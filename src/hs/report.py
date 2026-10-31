@@ -176,6 +176,52 @@ def compare_html(run_dirs: list[Path]) -> str:
             "<th>Figure</th><th>Cost</th></tr>" + "".join(rows) + "</table></body></html>")
 
 
+def showcase_html(run_dirs: list[Path]) -> str:
+    """Showcase: per run, exact input prompt left, final figure right (click to
+    enlarge), mechanism sentence + 3 decisive choices + open question under it.
+    Nothing else on the page. Same visual style as report.html."""
+    blocks: list[str] = []
+    for run_dir in run_dirs:
+        problem = _read_json(run_dir / "problem.json")
+        prompt_text = problem.get("statement", "")
+        if problem.get("constraints"):
+            prompt_text += "\n\nConstraints:\n" + "\n".join(f"- {c}" for c in problem["constraints"])
+        if problem.get("criteria"):
+            prompt_text += "\n\nCriteria:\n" + "\n".join(f"- {c}" for c in problem["criteria"])
+        sol_files = sorted((run_dir / "stage_a").glob("iter_*/solution.json")) if (run_dir / "stage_a").exists() else []
+        sol = _read_json(sol_files[-1]) if sol_files else {}
+        figure = run_dir / "final" / "figure.png"
+        fig_html = ""
+        if figure.exists():
+            data = base64.b64encode(figure.read_bytes()).decode()
+            fig_html = (f"<a href='data:image/png;base64,{data}' target='_blank'>"
+                        f"<img src='data:image/png;base64,{data}' style='width:100%;cursor:zoom-in'></a>")
+        else:
+            fig_html = "<i>missing final figure</i>"
+        blocks.append(
+            "<div style='display:flex;gap:28px;align-items:flex-start;background:#171a1f;color:#eee;"
+            "padding:26px 28px;border-radius:10px;margin:0 0 28px'>"
+            f"<div style='flex:0 0 34%'><h2 style='color:#fff;margin-top:0'>{html.escape(str(problem.get('title', run_dir.name)))}</h2>"
+            f"<pre style='white-space:pre-wrap;background:#23272e;color:#eee;padding:14px;border-radius:8px'>{html.escape(prompt_text)}</pre></div>"
+            f"<div style='flex:1'>{fig_html}"
+            f"<p style='font-size:18px'>{html.escape(str(sol.get('mechanism_sentence', '')))}</p>"
+            "<ol>" + "".join(f"<li style='margin:6px 0'>{html.escape(str(c))}</li>"
+                             for c in (sol.get("decisive_choices") or [])[:3]) + "</ol>"
+            f"<p><b>The open question</b><br>{html.escape(str(sol.get('open_question', '')))}</p>"
+            "</div></div>")
+    return ("<!doctype html><html><head><meta charset='utf-8'><title>Showcase</title>"
+            "<style>body{font-family:sans-serif;background:#111318;margin:18px}</style></head><body>"
+            + "".join(blocks) + "</body></html>")
+
+
+def write_showcase(run_dirs: list[Path], out: Path | None = None) -> Path:
+    if out is None:
+        out = Path("runs") / "showcase.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(showcase_html(run_dirs), encoding="utf-8")
+    return out
+
+
 def write_compare(run_dirs: list[Path], out: Path | None = None) -> Path:
     if out is None:
         out = Path("runs") / f"compare_{datetime.now().strftime('%Y%m%d-%H%M%S')}.html"

@@ -151,6 +151,14 @@ def _cmd_board(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_showcase(args: argparse.Namespace) -> int:
+    from hs.report import write_showcase
+
+    out = write_showcase([Path(p) for p in args.run_dirs], Path(args.out) if args.out else None)
+    print(out)
+    return 0
+
+
 def _cmd_compare(args: argparse.Namespace) -> int:
     from hs.report import write_compare
 
@@ -187,6 +195,10 @@ def build_parser() -> argparse.ArgumentParser:
     comp = sub.add_parser("compare")
     comp.add_argument("run_dirs", nargs="+")
     comp.set_defaults(func=_cmd_compare)
+    sc = sub.add_parser("showcase")
+    sc.add_argument("run_dirs", nargs="+")
+    sc.add_argument("--out", default="")
+    sc.set_defaults(func=_cmd_showcase)
     return parser
 
 
