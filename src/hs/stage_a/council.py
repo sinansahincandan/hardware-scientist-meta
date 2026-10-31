@@ -34,14 +34,31 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     prev_id: str | None = None
     counted = 0
     wb_calls = 0
+    chain_restarts = 0
     last_text = ""
     input_items: list[dict[str, Any]] = [{"type": "message", "role": "user",
                                           "content": [{"type": "input_text", "text": user_text}]}]
-    for _ in range(12):
+    for _ in range(16):
         parallel = False if counted >= 4 else None  # from 5th counted call: one at a time
-        resp = client.responses(role="member", instructions=roster_instructions,
-                                input_items=input_items, tools=TOOL_SCHEMAS,
-                                previous_response_id=prev_id, parallel_tool_calls=parallel)
+        try:
+            resp = client.responses(role="member", instructions=roster_instructions,
+                                    input_items=input_items, tools=TOOL_SCHEMAS,
+                                    previous_response_id=prev_id, parallel_tool_calls=parallel)
+        except Exception as exc:
+            # Provider-side chain state can expire while tools run (400
+            # "referenced response not found or expired", observed on real
+            # runs). Board/evidence state is code-side and persists, so
+            # restart this turn as a fresh chain from the current board.
+            if prev_id is None or "not found or expired" not in str(exc) or chain_restarts >= 2:
+                raise
+            chain_restarts += 1
+            prev_id = None
+            input_items = [{"type": "message", "role": "user", "content": [{"type": "input_text",
+                            "text": (f"WHITEBOARD (your previous chain in this turn expired; "
+                                     f"board state below already includes your earlier actions):\n"
+                                     f"{board.render_markdown()}\n\nContinue your turn from this "
+                                     f"board state and finish with your spoken message (<= 250 words).")}]}]
+            continue
         prev_id = getattr(resp, "id", prev_id)
         input_items = []
         calls = [i for i in (getattr(resp, "output", []) or []) if getattr(i, "type", None) == "function_call"]
