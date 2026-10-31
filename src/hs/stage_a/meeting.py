@@ -1,0 +1,242 @@
+"""Meeting: turns, cycles, closing rule, Secretary (spec §4.3). Council turn logic lives here."""
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+from hs import config
+from hs.master_prompt import MasterPrompt, roster_of
+from hs.schemas import (
+    ConceptBody,
+    Connection,
+    FabricationStep,
+    FigureSpec,
+    KeyEstimate,
+    Load,
+    MeasurementStage,
+    Part,
+    Problem,
+    SizeClass,
+    SolutionPrompt,
+)
+from hs.stage_a.tools import ToolRunner
+from hs.stage_a.whiteboard import HistoryLog, Whiteboard
+
+
+@dataclass
+class MeetingResult:
+    board: Whiteboard
+    transcript: list[dict[str, Any]]
+    cycles_used: int
+    closed_by: str
+    stats: dict[str, dict[str, int]] = field(default_factory=dict)
+
+
+def _truncate_words(text: str, limit: int = config.MAX_TURN_MESSAGE_WORDS) -> str:
+    words = text.split()
+    return " ".join(words[:limit])
+
+
+class Meeting:
+    def __init__(self, client: Any, master: MasterPrompt, run_dir: Path, iteration: int,
+                 min_cycles: int = config.MIN_CYCLES, max_cycles: int = config.MAX_CYCLES) -> None:
+        self.client = client
+        self.master = master
+        self.run_dir = run_dir
+        self.iteration = iteration
+        self.min_cycles = max(1, min(min_cycles, max_cycles))
+        self.max_cycles = max_cycles
+        self.iter_dir = run_dir / "stage_a" / f"iter_{iteration:02d}"
+        self.iter_dir.mkdir(parents=True, exist_ok=True)
+        (self.iter_dir / "turns").mkdir(exist_ok=True)
+        self.board = Whiteboard()
+        self.history = HistoryLog(self.iter_dir / "whiteboard_history.jsonl")
+        self.tools = ToolRunner(self.board, run_dir, self.iter_dir / "evidence")
+        self.transcript: list[dict[str, Any]] = []
+
+    # -- setup ---------------------------------------------------------------------
+    def pin_inspirations(self, inspirations: list[dict[str, Any]]) -> None:
+        self.board.inspirations = inspirations
+
+    def pin_evaluator_requests(self, requests: list[str], feedback: str) -> None:
+        self.board.pin_evaluator_requests(requests, feedback)
+
+    # -- turns -----------------------------------------------------------------------
+    def _apply_scripted_turn(self, member: str, roster: list[str], cycle: int) -> None:
+        turn = self.client.scripted_turn(member, roster, cycle, self.board)
+        new_evidence_ids: list[str] = []
+        for tool_call in turn.get("tools", []):
+            kind = tool_call["tool"]
+            if kind == "calc":
+                eid, _ = self.tools.calc(member, tool_call["expression"], tool_call["purpose"], cycle=cycle)
+            elif kind == "simulate":
+                eid, _ = self.tools.simulate(member, tool_call["script"], tool_call["purpose"], cycle=cycle)
+            elif kind == "sketch":
+                eid, _ = self.tools.sketch(member, tool_call["script"], tool_call["caption"], cycle=cycle)
+            else:
+                continue
+            new_evidence_ids.append(eid)
+            self.history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": kind})
+        for op in turn.get("ops", []):
+            if op.get("action") == "__resolve_first_eval__":
+                target = next((o for o in self.board.objections if o.author == "Evaluator" and o.status == "open"), None)
+                if target is not None:
+                    real_op = {"action": "resolve_objection", "id": target.id,
+                               "evidence_ids": new_evidence_ids[-1:] or [e.id for e in self.board.evidence[-1:]],
+                               "resolution": "Computed the requested quantity; see cited evidence."}
+                    ok, msg = self.board.apply_op(member, real_op)
+                    self.history.append({"cycle": cycle, "member": member, "kind": "op", "op": real_op, "ok": ok, "msg": msg})
+                continue
+            ok, msg = self.board.apply_op(member, op)
+            self.history.append({"cycle": cycle, "member": member, "kind": "op", "op": op, "ok": ok, "msg": msg})
+        if turn.get("vote") is not None and self.board.proposal is not None:
+            vote_op = {"action": "vote", "ready": turn["vote"]["ready"], "reason": turn["vote"]["reason"]}
+            # In fake cap scenario an open Evaluator objection still allows voting; board rule decides.
+            ok, msg = self.board.apply_op(member, vote_op)
+            self.history.append({"cycle": cycle, "member": member, "kind": "op", "op": vote_op, "ok": ok, "msg": msg})
+        message = _truncate_words(str(turn.get("message", "")))
+        self.transcript.append({"cycle": cycle, "member": member, "message": message})
+
+    def _run_real_turn(self, member: str, roster: list[str], cycle: int) -> None:
+        """Responses tool loop for one turn (real client only; fake uses scripted turns)."""
+        from hs.stage_a.council import run_member_turn
+
+        message = run_member_turn(self.client, self.master, member, self.board, self.tools,
+                                  self.transcript, cycle)
+        self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})
+        self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
+
+    # -- main loop ---------------------------------------------------------------------
+    def run(self) -> MeetingResult:
+        roster = roster_of(self.master.sections)
+        stats: dict[str, dict[str, int]] = {m: {"evidence": 0, "objections_raised": 0,
+                                                "objections_resolved": 0, "votes": 0, "tool_errors": 0}
+                                            for m in roster}
+        closed_by = "cap"
+        cycles_used = 0
+        for cycle in range(1, self.max_cycles + 1):
+            cycles_used = cycle
+            order = roster[cycle % len(roster):] + roster[: cycle % len(roster)] if roster else []
+            # spec §4.3: cycle c starts with member c mod n (0-based cycle index c-1 equivalent rotation)
+            order = roster[(cycle - 1) % len(roster):] + roster[: (cycle - 1) % len(roster)] if roster else []
+            for member in order:
+                if getattr(self.client, "is_fake", False):
+                    self._apply_scripted_turn(member, roster, cycle)
+                else:
+                    self._run_real_turn(member, roster, cycle)
+                (self.iter_dir / "turns" / f"c{cycle}_{member}.json").write_text(
+                    json.dumps({"cycle": cycle, "member": member,
+                                "message": self.transcript[-1]["message"] if self.transcript else ""}, indent=2),
+                    encoding="utf-8")
+                if cycle >= self.min_cycles and self.board.consensus_reached(roster):
+                    closed_by = "consensus"
+                    break
+            if closed_by == "consensus":
+                break
+            # stats snapshot per cycle
+            for m in roster:
+                stats[m]["evidence"] = sum(1 for e in self.board.evidence if e.author == m)
+        if closed_by != "consensus" and self.board.proposal is not None:
+            # vote-only round: only vote / raise_objection allowed (fake: re-vote once)
+            for member in roster:
+                if getattr(self.client, "is_fake", False):
+                    turn = self.client.scripted_turn(member, roster, self.max_cycles, self.board)
+                    if turn.get("vote") is not None:
+                        self.board.apply_op(member, {"action": "vote", "ready": turn["vote"]["ready"],
+                                                     "reason": turn["vote"]["reason"]})
+                else:
+                    self._run_real_turn(member, roster, self.max_cycles)
+            if self.board.consensus_reached(roster):
+                closed_by = "consensus"
+        open_blocking = [o.id for o in self.board.objections if o.blocking and o.status == "open"]
+        self.board.closure.closed_by = closed_by
+        self.board.closure.cycles_used = cycles_used
+        self.board.closure.open_blocking = open_blocking
+        for m in roster:
+            stats[m]["evidence"] = sum(1 for e in self.board.evidence if e.author == m)
+            stats[m]["objections_raised"] = sum(1 for o in self.board.objections if o.author == m)
+            stats[m]["votes"] = 1 if m in self.board.votes else 0
+            stats[m]["tool_errors"] = sum(1 for e in self.board.evidence if e.author == m and e.status == "error")
+        self.board.save(self.iter_dir / "whiteboard.json")
+        (self.iter_dir / "whiteboard.md").write_text(self.board.render_markdown(), encoding="utf-8")
+        (self.iter_dir / "transcript.md").write_text(
+            "\n\n".join(f"## Cycle {t['cycle']} — {t['member']}\n{t['message']}" for t in self.transcript),
+            encoding="utf-8")
+        (self.iter_dir / "closure.json").write_text(
+            json.dumps(self.board.closure.model_dump(), indent=2), encoding="utf-8")
+        return MeetingResult(board=self.board, transcript=list(self.transcript),
+                             cycles_used=cycles_used, closed_by=closed_by, stats=stats)
+
+
+class Secretary:
+    def __init__(self, client: Any) -> None:
+        self.client = client
+
+    def synthesize(self, result: MeetingResult, problem: Problem, iter_dir: Path) -> SolutionPrompt:
+        if getattr(self.client, "is_fake", False):
+            self.client.record_fake("secretary")
+            solution = self._from_board(result, problem)
+        else:
+            prompt = (
+                "Synthesize the SolutionPrompt from the final whiteboard and transcript. "
+                "Copy evidence ids into key_estimates where they exist. Add nothing not on the board.\n\n"
+                f"WHITEBOARD:\n{result.board.render_markdown()}\n\n"
+                f"TRANSCRIPT:\n" + "\n".join(t["message"] for t in result.transcript)
+            )
+            solution = self.client.structured("secretary", SolutionPrompt,
+                                              "You are the Secretary. Output only the structured solution.",
+                                              prompt)
+        if result.closed_by == "cap":
+            for oid in result.board.closure.open_blocking:
+                obj = next((o for o in result.board.objections if o.id == oid), None)
+                if obj is not None:
+                    solution.open_questions.append(f"{oid}: {obj.text}")
+        (iter_dir / "solution.json").write_text(solution.model_dump_json(indent=2), encoding="utf-8")
+        return solution
+
+    def _from_board(self, result: MeetingResult, problem: Problem) -> SolutionPrompt:
+        board = result.board
+        evidence_ids = [e.id for e in board.evidence if e.status == "ok"]
+        parts = [
+            Part(id="P1", name="Main frame", function="Carries the rated load", material="steel tube",
+                 size_class_mm=SizeClass(min=300, max=600), qty=1),
+            Part(id="P2", name="Drive / lift unit", function="Moves the load between levels", material="aluminium",
+                 size_class_mm=SizeClass(min=100, max=300), qty=1),
+            Part(id="P3", name="Sensor unit", function="Senses load and position", material="electronics",
+                 size_class_mm=SizeClass(min=20, max=80), qty=1),
+        ]
+        return SolutionPrompt(
+            title=problem.title,
+            problem_restatement=problem.statement,
+            assumed_constraints=[],
+            functional_decomposition=[f.text for f in board.functions] or ["Support and move the load"],
+            concept=ConceptBody(
+                working_principle="A framed unit carries the load while a drive unit moves it and a sensor unit guards safety.",
+                parts=parts,
+                connections=[Connection(from_id="P1", to_id="P2", kind="mechanical", label="bolted"),
+                             Connection(from_id="P2", to_id="P3", kind="electrical", label="signal")],
+                loads=[Load(on_id="P1", label="F", direction="down")],
+            ),
+            key_estimates=[KeyEstimate(quantity="rated load force", value=588.6, unit="N",
+                                       method="calc: mass times gravity",
+                                       evidence_ids=evidence_ids[:1])],
+            measurement_chain=[
+                MeasurementStage(stage="sensor", name="load cell", interface="bridge"),
+                MeasurementStage(stage="conditioning", name="amplifier", interface="analog"),
+                MeasurementStage(stage="instrument", name="DAQ", interface="USB"),
+                MeasurementStage(stage="computer", name="laptop", interface="software"),
+            ],
+            fabrication_steps=[
+                FabricationStep(step=1, description="Cut and weld the main frame", method="welding", parts_present=["P1"]),
+                FabricationStep(step=2, description="Fit the drive unit to the frame", method="bolting", parts_present=["P1", "P2"]),
+                FabricationStep(step=3, description="Wire the sensor unit and test", method="wiring", parts_present=["P1", "P2", "P3"]),
+            ],
+            risks=[{"risk": "Overload at worst case", "mitigation": "Rated with margin; sensor cutoff"}],
+            novelty_claim="Integrated folding frame with sensed drive (fake-mode claim).",
+            cost_class="$100-1k",
+            figure_spec=FigureSpec(system_view="side view of the integrated unit", critical_part_id="P2",
+                                   preferred_view="side"),
+            open_questions=[],
+        )
