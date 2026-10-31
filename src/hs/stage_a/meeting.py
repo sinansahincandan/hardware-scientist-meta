@@ -107,8 +107,15 @@ class Meeting:
         from hs.stage_a.council import run_member_turn
 
         records: list[dict[str, Any]] = []
-        message = run_member_turn(self.client, self.master, member, self.board, self.tools,
-                                  self.transcript, cycle, history=records)
+        try:
+            message = run_member_turn(self.client, self.master, member, self.board, self.tools,
+                                      self.transcript, cycle, history=records)
+        except Exception as exc:
+            if "not found or expired" not in str(exc):
+                raise
+            # Last resort: one whole-turn retry from the current board state.
+            message = run_member_turn(self.client, self.master, member, self.board, self.tools,
+                                      self.transcript, cycle, history=records)
         for rec in records:
             self.history.append(rec)
         self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})

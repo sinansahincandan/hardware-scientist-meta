@@ -7,6 +7,7 @@ turn only, instructions resent, tool caps enforced by code.
 from __future__ import annotations
 
 import json
+import time
 from typing import Any
 
 from hs import config
@@ -57,6 +58,7 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     counted = 0
     wb_calls = 0
     chain_restarts = 0
+    same_chain_retries = 0
     last_text = ""
     input_items: list[dict[str, Any]] = [{"type": "message", "role": "user",
                                           "content": [{"type": "input_text", "text": user_text}]}]
@@ -69,10 +71,19 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         except Exception as exc:
             # Provider-side chain state can expire while tools run (400
             # "referenced response not found or expired", observed on real
-            # runs). Board/evidence state is code-side and persists, so
-            # restart this turn as a fresh chain from the current board.
-            if prev_id is None or "not found or expired" not in str(exc) or chain_restarts >= 2:
+            # runs, sometimes repeatedly in one long turn). First retry the
+            # same chained request (transient node-local miss), then restart
+            # this turn as a fresh chain from the current board (board and
+            # evidence state is code-side and persists).
+            if prev_id is None or "not found or expired" not in str(exc):
                 raise
+            if same_chain_retries < 2:
+                same_chain_retries += 1
+                time.sleep(3)
+                continue
+            if chain_restarts >= 4:
+                raise
+            same_chain_retries = 0
             chain_restarts += 1
             prev_id = None
             input_items = [{"type": "message", "role": "user", "content": [{"type": "input_text",
