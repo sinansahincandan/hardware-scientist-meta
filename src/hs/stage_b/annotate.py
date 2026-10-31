@@ -40,7 +40,7 @@ class Annotator:
         return loc
 
     def run(self, render_png: Path, spec: SchematicSpec, geometry: dict[str, Any],
-            out_png: Path, panel_letter: str = "A") -> tuple[Path, Localization, list[str]]:
+            out_png: Path, panel_letter: str = "A", code_labels: bool = True) -> tuple[Path, Localization, list[str]]:
         loc = self.localize(render_png, spec, geometry)
         (out_png.parent / "localization.json").write_text(loc.model_dump_json(indent=2), encoding="utf-8")
         img = Image.open(render_png).convert("RGB")
@@ -57,17 +57,17 @@ class Annotator:
             y1 = min(max(b.y1 / 1000 * h, 0), h)
             boxes_px[part.id] = (x0, y0, x1, y1)
         label_of = {n.id: n.label for n in spec.nodes}
-        # labels with leader lines, placed above each box (collision-avoided by index offset)
-        for i, (pid, (x0, y0, x1, y1)) in enumerate(sorted(boxes_px.items())):
+        # labels with leader lines (code mode only; image mode labels are drawn by the image model)
+        for i, (pid, (x0, y0, x1, y1)) in enumerate(sorted(boxes_px.items()) if code_labels else []):
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
             lx = min(max(cx, 60), w - 60)
             ly = max(14 + (i % 3) * 16, y0 - 24)
             draw.line([cx, cy, lx, ly], fill=(0, 90, 90), width=2)
             draw.ellipse([cx - 3, cy - 3, cx + 3, cy + 3], fill=(0, 90, 90))
             draw.text((lx, ly), label_of.get(pid, pid), fill=(0, 90, 90))
-        # load arrows (letters from schematic loads)
+        # load arrows (letters from schematic loads; code mode only)
         node_box = boxes_px
-        for load in spec.loads:
+        for load in spec.loads if code_labels else []:
             box = node_box.get(load.on_id)
             if box is None:
                 continue
@@ -88,6 +88,9 @@ class Annotator:
             draw.line([bx, by, bx + bar_px, by], fill=(0, 90, 90), width=4)
             draw.text((bx, by + 6), f"~{spec.scale_bar_mm:g} mm", fill=(0, 90, 90))
         draw.text((12, 10), panel_letter, fill=(0, 0, 0))
+        footer = "Conceptual illustration — physical performance not established"
+        draw.rectangle([0, h - 22, w, h], fill=(255, 255, 255))
+        draw.text((12, h - 18), footer, fill=(60, 60, 60))
         out_png.parent.mkdir(parents=True, exist_ok=True)
         img.save(out_png)
         return out_png, loc, missing

@@ -20,7 +20,7 @@ from hs.stage_a.meeting import Meeting, Secretary
 from hs.stage_b import figure as figure_mod
 from hs.stage_b import schematic as schematic_mod
 from hs.stage_b.annotate import Annotator
-from hs.stage_b.designer_eval import DesignerEvalRunner, decide, feedback_text
+from hs.stage_b.designer_eval import DesignerEvalRunner, decide, feedback_text, label_failed
 from hs.stage_b.image_archive import ImageArchive
 from hs.stage_b.image_model import ImageModel
 from hs.stage_b.vlm_prompt import VLMPromptWriter
@@ -170,6 +170,7 @@ class Controller:
             decision = "s2_return"
             ev = None
             s1_diffs = ""
+            label_failures = 0
             attempt_dir = run_dir / "stage_b" / f"attempt_{returns_to_a:02d}"
             for r in range(self.max_s1_rounds):
                 round_dir = attempt_dir / f"round_{r:02d}"
@@ -178,13 +179,15 @@ class Controller:
                 writer = VLMPromptWriter(self.client)
                 vlm = writer.write(solution, spec, round_dir / "schematic.png",
                                    round_dir / "schematic_labeled.png", img_archive,
-                                   s1_differences=s1_diffs)
+                                   s1_differences=s1_diffs, corrections=s1_diffs,
+                                   force_code_labels=label_failures >= 2)
                 (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
                 render_bytes = ImageModel(self.client).edit(vlm, round_dir / "schematic.png")
                 render_path = round_dir / "render.png"
                 render_path.write_bytes(render_bytes)
                 annotated_path, loc, missing = Annotator(self.client).run(
-                    render_path, spec, geometry, round_dir / "annotated.png")
+                    render_path, spec, geometry, round_dir / "annotated.png",
+                    code_labels=(vlm.label_mode == "code"))
                 ev = DesignerEvalRunner(self.client).run(
                     annotated_path, round_dir / "schematic_labeled.png", solution, missing)
                 decision = decide(ev, r, self.max_s1_rounds)
@@ -198,7 +201,12 @@ class Controller:
                 if ev.s1_faithful:
                     best_pass = last
                 trace.log(f"iter {k} round {r}: S1={ev.s1_faithful} S2={ev.s2_flaw} decision={decision}")
-                s1_diffs = ev.s1_differences
+                if label_failed(ev):
+                    label_failures += 1
+                    trace.log(f"iter {k} round {r}: label failure {label_failures}/2 before code-label fallback")
+                # Targeted corrections from actual-image review, appended verbatim next round (§7.2).
+                s1_diffs = "\n".join(x for x in (ev.s1_differences, ev.label_findings,
+                                                 ev.pixel_description) if x)
                 if decision != "s1_retry":
                     break
             if decision == "s1_retry":

@@ -85,6 +85,10 @@ class FigureSpec(BaseModel):
 class SolutionPrompt(BaseModel):
     title: str
     problem_restatement: str
+    mechanism_sentence: str = ""
+    decisive_choices: list[str] = Field(default_factory=list)
+    open_question: str = ""
+    transfer_line: str = ""
     assumed_constraints: list[AssumedConstraint] = Field(default_factory=list)
     functional_decomposition: list[str] = Field(default_factory=list)
     concept: ConceptBody
@@ -179,10 +183,29 @@ class SchematicSpec(BaseModel):
     notes: list[str] = Field(default_factory=list)
 
 
+class VisualPlan(BaseModel):
+    view: str = ""
+    spatial_layout: str = ""
+    operating_moment: str = ""
+    transfer_path: str = ""
+    interactions: str = ""
+    avoid: list[str] = Field(default_factory=list)
+
+
+class FocusPart(BaseModel):
+    part_id: str
+    material: str = ""
+    purpose: str = ""
+    callout: str = ""
+
+
 class VLMPrompt(BaseModel):
     prompt: str
     must_not: list[str] = Field(default_factory=list)
     changes_from_previous: str = ""
+    visual_plan: VisualPlan = Field(default_factory=VisualPlan)
+    focus_parts: list[FocusPart] = Field(default_factory=list)
+    label_mode: Literal["image", "code"] = "image"
 
 
 class Box1000(BaseModel):
@@ -203,7 +226,17 @@ class Localization(BaseModel):
     parts: list[LocalizedPart] = Field(default_factory=list)
 
 
+class RequirementCheck(BaseModel):
+    requirement: str
+    status: Literal["observed", "ambiguous", "missing"] = "observed"
+    stage_at_fault: Literal["meeting", "schematic", "prompt", "render", "none"] = "none"
+    detail: str = ""
+
+
 class DesignerEval(BaseModel):
+    pixel_description: str = ""
+    label_findings: str = ""
+    requirements: list[RequirementCheck] = Field(default_factory=list)
     s1_faithful: bool
     s1_differences: str = ""
     s2_flaw: bool = False

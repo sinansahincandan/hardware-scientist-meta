@@ -69,7 +69,10 @@ class Meeting:
         new_evidence_ids: list[str] = []
         for tool_call in turn.get("tools", []):
             kind = tool_call["tool"]
-            if kind == "calc":
+            if kind == "vetted_calc":
+                eid, _ = self.tools.vetted_calc(member, tool_call["name"], tool_call.get("args", {}),
+                                                tool_call.get("input_sources"), tool_call["purpose"], cycle=cycle)
+            elif kind == "calc":
                 eid, _ = self.tools.calc(member, tool_call["expression"], tool_call["purpose"], cycle=cycle)
             elif kind == "simulate":
                 eid, _ = self.tools.simulate(member, tool_call["script"], tool_call["purpose"], cycle=cycle)
@@ -181,13 +184,30 @@ class Secretary:
         else:
             prompt = (
                 "Synthesize the SolutionPrompt from the final whiteboard and transcript. "
-                "Copy evidence ids into key_estimates where they exist. Add nothing not on the board.\n\n"
+                "Copy evidence ids into key_estimates where they exist. Add nothing not on the board. "
+                "Also write: mechanism_sentence (one sentence stating the working principle); "
+                "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works); "
+                "open_question (EXACTLY 1, the most important unresolved question); "
+                "transfer_line formatted exactly as: Force: A -> B -> C | Measured: D -> E "
+                "naming the real parts/sensor stages of this concept.\n\n"
                 f"WHITEBOARD:\n{result.board.render_markdown()}\n\n"
                 f"TRANSCRIPT:\n" + "\n".join(t["message"] for t in result.transcript)
             )
             solution = self.client.structured("secretary", SolutionPrompt,
                                               "You are the Secretary. Output only the structured solution.",
                                               prompt)
+        # Deliverable-summary guards (AUTOPILOT §7.4): exactly 3 choices, 1 open question.
+        solution.decisive_choices = (solution.decisive_choices or [])[:3]
+        while len(solution.decisive_choices) < 3:
+            pad = (solution.risks[len(solution.decisive_choices)].risk
+                   if len(solution.decisive_choices) < len(solution.risks)
+                   else solution.concept.working_principle)
+            solution.decisive_choices.append(f"Choice needs Secretary confirmation: {pad}"[:200])
+        if not solution.open_question:
+            solution.open_question = (solution.open_questions[0] if solution.open_questions
+                                      else "No open question was recorded by the council.")
+        if not solution.mechanism_sentence:
+            solution.mechanism_sentence = solution.concept.working_principle
         if result.closed_by == "cap":
             for oid in result.board.closure.open_blocking:
                 obj = next((o for o in result.board.objections if o.id == oid), None)
@@ -210,6 +230,10 @@ class Secretary:
         return SolutionPrompt(
             title=problem.title,
             problem_restatement=problem.statement,
+            mechanism_sentence="A framed unit carries the load while a drive unit moves it and a sensor unit guards safety.",
+            decisive_choices=["Framed load path sized for the rated load", "Drive unit moves the load between levels", "Sensor unit guards the worst-case state"],
+            open_question="Does the drive hold the rated load at the worst-case position?",
+            transfer_line="Force: load -> frame -> drive unit | Measured: load cell -> amplifier -> laptop",
             assumed_constraints=[],
             functional_decomposition=[f.text for f in board.functions] or ["Support and move the load"],
             concept=ConceptBody(

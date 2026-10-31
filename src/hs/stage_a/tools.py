@@ -21,6 +21,11 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
     {"type": "function", "name": "sketch", "description": "Run a matplotlib script saving sketch.png.",
      "parameters": {"type": "object", "properties": {"script": {"type": "string"}, "caption": {"type": "string"}},
                     "required": ["script", "caption"]}},
+    {"type": "function", "name": "vetted_calc",
+     "description": "Run a vetted calculator: lever_effort, lead_screw_effort, cantilever_deflection, spring_mass_frequency, first_order_settling, natural_convection_plate, tuned_mass_damper_den_hartog. Args are SI floats; input_sources maps each arg to user|source|assumption.",
+     "parameters": {"type": "object", "properties": {"name": {"type": "string"}, "args": {"type": "object"},
+                                                     "input_sources": {"type": "object"}, "purpose": {"type": "string"}},
+                    "required": ["name", "args", "purpose"]}},
     {"type": "web_search", "search_context_size": "low"},
 ]
 
@@ -106,6 +111,30 @@ class ToolRunner:
                          full=result.stdout, sketch_path=sketch_rel,
                          status="ok" if result.ok else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
+
+    def vetted_calc(self, author: str, name: str, args: dict[str, Any],
+                    input_sources: dict[str, Any] | None = None, purpose: str = "", cycle: int = 0) -> tuple[str, str]:
+        from hs.stage_a.calculators import VETTED, run_vetted
+
+        if name not in VETTED:
+            eid = self._post(author, "vetted_calc", purpose or name, name,
+                             f"unknown vetted calculator {name}", status="error", cycle=cycle)
+            return eid, f"{eid}: error: unknown vetted calculator {name}"
+        try:
+            result = run_vetted(name, args, input_sources)
+            summary = ", ".join(f"{k}={v} {result.get('unit', '')}".strip()
+                                for k, v in result.items()
+                                if k not in ("inputs", "provenance", "calculator", "unit"))[:200]
+            eid = self._post(author, f"vetted_calc:{name}", purpose or name,
+                             json.dumps({"args": args, "input_sources": input_sources or {}}),
+                             summary, full=json.dumps(result, indent=2),
+                             inputs=result.get("provenance", {}), cycle=cycle)
+            return eid, f"{eid}: {summary}"
+        except Exception as exc:
+            eid = self._post(author, f"vetted_calc:{name}", purpose or name,
+                             json.dumps({"args": args}), f"vetted_calc error: {exc}"[:200],
+                             status="error", cycle=cycle)
+            return eid, f"{eid}: error: {exc}"
 
     def web_search_evidence(self, author: str, query: str, citations: list[dict[str, Any]], cycle: int = 0) -> list[str]:
         ids: list[str] = []

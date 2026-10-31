@@ -14,7 +14,7 @@ from hs.master_prompt import MasterPrompt, member_instructions
 from hs.stage_a.tools import TOOL_SCHEMAS, ToolRunner
 from hs.stage_a.whiteboard import Whiteboard
 
-COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool"}
+COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc"}
 
 
 def run_member_turn(client: Any, master: MasterPrompt, member: str, board: Whiteboard,
@@ -26,7 +26,10 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         f"WHITEBOARD:\n{board.render_markdown()}\n\n"
         f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + "\n".join(f"{t['member']}: {t['message']}" for t in since[-8:])
         + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). "
-        "Use the whiteboard tool to write to the board; use calc/simulate/sketch/web_search for evidence."
+        "Use the whiteboard tool to write to the board; use calc/vetted_calc/simulate/sketch/web_search for evidence. "
+        "Search the literature the way your persona implies: your own domain's directly relevant papers, standards "
+        "and datasheets first, and neighbouring or distant fields where a transferable principle may exist. "
+        "When you borrow a principle from another field, state on the whiteboard why it should transfer."
     )
     prev_id: str | None = None
     counted = 0
@@ -72,6 +75,11 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                     _, output = tools.simulate(member, str(args.get("script", "")), str(args.get("purpose", "")), cycle=cycle)
                 elif name == "sketch":
                     _, output = tools.sketch(member, str(args.get("script", "")), str(args.get("caption", "")), cycle=cycle)
+                elif name == "vetted_calc":
+                    _, output = tools.vetted_calc(member, str(args.get("name", "")),
+                                                  dict(args.get("args", {}) or {}),
+                                                  dict(args.get("input_sources", {}) or {}),
+                                                  str(args.get("purpose", "")), cycle=cycle)
                 elif name == "new_tool":
                     ok, output = tools.new_tool(member, str(args.get("name", "")), str(args.get("description", "")),
                                                 dict(args.get("parameters", {}) or {}),
