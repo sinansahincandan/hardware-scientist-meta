@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hs"
+version = "0.1.0"
+description = "Hardware Scientist — conceptual hardware design system (Meta Model API, Responses API)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2",
+    "openai>=1.30",
+    "requests>=2.31",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "Pillow",
+    "pint",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+hs = "hs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+# Blind excepts are deliberate in parsing/retry helpers (errors become tool-output text).
+ignore = ["BLE001", "S110"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/hs/launcher.py" = ["S102"]  # exec of the user script is the sandbox's purpose
