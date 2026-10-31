@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import math
+import textwrap
 from pathlib import Path
 from typing import Any
 
@@ -38,17 +39,21 @@ def _repair_steps(solution: SolutionPrompt, trace: list[str]) -> list[list[str]]
 
 
 def _panel_c(solution: SolutionPrompt, path: Path) -> None:
-    img = Image.new("RGB", (760, 220), "white")
+    from hs.stage_b.annotate import _font
+
+    img = Image.new("RGB", (1000, 260), "white")
     draw = ImageDraw.Draw(img)
-    draw.text((10, 8), "C Measurement chain", fill=(0, 0, 0))
+    title, body = _font(26), _font(20)
+    draw.text((10, 8), "C Measurement chain", fill=(0, 0, 0), font=title)
     x = 20
     for stage in solution.measurement_chain:
-        draw.rectangle([x, 70, x + 150, 150], outline=(0, 90, 90), width=2)
-        draw.text((x + 8, 90), stage.stage, fill=(0, 90, 90))
-        draw.text((x + 8, 112), stage.name[:18], fill=(0, 0, 0))
-        draw.line([x + 150, 110, x + 180, 110], fill=(0, 90, 90), width=2)
-        draw.polygon([(x + 180, 110), (x + 170, 105), (x + 170, 115)], fill=(0, 90, 90))
-        x += 185
+        draw.rectangle([x, 80, x + 200, 190], outline=(0, 90, 90), width=3)
+        draw.text((x + 10, 100), stage.stage, fill=(0, 90, 90), font=body)
+        name = stage.name if len(stage.name) <= 22 else stage.name[:22] + "…"
+        draw.text((x + 10, 140), name, fill=(0, 0, 0), font=body)
+        draw.line([x + 200, 135, x + 235, 135], fill=(0, 90, 90), width=3)
+        draw.polygon([(x + 235, 135), (x + 222, 128), (x + 222, 142)], fill=(0, 90, 90))
+        x += 240
     path.parent.mkdir(parents=True, exist_ok=True)
     img.save(path)
 
@@ -163,14 +168,19 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     # compose D strip with code captions
     if step_images:
         thumbs = [Image.open(p).convert("RGB").resize((360, 225)) for p in step_images]
-        strip = Image.new("RGB", (360 * len(thumbs), 260), "white")
+        strip = Image.new("RGB", (360 * len(thumbs), 300), "white")
         d = ImageDraw.Draw(strip)
+        from hs.stage_b.annotate import _font
+
+        cap_font = _font(17)
         steps_sorted = sorted(solution.fabrication_steps, key=lambda s: s.step)
         for i, thumb in enumerate(thumbs):
             strip.paste(thumb, (360 * i, 0))
-            desc = steps_sorted[i].description[:34] if i < len(steps_sorted) else ""
+            desc = steps_sorted[i].description if i < len(steps_sorted) else ""
             mark = " (o)" if (i + 1) in failed_steps else ""
-            d.text((360 * i + 6, 232), f"{i + 1}. {desc}{mark}", fill=(0, 0, 0))
+            lines = textwrap.wrap(f"{i + 1}. {desc}{mark}", width=30)[:3]
+            for j, line in enumerate(lines):
+                d.text((360 * i + 6, 230 + j * 21), line, fill=(0, 0, 0), font=cap_font)
         panel_d = final_dir / "panel_D.png"
         strip.save(panel_d)
     else:

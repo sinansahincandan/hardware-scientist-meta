@@ -106,8 +106,11 @@ class Meeting:
         """Responses tool loop for one turn (real client only; fake uses scripted turns)."""
         from hs.stage_a.council import run_member_turn
 
+        records: list[dict[str, Any]] = []
         message = run_member_turn(self.client, self.master, member, self.board, self.tools,
-                                  self.transcript, cycle)
+                                  self.transcript, cycle, history=records)
+        for rec in records:
+            self.history.append(rec)
         self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})
         self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
 

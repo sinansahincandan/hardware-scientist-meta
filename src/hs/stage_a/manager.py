@@ -66,8 +66,10 @@ class Manager:
         reverted = self.master.apply_reverts(gradients)
         rewrite = self.client.structured(
             "optimizer", MasterPromptRewrite,
-            "Rewrite only the sections that need it, as free Markdown section text.",
+            "Rewrite only the sections that need it, as free Markdown section text. "
+            "Use the exact section headings from the master prompt (e.g. '## 4. Meeting protocol') as each heading.",
             f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES:\n{gradients.model_dump_json(indent=2)}")
+        (iter_dir / "rewrite.json").write_text(rewrite.model_dump_json(indent=2), encoding="utf-8")
         report = self.master.apply_rewrite(rewrite)
         if report.get("guard_reasked"):
             rewrite2 = self.client.structured(

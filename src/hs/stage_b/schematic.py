@@ -119,12 +119,17 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
     loads = [l for l in spec.loads if l.on_id in node_ids]
     boxes: dict[str, dict[str, float]] = {}
     positions: dict[str, tuple[float, float, float, float]] = {}
+    # Normalize arbitrary LLM layout values to sequential grid ranks so no
+    # node lands off-canvas (real specs used col values up to 11 on a 0-9 axis).
+    col_rank = {v: i for i, v in enumerate(sorted({n.layout.col for n in nodes}))}
+    row_rank = {v: i for i, v in enumerate(sorted({n.layout.row for n in nodes}))}
+    ncols = max(len(col_rank), 1)
     for node in nodes:
         gm = _geomean(node.size_class_mm)
         w = min(max(gm / 12.0, 0.7), 2.2)
         h = min(max(gm / 16.0, 0.5), 1.6)
-        cx = 1.2 + node.layout.col * 2.4
-        cy = 3.4 - node.layout.row * 2.0
+        cx = 1.2 + col_rank[node.layout.col] * (8.4 / max(ncols - 1, 1) if ncols > 1 else 0)
+        cy = 3.4 - row_rank[node.layout.row] * 2.0
         positions[node.id] = (cx, cy, w, h)
         boxes[node.id] = {"x0": (cx - w / 2) * 100, "y0": 625 - (cy + h / 2) * 100,
                           "x1": (cx + w / 2) * 100, "y1": 625 - (cy - h / 2) * 100,

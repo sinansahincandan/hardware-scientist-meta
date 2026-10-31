@@ -17,8 +17,28 @@ from hs.stage_a.whiteboard import Whiteboard
 COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc"}
 
 
+def _unwrap_args(args: dict[str, Any]) -> dict[str, Any]:
+    """Models sometimes pack all fields into the action string as JSON; unwrap."""
+    action = args.get("action")
+    if isinstance(action, str) and action.strip().startswith("{"):
+        try:
+            inner = json.loads(action)
+            if isinstance(inner, dict):
+                merged = dict(inner)
+                for k, v in args.items():
+                    if k != "action":
+                        merged[k] = v
+                if "action" not in merged and "type" in merged:
+                    merged["action"] = merged.pop("type")
+                return merged
+        except Exception:
+            pass
+    return args
+
+
 def run_member_turn(client: Any, master: MasterPrompt, member: str, board: Whiteboard,
-                    tools: ToolRunner, transcript: list[dict[str, Any]], cycle: int) -> str:
+                    tools: ToolRunner, transcript: list[dict[str, Any]], cycle: int,
+                    history: list[dict[str, Any]] | None = None) -> str:
     roster_instructions = member_instructions(master.sections, member)
     since = [t for t in transcript if t["member"] != member]
     own_prev = next((t["message"] for t in reversed(transcript) if t["member"] == member), "")
@@ -82,23 +102,35 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                 if wb_calls > config.MAX_WHITEBOARD_CALLS_PER_TURN:
                     output = "whiteboard budget exhausted — write your message now"
                 else:
-                    ok, msg = board.apply_op(member, args)
+                    op_args = _unwrap_args(args)
+                    ok, msg = board.apply_op(member, op_args)
                     output = msg if ok else f"error: {msg}"
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "op",
+                                        "op": op_args, "ok": ok, "msg": msg})
             elif name in COUNTED_TOOLS:
                 counted += 1
                 if counted > config.MAX_TOOL_CALLS_PER_TURN:
                     output = "tool budget exhausted — write your message now"
                 elif name == "calc":
-                    _, output = tools.calc(member, str(args.get("expression", "")), str(args.get("purpose", "")), cycle=cycle)
+                    eid, output = tools.calc(member, str(args.get("expression", "")), str(args.get("purpose", "")), cycle=cycle)
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": "calc"})
                 elif name == "simulate":
-                    _, output = tools.simulate(member, str(args.get("script", "")), str(args.get("purpose", "")), cycle=cycle)
+                    eid, output = tools.simulate(member, str(args.get("script", "")), str(args.get("purpose", "")), cycle=cycle)
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": "simulate"})
                 elif name == "sketch":
-                    _, output = tools.sketch(member, str(args.get("script", "")), str(args.get("caption", "")), cycle=cycle)
+                    eid, output = tools.sketch(member, str(args.get("script", "")), str(args.get("caption", "")), cycle=cycle)
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": "sketch"})
                 elif name == "vetted_calc":
-                    _, output = tools.vetted_calc(member, str(args.get("name", "")),
+                    eid, output = tools.vetted_calc(member, str(args.get("name", "")),
                                                   dict(args.get("args", {}) or {}),
                                                   dict(args.get("input_sources", {}) or {}),
                                                   str(args.get("purpose", "")), cycle=cycle)
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": "vetted_calc"})
                 elif name == "new_tool":
                     ok, output = tools.new_tool(member, str(args.get("name", "")), str(args.get("description", "")),
                                                 dict(args.get("parameters", {}) or {}),
@@ -109,7 +141,9 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                     output = "web_search handled by the built-in tool"
             elif name in tools.new_tools:
                 counted += 1
-                _, output = tools.run_new_tool(member, name, args, cycle=cycle)
+                eid, output = tools.run_new_tool(member, name, args, cycle=cycle)
+                if history is not None:
+                    history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid, "tool": name})
             else:
                 output = f"error: unknown tool {name}"
             input_items.append({"type": "function_call_output",
@@ -122,5 +156,8 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                              for a in (getattr(block, "annotations", []) or [])
                              if getattr(a, "type", None) == "url_citation"]
                     if cites:
-                        tools.web_search_evidence(member, "member search", cites, cycle=cycle)
+                        for eid in tools.web_search_evidence(member, "member search", cites, cycle=cycle):
+                            if history is not None:
+                                history.append({"cycle": cycle, "member": member, "kind": "evidence",
+                                                "evidence_id": eid, "tool": "web_search"})
     return last_text or "(no message)"

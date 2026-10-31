@@ -10,8 +10,18 @@ from hs import sandbox
 from hs.stage_a.whiteboard import Whiteboard
 
 TOOL_SCHEMAS: list[dict[str, Any]] = [
-    {"type": "function", "name": "whiteboard", "description": "Write to the shared whiteboard.",
-     "parameters": {"type": "object", "properties": {"action": {"type": "string"}}, "required": ["action"]}},
+    {"type": "function", "name": "whiteboard",
+     "description": "Write to the shared whiteboard. action is one of add_function, add_concept, "
+                    "set_concept_status, raise_objection, resolve_objection, update_proposal, vote, read_evidence. "
+                    "Pass the fields for that action as separate properties (never pack them into the action string).",
+     "parameters": {"type": "object", "properties": {
+         "action": {"type": "string"}, "id": {"type": "string"}, "function_id": {"type": "string"},
+         "text": {"type": "string"}, "status": {"type": "string"}, "target_id": {"type": "string"},
+         "blocking": {"type": "boolean"}, "resolution": {"type": "string"},
+         "evidence_ids": {"type": "array", "items": {"type": "string"}},
+         "concept_ids": {"type": "array", "items": {"type": "string"}},
+         "key_claims": {"type": "array", "items": {"type": "object"}},
+         "ready": {"type": "boolean"}, "reason": {"type": "string"}}, "required": ["action"]}},
     {"type": "function", "name": "calc", "description": "Evaluate an expression with math/numpy/pint Q_.",
      "parameters": {"type": "object", "properties": {"expression": {"type": "string"}, "purpose": {"type": "string"}},
                     "required": ["expression", "purpose"]}},

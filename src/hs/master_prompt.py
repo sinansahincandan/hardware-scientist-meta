@@ -179,7 +179,23 @@ class MasterPrompt:
         old_by = dict(old_sections)
         new_by = dict(old_sections)
         changed: list[str] = []
+
+        def _canonical(heading: str) -> str | None:
+            # Optimizers often return "Meeting protocol" or "4. Meeting protocol"
+            # instead of the exact "## 4. Meeting protocol": match by title words.
+            wanted = re.sub(r"^#+\s*", "", heading).strip().lower()
+            wanted = re.sub(r"^\d+\.?\s*", "", wanted)
+            for known in old_by:
+                title = re.sub(r"^#+\s*", "", known).strip().lower()
+                title = re.sub(r"^\d+\.?\s*", "", title)
+                if wanted == title:
+                    return known
+            return heading if heading in old_by else None
+
         for section in rewrite.sections:
+            canonical = _canonical(section.heading)
+            if canonical is not None:
+                section = section.model_copy(update={"heading": canonical})
             if section.heading in new_by and section.heading != "## 1. Problem":
                 if new_by[section.heading].strip() != section.new_text.strip():
                     changed.append(section.heading)

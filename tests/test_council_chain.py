@@ -32,6 +32,39 @@ class _StubClient:
         return SimpleNamespace(id="resp_2", output=[msg])
 
 
+def test_whiteboard_schema_declares_all_fields():
+    from hs.stage_a.tools import TOOL_SCHEMAS
+
+    wb = next(t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard")
+    props = wb["parameters"]["properties"]
+    for field in ("function_id", "text", "target_id", "blocking", "evidence_ids", "ready", "reason"):
+        assert field in props, field
+
+
+def test_unwrap_packed_action_args():
+    from hs.stage_a.council import _unwrap_args
+
+    out = _unwrap_args({"action": '{"text": "Move the load", "type": "add_function"}'})
+    assert out["action"] == "add_function" and out["text"] == "Move the load"
+
+
+def test_optimizer_heading_normalized(tmp_path):
+    from hs.master_prompt import MasterPrompt
+    from hs.schemas import MasterPromptRewrite, RewriteSection
+
+    master = MasterPrompt(tmp_path, "T", [
+        ("## 1. Problem", "{}"), ("## 2. Roles", "### A\nx\n### B\ny\n### C\nz"),
+        ("## 3. Tools", "t"), ("## 4. Meeting protocol", "old protocol text here"),
+        ("## 5. Criteria", ("- The concept must work physically (no violated conservation law, load path, or signal path).\n"
+                             "- The concept must be buildable with purchasable parts and ordinary lab/shop methods.")),
+        ("## 6. Lessons applied", "l")], rev=0)
+    report = master.apply_rewrite(MasterPromptRewrite(
+        sections=[RewriteSection(heading="Meeting protocol", new_text="new protocol: vote only with evidence")],
+        change_note="test"))
+    assert report["changed"] == ["## 4. Meeting protocol"]
+    assert "vote only with evidence" in dict(master.sections)["## 4. Meeting protocol"]
+
+
 def test_expired_chain_restarts_turn(tmp_path):
     master = MasterPrompt(tmp_path, "T", [
         ("## 1. Problem", "{}"), ("## 2. Roles", "### Mechanics\ndomain"),

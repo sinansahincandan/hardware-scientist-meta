@@ -68,17 +68,31 @@ class Annotator:
             y1 = min(max(b.y1 / 1000 * h, 0), h)
             boxes_px[part.id] = (x0, y0, x1, y1)
         label_of = {n.id: n.label for n in spec.nodes}
-        # labels with leader lines (code mode only; image mode labels are drawn by the image model)
-        for i, (pid, (x0, y0, x1, y1)) in enumerate(sorted(boxes_px.items()) if code_labels else []):
-            cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-            text = label_of.get(pid, pid)
-            tw = draw.textlength(text, font=font)
-            lx = min(max(cx - tw / 2, 6), max(w - tw - 6, 6))
-            ly = max(30 + (i % 3) * (font.size + 8), y0 - font.size - 14)  # type: ignore[attr-defined]
-            draw.rectangle([lx - 4, ly - 3, lx + tw + 4, ly + font.size + 5], fill=(255, 255, 255))  # type: ignore[attr-defined]
-            draw.line([cx, cy, cx, ly + font.size + 5], fill=(0, 90, 90), width=3)  # type: ignore[attr-defined]
-            draw.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=(0, 90, 90))
-            draw.text((lx, ly), text, fill=(0, 70, 70), font=font)
+        if code_labels and boxes_px:
+            # White side margins: labels stacked without overlap, leader lines
+            # to box centres (co-located hub parts no longer collide).
+            pad = max(300, w // 3)
+            canvas = Image.new("RGB", (w + 2 * pad, h), "white")
+            canvas.paste(img, (pad, 0))
+            img = canvas
+            boxes_px = {k: (x0 + pad, y0, x1 + pad, y1) for k, (x0, y0, x1, y1) in boxes_px.items()}
+            w, h = img.size
+            draw = ImageDraw.Draw(img)
+            items = sorted(boxes_px.items(), key=lambda kv: (kv[1][1] + kv[1][3]) / 2)
+            next_y = {"left": 16.0, "right": 16.0}
+            for pid, (x0, y0, x1, y1) in items:
+                cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+                text = label_of.get(pid, pid)
+                tw = draw.textlength(text, font=font)
+                side = "left" if cx < w / 2 else "right"
+                ly = max(next_y[side], min(cy, h - 40))
+                next_y[side] = ly + font.size + 10  # type: ignore[attr-defined]
+                lx = 10 if side == "left" else w - tw - 10
+                edge_x = lx + tw + 6 if side == "left" else lx - 6
+                draw.rectangle([lx - 4, ly - 3, lx + tw + 4, ly + font.size + 5], fill=(255, 255, 255))  # type: ignore[attr-defined]
+                draw.line([edge_x, ly + font.size / 2, cx, cy], fill=(0, 90, 90), width=3)  # type: ignore[attr-defined]
+                draw.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=(0, 90, 90))
+                draw.text((lx, ly), text, fill=(0, 70, 70), font=font)
         # load arrows (letters from schematic loads; code mode only)
         node_box = boxes_px
         for load in spec.loads if code_labels else []:
