@@ -5,7 +5,16 @@ import math
 from pathlib import Path
 from typing import Any
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
+
+
+def _font(size: int):  # readable labels at any image size; default bitmap font is not
+    for name in ("DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "Arial.ttf"):
+        try:
+            return ImageFont.truetype(name, size)
+        except Exception:
+            continue
+    return ImageFont.load_default()
 
 from hs.schemas import Box1000, Localization, LocalizedPart, SchematicSpec
 
@@ -46,6 +55,8 @@ class Annotator:
         img = Image.open(render_png).convert("RGB")
         w, h = img.size
         draw = ImageDraw.Draw(img)
+        font = _font(max(16, w // 64))
+        small = _font(max(13, w // 90))
         boxes_px: dict[str, tuple[float, float, float, float]] = {}
         for part in loc.parts:
             if not part.found:
@@ -60,11 +71,14 @@ class Annotator:
         # labels with leader lines (code mode only; image mode labels are drawn by the image model)
         for i, (pid, (x0, y0, x1, y1)) in enumerate(sorted(boxes_px.items()) if code_labels else []):
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-            lx = min(max(cx, 60), w - 60)
-            ly = max(14 + (i % 3) * 16, y0 - 24)
-            draw.line([cx, cy, lx, ly], fill=(0, 90, 90), width=2)
-            draw.ellipse([cx - 3, cy - 3, cx + 3, cy + 3], fill=(0, 90, 90))
-            draw.text((lx, ly), label_of.get(pid, pid), fill=(0, 90, 90))
+            text = label_of.get(pid, pid)
+            tw = draw.textlength(text, font=font)
+            lx = min(max(cx - tw / 2, 6), max(w - tw - 6, 6))
+            ly = max(30 + (i % 3) * (font.size + 8), y0 - font.size - 14)  # type: ignore[attr-defined]
+            draw.rectangle([lx - 4, ly - 3, lx + tw + 4, ly + font.size + 5], fill=(255, 255, 255))  # type: ignore[attr-defined]
+            draw.line([cx, cy, cx, ly + font.size + 5], fill=(0, 90, 90), width=3)  # type: ignore[attr-defined]
+            draw.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=(0, 90, 90))
+            draw.text((lx, ly), text, fill=(0, 70, 70), font=font)
         # load arrows (letters from schematic loads; code mode only)
         node_box = boxes_px
         for load in spec.loads if code_labels else []:
@@ -75,7 +89,7 @@ class Annotator:
             cx = (x0 + x1) / 2
             draw.line([cx, y0 - 30, cx, y0], fill=(200, 0, 0), width=3)
             draw.polygon([(cx - 5, y0), (cx + 5, y0), (cx, y0 + 8)], fill=(200, 0, 0))
-            draw.text((cx + 6, y0 - 30), load.label, fill=(200, 0, 0))
+            draw.text((cx + 6, y0 - 30), load.label, fill=(200, 0, 0), font=font)
         # scale bar from critical part
         missing = [p.id for p in loc.parts if not p.found]
         crit = next((n for n in spec.nodes if n.id == spec.critical_part_id), None)
@@ -84,13 +98,13 @@ class Annotator:
             gm = math.sqrt(max(crit.size_class_mm.min, 0.01) * max(crit.size_class_mm.max, 0.01))
             px_per_mm = max((cx1 - cx0) / gm, 0.01)
             bar_px = spec.scale_bar_mm * px_per_mm
-            bx, by = 20, h - 30
+            bx, by = 20, h - 64
             draw.line([bx, by, bx + bar_px, by], fill=(0, 90, 90), width=4)
-            draw.text((bx, by + 6), f"~{spec.scale_bar_mm:g} mm", fill=(0, 90, 90))
-        draw.text((12, 10), panel_letter, fill=(0, 0, 0))
-        footer = "Conceptual illustration — physical performance not established"
-        draw.rectangle([0, h - 22, w, h], fill=(255, 255, 255))
-        draw.text((12, h - 18), footer, fill=(60, 60, 60))
+            draw.text((bx, by + 6), f"~{spec.scale_bar_mm:g} mm", fill=(0, 90, 90), font=small)
+        draw.text((12, 10), panel_letter, fill=(0, 0, 0), font=font)
+        footer = "Conceptual illustration - physical performance not established"
+        draw.rectangle([0, h - (small.size + 10), w, h], fill=(255, 255, 255))  # type: ignore[attr-defined]
+        draw.text((12, h - (small.size + 6)), footer, fill=(60, 60, 60), font=small)  # type: ignore[attr-defined]
         out_png.parent.mkdir(parents=True, exist_ok=True)
         img.save(out_png)
         return out_png, loc, missing

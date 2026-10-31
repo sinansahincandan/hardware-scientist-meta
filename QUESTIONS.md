@@ -36,7 +36,18 @@ Every assumption is recorded here with the default chosen; work continues withou
     six headings and 3 members (Mechanics / Thermal-Fluids / Fabrication for the stair-cart fixture
     shape; generic domains otherwise) so heading-split and roster code run unchanged.
 
-## Unverified API items (spec §14) — status: NOT RUN (fake mode only this session)
+## Unverified API items (spec §14) — settled 2026-10-31 (real API)
+
+- **14.1 SETTLED (pass).** `HS_SMOKE=1 pytest tests/test_smoke_real.py` → 2 passed. The §9 `text.format` nesting works as implemented.
+- **14.2 SETTLED (accepted).** Probe (`/tmp/smoke_probe.py`): first `web_search` call returned `web_search_call` items; a chained call with `previous_response_id` + `include: ["web_search_call.results"]` succeeded. Code still relies on `url_citation` annotations only (include stays opt-in, off).
+- **14.3 OPEN.** The real member-turn loop returns sketch tool output as text only; the `function_call_output` + user `input_image` single-request shape is not exercised by `council.py`. Sketch PNGs are saved as evidence and shown on the board. Default chosen: keep text-only return, record here; revisit if run reviews show members cannot use sketches.
+- **14.4 SETTLED (accepted, fidelity weak).** Toy 3-box schematic → `/v1/images/edits` with `tool_enablement`/`reasoning_strength` accepted (no 400). The render preserved the 3 parts + connections but copied the flat schematic style instead of a rendered illustration. S1 exists for exactly this; real concept prompts are richer. Fallback `IMAGE_BACKEND="responses"` remains available.
+- **14.5 SETTLED (usable).** Localization on the toy render found all 3 parts (confidence 0.8). Code-label readability was poor with the default bitmap font — fixed in `annotate.py` (TrueType scaled font, white label backing).
+- **14.6 NOT NEEDED** by design (searches in turns, structured output separate). Untested.
+- **14.7 PARTLY OPEN.** Prices/limits taken from spec §9 in `config.py`; dashboard credit not checked (no dashboard access in this session). The $15/run cap and $60 session budget bound the exposure.
+- **14.8 SETTLED.** Truncation probe printed `status=incomplete incomplete=IncompleteDetails(reason='max_output_tokens')`. The defensive detection in `client.py` (status != completed) covers this shape.
+
+## Unverified API items (spec §14) — previous status: NOT RUN (fake mode only, superseded above)
 
 Smoke tests are written under `tests/test_smoke_real.py` (skipped unless `HS_SMOKE=1` + `MODEL_API_KEY`).
 Exact commands are listed in `CHECKPOINT.md`. Nothing in the implementation relies on an unverified
