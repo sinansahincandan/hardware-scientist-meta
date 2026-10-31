@@ -29,7 +29,9 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         "Use the whiteboard tool to write to the board; use calc/vetted_calc/simulate/sketch/web_search for evidence. "
         "Search the literature the way your persona implies: your own domain's directly relevant papers, standards "
         "and datasheets first, and neighbouring or distant fields where a transferable principle may exist. "
-        "When you borrow a principle from another field, state on the whiteboard why it should transfer."
+        "When you borrow a principle from another field, state on the whiteboard why it should transfer. "
+        "For sketch scripts, draw in a hand-sketched whiteboard style (e.g. matplotlib plt.xkcd()) "
+        "showing the actual mechanism, the workpiece/load, and fixed vs moving parts."
     )
     prev_id: str | None = None
     counted = 0

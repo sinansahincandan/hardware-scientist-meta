@@ -45,6 +45,26 @@ def report_html(run_dir: Path, embed: bool = True) -> str:
                          ".chip{display:inline-block;border:1px solid #333;padding:3px 8px;margin:2px;border-radius:10px}"
                          "del{background:#fdd}ins{background:#dfd;text-decoration:none}</style></head><body>")]
     parts.append(f"<h1>{html.escape(str(problem.get('title', run_dir.name)))}</h1>")
+    # Deliverable header (AUTOPILOT §4 ref_deliverable_layout): mechanism sentence,
+    # concept image, three decisive choices, one open question, next-iteration box.
+    sol_files = sorted((run_dir / "stage_a").glob("iter_*/solution.json")) if (run_dir / "stage_a").exists() else []
+    sol = _read_json(sol_files[-1]) if sol_files else {}
+    if sol:
+        parts.append("<div style='background:#171a1f;color:#eee;padding:22px 26px;border-radius:10px'>")
+        parts.append(f"<p style='font-size:19px;margin:4px 0'>{html.escape(str(sol.get('mechanism_sentence', '')))}</p>")
+        parts.append(f"<p style='color:#9fd0ff'>{html.escape(str(sol.get('transfer_line', '')))}</p>")
+        parts.append(_img(run_dir / "final" / "panel_A.png", embed, run_dir, width=980))
+        ff = run_dir / "final" / "force_flow.png"
+        if ff.exists():
+            parts.append("<p>Force-flow view:</p>" + _img(ff, embed, run_dir, width=980))
+        parts.append("<h3 style='color:#fff'>Three decisive design choices</h3><ol>"
+                     + "".join(f"<li style='margin:6px 0'>{html.escape(str(c))}</li>"
+                               for c in (sol.get("decisive_choices") or [])[:3]) + "</ol>")
+        parts.append(f"<div style='border:1px solid #e6c34a;border-radius:8px;padding:10px 14px'>"
+                     f"<b>The open question</b><br>{html.escape(str(sol.get('open_question', '')))}</div>")
+        parts.append("<div style='background:#20261e;border-radius:8px;padding:10px 14px;margin-top:10px'>"
+                     "<b>Next iteration</b><br>Move the design forward: answer the open question with a "
+                     "measurement or a focused redesign, then re-run the designer evaluation.</div></div>")
     parts.append("<h2>1. Input</h2>")
     parts.append(f"<p>{html.escape(str(problem.get('statement', '')))}</p><ul>"
                  + "".join(f"<li>{html.escape(str(c))}</li>" for c in problem.get("constraints", [])) + "</ul>")

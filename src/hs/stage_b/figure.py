@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -63,6 +64,29 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     annotated = Image.open(annotated_path).convert("RGB")
     panel_a = final_dir / "panel_A.png"
     annotated.save(panel_a)
+    # Force-flow view (AUTOPILOT §4): same render, translucent arrows tracing
+    # the load/transfer path along schematic edges between localized parts.
+    try:
+        overlay = annotated.convert("RGBA")
+        arrows = Image.new("RGBA", overlay.size, (0, 0, 0, 0))
+        ad = ImageDraw.Draw(arrows)
+        w, h = overlay.size
+        centers: dict[str, tuple[float, float]] = {}
+        for p in localization.parts:
+            if p.found:
+                centers[p.id] = ((p.box_1000.x0 + p.box_1000.x1) / 2000 * w,
+                                 (p.box_1000.y0 + p.box_1000.y1) / 2000 * h)
+        for edge in spec.edges:
+            if edge.from_id in centers and edge.to_id in centers:
+                (x1, y1), (x2, y2) = centers[edge.from_id], centers[edge.to_id]
+                ad.line([x1, y1, x2, y2], fill=(60, 140, 255, 150), width=max(10, w // 90))
+                ang = math.atan2(y2 - y1, x2 - x1)
+                for da in (2.6, -2.6):
+                    ad.line([x2, y2, x2 - 34 * math.cos(ang + da), y2 - 34 * math.sin(ang + da)],
+                            fill=(60, 140, 255, 170), width=max(10, w // 90))
+        Image.alpha_composite(overlay, arrows).convert("RGB").save(final_dir / "force_flow.png")
+    except Exception as exc:  # force-flow is an extra view; never fail the figure
+        trace_notes.append(f"force-flow view skipped: {exc}")
     # Panel B: crop around critical part
     crit_box = next((p for p in localization.parts if p.id == spec.critical_part_id and p.found), None)
     panel_b_img: Image.Image
