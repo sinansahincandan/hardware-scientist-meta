@@ -1,0 +1,10 @@
+{
+  "title": "Off-grid solar-powered cold storage for smallholder farmers",
+  "statement": "Smallholder farmers in hot regions without grid electricity lose a large share of their fruit and vegetables after harvest because they cannot keep them cool. Design an energy-efficient, solar-powered cold storage unit that a farming cooperative can use to keep fresh produce cool until it is sold.",
+  "constraints": [
+    "No grid electricity; solar energy only",
+    "Store about 1 tonne of fresh produce"
+  ],
+  "criteria": [],
+  "attachments": []
+}
