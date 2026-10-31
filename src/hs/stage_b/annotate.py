@@ -12,7 +12,7 @@ def _font(size: int):  # readable labels at any image size; default bitmap font 
     for name in ("DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "Arial.ttf"):
         try:
             return ImageFont.truetype(name, size)
-        except Exception:
+        except Exception:  # noqa: S112 — missing font file: try the next candidate
             continue
     return ImageFont.load_default()
 
