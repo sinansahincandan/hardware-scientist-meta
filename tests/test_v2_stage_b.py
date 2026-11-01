@@ -50,3 +50,15 @@ def test_schematic_aspect_controls_box_proportions(tmp_path) -> None:
     geo2 = render_schematic(spec2, tmp_path / "b")
     box2 = geo2["boxes"]["girder"]
     assert box2["x1"] - box2["x0"] > box2["y1"] - box2["y0"]  # wide, not tall
+
+
+def test_drop_conflicting_labels() -> None:
+    from hs.stage_b.annotate import _drop_conflicting
+
+    boxes = {
+        "crates": (700.0, 400.0, 760.0, 460.0),   # anchor lands inside cabinet
+        "cabinet": (650.0, 350.0, 800.0, 500.0),
+        "drums": (100.0, 700.0, 200.0, 800.0),
+    }
+    assert _drop_conflicting(boxes) == {"crates"}
+    assert _drop_conflicting({"a": (0.0, 0.0, 10.0, 10.0), "b": (50.0, 50.0, 60.0, 60.0)}) == set()

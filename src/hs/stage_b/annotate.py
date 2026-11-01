@@ -19,6 +19,20 @@ def _font(size: int):  # readable labels at any image size; default bitmap font 
 from hs.schemas import Box1000, Localization, LocalizedPart, SchematicSpec
 
 
+def _drop_conflicting(boxes: dict[str, tuple[float, float, float, float]]) -> set[str]:
+    """A label whose anchor (box centre) lies inside a *different* part's box
+    points at the wrong part — worse than no label. Drop those so they are
+    reported missing instead (a real S1 finding the loop can act on)."""
+    dropped: set[str] = set()
+    for pid, (x0, y0, x1, y1) in boxes.items():
+        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+        for other, (ox0, oy0, ox1, oy1) in boxes.items():
+            if other != pid and ox0 < cx < ox1 and oy0 < cy < oy1:
+                dropped.add(pid)
+                break
+    return dropped
+
+
 class Annotator:
     def __init__(self, client: Any) -> None:
         self.client = client
@@ -51,7 +65,6 @@ class Annotator:
     def run(self, render_png: Path, spec: SchematicSpec, geometry: dict[str, Any],
             out_png: Path, panel_letter: str = "A", code_labels: bool = True) -> tuple[Path, Localization, list[str]]:
         loc = self.localize(render_png, spec, geometry)
-        (out_png.parent / "localization.json").write_text(loc.model_dump_json(indent=2), encoding="utf-8")
         img = Image.open(render_png).convert("RGB")
         w, h = img.size
         draw = ImageDraw.Draw(img)
@@ -67,6 +80,13 @@ class Annotator:
             x1 = min(max(b.x1 / 1000 * w, 0), w)
             y1 = min(max(b.y1 / 1000 * h, 0), h)
             boxes_px[part.id] = (x0, y0, x1, y1)
+        dropped = _drop_conflicting(boxes_px)
+        for pid in dropped:
+            boxes_px.pop(pid, None)
+            for part in loc.parts:
+                if part.id == pid:
+                    part.found = False
+        (out_png.parent / "localization.json").write_text(loc.model_dump_json(indent=2), encoding="utf-8")
         label_of = {n.id: n.label for n in spec.nodes}
         if code_labels and boxes_px:
             # White side margins: labels stacked without overlap, leader lines
