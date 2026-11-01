@@ -185,20 +185,46 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         strip.save(panel_d)
     else:
         panel_d = panel_c
-    # compose 2-column figure
-    a = Image.open(panel_a).resize((780, 488))
+    # Compose 2-column figure from measured panel heights (no fixed gaps).
+    a = Image.open(panel_a)
+    a = a.resize((780, int(780 * a.size[1] / max(a.size[0], 1))))
     b = Image.open(panel_b)
-    b = b.resize((380, 300)) if b.size[0] > 0 else b
+    b = b.resize((760, int(760 * b.size[1] / max(b.size[0], 1)))) if b.size[0] > 0 else b
     c = Image.open(panel_c)
+    c = c.resize((760, int(760 * c.size[1] / max(c.size[0], 1))))
     dimg = Image.open(panel_d)
-    canvas = Image.new("RGB", (1600, 1250), "white")
+    dimg = dimg.resize((1580, int(1580 * dimg.size[1] / max(dimg.size[0], 1)))) if dimg.size[0] > 0 else dimg
+    right_h = b.size[1] + 16 + c.size[1]
+    row1_h = max(a.size[1], right_h)
+    canvas = Image.new("RGB", (1600, 20 + row1_h + 16 + dimg.size[1]), "white")
     canvas.paste(a, (10, 10))
     canvas.paste(b, (810, 10))
-    canvas.paste(c, (810, 330))
-    dimg = dimg.resize((min(dimg.size[0], 1580), 260)) if dimg.size[0] > 0 else dimg
-    canvas.paste(dimg, (10, 900))
+    canvas.paste(c, (810, 10 + b.size[1] + 16))
+    canvas.paste(dimg, (10, 20 + row1_h))
     figure_path = final_dir / "figure.png"
     canvas.save(figure_path)
+
+
+def recompose(run_dir: Path) -> Path:
+    """Layout-only recomposition from existing panel PNGs (no model calls)."""
+    final_dir = run_dir / "final"
+    a = Image.open(final_dir / "panel_A.png")
+    a = a.resize((780, int(780 * a.size[1] / max(a.size[0], 1))))
+    b = Image.open(final_dir / "panel_B.png")
+    b = b.resize((760, int(760 * b.size[1] / max(b.size[0], 1))))
+    c = Image.open(final_dir / "panel_C.png")
+    c = c.resize((760, int(760 * c.size[1] / max(c.size[0], 1))))
+    dimg = Image.open(final_dir / "panel_D.png")
+    dimg = dimg.resize((1580, int(1580 * dimg.size[1] / max(dimg.size[0], 1))))
+    row1_h = max(a.size[1], b.size[1] + 16 + c.size[1])
+    canvas = Image.new("RGB", (1600, 20 + row1_h + 16 + dimg.size[1]), "white")
+    canvas.paste(a, (10, 10))
+    canvas.paste(b, (810, 10))
+    canvas.paste(c, (810, 10 + b.size[1] + 16))
+    canvas.paste(dimg, (10, 20 + row1_h))
+    out = final_dir / "figure.png"
+    canvas.save(out)
+    return out
     # rationale.md
     lines = [f"# Rationale — {solution.title}", "", solution.problem_restatement, "",
              "## Key estimates"]

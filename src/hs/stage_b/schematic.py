@@ -124,12 +124,14 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
     col_rank = {v: i for i, v in enumerate(sorted({n.layout.col for n in nodes}))}
     row_rank = {v: i for i, v in enumerate(sorted({n.layout.row for n in nodes}))}
     ncols = max(len(col_rank), 1)
+    nrows = max(len(row_rank), 1)
+    row_step = min(2.0, 5.2 / nrows)
     for node in nodes:
         gm = _geomean(node.size_class_mm)
         w = min(max(gm / 12.0, 0.7), 2.2)
-        h = min(max(gm / 16.0, 0.5), 1.6)
+        h = min(max(gm / 16.0, 0.5), 1.6, row_step * 0.8)
         cx = 1.2 + col_rank[node.layout.col] * (8.4 / max(ncols - 1, 1) if ncols > 1 else 0)
-        cy = 3.4 - row_rank[node.layout.row] * 2.0
+        cy = 5.6 - row_rank[node.layout.row] * row_step - h / 2
         positions[node.id] = (cx, cy, w, h)
         boxes[node.id] = {"x0": (cx - w / 2) * 100, "y0": 625 - (cy + h / 2) * 100,
                           "x1": (cx + w / 2) * 100, "y1": 625 - (cy - h / 2) * 100,
