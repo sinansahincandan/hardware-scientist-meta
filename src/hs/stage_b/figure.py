@@ -49,8 +49,8 @@ def _panel_c(solution: SolutionPrompt, path: Path) -> None:
     for stage in solution.measurement_chain:
         draw.rectangle([x, 80, x + 200, 190], outline=(0, 90, 90), width=3)
         draw.text((x + 10, 100), stage.stage, fill=(0, 90, 90), font=body)
-        name = stage.name if len(stage.name) <= 22 else stage.name[:22] + "…"
-        draw.text((x + 10, 140), name, fill=(0, 0, 0), font=body)
+        for j, line in enumerate(textwrap.wrap(stage.name, width=17)[:2]):
+            draw.text((x + 10, 132 + j * 26), line, fill=(0, 0, 0), font=body)
         draw.line([x + 200, 135, x + 235, 135], fill=(0, 90, 90), width=3)
         draw.polygon([(x + 235, 135), (x + 222, 128), (x + 222, 142)], fill=(0, 90, 90))
         x += 240
