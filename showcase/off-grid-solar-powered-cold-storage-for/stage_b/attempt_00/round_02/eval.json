@@ -1,0 +1,42 @@
+{
+  "pixel_description": "Photorealistic 3/4 isometric of a white box cold room with open hinged door on left, large tilted PV canopy above on four grey steel posts with concrete footings, concrete slab in front. Visible labels exactly as spelled: Tilted roof monocrystalline PV array pointing to dark blue tilted panels on steel beams above room; PU insulated cold room pointing to white box wall; ice-bank pointing to ceiling indoor unit and central cylindrical tank inside room; DC vapour-compression cooler pointing to grey outdoor condenser box mounted on right wall of room with copper pipes to interior; insulated hinged door with gaskets pointing to open white door; LiFePO4 battery bank pointing to tall grey cabinet standing beside room on right; MPPT charge controller pointing to lower wiring area of that cabinet; MPPT on small black box mounted on side of cabinet; External wash slab pointing to concrete apron in front of door; ~1000 mm scale bar; Conceptual illustration - physical performance not established; A top-left. Physical connections seen: steel beams physically carry PV panels above with vent gap; black electrical cables run from PV underside down right wall into battery cabinet and to MPPT box and up to outdoor cooler; copper refrigerant pipes run from outdoor cooler through wall to ceiling evaporator and down to central stainless tank; ceiling evaporator blows light-blue airflow arrows down and around two side steel racks holding grey vented crates filled with colorful produce with central aisle around the tank; door hinged to front left of room; wash slab abuts door threshold.",
+  "label_findings": "labels ok - all drawn labels name the correct part and spelling is correct: Tilted roof monocrystalline PV array, PU insulated cold room, ice-bank, DC vapour-compression cooler, insulated hinged door with gaskets, LiFePO4 battery bank, MPPT charge controller, MPPT on device, External wash slab, ~1000 mm scale and disclaimer.",
+  "regions": [],
+  "requirements": [
+    {
+      "requirement": "same parts",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "P1 cold room, P2 DC cooler outdoor+indoor+copper, P3 tilted PV, P4 MPPT box, P5 battery cabinet, P6 central tank+evaporator, P7 twin racks, P8 vented crates with produce, P9 hinged door, P10 steel canopy posts/beams, P11 concrete wash slab all pixels visible"
+    },
+    {
+      "requirement": "same connections",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "PV to MPPT to battery via black cables down wall, battery to cooler via cables up wall, cooler to room via copper to ceiling evaporator, ice tank inside room, canopy physically carries PV, door hinged on room"
+    },
+    {
+      "requirement": "same relative sizes",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "PV canopy largest span > cold room box > door/batterycabinet/racks > crates/MPPT box, scale bar ~1000 mm consistent with 2m+ room"
+    },
+    {
+      "requirement": "operating moment visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Sun glare top-right on PV, produce loaded in crates, blue cold airflow circulation from evaporator around racks/tank shows cooling moment"
+    },
+    {
+      "requirement": "transfer path visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Energy path PV roof -> down cables -> MPPT/battery cabinet -> up to DC cooler -> copper into room evaporator/ice-bank visible; airflow loop overlays room"
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "",
+  "s2_flaw": false,
+  "s2_feedback": "",
+  "notes": "Photorealistic isometric conceptual illustration with disclaimer Conceptual illustration - physical performance not established. Scale bar ~1000 mm at bottom left. All 11 schematic parts are visibly present including unlabeled canopy steelwork, racks and crates."
+}

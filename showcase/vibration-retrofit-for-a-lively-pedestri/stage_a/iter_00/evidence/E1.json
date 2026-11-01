@@ -1,0 +1,14 @@
+{
+  "id": "E1",
+  "author": "Structural Dynamics Lead",
+  "tool": "calc",
+  "purpose": "resonant acceleration single pedestrian baseline",
+  "code_or_query": "280/(2*0.004*20000)",
+  "inputs": {},
+  "output_summary": "1.75",
+  "output_full": "1.75",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

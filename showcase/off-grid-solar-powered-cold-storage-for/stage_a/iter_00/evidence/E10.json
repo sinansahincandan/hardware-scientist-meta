@@ -1,0 +1,14 @@
+{
+  "id": "E10",
+  "author": "Structural Enclosure Designer",
+  "tool": "calc",
+  "purpose": "door panel conduction check for insulated door",
+  "code_or_query": "0.23*0.9*1.9*35",
+  "inputs": {},
+  "output_summary": "13.765500000000001",
+  "output_full": "13.765500000000001",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

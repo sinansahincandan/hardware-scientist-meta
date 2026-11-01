@@ -1,0 +1,14 @@
+{
+  "id": "E9",
+  "author": "Vibration Control Specialist",
+  "tool": "calc",
+  "purpose": "static weight of 400kg TMD for connection sizing",
+  "code_or_query": "400*9.81",
+  "inputs": {},
+  "output_summary": "3924.0",
+  "output_full": "3924.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

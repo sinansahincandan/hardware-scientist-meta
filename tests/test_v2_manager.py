@@ -87,7 +87,7 @@ def test_rev0_saved_document_has_only_canonical_headings(tmp_path: Path) -> None
     problem = Problem(title="t", statement="p")
     master = MasterPrompt.rev0(_StubRev0Client(), problem, "", tmp_path)
     saved = (tmp_path / "master_prompt" / "rev_000.md").read_text(encoding="utf-8")
-    headings = _re.findall(r"^## .*", saved, flags=_re.M)
+    headings = _re.findall(r"^## .*", saved, flags=_re.MULTILINE)
     assert headings == ["## 1. Problem", "## 2. Roles", "## 3. Tools",
                         "## 4. Meeting protocol", "## 5. Criteria", "## 6. Lessons applied"]
     assert "stray" not in saved

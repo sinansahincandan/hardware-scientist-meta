@@ -1,0 +1,11 @@
+# Trace
+- master prompt rev 0 written; roster=Structural Dynamics Lead, Vibration Control Specialist, Retrofit Integration Architect, Pedestrian Comfort and Construction Planner
+- iter 0: meeting closed_by=cap cycles=4
+- iter 0: evaluator accept=False archive=A1
+- iter 0: manager edit changed=[] reverted=[]
+- iter 1: meeting closed_by=consensus cycles=4
+- iter 1: evaluator accept=True archive=A2
+- iter 1 round 0: S1=False S2=False decision=s1_retry
+- iter 1 round 0: label failure 1/2 before code-label fallback
+- iter 1 round 1: S1=True S2=False decision=s1_pass
+- run accepted; final figure composed

@@ -1,0 +1,14 @@
+{
+  "id": "E1",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "pull-down thermal energy 1 tonne 30C to 5C",
+  "code_or_query": "1000*3.6*25/3600",
+  "inputs": {},
+  "output_summary": "25.0",
+  "output_full": "25.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

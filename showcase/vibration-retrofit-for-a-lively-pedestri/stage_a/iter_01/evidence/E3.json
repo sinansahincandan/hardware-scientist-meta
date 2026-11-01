@@ -1,0 +1,23 @@
+{
+  "id": "E3",
+  "author": "Structural Dynamics Lead",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "Den Hartog optimum TMD for 1.9 Hz bridge",
+  "code_or_query": "{\"args\": {\"main_frequency_hz\": 1.9, \"main_mass_kg\": 10000.0}, \"input_sources\": {\"main_frequency_hz\": \"constraint: 1.9 Hz first mode\", \"main_mass_kg\": \"assumption from 40m bridge deck mass estimate\"}}",
+  "inputs": {
+    "main_frequency_hz": {
+      "value": 1.9,
+      "source": "constraint: 1.9 Hz first mode"
+    },
+    "main_mass_kg": {
+      "value": 10000.0,
+      "source": "assumption from 40m bridge deck mass estimate"
+    }
+  },
+  "output_summary": "tmd_mass_kg=500.0 mixed (see keys), tmd_frequency_hz=1.8095238095238093 mixed (see keys), tmd_damping_ratio=0.1336306209562122 mixed (see keys), tmd_stiffness_n_m=64633.59979670308 mixed (see keys), t",
+  "output_full": "{\n  \"tmd_mass_kg\": 500.0,\n  \"tmd_frequency_hz\": 1.8095238095238093,\n  \"tmd_damping_ratio\": 0.1336306209562122,\n  \"tmd_stiffness_n_m\": 64633.59979670308,\n  \"tmd_damping_ns_m\": 1519.3231551853125,\n  \"unit\": \"mixed (see keys)\",\n  \"inputs\": {\n    \"main_mass_kg\": 10000.0,\n    \"main_frequency_hz\": 1.9,\n    \"mass_ratio\": 0.05\n  },\n  \"provenance\": {\n    \"main_frequency_hz\": {\n      \"value\": 1.9,\n      \"source\": \"constraint: 1.9 Hz first mode\"\n    },\n    \"main_mass_kg\": {\n      \"value\": 10000.0,\n      \"source\": \"assumption from 40m bridge deck mass estimate\"\n    }\n  },\n  \"calculator\": \"tuned_mass_damper_den_hartog\"\n}",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

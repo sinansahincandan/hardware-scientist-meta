@@ -1,0 +1,27 @@
+{
+  "id": "E4",
+  "author": "Vibration Control Specialist",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "Size under-deck TMD tuning and damping for 1.9 Hz bridge",
+  "code_or_query": "{\"args\": {\"main_frequency_hz\": 1.9, \"main_mass_kg\": 20000.0, \"mass_ratio\": 0.02}, \"input_sources\": {\"main_frequency_hz\": \"source\", \"main_mass_kg\": \"source\", \"mass_ratio\": \"assumption\"}}",
+  "inputs": {
+    "main_frequency_hz": {
+      "value": 1.9,
+      "source": "source"
+    },
+    "main_mass_kg": {
+      "value": 20000.0,
+      "source": "source"
+    },
+    "mass_ratio": {
+      "value": 0.02,
+      "source": "assumption"
+    }
+  },
+  "output_summary": "tmd_mass_kg=400.0 mixed (see keys), tmd_frequency_hz=1.8627450980392155 mixed (see keys), tmd_damping_ratio=0.08574929257125442 mixed (see keys), tmd_stiffness_n_m=54793.190139073544 mixed (see keys),",
+  "output_full": "{\n  \"tmd_mass_kg\": 400.0,\n  \"tmd_frequency_hz\": 1.8627450980392155,\n  \"tmd_damping_ratio\": 0.08574929257125442,\n  \"tmd_stiffness_n_m\": 54793.190139073544,\n  \"tmd_damping_ns_m\": 802.8858987066853,\n  \"unit\": \"mixed (see keys)\",\n  \"inputs\": {\n    \"main_mass_kg\": 20000.0,\n    \"main_frequency_hz\": 1.9,\n    \"mass_ratio\": 0.02\n  },\n  \"provenance\": {\n    \"main_frequency_hz\": {\n      \"value\": 1.9,\n      \"source\": \"source\"\n    },\n    \"main_mass_kg\": {\n      \"value\": 20000.0,\n      \"source\": \"source\"\n    },\n    \"mass_ratio\": {\n      \"value\": 0.02,\n      \"source\": \"assumption\"\n    }\n  },\n  \"calculator\": \"tuned_mass_damper_den_hartog\"\n}",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

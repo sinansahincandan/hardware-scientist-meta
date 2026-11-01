@@ -1,0 +1,108 @@
+{
+  "pixel_description": "Pixel-only view: light wall with concrete stairs on right. Center black trolley with vertical spine pole from base to top, topped by angled black grip handle with pivot bolts. Brown cardboard box sits on horizontal black rectangular toe plate mid-height. Toe plate joined to lower spine frame. Under toe plate two clusters of small black wheels, each 3 wheels with vertical swivel stems, contacting ground. Behind lower spine a silver perforated disc bracket with two small black wheels resting on stair nosing edge. Light-blue straight up-arrow floating right of spine, small light-blue up-arrow below spine bracket, light-blue curved arrow under toe front, red curved arrow at disc. Visible labels exactly: 'spine' with leader to mid-spine, 'deadman disc' with leader to silver disc, 'twin fixed tri-stars' with leader dot on toe plate edge, 'wheels' with leader to front lower wheel cluster, '~100 mm' with teal scale bar bottom-left, footer 'Conceptual illustration - physical performance not established', 'A' top-left. Physically seen: spine rigidly meets toe frame, toe meets wheel stems, disc bracket meets spine base; no clutch cylinder, no lock levers, no triangular star plates, no folding hinges visible.",
+  "label_findings": "'spine' ok, 'deadman disc' ok, 'wheels' ok - spelling correct and leaders end on spine pole, perforated disc, lower wheel cluster. 'twin fixed tri-stars' WRONG PLACEMENT - text spelled correct but leader dot sits on edge of black toe plate (H2 folding toe) not on R95 star arms/wheels below. H1 folding handle, H2 folding toe, CSK30, DESTACO lock have no labels. Scale '~100 mm' and footer 'Conceptual illustration - physical performance not established' and 'A' are not part names.",
+  "regions": [
+    {
+      "box": [
+        335.0,
+        865.0,
+        558.0,
+        952.0
+      ],
+      "part_id": "s_star",
+      "observed": "two 3-wheel caster-like clusters with vertical swivel stems under toe, no triangular R95 plates, no fixed axle",
+      "expected": "twin fixed R95 triangular tri-stars with 2x3x100mm wheels on fixed spine-star axle bridging 170R/280G",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        498.0,
+        708.0,
+        552.0,
+        842.0
+      ],
+      "part_id": "s_csk",
+      "observed": "silver spring/bracket at spine base, no clutch cylinder visible",
+      "expected": "CSK30 30x62x16 one-way clutch 110Nm coaxial at star axle holding 38.5Nm/405N",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        285.0,
+        730.0,
+        510.0,
+        825.0
+      ],
+      "part_id": "s_h2",
+      "observed": "flat toe plate rigidly abutting spine, no hinge visible; twin fixed tri-stars dot sits on plate edge",
+      "expected": "H2 folding toe on folding hinge to spine, folding to 850x550x260 standing stow",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        432.0,
+        30.0,
+        568.0,
+        180.0
+      ],
+      "part_id": "s_lock",
+      "observed": "angled handle with pivot bolts, no lock/latch visible",
+      "expected": "H1 folding handle with over-centre DESTACO 207-USS stainless lock 2000N",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        527.0,
+        400.0,
+        642.0,
+        710.0
+      ],
+      "part_id": "s_disc",
+      "observed": "floating blue up-arrow beside spine and red curved arrow at disc with no sources/sinks/values, does not trace H2-spine-stars",
+      "expected": "force path H2 toe -> spine -> R95 tri-stars and measured CSK30 -> R60 disc, or no overlay",
+      "source": "render",
+      "fixed": false
+    }
+  ],
+  "requirements": [
+    {
+      "requirement": "same parts",
+      "status": "missing",
+      "stage_at_fault": "render",
+      "detail": "spine, twin R95 stars, 6x100mm wheels, CSK30, R60 disc, H1 handle, H2 toe, DESTACO locks - CSK, locks, true stars not recognizable in pixels"
+    },
+    {
+      "requirement": "same connections",
+      "status": "missing",
+      "stage_at_fault": "render",
+      "detail": "H2 hinge to spine, spine fixed to stars, stars to wheels, H1 hinge, CSK/disc to stars, locks to H1/H2 - hinges/fixed axle/locks not seen"
+    },
+    {
+      "requirement": "same relative sizes",
+      "status": "ambiguous",
+      "stage_at_fault": "render",
+      "detail": "R95 vs 100mm wheels vs spine length - wheels look undersized vs ~100mm bar, star radius cannot verify without plates"
+    },
+    {
+      "requirement": "operating moment visible",
+      "status": "ambiguous",
+      "stage_at_fault": "render",
+      "detail": "60kg+12kg on toe, 38.5Nm/405N 60s hold, 40.5N metered descent, 161N pull - box on toe shown but no torques/forces, only decorative arrows"
+    },
+    {
+      "requirement": "transfer path visible",
+      "status": "missing",
+      "stage_at_fault": "render",
+      "detail": "Force H2 toe -> spine -> R95 tri-stars | Measured CSK30 -> R60 disc - CSK invisible, arrows do not trace path"
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "LABEL: 'twin fixed tri-stars' leader dots H2 toe plate not star assembly. Plus render omits CSK30 clutch cylinder at spine base, omits DESTACO locks at H1/H2, shows swivel caster clusters under toe and trailing disc-arm on stair instead of twin fixed R95 triangular stars on fixed spine-star axle, shows no folding hinges, shows decorative blue/red arrows that do not encode H2->spine->stars / CSK->disc, relative wheel size ambiguous vs ~100mm bar.",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw exposed. Schematic correctly shows fixed stars, CSK30, disc, H1/H2, locks and loads. All faults are depiction omissions in render (missing clutch/locks, wrong star geometry, misplaced leader, meaningless arrows). Concrete feature: silver perforated disc and lower wheel clusters are present but star plates/clutch/locks are simply not drawn.",
+  "notes": "Render carries disclaimer 'Conceptual illustration - physical performance not established' so hold 38.5Nm/405N 60s and metered 40.5N not proven. Scale bar '~100 mm' present bottom-left. Blue up-arrows and red curved arrow are decorative flow overlay with no values. Schematic itself contains all parts/loads/connections per solution."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E14",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "PV watts for 6kWh day at 5 peak sun hours with 25 percent losses",
+  "code_or_query": "6000/5/0.75",
+  "inputs": {},
+  "output_summary": "1600.0",
+  "output_full": "1600.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Vibration retrofit for a lively pedestrian footbridge",
+  "statement": "A 40 m pedestrian footbridge bounces uncomfortably when crowds walk over it. Its first vertical bending mode is about 1.9 Hz with very low damping. Design a retrofit concept that brings the vibration down to a comfortable level without changing how the bridge looks from the deck.",
+  "constraints": [
+    "Span 40 m; first vertical mode about 1.9 Hz"
+  ],
+  "criteria": [],
+  "attachments": []
+}

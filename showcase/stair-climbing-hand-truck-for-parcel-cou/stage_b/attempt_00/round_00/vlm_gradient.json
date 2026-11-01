@@ -1,0 +1,31 @@
+{
+  "per_region": [
+    {
+      "part_id": "s_star",
+      "diagnosis": "Caused by sentence 'twin fixed tri-star clusters at base with six small wheels contacting two stair nosings simultaneously.' Word 'clusters' + 'small wheels' underspecifies form, invites caster interpretation. Missing explicit triangular plates, fixed axle, and anti-caster ban, so VLM rendered two 3-wheel swivel-stem casters under toe with no R95 plates or fixed spine-star axle.",
+      "prompt_fix": "Replace with: twin FIXED triangular R95 side plates rigidly fixed to central spine-star axle at base, each plate carrying 3x 100mm wheels (6 total) bridging two stair nosings; NO vertical swivel stems, NO caster forks."
+    },
+    {
+      "part_id": "s_csk",
+      "diagnosis": "Caused by sentence 'One-way clutch and deadman disc mounted exposed on side of star axle and clearly visible, not hidden.' Describes location/visibility but not form/orientation, so VLM substituted generic silver spring/bracket at spine base with no coaxial cylinder.",
+      "prompt_fix": "Replace with: render one-way clutch as small 30x62x16mm steel cylinder coaxial ON the star axle side, directly adjacent to deadman disc, clearly visible; NOT a spring, bracket, or hidden internals."
+    },
+    {
+      "part_id": "s_h2",
+      "diagnosis": "Caused by sentences 'folding toe extended forward low carrying a parcel box' and 'Show FIXED spine to star axle versus FOLDING handle hinge and FOLDING toe hinge.' States folding vs fixed but does not require visible hinge hardware or leader anchoring, so VLM fused toe plate rigidly to spine with no hinge gap and mis-anchored 'twin fixed tri-stars' leader dot on toe plate edge.",
+      "prompt_fix": "Replace with: show H2 folding toe as separate platform joined to spine by visible folding hinge pin/bracket with gap; show RIGID weld between spine and star axle; anchor 'twin fixed tri-stars' leader dot ONLY on star triangular plate, never on toe plate."
+    },
+    {
+      "part_id": "s_lock",
+      "diagnosis": "Missing content: prompt has only 'folding handle extended up at top' and 'FOLDING handle hinge' with no lock/latch specification, so VLM rendered plain pivot bolts with no over-centre lock. Expected H1 with DESTACO 207-USS stainless lock not requested.",
+      "prompt_fix": "Add to handle sentence: folding handle extended up showing distinct over-centre folding lock/latch block at H1 hinge on top of spine in locked-open state, separate from plain pivot bolts; MUST NOT render handle as plain pivots only."
+    },
+    {
+      "part_id": "s_disc",
+      "diagnosis": "Caused by sentence 'Draw subtle force arrows from toe up spine to stars to stairs and braking at clutch to disc.' Specifies intent but no source/sink anchoring, continuity, or ban on decorative arrows, so VLM drew floating blue up-arrow beside spine and red curved arrow at disc that do not trace H2-toe -> spine -> stars path or CSK30 -> disc braking.",
+      "prompt_fix": "Replace with: draw ONE thin anchored force-path arrow: start ON toe platform -> up spine -> into star axle -> to stair contact, plus ONE short curved braking arrow FROM clutch body edge INTO disc edge; all arrows must touch source and sink parts; NO floating/off-part blue/red decorative arrows; if cannot anchor, draw no arrows."
+    }
+  ],
+  "fix_mode": "full",
+  "summary": "Systemic structure failure: swivel casters instead of twin fixed R95 triangular stars on fixed spine-star axle, missing CSK30 coaxial cylinder, missing H1/H2 folding hinges and DESTACO locks, mis-anchored leaders, and floating force arrows. Requires full-image regeneration with explicit fixed-vs-folding hardware, coaxial clutch/disc form, leader anchoring, and anchored force path."
+}

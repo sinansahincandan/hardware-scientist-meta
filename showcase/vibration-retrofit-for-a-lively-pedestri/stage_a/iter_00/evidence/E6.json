@@ -1,0 +1,14 @@
+{
+  "id": "E6",
+  "author": "Vibration Control Specialist",
+  "tool": "simulate",
+  "purpose": "Estimate controlled acceleration with added 3 percent effective damping",
+  "code_or_query": "F0=280; m=20000; zeta0=0.004; zeta_eff=0.035\na0=F0/(2*zeta0*m)\na1=F0/(2*zeta_eff*m)\nprint(f\"a0={a0:.3f} m/s2 a1={a1:.3f} m/s2 reduction={a0/a1:.1f}x\")\n# stroke estimate: dynamic amplification of TMD mass ~ sqrt(1/(2*mu*zeta_tmd^2)) approx\nmu=0.02; zeta_t=0.0857; import math\ndeck_amp=a1/(2*math.pi*1.9)**2*1000 # mm\ntmd_amp_factor=1/(2*zeta_t) # approx relative\nprint(f\"deck_amp~{deck_amp:.1f} mm TMD stroke~{deck_amp*tmd_amp_factor:.1f} mm\")",
+  "inputs": {},
+  "output_summary": "deck_amp~1.4 mm TMD stroke~8.2 mm",
+  "output_full": "a0=1.750 m/s2 a1=0.200 m/s2 reduction=8.8x\ndeck_amp~1.4 mm TMD stroke~8.2 mm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

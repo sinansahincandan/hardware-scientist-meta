@@ -1,0 +1,14 @@
+{
+  "id": "E12",
+  "author": "Structural Dynamics Lead",
+  "tool": "calc",
+  "purpose": "midspan stress increment from TMD weight assuming section modulus",
+  "code_or_query": "3924*40/4/2/0.008",
+  "inputs": {},
+  "output_summary": "2452500.0",
+  "output_full": "2452500.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

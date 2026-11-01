@@ -1,0 +1,77 @@
+{
+  "per_member": [
+    {
+      "member": "Structural Dynamics Lead",
+      "what_went_wrong": "Withheld ready pending joint proposal/manager blocks despite providing 2.5 MPa static +0.3 MPa dynamic fatigue-non-critical numbers; contributed to no-vote cap pattern.",
+      "what_should_change": "Retain mode/frequency/stress evidence and vote ready on closed placement/comfort; list formal fatigue-non-critical sentence as recorded evidence, not as reason to withhold joint proposal.",
+      "explains": "2. Roles Structural Dynamics Lead responsibility to confirm 1.9 Hz mode/low damping plus Evidence duty; Meeting protocol reuse evidence by id produced E1/E3/E12 correctly."
+    },
+    {
+      "member": "Vibration Control Specialist",
+      "what_went_wrong": "Left -5% side open and kept ready conditional on support fatigue, sustaining O2/O3 blocking chain despite on-tune and +5% compliance.",
+      "what_should_change": "Retain 400kg/1.86Hz/0.086/54.8kN/m and +5% 0.136 m/s2/5.33mm as sufficient proof; present -5% complement as non-blocking follow-on with slotted-seat mitigation instead of blocking readiness.",
+      "explains": "2. Roles Vibration Control Specialist to size TMD/stroke/access plus Tools calc/simulate produced correct E4/E6/E8/E13; 3. Criteria C2 robustness to ±5-10% variation was read as requiring both sides pre-proposal."
+    },
+    {
+      "member": "Retrofit Integration Architect",
+      "what_went_wrong": "No sizing error; readiness withheld awaiting companion fatigue closure, feeding manager pending-closure notes.",
+      "what_should_change": "Retain below-soffit bolted cross-frames/no penetration/30mm clearance evidence and close as ready; reference companion girder check as done, not as pending block.",
+      "explains": "2. Roles Retrofit Integration Architect zero-change deck-view duty plus 5. Criteria buildable with ordinary shop methods produced correct E7/E10 concealment and 3924N/4373N/4xM16 closure."
+    },
+    {
+      "member": "Pedestrian Comfort and Construction Planner",
+      "what_went_wrong": "Held proposal on hold pending blocks despite stating threshold met, reinforcing cap with zero votes.",
+      "what_should_change": "Retain comfort/buildability evidence and vote ready on threshold met with margin; do not hold proposal pending manager process blocks.",
+      "explains": "2. Roles Pedestrian Comfort and Construction Planner comfort/buildability duty produced correct HIVOSS 0.5 m/s2 CL1 vs 1.75 to 0.20 m/s2 and night-works-from-below plan."
+    },
+    {
+      "member": "Manager",
+      "what_went_wrong": "Created and retained O2/O3 process-block wording in open_questions/open_question and required minus-side mapping before any proposal, blocking closure despite sound concept per code rule.",
+      "what_should_change": "Retain steering but downgrade -5% detune, formal fatigue, catalog items from blocking objections to advisory detailed-design notes; cap closure with no open blocking objection so consensus can be reached.",
+      "explains": "4. Meeting protocol Manager speaks last and steers, vote ready only when proposal survives strongest objection, plus 4. Meeting Protocol consensus-close rule produced Cycles 1-4 holds for O2/O3 and minus-side requests."
+    }
+  ],
+  "per_section": [
+    {
+      "heading": "2. Roles",
+      "diagnosis": "Healthy: produced correct f_opt=1/(1+mu)=0.98 to 1.863Hz, zeta_opt 0.084-0.086, k~54.8kN/m for 400kg per E4.",
+      "direction": "No change: retain 400kg mass, 1.86Hz, 0.086 ratio, 54.8kN/m in key_estimates/working_principle and two 200kg midspan modules narrative.",
+      "explains": "2. Roles Vibration Control Specialist sizing duty + Structural Dynamics Lead mode duty + Tools calc/simulate + Meeting protocol reuse by id explains Den Hartog optimum match and 2% ratio (~20t modal mass) plausibility."
+    },
+    {
+      "heading": "5. Criteria",
+      "diagnosis": "Healthy: produced continuous deck-frame-spring/damper-mass path and out-of-phase effective damping, no violation.",
+      "direction": "No change: retain transfer_line and frame/spring/damper/mass connections as continuous mechanical path.",
+      "explains": "5. Criteria concept must work physically (load path/signal path) explains correct working_principle and connections validation."
+    },
+    {
+      "heading": "1. Problem",
+      "diagnosis": "Healthy: produced 3924N static, ~2.5MPa+small dynamic non-critical, 8.2mm vs 30mm, below-soffit bolted frames with purchasable parts.",
+      "direction": "No change: retain 3924N load, stress values, 30mm clearance, bolted cross-frames, no deck penetration, fabrication_steps.",
+      "explains": "5. Criteria buildable with purchasable parts/ordinary shop methods + 2. Roles Architect concealment/connection duty explains support/clearance/buildability correctness and DEICON precedent regime."
+    },
+    {
+      "heading": "3. Criteria",
+      "diagnosis": "Faulty blocking reading: C2 tuning centered on 1.9Hz with robustness to ±5-10% and C4 fatigue verification were read as requiring -5% acceleration/stroke mapping and formal Eurocode check pre-proposal, generating O2/O3 blocks.",
+      "direction": "Converging clarification tied to rejection, not expanded pipeline text: clarify C2/C4 concept threshold is met by +5% 0.064 effective damping/0.136 m/s2/5.33mm within clearance; reframe -5% complement, formal fatigue sign-off, spring catalog as advisory detailed-design follow-ons, not proposal/vote blocks; retain +5% verification as sufficient.",
+      "explains": "3. Criteria C1-C5, especially C2 robustness and C4 integrity, explains must-change open_question/open_questions item to remove O2/O3 process-block wording."
+    },
+    {
+      "heading": "4. Meeting protocol",
+      "diagnosis": "Faulty blocking behaviour: vote-ready-only-if-strongest-objection-survives plus cited-evidence-before-ready plus Manager hold-any-proposal-until-block-resolved kept zero votes and cap pattern across Cycles 1-4.",
+      "direction": "Converging clarification in Roles/Meeting protocol language only, no pipeline retry/cap/gating rules: state open questions may remain advisory only; ready vote allowed when nominal + one-side detune and quantified peak/stress show comfort/stroke/support compliance; any retained items must not block proposal/vote.",
+      "explains": "4. Meeting protocol speaking/voting/reuse rules plus 4. Meeting Protocol consensus-close/cited-evidence rules explains must-change solution closure item capping with open blocking objection."
+    }
+  ],
+  "sections_to_change": [
+    "3. Criteria",
+    "2. Roles",
+    "4. Meeting protocol"
+  ],
+  "root_cause": "Manager and members treated detailed-design refinements (-5% to complement +5%, formal fatigue sentence, catalog selection) as pre-proposal blocking objections and encoded them as O2/O3 in open_questions/open_question, so closure was capped with open blocks despite Den Hartog tuning, comfort margin, load-path continuity, and support/clearance/buildability all verified.",
+  "agenda": "Targeted process problem, not broad physics failure. Concept is physically sound and buildable (Den Hartog tuning, load path, support/clearance all verified). Council as engineers should retain all sizing/architecture and change only meeting behaviour: stop treating -5% detune complement, formal Eurocode fatigue sentence, and catalog selection as pre-proposal blocks; keep +5% detune verification as sufficient for concept acceptance and list remainders as advisory detailed-design follow-ons to allow consensus close.",
+  "same_problem_as_before": false,
+  "repeat_explanation": "Not the same problem as prior S1 label-driven render failures and text-free fallback loops; this is a new targeted Stage-A concept-acceptance failure where physics/buildability already pass but process-block wording prevents consensus close. No broad revert needed, only converging clarification of Criteria/Roles meeting meaning.",
+  "revert_sections": [],
+  "new_tool_proposals": []
+}

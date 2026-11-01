@@ -1,0 +1,14 @@
+{
+  "id": "E23",
+  "author": "Refrigeration and Thermal Engineer",
+  "tool": "calc",
+  "purpose": "ice-bank latent kWh for 100kg ice",
+  "code_or_query": "100*334/3600",
+  "inputs": {},
+  "output_summary": "9.277777777777779",
+  "output_full": "9.277777777777779",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

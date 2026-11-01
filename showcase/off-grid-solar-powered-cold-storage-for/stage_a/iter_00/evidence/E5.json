@@ -1,0 +1,14 @@
+{
+  "id": "E5",
+  "author": "Structural Enclosure Designer",
+  "tool": "calc",
+  "purpose": "crate net volume for 50 crates of 1 tonne",
+  "code_or_query": "50*0.6*0.4*0.226",
+  "inputs": {},
+  "output_summary": "2.712",
+  "output_full": "2.712",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

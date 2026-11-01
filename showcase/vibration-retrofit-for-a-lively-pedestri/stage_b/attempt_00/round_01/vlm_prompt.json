@@ -1,0 +1,66 @@
+{
+  "prompt": "Side elevation realistic rendered product-style illustration on light background of concealed twin under-deck TMD retrofit at 40 m footbridge midspan. Top walking deck clear with railings, no hardware above deck. Dark longitudinal girder below deck, existing cross-girder below deck at midspan. Two transverse SHS clamp beams U-bolted below host girder with M20 U-bolts. Each beam carries two outer vertical coil springs tuned to 1.81 Hz with 20.0 mm travel hung from beam underside to top of large black rectangular mass block, plus one central vertical viscous damper cylinder connecting beam center to mass center. Twin steel masses shown oscillating vertically. Draw short leader-line callouts in image with EXACT verbatim text: 'TMD mass block 250kg x2', 'Coil spring 1.81 Hz', 'Viscous damper', 'Transverse clamp beam SHS 100x6mm', 'M20 U-bolt', 'Soffit access hatch'. Specify U-bolts as M20. Describe springs as tuned to 1.81 Hz with 20.0 mm travel. Add context arrows: crowd-induced vibration dynamic load down onto clear walking deck, deck vibration motion, vertical oscillation arrows at masses, soffit access hatch box under girder. Show fixed beams vs moving masses and force path.",
+  "must_not": [
+    "1200 kg steel mass label",
+    "SHS 200x200x8 mm beam section label",
+    "320 mm compression travel label",
+    "generic stainless steel clamp without M20",
+    "any hardware above walking deck",
+    "hidden masses dampers or beams inside other parts"
+  ],
+  "changes_from_previous": "Full image regeneration to fix root cause generic callouts + number ban. Deleted MUST NOT number ban. Replaced with exact verbatim callouts: 'TMD mass block 250kg x2', 'Transverse clamp beam SHS 100x6mm', 'Coil spring 1.81 Hz', 'M20 U-bolt'. Specified M20 U-bolts and springs tuned to 1.81 Hz with 20.0 mm travel.",
+  "visual_plan": {
+    "view": "side elevation of midspan, realistic rendered product-style on light background, true relative sizes with masses 400-600mm, springs and dampers vertical below 100x6mm clamp beams",
+    "spatial_layout": "Side elevation: clear walking deck on top with railings, longitudinal girder below, two transverse clamp beams cross-wise below host cross-girder at midspan, each with TMD mass block below on springs + damper, M20 U-bolts on top of beams clamping to girder soffit, soffit access hatch box to side under girder.",
+    "operating_moment": "In operation under crowd walking at 1.9 Hz at midspan antinode: deck vibrates, twin 250kg masses oscillate vertically on 1.81 Hz springs with damper stroking to absorb bending-mode energy.",
+    "transfer_path": "Load: Crowd walking force -> Midspan deck antinode -> Twin TMD masses with springs/dampers on clamp beams | Measured: Midspan accelerometer -> Setra comfort assessment",
+    "interactions": "Coil springs sit on mass top and hang from clamp beam underside; viscous damper connects mass center to clamp beam center; clamp beams sit below host existing cross-girder via M20 U-bolts with nuts; no hardware above deck; masses move vertically relative to fixed beams.",
+    "avoid": [
+      "1200 kg mass",
+      "SHS 200x200x8 mm",
+      "320 mm travel",
+      "generic clamp omitting M20",
+      "hardware above deck",
+      "hiding TMD mass spring damper or clamp beam"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "tmd_mass",
+      "material": "steel",
+      "purpose": "provide tuned mass at antinode to absorb 1.9 Hz energy",
+      "callout": "TMD mass block 250kg x2"
+    },
+    {
+      "part_id": "coil_spring",
+      "material": "steel",
+      "purpose": "provide stiffness tuned to 1.81 Hz with 20.0 mm travel",
+      "callout": "Coil spring 1.81 Hz"
+    },
+    {
+      "part_id": "viscous_damper",
+      "material": "steel",
+      "purpose": "provide 13.36% damping between mass and beam",
+      "callout": "Viscous damper"
+    },
+    {
+      "part_id": "clamp_beam",
+      "material": "galvanized steel",
+      "purpose": "support twin TMD units below soffit",
+      "callout": "Transverse clamp beam SHS 100x6mm"
+    },
+    {
+      "part_id": "u_bolt",
+      "material": "steel",
+      "purpose": "clamp beams to existing cross-girders",
+      "callout": "M20 U-bolt"
+    },
+    {
+      "part_id": "access_hatch",
+      "material": "galvanized steel",
+      "purpose": "allow maintainable under-deck inspection access",
+      "callout": "Soffit access hatch"
+    }
+  ],
+  "label_mode": "image"
+}

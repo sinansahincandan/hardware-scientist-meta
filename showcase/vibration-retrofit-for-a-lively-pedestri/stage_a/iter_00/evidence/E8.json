@@ -1,0 +1,14 @@
+{
+  "id": "E8",
+  "author": "Vibration Control Specialist",
+  "tool": "simulate",
+  "purpose": "off-tune comfort stroke and connection forces for 400kg TMD",
+  "code_or_query": "import numpy as np\n# Main bridge modal params (from E1 context)\nM = 20000.0  # kg modal mass\nf_n = 1.9  # Hz\nwn = 2*np.pi*f_n\nzeta_s = 0.004\nK = M*wn**2\nC = 2*zeta_s*M*wn\n# TMD nominal optimal (E4)\nm = 400.0\nf_t = 1.8627450980392155\nwt = 2*np.pi*f_t\nzeta_t = 0.08574929257125442\nk = 54793.190139073544\nc = 2*zeta_t*m*wt\nF0 = 280.0  # N single pedestrian resonant harmonic\nw_exc = wn  # worst-case excitation at bridge freq\ndef steady_state(wt_var):\n    k_var = m*wt_var**2\n    # 2DOF steady state: solve (K - w^2 M + i w C) X = F\n    w = w_exc\n    Mmat = np.array([[M,0],[0,m]],dtype=float)\n    Kmat = np.array([[K+k_var,-k_var],[-k_var,k_var]],dtype=float)\n    Cmat = np.array([[C+c,-c],[-c,c]],dtype=float)\n    A = Kmat - w**2*Mmat + 1j*w*Cmat\n    F = np.array([F0,0],dtype=complex)\n    X = np.linalg.solve(A,F)\n    Xdeck = abs(X[0]); Xtmd_abs = abs(X[1]); rel = abs(X[1]-X[0])\n    adeck = Xdeck*w**2\n    # connection force: spring+damper force = k*rel + c*rel_vel ~ |k + i w c|*rel\n    Fdyn = abs(k_var + 1j*w*c)*rel\n    return adeck, Xdeck*1000, rel*1000, Fdyn\nprint(\"nominal:\")\nfor det in [-0.05, 0.0, 0.05]:\n    wt_var = wt*(1+det)\n    a, xd_mm, rel_mm, Fdyn = steady_state(wt_var)\n    print(f\"det {det:+.0%}: a={a:.3f} m/s2 deck={xd_mm:.2f} mm rel={rel_mm:.2f} mm Fdyn={Fdyn:.0f} N\")\n# static\nFstat = m*9.81\nprint(f\"Fstat={Fstat:.0f} N\")\n# fatigue: dynamic amplitude per cycle at full resonance\n_,_,_,Fdyn0 = steady_state(wt)\nprint(f\"total max={Fstat+Fdyn0:.0f} N total min={Fstat-Fdyn0:.0f} N\")\n# effective damping estimate from peak reduction: zeta_eff ~ F0/(2*M*a)? \nfor det in [-0.05,0,0.05]:\n    wt_var=wt*(1+det)\n    a,_,_,_ = steady_state(wt_var)\n    zeta_eff = F0/(2*M*a) if a>0 else 0\n    print(f\"det {det:+.0%} zeta_eff={zeta_eff:.3f}\")\n",
+  "inputs": {},
+  "output_summary": "det +5% zeta_eff=0.064",
+  "output_full": "nominal:\ndet -5%: a=0.156 m/s2 deck=1.09 mm rel=5.11 mm Fdyn=258 N\ndet +0%: a=0.116 m/s2 deck=0.81 mm rel=4.70 mm Fdyn=262 N\ndet +5%: a=0.110 m/s2 deck=0.77 mm rel=4.32 mm Fdyn=264 N\nFstat=3924 N\ntotal max=4186 N total min=3662 N\ndet -5% zeta_eff=0.045\ndet +0% zeta_eff=0.061\ndet +5% zeta_eff=0.064",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

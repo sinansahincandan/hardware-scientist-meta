@@ -1,0 +1,42 @@
+{
+  "pixel_description": "Pixel-first side photo of courier trolley on concrete stairs. Central vertical silver slotted spine column. Top: black rubber grip horizontal to left inserted into top of spine, clamped by silver mechanical over-centre stainless lock assembly bolted to spine top. Mid-left: flat silver rectangular toe platform cantilevered left from spine, carrying brown cardboard parcel box sitting on top surface. Toe physically bolted via hinge bracket plus vertical damper cylinder to spine face. Bottom: spine welded to horizontal transverse tube; left and right flat silver triangular tri-star plates fixed to axle ends with visible bolts/weld bead. Each plate tip carries black rubber wheels with hub bolts - left front wheel fully visible, second left wheel partially behind plate, right side shows bottom wheel and right-front wheel touching stair edge plus a partially obscured wheel behind. Coaxial on right axle: perforated silver deadman disc behind plate and silver cylindrical one-way clutch housing on axle. Trolley bridges levels: left wheels on lower pavement, right wheels contacting concrete step nosing/edge. Overlays: thin black curved double-arrow from toe underside to lower spine, thin black double-arrow between right wheel and stair riser, thin black curved single-arrow around disc indicating rotation. Text labels exactly as drawn: 'stainless lock' leader to top lock, 'spine' leader to central column, 'one-way clutch' leader to axle cylinder, 'deadman disc' leader to perforated disc, 'twin fixed tri-stars' leader to left triangular plate, 'wheels' leader to left front wheel, '~100 mm' scale bar bottom-left, 'A' top-left, 'Conceptual illustration - physical performance not established' footer.",
+  "label_findings": "labels ok - 'stainless lock', 'spine', 'one-way clutch', 'deadman disc', 'twin fixed tri-stars', 'wheels' all point to correct parts with correct spelling; '~100 mm' scale and 'Conceptual illustration - physical performance not established' and 'A' also present. No mislabeled or misspelled label.",
+  "regions": [],
+  "requirements": [
+    {
+      "requirement": "same parts",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "All mechanism parts visible in pixels: vertical spine, twin triangular tri-star plates, multiple black wheels bridging stair, coaxial clutch cylinder and perforated deadman disc on star axle, top folding handle with grip, folding toe with parcel load, stainless lock at handle-spine joint."
+    },
+    {
+      "requirement": "same connections",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Physical connections seen: handle inserted/locked to spine top, toe hinge/bracket bolted to spine, spine welded to fixed star axle, star plates bolted to axle, wheels bolted to star tips, clutch and disc coaxial to star axle, lock clamping handle to spine. No floating or disconnected part."
+    },
+    {
+      "requirement": "same relative sizes",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Relative sizes plausible vs ~100 mm bar: wheels ~100mm, disc slightly larger ~R60, stars R95 larger than wheels, spine tall vertical ~8-10x wheel diameter, toe and handle widths foreshortened but consistent with 550mm track. No gross oversize/undersize."
+    },
+    {
+      "requirement": "operating moment visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Loaded stair-climb/braked moment shown: parcel on toe, spine vertical, twin stars with two-point contact lower ground and stair nosing, disc rotation arrow and stair arrow indicating climb/metered descent."
+    },
+    {
+      "requirement": "transfer path visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Load path traceable in pixels: H2 toe -> bracket -> spine -> fixed axle -> tri-stars -> wheels -> ground/stair; measured path CSK clutch -> disc coaxial on same axle visible."
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw exposed by this view - fixed spine-star axle, hinge brackets, coaxial clutch/disc and two-nosing stair contact all appear as intended; no concrete image feature contradicts holding/braking, folding or fit requirements.",
+  "notes": "Side-view photorealistic render, not diagram. Handle width foreshortened in side view and one wheel occluded by overlap, expected for perspective. Top lock visible; H2 hinge hardware visible on spine. Weld at spine-star axle visible."
+}

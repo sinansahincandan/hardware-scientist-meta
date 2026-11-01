@@ -1,0 +1,279 @@
+{
+  "inspirations": [],
+  "functions": [
+    {
+      "id": "F1",
+      "text": "Limit first vertical bending response near 1.9 Hz to comfortable acceleration",
+      "author": "Structural Dynamics Lead"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "C1",
+      "function_id": "F1",
+      "text": "Under-deck vertical Tuned Mass Damper (TMD) at midspan, hidden below deck, tuned to 1.9 Hz with ~2% modal mass ratio and added viscous damping",
+      "author": "Structural Dynamics Lead",
+      "status": "open"
+    },
+    {
+      "id": "C2",
+      "function_id": "F1",
+      "text": "Concealed under-deck support frame: bolted cross-frames between existing girders carrying two 200 kg TMD units below soffit, 30 mm stroke clearance, lockable access hatches from below, soffit-matched finish, no fixings through deck wearing surface",
+      "author": "Retrofit Integration Architect",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "author": "Structural Dynamics Lead",
+      "tool": "calc",
+      "purpose": "resonant acceleration single pedestrian baseline",
+      "code_or_query": "280/(2*0.004*20000)",
+      "inputs": {},
+      "output_summary": "1.75",
+      "output_full": "1.75",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E2",
+      "author": "Structural Dynamics Lead",
+      "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+      "purpose": "TMD sizing for 20t modal mass",
+      "code_or_query": "{\"args\": {\"mass\": 400, \"mass_ratio\": 0.02, \"mode_frequency\": 1.9, \"structural_damping\": 0.004}}",
+      "inputs": {},
+      "output_summary": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+      "output_full": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 1
+    },
+    {
+      "id": "E3",
+      "author": "Structural Dynamics Lead",
+      "tool": "sketch",
+      "purpose": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(8,3)); ax.plot([0,40],[0,0],'k-',lw=3); ax.plot([0,0],[0,-3],'k-'); ax.plot([40,40],[0,-3],'k-'); import numpy as np; x=np.linspace(0,40,200); ax.plot(x, -0.02*(1-np.cos(2*np.pi*(x-0)/40))*40/4 -0.0, 'b--'); ax.plot([20],[0], 'ro'); ax.annotate('deck', xy=(5,0)); ax.annotate('TMD under deck at midspan', xy=(20,0)); ax.set_axis_off(); plt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
+      "inputs": {},
+      "output_summary": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+      "output_full": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+      "sketch_path": "evidence/sketch_3.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E4",
+      "author": "Vibration Control Specialist",
+      "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+      "purpose": "Size under-deck TMD tuning and damping for 1.9 Hz bridge",
+      "code_or_query": "{\"args\": {\"main_frequency_hz\": 1.9, \"main_mass_kg\": 20000.0, \"mass_ratio\": 0.02}, \"input_sources\": {\"main_frequency_hz\": \"source\", \"main_mass_kg\": \"source\", \"mass_ratio\": \"assumption\"}}",
+      "inputs": {
+        "main_frequency_hz": {
+          "value": 1.9,
+          "source": "source"
+        },
+        "main_mass_kg": {
+          "value": 20000.0,
+          "source": "source"
+        },
+        "mass_ratio": {
+          "value": 0.02,
+          "source": "assumption"
+        }
+      },
+      "output_summary": "tmd_mass_kg=400.0 mixed (see keys), tmd_frequency_hz=1.8627450980392155 mixed (see keys), tmd_damping_ratio=0.08574929257125442 mixed (see keys), tmd_stiffness_n_m=54793.190139073544 mixed (see keys),",
+      "output_full": "{\n  \"tmd_mass_kg\": 400.0,\n  \"tmd_frequency_hz\": 1.8627450980392155,\n  \"tmd_damping_ratio\": 0.08574929257125442,\n  \"tmd_stiffness_n_m\": 54793.190139073544,\n  \"tmd_damping_ns_m\": 802.8858987066853,\n  \"unit\": \"mixed (see keys)\",\n  \"inputs\": {\n    \"main_mass_kg\": 20000.0,\n    \"main_frequency_hz\": 1.9,\n    \"mass_ratio\": 0.02\n  },\n  \"provenance\": {\n    \"main_frequency_hz\": {\n      \"value\": 1.9,\n      \"source\": \"source\"\n    },\n    \"main_mass_kg\": {\n      \"value\": 20000.0,\n      \"source\": \"source\"\n    },\n    \"mass_ratio\": {\n      \"value\": 0.02,\n      \"source\": \"assumption\"\n    }\n  },\n  \"calculator\": \"tuned_mass_damper_den_hartog\"\n}",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E5",
+      "author": "Vibration Control Specialist",
+      "tool": "calc",
+      "purpose": "TMD mass from 2 percent mass ratio",
+      "code_or_query": "20000*0.02",
+      "inputs": {},
+      "output_summary": "400.0",
+      "output_full": "400.0",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E6",
+      "author": "Vibration Control Specialist",
+      "tool": "simulate",
+      "purpose": "Estimate controlled acceleration with added 3 percent effective damping",
+      "code_or_query": "F0=280; m=20000; zeta0=0.004; zeta_eff=0.035\na0=F0/(2*zeta0*m)\na1=F0/(2*zeta_eff*m)\nprint(f\"a0={a0:.3f} m/s2 a1={a1:.3f} m/s2 reduction={a0/a1:.1f}x\")\n# stroke estimate: dynamic amplification of TMD mass ~ sqrt(1/(2*mu*zeta_tmd^2)) approx\nmu=0.02; zeta_t=0.0857; import math\ndeck_amp=a1/(2*math.pi*1.9)**2*1000 # mm\ntmd_amp_factor=1/(2*zeta_t) # approx relative\nprint(f\"deck_amp~{deck_amp:.1f} mm TMD stroke~{deck_amp*tmd_amp_factor:.1f} mm\")",
+      "inputs": {},
+      "output_summary": "deck_amp~1.4 mm TMD stroke~8.2 mm",
+      "output_full": "a0=1.750 m/s2 a1=0.200 m/s2 reduction=8.8x\ndeck_amp~1.4 mm TMD stroke~8.2 mm",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E7",
+      "author": "Retrofit Integration Architect",
+      "tool": "sketch",
+      "purpose": "Under-deck concealed TMD mounting cross-section - no change to deck view, access from below",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\n# deck slab\nax.fill([-3,3,3,-3], [2.0,2.0,1.7,1.7], color='lightgray')\nax.text(0, 1.85, 'deck slab (unchanged top view)', ha='center', fontsize=8)\n# parapets\nax.fill([-3,-2.6,-2.6,-3], [2.0,2.0,3.0,3.0], color='gray')\nax.fill([3,2.6,2.6,3], [2.0,2.0,3.0,3.0], color='gray')\nax.text(-2.8, 3.1, 'parapet void', ha='center', fontsize=7)\nax.text(2.8, 3.1, 'parapet void', ha='center', fontsize=7)\n# girders below\nax.fill([-2.2,-1.8,-1.8,-2.2], [1.7,1.7,0.2,0.2], color='dimgray')\nax.fill([2.2,1.8,1.8,2.2], [1.7,1.7,0.2,0.2], color='dimgray')\nax.text(-2.0, 0.9, 'girder (fixed)', ha='center', fontsize=7, rotation=90)\nax.text(2.0, 0.9, 'girder (fixed)', ha='center', fontsize=7, rotation=90)\n# cross beam\nax.fill([-2.2,2.2,2.2,-2.2], [0.2,0.2,-0.1,-0.1], color='darkgray')\nax.text(0, 0.05, 'cross frame (fixed support)', ha='center', fontsize=7)\n# TMD masses (moving)\nax.fill([-1.0,-0.2,-0.2,-1.0], [0.6,0.6,0.1,0.1], color='steelblue')\nax.fill([0.2,1.0,1.0,0.2], [0.6,0.6,0.1,0.1], color='steelblue')\nax.text(-0.6, 0.35, 'TMD mass (moving)', ha='center', fontsize=7)\nax.text(0.6, 0.35, 'TMD mass (moving)', ha='center', fontsize=7)\n# springs/dampers vertical\nfor x in [-0.85,-0.35,0.35,0.85]:\n    ax.plot([x,x], [-0.1,0.1], color='black', lw=1.5)\n    ax.text(x, -0.25, 'spring+damper', ha='center', fontsize=6)\nax.text(0, -0.6, 'soffit zone hidden from deck, access hatch below', ha='center', fontsize=8, style='italic')\nax.set_xlim(-3.5,3.5); ax.set_ylim(-1,3.5); ax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+      "inputs": {},
+      "output_summary": "Under-deck concealed TMD mounting cross-section - no change to deck view, access from below",
+      "output_full": "Under-deck concealed TMD mounting cross-section - no change to deck view, access from below",
+      "sketch_path": "evidence/sketch_7.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E8",
+      "author": "Vibration Control Specialist",
+      "tool": "simulate",
+      "purpose": "off-tune comfort stroke and connection forces for 400kg TMD",
+      "code_or_query": "import numpy as np\n# Main bridge modal params (from E1 context)\nM = 20000.0  # kg modal mass\nf_n = 1.9  # Hz\nwn = 2*np.pi*f_n\nzeta_s = 0.004\nK = M*wn**2\nC = 2*zeta_s*M*wn\n# TMD nominal optimal (E4)\nm = 400.0\nf_t = 1.8627450980392155\nwt = 2*np.pi*f_t\nzeta_t = 0.08574929257125442\nk = 54793.190139073544\nc = 2*zeta_t*m*wt\nF0 = 280.0  # N single pedestrian resonant harmonic\nw_exc = wn  # worst-case excitation at bridge freq\ndef steady_state(wt_var):\n    k_var = m*wt_var**2\n    # 2DOF steady state: solve (K - w^2 M + i w C) X = F\n    w = w_exc\n    Mmat = np.array([[M,0],[0,m]],dtype=float)\n    Kmat = np.array([[K+k_var,-k_var],[-k_var,k_var]],dtype=float)\n    Cmat = np.array([[C+c,-c],[-c,c]],dtype=float)\n    A = Kmat - w**2*Mmat + 1j*w*Cmat\n    F = np.array([F0,0],dtype=complex)\n    X = np.linalg.solve(A,F)\n    Xdeck = abs(X[0]); Xtmd_abs = abs(X[1]); rel = abs(X[1]-X[0])\n    adeck = Xdeck*w**2\n    # connection force: spring+damper force = k*rel + c*rel_vel ~ |k + i w c|*rel\n    Fdyn = abs(k_var + 1j*w*c)*rel\n    return adeck, Xdeck*1000, rel*1000, Fdyn\nprint(\"nominal:\")\nfor det in [-0.05, 0.0, 0.05]:\n    wt_var = wt*(1+det)\n    a, xd_mm, rel_mm, Fdyn = steady_state(wt_var)\n    print(f\"det {det:+.0%}: a={a:.3f} m/s2 deck={xd_mm:.2f} mm rel={rel_mm:.2f} mm Fdyn={Fdyn:.0f} N\")\n# static\nFstat = m*9.81\nprint(f\"Fstat={Fstat:.0f} N\")\n# fatigue: dynamic amplitude per cycle at full resonance\n_,_,_,Fdyn0 = steady_state(wt)\nprint(f\"total max={Fstat+Fdyn0:.0f} N total min={Fstat-Fdyn0:.0f} N\")\n# effective damping estimate from peak reduction: zeta_eff ~ F0/(2*M*a)? \nfor det in [-0.05,0,0.05]:\n    wt_var=wt*(1+det)\n    a,_,_,_ = steady_state(wt_var)\n    zeta_eff = F0/(2*M*a) if a>0 else 0\n    print(f\"det {det:+.0%} zeta_eff={zeta_eff:.3f}\")\n",
+      "inputs": {},
+      "output_summary": "det +5% zeta_eff=0.064",
+      "output_full": "nominal:\ndet -5%: a=0.156 m/s2 deck=1.09 mm rel=5.11 mm Fdyn=258 N\ndet +0%: a=0.116 m/s2 deck=0.81 mm rel=4.70 mm Fdyn=262 N\ndet +5%: a=0.110 m/s2 deck=0.77 mm rel=4.32 mm Fdyn=264 N\nFstat=3924 N\ntotal max=4186 N total min=3662 N\ndet -5% zeta_eff=0.045\ndet +0% zeta_eff=0.061\ndet +5% zeta_eff=0.064",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E9",
+      "author": "Vibration Control Specialist",
+      "tool": "calc",
+      "purpose": "static weight of 400kg TMD for connection sizing",
+      "code_or_query": "400*9.81",
+      "inputs": {},
+      "output_summary": "3924.0",
+      "output_full": "3924.0",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E10",
+      "author": "Retrofit Integration Architect",
+      "tool": "calc",
+      "purpose": "verify total static weight for connection sizing",
+      "code_or_query": "400*9.81",
+      "inputs": {},
+      "output_summary": "3924.0",
+      "output_full": "3924.0",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E11",
+      "author": "Structural Dynamics Lead",
+      "tool": "calc",
+      "purpose": "static weight of 400 kg TMD for girder fatigue check",
+      "code_or_query": "400*9.81",
+      "inputs": {},
+      "output_summary": "3924.0",
+      "output_full": "3924.0",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
+    },
+    {
+      "id": "E12",
+      "author": "Structural Dynamics Lead",
+      "tool": "calc",
+      "purpose": "midspan stress increment from TMD weight assuming section modulus",
+      "code_or_query": "3924*40/4/2/0.008",
+      "inputs": {},
+      "output_summary": "2452500.0",
+      "output_full": "2452500.0",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
+    },
+    {
+      "id": "E13",
+      "author": "Vibration Control Specialist",
+      "tool": "simulate",
+      "purpose": "Off-tune +/-5% TMD comfort and stroke check for 1.9Hz footbridge",
+      "code_or_query": "import numpy as np\n# Bridge modal params inferred to match E1,E4,E6\nf_n = 1.9\nw_n = 2*np.pi*f_n\nM = 20000.0  # kg modal mass -> mu=400/20000=2%\nzeta_main = 0.005\nK = M*w_n**2\nC = 2*zeta_main*np.sqrt(K*M)\n# TMD nominal optimum from E4\nm = 400.0\nf_tmd0 = 1.8627450980392155\nk0 = 54793.190139073544\nzeta_tmd = 0.08574929257125442\nc = 2*zeta_tmd*np.sqrt(k0*m)\n# Harmonic pedestrian force amplitude chosen to reproduce E1 baseline 1.75 m/s2\n# Baseline resonant disp = F/(K*2*zeta) approx; a = w^2 * disp\na_baseline_target = 1.75\nF = a_baseline_target*M*2*zeta_main  # since a_res = F/(M*2*zeta)\nprint(f\"F={F:.1f} N, K={K:.0f}, M={M:.0f}\")\ndef response(f_tmd_factor):\n    k = k0*(f_tmd_factor**2)  # freq scales sqrt(k)\n    # 2DOF frequency response at excitation = bridge natural freq (worst case 1.9 Hz)\n    w = w_n\n    # dynamic stiffness matrix [-w^2 M + i w C + K]\n    Z11 = -w**2*M + 1j*w*C + K + (-w**2*0+1j*w*c+k)  # careful: primary + tmd connection\n    # Actually: equations: M x1 + C x1 + K x1 + c(x1dot-x2dot)+k(x1-x2)=F; m x2 + c(x2dot-x1dot)+k(x2-x1)=0\n    # So Z11 = -w2 M + iw(C+c)+K+k, Z12=-iwc-k, Z21=-iwc-k, Z22=-w2 m+iwc+k\n    Z11 = -w**2*M + 1j*w*(C+c) + K + k\n    Z12 = -1j*w*c - k\n    Z21 = Z12\n    Z22 = -w**2*m + 1j*w*c + k\n    det = Z11*Z22 - Z12*Z21\n    X1 = F*Z22/det\n    X2 = -F*Z21/det\n    deck = abs(X1)\n    stroke = abs(X2-X1)\n    acc = deck*w**2\n    return deck*1000, stroke*1000, acc\nfor d in [-0.05, 0.0, 0.05]:\n    deck_mm, stroke_mm, acc = response(1+d)\n    print(f\"det {d*100:+.0f}%: deck {deck_mm:.2f} mm acc {acc:.3f} m/s2 stroke {stroke_mm:.2f} mm\")\n",
+      "inputs": {},
+      "output_summary": "det +5%: deck 0.95 mm acc 0.136 m/s2 stroke 5.33 mm",
+      "output_full": "F=350.0 N, K=2850342, M=20000\ndet -5%: deck 1.34 mm acc 0.191 m/s2 stroke 6.27 mm\ndet +0%: deck 1.00 mm acc 0.142 m/s2 stroke 5.78 mm\ndet +5%: deck 0.95 mm acc 0.136 m/s2 stroke 5.33 mm",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    },
+    {
+      "id": "E14",
+      "author": "Vibration Control Specialist",
+      "tool": "calc",
+      "purpose": "verify acc from deck mm",
+      "code_or_query": "0.95*2*pi*1.9^2/1000*1000",
+      "inputs": {},
+      "output_summary": "calc failed: NameError: name 'pi' is not defined",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 72, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 67, in main\n    exec(compile(code, script, \"exec\"), globals_dict)\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-5wuzhxb8/hs_user_script.py\", line 5, in <module>\n    __r = (0.95*2*pi*1.9^2/1000*1000)\n                  ^^\nNameError: name 'pi' is not defined",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 4
+    }
+  ],
+  "objections": [
+    {
+      "id": "O1",
+      "author": "Pedestrian Comfort and Construction Planner",
+      "target_id": "C2",
+      "text": "Under-deck TMD support needs fatigue check for added mass and re-tuning access plan before comfort sign-off",
+      "blocking": false,
+      "status": "open",
+      "resolution": "",
+      "evidence_ids": []
+    },
+    {
+      "id": "O2",
+      "author": "Manager",
+      "target_id": "C2",
+      "text": "Process block: C2 support needs quantified connection static+dynamic forces and fatigue check for 400 kg added mass, and C1 needs off-tune (+/-5%) comfort/ stroke check before proposal/vote",
+      "blocking": true,
+      "status": "open",
+      "resolution": "",
+      "evidence_ids": []
+    },
+    {
+      "id": "O3",
+      "author": "Manager",
+      "target_id": "C1",
+      "text": "Process block: need -5% detune acceleration and stroke to complement +5% check before joint proposal",
+      "blocking": true,
+      "status": "open",
+      "resolution": "",
+      "evidence_ids": []
+    }
+  ],
+  "proposal": null,
+  "votes": {},
+  "closure": {
+    "closed_by": "cap",
+    "cycles_used": 4,
+    "open_blocking": [
+      "O2",
+      "O3"
+    ]
+  }
+}

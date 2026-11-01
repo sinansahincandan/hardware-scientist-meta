@@ -1,0 +1,14 @@
+{
+  "id": "E9",
+  "author": "Refrigeration and Thermal Engineer",
+  "tool": "calc",
+  "purpose": "combined thermal: wall gain 24h plus pull-down",
+  "code_or_query": "216*24/1000 + 25",
+  "inputs": {},
+  "output_summary": "30.184",
+  "output_full": "30.184",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

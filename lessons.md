@@ -1,6 +1,11 @@
 # Lessons
 
 ## Process
+- Allow a cap-closed meeting with extended cycles to proceed to evaluator archiving and Stage-B retries when the evaluator accepts, rather than auto-blocking advancement on closed_by=cap alone. [2026-11-01, run 20261101-165746_off-grid-solar-powered-cold-storage-for-]
+- Permit up to two consecutive s1_retry rounds within the same evaluator-accepted iteration to reach s1_pass without forcing a Stage-A return or new iteration. [2026-11-01, run 20261101-165746_off-grid-solar-powered-cold-storage-for-]
+
+- Permit S1 fidelity retry within the same evaluator-accepted iteration to advance from s1_retry to s1_pass without reopening the meeting or forcing a Stage-A return. [2026-11-01, run 20261101-161405_vibration-retrofit-for-a-lively-pedestri]
+
 - When a meeting closes by cap and the evaluator rejects, require the manager edit to target Roles and Meeting protocol in addition to Criteria to restore consensus close in the next iteration. [2026-10-31, run 20261031-220800_vibration-retrofit-for-a-lively-pedestri]
 - Treat evaluator accept with all rounds S1=False as interim archiving only; allow a designer Stage-A return diagnostic to supersede acceptance and continue the pipeline. [2026-10-31, run 20261031-220800_vibration-retrofit-for-a-lively-pedestri]
 - After code-label fallback clears label-driven S1 failures, shift S1 retry focus explicitly to geometry and connection fidelity rather than re-checking labels. [2026-10-31, run 20261031-220800_vibration-retrofit-for-a-lively-pedestri]
@@ -26,6 +31,8 @@
 
 
 ## Prompts
+- Sequence S1 retry prompt edits by failure class: resolve component-omission/geometry fidelity first, then label/text fidelity on the next retry, rather than mixing both fixes in one retry. [2026-11-01, run 20261101-165746_off-grid-solar-powered-cold-storage-for-]
+
 - Include a pre-approved NO TEXT, NO LABELS, NO NUMBERS prompt variant in the prompt library for use once label fidelity blocks acceptance. [2026-10-31, run 20261031-170455_stair-climbing-hand-truck-for-parcel-cou]
 
 

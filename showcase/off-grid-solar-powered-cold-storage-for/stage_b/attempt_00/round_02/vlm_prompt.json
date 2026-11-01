@@ -1,0 +1,76 @@
+{
+  "prompt": "Light-background realistic rendered isometric product-style illustration of sun-only 1-tonne cold store, cutaway view. Central white 100mm PU insulated 10m3 cold room with front insulated hinged door with gaskets, interior twin side steel racks holding vented crates full of produce, rear 100kg ice-bank tank under ceiling evaporator. Support PV array on separate ground-standing steel shade canopy with its own footings on ground independent of cold-room walls/roof, leaving a clear air vent gap between PV underside and room roof; never mount posts directly on room roof. Large tilted dark-blue fully-populated Tilted roof monocrystalline PV array above room on canopy. Show ceiling evaporator inside above ice-bank piped to small wall-mounted finned DC vapour-compression cooler outdoor unit on side wall. The leader labelled 'DC vapour-compression cooler' must touch the ceiling evaporator and the wall-mounted condenser box, never a steel post or roof edge. Show large grey floor-standing LiFePO4 battery bank cabinet standing on ground beside room, clearly separate from small wall-mounted finned condenser. The leader labelled 'LiFePO4 battery bank' must touch the large grey cabinet only, never the wall-mounted condenser. Mount a small MPPT charge controller box on side of battery cabinet with cables. Add light-grey rectangular external concrete wash slab with drain edge in front/beside room. Render 'LiFePO4 battery bank' and 'DC vapour-compression cooler' as two separate non-overlapping horizontal labels with separate leader lines, exact spelling, part names only no numbers, do not merge, hyphenate or abbreviate into combined text. Draw 8 short labels with leader lines: 'Tilted roof monocrystalline PV array', 'PU insulated cold room', 'insulated hinged door with gaskets', 'ice-bank', 'DC vapour-compression cooler', 'LiFePO4 battery bank', 'MPPT charge controller', plus 'External wash slab' - leader must point to light-grey rectangular slab with drain edge in front/beside room, part names only no numbers. Show sun on PV, cold airflow loop over crates, black cables PV to MPPT to battery to cooler, copper pipes evaporator through wall to condenser.",
+  "must_not": [
+    "merged text LiFePO4-compression cooler or any hyphenated combined label",
+    "leader for battery touching condenser or leader for cooler touching post or roof edge",
+    "steel posts mounted directly on room roof or walls",
+    "hidden battery or cooler inside room",
+    "numbers quantities values units in drawn label text"
+  ],
+  "changes_from_previous": "Full regeneration: added explicit leader anchors for cooler vs battery to stop swap/merge, rewrote canopy as separate ground-standing footings with vent gap not roof-mounted, added 8th label for wash slab, enforced two separate non-overlapping labels.",
+  "visual_plan": {
+    "view": "isometric realistic rendered product-style cutaway on light background, three-quarter view showing room interior, roof PV on separate canopy, side battery and cooler, front wash slab",
+    "spatial_layout": "Isometric cutaway: central cold room with open interior showing twin side racks left and right with central aisle; large tilted PV on separate four-post ground canopy above with vent gap; large grey battery cabinet on ground beside right wall with small MPPT box on its side and small finned condenser wall-mounted above it; ceiling evaporator inside rear above ice-bank; white hinged door on front/left wall; light-grey wash slab in foreground beside room.",
+    "operating_moment": "Sunny midday operation holding 1000kg produce in vented crates at 4-6C while PV charges battery and ice-bank, with visible produce, sun glare on PV, and interior cold-air circulation.",
+    "transfer_path": "Energy: Tilted roof PV array -> MPPT charge controller -> 48V LiFePO4 battery bank -> DC vapour-compression cooler -> 100mm PU cold room, plus ice-bank night cooling to room; Measured: MPPT charge monitoring -> Battery state monitoring.",
+    "interactions": "Canopy footings stand on ground and carry PV; PV cables down to MPPT to battery cabinet to cooler; ceiling evaporator copper-piped through wall to side condenser; evaporator and ice-bank cool room air looping across twin racks of crates; door hinged on room; wash slab separate in front for crate washing.",
+    "avoid": [
+      "posts on room roof without separate ground footings and vent gap",
+      "merged garbled label or overlapping leaders for battery and cooler",
+      "leaders pointing to wrong hardware",
+      "hiding labelled parts inside other parts",
+      "dark background or non-photorealistic diagram style"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "P1",
+      "material": "PU",
+      "purpose": "Keep 1 tonne produce at 4-6C",
+      "callout": "PU insulated cold room"
+    },
+    {
+      "part_id": "P2",
+      "material": "steel",
+      "purpose": "Provide vapour-compression cooling",
+      "callout": "DC vapour-compression cooler"
+    },
+    {
+      "part_id": "P3",
+      "material": "monocrystalline silicon",
+      "purpose": "Generate electricity from sun",
+      "callout": "Tilted roof monocrystalline PV array"
+    },
+    {
+      "part_id": "P4",
+      "material": "electronics",
+      "purpose": "Hold panels at peak power",
+      "callout": "MPPT charge controller"
+    },
+    {
+      "part_id": "P5",
+      "material": "LiFePO4",
+      "purpose": "Ride through night and cloudy periods",
+      "callout": "LiFePO4 battery bank"
+    },
+    {
+      "part_id": "P6",
+      "material": "water",
+      "purpose": "Carry night steady load off battery",
+      "callout": "ice-bank"
+    },
+    {
+      "part_id": "P9",
+      "material": "PU",
+      "purpose": "Access with seals",
+      "callout": "insulated hinged door with gaskets"
+    },
+    {
+      "part_id": "P11",
+      "material": "concrete",
+      "purpose": "Wash crates cooperatively",
+      "callout": "External wash slab"
+    }
+  ],
+  "label_mode": "image"
+}

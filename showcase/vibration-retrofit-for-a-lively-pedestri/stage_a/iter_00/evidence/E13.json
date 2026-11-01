@@ -1,0 +1,14 @@
+{
+  "id": "E13",
+  "author": "Vibration Control Specialist",
+  "tool": "simulate",
+  "purpose": "Off-tune +/-5% TMD comfort and stroke check for 1.9Hz footbridge",
+  "code_or_query": "import numpy as np\n# Bridge modal params inferred to match E1,E4,E6\nf_n = 1.9\nw_n = 2*np.pi*f_n\nM = 20000.0  # kg modal mass -> mu=400/20000=2%\nzeta_main = 0.005\nK = M*w_n**2\nC = 2*zeta_main*np.sqrt(K*M)\n# TMD nominal optimum from E4\nm = 400.0\nf_tmd0 = 1.8627450980392155\nk0 = 54793.190139073544\nzeta_tmd = 0.08574929257125442\nc = 2*zeta_tmd*np.sqrt(k0*m)\n# Harmonic pedestrian force amplitude chosen to reproduce E1 baseline 1.75 m/s2\n# Baseline resonant disp = F/(K*2*zeta) approx; a = w^2 * disp\na_baseline_target = 1.75\nF = a_baseline_target*M*2*zeta_main  # since a_res = F/(M*2*zeta)\nprint(f\"F={F:.1f} N, K={K:.0f}, M={M:.0f}\")\ndef response(f_tmd_factor):\n    k = k0*(f_tmd_factor**2)  # freq scales sqrt(k)\n    # 2DOF frequency response at excitation = bridge natural freq (worst case 1.9 Hz)\n    w = w_n\n    # dynamic stiffness matrix [-w^2 M + i w C + K]\n    Z11 = -w**2*M + 1j*w*C + K + (-w**2*0+1j*w*c+k)  # careful: primary + tmd connection\n    # Actually: equations: M x1 + C x1 + K x1 + c(x1dot-x2dot)+k(x1-x2)=F; m x2 + c(x2dot-x1dot)+k(x2-x1)=0\n    # So Z11 = -w2 M + iw(C+c)+K+k, Z12=-iwc-k, Z21=-iwc-k, Z22=-w2 m+iwc+k\n    Z11 = -w**2*M + 1j*w*(C+c) + K + k\n    Z12 = -1j*w*c - k\n    Z21 = Z12\n    Z22 = -w**2*m + 1j*w*c + k\n    det = Z11*Z22 - Z12*Z21\n    X1 = F*Z22/det\n    X2 = -F*Z21/det\n    deck = abs(X1)\n    stroke = abs(X2-X1)\n    acc = deck*w**2\n    return deck*1000, stroke*1000, acc\nfor d in [-0.05, 0.0, 0.05]:\n    deck_mm, stroke_mm, acc = response(1+d)\n    print(f\"det {d*100:+.0f}%: deck {deck_mm:.2f} mm acc {acc:.3f} m/s2 stroke {stroke_mm:.2f} mm\")\n",
+  "inputs": {},
+  "output_summary": "det +5%: deck 0.95 mm acc 0.136 m/s2 stroke 5.33 mm",
+  "output_full": "F=350.0 N, K=2850342, M=20000\ndet -5%: deck 1.34 mm acc 0.191 m/s2 stroke 6.27 mm\ndet +0%: deck 1.00 mm acc 0.142 m/s2 stroke 5.78 mm\ndet +5%: deck 0.95 mm acc 0.136 m/s2 stroke 5.33 mm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

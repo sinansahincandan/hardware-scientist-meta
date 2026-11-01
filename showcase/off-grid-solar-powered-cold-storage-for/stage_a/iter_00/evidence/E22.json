@@ -1,0 +1,14 @@
+{
+  "id": "E22",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "PV kW needed for low-sun refill",
+  "code_or_query": "6.096/0.75/2",
+  "inputs": {},
+  "output_summary": "4.064",
+  "output_full": "4.064",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

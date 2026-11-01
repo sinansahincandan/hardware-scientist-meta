@@ -1,0 +1,64 @@
+{
+  "prompt": "Light-background realistic rendered isometric product-style illustration of sun-only cold store. Central PU insulated cold room box with front insulated hinged door with gaskets closed, separate steel posts carrying large Tilted roof monocrystalline PV array above with vent gap, wall-mounted DC vapour-compression cooler on side piped into room, LiFePO4 battery bank cabinet beside room cabled to cooler, ice-bank tank visible inside room under evaporator via cutaway side wall. Inside cutaway show twin racks with vented produce crates. Bright midday sun rays down onto PV, electrical cable down post to battery to cooler, cold air loop into room. Draw only 6 short labels with leader lines: PU insulated cold room, DC vapour-compression cooler, Tilted roof monocrystalline PV array, LiFePO4 battery bank, ice-bank, insulated hinged door with gaskets. No numbers or values in image text. Keep relative sizes: PV span largest, room medium, battery and cooler small boxes.",
+  "must_not": [
+    "no grid connection or diesel generator",
+    "no numbers quantities values or units in drawn labels",
+    "no hidden focus parts inside closed box",
+    "no dark or cluttered background",
+    "no incorrect energy flow from battery to PV"
+  ],
+  "changes_from_previous": "First version; no prior image.",
+  "visual_plan": {
+    "view": "isometric",
+    "spatial_layout": "Isometric front-three-quarter elevated. Center: PU insulated cold room. Front face: insulated hinged door with gaskets. Right side cutaway reveals ice-bank low under evaporator and racks with crates. Side wall: DC vapour-compression cooler mounted outside. Right-rear: LiFePO4 battery bank cabinet on ground. Above: separate canopy posts with Tilted roof monocrystalline PV array tilted south spanning over room with vent gap.",
+    "operating_moment": "Sunny daytime operation with produce present in crates, PV generating and charging battery, DC cooler running and blowing cold over ice-bank and racks, door closed and sealed holding 4-6C.",
+    "transfer_path": "Energy: Tilted roof PV array -> battery bank -> DC vapour-compression cooler -> PU insulated cold room; night assist: ice-bank -> cold room. Signal: charge monitoring on PV to battery path. Visualize as sun arrows down, cable down post, cable to cooler, cold airflow into room.",
+    "interactions": "Canopy mechanically carries PV array; PV cabled to battery bank; battery cabled to DC vapour-compression cooler; cooler thermally feeds cold into PU room; ice-bank thermally feeds cold into room; hinged door seals front of room.",
+    "avoid": [
+      "hide ice-bank or racks inside opaque box",
+      "bury battery or cooler inside room",
+      "tangled wiring or missing energy path",
+      "dark background or photorealistic clutter",
+      "numbers or values in callouts"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "P1",
+      "material": "PU",
+      "purpose": "Keep produce at cold temperature",
+      "callout": "PU insulated cold room"
+    },
+    {
+      "part_id": "P2",
+      "material": "steel",
+      "purpose": "Provide vapour-compression cooling",
+      "callout": "DC vapour-compression cooler"
+    },
+    {
+      "part_id": "P3",
+      "material": "monocrystalline silicon",
+      "purpose": "Generate electricity from sun",
+      "callout": "Tilted roof monocrystalline PV array"
+    },
+    {
+      "part_id": "P5",
+      "material": "LiFePO4",
+      "purpose": "Ride through night and cloudy periods",
+      "callout": "LiFePO4 battery bank"
+    },
+    {
+      "part_id": "P6",
+      "material": "water",
+      "purpose": "Carry night steady load off battery",
+      "callout": "ice-bank"
+    },
+    {
+      "part_id": "P9",
+      "material": "PU",
+      "purpose": "Access with seals",
+      "callout": "insulated hinged door with gaskets"
+    }
+  ],
+  "label_mode": "image"
+}

@@ -1,0 +1,64 @@
+{
+  "prompt": "Side elevation realistic rendered product-style illustration on light background of concealed twin under-deck TMD retrofit at 40m footbridge midspan. Top: clear walking deck with no hardware above, existing cross-girder below deck. Two transverse SHS clamp beams U-bolted to host girders. Twin steel mass blocks hung below on vertical coil springs with viscous dampers connected between mass and beam. Soffit access hatch beside. Show deck vibrating under crowd force and masses oscillating vertically, springs compressing, dampers stroking. Draw short leader-line callouts in image: TMD mass block, Coil spring, Viscous damper, Transverse clamp beam, U-bolt, Soffit access hatch. Keep relative sizes and connections from reference.",
+  "must_not": [
+    "hardware above deck",
+    "change to deck sightlines or parapet",
+    "numbers, values or units in drawn callouts",
+    "hidden or cutaway masses",
+    "dark or cluttered background"
+  ],
+  "changes_from_previous": "Initial version - no previous rounds.",
+  "visual_plan": {
+    "view": "side elevation, midspan under-deck section, realistic rendered product style, light background",
+    "spatial_layout": "Side view: deck horizontal on top clear, existing cross-girder directly below, two transverse clamp beams across below soffit, twin mass blocks centered at midspan antinode below beams on coil springs with flanking viscous dampers, U-bolts at beam ends, soffit access hatch to side.",
+    "operating_moment": "Crowd resonant excitation at midspan antinode, TMD masses resonating out-of-phase with vertical travel, springs flexing and dampers stroking to absorb 1.9 Hz bending energy.",
+    "transfer_path": "Load: Crowd walking force -> Midspan deck antinode -> Clamp beams -> Coil springs and viscous dampers -> Twin TMD masses | Measured: Midspan accelerometer -> Setra comfort assessment. Show red down arrow on deck and on mass, blue up reaction.",
+    "interactions": "Coil springs hung from clamp beam to mass, viscous damper connected between mass and beam, clamp beams U-bolted to existing host cross-girders, mass free to move vertically on springs while beams, U-bolts, girders and deck stay fixed.",
+    "avoid": [
+      "hardware above deck",
+      "deck sightline change",
+      "top or isometric view",
+      "numbers in callouts",
+      "hiding masses inside other parts"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "tmd_mass",
+      "material": "steel",
+      "purpose": "tuned mass resonating to absorb bending energy",
+      "callout": "TMD mass block"
+    },
+    {
+      "part_id": "coil_spring",
+      "material": "steel",
+      "purpose": "provide stiffness tuned to absorb mode",
+      "callout": "Coil spring"
+    },
+    {
+      "part_id": "viscous_damper",
+      "material": "steel",
+      "purpose": "dissipate vibration energy",
+      "callout": "Viscous damper"
+    },
+    {
+      "part_id": "clamp_beam",
+      "material": "galvanized steel",
+      "purpose": "support TMD units below soffit",
+      "callout": "Transverse clamp beam"
+    },
+    {
+      "part_id": "u_bolt",
+      "material": "steel",
+      "purpose": "clamp beams to host girders",
+      "callout": "U-bolt"
+    },
+    {
+      "part_id": "access_hatch",
+      "material": "galvanized steel",
+      "purpose": "maintainable under-deck access",
+      "callout": "Soffit access hatch"
+    }
+  ],
+  "label_mode": "image"
+}

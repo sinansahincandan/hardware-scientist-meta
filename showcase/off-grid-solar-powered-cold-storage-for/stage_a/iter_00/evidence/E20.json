@@ -1,0 +1,14 @@
+{
+  "id": "E20",
+  "author": "Post-Harvest Cooperative Operations Lead",
+  "tool": "calc",
+  "purpose": "verify total payload 1 tonne from 50 crates",
+  "code_or_query": "50*20",
+  "inputs": {},
+  "output_summary": "1000",
+  "output_full": "1000",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

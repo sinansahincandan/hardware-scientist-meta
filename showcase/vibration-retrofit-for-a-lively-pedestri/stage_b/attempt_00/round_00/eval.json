@@ -1,0 +1,95 @@
+{
+  "pixel_description": "Side elevation of 40m footbridge midspan. Top title 'Concealed Twin Under-Deck TMD Retrofit' '40 m Footbridge Midspan | Side Elevation' with 'A' top-left. Walking deck center clear with metal railings left and right. Above deck center wavy lines labeled 'Deck vibration motion' with down arrow to deck, labeled 'Clear walking deck no equipment above' with arrow to deck and 'Crowd-induced vibration dynamic load' on deck edge and 'Existing cross-girder (below deck)' on concrete edge. Dark longitudinal girder below deck. Two transverse clamp beams below girder, each with 2 silver U-bolts on top with nuts clamping to girder soffit. Each clamp beam carries 2 outer tall coil springs vertical from beam underside down to top of large black rectangular mass block, and 1 central vertical viscous damper cylinder with rod from beam center down to mass center, with small curved motion marks. Light gray double vertical arrows beside masses showing vertical oscillation. Labels left side: 'Transverse clamp beam SHS, 200x200x8 mm' with arrow to girder/beam, 'U-bolt stainless steel clamp, clamped to host girder', 'Coil spring high-load coil spring, 320 mm compression travel', 'Viscous damper damping cylinder, piston stroking', 'TMD mass block 1200 kg steel mass, oscillates vertically'. Right side small open box under girder labeled 'Soffit access hatch hinged, for inspection & maintenance' with arrow. Bottom left '~500 mm' scale bar and 'Conceptual illustration - physical performance not established'. Physical connections visible: springs sit on mass top and hang from clamp beam; damper connects mass center to clamp beam center; clamp beams sit below host girder via U-bolts; no hardware above deck.",
+  "label_findings": "Labels not ok - spelling correct but specs wrong: TMD mass block label says '1200 kg steel mass' vs required 250kg x2 (2452.5 N static); Transverse clamp beam label says 'SHS, 200x200x8 mm' vs required SHS 100x6mm; Coil spring label says '320 mm compression travel' vs required 20.0 mm travel tuned to 1.81 Hz; U-bolt label says 'stainless steel clamp, clamped to host girder' and omits required 'M20' size. Other labels correctly name parts: Viscous damper, Soffit access hatch, Existing cross-girder (below deck), Clear walking deck, Deck vibration motion, Crowd-induced vibration dynamic load.",
+  "regions": [
+    {
+      "box": [
+        274.0,
+        812.0,
+        430.0,
+        950.0
+      ],
+      "part_id": "tmd_mass",
+      "observed": "pixels show black mass block labeled '1200 kg steel mass, oscillates vertically'",
+      "expected": "Twin 250-kg masses (TMD mass block 250kg x2, 2452.5 N static) per mechanism sketch",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        28.0,
+        442.0,
+        196.0,
+        489.0
+      ],
+      "part_id": "clamp_beam",
+      "observed": "label says 'SHS, 200x200x8 mm'",
+      "expected": "transverse clamp beam SHS 100x6mm per concept",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        281.0,
+        590.0,
+        426.0,
+        832.0
+      ],
+      "part_id": "coil_spring",
+      "observed": "tall coils labeled '320 mm compression travel'",
+      "expected": "coil spring tuned to 1.81 Hz with 20.0 mm damper relative travel",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        41.0,
+        542.0,
+        198.0,
+        626.0
+      ],
+      "part_id": "u_bolt",
+      "observed": "label says 'stainless steel clamp' with no M20 size, hardware shows U-bolts",
+      "expected": "M20 U-bolt per schematic",
+      "source": "render",
+      "fixed": false
+    }
+  ],
+  "requirements": [
+    {
+      "requirement": "same parts",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Twin masses, 4 coil springs (2 per unit), 2 dampers, 2 clamp beams, U-bolts, soffit hatch, cross-girder and clear deck all present"
+    },
+    {
+      "requirement": "same connections",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Mass hung on springs and damped by damper hung from clamp beam U-bolted to host cross-girder as in sketch"
+    },
+    {
+      "requirement": "same relative sizes",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Mass blocks large under tall springs, central damper shorter, clamp beams transverse under girder, deck clear; pixels roughly match size classes despite wrong label numbers"
+    },
+    {
+      "requirement": "operating moment visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Vertical double arrows at masses, stroking marks at dampers, deck vibration waves with down arrow show 1.9 Hz bending and TMD oscillation"
+    },
+    {
+      "requirement": "transfer path visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "Crowd dynamic load on deck through cross-girder/clamp/spring/damper to mass visible; measurement accelerometer chain not drawn but load path is shown"
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "LABEL: TMD mass says 1200 kg vs 250kg x2 in sketch; clamp beam says SHS 200x200x8 mm vs SHS 100x6mm; coil spring says 320 mm travel vs 20.0 mm; U-bolt omits M20. Otherwise visually same twin under-deck layout with masses on springs/dampers hung from U-bolted clamp beams below cross-girder at midspan, clear deck, soffit hatch, and vertical operating arrows matching connections and relative sizes.",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw exposed. Apparent overload from 1200kg masses and 200x200x8 beams and 320mm travel is render label error, not schematic design which is 250kg x2 with 20mm travel. Host girder capacity question remains open but no failure, interference, or concealment breach is visible in pixels.",
+  "notes": "Render is side elevation with disclaimer 'Conceptual illustration - physical performance not established' and scale '~500 mm'. Twin units otherwise match system view: clear deck, under-deck hung masses. Numeric label errors are depiction faults, not schematic flaws. Schematic correctly shows 250kg x2, 1.81 Hz, 1400 N at 1.9 Hz, M20 U-bolt."
+}

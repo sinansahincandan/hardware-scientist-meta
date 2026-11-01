@@ -1,0 +1,108 @@
+{
+  "pixel_description": "Photorealistic isometric of cold-store system. Top: large tilted dark-blue monocrystalline PV array on galvanised steel posts/beams above a white box room, sun glare top-right, three rectangular open frames/missing modules visible mid-array. Left post: black cable drops down post to small grey cabinet, second black cable from cabinet to base of room. Cabinet is battery. Center: white panel box room with side hinged door with black gasket, hinges/latches visible. Cutaway front shows interior left: 3-tier metal rack with ~7 green vented crates with vegetables, right: large translucent blue cylindrical ice tank full of ice cubes under a blue finned evaporator coil on ceiling, copper + blue pipes connecting through wall to small grey outdoor condenser unit side-mounted on right wall. Light-blue curved airflow arrows on interior floor. Labels with leaders exactly as spelled: 'Tilted roof monocrystalline PV array', 'PU insulated cold room', 'insulated hinged door with gaskets', 'LiFePO4 battery bank', 'DC vapour-compression cooler', 'ice-bank'.",
+  "label_findings": "labels ok - all 6 drawn labels name the right part with correct spelling: 'Tilted roof monocrystalline PV array' = P3, 'PU insulated cold room' = P1, 'insulated hinged door with gaskets' = P9, 'LiFePO4 battery bank' = P5, 'DC vapour-compression cooler' = P2, 'ice-bank' = P6.",
+  "regions": [
+    {
+      "box": [
+        205.0,
+        700.0,
+        330.0,
+        885.0
+      ],
+      "part_id": "P4",
+      "observed": "only plain grey battery cabinet, no MPPT controller visible",
+      "expected": "MPPT charge controller cabinet/box between PV array cables and 48V LiFePO4 bank",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        10.0,
+        810.0,
+        400.0,
+        925.0
+      ],
+      "part_id": "P11",
+      "observed": "plain light floor/shadow with scale bar, no slab",
+      "expected": "external concrete wash slab beside room for crate washing",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        285.0,
+        255.0,
+        815.0,
+        375.0
+      ],
+      "part_id": "P3",
+      "observed": "three empty open frame holes where modules missing in mid-array",
+      "expected": "continuous tilted 4kW monocrystalline array",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        523.0,
+        560.0,
+        616.0,
+        790.0
+      ],
+      "part_id": "P7",
+      "observed": "single 3-tier rack visible on left wall only",
+      "expected": "twin side racks with centre aisle running length of room",
+      "source": "render",
+      "fixed": false
+    },
+    {
+      "box": [
+        523.0,
+        565.0,
+        614.0,
+        785.0
+      ],
+      "part_id": "P8",
+      "observed": "~7 green crates with produce visible",
+      "expected": "fifty 600x400x226mm vented crates holding 1000kg produce",
+      "source": "render",
+      "fixed": false
+    }
+  ],
+  "requirements": [
+    {
+      "requirement": "same parts",
+      "status": "missing",
+      "stage_at_fault": "render",
+      "detail": "P4 MPPT controller absent in pixels, P11 wash slab absent, P7 twin racks shows as single rack, P8 shows ~7 crates vs 50; P1,P2,P3,P5,P6,P9,P10 frame present"
+    },
+    {
+      "requirement": "same connections",
+      "status": "missing",
+      "stage_at_fault": "render",
+      "detail": "PV->MPPT and MPPT->battery electrical links broken by missing MPPT; battery cable goes to room base not to cooler unit; cooler thermal pipes to room and ice-to-room present, canopy carries PV and door on room present"
+    },
+    {
+      "requirement": "same relative sizes",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "PV span ~2x room width ~4000-5000mm class, room cube ~2000-2600mm class, battery cabinet small 400-800mm class, ice-bank cylinder ~300-600mm class; scale bar ~1000mm supports classes"
+    },
+    {
+      "requirement": "operating moment visible",
+      "status": "observed",
+      "stage_at_fault": "none",
+      "detail": "sun glare on PV, ice cubes in bank, produce in crates, blue circulation arrows on floor show cooling/airflow moment"
+    },
+    {
+      "requirement": "transfer path visible",
+      "status": "ambiguous",
+      "stage_at_fault": "render",
+      "detail": "black cables PV->battery->room and copper/blue pipes cooler->room/ice-bank visible, but MPPT stage missing and no MPPT charge or battery state monitoring displays visible"
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "Missing P4 MPPT charge controller and P11 external wash slab; interior shows single rack with ~7 crates vs twin side racks for fifty vented crates; PV array shows three empty frame holes vs continuous 4kW array; battery-to-cooler electrical route terminates at room base rather than explicit to cooler; no measurement displays for MPPT/battery monitoring.",
+  "s2_flaw": false,
+  "s2_feedback": "No concrete design flaw exposed. Shade canopy carrying PV, battery outside, cooler piped to evaporator and ice-bank inside with circulation arrows is sound sun-only ride-through concept. Panel holes, crate shortfall and absent MPPT/slab are depiction omissions, not schematic errors.",
+  "notes": "photorealistic isometric cutaway with scale bar ~1000 mm and disclaimer 'Conceptual illustration - physical performance not established'. Steel post canopy carries PV above room. No MPPT box, no wash slab, no rack/crate/canopy labels drawn."
+}

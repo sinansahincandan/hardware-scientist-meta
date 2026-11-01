@@ -1,0 +1,14 @@
+{
+  "id": "E4",
+  "author": "Refrigeration and Thermal Engineer",
+  "tool": "sketch",
+  "purpose": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.set_title('Solar cold room section - airflow and insulation')\n# walls\nimport matplotlib.patches as patches\nax.add_patch(patches.Rectangle((1,1), 6, 3.5, fill=False, linewidth=3))\nax.text(4, 0.5, '100mm PU walls + floor + roof')\nax.text(4, 5.0, 'PV shade roof above')\nax.plot([1,7],[5.2,5.2], linewidth=4)\n# crates\nfor x in [2,3.5,5]:\n  ax.add_patch(patches.Rectangle((x,1.5), 1.0, 1.0, fill=False))\n  ax.text(x+0.1, 1.9, 'produce')\n# evaporator + fan\nax.add_patch(patches.Rectangle((1.2,3.8), 1.5, 0.5, fill=False, linewidth=2))\nax.text(1.3, 4.0, 'evaporator+fan')\nax.annotate('', xy=(6.5,3.5), xytext=(2.7,4.0), arrowprops=dict(arrowstyle='->'))\nax.text(4.5, 4.2, 'cold air loop')\nax.annotate('', xy=(2.0,3.0), xytext=(6.0,2.5), arrowprops=dict(arrowstyle='->'))\nax.text(4.0, 2.8, 'return air')\n# condenser outside\nax.add_patch(patches.Rectangle((7.5,1.5), 1.5, 1.0, fill=False, linewidth=2))\nax.text(7.6, 1.9, 'condenser')\nax.plot([7,7.5],[3.5,2.2], linewidth=2); ax.plot([7,7.5],[3.3,2.0], linewidth=2)\nax.text(7.0, 3.0, 'hot reject')\nax.plot([3,3.5],[1.0,0.3], linewidth=2); ax.text(3.6,0.3,'condensate drain')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+  "inputs": {},
+  "output_summary": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
+  "output_full": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
+  "sketch_path": "evidence/sketch_4.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

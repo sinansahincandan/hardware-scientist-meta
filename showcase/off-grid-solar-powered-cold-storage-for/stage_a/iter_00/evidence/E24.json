@@ -1,0 +1,14 @@
+{
+  "id": "E24",
+  "author": "Structural Enclosure Designer",
+  "tool": "calc",
+  "purpose": "PV area for 4kW at 200W per m2",
+  "code_or_query": "4.06/0.2",
+  "inputs": {},
+  "output_summary": "20.299999999999997",
+  "output_full": "20.299999999999997",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

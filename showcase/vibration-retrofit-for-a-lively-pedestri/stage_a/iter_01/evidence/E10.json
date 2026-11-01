@@ -1,0 +1,14 @@
+{
+  "id": "E10",
+  "author": "Retrofit Integration Architect",
+  "tool": "calc",
+  "purpose": "Weight per 250kg TMD unit",
+  "code_or_query": "250*9.81",
+  "inputs": {},
+  "output_summary": "2452.5",
+  "output_full": "2452.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

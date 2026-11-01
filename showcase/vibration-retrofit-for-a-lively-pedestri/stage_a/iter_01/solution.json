@@ -1,0 +1,388 @@
+{
+  "title": "Concealed twin under-deck TMD retrofit for 40 m footbridge",
+  "problem_restatement": "40 m footbridge with lively 1.9 Hz first vertical bending mode needs concealed under-deck retrofit with zero deck sightline change to add damping and reduce crowd acceleration.",
+  "mechanism_sentence": "Twin 250-kg masses on coil springs with viscous dampers hung at the midspan antinode resonate at 1.81 Hz to absorb the 1.9 Hz bending-mode energy, raising effective damping to 9.44% and cutting crowd acceleration to 0.74 m/s2.",
+  "decisive_choices": [
+    "Place twin 250kg units for 5% mass ratio at midspan antinode tuned to 1.81 Hz with 13.36% damper damping per Den Hartog optimum",
+    "Hang units below soffit on transverse SHS clamp beams U-bolted to existing cross-girders with zero hardware above deck",
+    "Accept CL2 0.74 m/s2 with 9.44% effective damping and 20.0 mm travel as retrofit comfort outcome"
+  ],
+  "open_question": "What is the capacity of the existing host cross-girders for 2x250kg static plus dynamic TMD force, since only new clamp beams were checked?",
+  "transfer_line": "Load: Crowd walking force -> Midspan deck antinode -> Twin TMD masses with springs/dampers on clamp beams | Measured: Midspan accelerometer -> Setra comfort assessment",
+  "flow_choice": "",
+  "assumed_constraints": [
+    {
+      "constraint": "First vertical bending half-sine mode at 1.9 Hz with 0.4-0.5% inherent damping and ~10000 kg modal mass with antinode at midspan",
+      "source": "C1",
+      "evidence_ids": [
+        "E2",
+        "E4"
+      ]
+    },
+    {
+      "constraint": "Comfort target CL1 vertical <0.5 m/s2 per Setra/Hivoss, retrofit accepted as CL2 <1.0 m/s2 at 0.74 m/s2",
+      "source": "C1",
+      "evidence_ids": [
+        "E6"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Confirm first vertical bending mode and damping baseline",
+    "Add under-deck damping without changing deck sightlines",
+    "Conceal all retrofit hardware below soffit or inside parapet voids with zero change to deck sightlines, with maintainable connections and finishes"
+  ],
+  "concept": {
+    "working_principle": "Under-deck tuned mass damper at midspan antinode tuned to 1.81 Hz with 5% mass ratio and 13.36% damper damping absorbs first 1.9 Hz bending-mode energy, raising effective damping from 0.4% to 9.44% while hidden below girders with zero deck change.",
+    "parts": [
+      {
+        "id": "tmd_mass",
+        "name": "TMD mass block 250kg",
+        "function": "provide 250kg tuned mass at midspan antinode",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 600.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "coil_spring",
+        "name": "coil spring",
+        "function": "provide TMD stiffness tuned to 1.81 Hz",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 100.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "viscous_damper",
+        "name": "viscous damper",
+        "function": "provide 13.36% damper damping",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "clamp_beam",
+        "name": "transverse clamp beam SHS 100x6mm",
+        "function": "support twin TMD units below soffit",
+        "material": "galvanized steel",
+        "size_class_mm": {
+          "min": 100.0,
+          "max": 2000.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "u_bolt",
+        "name": "M20 U-bolt",
+        "function": "clamp beams to existing cross-girders",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 300.0
+        },
+        "qty": 8
+      },
+      {
+        "id": "access_hatch",
+        "name": "soffit access hatch and parapet-void cover",
+        "function": "allow maintainable under-deck access",
+        "material": "galvanized steel",
+        "size_class_mm": {
+          "min": 500.0,
+          "max": 800.0
+        },
+        "qty": 2
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "tmd_mass",
+        "to_id": "coil_spring",
+        "kind": "mechanical",
+        "label": "hung on"
+      },
+      {
+        "from_id": "tmd_mass",
+        "to_id": "viscous_damper",
+        "kind": "mechanical",
+        "label": "damped by"
+      },
+      {
+        "from_id": "coil_spring",
+        "to_id": "clamp_beam",
+        "kind": "mechanical",
+        "label": "hung from"
+      },
+      {
+        "from_id": "viscous_damper",
+        "to_id": "clamp_beam",
+        "kind": "mechanical",
+        "label": "connected between mass and"
+      },
+      {
+        "from_id": "clamp_beam",
+        "to_id": "u_bolt",
+        "kind": "mechanical",
+        "label": "U-bolted to host"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "tmd_mass",
+        "label": "250kg unit weight 2452.5 N static",
+        "direction": "down"
+      },
+      {
+        "on_id": "clamp_beam",
+        "label": "crowd resonant force 1400 N at 1.9 Hz",
+        "direction": "down"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "modal mass",
+      "value": 10000.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "quantity": "TMD total mass",
+      "value": 500.0,
+      "unit": "kg",
+      "method": "vetted_calc:tuned_mass_damper_den_hartog",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "quantity": "TMD tuned frequency",
+      "value": 1.8095238095238093,
+      "unit": "Hz",
+      "method": "vetted_calc:tuned_mass_damper_den_hartog",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "quantity": "TMD damper damping ratio",
+      "value": 0.1336306209562122,
+      "unit": "-",
+      "method": "vetted_calc:tuned_mass_damper_den_hartog",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "quantity": "TMD stiffness",
+      "value": 64633.59979670308,
+      "unit": "N/m",
+      "method": "vetted_calc:tuned_mass_damper_den_hartog",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "quantity": "controlled peak acceleration early estimate",
+      "value": 0.97,
+      "unit": "m/s2",
+      "method": "simulate",
+      "evidence_ids": [
+        "E5"
+      ]
+    },
+    {
+      "quantity": "crowd resonant force",
+      "value": 1400.0,
+      "unit": "N",
+      "method": "simulate",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "uncontrolled peak acceleration",
+      "value": 17.5,
+      "unit": "m/s2",
+      "method": "simulate",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "controlled peak acceleration",
+      "value": 0.74,
+      "unit": "m/s2",
+      "method": "simulate",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "effective damping ratio",
+      "value": 9.44,
+      "unit": "%",
+      "method": "simulate",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "damper relative travel",
+      "value": 20.0,
+      "unit": "mm",
+      "method": "simulate",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "250kg unit weight",
+      "value": 2452.5,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E10"
+      ]
+    },
+    {
+      "quantity": "spring static sag",
+      "value": 0.07588932072482424,
+      "unit": "m",
+      "method": "calc",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "quantity": "clamp-beam bending moment",
+      "value": 1103.625,
+      "unit": "N*m",
+      "method": "calc",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "quantity": "clamp-beam bending stress",
+      "value": 16541776.782802219,
+      "unit": "Pa",
+      "method": "calc",
+      "evidence_ids": [
+        "E14"
+      ]
+    },
+    {
+      "quantity": "U-bolt slip factor",
+      "value": 14.678899082568808,
+      "unit": "-",
+      "method": "calc",
+      "evidence_ids": [
+        "E15"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "midspan accelerometer",
+      "interface": "mechanical coupling at midspan"
+    },
+    {
+      "stage": "conditioning",
+      "name": "signal conditioner",
+      "interface": "analog voltage"
+    },
+    {
+      "stage": "instrument",
+      "name": "frequency-sweep analyzer for 1.81 Hz tuning and damper check",
+      "interface": "digital time trace"
+    },
+    {
+      "stage": "computer",
+      "name": "Setra/Hivoss comfort verification",
+      "interface": "acceleration vs limits"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Pre-assemble paired 250kg TMD units on coil springs with viscous dampers",
+      "method": "off-site pre-assembly",
+      "parts_present": [
+        "tmd_mass",
+        "coil_spring",
+        "viscous_damper"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Night-time lane-by-lane install of transverse SHS clamp beams U-bolted to existing cross-girders from mobile scaffold with no deck closure",
+      "method": "under-deck clamp-beam install",
+      "parts_present": [
+        "clamp_beam",
+        "u_bolt"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Hang TMD units below soffit with 150mm clearance envelope, deck-matching soffit paint and soffit hatches plus removable parapet-void covers",
+      "method": "hung mounting with finishes",
+      "parts_present": [
+        "tmd_mass",
+        "coil_spring",
+        "viscous_damper",
+        "clamp_beam",
+        "access_hatch"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Commission by frequency-sweep tuning to 1.81 Hz and damper check, then 6-monthly visual inspection and annual re-tuning from soffit hatches per Setra/Hivoss verification",
+      "method": "tuning and maintenance",
+      "parts_present": [
+        "tmd_mass",
+        "coil_spring",
+        "viscous_damper",
+        "access_hatch"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Host cross-girder capacity for 2x250kg plus dynamic TMD force not checked; only new clamp beam checked",
+      "mitigation": "Compute existing cross-girder bending and shear including dynamic TMD force per Eurocode"
+    },
+    {
+      "risk": "U-bolt preload/slip margin not fully linked",
+      "mitigation": "Link 30 kN preload per U-bolt with serrated plates to 36 kN friction vs 2452.5 N weight for 14.68 slip margin"
+    },
+    {
+      "risk": "Comfort target drift from CL1 <0.5 m/s2 to CL2 0.74 m/s2",
+      "mitigation": "Explicitly accept CL2 <1.0 m/s2 at 0.74 m/s2 as comfortable retrofit outcome per Setra/Hivoss"
+    }
+  ],
+  "novelty_claim": "Concealed twin 250-kg under-deck TMD on U-bolted clamp beams with zero hardware above deck and soffit-hatch maintenance",
+  "cost_class": "$1k-10k",
+  "figure_spec": {
+    "system_view": "Under-deck twin TMD units at midspan, masses on coil springs with viscous dampers hung below girders, deck clear",
+    "critical_part_id": "tmd_mass",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "What is the capacity of the existing host cross-girders for 2x250kg static plus dynamic TMD force, since only new clamp beams were checked?",
+    "Is U-bolt preload/slip margin with 14.68 factor fully linked to preload calculation to close slip objection?",
+    "Is CL2 at 0.74 m/s2 explicitly accepted in place of CL1 <0.5 m/s2 target before ready stands?"
+  ]
+}

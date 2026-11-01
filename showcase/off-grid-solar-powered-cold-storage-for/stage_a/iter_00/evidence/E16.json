@@ -1,0 +1,14 @@
+{
+  "id": "E16",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "add infiltration thermal to daily electric load",
+  "code_or_query": "6+0.12/2.5",
+  "inputs": {},
+  "output_summary": "6.048",
+  "output_full": "6.048",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

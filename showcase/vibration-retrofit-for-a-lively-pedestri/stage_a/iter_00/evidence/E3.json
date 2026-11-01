@@ -1,0 +1,14 @@
+{
+  "id": "E3",
+  "author": "Structural Dynamics Lead",
+  "tool": "sketch",
+  "purpose": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(8,3)); ax.plot([0,40],[0,0],'k-',lw=3); ax.plot([0,0],[0,-3],'k-'); ax.plot([40,40],[0,-3],'k-'); import numpy as np; x=np.linspace(0,40,200); ax.plot(x, -0.02*(1-np.cos(2*np.pi*(x-0)/40))*40/4 -0.0, 'b--'); ax.plot([20],[0], 'ro'); ax.annotate('deck', xy=(5,0)); ax.annotate('TMD under deck at midspan', xy=(20,0)); ax.set_axis_off(); plt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
+  "inputs": {},
+  "output_summary": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+  "output_full": "40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan",
+  "sketch_path": "evidence/sketch_3.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

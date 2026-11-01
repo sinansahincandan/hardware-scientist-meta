@@ -1,0 +1,14 @@
+{
+  "id": "E11",
+  "author": "Structural Dynamics Lead",
+  "tool": "calc",
+  "purpose": "static weight of 400 kg TMD for girder fatigue check",
+  "code_or_query": "400*9.81",
+  "inputs": {},
+  "output_summary": "3924.0",
+  "output_full": "3924.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

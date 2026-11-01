@@ -1,0 +1,486 @@
+{
+  "title": "Fixed twin R95 tri-star braked courier trolley with folding H1/H2 standing stow",
+  "problem_restatement": "Provide courier trolley for 60kg plus 12kg parcel to climb 170R/280G with two-nosing contact, hold then brake-meter descent HSE compliant, fold in 26s to 850x550x260 standing stow fitting 762/726mm doors and van between arches, with sealed wet/gritty operation",
+  "mechanism_sentence": "Twin fixed R95 tri-stars with six 100mm wheels maintain two-nosing contact to bridge 170R/280G stairs while the vertical 60x40x4 6061-T6 spine carries the bending moment and the CSK30 clutch plus R60 deadman disc holds 38.5Nm/405N then meters descent to 40.5N, with only H1 handle and H2 toe folding to 850x550x260 standing stow.",
+  "decisive_choices": [
+    "FIXED twin R95 tri-stars with 6x100mm wheels for two-nosing contact on 170R/280G with 220R out-of-scope",
+    "SINGLE vertical 60x40x4 spine with full-perimeter 4mm ER5356 plus gusset and HAZ 25mm off peak stress",
+    "CSK30 110Nm SF2.86 plus R60 deadman disc to hold 38.5Nm/405N then meter to 40.5N with sealed 2RS"
+  ],
+  "open_question": "Physical bench still required to prove 60kg plus 12kg 60s hold 38.5Nm/405N no slip and deadman-metered 40.5N descent with no runaway and no over 150N spike across mu and risers, analysis-only not accepted?",
+  "transfer_line": "Force: H2 toe -> spine -> R95 tri-stars | Measured: CSK30 -> R60 disc",
+  "assumed_constraints": [
+    {
+      "constraint": "Stairs 170R/280G diag ~328mm bridged with two-nosing contact; 220R diag 356.1mm frozen OUT-OF-SCOPE",
+      "source": "whiteboard",
+      "evidence_ids": [
+        "E14",
+        "E30"
+      ]
+    },
+    {
+      "constraint": "Payload 60kg+12kg must hold 38.5Nm/405N 60s then deadman-meter to 40.5N with no runaway and no >150N spike",
+      "source": "whiteboard",
+      "evidence_ids": [
+        "E7",
+        "E17",
+        "E38"
+      ]
+    },
+    {
+      "constraint": "Track 420mm in 762mm door 342mm total and 726mm frame 306mm conservative; overall 550mm width",
+      "source": "whiteboard",
+      "evidence_ids": [
+        "E21",
+        "E31",
+        "E32"
+      ]
+    },
+    {
+      "constraint": "Folded 850x550x260 standing on toe+stars 0.12155m3 stows between 1392mm arches; fold 26s <30s one courier",
+      "source": "whiteboard",
+      "evidence_ids": [
+        "E8",
+        "E15",
+        "E33"
+      ]
+    },
+    {
+      "constraint": "HAZ design to ~103MPa/24ksi with full-perimeter 4mm ER5356+gusset HAZ 25mm off peak; van 10deg brake and 1.04Grms latched stow",
+      "source": "transcript",
+      "evidence_ids": [
+        "E37",
+        "E18",
+        "E28"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "support 60kg plus 12kg parcel on toe",
+    "bridge 170R/280G with two-nosing contact without jamming",
+    "hold 38.5Nm/405N then deadman-meter descent to 40.5N",
+    "fold H1 plus H2 in 26s to standing stow and lock for van vibration",
+    "fit 420mm track in 762/726mm doors and 1392mm between arches"
+  ],
+  "concept": {
+    "working_principle": "Twin fixed R95 tri-stars with 6x100mm wheels bridge 170R/280G diag 327.6mm with two-nosing contact within 650D, SINGLE vertical 60x40x4 spine carries M317.8Nm with HAZ 25mm off peak, CSK30 110Nm plus R60 deadman disc holds 38.5Nm/405N 60s then meters to 40.5N, only H1 handle and H2 toe fold deployed 1200x550x650 to folded 850x550x260 standing on toe+stars in 26s",
+    "parts": [
+      {
+        "id": "s_spine",
+        "name": "spine 6061-T6 RHS 60x40x4",
+        "function": "carry 317.8Nm moment vertical 60mm depth peak away from weld",
+        "material": "6061-T6",
+        "size_class_mm": {
+          "min": 40.0,
+          "max": 60.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "s_star",
+        "name": "twin fixed R95 tri-stars",
+        "function": "bridge 170R/280G diag 328mm with two-nosing contact",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 95.0,
+          "max": 95.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "s_wheel",
+        "name": "100mm wheels",
+        "function": "roll and climb with star",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "qty": 6
+      },
+      {
+        "id": "s_csk",
+        "name": "CSK30 30x62x16 one-way clutch 110Nm",
+        "function": "hold 38.5Nm/405N 60s no slip SF2.86",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 16.0,
+          "max": 62.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "s_disc",
+        "name": "R60 deadman disc 1604N",
+        "function": "meter braked descent to 40.5N mean",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 60.0,
+          "max": 60.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "s_h1",
+        "name": "H1 folding handle",
+        "function": "operator pull-rest ascent fold",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 550.0,
+          "max": 1200.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "s_h2",
+        "name": "H2 folding toe",
+        "function": "support parcel standing-stow on toe+stars",
+        "material": "COTS",
+        "size_class_mm": {
+          "min": 260.0,
+          "max": 550.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "s_lock",
+        "name": "DESTACO 207-USS stainless lock 2000N",
+        "function": "lock H1/H2 latched stow against 353N 3g",
+        "material": "stainless steel",
+        "size_class_mm": {
+          "min": 260.0,
+          "max": 850.0
+        },
+        "qty": 2
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "s_h2",
+        "to_id": "s_spine",
+        "kind": "mechanical",
+        "label": "H2 folding hinge"
+      },
+      {
+        "from_id": "s_spine",
+        "to_id": "s_star",
+        "kind": "mechanical",
+        "label": "fixed spine-star axle vertical keyed"
+      },
+      {
+        "from_id": "s_star",
+        "to_id": "s_wheel",
+        "kind": "mechanical",
+        "label": "2x3x100 star-wheel axles"
+      },
+      {
+        "from_id": "s_spine",
+        "to_id": "s_h1",
+        "kind": "mechanical",
+        "label": "H1 folding hinge"
+      },
+      {
+        "from_id": "s_csk",
+        "to_id": "s_star",
+        "kind": "mechanical",
+        "label": "one-way hold 38.5Nm"
+      },
+      {
+        "from_id": "s_disc",
+        "to_id": "s_star",
+        "kind": "mechanical",
+        "label": "deadman meter to 40.5N"
+      },
+      {
+        "from_id": "s_lock",
+        "to_id": "s_h1",
+        "kind": "mechanical",
+        "label": "over-centre latch H1/H2"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "s_h2",
+        "label": "60kg+12kg parcel 405N hold 60s on toe",
+        "direction": "down"
+      },
+      {
+        "on_id": "s_h1",
+        "label": "161N intermittent 3s pull/9s rest ascent avg 40N",
+        "direction": "up"
+      },
+      {
+        "on_id": "s_disc",
+        "label": "40.5N braked metered descent no runaway no >150N spike",
+        "direction": "down"
+      },
+      {
+        "on_id": "s_lock",
+        "label": "353N 3g lock load + 1.04Grms latched",
+        "direction": "in"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "I-strong",
+      "value": 345045.3333333333,
+      "unit": "mm4",
+      "method": "calc",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "quantity": "W-strong",
+      "value": 11501.511111111111,
+      "unit": "mm3",
+      "method": "calc",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "quantity": "sigma-strong",
+      "value": 27.631151848645974,
+      "unit": "MPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E5"
+      ]
+    },
+    {
+      "quantity": "W-weak",
+      "value": 8900.266666666666,
+      "unit": "mm3",
+      "method": "calc",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "sigma-weak",
+      "value": 35.706795302013425,
+      "unit": "MPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E22"
+      ]
+    },
+    {
+      "quantity": "SF strong vs HAZ",
+      "value": 3.727676665967415,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E23"
+      ]
+    },
+    {
+      "quantity": "SF weak vs HAZ",
+      "value": 2.884604992657856,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E24"
+      ]
+    },
+    {
+      "quantity": "impact sigma 1.5x",
+      "value": 41.44672777296896,
+      "unit": "MPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E25"
+      ]
+    },
+    {
+      "quantity": "SF CSK30 110Nm vs 38.5Nm",
+      "value": 2.857142857142857,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E26"
+      ]
+    },
+    {
+      "quantity": "tip latitude",
+      "value": 19.36293230061209,
+      "unit": "deg",
+      "method": "calc",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "quantity": "tip longitude",
+      "value": 18.189045699651313,
+      "unit": "deg",
+      "method": "calc",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "quantity": "stair diagonal 280G 170R",
+      "value": 327.566787083184,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E14",
+        "E30"
+      ]
+    },
+    {
+      "quantity": "folded volume 850x550x260",
+      "value": 0.12155,
+      "unit": "m3",
+      "method": "calc",
+      "evidence_ids": [
+        "E15",
+        "E33"
+      ]
+    },
+    {
+      "quantity": "door clearance total in 762mm",
+      "value": 342.0,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E31"
+      ]
+    },
+    {
+      "quantity": "door clearance conservative in 726mm",
+      "value": 306.0,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E32"
+      ]
+    },
+    {
+      "quantity": "door clearance per side",
+      "value": 171.0,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E21"
+      ]
+    },
+    {
+      "quantity": "fold time H1 plus H2",
+      "value": 26.0,
+      "unit": "s",
+      "method": "simulate",
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "quantity": "hold torque 60s no slip",
+      "value": 38.5,
+      "unit": "Nm",
+      "method": "simulate",
+      "evidence_ids": [
+        "E7",
+        "E38"
+      ]
+    },
+    {
+      "quantity": "metered descent mean braked",
+      "value": 40.5,
+      "unit": "N",
+      "method": "simulate",
+      "evidence_ids": [
+        "E7",
+        "E17"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "CSK30 hold 38.5Nm 405N 60s no slip",
+      "interface": "axle"
+    },
+    {
+      "stage": "conditioning",
+      "name": "R60 deadman disc meter to 40.5N",
+      "interface": "disc"
+    },
+    {
+      "stage": "instrument",
+      "name": "mu 0.25-0.6 wet gritty x 150 170 220mm risers bench",
+      "interface": "stair"
+    },
+    {
+      "stage": "computer",
+      "name": "virtual-bench sweep no runaway no over 150N spike",
+      "interface": "van"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Cut SINGLE 6061-T6 RHS 60x40x4 spine with bracket keying 60mm vertical orientation peak moment away from weld",
+      "method": "cutting",
+      "parts_present": [
+        "s_spine"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "TIG full-perimeter 4mm ER5356 plus gusset with HAZ 25mm moved off peak stress",
+      "method": "TIG welding",
+      "parts_present": [
+        "s_spine"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Assemble FIXED twin R95 stars plus 6x100mm wheels plus CSK30 30x62x16 plus R60 disc plus sealed 2RS",
+      "method": "assembly",
+      "parts_present": [
+        "s_star",
+        "s_wheel",
+        "s_csk",
+        "s_disc"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Fit FOLDING H1 handle plus H2 toe hinges plus DESTACO 207-USS 2000N stainless over-centre locks shrouded pinch <4mm <50N",
+      "method": "assembly",
+      "parts_present": [
+        "s_h1",
+        "s_h2",
+        "s_lock"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "unbraked 405.3N runaway exceeds 150N spike and HSE sustain",
+      "mitigation": "brake mandatory with CSK30 110Nm SF2.86 plus R60 disc 1604N deadman plus sealed 2RS plus cleaning inspection"
+    },
+    {
+      "risk": "HAZ softening to 90-120MPa yield with 62.3MPa net-section conflict",
+      "mitigation": "vertical 60mm orientation keyed plus full-perimeter 4mm ER5356 plus gusset plus HAZ 25mm off peak, weak-axis 35.71MPa SF2.88 and impact 41.45MPa SF2.48 vs HAZ 103MPa"
+    },
+    {
+      "risk": "standing-stow tip beyond 10deg van-brake and vibration unlocking H1/H2 with pinch",
+      "mitigation": "DESTACO 207-USS 2000N stainless SF5.66 vs 353N 3g plus strap plus MIL-STD-810H Cat4 1.04Grms latched plus shrouded under 4mm under 50N"
+    }
+  ],
+  "novelty_claim": "Re-affirmed freeze with FIXED twin R95 stars plus spine versus FOLDING H1/H2 only plus CSK30 and deadman disc meter to standing stow",
+  "cost_class": "$100-1k",
+  "figure_spec": {
+    "system_view": "deployed 1200x550x650 vs folded 850x550x260 standing on toe+stars, FIXED twin R95 stars plus spine vs FOLDING H1/H2, door landing van with two-nosing CONTACT, no-text overlay",
+    "critical_part_id": "s_star",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "Physical bench still required to prove 60kg plus 12kg 60s hold 38.5Nm/405N no slip and deadman-metered 40.5N descent with no runaway and no over 150N spike across mu and risers, analysis-only not accepted?"
+  ]
+}

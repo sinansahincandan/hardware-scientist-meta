@@ -1,0 +1,14 @@
+{
+  "id": "E6",
+  "author": "Structural Enclosure Designer",
+  "tool": "sketch",
+  "purpose": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,5))\n# Plan view\nax1.set_title(\"Plan - crate racks + aisle\")\nax1.set_xlim(0, 3.0); ax1.set_ylim(0, 2.2)\n# walls\nax1.plot([0.1,2.7,2.7,0.1,0.1],[0.1,0.1,2.1,2.1,0.1], 'k-', lw=2)\n# left rack\nax1.text(0.5,1.1,\"LEFT RACK\\n25 crates\", ha='center', va='center', fontsize=8)\nax1.add_patch(plt.Rectangle((0.2,0.25),0.8,1.6, fill=False, lw=2))\n# right rack\nax1.text(2.0,1.1,\"RIGHT RACK\\n25 crates\", ha='center', va='center', fontsize=8)\nax1.add_patch(plt.Rectangle((1.6,0.25),0.8,1.6, fill=False, lw=2))\n# aisle\nax1.text(1.4,1.1,\"AISLE\", ha='center', rotation=90, fontsize=8)\nax1.annotate(\"HINGED DOOR\\n800 wide\", xy=(1.4,0.1), xytext=(1.4,-0.25), ha='center', fontsize=8, arrowprops=dict(arrowstyle='->'))\nax1.annotate(\"100mm PU wall\", xy=(0.1,1.5), xytext=(-0.6,1.7), fontsize=8, arrowprops=dict(arrowstyle='->'))\nax1.set_aspect('equal'); ax1.axis('off')\n# Section view\nax2.set_title(\"Section - shade roof + airflow gap\")\nax2.set_xlim(0,3); ax2.set_ylim(0,3)\nax2.plot([0.3,2.7],[2.0,2.0],'k-',lw=3)\nax2.text(1.5,2.15,\"100mm PU ROOF\", ha='center', fontsize=8)\nax2.plot([0.2,2.8],[2.6,2.6],'k-',lw=2)\nax2.text(1.5,2.75,\"PV SHADE ROOF\\nvented gap 150\", ha='center', fontsize=8)\nax2.plot([0.3,0.3],[0.2,2.0],'k-',lw=3); ax2.plot([2.7,2.7],[0.2,2.0],'k-',lw=3)\nax2.text(0.15,1.0,\"PU WALL\", rotation=90, fontsize=7, ha='center')\nax2.add_patch(plt.Rectangle((0.5,0.3),0.7,1.2, fill=False, lw=2))\nax2.add_patch(plt.Rectangle((1.8,0.3),0.7,1.2, fill=False, lw=2))\nax2.text(0.85,0.9,\"CRATES\\non racks\", ha='center', fontsize=7)\nax2.text(2.15,0.9,\"CRATES\\non racks\", ha='center', fontsize=7)\nax2.text(1.5,0.5,\"AISLE + FAN AIRFLOW\", ha='center', fontsize=7)\nax2.annotate(\"\", xy=(1.5,0.7), xytext=(0.9,0.7), arrowprops=dict(arrowstyle='<->'))\nax2.annotate(\"\", xy=(1.5,2.4), xytext=(1.5,2.05), arrowprops=dict(arrowstyle='<->'))\nax2.axis('off')\nplt.tight_layout(); plt.savefig(\"sketch.png\", dpi=150)",
+  "inputs": {},
+  "output_summary": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
+  "output_full": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
+  "sketch_path": "evidence/sketch_6.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

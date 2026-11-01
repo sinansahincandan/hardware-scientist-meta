@@ -1,0 +1,14 @@
+{
+  "id": "E17",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "check autonomy days with updated load",
+  "code_or_query": "11.25*0.8/6.048",
+  "inputs": {},
+  "output_summary": "1.4880952380952381",
+  "output_full": "1.4880952380952381",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

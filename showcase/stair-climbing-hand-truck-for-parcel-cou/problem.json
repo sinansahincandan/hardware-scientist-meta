@@ -1,0 +1,10 @@
+{
+  "title": "Stair-climbing hand truck for parcel couriers",
+  "statement": "Couriers in old city centres carry heavy parcels up residential staircases with no lift. Design a hand truck that lets one courier move a load of about 60 kg up and down stairs safely, and that folds into a delivery van.",
+  "constraints": [
+    "Load about 60 kg",
+    "Operated by one person"
+  ],
+  "criteria": [],
+  "attachments": []
+}

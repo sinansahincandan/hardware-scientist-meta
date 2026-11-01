@@ -1,0 +1,26 @@
+{
+  "per_region": [
+    {
+      "part_id": "tmd_mass",
+      "diagnosis": "Caused by callout sentence 'Draw short leader-line callouts in image: TMD mass block, Coil spring, Viscous damper, Transverse clamp beam, U-bolt, Soffit access hatch.' which gives generic name only with no exact wording/value, combined with conflicting MUST NOT 'numbers, values or units in drawn callouts'. VLM ignored ban and hallucinated '1200 kg steel mass, oscillates vertically' instead of reference 250kg x2 / 2452.5 N static.",
+      "prompt_fix": "Replace callout instruction with exact verbatim text requirement: callout must read exactly 'TMD mass block 250kg x2' and delete MUST NOT entry 'numbers, values or units in drawn callouts' to allow correct values."
+    },
+    {
+      "part_id": "clamp_beam",
+      "diagnosis": "Caused by same generic callout sentence for 'Transverse clamp beam' with no size specified plus sentence 'Two transverse SHS clamp beams U-bolted to host girders.' with no section size. VLM invented 'SHS, 200x200x8 mm' versus reference SHS 100x6mm, and MUST NOT number ban was ignored.",
+      "prompt_fix": "Replace callout instruction with exact verbatim text requirement: callout must read exactly 'Transverse clamp beam SHS 100x6mm' and delete MUST NOT entry 'numbers, values or units in drawn callouts'."
+    },
+    {
+      "part_id": "coil_spring",
+      "diagnosis": "Caused by mechanism sentence 'Twin steel mass blocks hung below on vertical coil springs...' with no tuning/travel value and generic callout sentence for 'Coil spring'. VLM hallucinated '320 mm compression travel' versus reference tuned to 1.81 Hz with 20.0 mm relative travel.",
+      "prompt_fix": "Replace callout instruction with exact verbatim text requirement: callout must read exactly 'Coil spring 1.81 Hz' and describe springs as tuned to 1.81 Hz with 20.0 mm travel; delete MUST NOT entry 'numbers, values or units in drawn callouts'."
+    },
+    {
+      "part_id": "u_bolt",
+      "diagnosis": "Caused by attachment sentence 'Two transverse SHS clamp beams U-bolted to host girders.' which omits M20 size, plus MUST NOT 'numbers, values or units in drawn callouts' which forced omission. VLM obeyed ban here and wrote generic 'stainless steel clamp' with no M20 versus schematic M20 U-bolt.",
+      "prompt_fix": "Replace callout instruction with exact verbatim text requirement: callout must read exactly 'M20 U-bolt' and specify U-bolts as M20 in description; delete MUST NOT entry 'numbers, values or units in drawn callouts'."
+    }
+  ],
+  "fix_mode": "full",
+  "summary": "All four faults share one root: generic callout list with no verbatim strings plus contradictory MUST NOT number ban, causing hallucinated wrong numbers for mass/beam/spring and omission of M20 for U-bolt. Fix requires deleting the number ban and rewriting the callout instruction with exact allowed texts for all parts, so full image regeneration is required."
+}

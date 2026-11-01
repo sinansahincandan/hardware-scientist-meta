@@ -1,0 +1,71 @@
+{
+  "prompt": "Light-background realistic rendered isometric product-style illustration of sun-only cold store. Separate steel posts carrying large continuous fully-populated Tilted roof monocrystalline PV array above, all modules present with no missing modules or empty frame holes, vent gap only between PV underside and room roof. Central white PU insulated cold room below with insulated hinged door with gaskets on front with hinges and latches. Inside cutaway with side wall removed show two long side racks left and right with centre aisle running length of room, ice-bank tank at far end under evaporator, both racks clearly visible. Both side racks fully filled on all tiers with densely stacked vented produce crates forming full load of about fifty crates with produce, no numbers dimensions or units written on crates or labels. Ceiling evaporator above ice-bank piped through wall to DC vapour-compression cooler outdoor unit side-mounted on room. LiFePO4 battery bank cabinet beside room. Mount a small MPPT charge controller box on the side of the LiFePO4 battery cabinet, cabled PV array down post to MPPT to battery to cooler, show as separate small box with indicator lights. Black cable from PV down post to MPPT to battery to cooler, blue cold airflow arrows in aisle, sun rays on PV. Add light-grey rectangular external concrete wash slab on ground beside room for crate washing, with drain edge, no scale bar, no numbers, keep background plain light. Keep relative sizes: PV span largest, room medium, battery and cooler small boxes. Draw only 7 short labels with leader lines: 'Tilted roof monocrystalline PV array', 'PU insulated cold room', 'insulated hinged door with gaskets', 'LiFePO4 battery bank', 'MPPT charge controller', 'DC vapour-compression cooler', 'ice-bank' - part names only, no numbers or values in image text.",
+  "must_not": [
+    "numbers quantities values or units in drawn labels",
+    "missing modules or empty frame holes in PV array",
+    "single rack or few illustrative crates",
+    "missing MPPT box or missing wash slab",
+    "scale bar",
+    "dark background"
+  ],
+  "changes_from_previous": "Full regeneration: made PV continuous fully-populated with no empty holes, added MPPT box as 7th label and external wash slab, respaced cutaway to two side racks left/right with centre aisle fully loaded with dense crates, clarified battery-MPPT-cooler cabling and kept 7 short name-only labels.",
+  "visual_plan": {
+    "view": "isometric cutaway with side wall removed, light plain background, realistic rendered product style",
+    "spatial_layout": "Isometric: large tilted PV on four separate posts above room with vent gap to roof; white box room central; door on front; battery cabinet with MPPT box beside room; cooler side-mounted; cutaway side wall reveals left and right long racks with centre aisle, dense crates on all tiers, ice-bank tank plus evaporator at far end; wash slab on ground beside room.",
+    "operating_moment": "Sunny daytime operation holding full load: sun on PV charging battery via MPPT while DC cooler runs, twin racks fully loaded with produce-filled vented crates at 4-6C, ice-bank charged/frosty at far end, airflow circulating in aisle.",
+    "transfer_path": "Energy: Tilted roof PV array -> MPPT charge controller -> LiFePO4 battery bank -> DC vapour-compression cooler -> PU insulated cold room; ice-bank -> room night cooling; Measured: MPPT charge monitoring -> Battery state monitoring via lights/displays.",
+    "interactions": "Steel posts carry continuous PV; cable PV down post to MPPT to battery to cooler; cooler pipes cold to room evaporator; ice-bank under evaporator supplements room; twin racks hold dense crates with aisle airflow; door seals room; wash slab beside room for crate washing; MPPT and battery displays show monitoring.",
+    "avoid": [
+      "empty PV modules or holes inside array",
+      "single-side rack collapse or ~7 crates only",
+      "hidden MPPT inside battery or missing slab",
+      "numbers values units in image text or scale bar",
+      "dark or cluttered background"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "P1",
+      "material": "PU",
+      "purpose": "Keep 1 tonne produce at 4-6C",
+      "callout": "PU insulated cold room"
+    },
+    {
+      "part_id": "P2",
+      "material": "steel",
+      "purpose": "Provide vapour-compression cooling",
+      "callout": "DC vapour-compression cooler"
+    },
+    {
+      "part_id": "P3",
+      "material": "monocrystalline silicon",
+      "purpose": "Generate electricity from sun",
+      "callout": "Tilted roof monocrystalline PV array"
+    },
+    {
+      "part_id": "P4",
+      "material": "electronics",
+      "purpose": "Hold panels at peak power",
+      "callout": "MPPT charge controller"
+    },
+    {
+      "part_id": "P5",
+      "material": "LiFePO4",
+      "purpose": "Ride through night and cloudy periods",
+      "callout": "LiFePO4 battery bank"
+    },
+    {
+      "part_id": "P6",
+      "material": "water",
+      "purpose": "Carry night steady load off battery",
+      "callout": "ice-bank"
+    },
+    {
+      "part_id": "P9",
+      "material": "PU",
+      "purpose": "Access with seals",
+      "callout": "insulated hinged door with gaskets"
+    }
+  ],
+  "label_mode": "image"
+}

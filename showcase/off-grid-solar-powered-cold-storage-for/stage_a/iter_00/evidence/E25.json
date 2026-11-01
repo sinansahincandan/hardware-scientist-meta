@@ -1,0 +1,14 @@
+{
+  "id": "E25",
+  "author": "Structural Enclosure Designer",
+  "tool": "calc",
+  "purpose": "load per canopy post for 4kW array",
+  "code_or_query": "(10*22+80)/4",
+  "inputs": {},
+  "output_summary": "75.0",
+  "output_full": "75.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

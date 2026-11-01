@@ -65,6 +65,9 @@ def copy_run(run_dir: Path, dest: Path) -> None:
         src = run_dir / name
         if src.exists():
             shutil.copytree(src, dest / name)
+    # Figure-composer intermediates are provenance bulk, not reading material.
+    for step in (dest / "final").glob("_step*"):
+        shutil.rmtree(step) if step.is_dir() else step.unlink()
     for sub in ("stage_a", "stage_b"):
         src_root = run_dir / sub
         if not src_root.exists():

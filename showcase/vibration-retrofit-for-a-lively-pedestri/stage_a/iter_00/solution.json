@@ -1,0 +1,351 @@
+{
+  "title": "Concealed Under-Deck Tuned Mass Damper for 40 m Footbridge Vertical Comfort",
+  "problem_restatement": "Limit first vertical bending response of the 40 m footbridge near 1.9 Hz at midspan to comfortable acceleration below the 0.5 m/s2 maximum-comfort limit.",
+  "mechanism_sentence": "Two 200 kg under-deck masses on coil springs and viscous dampers tuned to 1.86 Hz vibrate out of phase with the 1.9 Hz midspan bending mode to add effective damping and limit vertical acceleration.",
+  "decisive_choices": [
+    "Place two 200 kg modules at midspan below soffit where first vertical bending motion is maximum",
+    "Tune 400 kg system to 1.86 Hz with 0.086 TMD damping ratio for ~2% mass ratio",
+    "Carry units on bolted cross-frames between girders with 30 mm clearance, no deck penetration and below-deck hatch access"
+  ],
+  "open_question": "What are the vertical acceleration and TMD stroke at -5% detune and do they remain below 0.5 m/s2 and within 30 mm clearance?",
+  "transfer_line": "Load: pedestrian walking force -> deck and girders -> TMD units | Measured: deck acceleration -> comfort class",
+  "flow_choice": "",
+  "assumed_constraints": [
+    {
+      "constraint": "40 m footbridge first vertical bending mode near 1.9 Hz with peak motion at midspan",
+      "source": "E3 side-view mode-shape layout",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "constraint": "Single pedestrian resonant baseline ~1.75 m/s2 above 0.5 m/s2 maximum-comfort limit",
+      "source": "E1 resonant response calculation, HIVOSS 2008",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "constraint": "Concealed fit below soffit with 30 mm stroke clearance and no fixings through deck wearing surface, access from below",
+      "source": "E7 concealed mounting cross-section",
+      "evidence_ids": [
+        "E7",
+        "E6"
+      ]
+    },
+    {
+      "constraint": "Added mass 400 kg as two 200 kg modules with bolted support design load ~3924 N static",
+      "source": "E4 optimal TMD sizing, E9 static weight calculation",
+      "evidence_ids": [
+        "E4",
+        "E5",
+        "E9",
+        "E10",
+        "E11"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Limit first vertical bending response near 1.9 Hz to comfortable acceleration",
+    "Provide tuned mass damping at midspan with added viscous damping",
+    "Support added mass on concealed under-deck frame without changing deck view",
+    "Allow below-deck installation, inspection and re-tuning"
+  ],
+  "concept": {
+    "working_principle": "Under-deck vertical tuned mass damper at midspan tuned to 1.86 Hz with ~2% modal mass ratio and viscous damping resonates out of phase with the 1.9 Hz first vertical bending mode to add effective damping above 3% and limit acceleration below 0.5 m/s2 while hidden below the soffit.",
+    "parts": [
+      {
+        "id": "deck",
+        "name": "40 m footbridge deck and existing girders",
+        "function": "Host first vertical bending mode and carry pedestrians",
+        "material": "steel girders with deck",
+        "size_class_mm": {
+          "min": 40000.0,
+          "max": 40000.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "tmd_mass",
+        "name": "TMD mass units",
+        "function": "Provide 400 kg tuned mass as two 200 kg units",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 300.0,
+          "max": 600.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "spring",
+        "name": "TMD coil springs",
+        "function": "Tune stiffness to 1.86 Hz",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "damper",
+        "name": "TMD viscous dampers",
+        "function": "Provide 0.086 TMD damping ratio",
+        "material": "steel hydraulic damper",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "frame",
+        "name": "Bolted under-deck cross-frames",
+        "function": "Carry TMD units between girders below soffit",
+        "material": "galvanized steel",
+        "size_class_mm": {
+          "min": 1000.0,
+          "max": 3000.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "hatch",
+        "name": "Lockable access hatches",
+        "function": "Allow inspection and re-tuning from below",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 800.0
+        },
+        "qty": 2
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "frame",
+        "to_id": "deck",
+        "kind": "mechanical",
+        "label": "bolted between girders"
+      },
+      {
+        "from_id": "spring",
+        "to_id": "frame",
+        "kind": "mechanical",
+        "label": "seated on cross-frame with slotted seats"
+      },
+      {
+        "from_id": "damper",
+        "to_id": "frame",
+        "kind": "mechanical",
+        "label": "connected between mass and frame"
+      },
+      {
+        "from_id": "tmd_mass",
+        "to_id": "spring",
+        "kind": "mechanical",
+        "label": "supported on springs and dampers"
+      },
+      {
+        "from_id": "tmd_mass",
+        "to_id": "damper",
+        "kind": "mechanical",
+        "label": "damped relative motion"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "deck",
+        "label": "pedestrian walking excitation near 1.9 Hz on 40 m deck",
+        "direction": "down"
+      },
+      {
+        "on_id": "frame",
+        "label": "3924 N static weight of 400 kg TMD on support frame",
+        "direction": "down"
+      },
+      {
+        "on_id": "tmd_mass",
+        "label": "dynamic spring force at ~8.2 mm stroke on TMD mass",
+        "direction": "down"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "baseline vertical acceleration",
+      "value": 1.75,
+      "unit": "m/s2",
+      "method": "resonant hand calculation",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "quantity": "TMD mass",
+      "value": 400.0,
+      "unit": "kg",
+      "method": "Den Hartog vetted calculation",
+      "evidence_ids": [
+        "E4",
+        "E5"
+      ]
+    },
+    {
+      "quantity": "TMD frequency",
+      "value": 1.8627450980392155,
+      "unit": "Hz",
+      "method": "Den Hartog vetted calculation",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "quantity": "TMD damping ratio",
+      "value": 0.08574929257125442,
+      "unit": "-",
+      "method": "Den Hartog vetted calculation",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "quantity": "TMD stiffness",
+      "value": 54793.190139073544,
+      "unit": "N/m",
+      "method": "Den Hartog vetted calculation",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "quantity": "TMD stroke on-tune",
+      "value": 8.2,
+      "unit": "mm",
+      "method": "resonant controlled-response simulation",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "deck amplitude controlled",
+      "value": 1.4,
+      "unit": "mm",
+      "method": "resonant controlled-response simulation",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "quantity": "effective damping ratio at +5% detune",
+      "value": 0.064,
+      "unit": "-",
+      "method": "two-degree-of-freedom steady-state simulation",
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "quantity": "static weight of 400 kg mass",
+      "value": 3924.0,
+      "unit": "N",
+      "method": "static weight calculation",
+      "evidence_ids": [
+        "E9",
+        "E10",
+        "E11"
+      ]
+    },
+    {
+      "quantity": "midspan girder stress increment",
+      "value": 2452500.0,
+      "unit": "Pa",
+      "method": "static bending hand calculation",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "quantity": "detuned +5% deck acceleration",
+      "value": 0.136,
+      "unit": "m/s2",
+      "method": "off-tune steady-state simulation",
+      "evidence_ids": [
+        "E13"
+      ]
+    },
+    {
+      "quantity": "detuned +5% deck amplitude",
+      "value": 0.95,
+      "unit": "mm",
+      "method": "off-tune steady-state simulation",
+      "evidence_ids": [
+        "E13"
+      ]
+    },
+    {
+      "quantity": "detuned +5% TMD stroke",
+      "value": 5.33,
+      "unit": "mm",
+      "method": "off-tune steady-state simulation",
+      "evidence_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "measurement_chain": [],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Install galvanized bolted cross-frames between existing girders from below with four M16 preloaded bolts per module, no fixings through wearing surface",
+      "method": "bolted assembly from below",
+      "parts_present": [
+        "deck",
+        "frame"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Mount two 200 kg TMD modules on coil springs and viscous dampers with slotted spring seats, set 30 mm stroke clearance",
+      "method": "mechanical assembly and tuning",
+      "parts_present": [
+        "tmd_mass",
+        "spring",
+        "damper",
+        "frame"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Fit lockable access hatches from below, soffit-matched finish, corrosion protection and shim re-tuning provision",
+      "method": "finishing and access fit-out",
+      "parts_present": [
+        "frame",
+        "hatch"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Added 400 kg under-deck mass causes bolted connection and girder fatigue failure",
+      "mitigation": "Size four preloaded M16 bolts per module for ~4373 N peak and verify ~7 MPa per bolt and ~2.5 MPa static plus ~0.3 MPa dynamic girder stress as fatigue-non-critical per Eurocode 3"
+    },
+    {
+      "risk": "Frequency drift off-tune loses comfort and stroke margin",
+      "mitigation": "Retain slotted spring seats and shims for re-tuning, verified 0.064 effective damping and 0.136 m/s2 at +5% detune within 30 mm clearance"
+    }
+  ],
+  "novelty_claim": "Concealed under-deck two-module TMD hidden below soffit with zero change above deck, no fixings through wearing surface and below-deck lockable hatch access.",
+  "cost_class": "$1k-10k",
+  "figure_spec": {
+    "system_view": "40m footbridge side view showing first vertical bending mode max at midspan with under-deck TMD mass-spring-damper hidden below deck at midspan",
+    "critical_part_id": "tmd_mass",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "What are the vertical acceleration and TMD stroke at -5% detune and do they remain below 0.5 m/s2 and within 30 mm clearance?",
+    "Is the bolted cross-frame with ~4373 N peak per 400 kg unit and ~2.5 MPa static plus ~0.3 MPa dynamic girder stress formally fatigue-non-critical?",
+    "O2: Process block: C2 support needs quantified connection static+dynamic forces and fatigue check for 400 kg added mass, and C1 needs off-tune (+/-5%) comfort/ stroke check before proposal/vote",
+    "O3: Process block: need -5% detune acceleration and stroke to complement +5% check before joint proposal"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "parts": [
+    {
+      "id": "deck",
+      "found": true,
+      "box_1000": {
+        "x0": 304.0,
+        "y0": 275.0,
+        "x1": 750.0,
+        "y1": 314.0
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "cross_girder",
+      "found": true,
+      "box_1000": {
+        "x0": 95.0,
+        "y0": 456.0,
+        "x1": 907.0,
+        "y1": 524.0
+      },
+      "confidence": 0.94
+    },
+    {
+      "id": "u_bolt",
+      "found": true,
+      "box_1000": {
+        "x0": 651.0,
+        "y0": 441.0,
+        "x1": 673.0,
+        "y1": 524.0
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "clamp_beam",
+      "found": true,
+      "box_1000": {
+        "x0": 196.0,
+        "y0": 515.0,
+        "x1": 392.0,
+        "y1": 563.0
+      },
+      "confidence": 0.93
+    },
+    {
+      "id": "coil_spring",
+      "found": true,
+      "box_1000": {
+        "x0": 208.0,
+        "y0": 574.0,
+        "x1": 233.0,
+        "y1": 732.0
+      },
+      "confidence": 0.94
+    },
+    {
+      "id": "viscous_damper",
+      "found": true,
+      "box_1000": {
+        "x0": 261.0,
+        "y0": 564.0,
+        "x1": 306.0,
+        "y1": 728.0
+      },
+      "confidence": 0.94
+    },
+    {
+      "id": "tmd_mass",
+      "found": true,
+      "box_1000": {
+        "x0": 181.0,
+        "y0": 731.0,
+        "x1": 397.0,
+        "y1": 882.0
+      },
+      "confidence": 0.96
+    },
+    {
+      "id": "tmd_mass",
+      "found": true,
+      "box_1000": {
+        "x0": 610.0,
+        "y0": 734.0,
+        "x1": 822.0,
+        "y1": 883.0
+      },
+      "confidence": 0.96
+    },
+    {
+      "id": "access_hatch",
+      "found": true,
+      "box_1000": {
+        "x0": 260.0,
+        "y0": 874.0,
+        "x1": 322.0,
+        "y1": 941.0
+      },
+      "confidence": 0.92
+    }
+  ]
+}

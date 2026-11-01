@@ -1,0 +1,30 @@
+{
+  "px_per_mm": 4.0,
+  "boxes": {
+    "coil_spring": {
+      "x0": 9.999999999999986,
+      "y0": 65.0,
+      "x1": 229.99999999999997,
+      "y1": 225.0,
+      "label": "Coil spring 1.81 Hz"
+    },
+    "viscous_damper": {
+      "x0": 850.0,
+      "y0": 65.0,
+      "x1": 1070.0,
+      "y1": 225.0,
+      "label": "Viscous damper"
+    },
+    "tmd_mass": {
+      "x0": 430.00000000000006,
+      "y0": 265.00000000000006,
+      "x1": 650.0,
+      "y1": 425.0,
+      "label": "TMD mass block 250kg x2"
+    }
+  },
+  "width": 1000,
+  "height": 625,
+  "critical_part_id": "tmd_mass",
+  "scale_bar_mm": 500.0
+}

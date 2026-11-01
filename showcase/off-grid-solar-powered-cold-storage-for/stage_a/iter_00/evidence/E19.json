@@ -1,0 +1,14 @@
+{
+  "id": "E19",
+  "author": "Refrigeration and Thermal Engineer",
+  "tool": "calc",
+  "purpose": "infiltration electric from 0.12 kWh thermal at COP 2.5",
+  "code_or_query": "0.12/2.5",
+  "inputs": {},
+  "output_summary": "0.048",
+  "output_full": "0.048",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E2",
+  "author": "Structural Dynamics Lead",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "TMD sizing for 20t modal mass",
+  "code_or_query": "{\"args\": {\"mass\": 400, \"mass_ratio\": 0.02, \"mode_frequency\": 1.9, \"structural_damping\": 0.004}}",
+  "inputs": {},
+  "output_summary": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+  "output_full": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

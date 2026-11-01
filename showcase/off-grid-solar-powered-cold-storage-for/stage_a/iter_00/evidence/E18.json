@@ -1,0 +1,14 @@
+{
+  "id": "E18",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "low-sun daily PV energy at 2 PSH",
+  "code_or_query": "2.5*2*0.75",
+  "inputs": {},
+  "output_summary": "3.75",
+  "output_full": "3.75",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

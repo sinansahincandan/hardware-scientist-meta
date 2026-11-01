@@ -1,0 +1,14 @@
+{
+  "id": "E11",
+  "author": "Retrofit Integration Architect",
+  "tool": "calc",
+  "purpose": "Static spring sag per 250kg unit",
+  "code_or_query": "2452.5/32316.8",
+  "inputs": {},
+  "output_summary": "0.07588932072482424",
+  "output_full": "0.07588932072482424",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,69 @@
+{
+  "prompt": "Light-background realistic rendered product-style side view of fixed twin tri-star braked courier trolley mid-climb on concrete 170R/280G stairs with cardboard parcel on toe. Vertical 60x40x4 spine centre with folding handle extended up at top showing distinct over-centre folding lock/latch block at H1 hinge on top of spine in locked-open state, separate from plain pivot bolts; MUST NOT render handle as plain pivots only. Show H2 folding toe as separate forward platform with parcel carrying load joined to spine by visible folding hinge pin/bracket with gap; show RIGID weld between spine and star axle. At base twin FIXED triangular R95 side plates rigidly fixed to central spine-star axle at base, each plate carrying 3x 100mm wheels (6 total) bridging two stair nosings; NO vertical swivel stems, NO caster forks. Render one-way clutch as small 30x62x16mm steel cylinder coaxial ON the star axle side, directly adjacent to deadman disc, clearly visible; NOT a spring, bracket, or hidden internals. Exposed perforated deadman disc adjacent to clutch on same axle. Draw ONE thin anchored force-path arrow: start ON toe platform -> up spine -> into star axle -> to stair contact, plus ONE short curved braking arrow FROM clutch body edge INTO disc edge; all arrows must touch source and sink parts; NO floating/off-part blue/red decorative arrows; if cannot anchor, draw no arrows. Draw in-image short callouts with leader lines and dots: 'twin fixed tri-stars' anchor dot ONLY on star triangular plate, never on toe plate; 'spine' on spine pole; 'wheels' on 100mm wheel; 'one-way clutch' on coaxial cylinder; 'deadman disc' on disc; 'folding toe' on toe platform hinge; 'stainless lock' on lock block. No dimensions, no values, no footer, no scale bar in image.",
+  "must_not": [
+    "swivel casters or vertical swivel stems or caster forks",
+    "spring or bracket or hidden internals instead of coaxial clutch cylinder",
+    "plain pivot bolts only for handle without lock block",
+    "floating or off-part decorative arrows",
+    "leader for twin fixed tri-stars on toe plate"
+  ],
+  "changes_from_previous": "Full regeneration from caster failure: replaced swivel casters with FIXED triangular R95 plates on fixed spine-star axle, added coaxial CSK30 cylinder + R60 disc form, added visible H1/H2 folding hinges + DESTACO over-centre lock block, re-anchored twin fixed tri-stars leader to star plate only, replaced floating arrows with anchored force/brake path.",
+  "visual_plan": {
+    "view": "side view eye-level full-profile showing fixed spine-star axle versus folding H1/H2 hinges",
+    "spatial_layout": "side profile, light wall background, concrete stairs right; vertical spine centre, top H1 handle up with lock block, mid H2 toe forward with parcel, base twin triangular star plates straddling two nosings with 6 wheels, clutch cylinder + disc exposed on side of star axle",
+    "operating_moment": "mid-climb braked hold on 170R/280G stairs with two-nosing contact, parcel box present on extended H2 toe, handle pulled up, clutch holding and disc metering descent",
+    "transfer_path": "Force: H2 toe -> spine -> R95 tri-stars to stairs | Measured/Braking: CSK30 clutch -> R60 disc",
+    "interactions": "H2 toe hinge-folded to spine carries parcel; spine rigidly welded/keyed to central star axle; star plates fixed to axle carry 3 wheels each rolling on two nosings; CSK30 cylinder coaxial on axle holds then feeds to adjacent R60 disc for metering; DESTACO lock block locks H1 hinge open and H2 hinge; force flows toe->spine->stars->stairs, braking CSK->disc.",
+    "avoid": [
+      "swivel casters, swivel stems, caster forks",
+      "spring/bracket clutch, hidden clutch, trailing disc-arm",
+      "fused toe without hinge gap, plain handle pivots",
+      "floating blue/red arrows, mis-anchored leaders"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "s_star",
+      "material": "COTS",
+      "purpose": "bridge 170R/280G with two-nosing contact",
+      "callout": "twin fixed tri-stars"
+    },
+    {
+      "part_id": "s_spine",
+      "material": "6061-T6",
+      "purpose": "carry bending moment vertical fixed to star axle",
+      "callout": "spine"
+    },
+    {
+      "part_id": "s_wheel",
+      "material": "COTS",
+      "purpose": "roll and climb with star on nosings",
+      "callout": "wheels"
+    },
+    {
+      "part_id": "s_csk",
+      "material": "COTS",
+      "purpose": "hold 38.5Nm no slip coaxial on star axle",
+      "callout": "one-way clutch"
+    },
+    {
+      "part_id": "s_disc",
+      "material": "COTS",
+      "purpose": "meter braked descent to 40.5N",
+      "callout": "deadman disc"
+    },
+    {
+      "part_id": "s_h2",
+      "material": "COTS",
+      "purpose": "support parcel separate folding platform",
+      "callout": "folding toe"
+    },
+    {
+      "part_id": "s_lock",
+      "material": "stainless steel",
+      "purpose": "lock H1/H2 open latched against vibration",
+      "callout": "stainless lock"
+    }
+  ],
+  "label_mode": "image"
+}

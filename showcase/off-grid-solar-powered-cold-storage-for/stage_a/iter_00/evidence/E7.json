@@ -1,0 +1,14 @@
+{
+  "id": "E7",
+  "author": "Post-Harvest Cooperative Operations Lead",
+  "tool": "calc",
+  "purpose": "total produce mass in 50 crates at 20kg each",
+  "code_or_query": "50*20",
+  "inputs": {},
+  "output_summary": "1000",
+  "output_full": "1000",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

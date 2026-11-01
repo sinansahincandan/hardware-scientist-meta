@@ -1,0 +1,14 @@
+{
+  "id": "E13",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "battery nominal kWh for 6kWh/day staged load with 1.5 days autonomy at 80% DoD",
+  "code_or_query": "6*1.5/0.8",
+  "inputs": {},
+  "output_summary": "11.25",
+  "output_full": "11.25",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,5 @@
+{
+  "cycle": 1,
+  "member": "Vibration Control Specialist",
+  "message": "In the under-deck Tuned Mass Damper (TMD) retrofit, Structural Dynamics Lead, the vertical damper mass tuned near 1.9 Hertz (Hz) has uncertain tuning, added damping and stroke for concealed midspan fit. To check it I used Den Hartog vetted calculation (the optimal TMD sizing (E4)) and resonant controlled-response simulation (the controlled-response stroke estimate (E6)) building on the bare-bridge resonance (the resonant response calculation (E1)). I found 400 kilograms mass at 1.86 Hz with 0.086 TMD damping ratio giving about 0.20 metres per second squared and 8.2 millimetres stroke, according to Den Hartog, 1934 and Human Induced Vibrations of Steel Structures (HIVOSS), 2008. I propose two 200 kilogram under-deck TMD (Tuned Mass Damper) units at midspan on coil springs with viscous dampers, tuned to 1.86 Hz with maintenance access from below. My position: not ready because added-damping comfort margin needs team review."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E15",
+  "author": "Post-Harvest Cooperative Operations Lead",
+  "tool": "calc",
+  "purpose": "batch door openings infiltration saving from 10 to 2 per day",
+  "code_or_query": "0.6*2/10",
+  "inputs": {},
+  "output_summary": "0.12",
+  "output_full": "0.12",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

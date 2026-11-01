@@ -1,0 +1,14 @@
+{
+  "id": "E21",
+  "author": "Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "autonomy days from usable battery vs updated load",
+  "code_or_query": "11.25*0.8/6.096",
+  "inputs": {},
+  "output_summary": "1.4763779527559056",
+  "output_full": "1.4763779527559056",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

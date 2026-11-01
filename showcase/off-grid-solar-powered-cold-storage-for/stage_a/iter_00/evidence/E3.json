@@ -1,0 +1,14 @@
+{
+  "id": "E3",
+  "author": "Refrigeration and Thermal Engineer",
+  "tool": "calc",
+  "purpose": "steady conduction through 100mm PU walls for 28m2 room at 35K delta-T",
+  "code_or_query": "0.022/0.10*28*35",
+  "inputs": {},
+  "output_summary": "215.59999999999997",
+  "output_full": "215.59999999999997",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

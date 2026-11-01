@@ -1,0 +1,14 @@
+{
+  "id": "E5",
+  "author": "Vibration Control Specialist",
+  "tool": "calc",
+  "purpose": "TMD mass from 2 percent mass ratio",
+  "code_or_query": "20000*0.02",
+  "inputs": {},
+  "output_summary": "400.0",
+  "output_full": "400.0",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}
