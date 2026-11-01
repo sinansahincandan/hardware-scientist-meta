@@ -80,3 +80,19 @@ sentence, three decisive choices and the open question — nothing else).
   overlays after two label failures (AUTOPILOT §7.1, `SPEC_CHANGES.md`).
 - Fabrication-step renders (panel D) read as parts posters, and the final
   schematic is a grid diagram, not a mechanism sketch — known visual limits.
+
+## v2 additions (2026-11-01)
+
+- `hs stageb runs/<run>` — rerun Stage B only, seeded from a run's
+  accepted (or latest) solution; an S2 route-back is saved to
+  `s2_return.json`, never hidden.
+- `hs showcase-build runs/<a> runs/<b> runs/<c> --out showcase` —
+  copy the final runs and build `showcase/index.html` plus one
+  `showcase/<problem>/dossier.html` per problem (architecture path
+  overlays from `docs/figures_map.json`, conformance tables, cost
+  per role). The shipped showcase is committed at `showcase/`.
+- v2 behaviour: region-anchored designer evaluation with source
+  trace, two-step Manager gradients, Manager in the room, speaking
+  rule with turn checks, transcript compaction, resolved citations
+  (`references.md` per run). Page screenshots could not be taken in
+  the build sandbox — see `BLOCKED.md`.
