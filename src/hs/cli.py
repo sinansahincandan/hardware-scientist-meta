@@ -159,6 +159,14 @@ def _cmd_showcase(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_showcase_build(args: argparse.Namespace) -> int:
+    from hs.showcase_build import build_showcase
+
+    out = build_showcase([Path(p) for p in args.run_dirs], Path(args.out))
+    print(out)
+    return 0
+
+
 def _cmd_stageb(args: argparse.Namespace) -> int:
     from hs.stage_b_rerun import rerun_stage_b
 
@@ -212,6 +220,10 @@ def build_parser() -> argparse.ArgumentParser:
     sb.add_argument("run_dir")
     sb.add_argument("--fake", action="store_true")
     sb.set_defaults(func=_cmd_stageb)
+    scb = sub.add_parser("showcase-build")
+    scb.add_argument("run_dirs", nargs="+")
+    scb.add_argument("--out", default="showcase")
+    scb.set_defaults(func=_cmd_showcase_build)
     return parser
 
 
