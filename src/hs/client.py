@@ -219,10 +219,21 @@ class MetaClient:
         for path in image_paths or []:
             content.append({"type": "input_image",
                             "image_url": "data:image/png;base64," + base64.b64encode(Path(path).read_bytes()).decode()})
-        resp = self.responses(role=role, instructions=instructions,
-                              input_items=[{"type": "message", "role": "user", "content": content}],
-                              schema_model=model_cls)
-        return model_cls.model_validate_json(_output_text(resp))
+        last_error: Exception | None = None
+        for attempt in range(2):
+            text = user_text if attempt == 0 else (
+                user_text + f"\n\nYour previous reply was not valid for the required format "
+                f"({last_error}). Reply again with only the requested structured output.")
+            attempt_content = [{"type": "input_text", "text": text}, *content[1:]]
+            resp = self.responses(role=role, instructions=instructions,
+                                  input_items=[{"type": "message", "role": "user", "content": attempt_content}],
+                                  schema_model=model_cls)
+            try:
+                return model_cls.model_validate_json(_output_text(resp))
+            except Exception as exc:  # empty or malformed structured output: re-ask once
+                last_error = exc
+        assert last_error is not None
+        raise last_error
 
     def free_text(self, role: str, instructions: str, user_text: str,
                   tools: list[dict[str, Any]] | None = None) -> tuple[str, list[dict[str, Any]]]:
