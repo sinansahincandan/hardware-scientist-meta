@@ -77,3 +77,14 @@ will be in the traceback; record it here verbatim and adjust the request.
 Assumption until then: transient/content-filter rejection of that round's
 prompt, since rounds 00-01 with the same shape succeeded and a probe with
 the round-00 schematic + test prompt returns 200.
+
+## 2026-11-01 — content-filter 400 killed a run at the evaluator
+Full error body: `Error code: 400 - The response was filtered due to the
+prompt triggering our content management policy.` (openai.BadRequestError,
+Responses API, evaluator free_text call in run 20261101-160854, iteration 2.)
+The same council content passed dozens of earlier calls, so this is a
+stochastic provider filter, not a request-shape error. Fix per the rule:
+`_create_with_retries` now retries a 400 whose body mentions the content
+management policy (like a 429, 3 attempts with backoff); all other 400s
+still raise immediately. Covered by tests/test_image_edit_errors.py
+(test_content_filter_400_is_retried, test_plain_400_still_raises).

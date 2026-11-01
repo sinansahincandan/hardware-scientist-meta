@@ -194,7 +194,10 @@ class MetaClient:
                 return client.responses.create(**kwargs)
             except Exception as exc:  # status-aware retry (503/500/429 retry, 400 raise)
                 status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
-                if status in (400, 402):
+                # A content-filter 400 is stochastic on this provider (the same
+                # prompt passes on a fresh roll); retry it like a 429 instead
+                # of losing the whole run. Other 400s are deterministic: raise.
+                if status in (400, 402) and "content management policy" not in str(exc):
                     raise
                 last_exc = exc
                 if attempt == 2:

@@ -47,6 +47,50 @@ def test_structured_reasks_once_on_empty_output() -> None:
     assert client.structured("r", Out, "i", "u").x == 3
 
 
+class _StatusError(Exception):
+    def __init__(self, status: int, message: str) -> None:
+        super().__init__(message)
+        self.status_code = status
+
+
+def test_content_filter_400_is_retried() -> None:
+    client = MetaClient.__new__(MetaClient)
+    attempts = []
+
+    class _Sdk:
+        class responses:
+            @staticmethod
+            def create(**kw):
+                attempts.append(1)
+                if len(attempts) < 3:
+                    raise _StatusError(400, "The response was filtered due to the prompt "
+                                            "triggering our content management policy.")
+                return "ok"
+
+    client._sdk = _Sdk()
+    client._client = lambda: _Sdk  # type: ignore[method-assign]
+    import hs.client as hc
+
+    with patch.object(hc.time, "sleep", lambda s: None):
+        assert client._create_with_retries({}) == "ok"
+    assert len(attempts) == 3
+
+
+def test_plain_400_still_raises() -> None:
+    client = MetaClient.__new__(MetaClient)
+
+    class _Sdk:
+        class responses:
+            @staticmethod
+            def create(**kw):
+                raise _StatusError(400, "invalid parameter: demo")
+
+    client._sdk = _Sdk()
+    client._client = lambda: _Sdk  # type: ignore[method-assign]
+    with pytest.raises(_StatusError, match="invalid parameter"):
+        client._create_with_retries({})
+
+
 def test_image_edit_400_raises_with_body(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("MODEL_API_KEY", "test-key-not-real")
     ref = tmp_path / "ref.png"
