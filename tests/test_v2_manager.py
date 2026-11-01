@@ -67,3 +67,28 @@ def test_manager_tool_proposals_capped_at_two(tmp_path: Path) -> None:
     assert tools.calls == ["tool_0", "tool_1"]
     # Cap persists across iterations.
     assert manager.register_proposed_tools(Gradients(new_tool_proposals=proposals), tools) == []
+
+
+class _StubRev0Client:
+    is_fake = False
+
+    def free_text(self, role, instructions, user_text):
+        return ("## 2. Roles\n### A\nmech\n### B\ntherm\n### C\nfab\n"
+                "## 3. Criteria\nstray criteria heading inside\n"
+                "## 3. Tools\nuse calc\n## 4. Meeting protocol\nspeak clearly\n"
+                "## 5. Pipeline\nstray\n"), []
+
+
+def test_rev0_saved_document_has_only_canonical_headings(tmp_path: Path) -> None:
+    import re as _re
+
+    from hs.schemas import Problem
+
+    problem = Problem(title="t", statement="p")
+    master = MasterPrompt.rev0(_StubRev0Client(), problem, "", tmp_path)
+    saved = (tmp_path / "master_prompt" / "rev_000.md").read_text(encoding="utf-8")
+    headings = _re.findall(r"^## .*", saved, flags=_re.M)
+    assert headings == ["## 1. Problem", "## 2. Roles", "## 3. Tools",
+                        "## 4. Meeting protocol", "## 5. Criteria", "## 6. Lessons applied"]
+    assert "stray" not in saved
+    assert master.rev == 0

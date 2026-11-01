@@ -144,10 +144,31 @@ class MasterPrompt:
         lessons_applied = lessons_text.strip() or "(no lessons yet)"
         if not getattr(client, "is_fake", False):
             got = dict(split_master_prompt(text))  # type: ignore[has-type]
-            tools_text = got.get("## 3. Tools", tools_text)
-            protocol = got.get("## 4. Meeting protocol", protocol)
+
+            def _clean(body: str) -> str:
+                # A stray "## " section inside a body (the splitter folds its
+                # text into the previous canonical section) becomes a phantom
+                # heading in the saved document and teaches the optimizer
+                # wrong heading names (seen in a real run). Drop the phantom
+                # section: its heading line plus its text, up to the next
+                # heading. "### " member headings survive.
+                kept: list[str] = []
+                dropping = False
+                for line in body.splitlines():
+                    if re.match(r"^##\s", line):
+                        dropping = True
+                        continue
+                    if re.match(r"^###\s", line):
+                        dropping = False
+                    if not dropping:
+                        kept.append(line)
+                return "\n".join(kept).strip()
+
+            roles = _clean(roles) or roles
+            tools_text = _clean(got.get("## 3. Tools", tools_text))
+            protocol = _clean(got.get("## 4. Meeting protocol", protocol))
             if "## 5. Criteria" in got and all(f in got["## 5. Criteria"] for f in config.FIXED_CRITERIA):
-                criteria = got["## 5. Criteria"]
+                criteria = _clean(got["## 5. Criteria"])
         sections: list[tuple[str, str]] = [
             ("## 1. Problem", problem_block),
             ("## 2. Roles", roles),
