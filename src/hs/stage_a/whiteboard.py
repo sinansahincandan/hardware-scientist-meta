@@ -32,6 +32,7 @@ class WBEvidence(BaseModel):
     output_summary: str
     output_full: str = ""
     sketch_path: str | None = None
+    references: list[dict[str, Any]] = Field(default_factory=list)
     status: str = "ok"  # ok | error
     cycle: int = 0
 

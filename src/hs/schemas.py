@@ -89,6 +89,7 @@ class SolutionPrompt(BaseModel):
     decisive_choices: list[str] = Field(default_factory=list)
     open_question: str = ""
     transfer_line: str = ""
+    flow_choice: str = ""
     assumed_constraints: list[AssumedConstraint] = Field(default_factory=list)
     functional_decomposition: list[str] = Field(default_factory=list)
     concept: ConceptBody
@@ -112,12 +113,14 @@ class MemberNote(BaseModel):
     member: str
     what_went_wrong: str
     what_should_change: str
+    explains: str = ""
 
 
 class SectionNote(BaseModel):
     heading: str
     diagnosis: str
     direction: str
+    explains: str = ""
 
 
 class RevertTarget(BaseModel):
@@ -130,9 +133,44 @@ class Gradients(BaseModel):
     per_section: list[SectionNote] = Field(default_factory=list)
     sections_to_change: list[str] = Field(default_factory=list)
     root_cause: str = ""
+    agenda: str = ""
     same_problem_as_before: bool = False
     repeat_explanation: str = ""
     revert_sections: list[RevertTarget] = Field(default_factory=list)
+
+
+class OutputGradientItem(BaseModel):
+    feedback_item: str
+    must_change: str
+
+
+class OutputGradient(BaseModel):
+    items: list[OutputGradientItem] = Field(default_factory=list)
+    summary: str = ""
+
+
+class VLMPromptGradientItem(BaseModel):
+    part_id: str
+    diagnosis: str
+    prompt_fix: str = ""
+
+
+class VLMPromptGradient(BaseModel):
+    per_region: list[VLMPromptGradientItem] = Field(default_factory=list)
+    fix_mode: Literal["local", "full"] = "local"
+    summary: str = ""
+
+
+class ProgressCheck(BaseModel):
+    fixed_region_pass: bool = False
+    previous_pass: bool = True
+    seam_visible: bool = False
+    notes: str = ""
+
+
+class TurnCheck(BaseModel):
+    ok: bool = True
+    reason: str = ""
 
 
 class RewriteSection(BaseModel):
@@ -233,9 +271,19 @@ class RequirementCheck(BaseModel):
     detail: str = ""
 
 
+class EvalRegion(BaseModel):
+    box: list[float] = Field(default_factory=list)
+    part_id: str = ""
+    observed: str = ""
+    expected: str = ""
+    source: Literal["render", "schematic"] = "render"
+    fixed: bool = False
+
+
 class DesignerEval(BaseModel):
     pixel_description: str = ""
     label_findings: str = ""
+    regions: list[EvalRegion] = Field(default_factory=list)
     requirements: list[RequirementCheck] = Field(default_factory=list)
     s1_faithful: bool
     s1_differences: str = ""

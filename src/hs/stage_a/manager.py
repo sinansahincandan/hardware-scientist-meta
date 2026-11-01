@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from hs.master_prompt import MasterPrompt
-from hs.schemas import Gradients, Inspirations, MasterPromptRewrite, SolutionPrompt
+from hs.schemas import Gradients, Inspirations, MasterPromptRewrite, OutputGradient, SolutionPrompt
 from hs.stage_a.archive import CouncilArchive
 from hs.stage_a.meeting import MeetingResult
 
@@ -42,33 +42,64 @@ class Manager:
         return [{"archive_id": p.archive_id, "status": by_id[p.archive_id]["status"],
                  "feedback_summary": by_id[p.archive_id].get("feedback", "")[:200]} for p in chosen]
 
+    def output_gradient(self, solution: SolutionPrompt, feedback_text: str,
+                        iter_dir: Path) -> OutputGradient:
+        """Step 1 of the TextGrad chain: per feedback item, what must change."""
+        prompt = (
+            f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\nWRITTEN FEEDBACK:\n{feedback_text}\n\n"
+            "Step 1 (output gradient): for each feedback item or designer region, state in writing "
+            "what in the solution or on the whiteboard must change. Do not diagnose the prompt yet."
+        )
+        gradient = self.client.structured("manager_output_gradient", OutputGradient,
+                                          "You are the Manager, step 1: judge the output against the feedback.",
+                                          prompt)
+        (iter_dir / "gradient_output.json").write_text(gradient.model_dump_json(indent=2), encoding="utf-8")
+        return gradient
+
     def diagnose(self, room: MeetingResult, solution: SolutionPrompt, feedback_text: str,
-                 iter_dir: Path) -> Gradients:
+                 iter_dir: Path, output_gradient: OutputGradient | None = None) -> Gradients:
+        """Step 2 of the TextGrad chain: which prompt part or behaviour caused it."""
         stats = json.dumps(room.stats)
+        notes_path = iter_dir / "manager_notes.md"
+        meeting_notes = notes_path.read_text(encoding="utf-8") if notes_path.exists() else ""
+        if output_gradient is None:
+            output_gradient = self.output_gradient(solution, feedback_text, iter_dir)
         prompt = (
             "TRANSCRIPT:\n" + "\n".join(f"{t['member']}: {t['message']}" for t in room.transcript)
-            + f"\n\nMEMBER STATS: {stats}\n\nSOLUTION:\n{solution.model_dump_json(indent=2)}"
+            + f"\n\nMEMBER STATS: {stats}\n\nYOUR MEETING NOTES:\n{meeting_notes}"
+            f"\n\nSTEP-1 OUTPUT GRADIENT:\n{output_gradient.model_dump_json(indent=2)}"
+            f"\n\nSOLUTION:\n{solution.model_dump_json(indent=2)}"
             f"\n\nFEEDBACK:\n{feedback_text}\n\nCURRENT MASTER PROMPT:\n{self.master.text()}"
-            "\n\nDiagnose the process (never propose a design). State whether this is the same problem "
-            "as the previous failure and which sections to revert if so."
+            "\n\nStep 2 (prompt gradient): per section and per member, state which part of the prompt "
+            "or which behaviour produced each step-1 item (cite it in 'explains'), and how it should "
+            "change. Judge in the agenda whether the problem is targeted or broad. Target what the "
+            "council should know or do differently as engineers (design knowledge, checks, comparisons, "
+            "member behaviour, meeting agenda). Never propose a design. Never write pipeline rules: "
+            "retry limits, caps and gating live in code, not in the prompt. State whether this is the "
+            "same problem as the previous failure and which sections to revert if so."
         )
         gradients = self.client.structured("manager_gradients", Gradients,
-                                           "You are the Manager. Diagnose how the team worked.",
+                                           "You are the Manager, step 2: diagnose which prompt part or behaviour caused the output.",
                                            prompt)
         self.last_gradients = gradients
         (iter_dir / "diagnosis.json").write_text(gradients.model_dump_json(indent=2), encoding="utf-8")
+        (iter_dir / "gradient_prompt.json").write_text(gradients.model_dump_json(indent=2), encoding="utf-8")
         return gradients
 
     def edit(self, room: MeetingResult, solution: SolutionPrompt, feedback_text: str,
              iter_dir: Path) -> dict[str, Any]:
         """Diagnosis -> revert (code) -> optimizer rewrite with guards/shrink. Returns ops report."""
-        gradients = self.diagnose(room, solution, feedback_text, iter_dir)
+        output_gradient = self.output_gradient(solution, feedback_text, iter_dir)
+        gradients = self.diagnose(room, solution, feedback_text, iter_dir, output_gradient)
         reverted = self.master.apply_reverts(gradients)
         rewrite = self.client.structured(
             "optimizer", MasterPromptRewrite,
             "Rewrite only the sections that need it, as free Markdown section text. "
-            "Use the exact section headings from the master prompt (e.g. '## 4. Meeting protocol') as each heading.",
-            f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES:\n{gradients.model_dump_json(indent=2)}")
+            "Use the exact section headings from the master prompt (e.g. '## 4. Meeting protocol') as each heading. "
+            "Write the Manager's agenda judgment into ## 4. Meeting protocol as this iteration's agenda. "
+            "Write engineering content only (design knowledge, checks, member behaviour, agenda); "
+            "never write pipeline rules such as retry limits, caps or gating — those live in code.",
+            f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES (step-2 prompt gradient; consume this only):\n{gradients.model_dump_json(indent=2)}")
         (iter_dir / "rewrite.json").write_text(rewrite.model_dump_json(indent=2), encoding="utf-8")
         report = self.master.apply_rewrite(rewrite)
         if report.get("guard_reasked"):

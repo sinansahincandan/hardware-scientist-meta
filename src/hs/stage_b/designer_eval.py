@@ -9,8 +9,9 @@ from hs.schemas import DesignerEval, SolutionPrompt
 
 
 def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROUNDS) -> str:
-    """Returns s1_pass | s1_retry | s2_return."""
-    if ev.s2_flaw:
+    """Returns s1_pass | s1_retry | s2_return. Source trace (v2): a region whose
+    source is the schematic itself is a design flaw (S2), whatever the flag says."""
+    if ev.s2_flaw or any(r.source == "schematic" for r in ev.regions):
         return "s2_return"
     if ev.s1_faithful:
         return "s1_pass"
@@ -50,6 +51,14 @@ class DesignerEvalRunner:
             "STEP 3 — REQUIREMENTS: for each requirement (same parts, same connections, same relative "
             "sizes, operating moment visible, transfer path visible) report observed/ambiguous/missing "
             "and name the stage that caused each fault: meeting, schematic, prompt, or render.\n"
+            "STEP 3b — REGIONS: for every mismatch, add a region: box [x0,y0,x1,y1] on the 0-1000 grid "
+            "(origin top-left) around the fault in the render, part_id, observed (what the pixels show), "
+            "expected (what the mechanism sketch shows), and source: 'render' when the render differs "
+            "from the sketch (depiction fault), 'schematic' when the sketch itself is wrong or silent "
+            "on this aspect (design flaw). A render that looks like a diagram, cartoon or CAD wireframe "
+            "is a depiction fault (source 'render'). If a flow overlay is present, check its direction, "
+            "sources, sinks and the parts it passes through like any other region; a wrong or "
+            "meaningless flow is a depiction fault.\n"
             "STEP 4 — S1/S2: S1 faithful = same parts/connections/relative sizes (perspective may differ) "
             "AND all labels correct. If any label is wrong, s1_faithful=false and start s1_differences with 'LABEL: '. "
             "S2: does seeing it expose a real design flaw? Do not blame the design for rendering mistakes; "

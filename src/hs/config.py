@@ -25,6 +25,9 @@ ROLES: dict[str, RoleConfig] = {
     "evaluator": RoleConfig(DEFAULT_MODEL, "high", 12000),
     "manager_inspirations": RoleConfig(DEFAULT_MODEL, "low", 2000),
     "manager_gradients": RoleConfig(DEFAULT_MODEL, "high", 12000),
+    "manager_output_gradient": RoleConfig(DEFAULT_MODEL, "high", 6000),
+    "vlm_prompt_gradient": RoleConfig(DEFAULT_MODEL, "high", 6000),
+    "turn_check": RoleConfig(DEFAULT_MODEL, "low", 1000),
     "optimizer": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "schematic": RoleConfig(DEFAULT_MODEL, "low", 8000),
     "vlm_writer": RoleConfig(DEFAULT_MODEL, "high", 4000),
@@ -47,6 +50,7 @@ MAX_TOOL_CALLS_PER_TURN = 6
 MAX_WHITEBOARD_CALLS_PER_TURN = 8
 MAX_TURN_MESSAGE_WORDS = 250
 MAX_NEW_TOOLS = 2
+MAX_MANAGER_NEW_TOOLS = 2
 MAX_FIGURE_IMAGES = 8
 MAX_COST_USD_PER_RUN = 15.00
 

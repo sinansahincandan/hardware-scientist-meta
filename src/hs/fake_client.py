@@ -253,13 +253,42 @@ class FakeClient:
                                 s2_feedback="In the annotated render the drive part overlaps the frame at the centre joint, so it cannot be assembled.",
                                 notes="")
         if n == 1:
+            from hs.schemas import EvalRegion
+
             return DesignerEval(s1_faithful=False, s1_differences="One part is merged with its neighbour at the left of the image.",
+                                regions=[EvalRegion(box=[100, 300, 400, 700], part_id="P2",
+                                                    observed="merged with neighbour", expected="separate part",
+                                                    source="render")],
                                 s2_flaw=False, s2_feedback="", notes="")
         return DesignerEval(s1_faithful=True, s1_differences="", s2_flaw=False, s2_feedback="",
                             notes="Minor: finish looks polished.")
 
     def _fake_LightCheck(self, user_text: str) -> LightCheck:
         return LightCheck(ok=True, reason="Panel shows the requested parts.")
+
+    def _fake_OutputGradient(self, user_text: str):
+        from hs.schemas import OutputGradient
+
+        return OutputGradient(items=[{"feedback_item": "critical claim lacks evidence",
+                                      "must_change": "compute the critical quantity and cite it"}],
+                              summary="The solution must carry cited evidence for its critical claim.")
+
+    def _fake_VLMPromptGradient(self, user_text: str):
+        from hs.schemas import VLMPromptGradient
+
+        return VLMPromptGradient(per_region=[{"part_id": "P2", "diagnosis": "parts merged in the render",
+                                              "prompt_fix": "separate the parts visually"}],
+                                 fix_mode="local", summary="Local separation fix.")
+
+    def _fake_ProgressCheck(self, user_text: str):
+        from hs.schemas import ProgressCheck
+
+        return ProgressCheck(fixed_region_pass=True, previous_pass=True, seam_visible=False, notes="kept")
+
+    def _fake_TurnCheck(self, user_text: str):
+        from hs.schemas import TurnCheck
+
+        return TurnCheck(ok=True, reason="")
 
     def _fake_Lessons(self, user_text: str) -> Lessons:
         return Lessons(candidates=[

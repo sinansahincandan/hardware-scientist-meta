@@ -173,19 +173,27 @@ class Controller:
             s1_diffs = ""
             label_failures = label_failures_total
             attempt_dir = run_dir / "stage_b" / f"attempt_{returns_to_a:02d}"
+            carry_render: Path | None = None
+            carry_vlm = None
             for r in range(self.max_s1_rounds):
                 round_dir = attempt_dir / f"round_{r:02d}"
                 round_dir.mkdir(parents=True, exist_ok=True)
                 geometry = schematic_mod.render_schematic(spec, round_dir)
                 writer = VLMPromptWriter(self.client)
-                vlm = writer.write(solution, spec, round_dir / "schematic.png",
-                                   round_dir / "schematic_labeled.png", img_archive,
-                                   s1_differences=s1_diffs, corrections=s1_diffs,
-                                   force_code_labels=label_failures >= 2)
+                if carry_render is not None and carry_vlm is not None:
+                    vlm = carry_vlm
+                    render_path = round_dir / "render.png"
+                    render_path.write_bytes(carry_render.read_bytes())
+                    carry_render = None
+                else:
+                    vlm = writer.write(solution, spec, round_dir / "schematic.png",
+                                       round_dir / "schematic_labeled.png", img_archive,
+                                       s1_differences=s1_diffs, corrections=s1_diffs,
+                                       force_code_labels=label_failures >= 2)
+                    render_bytes = ImageModel(self.client).edit(vlm, round_dir / "schematic.png")
+                    render_path = round_dir / "render.png"
+                    render_path.write_bytes(render_bytes)
                 (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
-                render_bytes = ImageModel(self.client).edit(vlm, round_dir / "schematic.png")
-                render_path = round_dir / "render.png"
-                render_path.write_bytes(render_bytes)
                 annotated_path, loc, missing = Annotator(self.client).run(
                     render_path, spec, geometry, round_dir / "annotated.png",
                     code_labels=(vlm.label_mode == "code"))
@@ -209,6 +217,57 @@ class Controller:
                 # Targeted corrections from actual-image review, appended verbatim next round (§7.2).
                 s1_diffs = "\n".join(x for x in (ev.s1_differences, ev.label_findings,
                                                  ev.pixel_description) if x)
+                if decision == "s1_retry":
+                    # Two-step chain for S1 (spec §5.5b): regions are the output
+                    # gradient; the VLM prompt gradient diagnoses each region.
+                    from hs.stage_b.prompt_gradient import VLMPromptGradientRunner, composite_region
+
+                    grad_runner = VLMPromptGradientRunner(self.client)
+                    try:
+                        grad = grad_runner.run(render_path, round_dir / "schematic_labeled.png", vlm, ev)
+                        (round_dir / "vlm_gradient.json").write_text(grad.model_dump_json(indent=2), encoding="utf-8")
+                        render_regions = [x for x in ev.regions if x.source == "render" and len(x.box) == 4]
+                        if grad.fix_mode == "local" and render_regions:
+                            current = render_path
+                            kept_any = False
+                            for region in render_regions:
+                                fix = next((g.prompt_fix for g in grad.per_region
+                                            if g.part_id == region.part_id), region.expected)
+                                edited_bytes = self.client.image_edit(
+                                    f"Change only this: {fix}. Keep everything else in the image identical.",
+                                    current)
+                                edited_path = round_dir / f"edited_{region.part_id}.png"
+                                edited_path.write_bytes(edited_bytes)
+                                comp_path = round_dir / f"local_{region.part_id}.png"
+                                assert_info = composite_region(current, edited_path, region.box, comp_path)
+                                (round_dir / f"composite_{region.part_id}.json").write_text(
+                                    json.dumps(assert_info), encoding="utf-8")
+                                if not assert_info["outside_unchanged"]:
+                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} reverted (outside-box pixels changed)")
+                                    continue
+                                ann_local, _loc2, _miss2 = Annotator(self.client).run(
+                                    comp_path, spec, geometry, round_dir / f"annotated_local_{region.part_id}.png",
+                                    code_labels=(vlm.label_mode == "code"))
+                                check = grad_runner.progress_check(ann_local, ev, fix)
+                                (round_dir / f"progress_{region.part_id}.json").write_text(
+                                    check.model_dump_json(indent=2), encoding="utf-8")
+                                if check.fixed_region_pass and check.previous_pass and not check.seam_visible:
+                                    current = comp_path
+                                    kept_any = True
+                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} kept")
+                                else:
+                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} reverted by progress check")
+                            if kept_any:
+                                carry_render = current
+                                carry_vlm = vlm
+                        else:
+                            s1_diffs = (grad.summary + "\n" + "\n".join(
+                                f"{g.part_id}: {g.diagnosis} -> {g.prompt_fix}" for g in grad.per_region)
+                                + "\n" + s1_diffs)
+                    except Exception as exc:  # gradient path must never kill the run (budget guards still apply first)
+                        if "budget cap" in str(exc) or "hs run cost" in str(exc):
+                            raise
+                        trace.log(f"iter {k} round {r}: VLM prompt gradient skipped: {exc}")
                 if decision != "s1_retry":
                     break
             if decision == "s1_retry":
