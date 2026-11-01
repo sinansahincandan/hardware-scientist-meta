@@ -17,3 +17,5 @@
 [2026-10-31 22:50] Run 03 (220800) ACCEPTED $2.5186: S2 flaw (enclosures below flange) -> redesign flush 420mm stack -> S1 pass · Panel B hallucinated electronics diagram replaced with crop of passing render; REVIEW.md written · Runtime cost: ~$16.1 real total (01 $11.3 across 3 runs incl accepted $7.22, 02 $1.91, 03 $2.52, smoke ~$0.1)
 
 [2026-10-31 23:10] Visual pass: panel D regenerated as workshop scenes for all 3 final runs (14 images, ~$0.14, logged in each cost.json), panel C regenerated code-only, figures recomposed, reports/boards re-rendered, compare + showcase regenerated · Runtime cost total: see SUMMARY audit
+
+[2026-10-31 23:20] Hand-off: 3/3 examples accepted for real (01 $7.22, 02 $1.91, 03 $2.52), REVIEW.md in each final folder, compare_20261031-230924.html + runs/showcase.html written, SUMMARY.md written · Verification: smoke 2 passed, pytest 29 passed/2 skipped, ruff clean, all final visuals viewed as images · Total runtime cost: $16.37 all cost.json (budget $60) · Open: no HTML screenshots (browser blocked in sandbox), schematic still grid-style
