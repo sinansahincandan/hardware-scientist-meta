@@ -159,6 +159,15 @@ def _cmd_showcase(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_stageb(args: argparse.Namespace) -> int:
+    from hs.stage_b_rerun import rerun_stage_b
+
+    client = _make_client(bool(args.fake), run_dir=None)
+    result = rerun_stage_b(client, Path(args.run_dir))
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def _cmd_compare(args: argparse.Namespace) -> int:
     from hs.report import write_compare
 
@@ -199,6 +208,10 @@ def build_parser() -> argparse.ArgumentParser:
     sc.add_argument("run_dirs", nargs="+")
     sc.add_argument("--out", default="")
     sc.set_defaults(func=_cmd_showcase)
+    sb = sub.add_parser("stageb")
+    sb.add_argument("run_dir")
+    sb.add_argument("--fake", action="store_true")
+    sb.set_defaults(func=_cmd_stageb)
     return parser
 
 
