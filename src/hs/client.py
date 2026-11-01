@@ -268,10 +268,16 @@ class MetaClient:
                     time.sleep(float(wait) if wait else delay)
                     delay *= 2
                     continue
+                if r.status_code >= 400:
+                    # Deterministic rejection: never retry blind, and keep the
+                    # body — it was once lost and cost a full run (QUESTIONS.md).
+                    raise RuntimeError(f"image edit HTTP {r.status_code}: {r.text[:1000]}")
                 r.raise_for_status()
                 data = r.json()["data"][0]["b64_json"]
                 self.cost.record("image_model", config.IMAGE_MODEL, {"images": 1})
                 return base64.b64decode(data)
+            except RuntimeError:
+                raise
             except Exception as exc:
                 last = exc
                 if time.time() - started > 240:

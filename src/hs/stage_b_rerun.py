@@ -107,9 +107,9 @@ def _rounds(client: Any, solution: SolutionPrompt, spec: Any, run_dir: Path,
             solution, spec, round_dir / "schematic.png", round_dir / "schematic_labeled.png",
             img_archive, s1_differences=s1_diffs, corrections=s1_diffs,
             force_code_labels=label_failures >= 2)
+        (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
         render_path = round_dir / "render.png"
         render_path.write_bytes(ImageModel(client).edit(vlm, round_dir / "schematic.png"))
-        (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
         annotated_path, loc, missing = Annotator(client).run(
             render_path, spec, geometry, round_dir / "annotated.png",
             code_labels=(vlm.label_mode == "code"))

@@ -63,3 +63,17 @@ shape without a fallback:
 | 14.6 | `web_search` + `text.format` in one request | Not needed by design (searches in turns, structured output separate) |
 | 14.7 | Current prices / limits / remaining credit | Prices centralised in `config.py`; check dashboard before M4 |
 | 14.8 | Truncated-response shape (`status`, `incomplete_details`) | Defensive detection (status / token ceiling / JSON parse) + one doubled-token retry |
+
+## 2026-11-01 — image edit HTTP 400 with swallowed body (stageb rerun 03)
+Stage B rerun of example 03 died in round 02 at POST /v1/images/edits with
+HTTP 400 after two successful rounds. The client retry loop raised only
+`HTTPError: 400 Client Error` and discarded the response body, and
+round_02's vlm_prompt.json was written only after the image call, so the
+exact failing prompt was lost. Fixes: client now raises immediately on
+HTTP >= 400 with the body in the message (no blind retries of a
+deterministic rejection); vlm_prompt.json is saved before the image call
+in both the controller and the Stage B rerun. If the 400 recurs, the body
+will be in the traceback; record it here verbatim and adjust the request.
+Assumption until then: transient/content-filter rejection of that round's
+prompt, since rounds 00-01 with the same shape succeeded and a probe with
+the round-00 schematic + test prompt returns 200.

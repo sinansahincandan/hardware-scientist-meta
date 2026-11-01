@@ -220,10 +220,10 @@ class Controller:
                                        round_dir / "schematic_labeled.png", img_archive,
                                        s1_differences=s1_diffs, corrections=s1_diffs,
                                        force_code_labels=label_failures >= 2)
+                    (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
                     render_bytes = ImageModel(self.client).edit(vlm, round_dir / "schematic.png")
                     render_path = round_dir / "render.png"
                     render_path.write_bytes(render_bytes)
-                (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
                 annotated_path, loc, missing = Annotator(self.client).run(
                     render_path, spec, geometry, round_dir / "annotated.png",
                     code_labels=(vlm.label_mode == "code"))
