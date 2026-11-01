@@ -146,6 +146,7 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     _panel_c(solution, panel_c)
     # Panel D: one render per fabrication step
     repaired = _repair_steps(solution, trace_notes)
+    steps_sorted = sorted(solution.fabrication_steps, key=lambda s: s.step)
     step_images: list[Path] = []
     failed_steps: list[int] = []
     for i, present in enumerate(repaired):
@@ -154,8 +155,13 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
             break
         tmp = final_dir / f"_step{i + 1}_ref"
         schematic_mod.render_schematic(spec, tmp, subset_ids=present, stem=f"step{i + 1}")
-        png = client.image_edit(f"fabrication step {i + 1}: show exactly parts {present}",
-                                tmp / f"step{i + 1}.png")
+        step_desc = steps_sorted[i].description if i < len(steps_sorted) else ""
+        names = ", ".join(next((p.name for p in solution.concept.parts if p.id == pid), pid) for pid in present)
+        png = client.image_edit(
+            f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
+            f"Show exactly these parts assembled so far ({names}) on a workbench with ordinary "
+            f"shop tools, following the reference layout. No text, no labels, no numbers.",
+            tmp / f"step{i + 1}.png")
         images_used += 1
         step_path = final_dir / f"_step{i + 1}.png"
         step_path.write_bytes(png)

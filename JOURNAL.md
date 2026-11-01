@@ -13,3 +13,7 @@
 [2026-10-31 19:45] Run 01 (184531) ACCEPTED end-to-end $7.2244: consensus iters 0+6, S1 pass attempt1 round1, figure composed · Reviewed as images: figure, panel A (presentation-grade), schematic (weak, rows off-canvas), passing render · Changed: schematic row clamp, figure measured layout + recompose(), REVIEW.md in final 01 folder; figure recomposed layout-only · Runtime cost total so far: ~$11.6 real across all runs/smoke
 
 [2026-10-31 22:15] Run 02 (212855) ACCEPTED first attempt $1.9136: consensus iters, designer return -> Manager rewrite -> code-label S1 pass round 0 · Panel A presentation-grade; force-flow arrows too thick (thinned after), schematic load labels overlap · REVIEW.md written · Runtime cost: ~$13.5 real total
+
+[2026-10-31 22:50] Run 03 (220800) ACCEPTED $2.5186: S2 flaw (enclosures below flange) -> redesign flush 420mm stack -> S1 pass · Panel B hallucinated electronics diagram replaced with crop of passing render; REVIEW.md written · Runtime cost: ~$16.1 real total (01 $11.3 across 3 runs incl accepted $7.22, 02 $1.91, 03 $2.52, smoke ~$0.1)
+
+[2026-10-31 23:10] Visual pass: panel D regenerated as workshop scenes for all 3 final runs (14 images, ~$0.14, logged in each cost.json), panel C regenerated code-only, figures recomposed, reports/boards re-rendered, compare + showcase regenerated · Runtime cost total: see SUMMARY audit

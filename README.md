@@ -7,8 +7,9 @@ figure (panels A–D) — system view, critical part, measurement chain, fabrica
 A council of LLM experts argues around a shared whiteboard (Stage A); a Manager rewrites the
 Markdown master prompt from written feedback (TextGrad-style); Stage B turns the accepted
 concept into a schematic → image-model render → code-drawn annotation, judged by S1
-(schematic-faithful?) and S2 (design flaw revealed?). All words in images are drawn by code;
-the image model paints pixels only. Full brief: [HARDWARE_SCIENTIST_SPEC.md](HARDWARE_SCIENTIST_SPEC.md),
+(schematic-faithful?) and S2 (design flaw revealed?). The image model may draw
+brief part callouts, checked by S1; after two label failures, labels fall back to
+code-drawn overlays (`SPEC_CHANGES.md`). Full brief: [HARDWARE_SCIENTIST_SPEC.md](HARDWARE_SCIENTIST_SPEC.md),
 plan: [PLAN.md](PLAN.md), assumptions: [QUESTIONS.md](QUESTIONS.md).
 
 ## Setup
@@ -37,16 +38,28 @@ Every role's model and reasoning effort is configurable in `src/hs/config.py` (`
 one entry per role: member, secretary, evaluator, manager, optimizer, schematic, VLM writer,
 localization, designer eval, light check, lessons, example generator, master rev0).
 
-## Cost (measured in fake mode; real figures are pre-M4 estimates)
+## Cost (measured)
 
-| | Fake mode (this repo, verified) | Real estimate (spec §9, unverified until M4) |
+Real runs, 2026-10-31 (muse-spark-1.3 + muse-image-1.0; `cost.json` of each run):
+
+| Run | Outcome | Cost |
 |---|---|---|
-| One shipped example (2 Stage A iters, 2 Stage B rounds) | $0.1162 synthetic, 28 calls | ≈ $5–8 |
-| Three shipped examples | $0.35 synthetic | ≈ $15–25 total |
+| Example 01 stair truck (final run `20261031-184531`) | accepted (7 Stage A iters) | $7.2244 |
+| Example 02 solar cold room (`20261031-212855`) | accepted (2 iters) | $1.9136 |
+| Example 03 footbridge TMD (`20261031-220800`) | accepted (3 iters) | $2.5186 |
+| Two earlier 01 attempts (kept, REVIEW.md) | best-effort / crashed, then fixed | $2.0010 + $2.1291 |
+| Real smoke probes (§14) | pass | about $0.05 |
 
-Prices: `muse-spark-1.3` $1.25 / $0.15 cached / $4.25 per 1M tokens; web search $2.50/1000;
-`muse-image-1.0` $0.01/image. The cost cap ($15/run default) is checked before every call;
-every call's usage is logged to `runs/<id>/cost.json`.
+Total for the three final examples: **$11.66**. All real runs including failed
+attempts and smoke: about $15.9 (session budget $60, AUTOPILOT.md). Fake mode is
+$0.1162 synthetic per example. Prices: `muse-spark-1.3` $1.25 / $0.15 cached /
+$4.25 per 1M tokens; web search $2.50/1000; `muse-image-1.0` $0.01/image. The
+cost cap ($15/run default) is checked before every call; every call's usage is
+logged to `runs/<id>/cost.json`.
+
+Also: `hs showcase runs/<a> runs/<b> runs/<c>` writes `runs/showcase.html`
+(input prompt left, final figure right with click-to-enlarge, mechanism
+sentence, three decisive choices and the open question — nothing else).
 
 ## Known limitations (spec §13)
 
@@ -58,5 +71,12 @@ every call's usage is logged to `runs/<id>/cost.json`.
   S1 exists because of this; the `responses` backend is a switch, not a fix.
 - Dimensions are size classes; no tolerance or detailed geometry.
 - One accepted concept per run; alternatives live in `archive.jsonl`, not in the figure.
-- Real-API shapes in spec §14 are unverified: smoke tests exist (`tests/test_smoke_real.py`)
-  but have not been run yet (see `CHECKPOINT.md`).
+- Real-API shapes in spec §14 are settled (see `QUESTIONS.md`): `text.format`
+  nesting works, truncation reports `status=incomplete`, image edits accept
+  `tool_enablement`/`reasoning_strength`, localization is usable. Remaining:
+  provider chain state (`previous_response_id`) can expire mid-turn — the
+  member-turn loop retries and restarts chains from the code-side board.
+- Image-model labels invent values, so labels fall back to code-drawn
+  overlays after two label failures (AUTOPILOT §7.1, `SPEC_CHANGES.md`).
+- Fabrication-step renders (panel D) read as parts posters, and the final
+  schematic is a grid diagram, not a mechanism sketch — known visual limits.
