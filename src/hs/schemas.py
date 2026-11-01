@@ -204,6 +204,7 @@ class SchematicNode(BaseModel):
     size_class_mm: SizeClass
     layout: Layout
     color_hint: str = "#7fb3d5"
+    aspect: float = 1.33  # real width/height ratio of the part (coil spring ~0.35, girder ~6)
 
 
 class SchematicEdge(BaseModel):

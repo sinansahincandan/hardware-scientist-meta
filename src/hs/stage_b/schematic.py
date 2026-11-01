@@ -87,7 +87,11 @@ def spec_and_check(client: Any, solution: SolutionPrompt) -> tuple[SchematicSpec
             return (spec2 if not errors2 else None), errors2
         return spec, []
     spec = client.structured("schematic", SchematicSpec,
-                             "Convert the concept into a 2D schematic spec.",
+                             "Convert the concept into a 2D mechanism sketch spec. Set every node's "
+                             "aspect to the part's real width/height ratio (a coil spring is tall, about "
+                             "0.35; a deck girder is wide, about 6; a box is near 1), so the sketch "
+                             "carries true relative proportions, and place joints and loads where they "
+                             "physically act.",
                              solution.model_dump_json(indent=2))
     errors = check_spec(spec, solution)
     if not errors:
@@ -129,7 +133,12 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
     for node in nodes:
         gm = _geomean(node.size_class_mm)
         w = min(max(gm / 12.0, 0.7), 2.2)
-        h = min(max(gm / 16.0, 0.5), 1.6, row_step * 0.8)
+        # Real relative proportions (v2 B7): height follows the part's own
+        # width/height aspect, not a fixed grid ratio — a tall coil spring
+        # must not be drawn as a wide box, or S1 proportion checks misfire.
+        aspect = node.aspect if node.aspect and node.aspect > 0 else 1.33
+        h = min(max(w / aspect, 0.5), 1.6, row_step * 0.8)
+        w = h * aspect
         cx = 1.2 + col_rank[node.layout.col] * (8.4 / max(ncols - 1, 1) if ncols > 1 else 0)
         cy = 5.6 - row_rank[node.layout.row] * row_step - h / 2
         positions[node.id] = (cx, cy, w, h)

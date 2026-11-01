@@ -32,3 +32,21 @@ def test_gradient_schemas_strict():
     for model in (OutputGradient, VLMPromptGradient):
         schema = make_strict_schema(model)
         assert schema["additionalProperties"] is False
+
+
+def test_schematic_aspect_controls_box_proportions(tmp_path) -> None:
+    from hs.schemas import Layout, SchematicNode, SchematicSpec, SizeClass
+    from hs.stage_b.schematic import render_schematic
+
+    def node(nid: str, aspect: float) -> SchematicNode:
+        return SchematicNode(id=nid, label=nid, size_class_mm=SizeClass(min=100, max=400),
+                             layout=Layout(col=0, row=0), aspect=aspect)
+
+    spec = SchematicSpec(nodes=[node("spring", 0.35)], critical_part_id="spring")
+    geo = render_schematic(spec, tmp_path / "a")
+    box = geo["boxes"]["spring"]
+    assert box["y1"] - box["y0"] > box["x1"] - box["x0"]  # tall, not wide
+    spec2 = SchematicSpec(nodes=[node("girder", 6.0)], critical_part_id="girder")
+    geo2 = render_schematic(spec2, tmp_path / "b")
+    box2 = geo2["boxes"]["girder"]
+    assert box2["x1"] - box2["x0"] > box2["y1"] - box2["y0"]  # wide, not tall
