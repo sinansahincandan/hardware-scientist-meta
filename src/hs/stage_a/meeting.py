@@ -118,8 +118,70 @@ class Meeting:
                                       self.transcript, cycle, history=records)
         for rec in records:
             self.history.append(rec)
+        # Speaking + substance check (v2 B6/B7): one retry with the reason.
+        try:
+            from hs.schemas import TurnCheck
+
+            activity = sum(1 for r in records if r.get("kind") in ("op", "evidence"))
+            check = self.client.structured(
+                "turn_check", TurnCheck,
+                "You check one council turn message against the speaking rule. ok=false when: "
+                "telegraphic fragments, ids standing alone without words, undefined abbreviations, "
+                "talk about any figure/rendering pipeline instead of the device, raw search tokens, "
+                "or the turn adds nothing (no concept, evidence, objection, resolution or reasoned vote).",
+                f"BOARD ACTIONS THIS TURN (ops+evidence): {activity}\n\nMESSAGE:\n{message}")
+            if not check.ok:
+                cost_log = getattr(self.client, "cost", None)
+                if cost_log is not None:
+                    cost_log.note("turn_check_retry")
+                self.history.append({"cycle": cycle, "member": member, "kind": "turn_retry",
+                                     "reason": check.reason})
+                message = run_member_turn(
+                    self.client, self.master, member, self.board, self.tools, self.transcript, cycle,
+                    history=records,
+                    extra_instruction=(f"Your previous turn was rejected by the speaking check: {check.reason}. "
+                                       "Rewrite it following the speaking rule exactly, and add at least one of: "
+                                       "a concept, evidence, an objection, a resolution, or a vote with its reason."))
+                for rec in records:
+                    if rec not in self.history:
+                        self.history.append(rec)
+        except Exception as exc:
+            if "budget" in str(exc).lower():
+                raise
         self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})
         self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
+
+    def _run_manager_turn(self, roster: list[str], cycle: int) -> None:
+        """Manager's end-of-cycle steering turn (spec §4.3 v2). Never designs, never votes."""
+        if getattr(self.client, "is_fake", False):
+            message = ("The Manager has reviewed this cycle. The room has evidence on the board; "
+                       "the next cycle should test the weakest claim before voting.")
+            self.transcript.append({"cycle": cycle, "member": "Manager", "message": message})
+            self.history.append({"cycle": cycle, "member": "Manager", "kind": "turn_end"})
+            (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
+                json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
+            return
+        from hs.stage_a.council import SPEAKING_RULE, run_member_turn
+
+        instructions = (
+            "You are the Manager, process lead of this council. You steer the process only: point out a "
+            "critical quantity nobody computed, an objection closed without evidence, a vote that came too "
+            "early, or a missing expertise; ask a named member to compute, sketch or look something up; you "
+            "may raise or resolve process objections on the whiteboard and propose a new tool. You never "
+            "propose design concepts and you never vote. Keep short notes: end your message with one line "
+            "'Note on <member>: ...' for each member you observed. " + SPEAKING_RULE)
+        records: list[dict[str, Any]] = []
+        message = run_member_turn(self.client, self.master, "Manager", self.board, self.tools,
+                                  self.transcript, cycle, history=records,
+                                  instructions_override=instructions)
+        for rec in records:
+            self.history.append(rec)
+        self.transcript.append({"cycle": cycle, "member": "Manager", "message": _truncate_words(message)})
+        self.history.append({"cycle": cycle, "member": "Manager", "kind": "turn_end"})
+        (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
+            json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
+        with (self.iter_dir / "manager_notes.md").open("a", encoding="utf-8") as fh:
+            fh.write(f"\n## Cycle {cycle}\n{message}\n")
 
     # -- main loop ---------------------------------------------------------------------
     def run(self) -> MeetingResult:
@@ -146,6 +208,9 @@ class Meeting:
                 if cycle >= self.min_cycles and self.board.consensus_reached(roster):
                     closed_by = "consensus"
                     break
+            self._run_manager_turn(roster, cycle)
+            if cycle >= self.min_cycles and self.board.consensus_reached(roster):
+                closed_by = "consensus"
             if closed_by == "consensus":
                 break
             # stats snapshot per cycle
@@ -198,8 +263,11 @@ class Secretary:
                 "Also write: mechanism_sentence (one sentence stating the working principle); "
                 "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works); "
                 "open_question (EXACTLY 1, the most important unresolved question); "
-                "transfer_line formatted exactly as: Force: A -> B -> C | Measured: D -> E "
-                "naming the real parts/sensor stages of this concept.\n\n"
+                "transfer_line formatted exactly as: <governing quantity>: A -> B -> C | Measured: D -> E "
+                "where the governing quantity is the one that actually decides this design (Load, Heat, "
+                "Energy, Fluid, Signal...), naming the real parts/sensor stages of this concept; "
+                "flow_choice records the council's decision in the meeting: empty when no flow view is "
+                "needed, otherwise '<quantity>: <source> -> ... -> <sink> through <parts>'.\n\n"
                 f"WHITEBOARD:\n{result.board.render_markdown()}\n\n"
                 f"TRANSCRIPT:\n" + "\n".join(t["message"] for t in result.transcript)
             )

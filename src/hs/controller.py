@@ -105,7 +105,9 @@ class Controller:
     def _loop(self, problem: Problem, run_dir: Path, trace: Trace, warnings: list[str]) -> Path | None:
         lessons_text = load_lessons()
         master = MasterPrompt.rev0(self.client, problem, lessons_text, run_dir)
-        trace.log(f"master prompt rev 0 written; roster={master.text()[:0]}")
+        from hs.master_prompt import roster_of
+
+        trace.log(f"master prompt rev 0 written; roster={', '.join(roster_of(master.sections))}")
         manager = Manager(self.client, master)
         archive = CouncilArchive(run_dir)
         img_archive = ImageArchive(run_dir)

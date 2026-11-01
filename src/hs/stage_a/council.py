@@ -37,22 +37,60 @@ def _unwrap_args(args: dict[str, Any]) -> dict[str, Any]:
     return args
 
 
+SPEAKING_RULE = (
+    "Speak in full sentences, one point per short paragraph, at most three points, in this order: "
+    "'In <design or concept>, the <part/method/approach> has <problem>. To check it I used <method or tool> "
+    "(<evidence id>). I found <result with units>, according to <author, year>. I propose <design change>. "
+    "My position: <ready / not ready> because <reason>.' Never let an id stand alone: write "
+    "'the 760 mm standard door width (E10)', not 'E10'. Define every abbreviation on first use and address "
+    "other members by name. Talk only about the device, never about any figure or rendering pipeline. "
+    "This is concept design: aim for a concept that works and can be built, use standard conceptual-design "
+    "methods and literature (papers, standards, studies, videos) before deep quantification."
+)
+
+
+def _compact_transcript(since: list[dict[str, Any]], budget: int = 6000) -> str:
+    """Compaction (v2 E): full text for recent turns, one-line summaries before."""
+    lines = [f"{t['member']}: {t['message']}" for t in since]
+    text = "\n".join(lines)
+    if len(text) <= budget:
+        return text
+    kept: list[str] = []
+    total = 0
+    for line in reversed(lines):
+        if total + len(line) > budget and kept:
+            break
+        kept.append(line)
+        total += len(line)
+    kept.reverse()
+    older = lines[: len(lines) - len(kept)]
+    summary = "\n".join(f"{l.split(':')[0]}: {l.split(':', 1)[-1].strip().split('.')[0]}."
+                        for l in older if ":" in l)
+    return f"EARLIER TURNS (one-line summaries; full text is on disk):\n{summary}\n\nRECENT TURNS:\n" + "\n".join(kept)
+
+
 def run_member_turn(client: Any, master: MasterPrompt, member: str, board: Whiteboard,
                     tools: ToolRunner, transcript: list[dict[str, Any]], cycle: int,
-                    history: list[dict[str, Any]] | None = None) -> str:
-    roster_instructions = member_instructions(master.sections, member)
+                    history: list[dict[str, Any]] | None = None,
+                    instructions_override: str | None = None,
+                    extra_instruction: str = "") -> str:
+    roster_instructions = instructions_override or member_instructions(master.sections, member)
     since = [t for t in transcript if t["member"] != member]
     own_prev = next((t["message"] for t in reversed(transcript) if t["member"] == member), "")
     user_text = (
         f"WHITEBOARD:\n{board.render_markdown()}\n\n"
-        f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + "\n".join(f"{t['member']}: {t['message']}" for t in since[-8:])
-        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). "
+        f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + _compact_transcript(since[-8:])
+        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). {SPEAKING_RULE}\n"
         "Use the whiteboard tool to write to the board; use calc/vetted_calc/simulate/sketch/web_search for evidence. "
+        "Read the evidence already on the board before computing: reuse an existing evidence item by its id "
+        "unless you state in your message why you recompute it. Post a labeled sketch (sketch tool, hand-drawn "
+        "xkcd style, with the mechanism, the workpiece or load, and fixed versus moving parts) when you propose "
+        "or change a concept whose geometry, mechanism or flow path matters; purely numerical turns need no sketch. "
         "Search the literature the way your persona implies: your own domain's directly relevant papers, standards "
         "and datasheets first, and neighbouring or distant fields where a transferable principle may exist. "
-        "When you borrow a principle from another field, state on the whiteboard why it should transfer. "
-        "For sketch scripts, draw in a hand-sketched whiteboard style (e.g. matplotlib plt.xkcd()) "
-        "showing the actual mechanism, the workpiece/load, and fixed vs moving parts."
+        "Cite literature readably (authors or organisation, title, year), never as raw search tokens. "
+        "When you borrow a principle from another field, say why it should transfer. "
+        + extra_instruction
     )
     prev_id: str | None = None
     counted = 0
@@ -171,4 +209,8 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                             if history is not None:
                                 history.append({"cycle": cycle, "member": member, "kind": "evidence",
                                                 "evidence_id": eid, "tool": "web_search"})
-    return last_text or "(no message)"
+    # Raw search tokens never appear in speech (v2 D): strip token spans.
+    import re as _re
+
+    cleaned = _re.sub(r"\[\d+†[^\]]*\]", "", last_text or "")
+    return cleaned.strip() or "(no message)"

@@ -80,6 +80,12 @@ class CostLog:
         self.flush()
         return usd
 
+    def note(self, role: str) -> None:
+        """Zero-cost marker entry (e.g. counting a retried turn in cost.json)."""
+        self.entries.append({"role": role, "model": "", "input": 0, "cached_input": 0,
+                             "output": 0, "reasoning": 0, "searches": 0, "images": 0, "usd": 0.0})
+        self.flush()
+
     def flush(self) -> None:
         if self.run_dir is None:
             return

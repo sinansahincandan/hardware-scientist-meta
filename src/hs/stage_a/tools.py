@@ -95,6 +95,8 @@ class ToolRunner:
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
         summary = out.splitlines()[-1] if out else "calc error"
+        if not result.ok:
+            summary = f"calc failed: {summary}"[:200]
         eid = self._post(author, "calc", purpose, expression, summary[:200],
                          full=out, inputs=parse_calc_inputs(expression),
                          status="ok" if result.ok else "error", cycle=cycle)
@@ -104,6 +106,8 @@ class ToolRunner:
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
         summary = (out.splitlines()[-1] if out else "simulate done")[:200]
+        if not result.ok:
+            summary = f"simulate failed: {summary}"[:200]
         eid = self._post(author, "simulate", purpose, script, summary,
                          full=out, status="ok" if result.ok else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
@@ -116,10 +120,11 @@ class ToolRunner:
             fname = f"sketch_{len(self.board.evidence) + 1}.png"
             (self.evidence_dir / fname).write_bytes(png)
             sketch_rel = f"evidence/{fname}"
-        summary = caption if result.ok else f"sketch error: {result.stderr.strip()[:120]}"
+        last_err = result.stderr.strip().splitlines()[-1] if result.stderr.strip() else "no image produced"
+        summary = caption if (result.ok and png) else f"sketch failed: {last_err}"[:200]
         eid = self._post(author, "sketch", caption, script, summary[:200],
                          full=result.stdout, sketch_path=sketch_rel,
-                         status="ok" if result.ok else "error", cycle=cycle)
+                         status="ok" if (result.ok and png) else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
 
     def vetted_calc(self, author: str, name: str, args: dict[str, Any],

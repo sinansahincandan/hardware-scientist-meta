@@ -159,6 +159,35 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
                                        facecolor=node.color_hint, edgecolor="#333333"))
             if labeled:
                 ax.text(cx, cy, node.label, ha="center", va="center", fontsize=9)
+        # Joints: hinge circles where mechanical connections meet (v2 mechanism sketch).
+        for edge in edges:
+            if edge.kind in ("mechanical", "structural"):
+                x1, y1, _, _ = positions[edge.from_id]
+                x2, y2, _, _ = positions[edge.to_id]
+                ax.add_patch(Circle(((x1 + x2) / 2, (y1 + y2) / 2), 0.09,
+                                    facecolor="white", edgecolor="#333333", lw=1.4, zorder=5))
+        # Motion arrow on the critical (moving) part.
+        if spec.critical_part_id in positions:
+            cx, cy, w, h = positions[spec.critical_part_id]
+            ax.annotate("", xy=(cx + w / 2 + 0.45, cy + 0.55), xytext=(cx + w / 2 + 0.45, cy - 0.55),
+                        arrowprops={"arrowstyle": "->", "color": "#1a6fb8", "lw": 2.2})
+        if labeled and positions:
+            # Key dimensions: overall extent (calibrated by the critical part's
+            # size class) and the critical part's own size.
+            crit = next((n for n in nodes if n.id == spec.critical_part_id), nodes[0])
+            _, _, cw, _ = positions[crit.id]
+            mm_per_unit = _geomean(crit.size_class_mm) / max(cw, 0.01)
+            xs = [positions[n.id][0] - positions[n.id][2] / 2 for n in nodes]
+            xe = [positions[n.id][0] + positions[n.id][2] / 2 for n in nodes]
+            x_lo, x_hi = min(xs), max(xe)
+            y_dim = min(positions[n.id][1] - positions[n.id][3] / 2 for n in nodes) - 0.55
+            if y_dim > 0.15:
+                ax.plot([x_lo, x_hi], [y_dim, y_dim], color="#555555", lw=1.0)
+                ax.plot([x_lo, x_lo], [y_dim - 0.08, y_dim + 0.08], color="#555555", lw=1.0)
+                ax.plot([x_hi, x_hi], [y_dim - 0.08, y_dim + 0.08], color="#555555", lw=1.0)
+                ax.text((x_lo + x_hi) / 2, y_dim - 0.34,
+                        f"overall ≈ {(x_hi - x_lo) * mm_per_unit:.0f} mm · {crit.label} ≈ {_geomean(crit.size_class_mm):.0f} mm",
+                        ha="center", fontsize=8, color="#333333")
         for load in loads:
             cx, cy, w, h = positions[load.on_id]
             dx, dy = {"down": (0, -1), "up": (0, 1), "left": (-1, 0), "right": (1, 0),

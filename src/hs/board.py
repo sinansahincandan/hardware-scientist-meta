@@ -122,10 +122,15 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
                     color = COLORS[legend_members.index(c.author) % len(COLORS)] if c.author in legend_members else "#eee"
                     cls = "sticky dropped" if c.status == "dropped" else ("sticky favored" if c.status == "favored" else "sticky")
                     cards.append(f"<div class='{cls}' style='background:{color}'><b>{c.id}</b> [{c.author}] {c.text}</div>")
+            # Sketch files live in the iteration that produced them; evidence
+            # in a later section must not point at this section's folder.
+            sketch_files = {p.name: p.relative_to(run_dir).as_posix()
+                            for p in (run_dir / "stage_a").glob("iter_*/evidence/sketch_*.png")}
             for e in final.evidence:
                 sketch = ""
                 if e.sketch_path:
-                    rel = f"stage_a/{iter_dir.name}/{e.sketch_path}"
+                    fname = Path(e.sketch_path).name
+                    rel = sketch_files.get(fname, f"stage_a/{iter_dir.name}/{e.sketch_path}")
                     sketch = f"<br><img src='{rel}' style='max-width:220px'>"
                 cards.append(f"<div class='evidence'><b>{e.id} · {e.output_summary}</b> "
                              f"[{e.tool}, {e.author}] purpose: {e.purpose}{sketch}"
