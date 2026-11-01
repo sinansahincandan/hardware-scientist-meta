@@ -69,29 +69,38 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     annotated = Image.open(annotated_path).convert("RGB")
     panel_a = final_dir / "panel_A.png"
     annotated.save(panel_a)
-    # Force-flow view (AUTOPILOT §4): same render, translucent arrows tracing
-    # the load/transfer path along schematic edges between localized parts.
-    try:
-        overlay = annotated.convert("RGBA")
-        arrows = Image.new("RGBA", overlay.size, (0, 0, 0, 0))
-        ad = ImageDraw.Draw(arrows)
-        w, h = overlay.size
-        centers: dict[str, tuple[float, float]] = {}
-        for p in localization.parts:
-            if p.found:
-                centers[p.id] = ((p.box_1000.x0 + p.box_1000.x1) / 2000 * w,
-                                 (p.box_1000.y0 + p.box_1000.y1) / 2000 * h)
-        for edge in spec.edges:
-            if edge.from_id in centers and edge.to_id in centers:
-                (x1, y1), (x2, y2) = centers[edge.from_id], centers[edge.to_id]
-                ad.line([x1, y1, x2, y2], fill=(60, 140, 255, 105), width=max(4, w // 260))
+    # Flow view (v2, optional): only when the council recorded a flow_choice.
+    # Arrows follow the transfer_line order (the governing quantity's path),
+    # never an automatic all-edges overlay.
+    if solution.flow_choice:
+        try:
+            overlay = annotated.convert("RGBA")
+            arrows = Image.new("RGBA", overlay.size, (0, 0, 0, 0))
+            ad = ImageDraw.Draw(arrows)
+            w, h = overlay.size
+            centers: dict[str, tuple[float, float]] = {}
+            label_of = {n.id: n.label.lower() for n in spec.nodes}
+            for p in localization.parts:
+                if p.found:
+                    centers[label_of.get(p.id, p.id).lower()] = (
+                        (p.box_1000.x0 + p.box_1000.x1) / 2000 * w,
+                        (p.box_1000.y0 + p.box_1000.y1) / 2000 * h)
+            path_text = solution.transfer_line.split("|")[0].split(":", 1)[-1]
+            stops = [s.strip().lower() for s in path_text.replace("->", "→").split("→")]
+            pts = [centers[s] for s in stops if s in centers]
+            from itertools import pairwise
+
+            for (x1, y1), (x2, y2) in pairwise(pts):
+                ad.line([x1, y1, x2, y2], fill=(230, 120, 30, 160), width=max(5, w // 220))
                 ang = math.atan2(y2 - y1, x2 - x1)
                 for da in (2.6, -2.6):
-                    ad.line([x2, y2, x2 - 22 * math.cos(ang + da), y2 - 22 * math.sin(ang + da)],
-                            fill=(60, 140, 255, 130), width=max(4, w // 260))
-        Image.alpha_composite(overlay, arrows).convert("RGB").save(final_dir / "force_flow.png")
-    except Exception as exc:  # force-flow is an extra view; never fail the figure
-        trace_notes.append(f"force-flow view skipped: {exc}")
+                    ad.line([x2, y2, x2 - 26 * math.cos(ang + da), y2 - 26 * math.sin(ang + da)],
+                            fill=(230, 120, 30, 180), width=max(5, w // 220))
+            flow_path = final_dir / "flow.png"
+            Image.alpha_composite(overlay, arrows).convert("RGB").save(flow_path)
+            images_used.append(str(flow_path))
+        except Exception as exc:  # flow view is optional; never fail the figure
+            trace_notes.append(f"flow view skipped: {exc}")
     # Panel B: crop around critical part
     crit_box = next((p for p in localization.parts if p.id == spec.critical_part_id and p.found), None)
     panel_b_img: Image.Image

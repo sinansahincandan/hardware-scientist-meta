@@ -49,6 +49,32 @@ def parse_calc_inputs(expression: str) -> dict[str, Any]:
     return inputs
 
 
+def resolve_citation(cit: dict[str, Any], query: str) -> dict[str, Any]:
+    """Resolve a raw search citation to readable reference fields at record time (v2 D)."""
+    url = str(cit.get("url", "")).strip()
+    title = str(cit.get("title", "")).strip()
+    if not url:
+        return {"authors_or_org": "unresolved source", "title": title or query,
+                "year": "", "url": "", "query": query, "unresolved": True}
+    from urllib.parse import urlparse
+
+    host = urlparse(url).netloc.replace("www.", "")
+    year = ""
+    for key in ("year", "date", "published"):
+        if cit.get(key):
+            year = str(cit[key])[:4]
+            break
+    return {"authors_or_org": str(cit.get("author", "") or cit.get("authors", "") or host),
+            "title": title or url, "year": year, "url": url, "query": query, "unresolved": False}
+
+
+def format_reference(ref: dict[str, Any]) -> str:
+    if ref.get("unresolved"):
+        return f"unresolved source (search: {ref.get('query', '')})"
+    bits = [ref.get("authors_or_org", ""), ref.get("title", ""), ref.get("year", ""), ref.get("url", "")]
+    return " — ".join(b for b in bits if b)[:200]
+
+
 class ToolRunner:
     def __init__(self, board: Whiteboard, run_dir: Path, evidence_dir: Path) -> None:
         self.board = board
@@ -154,9 +180,12 @@ class ToolRunner:
     def web_search_evidence(self, author: str, query: str, citations: list[dict[str, Any]], cycle: int = 0) -> list[str]:
         ids: list[str] = []
         for cit in citations:
-            url = str(cit.get("url", ""))
-            eid = self._post(author, "web_search", query, query,
-                             f"source: {cit.get('title', '')} {url}"[:200], full=url, cycle=cycle)
+            reference = resolve_citation(cit, query)
+            eid = self._post(author, "web_search", query, query, format_reference(reference),
+                             full=reference.get("url", ""), cycle=cycle)
+            ev = next(e for e in self.board.evidence if e.id == eid)
+            ev.references = [reference]
+            (self.evidence_dir / f"{eid}.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
             ids.append(eid)
         return ids
 

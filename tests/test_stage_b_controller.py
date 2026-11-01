@@ -64,11 +64,12 @@ def test_fake_happy_run_end_to_end(tmp_path):
         assert (run_dir / "final" / panel).exists()
     assert (run_dir / "final" / "rationale.md").exists()
     report = (run_dir / "report.html").read_text()
-    for marker in ("1. Input", "2. Timeline", "3. Per iteration", "4. Revision timeline",
-                   "4b. Board", "5. Stage B rounds", "6. Final figure", "Cost table"):
+    for marker in ("The concept", "Three decisive design choices", "The open question",
+                   "What happened", "References", "board.html"):
         assert marker in report
+    assert len(report.encode()) < 2_000_000  # v2 F2: report under 2 MB, relative images
     board = (run_dir / "board.html").read_text()
-    assert "sticky" in board and "E1" in board and "type='range'" in board or 'type="range"' in board
+    assert "Cycle" in board and "E1" in board and "Manager" in board  # v2 readable board (F4)
     cost = json.loads((run_dir / "cost.json").read_text())
     assert cost["total_usd"] > 0
     assert (run_dir / "trace.md").exists()
@@ -94,7 +95,7 @@ def test_fake_s1_three_fail_then_pass(tmp_path):
 def test_fake_cost_cap_best_effort(tmp_path):
     run_dir = _run(tmp_path, scenario="cost_cap")
     report = (run_dir / "report.html").read_text()
-    assert "6. Final figure" in report
+    assert "What happened" in report
     cost = json.loads((run_dir / "cost.json").read_text())
     assert cost["total_usd"] > 0
 

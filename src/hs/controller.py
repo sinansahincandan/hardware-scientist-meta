@@ -60,6 +60,33 @@ def make_run_dir(problem: Problem, base: Path = Path("runs")) -> Path:
     return candidate
 
 
+def build_references(run_dir: Path) -> Path:
+    """Numbered reference list for the run (v2 D), from recorded citations."""
+    refs: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for ev_file in sorted((run_dir / "stage_a").glob("iter_*/evidence/*.json")):
+        try:
+            ev = json.loads(ev_file.read_text(encoding="utf-8"))
+        except Exception:  # noqa: S112 — unreadable evidence file contributes no references
+            continue
+        for ref in ev.get("references", []) or []:
+            key = ref.get("url") or f"{ref.get('title')}|{ref.get('query')}"
+            if key in seen:
+                continue
+            seen.add(key)
+            refs.append(ref)
+    lines = ["# References", ""]
+    for i, ref in enumerate(refs, 1):
+        if ref.get("unresolved"):
+            lines.append(f"{i}. unresolved source (search: {ref.get('query', '')})")
+        else:
+            year = f"({ref['year']}) " if ref.get("year") else ""
+            lines.append(f"{i}. {ref.get('authors_or_org', '')} — {ref.get('title', '')} {year}{ref.get('url', '')}")
+    out = run_dir / "references.md"
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return out
+
+
 class Controller:
     def __init__(self, client: Any, *, max_a_iters: int = config.MAX_A_ITERS,
                  max_s1_rounds: int = config.MAX_S1_ROUNDS, max_b_returns: int = config.MAX_B_RETURNS,
@@ -91,6 +118,7 @@ class Controller:
                 from hs.board import write_board
                 from hs.report import write_report
 
+                build_references(run_dir)
                 write_report(run_dir)
                 write_board(run_dir)
             except Exception as exc:  # report must never mask the run result

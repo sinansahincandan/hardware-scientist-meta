@@ -33,7 +33,132 @@ def _read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
-def report_html(run_dir: Path, embed: bool = True) -> str:
+def _sf(x: float) -> str:
+    """At most 3 significant figures, for human-facing numbers."""
+    return f"{x:.3g}"
+
+
+def _rel_img(path: Path, run_dir: Path, width: int = 900) -> str:
+    """Relative-path image, display copy downscaled to <=1600 px, click to full."""
+    if not path.exists():
+        return f"<i>missing image: {html.escape(path.name)}</i>"
+    try:
+        from PIL import Image
+
+        img = Image.open(path)
+        display = path
+        if max(img.size) > 1600:
+            disp_dir = path.parent / "display"
+            disp_dir.mkdir(exist_ok=True)
+            display = disp_dir / path.name
+            if not display.exists():
+                img.thumbnail((1600, 1600))
+                img.convert("RGB").save(display)
+        rel_full = path.relative_to(run_dir).as_posix()
+        rel_disp = display.relative_to(run_dir).as_posix()
+        return (f"<a href='{rel_full}' target='_blank'><img src='{rel_disp}' "
+                f"style='max-width:{width}px;width:100%;cursor:zoom-in'></a>")
+    except Exception:
+        return f"<i>image: {html.escape(path.name)}</i>"
+
+
+REPORT_STYLE = """<style>
+body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:#f4f4f2;color:#1c1e22;margin:0}
+main{max-width:1080px;margin:0 auto;padding:28px 22px 60px}
+h1{font-size:30px;line-height:1.2;margin:6px 0 10px} h2{font-size:20px;margin:34px 0 10px;border-bottom:2px solid #222;padding-bottom:5px}
+h3{font-size:16px;margin:20px 0 6px} p,li{font-size:15px;line-height:1.55}
+.hero{background:#171a1f;color:#eee;border-radius:12px;padding:22px 26px}
+.hero .mech{font-size:19px;line-height:1.45}
+.chip{display:inline-block;background:#e9f2e7;border:1px solid #9db894;border-radius:10px;padding:3px 9px;margin:2px;font-size:13px}
+.event{border-left:3px solid #b9c4bb;padding:7px 12px;margin:8px 0;background:#fff}
+.event b{color:#333}
+.q{border:1px solid #d8a920;background:#fdf6dd;border-radius:8px;padding:10px 14px}
+a{color:#1a5fb8} img{border-radius:6px}
+.small{color:#666;font-size:13px}
+</style>"""
+
+
+def report_html(run_dir: Path, embed: bool = False) -> str:
+    problem = _read_json(run_dir / "problem.json")
+    archive = [json.loads(l) for l in (run_dir / "archive.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()] \
+        if (run_dir / "archive.jsonl").exists() else []
+    img_entries = [json.loads(l) for l in (run_dir / "image_archive.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()] \
+        if (run_dir / "image_archive.jsonl").exists() else []
+    cost = _read_json(run_dir / "cost.json")
+    sol_files = sorted((run_dir / "stage_a").glob("iter_*/solution.json")) if (run_dir / "stage_a").exists() else []
+    sol = _read_json(sol_files[-1]) if sol_files else {}
+    parts: list[str] = [("<!doctype html><html><head><meta charset='utf-8'>"
+                         f"<title>{html.escape(str(problem.get('title', run_dir.name)))}</title>"
+                         f"{REPORT_STYLE}</head><body><main>")]
+    # 1. The problem
+    parts.append(f"<p class='small'>Hardware Scientist — concept report</p><h1>{html.escape(str(problem.get('title', run_dir.name)))}</h1>")
+    parts.append(f"<p>{html.escape(str(problem.get('statement', '')))}</p>")
+    if problem.get("constraints"):
+        parts.append("<ul>" + "".join(f"<li>{html.escape(str(c))}</li>" for c in problem["constraints"]) + "</ul>")
+    # 2. The final figure
+    parts.append("<h2>The concept</h2>")
+    parts.append(_rel_img(run_dir / "final" / "figure.png", run_dir, width=1040))
+    ff = run_dir / "final" / "flow.png"
+    if ff.exists():
+        parts.append("<p>Flow view (the governing quantity, as decided by the council):</p>"
+                     + _rel_img(ff, run_dir, width=1040))
+    # 3. Mechanism, choices, open question
+    if sol:
+        parts.append("<div class='hero'>")
+        parts.append(f"<p class='mech'>{html.escape(str(sol.get('mechanism_sentence', '')))}</p>")
+        parts.append(f"<p>{html.escape(str(sol.get('transfer_line', '')))}</p>")
+        parts.append("<h3 style='color:#fff'>Three decisive design choices</h3><ol>"
+                     + "".join(f"<li>{html.escape(str(c))}</li>" for c in (sol.get("decisive_choices") or [])[:3]) + "</ol>")
+        parts.append(f"<div class='q' style='color:#222'><b>The open question</b><br>{html.escape(str(sol.get('open_question', '')))}</div>")
+        parts.append("</div>")
+    # 4. What happened (one plain sentence per event)
+    parts.append("<h2>What happened</h2>")
+    events: list[str] = []
+    for entry in archive:
+        k = int(entry.get("iteration", 0))
+        iter_dir = run_dir / "stage_a" / f"iter_{k:02d}"
+        closure = _read_json(iter_dir / "closure.json")
+        closed = closure.get("closed_by", "")
+        events.append(f"The council meeting {'closed by consensus' if closed == 'consensus' else 'reached the cycle cap'} "
+                      f"after {closure.get('cycles_used', '?')} cycles.")
+        events.append(f"The evaluator {'accepted the concept' if entry.get('accept') else 'sent the concept back'}: "
+                      f"{html.escape(str(entry.get('feedback', ''))[:180])}")
+    for e in img_entries:
+        dec = str(e.get("decision", ""))
+        what = {"s1_pass": "The picture matched the mechanism sketch.",
+                "s2_return": "The picture showed a design flaw, so the concept went back to the council.",
+                "s1_retry": "The picture did not yet match the sketch, so it was corrected."}.get(dec, dec)
+        region = html.escape(str(e.get("s1_differences", ""))[:160])
+        events.append(f"Visualization attempt {e.get('attempt')}, round {e.get('round')}: {what} {region}")
+    diffs = sorted((run_dir / "master_prompt").glob("diff_*.md"))
+    for d in diffs:
+        events.append(f"The Manager changed the council's instructions (<a href='master_prompt/{d.name}'>see the diff</a>).")
+    events.append(f"The whole run cost ${_sf(float(cost.get('total_usd', 0)))}.")
+    parts.append("".join(f"<div class='event'>{e}</div>" for e in events))
+    # 5. References
+    refs = _read_text(run_dir / "references.md")
+    parts.append("<h2>References</h2>")
+    if refs:
+        items = [l for l in refs.splitlines() if l and not l.startswith("#")]
+        parts.append("<ol>" + "".join(
+            f"<li>{html.escape(l.split('. ', 1)[-1])}</li>" for l in items) + "</ol>")
+    else:
+        parts.append("<p>No literature references were recorded in this run.</p>")
+    # Files (linked, never inlined)
+    parts.append("<h2>Files</h2><ul>"
+                 "<li><a href='board.html'>Whiteboard replay</a></li>"
+                 "<li><a href='references.md'>Reference list (Markdown)</a></li>"
+                 + "".join(f"<li><a href='stage_a/{d.name}/transcript.md'>{d.name} transcript</a> · "
+                           f"<a href='stage_a/{d.name}/whiteboard.md'>whiteboard</a></li>"
+                           for d in sorted((run_dir / 'stage_a').glob('iter_*'))) 
+                 + "</ul>")
+    parts.append(f"<p class='small'>Run {run_dir.name} · total cost ${_sf(float(cost.get('total_usd', 0)))} · "
+                 "conceptual illustration — physical performance not established.</p>")
+    parts.append("</main></body></html>")
+    return "".join(parts)
+
+
+def _old_report_html(run_dir: Path, embed: bool = True) -> str:
     problem = _read_json(run_dir / "problem.json")
     archive_path = run_dir / "archive.jsonl"
     archive = [json.loads(l) for l in archive_path.read_text(encoding="utf-8").splitlines() if l.strip()] \
@@ -54,9 +179,9 @@ def report_html(run_dir: Path, embed: bool = True) -> str:
         parts.append(f"<p style='font-size:19px;margin:4px 0'>{html.escape(str(sol.get('mechanism_sentence', '')))}</p>")
         parts.append(f"<p style='color:#9fd0ff'>{html.escape(str(sol.get('transfer_line', '')))}</p>")
         parts.append(_img(run_dir / "final" / "panel_A.png", embed, run_dir, width=980))
-        ff = run_dir / "final" / "force_flow.png"
+        ff = run_dir / "final" / "flow.png"
         if ff.exists():
-            parts.append("<p>Force-flow view:</p>" + _img(ff, embed, run_dir, width=980))
+            parts.append("<p>Flow view (governing quantity, as decided by the council):</p>" + _img(ff, embed, run_dir, width=980))
         parts.append("<h3 style='color:#fff'>Three decisive design choices</h3><ol>"
                      + "".join(f"<li style='margin:6px 0'>{html.escape(str(c))}</li>"
                                for c in (sol.get("decisive_choices") or [])[:3]) + "</ol>")
@@ -141,7 +266,7 @@ def report_html(run_dir: Path, embed: bool = True) -> str:
     return "".join(parts)
 
 
-def write_report(run_dir: Path, embed: bool = True) -> Path:
+def write_report(run_dir: Path, embed: bool = False) -> Path:
     out = run_dir / "report.html"
     out.write_text(report_html(run_dir, embed=embed), encoding="utf-8")
     return out
