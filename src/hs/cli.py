@@ -64,8 +64,10 @@ def _run_with_dir(controller: Any, client: Any, problem: Any, run_dir: Path) -> 
     finally:
         try:
             from hs.board import write_board
+            from hs.controller import build_references
             from hs.report import write_report
 
+            build_references(run_dir)
             write_report(run_dir)
             write_board(run_dir)
         except Exception as exc:

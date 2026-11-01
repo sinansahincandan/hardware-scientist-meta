@@ -75,13 +75,25 @@ def build_references(run_dir: Path) -> Path:
                 continue
             seen.add(key)
             refs.append(ref)
+    # Prior-art sources are searched literature too; their URLs are recorded
+    # in novelty.md even when no member search produced an evidence item.
+    for novelty in sorted(run_dir.glob("stage_a/iter_*/novelty.md")):
+        for line in novelty.read_text(encoding="utf-8").splitlines():
+            if line.startswith("- http"):
+                url = line[2:].strip()
+                if url not in seen:
+                    seen.add(url)
+                    refs.append({"authors_or_org": "prior-art check", "title": url,
+                                 "year": "", "url": url, "query": "", "unresolved": False})
     lines = ["# References", ""]
     for i, ref in enumerate(refs, 1):
         if ref.get("unresolved"):
             lines.append(f"{i}. unresolved source (search: {ref.get('query', '')})")
         else:
             year = f"({ref['year']}) " if ref.get("year") else ""
-            lines.append(f"{i}. {ref.get('authors_or_org', '')} — {ref.get('title', '')} {year}{ref.get('url', '')}")
+            title = ref.get("title", "")
+            url = ref.get("url", "")
+            lines.append(f"{i}. {ref.get('authors_or_org', '')} — {title} {year}{'' if title == url else url}")
     out = run_dir / "references.md"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return out
