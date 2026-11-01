@@ -11,3 +11,5 @@
 [2026-10-31 19:00] Run 01 rerun (175744) CRASHED in iter2 at $2.1291/212 calls with repeated expired-chain 400 despite 2 restarts; iter0 consensus cycle2 + accepted, Manager rewrite landed (3 sections) · Changed: same-request retries (x2, 3s) + up to 4 fresh restarts per turn + whole-turn retry in Meeting; VLM focus parts must include critical part + neighbours visibly · Runtime cost so far: ~$4.35 real
 
 [2026-10-31 19:45] Run 01 (184531) ACCEPTED end-to-end $7.2244: consensus iters 0+6, S1 pass attempt1 round1, figure composed · Reviewed as images: figure, panel A (presentation-grade), schematic (weak, rows off-canvas), passing render · Changed: schematic row clamp, figure measured layout + recompose(), REVIEW.md in final 01 folder; figure recomposed layout-only · Runtime cost total so far: ~$11.6 real across all runs/smoke
+
+[2026-10-31 22:15] Run 02 (212855) ACCEPTED first attempt $1.9136: consensus iters, designer return -> Manager rewrite -> code-label S1 pass round 0 · Panel A presentation-grade; force-flow arrows too thick (thinned after), schematic load labels overlap · REVIEW.md written · Runtime cost: ~$13.5 real total

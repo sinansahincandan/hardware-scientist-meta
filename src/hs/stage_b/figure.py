@@ -84,11 +84,11 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         for edge in spec.edges:
             if edge.from_id in centers and edge.to_id in centers:
                 (x1, y1), (x2, y2) = centers[edge.from_id], centers[edge.to_id]
-                ad.line([x1, y1, x2, y2], fill=(60, 140, 255, 150), width=max(10, w // 90))
+                ad.line([x1, y1, x2, y2], fill=(60, 140, 255, 105), width=max(4, w // 260))
                 ang = math.atan2(y2 - y1, x2 - x1)
                 for da in (2.6, -2.6):
-                    ad.line([x2, y2, x2 - 34 * math.cos(ang + da), y2 - 34 * math.sin(ang + da)],
-                            fill=(60, 140, 255, 170), width=max(10, w // 90))
+                    ad.line([x2, y2, x2 - 22 * math.cos(ang + da), y2 - 22 * math.sin(ang + da)],
+                            fill=(60, 140, 255, 130), width=max(4, w // 260))
         Image.alpha_composite(overlay, arrows).convert("RGB").save(final_dir / "force_flow.png")
     except Exception as exc:  # force-flow is an extra view; never fail the figure
         trace_notes.append(f"force-flow view skipped: {exc}")
