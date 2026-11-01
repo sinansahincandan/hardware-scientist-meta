@@ -19,17 +19,28 @@ def _font(size: int):  # readable labels at any image size; default bitmap font 
 from hs.schemas import Box1000, Localization, LocalizedPart, SchematicSpec
 
 
+def _iou(a: tuple[float, float, float, float], b: tuple[float, float, float, float]) -> float:
+    ix = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+    iy = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+    inter = ix * iy
+    union = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter
+    return inter / union if union > 0 else 0.0
+
+
 def _drop_conflicting(boxes: dict[str, tuple[float, float, float, float]]) -> set[str]:
-    """A label whose anchor (box centre) lies inside a *different* part's box
-    points at the wrong part — worse than no label. Drop those so they are
-    reported missing instead (a real S1 finding the loop can act on)."""
+    """Two parts localized onto nearly the same box means one of them was
+    grounded on the wrong object; its label would point at the other part —
+    worse than no label. Drop the smaller claim so it is reported missing
+    instead (a real S1 finding the loop can act on). Genuine containment
+    (a small part inside a chamber) has low IoU and is kept."""
     dropped: set[str] = set()
-    for pid, (x0, y0, x1, y1) in boxes.items():
-        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-        for other, (ox0, oy0, ox1, oy1) in boxes.items():
-            if other != pid and ox0 < cx < ox1 and oy0 < cy < oy1:
-                dropped.add(pid)
-                break
+    ids = list(boxes)
+    for i, pid in enumerate(ids):
+        for other in ids[i + 1:]:
+            if _iou(boxes[pid], boxes[other]) > 0.5:
+                area_pid = (boxes[pid][2] - boxes[pid][0]) * (boxes[pid][3] - boxes[pid][1])
+                area_other = (boxes[other][2] - boxes[other][0]) * (boxes[other][3] - boxes[other][1])
+                dropped.add(pid if area_pid <= area_other else other)
     return dropped
 
 

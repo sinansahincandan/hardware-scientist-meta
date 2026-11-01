@@ -56,9 +56,12 @@ def test_drop_conflicting_labels() -> None:
     from hs.stage_b.annotate import _drop_conflicting
 
     boxes = {
-        "crates": (700.0, 400.0, 760.0, 460.0),   # anchor lands inside cabinet
+        "crates": (655.0, 355.0, 795.0, 495.0),   # grounded on the cabinet itself
         "cabinet": (650.0, 350.0, 800.0, 500.0),
         "drums": (100.0, 700.0, 200.0, 800.0),
     }
     assert _drop_conflicting(boxes) == {"crates"}
+    # Genuine containment (small part inside a big chamber) is kept.
+    nested = {"chamber": (0.0, 0.0, 900.0, 900.0), "evaporator": (300.0, 100.0, 500.0, 200.0)}
+    assert _drop_conflicting(nested) == set()
     assert _drop_conflicting({"a": (0.0, 0.0, 10.0, 10.0), "b": (50.0, 50.0, 60.0, 60.0)}) == set()
