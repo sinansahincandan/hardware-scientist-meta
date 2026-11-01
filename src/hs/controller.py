@@ -173,7 +173,7 @@ class Controller:
             pending_eval_requests = list(verdict.evidence_requests)
             pending_eval_feedback = verdict.feedback
             if not verdict.accept:
-                report = manager.edit(room, solution, verdict.feedback, iter_dir)
+                report = manager.edit(room, solution, verdict.feedback, iter_dir, tools=meeting.tools)
                 trace.log(f"iter {k}: manager edit changed={report.get('changed')} reverted={report.get('reverted')}")
                 if manager.no_progress_streak >= 2:
                     exit_reason = "two consecutive no_progress iterations"
@@ -192,7 +192,7 @@ class Controller:
                     exit_reason = "MAX_B_RETURNS reached (schematic)"
                     break
                 returns_to_a += 1
-                manager.edit(room, solution, fb, iter_dir)
+                manager.edit(room, solution, fb, iter_dir, tools=meeting.tools)
                 if manager.no_progress_streak >= 2:
                     exit_reason = "two consecutive no_progress iterations"
                     break
@@ -319,7 +319,7 @@ class Controller:
                 exit_reason = "MAX_B_RETURNS reached (designer)"
                 break
             returns_to_a += 1
-            manager.edit(room, solution, fb, iter_dir)
+            manager.edit(room, solution, fb, iter_dir, tools=meeting.tools)
             if manager.no_progress_streak >= 2:
                 exit_reason = "two consecutive no_progress iterations"
                 break

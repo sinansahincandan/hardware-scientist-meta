@@ -128,6 +128,14 @@ class RevertTarget(BaseModel):
     to_revision: int
 
 
+class ToolProposal(BaseModel):
+    name: str
+    description: str
+    parameters: dict[str, Any] = Field(default_factory=dict)
+    python_source: str
+    smoke_test_input: dict[str, Any] = Field(default_factory=dict)
+
+
 class Gradients(BaseModel):
     per_member: list[MemberNote] = Field(default_factory=list)
     per_section: list[SectionNote] = Field(default_factory=list)
@@ -137,6 +145,7 @@ class Gradients(BaseModel):
     same_problem_as_before: bool = False
     repeat_explanation: str = ""
     revert_sections: list[RevertTarget] = Field(default_factory=list)
+    new_tool_proposals: list[ToolProposal] = Field(default_factory=list)
 
 
 class OutputGradientItem(BaseModel):

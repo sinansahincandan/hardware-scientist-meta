@@ -16,6 +16,7 @@ class Manager:
         self.client = client
         self.master = master
         self.last_gradients: Gradients | None = None
+        self.manager_tools_registered = 0
 
     @property
     def no_progress_streak(self) -> int:
@@ -76,7 +77,10 @@ class Manager:
             "council should know or do differently as engineers (design knowledge, checks, comparisons, "
             "member behaviour, meeting agenda). Never propose a design. Never write pipeline rules: "
             "retry limits, caps and gating live in code, not in the prompt. State whether this is the "
-            "same problem as the previous failure and which sections to revert if so."
+            "same problem as the previous failure and which sections to revert if so. If a missing "
+            "calculator caused the failure, you may add up to 2 entries to new_tool_proposals "
+            "(name, description, JSON-schema parameters, python_source defining run(args), "
+            "smoke_test_input); each is smoke-tested in the sandbox and registered for all members."
         )
         gradients = self.client.structured("manager_gradients", Gradients,
                                            "You are the Manager, step 2: diagnose which prompt part or behaviour caused the output.",
@@ -86,11 +90,31 @@ class Manager:
         (iter_dir / "gradient_prompt.json").write_text(gradients.model_dump_json(indent=2), encoding="utf-8")
         return gradients
 
+    def register_proposed_tools(self, gradients: Gradients, tools: Any) -> list[str]:
+        """A5: Manager-proposed tools go through the same sandbox smoke test
+        and registry as member tools, capped by MAX_MANAGER_NEW_TOOLS."""
+        from hs import config
+
+        registered: list[str] = []
+        if tools is None:
+            return registered
+        for proposal in gradients.new_tool_proposals:
+            if self.manager_tools_registered >= config.MAX_MANAGER_NEW_TOOLS:
+                break
+            ok, _msg = tools.new_tool("Manager", proposal.name, proposal.description,
+                                      proposal.parameters, proposal.python_source,
+                                      proposal.smoke_test_input)
+            if ok:
+                self.manager_tools_registered += 1
+                registered.append(proposal.name)
+        return registered
+
     def edit(self, room: MeetingResult, solution: SolutionPrompt, feedback_text: str,
-             iter_dir: Path) -> dict[str, Any]:
+             iter_dir: Path, tools: Any = None) -> dict[str, Any]:
         """Diagnosis -> revert (code) -> optimizer rewrite with guards/shrink. Returns ops report."""
         output_gradient = self.output_gradient(solution, feedback_text, iter_dir)
         gradients = self.diagnose(room, solution, feedback_text, iter_dir, output_gradient)
+        tools_registered = self.register_proposed_tools(gradients, tools)
         reverted = self.master.apply_reverts(gradients)
         rewrite = self.client.structured(
             "optimizer", MasterPromptRewrite,
@@ -115,5 +139,6 @@ class Manager:
                 f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES:\n{gradients.model_dump_json(indent=2)}")
             report = self.master.apply_rewrite(rewrite3, _shrink_retry=True)
         report["reverted"] = reverted
+        report["tools_registered"] = tools_registered
         report["gradients"] = gradients.model_dump()
         return report

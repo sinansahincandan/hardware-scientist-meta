@@ -190,10 +190,21 @@ class MasterPrompt:
                 title = re.sub(r"^\d+\.?\s*", "", title)
                 if wanted == title:
                     return known
+            # Fall back to the section number ("## 3. Process" -> "## 3. Tools"):
+            # dropping a rewrite silently once lost a whole revision (run 02).
+            number = re.match(r"^#+\s*(\d+)[.\s]", heading)
+            if number:
+                for known in old_by:
+                    if re.match(rf"^#+\s*{number.group(1)}[.\s]", known):
+                        return known
             return heading if heading in old_by else None
 
+        dropped: list[str] = []
         for section in rewrite.sections:
             canonical = _canonical(section.heading)
+            if canonical is None:
+                dropped.append(section.heading)
+                continue
             if canonical is not None:
                 section = section.model_copy(update={"heading": canonical})
             if section.heading in new_by and section.heading != "## 1. Problem":
@@ -203,7 +214,8 @@ class MasterPrompt:
         candidate = [(h, new_by[h]) for h, _ in old_sections]
         violations = guard_violations(old_sections, candidate)
         result: dict[str, Any] = {"changed": [], "violations": violations, "shrink_asked": [],
-                                  "change_note": rewrite.change_note, "no_progress": False}
+                                  "change_note": rewrite.change_note, "no_progress": False,
+                                  "dropped_headings": dropped}
         if violations and not _guard_retry:
             result["guard_reasked"] = True
             return result  # caller re-asks once; state untouched
