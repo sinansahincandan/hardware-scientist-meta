@@ -112,6 +112,7 @@ class Controller:
         evaluator = Evaluator(self.client)
         secretary = Secretary(self.client)
         returns_to_a = 0
+        label_failures_total = 0  # persists across Stage B attempts (AUTOPILOT §7.1 fallback)
         best_pass: tuple[Any, ...] | None = None
         last: tuple[Any, ...] | None = None
         pending_eval_requests: list[str] = []
@@ -170,7 +171,7 @@ class Controller:
             decision = "s2_return"
             ev = None
             s1_diffs = ""
-            label_failures = 0
+            label_failures = label_failures_total
             attempt_dir = run_dir / "stage_b" / f"attempt_{returns_to_a:02d}"
             for r in range(self.max_s1_rounds):
                 round_dir = attempt_dir / f"round_{r:02d}"
@@ -203,6 +204,7 @@ class Controller:
                 trace.log(f"iter {k} round {r}: S1={ev.s1_faithful} S2={ev.s2_flaw} decision={decision}")
                 if label_failed(ev):
                     label_failures += 1
+                    label_failures_total = label_failures
                     trace.log(f"iter {k} round {r}: label failure {label_failures}/2 before code-label fallback")
                 # Targeted corrections from actual-image review, appended verbatim next round (§7.2).
                 s1_diffs = "\n".join(x for x in (ev.s1_differences, ev.label_findings,
