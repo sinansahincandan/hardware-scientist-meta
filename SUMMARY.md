@@ -144,3 +144,7 @@ Total v2 session hs spend: **$7.14** (cap $40). Tests: 44 passed,
 - Members sometimes cite literature from memory without searching
   (run 02c: no member web_search calls); prior-art check still searches.
 - Stochastic provider content-filter 400s now retry (QUESTIONS.md).
+- The VLM prompt gradient ran in all three final runs and chose
+  fix_mode "full" every time; the local-edit + composite branch is
+  covered by unit tests and the earlier rerun machinery, but no real
+  run has kept a local edit yet.
