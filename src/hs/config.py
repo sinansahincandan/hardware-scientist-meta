@@ -65,7 +65,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger.jsonl"))
 
 IMAGE_BACKEND = "edits"  # "edits" | "responses" (fallback, spec §5.3)
-SKETCH_SINGLE_REQUEST = True  # §14.3 fallback switch
 
 # Prices: USD per 1M tokens unless noted. Verified against https://dev.meta.ai/docs/pricing-rate-limits
 # on 2026-11-02 (muse-spark-1.3 standard mode; web search grounding; muse-image-1.0 flat per image;

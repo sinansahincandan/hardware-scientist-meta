@@ -211,28 +211,5 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
         name = f"{stem}_labeled.png" if labeled else f"{stem}.png"
         fig.savefig(out_dir / name, bbox_inches="tight")
         plt.close(fig)
-    # Two-state reference view (labeled only): same mechanism with the critical
-    # part offset one grid step — initial vs operated state (AUTOPILOT §4).
-    fig, axes = plt.subplots(1, 2, figsize=(12, 3.6), dpi=100)
-    for ax, (state, dx) in zip(axes, [("INITIAL", 0.0), ("OPERATED", 0.7)], strict=True):
-        ax.set_xlim(0, 10)
-        ax.set_ylim(0, 6.25)
-        ax.axis("off")
-        ax.set_title(state, fontsize=10)
-        for edge in edges:
-            x1, y1, _, _ = positions[edge.from_id]
-            x2, y2, _, _ = positions[edge.to_id]
-            ox1 = dx if edge.from_id == spec.critical_part_id else 0.0
-            ox2 = dx if edge.to_id == spec.critical_part_id else 0.0
-            ax.plot([x1 + ox1, x2 + ox2], [y1, y2], color="#333333", lw=1.2)
-        for node in nodes:
-            cx, cy, w, h = positions[node.id]
-            if node.id == spec.critical_part_id:
-                cx += dx
-            ax.add_patch(Rectangle((cx - w / 2, cy - h / 2), w, h,
-                                   facecolor=node.color_hint, edgecolor="#333333"))
-            ax.text(cx, cy - h / 2 - 0.45, node.label, ha="center", fontsize=7)
-    fig.savefig(out_dir / f"{stem}_two_states.png", bbox_inches="tight")
-    plt.close(fig)
     (out_dir / f"{stem}.json").write_text(json.dumps(geometry, indent=2), encoding="utf-8")
     return geometry

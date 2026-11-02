@@ -97,7 +97,7 @@ def _cmd_show(args: argparse.Namespace) -> int:
 def _cmd_report(args: argparse.Namespace) -> int:
     from hs.report import write_report
 
-    out = write_report(Path(args.run_dir), embed=not args.no_embed)
+    out = write_report(Path(args.run_dir))
     print(out)
     return 0
 
@@ -106,14 +106,6 @@ def _cmd_board(args: argparse.Namespace) -> int:
     from hs.board import write_board
 
     out = write_board(Path(args.run_dir), live=bool(args.live))
-    print(out)
-    return 0
-
-
-def _cmd_showcase(args: argparse.Namespace) -> int:
-    from hs.report import write_showcase
-
-    out = write_showcase([Path(p) for p in args.run_dirs], Path(args.out) if args.out else None)
     print(out)
     return 0
 
@@ -174,7 +166,6 @@ def build_parser() -> argparse.ArgumentParser:
     show.set_defaults(func=_cmd_show)
     rep = sub.add_parser("report")
     rep.add_argument("run_dir")
-    rep.add_argument("--no-embed", action="store_true")
     rep.set_defaults(func=_cmd_report)
     board = sub.add_parser("board")
     board.add_argument("run_dir")
@@ -183,10 +174,6 @@ def build_parser() -> argparse.ArgumentParser:
     comp = sub.add_parser("compare")
     comp.add_argument("run_dirs", nargs="+")
     comp.set_defaults(func=_cmd_compare)
-    sc = sub.add_parser("showcase")
-    sc.add_argument("run_dirs", nargs="+")
-    sc.add_argument("--out", default="")
-    sc.set_defaults(func=_cmd_showcase)
     sb = sub.add_parser("stageb")
     sb.add_argument("run_dir")
     sb.add_argument("--fake", action="store_true")

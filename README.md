@@ -67,9 +67,8 @@ Meta HTTP 402 billing error, raises `BudgetExceeded` (never retried); the run th
 the best-effort path with its files saved. Fake mode never writes the ledger. The ledger counts
 only calls made by this code; the Meta dashboard is the authority on credit left.
 
-Also: `hs showcase runs/<a> runs/<b> runs/<c>` writes `runs/showcase.html`
-(input prompt left, final figure right with click-to-enlarge, mechanism
-sentence, three decisive choices and the open question — nothing else).
+Pages: `hs showcase-build runs/<a> runs/<b> runs/<c> --out showcase` (see below) builds the showcase;
+the old single-file `hs showcase` page was removed in round 3 (D20).
 
 ## Known limitations (spec §13)
 
