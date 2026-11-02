@@ -74,3 +74,11 @@ context (workpiece, real materials, product-shot lighting, mechanism readable), 
 The render carries no labels or callouts; code labels the figure only. The designer evaluation
 judges the unlabeled render (no burned margins, footer, panel letter or scale bar). must_not names
 kinds of things, never quoted text; code drops must_not entries containing digits.
+
+## SPEC-10 (round 3, items 16-18): SAM part map, closed Stage B loop, deviations
+New §5.4b and the closed-loop paragraph in §5.5. SAM 3.1 measures every part per round (boxes only;
+masks blocked) against an LLM-derived expectation table; differences are text evidence for the
+critic and the gradient; SAM boxes place code labels. Each evaluation rules on every earlier fault
+(fixed / still wrong / regressed) and compares with the kept render; rounds that fix nothing or
+regress revert render and prompt; s1_pass needs every earlier fault fixed. Deviations are listed
+with whether they matter. EvalRegion.fixed, RequirementCheck and Localization.confidence removed.

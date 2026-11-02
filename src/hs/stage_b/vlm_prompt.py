@@ -13,7 +13,8 @@ class VLMPromptWriter:
         self.client = client
 
     def write(self, solution: SolutionPrompt, spec: SchematicSpec, schematic_png: Path,
-              labeled_png: Path, archive: ImageArchive, corrections: str = "") -> VLMPrompt:
+              labeled_png: Path, archive: ImageArchive, corrections: str = "",
+              previous_prompt: str = "") -> VLMPrompt:
         prompt = (
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"PREFERRED VIEW: {solution.figure_spec.preferred_view}\n\n"
@@ -32,6 +33,8 @@ class VLMPromptWriter:
             "text, labels, callouts, margins or scale bars: code adds every label afterwards. In must_not, name "
             "kinds of things to avoid; never quote the text, numbers or names you want kept out of the image "
             "(a quoted string gets drawn).\n\n"
+            + (f"KEPT PROMPT (the last render that was kept came from this prompt; edit it where the "
+               f"corrections point, keep the rest):\n{previous_prompt}\n\n" if previous_prompt else "")
             + (f"TARGETED CORRECTIONS FROM ACTUAL-IMAGE REVIEW (apply verbatim):\n{corrections}\n" if corrections else "")
         )
         vlm = self.client.structured("vlm_writer", VLMPrompt,

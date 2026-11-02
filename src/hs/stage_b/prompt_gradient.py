@@ -13,7 +13,8 @@ class VLMPromptGradientRunner:
     def __init__(self, client: Any) -> None:
         self.client = client
 
-    def run(self, render_png: Path, labeled_png: Path, vlm: VLMPrompt, ev: DesignerEval) -> VLMPromptGradient:
+    def run(self, render_png: Path, labeled_png: Path, vlm: VLMPrompt, ev: DesignerEval,
+            measurements: str = "") -> VLMPromptGradient:
         regions = "\n".join(
             f"- region part={r.part_id} box={r.box} source={r.source}: observed={r.observed} | expected={r.expected}"
             for r in ev.regions) or "(no regions; use the written differences)"
@@ -21,10 +22,13 @@ class VLMPromptGradientRunner:
             "You are the VLM prompt gradient. The designer evaluation regions below are the output "
             "gradient. For EACH region, write a diagnosis: which sentence of the VLM prompt caused "
             "this depiction fault, or what the prompt is missing, and the exact prompt fix. Then set "
-            "fix_mode: 'local' when the fixes touch one part/region at a time, 'full' when the fix "
-            "spans several parts and the whole image must be regenerated.\n\n"
-            f"VLM PROMPT:\n{vlm.prompt}\nMUST NOT: {vlm.must_not}\n\nREGIONS:\n{regions}\n\n"
-            f"WRITTEN DIFFERENCES:\n{ev.s1_differences}\n"
+            "fix_mode: 'full' when the error is spread or structural; 'local' when the same part or connection "
+            "stays wrong in consecutive rounds, so the next fix targets that part alone and the prompt's emphasis "
+            "moves to it. Counts are hard for image models: if a count stays wrong, rephrase it, or say that a "
+            "representative count is acceptable when the working principle does not depend on it.\n\n"
+            + (f"{measurements}\n\n" if measurements else "")
+            + f"VLM PROMPT:\n{vlm.prompt}\nMUST NOT: {vlm.must_not}\n\nREGIONS:\n{regions}\n\n"
+            + f"WRITTEN DIFFERENCES:\n{ev.s1_differences}\n"
         )
         return self.client.structured("vlm_prompt_gradient", VLMPromptGradient,
                                       "You diagnose which VLM-prompt sentence caused each depiction fault.",

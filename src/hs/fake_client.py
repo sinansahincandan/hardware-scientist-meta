@@ -97,6 +97,20 @@ class FakeClient:
         img.save(buf, format="PNG")
         return buf.getvalue()
 
+    def sam_segment(self, phrase: str, image_png: Path, metadata: dict[str, str] | None = None) -> str:
+        """Fake SAM: one box per phrase, placed on the fake render's coloured blocks by part number."""
+        import re
+
+        self.cost.check_budget(estimated_usd=0.01)
+        self.cost.record("sam", config.SAM_MODEL, {"sam_calls": 1})
+        with Image.open(image_png) as im:
+            w, h = im.size
+        digits = re.findall(r"\d+", phrase)
+        i = (int(digits[-1]) - 1) % 4 if digits else 0
+        x0 = int((60 + i * 180) / 800 * w)
+        return (f"<0f>0<|box;x1={x0};y1={int(180 / 500 * h)};x2={x0 + int(130 / 800 * w)};"
+                f"y2={int(330 / 500 * h)};w={w};h={h}|><|mask;x=0;y=0;data=1,1,!!!!!!|>")
+
     # -- scripted member turns (executed by Meeting against real board code) --
     def scripted_turn(self, member: str, roster: list[str], cycle: int, board: Any) -> dict[str, Any]:
         """Return {tools, ops, message, vote} for one fake member turn."""
@@ -262,6 +276,15 @@ class FakeClient:
                                 s2_flaw=False, s2_feedback="", notes="")
         return DesignerEval(s1_faithful=True, s1_differences="", s2_flaw=False, s2_feedback="",
                             notes="Minor: finish looks polished.")
+
+    def _fake_PartMap(self, user_text: str):
+        import re
+
+        from hs.schemas import PartMap, PartVisual
+
+        ids = re.findall(r"^- (P\d+): ", user_text, flags=re.MULTILINE)
+        return PartMap(parts=[PartVisual(part_id=pid, visual_phrase=f"fake part {pid[1:]}", count=1)
+                              for pid in ids])
 
     def _fake_LightCheck(self, user_text: str) -> LightCheck:
         return LightCheck(ok=True, reason="Panel shows the requested parts.")

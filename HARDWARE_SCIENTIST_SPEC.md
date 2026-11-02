@@ -238,6 +238,9 @@ Unknown top-level JSON fields return 400; `mask`, `input_fidelity`, `partial_ima
 2. **Overlay (Pillow):** labels with leader lines anchored at box centers (collision-avoided, outside the part), arrows for `loads` (letter from `loads[].label`, e.g. "F") and for edges with a non-empty label (signal), panel letter. **Scale bar:** `px_per_mm = critical box width in px / geometric mean of critical part's size_class_mm`; draw a bar of `SchematicSpec.scale_bar_mm` labeled as a class ("~10 mm"). If the critical part is `found: false`, skip the bar and add it to the eval input. Fonts and line widths scale with image size.
 3. `missing_parts = [p for p in parts if not found]` goes to the designer evaluation.
 
+### 5.4b Part map with SAM 3.1 (round 3, item 16)
+Once per accepted solution, one call (`part_map`, structured `PartMap`) gives every part a plain visual phrase for the segmenter ("black rubber wheel", never an engineering name) and a coarse expectation from the design: visible count, long axis (horizontal / vertical / any), size against a named neighbour (about ×2 tolerance), and the parts it touches. Every round, code calls `sam-3.1` once per part on the unlabeled render and measures the boxes (count, long axis, size ratio, contacts; masks are not decoded in this build, see BLOCKED.md). The differences from the expectation, and from the previous kept round (fixed, still different, moved, lost), go to the designer evaluation and the VLM prompt gradient as text evidence, never as a verdict. SAM boxes also place the code-drawn labels (inside the frame, leader to each part; the localization call only for parts SAM did not find). Each round writes `sam.json` and `sam_use.json` (which segmenter findings the critique used, earlier-fault outcomes next round, and measured deviations nobody noticed).
+
 ### 5.5 Designer evaluation (VLM) — region-anchored critique (v2)
 `muse-spark-1.3`, high effort, structured output `DesignerEval` (§12.8). Input: `annotated.png`, `schematic_labeled.png`, the `SolutionPrompt` summary, `missing_parts`.
 - **Regions:** every finding is a region `{box: [x0, y0, x1, y1] on the 0–1000 grid, part_id, observed, expected}` in free text. Grounding convention verified against the Muse image-understanding docs (0–1000 normalized grid, origin top-left; §14). The designer first describes what it actually sees (pixel-first), then anchors each mismatch to a box.
@@ -251,6 +254,8 @@ Routing (`designer_eval.decide()` returns `s1_pass | s1_retry | s2_return`):
 - `s1_pass`: S1 yes and S2 no → compose the final figure (§5.6). Minor remarks from the S2 text go to `rationale.md` as notes.
 
 Every round writes `prompt + render + annotated + eval` to `ImageArchive` and one line to `trace.md` (S1 reason, prompt change).
+
+**Closed loop (round 3, items 17–18).** Every evaluation after the first receives every fault flagged in any earlier round and the previous kept render; it sets each earlier fault to fixed / still wrong / regressed (`previous_regions`) and writes `comparison_with_previous`. A round is kept only if it fixed an earlier fault and introduced none (or passes with every earlier fault fixed); otherwise the render and the VLM prompt revert to the kept round and the next writer call edits the kept prompt. `s1_pass` requires `s1_faithful` and every earlier fault fixed. The evaluation lists every measurable deviation (scale, counts, orientations, proportions — including each segmenter difference) with whether it matters for the working principle (`deviations`).
 
 ### 5.5b VLM prompt gradient, local edit, progress check (v2)
 S1 follows the same two-step TextGrad chain as Stage A:

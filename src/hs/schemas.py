@@ -270,18 +270,10 @@ class LocalizedPart(BaseModel):
     id: str
     found: bool
     box_1000: Box1000
-    confidence: float = 0.0
 
 
 class Localization(BaseModel):
     parts: list[LocalizedPart] = Field(default_factory=list)
-
-
-class RequirementCheck(BaseModel):
-    requirement: str
-    status: Literal["observed", "ambiguous", "missing"] = "observed"
-    stage_at_fault: Literal["meeting", "schematic", "prompt", "render", "none"] = "none"
-    detail: str = ""
 
 
 class EvalRegion(BaseModel):
@@ -290,14 +282,46 @@ class EvalRegion(BaseModel):
     observed: str = ""
     expected: str = ""
     source: Literal["render", "schematic"] = "render"
-    fixed: bool = False
+
+
+class PreviousRegionStatus(BaseModel):
+    """C17: the critic's own word on every fault flagged in earlier rounds (read by the loop)."""
+    part_id: str
+    fault: str
+    status: Literal["fixed", "still_wrong", "regressed"]
+    note: str = ""
+
+
+class Deviation(BaseModel):
+    """C18: a visible, measurable deviation and whether it matters for the working principle."""
+    what: str
+    measured: str
+    expected: str
+    matters: bool
+    why: str
+
+
+class PartVisual(BaseModel):
+    part_id: str
+    visual_phrase: str
+    count: int = 1
+    long_axis: Literal["horizontal", "vertical", "any"] = "any"
+    size_vs: str = ""
+    size_ratio: float = 0.0
+    touches: list[str] = Field(default_factory=list)
+    note: str = ""
+
+
+class PartMap(BaseModel):
+    parts: list[PartVisual] = Field(default_factory=list)
 
 
 class DesignerEval(BaseModel):
     pixel_description: str = ""
-    label_findings: str = ""
     regions: list[EvalRegion] = Field(default_factory=list)
-    requirements: list[RequirementCheck] = Field(default_factory=list)
+    previous_regions: list[PreviousRegionStatus] = Field(default_factory=list)
+    comparison_with_previous: str = ""
+    deviations: list[Deviation] = Field(default_factory=list)
     s1_faithful: bool
     s1_differences: str = ""
     s2_flaw: bool = False

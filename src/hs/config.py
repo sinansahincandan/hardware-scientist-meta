@@ -35,6 +35,7 @@ ROLES: dict[str, RoleConfig] = {
     "schematic": RoleConfig(DEFAULT_MODEL, "low", 8000),
     "vlm_writer": RoleConfig(DEFAULT_MODEL, "high", 4000),
     "localization": RoleConfig(DEFAULT_MODEL, "low", 4000),
+    "part_map": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "designer_eval": RoleConfig(DEFAULT_MODEL, "high", 8000),
     "progress_check": RoleConfig(DEFAULT_MODEL, "high", 4000),
     "light_check": RoleConfig(DEFAULT_MODEL, "low", 2000),

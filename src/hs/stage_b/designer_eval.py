@@ -16,7 +16,8 @@ def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROU
     """
     if ev.s2_flaw:
         return "s2_return"
-    if ev.s1_faithful:
+    # C17: faithful only when the critic's own statuses leave no earlier fault unfixed.
+    if ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions):
         return "s1_pass"
     if round_idx + 1 < max_rounds:
         return "s1_retry"
@@ -45,7 +46,9 @@ class DesignerEvalRunner:
         self.client = client
 
     def run(self, render_png: Path, sketch_png: Path, solution: SolutionPrompt,
-            missing_parts: list[str]) -> DesignerEval:
+            missing_parts: list[str], measurements: str = "", earlier_faults: list[str] | None = None,
+            previous_render: Path | None = None) -> DesignerEval:
+        earlier = "\n".join(f"- {f}" for f in earlier_faults or [])
         prompt = (
             "The first image is the render to judge (it carries no labels; any text, numbers, arrows, "
             "margins or callouts drawn into it are themselves a depiction fault). The second image is the "
@@ -62,10 +65,20 @@ class DesignerEvalRunner:
             "directions as the sketch (perspective may differ). s2_flaw = seeing the device exposes a real "
             "design problem (interference, impossible assembly, a load path that cannot work, an unreachable "
             "part), or the flaw is already in the sketch or in the design itself. Do not blame the design for "
-            "rendering mistakes; s2_feedback must point at a concrete feature of the image.\n\n"
-            f"SOLUTION SUMMARY:\n{solution.model_dump_json(indent=2)}\n\n"
-            f"PARTS THE LOCALIZER COULD NOT FIND IN THE RENDER: {missing_parts}\n"
+            "rendering mistakes; s2_feedback must point at a concrete feature of the image.\n"
+            "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
+            "proportions), including each one in the segmenter measurements below, and say whether it matters "
+            "for the working principle (in concept design a deviation may be acceptable, but it must be noticed).\n"
+            + (("STEP 5 — EARLIER FAULTS: for EVERY fault below (flagged in earlier rounds) set previous_regions: "
+                "fixed, still_wrong or regressed, with a note. A fault flagged earlier may not quietly pass now. "
+                "Then write comparison_with_previous: compared with the previous render (third image), did this "
+                "one fix the listed faults, and did it introduce new ones?\nEARLIER FAULTS:\n" + earlier + "\n")
+               if earlier else "")
+            + (f"\n{measurements}\n" if measurements else "")
+            + f"\nSOLUTION SUMMARY:\n{solution.model_dump_json(indent=2)}\n\n"
+            + f"PARTS THE LOCALIZER COULD NOT FIND IN THE RENDER: {missing_parts}\n"
         )
         return self.client.structured("designer_eval", DesignerEval,
                                       "You are the designer-evaluator (VLM). Compare the render with the mechanism sketch.",
-                                      prompt, image_paths=[render_png, sketch_png])
+                                      prompt, image_paths=[render_png, sketch_png]
+                                      + ([previous_render] if previous_render is not None else []))
