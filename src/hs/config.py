@@ -56,7 +56,7 @@ MAX_WHITEBOARD_CALLS_PER_TURN = 8
 MAX_TURN_MESSAGE_WORDS = 250
 MAX_NEW_TOOLS = 2
 MAX_MANAGER_NEW_TOOLS = 2
-MAX_FIGURE_IMAGES = 8
+MAX_FIGURE_IMAGES = 10  # round 4: up to 5 fabrication steps, each with one redraw
 MAX_COST_USD_PER_RUN = 15.00
 # Round-3 budget (item 0): one project-wide ledger of real Meta spend, checked before
 # every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).

@@ -267,7 +267,7 @@ S1 follows the same two-step TextGrad chain as Stage A:
 5. **After an S2 redesign:** in the next Stage B attempt, the previously flagged regions are re-checked; fixed and nothing regressed → proceed; a regression uses the existing `same_problem` / `revert_sections` mechanism (§3.2, §4.6).
 
 ### 5.6 Final figure (panels A–D)
-Composed by code into one PNG (`final/figure.png`, 2 columns) + `final/rationale.md`. Image budget for this step: `MAX_FIGURE_IMAGES = 8`.
+Composed by code into one PNG (`final/figure.png`, 2 columns) + `final/rationale.md`. Image budget for this step: `MAX_FIGURE_IMAGES = 10` (round 4: up to 5 fabrication steps, each with one redraw from its check's reason; steps are drawn from the passing render plus the step's parts sketch).
 - **A — System view:** the annotated render that passed.
 - **B — Critical part:** zoomed crop of A around the critical part's box (upscale ≤ 2×) with the scale bar. If the crop is < 300 px on its short side, request one close-up render whose **reference is a crop of `schematic.png` around the critical node and its direct neighbours** (re-rendered by `render_schematic` on that node subset), writer prompt "close-up of <critical part> and its neighbours"; run `LightCheck` (§12.13) once, one retry; if it still fails, use the crop of A.
 - **C — Measurement chain:** code-only block diagram from `SolutionPrompt.measurement_chain` (sensor → conditioning → instrument → computer). No image model.

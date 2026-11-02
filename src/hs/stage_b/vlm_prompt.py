@@ -14,7 +14,8 @@ class VLMPromptWriter:
 
     def write(self, solution: SolutionPrompt, spec: SchematicSpec, schematic_png: Path,
               labeled_png: Path, archive: ImageArchive, corrections: str = "",
-              previous_prompt: str = "", council_sketches: list[Path] | None = None) -> VLMPrompt:
+              previous_prompt: str = "", council_sketches: list[Path] | None = None,
+              callouts: bool = True) -> VLMPrompt:
         prompt = (
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"PREFERRED VIEW: {solution.figure_spec.preferred_view}\n\n"
@@ -33,10 +34,15 @@ class VLMPromptWriter:
             "interactions between the parts; an avoid list. The focus parts MUST include the critical part "
             "and its direct sketch neighbours, and every focus part must be visibly drawn (not hidden inside "
             "another part). Show fixed vs moving parts and the force/signal path. Keep the parts, their "
-            "connections and relative sizes of the reference; perspective may differ. The image carries no "
-            "text, labels, callouts, margins or scale bars: code adds every label afterwards. In must_not, name "
-            "kinds of things to avoid; never quote the text, numbers or names you want kept out of the image "
-            "(a quoted string gets drawn).\n\n"
+            "connections and relative sizes of the reference; perspective may differ. "
+            + ("CALLOUTS (Fig. 2): the image model draws a short callout with a thin leader line for each focus "
+               "part; set each focus part's callout to its plain name exactly as it should read (2 to 4 words, no "
+               "numbers, no units, no ids). Ask for clean, legible callouts on light tags placed in empty space, and "
+               "no other text, margins or scale bars. "
+               if callouts else
+               "The image carries no text, labels, callouts, margins or scale bars: code adds every label afterwards. ")
+            + "In must_not, name kinds of things to avoid; never quote the text, numbers or names you want kept out "
+            "of the image (a quoted string gets drawn).\n\n"
             + (f"KEPT PROMPT (the last render that was kept came from this prompt; edit it where the "
                f"corrections point, keep the rest):\n{previous_prompt}\n\n" if previous_prompt else "")
             + (f"TARGETED CORRECTIONS FROM ACTUAL-IMAGE REVIEW (apply verbatim):\n{corrections}\n" if corrections else "")

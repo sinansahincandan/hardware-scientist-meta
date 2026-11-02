@@ -80,23 +80,23 @@ class Annotator:
             image_paths=[render_png])
         return loc
 
-    def check_labels(self, annotated_png: Path, spec: SchematicSpec, loc: Localization) -> list[str]:
-        """One look at the labelled image: which labels point at the wrong part? Returns part ids."""
+    def check_labels(self, image_png: Path, labels: list[str]) -> list[str]:
+        """One look at a labelled image: which of these labels point at the wrong part or are misspelled?"""
         from hs.schemas import LabelCheck
 
-        labels = {n.label: n.id for n in spec.nodes if any(p.id == n.id and p.found for p in loc.parts)}
         if not labels:
             return []
         check = self.client.structured(
-            "light_check", LabelCheck, "You check code-drawn labels on a product photo.",
-            "Each label below is drawn with a leader line ending on a part. List, exactly as written, every label "
-            "whose leader ends on a part that is NOT what the label names. Judge from the pixels.\nLABELS: "
-            + "; ".join(labels), image_paths=[annotated_png])
-        return [labels[x] for x in check.wrong_labels if x in labels]
+            "light_check", LabelCheck, "You check labels and callouts on a product photo.",
+            "Each label below appears in the image with a leader line ending on a part. List, exactly as written "
+            "below, every label whose leader ends on a part that is NOT what the label names, or that is "
+            "misspelled or unreadable in the image. Judge from the pixels.\nLABELS: " + "; ".join(labels),
+            image_paths=[image_png])
+        return [x for x in check.wrong_labels if x in labels]
 
     def run(self, render_png: Path, spec: SchematicSpec, geometry: dict[str, Any], out_png: Path,
             panel_letter: str = "A", localization: Localization | None = None,
-            fallback: bool = True) -> tuple[Path, Localization, list[str]]:
+            fallback: bool = True, draw_labels: bool = True) -> tuple[Path, Localization, list[str]]:
         """Label the render for the figure (16a): boxes from SAM when given (the localization call only
         for parts SAM did not find), labels drawn by code inside the frame with a leader to each part."""
         if localization is None:
@@ -130,7 +130,7 @@ class Annotator:
         draw = ImageDraw.Draw(overlay)
         placed: list[tuple[float, float, float, float]] = []
         fs = font.size  # type: ignore[attr-defined]
-        for pid, (x0, y0, x1, y1) in sorted(boxes_px.items(), key=lambda kv: kv[1][1]):
+        for pid, (x0, y0, x1, y1) in sorted(boxes_px.items(), key=lambda kv: kv[1][1]) if draw_labels else []:
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
             text = label_of.get(pid, pid)
             tw = draw.textlength(text, font=font)

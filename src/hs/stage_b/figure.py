@@ -138,25 +138,46 @@ def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, nam
 
 def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localization: Localization,
                     panel_a: Path, notes: list[str]) -> None:
-    """16a: labels that point at the wrong part are removed, never shown (run 02: 'PU box' on the control box)."""
+    """Fig. 2 'checks: SAM + judges': the image model's callouts are checked on panel A. If any is wrong, the
+    callouts are removed from the image and code labels each part from the SAM-located boxes (fallback).
+    Renders without callouts (older runs) get their code labels checked and wrong ones removed."""
     from hs.stage_b.annotate import Annotator
 
     annotator = Annotator(client)
+    vlm_file = render_path.parent / "vlm_prompt.json"
+    callouts: list[str] = []
+    if vlm_file.exists():
+        vlm = json.loads(vlm_file.read_text(encoding="utf-8"))
+        callouts = [fp.get("callout", "").strip() for fp in vlm.get("focus_parts", []) if fp.get("callout", "").strip()]
     try:
-        wrong = annotator.check_labels(panel_a, spec, localization)
+        if callouts:
+            wrong = annotator.check_labels(panel_a, callouts)
+            if not wrong:
+                notes.append("callout check: every callout drawn by the image model names its part")
+                return
+            clean = panel_a.parent / "_render_without_callouts.png"
+            clean.write_bytes(client.image_edit(
+                "Remove every text label, callout tag and leader line from this image. Keep everything else exactly "
+                "identical.", render_path))
+            annotator.run(clean, spec, {}, panel_a, localization=localization, fallback=False)
+            notes.append(f"callouts {', '.join(wrong)} pointed at the wrong part or were misspelled; the callouts "
+                         "were removed and code labelled the parts instead")
+            return
+        labels = {n.label: n.id for n in spec.nodes if any(p.id == n.id and p.found for p in localization.parts)}
+        wrong_labels = annotator.check_labels(panel_a, list(labels))
     except BudgetExceeded:
         raise
     except Exception as exc:
         notes.append(f"label check could not run ({type(exc).__name__}); labels not verified")
         return
-    if not wrong:
+    if not wrong_labels:
         notes.append("label check: every label points at the part it names")
         return
+    wrong = [labels[x] for x in wrong_labels]
     kept = Localization(parts=[p.model_copy(update={"found": p.found and p.id not in wrong})
                                for p in localization.parts])
     annotator.run(render_path, spec, {}, panel_a, localization=kept, fallback=False)
-    names = [n.label for n in spec.nodes if n.id in wrong]
-    notes.append(f"labels removed because they pointed at the wrong part: {', '.join(names)}")
+    notes.append(f"labels removed because they pointed at the wrong part: {', '.join(wrong_labels)}")
 
 
 def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
@@ -189,31 +210,43 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         schematic_mod.render_schematic(spec, tmp, subset_ids=present, stem=f"step{i + 1}")
         step_desc = steps_sorted[i].description if i < len(steps_sorted) else ""
         names = ", ".join(next((p.name for p in solution.concept.parts if p.id == pid), pid) for pid in present)
-        try:
-            png = client.image_edit(
-                f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
-                f"Show these parts assembled so far ({names}) on a workbench with ordinary "
-                f"shop tools, following the reference layout. The image carries no text.",
-                tmp / f"step{i + 1}.png")
-            images_used += 1
-            step_path = final_dir / f"_step{i + 1}.png"
-            step_path.write_bytes(png)
-            check, general = _step_check(client, solution, i + 1, step_desc, names, step_path)
-        except BudgetExceeded:
-            raise
-        except Exception as exc:  # a panel-D step must never sink the figure (run 02: content filter 400)
-            failed_steps.append(i + 1)
-            trace_notes.append(f"fabrication step {i + 1} could not be made or checked ({type(exc).__name__}: "
-                               f"{str(exc)[:160]}); not shown")
-            continue
-        if check.ok:
+        step_path = final_dir / f"_step{i + 1}.png"
+        reason = ""
+        check, general, error = None, False, ""
+        for attempt in range(2):  # one redraw with the checker's reason (ImageGrad on a fabrication step)
+            if images_used >= config.MAX_FIGURE_IMAGES:
+                break
+            try:
+                png = client.image_edit(
+                    f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. The first reference "
+                    f"image shows the finished device; show it at this stage of building, with only these parts "
+                    f"assembled so far ({names}) as in the second reference, on a workbench with ordinary shop "
+                    f"tools. The image carries no text."
+                    + (f" The previous attempt was rejected because: {reason} Fix that." if reason else ""),
+                    render_path, extra_refs=[tmp / f"step{i + 1}.png"])
+                images_used += 1
+                step_path.write_bytes(png)
+                check, general = _step_check(client, solution, i + 1, step_desc, names, step_path)
+            except BudgetExceeded:
+                raise
+            except Exception as exc:  # a panel-D step must never sink the figure (run 02: content filter 400)
+                check, error = None, f"{type(exc).__name__}: {str(exc)[:160]}"
+                break
+            if check.ok:
+                break
+            reason = check.reason
+        if check is not None and check.ok:
             shipped.append((step_path, f"{i + 1}. {step_desc}" + (" (general check only)" if general else "")))
             if general:
                 trace_notes.append(f"fabrication step {i + 1}: the detailed check was blocked by the provider's "
                                    "content filter; it passed a general check only (caption marked)")
+            if reason:
+                trace_notes.append(f"fabrication step {i + 1} passed after one redraw (first attempt: {reason})")
         else:
             failed_steps.append(i + 1)
-            trace_notes.append(f"fabrication step {i + 1} failed its light check ({check.reason}); not shown")
+            trace_notes.append(f"fabrication step {i + 1} not shown: "
+                               + (f"could not be made or checked ({error})" if error else
+                                  f"failed its light check twice ({reason})" if reason else "image budget reached"))
     panel_d: Path | None = None
     if shipped:
         from hs.stage_b.annotate import _font

@@ -55,6 +55,44 @@ def council_sketches(iter_dir: Path, limit: int = 2) -> list[Path]:
     return found[-limit:][::-1]
 
 
+def concept_sketch(client: Any, solution: SolutionPrompt, spec: SchematicSpec, attempt_dir: Path,
+                   sketches: list[Path], log: Any) -> Path | None:
+    """Fig. 2 node 1 'concept sketch: real geometry, joints, motion, workpiece and use context': the image model
+    redraws the council's own sketches as one clean pencil concept sketch; one check that it shows the parts and
+    how they connect. None (code sketch used) when there is no council sketch or the check fails."""
+    from hs.schemas import LightCheck
+
+    if not sketches:
+        return None
+    schematic_mod.render_schematic(spec, attempt_dir, stem="parts")
+    parts = ", ".join(f"{n.label}" for n in spec.nodes)
+    out = attempt_dir / "concept_sketch.png"
+    try:
+        out.write_bytes(client.image_edit(
+            "A clean engineer's pencil concept sketch on white paper, side view, of this device in use: "
+            f"{solution.mechanism_sentence or solution.concept.working_principle} Draw every part with its real "
+            f"shape and proportion ({parts}), how the parts connect and which ones move (small motion arrows), the "
+            "load or workpiece and the ground or structure it works on. Follow the engineers' hand sketches given as "
+            "references for geometry and arrangement. Line drawing only, light grey shading, no colour, no text.",
+            sketches[0], extra_refs=[*sketches[1:], attempt_dir / "parts.png"]))
+        check = client.structured(
+            "light_check", LightCheck, "Light check of a concept sketch.",
+            f"Does this sketch show these parts with plausible shapes and connections: {parts}? Is the arrangement "
+            "consistent with the engineers' hand sketch (second image)? Answer from the pixels.",
+            image_paths=[out, sketches[0]])
+    except BudgetExceeded:
+        raise
+    except Exception as exc:
+        log(f"attempt concept sketch could not be made ({type(exc).__name__}); code sketch used")
+        return None
+    (attempt_dir / "concept_sketch_check.json").write_text(check.model_dump_json(indent=2), encoding="utf-8")
+    if not check.ok:
+        log(f"concept sketch rejected by its check ({check.reason}); code sketch used")
+        return None
+    log("concept sketch drawn from the council's sketches and checked; used as the primary reference")
+    return out
+
+
 def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, attempt_dir: Path,
                 img_archive: ImageArchive, log: Any, *, attempt: int, max_rounds: int,
                 sketches: list[Path] | None = None) -> StageBResult:
@@ -71,6 +109,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     if sketches:
         log(f"attempt {attempt}: council sketches used as extra references: {[p.name for p in sketches]}")
     part_map = pm.build_part_map(client, solution, spec, attempt_dir)
+    concept = concept_sketch(client, solution, spec, attempt_dir, sketches or [], log)
     result = StageBResult(decision="s1_exhausted", rounds=0)
     corrections = ""
     kept: dict[str, Any] | None = None  # {"render", "vlm", "ev", "sam", "round"}
@@ -87,22 +126,23 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             carry = None
         else:
             vlm = VLMPromptWriter(client).write(
-                solution, spec, round_dir / "schematic.png", round_dir / "schematic_labeled.png", img_archive,
+                solution, spec, concept or round_dir / "schematic.png", round_dir / "schematic_labeled.png", img_archive,
                 corrections=corrections, previous_prompt=kept["vlm"].prompt if kept else "",
                 council_sketches=sketches)
-            render_path.write_bytes(ImageModel(client).edit(vlm, round_dir / "schematic.png",
+            render_path.write_bytes(ImageModel(client).edit(vlm, concept or round_dir / "schematic.png",
                                                             council_sketches=sketches))
         (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
-        meas = pm.measure(client, render_path, part_map)
+        meas = pm.measure(client, render_path, part_map, out_dir=round_dir)
         diffs = pm.differences(meas, part_map)
         rechecks = pm.recheck(meas, diffs, kept["sam"] if kept else None)
         pm.save_round(round_dir, meas, diffs, rechecks)
         pm.draw_overlay(render_path, round_dir / "sam.json", round_dir / "sam_overlay.png")
         sam_text = pm.evidence_text(diffs, rechecks, part_map)
         annotated_path, loc, missing = Annotator(client).run(render_path, spec, geometry, round_dir / "annotated.png",
-                                                             localization=pm.to_localization(meas, spec))
+                                                             localization=pm.to_localization(meas, spec),
+                                                             draw_labels=False)  # Fig. 2: callouts are in the render
         ev = DesignerEvalRunner(client).run(
-            render_path, round_dir / "schematic_labeled.png", solution, missing, measurements=sam_text,
+            render_path, concept or round_dir / "schematic_labeled.png", solution, missing, measurements=sam_text,
             earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
             previous_render=kept["render"] if kept else None,
             critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
@@ -111,7 +151,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         if missed:  # C18 completeness: one re-ask naming the findings the critic did not address
             log(f"attempt {attempt} round {r}: critic re-asked for unaddressed segmenter findings {missed}")
             ev = DesignerEvalRunner(client).run(
-                render_path, round_dir / "schematic_labeled.png", solution, missing,
+                render_path, concept or round_dir / "schematic_labeled.png", solution, missing,
                 measurements=sam_text + "\nYOUR PREVIOUS ANSWER DID NOT ADDRESS THESE FINDINGS: " + ", ".join(missed)
                 + ". Answer again in full, with a deviation for each of them.",
                 earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],

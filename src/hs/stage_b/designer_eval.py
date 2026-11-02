@@ -57,8 +57,10 @@ class DesignerEvalRunner:
             council_sketches: list[Path] | None = None) -> DesignerEval:
         earlier = "\n".join(f"- {f}" for f in earlier_faults or [])
         prompt = (
-            "The first image is the render to judge (it carries no labels; any text, numbers, arrows, "
-            "margins or callouts drawn into it are themselves a depiction fault). The second image is the "
+            "The first image is the render to judge. It carries short callouts drawn by the image model: each "
+            "callout must name the part its leader line ends on, spelled correctly, with no numbers; a wrong, "
+            "misspelled or misplaced callout is a depiction fault (region part_id 'callout'). Any other text, "
+            "numbers, margins or scale bars in the render are depiction faults too. The second image is the "
             "labeled mechanism sketch it must follow. Any images after the previous render are the engineers' "
             "own hand sketches of the mechanism.\n"
             "STEP 1 — PIXEL-FIRST: look at the render ONLY and write pixel_description: what you actually "

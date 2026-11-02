@@ -16,6 +16,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 from PIL import Image
 
 from hs.schemas import Box1000, Localization, LocalizedPart, PartMap, SchematicSpec, SolutionPrompt
@@ -52,21 +53,110 @@ def parse_sam(raw: str, img_w: int, img_h: int) -> list[tuple[float, float, floa
     return boxes
 
 
-def measure(client: Any, render_png: Path, part_map: PartMap) -> dict[str, Any]:
-    """One SAM call per part; returns {"size": [w, h], "parts": {id: {"phrase", "boxes"}}}."""
+def parse_masks(raw: str, img_w: int, img_h: int) -> np.ndarray | None:
+    """Union of SAM's masks for one phrase as a boolean image in render pixels (meta-sam-parser, owner-approved
+    2026-11-02); None when the text has no decodable mask (e.g. fake mode)."""
+    frame = _BOX.search(raw or "")
+    if frame is None:
+        return None
+    try:
+        import meta_sam_parser as msp
+
+        parser = msp.image_segmentation_format().create_parser()
+        parser.push(raw)
+        records = parser.finish(msp.CompletedOutcome()).result.records
+    except Exception:
+        return None
+    fw, fh = int(frame.group(5)), int(frame.group(6))
+    union = np.zeros((img_h, img_w), dtype=bool)
+    found = False
+    for rec in records:
+        if getattr(rec, "kind", "") != "mask":
+            continue
+        try:
+            raster = np.frombuffer(msp.decode_mask_to_raster(rec.mask), dtype=np.uint8)
+        except Exception:  # noqa: S112 — an undecodable mask leaves that object to its box
+            continue
+        mh, mw = rec.mask.height, rec.mask.width
+        b = rec.bounds
+        small = Image.fromarray((raster.reshape(mh, mw) * 255).astype(np.uint8))
+        x0, y0 = round(b.left * img_w / fw), round(b.top * img_h / fh)
+        x1, y1 = max(round(b.right * img_w / fw), x0 + 1), max(round(b.bottom * img_h / fh), y0 + 1)
+        big = np.asarray(small.resize((x1 - x0, y1 - y0))) > 127
+        union[y0:y0 + big.shape[0], x0:x0 + big.shape[1]] |= big[: img_h - y0, : img_w - x0]
+        found = True
+    return union if found else None
+
+
+def _mask_stats(mask: np.ndarray) -> dict[str, float]:
+    """Area, centroid and principal-axis angle (degrees from horizontal, 0–180) of a boolean mask."""
+    ys, xs = np.nonzero(mask[::2, ::2])
+    if len(xs) < 5:
+        return {}
+    xs, ys = xs * 2.0, ys * 2.0
+    cx, cy = float(xs.mean()), float(ys.mean())
+    cov = np.cov(np.vstack([xs - cx, ys - cy]))
+    vals, vecs = np.linalg.eigh(cov)
+    vx, vy = vecs[:, int(np.argmax(vals))]
+    angle = math.degrees(math.atan2(-vy, vx)) % 180.0
+    elong = float(math.sqrt(max(vals.max(), 1e-9) / max(vals.min(), 1e-9)))
+    return {"area": float(mask.sum()), "cx": cx, "cy": cy, "angle": round(angle, 1), "elongation": round(elong, 2)}
+
+
+def measure(client: Any, render_png: Path, part_map: PartMap, out_dir: Path | None = None) -> dict[str, Any]:
+    """One SAM call per part; boxes always, masks when decodable (saved as sam_masks/<part>.png)."""
     with Image.open(render_png) as im:
         w, h = im.size
     out: dict[str, Any] = {"size": [w, h], "parts": {}}
     for part in part_map.parts:
         raw = client.sam_segment(part.visual_phrase, render_png)
-        out["parts"][part.part_id] = {"phrase": part.visual_phrase, "boxes": parse_sam(raw, w, h)}
+        rec: dict[str, Any] = {"phrase": part.visual_phrase, "boxes": parse_sam(raw, w, h)}
+        mask = parse_masks(raw, w, h)
+        if mask is not None and out_dir is not None:
+            (out_dir / "sam_masks").mkdir(parents=True, exist_ok=True)
+            Image.fromarray((mask * 255).astype(np.uint8)).save(out_dir / "sam_masks" / f"{part.part_id}.png")
+            rec["mask"] = {"file": f"sam_masks/{part.part_id}.png", **_mask_stats(mask)}
+        out["parts"][part.part_id] = rec
+    if out_dir is not None:
+        out["contacts"] = _mask_contacts(out_dir, list(out["parts"]), w, h)
     return out
+
+
+def _mask_contacts(out_dir: Path, ids: list[str], w: int, h: int) -> list[list[str]]:
+    """Pairs of parts whose masks touch (dilated by ~1 % of the image diagonal), measured at quarter size."""
+    from PIL import ImageFilter
+
+    small: dict[str, np.ndarray] = {}
+    k = max(3, int(0.01 * math.hypot(w, h) / 4) | 1)
+    for pid in ids:
+        f = out_dir / "sam_masks" / f"{pid}.png"
+        if f.exists():
+            im = Image.open(f).resize((max(w // 4, 1), max(h // 4, 1)))
+            small[pid] = np.asarray(im.filter(ImageFilter.MaxFilter(k))) > 127
+    pairs: list[list[str]] = []
+    keys = list(small)
+    for i, a in enumerate(keys):
+        for b in keys[i + 1:]:
+            if (small[a] & small[b]).any():
+                pairs.append([a, b])
+    return pairs
 
 
 def _gap(a: tuple[float, ...], b: tuple[float, ...]) -> float:
     dx = max(0.0, max(a[0], b[0]) - min(a[2], b[2]))
     dy = max(0.0, max(a[1], b[1]) - min(a[3], b[3]))
     return math.hypot(dx, dy)
+
+
+def _mask_axis(stats: dict[str, Any]) -> str | None:
+    if not stats or stats.get("elongation", 1) < 1.3:
+        return None if not stats else "any"
+    a = stats["angle"]
+    if a < 30 or a > 150:
+        return "horizontal"
+    if 60 < a < 120:
+        return "vertical"
+    return f"tilted about {a:.0f} degrees"
 
 
 def _axis(box: tuple[float, ...]) -> str:
@@ -97,17 +187,25 @@ def differences(meas: dict[str, Any], part_map: PartMap) -> dict[str, list[str]]
         else:
             if part.count and len(found) != part.count:
                 notes.append(f"expected {part.count} visible, found {len(found)}")
-            if part.long_axis in ("horizontal", "vertical") and _axis(main) not in (part.long_axis, "any"):
-                notes.append(f"expected a {part.long_axis} long axis, measured {_axis(main)}")
+            measured_axis = _mask_axis(by.get(part.part_id, {}).get("mask", {})) or _axis(main)
+            if part.long_axis in ("horizontal", "vertical") and measured_axis not in (part.long_axis, "any"):
+                notes.append(f"expected a {part.long_axis} long axis, measured {measured_axis}")
             ref = _main(by.get(part.size_vs, {}).get("boxes", []))
             if ref is not None and part.size_ratio > 0:
                 ratio = max(main[2] - main[0], main[3] - main[1]) / max(ref[2] - ref[0], ref[3] - ref[1], 1e-6)
                 if not 0.5 <= ratio / part.size_ratio <= 2.0:
                     notes.append(f"size against {part.size_vs}: expected about {part.size_ratio:.2g} times, "
                                  f"measured {ratio:.2g} times")
+            contacts = meas.get("contacts")
             for other in part.touches:
                 ob = by.get(other, {}).get("boxes", [])
-                if ob and min(_gap(b, o) for b in found for o in ob) > near:
+                if not ob:
+                    continue
+                if contacts is not None and "mask" in by.get(part.part_id, {}) and "mask" in by.get(other, {}):
+                    apart = not any({part.part_id, other} == set(pair) for pair in contacts)
+                else:
+                    apart = min(_gap(b, o) for b in found for o in ob) > near
+                if apart:
                     notes.append(f"expected to touch {other}, but they are apart in the picture")
         if notes:
             diffs[part.part_id] = notes
@@ -196,8 +294,13 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     draw = ImageDraw.Draw(overlay)
     for i, (pid, rec) in enumerate(data["parts"].items()):
         color = SAM_COLORS[i % len(SAM_COLORS)]
+        mask_file = sam_json.parent / rec.get("mask", {}).get("file", "-")
+        if mask_file.exists():  # fill the part's mask in its colour
+            m = Image.open(mask_file).convert("L").resize((w, h))
+            tint = Image.new("RGBA", (w, h), color + (110,))
+            overlay.paste(tint, (0, 0), m.point(lambda v: 110 if v > 127 else 0))
         for j, (x0, y0, x1, y1) in enumerate(rec["boxes"]):
-            draw.rectangle([x0, y0, x1, y1], outline=color + (255,), width=max(3, w // 400), fill=color + (40,))
+            draw.rectangle([x0, y0, x1, y1], outline=color + (255,), width=max(2, w // 600))
             if j == 0:
                 text = f"{rec['phrase']} ×{len(rec['boxes'])}" if len(rec["boxes"]) > 1 else rec["phrase"]
                 tw = draw.textlength(text, font=font)
@@ -207,7 +310,7 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
     d = ImageDraw.Draw(canvas)
     found = sum(1 for rec in data["parts"].values() if rec["boxes"])
-    d.text((10, h + 6), f"SAM 3.1 found {found} of {len(data['parts'])} parts (boxes in each part's colour).",
+    d.text((10, h + 6), f"SAM 3.1 found {found} of {len(data['parts'])} parts (each part's mask and box in its colour).",
            fill=(30, 30, 30), font=font)
     if missing:
         d.text((10, h + 6 + font.size + 10), "Not found: " + "; ".join(missing), fill=(150, 30, 30), font=font)  # type: ignore[attr-defined]
