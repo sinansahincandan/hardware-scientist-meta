@@ -320,20 +320,30 @@ class MetaClient:
         return resp
 
     def _create_with_retries(self, kwargs: dict[str, Any]) -> Any:
+        """5xx/429: retry with backoff (max 3). 402: BudgetExceeded. Other 400s raise. A content-filter 400
+        is taken as a reason to re-word, not to resend: one retry with numbers, units and codes removed
+        from the text (owner decision 2026-11-02); if that is blocked too, the error is raised."""
+        from hs.plain import plain_request
+
         client = self._client()
         delay = 2.0
         last_exc: Exception | None = None
+        plain = False
         for attempt in range(3):
             try:
                 return client.responses.create(**kwargs)
-            except Exception as exc:  # status-aware retry (503/500/429 retry, 400 raise)
+            except Exception as exc:
                 status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
                 if status == 402:  # billing / credit exhausted: stop via the best-effort path
                     raise BudgetExceeded(f"Meta billing error HTTP 402 (out of credit or billing problem; check the dashboard): {exc}") from exc
-                # A content-filter 400 is stochastic on this provider (the same
-                # prompt passes on a fresh roll); retry it like a 429 instead
-                # of losing the whole run. Other 400s are deterministic: raise.
-                if status in (400, 402) and "content management policy" not in str(exc):
+                if "content management policy" in str(exc):
+                    if plain:
+                        raise
+                    plain = True
+                    kwargs = plain_request(kwargs)
+                    self.cost.note("content_filter_retry_plain")
+                    continue
+                if status in (400, 402):
                     raise
                 last_exc = exc
                 if attempt == 2:
@@ -410,7 +420,8 @@ class MetaClient:
         started = time.time()
         for _ in range(3):
             try:
-                r = requests.post("https://api.meta.ai/v1/images/edits", json=body, headers=headers, timeout=240)
+                r = requests.post("https://api.meta.ai/v1/images/edits",
+                                  json={k: v for k, v in body.items() if k != "_plain"}, headers=headers, timeout=240)
                 if r.status_code in (500, 503, 429):
                     wait = r.headers.get("Retry-After")
                     time.sleep(float(wait) if wait else delay)
@@ -418,6 +429,12 @@ class MetaClient:
                     continue
                 if r.status_code == 402:
                     raise BudgetExceeded(f"Meta billing error HTTP 402 (out of credit or billing problem; check the dashboard): {r.text[:1000]}")
+                if r.status_code == 400 and "content management policy" in r.text and not body.get("_plain"):
+                    from hs.plain import plain_words
+
+                    body = {**body, "prompt": plain_words(body["prompt"]), "_plain": True}
+                    self.cost.note("content_filter_retry_plain")
+                    continue
                 if r.status_code >= 400:
                     # Deterministic rejection: never retry blind, and keep the
                     # body — it was once lost and cost a full run (QUESTIONS.md).

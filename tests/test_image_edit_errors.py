@@ -53,8 +53,10 @@ class _StatusError(Exception):
         self.status_code = status
 
 
-def test_content_filter_400_is_retried() -> None:
+def test_content_filter_400_is_reworded_once_then_raised() -> None:
+    """Owner decision 2026-11-02: a blocked request is retried once without numbers, not resent as is."""
     client = MetaClient.__new__(MetaClient)
+    client.cost = MagicMock()
     attempts = []
 
     class _Sdk:
@@ -71,9 +73,9 @@ def test_content_filter_400_is_retried() -> None:
     client._client = lambda: _Sdk  # type: ignore[method-assign]
     import hs.client as hc
 
-    with patch.object(hc.time, "sleep", lambda s: None):
-        assert client._create_with_retries({}) == "ok"
-    assert len(attempts) == 3
+    with patch.object(hc.time, "sleep", lambda s: None), pytest.raises(_StatusError):
+        client._create_with_retries({})
+    assert len(attempts) == 2
 
 
 def test_plain_400_still_raises() -> None:

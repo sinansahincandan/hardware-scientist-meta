@@ -115,5 +115,32 @@ def test_step_check_falls_back_to_a_general_check_only_on_the_content_filter(tmp
 
     check, general = _step_check(Client(), SimpleNamespace(title="Solar 48V cold room"), 2,
                                  "wire MPPT 150V 60A controller", "48V LiFePO4 bank", tmp_path / "x.png")
-    assert check.ok and general and "150V" not in prompts[0] and "LiFePO4" not in prompts[0]
-    assert "Solar cold room" in prompts[1]
+    assert check.ok and general and "150V 60A" in prompts[0]  # numbers kept as references first
+    assert "Solar cold room" in prompts[1] and "48V" not in prompts[1]
+
+
+
+def test_client_rewords_a_content_filtered_request_once_without_numbers(tmp_path: Path) -> None:
+    from types import SimpleNamespace
+
+    from hs.client import CostLog, MetaClient
+
+    sent: list[dict] = []
+
+    class Filtered(Exception):
+        status_code = 400
+
+    def create(**kwargs):
+        sent.append(kwargs)
+        if len(sent) == 1:
+            raise Filtered("Error code: 400 - triggering our content management policy.")
+        return SimpleNamespace(ok=True)
+
+    client = MetaClient.__new__(MetaClient)
+    client.cost = CostLog(tmp_path / "run")
+    client._sdk = SimpleNamespace(responses=SimpleNamespace(create=create))
+    client._create_with_retries({"instructions": "Check 48V bank", "input": [
+        {"type": "message", "role": "user", "content": [{"type": "input_text", "text": "wire MPPT 150V 60A to battery"}]}]})
+    assert len(sent) == 2 and "150V" in sent[0]["input"][0]["content"][0]["text"]
+    assert sent[1]["input"][0]["content"][0]["text"] == "wire to battery" and "48V" not in sent[1]["instructions"]
+    assert client.cost.entries[-1]["role"] == "content_filter_retry_plain"

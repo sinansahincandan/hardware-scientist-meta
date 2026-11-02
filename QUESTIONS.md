@@ -116,7 +116,8 @@ Meta's content filter (HTTP 400 "…triggering our content management policy") b
 fabrication-step images of problem 02 in two runs. Probe (runs/filter_probe, ~$0.04): the same saved images
 passed with neutral wording, so the trigger is in the text, not the image; stripping numbers, units and
 product codes ("150V 60A", "48V 100Ah LiFePO4") let step 2 pass the detailed check, but steps 3 and 5 stayed
-blocked even with a general question. The filter cannot be inspected or switched off by us. *Default chosen:*
-checks use plain words (no numbers/codes); if blocked, one general check, and a step that passes only that is
-shown with "(general check only)" in its caption and a rationale note; if both are blocked, the step is not
-shown and recorded.
+blocked even with a general question. The filter cannot be inspected or switched off by us.
+*Decision (owner, 2026-11-02):* numbers stay as references in prompts, but are not enforced strictly; a
+blocked request is taken as a reason to re-word: the client retries it once with numbers, units and codes
+removed (every Responses call and image edit; `content_filter_retry_plain` marker in cost.json); a step check
+blocked after that falls back to one general check (caption "(general check only)"); blocked again → not shown.

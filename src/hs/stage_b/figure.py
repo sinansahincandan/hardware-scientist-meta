@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw
 
 from hs import config
 from hs.client import BudgetExceeded
+from hs.plain import plain_words
 from hs.schemas import LightCheck, Localization, SchematicSpec, SolutionPrompt
 from hs.stage_b import schematic as schematic_mod
 
@@ -114,24 +115,16 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     return True
 
 
-def plain_words(text: str) -> str:
-    """Text without numbers, units, ratings and product codes: the provider's content filter blocked
-    detailed checks that carried them (run 02), while the same images passed with plain wording."""
-    import re
-
-    words = [w for w in text.split() if not re.search(r"\d", w) and not re.fullmatch(r"[A-Z]{2,}[A-Za-z]*s?[,.;]?", w)]
-    return re.sub(r"\s+([,.;])", r"\1", " ".join(words)).strip(" ,;")
-
-
 def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, names: str,
                 image: Path) -> tuple[LightCheck, bool]:
-    """Detailed check in plain words; only if the content filter blocks it, one general check.
-    Returns (check, general_only)."""
+    """Detailed check (the client re-words it once without numbers if the content filter blocks it); only
+    if that is blocked too, one general check. Returns (check, general_only)."""
     try:
         return client.structured(
             "light_check", LightCheck, "Light check.",
-            f"Does it show fabrication step {step} ({plain_words(desc)}) with these parts: {plain_words(names)}? "
-            "Answer from the pixels.", image_paths=[image]), False
+            f"Does it show fabrication step {step} ({desc}) with these parts: {names}? The numbers are "
+            "references only; judge the parts and the stage, not exact sizes. Answer from the pixels.",
+            image_paths=[image]), False
     except BudgetExceeded:
         raise
     except Exception as exc:
@@ -198,8 +191,8 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         names = ", ".join(next((p.name for p in solution.concept.parts if p.id == pid), pid) for pid in present)
         try:
             png = client.image_edit(
-                f"Photorealistic workshop scene, fabrication step {i + 1}: {plain_words(step_desc)}. "
-                f"Show these parts assembled so far ({plain_words(names)}) on a workbench with ordinary "
+                f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
+                f"Show these parts assembled so far ({names}) on a workbench with ordinary "
                 f"shop tools, following the reference layout. The image carries no text.",
                 tmp / f"step{i + 1}.png")
             images_used += 1
