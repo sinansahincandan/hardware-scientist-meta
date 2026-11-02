@@ -34,3 +34,15 @@ Spec §7 caps gain a cross-run cap: every real Meta call is checked before it is
 `budget/ledger.jsonl` (worst-case estimate of that call) and appended after it; round-3 cap $55.
 HTTP 402 billing errors raise `BudgetExceeded`, never retried. Web searches (`web_search_call`
 items) and SAM calls are priced and counted. `hs budget` prints spent, remaining, per-run totals.
+
+## SPEC-6 (round 3, A4/A5/A6): meeting closure, proposal rule, no cutting of speech
+- A4: the cap code rule (`closed_by == "cap"` + open blocking objection → reject) is removed; the
+  Evaluator gets the closure facts and open objections as information and decides in writing.
+  Consensus is decided after the Manager's turn, so the Manager's objection counts.
+- A5: the protocol (rev 0 §4 and DEFAULT_PROTOCOL) names who integrates the proposal and when;
+  the Manager calls for it if nobody has by the end of cycle 2.
+- A6: no 250-word truncation and no LLM turn check; a turn over the limit is re-asked once to
+  shorten (members and Manager). The vote-only round allows only vote / raise_objection
+  (enforced in code); the Manager's whiteboard actions are limited to process objections and
+  read_evidence (it cannot vote or design). Manager turns are billed as `manager`, progress
+  checks as `progress_check`.

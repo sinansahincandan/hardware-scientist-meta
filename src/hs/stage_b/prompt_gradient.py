@@ -41,7 +41,7 @@ class VLMPromptGradientRunner:
             "alone never proves a connection.\n\n"
             f"REGIONS BEFORE THE FIX:\n{regions}\n\nFIX APPLIED:\n{fix_notes}\n"
         )
-        return self.client.structured("designer_eval", ProgressCheck,
+        return self.client.structured("progress_check", ProgressCheck,
                                       "You are the progress-check judge for a locally edited render.",
                                       prompt, image_paths=[annotated_png])
 

@@ -285,11 +285,6 @@ class FakeClient:
 
         return ProgressCheck(fixed_region_pass=True, previous_pass=True, seam_visible=False, notes="kept")
 
-    def _fake_TurnCheck(self, user_text: str):
-        from hs.schemas import TurnCheck
-
-        return TurnCheck(ok=True, reason="")
-
     def _fake_Lessons(self, user_text: str) -> Lessons:
         return Lessons(candidates=[
             LessonCandidate(text="Require cited evidence ids before any ready vote in the meeting protocol.",

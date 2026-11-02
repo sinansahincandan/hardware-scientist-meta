@@ -123,22 +123,3 @@ def test_fake_client_never_touches_ledger(tmp_path: Path, monkeypatch: pytest.Mo
     monkeypatch.setattr(config, "BUDGET_LEDGER_PATH", path)
     FakeClient(run_dir=tmp_path / "run").free_text("member", "i", "u")
     assert not path.exists()
-
-
-def test_budget_stop_is_not_swallowed_by_the_turn_check(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    """Round-3 review finding 1: BudgetExceeded must propagate out of the speaking check."""
-    from hs.master_prompt import MasterPrompt
-    from hs.stage_a import council
-    from hs.stage_a.meeting import Meeting
-
-    class Client:
-        is_fake = False
-
-        def structured(self, *a: Any, **k: Any) -> Any:
-            raise BudgetExceeded("cost cap $15.00 would be exceeded")  # the per-run wording the old check missed
-
-    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "a message")
-    master = MasterPrompt(tmp_path, "t", [("## 2. Roles", "### A\nx")])
-    meeting = Meeting(Client(), master, tmp_path, 0)
-    with pytest.raises(BudgetExceeded):
-        meeting._run_real_turn("A", ["A"], 1)

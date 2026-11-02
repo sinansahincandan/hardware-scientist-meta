@@ -28,12 +28,23 @@ class Evaluator:
         (iter_dir / "novelty.md").write_text(novelty_md, encoding="utf-8")
         # 2) verdict (structured; free-text judgment + accept + evidence requests)
         evidence_table = "\n".join(
-            f"{e.id} [{e.tool}] {e.output_summary}" for e in board.evidence)
+            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}" for e in board.evidence)
+        if board.proposal is None:
+            proposal_fact = "No proposal was formed on the whiteboard in this meeting."
+        else:
+            ready = [m for m, v in board.votes.items() if v.version == board.proposal.version and v.ready]
+            proposal_fact = (f"Proposal v{board.proposal.version} by {board.proposal.author}; ready votes on it: "
+                             f"{', '.join(ready) or 'none'}.")
+        open_objections = "\n".join(
+            f"- {o.id} by {o.author} ({'blocking' if o.blocking else 'not blocking'}): {o.text}"
+            for o in board.objections if o.status == "open") or "(none)"
         prompt = (
             f"PROBLEM AND CRITERIA:\n{sections.get('## 1. Problem', '')}\n{sections.get('## 5. Criteria', '')}\n\n"
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"EVIDENCE TABLE:\n{evidence_table}\n\n"
-            f"MEETING CLOSURE: closed_by={closed_by}\n\n"
+            f"HOW THE MEETING CLOSED (facts, for your judgement): closed by "
+            f"{'consensus' if closed_by == 'consensus' else 'the cycle cap without consensus'} after "
+            f"{board.closure.cycles_used} cycles. {proposal_fact}\nOPEN OBJECTIONS:\n{open_objections}\n\n"
             f"PRIOR ART:\n{novelty}\n\n"
             "Write your judgment as free text. Consult cited evidence only when a claim looks doubtful; "
             "add one evidence_request per doubtful critical claim. "
@@ -44,16 +55,14 @@ class Evaluator:
             "bench test, prototype measurement or physical trace; phrase every evidence_request as a "
             "computation, simulation, sketch or search the room can actually perform. If the concept "
             "works physically and is buildable on sound analysis, accept it and put remaining test "
-            "needs in your feedback text, not in evidence_requests."
+            "needs in your feedback text, not in evidence_requests. Judge in writing what the meeting facts "
+            "above mean for acceptance (for example, whether an open objection or a missing proposal leaves "
+            "the concept unsettled); no rule decides this for you."
         )
         verdict = self.client.structured(
             "evaluator", Verdict,
             "You are the Evaluator, a senior engineer. Judge whether it works and can be built.",
             prompt)
-        # Code rule (spec §4.5): cap closure with open blocking objection => reject.
-        if closed_by == "cap" and any(o.blocking and o.status == "open" for o in board.objections):
-            verdict = Verdict(feedback=verdict.feedback + " [code rule: cap closure with open blocking objection]",
-                              evidence_requests=verdict.evidence_requests, accept=False)
         (iter_dir / "verdict.json").write_text(
             json.dumps({**verdict.model_dump(), "source": "evaluator"}, indent=2), encoding="utf-8")
         return verdict

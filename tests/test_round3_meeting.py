@@ -1,0 +1,137 @@
+"""Round 3 A4/A5/A6: no cutting of speech, consensus after the Manager, closure facts to the Evaluator."""
+from __future__ import annotations
+
+from pathlib import Path
+from types import SimpleNamespace
+from typing import Any
+
+import pytest
+
+from hs import config
+from hs.client import BudgetExceeded
+from hs.master_prompt import MasterPrompt
+from hs.schemas import Verdict
+from hs.stage_a import council
+from hs.stage_a.meeting import Meeting
+
+
+class _Client:
+    is_fake = False
+
+    def __init__(self, reply: str = "", raise_budget: bool = False) -> None:
+        self.reply, self.raise_budget, self.calls = reply, raise_budget, 0
+
+    def free_text(self, *a: Any, **k: Any) -> tuple[str, list[Any]]:
+        self.calls += 1
+        if self.raise_budget:
+            raise BudgetExceeded("cost cap $15.00 would be exceeded")
+        return self.reply, []
+
+
+def _meeting(tmp_path: Path, client: Any) -> Meeting:
+    master = MasterPrompt(tmp_path, "t", [("## 2. Roles", "### A\nmechanics")])
+    return Meeting(client, master, tmp_path, 0)
+
+
+def test_long_turn_is_reasked_once_and_never_cut(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    long_msg = "word " * 400
+    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: long_msg)
+    client = _Client(reply="short " * 120)
+    meeting = _meeting(tmp_path, client)
+    meeting._run_real_turn("A", ["A"], 1)
+    assert client.calls == 1 and len(meeting.transcript[-1]["message"].split()) == 120
+    # A reply that is not shorter is ignored: the full original stays, uncut.
+    client2 = _Client(reply="longer " * 500)
+    meeting2 = _meeting(tmp_path / "b", client2)
+    meeting2._run_real_turn("A", ["A"], 1)
+    assert len(meeting2.transcript[-1]["message"].split()) == 400
+
+
+def test_short_turn_costs_no_extra_call(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "word " * config.MAX_TURN_MESSAGE_WORDS)
+    client = _Client()
+    _meeting(tmp_path, client)._run_real_turn("A", ["A"], 1)
+    assert client.calls == 0
+
+
+def test_budget_stop_propagates_from_the_shorten_reask(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "word " * 400)
+    with pytest.raises(BudgetExceeded):
+        _meeting(tmp_path, _Client(raise_budget=True))._run_real_turn("A", ["A"], 1)
+
+
+def test_consensus_is_rechecked_after_the_managers_turn(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    from hs.fake_client import FakeClient
+    from hs.master_prompt import MasterPrompt as MP
+
+    client = FakeClient(run_dir=tmp_path)
+    master = MP.rev0(client, SimpleNamespace(title="t", statement="s", constraints=[], criteria=[],
+                                             attachments=[], model_dump=lambda: {"title": "t"}), "", tmp_path)
+    meeting = Meeting(client, master, tmp_path, 0, min_cycles=2, max_cycles=3)
+    original = Meeting._run_manager_turn
+
+    def manager_objects_in_cycle_2(self: Meeting, roster: list[str], cycle: int) -> None:
+        original(self, roster, cycle)
+        if cycle == 2:
+            self.board.apply_op("Manager", {"action": "raise_objection", "target_id": "proposal",
+                                            "text": "The critical load was never computed.", "blocking": True})
+
+    monkeypatch.setattr(Meeting, "_run_manager_turn", manager_objects_in_cycle_2)
+    result = meeting.run()
+    # Without the objection this fake meeting closes by consensus in cycle 2; with it, it must not.
+    assert result.cycles_used == 3
+    assert not (result.closed_by == "consensus" and result.board.closure.open_blocking)
+
+
+def test_manager_turn_cannot_vote(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    from hs.stage_a.tools import ToolRunner
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    board.apply_op("A", {"action": "add_function", "text": "carry the load"})
+    board.apply_op("A", {"action": "add_concept", "function_id": "F1", "text": "frame"})
+    board.apply_op("A", {"action": "update_proposal", "text": "frame", "concept_ids": ["C1"]})
+    vote = SimpleNamespace(type="function_call", name="whiteboard", call_id="c1",
+                           arguments='{"action": "vote", "ready": true, "reason": "fine"}')
+    replies = iter([SimpleNamespace(id="r1", output=[vote]),
+                    SimpleNamespace(id="r2", output=[SimpleNamespace(type="message", content=[
+                        SimpleNamespace(type="output_text", text="Process note.", annotations=[])])])])
+    seen_roles: list[str] = []
+
+    class Client:
+        def responses(self, **kwargs: Any) -> Any:
+            seen_roles.append(kwargs["role"])
+            return next(replies)
+
+    master = MasterPrompt(tmp_path, "t", [("## 2. Roles", "### A\nx")])
+    council.run_member_turn(Client(), master, "Manager", board, ToolRunner(board, tmp_path, tmp_path / "ev"),
+                            [], 1, instructions_override="manager", role="manager",
+                            allowed_actions={"raise_objection", "resolve_objection", "read_evidence"})
+    assert "Manager" not in board.votes and seen_roles == ["manager", "manager"]
+
+
+def test_evaluator_sees_closure_facts_and_no_code_rule_overrides_it(tmp_path: Path) -> None:
+    from hs.stage_a.evaluator import Evaluator
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    board.apply_op("A", {"action": "add_function", "text": "carry the load"})
+    board.apply_op("A", {"action": "raise_objection", "target_id": "F1", "text": "wheel size unknown",
+                         "blocking": True})
+    board.closure.cycles_used = 4
+    prompts: list[str] = []
+
+    class Client:
+        def free_text(self, *a: Any, **k: Any) -> tuple[str, list[Any]]:
+            return "closest prior art", []
+
+        def structured(self, role: str, model: Any, instructions: str, prompt: str, **k: Any) -> Any:
+            prompts.append(prompt)
+            return Verdict(feedback="Works; the wheel question is minor.", evidence_requests=[], accept=True)
+
+    solution = SimpleNamespace(model_dump_json=lambda **k: "{}")
+    master = SimpleNamespace(sections=[("## 1. Problem", "p"), ("## 5. Criteria", "c")])
+    verdict = Evaluator(Client()).judge(master, solution, board, "cap", tmp_path)
+    assert verdict.accept is True  # the Evaluator decided; no cap rule flipped it
+    assert "No proposal was formed" in prompts[0] and "wheel size unknown" in prompts[0]
+    assert "cycle cap without consensus" in prompts[0]

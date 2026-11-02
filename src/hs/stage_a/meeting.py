@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Any
 
 from hs import config
-from hs.client import BudgetExceeded
 from hs.master_prompt import MasterPrompt, roster_of
 from hs.schemas import (
     ConceptBody,
@@ -35,9 +34,8 @@ class MeetingResult:
     stats: dict[str, dict[str, int]] = field(default_factory=dict)
 
 
-def _truncate_words(text: str, limit: int = config.MAX_TURN_MESSAGE_WORDS) -> str:
-    words = text.split()
-    return " ".join(words[:limit])
+VOTE_ONLY_ACTIONS = {"vote", "raise_objection", "read_evidence"}
+MANAGER_ACTIONS = {"raise_objection", "resolve_objection", "read_evidence"}
 
 
 class Meeting:
@@ -100,57 +98,60 @@ class Meeting:
             # In fake cap scenario an open Evaluator objection still allows voting; board rule decides.
             ok, msg = self.board.apply_op(member, vote_op)
             self.history.append({"cycle": cycle, "member": member, "kind": "op", "op": vote_op, "ok": ok, "msg": msg})
-        message = _truncate_words(str(turn.get("message", "")))
-        self.transcript.append({"cycle": cycle, "member": member, "message": message})
+        self.transcript.append({"cycle": cycle, "member": member, "message": str(turn.get("message", ""))})
 
-    def _run_real_turn(self, member: str, roster: list[str], cycle: int) -> None:
-        """Responses tool loop for one turn (real client only; fake uses scripted turns)."""
+    def _turn(self, speaker: str, cycle: int, **kwargs: Any) -> str:
+        """One real turn with the expired-chain whole-turn retry; history records are kept."""
         from hs.stage_a.council import run_member_turn
 
         records: list[dict[str, Any]] = []
         try:
-            message = run_member_turn(self.client, self.master, member, self.board, self.tools,
-                                      self.transcript, cycle, history=records)
+            message = run_member_turn(self.client, self.master, speaker, self.board, self.tools,
+                                      self.transcript, cycle, history=records, **kwargs)
         except Exception as exc:
             if "not found or expired" not in str(exc):
                 raise
             # Last resort: one whole-turn retry from the current board state.
-            message = run_member_turn(self.client, self.master, member, self.board, self.tools,
-                                      self.transcript, cycle, history=records)
+            message = run_member_turn(self.client, self.master, speaker, self.board, self.tools,
+                                      self.transcript, cycle, history=records, **kwargs)
         for rec in records:
             self.history.append(rec)
-        # Speaking + substance check (v2 B6/B7): one retry with the reason.
-        try:
-            from hs.schemas import TurnCheck
+        return message
 
-            activity = sum(1 for r in records if r.get("kind") in ("op", "evidence"))
-            check = self.client.structured(
-                "turn_check", TurnCheck,
-                "You check one council turn message against the speaking rule. ok=false when: "
-                "telegraphic fragments, ids standing alone without words, undefined abbreviations, "
-                "talk about any figure/rendering pipeline instead of the device, raw search tokens, "
-                "or the turn adds nothing (no concept, evidence, objection, resolution or reasoned vote).",
-                f"BOARD ACTIONS THIS TURN (ops+evidence): {activity}\n\nMESSAGE:\n{message}")
-            if not check.ok:
-                cost_log = getattr(self.client, "cost", None)
-                if cost_log is not None:
-                    cost_log.note("turn_check_retry")
-                self.history.append({"cycle": cycle, "member": member, "kind": "turn_retry",
-                                     "reason": check.reason})
-                message = run_member_turn(
-                    self.client, self.master, member, self.board, self.tools, self.transcript, cycle,
-                    history=records,
-                    extra_instruction=(f"Your previous turn was rejected by the speaking check: {check.reason}. "
-                                       "Rewrite it following the speaking rule exactly, and add at least one of: "
-                                       "a concept, evidence, an objection, a resolution, or a vote with its reason."))
-                for rec in records:
-                    if rec not in self.history:
-                        self.history.append(rec)
-        except BudgetExceeded:
-            raise
-        except Exception:
-            pass
-        self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})
+    def _shorten_if_long(self, speaker: str, message: str, instructions: str, role: str, cycle: int) -> str:
+        """A6: a turn over the word limit is re-asked once to shorten; speech is never cut by code."""
+        limit = config.MAX_TURN_MESSAGE_WORDS
+        words = len(message.split())
+        if words <= limit:
+            return message
+        text, _ = self.client.free_text(
+            role, instructions,
+            f"Your message below has {words} words; the room's limit is {limit}. Rewrite it in at most "
+            f"{limit} words. Keep every point, every deciding number with its unit and every evidence id; "
+            f"drop repetition, not content. Reply with the message only.\n\nYOUR MESSAGE:\n{message}")
+        shorter = text.strip()
+        kept = shorter if shorter and len(shorter.split()) < words else message
+        self.history.append({"cycle": cycle, "member": speaker, "kind": "shorten_reask", "words_before": words,
+                             "words_after": len(kept.split())})
+        return kept
+
+    def _run_real_turn(self, member: str, roster: list[str], cycle: int, vote_only: bool = False) -> None:
+        """Responses tool loop for one member turn (real client only; fake uses scripted turns)."""
+        from hs.master_prompt import member_instructions
+        from hs.stage_a.tools import TOOL_SCHEMAS
+
+        if vote_only:
+            message = self._turn(
+                member, cycle, allowed_actions=VOTE_ONLY_ACTIONS,
+                tool_schemas=[t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard"],
+                extra_instruction=("\nThis is the final vote-only round: the cycles are over. Read the current "
+                                   "proposal, the open objections and the evidence, then vote on the proposal "
+                                   "with your reason, or raise an objection. No other board actions."))
+        else:
+            message = self._turn(member, cycle)
+        message = self._shorten_if_long(member, message, member_instructions(self.master.sections, member),
+                                        "member", cycle)
+        self.transcript.append({"cycle": cycle, "member": member, "message": message})
         self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
 
     def _run_manager_turn(self, roster: list[str], cycle: int) -> None:
@@ -163,22 +164,22 @@ class Meeting:
             (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
                 json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
             return
-        from hs.stage_a.council import SPEAKING_RULE, run_member_turn
+        from hs.stage_a.council import SPEAKING_RULE
 
         instructions = (
             "You are the Manager, process lead of this council. You steer the process only: point out a "
             "critical quantity nobody computed, an objection closed without evidence, a vote that came too "
             "early, or a missing expertise; ask a named member to compute, sketch or look something up; you "
-            "may raise or resolve process objections on the whiteboard and propose a new tool. You never "
-            "propose design concepts and you never vote. Keep short notes: end your message with one line "
+            "may raise or resolve process objections on the whiteboard (whether one of your objections blocks "
+            "the vote is your judgement from its content) and register a new tool. From cycle 2, if no "
+            "proposal is on the board, name the member whose favored concepts should be integrated and ask "
+            "them to write the proposal (update_proposal) in their next turn. You never propose design "
+            "concepts and you never vote. Keep short notes: end your message with one line "
             "'Note on <member>: ...' for each member you observed. " + SPEAKING_RULE)
-        records: list[dict[str, Any]] = []
-        message = run_member_turn(self.client, self.master, "Manager", self.board, self.tools,
-                                  self.transcript, cycle, history=records,
-                                  instructions_override=instructions)
-        for rec in records:
-            self.history.append(rec)
-        self.transcript.append({"cycle": cycle, "member": "Manager", "message": _truncate_words(message)})
+        message = self._turn("Manager", cycle, instructions_override=instructions, role="manager",
+                             allowed_actions=MANAGER_ACTIONS)
+        message = self._shorten_if_long("Manager", message, instructions, "manager", cycle)
+        self.transcript.append({"cycle": cycle, "member": "Manager", "message": message})
         self.history.append({"cycle": cycle, "member": "Manager", "kind": "turn_end"})
         (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
             json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
@@ -189,14 +190,13 @@ class Meeting:
     def run(self) -> MeetingResult:
         roster = roster_of(self.master.sections)
         stats: dict[str, dict[str, int]] = {m: {"evidence": 0, "objections_raised": 0,
-                                                "objections_resolved": 0, "votes": 0, "tool_errors": 0}
+                                                "votes": 0, "tool_errors": 0}
                                             for m in roster}
         closed_by = "cap"
         cycles_used = 0
         for cycle in range(1, self.max_cycles + 1):
             cycles_used = cycle
-            order = roster[cycle % len(roster):] + roster[: cycle % len(roster)] if roster else []
-            # spec §4.3: cycle c starts with member c mod n (0-based cycle index c-1 equivalent rotation)
+            # spec §4.3: cycle c starts with member (c-1) mod n
             order = roster[(cycle - 1) % len(roster):] + roster[: (cycle - 1) % len(roster)] if roster else []
             for member in order:
                 if getattr(self.client, "is_fake", False):
@@ -208,18 +208,14 @@ class Meeting:
                                 "message": self.transcript[-1]["message"] if self.transcript else ""}, indent=2),
                     encoding="utf-8")
                 if cycle >= self.min_cycles and self.board.consensus_reached(roster):
-                    closed_by = "consensus"
                     break
             self._run_manager_turn(roster, cycle)
+            # A4: consensus is decided after the Manager's turn, so an objection it raised counts.
             if cycle >= self.min_cycles and self.board.consensus_reached(roster):
                 closed_by = "consensus"
-            if closed_by == "consensus":
                 break
-            # stats snapshot per cycle
-            for m in roster:
-                stats[m]["evidence"] = sum(1 for e in self.board.evidence if e.author == m)
         if closed_by != "consensus" and self.board.proposal is not None:
-            # vote-only round: only vote / raise_objection allowed (fake: re-vote once)
+            # vote-only round (spec §4.3): only vote / raise_objection
             for member in roster:
                 if getattr(self.client, "is_fake", False):
                     turn = self.client.scripted_turn(member, roster, self.max_cycles, self.board)
@@ -227,7 +223,7 @@ class Meeting:
                         self.board.apply_op(member, {"action": "vote", "ready": turn["vote"]["ready"],
                                                      "reason": turn["vote"]["reason"]})
                 else:
-                    self._run_real_turn(member, roster, self.max_cycles)
+                    self._run_real_turn(member, roster, self.max_cycles, vote_only=True)
             if self.board.consensus_reached(roster):
                 closed_by = "consensus"
         open_blocking = [o.id for o in self.board.objections if o.blocking and o.status == "open"]
@@ -274,13 +270,8 @@ class Secretary:
             solution = self.client.structured("secretary", SolutionPrompt,
                                               "You are the Secretary. Output only the structured solution.",
                                               prompt)
-        # Deliverable-summary guards (AUTOPILOT §7.4): exactly 3 choices, 1 open question.
+        # Deliverable summary (AUTOPILOT §7.4): at most 3 choices, and only what the Secretary wrote.
         solution.decisive_choices = (solution.decisive_choices or [])[:3]
-        while len(solution.decisive_choices) < 3:
-            pad = (solution.risks[len(solution.decisive_choices)].risk
-                   if len(solution.decisive_choices) < len(solution.risks)
-                   else solution.concept.working_principle)
-            solution.decisive_choices.append(f"Choice needs Secretary confirmation: {pad}"[:200])
         if not solution.open_question:
             solution.open_question = (solution.open_questions[0] if solution.open_questions
                                       else "No open question was recorded by the council.")

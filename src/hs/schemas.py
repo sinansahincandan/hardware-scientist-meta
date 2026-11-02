@@ -176,11 +176,6 @@ class ProgressCheck(BaseModel):
     notes: str = ""
 
 
-class TurnCheck(BaseModel):
-    ok: bool = True
-    reason: str = ""
-
-
 class RewriteSection(BaseModel):
     heading: str
     new_text: str

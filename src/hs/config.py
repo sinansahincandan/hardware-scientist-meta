@@ -23,6 +23,7 @@ SAM_MODEL = "sam-3.1"
 
 ROLES: dict[str, RoleConfig] = {
     "member": RoleConfig(DEFAULT_MODEL, "medium", 8000),
+    "manager": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "secretary": RoleConfig(DEFAULT_MODEL, "high", 16000),
     "prior_art": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "evaluator": RoleConfig(DEFAULT_MODEL, "high", 12000),
@@ -30,12 +31,12 @@ ROLES: dict[str, RoleConfig] = {
     "manager_gradients": RoleConfig(DEFAULT_MODEL, "high", 12000),
     "manager_output_gradient": RoleConfig(DEFAULT_MODEL, "high", 6000),
     "vlm_prompt_gradient": RoleConfig(DEFAULT_MODEL, "high", 6000),
-    "turn_check": RoleConfig(DEFAULT_MODEL, "low", 1000),
     "optimizer": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "schematic": RoleConfig(DEFAULT_MODEL, "low", 8000),
     "vlm_writer": RoleConfig(DEFAULT_MODEL, "high", 4000),
     "localization": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "designer_eval": RoleConfig(DEFAULT_MODEL, "high", 8000),
+    "progress_check": RoleConfig(DEFAULT_MODEL, "high", 4000),
     "light_check": RoleConfig(DEFAULT_MODEL, "low", 2000),
     "lessons": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "example_generator": RoleConfig(DEFAULT_MODEL, "medium", 8000),
@@ -83,6 +84,14 @@ FIXED_CRITERIA = [
     "The concept must be buildable with purchasable parts and ordinary lab/shop methods.",
 ]
 
+# A5: who integrates the proposal, and when. Part of rev 0's §4 (the optimizer may revise it later).
+PROPOSAL_RULE = (
+    "Proposal: from cycle 2, the member whose concepts are favored for the most functions integrates them "
+    "into one proposal with update_proposal (the concepts, and the key claims with their evidence ids) in "
+    "their turn. If no proposal is on the board when cycle 2 ends, the Manager names the member who writes "
+    "it in cycle 3. Every later change to the design goes through update_proposal, which clears the votes."
+)
+
 DEFAULT_PROTOCOL = (
     "Cycle 1: decompose the problem into functions, propose concepts per function "
     "(distant cross-domain analogies welcome), post first order-of-magnitude estimates as evidence. "
@@ -98,5 +107,6 @@ DEFAULT_PROTOCOL = (
     "abbreviation on first use; address other members by name; talk only about the device. "
     "Read existing evidence before computing and reuse it by id unless you state why you recompute. "
     "Post a labeled sketch when proposing or changing a concept whose geometry, mechanism or flow "
-    "path matters. The Manager speaks last in every cycle and steers the process; it does not design."
+    "path matters. The Manager speaks last in every cycle and steers the process; it does not design. "
+    + PROPOSAL_RULE
 )

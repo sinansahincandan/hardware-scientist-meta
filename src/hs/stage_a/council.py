@@ -12,7 +12,7 @@ from typing import Any
 
 from hs import config
 from hs.master_prompt import MasterPrompt, member_instructions
-from hs.stage_a.tools import TOOL_SCHEMAS, ToolRunner
+from hs.stage_a.tools import ToolRunner
 from hs.stage_a.whiteboard import Whiteboard
 
 COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc"}
@@ -73,7 +73,11 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                     tools: ToolRunner, transcript: list[dict[str, Any]], cycle: int,
                     history: list[dict[str, Any]] | None = None,
                     instructions_override: str | None = None,
-                    extra_instruction: str = "") -> str:
+                    extra_instruction: str = "", role: str = "member",
+                    allowed_actions: set[str] | None = None,
+                    tool_schemas: list[dict[str, Any]] | None = None) -> str:
+    """One speaker's turn. `role` is the billing role; `allowed_actions` limits whiteboard
+    actions (vote-only round, Manager); `tool_schemas` replaces the default tool list."""
     roster_instructions = instructions_override or member_instructions(master.sections, member)
     since = [t for t in transcript if t["member"] != member]
     own_prev = next((t["message"] for t in reversed(transcript) if t["member"] == member), "")
@@ -103,8 +107,8 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     for _ in range(16):
         parallel = False if counted >= 4 else None  # from 5th counted call: one at a time
         try:
-            resp = client.responses(role="member", instructions=roster_instructions,
-                                    input_items=input_items, tools=TOOL_SCHEMAS,
+            resp = client.responses(role=role, instructions=roster_instructions,
+                                    input_items=input_items, tools=tool_schemas or tools.schemas(),
                                     previous_response_id=prev_id, parallel_tool_calls=parallel)
         except Exception as exc:
             # Provider-side chain state can expire while tools run (400
@@ -148,8 +152,12 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                 args = {}
             if name == "whiteboard":
                 wb_calls += 1
+                op_action = str(_unwrap_args(args).get("action", ""))
                 if wb_calls > config.MAX_WHITEBOARD_CALLS_PER_TURN:
                     output = "whiteboard budget exhausted — write your message now"
+                elif allowed_actions is not None and op_action not in allowed_actions:
+                    output = (f"error: action {op_action} is not available in this turn; "
+                              f"available: {', '.join(sorted(allowed_actions))}")
                 else:
                     op_args = _unwrap_args(args)
                     ok, msg = board.apply_op(member, op_args)

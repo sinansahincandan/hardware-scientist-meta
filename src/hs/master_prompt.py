@@ -167,6 +167,8 @@ class MasterPrompt:
             roles = _clean(roles) or roles
             tools_text = _clean(got.get("## 3. Tools", tools_text))
             protocol = _clean(got.get("## 4. Meeting protocol", protocol))
+            if config.PROPOSAL_RULE not in protocol:  # A5: the proposal rule is part of every rev 0
+                protocol = protocol.rstrip() + "\n\n" + config.PROPOSAL_RULE
             if "## 5. Criteria" in got and all(f in got["## 5. Criteria"] for f in config.FIXED_CRITERIA):
                 criteria = _clean(got["## 5. Criteria"])
         sections: list[tuple[str, str]] = [

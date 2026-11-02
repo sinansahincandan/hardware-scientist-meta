@@ -36,6 +36,14 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
      "parameters": {"type": "object", "properties": {"name": {"type": "string"}, "args": {"type": "object"},
                                                      "input_sources": {"type": "object"}, "purpose": {"type": "string"}},
                     "required": ["name", "args", "purpose"]}},
+    {"type": "function", "name": "new_tool",
+     "description": "Register a new calculation tool for this problem: python_source defines run(args) and "
+                    "returns a result; smoke_test_input is passed to run() once in the sandbox before the tool "
+                    "is registered. Registered tools become callable by every member from the next request.",
+     "parameters": {"type": "object", "properties": {
+         "name": {"type": "string"}, "description": {"type": "string"}, "parameters": {"type": "object"},
+         "python_source": {"type": "string"}, "smoke_test_input": {"type": "object"}},
+         "required": ["name", "description", "parameters", "python_source", "smoke_test_input"]}},
     {"type": "web_search", "search_context_size": "low"},
 ]
 
@@ -83,6 +91,14 @@ class ToolRunner:
         self.evidence_dir.mkdir(parents=True, exist_ok=True)
         self.new_tools: dict[str, dict[str, Any]] = {}
         self._load_registry()
+
+    def schemas(self) -> list[dict[str, Any]]:
+        """The shared tool list plus every registered tool (A7: registered tools are callable)."""
+        extra = [{"type": "function", "name": name,
+                  "description": str(rec.get("description", ""))[:1000] or f"custom tool {name}",
+                  "parameters": rec.get("parameters") or {"type": "object", "properties": {}}}
+                 for name, rec in self.new_tools.items()]
+        return TOOL_SCHEMAS + extra
 
     def _registry_dir(self) -> Path:
         d = self.run_dir / "tools"
