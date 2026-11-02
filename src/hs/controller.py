@@ -68,6 +68,10 @@ def build_references(run_dir: Path) -> Path:
         except Exception:  # noqa: S112 — unreadable evidence file contributes no references
             continue
         for ref in ev.get("references", []) or []:
+            from hs.stage_a.tools import clean_title
+
+            ref = {**ref, "title": clean_title(str(ref.get("title", "")), str(ref.get("url", ""))),
+                   "authors_or_org": str(ref.get("authors_or_org", "")).split(":")[0]}
             key = ref.get("url") or f"{ref.get('title')}|{ref.get('query')}"
             if key in seen:
                 continue

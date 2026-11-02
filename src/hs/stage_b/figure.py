@@ -163,12 +163,13 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         cap_font = _font(17)
         captions = [textwrap.wrap(cap, width=30) for _, cap in shipped]
         cap_h = 10 + 21 * max(len(c) for c in captions)
-        strip = Image.new("RGB", (360 * len(shipped), 225 + cap_h), "white")
+        tw, th = 520, 325
+        strip = Image.new("RGB", (tw * len(shipped), th + cap_h), "white")
         d = ImageDraw.Draw(strip)
         for i, ((step_path, _cap), lines) in enumerate(zip(shipped, captions, strict=True)):
-            strip.paste(Image.open(step_path).convert("RGB").resize((360, 225)), (360 * i, 0))
+            strip.paste(Image.open(step_path).convert("RGB").resize((tw, th)), (tw * i, 0))
             for j, line in enumerate(lines):
-                d.text((360 * i + 6, 230 + j * 21), line, fill=(0, 0, 0), font=cap_font)
+                d.text((tw * i + 6, th + 5 + j * 21), line, fill=(0, 0, 0), font=cap_font)
         panel_d = final_dir / "panel_D.png"
         strip.save(panel_d)
     for stale, keep in ((panel_b, has_b), (panel_c, has_c)):
@@ -215,8 +216,9 @@ def _layout(panel_a: Path, panel_b: Path | None, panel_c: Path | None, panel_d: 
     right = [Image.open(p) for p in (panel_b, panel_c) if p is not None]
     right = [im.resize((760, int(760 * im.size[1] / max(im.size[0], 1)))) for im in right]
     dimg = Image.open(panel_d) if panel_d is not None else None
-    if dimg is not None:
-        dimg = dimg.resize((1580, int(1580 * dimg.size[1] / max(dimg.size[0], 1))))
+    if dimg is not None:  # never stretched past its own width (one shipped step stays one thumbnail wide)
+        dw = min(1580, dimg.size[0])
+        dimg = dimg.resize((dw, int(dw * dimg.size[1] / max(dimg.size[0], 1))))
     right_h = sum(im.size[1] for im in right) + 16 * max(len(right) - 1, 0)
     row1_h = max(a.size[1], right_h)
     width = 1600 if (right or dimg is not None) else 800

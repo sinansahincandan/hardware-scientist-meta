@@ -86,7 +86,8 @@ def resolve_citation(cit: dict[str, Any], query: str) -> dict[str, Any]:
                 "year": "", "url": "", "query": query, "unresolved": True, "passage": ""}
     from urllib.parse import urlparse
 
-    host = urlparse(url).netloc.replace("www.", "")
+    host = urlparse(url).netloc.replace("www.", "").split(":")[0]
+    title = clean_title(title, url)
     year = str(cit.get("year") or cit.get("date") or "")[:4]
     if not year:
         found = re.search(r"(?<!\d)(19[5-9]\d|20[0-3]\d)(?!\d)", f"{title} {url}")
@@ -94,6 +95,17 @@ def resolve_citation(cit: dict[str, Any], query: str) -> dict[str, Any]:
     return {"authors_or_org": str(cit.get("author", "") or cit.get("authors", "") or host),
             "title": title or url, "year": year, "url": url, "query": query, "unresolved": False,
             "passage": str(cit.get("snippet", "") or "")}
+
+
+def clean_title(title: str, url: str) -> str:
+    """A readable title: garbled search titles (binary PDF metadata) fall back to the file or page name."""
+    from urllib.parse import unquote, urlparse
+
+    odd = sum(1 for ch in title if not (ch.isascii() and (ch.isprintable() or ch == " ")) and not ch.isalpha())
+    if title and odd / len(title) < 0.1 and not any(0x80 <= ord(ch) < 0xC0 for ch in title):
+        return title
+    name = unquote(urlparse(url).path.rstrip("/").split("/")[-1]) or urlparse(url).netloc
+    return name.replace("-", " ").replace("_", " ")
 
 
 def format_reference(ref: dict[str, Any]) -> str:
