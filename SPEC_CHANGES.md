@@ -46,3 +46,10 @@ items) and SAM calls are priced and counted. `hs budget` prints spent, remaining
   (enforced in code); the Manager's whiteboard actions are limited to process objections and
   read_evidence (it cannot vote or design). Manager turns are billed as `manager`, progress
   checks as `progress_check`.
+
+## SPEC-7 (round 3, A3 + B11 guards): Manager rewrites are never lost
+Guards are per section and only two remain (§1 unchanged, both fixed criteria verbatim; the
+3–MAX_MEMBERS roster guard and MAX_MEMBERS are removed). Passing sections are applied; a violating
+section alone is re-asked once, then keeps its old text. Ambiguous headings ("## 3. Criteria") are
+recorded, not guessed. Every optimizer output is saved. Reverts always yield a saved revision. The
+Manager's agenda is written into §4 by code. Only gradient_prompt.json is written (no diagnosis.json).

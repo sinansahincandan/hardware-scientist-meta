@@ -60,18 +60,16 @@ def member_instructions(sections: list[tuple[str, str]], member: str) -> str:
     return "\n\n".join(chunks)
 
 
-def guard_violations(old: list[tuple[str, str]], new: list[tuple[str, str]]) -> list[str]:
+def section_problems(heading: str, old_text: str, new_text: str) -> list[str]:
+    """The only two code guards (spec §3.2, round-3 B11): §1 never changes, and §5 keeps
+    both fixed criteria verbatim. Checked per section, so one bad section never blocks the rest."""
     problems: list[str] = []
-    old_by, new_by = dict(old), dict(new)
-    if old_by.get("## 1. Problem", "") != new_by.get("## 1. Problem", ""):
+    if heading == "## 1. Problem" and new_text.strip() != old_text.strip():
         problems.append("## 1. Problem must remain unchanged")
-    criteria = new_by.get("## 5. Criteria", "")
-    for fixed in config.FIXED_CRITERIA:
-        if fixed not in criteria:
-            problems.append(f"fixed criterion missing verbatim: {fixed[:40]}...")
-    n_members = len(roster_of(new))
-    if not (3 <= n_members <= config.MAX_MEMBERS):
-        problems.append(f"roster size {n_members} outside 3..{config.MAX_MEMBERS}")
+    if heading == "## 5. Criteria":
+        for fixed in config.FIXED_CRITERIA:
+            if fixed not in new_text:
+                problems.append(f"## 5. Criteria must contain this fixed criterion verbatim: {fixed}")
     return problems
 
 
@@ -195,81 +193,57 @@ class MasterPrompt:
         self.sections = [(h, by[h]) for h, _ in self.sections]
         return reverted
 
-    def apply_rewrite(self, rewrite: MasterPromptRewrite, *, _guard_retry: bool = False,
-                      _shrink_retry: bool = False) -> dict[str, Any]:
-        """Apply section rewrites under guards + shrink check. Returns ops report."""
-        old_sections = list(self.sections)
-        old_by = dict(old_sections)
-        new_by = dict(old_sections)
-        changed: list[str] = []
+    def resolve_heading(self, heading: str) -> str | None:
+        """Map an optimizer heading onto a canonical one. Exact match first; otherwise the section
+        number and the title must agree (an optimizer heading such as "## 3. Criteria", whose number
+        and title name different sections, is ambiguous and is dropped, never guessed)."""
+        known = [h for h, _ in self.sections]
+        if heading in known:
+            return heading
+        number = re.match(r"^#*\s*(\d+)[.\s]", heading.strip())
+        title = re.sub(r"^#*\s*(\d+\.?)?\s*", "", heading.strip()).lower()
+        by_number = next((h for h in known if number and re.match(rf"^##\s*{number.group(1)}\.", h)), None)
+        by_title = next((h for h in known if title and re.sub(r"^##\s*\d+\.\s*", "", h).lower() == title), None)
+        if by_number and by_title and by_number != by_title:
+            return None
+        return by_number or by_title
 
-        def _canonical(heading: str) -> str | None:
-            # Optimizers often return "Meeting protocol" or "4. Meeting protocol"
-            # instead of the exact "## 4. Meeting protocol": match by title words.
-            wanted = re.sub(r"^#+\s*", "", heading).strip().lower()
-            wanted = re.sub(r"^\d+\.?\s*", "", wanted)
-            for known in old_by:
-                title = re.sub(r"^#+\s*", "", known).strip().lower()
-                title = re.sub(r"^\d+\.?\s*", "", title)
-                if wanted == title:
-                    return known
-            # Fall back to the section number ("## 3. Process" -> "## 3. Tools"):
-            # dropping a rewrite silently once lost a whole revision (run 02).
-            number = re.match(r"^#+\s*(\d+)[.\s]", heading)
-            if number:
-                for known in old_by:
-                    if re.match(rf"^#+\s*{number.group(1)}[.\s]", known):
-                        return known
-            return heading if heading in old_by else None
-
+    def propose(self, rewrite: MasterPromptRewrite) -> tuple[dict[str, str], list[str]]:
+        """Canonical heading -> proposed text for every section the rewrite names, and the
+        headings that could not be placed (recorded, never silently lost)."""
+        proposed: dict[str, str] = {}
         dropped: list[str] = []
         for section in rewrite.sections:
-            canonical = _canonical(section.heading)
-            if canonical is None:
+            canonical = self.resolve_heading(section.heading)
+            if canonical is None or canonical == "## 1. Problem":
                 dropped.append(section.heading)
                 continue
-            if canonical is not None:
-                section = section.model_copy(update={"heading": canonical})
-            if section.heading in new_by and section.heading != "## 1. Problem":
-                if new_by[section.heading].strip() != section.new_text.strip():
-                    changed.append(section.heading)
-                new_by[section.heading] = section.new_text
-        candidate = [(h, new_by[h]) for h, _ in old_sections]
-        violations = guard_violations(old_sections, candidate)
-        result: dict[str, Any] = {"changed": [], "violations": violations, "shrink_asked": [],
-                                  "change_note": rewrite.change_note, "no_progress": False,
-                                  "dropped_headings": dropped}
-        if violations and not _guard_retry:
-            result["guard_reasked"] = True
-            return result  # caller re-asks once; state untouched
-        if violations:
-            # Second violation: keep old text for offending sections only.
-            for heading in list(changed):
-                trial = dict(candidate)
-                trial[heading] = old_by[heading]
-                if not guard_violations(old_sections, [(h, trial[h]) for h, _ in old_sections]):
-                    candidate = [(h, trial[h]) for h, _ in old_sections]
-                    changed.remove(heading)
-            result["violations_kept_old"] = violations
-        # shrink check
-        shrinked = [h for h in changed if shrink_fraction(old_by[h], dict(candidate)[h]) > 0.5]
-        if shrinked and not _shrink_retry:
-            result["shrink_asked"] = shrinked
-            result["changed"] = []
-            return result  # caller re-asks once with removed lines
+            proposed[canonical] = section.new_text
+        return proposed, dropped
+
+    def commit(self, new_texts: dict[str, str], change_note: str, notes: list[str] | None = None) -> dict[str, Any]:
+        """Apply the given section texts (already guard-checked by the caller) on top of the current
+        sections and save a revision when anything differs from the last saved revision."""
+        saved = dict(split_master_prompt((self._dir / f"rev_{self.rev:03d}.md").read_text(encoding="utf-8"))) \
+            if (self._dir / f"rev_{self.rev:03d}.md").exists() else dict(self.sections)
+        by = dict(self.sections)
+        by.update(new_texts)
+        candidate = [(h, by[h]) for h, _ in self.sections]
+        changed = [h for h, body in candidate if saved.get(h, "").strip() != body.strip()]
+        result: dict[str, Any] = {"changed": changed, "change_note": change_note, "no_progress": not changed,
+                                  "notes": notes or []}
         if not changed:
             self.no_progress_streak += 1
-            result["no_progress"] = True
             return result
         self.no_progress_streak = 0
         self.rev += 1
         self.sections = candidate
         self.save()
-        # diff file
-        lines = [f"# Diff rev {self.rev}", "", f"Change note: {rewrite.change_note}", ""]
+        lines = [f"# Diff rev {self.rev}", "", f"Change note: {change_note}", ""]
+        lines += [f"- {n}" for n in notes or []]
         for heading in changed:
             lines.append(f"## {heading}")
-            for line in difflib.unified_diff(old_by[heading].splitlines(), dict(candidate)[heading].splitlines(),
+            for line in difflib.unified_diff(saved.get(heading, "").splitlines(), by[heading].splitlines(),
                                              lineterm="", n=1):
                 if line.startswith("+") and not line.startswith("+++"):
                     lines.append(f"<green>+ {line[1:]}</green>")
@@ -277,6 +251,5 @@ class MasterPrompt:
                     lines.append(f"<red>- {line[1:]}</red>")
             lines.append("")
         (self._dir / f"diff_{self.rev:03d}.md").write_text("\n".join(lines), encoding="utf-8")
-        result["changed"] = changed
-        self.history.append({"rev": self.rev, "changed": changed, "change_note": rewrite.change_note})
+        self.history.append({"rev": self.rev, "changed": changed, "change_note": change_note})
         return result

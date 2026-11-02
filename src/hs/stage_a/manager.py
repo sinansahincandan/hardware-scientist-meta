@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from hs.master_prompt import MasterPrompt
+from hs.master_prompt import MasterPrompt, section_problems, shrink_fraction
 from hs.schemas import Gradients, Inspirations, MasterPromptRewrite, OutputGradient, SolutionPrompt
 from hs.stage_a.archive import CouncilArchive
 from hs.stage_a.meeting import MeetingResult
@@ -86,7 +86,6 @@ class Manager:
                                            "You are the Manager, step 2: diagnose which prompt part or behaviour caused the output.",
                                            prompt)
         self.last_gradients = gradients
-        (iter_dir / "diagnosis.json").write_text(gradients.model_dump_json(indent=2), encoding="utf-8")
         (iter_dir / "gradient_prompt.json").write_text(gradients.model_dump_json(indent=2), encoding="utf-8")
         return gradients
 
@@ -109,36 +108,89 @@ class Manager:
                 registered.append(proposal.name)
         return registered
 
+    def _optimize(self, instructions: str, user_text: str, out: Path) -> MasterPromptRewrite:
+        rewrite = self.client.structured("optimizer", MasterPromptRewrite, instructions, user_text)
+        out.write_text(rewrite.model_dump_json(indent=2), encoding="utf-8")  # A3: every output is saved
+        return rewrite
+
     def edit(self, room: MeetingResult, solution: SolutionPrompt, feedback_text: str,
              iter_dir: Path, tools: Any = None) -> dict[str, Any]:
-        """Diagnosis -> revert (code) -> optimizer rewrite with guards/shrink. Returns ops report."""
+        """Diagnosis -> revert (code) -> optimizer rewrite, guarded per section, with at most one guard
+        re-ask and one shrink re-ask (spec §3.2). Every optimizer output is saved; nothing is lost silently."""
         output_gradient = self.output_gradient(solution, feedback_text, iter_dir)
         gradients = self.diagnose(room, solution, feedback_text, iter_dir, output_gradient)
         tools_registered = self.register_proposed_tools(gradients, tools)
         reverted = self.master.apply_reverts(gradients)
-        rewrite = self.client.structured(
-            "optimizer", MasterPromptRewrite,
-            "Rewrite only the sections that need it, as free Markdown section text. "
-            "Use the exact section headings from the master prompt (e.g. '## 4. Meeting protocol') as each heading. "
-            "Write the Manager's agenda judgment into ## 4. Meeting protocol as this iteration's agenda. "
-            "Write engineering content only (design knowledge, checks, member behaviour, agenda); "
-            "never write pipeline rules such as retry limits, caps or gating — those live in code.",
-            f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES (step-2 prompt gradient; consume this only):\n{gradients.model_dump_json(indent=2)}")
-        (iter_dir / "rewrite.json").write_text(rewrite.model_dump_json(indent=2), encoding="utf-8")
-        report = self.master.apply_rewrite(rewrite)
-        if report.get("guard_reasked"):
-            rewrite2 = self.client.structured(
-                "optimizer", MasterPromptRewrite,
-                "Your rewrite violated a guard: " + "; ".join(report["violations"]) + ". Fix it.",
-                f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES:\n{gradients.model_dump_json(indent=2)}")
-            report = self.master.apply_rewrite(rewrite2, _guard_retry=True)
-        if report.get("shrink_asked"):
-            rewrite3 = self.client.structured(
-                "optimizer", MasterPromptRewrite,
-                "Sections shrank by >50%: " + ", ".join(report["shrink_asked"]) + ". Confirm intended.",
-                f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES:\n{gradients.model_dump_json(indent=2)}")
-            report = self.master.apply_rewrite(rewrite3, _shrink_retry=True)
+        notes = [f"{h} reverted to the revision the Manager named" for h in reverted]
+        base = dict(self.master.sections)
+        notes_json = gradients.model_dump_json(indent=2)
+        rewrite = self._optimize(
+            "Rewrite only the sections that need it, as free Markdown section text, using the exact section "
+            "headings of the master prompt (e.g. '## 4. Meeting protocol'). Write engineering content only "
+            "(design knowledge, checks, member behaviour, protocol); never write pipeline rules such as retry "
+            "limits, caps or gating — those live in code. Never put design answers or numbers into a role, "
+            "and never tell members to drop an objection or to treat an unchecked item as done.",
+            f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES (step-2 prompt gradient; consume this only):\n"
+            f"{notes_json}", iter_dir / "rewrite.json")
+        change_notes = [rewrite.change_note]
+        proposed, dropped = self.master.propose(rewrite)
+        notes += [f"heading '{h}' could not be placed on one section; that text was not applied" for h in dropped]
+        bad = {h: probs for h, t in proposed.items() if (probs := section_problems(h, base[h], t))}
+        if bad:
+            listing = "\n\n".join(f"{h}\nPROBLEM: {'; '.join(probs)}\nYOUR TEXT:\n{proposed[h]}"
+                                   for h, probs in bad.items())
+            again = self._optimize(
+                "Your rewrite of the sections below broke a guard. Rewrite only these sections so the guard "
+                "holds; keep your intent.", f"MASTER PROMPT:\n{self.master.text()}\n\nSECTIONS:\n{listing}",
+                iter_dir / "rewrite_guard_reask.json")
+            change_notes.append(again.change_note)
+            fixed, _ = self.master.propose(again)
+            for h, probs in bad.items():
+                if h in fixed and not section_problems(h, base[h], fixed[h]):
+                    proposed[h] = fixed[h]
+                else:
+                    proposed.pop(h)
+                    notes.append(f"{h} kept its previous text: {'; '.join(probs)}")
+        shrunk = [h for h, t in proposed.items() if shrink_fraction(base[h], t) > 0.5]
+        if shrunk:
+            listing = "\n\n".join(
+                f"{h} lost {round(100 * shrink_fraction(base[h], proposed[h]))} % of its text. Removed lines:\n"
+                + "\n".join(f"- {line}" for line in base[h].splitlines() if line.strip() and line not in proposed[h])
+                + f"\nYOUR NEW TEXT:\n{proposed[h]}" for h in shrunk)
+            again = self._optimize(
+                "These sections lost more than half of their text in your rewrite. Is that intended? Reply with "
+                "the final text of each listed section (unchanged if the cut was intended).",
+                f"MASTER PROMPT:\n{self.master.text()}\n\nSECTIONS:\n{listing}",
+                iter_dir / "rewrite_shrink_reask.json")
+            change_notes.append(again.change_note)
+            confirmed, _ = self.master.propose(again)
+            for h in shrunk:
+                if h in confirmed and not section_problems(h, base[h], confirmed[h]):
+                    proposed[h] = confirmed[h]  # whatever it answers the second time is applied
+        if gradients.agenda.strip():
+            protocol = proposed.get("## 4. Meeting protocol", base.get("## 4. Meeting protocol", ""))
+            proposed["## 4. Meeting protocol"] = with_agenda(protocol, gradients.agenda)
+        report = self.master.commit(proposed, " ".join(n for n in change_notes if n), notes)
         report["reverted"] = reverted
         report["tools_registered"] = tools_registered
-        report["gradients"] = gradients.model_dump()
+        (iter_dir / "manager_edit.json").write_text(json.dumps(
+            {k: v for k, v in report.items() if k != "gradients"}, indent=2), encoding="utf-8")
         return report
+
+
+AGENDA_HEADING = "### Agenda for the next meeting (Manager)"
+
+
+def with_agenda(protocol: str, agenda: str) -> str:
+    """Write the Manager's agenda into §4 (spec §4.6), replacing the previous iteration's agenda."""
+    kept: list[str] = []
+    skipping = False
+    for line in protocol.splitlines():
+        if line.strip() == AGENDA_HEADING:
+            skipping = True
+            continue
+        if skipping and line.startswith("### "):
+            skipping = False
+        if not skipping:
+            kept.append(line)
+    return "\n".join(kept).rstrip() + f"\n\n{AGENDA_HEADING}\n{agenda.strip()}"

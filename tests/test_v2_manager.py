@@ -30,7 +30,8 @@ def test_numbered_heading_maps_and_saves_rev_and_diff(tmp_path: Path) -> None:
         sections=[RewriteSection(heading="## 3. Process", new_text="new tools text, longer")],
         change_note="retitle test",
     )
-    report = master.apply_rewrite(rewrite)
+    proposed, _ = master.propose(rewrite)
+    report = master.commit(proposed, rewrite.change_note)
     assert report["changed"] == ["## 3. Tools"]
     assert (tmp_path / "master_prompt" / "rev_001.md").exists()
     assert (tmp_path / "master_prompt" / "diff_001.md").exists()
@@ -43,9 +44,17 @@ def test_unknown_heading_is_reported_not_silent(tmp_path: Path) -> None:
         sections=[RewriteSection(heading="## 9. Nowhere", new_text="x")],
         change_note="bad heading",
     )
-    report = master.apply_rewrite(rewrite)
-    assert report["dropped_headings"] == ["## 9. Nowhere"]
+    proposed, dropped = master.propose(rewrite)
+    assert dropped == ["## 9. Nowhere"] and proposed == {}
+    master.commit(proposed, rewrite.change_note)
     assert not (tmp_path / "master_prompt" / "rev_001.md").exists()
+
+
+def test_heading_whose_number_and_title_disagree_is_dropped_not_guessed(tmp_path: Path) -> None:
+    master = _master(tmp_path)
+    proposed, dropped = master.propose(MasterPromptRewrite(
+        sections=[RewriteSection(heading="## 3. Criteria", new_text="x")], change_note="ambiguous"))
+    assert dropped == ["## 3. Criteria"] and proposed == {}
 
 
 class _StubTools:

@@ -58,10 +58,11 @@ def test_optimizer_heading_normalized(tmp_path):
         ("## 5. Criteria", ("- The concept must work physically (no violated conservation law, load path, or signal path).\n"
                              "- The concept must be buildable with purchasable parts and ordinary lab/shop methods.")),
         ("## 6. Lessons applied", "l")], rev=0)
-    report = master.apply_rewrite(MasterPromptRewrite(
+    proposed, dropped = master.propose(MasterPromptRewrite(
         sections=[RewriteSection(heading="Meeting protocol", new_text="new protocol: vote only with evidence")],
         change_note="test"))
-    assert report["changed"] == ["## 4. Meeting protocol"]
+    report = master.commit(proposed, "test")
+    assert report["changed"] == ["## 4. Meeting protocol"] and dropped == []
     assert "vote only with evidence" in dict(master.sections)["## 4. Meeting protocol"]
 
 

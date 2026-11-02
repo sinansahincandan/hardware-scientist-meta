@@ -340,7 +340,7 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     p.append(f"<p>Master prompt revisions in this run: {len(revs)}. "
              f"Each applied rewrite is saved as rev_N.md with diff_N.md next to it.</p>")
     for it_dir in iters:
-        diag = _read_json(it_dir / "diagnosis.json")
+        diag = _read_json(it_dir / "gradient_prompt.json") or _read_json(it_dir / "diagnosis.json")
         if diag:
             p.append(f"<div class='event'><b>{it_dir.name}</b> Manager root cause: "
                      f"{html.escape(str(diag.get('root_cause', ''))[:300])} Agenda: "
