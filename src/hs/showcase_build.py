@@ -381,6 +381,41 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
     return out / "index.html"
 
 
+def _knowledge_html(run_dir: Path, iters: list[Path]) -> str:
+    """Knowledge carried between problems: what this run inherited, what it used, what it left behind."""
+    k_in = _read_json(run_dir / "knowledge_in.json")
+    if not k_in:
+        return "<p>This run predates the knowledge record (knowledge_in.json); nothing to show.</p>"
+    used: list[str] = []
+    for it_dir in iters:
+        board = _read_json(it_dir / "whiteboard.json")
+        for ev in board.get("evidence", []):
+            if ev.get("tool") == "search_knowledge":
+                used.append(f"{ev.get('author')} searched the library for “{ev.get('code_or_query')}” → "
+                            f"{ev.get('output_summary')} ({ev.get('id')})")
+            elif str(ev.get("tool", "")).split(":")[0] in k_in.get("tools", {}):
+                used.append(f"{ev.get('author')} ran the carried tool {ev.get('tool')} ({ev.get('id')})")
+    lessons_file = ROOT / "knowledge" / "lessons.md"
+    notes = [line.strip() for line in lessons_file.read_text(encoding="utf-8").splitlines()
+             if line.startswith("  - used in run " + run_dir.name)] if lessons_file.exists() else []
+    tools = k_in.get("tools", {})
+    out = ["<h3>Knowledge carried between problems</h3><ul>",
+           f"<li>Inherited: {_n(len(k_in.get('lessons', [])), 'process lesson')} "
+           f"({', '.join(k_in.get('lessons', [])) or 'none'}) given to the Manager and the optimizer; "
+           f"{_n(len(k_in.get('insight_runs', [])), 'insight file')} members could search; "
+           f"{_n(len(tools), 'carried tool')}"
+           + (" (" + ", ".join(f"{t} from {src}" for t, src in tools.items()) + ")" if tools else "") + ".</li>"]
+    out.append("<li>Used in this run: " + ("</li><ul>" + "".join(f"<li>{html.escape(u)}</li>" for u in used) + "</ul>"
+                                         if used else "no library search or carried tool was used.</li>"))
+    out.append("<li>Lesson notes recorded for this run: " + (
+        "</li><ul>" + "".join(f"<li>{html.escape(n.lstrip('- '))}</li>" for n in notes) + "</ul>" if notes else "none.</li>"))
+    ins = ROOT / "knowledge" / "insights" / f"{run_dir.name}.md"
+    if ins.exists():
+        titles = [line[3:] for line in ins.read_text(encoding="utf-8").splitlines() if line.startswith("## ")]
+        out.append("<li>Insights left for later problems: " + "; ".join(html.escape(t) for t in titles) + ".</li>")
+    return "".join(out) + "</ul>"
+
+
 def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     problem, sol = _problem(run_dir), _final_solution(run_dir)
     rounds = _rounds(run_dir)
@@ -490,6 +525,7 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     p.append("<p>Lessons this run added to knowledge/lessons.md: " + (
         "</p><ul>" + "".join(f"<li>{html.escape(line.lstrip('- '))}</li>" for line in added) + "</ul>"
         if added else "none.</p>"))
+    p.append(_knowledge_html(run_dir, iters))
     # TextGrad chain per meeting (D22): critique -> output gradient -> prompt gradient -> edit -> re-check
     p.append("<h2>6. The TextGrad chain, meeting by meeting</h2>")
     for idx, it_dir in enumerate(iters):

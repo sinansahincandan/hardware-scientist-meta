@@ -109,8 +109,15 @@ def measure(client: Any, render_png: Path, part_map: PartMap, out_dir: Path | No
         w, h = im.size
     out: dict[str, Any] = {"size": [w, h], "parts": {}}
     for part in part_map.parts:
-        raw = client.sam_segment(part.visual_phrase, render_png)
-        rec: dict[str, Any] = {"phrase": part.visual_phrase, "boxes": parse_sam(raw, w, h)}
+        phrase = part.visual_phrase
+        raw = client.sam_segment(phrase, render_png)
+        boxes = parse_sam(raw, w, h)
+        head = phrase.split()[-1] if len(phrase.split()) > 1 else ""
+        if not boxes and head:  # one plainer try: the head noun alone ("metal frame" -> "frame")
+            raw2 = client.sam_segment(head, render_png)
+            if parse_sam(raw2, w, h):
+                phrase, raw, boxes = head, raw2, parse_sam(raw2, w, h)
+        rec: dict[str, Any] = {"phrase": phrase, "boxes": boxes}
         mask = parse_masks(raw, w, h)
         if mask is not None and out_dir is not None:
             (out_dir / "sam_masks").mkdir(parents=True, exist_ok=True)

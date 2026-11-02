@@ -154,6 +154,7 @@ class Controller:
         if getattr(self.client, "is_fake", False) and not os.environ.get("HS_LESSONS_PATH"):
             self._lessons_out = run_dir / "lessons_fake_run.md"
             self._lessons_out.write_text(lessons_text, encoding="utf-8")
+        _record_knowledge_in(run_dir, lessons_text)
         master = MasterPrompt.rev0(self.client, problem, lessons_text, run_dir)
         from hs.master_prompt import roster_of
 
@@ -312,3 +313,17 @@ class Controller:
                 if line.startswith("- http"):
                     sources.append(line[2:].partition(" — ")[0])
         return sources
+
+
+def _record_knowledge_in(run_dir: Path, lessons_text: str) -> None:
+    """What this problem inherits from earlier ones (Fig. 1 knowledge/), for the pages: lesson ids given to
+    rev 0, insight files members can search, smoke-tested tools loaded into the toolbox."""
+    from hs.knowledge import carried_tools, knowledge_dir
+
+    insights = sorted(p.stem for p in (knowledge_dir() / "insights").glob("*.md")) \
+        if (knowledge_dir() / "insights").exists() else []
+    (run_dir / "knowledge_in.json").write_text(json.dumps({
+        "lessons": re.findall(r"^- (L\d+):", lessons_text, flags=re.MULTILINE),
+        "insight_runs": insights,
+        "tools": {name: rec.get("source_run", "") for name, rec in carried_tools().items()},
+    }, indent=2), encoding="utf-8")

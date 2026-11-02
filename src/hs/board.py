@@ -15,6 +15,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from hs import config
+from hs.board_picture import PICTURE_STYLE, board_picture_html
 from hs.stage_a.whiteboard import Whiteboard
 
 MANAGER_COLOR = "#7d3c98"
@@ -152,6 +154,12 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
         body = [f"<section class='board' id='{iter_dir.name}'><h2>Meeting {n}</h2>"
                 "<p class='legend'>" + "".join(f"<span style='color:{color[m]}'>● {_e(m)}</span>" for m in members)
                 + f"<span style='color:{MANAGER_COLOR}'>● Manager (process lead)</span></p>"]
+        raw_board = _read(iter_dir / "whiteboard.json")
+        if raw_board:
+            closure_info = _read(iter_dir / "closure.json")
+            used = int(closure_info.get("cycles_used") or max((int(t.get("cycle", 0)) for t in turns), default=0))
+            body.append("<p class='small'>The board as it stood when the meeting closed; the turns that built it follow.</p>"
+                        + board_picture_html(raw_board, run_dir, iter_dir, members, title, used, config.MAX_CYCLES))
         proposal_text, proposal_v = "", 0
         for cycle in sorted({int(t.get("cycle", 0)) for t in turns}):
             body.append(f"<div class='cycle'><h3>Cycle {cycle}</h3>")
@@ -247,10 +255,10 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
               f"and how the design changed.</p><nav>{''.join(nav)}</nav></header>")
     body_html = header + "".join(sections)
     if fragment:
-        return STYLE + body_html
+        return STYLE + PICTURE_STYLE + body_html
     refresh = '<meta http-equiv="refresh" content="5">' if live else ""
     return (f"<!doctype html><html><head><meta charset='utf-8'>{refresh}<title>Board — {_e(title)}</title>"
-            f"{STYLE}</head><body>{body_html}</body></html>")
+            f"{STYLE}{PICTURE_STYLE}</head><body>{body_html}</body></html>")
 
 
 def write_board(run_dir: Path, live: bool = False) -> Path:

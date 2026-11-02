@@ -128,26 +128,31 @@ class Annotator:
         label_of = {n.id: n.label for n in spec.nodes}
         overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         draw = ImageDraw.Draw(overlay)
-        placed: list[tuple[float, float, float, float]] = []
         fs = font.size  # type: ignore[attr-defined]
-        for pid, (x0, y0, x1, y1) in sorted(boxes_px.items(), key=lambda kv: kv[1][1]) if draw_labels else []:
-            cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-            text = label_of.get(pid, pid)
-            tw = draw.textlength(text, font=font)
-            lx = min(max(cx - tw / 2, 8), w - tw - 8)
-            ly = y0 - fs - 18 if y0 - fs - 18 > 8 else min(y1 + 12, h - fs - 12)
-            for _ in range(40):  # step away from labels already placed
+        # Callout layout: labels in a left and a right column (the side nearest each part), ordered top to
+        # bottom by the part's height, so leaders run sideways and never cross another label.
+        items = [(pid, (b[0] + b[2]) / 2, (b[1] + b[3]) / 2) for pid, b in boxes_px.items()] if draw_labels else []
+        pad, gap = 10, 12
+        for side in ("left", "right"):
+            col = sorted([it for it in items if (it[1] < w / 2) == (side == "left")], key=lambda it: it[2])
+            next_top = 8.0
+            for pid, cx, cy in col:
+                text = label_of.get(pid, pid)
+                tw = draw.textlength(text, font=font)
+                lx = 16 if side == "left" else w - tw - 16
+                ly = min(max(cy - fs / 2, next_top), h - fs - 16)
+                below = (lx - 6 < cx < lx + tw + 6) and (ly - 4 < cy < ly + fs + 6)  # the label would hide its part
+                if below:
+                    ly = min(max(cy + 2 * fs, next_top), h - fs - 16)
+                next_top = ly + fs + pad + gap
                 rect = (lx - 6, ly - 4, lx + tw + 6, ly + fs + 6)
-                if not any(not (rect[2] < r[0] or rect[0] > r[2] or rect[3] < r[1] or rect[1] > r[3]) for r in placed):
-                    break
-                ly = ly + fs + 10 if ly + 2 * fs + 20 < h else max(ly - 3 * fs, 8)
-            rect = (lx - 6, ly - 4, lx + tw + 6, ly + fs + 6)
-            placed.append(rect)
-            anchor_y = rect[3] if rect[3] <= cy else rect[1]
-            draw.line([lx + tw / 2, anchor_y, cx, cy], fill=(0, 80, 80, 255), width=max(2, w // 600))
-            draw.ellipse([cx - 5, cy - 5, cx + 5, cy + 5], fill=(0, 80, 80, 255))
-            draw.rounded_rectangle(rect, radius=6, fill=(255, 255, 255, 225))
-            draw.text((lx, ly), text, fill=(0, 60, 60, 255), font=font)
+                ax, ay = (rect[2] if side == "left" else rect[0]), (rect[1] + rect[3]) / 2
+                if below:
+                    ax, ay = min(max(cx, rect[0] + 12), rect[2] - 12), rect[1]
+                draw.line([ax, ay, cx, cy], fill=(0, 80, 80, 255), width=max(2, w // 600))
+                draw.ellipse([cx - 6, cy - 6, cx + 6, cy + 6], fill=(0, 80, 80, 255), outline=(255, 255, 255, 255))
+                draw.rounded_rectangle(rect, radius=6, fill=(255, 255, 255, 232), outline=(0, 80, 80, 255))
+                draw.text((lx, ly), text, fill=(0, 60, 60, 255), font=font)
         img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
         draw = ImageDraw.Draw(img)
         missing = [p.id for p in loc.parts if not p.found]

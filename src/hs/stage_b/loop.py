@@ -22,7 +22,13 @@ from hs.schemas import DesignerEval, Localization, SchematicSpec, SolutionPrompt
 from hs.stage_b import part_map as pm
 from hs.stage_b import schematic as schematic_mod
 from hs.stage_b.annotate import Annotator
-from hs.stage_b.designer_eval import DesignerEvalRunner, decide, s1_exhausted_text, s2_feedback_text
+from hs.stage_b.designer_eval import (
+    DesignerEvalRunner,
+    decide,
+    part_faults,
+    s1_exhausted_text,
+    s2_feedback_text,
+)
 from hs.stage_b.image_archive import ImageArchive
 from hs.stage_b.image_model import ImageModel
 from hs.stage_b.vlm_prompt import VLMPromptWriter
@@ -181,12 +187,15 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         else:
             keep, why = False, "fixed no earlier fault" if "fixed" not in statuses else "introduced new faults"
         _log_sam_use(round_dir, attempt_dir, r, diffs, ev, keep, why)
+        if ev.s1_faithful and part_faults(ev):
+            log(f"attempt {attempt} round {r}: the critic answered faithful but listed faults on "
+                f"{', '.join(sorted(set(part_faults(ev))))}; treated as not faithful")
         log(f"attempt {attempt} round {r}: S1={ev.s1_faithful} S2={ev.s2_flaw} decision={decision}; "
             f"{'kept' if keep else 'reverted'} ({why})")
         if keep:
             kept = {"render": render_path, "vlm": vlm, "ev": ev, "sam": {**meas, "differences": diffs}, "round": r}
             result.last = this_round
-            if ev.s1_faithful and decision != "s2_return":
+            if ev.s1_faithful and not part_faults(ev) and decision != "s2_return":
                 result.best_pass = this_round
         for x in ev.regions:
             earlier_faults[x.part_id] = f"{x.observed} (expected: {x.expected})"

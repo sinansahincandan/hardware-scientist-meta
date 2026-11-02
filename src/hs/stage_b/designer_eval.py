@@ -18,12 +18,18 @@ def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROU
     # design itself (a region with source "schematic"); otherwise it is a drawing fault like any other.
     if ev.s2_flaw and (ev.s1_faithful or any(r.source == "schematic" for r in ev.regions)):
         return "s2_return"
-    # C17: faithful only when the critic's own statuses leave no earlier fault unfixed.
-    if ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions):
+    # C17: faithful only when the critic's own statuses leave no earlier fault unfixed, and (round 4) when it
+    # lists no picture fault on a part of the device; callout faults are fixed by the label check instead.
+    if ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions) and not part_faults(ev):
         return "s1_pass"
     if round_idx + 1 < max_rounds:
         return "s1_retry"
     return "s1_exhausted"
+
+
+def part_faults(ev: DesignerEval) -> list[str]:
+    """Regions where the critic itself says the render differs from the sketch on a part (not a callout)."""
+    return [r.part_id for r in ev.regions if r.source == "render" and r.part_id != "callout"]
 
 
 def _regions_text(ev: DesignerEval) -> str:
@@ -75,8 +81,9 @@ class DesignerEvalRunner:
             "directions as the sketch (perspective may differ). Image models are poor at exact counts: a count "
             "or size that differs but does not change how the device works (eight panels drawn for six, a "
             "partial load of crates) is a deviation to list with matters=false and does not make the render "
-            "unfaithful; S1 fails for missing or wrong parts or connections, or for deviations that matter for "
-            "the working principle. s2_flaw = seeing the device exposes a real "
+            "unfaithful; S1 fails for missing or wrong parts or connections, for a part drawn twice or floating unattached, "
+            "or for deviations that matter for the working principle. Every region you list with source 'render' "
+            "on a part is a fault to redraw; list it only if it should be fixed. s2_flaw = seeing the device exposes a real "
             "design problem (interference, impossible assembly, a load path that cannot work, an unreachable "
             "part), or the flaw is already in the sketch or in the design itself (then mark those regions "
             "source 'schematic'). Report a design flaw only when the render is faithful or the flaw is in the "

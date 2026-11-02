@@ -137,10 +137,11 @@ def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, nam
 
 
 def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localization: Localization,
-                    panel_a: Path, notes: list[str]) -> None:
+                    panel_a: Path, notes: list[str]) -> Path:
     """Fig. 2 'checks: SAM + judges': the image model's callouts are checked on panel A. If any is wrong, the
     callouts are removed from the image and code labels each part from the SAM-located boxes (fallback).
-    Renders without callouts (older runs) get their code labels checked and wrong ones removed."""
+    Code labels (the fallback, or older renders without callouts) are checked in turn and wrong ones removed.
+    Returns the picture panel A is drawn on (the render without callouts after a fallback)."""
     from hs.stage_b.annotate import Annotator
 
     annotator = Annotator(client)
@@ -154,30 +155,31 @@ def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localiz
             wrong = annotator.check_labels(panel_a, callouts)
             if not wrong:
                 notes.append("callout check: every callout drawn by the image model names its part")
-                return
+                return render_path
             clean = panel_a.parent / "_render_without_callouts.png"
             clean.write_bytes(client.image_edit(
                 "Remove every text label, callout tag and leader line from this image. Keep everything else exactly "
                 "identical.", render_path))
+            render_path = clean
             annotator.run(clean, spec, {}, panel_a, localization=localization, fallback=False)
             notes.append(f"callouts {', '.join(wrong)} pointed at the wrong part or were misspelled; the callouts "
                          "were removed and code labelled the parts instead")
-            return
         labels = {n.label: n.id for n in spec.nodes if any(p.id == n.id and p.found for p in localization.parts)}
         wrong_labels = annotator.check_labels(panel_a, list(labels))
     except BudgetExceeded:
         raise
     except Exception as exc:
         notes.append(f"label check could not run ({type(exc).__name__}); labels not verified")
-        return
+        return render_path
     if not wrong_labels:
         notes.append("label check: every label points at the part it names")
-        return
+        return render_path
     wrong = [labels[x] for x in wrong_labels]
     kept = Localization(parts=[p.model_copy(update={"found": p.found and p.id not in wrong})
                                for p in localization.parts])
     annotator.run(render_path, spec, {}, panel_a, localization=kept, fallback=False)
     notes.append(f"labels removed because they pointed at the wrong part: {', '.join(wrong_labels)}")
+    return render_path
 
 
 def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
@@ -190,9 +192,9 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     images_used = 0
     panel_a = final_dir / "panel_A.png"
     Image.open(annotated_path).convert("RGB").save(panel_a)
-    relabel_panel_a(client, spec, render_path, localization, panel_a, trace_notes)
+    shown = relabel_panel_a(client, spec, render_path, localization, panel_a, trace_notes)
     panel_b = final_dir / "panel_B.png"
-    has_b = _panel_b(render_path, spec, localization, panel_b, trace_notes)
+    has_b = _panel_b(shown, spec, localization, panel_b, trace_notes)
     panel_c = final_dir / "panel_C.png"
     has_c = _panel_c(solution, panel_c)
     if not has_c:
