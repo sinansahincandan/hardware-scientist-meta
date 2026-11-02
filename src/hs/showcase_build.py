@@ -80,7 +80,7 @@ def copy_run(run_dir: Path, dest: Path) -> None:
                 continue
             keep = item.suffix in (".json", ".md", ".txt") or (
                 item.suffix == ".png" and any(k in item.name for k in
-                ("schematic", "render", "annotated", "local_", "edited_", "sketch_", "sam_overlay")))
+                ("schematic", "render", "annotated", "local_", "edited_", "sketch_", "sam_overlay", "concept_sketch")))
             if keep:
                 target = dest / item.relative_to(run_dir)
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -466,6 +466,17 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
                  f"{_n(len(sketches), 'sketch')}, {_n(len(wb.get('objections', [])), 'objection')}. "
                  + (f"Proposal: {html.escape(_sentences(proposal.get('text', ''), 1))} " if proposal else "No proposal. ")
                  + f"{verdict_words} <a href='board.html'>Open the board</a></div>")
+    if iters and _read_json(iters[-1] / "whiteboard.json"):
+        from hs import config
+        from hs.board_picture import PICTURE_STYLE, board_picture_html
+
+        last = iters[-1]
+        wb = _read_json(last / "whiteboard.json")
+        members = list(dict.fromkeys([*wb.get("votes", {}), *(c.get("author") for c in wb.get("concepts", []))]))
+        members = [m for m in members if m and m != "Manager"]
+        used = int(_read_json(last / "closure.json").get("cycles_used") or 0)
+        p.append(PICTURE_STYLE + "<p class='small'>The board of the last meeting as it stood at closure:</p>"
+                 + board_picture_html(wb, run_dir, last, members, str(problem.get("title", "")), used, config.MAX_CYCLES))
     # 3. Path through the architecture: one overlay per stage (D22), sentences from the files (A2)
     p.append("<h2>3. Path through the architecture</h2>")
     a_steps = [_stage_a_steps(run_dir, int(it.name.split("_")[-1])) for it in iters]
