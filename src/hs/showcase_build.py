@@ -173,6 +173,15 @@ def _overlay_svg(fig: str, steps: list[str], fmap: dict[str, Any]) -> str:
     return "".join(parts)
 
 
+def _n(count: int, noun: str) -> str:
+    plural = noun + ("es" if noun.endswith(("ch", "sh")) else "s")
+    return f"{count} {noun if count == 1 else plural}"
+
+
+def _times(count: int) -> str:
+    return {1: "once", 2: "twice"}.get(count, f"{count} times")
+
+
 def _sentences(text: str, n: int) -> str:
     """The first n sentences, never cut mid-word."""
     parts = re.split(r"(?<=[.!?])\s+", " ".join(str(text).split()))
@@ -391,13 +400,16 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
         f"<li>{html.escape(str(c))}</li>" for c in sol.get("decisive_choices", [])) + "</ol>")
     p.append(f"<div class='q'><b>Open question:</b> {html.escape(str(sol.get('open_question', '')))}</div>")
     first_render = next((rd for rd in rounds if rd["render"].exists()), None)
-    if first_render is not None and rounds:
+    if first_render is not None and len(rounds) > 1:
         p.append("<h3>First render next to the final render</h3>")
         rel_first = "/".join(first_render["render"].parts[len(run_dir.parts):])
         p.append(f"<p><img src='{rel_first}' style='max-width:49%'> "
                  f"<img src='final/panel_A.png' style='max-width:49%'></p>")
     refs = (run_dir / "references.md").read_text(encoding="utf-8") if (run_dir / "references.md").exists() else ""
-    p.append("<h3>Reference list</h3><pre style='white-space:pre-wrap'>" + html.escape(refs) + "</pre>")
+    items = [line.split(". ", 1)[-1] for line in refs.splitlines() if re.match(r"^\d+\. ", line)]
+    p.append(f"<details><summary><b>Reference list</b> ({len(items)} sources found by the council's searches and "
+             "the prior-art check)</summary><ol class='small'>"
+             + "".join(f"<li>{html.escape(x)}</li>" for x in items) + "</ol></details>")
     # 2. Whiteboard over time (facts per iteration)
     p.append("<h2>2. Whiteboard over time</h2>")
     iters = sorted(run_dir.glob("stage_a/iter_*"))
@@ -415,8 +427,8 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
         verdict = _read_json(it_dir / "verdict.json")
         verdict_words = ("The Evaluator accepted it." if verdict.get("accept") else "The Evaluator sent it back.") \
             if verdict else ""
-        p.append(f"<div class='event'><b>Meeting {int(it_dir.name.split('_')[-1]) + 1}</b>: {len(ev)} evidence items, "
-                 f"{len(sketches)} sketches, {len(wb.get('objections', []))} objections. "
+        p.append(f"<div class='event'><b>Meeting {int(it_dir.name.split('_')[-1]) + 1}</b>: {_n(len(ev), 'evidence item')}, "
+                 f"{_n(len(sketches), 'sketch')}, {_n(len(wb.get('objections', [])), 'objection')}. "
                  + (f"Proposal: {html.escape(_sentences(proposal.get('text', ''), 1))} " if proposal else "No proposal. ")
                  + f"{verdict_words} <a href='board.html'>Open the board</a></div>")
     # 3. Path through the architecture: one overlay per stage (D22), sentences from the files (A2)
@@ -448,7 +460,7 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     decisions = [rd["decision"] for rd in rounds]
     ran = []
     if archive:
-        ran.append(f"The council met {len(archive)} times and the Manager diagnosed {len(edits)} failures")
+        ran.append(f"The council met {_times(len(archive))} and the Manager diagnosed {_n(len(edits), 'failure')}")
     if rounds:
         ran.append(f"the picture loop ran {len(rounds)} rounds")
     not_ran = []
@@ -478,8 +490,50 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     p.append("<p>Lessons this run added to lessons.md: " + (
         "</p><ul>" + "".join(f"<li>{html.escape(line.lstrip('- '))}</li>" for line in added) + "</ul>"
         if added else "none.</p>"))
-    # J6 cost and wall clock
-    p.append("<h2>6. Cost and wall-clock time</h2>")
+    # TextGrad chain per meeting (D22): critique -> output gradient -> prompt gradient -> edit -> re-check
+    p.append("<h2>6. The TextGrad chain, meeting by meeting</h2>")
+    for idx, it_dir in enumerate(iters):
+        verdict = _read_json(it_dir / "verdict.json")
+        out_g = _read_json(it_dir / "gradient_output.json")
+        prompt_g = _read_json(it_dir / "gradient_prompt.json")
+        edit = _read_json(it_dir / "manager_edit.json")
+        steps: list[str] = []
+        if verdict:
+            steps.append(f"<b>Critique</b> (Evaluator, {'accepted' if verdict.get('accept') else 'sent back'}): "
+                         f"{html.escape(_sentences(verdict.get('feedback', ''), 2))}")
+        if out_g:
+            items = "; ".join(f"{_sentences(x.get('feedback_item', ''), 1)} → {_sentences(x.get('must_change', ''), 1)}"
+                              for x in out_g.get("items", [])[:4])
+            steps.append(f"<b>Output gradient</b> (what must change in the solution): {html.escape(items)}"
+                         + (f" <i>Process cause:</i> {html.escape(_sentences(out_g.get('process_cause', ''), 1))}"
+                            if out_g.get("process_cause") else ""))
+        if prompt_g:
+            dec = "; ".join(f"{x.get('decision', '')}: {_sentences(x.get('feedback_item', ''), 1)}"
+                            for x in prompt_g.get("feedback_decisions", [])[:4])
+            steps.append(f"<b>Prompt gradient</b> (which part of the council's prompt caused it): "
+                         f"{html.escape(_sentences(prompt_g.get('root_cause', ''), 2))}"
+                         + (f" <i>Feedback applied/deferred/rejected:</i> {html.escape(dec)}" if dec else ""))
+        if edit:
+            changed = ", ".join(edit.get("changed") or []) or "no section"
+            steps.append(f"<b>Edit</b>: the optimizer rewrote {html.escape(changed)}. "
+                         f"{html.escape(_sentences(edit.get('change_note', ''), 1))}")
+        if idx + 1 < len(iters):
+            nxt = _read_json(iters[idx + 1] / "verdict.json")
+            if nxt:
+                steps.append(f"<b>Re-check</b> (next meeting's verdict): "
+                             f"{'accepted' if nxt.get('accept') else 'sent back again'}.")
+        if verdict and verdict.get("accept") and not out_g:
+            steps.append("Accepted at this meeting, so no gradient step ran.")
+        p.append(f"<h3>Meeting {idx + 1}</h3>" + "".join(f"<div class='event'>{x}</div>" for x in steps))
+    if not iters:
+        p.append("<p>No council meeting ran in this run, so there is no Stage A gradient chain.</p>")
+    from hs.report import picture_rounds_html
+
+    p.append("<h2>7. How the picture was made</h2><style>.round{display:flex;gap:16px;background:#fff;"
+             "border-radius:10px;padding:12px;margin:10px 0}.round img{width:380px;flex:none}</style>"
+             + picture_rounds_html(run_dir))
+    # cost and wall clock
+    p.append("<h2>8. Cost and wall-clock time</h2>")
     by_role: dict[str, dict[str, float]] = {}
     for e in entries:
         r = by_role.setdefault(str(e.get("role")), {"n": 0, "usd": 0.0, "input": 0})

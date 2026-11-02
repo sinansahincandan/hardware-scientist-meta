@@ -242,8 +242,9 @@ def report_html(run_dir: Path) -> str:
     parts.append("<h2>References</h2>")
     if refs:
         items = [l for l in refs.splitlines() if l and not l.startswith("#")]
-        parts.append("<ol>" + "".join(
-            f"<li>{html.escape(l.split('. ', 1)[-1])}</li>" for l in items) + "</ol>")
+        parts.append(f"<details><summary>{len(items)} sources found by the council's searches and the prior-art "
+                     "check (click to open)</summary><ol class='small'>" + "".join(
+                         f"<li>{html.escape(l.split('. ', 1)[-1])}</li>" for l in items) + "</ol></details>")
     else:
         parts.append("<p>No literature references were recorded in this run.</p>")
     # Files (linked, never inlined)

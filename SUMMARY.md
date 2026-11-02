@@ -1,4 +1,152 @@
-# SUMMARY.md — hand-off (AUTOPILOT §6)
+# SUMMARY.md — Hardware Scientist, round 3 (Claude Code, 2026-11-02)
+
+Every statement below points to a file. Earlier rounds (v1, v2) are kept at the end of this file.
+
+## Where to look
+
+- **Showcase:** `showcase/index.html` (three problems), each with `report.html`, `board.html`, `dossier.html`, `REVIEW.md`.
+- **Final runs (round-3 code, real API):**
+  | Problem | Run | Outcome | Cost (cost.json) |
+  |---|---|---|---|
+  | 01 stair-climbing hand truck | `runs/20261102-033230_stair-climbing-hand-truck-for-parcel-cou` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.7557 |
+  | 02 off-grid solar cold room | `runs/20261102-053545_off-grid-solar-powered-cold-storage-for-` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.9229 |
+  | 03 footbridge vibration retrofit | `runs/20261102-082123_vibration-retrofit-for-a-lively-pedestri` | cycle cap (one blocking objection open), accepted by the Evaluator in writing, picture faithful in round 1 | $1.4227 |
+- **Runs kept as evidence of fixes** (each with REVIEW.md): 025924 (01, tri-star not drawn), 032624 (01 Stage B redraw, C14),
+  035951 (02 crash), 042726 (02 hidden NOT-ready vote, skipped SAM findings), 050118 (02 s1_exhausted), plus the smoke
+  runs 022817 (Stage A) and 024314 (Stage B).
+- **Screenshots:** `docs/screens/` (index cards, SAM picture, whiteboard, figure).
+- **Reviews:** `docs/review/code_review_cc.md` (full code review), `docs/review/hs_round2_review.md`.
+
+## Budget (item 0)
+
+Ledger total **$14.6026 of the $55 cap** (`hs budget`, `budget/ledger.jsonl`), $40.40 left; the dashboard showed $67 at
+the start. Per run: access check $0.0001, PHASE 1 check $0.0217, SAM probe $0.0050, search probe $0.0107, filter probe
+$0.0389; runs 022817 $1.0522, 024314 $0.5735, 025924 $1.7684, 032624 $0.2018, 033230 $1.7681, 035951 $1.7908,
+042726 $1.8584, 050118 $2.1405, 053545 $1.9498, 082123 $1.4227 (ledger values include the later label checks).
+Please compare with the Meta dashboard.
+
+## Item by item — did it fire in a real run, did it change anything, what still does not work
+
+**0 Budget ledger.** Fired in every real call (ledger has every entry with run id, role, tokens, searches, images,
+SAM calls). Pre-call worst-case estimate; BudgetExceeded no longer swallowed (behaviour test). HTTP 402 → clean stop:
+never triggered (no billing error happened), covered by tests only.
+
+**A1 Outcome labels.** Fired: run 050118 ended `s1_exhausted` ("could not be drawn faithfully after 3 rounds",
+archive status `could_not_draw`, no figure, nothing sent to Stage A — trace.md). Report wording per outcome
+(report.html). S2 → Stage A: fired once in smoke 024314 (round 2) before the R4 rule; since the rule (a flaw counts
+only on a faithful render or a sketch-traced region) no real S2 return happened.
+
+**A2 Pages from facts.** Dossier sentences, index cards and the Stage B redraw pages are built from run files
+(`showcase/*/dossier.html`; 032624 report says "no council meeting ran in this run"). Conformance table replaced by
+two prose sentences. Verified by tests and by reading the rendered pages.
+
+**A3 Manager rewrites never lost.** Fired in smoke 022817: `rewrite.json`, `manager_edit.json`, rev_001 saved, the
+agenda written into §4 (`master_prompt/rev_001.md`). Found there: the optimizer wrote `### <member>` sections, which
+were dropped — fixed (they now edit that member's block), unit-tested, **not yet exercised in a real run** (all final
+runs were accepted at meeting 1, so no rewrite happened).
+
+**A4 No cap code rule; consensus after the Manager.** Fired: runs 042726 and 082123 closed at the cycle cap and the
+Evaluator decided in writing (verdict.json). Found in 042726: the closure facts listed only ready votes, so a reasoned
+NOT-ready vote was invisible — fixed (all votes with reasons; 053545's verdict cites them).
+
+**A5 Proposals form.** Fired: every final run formed a proposal (v1 or v2) with votes (whiteboard.json); v2 had none
+in 5 of 6 meetings.
+
+**A6 No cutting of speech.** Fired: 7–9 shorten re-asks per final run (whiteboard_history.jsonl, `shorten_reask`);
+no turn cut; LLM turn check removed.
+
+**A7 Silent no-ops.** new_tool now callable and registered tools are sent — **no member called it in any final run**
+(no `tools/*.json`). read_evidence: 2 ok, 1 failure in 082123. Whiteboard op failures remain common (12 of 36 ops
+failed in 033230, mostly missing ids). Flow view removed (it never worked). One Stage B loop; Manager and progress
+check billed separately; searches counted; lessons dedupe; showcase sketches/statement/link fixed.
+
+**Item 16 SAM smoke test.** Done: call shape, phrase sensitivity, $2.50/1000 images (QUESTIONS.md, spec §14.10).
+Masks cannot be decoded (Meta's `meta-sam-parser` install was refused by the session's permission system —
+BLOCKED.md); measurements use boxes.
+
+**B8 Search and read sources.** Fired: 36, 45, 27 search sources in the final runs, cited in speech by evidence id and
+title (transcript.md). Snippets are mostly empty, so "the passage read" is often unavailable. References carry
+site, title, year when stated, URL.
+
+**B9 Understandable speech.** Fired: plain sentences, roster names; failed calculations shown in plain words on
+pages. Some turns are still dense with numbers.
+
+**B10 Physical sanity.** Fired: the Evaluator compares with g and everyday scales (082123: 1.75 m/s² = 0.18 g;
+v2 had reported 17.5 m/s² for this problem). No evidence_requests were issued in the final runs.
+
+**B11 Manager as coach.** Prompt and optimizer framing changed; member-block diffs shown in reports. Fired only in
+smoke 022817 (where the role edits were lost, then fixed). Not exercised since.
+
+**B12 Knowledge.** Partly: lessons.md cleaned (pipeline lessons and duplicates removed), lessons go to the Manager
+and optimizer only. **knowledge/insights and knowledge/tools carry-over were not built.**
+
+**B13 Backward chain.** Fired in smoke 022817: gradient_output.json and gradient_prompt.json with 8 feedback
+decisions (apply/defer/reject); chain text built by code (unit-tested).
+
+**C14 Sketch method.** Compared on problem 01 (025924 vs 032624, REVIEW.md of 032624): the council's own sketches as
+extra references made the tri-star cluster appear as designed; chosen for all runs.
+
+**C15 Writer style.** Fired: all final renders are photoreal in use context with no text in the render.
+
+**C16 SAM part map.** Fired in all final runs: part_map.json, sam.json, sam_overlay.png per round; SAM boxes place
+code labels; a label check removed wrong labels (01: worm drive; 02: "PU box"; 03: friction clamps). SAM misses parts
+regularly (cooler, battery, clamps) and sometimes confuses parts (02: crates as "insulated box").
+
+**C17 Closed Stage B loop.** Fired: 024314 kept/kept/reverted; 025924 round 1 marked both earlier faults fixed;
+050118 reverted rounds that fixed nothing. In the final runs round 1 passed, so the loop had nothing to correct.
+
+**C18 Deviations.** Fired: every final eval lists one deviation per segmenter finding (unnoticed = [] in sam_use.json).
+The completeness re-ask was not needed in the final runs. 050118 showed the critic failing S1 on exact counts; the
+critic now notes such counts as deviations.
+
+**C19 Panels.** Panel B is a crop of the render (or omitted when the critical part fills the picture); panel C
+omitted when no chain was recorded (01); failed fabrication steps are not shipped (01: 3 of 4 failed; 02: 2 shown
+after a plain-word re-check; 03: 1 of 4 shown). Content-filter handling: QUESTIONS.md.
+
+**D20 Remove dead code.** Done; SIMPLIFY.md lists 8 further candidates for your decision.
+
+**D21 Board.** Rebuilt; rendered and viewed for all three runs.
+
+**D22 Pages.** Plain mechanism sentences; references folded; one overlay per stage; dossier has the TextGrad chain per
+meeting (in the final runs: "accepted at this meeting, so no gradient step ran") and the picture-round strip with the
+SAM picture.
+
+**D23 Related work.** README, nine works, each page fetched with its arXiv id.
+
+**E24 Runs.** 01 → 02 → 03 run fresh; 01 and 02 were re-run after fixes (kept runs listed above).
+
+**E25 Self-audit.** All ten showcase pages rendered headless at 1440 px and every slice viewed (index, 3 reports,
+3 boards, 3 dossiers); fixes from the audit are in the last commits. Claims in this file and the REVIEW.md files
+were re-checked against the run files; two numbers I had written wrongly were corrected (journal ledger figure,
+032624 cost).
+
+## Implemented flow versus the owner's figures (R5)
+
+- **fig1 sends "S1 exhausted (reported as such)" back to Stage A**; the implementation sends nothing to the design on
+  S1 exhaustion (brief A1/R4). `docs/fig1_architecture-1.svg` ("back to A only on S2") matches the implementation.
+- **knowledge/ (lessons · insights · tools)** in both figures: only lessons exist.
+- **Part map · SAM (masks · part connections)**: boxes only; connections are box contacts, not mask contacts.
+- **fig2 VLM writer "callouts for 4–7 parts"**: the render carries no callouts; code draws all labels (item 16a).
+- **Mechanism sketch "real geometry, joints, motion, workpiece, use context"**: the code sketch is still boxes; the
+  council's own sketches are added as references, which is what made geometry reach the render.
+- **"S1 fail: local or full fix, keep/revert"**: implemented; the local fix composites a feathered box (no masks) and
+  never ran in the final runs.
+- **Controller "dossier(run)" at the end of a problem**: dossiers are built by `hs showcase-build`, not per run.
+- **Panel B "close-up + scale bar"**: a crop of the passing render, by the brief (C19).
+- Evaluator and Manager are separate roles, as drawn.
+
+## Still not working / open
+
+- Coach path (B11/B13) and member-block rewrites have not run in a real run since their fixes.
+- new_tool never used; whiteboard ops often fail on missing ids.
+- SAM masks blocked (needs your permission to install `meta-sam-parser`).
+- knowledge/insights and knowledge/tools not built.
+- Provider content filter blocks some fabrication-step checks; handled, not avoidable.
+- Code labels are small and can overlap (03: "Coil springs" and "Lock pin").
+
+---
+
+# Earlier rounds — v1 hand-off (AUTOPILOT §6)
 
 ## Runs that exist (final, accepted, real API)
 
