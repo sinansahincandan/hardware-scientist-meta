@@ -198,8 +198,8 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         names = ", ".join(next((p.name for p in solution.concept.parts if p.id == pid), pid) for pid in present)
         try:
             png = client.image_edit(
-                f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
-                f"Show exactly these parts assembled so far ({names}) on a workbench with ordinary "
+                f"Photorealistic workshop scene, fabrication step {i + 1}: {plain_words(step_desc)}. "
+                f"Show these parts assembled so far ({plain_words(names)}) on a workbench with ordinary "
                 f"shop tools, following the reference layout. The image carries no text.",
                 tmp / f"step{i + 1}.png")
             images_used += 1
