@@ -23,7 +23,15 @@ def main() -> int:
                                       if x.strip()]) if e["decision"] == "s1_pass")
     render = Path(entry["render"])
     attempt = render.parent.parent
-    spec = SchematicSpec.model_validate_json((attempt / "schematic_spec.json").read_text())
+    spec_file = attempt / "schematic_spec.json"
+    if spec_file.exists():
+        spec = SchematicSpec.model_validate_json(spec_file.read_text())
+    else:  # runs made before specs were saved: part ids, names and sizes from the solution
+        from hs.schemas import SolutionPrompt
+        from hs.stage_b.schematic import build_spec_from_solution
+
+        sol = next(run_dir.glob("stage_a/iter_*/solution.json"), None) or run_dir / "seeded_solution.json"
+        spec = build_spec_from_solution(SolutionPrompt.model_validate_json(sol.read_text()))
     loc = Localization.model_validate_json((render.parent / "localization.json").read_text())
     notes: list[str] = []
     relabel_panel_a(MetaClient(run_dir=run_dir), spec, render, loc, run_dir / "final" / "panel_A.png", notes)
