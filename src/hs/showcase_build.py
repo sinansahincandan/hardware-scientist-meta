@@ -272,7 +272,7 @@ def _stage_b_steps(rd: dict[str, Any]) -> list[tuple[str, str]]:
     return steps
 
 
-def build_showcase(run_dirs: list[Path], out: Path = Path(__file__).resolve().parents[2] / "showcase") -> Path:
+def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
     fmap = json.loads((ROOT / "docs" / "figures_map.json").read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
     cards: list[str] = []
