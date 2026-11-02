@@ -132,7 +132,7 @@ def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, nam
             raise
     return client.structured(
         "light_check", LightCheck, "Light check.",
-        f"Does this workshop photo show a stage of building this device: {plain_words(solution.title)}? "
+        f"Does this photo show a stage of building this device, at a believable size and place: {plain_words(solution.title)}? "
         "Answer from the pixels.", image_paths=[image]), True
 
 
@@ -220,10 +220,12 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
                 break
             try:
                 png = client.image_edit(
-                    f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. The first reference "
+                    f"Photorealistic photo, fabrication step {i + 1}: {step_desc}. The first reference "
                     f"image shows the finished device; show it at this stage of building, with only these parts "
-                    f"assembled so far ({names}) as in the second reference, on a workbench with ordinary shop "
-                    f"tools. The image carries no text."
+                    f"assembled so far ({names}) as in the second reference, at its true size in the place where "
+                    f"a thing of this size is really built (a workbench for hand-sized parts, the shop floor for "
+                    f"larger assemblies, the site itself for rooms, buildings and structures), with the people or "
+                    f"tools that build it for scale. The image carries no text."
                     + (f" The previous attempt was rejected because: {reason} Fix that." if reason else ""),
                     render_path, extra_refs=[tmp / f"step{i + 1}.png"])
                 images_used += 1

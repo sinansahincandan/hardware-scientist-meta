@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from hs.client import BudgetExceeded
+from hs.plain import plain_words
 from hs.schemas import DesignerEval, Localization, SchematicSpec, SolutionPrompt, VLMPrompt
 from hs.stage_b import part_map as pm
 from hs.stage_b import schematic as schematic_mod
@@ -73,14 +74,27 @@ def concept_sketch(client: Any, solution: SolutionPrompt, spec: SchematicSpec, a
     schematic_mod.render_schematic(spec, attempt_dir, stem="parts")
     parts = ", ".join(f"{n.label}" for n in spec.nodes)
     out = attempt_dir / "concept_sketch.png"
+    refs = [*sketches[1:], attempt_dir / "parts.png"]
     try:
-        out.write_bytes(client.image_edit(
-            "A clean engineer's pencil concept sketch on white paper, side view, of this device in use: "
-            f"{solution.mechanism_sentence or solution.concept.working_principle} Draw every part with its real "
-            f"shape and proportion ({parts}), how the parts connect and which ones move (small motion arrows), the "
-            "load or workpiece and the ground or structure it works on. Follow the engineers' hand sketches given as "
-            "references for geometry and arrangement. Line drawing only, light grey shading, no colour, no text.",
-            sketches[0], extra_refs=[*sketches[1:], attempt_dir / "parts.png"]))
+        try:
+            out.write_bytes(client.image_edit(
+                "A clean engineer's pencil concept sketch on white paper, side view, of this device in use: "
+                f"{solution.mechanism_sentence or solution.concept.working_principle} Draw every part with its real "
+                f"shape and proportion ({parts}), how the parts connect and which ones move (small motion arrows), "
+                "the load or workpiece and the ground or structure it works on. Follow the engineers' hand sketches "
+                "given as references for geometry and arrangement. Line drawing only, light grey shading, no colour, "
+                "no text.", sketches[0], extra_refs=refs))
+        except Exception as exc:
+            if "content management policy" not in str(exc):
+                raise
+            # Owner rule: a block is a reason to re-word. The client already retried without numbers; this is
+            # the plainest wording (plain part names, no mechanism sentence), tried once.
+            log("concept sketch blocked by the content filter; re-worded in plain part names and tried once more")
+            out.write_bytes(client.image_edit(
+                "Redraw the engineers' hand sketches given as references as one clean pencil concept sketch on white "
+                "paper, side view, showing these parts with their real shapes and how they connect: "
+                + ", ".join(plain_words(n.label) for n in spec.nodes)
+                + ". Line drawing only, light grey shading, no colour, no text.", sketches[0], extra_refs=refs))
         check = client.structured(
             "light_check", LightCheck, "Light check of a concept sketch.",
             f"Does this sketch show these parts with plausible shapes and connections: {parts}? Is the arrangement "
@@ -89,7 +103,7 @@ def concept_sketch(client: Any, solution: SolutionPrompt, spec: SchematicSpec, a
     except BudgetExceeded:
         raise
     except Exception as exc:
-        log(f"attempt concept sketch could not be made ({type(exc).__name__}); code sketch used")
+        log(f"attempt concept sketch could not be made ({type(exc).__name__}: {str(exc)[:300]}); code sketch used")
         return None
     (attempt_dir / "concept_sketch_check.json").write_text(check.model_dump_json(indent=2), encoding="utf-8")
     if not check.ok:

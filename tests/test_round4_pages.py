@@ -86,3 +86,32 @@ def test_sam_tries_the_head_noun_when_the_phrase_misses(tmp_path: Path) -> None:
     with_boxes = pm.measure(c, img, pmap)
     assert c.asked == ["metal frame", "frame"]
     assert with_boxes["parts"]["spine"]["phrase"] == "frame"
+
+
+def test_concept_sketch_rewords_once_after_a_content_filter_block(tmp_path: Path) -> None:
+    from PIL import Image
+    from test_stage_b_controller import _solution
+
+    from hs.fake_client import FakeClient
+    from hs.stage_b import loop
+    from hs.stage_b.schematic import build_spec_from_solution
+
+    fake = FakeClient(run_dir=tmp_path)
+    sol = _solution()
+    spec = build_spec_from_solution(sol)
+    sketch = tmp_path / "sketch_1.png"
+    Image.new("RGB", (64, 64), "white").save(sketch)
+    prompts: list[str] = []
+    real_edit = fake.image_edit
+
+    def edit(prompt: str, ref: Path, size: str = "1024x1024", extra_refs=None) -> bytes:
+        prompts.append(prompt)
+        if len(prompts) == 1:
+            raise RuntimeError("Error code: 400 - triggering our content management policy.")
+        return real_edit(prompt, ref, size, extra_refs=extra_refs)
+
+    fake.image_edit = edit  # type: ignore[method-assign]
+    logs: list[str] = []
+    loop.concept_sketch(fake, sol, spec, tmp_path, [sketch], logs.append)
+    assert len(prompts) == 2 and prompts[1].startswith("Redraw the engineers' hand sketches")
+    assert any("re-worded" in line for line in logs)
