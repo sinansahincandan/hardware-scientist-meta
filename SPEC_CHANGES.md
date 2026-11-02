@@ -53,3 +53,16 @@ Guards are per section and only two remain (§1 unchanged, both fixed criteria v
 section alone is re-asked once, then keeps its old text. Ambiguous headings ("## 3. Criteria") are
 recorded, not guessed. Every optimizer output is saved. Reverts always yield a saved revision. The
 Manager's agenda is written into §4 by code. Only gradient_prompt.json is written (no diagnosis.json).
+
+## SPEC-8 (round 3, B8/B9/B10): searches become evidence; speech; physical sanity
+- B8: member requests send include=["web_search_call.results"]; every search result is posted as
+  evidence (title, organisation/site, year when stated, URL, query, passage when returned) from every
+  response including the final one; one extra chained request lets the member cite the new ids.
+  Citations only from board evidence; the "according to <author, year>" template slot is removed.
+  The prior-art check records its sources the same way.
+- B9: plain words first, deciding numbers only (units, <= 3 significant figures), roster names only
+  (listed in every turn input), no pipeline vocabulary; evidence summaries are readable (no raw
+  decimals or tracebacks).
+- B10: members, Manager and Evaluator check key results against everyday scales; the Evaluator
+  names unsupported claims, re-derives deciding arithmetic, uses evidence_requests when a number
+  looks off, and lists measurable deviations (C18 for Stage A).

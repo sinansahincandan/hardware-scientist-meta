@@ -135,3 +135,35 @@ def test_evaluator_sees_closure_facts_and_no_code_rule_overrides_it(tmp_path: Pa
     assert verdict.accept is True  # the Evaluator decided; no cap rule flipped it
     assert "No proposal was formed" in prompts[0] and "wheel size unknown" in prompts[0]
     assert "cycle cap without consensus" in prompts[0]
+
+
+def test_search_results_in_the_final_response_become_citable_evidence(tmp_path: Path) -> None:
+    """B8: a member's search posts one evidence item per result (even in the last response), and one
+    extra chained request lets the member cite them by id."""
+    from hs.stage_a.tools import ToolRunner
+    from hs.stage_a.whiteboard import Whiteboard
+
+    search = SimpleNamespace(type="web_search_call", action=SimpleNamespace(query="tri-star wheel diameter"),
+                             results=[{"url": "https://example.org/sc3", "title": "SC3 stair climber 2021",
+                                       "snippet": "Wheels of 150 mm diameter."}])
+    first = SimpleNamespace(id="r1", output=[search, SimpleNamespace(type="message", content=[
+        SimpleNamespace(type="output_text", text="Wheels are about 150 mm.", annotations=[])])])
+    cite = SimpleNamespace(id="r2", output=[SimpleNamespace(type="message", content=[
+        SimpleNamespace(type="output_text", text="The SC3 listing (E1) gives 150 mm wheels.", annotations=[])])])
+    replies = iter([first, cite])
+    sent: list[dict[str, Any]] = []
+
+    class Client:
+        def responses(self, **kwargs: Any) -> Any:
+            sent.append(kwargs)
+            return next(replies)
+
+    board = Whiteboard()
+    master = MasterPrompt(tmp_path, "t", [("## 2. Roles", "### A\nx")])
+    text = council.run_member_turn(Client(), master, "A", board, ToolRunner(board, tmp_path, tmp_path / "ev"), [], 1)
+    ev = board.evidence[0]
+    assert ev.tool == "web_search" and ev.references[0]["url"] == "https://example.org/sc3"
+    assert ev.references[0]["year"] == "2021" and "150 mm" in ev.output_full
+    assert sent[0]["include"] == ["web_search_call.results"]
+    assert sent[1]["previous_response_id"] == "r1" and "E1" in sent[1]["input_items"][0]["content"][0]["text"]
+    assert text == "The SC3 listing (E1) gives 150 mm wheels."

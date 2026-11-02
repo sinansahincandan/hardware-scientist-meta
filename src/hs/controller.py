@@ -78,11 +78,14 @@ def build_references(run_dir: Path) -> Path:
     for novelty in sorted(run_dir.glob("stage_a/iter_*/novelty.md")):
         for line in novelty.read_text(encoding="utf-8").splitlines():
             if line.startswith("- http"):
-                url = line[2:].strip()
+                url, _, title = line[2:].strip().partition(" — ")
                 if url not in seen:
                     seen.add(url)
-                    refs.append({"authors_or_org": "prior-art check", "title": url,
-                                 "year": "", "url": url, "query": "", "unresolved": False})
+                    from urllib.parse import urlparse
+
+                    refs.append({"authors_or_org": urlparse(url).netloc.replace("www.", ""),
+                                 "title": title or url, "year": "", "url": url,
+                                 "query": "prior-art check", "unresolved": False})
     lines = ["# References", ""]
     for i, ref in enumerate(refs, 1):
         if ref.get("unresolved"):
@@ -269,5 +272,5 @@ class Controller:
         for novelty in sorted(run_dir.glob("stage_a/iter_*/novelty.md")):
             for line in novelty.read_text(encoding="utf-8").splitlines():
                 if line.startswith("- http"):
-                    sources.append(line[2:])
+                    sources.append(line[2:].partition(" — ")[0])
         return sources

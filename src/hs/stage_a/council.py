@@ -11,8 +11,9 @@ import time
 from typing import Any
 
 from hs import config
+from hs.client import _output_text, search_sources
 from hs.master_prompt import MasterPrompt, member_instructions
-from hs.stage_a.tools import ToolRunner
+from hs.stage_a.tools import TOOL_SCHEMAS, ToolRunner
 from hs.stage_a.whiteboard import Whiteboard
 
 COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc"}
@@ -38,14 +39,17 @@ def _unwrap_args(args: dict[str, Any]) -> dict[str, Any]:
 
 
 SPEAKING_RULE = (
-    "Speak in full sentences, one point per short paragraph, at most three points, in this order: "
-    "'In <design or concept>, the <part/method/approach> has <problem>. To check it I used <method or tool> "
-    "(<evidence id>). I found <result with units>, according to <author, year>. I propose <design change>. "
-    "My position: <ready / not ready> because <reason>.' Never let an id stand alone: write "
-    "'the 760 mm standard door width (E10)', not 'E10'. Define every abbreviation on first use and address "
-    "other members by name. Talk only about the device, never about any figure or rendering pipeline. "
-    "This is concept design: aim for a concept that works and can be built, use standard conceptual-design "
-    "methods and literature (papers, standards, studies, videos) before deep quantification."
+    "Speak in full sentences. Say each point in plain words first, then give only the numbers that decide "
+    "it, with units and at most three significant figures. One point per short paragraph, at most three "
+    "points. When you rely on a calculation, simulation, sketch or source, name it in words with its id, for "
+    "example 'the 760 mm door width (E10)'; an id never stands alone. Cite literature only when it is on the "
+    "whiteboard as search evidence and you have read it, by its evidence id and title; never cite from "
+    "memory. Before you rely on a key result, check it against everyday scales and known regimes "
+    "(accelerations in g, sizes against a person or a door, loads against body weights, energies against "
+    "daily household use) and say so when a number falls outside what such things show. End with your "
+    "position: ready or not ready, and why. Address the other people in the room only by their names. Define "
+    "every abbreviation the first time you use it. Talk only about the device, never about figures, images "
+    "or any pipeline. This is concept design: aim for a concept that works and can be built."
 )
 
 
@@ -81,7 +85,11 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     roster_instructions = instructions_override or member_instructions(master.sections, member)
     since = [t for t in transcript if t["member"] != member]
     own_prev = next((t["message"] for t in reversed(transcript) if t["member"] == member), "")
+    from hs.master_prompt import roster_of
+
+    people = ", ".join(roster_of(master.sections) + ["the Manager"])
     user_text = (
+        f"PEOPLE IN THIS ROOM (address them only by these names): {people}\n\n"
         f"WHITEBOARD:\n{board.render_markdown()}\n\n"
         f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + _compact_transcript(since[-8:])
         + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). {SPEAKING_RULE}\n"
@@ -90,13 +98,15 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         "unless you state in your message why you recompute it. Post a labeled sketch (sketch tool, hand-drawn "
         "xkcd style, with the mechanism, the workpiece or load, and fixed versus moving parts) when you propose "
         "or change a concept whose geometry, mechanism or flow path matters; purely numerical turns need no sketch. "
-        "Search the literature the way your persona implies: your own domain's directly relevant papers, standards "
-        "and datasheets first, and neighbouring or distant fields where a transferable principle may exist. "
-        "Cite literature readably (authors or organisation, title, year), never as raw search tokens. "
-        "When you borrow a principle from another field, say why it should transfer. "
+        "Search the literature the way your persona implies (web_search): your own domain's directly relevant "
+        "papers, standards and datasheets first, and neighbouring or distant fields where a transferable principle "
+        "may exist. Every result of your searches is posted on the whiteboard as evidence; read a source "
+        "(read_evidence) before you rely on it. When you borrow a principle from another field, say why it "
+        "should transfer. "
         + extra_instruction
     )
     prev_id: str | None = None
+    new_search_ids: list[str] = []
     counted = 0
     wb_calls = 0
     chain_restarts = 0
@@ -107,9 +117,12 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     for _ in range(16):
         parallel = False if counted >= 4 else None  # from 5th counted call: one at a time
         try:
+            offered = tool_schemas or tools.schemas()
             resp = client.responses(role=role, instructions=roster_instructions,
-                                    input_items=input_items, tools=tool_schemas or tools.schemas(),
-                                    previous_response_id=prev_id, parallel_tool_calls=parallel)
+                                    input_items=input_items, tools=offered,
+                                    previous_response_id=prev_id, parallel_tool_calls=parallel,
+                                    include=(["web_search_call.results"]
+                                             if any(t.get("type") == "web_search" for t in offered) else None))
         except Exception as exc:
             # Provider-side chain state can expire while tools run (400
             # "referenced response not found or expired", observed on real
@@ -136,6 +149,14 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
             continue
         prev_id = getattr(resp, "id", prev_id)
         input_items = []
+        # B8: every source a search returned becomes evidence at once — also from the final response.
+        sources = search_sources(resp)
+        if sources:
+            for eid in tools.web_search_evidence(member, sources, cycle=cycle):
+                new_search_ids.append(eid)
+                if history is not None:
+                    history.append({"cycle": cycle, "member": member, "kind": "evidence",
+                                    "evidence_id": eid, "tool": "web_search"})
         calls = [i for i in (getattr(resp, "output", []) or []) if getattr(i, "type", None) == "function_call"]
         for item in getattr(resp, "output", []) or []:
             if getattr(item, "type", None) == "message":
@@ -205,18 +226,22 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                 output = f"error: unknown tool {name}"
             input_items.append({"type": "function_call_output",
                                 "call_id": getattr(call, "call_id", ""), "output": str(output)[:2000]})
-        # web_search evidence: post one entry per citation in this response
-        for item in getattr(resp, "output", []) or []:
-            if getattr(item, "type", None) == "message":
-                for block in getattr(item, "content", []) or []:
-                    cites = [{"url": getattr(a, "url", ""), "title": getattr(a, "title", "")}
-                             for a in (getattr(block, "annotations", []) or [])
-                             if getattr(a, "type", None) == "url_citation"]
-                    if cites:
-                        for eid in tools.web_search_evidence(member, "member search", cites, cycle=cycle):
-                            if history is not None:
-                                history.append({"cycle": cycle, "member": member, "kind": "evidence",
-                                                "evidence_id": eid, "tool": "web_search"})
+    if new_search_ids and prev_id is not None:
+        # Spec §4.4 / B8: one extra chained request so the member can cite the new search evidence by id.
+        listing = "\n".join(f"- {e.id}: {e.output_summary}" for e in board.evidence if e.id in new_search_ids)
+        try:
+            resp = client.responses(
+                role=role, instructions=roster_instructions, previous_response_id=prev_id,
+                tools=[t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard"],
+                input_items=[{"type": "message", "role": "user", "content": [{"type": "input_text", "text": (
+                    "Your searches are now on the whiteboard as evidence:\n" + listing + "\n\nRewrite your spoken "
+                    "message so that every source you rely on is cited by its evidence id and title, and cite "
+                    "nothing that is not on the board. Reply with the message only.")}]}])
+            text = _output_text(resp)
+            last_text = text or last_text
+        except Exception as exc:
+            if "not found or expired" not in str(exc):
+                raise
     # Raw search tokens never appear in speech (v2 D): strip token spans.
     import re as _re
 

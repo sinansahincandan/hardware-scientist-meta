@@ -173,7 +173,9 @@ class Meeting:
             "may raise or resolve process objections on the whiteboard (whether one of your objections blocks "
             "the vote is your judgement from its content) and register a new tool. From cycle 2, if no "
             "proposal is on the board, name the member whose favored concepts should be integrated and ask "
-            "them to write the proposal (update_proposal) in their next turn. You never propose design "
+            "them to write the proposal (update_proposal) in their next turn. Check the key results on the board "
+            "against everyday scales (accelerations in g, sizes against a person or a door, loads against body "
+            "weights, energies against daily household use) and name any that look off. You never propose design "
             "concepts and you never vote. Keep short notes: end your message with one line "
             "'Note on <member>: ...' for each member you observed. " + SPEAKING_RULE)
         message = self._turn("Manager", cycle, instructions_override=instructions, role="manager",

@@ -77,29 +77,30 @@ def parse_calc_inputs(expression: str) -> dict[str, Any]:
 
 
 def resolve_citation(cit: dict[str, Any], query: str) -> dict[str, Any]:
-    """Resolve a raw search citation to readable reference fields at record time (v2 D)."""
+    """Readable reference fields at record time (v2 D, B8): organisation (site), title, year when the
+    title or URL states one, URL, the query, and the passage the search returned (may be empty)."""
     url = str(cit.get("url", "")).strip()
     title = str(cit.get("title", "")).strip()
     if not url:
         return {"authors_or_org": "unresolved source", "title": title or query,
-                "year": "", "url": "", "query": query, "unresolved": True}
+                "year": "", "url": "", "query": query, "unresolved": True, "passage": ""}
     from urllib.parse import urlparse
 
     host = urlparse(url).netloc.replace("www.", "")
-    year = ""
-    for key in ("year", "date", "published"):
-        if cit.get(key):
-            year = str(cit[key])[:4]
-            break
+    year = str(cit.get("year") or cit.get("date") or "")[:4]
+    if not year:
+        found = re.search(r"(?<!\d)(19[5-9]\d|20[0-3]\d)(?!\d)", f"{title} {url}")
+        year = found.group(1) if found else ""
     return {"authors_or_org": str(cit.get("author", "") or cit.get("authors", "") or host),
-            "title": title or url, "year": year, "url": url, "query": query, "unresolved": False}
+            "title": title or url, "year": year, "url": url, "query": query, "unresolved": False,
+            "passage": str(cit.get("snippet", "") or "")}
 
 
 def format_reference(ref: dict[str, Any]) -> str:
     if ref.get("unresolved"):
         return f"unresolved source (search: {ref.get('query', '')})"
     bits = [ref.get("authors_or_org", ""), ref.get("title", ""), ref.get("year", ""), ref.get("url", "")]
-    return " — ".join(b for b in bits if b)[:200]
+    return " — ".join(b for b in bits if b)
 
 
 class ToolRunner:
@@ -208,12 +209,18 @@ class ToolRunner:
                              status="error", cycle=cycle)
             return eid, f"{eid}: error: {exc}"
 
-    def web_search_evidence(self, author: str, query: str, citations: list[dict[str, Any]], cycle: int = 0) -> list[str]:
+    def web_search_evidence(self, author: str, sources: list[dict[str, Any]], cycle: int = 0) -> list[str]:
+        """One evidence item per search result (B8): who searched, the query, and the source."""
         ids: list[str] = []
-        for cit in citations:
+        for cit in sources:
+            query = str(cit.get("query", "") or "")
             reference = resolve_citation(cit, query)
-            eid = self._post(author, "web_search", query, query, format_reference(reference),
-                             full=reference.get("url", ""), cycle=cycle)
+            passage = reference.get("passage", "")
+            eid = self._post(author, "web_search", f"search: {query}" if query else "search", query,
+                             format_reference(reference),
+                             full=(f"{format_reference(reference)}\nPassage returned by the search: {passage}"
+                                   if passage else f"{format_reference(reference)}\n(the search returned no passage text)"),
+                             cycle=cycle)
             ev = next(e for e in self.board.evidence if e.id == eid)
             ev.references = [reference]
             (self.evidence_dir / f"{eid}.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")

@@ -24,7 +24,8 @@ class Evaluator:
             f"Concept:\n{solution.model_dump_json(indent=2)}",
             tools=[{"type": "web_search", "search_context_size": "low"}],
         )
-        novelty_md = novelty + "\n\nSources:\n" + "\n".join(f"- {c.get('url', '')}" for c in citations)
+        novelty_md = novelty + "\n\nSources:\n" + "\n".join(
+            f"- {c.get('url', '')} — {c.get('title', '')}" for c in citations)
         (iter_dir / "novelty.md").write_text(novelty_md, encoding="utf-8")
         # 2) verdict (structured; free-text judgment + accept + evidence requests)
         evidence_table = "\n".join(
@@ -47,7 +48,14 @@ class Evaluator:
             f"{board.closure.cycles_used} cycles. {proposal_fact}\nOPEN OBJECTIONS:\n{open_objections}\n\n"
             f"PRIOR ART:\n{novelty}\n\n"
             "Write your judgment as free text. Consult cited evidence only when a claim looks doubtful; "
-            "add one evidence_request per doubtful critical claim. "
+            "add one evidence_request per doubtful critical claim. The evidence table lists every calculation, "
+            "simulation, sketch and literature source on the board: point out in your feedback each key claim "
+            "that rests on no evidence or source. Check the key numbers against everyday scales and known "
+            "regimes (accelerations in g, sizes against a person or a door, loads against body weights, energies "
+            "against daily household use) and re-derive the arithmetic that decides acceptance; when a number "
+            "looks off, add an evidence_request. List the deviations you can measure between the solution's "
+            "numbers and the problem or its own evidence, and say for each whether it matters for the working "
+            "principle (a deviation can be acceptable in concept design, but it must be noticed). "
             "This is concept-stage design: the only evidence the room can produce is calculation, "
             "simulation, sketches and literature/datasheet search. Judge whether the analysis is sound "
             "(right model, regime, inputs and units), not whether a physical test has been run — you are "

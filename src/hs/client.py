@@ -222,6 +222,35 @@ def _usage_from_response(resp: Any) -> dict[str, Any]:
     }
 
 
+def search_sources(resp: Any) -> list[dict[str, Any]]:
+    """Every source a response's web searches returned (B8): `web_search_call.results` (needs
+    include=["web_search_call.results"], spec §14.2) plus any `url_citation` annotations.
+    Each: {url, title, snippet, query}; duplicates by URL dropped."""
+    found: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in getattr(resp, "output", []) or []:
+        kind = getattr(item, "type", None)
+        if kind == "web_search_call":
+            action = getattr(item, "action", None)
+            query = str(getattr(action, "query", "") or "") if action is not None else ""
+            for res in getattr(item, "results", None) or []:
+                get = (lambda k, r=res: r.get(k) if isinstance(r, dict) else getattr(r, k, None))
+                url = str(get("url") or "")
+                if url and url not in seen:
+                    seen.add(url)
+                    found.append({"url": url, "title": str(get("title") or ""),
+                                  "snippet": str(get("snippet") or ""), "query": query})
+        elif kind == "message":
+            for block in getattr(item, "content", []) or []:
+                for ann in getattr(block, "annotations", []) or []:
+                    url = str(getattr(ann, "url", "") or "")
+                    if getattr(ann, "type", None) == "url_citation" and url and url not in seen:
+                        seen.add(url)
+                        found.append({"url": url, "title": str(getattr(ann, "title", "") or ""),
+                                      "snippet": "", "query": ""})
+    return found
+
+
 def _output_text(resp: Any) -> str:
     texts: list[str] = []
     for item in getattr(resp, "output", []) or []:
@@ -257,7 +286,7 @@ class MetaClient:
     def responses(self, *, role: str, instructions: str, input_items: list[dict[str, Any]],
                   tools: list[dict[str, Any]] | None = None, schema_model: type[BaseModel] | None = None,
                   max_output_tokens: int | None = None, previous_response_id: str | None = None,
-                  parallel_tool_calls: bool | None = None) -> Any:
+                  parallel_tool_calls: bool | None = None, include: list[str] | None = None) -> Any:
         rc = config.ROLES[role]
         max_tokens = max_output_tokens or rc.max_output_tokens
         self.cost.check_budget(estimate_call_usd(instructions, input_items, max_tokens, tools))
@@ -274,6 +303,8 @@ class MetaClient:
             kwargs["previous_response_id"] = previous_response_id
         if parallel_tool_calls is not None:
             kwargs["parallel_tool_calls"] = parallel_tool_calls
+        if include:
+            kwargs["include"] = include  # e.g. ["web_search_call.results"] (spec §14.2, verified)
         if schema_model is not None:
             kwargs["text"] = {"format": {"type": "json_schema", "name": schema_model.__name__,
                                          "schema": make_strict_schema(schema_model), "strict": True}}
@@ -345,18 +376,12 @@ class MetaClient:
 
     def free_text(self, role: str, instructions: str, user_text: str,
                   tools: list[dict[str, Any]] | None = None) -> tuple[str, list[dict[str, Any]]]:
+        searching = any(t.get("type") == "web_search" for t in tools or [])
         resp = self.responses(role=role, instructions=instructions,
                               input_items=[{"type": "message", "role": "user", "content": [
                                   {"type": "input_text", "text": user_text}]}],
-                              tools=tools)
-        citations: list[dict[str, Any]] = []
-        for item in getattr(resp, "output", []) or []:
-            if getattr(item, "type", None) == "message":
-                for block in getattr(item, "content", []) or []:
-                    for ann in getattr(block, "annotations", []) or []:
-                        if getattr(ann, "type", None) == "url_citation":
-                            citations.append({"url": getattr(ann, "url", ""), "title": getattr(ann, "title", "")})
-        return _output_text(resp), citations
+                              tools=tools, include=["web_search_call.results"] if searching else None)
+        return _output_text(resp), search_sources(resp)
 
     def member_turn(self, **kwargs: Any) -> str:  # implemented in stage_a.council via tool loop
         raise NotImplementedError("MetaClient.member_turn is provided by hs.stage_a.council.run_member_turn")
