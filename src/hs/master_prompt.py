@@ -177,6 +177,8 @@ class MasterPrompt:
             ("## 5. Criteria", criteria),
             ("## 6. Lessons applied", lessons_applied),
         ]
+        if not roster_of(sections):  # review finding 14: a meeting without members must not start
+            raise RuntimeError("master prompt rev 0 has no members under '## 2. Roles' after the re-ask")
         master = cls(run_dir, problem.title, sections, rev=0)
         master.save()
         return master

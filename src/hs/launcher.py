@@ -56,6 +56,37 @@ class _Finder(importlib.abc.MetaPathFinder):
 sys.meta_path.insert(0, _Finder())
 
 
+def _install_file_guard(script: str) -> None:
+    """Round-3 review finding 8: user code may read the Python installation and system files, but
+    nothing else under the user's home folder (shell startup files hold the API key), and may write
+    only inside its own temp folder. Audit hooks cannot be removed by the user script."""
+    import pwd
+
+    home = os.path.realpath(pwd.getpwuid(os.getuid()).pw_dir)
+    work = os.path.realpath(os.path.dirname(os.path.abspath(script)))
+    allowed_read = {os.path.realpath(p) for p in (sys.prefix, sys.base_prefix, sys.exec_prefix, work,
+                                                  tempfile.gettempdir(), os.environ.get("MPLCONFIGDIR", ""))
+                    if p}
+    allowed_write = {work, os.path.realpath(os.environ.get("MPLCONFIGDIR", work))}
+
+    def inside(path: str, roots: set[str]) -> bool:
+        return any(path == r or path.startswith(r + os.sep) for r in roots)
+
+    def guard(event: str, args: tuple) -> None:
+        if event != "open" or not args or isinstance(args[0], int):
+            return
+        path = os.path.realpath(os.fsdecode(args[0]))
+        mode, flags = (args[1] if len(args) > 1 else None), (args[2] if len(args) > 2 else 0)
+        writing = (isinstance(mode, str) and any(c in mode for c in "wax+")) or (
+            mode is None and isinstance(flags, int) and flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT))
+        if writing and not inside(path, allowed_write):
+            raise PermissionError(f"the sandbox may not write {path}")
+        if inside(path, {home}) and not inside(path, allowed_read):
+            raise PermissionError(f"the sandbox may not read files in the user's home folder: {path}")
+
+    sys.addaudithook(guard)
+
+
 def main() -> int:
     if len(sys.argv) < 2:
         print("usage: launcher.py <script>", file=sys.stderr)
@@ -63,6 +94,7 @@ def main() -> int:
     script = sys.argv[1]
     with open(script, encoding="utf-8") as fh:
         code = fh.read()
+    _install_file_guard(script)
     globals_dict: dict = {"__name__": "__main__", "__file__": script}
     exec(compile(code, script, "exec"), globals_dict)
     return 0

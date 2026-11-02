@@ -180,7 +180,9 @@ class Whiteboard(BaseModel):
                                             reason=str(op.get("reason", "")))
                 return True, f"vote recorded for v{self.proposal.version}"
             if action == "read_evidence":
-                eid = str(op.get("id", ""))
+                # Models pass the id as id, evidence_ids[0] or target_id; accept any (A7).
+                eid = str(op.get("id") or (list(op.get("evidence_ids") or []) or [""])[0]
+                          or op.get("target_id") or "")
                 for e in self.evidence:
                     if e.id == eid:
                         return True, e.output_full or e.output_summary
@@ -219,7 +221,8 @@ class Whiteboard(BaseModel):
                 lines.append(f"- {c.id} [{c.author}, {c.status}, for {c.function_id}] {c.text}")
         lines.append("## Evidence")
         for e in self.evidence:
-            lines.append(f"- {e.id} [{e.tool}, {e.author}] {e.output_summary} ({e.status})")
+            lines.append(f"- {e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}"
+                         + (" (failed)" if e.status == "error" else ""))
         lines.append("## Objections")
         for o in self.objections:
             if o.status == "resolved":

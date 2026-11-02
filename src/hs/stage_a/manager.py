@@ -26,8 +26,9 @@ class Manager:
         entries = archive.entries()
         if not entries:
             return []
-        payload = json.dumps({"archive_ids": [e["id"] for e in entries],
-                              "statuses": {e["id"]: e["status"] for e in entries}})
+        # Review finding 5: the picker sees what each past solution was and why it was judged so.
+        payload = json.dumps([{"archive_id": e["id"], "status": e["status"], "title": e.get("title", ""),
+                               "feedback": e.get("feedback", "")} for e in entries], indent=2)
         picks = self.client.structured("manager_inspirations", Inspirations,
                                        "Pick 1-3 inspirations; at least one rejected if any exist.",
                                        payload)
@@ -41,7 +42,8 @@ class Manager:
 
                 chosen[-1] = InspirationPick(archive_id=rejected[-1]["id"], why_useful="Rejected attempt to learn from.")
         return [{"archive_id": p.archive_id, "status": by_id[p.archive_id]["status"],
-                 "feedback_summary": by_id[p.archive_id].get("feedback", "")[:200]} for p in chosen]
+                 "feedback_summary": by_id[p.archive_id].get("feedback", ""), "why_useful": p.why_useful}
+                for p in chosen]
 
     def output_gradient(self, solution: SolutionPrompt, feedback_text: str,
                         iter_dir: Path) -> OutputGradient:

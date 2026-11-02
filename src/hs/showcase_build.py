@@ -77,7 +77,7 @@ def copy_run(run_dir: Path, dest: Path) -> None:
                 continue
             keep = item.suffix in (".json", ".md", ".txt") or (
                 item.suffix == ".png" and any(k in item.name for k in
-                ("schematic", "render", "annotated", "local_", "edited_")))
+                ("schematic", "render", "annotated", "local_", "edited_", "sketch_")))
             if keep:
                 target = dest / item.relative_to(run_dir)
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -110,7 +110,7 @@ def _problem(run_dir: Path) -> dict[str, Any]:
 
 
 def _prompt_text(problem: dict[str, Any]) -> str:
-    return str(problem.get("prompt") or problem.get("description") or
+    return str(problem.get("statement") or problem.get("prompt") or problem.get("description") or
                problem.get("title") or "")
 
 
@@ -281,7 +281,7 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
         p.append(f"<div class='event'><b>{_ts(it_dir)} {it_dir.name}</b> — {len(ev)} evidence items, "
                  f"{len(sketches)} sketches, {len(objs)} objections; evaluator accept = "
                  f"{verdict.get('accept')}. Proposal: {html.escape(str(_read_json(it_dir / 'solution.json').get('title', '')))}. "
-                 f"<a href='../board.html'>Board step</a></div>")
+                 f"<a href='board.html'>Board step</a></div>")
     # J3 path overlays
     p.append("<h2>3. Path through the architecture</h2>")
     for idx, _it_dir in enumerate(iters):

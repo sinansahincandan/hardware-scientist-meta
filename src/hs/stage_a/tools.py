@@ -50,6 +50,25 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
 _NAME_RE = re.compile(r"^[a-zA-Z0-9_.-]+$")
 
 
+_NUMBER = re.compile(r"(?<![\w.])-?\d+\.\d{4,}(?:[eE][-+]?\d+)?")
+
+
+def _three_sig(match: re.Match[str]) -> str:
+    return f"{float(match.group(0)):.3g}"
+
+
+def readable_result(out: str, ok: bool) -> str:
+    """One readable line for the board (A7/B9): the last result lines with long decimals cut to
+    3 significant figures; on failure, the exception line, never a raw traceback."""
+    lines = [line.strip() for line in out.splitlines() if line.strip()]
+    if not lines:
+        return "no output" if ok else "failed without a message"
+    if not ok:
+        return "failed: " + lines[-1][:300]
+    tail = lines[-3:]
+    return _NUMBER.sub(_three_sig, "; ".join(tail))[:400]
+
+
 def parse_calc_inputs(expression: str) -> dict[str, Any]:
     inputs: dict[str, Any] = {}
     for i, m in enumerate(re.finditer(r"Q_\(\s*([^,\)]+)\s*(?:,\s*[\"']([^\"']+)[\"'])?\s*\)", expression)):
@@ -136,10 +155,8 @@ class ToolRunner:
         )
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
-        summary = out.splitlines()[-1] if out else "calc error"
-        if not result.ok:
-            summary = f"calc failed: {summary}"[:200]
-        eid = self._post(author, "calc", purpose, expression, summary[:200],
+        summary = readable_result(out, result.ok)
+        eid = self._post(author, "calc", purpose, expression, summary,
                          full=out, inputs=parse_calc_inputs(expression),
                          status="ok" if result.ok else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
@@ -147,9 +164,7 @@ class ToolRunner:
     def simulate(self, author: str, script: str, purpose: str, cycle: int = 0) -> tuple[str, str]:
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
-        summary = (out.splitlines()[-1] if out else "simulate done")[:200]
-        if not result.ok:
-            summary = f"simulate failed: {summary}"[:200]
+        summary = readable_result(out, result.ok)
         eid = self._post(author, "simulate", purpose, script, summary,
                          full=out, status="ok" if result.ok else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
@@ -163,8 +178,8 @@ class ToolRunner:
             (self.evidence_dir / fname).write_bytes(png)
             sketch_rel = f"evidence/{fname}"
         last_err = result.stderr.strip().splitlines()[-1] if result.stderr.strip() else "no image produced"
-        summary = caption if (result.ok and png) else f"sketch failed: {last_err}"[:200]
-        eid = self._post(author, "sketch", caption, script, summary[:200],
+        summary = caption if (result.ok and png) else f"failed: {last_err}"[:300]
+        eid = self._post(author, "sketch", caption, script, summary,
                          full=result.stdout, sketch_path=sketch_rel,
                          status="ok" if (result.ok and png) else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"
@@ -232,7 +247,7 @@ class ToolRunner:
         script = f"{record['python_source']}\nprint(run({args!r}))\n"
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
-        summary = (out.splitlines()[-1] if out else "tool done")[:200]
+        summary = readable_result(out, result.ok)
         eid = self._post(author, name, f"custom tool {name}", script, summary,
                          full=out, status="ok" if result.ok else "error", cycle=cycle)
         return eid, f"{eid}: {summary}"

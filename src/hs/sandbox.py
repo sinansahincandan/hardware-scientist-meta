@@ -45,8 +45,8 @@ def run_script(script: str, timeout: float = 10.0, extra_files: dict[str, bytes]
             sketch_bytes = sketch.read_bytes() if sketch.exists() else None
             result = SandboxResult(
                 ok=proc.returncode == 0,
-                stdout=(proc.stdout or "")[:MAX_CAPTURE],
-                stderr=(proc.stderr or "")[:MAX_CAPTURE],
+                stdout=(proc.stdout or "")[-MAX_CAPTURE:],  # the result and the error are at the end
+                stderr=(proc.stderr or "")[-MAX_CAPTURE:],
                 returncode=proc.returncode,
             )
             object.__setattr__(result, "_sketch_bytes", sketch_bytes)

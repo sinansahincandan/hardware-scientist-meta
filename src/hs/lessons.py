@@ -29,8 +29,11 @@ def load_lessons(path: Path | None = None) -> str:
 
 
 def _existing_lines(text: str) -> list[str]:
-    return [line.strip("- ").strip() for line in text.splitlines()
-            if line.strip().startswith("-")]
+    """Lesson texts without the "[date, run id]" suffix, so near-duplicates are recognized (A7)."""
+    import re
+
+    return [re.sub(r"\s*\[\d{4}-\d{2}-\d{2}, run [^\]]*\]\s*$", "", line.strip()[1:].strip())
+            for line in text.splitlines() if line.strip().startswith("-")]
 
 
 def filter_candidates(candidates: list[Any], existing_text: str) -> list[Any]:

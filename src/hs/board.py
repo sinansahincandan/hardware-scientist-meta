@@ -80,7 +80,7 @@ def _first_sentence(text: str) -> str:
     for sep in (". ", ".\n"):
         if sep in text:
             return text.split(sep)[0] + "."
-    return text[:160]
+    return text  # one sentence without a full stop: keep it whole, never cut mid-word
 
 
 def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> str:
