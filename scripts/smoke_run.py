@@ -11,9 +11,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from hs.client import MetaClient  # noqa: E402
-from hs.controller import Controller  # noqa: E402
-from hs.schemas import Problem  # noqa: E402
+from hs.client import MetaClient
+from hs.controller import Controller
+from hs.schemas import Problem
 
 
 def main() -> int:

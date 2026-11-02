@@ -80,8 +80,23 @@ class Annotator:
             image_paths=[render_png])
         return loc
 
+    def check_labels(self, annotated_png: Path, spec: SchematicSpec, loc: Localization) -> list[str]:
+        """One look at the labelled image: which labels point at the wrong part? Returns part ids."""
+        from hs.schemas import LabelCheck
+
+        labels = {n.label: n.id for n in spec.nodes if any(p.id == n.id and p.found for p in loc.parts)}
+        if not labels:
+            return []
+        check = self.client.structured(
+            "light_check", LabelCheck, "You check code-drawn labels on a product photo.",
+            "Each label below is drawn with a leader line ending on a part. List, exactly as written, every label "
+            "whose leader ends on a part that is NOT what the label names. Judge from the pixels.\nLABELS: "
+            + "; ".join(labels), image_paths=[annotated_png])
+        return [labels[x] for x in check.wrong_labels if x in labels]
+
     def run(self, render_png: Path, spec: SchematicSpec, geometry: dict[str, Any], out_png: Path,
-            panel_letter: str = "A", localization: Localization | None = None) -> tuple[Path, Localization, list[str]]:
+            panel_letter: str = "A", localization: Localization | None = None,
+            fallback: bool = True) -> tuple[Path, Localization, list[str]]:
         """Label the render for the figure (16a): boxes from SAM when given (the localization call only
         for parts SAM did not find), labels drawn by code inside the frame with a leader to each part."""
         if localization is None:
@@ -89,7 +104,7 @@ class Annotator:
         else:
             loc = localization
             missing_ids = [p.id for p in loc.parts if not p.found]
-            if missing_ids and not getattr(self.client, "is_fake", False):
+            if fallback and missing_ids and not getattr(self.client, "is_fake", False):
                 subset = spec.model_copy(update={"nodes": [n for n in spec.nodes if n.id in missing_ids]})
                 extra = {p.id: p for p in self.localize(render_png, subset, geometry).parts if p.found}
                 loc = Localization(parts=[extra.get(p.id, p) for p in loc.parts])

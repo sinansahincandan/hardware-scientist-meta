@@ -357,6 +357,12 @@ class Inspirations(BaseModel):
     picks: list[InspirationPick] = Field(default_factory=list)
 
 
+class LabelCheck(BaseModel):
+    """16a: labels the checker judged to point at the wrong part (code removes them)."""
+    wrong_labels: list[str] = Field(default_factory=list)
+    note: str = ""
+
+
 class LightCheck(BaseModel):
     ok: bool
     reason: str = ""

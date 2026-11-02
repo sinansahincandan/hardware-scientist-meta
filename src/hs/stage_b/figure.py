@@ -114,6 +114,29 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     return True
 
 
+def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localization: Localization,
+                    panel_a: Path, notes: list[str]) -> None:
+    """16a: labels that point at the wrong part are removed, never shown (run 02: 'PU box' on the control box)."""
+    from hs.stage_b.annotate import Annotator
+
+    annotator = Annotator(client)
+    try:
+        wrong = annotator.check_labels(panel_a, spec, localization)
+    except BudgetExceeded:
+        raise
+    except Exception as exc:
+        notes.append(f"label check could not run ({type(exc).__name__}); labels not verified")
+        return
+    if not wrong:
+        notes.append("label check: every label points at the part it names")
+        return
+    kept = Localization(parts=[p.model_copy(update={"found": p.found and p.id not in wrong})
+                               for p in localization.parts])
+    annotator.run(render_path, spec, {}, panel_a, localization=kept, fallback=False)
+    names = [n.label for n in spec.nodes if n.id in wrong]
+    notes.append(f"labels removed because they pointed at the wrong part: {', '.join(names)}")
+
+
 def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
             annotated_path: Path, render_path: Path, localization: Localization, run_dir: Path,
             master_history: list[dict[str, Any]], s_history: list[dict[str, Any]],
@@ -124,6 +147,7 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     images_used = 0
     panel_a = final_dir / "panel_A.png"
     Image.open(annotated_path).convert("RGB").save(panel_a)
+    relabel_panel_a(client, spec, render_path, localization, panel_a, trace_notes)
     panel_b = final_dir / "panel_B.png"
     has_b = _panel_b(render_path, spec, localization, panel_b, trace_notes)
     panel_c = final_dir / "panel_C.png"

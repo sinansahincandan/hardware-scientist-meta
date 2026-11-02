@@ -287,6 +287,11 @@ class FakeClient:
         return PartMap(parts=[PartVisual(part_id=pid, visual_phrase=f"fake part {pid[1:]}", count=1)
                               for pid in ids])
 
+    def _fake_LabelCheck(self, user_text: str):
+        from hs.schemas import LabelCheck
+
+        return LabelCheck(wrong_labels=[], note="fake: labels ok")
+
     def _fake_LightCheck(self, user_text: str) -> LightCheck:
         return LightCheck(ok=True, reason="Panel shows the requested parts.")
 
