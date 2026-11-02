@@ -1,0 +1,14 @@
+{
+  "id": "E38",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "bending moment spine under factored load",
+  "code_or_query": "(75*9.81*1.2/2).to('N*m') if False else 75*9.81*0.6",
+  "inputs": {},
+  "output_summary": "441",
+  "output_full": "441",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

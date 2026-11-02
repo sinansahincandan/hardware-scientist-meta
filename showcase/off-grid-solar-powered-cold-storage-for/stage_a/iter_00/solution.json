@@ -1,70 +1,74 @@
 {
-  "title": "Sun-only 1-tonne 4-6C cold store with PV, LiFePO4 bank and ice-bank",
-  "problem_restatement": "Keep 1 tonne produce at 4-6C in hot ambient using sun only with night and cloudy ride-through without grid or diesel.",
-  "mechanism_sentence": "Sunlight on a tilted 4kW PV array with MPPT charges a 48V LiFePO4 bank that drives a DC vapour-compression cooler to hold a 100mm PU-insulated 10m3 room with twin racks of fifty vented crates at 4-6C, with a 100kg ice-bank carrying night load.",
+  "title": "Solar-only 1-tonne staged cold store with flat-pack chamber",
+  "problem_restatement": "Provide solar-only day-and-night power for 1 tonne produce cold storage, maintain chill with insulation, refrigeration and air circulation, in a weatherproof transportable cooperatively assemblable chamber with 1-tonne crate layout.",
+  "mechanism_sentence": "Sunlight from about 10 m2 of panels makes and stores electricity that runs a small cooler blowing cold air around vented crates inside a thick insulated box, cooling about 333 kg of fresh produce per day down to 5 degC.",
   "decisive_choices": [
-    "Retain 100mm PU cold room with vented PV shade roof and tight door seals",
-    "Stage intake at 250kg per day over 4 days with 1.5kW cooling 0.6kW electric compressor duty",
-    "Size 4kW tilted south PV with MPPT plus 48V 240Ah LiFePO4 near 11.25kWh plus 100kg ice-bank for night"
+    "Stage 1 tonne harvest over 3 days at about 333 kg per day to fit 8 kWh per day solar and battery",
+    "Use variable-speed 1.0 kW DC cooling at COP about 2 with fan-forced evaporator for staged pull-down plus 185 W leak",
+    "Build 100 mm PU sandwich chamber at U about 0.22 with 2.2 kW array and 5.12 kWh store for night hold"
   ],
-  "open_question": "What is combined battery-plus-ice autonomy in days when 9.28kWh thermal ice-bank (E23) is divided by COP 2.5?",
-  "transfer_line": "Energy: Tilted roof PV array -> 48V LiFePO4 battery bank -> DC vapour-compression cooler | Measured: MPPT charge monitoring -> Battery state monitoring",
-  "flow_choice": "Energy: Tilted roof PV array -> MPPT charge controller -> 48V LiFePO4 battery bank -> DC vapour-compression cooler -> 100mm PU cold room through PV array, battery bank and DC cooler",
+  "open_question": "Will overnight electrical use with realistic duty cycling plus door-opening infiltration stay within the 5.12 kWh store during staged pull-down?",
+  "transfer_line": "Energy: 4x550W solar array -> 48V battery bank -> DC cooling unit | Measured: Temperature logger -> MPPT meter",
   "assumed_constraints": [
     {
-      "constraint": "Net crate volume 2.7m3 holds 1 tonne per NCCD 3.4m3 per tonne guideline",
-      "source": "C4",
+      "constraint": "Fixed tilt ~ latitude facing equator, ground mount with airflow gap for cooling",
+      "source": "C3",
+      "evidence_ids": []
+    },
+    {
+      "constraint": "Hold 5 degC and 85-95 % Relative Humidity, where Relative Humidity means moist air fraction, avoiding chilling injury below tropical range",
+      "source": "C6",
       "evidence_ids": [
-        "E5"
+        "E18",
+        "E19"
+      ]
+    },
+    {
+      "constraint": "Washable food-safe interior with drain and 20 kg single-person lift limit for safe cooperative handling and cleaning",
+      "source": "C12",
+      "evidence_ids": [
+        "E32",
+        "E43",
+        "E49",
+        "E52"
       ]
     }
   ],
   "functional_decomposition": [
-    "Keep 1 tonne produce at 4-6 C in hot ambient",
-    "Generate all electricity from sun only",
-    "Ride through night and cloudy periods without grid or diesel"
+    "Provide solar-only electrical power day and night for 1 tonne cold storage",
+    "Maintain 1 tonne produce at chill temperature with insulation, refrigeration and air circulation",
+    "Provide weatherproof insulated chamber, load-bearing frame, door and 1 tonne crate layout that is transportable and cooperatively assemblable"
   ],
   "concept": {
-    "working_principle": "Tilted PV with MPPT charges 48V LiFePO4 bank to run DC vapour-compression cooler holding 100mm PU 10m3 room at 4-6C, with staged intake and daytime-charged ice-bank for night ride-through.",
+    "working_principle": "Sun makes day electricity stored in battery for night; battery runs variable-speed DC vapour-compression cooler with fan-forced evaporator inside 100mm PU box; staged daily lots of ~333 kg plus 185 W wall leak set ~1.0 kW cooling at COP ~2 drawing 662 W peak; cold air circulates around vented crates on side racks with central aisle to hold 5 degC and 85-95% RH.",
     "parts": [
       {
-        "id": "P1",
-        "name": "100mm PU insulated 10m3 cold room",
-        "function": "Keep 1 tonne produce at 4-6C",
-        "material": "PU",
+        "id": "P-array",
+        "name": "4x550W monocrystalline solar array",
+        "function": "Convert sun to daytime electricity",
+        "material": "monocrystalline silicon, glass, aluminium frame",
         "size_class_mm": {
-          "min": 2000.0,
-          "max": 2600.0
+          "min": 1130.0,
+          "max": 2280.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "P-battery",
+        "name": "48V 100Ah LiFePO4 battery bank 5.12kWh",
+        "function": "Store night energy",
+        "material": "lithium iron phosphate, steel case",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 600.0
         },
         "qty": 1
       },
       {
-        "id": "P2",
-        "name": "DC vapour-compression cooler",
-        "function": "Provide vapour-compression cooling",
-        "material": "steel",
-        "size_class_mm": {
-          "min": 300.0,
-          "max": 800.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "P3",
-        "name": "Tilted roof monocrystalline PV array 4kW",
-        "function": "Generate electricity from sun",
-        "material": "monocrystalline silicon",
-        "size_class_mm": {
-          "min": 4000.0,
-          "max": 5000.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "P4",
-        "name": "MPPT charge controller",
-        "function": "Hold panels at peak power",
-        "material": "electronics",
+        "id": "P-controller",
+        "name": "MPPT 150V 60A charge controller",
+        "function": "Extract peak panel power and charge battery",
+        "material": "electronics, aluminium heatsink",
         "size_class_mm": {
           "min": 100.0,
           "max": 300.0
@@ -72,415 +76,363 @@
         "qty": 1
       },
       {
-        "id": "P5",
-        "name": "48V LiFePO4 battery bank 11.25kWh",
-        "function": "Ride through night and cloudy periods",
-        "material": "LiFePO4",
+        "id": "P-box",
+        "name": "100mm PU sandwich insulated box 2.4x2.0x2.2m",
+        "function": "Insulate walls roof floor",
+        "material": "polyurethane foam, steel skins",
         "size_class_mm": {
-          "min": 400.0,
+          "min": 960.0,
+          "max": 2400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "P-base",
+        "name": "Raised galvanized steel skid with posts roof rails anchors",
+        "function": "Carry chamber floor and roof array",
+        "material": "galvanized steel, plywood spreaders",
+        "size_class_mm": {
+          "min": 2000.0,
+          "max": 2400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "P-door",
+        "name": "800mm hinged insulated door with gaskets rain canopy",
+        "function": "Person and crate access with seal",
+        "material": "polyurethane panel, steel, rubber magnetic gasket",
+        "size_class_mm": {
+          "min": 800.0,
+          "max": 2100.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "P-cooling",
+        "name": "Variable-speed DC cooling unit 1.0kW with fan evaporator drain",
+        "function": "Provide staged cooling with uniform chill",
+        "material": "steel, copper, aluminium, refrigerant",
+        "size_class_mm": {
+          "min": 300.0,
           "max": 800.0
         },
         "qty": 1
       },
       {
-        "id": "P6",
-        "name": "100kg ice-bank",
-        "function": "Carry night steady load off battery",
-        "material": "water",
+        "id": "P-crates",
+        "name": "Side slatted racks with 50x 600x400mm 20kg vented crates",
+        "function": "Hold 1 tonne with aisle airflow and FIFO",
+        "material": "food-grade plastic crates, steel racks",
         "size_class_mm": {
-          "min": 300.0,
-          "max": 600.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "P7",
-        "name": "Twin side racks",
-        "function": "Hold fifty vented crates with aisle",
-        "material": "steel",
-        "size_class_mm": {
-          "min": 2000.0,
-          "max": 2600.0
-        },
-        "qty": 2
-      },
-      {
-        "id": "P8",
-        "name": "Vented crates 600x400x226mm",
-        "function": "Hold produce with airflow",
-        "material": "plastic",
-        "size_class_mm": {
-          "min": 226.0,
+          "min": 400.0,
           "max": 600.0
         },
         "qty": 50
-      },
-      {
-        "id": "P9",
-        "name": "90mm insulated hinged door with gaskets",
-        "function": "Access with seals",
-        "material": "PU",
-        "size_class_mm": {
-          "min": 900.0,
-          "max": 1900.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "P10",
-        "name": "Separate steel shade canopy",
-        "function": "Shade room and carry PV",
-        "material": "galvanised steel",
-        "size_class_mm": {
-          "min": 4000.0,
-          "max": 5000.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "P11",
-        "name": "External wash slab",
-        "function": "Wash crates cooperatively",
-        "material": "concrete",
-        "size_class_mm": {
-          "min": 1000.0,
-          "max": 2000.0
-        },
-        "qty": 1
       }
     ],
     "connections": [
       {
-        "from_id": "P3",
-        "to_id": "P4",
+        "from_id": "P-array",
+        "to_id": "P-controller",
         "kind": "electrical",
-        "label": "PV to MPPT"
+        "label": "daytime DC to controller"
       },
       {
-        "from_id": "P4",
-        "to_id": "P5",
+        "from_id": "P-controller",
+        "to_id": "P-battery",
         "kind": "electrical",
-        "label": "MPPT to battery"
+        "label": "charge 48 V"
       },
       {
-        "from_id": "P5",
-        "to_id": "P2",
+        "from_id": "P-battery",
+        "to_id": "P-cooling",
         "kind": "electrical",
-        "label": "battery to cooler"
+        "label": "night power 13.8 A peak"
       },
       {
-        "from_id": "P2",
-        "to_id": "P1",
+        "from_id": "P-cooling",
+        "to_id": "P-box",
         "kind": "thermal",
-        "label": "cooling to room"
+        "label": "1.0 kW cooling to room"
       },
       {
-        "from_id": "P6",
-        "to_id": "P1",
-        "kind": "thermal",
-        "label": "ice night cooling"
+        "from_id": "P-cooling",
+        "to_id": "P-crates",
+        "kind": "fluid",
+        "label": "fan air plus condensate to drain"
       },
       {
-        "from_id": "P10",
-        "to_id": "P3",
+        "from_id": "P-box",
+        "to_id": "P-base",
         "kind": "mechanical",
-        "label": "canopy carries PV"
+        "label": "bolted to skid"
       },
       {
-        "from_id": "P1",
-        "to_id": "P9",
+        "from_id": "P-array",
+        "to_id": "P-base",
         "kind": "mechanical",
-        "label": "door on room"
+        "label": "mounted on roof rails"
+      },
+      {
+        "from_id": "P-crates",
+        "to_id": "P-box",
+        "kind": "mechanical",
+        "label": "racked on side racks"
       }
     ],
     "loads": [
       {
-        "on_id": "P3",
-        "label": "solar irradiance on PV array",
+        "on_id": "P-array",
+        "label": "sun 4.5 to 6.5 kWh per m2 per day on 10 m2 array",
         "direction": "down"
       },
       {
-        "on_id": "P1",
-        "label": "ambient heat 35K lift on cold room",
+        "on_id": "P-base",
+        "label": "1 tonne produce in 50x20 kg crates",
+        "direction": "down"
+      },
+      {
+        "on_id": "P-box",
+        "label": "warm field heat 333 kg per day staged lot",
         "direction": "in"
-      },
-      {
-        "on_id": "P8",
-        "label": "1000kg produce in crates",
-        "direction": "down"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "pull-down thermal energy",
-      "value": 25.0,
-      "unit": "kWh",
-      "method": "hand calculation",
-      "evidence_ids": [
-        "E1"
-      ]
-    },
-    {
-      "quantity": "wall gain estimate",
-      "value": 215.59999999999997,
-      "unit": "W",
-      "method": "conduction calculation",
-      "evidence_ids": [
-        "E3"
-      ]
-    },
-    {
-      "quantity": "crate net volume",
-      "value": 2.712,
-      "unit": "m3",
-      "method": "volume calculation",
-      "evidence_ids": [
-        "E5"
-      ]
-    },
-    {
-      "quantity": "total mass check",
-      "value": 1000.0,
-      "unit": "kg",
-      "method": "hand calculation",
-      "evidence_ids": [
-        "E7"
-      ]
-    },
-    {
-      "quantity": "combined thermal load",
-      "value": 30.184,
-      "unit": "kWh",
-      "method": "hand addition",
-      "evidence_ids": [
-        "E9"
-      ]
-    },
-    {
-      "quantity": "door conduction estimate",
-      "value": 13.765500000000001,
-      "unit": "W",
-      "method": "conduction calculation",
-      "evidence_ids": [
-        "E10"
-      ]
-    },
-    {
-      "quantity": "staged fill duration",
-      "value": 4.0,
-      "unit": "days",
-      "method": "staged-intake division",
-      "evidence_ids": [
-        "E12"
-      ]
-    },
-    {
-      "quantity": "autonomy sizing nominal",
-      "value": 11.25,
-      "unit": "kWh",
-      "method": "hand calculation",
-      "evidence_ids": [
-        "E13"
-      ]
-    },
-    {
-      "quantity": "PV array sizing minimum",
-      "value": 1600.0,
-      "unit": "W",
-      "method": "standard off-grid sizing",
-      "evidence_ids": [
-        "E14"
-      ]
-    },
-    {
-      "quantity": "batch infiltration estimate",
-      "value": 0.12,
-      "unit": "kWh",
-      "method": "batch-scaling calculation",
-      "evidence_ids": [
-        "E15"
-      ]
-    },
-    {
-      "quantity": "updated daily load",
-      "value": 6.048,
-      "unit": "kWh",
-      "method": "hand addition",
+      "quantity": "array power for 8 kWh per day at 5 peak sun hours",
+      "value": 2.13,
+      "unit": "kW",
+      "method": "calc",
       "evidence_ids": [
         "E16"
       ]
     },
     {
-      "quantity": "autonomy check usable",
-      "value": 1.4880952380952381,
-      "unit": "days",
-      "method": "autonomy division",
+      "quantity": "staged daily electrical need",
+      "value": 8.0,
+      "unit": "kWh/day",
+      "method": "calc",
       "evidence_ids": [
-        "E17"
+        "E16",
+        "E31",
+        "E56"
       ]
     },
     {
-      "quantity": "low-sun daily energy",
-      "value": 3.75,
+      "quantity": "wall transmission leak",
+      "value": 185.0,
+      "unit": "W",
+      "method": "simulate",
+      "evidence_ids": [
+        "E31"
+      ]
+    },
+    {
+      "quantity": "steady cooling load",
+      "value": 315.0,
+      "unit": "W",
+      "method": "simulate",
+      "evidence_ids": [
+        "E31"
+      ]
+    },
+    {
+      "quantity": "steady electrical power at COP 2",
+      "value": 157.0,
+      "unit": "W",
+      "method": "simulate",
+      "evidence_ids": [
+        "E31"
+      ]
+    },
+    {
+      "quantity": "steady daily electricity",
+      "value": 3.78,
+      "unit": "kWh/day",
+      "method": "simulate",
+      "evidence_ids": [
+        "E31"
+      ]
+    },
+    {
+      "quantity": "product pull-down thermal energy 1 tonne 25K",
+      "value": 25.0,
       "unit": "kWh",
-      "method": "standard off-grid derate",
+      "method": "calc",
       "evidence_ids": [
-        "E18"
+        "E56"
       ]
     },
     {
-      "quantity": "infiltration electric conversion",
-      "value": 0.048,
+      "quantity": "average pull-down cooling power over 24h",
+      "value": 1040.0,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E57"
+      ]
+    },
+    {
+      "quantity": "peak electrical power pulldown plus leak at COP 2 plus fan",
+      "value": 662.0,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E60",
+        "E57",
+        "E31"
+      ]
+    },
+    {
+      "quantity": "peak battery current at 48V for 662W",
+      "value": 13.8,
+      "unit": "A",
+      "method": "calc",
+      "evidence_ids": [
+        "E61"
+      ]
+    },
+    {
+      "quantity": "battery usable store 48V 100Ah",
+      "value": 5.12,
       "unit": "kWh",
-      "method": "hand conversion",
+      "method": "datasheet",
       "evidence_ids": [
-        "E19"
+        "E10"
       ]
     },
     {
-      "quantity": "total payload",
-      "value": 1000.0,
-      "unit": "kg",
-      "method": "payload review",
+      "quantity": "chamber inner volume",
+      "value": 10.6,
+      "unit": "m3",
+      "method": "simulate",
       "evidence_ids": [
-        "E20"
+        "E44"
       ]
     },
     {
-      "quantity": "autonomy recheck usable",
-      "value": 1.4763779527559056,
-      "unit": "days",
-      "method": "autonomy division",
+      "quantity": "produce volume fill fraction",
+      "value": 27.1,
+      "unit": "%",
+      "method": "simulate",
       "evidence_ids": [
-        "E21"
+        "E44"
       ]
     },
     {
-      "quantity": "low-sun PV required",
-      "value": 4.064,
-      "unit": "kW",
-      "method": "standard derate sizing",
+      "quantity": "floor uniform pressure from 1 tonne",
+      "value": 2.04,
+      "unit": "kPa",
+      "method": "calc",
       "evidence_ids": [
-        "E22"
+        "E43",
+        "E44"
       ]
     },
     {
-      "quantity": "ice-bank latent estimate",
-      "value": 9.277777777777779,
-      "unit": "kWh",
-      "method": "latent heat calculation",
+      "quantity": "wall U from 100mm polyurethane",
+      "value": 0.22,
+      "unit": "W/m2K",
+      "method": "simulate",
       "evidence_ids": [
-        "E23"
-      ]
-    },
-    {
-      "quantity": "PV area estimate",
-      "value": 20.299999999999997,
-      "unit": "m2",
-      "method": "panel area division",
-      "evidence_ids": [
-        "E24"
-      ]
-    },
-    {
-      "quantity": "canopy post-load estimate",
-      "value": 75.0,
-      "unit": "kg",
-      "method": "footing load division",
-      "evidence_ids": [
-        "E25"
+        "E31"
       ]
     }
   ],
   "measurement_chain": [
     {
-      "stage": "instrument",
-      "name": "MPPT charge monitoring",
-      "interface": "electrical"
+      "stage": "sensor",
+      "name": "Cold-room temperature and humidity logger",
+      "interface": "air in chamber aisle and crates"
     },
     {
-      "stage": "computer",
-      "name": "Battery state monitoring",
-      "interface": "electrical"
+      "stage": "conditioning",
+      "name": "MPPT controller sensing",
+      "interface": "wired DC from array and battery"
+    },
+    {
+      "stage": "instrument",
+      "name": "MPPT meter",
+      "interface": "display"
     }
   ],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Assemble cam-lock 100mm PU panels to 2.6x2.0x2.1m room with door seals and threshold",
-      "method": "panel assembly",
+      "description": "Set raised galvanized skid with plywood spreaders, bolt corner posts and roof rails, set ground anchors",
+      "method": "bolt-together",
       "parts_present": [
-        "P1",
-        "P9"
+        "P-base",
+        "P-box"
       ]
     },
     {
       "step": 2,
-      "description": "Install twin side racks and fifty vented crates with central aisle and PVC strip curtain",
-      "method": "rack fit-out",
+      "description": "Hand-lock 960mm PU panels to form 2.4x2.0x2.2m box, fit 800mm door with double magnetic gaskets and rain canopy",
+      "method": "cam-lock assembly",
       "parts_present": [
-        "P7",
-        "P8",
-        "P9"
+        "P-box",
+        "P-door"
       ]
     },
     {
       "step": 3,
-      "description": "Erect separate galvanised steel canopy on four anchored footings with vent gap and mount 4kW PV",
-      "method": "canopy and PV mounting",
+      "description": "Fit side slatted racks with 50mm guard rails and central aisle, load 50x 600x400mm 20kg vented crates stacked 5 high",
+      "method": "fit-out",
       "parts_present": [
-        "P10",
-        "P3"
+        "P-box",
+        "P-crates",
+        "P-door"
       ]
     },
     {
       "step": 4,
-      "description": "Wire MPPT controller to PV and 48V LiFePO4 bank and install DC cooler with evaporator fan and condenser",
-      "method": "electrical wiring",
+      "description": "Mount 4x550W array on ground beside room and roof rails, wire MPPT 150V 60A controller to 48V 100Ah bank",
+      "method": "solar install and wiring",
       "parts_present": [
-        "P4",
-        "P5",
-        "P2"
+        "P-array",
+        "P-controller",
+        "P-battery",
+        "P-base"
       ]
     },
     {
       "step": 5,
-      "description": "Place 100kg ice-bank under evaporator and commission staged intake with wash slab workflow",
-      "method": "commissioning",
+      "description": "Install variable-speed DC unit with fan-forced evaporator and condensate drain, commission staged 3-day pull-down with outside sort and FIFO",
+      "method": "refrigeration install and commission",
       "parts_present": [
-        "P6",
-        "P1",
-        "P11"
+        "P-cooling",
+        "P-box",
+        "P-crates",
+        "P-battery",
+        "P-controller"
       ]
     }
   ],
   "risks": [
     {
-      "risk": "Array undersupply on cloudy days with 2kW giving 3.75kWh per day versus 6.05kWh load",
-      "mitigation": "Stage 250kg per day intake over 4 days and upsize to 4kW PV with MPPT plus ice-bank"
+      "risk": "One-shot 1-tonne pull-down of 25 kWh exceeds solar day and battery",
+      "mitigation": "Stage loading over 3 days at ~333 kg per day with outside sort"
     },
     {
-      "risk": "Night deep-discharge without diesel backup",
-      "mitigation": "Retain 48V 240Ah bank near 11.25kWh plus ice-bank for night peak shaving"
+      "risk": "Running 662 W peak all night empties battery",
+      "mitigation": "Run steady 157 W hold with duty cycling; night need ~1.88-4 kWh within 5.12 kWh store"
     },
     {
-      "risk": "Door-opening infiltration adding to wall gain",
-      "mitigation": "Use self-closing door with double gaskets plus PVC strip curtain and two fixed loadings per day"
+      "risk": "Warm air infiltration and spoilage spread from damaged produce",
+      "mitigation": "800 mm door with double gaskets, 3 mm squeeze, brief openings for 1-2 crates and FIFO rotation"
     }
   ],
-  "novelty_claim": "Separate vented steel shade canopy carrying PV above cam-lock PU panels combined with staged intake and daytime-charged ice-bank to shave night battery load.",
-  "cost_class": ">$10k",
+  "novelty_claim": "Flat-pack cam-lock insulated chamber on steel skid with roof array rails combining 1.0 kW variable-speed DC cooling, 50x20 kg vented crates on side racks with aisle, and 3-day staged loading with outside sort and FIFO to fit 2.2 kW solar and 5.12 kWh store",
+  "cost_class": "$1k-10k",
   "figure_spec": {
-    "system_view": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-    "critical_part_id": "P1",
+    "system_view": "Insulated chamber on steel skid with door, racks, crates, central aisle and roof solar rails, with evaporator fan and condensate drain",
+    "critical_part_id": "P-cooling",
     "preferred_view": "isometric"
   },
   "open_questions": [
-    "Battery autonomy in kWh not closed without combined daily load from E1 and E3 for 1.5 days",
-    "Cloudy-sequence refill not closed for E14 fair-sun sizing without 2-3 day low-sun balance",
-    "Door-opening infiltration kWh not added to E10 conduction versus E9 combined load",
-    "Ice-bank kWh contribution to 1.5 days not quantified separately from battery E17",
-    "Ice-bank thermal kWh E23 not converted via COP so combined battery-plus-ice days remain unclosed"
+    "Will overnight electrical use with realistic duty cycling plus door-opening infiltration stay within the 5.12 kWh store during staged pull-down?"
   ]
 }

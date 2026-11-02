@@ -1,14 +1,24 @@
 {
   "id": "E5",
-  "author": "Vibration Control Specialist",
-  "tool": "calc",
-  "purpose": "TMD mass from 2 percent mass ratio",
-  "code_or_query": "20000*0.02",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: steel footbridge damping ratio vertical mode 0.4 percent",
+  "code_or_query": "steel footbridge damping ratio vertical mode 0.4 percent",
   "inputs": {},
-  "output_summary": "400.0",
-  "output_full": "400.0",
+  "output_summary": "1library.net — Guarda Footbridge in Portugal - Design of Footbridges — https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq",
+  "output_full": "1library.net — Guarda Footbridge in Portugal - Design of Footbridges — https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "1library.net",
+      "title": "Guarda Footbridge in Portugal - Design of Footbridges",
+      "year": "",
+      "url": "https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq",
+      "query": "steel footbridge damping ratio vertical mode 0.4 percent",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

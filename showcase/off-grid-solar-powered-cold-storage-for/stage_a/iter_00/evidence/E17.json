@@ -1,14 +1,14 @@
 {
   "id": "E17",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "check autonomy days with updated load",
-  "code_or_query": "11.25*0.8/6.048",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "sketch",
+  "purpose": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.set_title('Solar array + battery for cold room')\n# cold room\nax.text(7,5.2,'cold room',fontsize=10)\nimport matplotlib.patches as mp\nax.add_patch(mp.Rectangle((6,2.5),3,2.5,color='lightblue'))\nax.text(6.3,1.8,'battery+MPPT',fontsize=9)\nax.add_patch(mp.Rectangle((6.3,1.0),1.5,0.7,color='gold'))\n# panels\nfor i,x in enumerate([1,2.5,4]):\n    ax.plot([x,x+1.2],[3.2,4.0],'k-',lw=2)\n    ax.plot([x,x+1.2],[3.2,3.2],'k-')\n    ax.text(x,2.6,f'550W {i+1}',fontsize=8)\nax.annotate('sun',xy=(2.5,4.5),xytext=(2.5,5.3),arrowprops=dict(facecolor='orange'),fontsize=12,ha='center')\nax.annotate('cable to cold room',xy=(6,2),xytext=(3.5,1.2),arrowprops=dict(arrowstyle='->'),fontsize=9)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
   "inputs": {},
-  "output_summary": "1.4880952380952381",
-  "output_full": "1.4880952380952381",
-  "sketch_path": null,
+  "output_summary": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+  "output_full": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+  "sketch_path": "evidence/sketch_17.png",
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 1
 }

@@ -1,0 +1,128 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "cluster": {
+      "phrase": "wheel cluster",
+      "boxes": [
+        [
+          245.625,
+          637.1888726207907,
+          748.125,
+          1184.4216691068814
+        ]
+      ]
+    },
+    "worm": {
+      "phrase": "metal box",
+      "boxes": []
+    },
+    "spine": {
+      "phrase": "metal frame",
+      "boxes": [
+        [
+          669.375,
+          33.733528550512446,
+          1728.75,
+          1083.2210834553441
+        ]
+      ]
+    },
+    "toe": {
+      "phrase": "foot plate",
+      "boxes": []
+    },
+    "handle": {
+      "phrase": "handle bar",
+      "boxes": [
+        [
+          1717.5,
+          29.98535871156662,
+          1854.375,
+          125.56368960468521
+        ]
+      ]
+    },
+    "strap": {
+      "phrase": "fabric strap",
+      "boxes": [
+        [
+          901.875,
+          646.5592972181552,
+          1342.5,
+          1188.1698389458272
+        ]
+      ]
+    },
+    "wheel": {
+      "phrase": "rubber wheel",
+      "boxes": [
+        [
+          530.625,
+          985.7686676427526,
+          729.375,
+          1184.4216691068814
+        ],
+        [
+          245.625,
+          637.1888726207907,
+          406.875,
+          796.4860907759883
+        ],
+        [
+          320.625,
+          788.9897510980967,
+          519.375,
+          983.8945827232797
+        ],
+        [
+          412.5,
+          684.0409956076135,
+          564.375,
+          837.7159590043924
+        ],
+        [
+          635.625,
+          888.316251830161,
+          750.0,
+          1019.502196193265
+        ]
+      ]
+    },
+    "pin": {
+      "phrase": "metal pin",
+      "boxes": []
+    }
+  },
+  "differences": {
+    "cluster": [
+      "expected 2 visible, found 1"
+    ],
+    "worm": [
+      "not found by the segmenter as 'metal box'"
+    ],
+    "spine": [
+      "expected 2 visible, found 1",
+      "size against handle: expected about 1.1 times, measured 7.7 times"
+    ],
+    "toe": [
+      "not found by the segmenter as 'foot plate'"
+    ],
+    "handle": [
+      "expected a vertical long axis, measured horizontal",
+      "size against spine: expected about 0.9 times, measured 0.13 times"
+    ],
+    "strap": [
+      "expected 2 visible, found 1"
+    ],
+    "wheel": [
+      "expected 3 visible, found 5"
+    ],
+    "pin": [
+      "not found by the segmenter as 'metal pin'"
+    ]
+  },
+  "rechecks": []
+}

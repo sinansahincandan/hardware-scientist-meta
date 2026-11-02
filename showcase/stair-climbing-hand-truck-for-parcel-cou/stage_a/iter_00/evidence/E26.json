@@ -1,0 +1,24 @@
+{
+  "id": "E26",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "inputs": {},
+  "output_summary": "stacks.cdc.gov — Cdc 186349 Ds1 — http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
+  "output_full": "stacks.cdc.gov — Cdc 186349 Ds1 — http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "stacks.cdc.gov",
+      "title": "Cdc 186349 Ds1",
+      "year": "",
+      "url": "http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
+      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

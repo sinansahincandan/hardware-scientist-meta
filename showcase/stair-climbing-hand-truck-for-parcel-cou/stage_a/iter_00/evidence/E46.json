@@ -1,0 +1,27 @@
+{
+  "id": "E46",
+  "author": "Dario \u2014 Courier Operations and Serviceability Lead",
+  "tool": "calc",
+  "purpose": "lift energy 15 kg device into van floor 0.6 m",
+  "code_or_query": "Q_(15,'kg')*Q_(9.81,'m/s**2')*Q_(0.6,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "15",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.6",
+      "unit": "m"
+    }
+  },
+  "output_summary": "88.3 kg\u22c5m\u00b2/s\u00b2",
+  "output_full": "88.3 kg\u22c5m\u00b2/s\u00b2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

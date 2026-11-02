@@ -1,0 +1,27 @@
+{
+  "id": "E43",
+  "author": "Chidi - Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "floor uniform pressure from 1 tonne produce",
+  "code_or_query": "(Q_(1000,'kg')*9.81*Q_(1,'m/s**2')/Q_(1,'')/Q_(4.8,'m**2')).to('kPa')",
+  "inputs": {
+    "arg0": {
+      "value": "1000",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "1",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "4.8",
+      "unit": "m**2"
+    }
+  },
+  "output_summary": "2.04 kPa",
+  "output_full": "2.04 kPa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

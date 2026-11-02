@@ -1,0 +1,27 @@
+{
+  "id": "E12",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "energy to lift 60 kg one riser in joules corrected",
+  "code_or_query": "(Q_(60,'kg')*Q_(9.81,'m/s**2')*Q_(0.17,'m')).to('J')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.17",
+      "unit": "m"
+    }
+  },
+  "output_summary": "100 J",
+  "output_full": "100 J",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

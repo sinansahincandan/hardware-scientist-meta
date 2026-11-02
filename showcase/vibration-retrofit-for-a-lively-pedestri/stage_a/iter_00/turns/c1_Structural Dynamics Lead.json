@@ -1,5 +1,0 @@
-{
-  "cycle": 1,
-  "member": "Structural Dynamics Lead",
-  "message": "In the bare 40 m footbridge, Manager, the first vertical bending mode near 1.9 Hertz (Hz) has very low inherent damping and peak motion at midspan in step with normal walking. To check it I used a resonant hand calculation and modal layout reasoning (the resonant response calculation (E1) and the side-view mode-shape layout (E3)). I found about 1.75 metres per second squared for a single 280 Newton pedestrian on 20 tonne modal mass at 0.4 percent damping, well above the 0.5 metres per second squared maximum-comfort limit, according to HIVOSS, 2008. I propose an under-deck Tuned Mass Damper (TMD) at midspan hidden below the deck tuned to 1.9 Hz with about 2 percent mass ratio to raise effective damping above 3 percent. My position: not ready because damping, mass and comfort targets need team review."
-}

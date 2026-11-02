@@ -1,0 +1,14 @@
+{
+  "id": "E44",
+  "author": "Chidi - Enclosure and Structural Designer",
+  "tool": "simulate",
+  "purpose": "chamber volume floor load and panel count check",
+  "code_or_query": "from pint import UnitRegistry\nQ_=UnitRegistry().Quantity\ninternal_L=2.4; internal_W=2.0; internal_H=2.2\nV=internal_L*internal_W*internal_H\nfloor_area=internal_L*internal_W\nmass=1000.0\nproduce_density_bulk=350.0 # kg/m3 crates with air gaps\nproduce_vol=mass/produce_density_bulk\npressure_kPa=mass*9.81/floor_area/1000\ncrate_L=0.6; crate_W=0.4; crate_H=0.22\ncrates_needed=int(mass/20)+2  # ~20kg per crate\nfootprints_per_layer=int((2.0//0.6)*2)  # racks both sides\nprint(f\"V={V:.2f} m3 produce_vol={produce_vol:.2f} m3 fill={produce_vol/V*100:.1f}% pressure={pressure_kPa:.2f} kPa crates~{crates_needed} footprints/layer~{footprints_per_layer}\")",
+  "inputs": {},
+  "output_summary": "V=10.6 m3 produce_vol=2.86 m3 fill=27.1% pressure=2.04 kPa crates~52 footprints/layer~6",
+  "output_full": "V=10.56 m3 produce_vol=2.86 m3 fill=27.1% pressure=2.04 kPa crates~52 footprints/layer~6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

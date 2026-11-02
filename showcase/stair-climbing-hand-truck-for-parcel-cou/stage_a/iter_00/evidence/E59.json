@@ -1,0 +1,14 @@
+{
+  "id": "E59",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "pin double shear stress MPa corrected",
+  "code_or_query": "6130/(2*3.1416*(0.012**2)/4)/1e6",
+  "inputs": {},
+  "output_summary": "27.1",
+  "output_full": "27.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

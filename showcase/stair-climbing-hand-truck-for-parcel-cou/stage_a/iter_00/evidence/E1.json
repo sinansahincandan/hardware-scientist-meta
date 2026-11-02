@@ -1,0 +1,24 @@
+{
+  "id": "E1",
+  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
+  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "inputs": {},
+  "output_summary": "britishsc.co.uk — Spiral Stair Dimensions – At a Glance — https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
+  "output_full": "britishsc.co.uk — Spiral Stair Dimensions – At a Glance — https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "britishsc.co.uk",
+      "title": "Spiral Stair Dimensions – At a Glance",
+      "year": "",
+      "url": "https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
+      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,23 @@
+{
+  "id": "E52",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "required section modulus SF2 corrected",
+  "code_or_query": "(Q_(588,\"N*m\")/Q_(240,\"MPa\")).to(\"cm**3\")",
+  "inputs": {
+    "arg0": {
+      "value": "588",
+      "unit": "N*m"
+    },
+    "arg1": {
+      "value": "240",
+      "unit": "MPa"
+    }
+  },
+  "output_summary": "2.45 cm\u00b3",
+  "output_full": "2.45 cm\u00b3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

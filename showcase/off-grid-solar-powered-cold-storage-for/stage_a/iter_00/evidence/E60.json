@@ -1,0 +1,14 @@
+{
+  "id": "E60",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "calc",
+  "purpose": "peak electrical power from pulldown plus transmission at COP2 plus fan",
+  "code_or_query": "((1040+185)/2+50)",
+  "inputs": {},
+  "output_summary": "662",
+  "output_full": "662",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

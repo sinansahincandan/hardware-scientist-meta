@@ -1,0 +1,24 @@
+{
+  "id": "E16",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228 ergonomic push pull force limits two handed",
+  "code_or_query": "ISO 11228 ergonomic push pull force limits two handed",
+  "inputs": {},
+  "output_summary": "inus04aapb1h3nprod.dxcloud.episerver.net — BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling — 2007 — https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
+  "output_full": "inus04aapb1h3nprod.dxcloud.episerver.net — BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling — 2007 — https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "inus04aapb1h3nprod.dxcloud.episerver.net",
+      "title": "BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling",
+      "year": "2007",
+      "url": "https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
+      "query": "ISO 11228 ergonomic push pull force limits two handed",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

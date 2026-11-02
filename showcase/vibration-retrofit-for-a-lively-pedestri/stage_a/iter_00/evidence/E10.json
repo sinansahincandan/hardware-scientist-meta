@@ -1,14 +1,14 @@
 {
   "id": "E10",
-  "author": "Retrofit Integration Architect",
-  "tool": "calc",
-  "purpose": "verify total static weight for connection sizing",
-  "code_or_query": "400*9.81",
+  "author": "Structural Dynamicist",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "Size under-deck TMD mass tuning and damping for 1.9 Hz mode",
+  "code_or_query": "{\"args\": {\"damping_primary\": 0.004, \"frequency_primary_hz\": 1.9, \"mass_primary_kg\": 20000.0, \"mass_ratio\": 0.04}}",
   "inputs": {},
-  "output_summary": "3924.0",
-  "output_full": "3924.0",
+  "output_summary": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+  "output_full": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
   "sketch_path": null,
   "references": [],
-  "status": "ok",
-  "cycle": 2
+  "status": "error",
+  "cycle": 1
 }

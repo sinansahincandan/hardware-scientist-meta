@@ -1,14 +1,24 @@
 {
   "id": "E1",
-  "author": "Structural Dynamics Lead",
-  "tool": "calc",
-  "purpose": "resonant acceleration single pedestrian baseline",
-  "code_or_query": "280/(2*0.004*20000)",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+  "code_or_query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
   "inputs": {},
-  "output_summary": "1.75",
-  "output_full": "1.75",
+  "output_summary": "matec-conferences.org — Assessment of human-induced vibrations of a cable-stayed footbridge — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_09001.pdf",
+  "output_full": "matec-conferences.org — Assessment of human-induced vibrations of a cable-stayed footbridge — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_09001.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "matec-conferences.org",
+      "title": "Assessment of human-induced vibrations of a cable-stayed footbridge",
+      "year": "2018",
+      "url": "https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_09001.pdf",
+      "query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

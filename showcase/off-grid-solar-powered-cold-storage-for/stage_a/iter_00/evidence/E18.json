@@ -1,14 +1,24 @@
 {
   "id": "E18",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "low-sun daily PV energy at 2 PSH",
-  "code_or_query": "2.5*2*0.75",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
+  "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
   "inputs": {},
-  "output_summary": "3.75",
-  "output_full": "3.75",
+  "output_summary": "fao.org — Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) — https://www.fao.org/4/v5030E/V5030E0r.htm",
+  "output_full": "fao.org — Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) — https://www.fao.org/4/v5030E/V5030E0r.htm\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "fao.org",
+      "title": "Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.)",
+      "year": "",
+      "url": "https://www.fao.org/4/v5030E/V5030E0r.htm",
+      "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 1
 }

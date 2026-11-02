@@ -1,0 +1,24 @@
+{
+  "id": "E36",
+  "author": "Chidi - Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
+  "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+  "inputs": {},
+  "output_summary": "directindustry.com — Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated — https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
+  "output_full": "directindustry.com — Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated — https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "directindustry.com",
+      "title": "Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated",
+      "year": "",
+      "url": "https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
+      "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

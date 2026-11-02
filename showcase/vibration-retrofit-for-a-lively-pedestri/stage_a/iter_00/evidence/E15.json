@@ -1,0 +1,24 @@
+{
+  "id": "E15",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "web_search",
+  "purpose": "search: Setra footbridge vibration comfort limits vertical acceleration 0.7",
+  "code_or_query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+  "inputs": {},
+  "output_summary": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link — https://link.springer.com/article/10.1186/s43251-025-00188-y",
+  "output_full": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link — https://link.springer.com/article/10.1186/s43251-025-00188-y\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "link.springer.com",
+      "title": "Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link",
+      "year": "",
+      "url": "https://link.springer.com/article/10.1186/s43251-025-00188-y",
+      "query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

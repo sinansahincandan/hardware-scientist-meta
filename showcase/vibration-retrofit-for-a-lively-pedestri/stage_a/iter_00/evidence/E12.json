@@ -1,14 +1,14 @@
 {
   "id": "E12",
-  "author": "Structural Dynamics Lead",
-  "tool": "calc",
-  "purpose": "midspan stress increment from TMD weight assuming section modulus",
-  "code_or_query": "3924*40/4/2/0.008",
+  "author": "Structural Dynamicist",
+  "tool": "sketch",
+  "purpose": "Side view of 40m bridge midspan: girders, cross beam, under-hung frame, springs plus damper plus moving mass; end view shows frame locked to bottom flanges, mass free vertically.",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig,(ax1,ax2)=plt.subplots(1,2,figsize=(10,4))\nax1.set_title('Side view midspan TMD')\nax1.plot([0,10],[3,3],'k-',lw=3); ax1.text(5,3.3,'deck / girders')\nax1.plot([4,6],[2.2,2.2],'k-',lw=3); ax1.text(4.2,1.9,'support frame (fixed to flange)')\nfor x in [4.3,5.7]:\n    ax1.plot([x,x],[1.2,2.2],'b-'); ax1.text(x-0.2,1.6,'spring')\nax1.plot([5,5],[1.2,2.2],'r--'); ax1.text(5.1,1.6,'damper')\nax1.add_patch(plt.Rectangle((4.2,0.5),1.6,0.7,fc='gray')); ax1.text(4.3,0.7,'moving mass')\nax1.arrow(5,0.5,0,-0.4); ax1.text(5.1,0.2,'motion')\nax1.set_ylim(0,4); ax1.axis('off')\nax2.set_title('End view')\nax2.plot([2,8],[3,3],'k-',lw=4); ax2.text(4.5,3.2,'deck')\nax2.plot([3,3],[2.2,3],'k-',lw=3); ax2.plot([7,7],[2.2,3],'k-',lw=3)\nax2.text(2.2,2.5,'girders'); ax2.plot([2.5,7.5],[2.2,2.2],'k-',lw=3); ax2.text(4,2.3,'cross beam+frame (fixed)')\nax2.plot([4.5,4.5],[1.2,2.2],'b-'); ax2.plot([5.5,5.5],[1.2,2.2],'b-'); ax2.plot([5,5],[1.2,2.2],'r--')\nax2.add_patch(plt.Rectangle((4.2,0.5),1.6,0.7,fc='gray')); ax2.text(4.4,0.7,'mass')\nax2.set_ylim(0,4); ax2.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
   "inputs": {},
-  "output_summary": "2452500.0",
-  "output_full": "2452500.0",
-  "sketch_path": null,
+  "output_summary": "Side view of 40m bridge midspan: girders, cross beam, under-hung frame, springs plus damper plus moving mass; end view shows frame locked to bottom flanges, mass free vertically.",
+  "output_full": "Side view of 40m bridge midspan: girders, cross beam, under-hung frame, springs plus damper plus moving mass; end view shows frame locked to bottom flanges, mass free vertically.",
+  "sketch_path": "evidence/sketch_12.png",
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 1
 }

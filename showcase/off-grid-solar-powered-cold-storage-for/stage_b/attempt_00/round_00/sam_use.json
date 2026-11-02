@@ -1,0 +1,40 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "P-array": [
+      "size against P-box: expected about 0.95 times, measured 3.1 times",
+      "expected to touch P-base, but they are apart in the picture"
+    ],
+    "P-battery": [
+      "not found by the segmenter as 'battery box'"
+    ],
+    "P-controller": [
+      "expected 1 visible, found 4"
+    ],
+    "P-box": [
+      "expected 1 visible, found 29"
+    ],
+    "P-base": [
+      "expected 1 visible, found 4",
+      "expected a horizontal long axis, measured vertical",
+      "expected to touch P-array, but they are apart in the picture"
+    ],
+    "P-door": [
+      "expected 1 visible, found 2",
+      "size against P-box: expected about 0.95 times, measured 3 times"
+    ],
+    "P-cooling": [
+      "not found by the segmenter as 'cooler'"
+    ],
+    "P-crates": [
+      "expected 12 visible, found 25",
+      "size against P-box: expected about 0.25 times, measured 0.51 times"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": []
+}

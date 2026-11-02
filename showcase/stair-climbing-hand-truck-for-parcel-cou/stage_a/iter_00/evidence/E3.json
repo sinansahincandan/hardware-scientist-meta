@@ -1,0 +1,24 @@
+{
+  "id": "E3",
+  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
+  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "inputs": {},
+  "output_summary": "gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials — https://gharpedia.com/blog/tread-and-riser-size/",
+  "output_full": "gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials — https://gharpedia.com/blog/tread-and-riser-size/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "gharpedia.com",
+      "title": "Tread and Riser Size: Safe Stair Design Essentials",
+      "year": "",
+      "url": "https://gharpedia.com/blog/tread-and-riser-size/",
+      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

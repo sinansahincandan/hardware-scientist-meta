@@ -1,14 +1,24 @@
 {
   "id": "E10",
-  "author": "Structural Enclosure Designer",
-  "tool": "calc",
-  "purpose": "door panel conduction check for insulated door",
-  "code_or_query": "0.23*0.9*1.9*35",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
   "inputs": {},
-  "output_summary": "13.765500000000001",
-  "output_full": "13.765500000000001",
+  "output_summary": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+  "output_full": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "thesolarstore.com",
+      "title": "EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery",
+      "year": "",
+      "url": "https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

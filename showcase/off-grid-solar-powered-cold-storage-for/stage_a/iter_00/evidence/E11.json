@@ -1,14 +1,24 @@
 {
   "id": "E11",
-  "author": "Structural Enclosure Designer",
-  "tool": "sketch",
-  "purpose": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd();\nfig, ax = plt.subplots(figsize=(8,6));\nax.set_xlim(0,10); ax.set_ylim(0,8); ax.set_aspect('equal'); ax.axis('off');\nax.text(5,7.5,'PV shade canopy with 150mm vent gap',ha='center',fontsize=9);\nax.plot([1,9],[7,7],lw=3); ax.plot([1,9],[6.5,6.5],lw=2);\nfor x in [2,4,6,8]:\n  ax.plot([x,x],[6.5,7],lw=1,linestyle='--');\n  ax.text(x,6.75,'vent',ha='center',fontsize=7);\nax.text(1.2,6.0,'100mm PU roof panel',fontsize=8);\nax.add_patch(plt.Rectangle((1,3),8,3,fill=False,lw=2));\nax.text(5,5.8,'cold room 2.6 x 2.0m',ha='center',fontsize=8);\nax.add_patch(plt.Rectangle((1.5,3.5),2,2,fill=False,lw=1.5));\nax.add_patch(plt.Rectangle((6.5,3.5),2,2,fill=False,lw=1.5));\nax.text(2.5,4.4,'twin side rack\\n25 crates',ha='center',fontsize=7);\nax.text(7.5,4.4,'twin side rack\\n25 crates',ha='center',fontsize=7);\nax.text(5,4.0,'central aisle',ha='center',fontsize=7);\nax.add_patch(plt.Rectangle((4,2),2,1,fill=False,lw=2));\nax.text(5,2.5,'hinged door\\n0.9x1.9m',ha='center',fontsize=7);\nax.plot([4,4],[2,3],lw=3); ax.plot([6,6],[2,3],lw=3);\nax.text(6.3,2.3,'double gasket\\n+ cam lock',fontsize=7);\nax.text(1.2,3.1,'cam-lock PU panel joint',fontsize=7);\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150);",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
   "inputs": {},
-  "output_summary": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-  "output_full": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-  "sketch_path": "evidence/sketch_11.png",
-  "references": [],
+  "output_summary": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+  "output_full": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "bigweibattery.com.au",
+      "title": "48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid",
+      "year": "",
+      "url": "https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

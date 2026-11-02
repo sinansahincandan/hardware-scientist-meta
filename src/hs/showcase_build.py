@@ -80,7 +80,7 @@ def copy_run(run_dir: Path, dest: Path) -> None:
                 continue
             keep = item.suffix in (".json", ".md", ".txt") or (
                 item.suffix == ".png" and any(k in item.name for k in
-                ("schematic", "render", "annotated", "local_", "edited_", "sketch_")))
+                ("schematic", "render", "annotated", "local_", "edited_", "sketch_", "sam_overlay")))
             if keep:
                 target = dest / item.relative_to(run_dir)
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -272,6 +272,59 @@ def _stage_b_steps(rd: dict[str, Any]) -> list[tuple[str, str]]:
     return steps
 
 
+INDEX_STYLE = """<style>
+body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:#0f1216;color:#e8eaed;margin:0}
+header{max-width:1240px;margin:0 auto;padding:44px 28px 10px}
+header h1{font-size:44px;margin:0;letter-spacing:-.5px}
+header p{font-size:19px;color:#b8c0cc;max-width:900px;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.flow span{background:#1d232b;border:1px solid #2f3a46;border-radius:20px;padding:6px 14px;font-size:14px;color:#cfd6df}
+.flow b{color:#7cc4ff}
+.card{max-width:1240px;margin:28px auto;background:#171b21;border:1px solid #262d36;border-radius:18px;overflow:hidden}
+.top{display:grid;grid-template-columns:1.35fr 1fr;align-items:start}
+.top img{width:100%;height:auto;display:block}
+.text{padding:26px 28px}
+.text h2{font-size:28px;margin:0 0 8px;line-height:1.2}
+.prob{color:#9aa4b1;font-size:15px;line-height:1.5}
+.mech{font-size:19px;line-height:1.5;margin:14px 0;color:#fff}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.stats span{background:#0f1216;border:1px solid #2f3a46;border-radius:10px;padding:6px 10px;font-size:13px}
+.stats b{display:block;font-size:20px;color:#7cc4ff}
+ol{padding-left:20px;font-size:15px;line-height:1.55}
+.q{border-left:4px solid #f0b429;background:#1f1a0e;padding:10px 14px;font-size:15px;border-radius:6px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#262d36}
+.strip a{position:relative;display:block;background:#0f1216}
+.strip img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+.strip span{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.78);color:#fff;padding:4px 9px;border-radius:8px;font-size:13px}
+.links{padding:14px 28px;font-size:15px}.links a{color:#7cc4ff;margin-right:18px}
+@media (max-width:900px){.top{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}}
+</style>"""
+
+
+def _stats(run_dir: Path) -> list[tuple[str, str]]:
+    """Numbers for the index card, read from the run's files."""
+    revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) if (run_dir / "master_prompt").exists() else []
+    roster = re.findall(r"^###\s+(.+?)\s*$", revs[0].read_text(encoding="utf-8").split("## 3.")[0],
+                        flags=re.MULTILINE) if revs else []
+    iters = sorted(run_dir.glob("stage_a/iter_*"))
+    ev = [e for it in iters for e in _read_json(it / "whiteboard.json").get("evidence", [])]
+    count = {t: sum(1 for e in ev if str(e.get("tool", "")).split(":")[0] in t) for t in
+             (("web_search",), ("calc", "vetted_calc", "simulate"), ("sketch",))}
+    closure = _read_json(iters[-1] / "closure.json") if iters else {}
+    verdict = _read_json(iters[-1] / "verdict.json") if iters else {}
+    rounds = len(list(run_dir.glob("stage_b/attempt_*/round_*/eval.json")))
+    cost = float(_read_json(run_dir / "cost.json").get("total_usd", 0))
+    out = [(str(len(roster)), "expert members"), (str(count[("web_search",)]), "sources found"),
+           (str(count[("calc", "vetted_calc", "simulate")]), "calculations"), (str(count[("sketch",)]), "sketches")]
+    if closure:
+        out.append((f"{closure.get('cycles_used')} cycles",
+                    "consensus" if closure.get("closed_by") == "consensus" else "cycle cap"))
+    if verdict:
+        out.append(("accepted" if verdict.get("accept") else "sent back", f"meeting {len(iters)}"))
+    out += [(str(rounds), "picture rounds"), (f"${cost:.2f}", "Meta API cost")]
+    return out
+
+
 def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
     fmap = json.loads((ROOT / "docs" / "figures_map.json").read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
@@ -282,39 +335,40 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
         copy_run(run_dir, dest)
         _dossier(run_dir, dest, fmap)
         problem, sol = _problem(run_dir), _final_solution(run_dir)
-        rounds = _rounds(run_dir)
-        revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) \
-            if (run_dir / "master_prompt").exists() else []
-        fig_rel = f"{slug}/final/figure.png"
-        seeded = _read_json(run_dir / "seeded_from.json")
-        evo: list[str] = []
-        if seeded:
-            evo.append(f"This run redrew the accepted solution of run {seeded.get('source_run')}; no council "
-                       "meeting ran in it.")
-        elif revs:
-            evo.append(f"The council met {len(_archive(run_dir))} times; the Manager rewrote the master prompt "
-                       f"{len(revs) - 1} times.")
-        for rd in rounds:
-            kept = [p_["part"] for p_ in rd["progress"]
-                    if p_["fixed_region_pass"] and p_["previous_pass"] and not p_["seam_visible"]]
-            evo.append(f"Picture {rd['attempt'] + 1}, round {rd['round'] + 1}: "
-                       f"{DECISION_WORDS.get(rd['decision'], rd['decision'])}"
-                       + (f"; a local repair of {', '.join(kept)} was kept" if kept else "") + ".")
+        sketches = sorted(dest.glob("stage_a/iter_*/evidence/sketch_*.png"),
+                          key=lambda q: int(q.stem.split("_")[-1]) if q.stem.split("_")[-1].isdigit() else 0)
+        overlays = sorted(dest.glob("stage_b/attempt_*/round_*/sam_overlay.png"))
+        thumbs = [(sketches[-1] if sketches else None, "The council's own sketch"),
+                  (overlays[-1] if overlays else None, "What SAM 3.1 saw"),
+                  (dest / "final" / "panel_B.png", "Critical part"),
+                  (dest / "final" / "panel_D.png", "How it is made")]
+        strip = "".join(f"<a href='{slug}/{t.relative_to(dest).as_posix()}'><img src='{slug}/{t.relative_to(dest).as_posix()}'>"
+                        f"<span>{html.escape(cap)}</span></a>" for t, cap in thumbs if t is not None and t.exists())
+        stats = "".join(f"<span><b>{html.escape(v)}</b>{html.escape(k)}</span>" for v, k in _stats(run_dir))
         choices = "".join(f"<li>{html.escape(str(c))}</li>" for c in sol.get("decisive_choices", []))
-        cards.append(f"""<section class="hero"><h1 style="color:#fff">{html.escape(str(problem.get('title', slug)))}</h1>
-<p class="mech">{html.escape(str(sol.get('mechanism_sentence', '')))}</p></section>
-<h2>The problem</h2><p>{html.escape(_prompt_text(problem))}</p>
-<a href="{fig_rel}"><img src="{fig_rel}" alt="final concept figure" style="max-width:100%"></a>
-<p class="small">Final concept figure — click to enlarge.</p>
-<h2>Three decisive choices</h2><ol>{choices}</ol>
-<div class="q"><b>Open question:</b> {html.escape(str(sol.get('open_question', '')))}</div>
-<h2>Evolution</h2>{''.join(f'<div class="event">{html.escape(e)}</div>' for e in evo)}
-<p><a href="{slug}/report.html">Full report</a> · <a href="{slug}/board.html">Whiteboard replay</a> ·
-<a href="{slug}/references.md">Reference list</a> · <a href="{slug}/dossier.html">Dossier</a></p>""")
+        hero = f"{slug}/final/panel_A.png" if (dest / "final" / "panel_A.png").exists() else ""
+        cards.append(f"""<section class="card"><div class="top">
+<a href="{slug}/final/figure.png">{f'<img src="{hero}" alt="the concept">' if hero else ''}</a>
+<div class="text"><h2>{html.escape(str(problem.get('title', slug)))}</h2>
+<p class="prob">{html.escape(_prompt_text(problem))}</p>
+<p class="mech">{html.escape(str(sol.get('mechanism_sentence', '')))}</p>
+<div class="stats">{stats}</div>
+<ol>{choices}</ol>
+<div class="q"><b>Open question:</b> {html.escape(str(sol.get('open_question', '')))}</div></div></div>
+<div class="strip">{strip}</div>
+<div class="links"><a href="{slug}/final/figure.png">Full figure</a><a href="{slug}/board.html">The council's whiteboard</a>
+<a href="{slug}/report.html">Report</a><a href="{slug}/dossier.html">Dossier</a><a href="{slug}/REVIEW.md">Review</a></div></section>""")
     (out / "index.html").write_text(
-        f"<!doctype html><html><head><meta charset='utf-8'><title>Hardware Scientist — showcase</title>"
-        f"{STYLE}</head><body><main><h1>Hardware Scientist — three problems, three concepts</h1>"
-        + "".join(cards) + "</main></body></html>", encoding="utf-8")
+        "<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'>"
+        f"<title>Hardware Scientist</title>{INDEX_STYLE}</head><body><header><h1>Hardware Scientist</h1>"
+        "<p>Give it a hardware problem in plain words. A council of AI engineers searches the literature, computes "
+        "and sketches on a shared whiteboard; an evaluator judges the concept; a manager coaches the council when "
+        "it fails. Then the accepted concept is drawn, measured by SAM 3.1, critiqued and redrawn until the picture "
+        "matches the design. All models: Meta Muse Spark, Muse Image and SAM 3.1.</p>"
+        "<div class='flow'><span><b>1</b> problem</span><span><b>2</b> council on a whiteboard</span>"
+        "<span><b>3</b> evaluator</span><span><b>4</b> manager rewrites the council's prompt</span>"
+        "<span><b>5</b> mechanism sketch → render</span><span><b>6</b> SAM + critic → keep or revert</span>"
+        "<span><b>7</b> concept figure</span></div></header>" + "".join(cards) + "</body></html>", encoding="utf-8")
     return out / "index.html"
 
 

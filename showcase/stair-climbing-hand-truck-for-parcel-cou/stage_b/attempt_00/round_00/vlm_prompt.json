@@ -1,58 +1,64 @@
 {
-  "prompt": "Light-background realistic rendered product-style side view of fixed twin tri-star braked courier trolley mid-climb on stairs. Vertical single spine in centre, folding handle extended up at top, folding toe extended forward low carrying a parcel box, twin fixed tri-star clusters at base with six small wheels contacting two stair nosings simultaneously. One-way clutch and deadman disc mounted exposed on side of star axle and clearly visible, not hidden. Show FIXED spine to star axle versus FOLDING handle hinge and FOLDING toe hinge. Draw subtle force arrows from toe up spine to stars to stairs and braking at clutch to disc. Draw only these 5 short callouts with leader lines, no numbers in image: spine, twin fixed tri-stars, wheels, one-way clutch, deadman disc. Keep relative sizes and connections of reference.",
+  "prompt": "Photorealistic side-profile product shot of a stair-climbing hand truck paused mid-climb on a concrete residential stair flight, no text or labels. Two three-wheeled tri-star clusters with 150mm solid black rubber wheels on steel tri-arms contact two adjacent stair noses. Central steel worm gearbox housing mounted visibly on the cluster axle between the frames, with small pawl block and short hand crank. Twin parallel brushed aluminium spine tubes run diagonally parallel to the stair slope, L-shaped. At the lower end a hinged aluminium toe plate sticks out horizontally carrying a large brown cardboard parcel strapped vertically against the spine with black polyester webbing. At the upper end a telescopic closed-loop aluminium handle with steel dead-man lever. Real materials: brushed aluminium, dark steel, matte black rubber, plywood-like toe, corrugated cardboard. Soft daylight product lighting, sharp focus on mechanism, shallow depth of field, residential stairwell context, operating tilt, all six wheels, both clusters, gearbox, spine, toe, parcel and handle clearly visible and correctly connected.",
   "must_not": [
-    "numbers, dimensions, values or extra words in drawn labels",
-    "dark background or cluttered workshop",
-    "exploded view or hidden internals",
-    "folded stow view only",
-    "single wheel or rotating star without stair contact"
+    "written labels or annotations",
+    "numeric readouts or dimensions",
+    "arrow diagrams or leader lines",
+    "margins, borders or scale bars",
+    "transparent or cutaway views",
+    "cartoon or wireframe styling"
   ],
-  "changes_from_previous": "Initial version, no previous rounds",
+  "changes_from_previous": "Initial version, no prior image to revise.",
   "visual_plan": {
-    "view": "side",
-    "spatial_layout": "side view: vertical spine centre, folding handle up top, folding toe forward low with parcel, twin tri-star clusters low rear on stair nosings, wheels around stars, clutch and disc exposed at star axle side, stairs rising left to right behind",
-    "operating_moment": "deployed trolley climbing stairs with two-nosing contact, loaded parcel on toe, holding load then deadman-metered braked descent",
-    "transfer_path": "Force: folding toe -> spine -> twin tri-stars -> stair nosings | Measured: one-way clutch -> deadman disc",
-    "interactions": "parcel sits on folding toe hinged to spine, spine fixed with keyed axle to twin tri-stars, tri-stars carry three wheels each on star-wheel axles, one-way clutch locks star axle for hold, deadman disc meters star rotation for descent, folding handle hinged to top of spine for pull",
+    "view": "true side elevation, camera perpendicular to stair flight, full device and two steps visible",
+    "spatial_layout": "Side view perpendicular to stair flight. Stair flight diagonals from lower left to upper right with 170mm riser 280mm tread profile. Cluster centered on stair noses in middle ground. Spine diagonal above cluster parallel to slope. Toe and parcel low-forward over steps. Handle high to upper right. Fixed stair below, moving cluster mid-rotation, fixed spine and toe relative to each other during hold.",
+    "operating_moment": "Paused mid-step ascent with load aboard: one wheel of each tri-star on lower tread nose and one on upper nose, parcel strapped on toe, spine reclined ~30 deg, worm holding position without hand grip, showing lift of one riser.",
+    "transfer_path": "Hand pull at closed-loop handle into spine and via crank into self-locking worm to tri-star axle to stair nose reaction lifting toe and parcel one step.",
+    "interactions": "Wheels roll on stair noses, tri-arms pivot about central axle, worm gearbox locks axle to spine, spine carries parcel weight to axle, toe hinge supports parcel from below with straps clamping parcel to spine, handle loop transmits pull into spine and crank into worm.",
     "avoid": [
-      "numbers or values in drawn text",
-      "hidden clutch or disc inside housing",
-      "top or front view",
-      "dark background",
-      "folded view or van interior"
+      "hiding gearbox inside frame",
+      "showing wrong wheel count per cluster",
+      "flat schematic colors",
+      "floating parts without contact",
+      "top or front view"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "s_star",
-      "material": "COTS",
-      "purpose": "bridge stairs with two-nosing contact",
-      "callout": "twin fixed tri-stars"
+      "part_id": "cluster",
+      "material": "steel tri-arm with black rubber wheels",
+      "purpose": "rotate 120 deg to step over risers and lift load",
+      "callout": "tri-star wheel cluster"
     },
     {
-      "part_id": "s_spine",
-      "material": "6061-T6",
-      "purpose": "carry bending moment vertically",
-      "callout": "spine"
+      "part_id": "wheel",
+      "material": "solid black rubber on steel hub",
+      "purpose": "roll on stair noses, three per cluster side",
+      "callout": "solid puncture-proof wheels"
     },
     {
-      "part_id": "s_wheel",
-      "material": "COTS",
-      "purpose": "roll and climb with star",
-      "callout": "wheels"
+      "part_id": "worm",
+      "material": "steel gearbox housing with crank",
+      "purpose": "reduce crank effort and hold cluster hands-free",
+      "callout": "self-locking worm drive plus pawl"
     },
     {
-      "part_id": "s_csk",
-      "material": "COTS",
-      "purpose": "hold load with one-way lock",
-      "callout": "one-way clutch"
+      "part_id": "spine",
+      "material": "brushed 6061-T6 aluminium tubes with steel inserts",
+      "purpose": "carry load as main structure and fold flat",
+      "callout": "L-frame spine twin tubes"
     },
     {
-      "part_id": "s_disc",
-      "material": "COTS",
-      "purpose": "meter braked descent",
-      "callout": "deadman disc"
+      "part_id": "toe",
+      "material": "aluminium plate with anti-slip pads",
+      "purpose": "support parcel from below and fold for stowage",
+      "callout": "hinged toe plate with backrest"
+    },
+    {
+      "part_id": "handle",
+      "material": "aluminium loop with steel brake lever",
+      "purpose": "two-hand pull and dead-man descent control",
+      "callout": "telescopic closed-loop handle"
     }
-  ],
-  "label_mode": "image"
+  ]
 }

@@ -1,0 +1,24 @@
+{
+  "id": "E28",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: deadman brake lever hand truck stair climber safety",
+  "code_or_query": "deadman brake lever hand truck stair climber safety",
+  "inputs": {},
+  "output_summary": "handtrucks2go.com — 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... — https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html",
+  "output_full": "handtrucks2go.com — 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... — https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "handtrucks2go.com",
+      "title": "52'' Vertical Loop Hydraulic Brake Hand Truck with Stair...",
+      "year": "",
+      "url": "https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html",
+      "query": "deadman brake lever hand truck stair climber safety",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

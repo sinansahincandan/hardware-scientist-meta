@@ -1,14 +1,24 @@
 {
   "id": "E3",
-  "author": "Refrigeration and Thermal Engineer",
-  "tool": "calc",
-  "purpose": "steady conduction through 100mm PU walls for 28m2 room at 35K delta-T",
-  "code_or_query": "0.022/0.10*28*35",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
   "inputs": {},
-  "output_summary": "215.59999999999997",
-  "output_full": "215.59999999999997",
+  "output_summary": "la.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+  "output_full": "la.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "la.china-yiteng.com",
+      "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+      "year": "",
+      "url": "https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,14 +1,24 @@
 {
   "id": "E5",
-  "author": "Structural Enclosure Designer",
-  "tool": "calc",
-  "purpose": "crate net volume for 50 crates of 1 tonne",
-  "code_or_query": "50*0.6*0.4*0.226",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
+  "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
   "inputs": {},
-  "output_summary": "2.712",
-  "output_full": "2.712",
+  "output_summary": "renewableoutdoors.com — SunGoldPower 550W Monocrystalline PERC Solar Panel — https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
+  "output_full": "renewableoutdoors.com — SunGoldPower 550W Monocrystalline PERC Solar Panel — https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "renewableoutdoors.com",
+      "title": "SunGoldPower 550W Monocrystalline PERC Solar Panel",
+      "year": "",
+      "url": "https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
+      "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

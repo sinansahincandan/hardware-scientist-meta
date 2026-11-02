@@ -1,14 +1,24 @@
 {
   "id": "E13",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "battery nominal kWh for 6kWh/day staged load with 1.5 days autonomy at 80% DoD",
-  "code_or_query": "6*1.5/0.8",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+  "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
   "inputs": {},
-  "output_summary": "11.25",
-  "output_full": "11.25",
+  "output_summary": "medium.com — Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium — https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
+  "output_full": "medium.com — Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium — https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "medium.com",
+      "title": "Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium",
+      "year": "",
+      "url": "https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
+      "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

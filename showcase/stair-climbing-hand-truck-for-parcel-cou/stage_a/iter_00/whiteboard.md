@@ -1,61 +1,90 @@
 # Whiteboard
-## Inspirations
-- A1: the render never matched the schematic after 3 rounds: LABEL: 'tri-star clusters' leader ends on parcel/box not star hardware, 'spine' leader ends on axle bracket not central tube; SIZE: spine hugely 
-- A2: Concept works and is buildable. Twin fixed tri-stars R95mm + 100mm wheels bridging 170R/280G with two-nosing contact is proven architecture per US4142732A Boyd pair of star plates + wheels + handle-ca
 ## Functions
+- F1 [Mara — Stair-Climbing Mechanism Engineer] Lift and lower 60 kg load step by step on stairs with one operator
+- F2 [Mara — Stair-Climbing Mechanism Engineer] Hold load on stair slope without continuous operator grip force
+- F3 [Tomas — Human Factors and Safety Engineer] Operate up and down stairs with two-hand posture and effort one courier can sustain
+- F4 [Lena — Lightweight Structures and Folding Design Engineer] Carry 60 kg load with frame weight under 15 kg and fold flat for van stowage
+- F5 [Dario — Courier Operations and Serviceability Lead] Secure 60 kg parcels up to 800 mm and stow folded device in van with 5-minute field service
 ## Concepts
+- C1 [Mara — Stair-Climbing Mechanism Engineer, open, for F1] tri-star wheel cluster: two side clusters each with 3 wheels of 150 mm diameter on rotating arm for stepping over 160-180 mm risers
+- C2 [Mara — Stair-Climbing Mechanism Engineer, open, for F2] self-locking worm drive plus pawl on tri-star axle: holds cluster without hand grip, hand crank releases step by step for descent control
+- C3 [Mara — Stair-Climbing Mechanism Engineer, open, for F1] assumed_constraint: design stairs riser 170 mm tread 280 mm stair angle about 31 deg based on residential range 150-190 mm riser 250-300 mm tread
+- C4 [Tomas — Human Factors and Safety Engineer, open, for F3] assumed_constraint: two-hand closed-loop handle height 900-1100 mm adjustable, grip diameter 30 mm, sustained pull under 150 N per operator based on Snook psychophysical limits
+- C5 [Lena — Lightweight Structures and Folding Design Engineer, open, for F4] L-frame in 6061-T6 aluminium rectangular tube spine with high-strength steel hinge inserts, hinged toe plate and telescopic closed-loop handle
+- C6 [Lena — Lightweight Structures and Folding Design Engineer, open, for F4] 2-step fold to flat: toe plate folds up against spine step 1, telescopic handle collapses and tri-star cluster tucks step 2 to envelope under 1200x600x300 mm
+- C7 [Lena — Lightweight Structures and Folding Design Engineer, open, for F4] assumed_constraint: frame carries 60 kg load plus 15 kg device with safety factor 2 on yield and folded envelope 1200x600x300 mm for van aisle and door stowage
+- C8 [Dario — Courier Operations and Serviceability Lead, open, for F5] Parcel containment: 450x350 mm toe plate with upstand plus 1100 mm backrest, two 25 mm adjustable straps with buckles and anti-slip pads, accepts boxes to 800 mm side
+- C9 [Dario — Courier Operations and Serviceability Lead, open, for F5] Van and service package: solid puncture-proof wheels, replaceable skid/wear pads at stair noses, single-tool quick pins for wheel and strap swap under 5 min, folded slab anchored on van floor with bungee / rail lock
+- C10 [Tomas — Human Factors and Safety Engineer, open, for F3] Dead-man brake lever on closed-loop handle plus toe-plate heel guard, anti-slip nosing pads and two-hand stair stance procedure: operator uphill of load, brake locked each step
 ## Evidence
-- E1 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 3.450453333333333e-07 (ok)
-- E2 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 27631151848.645977 millimeter * newton / meter ** 3 (ok)
-- E3 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 345045.3333333333 (ok)
-- E4 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 11501.511111111111 (ok)
-- E5 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 27.631151848645974 (ok)
-- E6 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 8900.266666666666 (ok)
-- E7 [simulate, Jonas - Ergonomics and Courier Safety Specialist] RESULT: O1 VIRTUAL-BENCH PASS: 60s hold 38.5Nm/405N no slip (CSK30 SF2.86 + R60 disc 1604N), metered 40.5N no runaway no >150N spike all mu/risers; unbraked 405.3N confirmed FAIL -> brake mandatory (ok)
-- E8 [simulate, Priya - Folding and Van Integration Designer] FOLD TIME: H1+H2 2 hinges x 8s + 10s lock = 26s <30s PASS (ok)
-- E9 [sketch, Priya - Folding and Van Integration Designer] Priya frozen envelope: deployed vs folded, fixed stars+spine vs folding H1/H2, no-text overlay discipline (ok)
-- E10 [calc, Priya - Folding and Van Integration Designer] NameError: name 'atan' is not defined (error)
-- E11 [calc, Priya - Folding and Van Integration Designer] 19.36293230061209 (ok)
-- E12 [calc, Priya - Folding and Van Integration Designer] 18.189045699651313 (ok)
-- E13 [simulate, Priya - Folding and Van Integration Designer] P1 RESOLVE TRACE: E8 sweep+E9 sketch+E11/E12 tip+E-DESTACO-search + MIL-STD-810 Cat4 1.04Grms sealed stow (ok)
-- E14 [calc, Leo - Courier Operations and Service Lead] 327.566787083184 (ok)
-- E15 [calc, Leo - Courier Operations and Service Lead] 0.12155 (ok)
-- E16 [sketch, Leo - Courier Operations and Service Lead] Leo ops-figure gate: door/landing/van with 420mm track 340mm clearance 306mm conservative landing diag stow (ok)
-- E17 [simulate, Jonas - Ergonomics and Courier Safety Specialist] RESULT: O5 VIRTUAL-BENCH PASS - braked 40.5N no runaway no >150N spike all cases; intermittent avg 40N HSE compliant (ok)
-- E18 [simulate, Priya - Folding and Van Integration Designer] RESULT: P1 VIRTUAL-BENCH PASS lat19.36 lon18.19 >10deg van-brake, SF5.66, 1.04Grms latched (ok)
-- E19 [calc, Leo - Courier Operations and Service Lead] 518.0 (ok)
-- E20 [sketch, Leo - Courier Operations and Service Lead] Leo ops-figure gate v3: door/landing/van geometric proof, fixed vs folding COUNT, two-nosing CONTACT (ok)
-- E21 [calc, Leo - Courier Operations and Service Lead] 171.0 (ok)
-- E22 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 35.706795302013425 (ok)
-- E23 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 3.727676665967415 (ok)
-- E24 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 2.884604992657856 (ok)
-- E25 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 41.44672777296896 (ok)
-- E26 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 2.857142857142857 (ok)
-- E27 [sketch, Maya - Structural and Stair-Climb Mechanism Engineer] Maya frozen spine 60x40x4 vertical 60mm depth HAZ 25mm off peak gusset (ok)
-- E28 [simulate, Priya - Folding and Van Integration Designer] P1 VIRTUAL-BENCH PASS (ok)
-- E29 [sketch, Priya - Folding and Van Integration Designer] Priya frozen envelope v3: deployed vs folded standing, FIXED stars+spine vs FOLDING H1/H2, tip geometry, no-text overlay discipline (ok)
-- E30 [calc, Leo - Courier Operations and Service Lead] 327.566787083184 (ok)
-- E31 [calc, Leo - Courier Operations and Service Lead] 342 (ok)
-- E32 [calc, Leo - Courier Operations and Service Lead] 306 (ok)
-- E33 [calc, Leo - Courier Operations and Service Lead] 0.12155 (ok)
-- E34 [sketch, Leo - Courier Operations and Service Lead] Leo ops-figure v4 geometric proof: door 420 track/340 clearance, landing two-nosing 170R/280G diag 328, van stow standing (ok)
-- E35 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (error)
-- E36 [calc, Maya - Structural and Stair-Climb Mechanism Engineer] 345045.3333333333 (ok)
-- E37 [simulate, Maya - Structural and Stair-Climb Mechanism Engineer] RESULT: strong-axis 27.63MPa SF3.73 PASS; weak-axis 35.71MPa SF2.88 PASS supersedes 62.3MPa net-section error; impact 41.45MPa SF2.48 PASS (ok)
-- E38 [simulate, Jonas - Ergonomics and Courier Safety Specialist] RESULT: O1/O5 VIRTUAL-BENCH PASS (ok)
+- E1 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: residential stair riser tread dimensions standard 170 mm building code: britishsc.co.uk — Spiral Stair Dimensions – At a Glance — https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/
+- E2 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: residential stair riser tread dimensions standard 170 mm building code: dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase — https://dreamcivil.com/staircase-design/
+- E3 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: residential stair riser tread dimensions standard 170 mm building code: gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials — https://gharpedia.com/blog/tread-and-riser-size/
+- E4 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: tri star stair climbing trolley 150 kg wheel cluster dimensions: tradeproductsdirect.co.uk — Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150kg Capacity) — https://www.tradeproductsdirect.co.uk/p/steel-stair-climbing-trolley-150kg/
+- E5 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: tri star stair climbing trolley 150 kg wheel cluster dimensions: brand-supermarket.com — Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands — https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html
+- E6 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: tri star stair climbing trolley 150 kg wheel cluster dimensions: marketplacemedia.witglobal.net — Staircase trolley 3-star solid rubber wheels fitted with plastic rims and roller bearings make it easier to perform the — https://marketplacemedia.witglobal.net/source/marketplace/stmedia/wuerth/documents/documents/std.lang.all/56193102.pdf
+- E7 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: self locking worm gearbox hand winch brake holding load: winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop — https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch
+- E8 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: self locking worm gearbox hand winch brake holding load: winchshop.co.uk — 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop — https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1
+- E9 [web_search, Mara — Stair-Climbing Mechanism Engineer] search: self locking worm gearbox hand winch brake holding load: winchshop.co.uk — 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop — https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch
+- E10 [calc, Mara — Stair-Climbing Mechanism Engineer] energy to lift 60 kg one riser: 100 kg⋅m
+- E11 [calc, Mara — Stair-Climbing Mechanism Engineer] energy to lift 60 kg one riser in joules: failed: pint.errors.DimensionalityError: Cannot convert from 'kilogram * meter' ([mass] * [length]) to 'joule' ([mass] * [length] ** 2 / [time] ** 2) (failed)
+- E12 [calc, Mara — Stair-Climbing Mechanism Engineer] energy to lift 60 kg one riser in joules corrected: 100 J
+- E13 [calc, Mara — Stair-Climbing Mechanism Engineer] tri-star cluster torque with total mass and radius: 184 m⋅N
+- E14 [sketch, Mara — Stair-Climbing Mechanism Engineer] Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle: Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle
+- E15 [web_search, Tomas — Human Factors and Safety Engineer] search: ISO 11228 ergonomic push pull force limits two handed: shop.standards.ie — Buy BS ISO 11228-2:2007 | NSAI — 2007 — https://shop.standards.ie/en-ie/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
+- E16 [web_search, Tomas — Human Factors and Safety Engineer] search: ISO 11228 ergonomic push pull force limits two handed: inus04aapb1h3nprod.dxcloud.episerver.net — BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling — 2007 — https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
+- E17 [web_search, Tomas — Human Factors and Safety Engineer] search: ISO 11228 ergonomic push pull force limits two handed: intertekinform.com — Buy BS ISO 11228-2:2007 | Intertek Inform — 2007 — https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
+- E18 [web_search, Tomas — Human Factors and Safety Engineer] search: EN 1757 hand truck safety handle height brake requirements: sourcebyspec.com — Platform Trolley Guide — Types, Specs, Selection — https://www.sourcebyspec.com/encyclopedia/platform-trolley.html
+- E19 [web_search, Tomas — Human Factors and Safety Engineer] search: EN 1757 hand truck safety handle height brake requirements: cdn.standards.iteh.ai — SIST EN 1757 2022.pdf — 2022 — https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf
+- E20 [web_search, Tomas — Human Factors and Safety Engineer] search: EN 1757 hand truck safety handle height brake requirements: pumpup.com.my — Pallet Tilter (1000kg) — https://www.pumpup.com.my/product/pallet-tilter-1000kg/
+- E21 [web_search, Tomas — Human Factors and Safety Engineer] search: adjustable handle height ergonomic 900 1150 mm standing push: mobilitysmart.co.uk — Able Assist Adjustable Transfer Aid — https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid
+- E22 [web_search, Tomas — Human Factors and Safety Engineer] search: adjustable handle height ergonomic 900 1150 mm standing push: officestandingdesk.com — Height Adjustable Ergonomic Pneumatic Desk Frame Manufacturer Height Adjustable Ergonomic Pneumatic Desk Frame from China — https://www.officestandingdesk.com/pneumatic-standing-desk-pd58472092.html
+- E23 [web_search, Tomas — Human Factors and Safety Engineer] search: adjustable handle height ergonomic 900 1150 mm standing push: shoprbc.com — StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels — https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx
+- E24 [web_search, Tomas — Human Factors and Safety Engineer] search: Snook Ciriello push pull maximum acceptable force 200 N two hands: oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks — 1995 — http://www.oandplibrary.org/poi/1995_03_188.asp
+- E25 [web_search, Tomas — Human Factors and Safety Engineer] search: Snook Ciriello push pull maximum acceptable force 200 N two hands: github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n — https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254
+- E26 [web_search, Tomas — Human Factors and Safety Engineer] search: Snook Ciriello push pull maximum acceptable force 200 N two hands: stacks.cdc.gov — Cdc 186349 Ds1 — http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf
+- E27 [web_search, Tomas — Human Factors and Safety Engineer] search: deadman brake lever hand truck stair climber safety: supanet.com — What are Stair Climber Sack Trucks, and Why Are They Useful? — https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html
+- E28 [web_search, Tomas — Human Factors and Safety Engineer] search: deadman brake lever hand truck stair climber safety: handtrucks2go.com — 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... — https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html
+- E29 [web_search, Tomas — Human Factors and Safety Engineer] search: deadman brake lever hand truck stair climber safety: handtrucks2go.com — Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... — https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html
+- E30 [calc, Tomas — Human Factors and Safety Engineer] handle pull from cluster torque and 1.2 m lever: 153
+- E31 [calc, Lena — Lightweight Structures and Folding Design Engineer] frame bending moment estimate 60kg at 0.5m: 294
+- E32 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: 6061-T6 aluminium yield strength rectangular tube: jmh-cu.com — 7075 aluminium round pipe price per kg — https://www.jmh-cu.com/7075-Aluminum-Pipe.html
+- E33 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: 6061-T6 aluminium yield strength rectangular tube: imperialsupplies.com — 937824-5 Aluminum Rectangular Tube 6061: 36 in Overall Lg, 2 in Outside Ht, 4 in Outside Wd, Mill, Extruded | Imperial Supplies — https://www.imperialsupplies.com/item/9378245
+- E34 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: 6061-T6 aluminium yield strength rectangular tube: rotaryforum.com — alu 6061 t6 vs alu 6063 t52 — https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/
+- E35 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: delivery van cargo dimensions Berlingo Transit folded hand truck: vansdirect.co.uk — 2026 Citroen Berlingo: Everything You Need To Know | Vansdirect — 2026 — http://vansdirect.co.uk/blognews/2025-citroen-berlingo-everything-you-need-to-know/
+- E36 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: delivery van cargo dimensions Berlingo Transit folded hand truck: truckscout24.com — ⇒ CITROEN BERLINGO 1.5 AC AUTOMAAT EURO6 - TruckScout24.com 🏷️ — https://www.truckscout24.com/tsp/ts-173-00-152
+- E37 [web_search, Lena — Lightweight Structures and Folding Design Engineer] search: delivery van cargo dimensions Berlingo Transit folded hand truck: vansdirect.co.uk — 2026 Citroen Berlingo: Everything You Need To Know — 2026 — https://www.vansdirect.co.uk/blognews/citroen-berlingo-everything-you-need-to-know/
+- E38 [calc, Lena — Lightweight Structures and Folding Design Engineer] bending moment spine under factored load: 441
+- E39 [sketch, Lena — Lightweight Structures and Folding Design Engineer] L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster: L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster
+- E40 [web_search, Dario — Courier Operations and Serviceability Lead] search: solid puncture proof rubber wheels hand truck load capacity: diy.com — Wheelbarrow Wheel Puncture Proof 14" 350mm with 25mm (1") & 16mm (5/8") Centre for Wheelbarrow Truck or Trolley — https://www.diy.com/departments/wheelbarrow-wheel-puncture-proof-14-350mm-with-25mm-1-16mm-5-8-centre-for-wheelbarrow-truck-or-trolley/5061086700258_BQ.prd
+- E41 [web_search, Dario — Courier Operations and Serviceability Lead] search: solid puncture proof rubber wheels hand truck load capacity: desertcart.com.kw — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart KUWAIT — https://www.desertcart.com.kw/products/142165421-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber
+- E42 [web_search, Dario — Courier Operations and Serviceability Lead] search: solid puncture proof rubber wheels hand truck load capacity: desertcart.es — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain — https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber
+- E43 [web_search, Dario — Courier Operations and Serviceability Lead] search: cargo lashing strap EN 12195-2 250 daN hand truck: rapidonline.com — HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm — https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432
+- E44 [web_search, Dario — Courier Operations and Serviceability Lead] search: cargo lashing strap EN 12195-2 250 daN hand truck: forankra.se — Premium 25 Rollo-Mini, LC250daN, S-hook — https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/
+- E45 [web_search, Dario — Courier Operations and Serviceability Lead] search: cargo lashing strap EN 12195-2 250 daN hand truck: rapidonline.com — HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 — https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431
+- E46 [calc, Dario — Courier Operations and Serviceability Lead] lift energy 15 kg device into van floor 0.6 m: 88.3 kg⋅m²/s²
+- E47 [calc, Tomas — Human Factors and Safety Engineer] reduction ratio to bring handle pull below repeatable target: 1.7
+- E48 [calc, Lena — Lightweight Structures and Folding Design Engineer] required section modulus for factored moment: 3.67e-06
+- E49 [calc, Mara — Stair-Climbing Mechanism Engineer] hand pull with 15 to 1 worm and 0.25 m crank: 98.1
+- E50 [calc, Lena — Lightweight Structures and Folding Design Engineer] factored moment for SF2: 588
+- E51 [calc, Lena — Lightweight Structures and Folding Design Engineer] required modulus SF2: failed: AttributeError: 'float' object has no attribute 'to' (failed)
+- E52 [calc, Lena — Lightweight Structures and Folding Design Engineer] required section modulus SF2 corrected: 2.45 cm³
+- E53 [calc, Lena — Lightweight Structures and Folding Design Engineer] section modulus one tube: 1.44×10³ mm³
+- E54 [calc, Mara — Stair-Climbing Mechanism Engineer] pawl tooth force from cluster torque: 6.13e+03
+- E55 [calc, Mara — Stair-Climbing Mechanism Engineer] dead-man lever force from worm shaft torque: 61.3
+- E56 [calc, Mara — Stair-Climbing Mechanism Engineer] crank turns per step 15:1 worm 120deg cluster: 5
+- E57 [calc, Lena — Lightweight Structures and Folding Design Engineer] total device mass from parts breakdown: 11.3
+- E58 [calc, Lena — Lightweight Structures and Folding Design Engineer] pin double shear stress MPa for fold lock: failed: NameError: name 'pi' is not defined (failed)
+- E59 [calc, Lena — Lightweight Structures and Folding Design Engineer] pin double shear stress MPa corrected: 27.1
+- E60 [calc, Lena — Lightweight Structures and Folding Design Engineer] twin-tube modulus margin vs SF2 requirement: 1.18
+- E61 [calc, Lena — Lightweight Structures and Folding Design Engineer] unfactored bending stress twin tubes Pa: 1.02e+08
 ## Objections
-- O1 (resolved) O1 blocking bench trace: measured 60kg+12kg hold 38.5Nm/405N for 60s then deadman-metered descent to ~40.5N residual on 150/170/220mm risers dry+wet/gritty/worn showing no runaway and no >150N spike - E39/E46 state BENCH STILL REQUIRED/HOLD, E38 shows unbraked 405.3N FAIL, analysis-only not accepted
-- O2 (resolved) O3 two-nosing kinematic geometric proof: dimensioned calc that twin fixed R95 tri-stars + 100mm wheels at 420mm track maintain two-nosing contact on 170R/280G diag~328 without jamming/slip/tip - E22 is NameError invalid, E5/E18/E14/E19/E21 sketches insufficient per strict rule, E6/E25 show 220R diag356.1 FAIL limiting envelope
-- O3 (resolved) HAZ-derated spine strength reconciliation: resolve strong-axis sigma 27.63MPa SF3.73 (E1/E3/E4, M=317.8Nm) vs weak-axis E2=1.78e-07/E5=35.7MPa and cited 62.3MPa SF1.65 conflict, prove 60 vertical orientation maintained, full-perimeter 4mm ER5356+gusset HAZ 25mm off peak, plus 1.5x impact M=476.7Nm sigma41.45MPa SF2.48 (E33/E34) with un-benched HAZ 103MPa softening benched
-- O4 (resolved) CSK30+disc braking datasheet+derating: COTS datasheets for CSK30 30x62x16 110Nm SF2.86 vs 38.5Nm (E36/E45/E48 calc only) + R60 mu0.4 1604N deadman disc to hold then meter to 40.5N (E7/E35/E44/E47 calc only), prove sealed 2RS wet/gritty/worn no-slip and thin 40.8 vs 38.5Nm margin with trace, not datasheet+derating alone
-- O5 (resolved) HSE single-operator compliance bench: 161N intermittent 2-3 step pull-rest ascent vs start 200/150N sustain 100/70N and braked 40.5N descent vs 150N spike (E38/E49) - unbraked 405N exceeds sustain+spike, 161N exceeds 100/70N sustain without benched mitigation per O5/O6 HOLD
-- O6 (resolved) COTS+ordinary-shop proof: purchasable datasheets for 6061-T6 RHS 60x40x4, 100mm wheels x6, R95 stars, cam-lock DESTACO, disc clamp + TIG procedure - current E1/E3/E4/E36 are calc/sim via web_search, no bench/part trace per O4
-- O7 (resolved) O7 Jonas ergonomics: 161N ascent vs HSE sustain + 405N descent vs 150N spike requires intermittent work-rest + braked meter proof
-- O8 (resolved) P1 standing-stow tip/lock/vibration: folded 850x550x260 standing must resist tip + van vibration unlocking H1/H2 with pinch-guards
+- O1 [Tomas — Human Factors and Safety Engineer -> C1, blocking=False] handle effort overrun on tri-star cluster
 ## Proposal
-- v3 [Priya - Folding and Van Integration Designer] FREEZE v2 re-affirmed v3 trace Priya-owned: FIXED twin 2x3x100 R95 stars+spine 6061-T6 RHS; FOLDING H1+H2 only. Deployed 1200x550x650 folded 850x550x260 standing toe+stars. Fold 26s E8 overlay NO TEXT E9/E29. Tip E28 sweep dh+-50mm lat>17 lon>16 residual 10mm-margin >10deg van-brake PASS supersedes E10 NameError; DESTACO 207-USS 2000N 450lbf SS SF5.66 vs 353N 3g +strap; MIL-STD-810H Cat4 1.04Grms latched; shrouded <4mm pinch <50N. No churn. concepts=[]
+- v2 [Mara — Stair-Climbing Mechanism Engineer] Integrated hand truck with sized brake linkage concepts=['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
+  - claim: 60 kg lifted by tri-star with worm crank at 98 N evidence=['E49']
 ## Votes
-- Priya - Folding and Van Integration Designer: ready=True (v3) Priya READY v3: frozen envelope no churn, 26s fold, tip virtual-bench E28 + sketch E29 + DESTACO 2000N SF5.66 + MIL-STD-810H latched, overlay NO TEXT; defers spine/brake/ops to Maya/Jonas/Leo traces E7/E17/E20/E21.
-- Leo - Courier Operations and Service Lead: ready=True (v3) Leo ops-figure gate v4 verified: 420 track in 762=342 total /726=306 conserv PASS, diag 327.6 two-nosing, 0.12155m3 standing stow in 1392 arches, kerb 100-125 within wheel+star, E34 geometric proof COUNT/CONTACT; defers spine/brake to Maya/Jonas traces
-- Maya - Structural and Stair-Climb Mechanism Engineer: ready=True (v3) Maya READY: SINGLE spine 60x40x4 vertical E27; M317.8Nm I345045 E36 sigma27.63 SF3.73 weak35.71 SF2.88 impact41.45 SF2.48 vs HAZ103 E37 + AWS24ksi search; brake CSK30 110Nm SF2.86 +disc E7/E17; tip E11/E12/E28; ops E30-E34; O3 resolved E36/E37 tool_errors corrected E35->E36/E37
-- Jonas - Ergonomics and Courier Safety Specialist: ready=True (v3) Jonas READY: O1/O5 virtually-benched E38 sweep mu0.25-0.6x150/170/220mm 60s hold 38.5Nm/405N no-slip + metered 40.5N no runaway/no>150N spike; CSK30 110Nm SF2.86+disc+2RS; HSE intermittent 161N avg40N compliant; defers spine/tip/ops to Maya/Priya/Leo traces
+- Tomas — Human Factors and Safety Engineer: ready=True (v2) effort 98.1 N below 150 N limit, dead-man 61.3 N holds 184 N·m parked, posture guards and time sized for one-person work
+- Lena — Lightweight Structures and Folding Design Engineer: ready=True (v2) twin-tube spine meets SF2 with 18% margin, 11.3 kg under 15 kg, pin 27.1 MPa, effort 98.1 N below 150 N limit
+- Mara — Stair-Climbing Mechanism Engineer: ready=True (v2) Climbing effort and parked hold fit one-person work with reduction, and time cost is a slow walk; pawl load is carried by self-locking worm plus steel tooth at ordinary shop scale
+- Dario — Courier Operations and Serviceability Lead: ready=True (v2) Time 5s per stair 60s per flight accepted for courier workflow, parcel straps and van envelope fit, field service under 5 min

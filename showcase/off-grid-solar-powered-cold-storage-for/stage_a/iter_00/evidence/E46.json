@@ -1,0 +1,24 @@
+{
+  "id": "E46",
+  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+  "code_or_query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+  "inputs": {},
+  "output_summary": "elearn-archive.fnu.ac.fj — Practices for the Postharvest Handling of Horticultural Crops — https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf",
+  "output_full": "elearn-archive.fnu.ac.fj — Practices for the Postharvest Handling of Horticultural Crops — https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "elearn-archive.fnu.ac.fj",
+      "title": "Practices for the Postharvest Handling of Horticultural Crops",
+      "year": "",
+      "url": "https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf",
+      "query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

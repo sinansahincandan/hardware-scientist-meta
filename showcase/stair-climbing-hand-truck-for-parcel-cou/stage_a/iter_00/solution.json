@@ -1,486 +1,429 @@
 {
-  "title": "Fixed twin R95 tri-star braked courier trolley with folding H1/H2 standing stow",
-  "problem_restatement": "Provide courier trolley for 60kg plus 12kg parcel to climb 170R/280G with two-nosing contact, hold then brake-meter descent HSE compliant, fold in 26s to 850x550x260 standing stow fitting 762/726mm doors and van between arches, with sealed wet/gritty operation",
-  "mechanism_sentence": "Twin fixed R95 tri-stars with six 100mm wheels maintain two-nosing contact to bridge 170R/280G stairs while the vertical 60x40x4 6061-T6 spine carries the bending moment and the CSK30 clutch plus R60 deadman disc holds 38.5Nm/405N then meters descent to 40.5N, with only H1 handle and H2 toe folding to 850x550x260 standing stow.",
+  "title": "Integrated hand truck with sized brake linkage",
+  "problem_restatement": "Lift and lower 60 kg load step by step on stairs with one operator, hold without grip, fold flat under 15 kg for van stowage.",
+  "mechanism_sentence": "Two three-wheeled side clusters roll over each stair nose while a hand crank through a self-locking screw gear lifts a 60 kg parcel one 170 mm step at a time with about 98 N of hand effort and holds it parked when you let go.",
   "decisive_choices": [
-    "FIXED twin R95 tri-stars with 6x100mm wheels for two-nosing contact on 170R/280G with 220R out-of-scope",
-    "SINGLE vertical 60x40x4 spine with full-perimeter 4mm ER5356 plus gusset and HAZ 25mm off peak stress",
-    "CSK30 110Nm SF2.86 plus R60 deadman disc to hold 38.5Nm/405N then meter to 40.5N with sealed 2RS"
+    "Use tri-star clusters with 150 mm wheels for 170 mm risers",
+    "Use 15 to 1 self-locking worm plus pawl with 0.25 m crank for 98.1 N effort and hands-free hold",
+    "Use twin-tube aluminium spine with 2-step fold to 1200x600x300 mm under 15 kg"
   ],
-  "open_question": "Physical bench still required to prove 60kg plus 12kg 60s hold 38.5Nm/405N no slip and deadman-metered 40.5N descent with no runaway and no over 150N spike across mu and risers, analysis-only not accepted?",
-  "transfer_line": "Force: H2 toe -> spine -> R95 tri-stars | Measured: CSK30 -> R60 disc",
+  "open_question": "What is pawl tooth shear stress and wear life under 6.13 kN repeated parking load?",
+  "transfer_line": "Load: closed-loop handle -> self-locking worm drive -> tri-star cluster | Measured: hand pull -> cluster torque",
   "assumed_constraints": [
     {
-      "constraint": "Stairs 170R/280G diag ~328mm bridged with two-nosing contact; 220R diag 356.1mm frozen OUT-OF-SCOPE",
-      "source": "whiteboard",
+      "constraint": "design stairs riser 170 mm tread 280 mm stair angle about 31 deg based on residential range 150-190 mm riser 250-300 mm tread",
+      "source": "C3",
       "evidence_ids": [
-        "E14",
-        "E30"
+        "E1",
+        "E2",
+        "E3"
       ]
     },
     {
-      "constraint": "Payload 60kg+12kg must hold 38.5Nm/405N 60s then deadman-meter to 40.5N with no runaway and no >150N spike",
-      "source": "whiteboard",
+      "constraint": "two-hand closed-loop handle height 900-1100 mm adjustable, grip diameter 30 mm, sustained pull under 150 N per operator based on Snook psychophysical limits",
+      "source": "C4",
       "evidence_ids": [
-        "E7",
-        "E17",
-        "E38"
-      ]
-    },
-    {
-      "constraint": "Track 420mm in 762mm door 342mm total and 726mm frame 306mm conservative; overall 550mm width",
-      "source": "whiteboard",
-      "evidence_ids": [
-        "E21",
-        "E31",
-        "E32"
-      ]
-    },
-    {
-      "constraint": "Folded 850x550x260 standing on toe+stars 0.12155m3 stows between 1392mm arches; fold 26s <30s one courier",
-      "source": "whiteboard",
-      "evidence_ids": [
-        "E8",
         "E15",
-        "E33"
+        "E19",
+        "E24",
+        "E26"
       ]
     },
     {
-      "constraint": "HAZ design to ~103MPa/24ksi with full-perimeter 4mm ER5356+gusset HAZ 25mm off peak; van 10deg brake and 1.04Grms latched stow",
-      "source": "transcript",
+      "constraint": "frame carries 60 kg load plus 15 kg device with safety factor 2 on yield and folded envelope 1200x600x300 mm for van aisle and door stowage",
+      "source": "C7",
       "evidence_ids": [
-        "E37",
-        "E18",
-        "E28"
+        "E35",
+        "E36"
       ]
     }
   ],
   "functional_decomposition": [
-    "support 60kg plus 12kg parcel on toe",
-    "bridge 170R/280G with two-nosing contact without jamming",
-    "hold 38.5Nm/405N then deadman-meter descent to 40.5N",
-    "fold H1 plus H2 in 26s to standing stow and lock for van vibration",
-    "fit 420mm track in 762/726mm doors and 1392mm between arches"
+    "Lift and lower 60 kg load step by step on stairs with one operator",
+    "Hold load on stair slope without continuous operator grip force",
+    "Operate up and down stairs with two-hand posture and effort one courier can sustain",
+    "Carry 60 kg load with frame weight under 15 kg and fold flat for van stowage",
+    "Secure 60 kg parcels up to 800 mm and stow folded device in van with 5-minute field service"
   ],
   "concept": {
-    "working_principle": "Twin fixed R95 tri-stars with 6x100mm wheels bridge 170R/280G diag 327.6mm with two-nosing contact within 650D, SINGLE vertical 60x40x4 spine carries M317.8Nm with HAZ 25mm off peak, CSK30 110Nm plus R60 deadman disc holds 38.5Nm/405N 60s then meters to 40.5N, only H1 handle and H2 toe fold deployed 1200x550x650 to folded 850x550x260 standing on toe+stars in 26s",
+    "working_principle": "Tri-star clusters rotate 120 deg per step to lift load one riser, worm plus pawl locks axle hands-free, hand crank through 15 to 1 reduction drives climb and dead-man lever holds descent, twin-tube frame carries load and folds flat.",
     "parts": [
       {
-        "id": "s_spine",
-        "name": "spine 6061-T6 RHS 60x40x4",
-        "function": "carry 317.8Nm moment vertical 60mm depth peak away from weld",
-        "material": "6061-T6",
+        "id": "cluster",
+        "name": "tri-star wheel cluster",
+        "function": "step over 160-180 mm risers",
+        "material": "steel arm with rubber wheels",
         "size_class_mm": {
-          "min": 40.0,
-          "max": 60.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "s_star",
-        "name": "twin fixed R95 tri-stars",
-        "function": "bridge 170R/280G diag 328mm with two-nosing contact",
-        "material": "COTS",
-        "size_class_mm": {
-          "min": 95.0,
-          "max": 95.0
+          "min": 150.0,
+          "max": 300.0
         },
         "qty": 2
       },
       {
-        "id": "s_wheel",
-        "name": "100mm wheels",
-        "function": "roll and climb with star",
-        "material": "COTS",
+        "id": "worm",
+        "name": "self-locking worm drive plus pawl",
+        "function": "hold cluster without hand grip",
+        "material": "steel",
         "size_class_mm": {
-          "min": 100.0,
-          "max": 100.0
+          "min": 40.0,
+          "max": 120.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "spine",
+        "name": "L-frame spine twin tubes",
+        "function": "carry 60 kg load with frame weight under 15 kg",
+        "material": "6061-T6 aluminium with steel inserts",
+        "size_class_mm": {
+          "min": 1000.0,
+          "max": 1200.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "toe",
+        "name": "hinged toe plate with backrest",
+        "function": "support parcel and fold flat",
+        "material": "aluminium with anti-slip pads",
+        "size_class_mm": {
+          "min": 350.0,
+          "max": 1100.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "handle",
+        "name": "telescopic closed-loop handle with dead-man brake lever",
+        "function": "two-hand push pull with brake",
+        "material": "aluminium with steel lever",
+        "size_class_mm": {
+          "min": 900.0,
+          "max": 1100.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "strap",
+        "name": "adjustable parcel straps with buckles",
+        "function": "secure parcels up to 800 mm",
+        "material": "polyester webbing",
+        "size_class_mm": {
+          "min": 25.0,
+          "max": 1100.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "wheel",
+        "name": "solid puncture-proof wheels",
+        "function": "roll and climb stairs",
+        "material": "solid rubber",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 160.0
         },
         "qty": 6
       },
       {
-        "id": "s_csk",
-        "name": "CSK30 30x62x16 one-way clutch 110Nm",
-        "function": "hold 38.5Nm/405N 60s no slip SF2.86",
-        "material": "COTS",
+        "id": "pin",
+        "name": "quick pins and skid pads",
+        "function": "fold locks and field service",
+        "material": "steel",
         "size_class_mm": {
-          "min": 16.0,
-          "max": 62.0
+          "min": 12.0,
+          "max": 30.0
         },
-        "qty": 1
-      },
-      {
-        "id": "s_disc",
-        "name": "R60 deadman disc 1604N",
-        "function": "meter braked descent to 40.5N mean",
-        "material": "COTS",
-        "size_class_mm": {
-          "min": 60.0,
-          "max": 60.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "s_h1",
-        "name": "H1 folding handle",
-        "function": "operator pull-rest ascent fold",
-        "material": "COTS",
-        "size_class_mm": {
-          "min": 550.0,
-          "max": 1200.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "s_h2",
-        "name": "H2 folding toe",
-        "function": "support parcel standing-stow on toe+stars",
-        "material": "COTS",
-        "size_class_mm": {
-          "min": 260.0,
-          "max": 550.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "s_lock",
-        "name": "DESTACO 207-USS stainless lock 2000N",
-        "function": "lock H1/H2 latched stow against 353N 3g",
-        "material": "stainless steel",
-        "size_class_mm": {
-          "min": 260.0,
-          "max": 850.0
-        },
-        "qty": 2
+        "qty": 4
       }
     ],
     "connections": [
       {
-        "from_id": "s_h2",
-        "to_id": "s_spine",
+        "from_id": "wheel",
+        "to_id": "cluster",
         "kind": "mechanical",
-        "label": "H2 folding hinge"
+        "label": "mounted on"
       },
       {
-        "from_id": "s_spine",
-        "to_id": "s_star",
+        "from_id": "cluster",
+        "to_id": "worm",
         "kind": "mechanical",
-        "label": "fixed spine-star axle vertical keyed"
+        "label": "locked by"
       },
       {
-        "from_id": "s_star",
-        "to_id": "s_wheel",
+        "from_id": "worm",
+        "to_id": "spine",
         "kind": "mechanical",
-        "label": "2x3x100 star-wheel axles"
+        "label": "mounted on axle to"
       },
       {
-        "from_id": "s_spine",
-        "to_id": "s_h1",
+        "from_id": "spine",
+        "to_id": "toe",
         "kind": "mechanical",
-        "label": "H1 folding hinge"
+        "label": "hinged to"
       },
       {
-        "from_id": "s_csk",
-        "to_id": "s_star",
+        "from_id": "spine",
+        "to_id": "handle",
         "kind": "mechanical",
-        "label": "one-way hold 38.5Nm"
+        "label": "telescopes to"
       },
       {
-        "from_id": "s_disc",
-        "to_id": "s_star",
+        "from_id": "strap",
+        "to_id": "toe",
         "kind": "mechanical",
-        "label": "deadman meter to 40.5N"
+        "label": "secures to"
       },
       {
-        "from_id": "s_lock",
-        "to_id": "s_h1",
+        "from_id": "pin",
+        "to_id": "spine",
         "kind": "mechanical",
-        "label": "over-centre latch H1/H2"
+        "label": "locks"
       }
     ],
     "loads": [
       {
-        "on_id": "s_h2",
-        "label": "60kg+12kg parcel 405N hold 60s on toe",
+        "on_id": "toe",
+        "label": "60 kg parcel weight",
         "direction": "down"
       },
       {
-        "on_id": "s_h1",
-        "label": "161N intermittent 3s pull/9s rest ascent avg 40N",
+        "on_id": "handle",
+        "label": "operator crank pull",
         "direction": "up"
       },
       {
-        "on_id": "s_disc",
-        "label": "40.5N braked metered descent no runaway no >150N spike",
-        "direction": "down"
-      },
-      {
-        "on_id": "s_lock",
-        "label": "353N 3g lock load + 1.04Grms latched",
-        "direction": "in"
+        "on_id": "cluster",
+        "label": "stair nose reaction",
+        "direction": "up"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "I-strong",
-      "value": 345045.3333333333,
-      "unit": "mm4",
-      "method": "calc",
-      "evidence_ids": [
-        "E3"
-      ]
-    },
-    {
-      "quantity": "W-strong",
-      "value": 11501.511111111111,
-      "unit": "mm3",
-      "method": "calc",
-      "evidence_ids": [
-        "E4"
-      ]
-    },
-    {
-      "quantity": "sigma-strong",
-      "value": 27.631151848645974,
-      "unit": "MPa",
-      "method": "calc",
-      "evidence_ids": [
-        "E5"
-      ]
-    },
-    {
-      "quantity": "W-weak",
-      "value": 8900.266666666666,
-      "unit": "mm3",
-      "method": "calc",
-      "evidence_ids": [
-        "E6"
-      ]
-    },
-    {
-      "quantity": "sigma-weak",
-      "value": 35.706795302013425,
-      "unit": "MPa",
-      "method": "calc",
-      "evidence_ids": [
-        "E22"
-      ]
-    },
-    {
-      "quantity": "SF strong vs HAZ",
-      "value": 3.727676665967415,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E23"
-      ]
-    },
-    {
-      "quantity": "SF weak vs HAZ",
-      "value": 2.884604992657856,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E24"
-      ]
-    },
-    {
-      "quantity": "impact sigma 1.5x",
-      "value": 41.44672777296896,
-      "unit": "MPa",
-      "method": "calc",
-      "evidence_ids": [
-        "E25"
-      ]
-    },
-    {
-      "quantity": "SF CSK30 110Nm vs 38.5Nm",
-      "value": 2.857142857142857,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E26"
-      ]
-    },
-    {
-      "quantity": "tip latitude",
-      "value": 19.36293230061209,
-      "unit": "deg",
-      "method": "calc",
-      "evidence_ids": [
-        "E11"
-      ]
-    },
-    {
-      "quantity": "tip longitude",
-      "value": 18.189045699651313,
-      "unit": "deg",
+      "quantity": "energy to lift 60 kg one riser",
+      "value": 100.0,
+      "unit": "J",
       "method": "calc",
       "evidence_ids": [
         "E12"
       ]
     },
     {
-      "quantity": "stair diagonal 280G 170R",
-      "value": 327.566787083184,
-      "unit": "mm",
+      "quantity": "tri-star cluster torque",
+      "value": 184.0,
+      "unit": "N m",
       "method": "calc",
       "evidence_ids": [
-        "E14",
+        "E13"
+      ]
+    },
+    {
+      "quantity": "handle pull from cluster torque and 1.2 m lever",
+      "value": 153.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
         "E30"
       ]
     },
     {
-      "quantity": "folded volume 850x550x260",
-      "value": 0.12155,
-      "unit": "m3",
+      "quantity": "hand pull with 15 to 1 worm and 0.25 m crank",
+      "value": 98.1,
+      "unit": "N",
       "method": "calc",
       "evidence_ids": [
-        "E15",
-        "E33"
+        "E49"
       ]
     },
     {
-      "quantity": "door clearance total in 762mm",
-      "value": 342.0,
-      "unit": "mm",
+      "quantity": "pawl tooth force from cluster torque",
+      "value": 6130.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E54"
+      ]
+    },
+    {
+      "quantity": "dead-man lever force from worm shaft torque",
+      "value": 61.3,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E55"
+      ]
+    },
+    {
+      "quantity": "crank turns per step",
+      "value": 5.0,
+      "unit": "turns",
+      "method": "calc",
+      "evidence_ids": [
+        "E56"
+      ]
+    },
+    {
+      "quantity": "frame bending moment estimate 60kg at 0.5m",
+      "value": 294.0,
+      "unit": "N m",
       "method": "calc",
       "evidence_ids": [
         "E31"
       ]
     },
     {
-      "quantity": "door clearance conservative in 726mm",
-      "value": 306.0,
-      "unit": "mm",
+      "quantity": "factored moment for SF2",
+      "value": 588.0,
+      "unit": "N m",
       "method": "calc",
       "evidence_ids": [
-        "E32"
+        "E50"
       ]
     },
     {
-      "quantity": "door clearance per side",
-      "value": 171.0,
-      "unit": "mm",
+      "quantity": "required section modulus SF2",
+      "value": 2.45,
+      "unit": "cm3",
       "method": "calc",
       "evidence_ids": [
-        "E21"
+        "E52"
       ]
     },
     {
-      "quantity": "fold time H1 plus H2",
-      "value": 26.0,
-      "unit": "s",
-      "method": "simulate",
+      "quantity": "section modulus one tube",
+      "value": 1440.0,
+      "unit": "mm3",
+      "method": "calc",
       "evidence_ids": [
-        "E8"
+        "E53"
       ]
     },
     {
-      "quantity": "hold torque 60s no slip",
-      "value": 38.5,
-      "unit": "Nm",
-      "method": "simulate",
+      "quantity": "twin-tube modulus margin vs SF2 requirement",
+      "value": 1.18,
+      "unit": "ratio",
+      "method": "calc",
       "evidence_ids": [
-        "E7",
-        "E38"
+        "E60"
       ]
     },
     {
-      "quantity": "metered descent mean braked",
-      "value": 40.5,
-      "unit": "N",
-      "method": "simulate",
+      "quantity": "unfactored bending stress twin tubes",
+      "value": 102000000.0,
+      "unit": "Pa",
+      "method": "calc",
       "evidence_ids": [
-        "E7",
-        "E17"
+        "E61"
+      ]
+    },
+    {
+      "quantity": "total device mass from parts breakdown",
+      "value": 11.3,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E57"
+      ]
+    },
+    {
+      "quantity": "pin double shear stress for fold lock",
+      "value": 27.1,
+      "unit": "MPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E59"
+      ]
+    },
+    {
+      "quantity": "lift energy 15 kg device into van floor 0.6 m",
+      "value": 88.3,
+      "unit": "J",
+      "method": "calc",
+      "evidence_ids": [
+        "E46"
+      ]
+    },
+    {
+      "quantity": "reduction ratio to bring handle pull below target",
+      "value": 1.7,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E47"
       ]
     }
   ],
-  "measurement_chain": [
-    {
-      "stage": "sensor",
-      "name": "CSK30 hold 38.5Nm 405N 60s no slip",
-      "interface": "axle"
-    },
-    {
-      "stage": "conditioning",
-      "name": "R60 deadman disc meter to 40.5N",
-      "interface": "disc"
-    },
-    {
-      "stage": "instrument",
-      "name": "mu 0.25-0.6 wet gritty x 150 170 220mm risers bench",
-      "interface": "stair"
-    },
-    {
-      "stage": "computer",
-      "name": "virtual-bench sweep no runaway no over 150N spike",
-      "interface": "van"
-    }
-  ],
+  "measurement_chain": [],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Cut SINGLE 6061-T6 RHS 60x40x4 spine with bracket keying 60mm vertical orientation peak moment away from weld",
-      "method": "cutting",
+      "description": "Cut and assemble twin-tube spine with steel hinge inserts",
+      "method": "cut and fasten",
       "parts_present": [
-        "s_spine"
+        "spine",
+        "pin"
       ]
     },
     {
       "step": 2,
-      "description": "TIG full-perimeter 4mm ER5356 plus gusset with HAZ 25mm moved off peak stress",
-      "method": "TIG welding",
+      "description": "Fit hinged toe plate and telescopic closed-loop handle with brake lever",
+      "method": "assemble",
       "parts_present": [
-        "s_spine"
+        "spine",
+        "toe",
+        "handle"
       ]
     },
     {
       "step": 3,
-      "description": "Assemble FIXED twin R95 stars plus 6x100mm wheels plus CSK30 30x62x16 plus R60 disc plus sealed 2RS",
-      "method": "assembly",
+      "description": "Mount tri-star clusters with solid wheels on worm axle with pawl and crank",
+      "method": "assemble",
       "parts_present": [
-        "s_star",
-        "s_wheel",
-        "s_csk",
-        "s_disc"
+        "cluster",
+        "wheel",
+        "worm",
+        "spine",
+        "handle"
       ]
     },
     {
       "step": 4,
-      "description": "Fit FOLDING H1 handle plus H2 toe hinges plus DESTACO 207-USS 2000N stainless over-centre locks shrouded pinch <4mm <50N",
-      "method": "assembly",
+      "description": "Fit straps, skid pads and quick pins and check flat fold",
+      "method": "fit-out",
       "parts_present": [
-        "s_h1",
-        "s_h2",
-        "s_lock"
+        "strap",
+        "pin",
+        "toe",
+        "spine",
+        "handle",
+        "cluster"
       ]
     }
   ],
   "risks": [
     {
-      "risk": "unbraked 405.3N runaway exceeds 150N spike and HSE sustain",
-      "mitigation": "brake mandatory with CSK30 110Nm SF2.86 plus R60 disc 1604N deadman plus sealed 2RS plus cleaning inspection"
+      "risk": "handle effort overrun on tri-star cluster",
+      "mitigation": "use 15 to 1 worm with 0.25 m crank to give 98.1 N below 150 N limit"
     },
     {
-      "risk": "HAZ softening to 90-120MPa yield with 62.3MPa net-section conflict",
-      "mitigation": "vertical 60mm orientation keyed plus full-perimeter 4mm ER5356 plus gusset plus HAZ 25mm off peak, weak-axis 35.71MPa SF2.88 and impact 41.45MPa SF2.48 vs HAZ 103MPa"
+      "risk": "thin 1.18 margin and pin collapse on stairs",
+      "mitigation": "use two tubes giving 2.88 cm3 against 2.45 cm3 required with steel pins"
     },
     {
-      "risk": "standing-stow tip beyond 10deg van-brake and vibration unlocking H1/H2 with pinch",
-      "mitigation": "DESTACO 207-USS 2000N stainless SF5.66 vs 353N 3g plus strap plus MIL-STD-810H Cat4 1.04Grms latched plus shrouded under 4mm under 50N"
+      "risk": "descent runaway if brake linkage fails",
+      "mitigation": "hold with self-locking worm plus pawl and 61.3 N dead-man squeeze with uphill stance"
     }
   ],
-  "novelty_claim": "Re-affirmed freeze with FIXED twin R95 stars plus spine versus FOLDING H1/H2 only plus CSK30 and deadman disc meter to standing stow",
+  "novelty_claim": "Integrated hand truck with tri-star cluster, self-locking worm plus pawl crank and 2-step flat fold",
   "cost_class": "$100-1k",
   "figure_spec": {
-    "system_view": "deployed 1200x550x650 vs folded 850x550x260 standing on toe+stars, FIXED twin R95 stars plus spine vs FOLDING H1/H2, door landing van with two-nosing CONTACT, no-text overlay",
-    "critical_part_id": "s_star",
+    "system_view": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
+    "critical_part_id": "cluster",
     "preferred_view": "side"
   },
   "open_questions": [
-    "Physical bench still required to prove 60kg plus 12kg 60s hold 38.5Nm/405N no slip and deadman-metered 40.5N descent with no runaway and no over 150N spike across mu and risers, analysis-only not accepted?"
+    "What is pawl tooth shear stress and wear life under 6.13 kN repeated parking load?",
+    "Does 5 s per stair and 60 s per flight remain acceptable across full courier rounds?"
   ]
 }

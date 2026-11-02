@@ -1,0 +1,24 @@
+{
+  "id": "E43",
+  "author": "Dario — Courier Operations and Serviceability Lead",
+  "tool": "web_search",
+  "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
+  "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+  "inputs": {},
+  "output_summary": "rapidonline.com — HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm — https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432",
+  "output_full": "rapidonline.com — HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm — https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "rapidonline.com",
+      "title": "HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm",
+      "year": "",
+      "url": "https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432",
+      "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

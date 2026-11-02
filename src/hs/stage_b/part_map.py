@@ -171,3 +171,45 @@ def to_localization(meas: dict[str, Any], spec: SchematicSpec) -> Localization:
 def save_round(out_dir: Path, meas: dict[str, Any], diffs: dict[str, list[str]], rechecks: list[str]) -> None:
     (out_dir / "sam.json").write_text(json.dumps({**meas, "differences": diffs, "rechecks": rechecks},
                                                  indent=2), encoding="utf-8")
+
+
+SAM_COLORS = [(230, 57, 70), (29, 120, 220), (42, 157, 85), (244, 162, 37), (142, 68, 173), (0, 150, 160),
+              (200, 80, 150), (120, 120, 40), (90, 90, 90), (210, 105, 30)]
+
+
+def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
+    """What the segmenter saw: every SAM box on the render in one colour per part with the phrase it was
+    given, and a strip listing the parts it could not find (code only; no model call)."""
+    from PIL import ImageDraw
+
+    from hs.stage_b.annotate import _font
+
+    data = json.loads(sam_json.read_text(encoding="utf-8"))
+    img = Image.open(render_png).convert("RGB")
+    w, h = img.size
+    font = _font(max(16, w // 70))
+    missing = [f"{pid} ('{rec['phrase']}')" for pid, rec in data["parts"].items() if not rec["boxes"]]
+    strip_h = (font.size + 14) * (2 if missing else 1)  # type: ignore[attr-defined]
+    canvas = Image.new("RGB", (w, h + strip_h), "white")
+    canvas.paste(img, (0, 0))
+    overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    for i, (pid, rec) in enumerate(data["parts"].items()):
+        color = SAM_COLORS[i % len(SAM_COLORS)]
+        for j, (x0, y0, x1, y1) in enumerate(rec["boxes"]):
+            draw.rectangle([x0, y0, x1, y1], outline=color + (255,), width=max(3, w // 400), fill=color + (40,))
+            if j == 0:
+                text = f"{rec['phrase']} ×{len(rec['boxes'])}" if len(rec["boxes"]) > 1 else rec["phrase"]
+                tw = draw.textlength(text, font=font)
+                ty = max(y0 - font.size - 8, 0)  # type: ignore[attr-defined]
+                draw.rectangle([x0, ty, x0 + tw + 10, ty + font.size + 6], fill=color + (230,))  # type: ignore[attr-defined]
+                draw.text((x0 + 5, ty + 2), text, fill=(255, 255, 255, 255), font=font)
+    canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
+    d = ImageDraw.Draw(canvas)
+    found = sum(1 for rec in data["parts"].values() if rec["boxes"])
+    d.text((10, h + 6), f"SAM 3.1 found {found} of {len(data['parts'])} parts (boxes in each part's colour).",
+           fill=(30, 30, 30), font=font)
+    if missing:
+        d.text((10, h + 6 + font.size + 10), "Not found: " + "; ".join(missing), fill=(150, 30, 30), font=font)  # type: ignore[attr-defined]
+    canvas.save(out_png)
+    return out_png

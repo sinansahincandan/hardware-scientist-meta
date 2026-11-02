@@ -1,0 +1,14 @@
+{
+  "id": "E48",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "required section modulus for factored moment",
+  "code_or_query": "441/120e6",
+  "inputs": {},
+  "output_summary": "3.67e-06",
+  "output_full": "3.67e-06",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

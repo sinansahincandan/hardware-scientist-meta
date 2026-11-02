@@ -3,479 +3,1534 @@
   "functions": [
     {
       "id": "F1",
-      "text": "Keep 1 tonne produce at 4-6 C in hot ambient",
-      "author": "Solar Power Specialist"
+      "text": "Provide solar-only electrical power day and night for 1 tonne cold storage",
+      "author": "Amara - Off-Grid Solar Power Lead"
     },
     {
       "id": "F2",
-      "text": "Generate all electricity from sun only",
-      "author": "Solar Power Specialist"
+      "text": "Maintain 1 tonne produce at chill temperature with insulation, refrigeration and air circulation",
+      "author": "Baraka - Refrigeration and Thermal Engineer"
     },
     {
       "id": "F3",
-      "text": "Ride through night and cloudy periods without grid or diesel",
-      "author": "Solar Power Specialist"
+      "text": "Provide weatherproof insulated chamber, load-bearing frame, door and 1 tonne crate layout that is transportable and cooperatively assemblable",
+      "author": "Chidi - Enclosure and Structural Designer"
     }
   ],
   "concepts": [
     {
       "id": "C1",
       "function_id": "F1",
-      "text": "100mm PU insulated 10m3 cold room with DC vapour-compression cooler holding 4-6C",
-      "author": "Solar Power Specialist",
+      "text": "4x550W monocrystalline array (~2.2kW) tilted for hot-region sun",
+      "author": "Amara - Off-Grid Solar Power Lead",
       "status": "open"
     },
     {
       "id": "C2",
-      "function_id": "F2",
-      "text": "Tilted roof monocrystalline PV array with MPPT charge controller, sized by daily kWh divided by peak sun hours plus 25% losses",
-      "author": "Solar Power Specialist",
+      "function_id": "F1",
+      "text": "48V 100Ah LiFePO4 bank (5.12kWh) plus MPPT 150V 60A controller for overnight autonomy",
+      "author": "Amara - Off-Grid Solar Power Lead",
       "status": "open"
     },
     {
       "id": "C3",
-      "function_id": "F3",
-      "text": "48V LiFePO4 battery bank with 1.5 days autonomy plus thermal ice-bank for night cooling",
-      "author": "Solar Power Specialist",
+      "function_id": "F1",
+      "text": "assumed_constraint: fixed tilt ~ latitude facing equator, ground mount with airflow gap for cooling",
+      "author": "Amara - Off-Grid Solar Power Lead",
       "status": "open"
     },
     {
       "id": "C4",
-      "function_id": "F1",
-      "text": "Twin side racks with central aisle holding fifty 600x400x226mm vented crates for 1 tonne, internal room about 2.6x2.0x2.1m high giving 10m3 gross and 2.7m3 net crate volume (assumed_constraint per NCCD 3.4m3 per tonne guideline)",
-      "author": "Structural Enclosure Designer",
+      "function_id": "F2",
+      "text": "100mm polyurethane sandwich insulation giving U about 0.22 W/m2K for walls roof floor",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
       "status": "open"
     },
     {
       "id": "C5",
-      "function_id": "F1",
-      "text": "Ground-level cooperative loading workflow with fifty 20kg vented crates on twin racks, external wash slab with chlorinated water, and pay-per-crate cooperative ownership with trained local caretaker",
-      "author": "Post-Harvest Cooperative Operations Lead",
+      "function_id": "F2",
+      "text": "DC vapor-compression refrigeration at ~300W cooling, COP about 2, fan-forced evaporator for uniform chill",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C6",
+      "function_id": "F2",
+      "text": "assumed_constraint: hold 5 degC and 85-95 percent Relative Humidity, where Relative Humidity means moist air fraction, avoiding chilling injury below tropical range",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C7",
+      "function_id": "F3",
+      "text": "Flat-pack cam-lock insulated box: 100mm Polyurethane sandwich panels 960mm wide, internal about 2.4x2.0x2.2m high, hinged 800mm insulated door with magnetic gaskets and outer rain canopy",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "status": "open"
+    },
+    {
+      "id": "C8",
+      "function_id": "F3",
+      "text": "Load-bearing base and roof frame: raised galvanized steel skid with floor panels on top, bolted corner posts and roof rails carrying panel array tilted for drainage, ground anchors for wind",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "status": "open"
+    },
+    {
+      "id": "C9",
+      "function_id": "F3",
+      "text": "Crate and rack layout for 1 tonne: two-tier slatted racks along walls with central aisle, 600x400mm ventilated produce crates stacked 5 high with air gaps, floor load spread by plywood spreaders",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "status": "open"
+    },
+    {
+      "id": "C10",
+      "function_id": "F3",
+      "text": "20kg ventilated food-grade crate workflow: 50 crates for 1 tonne, 2 side racks with central aisle, sorting outside door, first-in first-out rotation by date labels",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "status": "open"
+    },
+    {
+      "id": "C11",
+      "function_id": "F2",
+      "text": "Spoilage prevention practice: pre-sort to remove damaged diseased produce, avoid bruising, keep crates vented with air gaps, daily check and remove spoiled items",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "status": "open"
+    },
+    {
+      "id": "C12",
+      "function_id": "F3",
+      "text": "assumed_constraint: washable food-safe interior with drain and 20kg single-person lift limit for safe cooperative handling and cleaning",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "status": "open"
+    },
+    {
+      "id": "C13",
+      "function_id": "F2",
+      "text": "Variable-speed DC vapor-compression refrigeration ~1.0 kW cooling, COP ~2, fan-forced evaporator for uniform chill plus condensate drain, sized for staged daily pull-down plus wall leak",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
       "status": "open"
     }
   ],
   "evidence": [
     {
       "id": "E1",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "pull-down thermal energy 1 tonne 30C to 5C",
-      "code_or_query": "1000*3.6*25/3600",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
       "inputs": {},
-      "output_summary": "25.0",
-      "output_full": "25.0",
+      "output_summary": "ms.china-yiteng.com \u2014 What Is an Off Grid Solar System? How It Works and What You Need \u2014 https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+      "output_full": "ms.china-yiteng.com \u2014 What Is an Off Grid Solar System? How It Works and What You Need \u2014 https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "ms.china-yiteng.com",
+          "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+          "year": "",
+          "url": "https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+          "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E2",
-      "author": "Solar Power Specialist",
-      "tool": "sketch",
-      "purpose": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd();\nfig, ax = plt.subplots(figsize=(8,5)); ax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(5,5.5,'Solar cold store - layout',ha='center',fontsize=14)\n# cold room\nax.add_patch(plt.Rectangle((1,1),4,3,fill=False,lw=2)); ax.text(3,3.2,'cold room\\n1 tonne\\n4-6C',ha='center')\nax.text(3,1.3,'100mm PU insulation',ha='center',fontsize=8)\n# door\nax.add_patch(plt.Rectangle((4.2,1.5),0.8,1.5,fill=False,lw=2)); ax.text(5.5,2.2,'door',fontsize=8)\n# PV roof\nxs=[1,3,5,2.5]; ys=[4,5.2,5.2,4]; ax.plot([1,3,5,3],[4,5.2,5.2,4],lw=2); ax.text(3.2,4.7,'PV array tilted',fontsize=8)\n# battery + controller\nax.add_patch(plt.Rectangle((6.5,1),2.5,1.2,fill=False,lw=2)); ax.text(7.75,1.6,'LiFePO4 battery\\n48V',ha='center',fontsize=8)\nax.add_patch(plt.Rectangle((6.5,2.7),2.5,0.8,fill=False,lw=2)); ax.text(7.75,3.1,'MPPT + DC cooler',ha='center',fontsize=8)\nax.arrow(4.5,4.5,1.5,-0.7,lw=1.5); ax.text(5.6,4.3,'DC cable',fontsize=8)\nax.arrow(6.5,1.8, -1.2,0.5,lw=1.5); ax.text(5.2,2.7,'cool air',fontsize=8)\nax.text(1,0.4,'fixed: room+PV rack  moving: air+refrigerant',fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120); plt.close()",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
       "inputs": {},
-      "output_summary": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-      "output_full": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-      "sketch_path": "evidence/sketch_2.png",
-      "references": [],
+      "output_summary": "elevatehomeguide.space \u2014 Off-Grid Cabin EV Charging: Solar + Battery Sizing \u2014 https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
+      "output_full": "elevatehomeguide.space \u2014 Off-Grid Cabin EV Charging: Solar + Battery Sizing \u2014 https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "elevatehomeguide.space",
+          "title": "Off-Grid Cabin EV Charging: Solar + Battery Sizing",
+          "year": "",
+          "url": "https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
+          "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E3",
-      "author": "Refrigeration and Thermal Engineer",
-      "tool": "calc",
-      "purpose": "steady conduction through 100mm PU walls for 28m2 room at 35K delta-T",
-      "code_or_query": "0.022/0.10*28*35",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
       "inputs": {},
-      "output_summary": "215.59999999999997",
-      "output_full": "215.59999999999997",
+      "output_summary": "la.china-yiteng.com \u2014 What Is an Off Grid Solar System? How It Works and What You Need \u2014 https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+      "output_full": "la.china-yiteng.com \u2014 What Is an Off Grid Solar System? How It Works and What You Need \u2014 https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "la.china-yiteng.com",
+          "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+          "year": "",
+          "url": "https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+          "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E4",
-      "author": "Refrigeration and Thermal Engineer",
-      "tool": "sketch",
-      "purpose": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
-      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.set_title('Solar cold room section - airflow and insulation')\n# walls\nimport matplotlib.patches as patches\nax.add_patch(patches.Rectangle((1,1), 6, 3.5, fill=False, linewidth=3))\nax.text(4, 0.5, '100mm PU walls + floor + roof')\nax.text(4, 5.0, 'PV shade roof above')\nax.plot([1,7],[5.2,5.2], linewidth=4)\n# crates\nfor x in [2,3.5,5]:\n  ax.add_patch(patches.Rectangle((x,1.5), 1.0, 1.0, fill=False))\n  ax.text(x+0.1, 1.9, 'produce')\n# evaporator + fan\nax.add_patch(patches.Rectangle((1.2,3.8), 1.5, 0.5, fill=False, linewidth=2))\nax.text(1.3, 4.0, 'evaporator+fan')\nax.annotate('', xy=(6.5,3.5), xytext=(2.7,4.0), arrowprops=dict(arrowstyle='->'))\nax.text(4.5, 4.2, 'cold air loop')\nax.annotate('', xy=(2.0,3.0), xytext=(6.0,2.5), arrowprops=dict(arrowstyle='->'))\nax.text(4.0, 2.8, 'return air')\n# condenser outside\nax.add_patch(patches.Rectangle((7.5,1.5), 1.5, 1.0, fill=False, linewidth=2))\nax.text(7.6, 1.9, 'condenser')\nax.plot([7,7.5],[3.5,2.2], linewidth=2); ax.plot([7,7.5],[3.3,2.0], linewidth=2)\nax.text(7.0, 3.0, 'hot reject')\nax.plot([3,3.5],[1.0,0.3], linewidth=2); ax.text(3.6,0.3,'condensate drain')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
+      "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
       "inputs": {},
-      "output_summary": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
-      "output_full": "Insulated cold room section with evaporator fan airflow over produce crates, 100mm PU walls, condenser heat rejection outside, condensate drain.",
-      "sketch_path": "evidence/sketch_4.png",
-      "references": [],
+      "output_summary": "tsolar.top \u2014 LVTOPSUN 550W Solar Panel \u2014 https://tsolar.top/products/lvtopsun-550w-solar-panel",
+      "output_full": "tsolar.top \u2014 LVTOPSUN 550W Solar Panel \u2014 https://tsolar.top/products/lvtopsun-550w-solar-panel\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "tsolar.top",
+          "title": "LVTOPSUN 550W Solar Panel",
+          "year": "",
+          "url": "https://tsolar.top/products/lvtopsun-550w-solar-panel",
+          "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E5",
-      "author": "Structural Enclosure Designer",
-      "tool": "calc",
-      "purpose": "crate net volume for 50 crates of 1 tonne",
-      "code_or_query": "50*0.6*0.4*0.226",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
+      "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
       "inputs": {},
-      "output_summary": "2.712",
-      "output_full": "2.712",
+      "output_summary": "renewableoutdoors.com \u2014 SunGoldPower 550W Monocrystalline PERC Solar Panel \u2014 https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
+      "output_full": "renewableoutdoors.com \u2014 SunGoldPower 550W Monocrystalline PERC Solar Panel \u2014 https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "renewableoutdoors.com",
+          "title": "SunGoldPower 550W Monocrystalline PERC Solar Panel",
+          "year": "",
+          "url": "https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
+          "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E6",
-      "author": "Structural Enclosure Designer",
-      "tool": "sketch",
-      "purpose": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
-      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,5))\n# Plan view\nax1.set_title(\"Plan - crate racks + aisle\")\nax1.set_xlim(0, 3.0); ax1.set_ylim(0, 2.2)\n# walls\nax1.plot([0.1,2.7,2.7,0.1,0.1],[0.1,0.1,2.1,2.1,0.1], 'k-', lw=2)\n# left rack\nax1.text(0.5,1.1,\"LEFT RACK\\n25 crates\", ha='center', va='center', fontsize=8)\nax1.add_patch(plt.Rectangle((0.2,0.25),0.8,1.6, fill=False, lw=2))\n# right rack\nax1.text(2.0,1.1,\"RIGHT RACK\\n25 crates\", ha='center', va='center', fontsize=8)\nax1.add_patch(plt.Rectangle((1.6,0.25),0.8,1.6, fill=False, lw=2))\n# aisle\nax1.text(1.4,1.1,\"AISLE\", ha='center', rotation=90, fontsize=8)\nax1.annotate(\"HINGED DOOR\\n800 wide\", xy=(1.4,0.1), xytext=(1.4,-0.25), ha='center', fontsize=8, arrowprops=dict(arrowstyle='->'))\nax1.annotate(\"100mm PU wall\", xy=(0.1,1.5), xytext=(-0.6,1.7), fontsize=8, arrowprops=dict(arrowstyle='->'))\nax1.set_aspect('equal'); ax1.axis('off')\n# Section view\nax2.set_title(\"Section - shade roof + airflow gap\")\nax2.set_xlim(0,3); ax2.set_ylim(0,3)\nax2.plot([0.3,2.7],[2.0,2.0],'k-',lw=3)\nax2.text(1.5,2.15,\"100mm PU ROOF\", ha='center', fontsize=8)\nax2.plot([0.2,2.8],[2.6,2.6],'k-',lw=2)\nax2.text(1.5,2.75,\"PV SHADE ROOF\\nvented gap 150\", ha='center', fontsize=8)\nax2.plot([0.3,0.3],[0.2,2.0],'k-',lw=3); ax2.plot([2.7,2.7],[0.2,2.0],'k-',lw=3)\nax2.text(0.15,1.0,\"PU WALL\", rotation=90, fontsize=7, ha='center')\nax2.add_patch(plt.Rectangle((0.5,0.3),0.7,1.2, fill=False, lw=2))\nax2.add_patch(plt.Rectangle((1.8,0.3),0.7,1.2, fill=False, lw=2))\nax2.text(0.85,0.9,\"CRATES\\non racks\", ha='center', fontsize=7)\nax2.text(2.15,0.9,\"CRATES\\non racks\", ha='center', fontsize=7)\nax2.text(1.5,0.5,\"AISLE + FAN AIRFLOW\", ha='center', fontsize=7)\nax2.annotate(\"\", xy=(1.5,0.7), xytext=(0.9,0.7), arrowprops=dict(arrowstyle='<->'))\nax2.annotate(\"\", xy=(1.5,2.4), xytext=(1.5,2.05), arrowprops=dict(arrowstyle='<->'))\nax2.axis('off')\nplt.tight_layout(); plt.savefig(\"sketch.png\", dpi=150)",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
+      "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
       "inputs": {},
-      "output_summary": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
-      "output_full": "Cold room enclosure: twin side racks with 50 vented crates, central aisle, hinged door with seals, 100mm PU panels and vented PV shade roof.",
-      "sketch_path": "evidence/sketch_6.png",
-      "references": [],
+      "output_summary": "tsolar.top \u2014 Znshine 550W Solar Panel \u2014 https://tsolar.top/products/znshine-550w-solar-panel",
+      "output_full": "tsolar.top \u2014 Znshine 550W Solar Panel \u2014 https://tsolar.top/products/znshine-550w-solar-panel\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "tsolar.top",
+          "title": "Znshine 550W Solar Panel",
+          "year": "",
+          "url": "https://tsolar.top/products/znshine-550w-solar-panel",
+          "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E7",
-      "author": "Post-Harvest Cooperative Operations Lead",
-      "tool": "calc",
-      "purpose": "total produce mass in 50 crates at 20kg each",
-      "code_or_query": "50*20",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
       "inputs": {},
-      "output_summary": "1000",
-      "output_full": "1000",
+      "output_summary": "yacht-supply24.com \u2014 Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 \u2014 https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
+      "output_full": "yacht-supply24.com \u2014 Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 \u2014 https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "yacht-supply24.com",
+          "title": "Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200",
+          "year": "",
+          "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
+          "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E8",
-      "author": "Post-Harvest Cooperative Operations Lead",
-      "tool": "sketch",
-      "purpose": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6)\nax.set_title(\"Coop loading workflow - wash slab, door, aisle, racks\")\nax.set_xlabel(\"plan view\"); ax.set_ylabel(\"\")\n# room outline\nax.plot([2,8,8,2,2],[1,1,5,5,1],'k-')\n# twin racks\nax.text(2.6,4.4,\"left rack\",fontsize=8); ax.text(6.0,4.4,\"right rack\",fontsize=8)\nfor y in [2.0,2.8,3.6]:\n    ax.plot([2.3,4.3],[y,y],'k-'); ax.plot([5.7,7.7],[y,y],'k-')\n# central aisle\nax.arrow(5.0,1.2,0,2.5,head_width=0.2,length_includes_head=True)\nax.text(5.15,2.2,\"aisle\",fontsize=8)\n# door\nax.plot([4.4,5.6],[1,1],'r-',linewidth=3); ax.text(4.4,0.6,\"door at grade\",fontsize=8,color='r')\n# wash slab outside\nax.plot([2,8,8,2,2],[0.0,0.0,0.5,0.5,0.0],'b--'); ax.text(2.2,0.2,\"wash slab\",fontsize=8,color='b')\nax.text(0.2,3.0,\"crates\\n20kg\",fontsize=8)\nplt.tight_layout(); plt.savefig(\"sketch.png\",dpi=150); plt.close()",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
       "inputs": {},
-      "output_summary": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-      "output_full": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-      "sketch_path": "evidence/sketch_8.png",
-      "references": [],
+      "output_summary": "yacht-supply24.com \u2014 Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 \u2014 https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
+      "output_full": "yacht-supply24.com \u2014 Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 \u2014 https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "yacht-supply24.com",
+          "title": "Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211",
+          "year": "",
+          "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
+          "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E9",
-      "author": "Refrigeration and Thermal Engineer",
-      "tool": "calc",
-      "purpose": "combined thermal: wall gain 24h plus pull-down",
-      "code_or_query": "216*24/1000 + 25",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
       "inputs": {},
-      "output_summary": "30.184",
-      "output_full": "30.184",
+      "output_summary": "leadingedgepower.com \u2014 Victron Blue Solar 60A MPPT Charge Controller \u2014 https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html",
+      "output_full": "leadingedgepower.com \u2014 Victron Blue Solar 60A MPPT Charge Controller \u2014 https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "leadingedgepower.com",
+          "title": "Victron Blue Solar 60A MPPT Charge Controller",
+          "year": "",
+          "url": "https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html",
+          "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
-      "cycle": 2
+      "cycle": 1
     },
     {
       "id": "E10",
-      "author": "Structural Enclosure Designer",
-      "tool": "calc",
-      "purpose": "door panel conduction check for insulated door",
-      "code_or_query": "0.23*0.9*1.9*35",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
       "inputs": {},
-      "output_summary": "13.765500000000001",
-      "output_full": "13.765500000000001",
+      "output_summary": "thesolarstore.com \u2014 EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery \u2014 https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+      "output_full": "thesolarstore.com \u2014 EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery \u2014 https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "thesolarstore.com",
+          "title": "EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery",
+          "year": "",
+          "url": "https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+          "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
-      "cycle": 2
+      "cycle": 1
     },
     {
       "id": "E11",
-      "author": "Structural Enclosure Designer",
-      "tool": "sketch",
-      "purpose": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd();\nfig, ax = plt.subplots(figsize=(8,6));\nax.set_xlim(0,10); ax.set_ylim(0,8); ax.set_aspect('equal'); ax.axis('off');\nax.text(5,7.5,'PV shade canopy with 150mm vent gap',ha='center',fontsize=9);\nax.plot([1,9],[7,7],lw=3); ax.plot([1,9],[6.5,6.5],lw=2);\nfor x in [2,4,6,8]:\n  ax.plot([x,x],[6.5,7],lw=1,linestyle='--');\n  ax.text(x,6.75,'vent',ha='center',fontsize=7);\nax.text(1.2,6.0,'100mm PU roof panel',fontsize=8);\nax.add_patch(plt.Rectangle((1,3),8,3,fill=False,lw=2));\nax.text(5,5.8,'cold room 2.6 x 2.0m',ha='center',fontsize=8);\nax.add_patch(plt.Rectangle((1.5,3.5),2,2,fill=False,lw=1.5));\nax.add_patch(plt.Rectangle((6.5,3.5),2,2,fill=False,lw=1.5));\nax.text(2.5,4.4,'twin side rack\\n25 crates',ha='center',fontsize=7);\nax.text(7.5,4.4,'twin side rack\\n25 crates',ha='center',fontsize=7);\nax.text(5,4.0,'central aisle',ha='center',fontsize=7);\nax.add_patch(plt.Rectangle((4,2),2,1,fill=False,lw=2));\nax.text(5,2.5,'hinged door\\n0.9x1.9m',ha='center',fontsize=7);\nax.plot([4,4],[2,3],lw=3); ax.plot([6,6],[2,3],lw=3);\nax.text(6.3,2.3,'double gasket\\n+ cam lock',fontsize=7);\nax.text(1.2,3.1,'cam-lock PU panel joint',fontsize=7);\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150);",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
       "inputs": {},
-      "output_summary": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-      "output_full": "Insulated door with gaskets, cam-lock PU panels, rack aisle and PV shade canopy gap",
-      "sketch_path": "evidence/sketch_11.png",
-      "references": [],
+      "output_summary": "bigweibattery.com.au \u2014 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid \u2014 https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+      "output_full": "bigweibattery.com.au \u2014 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid \u2014 https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "bigweibattery.com.au",
+          "title": "48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid",
+          "year": "",
+          "url": "https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+          "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
-      "cycle": 2
+      "cycle": 1
     },
     {
       "id": "E12",
-      "author": "Post-Harvest Cooperative Operations Lead",
-      "tool": "calc",
-      "purpose": "staged intake days for 1 tonne at 250 kg per day",
-      "code_or_query": "1000/250",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
       "inputs": {},
-      "output_summary": "4.0",
-      "output_full": "4.0",
+      "output_summary": "nabellasstores.com \u2014 LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores \u2014 https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+      "output_full": "nabellasstores.com \u2014 LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores \u2014 https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "nabellasstores.com",
+          "title": "LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores",
+          "year": "",
+          "url": "https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+          "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
-      "cycle": 2
+      "cycle": 1
     },
     {
       "id": "E13",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "battery nominal kWh for 6kWh/day staged load with 1.5 days autonomy at 80% DoD",
-      "code_or_query": "6*1.5/0.8",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
       "inputs": {},
-      "output_summary": "11.25",
-      "output_full": "11.25",
+      "output_summary": "medium.com \u2014 Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium \u2014 https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
+      "output_full": "medium.com \u2014 Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium \u2014 https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "medium.com",
+          "title": "Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium",
+          "year": "",
+          "url": "https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
+          "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
-      "cycle": 2
+      "cycle": 1
     },
     {
       "id": "E14",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "PV watts for 6kWh day at 5 peak sun hours with 25 percent losses",
-      "code_or_query": "6000/5/0.75",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
       "inputs": {},
-      "output_summary": "1600.0",
-      "output_full": "1600.0",
+      "output_summary": "link.springer.com \u2014 Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link \u2014 http://link.springer.com/article/10.1186/s40807-025-00162-2",
+      "output_full": "link.springer.com \u2014 Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link \u2014 http://link.springer.com/article/10.1186/s40807-025-00162-2\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "link.springer.com",
+          "title": "Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link",
+          "year": "",
+          "url": "http://link.springer.com/article/10.1186/s40807-025-00162-2",
+          "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E15",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "web_search",
+      "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "inputs": {},
+      "output_summary": "medium.com \u2014 SOLAR IRRADIATION POTENTIAL OF AFRICA \u2600\ufe0f | by Ibikunle Abdulateef | Medium \u2014 https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de",
+      "output_full": "medium.com \u2014 SOLAR IRRADIATION POTENTIAL OF AFRICA \u2600\ufe0f | by Ibikunle Abdulateef | Medium \u2014 https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "medium.com",
+          "title": "SOLAR IRRADIATION POTENTIAL OF AFRICA \u2600\ufe0f | by Ibikunle Abdulateef | Medium",
+          "year": "",
+          "url": "https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de",
+          "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E16",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "calc",
+      "purpose": "array kW for 8kWh per day load at 5 peak sun hours",
+      "code_or_query": "Q_(8,'kWh')/(Q_(5,'h')*0.75)",
+      "inputs": {
+        "arg0": {
+          "value": "8",
+          "unit": "kWh"
+        },
+        "arg1": {
+          "value": "5",
+          "unit": "h"
+        }
+      },
+      "output_summary": "2.13 kWh/h",
+      "output_full": "2.13 kWh/h",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E17",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "sketch",
+      "purpose": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.set_title('Solar array + battery for cold room')\n# cold room\nax.text(7,5.2,'cold room',fontsize=10)\nimport matplotlib.patches as mp\nax.add_patch(mp.Rectangle((6,2.5),3,2.5,color='lightblue'))\nax.text(6.3,1.8,'battery+MPPT',fontsize=9)\nax.add_patch(mp.Rectangle((6.3,1.0),1.5,0.7,color='gold'))\n# panels\nfor i,x in enumerate([1,2.5,4]):\n    ax.plot([x,x+1.2],[3.2,4.0],'k-',lw=2)\n    ax.plot([x,x+1.2],[3.2,3.2],'k-')\n    ax.text(x,2.6,f'550W {i+1}',fontsize=8)\nax.annotate('sun',xy=(2.5,4.5),xytext=(2.5,5.3),arrowprops=dict(facecolor='orange'),fontsize=12,ha='center')\nax.annotate('cable to cold room',xy=(6,2),xytext=(3.5,1.2),arrowprops=dict(arrowstyle='->'),fontsize=9)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+      "inputs": {},
+      "output_summary": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+      "output_full": "Ground-mounted 4-panel solar array beside cold room, 48V battery and MPPT controller inside shaded enclosure",
+      "sketch_path": "evidence/sketch_17.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E18",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "inputs": {},
+      "output_summary": "fao.org \u2014 Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) \u2014 https://www.fao.org/4/v5030E/V5030E0r.htm",
+      "output_full": "fao.org \u2014 Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) \u2014 https://www.fao.org/4/v5030E/V5030E0r.htm\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "fao.org",
+          "title": "Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.)",
+          "year": "",
+          "url": "https://www.fao.org/4/v5030E/V5030E0r.htm",
+          "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E19",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "inputs": {},
+      "output_summary": "fao.org \u2014 Small-Scale Postharvest Handling Practices \u2014 http://www.fao.org/4/ae075e/ae075e14.htm",
+      "output_full": "fao.org \u2014 Small-Scale Postharvest Handling Practices \u2014 http://www.fao.org/4/ae075e/ae075e14.htm\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "fao.org",
+          "title": "Small-Scale Postharvest Handling Practices",
+          "year": "",
+          "url": "http://www.fao.org/4/ae075e/ae075e14.htm",
+          "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E20",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "inputs": {},
+      "output_summary": "freshliance.com \u2014 Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain \u2014 https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
+      "output_full": "freshliance.com \u2014 Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain \u2014 https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "freshliance.com",
+          "title": "Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain",
+          "year": "",
+          "url": "https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
+          "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E21",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: respiration heat fresh produce watts per tonne refrigeration load",
+      "code_or_query": "respiration heat fresh produce watts per tonne refrigeration load",
+      "inputs": {},
+      "output_summary": "fr.slideserve.com \u2014 PPT - YML Reefer Introduction And Guidance For Marketing / Sales PowerPoint Presentation - ID:6831537 \u2014 https://fr.slideserve.com/mckenzie-hardin/yml-reefer-introduction-and-guidance-for-marketing-sales-powerpoint-ppt-presentation",
+      "output_full": "fr.slideserve.com \u2014 PPT - YML Reefer Introduction And Guidance For Marketing / Sales PowerPoint Presentation - ID:6831537 \u2014 https://fr.slideserve.com/mckenzie-hardin/yml-reefer-introduction-and-guidance-for-marketing-sales-powerpoint-ppt-presentation\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "fr.slideserve.com",
+          "title": "PPT - YML Reefer Introduction And Guidance For Marketing / Sales PowerPoint Presentation - ID:6831537",
+          "year": "",
+          "url": "https://fr.slideserve.com/mckenzie-hardin/yml-reefer-introduction-and-guidance-for-marketing-sales-powerpoint-ppt-presentation",
+          "query": "respiration heat fresh produce watts per tonne refrigeration load",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E22",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: respiration heat fresh produce watts per tonne refrigeration load",
+      "code_or_query": "respiration heat fresh produce watts per tonne refrigeration load",
+      "inputs": {},
+      "output_summary": "dr.ddn.upes.ac.in \u2014 Name: Enrolment No: \u2014 2038 \u2014 https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23",
+      "output_full": "dr.ddn.upes.ac.in \u2014 Name: Enrolment No: \u2014 2038 \u2014 https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "dr.ddn.upes.ac.in",
+          "title": "Name: Enrolment No:",
+          "year": "2038",
+          "url": "https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23",
+          "query": "respiration heat fresh produce watts per tonne refrigeration load",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E23",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: respiration heat fresh produce watts per tonne refrigeration load",
+      "code_or_query": "respiration heat fresh produce watts per tonne refrigeration load",
+      "inputs": {},
+      "output_summary": "mail.wjbphs.com \u2014 Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea \u2014 2024 \u2014 https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf",
+      "output_full": "mail.wjbphs.com \u2014 Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea \u2014 2024 \u2014 https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "mail.wjbphs.com",
+          "title": "Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea",
+          "year": "2024",
+          "url": "https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf",
+          "query": "respiration heat fresh produce watts per tonne refrigeration load",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E24",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "inputs": {},
+      "output_summary": "manualmachine.com \u2014 Danfoss BD1.4F-FSD Data sheet \u2014 https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
+      "output_full": "manualmachine.com \u2014 Danfoss BD1.4F-FSD Data sheet \u2014 https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "manualmachine.com",
+          "title": "Danfoss BD1.4F-FSD Data sheet",
+          "year": "",
+          "url": "https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
+          "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E25",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "inputs": {},
+      "output_summary": "darment.eu \u2014 BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz \u2014 https://www.darment.eu/web/content/77489?download=false",
+      "output_full": "darment.eu \u2014 BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz \u2014 https://www.darment.eu/web/content/77489?download=false\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "darment.eu",
+          "title": "BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz",
+          "year": "",
+          "url": "https://www.darment.eu/web/content/77489?download=false",
+          "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E26",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "inputs": {},
+      "output_summary": "assets.danfoss.com \u2014 BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz \u2014 https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
+      "output_full": "assets.danfoss.com \u2014 BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz \u2014 https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "assets.danfoss.com",
+          "title": "BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz",
+          "year": "",
+          "url": "https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
+          "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E27",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: polyurethane panel cold room insulation thickness thermal conductivity",
+      "code_or_query": "polyurethane panel cold room insulation thickness thermal conductivity",
+      "inputs": {},
+      "output_summary": "yuyan-refrigeration.en.made-in-china.com \u2014 Cold Room Panel with Polyurethane Foam - 2026 Polyurethane Sandwich Panel, PU Panel price | Made-in-china.com \u2014 2026 \u2014 http://yuyan-refrigeration.en.made-in-china.com/product/bCWEvujPfTVB/China-Cold-Room-Panel-with-Polyurethane-Foam.html",
+      "output_full": "yuyan-refrigeration.en.made-in-china.com \u2014 Cold Room Panel with Polyurethane Foam - 2026 Polyurethane Sandwich Panel, PU Panel price | Made-in-china.com \u2014 2026 \u2014 http://yuyan-refrigeration.en.made-in-china.com/product/bCWEvujPfTVB/China-Cold-Room-Panel-with-Polyurethane-Foam.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "yuyan-refrigeration.en.made-in-china.com",
+          "title": "Cold Room Panel with Polyurethane Foam - 2026 Polyurethane Sandwich Panel, PU Panel price | Made-in-china.com",
+          "year": "2026",
+          "url": "http://yuyan-refrigeration.en.made-in-china.com/product/bCWEvujPfTVB/China-Cold-Room-Panel-with-Polyurethane-Foam.html",
+          "query": "polyurethane panel cold room insulation thickness thermal conductivity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E28",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: polyurethane panel cold room insulation thickness thermal conductivity",
+      "code_or_query": "polyurethane panel cold room insulation thickness thermal conductivity",
+      "inputs": {},
+      "output_summary": "shsandwichpanel.com \u2014 Cold Room PU Sandwich Panel - Shandong Shanghe \u2014 https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+      "output_full": "shsandwichpanel.com \u2014 Cold Room PU Sandwich Panel - Shandong Shanghe \u2014 https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "shsandwichpanel.com",
+          "title": "Cold Room PU Sandwich Panel - Shandong Shanghe",
+          "year": "",
+          "url": "https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+          "query": "polyurethane panel cold room insulation thickness thermal conductivity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E29",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "web_search",
+      "purpose": "search: polyurethane panel cold room insulation thickness thermal conductivity",
+      "code_or_query": "polyurethane panel cold room insulation thickness thermal conductivity",
+      "inputs": {},
+      "output_summary": "chinametalbuildings.com \u2014 Camlock polyurethane cold room insulation sandwich panel for fresh food storage \u2014 https://www.chinametalbuildings.com/sale-36335316-camlock-polyurethane-cold-room-insulation-sandwich-panel-for-fresh-food-storage.html",
+      "output_full": "chinametalbuildings.com \u2014 Camlock polyurethane cold room insulation sandwich panel for fresh food storage \u2014 https://www.chinametalbuildings.com/sale-36335316-camlock-polyurethane-cold-room-insulation-sandwich-panel-for-fresh-food-storage.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "chinametalbuildings.com",
+          "title": "Camlock polyurethane cold room insulation sandwich panel for fresh food storage",
+          "year": "",
+          "url": "https://www.chinametalbuildings.com/sale-36335316-camlock-polyurethane-cold-room-insulation-sandwich-panel-for-fresh-food-storage.html",
+          "query": "polyurethane panel cold room insulation thickness thermal conductivity",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E30",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "calc",
+      "purpose": "product pull-down energy 1 tonne 25K over 24h",
+      "code_or_query": "Q_(\"1000kg*3.6kJ/kg/K*25K\")/Q_(\"24h\").to('kWh')",
+      "inputs": {
+        "arg0": {
+          "value": "\"1000kg*3.6kJ/kg/K*25K\"",
+          "unit": ""
+        },
+        "arg1": {
+          "value": "\"24h\"",
+          "unit": ""
+        }
+      },
+      "output_summary": "failed: pint.errors.DimensionalityError: Cannot convert from 'hour' ([time]) to 'kilowatt_hour' ([mass] * [length] ** 2 / [time] ** 2)",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-r3nfmj9e/hs_user_script.py\", line 5, in <module>\n    __r = (Q_(\"1000kg*3.6kJ/kg/K*25K\")/Q_(\"24h\").to('kWh'))\n                                       ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 585, in to\n    magnitude = self._convert_magnitude_not_inplace(other, *contexts, **ctx_kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 520, in _convert_magnitude_not_inplace\n    return self._REGISTRY.convert(self._magnitude, self._units, other, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1149, in convert\n    return self._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/context/registry.py\", line 418, in _convert\n    return super()._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/nonmultiplicative/registry.py\", line 263, in _convert\n    return super()._convert(value, src, dst, inplace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1184, in _convert\n    raise factor\npint.errors.DimensionalityError: Cannot convert from 'hour' ([time]) to 'kilowatt_hour' ([mass] * [length] ** 2 / [time] ** 2)",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 1
+    },
+    {
+      "id": "E31",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "simulate",
+      "purpose": "cooling load first order for 1 tonne cold room",
+      "code_or_query": "import pint; u=pint.UnitRegistry()\nm=1000 #kg\ncp=3600 # J/kgK\ndT=25 # K from 30C to 5C\nE=m*cp*dT/3.6e6 # kWh\nP_avg=E/24 # kW over 24h\nprint(f\"pull-down energy {E:.1f} kWh, avg power {P_avg*1000:.0f} W\")\n# transmission\nk=0.022; d=0.10; U=k/d\nA=6*(2*2) # 2m cube\ndT2=35\nQtrans=U*A*dT2\nprint(f\"U {U:.3f} W/m2K, Qtrans {Qtrans:.0f} W\")\nQresp=80 # W typical\nQfan=50\nQtotal=Qtrans+Qresp+Qfan\nprint(f\"steady cooling ~ {Qtotal:.0f} W\")\n# electrical with COP 2\nCOP=2.0\nPe=Qtotal/COP\nprint(f\"electrical steady {Pe:.0f} W, daily elec {Pe*24/1000:.2f} kWh/day, plus pulldown elec {(E/COP):.1f} kWh one-off\")\n",
+      "inputs": {},
+      "output_summary": "U 0.22 W/m2K, Qtrans 185 W; steady cooling ~ 315 W; electrical steady 157 W, daily elec 3.78 kWh/day, plus pulldown elec 12.5 kWh one-off",
+      "output_full": "pull-down energy 25.0 kWh, avg power 1042 W\nU 0.220 W/m2K, Qtrans 185 W\nsteady cooling ~ 315 W\nelectrical steady 157 W, daily elec 3.78 kWh/day, plus pulldown elec 12.5 kWh one-off",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E32",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "sketch",
+      "purpose": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.axis('off')\nax.text(5,6.5,'insulated roof 100mm PU',ha='center',fontsize=9)\nrect=plt.Rectangle((1,1),8,5,fill=False,lw=2); ax.add_patch(rect)\nax.text(0.2,3,'wall\\n100mm',fontsize=8)\nax.add_patch(plt.Rectangle((3,1.5),4,2,fill=False,lw=1.5))\nax.text(5,2.2,'1 tonne crates',ha='center',fontsize=9)\nax.text(7.5,5,'evaporator\\n+ fan',ha='center',fontsize=8,color='blue')\nax.annotate('',xy=(6.5,4.5),xytext=(7.5,4.7),arrowprops=dict(arrowstyle='->',color='blue'))\nax.annotate('',xy=(3.5,4.0),xytext=(6.0,4.5),arrowprops=dict(arrowstyle='->',color='blue'))\nax.text(5,0.4,'floor drain for condensate',ha='center',fontsize=8)\nax.text(1.2,5.7,'cold air flow',fontsize=8,color='blue')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120)",
+      "inputs": {},
+      "output_summary": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+      "output_full": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+      "sketch_path": "evidence/sketch_32.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E33",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "code_or_query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "inputs": {},
+      "output_summary": "coldroomjl.com \u2014 High Density White Pu Sandwich Cold Room And Freezer Room Xiamen Jialiang For Global \u2014 https://www.coldroomjl.com/cold-room/excellent-performance-easy-to-use-big-cold-room-sri-lanka-low-temperature-blast-medical-cold-room/",
+      "output_full": "coldroomjl.com \u2014 High Density White Pu Sandwich Cold Room And Freezer Room Xiamen Jialiang For Global \u2014 https://www.coldroomjl.com/cold-room/excellent-performance-easy-to-use-big-cold-room-sri-lanka-low-temperature-blast-medical-cold-room/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "coldroomjl.com",
+          "title": "High Density White Pu Sandwich Cold Room And Freezer Room Xiamen Jialiang For Global",
+          "year": "",
+          "url": "https://www.coldroomjl.com/cold-room/excellent-performance-easy-to-use-big-cold-room-sri-lanka-low-temperature-blast-medical-cold-room/",
+          "query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E34",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "code_or_query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "inputs": {},
+      "output_summary": "lingfancooling.en.made-in-china.com \u2014 High-Performance PU Sandwich Panels for Cold Room Insulation - Cold Room Panel and Insulation PU Panel \u2014 https://lingfancooling.en.made-in-china.com/product/pJArWKaMIYUq/China-High-Performance-PU-Sandwich-Panels-for-Cold-Room-Insulation.html",
+      "output_full": "lingfancooling.en.made-in-china.com \u2014 High-Performance PU Sandwich Panels for Cold Room Insulation - Cold Room Panel and Insulation PU Panel \u2014 https://lingfancooling.en.made-in-china.com/product/pJArWKaMIYUq/China-High-Performance-PU-Sandwich-Panels-for-Cold-Room-Insulation.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "lingfancooling.en.made-in-china.com",
+          "title": "High-Performance PU Sandwich Panels for Cold Room Insulation - Cold Room Panel and Insulation PU Panel",
+          "year": "",
+          "url": "https://lingfancooling.en.made-in-china.com/product/pJArWKaMIYUq/China-High-Performance-PU-Sandwich-Panels-for-Cold-Room-Insulation.html",
+          "query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E35",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "code_or_query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+      "inputs": {},
+      "output_summary": "sdecoice.en.made-in-china.com \u2014 100mm Cold Room Cold Storage PU Sandwich Insulation Panels - Cold Room Panel and Walk in Freezer Panel \u2014 https://sdecoice.en.made-in-china.com/product/twMASgRPOGcf/China-100mm-Cold-Room-Cold-Storage-PU-Sandwich-Insulation-Panels.html",
+      "output_full": "sdecoice.en.made-in-china.com \u2014 100mm Cold Room Cold Storage PU Sandwich Insulation Panels - Cold Room Panel and Walk in Freezer Panel \u2014 https://sdecoice.en.made-in-china.com/product/twMASgRPOGcf/China-100mm-Cold-Room-Cold-Storage-PU-Sandwich-Insulation-Panels.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "sdecoice.en.made-in-china.com",
+          "title": "100mm Cold Room Cold Storage PU Sandwich Insulation Panels - Cold Room Panel and Walk in Freezer Panel",
+          "year": "",
+          "url": "https://sdecoice.en.made-in-china.com/product/twMASgRPOGcf/China-100mm-Cold-Room-Cold-Storage-PU-Sandwich-Insulation-Panels.html",
+          "query": "cold room PU sandwich panel standard size cam lock thickness 100mm",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E36",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
+      "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "inputs": {},
+      "output_summary": "directindustry.com \u2014 Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated \u2014 https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
+      "output_full": "directindustry.com \u2014 Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated \u2014 https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "directindustry.com",
+          "title": "Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated",
+          "year": "",
+          "url": "https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
+          "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E37",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
+      "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "inputs": {},
+      "output_summary": "kruizinga.pt \u2014 Used Euronorm stacking bins walls + floor perforated \u2014 https://www.kruizinga.pt/used-euronorm-stacking-bins-walls-floor-perforated/98-7329gb_363",
+      "output_full": "kruizinga.pt \u2014 Used Euronorm stacking bins walls + floor perforated \u2014 https://www.kruizinga.pt/used-euronorm-stacking-bins-walls-floor-perforated/98-7329gb_363\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "kruizinga.pt",
+          "title": "Used Euronorm stacking bins walls + floor perforated",
+          "year": "",
+          "url": "https://www.kruizinga.pt/used-euronorm-stacking-bins-walls-floor-perforated/98-7329gb_363",
+          "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E38",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
+      "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "inputs": {},
+      "output_summary": "solentplastics.co.uk \u2014 Plastic Storage Solutions by Sector | Solent Plastics \u2014 1960 \u2014 https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
+      "output_full": "solentplastics.co.uk \u2014 Plastic Storage Solutions by Sector | Solent Plastics \u2014 1960 \u2014 https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "solentplastics.co.uk",
+          "title": "Plastic Storage Solutions by Sector | Solent Plastics",
+          "year": "1960",
+          "url": "https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
+          "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E39",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: solar panel ground mount wind load galvanized steel frame standard",
+      "code_or_query": "solar panel ground mount wind load galvanized steel frame standard",
+      "inputs": {},
+      "output_summary": "metakihsd.en.hisupplier.com \u2014 OEM Galvanized Steel Solar Panel Stand / mount for power plant  manufacturer from China Hangzhou Shangjun Industry Co., Ltd. \u2014 http://metakihsd.en.hisupplier.com/product-2013554-OEM-Galvanized-Steel-Solar-Panel-Stand-mount-for-power-plant.html",
+      "output_full": "metakihsd.en.hisupplier.com \u2014 OEM Galvanized Steel Solar Panel Stand / mount for power plant  manufacturer from China Hangzhou Shangjun Industry Co., Ltd. \u2014 http://metakihsd.en.hisupplier.com/product-2013554-OEM-Galvanized-Steel-Solar-Panel-Stand-mount-for-power-plant.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "metakihsd.en.hisupplier.com",
+          "title": "OEM Galvanized Steel Solar Panel Stand / mount for power plant  manufacturer from China Hangzhou Shangjun Industry Co., Ltd.",
+          "year": "",
+          "url": "http://metakihsd.en.hisupplier.com/product-2013554-OEM-Galvanized-Steel-Solar-Panel-Stand-mount-for-power-plant.html",
+          "query": "solar panel ground mount wind load galvanized steel frame standard",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E40",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: solar panel ground mount wind load galvanized steel frame standard",
+      "code_or_query": "solar panel ground mount wind load galvanized steel frame standard",
+      "inputs": {},
+      "output_summary": "amoybrand.com \u2014 Steel ground solar panel mounting systems manufacturer | Amoybrand.com \u2014 https://www.amoybrand.com/steel-ground-solar-panel-mounting-systems_c4763.html",
+      "output_full": "amoybrand.com \u2014 Steel ground solar panel mounting systems manufacturer | Amoybrand.com \u2014 https://www.amoybrand.com/steel-ground-solar-panel-mounting-systems_c4763.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "amoybrand.com",
+          "title": "Steel ground solar panel mounting systems manufacturer | Amoybrand.com",
+          "year": "",
+          "url": "https://www.amoybrand.com/steel-ground-solar-panel-mounting-systems_c4763.html",
+          "query": "solar panel ground mount wind load galvanized steel frame standard",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E41",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "web_search",
+      "purpose": "search: solar panel ground mount wind load galvanized steel frame standard",
+      "code_or_query": "solar panel ground mount wind load galvanized steel frame standard",
+      "inputs": {},
+      "output_summary": "166f920fb99ccb30.en.made-in-china.com \u2014 Galvanized Steel Solar Ground Mounting System - Ground Mount Solar Rack and Ground Mounting \u2014 https://166f920fb99ccb30.en.made-in-china.com/product/HdNTsKxAfhGZ/China-Galvanized-Steel-Solar-Ground-Mounting-System.html",
+      "output_full": "166f920fb99ccb30.en.made-in-china.com \u2014 Galvanized Steel Solar Ground Mounting System - Ground Mount Solar Rack and Ground Mounting \u2014 https://166f920fb99ccb30.en.made-in-china.com/product/HdNTsKxAfhGZ/China-Galvanized-Steel-Solar-Ground-Mounting-System.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "166f920fb99ccb30.en.made-in-china.com",
+          "title": "Galvanized Steel Solar Ground Mounting System - Ground Mount Solar Rack and Ground Mounting",
+          "year": "",
+          "url": "https://166f920fb99ccb30.en.made-in-china.com/product/HdNTsKxAfhGZ/China-Galvanized-Steel-Solar-Ground-Mounting-System.html",
+          "query": "solar panel ground mount wind load galvanized steel frame standard",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E42",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "calc",
+      "purpose": "floor pressure versus produce volume check",
+      "code_or_query": "Q_(1000,'kg')*Q_(1,'m')/Q_(4.6,'m**2')/Q_(1000,'kg/m**3')",
+      "inputs": {
+        "arg0": {
+          "value": "1000",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "1",
+          "unit": "m"
+        },
+        "arg2": {
+          "value": "4.6",
+          "unit": "m**2"
+        },
+        "arg3": {
+          "value": "1000",
+          "unit": "kg/m**3"
+        }
+      },
+      "output_summary": "0.217 m\u00b2",
+      "output_full": "0.217 m\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E43",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "calc",
+      "purpose": "floor uniform pressure from 1 tonne produce",
+      "code_or_query": "(Q_(1000,'kg')*9.81*Q_(1,'m/s**2')/Q_(1,'')/Q_(4.8,'m**2')).to('kPa')",
+      "inputs": {
+        "arg0": {
+          "value": "1000",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "1",
+          "unit": "m/s**2"
+        },
+        "arg2": {
+          "value": "4.8",
+          "unit": "m**2"
+        }
+      },
+      "output_summary": "2.04 kPa",
+      "output_full": "2.04 kPa",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E44",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "simulate",
+      "purpose": "chamber volume floor load and panel count check",
+      "code_or_query": "from pint import UnitRegistry\nQ_=UnitRegistry().Quantity\ninternal_L=2.4; internal_W=2.0; internal_H=2.2\nV=internal_L*internal_W*internal_H\nfloor_area=internal_L*internal_W\nmass=1000.0\nproduce_density_bulk=350.0 # kg/m3 crates with air gaps\nproduce_vol=mass/produce_density_bulk\npressure_kPa=mass*9.81/floor_area/1000\ncrate_L=0.6; crate_W=0.4; crate_H=0.22\ncrates_needed=int(mass/20)+2  # ~20kg per crate\nfootprints_per_layer=int((2.0//0.6)*2)  # racks both sides\nprint(f\"V={V:.2f} m3 produce_vol={produce_vol:.2f} m3 fill={produce_vol/V*100:.1f}% pressure={pressure_kPa:.2f} kPa crates~{crates_needed} footprints/layer~{footprints_per_layer}\")",
+      "inputs": {},
+      "output_summary": "V=10.6 m3 produce_vol=2.86 m3 fill=27.1% pressure=2.04 kPa crates~52 footprints/layer~6",
+      "output_full": "V=10.56 m3 produce_vol=2.86 m3 fill=27.1% pressure=2.04 kPa crates~52 footprints/layer~6",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E45",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "sketch",
+      "purpose": "Insulated chamber on steel skid with door, racks, crates, central aisle and roof solar rails",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig,ax=plt.subplots(figsize=(7,5))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.set_aspect('equal'); ax.axis('off')\nax.text(5,6.5,'cold chamber on skid with roof solar rails',ha='center',fontsize=11)\n# walls\nax.add_patch(plt.Rectangle((2,1.5),6,4,color='lightblue',ec='black',lw=1.5))\nax.add_patch(plt.Rectangle((2,1.0),6,0.5,color='gray',ec='black',lw=1.5))\nax.text(5,1.25,'steel skid base',ha='center',fontsize=8)\n# door\nax.add_patch(plt.Rectangle((4,1.5),2,3,color='white',ec='black',lw=1.5))\nax.text(5,3.2,'800 door\\n+ seals',ha='center',fontsize=8)\n# racks crates\nfor x in [2.3,6.9]:\n    for y in [1.8,2.5,3.2,3.9,4.6]:\n        ax.add_patch(plt.Rectangle((x,y),0.8,0.5,color='orange',ec='black'))\nax.text(2.7,5.4,'racks + crates',fontsize=8,ha='center')\nax.text(6.5,5.4,'racks + crates',fontsize=8,ha='center')\nax.text(5,2.0,'aisle',ha='center',fontsize=8)\n# roof + solar\nax.plot([1.5,8.5],[5.5,5.9],'k-',lw=2)\nax.plot([2,8],[5.9,6.3],'b-',lw=3)\nax.text(6.5,6.2,'solar rails',fontsize=8)\n# anchors\nfor x in [2,8]:\n    ax.plot([x,x],[0.4,1.0],'k-',lw=1.5)\n    ax.plot([x-0.3,x+0.3],[0.4,0.4],'k-',lw=2)\nax.text(5,0.15,'ground anchors',ha='center',fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=110); print('saved')",
+      "inputs": {},
+      "output_summary": "Insulated chamber on steel skid with door, racks, crates, central aisle and roof solar rails",
+      "output_full": "saved\n",
+      "sketch_path": "evidence/sketch_45.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E46",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "code_or_query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "inputs": {},
+      "output_summary": "elearn-archive.fnu.ac.fj \u2014 Practices for the Postharvest Handling of Horticultural Crops \u2014 https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf",
+      "output_full": "elearn-archive.fnu.ac.fj \u2014 Practices for the Postharvest Handling of Horticultural Crops \u2014 https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "elearn-archive.fnu.ac.fj",
+          "title": "Practices for the Postharvest Handling of Horticultural Crops",
+          "year": "",
+          "url": "https://elearn-archive.fnu.ac.fj/pluginfile.php/258419/mod_resource/content/1/Practices%20for%20the%20Postharvest%20Handling%20of%20Horticultural%20Crops.pdf",
+          "query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E47",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "code_or_query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "inputs": {},
+      "output_summary": "fao.org \u2014 Fruit and vegetable processing - Ch05 General procedures for fruit and vegetable preservation \u2014 https://www.fao.org/3/v5030e/V5030E0A.HTM",
+      "output_full": "fao.org \u2014 Fruit and vegetable processing - Ch05 General procedures for fruit and vegetable preservation \u2014 https://www.fao.org/3/v5030e/V5030E0A.HTM\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "fao.org",
+          "title": "Fruit and vegetable processing - Ch05 General procedures for fruit and vegetable preservation",
+          "year": "",
+          "url": "https://www.fao.org/3/v5030e/V5030E0A.HTM",
+          "query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E48",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "code_or_query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+      "inputs": {},
+      "output_summary": "slideshare.net \u2014 What is post harvest technology \u2014 http://slideshare.net/slideshow/what-is-post-harvest-technology/118428956",
+      "output_full": "slideshare.net \u2014 What is post harvest technology \u2014 http://slideshare.net/slideshow/what-is-post-harvest-technology/118428956\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "slideshare.net",
+          "title": "What is post harvest technology",
+          "year": "",
+          "url": "http://slideshare.net/slideshow/what-is-post-harvest-technology/118428956",
+          "query": "FAO postharvest handling fruit vegetables sorting cooling spoilage prevention",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E49",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "code_or_query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "inputs": {},
+      "output_summary": "legalclarity.org \u2014 OSHA Lifting Standards: Weight Limits, Rules & Penalties \u2014 https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/",
+      "output_full": "legalclarity.org \u2014 OSHA Lifting Standards: Weight Limits, Rules & Penalties \u2014 https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "legalclarity.org",
+          "title": "OSHA Lifting Standards: Weight Limits, Rules & Penalties",
+          "year": "",
+          "url": "https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/",
+          "query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E50",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "code_or_query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "inputs": {},
+      "output_summary": "centralfloridacraneservice.com \u2014 Safe Lifting Techniques for Heavy Objects: OSHA Guidelines \u2014 https://centralfloridacraneservice.com/feeds/blog/control-lifting-heavy-objects",
+      "output_full": "centralfloridacraneservice.com \u2014 Safe Lifting Techniques for Heavy Objects: OSHA Guidelines \u2014 https://centralfloridacraneservice.com/feeds/blog/control-lifting-heavy-objects\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "centralfloridacraneservice.com",
+          "title": "Safe Lifting Techniques for Heavy Objects: OSHA Guidelines",
+          "year": "",
+          "url": "https://centralfloridacraneservice.com/feeds/blog/control-lifting-heavy-objects",
+          "query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E51",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "code_or_query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+      "inputs": {},
+      "output_summary": "fieldsafetytalk.com \u2014 Manual Handling Toolbox Talk \u2014 https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk",
+      "output_full": "fieldsafetytalk.com \u2014 Manual Handling Toolbox Talk \u2014 https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "fieldsafetytalk.com",
+          "title": "Manual Handling Toolbox Talk",
+          "year": "",
+          "url": "https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk",
+          "query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E52",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: food grade plastic crate ventilated produce washable food safety",
+      "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+      "inputs": {},
+      "output_summary": "rjcox.com.au \u2014 Nally Series 2000 26 Litre Ventilated Plastic Crate \u2014 2000 \u2014 https://www.rjcox.com.au/product/614/138204/nally-series-2000-26-litre-ventilated-crate/",
+      "output_full": "rjcox.com.au \u2014 Nally Series 2000 26 Litre Ventilated Plastic Crate \u2014 2000 \u2014 https://www.rjcox.com.au/product/614/138204/nally-series-2000-26-litre-ventilated-crate/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "rjcox.com.au",
+          "title": "Nally Series 2000 26 Litre Ventilated Plastic Crate",
+          "year": "2000",
+          "url": "https://www.rjcox.com.au/product/614/138204/nally-series-2000-26-litre-ventilated-crate/",
+          "query": "food grade plastic crate ventilated produce washable food safety",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E53",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: food grade plastic crate ventilated produce washable food safety",
+      "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+      "inputs": {},
+      "output_summary": "m.indiamart.com \u2014 Super Market Crate \u2014 https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
+      "output_full": "m.indiamart.com \u2014 Super Market Crate \u2014 https://m.indiamart.com/proddetail/super-market-crate-22170947948.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "m.indiamart.com",
+          "title": "Super Market Crate",
+          "year": "",
+          "url": "https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
+          "query": "food grade plastic crate ventilated produce washable food safety",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E54",
+      "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+      "tool": "web_search",
+      "purpose": "search: food grade plastic crate ventilated produce washable food safety",
+      "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+      "inputs": {},
+      "output_summary": "life-solutions.in \u2014 Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha \u2014 https://www.life-solutions.in/supermarket-racks.html",
+      "output_full": "life-solutions.in \u2014 Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha \u2014 https://www.life-solutions.in/supermarket-racks.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "life-solutions.in",
+          "title": "Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha",
+          "year": "",
+          "url": "https://www.life-solutions.in/supermarket-racks.html",
+          "query": "food grade plastic crate ventilated produce washable food safety",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E55",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "calc",
+      "purpose": "product pull-down thermal energy 1 tonne 25K",
+      "code_or_query": "Q_=1000*3.6*25",
+      "inputs": {},
+      "output_summary": "failed: SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-lrqgm_xi/hs_user_script.py\", line 5\n    __r = (Q_=1000*3.6*25)\n           ^^^^^^^^^^^^^^\nSyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 2
+    },
+    {
+      "id": "E56",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
+      "tool": "calc",
+      "purpose": "product pull-down thermal energy 1 tonne 25K",
+      "code_or_query": "(90000*Q_('kJ')).to('kWh')",
+      "inputs": {
+        "arg0": {
+          "value": "'kJ'",
+          "unit": ""
+        }
+      },
+      "output_summary": "25 kWh",
+      "output_full": "25 kWh",
       "sketch_path": null,
       "references": [],
       "status": "ok",
       "cycle": 2
     },
     {
-      "id": "E15",
-      "author": "Post-Harvest Cooperative Operations Lead",
+      "id": "E57",
+      "author": "Baraka - Refrigeration and Thermal Engineer",
       "tool": "calc",
-      "purpose": "batch door openings infiltration saving from 10 to 2 per day",
-      "code_or_query": "0.6*2/10",
-      "inputs": {},
-      "output_summary": "0.12",
-      "output_full": "0.12",
+      "purpose": "average pull-down cooling power over 24h",
+      "code_or_query": "(25*Q_('kWh')/24/Q_('h')).to('W')",
+      "inputs": {
+        "arg0": {
+          "value": "'kWh'",
+          "unit": ""
+        },
+        "arg1": {
+          "value": "'h'",
+          "unit": ""
+        }
+      },
+      "output_summary": "1.04\u00d710\u00b3 W",
+      "output_full": "1.04\u00d710\u00b3 W",
       "sketch_path": null,
       "references": [],
       "status": "ok",
-      "cycle": 3
+      "cycle": 2
     },
     {
-      "id": "E16",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "add infiltration thermal to daily electric load",
-      "code_or_query": "6+0.12/2.5",
-      "inputs": {},
-      "output_summary": "6.048",
-      "output_full": "6.048",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 3
-    },
-    {
-      "id": "E17",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "check autonomy days with updated load",
-      "code_or_query": "11.25*0.8/6.048",
-      "inputs": {},
-      "output_summary": "1.4880952380952381",
-      "output_full": "1.4880952380952381",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 3
-    },
-    {
-      "id": "E18",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "low-sun daily PV energy at 2 PSH",
-      "code_or_query": "2.5*2*0.75",
-      "inputs": {},
-      "output_summary": "3.75",
-      "output_full": "3.75",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 3
-    },
-    {
-      "id": "E19",
-      "author": "Refrigeration and Thermal Engineer",
-      "tool": "calc",
-      "purpose": "infiltration electric from 0.12 kWh thermal at COP 2.5",
-      "code_or_query": "0.12/2.5",
-      "inputs": {},
-      "output_summary": "0.048",
-      "output_full": "0.048",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 3
-    },
-    {
-      "id": "E20",
-      "author": "Post-Harvest Cooperative Operations Lead",
-      "tool": "calc",
-      "purpose": "verify total payload 1 tonne from 50 crates",
-      "code_or_query": "50*20",
-      "inputs": {},
-      "output_summary": "1000",
-      "output_full": "1000",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E21",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "autonomy days from usable battery vs updated load",
-      "code_or_query": "11.25*0.8/6.096",
-      "inputs": {},
-      "output_summary": "1.4763779527559056",
-      "output_full": "1.4763779527559056",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E22",
-      "author": "Solar Power Specialist",
-      "tool": "calc",
-      "purpose": "PV kW needed for low-sun refill",
-      "code_or_query": "6.096/0.75/2",
-      "inputs": {},
-      "output_summary": "4.064",
-      "output_full": "4.064",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E23",
-      "author": "Refrigeration and Thermal Engineer",
-      "tool": "calc",
-      "purpose": "ice-bank latent kWh for 100kg ice",
-      "code_or_query": "100*334/3600",
-      "inputs": {},
-      "output_summary": "9.277777777777779",
-      "output_full": "9.277777777777779",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E24",
-      "author": "Structural Enclosure Designer",
-      "tool": "calc",
-      "purpose": "PV area for 4kW at 200W per m2",
-      "code_or_query": "4.06/0.2",
-      "inputs": {},
-      "output_summary": "20.299999999999997",
-      "output_full": "20.299999999999997",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E25",
-      "author": "Structural Enclosure Designer",
-      "tool": "calc",
-      "purpose": "load per canopy post for 4kW array",
-      "code_or_query": "(10*22+80)/4",
-      "inputs": {},
-      "output_summary": "75.0",
-      "output_full": "75.0",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E26",
-      "author": "Structural Enclosure Designer",
+      "id": "E58",
+      "author": "Chidi - Enclosure and Structural Designer",
       "tool": "sketch",
-      "purpose": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,6))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.set_aspect('equal'); ax.axis('off')\n# cold room box\nax.add_patch(plt.Rectangle((2,1), 6, 3, fill=False, linewidth=2))\nax.text(5,2.5,'twin racks + aisle',ha='center',fontsize=8)\nax.text(5,1.7,'100mm PU panels',ha='center',fontsize=8)\n# door\nax.add_patch(plt.Rectangle((4.2,1), 1.6, 2.0, fill=False, linewidth=1.5))\nax.text(5,0.7,'hinged door + seals',ha='center',fontsize=8)\n# canopy posts\nfor x in [1.5,8.5]:\n    ax.plot([x,x],[0.5,5.8],'k-',linewidth=2)\nax.text(1.5,0.3,'post anchor',ha='center',fontsize=7)\nax.text(8.5,0.3,'post anchor',ha='center',fontsize=7)\n# PV roof tilted\nax.plot([1,9],[5.8,6.5],'k-',linewidth=3)\nax.plot([1,9],[5.5,6.2],'k-',linewidth=1)\nax.text(5,6.7,'4kW tilted PV shade roof',ha='center',fontsize=9)\nax.annotate('vent gap', xy=(5,5.7), xytext=(8.8,5.0), arrowprops=dict(arrowstyle='->'), fontsize=8)\nax.annotate('ice bank under evaporator', xy=(6.5,3.5), xytext=(8.8,3.8), arrowprops=dict(arrowstyle='->'), fontsize=7)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150); plt.close()",
+      "purpose": "Door seal compression section and rack guard for crate tiers",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,4))\n# Door seal section\nax1.set_title(\"Door seal section (plan view)\")\nax1.set_xlim(0,10); ax1.set_ylim(0,10)\n# wall panel\nax1.fill([0,2,2,0],[1,1,9,9], color='lightgray')\nax1.text(0.3,5,\"wall 100mm\", rotation=90, fontsize=8)\n# door leaf\nax1.fill([6,8,8,6],[1.5,1.5,8.5,8.5], color='tan')\nax1.text(6.2,5,\"door leaf\", rotation=90, fontsize=8)\n# gasket uncompressed vs compressed\nax1.plot([2,6],[8,8],'k--')\nax1.plot([2,6],[2,2],'k--')\nax1.fill([2,6,6,2],[3,3,4,4], color='black')\nax1.text(2.5,6.5,\"magnetic gasket\\n3mm compression\", fontsize=8)\nax1.annotate(\"fixed wall\", xy=(1,9), fontsize=8)\nax1.annotate(\"moving door\", xy=(7,9), fontsize=8)\nax1.set_xticks([]); ax1.set_yticks([])\n# Rack guard\nax2.set_title(\"Rack tier with guard rail\")\nax2.set_xlim(0,10); ax2.set_ylim(0,10)\nax2.fill([1,9,9,1],[1,1,2,2], color='gray')\nax2.text(4,1.3,\"rack shelf\", fontsize=8)\nfor x in [2,4,6,8]:\n    ax2.fill([x-0.8,x+0.8,x+0.8,x-0.8],[3,3,5,5], color='green', alpha=0.6)\nax2.text(3.5,4,\"20kg crates\", fontsize=8)\nax2.plot([1,9],[6,6],'r-', linewidth=3)\nax2.text(4,6.5,\"guard rail 50mm above shelf\", fontsize=8, color='red')\nax2.plot([1,1],[1,6],'k-', linewidth=2)\nax2.plot([9,9],[1,6],'k-', linewidth=2)\nax2.text(1.2,7.5,\"fixed posts\", fontsize=8)\nax2.set_xticks([]); ax2.set_yticks([])\nfig.tight_layout()\n",
       "inputs": {},
-      "output_summary": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-      "output_full": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-      "sketch_path": "evidence/sketch_26.png",
+      "output_summary": "failed: findfont: Font family 'Comic Neue' not found.",
+      "output_full": "failed: findfont: Font family 'Comic Neue' not found.",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 3
+    },
+    {
+      "id": "E59",
+      "author": "Chidi - Enclosure and Structural Designer",
+      "tool": "sketch",
+      "purpose": "Door seal compression section and rack guard rail detail",
+      "code_or_query": "import matplotlib.pyplot as plt\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,4))\nax1.set_title(\"Door seal section plan view\")\nax1.set_xlim(0,10); ax1.set_ylim(0,10)\nax1.fill([0,2,2,0],[1,1,9,9], color='lightgray')\nax1.text(0.3,5,\"wall 100mm\", rotation=90, fontsize=8)\nax1.fill([6,8,8,6],[1.5,1.5,8.5,8.5], color='tan')\nax1.text(6.2,5,\"door leaf\", rotation=90, fontsize=8)\nax1.fill([2,6,6,2],[3,3,4,4], color='black')\nax1.text(2.5,6.5,\"magnetic gasket 3mm squeeze\", fontsize=8)\nax1.set_xticks([]); ax1.set_yticks([])\nax2.set_title(\"Rack tier with guard rail\")\nax2.set_xlim(0,10); ax2.set_ylim(0,10)\nax2.fill([1,9,9,1],[1,1,2,2], color='gray')\nax2.text(4,1.3,\"rack shelf\", fontsize=8)\nfor x in [2,4,6,8]:\n    ax2.fill([x-0.8,x+0.8,x+0.8,x-0.8],[3,3,5,5], color='green', alpha=0.6)\nax2.text(3.5,4,\"20kg crates\", fontsize=8)\nax2.plot([1,9],[6,6],'r-', linewidth=3)\nax2.text(3,6.5,\"guard rail 50mm above\", fontsize=8, color='red')\nax2.set_xticks([]); ax2.set_yticks([])\nfig.tight_layout()\nfig.savefig(\"sketch.png\")\n",
+      "inputs": {},
+      "output_summary": "Door seal compression section and rack guard rail detail",
+      "output_full": "Door seal compression section and rack guard rail detail",
+      "sketch_path": "evidence/sketch_59.png",
       "references": [],
       "status": "ok",
-      "cycle": 4
+      "cycle": 3
+    },
+    {
+      "id": "E60",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "calc",
+      "purpose": "peak electrical power from pulldown plus transmission at COP2 plus fan",
+      "code_or_query": "((1040+185)/2+50)",
+      "inputs": {},
+      "output_summary": "662",
+      "output_full": "662",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
+    },
+    {
+      "id": "E61",
+      "author": "Amara - Off-Grid Solar Power Lead",
+      "tool": "calc",
+      "purpose": "peak battery current at 48V for 662W",
+      "code_or_query": "662/48",
+      "inputs": {},
+      "output_summary": "13.8",
+      "output_full": "13.8",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
     }
   ],
   "objections": [
     {
       "id": "O1",
       "author": "Manager",
-      "target_id": "C3",
-      "text": "Battery autonomy in kWh not closed: no combined daily electrical load from E1 pull-down and E3 wall gain to justify 1.5 days. Request Solar Power Specialist to compute.",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
-      "evidence_ids": []
-    },
-    {
-      "id": "O2",
-      "author": "Manager",
       "target_id": "C2",
-      "text": "Cloudy-sequence refill not closed: E14 sizes for 5 Peak Sun Hours fair-sun only, no 2-3 day low-sun energy balance for F3.",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
-      "evidence_ids": []
-    },
-    {
-      "id": "O3",
-      "author": "Manager",
-      "target_id": "C1",
-      "text": "Door-opening infiltration kWh not added to steady load: E10 covers conduction only, not air exchange vs E9 combined load.",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
-      "evidence_ids": []
-    },
-    {
-      "id": "O4",
-      "author": "Manager",
-      "target_id": "C3",
-      "text": "Ice-bank kWh contribution to 1.5 days autonomy not quantified separately from battery E17; request Refrigeration Engineer to compute latent kWh.",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
-      "evidence_ids": []
-    },
-    {
-      "id": "O5",
-      "author": "Manager",
-      "target_id": "C3",
-      "text": "Ice-bank thermal kWh (E23) not converted to electrical kWh via COP, so combined battery+ice autonomy in days remains unclosed. Request Refrigeration Engineer to provide divisor.",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
+      "text": "Energy sizing mismatch blocks array and battery sizing",
+      "blocking": true,
+      "status": "resolved",
+      "resolution": "Proposal v2 carries upsized cooling concept and drops old size, so energy sizing aligns pending final votes",
       "evidence_ids": []
     }
   ],
-  "proposal": null,
-  "votes": {},
+  "proposal": {
+    "version": 2,
+    "author": "Chidi - Enclosure and Structural Designer",
+    "text": "Integrated solar cold store: flat-pack insulated chamber on steel skid with roof array rails, variable-speed DC cooling ~1kW with fan, 50x20kg crates on side racks with aisle, staged loading over 3 days, outside sort and FIFO rotation.",
+    "concept_ids": [
+      "C1",
+      "C2",
+      "C4",
+      "C7",
+      "C8",
+      "C9",
+      "C10",
+      "C11",
+      "C13"
+    ],
+    "key_claims": []
+  },
+  "votes": {
+    "Chidi - Enclosure and Structural Designer": {
+      "version": 2,
+      "ready": true,
+      "reason": "v2 carries agreed 1kW staged peak and enclosure loads close"
+    },
+    "Amara - Off-Grid Solar Power Lead": {
+      "version": 2,
+      "ready": true,
+      "reason": "Solar day and night power closes: 2.2kW array covers ~8kWh/day staged load, 5.12kWh bank covers night hold ~2-4kWh, 60A MPPT and 13.8A wiring carry 662W peak"
+    },
+    "Baraka - Refrigeration and Thermal Engineer": {
+      "version": 2,
+      "ready": true,
+      "reason": "staged 1kW cooling covers pull-down plus leak, night energy fits battery with duty cycling, insulation and air path buildable"
+    },
+    "Dalia - Cooperative Use and Produce Preservation Specialist": {
+      "version": 2,
+      "ready": true,
+      "reason": "50x20kg crates hold 1 tonne with aisle access, outside sort plus FIFO rotation and daily checks limit spoilage, washable interior with drain and 20kg lift limit keeps handling safe"
+    }
+  },
   "closure": {
-    "closed_by": "cap",
+    "closed_by": "consensus",
     "cycles_used": 4,
     "open_blocking": []
   }

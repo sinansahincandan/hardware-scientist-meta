@@ -1,64 +1,69 @@
 {
-  "prompt": "Side elevation realistic rendered product-style illustration on light background of concealed twin under-deck TMD retrofit at 40m footbridge midspan. Top: clear walking deck with no hardware above, existing cross-girder below deck. Two transverse SHS clamp beams U-bolted to host girders. Twin steel mass blocks hung below on vertical coil springs with viscous dampers connected between mass and beam. Soffit access hatch beside. Show deck vibrating under crowd force and masses oscillating vertically, springs compressing, dampers stroking. Draw short leader-line callouts in image: TMD mass block, Coil spring, Viscous damper, Transverse clamp beam, U-bolt, Soffit access hatch. Keep relative sizes and connections from reference.",
+  "prompt": "Photorealistic side three-quarter view from slightly below at midspan of a steel footbridge, showing hidden under-deck tuned mass damper cassette in operating condition. Two long existing grey steel longitudinal girders run horizontally under an unchanged walking deck with parapet; a small pedestrian silhouette walks on deck to indicate live load. Spanning between the bottom flanges is a galvanized transverse cross-beam held by dark friction beam clamps gripping the flanges with no drilling. Bolted centrally below the cross-beam hangs a compact galvanized support frame cassette. Inside the cassette a large dark steel rectangular 800 kg block mass is suspended with visible vertical clearance, carried on two vertical steel coil springs on the sides and a central vertical viscous damper cylinder. The mass is shown mid-stroke, slightly displaced, free to move vertically while frame is fixed. Below the unit a light-grey color-matched perforated metal soffit screen with small holes and shadow gap covers the bottom, with the front half neatly cut away to make the interior mass, springs and damper fully visible. Real materials: painted steel, galvanized steel texture, perforated sheet, concrete deck edge. Bright overcast daylight, product-shot clarity, sharp focus on clamp, beam, frame, springs, damper and mass connections, correct relative sizes, no text, no labels, no arrows, no scale bars.",
   "must_not": [
-    "hardware above deck",
-    "change to deck sightlines or parapet",
-    "numbers, values or units in drawn callouts",
-    "hidden or cutaway masses",
-    "dark or cluttered background"
+    "text labels or captions of any kind",
+    "dimension lines or scale bars",
+    "diagram arrows or graphic overlays",
+    "cut deck or parapet or deck construction work",
+    "drilled or welded girder connections",
+    "extra masses or extra dampers beyond one unit"
   ],
-  "changes_from_previous": "Initial version - no previous rounds.",
+  "changes_from_previous": "First version - new side-view under-deck cassette with cutaway screen to reveal moving mass, springs and damper.",
   "visual_plan": {
-    "view": "side elevation, midspan under-deck section, realistic rendered product style, light background",
-    "spatial_layout": "Side view: deck horizontal on top clear, existing cross-girder directly below, two transverse clamp beams across below soffit, twin mass blocks centered at midspan antinode below beams on coil springs with flanking viscous dampers, U-bolts at beam ends, soffit access hatch to side.",
-    "operating_moment": "Crowd resonant excitation at midspan antinode, TMD masses resonating out-of-phase with vertical travel, springs flexing and dampers stroking to absorb 1.9 Hz bending energy.",
-    "transfer_path": "Load: Crowd walking force -> Midspan deck antinode -> Clamp beams -> Coil springs and viscous dampers -> Twin TMD masses | Measured: Midspan accelerometer -> Setra comfort assessment. Show red down arrow on deck and on mass, blue up reaction.",
-    "interactions": "Coil springs hung from clamp beam to mass, viscous damper connected between mass and beam, clamp beams U-bolted to existing host cross-girders, mass free to move vertically on springs while beams, U-bolts, girders and deck stay fixed.",
+    "view": "side three-quarter view from below, looking slightly up at midspan cassette, showing vertical stacking of girder, clamp, cross-beam, frame, springs/damper, mass and lower screen",
+    "spatial_layout": "Side view at midspan: deck and two girders horizontal across top, cross-beam transverse between girder bottom flanges at center, support frame cassette hanging centrally below cross-beam, large block mass centered inside frame on springs left-right with damper alongside, perforated screen as thin horizontal plate below mass with shadow gap. Moving mass centered, fixed structure above and shroud below.",
+    "operating_moment": "Bridge in service under pedestrian walking causing vertical bounce; tuned mass oscillating vertically out of phase on springs while damper strokes, dissipating energy, fixed frame steady and mass free.",
+    "transfer_path": "Vibration energy flows girders to cross-beam to support frame to springs and damper to moving mass; deck acceleration sensed at midspan for comfort check.",
+    "interactions": "Friction clamps grip girder bottom flanges and carry cross-beam; cross-beam bolted to support frame; frame top fixed, springs and damper stand vertically between frame top and moving mass; mass floats with air gap on all sides for plus-minus stroke; perforated screen fixed below frame on standoffs with shadow gap, cut away in front to expose motion.",
     "avoid": [
-      "hardware above deck",
-      "deck sightline change",
-      "top or isometric view",
-      "numbers in callouts",
-      "hiding masses inside other parts"
+      "hiding mass, springs or damper inside closed box",
+      "deck closure, scaffolding on deck, or parapet change",
+      "text, labels, arrows, dimensions in image",
+      "top-down or eye-level view that hides under-deck unit"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "tmd_mass",
-      "material": "steel",
-      "purpose": "tuned mass resonating to absorb bending energy",
-      "callout": "TMD mass block"
+      "part_id": "mass",
+      "material": "dark painted steel block",
+      "purpose": "free vertical mass that moves out of phase to absorb 1.9 Hz mode",
+      "callout": "moving mass"
     },
     {
-      "part_id": "coil_spring",
-      "material": "steel",
-      "purpose": "provide stiffness tuned to absorb mode",
-      "callout": "Coil spring"
+      "part_id": "springs",
+      "material": "painted steel coils",
+      "purpose": "provide soft vertical stiffness tuned to mode, suspend mass from frame",
+      "callout": "coil springs"
     },
     {
-      "part_id": "viscous_damper",
-      "material": "steel",
-      "purpose": "dissipate vibration energy",
-      "callout": "Viscous damper"
+      "part_id": "damper",
+      "material": "painted steel cylinder with chrome rod",
+      "purpose": "dissipate mode energy between frame and moving mass",
+      "callout": "viscous damper"
     },
     {
-      "part_id": "clamp_beam",
-      "material": "galvanized steel",
-      "purpose": "support TMD units below soffit",
-      "callout": "Transverse clamp beam"
+      "part_id": "frame",
+      "material": "hot-dip galvanized steel frame",
+      "purpose": "fixed cassette that holds springs, damper and mass below deck",
+      "callout": "support frame"
     },
     {
-      "part_id": "u_bolt",
-      "material": "steel",
-      "purpose": "clamp beams to host girders",
-      "callout": "U-bolt"
+      "part_id": "crossbeam",
+      "material": "hot-dip galvanized steel I-beam",
+      "purpose": "span between girders to carry entire hung cassette load",
+      "callout": "cross-beam"
     },
     {
-      "part_id": "access_hatch",
-      "material": "galvanized steel",
-      "purpose": "maintainable under-deck access",
-      "callout": "Soffit access hatch"
+      "part_id": "clamps",
+      "material": "hot-dip galvanized malleable iron clamps",
+      "purpose": "grip girder bottom flanges without drilling for no-deck-closure install",
+      "callout": "friction clamps"
+    },
+    {
+      "part_id": "screen",
+      "material": "color-matched perforated steel sheet",
+      "purpose": "hide cassette from eye-height with shadow gap, shown cut away to reveal inside",
+      "callout": "perforated screen"
     }
-  ],
-  "label_mode": "image"
+  ]
 }

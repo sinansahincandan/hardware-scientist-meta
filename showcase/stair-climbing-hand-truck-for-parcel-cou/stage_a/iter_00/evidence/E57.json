@@ -1,0 +1,14 @@
+{
+  "id": "E57",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "total device mass from parts breakdown",
+  "code_or_query": "1.33+1.5+2+5+1.5",
+  "inputs": {},
+  "output_summary": "11.3",
+  "output_full": "11.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

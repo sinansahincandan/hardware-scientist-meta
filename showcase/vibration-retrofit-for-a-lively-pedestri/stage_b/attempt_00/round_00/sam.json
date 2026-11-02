@@ -1,0 +1,150 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "girder": {
+      "phrase": "steel beam",
+      "boxes": [
+        [
+          288.75,
+          359.8243045387994,
+          1404.375,
+          580.9663250366033
+        ]
+      ]
+    },
+    "clamps": {
+      "phrase": "metal clamp",
+      "boxes": []
+    },
+    "crossbeam": {
+      "phrase": "cross beam",
+      "boxes": []
+    },
+    "frame": {
+      "phrase": "metal frame",
+      "boxes": [
+        [
+          286.875,
+          356.0761346998536,
+          1404.375,
+          580.9663250366033
+        ],
+        [
+          729.375,
+          547.2327964860908,
+          1263.75,
+          993.2650073206443
+        ]
+      ]
+    },
+    "springs": {
+      "phrase": "steel spring",
+      "boxes": [
+        [
+          815.625,
+          640.9370424597365,
+          864.375,
+          950.1610541727672
+        ],
+        [
+          1153.125,
+          685.9150805270864,
+          1185.0,
+          931.4202049780381
+        ],
+        [
+          1072.5,
+          609.077598828697,
+          1123.125,
+          912.679355783309
+        ],
+        [
+          918.75,
+          745.8857979502196,
+          954.375,
+          940.7906295754027
+        ]
+      ]
+    },
+    "mass": {
+      "phrase": "steel block",
+      "boxes": [
+        [
+          795.0,
+          912.679355783309,
+          1226.25,
+          1173.1771595900439
+        ]
+      ]
+    },
+    "damper": {
+      "phrase": "metal cylinder",
+      "boxes": [
+        [
+          980.625,
+          616.5739385065885,
+          1010.625,
+          732.7672035139093
+        ],
+        [
+          961.875,
+          732.7672035139093,
+          1040.625,
+          929.5461200585652
+        ]
+      ]
+    },
+    "lockpin": {
+      "phrase": "metal pin",
+      "boxes": []
+    },
+    "screen": {
+      "phrase": "metal screen",
+      "boxes": [
+        [
+          1284.375,
+          732.7672035139093,
+          1920.0,
+          1115.0805270863837
+        ],
+        [
+          0.0,
+          907.0571010248902,
+          810.0,
+          1231.2737920937043
+        ]
+      ]
+    }
+  },
+  "differences": {
+    "girder": [
+      "expected 2 visible, found 1"
+    ],
+    "clamps": [
+      "not found by the segmenter as 'metal clamp'"
+    ],
+    "crossbeam": [
+      "not found by the segmenter as 'cross beam'"
+    ],
+    "frame": [
+      "expected 1 visible, found 2"
+    ],
+    "springs": [
+      "expected 1 visible, found 4"
+    ],
+    "damper": [
+      "expected 1 visible, found 2"
+    ],
+    "lockpin": [
+      "not found by the segmenter as 'metal pin'"
+    ],
+    "screen": [
+      "expected 1 visible, found 2",
+      "size against frame: expected about 1.8 times, measured 0.72 times"
+    ]
+  },
+  "rechecks": []
+}

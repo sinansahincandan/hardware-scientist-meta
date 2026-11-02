@@ -1,14 +1,24 @@
 {
   "id": "E20",
-  "author": "Post-Harvest Cooperative Operations Lead",
-  "tool": "calc",
-  "purpose": "verify total payload 1 tonne from 50 crates",
-  "code_or_query": "50*20",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
+  "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
   "inputs": {},
-  "output_summary": "1000",
-  "output_full": "1000",
+  "output_summary": "freshliance.com — Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain — https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
+  "output_full": "freshliance.com — Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain — https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "freshliance.com",
+      "title": "Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain",
+      "year": "",
+      "url": "https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
+      "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

@@ -97,6 +97,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         diffs = pm.differences(meas, part_map)
         rechecks = pm.recheck(meas, diffs, kept["sam"] if kept else None)
         pm.save_round(round_dir, meas, diffs, rechecks)
+        pm.draw_overlay(render_path, round_dir / "sam.json", round_dir / "sam_overlay.png")
         sam_text = pm.evidence_text(diffs, rechecks, part_map)
         annotated_path, loc, missing = Annotator(client).run(render_path, spec, geometry, round_dir / "annotated.png",
                                                              localization=pm.to_localization(meas, spec))

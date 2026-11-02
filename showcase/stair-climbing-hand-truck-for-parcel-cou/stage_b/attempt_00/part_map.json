@@ -1,0 +1,110 @@
+{
+  "parts": [
+    {
+      "part_id": "cluster",
+      "visual_phrase": "wheel cluster",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "wheel",
+      "size_ratio": 2.0,
+      "touches": [
+        "wheel",
+        "worm"
+      ],
+      "note": "Three-wheel side unit that steps over stair noses, locked by worm."
+    },
+    {
+      "part_id": "worm",
+      "visual_phrase": "metal box",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "cluster",
+      "size_ratio": 0.3,
+      "touches": [
+        "cluster",
+        "spine"
+      ],
+      "note": "Small drive on axle that holds load without hand grip."
+    },
+    {
+      "part_id": "spine",
+      "visual_phrase": "metal frame",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "handle",
+      "size_ratio": 1.1,
+      "touches": [
+        "worm",
+        "toe",
+        "handle",
+        "pin",
+        "strap"
+      ],
+      "note": "Tall twin frame that carries load and folds flat."
+    },
+    {
+      "part_id": "toe",
+      "visual_phrase": "foot plate",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "wheel",
+      "size_ratio": 2.5,
+      "touches": [
+        "spine",
+        "strap",
+        "pin"
+      ],
+      "note": "Flat bottom plate that holds parcel and folds up."
+    },
+    {
+      "part_id": "handle",
+      "visual_phrase": "handle bar",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "spine",
+      "size_ratio": 0.9,
+      "touches": [
+        "spine"
+      ],
+      "note": "Top loop pushed with two hands to climb stairs."
+    },
+    {
+      "part_id": "strap",
+      "visual_phrase": "fabric strap",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "spine",
+      "size_ratio": 0.7,
+      "touches": [
+        "spine",
+        "toe"
+      ],
+      "note": "Long belts that secure parcel to frame."
+    },
+    {
+      "part_id": "wheel",
+      "visual_phrase": "rubber wheel",
+      "count": 3,
+      "long_axis": "any",
+      "size_vs": "cluster",
+      "size_ratio": 0.5,
+      "touches": [
+        "cluster"
+      ],
+      "note": "Small round tire on each arm of cluster, three per side."
+    },
+    {
+      "part_id": "pin",
+      "visual_phrase": "metal pin",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "wheel",
+      "size_ratio": 0.13,
+      "touches": [
+        "spine",
+        "toe"
+      ],
+      "note": "Tiny lock and foot that fixes fold and protects frame."
+    }
+  ]
+}

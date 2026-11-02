@@ -1,0 +1,14 @@
+{
+  "id": "E31",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "calc",
+  "purpose": "required response reduction factor bare to target",
+  "code_or_query": "1.75/0.7",
+  "inputs": {},
+  "output_summary": "2.5",
+  "output_full": "2.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

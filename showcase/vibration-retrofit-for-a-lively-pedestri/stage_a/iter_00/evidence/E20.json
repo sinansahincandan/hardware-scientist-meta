@@ -1,0 +1,24 @@
+{
+  "id": "E20",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "web_search",
+  "purpose": "search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+  "code_or_query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+  "inputs": {},
+  "output_summary": "core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges — https://core.ac.uk/download/pdf/192164607.pdf",
+  "output_full": "core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges — https://core.ac.uk/download/pdf/192164607.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "core.ac.uk",
+      "title": "Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges",
+      "year": "",
+      "url": "https://core.ac.uk/download/pdf/192164607.pdf",
+      "query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

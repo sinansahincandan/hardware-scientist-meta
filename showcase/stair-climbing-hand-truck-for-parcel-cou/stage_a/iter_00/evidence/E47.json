@@ -1,0 +1,14 @@
+{
+  "id": "E47",
+  "author": "Tomas \u2014 Human Factors and Safety Engineer",
+  "tool": "calc",
+  "purpose": "reduction ratio to bring handle pull below repeatable target",
+  "code_or_query": "153/90",
+  "inputs": {},
+  "output_summary": "1.7",
+  "output_full": "1.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

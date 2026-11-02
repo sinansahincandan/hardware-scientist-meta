@@ -1,0 +1,23 @@
+{
+  "id": "E22",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "calc",
+  "purpose": "bare single-ped resonant accel estimate",
+  "code_or_query": "Q_(700,\"N\")*0.4/(2*0.004*Q_(20000,\"kg\"))",
+  "inputs": {
+    "arg0": {
+      "value": "700",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "20000",
+      "unit": "kg"
+    }
+  },
+  "output_summary": "1.75 N/kg",
+  "output_full": "1.75 N/kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

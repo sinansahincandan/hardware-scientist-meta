@@ -1,0 +1,23 @@
+{
+  "id": "E44",
+  "author": "Retrofit and Maintenance Engineer",
+  "tool": "calc",
+  "purpose": "total static hung load TMD plus frame",
+  "code_or_query": "(Q_(1000,'kg')*Q_(9.81,'m/s**2')).to('kN')",
+  "inputs": {
+    "arg0": {
+      "value": "1000",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    }
+  },
+  "output_summary": "9.81 kN",
+  "output_full": "9.81 kN",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

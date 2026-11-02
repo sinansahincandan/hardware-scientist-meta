@@ -1,0 +1,24 @@
+{
+  "id": "E17",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228 ergonomic push pull force limits two handed",
+  "code_or_query": "ISO 11228 ergonomic push pull force limits two handed",
+  "inputs": {},
+  "output_summary": "intertekinform.com — Buy BS ISO 11228-2:2007 | Intertek Inform — 2007 — https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
+  "output_full": "intertekinform.com — Buy BS ISO 11228-2:2007 | Intertek Inform — 2007 — https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "intertekinform.com",
+      "title": "Buy BS ISO 11228-2:2007 | Intertek Inform",
+      "year": "2007",
+      "url": "https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
+      "query": "ISO 11228 ergonomic push pull force limits two handed",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,14 +1,24 @@
 {
   "id": "E8",
-  "author": "Post-Harvest Cooperative Operations Lead",
-  "tool": "sketch",
-  "purpose": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6)\nax.set_title(\"Coop loading workflow - wash slab, door, aisle, racks\")\nax.set_xlabel(\"plan view\"); ax.set_ylabel(\"\")\n# room outline\nax.plot([2,8,8,2,2],[1,1,5,5,1],'k-')\n# twin racks\nax.text(2.6,4.4,\"left rack\",fontsize=8); ax.text(6.0,4.4,\"right rack\",fontsize=8)\nfor y in [2.0,2.8,3.6]:\n    ax.plot([2.3,4.3],[y,y],'k-'); ax.plot([5.7,7.7],[y,y],'k-')\n# central aisle\nax.arrow(5.0,1.2,0,2.5,head_width=0.2,length_includes_head=True)\nax.text(5.15,2.2,\"aisle\",fontsize=8)\n# door\nax.plot([4.4,5.6],[1,1],'r-',linewidth=3); ax.text(4.4,0.6,\"door at grade\",fontsize=8,color='r')\n# wash slab outside\nax.plot([2,8,8,2,2],[0.0,0.0,0.5,0.5,0.0],'b--'); ax.text(2.2,0.2,\"wash slab\",fontsize=8,color='b')\nax.text(0.2,3.0,\"crates\\n20kg\",fontsize=8)\nplt.tight_layout(); plt.savefig(\"sketch.png\",dpi=150); plt.close()",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
+  "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
   "inputs": {},
-  "output_summary": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-  "output_full": "Cooperative loading workflow: ground-level door, central aisle, twin crate racks, external wash slab",
-  "sketch_path": "evidence/sketch_8.png",
-  "references": [],
+  "output_summary": "yacht-supply24.com — Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
+  "output_full": "yacht-supply24.com — Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "yacht-supply24.com",
+      "title": "Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211",
+      "year": "",
+      "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
+      "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

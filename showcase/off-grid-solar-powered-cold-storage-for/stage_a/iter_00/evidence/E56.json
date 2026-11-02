@@ -1,0 +1,19 @@
+{
+  "id": "E56",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "calc",
+  "purpose": "product pull-down thermal energy 1 tonne 25K",
+  "code_or_query": "(90000*Q_('kJ')).to('kWh')",
+  "inputs": {
+    "arg0": {
+      "value": "'kJ'",
+      "unit": ""
+    }
+  },
+  "output_summary": "25 kWh",
+  "output_full": "25 kWh",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

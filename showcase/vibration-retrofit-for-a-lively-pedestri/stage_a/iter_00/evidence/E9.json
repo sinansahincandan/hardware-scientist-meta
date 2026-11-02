@@ -1,14 +1,24 @@
 {
   "id": "E9",
-  "author": "Vibration Control Specialist",
-  "tool": "calc",
-  "purpose": "static weight of 400kg TMD for connection sizing",
-  "code_or_query": "400*9.81",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+  "code_or_query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
   "inputs": {},
-  "output_summary": "3924.0",
-  "output_full": "3924.0",
+  "output_summary": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
+  "output_full": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "backend.orbit.dtu.dk",
+      "title": "TMD_nscm19.dvi",
+      "year": "",
+      "url": "https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
+      "query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

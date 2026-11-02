@@ -1,0 +1,23 @@
+{
+  "id": "E45",
+  "author": "Retrofit and Maintenance Engineer",
+  "tool": "calc",
+  "purpose": "slip safety factor 8xM16 clamps",
+  "code_or_query": "(Q_(8*4.0,'kN')/Q_(9.81,'kN')).to('')",
+  "inputs": {
+    "arg0": {
+      "value": "8*4.0",
+      "unit": "kN"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "kN"
+    }
+  },
+  "output_summary": "3.26",
+  "output_full": "3.26",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

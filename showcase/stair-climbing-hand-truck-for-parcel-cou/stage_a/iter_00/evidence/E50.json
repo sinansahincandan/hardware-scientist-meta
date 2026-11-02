@@ -1,0 +1,14 @@
+{
+  "id": "E50",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "factored moment for SF2",
+  "code_or_query": "294*2",
+  "inputs": {},
+  "output_summary": "588",
+  "output_full": "588",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

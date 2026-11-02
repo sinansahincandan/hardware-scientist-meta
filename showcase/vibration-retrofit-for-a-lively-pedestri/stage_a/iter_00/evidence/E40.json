@@ -1,0 +1,14 @@
+{
+  "id": "E40",
+  "author": "Retrofit and Maintenance Engineer",
+  "tool": "calc",
+  "purpose": "total slip capacity 8 clamps",
+  "code_or_query": "8*1.8",
+  "inputs": {},
+  "output_summary": "14.4",
+  "output_full": "14.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

@@ -1,14 +1,24 @@
 {
   "id": "E14",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "PV watts for 6kWh day at 5 peak sun hours with 25 percent losses",
-  "code_or_query": "6000/5/0.75",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+  "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
   "inputs": {},
-  "output_summary": "1600.0",
-  "output_full": "1600.0",
+  "output_summary": "link.springer.com — Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link — http://link.springer.com/article/10.1186/s40807-025-00162-2",
+  "output_full": "link.springer.com — Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link — http://link.springer.com/article/10.1186/s40807-025-00162-2\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "link.springer.com",
+      "title": "Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link",
+      "year": "",
+      "url": "http://link.springer.com/article/10.1186/s40807-025-00162-2",
+      "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

@@ -1,0 +1,24 @@
+{
+  "id": "E28",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: polyurethane panel cold room insulation thickness thermal conductivity",
+  "code_or_query": "polyurethane panel cold room insulation thickness thermal conductivity",
+  "inputs": {},
+  "output_summary": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+  "output_full": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "shsandwichpanel.com",
+      "title": "Cold Room PU Sandwich Panel - Shandong Shanghe",
+      "year": "",
+      "url": "https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+      "query": "polyurethane panel cold room insulation thickness thermal conductivity",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E54",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "pawl tooth force from cluster torque",
+  "code_or_query": "184/0.03",
+  "inputs": {},
+  "output_summary": "6.13e+03",
+  "output_full": "6.13e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

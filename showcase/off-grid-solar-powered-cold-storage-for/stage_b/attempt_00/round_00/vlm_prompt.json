@@ -1,64 +1,63 @@
 {
-  "prompt": "Light-background realistic rendered isometric product-style illustration of sun-only cold store. Central PU insulated cold room box with front insulated hinged door with gaskets closed, separate steel posts carrying large Tilted roof monocrystalline PV array above with vent gap, wall-mounted DC vapour-compression cooler on side piped into room, LiFePO4 battery bank cabinet beside room cabled to cooler, ice-bank tank visible inside room under evaporator via cutaway side wall. Inside cutaway show twin racks with vented produce crates. Bright midday sun rays down onto PV, electrical cable down post to battery to cooler, cold air loop into room. Draw only 6 short labels with leader lines: PU insulated cold room, DC vapour-compression cooler, Tilted roof monocrystalline PV array, LiFePO4 battery bank, ice-bank, insulated hinged door with gaskets. No numbers or values in image text. Keep relative sizes: PV span largest, room medium, battery and cooler small boxes.",
+  "prompt": "Photorealistic isometric product rendering of a solar-only 1-tonne produce cold store in a sunny farm yard, no text or labels. White 2.4x2.0x2.2m thick PU sandwich-panel chamber bolted to a raised galvanized steel skid with posts and ground anchors, 4 large dark-blue solar panels tilted on roof rails above with airflow gap, front insulated door swung open with rain canopy revealing central aisle. Inside both side walls have galvanized steel racks stacked 5-high with vented plastic crates filled with fresh green and red produce, 50mm air gaps for circulation. High on the rear interior wall a compact DC cooling unit with fan grille and evaporator blowing cold air down the aisle, condensate drain pipe to exterior. Small steel battery cabinet and controller box mounted externally on side wall with black DC cables running from roof array down to cabinet then to cooler. Bright midday sun with soft product-shot lighting, crisp shadows, real materials: glossy panels, matte white steel, galvanized skid, food-grade plastic, fresh produce. Fixed chamber and racks vs moving fan airflow and hinged door, energy path readable from sun to panels to battery to cooler to crates.",
   "must_not": [
-    "no grid connection or diesel generator",
-    "no numbers quantities values or units in drawn labels",
-    "no hidden focus parts inside closed box",
-    "no dark or cluttered background",
-    "no incorrect energy flow from battery to PV"
+    "overlaid text, labels, dimensions or scale bars",
+    "schematic arrows, circles or diagram symbols",
+    "transparent, wireframe or exploded rendering styles",
+    "people, hands or animals",
+    "excessive frost, snow or background clutter"
   ],
-  "changes_from_previous": "First version; no prior image.",
+  "changes_from_previous": "",
   "visual_plan": {
-    "view": "isometric",
-    "spatial_layout": "Isometric front-three-quarter elevated. Center: PU insulated cold room. Front face: insulated hinged door with gaskets. Right side cutaway reveals ice-bank low under evaporator and racks with crates. Side wall: DC vapour-compression cooler mounted outside. Right-rear: LiFePO4 battery bank cabinet on ground. Above: separate canopy posts with Tilted roof monocrystalline PV array tilted south spanning over room with vent gap.",
-    "operating_moment": "Sunny daytime operation with produce present in crates, PV generating and charging battery, DC cooler running and blowing cold over ice-bank and racks, door closed and sealed holding 4-6C.",
-    "transfer_path": "Energy: Tilted roof PV array -> battery bank -> DC vapour-compression cooler -> PU insulated cold room; night assist: ice-bank -> cold room. Signal: charge monitoring on PV to battery path. Visualize as sun arrows down, cable down post, cable to cooler, cold airflow into room.",
-    "interactions": "Canopy mechanically carries PV array; PV cabled to battery bank; battery cabled to DC vapour-compression cooler; cooler thermally feeds cold into PU room; ice-bank thermally feeds cold into room; hinged door seals front of room.",
+    "view": "isometric three-quarter exterior view slightly above with open front door revealing interior aisle, racks and evaporator",
+    "spatial_layout": "isometric from front-right above: chamber centered on skid, roof array tilted above, open door at front center revealing aisle receding inside, left and right side racks with crate stacks flanking aisle, evaporator high at rear interior, battery cabinet on right exterior side wall, cables routed down from roof, ground anchors below skid",
+    "operating_moment": "midday staged operation with cooler running, fan blowing cold air over partially loaded vented crates of fresh produce at chill, door open for loading one lot while stored lots remain chilled, condensate draining",
+    "transfer_path": "sunlight onto roof array to DC cables down to battery cabinet to powered cooler to fan-driven cold air circulating around vented crates and returning to evaporator",
+    "interactions": "solar panels bolted to roof rails on skid posts; chamber bolted to raised skid; door hinged to chamber compressing gaskets; battery cabinet wired to array and to cooler; cooler mounted to chamber wall blowing across racked crates; crates stacked on side rack shelves with guard rails and central aisle for airflow; condensate draining outward",
     "avoid": [
-      "hide ice-bank or racks inside opaque box",
-      "bury battery or cooler inside room",
-      "tangled wiring or missing energy path",
-      "dark background or photorealistic clutter",
-      "numbers or values in callouts"
+      "text or dimension overlays",
+      "schematic colors and line symbols",
+      "ghost or transparent walls",
+      "exploded views",
+      "dark interior or night lighting"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "P1",
-      "material": "PU",
-      "purpose": "Keep produce at cold temperature",
-      "callout": "PU insulated cold room"
+      "part_id": "P-box",
+      "material": "white coated steel skins with polyurethane foam core",
+      "purpose": "insulate walls roof floor to hold chill",
+      "callout": "insulated sandwich-panel chamber"
     },
     {
-      "part_id": "P2",
-      "material": "steel",
-      "purpose": "Provide vapour-compression cooling",
-      "callout": "DC vapour-compression cooler"
+      "part_id": "P-cooling",
+      "material": "painted steel casing, copper piping, aluminium finned evaporator",
+      "purpose": "provide staged cooling with uniform fan-forced chill",
+      "callout": "DC cooling unit with fan evaporator"
     },
     {
-      "part_id": "P3",
-      "material": "monocrystalline silicon",
-      "purpose": "Generate electricity from sun",
-      "callout": "Tilted roof monocrystalline PV array"
+      "part_id": "P-crates",
+      "material": "food-grade vented plastic crates on galvanized steel slatted racks",
+      "purpose": "hold 1 tonne produce with aisle airflow for FIFO",
+      "callout": "vented produce crates on side racks"
     },
     {
-      "part_id": "P5",
-      "material": "LiFePO4",
-      "purpose": "Ride through night and cloudy periods",
-      "callout": "LiFePO4 battery bank"
+      "part_id": "P-array",
+      "material": "monocrystalline silicon glass panels in aluminium frames",
+      "purpose": "convert sunlight to daytime electricity",
+      "callout": "roof solar array on rails"
     },
     {
-      "part_id": "P6",
-      "material": "water",
-      "purpose": "Carry night steady load off battery",
-      "callout": "ice-bank"
+      "part_id": "P-battery",
+      "material": "steel-cased lithium battery cabinet with cabling",
+      "purpose": "store energy for night cooling",
+      "callout": "external battery cabinet"
     },
     {
-      "part_id": "P9",
-      "material": "PU",
-      "purpose": "Access with seals",
-      "callout": "insulated hinged door with gaskets"
+      "part_id": "P-door",
+      "material": "insulated steel door leaf with rubber magnetic gaskets",
+      "purpose": "sealed person and crate access with rain canopy",
+      "callout": "hinged insulated access door open"
     }
-  ],
-  "label_mode": "image"
+  ]
 }

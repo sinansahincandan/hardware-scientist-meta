@@ -41,6 +41,49 @@ def _sentences(text: str, n: int) -> str:
     return " ".join(parts[:n])
 
 
+def picture_rounds_html(run_dir: Path) -> str:
+    """D22/item 16: every picture round as a strip — the render, the critic's verdict and notes, kept or
+    reverted — then what the segmenter (SAM 3.1) saw on the last kept round. Read from the round folders."""
+    import re
+
+    trace = (run_dir / "trace.md").read_text(encoding="utf-8") if (run_dir / "trace.md").exists() else ""
+    words = {"s1_pass": "faithful to the sketch — accepted", "s1_retry": "not yet faithful — prompt corrected",
+             "s1_exhausted": "could not be drawn faithfully within the round limit",
+             "s2_return": "showed a design flaw — back to the council"}
+    cards: list[str] = []
+    last_overlay = None
+    for rd in sorted(run_dir.glob("stage_b/attempt_*/round_*")):
+        ev = _read_json(rd / "eval.json")
+        if not ev:
+            continue
+        a, n = int(rd.parent.name.split("_")[-1]), int(rd.name.split("_")[-1])
+        dec = (rd / "decision.txt").read_text(encoding="utf-8").strip() if (rd / "decision.txt").exists() else ""
+        kept = re.search(rf"attempt {a} round {n}: .*?; (kept|reverted) \(([^)]*)\)", trace)
+        notes = "".join(f"<li>{html.escape(x.get('part_id', ''))}: {html.escape(x.get('observed', ''))}</li>"
+                        for x in ev.get("regions", []))
+        fixed = "".join(f"<li>{html.escape(x.get('part_id', ''))}: {html.escape(x.get('status', '').replace('_', ' '))}</li>"
+                        for x in ev.get("previous_regions", []))
+        rel = (rd / "render.png").relative_to(run_dir).as_posix()
+        cards.append(
+            f"<div class='round'><a href='{rel}'><img src='{rel}'></a><div><b>Picture {a + 1}, round {n + 1}:</b> "
+            f"{html.escape(words.get(dec, dec))}"
+            + (f" <span class='small'>({html.escape(kept.group(1))}: {html.escape(kept.group(2))})</span>" if kept else "")
+            + (f"<p class='small'>Earlier faults now:</p><ul class='small'>{fixed}</ul>" if fixed else "")
+            + (f"<p class='small'>What the critic flagged:</p><ul class='small'>{notes}</ul>" if notes else "")
+            + "</div></div>")
+        if (rd / "sam_overlay.png").exists() and (not kept or kept.group(1) == "kept"):
+            last_overlay = rd / "sam_overlay.png"
+    if not cards:
+        return "<p>No picture rounds in this run.</p>"
+    out = "".join(cards)
+    if last_overlay is not None:
+        rel = last_overlay.relative_to(run_dir).as_posix()
+        out += ("<h3>What the segmenter saw (SAM 3.1)</h3><p class='small'>Code asked SAM for each part by a plain "
+                "phrase and measured the boxes against what the design expects; the critic received the differences "
+                f"as evidence.</p><a href='{rel}'><img src='{rel}' style='max-width:100%'></a>")
+    return out
+
+
 def council_changes_html(run_dir: Path) -> str:
     """B11: how each member's role block changed from one master prompt revision to the next."""
     import difflib
@@ -111,6 +154,8 @@ h3{font-size:16px;margin:20px 0 6px} p,li{font-size:15px;line-height:1.55}
 .q{border:1px solid #d8a920;background:#fdf6dd;border-radius:8px;padding:10px 14px}
 a{color:#1a5fb8} img{border-radius:6px}
 .small{color:#666;font-size:13px}
+.round{display:flex;gap:16px;background:#fff;border-radius:10px;padding:12px;margin:10px 0;align-items:flex-start}
+.round img{width:380px;flex:none}
 </style>"""
 
 
@@ -190,6 +235,7 @@ def report_html(run_dir: Path) -> str:
         events.append(f"The Manager changed the council's instructions (<a href='master_prompt/{d.name}'>see the diff</a>).")
     events.append(f"The whole run cost ${_sf(float(cost.get('total_usd', 0)))}.")
     parts.append("".join(f"<div class='event'>{e}</div>" for e in events))
+    parts.append("<h2>How the picture was made</h2>" + picture_rounds_html(run_dir))
     parts.append("<h2>How the council changed</h2>" + council_changes_html(run_dir))
     # 5. References
     refs = _read_text(run_dir / "references.md")

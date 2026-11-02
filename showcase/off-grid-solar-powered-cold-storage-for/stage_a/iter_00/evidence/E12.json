@@ -1,14 +1,24 @@
 {
   "id": "E12",
-  "author": "Post-Harvest Cooperative Operations Lead",
-  "tool": "calc",
-  "purpose": "staged intake days for 1 tonne at 250 kg per day",
-  "code_or_query": "1000/250",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
   "inputs": {},
-  "output_summary": "4.0",
-  "output_full": "4.0",
+  "output_summary": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+  "output_full": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "nabellasstores.com",
+      "title": "LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores",
+      "year": "",
+      "url": "https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

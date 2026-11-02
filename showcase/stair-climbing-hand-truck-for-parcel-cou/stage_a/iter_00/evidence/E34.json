@@ -1,0 +1,24 @@
+{
+  "id": "E34",
+  "author": "Lena — Lightweight Structures and Folding Design Engineer",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminium yield strength rectangular tube",
+  "code_or_query": "6061-T6 aluminium yield strength rectangular tube",
+  "inputs": {},
+  "output_summary": "rotaryforum.com — alu 6061 t6 vs alu 6063 t52 — https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/",
+  "output_full": "rotaryforum.com — alu 6061 t6 vs alu 6063 t52 — https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "rotaryforum.com",
+      "title": "alu 6061 t6 vs alu 6063 t52",
+      "year": "",
+      "url": "https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/",
+      "query": "6061-T6 aluminium yield strength rectangular tube",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "E19",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "web_search",
+  "purpose": "search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+  "code_or_query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+  "inputs": {},
+  "output_summary": "mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra-Lightweight FRP Footbridge — https://www.mdpi.com/2076-3417/11/14/6654",
+  "output_full": "mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra-Lightweight FRP Footbridge — https://www.mdpi.com/2076-3417/11/14/6654\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mdpi.com",
+      "title": "Identification of a Human-Structure Interaction Model on an Ultra-Lightweight FRP Footbridge",
+      "year": "",
+      "url": "https://www.mdpi.com/2076-3417/11/14/6654",
+      "query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

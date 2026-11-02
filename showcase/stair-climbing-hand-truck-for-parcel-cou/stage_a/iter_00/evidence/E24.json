@@ -1,0 +1,24 @@
+{
+  "id": "E24",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "inputs": {},
+  "output_summary": "oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks — 1995 — http://www.oandplibrary.org/poi/1995_03_188.asp",
+  "output_full": "oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks — 1995 — http://www.oandplibrary.org/poi/1995_03_188.asp\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "oandplibrary.org",
+      "title": "Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks",
+      "year": "1995",
+      "url": "http://www.oandplibrary.org/poi/1995_03_188.asp",
+      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

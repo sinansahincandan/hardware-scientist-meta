@@ -1,0 +1,23 @@
+{
+  "id": "E35",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "spring force from stroke",
+  "code_or_query": "(Q_(105412,'N/m')*Q_(0.00252,'m')).to('N')",
+  "inputs": {
+    "arg0": {
+      "value": "105412",
+      "unit": "N/m"
+    },
+    "arg1": {
+      "value": "0.00252",
+      "unit": "m"
+    }
+  },
+  "output_summary": "266 N",
+  "output_full": "266 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

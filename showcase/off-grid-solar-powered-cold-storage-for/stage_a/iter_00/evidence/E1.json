@@ -1,14 +1,24 @@
 {
   "id": "E1",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "pull-down thermal energy 1 tonne 30C to 5C",
-  "code_or_query": "1000*3.6*25/3600",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
   "inputs": {},
-  "output_summary": "25.0",
-  "output_full": "25.0",
+  "output_summary": "ms.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+  "output_full": "ms.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "ms.china-yiteng.com",
+      "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+      "year": "",
+      "url": "https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
+      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

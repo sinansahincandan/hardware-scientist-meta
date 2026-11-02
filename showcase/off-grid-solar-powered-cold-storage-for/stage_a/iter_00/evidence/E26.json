@@ -1,14 +1,24 @@
 {
   "id": "E26",
-  "author": "Structural Enclosure Designer",
-  "tool": "sketch",
-  "purpose": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,6))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.set_aspect('equal'); ax.axis('off')\n# cold room box\nax.add_patch(plt.Rectangle((2,1), 6, 3, fill=False, linewidth=2))\nax.text(5,2.5,'twin racks + aisle',ha='center',fontsize=8)\nax.text(5,1.7,'100mm PU panels',ha='center',fontsize=8)\n# door\nax.add_patch(plt.Rectangle((4.2,1), 1.6, 2.0, fill=False, linewidth=1.5))\nax.text(5,0.7,'hinged door + seals',ha='center',fontsize=8)\n# canopy posts\nfor x in [1.5,8.5]:\n    ax.plot([x,x],[0.5,5.8],'k-',linewidth=2)\nax.text(1.5,0.3,'post anchor',ha='center',fontsize=7)\nax.text(8.5,0.3,'post anchor',ha='center',fontsize=7)\n# PV roof tilted\nax.plot([1,9],[5.8,6.5],'k-',linewidth=3)\nax.plot([1,9],[5.5,6.2],'k-',linewidth=1)\nax.text(5,6.7,'4kW tilted PV shade roof',ha='center',fontsize=9)\nax.annotate('vent gap', xy=(5,5.7), xytext=(8.8,5.0), arrowprops=dict(arrowstyle='->'), fontsize=8)\nax.annotate('ice bank under evaporator', xy=(6.5,3.5), xytext=(8.8,3.8), arrowprops=dict(arrowstyle='->'), fontsize=7)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150); plt.close()",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
   "inputs": {},
-  "output_summary": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-  "output_full": "Separate steel shade canopy over PU cold room carrying 4kW PV, vent gap, four anchored posts, twin racks inside.",
-  "sketch_path": "evidence/sketch_26.png",
-  "references": [],
+  "output_summary": "assets.danfoss.com — BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz — https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
+  "output_full": "assets.danfoss.com — BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz — https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "assets.danfoss.com",
+      "title": "BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz",
+      "year": "",
+      "url": "https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
+      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

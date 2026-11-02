@@ -1,0 +1,14 @@
+{
+  "id": "E31",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "frame bending moment estimate 60kg at 0.5m",
+  "code_or_query": "60*9.81*0.5",
+  "inputs": {},
+  "output_summary": "294",
+  "output_full": "294",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

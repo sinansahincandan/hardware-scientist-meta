@@ -1,0 +1,14 @@
+{
+  "id": "E32",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "sketch",
+  "purpose": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.axis('off')\nax.text(5,6.5,'insulated roof 100mm PU',ha='center',fontsize=9)\nrect=plt.Rectangle((1,1),8,5,fill=False,lw=2); ax.add_patch(rect)\nax.text(0.2,3,'wall\\n100mm',fontsize=8)\nax.add_patch(plt.Rectangle((3,1.5),4,2,fill=False,lw=1.5))\nax.text(5,2.2,'1 tonne crates',ha='center',fontsize=9)\nax.text(7.5,5,'evaporator\\n+ fan',ha='center',fontsize=8,color='blue')\nax.annotate('',xy=(6.5,4.5),xytext=(7.5,4.7),arrowprops=dict(arrowstyle='->',color='blue'))\nax.annotate('',xy=(3.5,4.0),xytext=(6.0,4.5),arrowprops=dict(arrowstyle='->',color='blue'))\nax.text(5,0.4,'floor drain for condensate',ha='center',fontsize=8)\nax.text(1.2,5.7,'cold air flow',fontsize=8,color='blue')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120)",
+  "inputs": {},
+  "output_summary": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+  "output_full": "Cold room section: insulated box, evaporator fan, produce crates, condensate drain",
+  "sketch_path": "evidence/sketch_32.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

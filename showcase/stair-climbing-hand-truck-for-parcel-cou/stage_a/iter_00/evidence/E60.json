@@ -1,0 +1,14 @@
+{
+  "id": "E60",
+  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "tool": "calc",
+  "purpose": "twin-tube modulus margin vs SF2 requirement",
+  "code_or_query": "2*1.44e3/2.45e3",
+  "inputs": {},
+  "output_summary": "1.18",
+  "output_full": "1.18",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

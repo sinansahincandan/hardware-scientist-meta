@@ -1,108 +1,69 @@
 {
-  "pixel_description": "Photorealistic isometric of cold-store system. Top: large tilted dark-blue monocrystalline PV array on galvanised steel posts/beams above a white box room, sun glare top-right, three rectangular open frames/missing modules visible mid-array. Left post: black cable drops down post to small grey cabinet, second black cable from cabinet to base of room. Cabinet is battery. Center: white panel box room with side hinged door with black gasket, hinges/latches visible. Cutaway front shows interior left: 3-tier metal rack with ~7 green vented crates with vegetables, right: large translucent blue cylindrical ice tank full of ice cubes under a blue finned evaporator coil on ceiling, copper + blue pipes connecting through wall to small grey outdoor condenser unit side-mounted on right wall. Light-blue curved airflow arrows on interior floor. Labels with leaders exactly as spelled: 'Tilted roof monocrystalline PV array', 'PU insulated cold room', 'insulated hinged door with gaskets', 'LiFePO4 battery bank', 'DC vapour-compression cooler', 'ice-bank'.",
-  "label_findings": "labels ok - all 6 drawn labels name the right part with correct spelling: 'Tilted roof monocrystalline PV array' = P3, 'PU insulated cold room' = P1, 'insulated hinged door with gaskets' = P9, 'LiFePO4 battery bank' = P5, 'DC vapour-compression cooler' = P2, 'ice-bank' = P6.",
-  "regions": [
+  "pixel_description": "Photorealistic outdoor view of white panel insulated chamber on galvanized steel skid with horizontal perimeter beams and 6 vertical screw-jack legs on footplates holding box off dirt. Single rectangular P-box with seams/rivets, front opening fully exposed. Front left is one large white hinged insulated door swung open ~90 deg with handle and hinges; above opening is separate flat white rain canopy propped horizontal. Inside left and right are tall metal slatted racks, 5 tiers each, holding ~20 small grey vented plastic crates full of green/red produce, leaving central aisle clear to rear wall. Critical part DC cooler 1kW: ONE wall-mounted rectangular evaporator unit centered high on rear interior wall, round black fan grille on left front face, finned side vents, small control box on right side with black cable loop to wall, white vertical pipe dropping from unit to floor with horizontal run to wall drain fitting that continues outside as white drain pipe on right side down to ground. Roof array: tilted dark-blue photovoltaic panels on silver aluminium rails/legs above box roof, 2 rows overhanging slightly, with thick black conduits looping down right exterior wall into grey metal cabinets - one small top junction, one large middle vented cabinet, two small lower boxes with vents/display - then to drain. Connections: box bolted to skid beams, array on rails to box roof, racks standing on box floor, crates sitting on racks, cooler screwed to box wall with air into room and condensate to drain, door hinged to box front frame, electrical conduits array to cabinets. No text or arrows overlaid.",
+  "regions": [],
+  "previous_regions": [],
+  "comparison_with_previous": "First evaluation - no previous render to compare.",
+  "deviations": [
     {
-      "box": [
-        205.0,
-        700.0,
-        330.0,
-        885.0
-      ],
-      "part_id": "P4",
-      "observed": "only plain grey battery cabinet, no MPPT controller visible",
-      "expected": "MPPT charge controller cabinet/box between PV array cables and 48V LiFePO4 bank",
-      "source": "render",
-      "fixed": false
+      "what": "P-array",
+      "measured": "3.1 times P-box and apart from P-base",
+      "expected": "about 0.95 times P-box and touching P-base",
+      "matters": false,
+      "why": "Pixels show tilted roof array on rails slightly overhanging box roof, connected via rails/box to skid. Apparent oversize is perspective/foreshortening. Larger array still provides daytime electricity, does not break solar-only principle."
     },
     {
-      "box": [
-        10.0,
-        810.0,
-        400.0,
-        925.0
-      ],
-      "part_id": "P11",
-      "observed": "plain light floor/shadow with scale bar, no slab",
-      "expected": "external concrete wash slab beside room for crate washing",
-      "source": "render",
-      "fixed": false
+      "what": "P-battery",
+      "measured": "not found by segmenter",
+      "expected": "1 battery box visible",
+      "matters": false,
+      "why": "Pixels show large grey cabinet on right exterior wall with conduits that plausibly houses 48V battery bank. Segmenter missed generic cabinet. Function present, no working-principle impact."
     },
     {
-      "box": [
-        285.0,
-        255.0,
-        815.0,
-        375.0
-      ],
-      "part_id": "P3",
-      "observed": "three empty open frame holes where modules missing in mid-array",
-      "expected": "continuous tilted 4kW monocrystalline array",
-      "source": "render",
-      "fixed": false
+      "what": "P-controller",
+      "measured": "4 found",
+      "expected": "1 control box visible",
+      "matters": false,
+      "why": "Pixels show 1 large middle cabinet plus small top junction and 2 small lower boxes with vents/displays and black conduits from array. Multiple enclosures implement controller/disconnect functions; extra junction boxes do not change charge-control path."
     },
     {
-      "box": [
-        523.0,
-        560.0,
-        616.0,
-        790.0
-      ],
-      "part_id": "P7",
-      "observed": "single 3-tier rack visible on left wall only",
-      "expected": "twin side racks with centre aisle running length of room",
-      "source": "render",
-      "fixed": false
+      "what": "P-box",
+      "measured": "29 found",
+      "expected": "1 insulated box visible",
+      "matters": false,
+      "why": "Pixels show single coherent white panel chamber. Segmenter fragmented wall panels, corner posts, door and canopy into many detections. No real multiplicity."
     },
     {
-      "box": [
-        523.0,
-        565.0,
-        614.0,
-        785.0
-      ],
-      "part_id": "P8",
-      "observed": "~7 green crates with produce visible",
-      "expected": "fifty 600x400x226mm vented crates holding 1000kg produce",
-      "source": "render",
-      "fixed": false
+      "what": "P-base",
+      "measured": "4 found, vertical axis, apart from P-array",
+      "expected": "1 metal skid, horizontal long axis, touching P-array",
+      "matters": false,
+      "why": "Pixels show single steel perimeter skid with horizontal beams plus 6 vertical screw-jack legs. Vertical detections are legs. Array mounts via roof rails/box to skid, so indirect mechanical path exists; direct touch not required."
+    },
+    {
+      "what": "P-door",
+      "measured": "2 found, 3 times P-box",
+      "expected": "1 door about 0.95 times P-box",
+      "matters": false,
+      "why": "Pixels show one side-hinged white insulated door open on left plus separate top-hinged rain canopy open horizontal over opening, which is part of door spec. Not two doors. Door is smaller than box front; segmenter size/count error."
+    },
+    {
+      "what": "P-cooling",
+      "measured": "not found by segmenter",
+      "expected": "1 cooler visible",
+      "matters": false,
+      "why": "Pixels show one rear-wall fan-evaporator unit clearly visible. Segmenter missed small interior unit. Part present and correctly connected, so miss does not affect principle."
+    },
+    {
+      "what": "P-crates",
+      "measured": "25 found about 0.51 times P-box",
+      "expected": "12 crates visible about 0.25 times P-box",
+      "matters": false,
+      "why": "Pixels show ~20 grey vented crates on two 5-tier side racks with central aisle, partial load vs 50 full. Count/size variation is allowed partial load; airflow around vented crates on side racks with aisle preserved."
     }
   ],
-  "requirements": [
-    {
-      "requirement": "same parts",
-      "status": "missing",
-      "stage_at_fault": "render",
-      "detail": "P4 MPPT controller absent in pixels, P11 wash slab absent, P7 twin racks shows as single rack, P8 shows ~7 crates vs 50; P1,P2,P3,P5,P6,P9,P10 frame present"
-    },
-    {
-      "requirement": "same connections",
-      "status": "missing",
-      "stage_at_fault": "render",
-      "detail": "PV->MPPT and MPPT->battery electrical links broken by missing MPPT; battery cable goes to room base not to cooler unit; cooler thermal pipes to room and ice-to-room present, canopy carries PV and door on room present"
-    },
-    {
-      "requirement": "same relative sizes",
-      "status": "observed",
-      "stage_at_fault": "none",
-      "detail": "PV span ~2x room width ~4000-5000mm class, room cube ~2000-2600mm class, battery cabinet small 400-800mm class, ice-bank cylinder ~300-600mm class; scale bar ~1000mm supports classes"
-    },
-    {
-      "requirement": "operating moment visible",
-      "status": "observed",
-      "stage_at_fault": "none",
-      "detail": "sun glare on PV, ice cubes in bank, produce in crates, blue circulation arrows on floor show cooling/airflow moment"
-    },
-    {
-      "requirement": "transfer path visible",
-      "status": "ambiguous",
-      "stage_at_fault": "render",
-      "detail": "black cables PV->battery->room and copper/blue pipes cooler->room/ice-bank visible, but MPPT stage missing and no MPPT charge or battery state monitoring displays visible"
-    }
-  ],
-  "s1_faithful": false,
-  "s1_differences": "Missing P4 MPPT charge controller and P11 external wash slab; interior shows single rack with ~7 crates vs twin side racks for fifty vented crates; PV array shows three empty frame holes vs continuous 4kW array; battery-to-cooler electrical route terminates at room base rather than explicit to cooler; no measurement displays for MPPT/battery monitoring.",
+  "s1_faithful": true,
+  "s1_differences": "Only immaterial variations: array slight overhang from tilt/perspective, partial crate load ~20 vs 50 full, multiple exterior enclosures for battery/controller functions, door plus rain canopy counted as two. Same parts, same mechanical/electrical/thermal/air connections, same relative layout and orientations as sketch.",
   "s2_flaw": false,
-  "s2_feedback": "No concrete design flaw exposed. Shade canopy carrying PV, battery outside, cooler piped to evaporator and ice-bank inside with circulation arrows is sound sun-only ride-through concept. Panel holes, crate shortfall and absent MPPT/slab are depiction omissions, not schematic errors.",
-  "notes": "photorealistic isometric cutaway with scale bar ~1000 mm and disclaimer 'Conceptual illustration - physical performance not established'. Steel post canopy carries PV above room. No MPPT box, no wash slab, no rack/crate/canopy labels drawn."
+  "s2_feedback": "No design flaw visible. Side electrical cabinets are clear of door swing, roof array on rails clears roof, interior cooler fan has clear blow path down central aisle to crates, and condensate/white drain runs clear through wall to ground without interference or impossible load path.",
+  "notes": "Photorealistic render with no labels, text, arrows or diagram overlays. Segmenter misses are classification/fragmentation errors; visual inspection confirms all functional parts present."
 }

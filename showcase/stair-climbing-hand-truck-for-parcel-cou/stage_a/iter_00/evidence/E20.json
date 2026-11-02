@@ -1,0 +1,24 @@
+{
+  "id": "E20",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
+  "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
+  "inputs": {},
+  "output_summary": "pumpup.com.my — Pallet Tilter (1000kg) — https://www.pumpup.com.my/product/pallet-tilter-1000kg/",
+  "output_full": "pumpup.com.my — Pallet Tilter (1000kg) — https://www.pumpup.com.my/product/pallet-tilter-1000kg/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pumpup.com.my",
+      "title": "Pallet Tilter (1000kg)",
+      "year": "",
+      "url": "https://www.pumpup.com.my/product/pallet-tilter-1000kg/",
+      "query": "EN 1757 hand truck safety handle height brake requirements",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

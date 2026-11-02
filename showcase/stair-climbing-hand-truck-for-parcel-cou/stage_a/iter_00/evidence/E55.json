@@ -1,0 +1,14 @@
+{
+  "id": "E55",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "dead-man lever force from worm shaft torque",
+  "code_or_query": "(184/15)/0.04/5",
+  "inputs": {},
+  "output_summary": "61.3",
+  "output_full": "61.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

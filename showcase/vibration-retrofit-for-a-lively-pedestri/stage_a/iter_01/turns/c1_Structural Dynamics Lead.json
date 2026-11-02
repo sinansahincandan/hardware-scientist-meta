@@ -1,5 +1,0 @@
-{
-  "cycle": 1,
-  "member": "Structural Dynamics Lead",
-  "message": "In the footbridge baseline concept, the first vertical bending mode confirmation has low damping uncertainty. To check it I used literature search and simple mass calculation (the 10000 kilogram modal mass estimate (E2)). I found 1.9 hertz first mode with about 0.4 percent damping and 10000 kilograms modal mass, according to Bachmann and Ammann, 1987. I propose keeping the half-sine antinode at midspan for damper placement. My position: not ready because the acceleration comfort check is still missing, Manager. In the under-deck Tuned Mass Damper (TMD) concept, the tuning for the lively 1.9 hertz mode has resonant crowd sensitivity. To check it I used vetted Den Hartog calculation and layout sketch (the Den Hartog optimum result (E3) and the under-deck layout sketch (E4)). I found 1.81 hertz damper frequency with 500 kilograms mass and 64634 newtons per metre stiffness, according to Den Hartog, 1934. I propose splitting into two 250 kilogram units under the girders to keep deck sightlines unchanged. My position: not ready because peak acceleration reduction still needs quantification."
-}

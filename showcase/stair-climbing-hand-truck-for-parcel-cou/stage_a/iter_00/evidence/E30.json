@@ -1,0 +1,14 @@
+{
+  "id": "E30",
+  "author": "Tomas \u2014 Human Factors and Safety Engineer",
+  "tool": "calc",
+  "purpose": "handle pull from cluster torque and 1.2 m lever",
+  "code_or_query": "184/1.2",
+  "inputs": {},
+  "output_summary": "153",
+  "output_full": "153",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

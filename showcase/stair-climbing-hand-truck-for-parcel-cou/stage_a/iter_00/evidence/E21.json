@@ -1,0 +1,24 @@
+{
+  "id": "E21",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: adjustable handle height ergonomic 900 1150 mm standing push",
+  "code_or_query": "adjustable handle height ergonomic 900 1150 mm standing push",
+  "inputs": {},
+  "output_summary": "mobilitysmart.co.uk — Able Assist Adjustable Transfer Aid — https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid",
+  "output_full": "mobilitysmart.co.uk — Able Assist Adjustable Transfer Aid — https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mobilitysmart.co.uk",
+      "title": "Able Assist Adjustable Transfer Aid",
+      "year": "",
+      "url": "https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid",
+      "query": "adjustable handle height ergonomic 900 1150 mm standing push",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

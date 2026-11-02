@@ -1,0 +1,24 @@
+{
+  "id": "E16",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "web_search",
+  "purpose": "search: HIVOSS footbridge comfort classes vertical acceleration limits",
+  "code_or_query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+  "inputs": {},
+  "output_summary": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
+  "output_full": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mdpi-res.com",
+      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
+      "year": "",
+      "url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
+      "query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

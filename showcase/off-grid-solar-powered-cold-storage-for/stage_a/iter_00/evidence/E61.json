@@ -1,0 +1,14 @@
+{
+  "id": "E61",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "calc",
+  "purpose": "peak battery current at 48V for 662W",
+  "code_or_query": "662/48",
+  "inputs": {},
+  "output_summary": "13.8",
+  "output_full": "13.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

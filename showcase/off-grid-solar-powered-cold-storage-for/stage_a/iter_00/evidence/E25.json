@@ -1,14 +1,24 @@
 {
   "id": "E25",
-  "author": "Structural Enclosure Designer",
-  "tool": "calc",
-  "purpose": "load per canopy post for 4kW array",
-  "code_or_query": "(10*22+80)/4",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
   "inputs": {},
-  "output_summary": "75.0",
-  "output_full": "75.0",
+  "output_summary": "darment.eu — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://www.darment.eu/web/content/77489?download=false",
+  "output_full": "darment.eu — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://www.darment.eu/web/content/77489?download=false\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "darment.eu",
+      "title": "BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz",
+      "year": "",
+      "url": "https://www.darment.eu/web/content/77489?download=false",
+      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

@@ -1,14 +1,24 @@
 {
   "id": "E2",
-  "author": "Solar Power Specialist",
-  "tool": "sketch",
-  "purpose": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd();\nfig, ax = plt.subplots(figsize=(8,5)); ax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(5,5.5,'Solar cold store - layout',ha='center',fontsize=14)\n# cold room\nax.add_patch(plt.Rectangle((1,1),4,3,fill=False,lw=2)); ax.text(3,3.2,'cold room\\n1 tonne\\n4-6C',ha='center')\nax.text(3,1.3,'100mm PU insulation',ha='center',fontsize=8)\n# door\nax.add_patch(plt.Rectangle((4.2,1.5),0.8,1.5,fill=False,lw=2)); ax.text(5.5,2.2,'door',fontsize=8)\n# PV roof\nxs=[1,3,5,2.5]; ys=[4,5.2,5.2,4]; ax.plot([1,3,5,3],[4,5.2,5.2,4],lw=2); ax.text(3.2,4.7,'PV array tilted',fontsize=8)\n# battery + controller\nax.add_patch(plt.Rectangle((6.5,1),2.5,1.2,fill=False,lw=2)); ax.text(7.75,1.6,'LiFePO4 battery\\n48V',ha='center',fontsize=8)\nax.add_patch(plt.Rectangle((6.5,2.7),2.5,0.8,fill=False,lw=2)); ax.text(7.75,3.1,'MPPT + DC cooler',ha='center',fontsize=8)\nax.arrow(4.5,4.5,1.5,-0.7,lw=1.5); ax.text(5.6,4.3,'DC cable',fontsize=8)\nax.arrow(6.5,1.8, -1.2,0.5,lw=1.5); ax.text(5.2,2.7,'cool air',fontsize=8)\nax.text(1,0.4,'fixed: room+PV rack  moving: air+refrigerant',fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120); plt.close()",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
   "inputs": {},
-  "output_summary": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-  "output_full": "Insulated cold room with roof PV array, MPPT controller, battery bank and DC vapour-compression unit; airflow loop shown.",
-  "sketch_path": "evidence/sketch_2.png",
-  "references": [],
+  "output_summary": "elevatehomeguide.space — Off-Grid Cabin EV Charging: Solar + Battery Sizing — https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
+  "output_full": "elevatehomeguide.space — Off-Grid Cabin EV Charging: Solar + Battery Sizing — https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "elevatehomeguide.space",
+      "title": "Off-Grid Cabin EV Charging: Solar + Battery Sizing",
+      "year": "",
+      "url": "https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
+      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

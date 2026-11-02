@@ -1,0 +1,14 @@
+{
+  "id": "E49",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "hand pull with 15 to 1 worm and 0.25 m crank",
+  "code_or_query": "(184/(15*0.5))/0.25",
+  "inputs": {},
+  "output_summary": "98.1",
+  "output_full": "98.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

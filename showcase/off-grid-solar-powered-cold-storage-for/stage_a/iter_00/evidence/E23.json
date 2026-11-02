@@ -1,14 +1,24 @@
 {
   "id": "E23",
-  "author": "Refrigeration and Thermal Engineer",
-  "tool": "calc",
-  "purpose": "ice-bank latent kWh for 100kg ice",
-  "code_or_query": "100*334/3600",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: respiration heat fresh produce watts per tonne refrigeration load",
+  "code_or_query": "respiration heat fresh produce watts per tonne refrigeration load",
   "inputs": {},
-  "output_summary": "9.277777777777779",
-  "output_full": "9.277777777777779",
+  "output_summary": "mail.wjbphs.com — Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea — 2024 — https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf",
+  "output_full": "mail.wjbphs.com — Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea — 2024 — https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mail.wjbphs.com",
+      "title": "Sustainable cooling solutions: Designing a zero-energy chamber with local materials in Eritrea",
+      "year": "2024",
+      "url": "https://mail.wjbphs.com/sites/default/files/WJBPHS-2024-0982.pdf",
+      "query": "respiration heat fresh produce watts per tonne refrigeration load",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

@@ -1,0 +1,24 @@
+{
+  "id": "E53",
+  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
+  "tool": "web_search",
+  "purpose": "search: food grade plastic crate ventilated produce washable food safety",
+  "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+  "inputs": {},
+  "output_summary": "m.indiamart.com — Super Market Crate — https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
+  "output_full": "m.indiamart.com — Super Market Crate — https://m.indiamart.com/proddetail/super-market-crate-22170947948.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "m.indiamart.com",
+      "title": "Super Market Crate",
+      "year": "",
+      "url": "https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
+      "query": "food grade plastic crate ventilated produce washable food safety",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

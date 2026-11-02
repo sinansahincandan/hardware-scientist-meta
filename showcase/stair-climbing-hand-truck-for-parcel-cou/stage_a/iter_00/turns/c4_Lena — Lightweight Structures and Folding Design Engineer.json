@@ -1,0 +1,5 @@
+{
+  "cycle": 4,
+  "member": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "message": "Mara, Tomas, Dario \u2014 the twin-tube L-frame spine (C5) carries the 60 kg load with Safety Factor (SF) 2.\n\nPlain words: two aluminium tubes share the spine bending so unfactored stress stays well below yield, leaving margin after doubling the load. The numbers: 102 MPa unfactored from the spine stress calculation (E61), 2.88 cubic centimetres paired modulus against 2.45 required, margin 1.18 from the twin-tube margin calculation (E60) \u2014 like a bathroom scale reading half its rated limit.\n\nThe device stays liftable and van-stowable with the 2-step fold to flat (C6) and the fold-lock pin sizing in the pin shear calculation (E59).\n\nPlain words: total mass is cabin-bag weight and the lock pin shear is low steel stress, folded slab fits a van door. The numbers: 11.3 kg total from the mass breakdown (E57) under 15 kg, 27.1 MPa pin stress, envelope under 1200x600x300 mm \u2014 I vote ready on the integrated proposal (v2)."
+}

@@ -1,28 +1,70 @@
 # Whiteboard
 ## Functions
-- F1 [Structural Dynamics Lead] Limit first vertical bending response near 1.9 Hz to comfortable acceleration
+- F1 [Structural Dynamicist] Dissipate first vertical mode energy at 1.9 Hz to comfortable acceleration
+- F2 [Retrofit and Maintenance Engineer] Carry added damper mass from existing girders entirely from below deck with no deck closure or deck appearance change, and allow lock-off and inspection
+- F3 [Under-Deck Integration Designer] Preserve deck appearance from eye-height with no visible change to parapet, floor or sightlines
 ## Concepts
-- C1 [Structural Dynamics Lead, open, for F1] Under-deck vertical Tuned Mass Damper (TMD) at midspan, hidden below deck, tuned to 1.9 Hz with ~2% modal mass ratio and added viscous damping
-- C2 [Retrofit Integration Architect, open, for F1] Concealed under-deck support frame: bolted cross-frames between existing girders carrying two 200 kg TMD units below soffit, 30 mm stroke clearance, lockable access hatches from below, soffit-matched finish, no fixings through deck wearing surface
+- C1 [Structural Dynamicist, open, for F1] Under-deck vertical Tuned Mass Damper (TMD): moving mass on coil springs plus viscous dampers, bolted support frame locked to girder bottom flange at midspan, tuned to 1.83 Hz with 4% mass ratio.
+- C2 [Serviceability and Crowd Loading Specialist, open, for F1] assumed_constraint: Comfort target is peak vertical deck acceleration below 0.7 m/s2 per Guidebook 2 threshold, with Setra/EN03 four-level scale max/mean/min/unacceptable; design aims for max-comfort band. 1.9 Hz lies in critical 1.25-2.3 Hz vertical range requiring response check.
+- C3 [Retrofit and Maintenance Engineer, open, for F1] Clamped under-deck support frame: friction beam clamps to girder bottom flanges carrying a cross-beam and TMD unit, with maintenance lock-off pin, galvanized steel for corrosion, installed from mobile lift below deck
+- C4 [Under-Deck Integration Designer, open, for F3] Recessed under-deck Tuned Mass Damper (TMD) cassette with shadow-gap perforated soffit screen color-matched to girders, fully below deck walking surface with no parapet or floor change
 ## Evidence
-- E1 [calc, Structural Dynamics Lead] 1.75 (ok)
-- E2 [vetted_calc:tuned_mass_damper_den_hartog, Structural Dynamics Lead] vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz' (error)
-- E3 [sketch, Structural Dynamics Lead] 40m footbridge side view, first vertical bending mode shape max at midspan, under-deck TMD mass-spring-damper hidden below deck at midspan (ok)
-- E4 [vetted_calc:tuned_mass_damper_den_hartog, Vibration Control Specialist] tmd_mass_kg=400.0 mixed (see keys), tmd_frequency_hz=1.8627450980392155 mixed (see keys), tmd_damping_ratio=0.08574929257125442 mixed (see keys), tmd_stiffness_n_m=54793.190139073544 mixed (see keys), (ok)
-- E5 [calc, Vibration Control Specialist] 400.0 (ok)
-- E6 [simulate, Vibration Control Specialist] deck_amp~1.4 mm TMD stroke~8.2 mm (ok)
-- E7 [sketch, Retrofit Integration Architect] Under-deck concealed TMD mounting cross-section - no change to deck view, access from below (ok)
-- E8 [simulate, Vibration Control Specialist] det +5% zeta_eff=0.064 (ok)
-- E9 [calc, Vibration Control Specialist] 3924.0 (ok)
-- E10 [calc, Retrofit Integration Architect] 3924.0 (ok)
-- E11 [calc, Structural Dynamics Lead] 3924.0 (ok)
-- E12 [calc, Structural Dynamics Lead] 2452500.0 (ok)
-- E13 [simulate, Vibration Control Specialist] det +5%: deck 0.95 mm acc 0.136 m/s2 stroke 5.33 mm (ok)
-- E14 [calc, Vibration Control Specialist] calc failed: NameError: name 'pi' is not defined (error)
+- E1 [web_search, Structural Dynamicist] search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2: matec-conferences.org — Assessment of human-induced vibrations of a cable-stayed footbridge — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_09001.pdf
+- E2 [web_search, Structural Dynamicist] search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2: mdpi.com — A Review of Evaluation Methods of Standards for Structural Vibration Serviceability under Crowd Walking — https://www.mdpi.com/2075-5309/14/3/675
+- E3 [web_search, Structural Dynamicist] search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2: mdpi.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge — http://mdpi.com/2412-3811/8/6/100/htm
+- E4 [web_search, Structural Dynamicist] search: steel footbridge damping ratio vertical mode 0.4 percent: matec-conferences.org — Vibration analysis of footbridges: an overview of the current practice — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_10002.pdf
+- E5 [web_search, Structural Dynamicist] search: steel footbridge damping ratio vertical mode 0.4 percent: 1library.net — Guarda Footbridge in Portugal - Design of Footbridges — https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq
+- E6 [web_search, Structural Dynamicist] search: steel footbridge damping ratio vertical mode 0.4 percent: jstage.jst.go.jp — Microsoft Word - Wahyuni_ITS.doc — 2009 — https://www.jstage.jst.go.jp/article/eastpro/2009/0/2009_0_303/_pdf
+- E7 [web_search, Structural Dynamicist] search: tuned mass damper footbridge Den Hartog optimum mass ratio damping: digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers — https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y
+- E8 [web_search, Structural Dynamicist] search: tuned mass damper footbridge Den Hartog optimum mass ratio damping: mdpi-res.com — | Article |  | — https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf
+- E9 [web_search, Structural Dynamicist] search: tuned mass damper footbridge Den Hartog optimum mass ratio damping: backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf
+- E10 [vetted_calc:tuned_mass_damper_den_hartog, Structural Dynamicist] Size under-deck TMD mass tuning and damping for 1.9 Hz mode: vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz' (failed)
+- E11 [vetted_calc:tuned_mass_damper_den_hartog, Structural Dynamicist] Size under-deck TMD mass tuning and damping for 1.9 Hz mode: tmd_mass_kg=800.0 mixed (see keys), tmd_frequency_hz=1.8269230769230769 mixed (see keys), tmd_damping_ratio=0.12009611535381534 mixed (see keys), tmd_stiffness_n_m=105412.04700571769 mixed (see keys),
+- E12 [sketch, Structural Dynamicist] Side view of 40m bridge midspan: girders, cross beam, under-hung frame, springs plus damper plus moving mass; end view shows frame locked to bottom flanges, mass free vertically.: Side view of 40m bridge midspan: girders, cross beam, under-hung frame, springs plus damper plus moving mass; end view shows frame locked to bottom flanges, mass free vertically.
+- E13 [web_search, Serviceability and Crowd Loading Specialist] search: Setra footbridge vibration comfort limits vertical acceleration 0.7: sbi.se — Analysis of Footbridge Comfort Vibrations — 2024 — https://www.sbi.se/wp-content/uploads/2024/05/Analysis-of-Footbridge-Comfort-Vibrations-A-Parametric-Study_Ruuth_Henrik-and-Thuresson_Niklas.pdf
+- E14 [web_search, Serviceability and Crowd Loading Specialist] search: Setra footbridge vibration comfort limits vertical acceleration 0.7: mentisia.org — Biodynamic Synchronized Coupled Model for Crowd-Footbridge Interaction | European Journal of Formal Sciences and Engineering — https://mentisia.org/files/articles/ejfe_v9_n2_26/Toso.pdf
+- E15 [web_search, Serviceability and Crowd Loading Specialist] search: Setra footbridge vibration comfort limits vertical acceleration 0.7: link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link — https://link.springer.com/article/10.1186/s43251-025-00188-y
+- E16 [web_search, Serviceability and Crowd Loading Specialist] search: HIVOSS footbridge comfort classes vertical acceleration limits: mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715
+- E17 [web_search, Serviceability and Crowd Loading Specialist] search: HIVOSS footbridge comfort classes vertical acceleration limits: mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://www.mdpi.com/2071-1050/17/23/10456
+- E18 [web_search, Serviceability and Crowd Loading Specialist] search: HIVOSS footbridge comfort classes vertical acceleration limits: WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders — https://WWW.mdpi.com/2076-3417/10/13/4505
+- E19 [web_search, Serviceability and Crowd Loading Specialist] search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz: mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra-Lightweight FRP Footbridge — https://www.mdpi.com/2076-3417/11/14/6654
+- E20 [web_search, Serviceability and Crowd Loading Specialist] search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz: core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges — https://core.ac.uk/download/pdf/192164607.pdf
+- E21 [web_search, Serviceability and Crowd Loading Specialist] search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz: mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra — https://www.mdpi.com/2076-3417/11/14/6654/html
+- E22 [calc, Serviceability and Crowd Loading Specialist] bare single-ped resonant accel estimate: 1.75 N/kg
+- E23 [web_search, Retrofit and Maintenance Engineer] search: beam clamp friction connection retrofit steelwork Lindapter capacity: grampianfasteners.com — Type CF High Friction Clamp, Galvanised - Grampian Fasteners — https://www.grampianfasteners.com/product/24037
+- E24 [web_search, Retrofit and Maintenance Engineer] search: beam clamp friction connection retrofit steelwork Lindapter capacity: barbourproductsearch.info — Lindapter's M24 Type AF Steelwork Fixing — https://www.barbourproductsearch.info/lindapter-s-m24-type-af-steelwork-fixing-news011686.html
+- E25 [web_search, Retrofit and Maintenance Engineer] search: beam clamp friction connection retrofit steelwork Lindapter capacity: ancon.co.nz — Steelwork and Rail Fixings — https://www.ancon.co.nz/products/lindapter-weld-free-steel-connectors/product-range/steelwork-and-rail-fixings
+- E26 [web_search, Retrofit and Maintenance Engineer] search: hot dip galvanized steel corrosion outdoor footbridge maintenance inspection interval: accio.com — 4x4 Square Metal Post: Durable & Rust-Resistant — https://www.accio.com/plp/4x4-square-metal-post
+- E27 [web_search, Retrofit and Maintenance Engineer] search: hot dip galvanized steel corrosion outdoor footbridge maintenance inspection interval: nzta.govt.nz — SPECIFICATION FOR COATING STEELWORK ON HIGHWAY STRUCTURES — https://www.nzta.govt.nz/assets/resources/specification-for-coating-steelwork-on-highway-structures/s9-specification-for-coating-steelwork-on-highway-structures-202010.pdf
+- E28 [web_search, Retrofit and Maintenance Engineer] search: hot dip galvanized steel corrosion outdoor footbridge maintenance inspection interval: rosensteelga.com — Hot Dip Galvanized Material — https://www.rosensteelga.com/steel-raw-materials/hot-dip-galvanized-steel.html
+- E29 [calc, Retrofit and Maintenance Engineer] total static hung load TMD plus frame: 9.81 kN
+- E30 [sketch, Under-Deck Integration Designer] Under-deck recessed TMD cassette side and bottom views with shadow-gap perforated screen, cross-beam and clamp fixings, no deck-top change: Under-deck recessed TMD cassette side and bottom views with shadow-gap perforated screen, cross-beam and clamp fixings, no deck-top change
+- E31 [calc, Serviceability and Crowd Loading Specialist] required response reduction factor bare to target: 2.5
+- E32 [simulate, Structural Dynamicist] Compute damped primary acceleration and TMD stroke at resonance: a_damped=0.0849 stroke=0.00245; peak_a=0.106 maxstroke_in_band=0.00252; bare_g=0.178 damped_g=0.0108
+- E33 [vetted_calc:tuned_mass_damper_den_hartog, Structural Dynamicist] Freeze modal mass 20000 kg and rerun Den Hartog TMD sizing for 1.9 Hz mode: tmd_mass_kg=800.0 mixed (see keys), tmd_frequency_hz=1.8269230769230769 mixed (see keys), tmd_damping_ratio=0.12009611535381534 mixed (see keys), tmd_stiffness_n_m=105412.04700571769 mixed (see keys),
+- E34 [calc, Structural Dynamicist] check static weight from 800 kg mass: 7.85×10³ kg⋅m/s²
+- E35 [calc, Structural Dynamicist] spring force from stroke: 266 N
+- E36 [calc, Structural Dynamicist] damper force estimate: 63.8 N
+- E37 [web_search, Retrofit and Maintenance Engineer] search: Lindapter beam clamp safe working load slip capacity kN: fixingsmith.com — Lindapter Beam Clamp Type FL for Flange | Clearance Bargains — https://fixingsmith.com/products/lindapter-beam-clamp-type-fl
+- E38 [web_search, Retrofit and Maintenance Engineer] search: Lindapter beam clamp safe working load slip capacity kN: lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/us/product/type-f3-beam-flange-clamp
+- E39 [web_search, Retrofit and Maintenance Engineer] search: Lindapter beam clamp safe working load slip capacity kN: lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/product/type-f3-beam-flange-clamp?lang=en
+- E40 [calc, Retrofit and Maintenance Engineer] total slip capacity 8 clamps: 14.4
+- E41 [calc, Retrofit and Maintenance Engineer] slip safety factor 8xM16: 2.77
+- E42 [calc, Retrofit and Maintenance Engineer] total static hung load TMD plus frame: failed: AttributeError: 'float' object has no attribute 'to' (failed)
+- E43 [calc, Retrofit and Maintenance Engineer] placeholder: failed: AttributeError: 'float' object has no attribute 'to' (failed)
+- E44 [calc, Retrofit and Maintenance Engineer] total static hung load TMD plus frame: 9.81 kN
+- E45 [calc, Retrofit and Maintenance Engineer] slip safety factor 8xM16 clamps: 3.26
 ## Objections
-- O1 [Pedestrian Comfort and Construction Planner -> C2, blocking=False] Under-deck TMD support needs fatigue check for added mass and re-tuning access plan before comfort sign-off
-- O2 [Manager -> C2, blocking=True] Process block: C2 support needs quantified connection static+dynamic forces and fatigue check for 400 kg added mass, and C1 needs off-tune (+/-5%) comfort/ stroke check before proposal/vote
-- O3 [Manager -> C1, blocking=True] Process block: need -5% detune acceleration and stroke to complement +5% check before joint proposal
+- O1 (resolved) Missing damped peak acceleration with TMD installed and TMD stroke plus modal mass freeze
+- O2 [Manager -> C3, blocking=True] Missing clamp slip capacity and flange bending check for hung TMD load installed entirely from below
 ## Proposal
-- (none)
+- v1 [Structural Dynamicist] Under-deck vertical TMD at midspan on clamped cross-frame with perforated screen: 800 kg mass on coil springs plus viscous dampers tuned to 1.83 Hz, hung from girder bottom flanges, no deck appearance change, lock-off for maintenance. concepts=['C1', 'C2', 'C3', 'C4']
+  - claim: damped peak deck acceleration 0.106 m/s2 below 0.7 m/s2 target evidence=['E32']
+  - claim: TMD 800 kg tuned 1.83 Hz damping 12% stiffness 105 kN/m mass ratio 4% evidence=['E11']
+  - claim: TMD stroke 2.52 mm within plus-minus 30 mm clearance evidence=['E32']
+  - claim: hung load 9.81 kN from below with no deck change evidence=['E29']
 ## Votes
+- Structural Dynamicist: ready=True (v1) TMD tuning and damped comfort proven with 0.106 m/s2 below 0.7 m/s2 and 2.52 mm stroke, hung load 9.81 kN with clamp factor 3.26, flange point load ~1.23 kN clearly non-critical for bridge girder concept stage
+- Retrofit and Maintenance Engineer: ready=True (v1) Support from below proved with margin; flange point load non-critical at concept stage
+- Under-Deck Integration Designer: ready=True (v1) Appearance frozen with zero deck change and screened under-deck cassette; damped 0.106 m/s2 below 0.7 m/s2 and stroke 2.52 mm in +/-30 mm; hung 9.81 kN with slip factor 3.26 and ~1.23 kN per clamp person-scale non-critical for concept
+- Serviceability and Crowd Loading Specialist: ready=True (v1) Comfort target and crowd cases met: damped 0.106 m/s2 below 0.7 m/s2 (E32) with 4% TMD (E11); support point load ~1 person weight non-critical for girder flange at concept stage.

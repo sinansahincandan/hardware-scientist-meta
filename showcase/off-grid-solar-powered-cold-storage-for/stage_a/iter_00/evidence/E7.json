@@ -1,14 +1,24 @@
 {
   "id": "E7",
-  "author": "Post-Harvest Cooperative Operations Lead",
-  "tool": "calc",
-  "purpose": "total produce mass in 50 crates at 20kg each",
-  "code_or_query": "50*20",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
+  "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
   "inputs": {},
-  "output_summary": "1000",
-  "output_full": "1000",
+  "output_summary": "yacht-supply24.com — Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
+  "output_full": "yacht-supply24.com — Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "yacht-supply24.com",
+      "title": "Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200",
+      "year": "",
+      "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
+      "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

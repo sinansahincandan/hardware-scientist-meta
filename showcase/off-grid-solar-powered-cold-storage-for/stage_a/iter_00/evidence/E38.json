@@ -1,0 +1,24 @@
+{
+  "id": "E38",
+  "author": "Chidi - Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
+  "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+  "inputs": {},
+  "output_summary": "solentplastics.co.uk — Plastic Storage Solutions by Sector | Solent Plastics — 1960 — https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
+  "output_full": "solentplastics.co.uk — Plastic Storage Solutions by Sector | Solent Plastics — 1960 — https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "solentplastics.co.uk",
+      "title": "Plastic Storage Solutions by Sector | Solent Plastics",
+      "year": "1960",
+      "url": "https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
+      "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

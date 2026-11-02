@@ -1,14 +1,24 @@
 {
   "id": "E24",
-  "author": "Structural Enclosure Designer",
-  "tool": "calc",
-  "purpose": "PV area for 4kW at 200W per m2",
-  "code_or_query": "4.06/0.2",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
   "inputs": {},
-  "output_summary": "20.299999999999997",
-  "output_full": "20.299999999999997",
+  "output_summary": "manualmachine.com — Danfoss BD1.4F-FSD Data sheet — https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
+  "output_full": "manualmachine.com — Danfoss BD1.4F-FSD Data sheet — https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "manualmachine.com",
+      "title": "Danfoss BD1.4F-FSD Data sheet",
+      "year": "",
+      "url": "https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
+      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

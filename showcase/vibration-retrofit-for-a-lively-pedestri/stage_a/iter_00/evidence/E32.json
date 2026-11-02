@@ -1,0 +1,14 @@
+{
+  "id": "E32",
+  "author": "Structural Dynamicist",
+  "tool": "simulate",
+  "purpose": "Compute damped primary acceleration and TMD stroke at resonance",
+  "code_or_query": "import numpy as np\nM=20000.0; f1=1.9; w1=2*np.pi*f1; k1=M*w1**2; z1=0.004; c1=2*z1*np.sqrt(k1*M)\nmu=0.04; m2=800.0; f2=1.8269230769230769; w2=2*np.pi*f2; k2=m2*w2**2; z2=0.12009611535381534; c2=2*z2*np.sqrt(k2*m2)\nF0=280.0\n# bare resonant accel\na_bare=F0/(2*z1*M)\nprint(f\"a_bare={a_bare}\")\n# 2DOF FRF at w=w1 excitation on primary\nw=w1\nMmat=np.array([[M,0],[0,m2]],dtype=complex)\nK=np.array([[k1+k2,-k2],[-k2,k2]],dtype=complex)\nC=np.array([[c1+c2,-c2],[-c2,c2]],dtype=complex)\nD=-w**2*Mmat+1j*w*C+K\nF=np.array([F0,0],dtype=complex)\nX=np.linalg.solve(D,F)\nX1=X[0]; X2=X[1]\na_damped=abs(X1)*w**2\nstroke=abs(X2-X1)\nprint(f\"a_damped={a_damped} stroke={stroke}\")\n# sweep around resonance to find peak primary\nws=2*np.pi*np.linspace(1.6,2.2,121)\namax=0; smax=0\nfor ww in ws:\n    DD=-ww**2*Mmat+1j*ww*C+K\n    XX=np.linalg.solve(DD,F)\n    a=abs(XX[0])*ww**2\n    s=abs(XX[1]-XX[0])\n    amax=max(amax,a); smax=max(smax,s)\nprint(f\"peak_a={amax} maxstroke_in_band={smax}\")\n# check everyday: g fractions\nprint(f\"bare_g={a_bare/9.81} damped_g={amax/9.81}\")\n",
+  "inputs": {},
+  "output_summary": "a_damped=0.0849 stroke=0.00245; peak_a=0.106 maxstroke_in_band=0.00252; bare_g=0.178 damped_g=0.0108",
+  "output_full": "a_bare=1.75\na_damped=0.08491494916760016 stroke=0.0024523086770269153\npeak_a=0.10566585025710021 maxstroke_in_band=0.0025204637275422336\nbare_g=0.1783893985728848 damped_g=0.010771238558318063",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

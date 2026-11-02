@@ -1,0 +1,37 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "cluster": [
+      "expected 2 visible, found 1"
+    ],
+    "worm": [
+      "not found by the segmenter as 'metal box'"
+    ],
+    "spine": [
+      "expected 2 visible, found 1",
+      "size against handle: expected about 1.1 times, measured 7.7 times"
+    ],
+    "toe": [
+      "not found by the segmenter as 'foot plate'"
+    ],
+    "handle": [
+      "expected a vertical long axis, measured horizontal",
+      "size against spine: expected about 0.9 times, measured 0.13 times"
+    ],
+    "strap": [
+      "expected 2 visible, found 1"
+    ],
+    "wheel": [
+      "expected 3 visible, found 5"
+    ],
+    "pin": [
+      "not found by the segmenter as 'metal pin'"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "E32",
+  "author": "Lena — Lightweight Structures and Folding Design Engineer",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminium yield strength rectangular tube",
+  "code_or_query": "6061-T6 aluminium yield strength rectangular tube",
+  "inputs": {},
+  "output_summary": "jmh-cu.com — 7075 aluminium round pipe price per kg — https://www.jmh-cu.com/7075-Aluminum-Pipe.html",
+  "output_full": "jmh-cu.com — 7075 aluminium round pipe price per kg — https://www.jmh-cu.com/7075-Aluminum-Pipe.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "jmh-cu.com",
+      "title": "7075 aluminium round pipe price per kg",
+      "year": "",
+      "url": "https://www.jmh-cu.com/7075-Aluminum-Pipe.html",
+      "query": "6061-T6 aluminium yield strength rectangular tube",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

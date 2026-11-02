@@ -1,0 +1,24 @@
+{
+  "id": "E18",
+  "author": "Serviceability and Crowd Loading Specialist",
+  "tool": "web_search",
+  "purpose": "search: HIVOSS footbridge comfort classes vertical acceleration limits",
+  "code_or_query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+  "inputs": {},
+  "output_summary": "WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders — https://WWW.mdpi.com/2076-3417/10/13/4505",
+  "output_full": "WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders — https://WWW.mdpi.com/2076-3417/10/13/4505\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "WWW.mdpi.com",
+      "title": "Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders",
+      "year": "",
+      "url": "https://WWW.mdpi.com/2076-3417/10/13/4505",
+      "query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

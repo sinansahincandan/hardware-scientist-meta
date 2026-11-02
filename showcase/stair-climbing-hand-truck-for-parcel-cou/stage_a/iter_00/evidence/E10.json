@@ -1,0 +1,23 @@
+{
+  "id": "E10",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "energy to lift 60 kg one riser",
+  "code_or_query": "Q_(60,'kg')*9.81*Q_(0.17,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "0.17",
+      "unit": "m"
+    }
+  },
+  "output_summary": "100 kg\u22c5m",
+  "output_full": "100 kg\u22c5m",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

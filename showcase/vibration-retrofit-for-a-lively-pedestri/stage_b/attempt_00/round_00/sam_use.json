@@ -1,0 +1,36 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "girder": [
+      "expected 2 visible, found 1"
+    ],
+    "clamps": [
+      "not found by the segmenter as 'metal clamp'"
+    ],
+    "crossbeam": [
+      "not found by the segmenter as 'cross beam'"
+    ],
+    "frame": [
+      "expected 1 visible, found 2"
+    ],
+    "springs": [
+      "expected 1 visible, found 4"
+    ],
+    "damper": [
+      "expected 1 visible, found 2"
+    ],
+    "lockpin": [
+      "not found by the segmenter as 'metal pin'"
+    ],
+    "screen": [
+      "expected 1 visible, found 2",
+      "size against frame: expected about 1.8 times, measured 0.72 times"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": []
+}

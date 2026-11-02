@@ -1,0 +1,24 @@
+{
+  "id": "E25",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "inputs": {},
+  "output_summary": "github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n — https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
+  "output_full": "github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n — https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "github.com",
+      "title": "lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n",
+      "year": "",
+      "url": "https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
+      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

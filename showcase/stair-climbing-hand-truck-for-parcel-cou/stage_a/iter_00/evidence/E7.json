@@ -1,0 +1,24 @@
+{
+  "id": "E7",
+  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "tool": "web_search",
+  "purpose": "search: self locking worm gearbox hand winch brake holding load",
+  "code_or_query": "self locking worm gearbox hand winch brake holding load",
+  "inputs": {},
+  "output_summary": "winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop — https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
+  "output_full": "winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop — https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "winchshop.co.uk",
+      "title": "3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop",
+      "year": "",
+      "url": "https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
+      "query": "self locking worm gearbox hand winch brake holding load",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

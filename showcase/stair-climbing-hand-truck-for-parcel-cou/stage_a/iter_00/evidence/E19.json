@@ -1,0 +1,24 @@
+{
+  "id": "E19",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
+  "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
+  "inputs": {},
+  "output_summary": "cdn.standards.iteh.ai — SIST EN 1757 2022.pdf — 2022 — https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
+  "output_full": "cdn.standards.iteh.ai — SIST EN 1757 2022.pdf — 2022 — https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "cdn.standards.iteh.ai",
+      "title": "SIST EN 1757 2022.pdf",
+      "year": "2022",
+      "url": "https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
+      "query": "EN 1757 hand truck safety handle height brake requirements",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

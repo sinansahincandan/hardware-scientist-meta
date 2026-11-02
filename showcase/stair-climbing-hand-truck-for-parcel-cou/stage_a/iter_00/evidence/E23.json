@@ -1,0 +1,24 @@
+{
+  "id": "E23",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: adjustable handle height ergonomic 900 1150 mm standing push",
+  "code_or_query": "adjustable handle height ergonomic 900 1150 mm standing push",
+  "inputs": {},
+  "output_summary": "shoprbc.com — StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels — https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx",
+  "output_full": "shoprbc.com — StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels — https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "shoprbc.com",
+      "title": "StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels",
+      "year": "",
+      "url": "https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx",
+      "query": "adjustable handle height ergonomic 900 1150 mm standing push",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

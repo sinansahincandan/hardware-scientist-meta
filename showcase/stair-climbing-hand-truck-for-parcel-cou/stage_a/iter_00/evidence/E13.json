@@ -1,0 +1,27 @@
+{
+  "id": "E13",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "tri-star cluster torque with total mass and radius",
+  "code_or_query": "(Q_(75,'kg')*Q_(9.81,'m/s**2')*Q_(0.25,'m')).to('N*m')",
+  "inputs": {
+    "arg0": {
+      "value": "75",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "output_summary": "184 m\u22c5N",
+  "output_full": "184 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

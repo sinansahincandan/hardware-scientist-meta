@@ -1,14 +1,24 @@
 {
   "id": "E15",
-  "author": "Post-Harvest Cooperative Operations Lead",
-  "tool": "calc",
-  "purpose": "batch door openings infiltration saving from 10 to 2 per day",
-  "code_or_query": "0.6*2/10",
+  "author": "Amara - Off-Grid Solar Power Lead",
+  "tool": "web_search",
+  "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+  "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
   "inputs": {},
-  "output_summary": "0.12",
-  "output_full": "0.12",
+  "output_summary": "medium.com — SOLAR IRRADIATION POTENTIAL OF AFRICA ☀️ | by Ibikunle Abdulateef | Medium — https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de",
+  "output_full": "medium.com — SOLAR IRRADIATION POTENTIAL OF AFRICA ☀️ | by Ibikunle Abdulateef | Medium — https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "medium.com",
+      "title": "SOLAR IRRADIATION POTENTIAL OF AFRICA ☀️ | by Ibikunle Abdulateef | Medium",
+      "year": "",
+      "url": "https://medium.com/@ibikunlelateef075/solar-irradiation-potential-of-africa-%EF%B8%8F-aa668ecfe1de",
+      "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 1
 }

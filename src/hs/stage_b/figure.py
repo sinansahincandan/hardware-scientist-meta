@@ -269,25 +269,26 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
 
 
 def _layout(panel_a: Path, panel_b: Path | None, panel_c: Path | None, panel_d: Path | None) -> Image.Image:
-    a = Image.open(panel_a)
-    a = a.resize((780, int(780 * a.size[1] / max(a.size[0], 1))))
-    right = [Image.open(p) for p in (panel_b, panel_c) if p is not None]
-    right = [im.resize((760, int(760 * im.size[1] / max(im.size[0], 1)))) for im in right]
-    dimg = Image.open(panel_d) if panel_d is not None else None
-    if dimg is not None:  # never stretched past its own width (one shipped step stays one thumbnail wide)
-        dw = min(1580, dimg.size[0])
-        dimg = dimg.resize((dw, int(dw * dimg.size[1] / max(dimg.size[0], 1))))
-    right_h = sum(im.size[1] for im in right) + 16 * max(len(right) - 1, 0)
-    row1_h = max(a.size[1], right_h)
-    width = 1600 if (right or dimg is not None) else 800
-    canvas = Image.new("RGB", (width, 20 + row1_h + (16 + dimg.size[1] if dimg is not None else 0)), "white")
+    """Panel A full width on top; B, C and D side by side below at one height (no white gaps)."""
+    width = 1600
+    a = Image.open(panel_a).convert("RGB")
+    a = a.resize((width - 20, int((width - 20) * a.size[1] / max(a.size[0], 1))))
+    row = [Image.open(p).convert("RGB") for p in (panel_b, panel_c, panel_d) if p is not None]
+    row_h = 0
+    if row:
+        row_h = 420
+        row = [im.resize((int(im.size[0] * row_h / max(im.size[1], 1)), row_h)) for im in row]
+        total = sum(im.size[0] for im in row) + 12 * (len(row) - 1)
+        if total > width - 20:  # shrink the whole row to fit
+            k = (width - 20) / total
+            row_h = int(row_h * k)
+            row = [im.resize((max(int(im.size[0] * k), 1), row_h)) for im in row]
+    canvas = Image.new("RGB", (width, 20 + a.size[1] + (12 + row_h if row else 0)), "white")
     canvas.paste(a, (10, 10))
-    y = 10
-    for im in right:
-        canvas.paste(im, (810, y))
-        y += im.size[1] + 16
-    if dimg is not None:
-        canvas.paste(dimg, (10, 20 + row1_h))
+    x = 10
+    for im in row:
+        canvas.paste(im, (x, 22 + a.size[1]))
+        x += im.size[0] + 12
     return canvas
 
 

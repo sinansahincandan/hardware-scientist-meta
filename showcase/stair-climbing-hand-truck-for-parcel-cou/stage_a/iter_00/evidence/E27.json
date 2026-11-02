@@ -1,0 +1,24 @@
+{
+  "id": "E27",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: deadman brake lever hand truck stair climber safety",
+  "code_or_query": "deadman brake lever hand truck stair climber safety",
+  "inputs": {},
+  "output_summary": "supanet.com — What are Stair Climber Sack Trucks, and Why Are They Useful? — https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html",
+  "output_full": "supanet.com — What are Stair Climber Sack Trucks, and Why Are They Useful? — https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "supanet.com",
+      "title": "What are Stair Climber Sack Trucks, and Why Are They Useful?",
+      "year": "",
+      "url": "https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html",
+      "query": "deadman brake lever hand truck stair climber safety",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

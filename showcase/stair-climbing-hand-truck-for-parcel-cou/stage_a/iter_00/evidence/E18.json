@@ -1,0 +1,24 @@
+{
+  "id": "E18",
+  "author": "Tomas — Human Factors and Safety Engineer",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
+  "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
+  "inputs": {},
+  "output_summary": "sourcebyspec.com — Platform Trolley Guide — Types, Specs, Selection — https://www.sourcebyspec.com/encyclopedia/platform-trolley.html",
+  "output_full": "sourcebyspec.com — Platform Trolley Guide — Types, Specs, Selection — https://www.sourcebyspec.com/encyclopedia/platform-trolley.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "sourcebyspec.com",
+      "title": "Platform Trolley Guide — Types, Specs, Selection",
+      "year": "",
+      "url": "https://www.sourcebyspec.com/encyclopedia/platform-trolley.html",
+      "query": "EN 1757 hand truck safety handle height brake requirements",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

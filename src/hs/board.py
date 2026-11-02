@@ -106,6 +106,20 @@ def _round3(text: str) -> str:
     return _NUMBER.sub(_three_sig, text)
 
 
+def _failure_words(summary: str) -> str:
+    """B9: a failed tool run in plain words on the page (members still get the full error in their turn)."""
+    low = summary.lower()
+    if "dimensionality" in low or "cannot convert" in low:
+        return "failed: the units did not match"
+    if "timeout" in low:
+        return "failed: the calculation took too long"
+    if "not allowed" in low or "permission" in low:
+        return "failed: the code used something the sandbox does not allow"
+    if "syntax" in low:
+        return "failed: the code had a typing error"
+    return "failed: the calculation did not run"
+
+
 def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> str:
     problem = _read(run_dir / "problem.json")
     title = str(problem.get("title", run_dir.name))
@@ -165,9 +179,9 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
                             added.append(f"<figure class='sketch'><a href='{_e(src)}'><img src='{_e(src)}'></a>"
                                          f"<figcaption>{_e(ev.id)} · {_e(ev.purpose)}</figcaption></figure>")
                         else:
-                            failed = " (failed)" if ev.status == "error" else ""
-                            added.append(f"<span class='calc'><b>{_e(ev.id)}</b> {_e(ev.purpose)}: "
-                                         f"{_e(_round3(ev.output_summary))}{failed}</span>")
+                            result = (_failure_words(ev.output_summary) if ev.status == "error"
+                                      else _round3(ev.output_summary))
+                            added.append(f"<span class='calc'><b>{_e(ev.id)}</b> {_e(ev.purpose)}: {_e(result)}</span>")
                         continue
                     op = r.get("op") or {}
                     if r.get("kind") != "op" or not r.get("ok"):

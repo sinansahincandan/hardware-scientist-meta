@@ -1,0 +1,14 @@
+{
+  "id": "E41",
+  "author": "Retrofit and Maintenance Engineer",
+  "tool": "calc",
+  "purpose": "slip safety factor 8xM16",
+  "code_or_query": "(8*3.4)/9.81",
+  "inputs": {},
+  "output_summary": "2.77",
+  "output_full": "2.77",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

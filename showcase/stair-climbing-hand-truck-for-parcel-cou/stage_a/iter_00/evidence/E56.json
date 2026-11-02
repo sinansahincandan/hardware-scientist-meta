@@ -1,0 +1,14 @@
+{
+  "id": "E56",
+  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "tool": "calc",
+  "purpose": "crank turns per step 15:1 worm 120deg cluster",
+  "code_or_query": "15*120/360",
+  "inputs": {},
+  "output_summary": "5",
+  "output_full": "5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

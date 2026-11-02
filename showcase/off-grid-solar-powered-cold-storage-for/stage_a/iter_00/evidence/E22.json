@@ -1,14 +1,24 @@
 {
   "id": "E22",
-  "author": "Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "PV kW needed for low-sun refill",
-  "code_or_query": "6.096/0.75/2",
+  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "tool": "web_search",
+  "purpose": "search: respiration heat fresh produce watts per tonne refrigeration load",
+  "code_or_query": "respiration heat fresh produce watts per tonne refrigeration load",
   "inputs": {},
-  "output_summary": "4.064",
-  "output_full": "4.064",
+  "output_summary": "dr.ddn.upes.ac.in — Name: Enrolment No: — 2038 — https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23",
+  "output_full": "dr.ddn.upes.ac.in — Name: Enrolment No: — 2038 — https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "dr.ddn.upes.ac.in",
+      "title": "Name: Enrolment No:",
+      "year": "2038",
+      "url": "https://dr.ddn.upes.ac.in/xmlui/bitstream/handle/123456789/4480/Set01_ESE_MAY25_SoHST_B.Tech FT_IV_MECH2038_Refrigeration and Cold Chain.pdf?sequence=23",
+      "query": "respiration heat fresh produce watts per tonne refrigeration load",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

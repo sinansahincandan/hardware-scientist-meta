@@ -1,0 +1,214 @@
+{
+  "view": "side",
+  "nodes": [
+    {
+      "id": "P-array",
+      "label": "Solar array 4x550W",
+      "shape": "plate",
+      "size_class_mm": {
+        "min": 1130.0,
+        "max": 2280.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 0
+      },
+      "color_hint": "#2e86c1",
+      "aspect": 2.0
+    },
+    {
+      "id": "P-battery",
+      "label": "48V 100Ah battery",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 600.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#e67e22",
+      "aspect": 1.5
+    },
+    {
+      "id": "P-controller",
+      "label": "MPPT controller",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 100.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 1
+      },
+      "color_hint": "#8e44ad",
+      "aspect": 1.33
+    },
+    {
+      "id": "P-box",
+      "label": "PU box 2.4x2x2.2m",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 960.0,
+        "max": 2400.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 1.5
+    },
+    {
+      "id": "P-base",
+      "label": "Steel skid base",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 2000.0,
+        "max": 2400.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 3
+      },
+      "color_hint": "#616a6b",
+      "aspect": 2.0
+    },
+    {
+      "id": "P-door",
+      "label": "800mm door",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 800.0,
+        "max": 2100.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#aab7b8",
+      "aspect": 0.6
+    },
+    {
+      "id": "P-cooling",
+      "label": "DC cooler 1kW",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 300.0,
+        "max": 800.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 1
+      },
+      "color_hint": "#17a589",
+      "aspect": 1.33
+    },
+    {
+      "id": "P-crates",
+      "label": "50x vented crates",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 400.0,
+        "max": 600.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 2
+      },
+      "color_hint": "#229954",
+      "aspect": 1.5
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "P-array",
+      "to_id": "P-controller",
+      "kind": "electrical",
+      "label": "day DC",
+      "arrow": false
+    },
+    {
+      "from_id": "P-controller",
+      "to_id": "P-battery",
+      "kind": "electrical",
+      "label": "charge 48V",
+      "arrow": false
+    },
+    {
+      "from_id": "P-battery",
+      "to_id": "P-cooling",
+      "kind": "electrical",
+      "label": "night power",
+      "arrow": false
+    },
+    {
+      "from_id": "P-cooling",
+      "to_id": "P-box",
+      "kind": "thermal",
+      "label": "1.0kW cooling",
+      "arrow": true
+    },
+    {
+      "from_id": "P-cooling",
+      "to_id": "P-crates",
+      "kind": "fluid",
+      "label": "cold air",
+      "arrow": true
+    },
+    {
+      "from_id": "P-box",
+      "to_id": "P-base",
+      "kind": "mechanical",
+      "label": "bolted",
+      "arrow": false
+    },
+    {
+      "from_id": "P-array",
+      "to_id": "P-base",
+      "kind": "mechanical",
+      "label": "on rails",
+      "arrow": false
+    },
+    {
+      "from_id": "P-crates",
+      "to_id": "P-box",
+      "kind": "mechanical",
+      "label": "racked",
+      "arrow": false
+    },
+    {
+      "from_id": "P-door",
+      "to_id": "P-box",
+      "kind": "mechanical",
+      "label": "hinged seal",
+      "arrow": false
+    }
+  ],
+  "loads": [
+    {
+      "on_id": "P-array",
+      "label": "sun on 10m2 array",
+      "direction": "down"
+    },
+    {
+      "on_id": "P-base",
+      "label": "1t in 50x20kg crates",
+      "direction": "down"
+    },
+    {
+      "on_id": "P-box",
+      "label": "333kg/day field heat",
+      "direction": "in"
+    }
+  ],
+  "critical_part_id": "P-cooling",
+  "scale_bar_mm": 500.0,
+  "notes": [
+    "Solar-only staged store: 2.2kW array -> MPPT -> 5.12kWh 48V -> 1kW DC cooler",
+    "100mm PU box U0.22 holds 5C; 333kg/day staged lot plus 185W leak",
+    "Door hinged sealed to box; box bolted to skid; crates racked in box"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "E2",
+  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
+  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "inputs": {},
+  "output_summary": "dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase — https://dreamcivil.com/staircase-design/",
+  "output_full": "dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase — https://dreamcivil.com/staircase-design/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "dreamcivil.com",
+      "title": "Staircase Design | Calculation of Tread, Riser and Landing in Staircase",
+      "year": "",
+      "url": "https://dreamcivil.com/staircase-design/",
+      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}
