@@ -96,12 +96,15 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     draw.text((8, 6), f"B  Critical part: {node.label}", fill=(0, 0, 0), font=font)
     gm = math.sqrt(max(node.size_class_mm.min, 0.01) * max(node.size_class_mm.max, 0.01))
     px_per_mm = (x1 - x0) * max(scale, 1.0) / gm if x1 > x0 else 0.0
-    bar_px = spec.scale_bar_mm * px_per_mm
+    from hs.stage_b.annotate import nice_scale_mm
+
+    bar_mm = nice_scale_mm(gm)
+    bar_px = bar_mm * px_per_mm
     if 10 < bar_px < crop.size[0] - 20:
         y = panel.size[1] - 18
         draw.rectangle([6, y - 26, 16 + bar_px, panel.size[1] - 2], fill=(255, 255, 255))
         draw.line([10, y, 10 + bar_px, y], fill=(0, 90, 90), width=4)
-        draw.text((10, y - 24), f"~{spec.scale_bar_mm:g} mm", fill=(0, 90, 90), font=_font(16))
+        draw.text((10, y - 24), f"~{bar_mm:g} mm", fill=(0, 90, 90), font=_font(16))
     path.parent.mkdir(parents=True, exist_ok=True)
     panel.save(path)
     return True

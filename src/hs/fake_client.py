@@ -82,7 +82,8 @@ class FakeClient:
             )
         return ("Fake free-text response.", [{"url": "https://example.org/fake-source", "title": "Fake source"}])
 
-    def image_edit(self, prompt: str, reference_png: Path, size: str = "1536x1024") -> bytes:
+    def image_edit(self, prompt: str, reference_png: Path, size: str = "1536x1024",
+                   extra_refs: list[Path] | None = None) -> bytes:
         self.cost.check_budget(estimated_usd=0.05)
         self.cost.record("image_model", config.IMAGE_MODEL, {"images": 1})
         self._image_n += 1

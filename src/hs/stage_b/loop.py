@@ -48,8 +48,16 @@ class StageBResult:
     notes: list[str] = field(default_factory=list)
 
 
+def council_sketches(iter_dir: Path, limit: int = 2) -> list[Path]:
+    """C14: the council's own sketches of the accepted concept (latest first, at most `limit`)."""
+    found = sorted((iter_dir / "evidence").glob("sketch_*.png"),
+                   key=lambda p: int(p.stem.split("_")[-1]) if p.stem.split("_")[-1].isdigit() else 0)
+    return found[-limit:][::-1]
+
+
 def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, attempt_dir: Path,
-                img_archive: ImageArchive, log: Any, *, attempt: int, max_rounds: int) -> StageBResult:
+                img_archive: ImageArchive, log: Any, *, attempt: int, max_rounds: int,
+                sketches: list[Path] | None = None) -> StageBResult:
     """Run up to `max_rounds` rounds; `log(msg)` receives one trace line per event.
 
     C17: every round after the first is judged against all earlier faults (fixed / still wrong /
@@ -59,6 +67,8 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     from hs.stage_b.prompt_gradient import VLMPromptGradientRunner, composite_region
 
     attempt_dir.mkdir(parents=True, exist_ok=True)
+    if sketches:
+        log(f"attempt {attempt}: council sketches used as extra references: {[p.name for p in sketches]}")
     part_map = pm.build_part_map(client, solution, spec, attempt_dir)
     result = StageBResult(decision="s1_exhausted", rounds=0)
     corrections = ""
@@ -77,8 +87,10 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         else:
             vlm = VLMPromptWriter(client).write(
                 solution, spec, round_dir / "schematic.png", round_dir / "schematic_labeled.png", img_archive,
-                corrections=corrections, previous_prompt=kept["vlm"].prompt if kept else "")
-            render_path.write_bytes(ImageModel(client).edit(vlm, round_dir / "schematic.png"))
+                corrections=corrections, previous_prompt=kept["vlm"].prompt if kept else "",
+                council_sketches=sketches)
+            render_path.write_bytes(ImageModel(client).edit(vlm, round_dir / "schematic.png",
+                                                            council_sketches=sketches))
         (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
         meas = pm.measure(client, render_path, part_map)
         diffs = pm.differences(meas, part_map)
@@ -90,7 +102,9 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         ev = DesignerEvalRunner(client).run(
             render_path, round_dir / "schematic_labeled.png", solution, missing, measurements=sam_text,
             earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
-            previous_render=kept["render"] if kept else None)
+            previous_render=kept["render"] if kept else None,
+            critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
+            council_sketches=sketches)
         decision = decide(ev, r, max_rounds)
         (round_dir / "eval.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
         (round_dir / "decision.txt").write_text(decision + "\n", encoding="utf-8")

@@ -44,6 +44,14 @@ def _drop_conflicting(boxes: dict[str, tuple[float, float, float, float]]) -> se
     return dropped
 
 
+def nice_scale_mm(size_mm: float) -> float:
+    """A round scale-bar length (1, 2 or 5 x 10^n mm) no longer than the critical part's own size."""
+    import math as _m
+
+    exp = 10 ** _m.floor(_m.log10(max(size_mm, 0.01)))
+    return max(m * exp for m in (1, 2, 5) if m * exp <= max(size_mm, exp))
+
+
 class Annotator:
     def __init__(self, client: Any) -> None:
         self.client = client
@@ -132,12 +140,13 @@ class Annotator:
         if crit is not None and spec.critical_part_id in boxes_px:
             cx0, _, cx1, _ = boxes_px[spec.critical_part_id]
             gm = math.sqrt(max(crit.size_class_mm.min, 0.01) * max(crit.size_class_mm.max, 0.01))
-            bar_px = spec.scale_bar_mm * max((cx1 - cx0) / gm, 0.01)
+            bar_mm = nice_scale_mm(gm)  # code-chosen: the spec's scale_bar_mm was 10 mm on a 1 m truck
+            bar_px = bar_mm * max((cx1 - cx0) / gm, 0.01)
             if 10 < bar_px < w / 2:
                 bx, by = 20, h - 40
                 draw.rectangle([bx - 8, by - small.size - 14, bx + bar_px + 8, by + 10], fill=(255, 255, 255))  # type: ignore[attr-defined]
                 draw.line([bx, by, bx + bar_px, by], fill=(0, 80, 80), width=4)
-                draw.text((bx, by - small.size - 8), f"~{spec.scale_bar_mm:g} mm", fill=(0, 80, 80), font=small)  # type: ignore[attr-defined]
+                draw.text((bx, by - small.size - 8), f"~{bar_mm:g} mm", fill=(0, 80, 80), font=small)  # type: ignore[attr-defined]
         draw.text((12, 8), panel_letter, fill=(0, 0, 0), font=font)
         out_png.parent.mkdir(parents=True, exist_ok=True)
         img.save(out_png)

@@ -386,7 +386,10 @@ class MetaClient:
     def member_turn(self, **kwargs: Any) -> str:  # implemented in stage_a.council via tool loop
         raise NotImplementedError("MetaClient.member_turn is provided by hs.stage_a.council.run_member_turn")
 
-    def image_edit(self, prompt: str, reference_png: Path, size: str = "1536x1024") -> bytes:
+    def image_edit(self, prompt: str, reference_png: Path, size: str = "1536x1024",
+                   extra_refs: list[Path] | None = None) -> bytes:
+        """`extra_refs` (C14): further reference images, e.g. the council's own sketches of the concept;
+        the documented `images` field is an array."""
         import requests
 
         self.cost.check_budget(estimated_usd=0.05)
@@ -395,7 +398,8 @@ class MetaClient:
         body = {
             "model": config.IMAGE_MODEL,
             "prompt": prompt,
-            "images": [{"image_url": "data:image/png;base64," + base64.b64encode(Path(reference_png).read_bytes()).decode()}],
+            "images": [{"image_url": "data:image/png;base64," + base64.b64encode(Path(p).read_bytes()).decode()}
+                       for p in [reference_png, *(extra_refs or [])]],
             "n": 1, "size": size, "output_format": "png", "response_format": "b64_json",
             "reasoning_strength": "high",
             "tool_enablement": {"enable_web_search": False, "enable_image_search": False, "enable_shell": False},

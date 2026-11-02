@@ -21,7 +21,7 @@ from hs.stage_a.meeting import Meeting, Secretary
 from hs.stage_b import figure as figure_mod
 from hs.stage_b import schematic as schematic_mod
 from hs.stage_b.image_archive import ImageArchive
-from hs.stage_b.loop import RoundResult, run_stage_b
+from hs.stage_b.loop import RoundResult, council_sketches, run_stage_b
 
 
 @dataclass
@@ -218,7 +218,8 @@ class Controller:
             attempt_dir = run_dir / "stage_b" / f"attempt_{returns_to_a:02d}"
             sb = run_stage_b(self.client, solution, spec, attempt_dir, img_archive,
                              lambda msg, k=k: trace.log(f"iter {k} {msg}"),
-                             attempt=returns_to_a, max_rounds=self.max_s1_rounds)
+                             attempt=returns_to_a, max_rounds=self.max_s1_rounds,
+                             sketches=council_sketches(iter_dir))
             last = sb.last
             best_pass = sb.best_pass or best_pass
             if sb.decision == "s1_pass" and sb.last is not None:

@@ -49,12 +49,14 @@ class DesignerEvalRunner:
 
     def run(self, render_png: Path, sketch_png: Path, solution: SolutionPrompt,
             missing_parts: list[str], measurements: str = "", earlier_faults: list[str] | None = None,
-            previous_render: Path | None = None) -> DesignerEval:
+            previous_render: Path | None = None, critical_part: str = "",
+            council_sketches: list[Path] | None = None) -> DesignerEval:
         earlier = "\n".join(f"- {f}" for f in earlier_faults or [])
         prompt = (
             "The first image is the render to judge (it carries no labels; any text, numbers, arrows, "
             "margins or callouts drawn into it are themselves a depiction fault). The second image is the "
-            "labeled mechanism sketch it must follow.\n"
+            "labeled mechanism sketch it must follow. Any images after the previous render are the engineers' "
+            "own hand sketches of the mechanism.\n"
             "STEP 1 — PIXEL-FIRST: look at the render ONLY and write pixel_description: what you actually "
             "see, part by part, and how the parts physically touch or connect. Do this before reading the "
             "solution below.\n"
@@ -70,7 +72,12 @@ class DesignerEvalRunner:
             "source 'schematic'). Report a design flaw only when the render is faithful or the flaw is in the "
             "sketch or design: a flaw seen only in an unfaithful render is a drawing fault. Do not blame the design for "
             "rendering mistakes; s2_feedback must point at a concrete feature of the image.\n"
-            "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
+            + (f"STEP 3b — CRITICAL PART: the part that decides whether this concept works is {critical_part}. "
+               "Say in pixel_description exactly how it is drawn (how many elements, how they are arranged and "
+               "connected). If its working geometry is not visible as in the sketch and the engineers' sketches, "
+               "the render is not faithful. A segmenter that cannot find a part is not proof that the part is "
+               "absent or present: look at the pixels yourself.\n" if critical_part else "")
+            + "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
             "proportions), including each one in the segmenter measurements below, and say whether it matters "
             "for the working principle (in concept design a deviation may be acceptable, but it must be noticed).\n"
             + (("STEP 5 — EARLIER FAULTS: for EVERY fault below (flagged in earlier rounds) set previous_regions: "
@@ -85,4 +92,5 @@ class DesignerEvalRunner:
         return self.client.structured("designer_eval", DesignerEval,
                                       "You are the designer-evaluator (VLM). Compare the render with the mechanism sketch.",
                                       prompt, image_paths=[render_png, sketch_png]
-                                      + ([previous_render] if previous_render is not None else []))
+                                      + ([previous_render] if previous_render is not None else [])
+                                      + list(council_sketches or []))

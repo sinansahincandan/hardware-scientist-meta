@@ -17,7 +17,7 @@ from hs.schemas import Problem, SolutionPrompt
 from hs.stage_b import figure as figure_mod
 from hs.stage_b import schematic as schematic_mod
 from hs.stage_b.image_archive import ImageArchive
-from hs.stage_b.loop import run_stage_b
+from hs.stage_b.loop import council_sketches, run_stage_b
 
 
 def find_accepted_solution(source: Path) -> tuple[SolutionPrompt, Path]:
@@ -54,7 +54,7 @@ def rerun_stage_b(client: Any, source: Path, base: Path = config.PROJECT_ROOT / 
                       feedback="the concept cannot be drawn consistently: " + "; ".join(errors))
     else:
         sb = run_stage_b(client, solution, spec, run_dir / "stage_b" / "attempt_00", img_archive, trace.log,
-                         attempt=0, max_rounds=config.MAX_S1_ROUNDS)
+                         attempt=0, max_rounds=config.MAX_S1_ROUNDS, sketches=council_sketches(sol_path.parent))
         result.update(decision=sb.decision, feedback=sb.feedback)
         if sb.best_pass is not None:
             rnd = sb.best_pass

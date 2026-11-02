@@ -14,14 +14,16 @@ class VLMPromptWriter:
 
     def write(self, solution: SolutionPrompt, spec: SchematicSpec, schematic_png: Path,
               labeled_png: Path, archive: ImageArchive, corrections: str = "",
-              previous_prompt: str = "") -> VLMPrompt:
+              previous_prompt: str = "", council_sketches: list[Path] | None = None) -> VLMPrompt:
         prompt = (
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"PREFERRED VIEW: {solution.figure_spec.preferred_view}\n\n"
             f"IMAGE ARCHIVE SUMMARY:\n{archive.summary_text()}\n\n"
             "GOAL: a correct, photorealistic rendering of this device in its use context, with the workpiece or "
             "load present, real materials, product-shot lighting and the mechanism readable. Correctness against "
-            "the mechanism sketch comes first, style second. The sketch's colours, circles and line style are "
+            "the mechanism sketch comes first, style second. The images after the first two are the engineers' "
+            "own hand sketches of the mechanism: use them to understand how the working parts look and move "
+            "(for example how many wheels a cluster has and how they are arranged). The sketch's colours, circles and line style are "
             "drawing conventions, not materials or parts: never ask for them.\n"
             "Write the image prompt plus a structured visual plan: view; spatial layout; "
             "operating moment (the device in its operating moment, workpiece/sample present); "
@@ -39,7 +41,7 @@ class VLMPromptWriter:
         )
         vlm = self.client.structured("vlm_writer", VLMPrompt,
                                      "You are the image-prompt writer for a photorealistic product rendering.",
-                                     prompt, image_paths=[schematic_png, labeled_png])
+                                     prompt, image_paths=[schematic_png, labeled_png, *(council_sketches or [])])
         # C15: an avoid-entry that quotes numbers gets drawn into the image; drop such entries.
         must_not = [m for m in vlm.must_not if not any(ch.isdigit() for ch in m)]
         return VLMPrompt(prompt=vlm.prompt, must_not=must_not,
