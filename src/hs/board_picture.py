@@ -75,21 +75,29 @@ def _clause(text: str, words: int = 6) -> str:
 
 
 def _note(text: str) -> str:
-    text = re.sub(r"^[a-z]+(_[a-z]+)+:\s*", "", str(text).strip())  # drop a tag like "assumed_constraint:"
-    return _short(text, 14) if len(text.split()) <= 18 else _clause(text, 14) + " …"
+    """A sticky note: the concept's name and the start of its description, about 14 words, whole words."""
+    text = re.sub(r"^\[?[a-z]+(_[a-z]+)+\]?:?\s*", "", str(text).strip())  # drop a tag like "[assumed_constraint]"
+    name, sep, rest = text.partition(": ")
+    if sep and len(name.split()) <= 6:
+        text = f"{name} — {rest}"
+    words = text.split()
+    return text if len(words) <= 16 else " ".join(words[:14]).rstrip(",;:") + " …"
 
 
 def _value(summary: str) -> str:
+    """The first one or two results of a calculation, numbers at three significant figures."""
     text = re.sub(r"\s*mixed \(see keys\)", "", str(summary)).rstrip(", ")
-    first = text.split(", ")[0]
-    if "=" in first:
-        key, _, val = first.partition("=")
+    pairs = re.findall(r"([A-Za-z][\w ]{0,30}?)\s*=\s*(-?[\d.]+(?:e[+-]?\d+)?)\s*([A-Za-z/%°]*)", text)
+    if not pairs:
+        return " ".join(text.split()[:10])
+    out = []
+    for key, val, unit in pairs[:2]:
         try:
             val = f"{float(val):.3g}"
         except ValueError:
             pass
-        first = f"{key.replace('_', ' ')} = {val}"
-    return " ".join(first.split()[:10])
+        out.append(f"{key.strip().replace('_', ' ')} = {val}{(' ' + unit) if unit else ''}")
+    return "; ".join(out) + (" …" if len(pairs) > 2 else "")
 
 
 def board_picture_html(board: dict[str, Any], run_dir: Path, iter_dir: Path, members: list[str], title: str,

@@ -303,27 +303,40 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     return figure_path
 
 
+def _fit_row(images: list[Image.Image], row_h: int, width: int) -> tuple[list[Image.Image], int]:
+    """Scale images to one height, shrinking the row if it is wider than the page."""
+    row = [im.resize((int(im.size[0] * row_h / max(im.size[1], 1)), row_h)) for im in images]
+    total = sum(im.size[0] for im in row) + 12 * (len(row) - 1)
+    if total > width - 20:
+        k = (width - 20) / total
+        row_h = int(row_h * k)
+        row = [im.resize((max(int(im.size[0] * k), 1), row_h)) for im in row]
+    return row, row_h
+
+
 def _layout(panel_a: Path, panel_b: Path | None, panel_c: Path | None, panel_d: Path | None) -> Image.Image:
-    """Panel A full width on top; B, C and D side by side below at one height (no white gaps)."""
+    """Panel A full width on top; B and C side by side below; D (the making steps) full width at the bottom,
+    so each step and its caption stays readable."""
     width = 1600
     a = Image.open(panel_a).convert("RGB")
     a = a.resize((width - 20, int((width - 20) * a.size[1] / max(a.size[0], 1))))
-    row = [Image.open(p).convert("RGB") for p in (panel_b, panel_c, panel_d) if p is not None]
-    row_h = 0
-    if row:
-        row_h = 420
-        row = [im.resize((int(im.size[0] * row_h / max(im.size[1], 1)), row_h)) for im in row]
-        total = sum(im.size[0] for im in row) + 12 * (len(row) - 1)
-        if total > width - 20:  # shrink the whole row to fit
-            k = (width - 20) / total
-            row_h = int(row_h * k)
-            row = [im.resize((max(int(im.size[0] * k), 1), row_h)) for im in row]
-    canvas = Image.new("RGB", (width, 20 + a.size[1] + (12 + row_h if row else 0)), "white")
+    rows: list[tuple[list[Image.Image], int]] = []
+    bc = [Image.open(p).convert("RGB") for p in (panel_b, panel_c) if p is not None]
+    if bc:
+        rows.append(_fit_row(bc, 420, width))
+    if panel_d is not None:
+        rows.append(_fit_row([Image.open(panel_d).convert("RGB")], 2000, width))
+    height = 20 + a.size[1] + sum(12 + h for _, h in rows)
+    canvas = Image.new("RGB", (width, height), "white")
     canvas.paste(a, (10, 10))
-    x = 10
-    for im in row:
-        canvas.paste(im, (x, 22 + a.size[1]))
-        x += im.size[0] + 12
+    y = 10 + a.size[1]
+    for row, h in rows:
+        y += 12
+        x = 10
+        for im in row:
+            canvas.paste(im, (x, y))
+            x += im.size[0] + 12
+        y += h
     return canvas
 
 

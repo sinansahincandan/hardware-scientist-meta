@@ -34,7 +34,7 @@ def test_board_picture_reads_only_the_board(tmp_path: Path) -> None:
 
 def test_heading_never_ends_on_a_small_word() -> None:
     assert _clause("Dissipate first vertical mode energy at 1.9 Hz") == "Dissipate first vertical mode energy"
-    assert _value("tmd_mass_kg=800.0 mixed (see keys), f=1") == "tmd mass kg = 800"
+    assert _value("tmd_mass_kg=800.0 mixed (see keys), f=1") == "tmd mass kg = 800; f = 1"
 
 
 def test_knowledge_in_recorded(tmp_path: Path, monkeypatch) -> None:
