@@ -1,4 +1,4 @@
-"""hs CLI (spec §8): run | examples | feedback | show | report | compare | board."""
+"""hs CLI (spec §8): run | examples | feedback | show | report | compare | board | spend."""
 from __future__ import annotations
 
 import argparse
@@ -186,6 +186,16 @@ def _cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_spend(args: argparse.Namespace) -> int:
+    from hs.client import SpendLedger
+
+    ledger = SpendLedger()
+    total = ledger.total()
+    print(f"real API spend: ${total:.4f} of ${ledger.cap_usd:.2f} cap "
+          f"(${ledger.cap_usd - total:.4f} left) - {ledger.path}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="hs", description="Hardware Scientist")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -226,6 +236,8 @@ def build_parser() -> argparse.ArgumentParser:
     scb.add_argument("run_dirs", nargs="+")
     scb.add_argument("--out", default="showcase")
     scb.set_defaults(func=_cmd_showcase_build)
+    sp = sub.add_parser("spend")
+    sp.set_defaults(func=_cmd_spend)
     return parser
 
 

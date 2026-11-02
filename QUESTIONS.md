@@ -45,6 +45,7 @@ Every assumption is recorded here with the default chosen; work continues withou
 - **14.5 SETTLED (usable).** Localization on the toy render found all 3 parts (confidence 0.8). Code-label readability was poor with the default bitmap font — fixed in `annotate.py` (TrueType scaled font, white label backing).
 - **14.6 NOT NEEDED** by design (searches in turns, structured output separate). Untested.
 - **14.7 PARTLY OPEN.** Prices/limits taken from spec §9 in `config.py`; dashboard credit not checked (no dashboard access in this session). The $15/run cap and $60 session budget bound the exposure.
+  *Update 2026-11-02:* the user reported $67 credit left on the dashboard and asked for a $50 limit. The Meta docs list no balance endpoint (dashboard only); `/docs/error-handling` documents HTTP 402 `billing_error` for billing problems. *Default chosen:* a cross-run ledger (`spend_ledger.json`, `MAX_TOTAL_SPEND_USD = 50.00`) starts at $0 on 2026-11-02; earlier runs ($23.51 logged) are not counted in it. 402 now raises `BudgetExceeded`. Two undercounts were fixed at the same time: a truncated structured reply that was re-asked was not recorded, and hosted `web_search_call` items were never priced.
 - **14.8 SETTLED.** Truncation probe printed `status=incomplete incomplete=IncompleteDetails(reason='max_output_tokens')`. The defensive detection in `client.py` (status != completed) covers this shape.
 
 ## Unverified API items (spec §14) — previous status: NOT RUN (fake mode only, superseded above)

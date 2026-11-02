@@ -6,9 +6,13 @@ call (it is NOT carried by previous_response_id).
 from __future__ import annotations
 
 import base64
+import fcntl
 import json
 import os
+import sys
 import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -38,10 +42,63 @@ def price_usage(usage: dict[str, Any]) -> float:
     )
 
 
+class SpendLedger:
+    """Cross-run record of real API spend, capped at MAX_TOTAL_SPEND_USD.
+
+    One JSON file shared by every run and command; read under a file lock
+    before each call and updated after it, so parallel runs see each other.
+    """
+
+    def __init__(self, path: Path | None = None, cap_usd: float | None = None) -> None:
+        self.path = Path(path or config.SPEND_LEDGER_PATH)
+        self.cap_usd = config.MAX_TOTAL_SPEND_USD if cap_usd is None else cap_usd
+
+    @contextmanager
+    def _locked(self) -> Iterator[dict[str, Any]]:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.path.with_suffix(".lock"), "w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            data: dict[str, Any] = {"total_usd": 0.0, "calls": 0, "entries": []}
+            if self.path.exists():
+                data = json.loads(self.path.read_text(encoding="utf-8"))
+            yield data
+            data["cap_usd"] = self.cap_usd
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(data, indent=2), encoding="utf-8")
+            tmp.replace(self.path)
+
+    def total(self) -> float:
+        with self._locked() as data:
+            return float(data.get("total_usd", 0.0))
+
+    def check(self, estimated_usd: float) -> None:
+        spent = self.total()
+        if spent + estimated_usd > self.cap_usd:
+            raise BudgetExceeded(
+                f"total spend cap ${self.cap_usd:.2f} would be exceeded "
+                f"(spent ${spent:.4f} across all runs, next call est. ${estimated_usd:.4f}; "
+                f"ledger {self.path})"
+            )
+
+    def add(self, role: str, model: str, usd: float) -> float:
+        with self._locked() as data:
+            data["total_usd"] = round(float(data.get("total_usd", 0.0)) + usd, 6)
+            data["calls"] = int(data.get("calls", 0)) + 1
+            data.setdefault("entries", []).append(
+                {"at": time.strftime("%Y-%m-%dT%H:%M:%S"), "role": role, "model": model,
+                 "usd": round(usd, 6), "total_usd": data["total_usd"]})
+            total = float(data["total_usd"])
+        print(f"[spend] {role} +${usd:.4f} | total ${total:.4f} of ${self.cap_usd:.2f} "
+              f"| left ${self.cap_usd - total:.4f}", file=sys.stderr, flush=True)
+        return total
+
+
 class CostLog:
-    def __init__(self, run_dir: Path | None, max_cost: float | None = None) -> None:
+    def __init__(self, run_dir: Path | None, max_cost: float | None = None,
+                 ledger: SpendLedger | None = None) -> None:
         self.run_dir = run_dir
         self.max_cost = config.MAX_COST_USD_PER_RUN if max_cost is None else max_cost
+        self.ledger = ledger
         self.entries: list[dict[str, Any]] = []
         self.total_usd = 0.0
         if run_dir is not None:
@@ -60,6 +117,8 @@ class CostLog:
                 f"cost cap ${self.max_cost:.2f} would be exceeded "
                 f"(spent ${self.total_usd:.4f}, next call est. ${estimated_usd:.4f})"
             )
+        if self.ledger is not None:
+            self.ledger.check(estimated_usd)
 
     def record(self, role: str, model: str, usage: dict[str, Any]) -> float:
         usd = price_usage(usage)
@@ -78,6 +137,8 @@ class CostLog:
         )
         self.total_usd += usd
         self.flush()
+        if self.ledger is not None:
+            self.ledger.add(role, model, usd)
         return usd
 
     def note(self, role: str) -> None:
@@ -114,11 +175,16 @@ def _usage_from_response(resp: Any) -> dict[str, Any]:
     cached = g(details, "cached_tokens") if details is not None else 0
     out_details = getattr(usage, "output_tokens_details", None)
     reasoning = g(out_details, "reasoning_tokens") if out_details is not None else 0
+    # Hosted web_search is billed per query on top of tokens (QUESTIONS.md 14.2:
+    # each search shows up as a `web_search_call` output item).
+    searches = sum(1 for item in getattr(resp, "output", []) or []
+                   if getattr(item, "type", None) == "web_search_call")
     return {
         "input_tokens": g(usage, "input_tokens"),
         "cached_input_tokens": cached,
         "output_tokens": g(usage, "output_tokens"),
         "reasoning_tokens": reasoning,
+        "searches": searches,
     }
 
 
@@ -143,7 +209,7 @@ class MetaClient:
     """Real client. Constructed only when MODEL_API_KEY is present."""
 
     def __init__(self, run_dir: Path | None = None, max_cost: float | None = None) -> None:
-        self.cost = CostLog(run_dir, max_cost=max_cost)
+        self.cost = CostLog(run_dir, max_cost=max_cost, ledger=SpendLedger())
         self._sdk: Any = None
 
     def _client(self) -> Any:
@@ -180,6 +246,9 @@ class MetaClient:
         resp = self._create_with_retries(kwargs)
         text = _output_text(resp)
         if schema_model is not None and (_is_truncated(resp, max_tokens, text)):
+            # The truncated reply was billed too: record it before re-asking.
+            self.cost.record(role, rc.model, _usage_from_response(resp))
+            self.cost.check_budget()
             kwargs["max_output_tokens"] = min(max_tokens * 2, 32000)
             resp = self._create_with_retries(kwargs)
         self.cost.record(role, rc.model, _usage_from_response(resp))
@@ -194,6 +263,8 @@ class MetaClient:
                 return client.responses.create(**kwargs)
             except Exception as exc:  # status-aware retry (503/500/429 retry, 400 raise)
                 status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
+                if status == 402:  # billing / credit exhausted: stop via the best-effort path
+                    raise BudgetExceeded(f"billing error HTTP 402: {exc}") from exc
                 # A content-filter 400 is stochastic on this provider (the same
                 # prompt passes on a fresh roll); retry it like a 429 instead
                 # of losing the whole run. Other 400s are deterministic: raise.
@@ -282,6 +353,8 @@ class MetaClient:
                     time.sleep(float(wait) if wait else delay)
                     delay *= 2
                     continue
+                if r.status_code == 402:
+                    raise BudgetExceeded(f"billing error HTTP 402: {r.text[:1000]}")
                 if r.status_code >= 400:
                     # Deterministic rejection: never retry blind, and keep the
                     # body — it was once lost and cost a full run (QUESTIONS.md).
@@ -290,7 +363,7 @@ class MetaClient:
                 data = r.json()["data"][0]["b64_json"]
                 self.cost.record("image_model", config.IMAGE_MODEL, {"images": 1})
                 return base64.b64decode(data)
-            except RuntimeError:
+            except (RuntimeError, BudgetExceeded):
                 raise
             except Exception as exc:
                 last = exc

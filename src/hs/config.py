@@ -5,7 +5,9 @@ higher reasoning effort here only — no code changes elsewhere.
 """
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
+from pathlib import Path
 
 
 @dataclass(frozen=True)
@@ -53,6 +55,12 @@ MAX_NEW_TOOLS = 2
 MAX_MANAGER_NEW_TOOLS = 2
 MAX_FIGURE_IMAGES = 8
 MAX_COST_USD_PER_RUN = 15.00
+# Cross-run cap on real API spend (all commands, all runs). The ledger is
+# re-read before every call so parallel runs share it. Fake mode never touches it.
+# Set 2026-11-02 when the dashboard showed $67 credit left.
+MAX_TOTAL_SPEND_USD = 50.00
+SPEND_LEDGER_PATH = Path(os.environ.get("HS_SPEND_LEDGER",
+                                        Path(__file__).resolve().parents[2] / "spend_ledger.json"))
 
 IMAGE_BACKEND = "edits"  # "edits" | "responses" (fallback, spec §5.3)
 SKETCH_SINGLE_REQUEST = True  # §14.3 fallback switch
