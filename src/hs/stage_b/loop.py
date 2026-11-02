@@ -106,6 +106,17 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             previous_render=kept["render"] if kept else None,
             critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
             council_sketches=sketches)
+        missed = _unaddressed(diffs, ev)
+        if missed:  # C18 completeness: one re-ask naming the findings the critic did not address
+            log(f"attempt {attempt} round {r}: critic re-asked for unaddressed segmenter findings {missed}")
+            ev = DesignerEvalRunner(client).run(
+                render_path, round_dir / "schematic_labeled.png", solution, missing,
+                measurements=sam_text + "\nYOUR PREVIOUS ANSWER DID NOT ADDRESS THESE FINDINGS: " + ", ".join(missed)
+                + ". Answer again in full, with a deviation for each of them.",
+                earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
+                previous_render=kept["render"] if kept else None,
+                critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
+                council_sketches=sketches)
         decision = decide(ev, r, max_rounds)
         (round_dir / "eval.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
         (round_dir / "decision.txt").write_text(decision + "\n", encoding="utf-8")
@@ -191,13 +202,18 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     return result
 
 
+def _unaddressed(diffs: dict[str, list[str]], ev: DesignerEval) -> list[str]:
+    mentioned = {x.part_id for x in ev.regions}
+    text = " ".join(f"{d.what} {d.measured} {d.expected}" for d in ev.deviations).lower()
+    return [pid for pid in diffs if pid not in mentioned and pid.lower() not in text]
+
+
 def _log_sam_use(round_dir: Path, attempt_dir: Path, r: int, diffs: dict[str, list[str]], ev: DesignerEval,
                  keep: bool, why: str) -> None:
     """Item 16 log: which segmenter findings the critique used, whether earlier ones were fixed, and
     which measured deviations nobody noticed (C18: an unnoticed deviation is a defect to report)."""
     mentioned = {x.part_id for x in ev.regions}
-    text = " ".join(f"{d.what} {d.measured} {d.expected}" for d in ev.deviations).lower()
-    unnoticed = [pid for pid in diffs if pid not in mentioned and pid.lower() not in text]
+    unnoticed = _unaddressed(diffs, ev)
     record = {"round": r, "sam_differences": diffs, "critique_part_ids": sorted(mentioned),
               "sam_parts_used_by_critique": sorted(set(diffs) & mentioned), "unnoticed_sam_deviations": unnoticed,
               "kept": keep, "why": why,

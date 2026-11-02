@@ -33,9 +33,10 @@ class Evaluator:
         if board.proposal is None:
             proposal_fact = "No proposal was formed on the whiteboard in this meeting."
         else:
-            ready = [m for m, v in board.votes.items() if v.version == board.proposal.version and v.ready]
-            proposal_fact = (f"Proposal v{board.proposal.version} by {board.proposal.author}; ready votes on it: "
-                             f"{', '.join(ready) or 'none'}.")
+            votes = [f"{m}: {'ready' if v.ready else 'NOT ready'} ({v.reason})" for m, v in board.votes.items()
+                     if v.version == board.proposal.version]
+            proposal_fact = (f"Proposal v{board.proposal.version} by {board.proposal.author}. Votes on it: "
+                             + ("; ".join(votes) if votes else "none") + ".")
         open_objections = "\n".join(
             f"- {o.id} by {o.author} ({'blocking' if o.blocking else 'not blocking'}): {o.text}"
             for o in board.objections if o.status == "open") or "(none)"

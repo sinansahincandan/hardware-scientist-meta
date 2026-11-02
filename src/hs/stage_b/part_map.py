@@ -144,8 +144,11 @@ def evidence_text(diffs: dict[str, list[str]], rechecks: list[str], part_map: Pa
     names = {p.part_id: p.visual_phrase for p in part_map.parts}
     lines = [("Segmenter measurements of the render (evidence, not a verdict; coarse: about x2 in size, "
               "long axis only):")]
-    lines += [f"- {pid} ('{names.get(pid, pid)}'): {'; '.join(n)}" for pid, n in diffs.items()] or \
-        ["- every part was found and matched its expected count, axis, size and contacts"]
+    lines += [f"{i}. {pid} ('{names.get(pid, pid)}'): {'; '.join(n)}" for i, (pid, n) in enumerate(diffs.items(), 1)] \
+        or ["- every part was found and matched its expected count, axis, size and contacts"]
+    if diffs:
+        lines.append("Add one deviation per numbered finding (what = the part id), say what the pixels show "
+                     "and whether it matters for the working principle.")
     if rechecks:
         lines.append("Compared with the previous round:")
         lines += [f"- {r}" for r in rechecks]

@@ -203,3 +203,28 @@ def test_search_evidence_is_capped_per_query_and_deduplicated(tmp_path: Path) ->
     sources = [{"url": f"https://ex.org/{i}", "title": f"t{i}", "query": "q"} for i in range(6)]
     assert len(runner.web_search_evidence("A", sources)) == 3
     assert runner.web_search_evidence("B", sources[:3] + [{"url": "https://ex.org/new", "title": "n", "query": "r"}]) == ["E4"]
+
+
+def test_evaluator_sees_not_ready_votes_with_reasons(tmp_path: Path) -> None:
+    from hs.stage_a.evaluator import Evaluator
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    board.apply_op("A", {"action": "add_function", "text": "cool"})
+    board.apply_op("A", {"action": "add_concept", "function_id": "F1", "text": "box"})
+    board.apply_op("A", {"action": "update_proposal", "text": "box", "concept_ids": ["C1"]})
+    board.apply_op("A", {"action": "vote", "ready": True, "reason": "fine"})
+    board.apply_op("B", {"action": "vote", "ready": False, "reason": "no cloudy-day rule"})
+    prompts: list[str] = []
+
+    class Client:
+        def free_text(self, *a: Any, **k: Any) -> tuple[str, list[Any]]:
+            return "p", []
+
+        def structured(self, role: str, model: Any, instructions: str, prompt: str, **k: Any) -> Any:
+            prompts.append(prompt)
+            return Verdict(feedback="ok", evidence_requests=[], accept=True)
+
+    Evaluator(Client()).judge(SimpleNamespace(sections=[]), SimpleNamespace(model_dump_json=lambda **k: "{}"),
+                              board, "cap", tmp_path)
+    assert "B: NOT ready (no cloudy-day rule)" in prompts[0] and "A: ready (fine)" in prompts[0]

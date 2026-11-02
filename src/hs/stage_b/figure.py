@@ -82,6 +82,9 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     render = Image.open(render_path).convert("RGB")
     w, h = render.size
     b = crit.box_1000
+    if (b.x1 - b.x0) * (b.y1 - b.y0) > 0.4 * 1000 * 1000:  # the critical part is most of the picture
+        notes.append(f"the critical part ({node.label}) fills most of the picture; panel B would repeat panel A, omitted")
+        return False
     x0, y0, x1, y1 = b.x0 / 1000 * w, b.y0 / 1000 * h, b.x1 / 1000 * w, b.y1 / 1000 * h
     pad = 0.25 * max(x1 - x0, y1 - y0, 40)
     box = (int(max(x0 - pad, 0)), int(max(y0 - pad, 0)), int(min(x1 + pad, w)), int(min(y1 + pad, h)))

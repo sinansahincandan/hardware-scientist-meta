@@ -86,3 +86,13 @@ def test_design_flaw_counts_only_on_a_faithful_render_or_a_sketch_traced_region(
     in_sketch = EvalRegion(part_id="P6", observed="no drain", expected="drain", source="schematic")
     assert decide(DesignerEval(s1_faithful=False, s2_flaw=True, regions=[in_sketch]), 0, 3) == "s2_return"
     assert decide(DesignerEval(s1_faithful=True, s2_flaw=True), 0, 3) == "s2_return"
+
+
+def test_unaddressed_segmenter_findings_are_detected() -> None:
+    from hs.schemas import Deviation
+    from hs.stage_b.loop import _unaddressed
+
+    ev = DesignerEval(s1_faithful=True, deviations=[
+        Deviation(what="pv_array panel count", measured="14", expected="12", matters=False, why="")])
+    diffs = {"pv_array": ["expected 12, found 14"], "dc_cooler": ["not found"]}
+    assert _unaddressed(diffs, ev) == ["dc_cooler"]
