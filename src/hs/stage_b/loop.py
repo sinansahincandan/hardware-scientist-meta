@@ -67,6 +67,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     from hs.stage_b.prompt_gradient import VLMPromptGradientRunner, composite_region
 
     attempt_dir.mkdir(parents=True, exist_ok=True)
+    (attempt_dir / "schematic_spec.json").write_text(spec.model_dump_json(indent=2), encoding="utf-8")
     if sketches:
         log(f"attempt {attempt}: council sketches used as extra references: {[p.name for p in sketches]}")
     part_map = pm.build_part_map(client, solution, spec, attempt_dir)

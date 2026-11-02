@@ -10,6 +10,7 @@ from typing import Any
 from PIL import Image, ImageDraw
 
 from hs import config
+from hs.client import BudgetExceeded
 from hs.schemas import LightCheck, Localization, SchematicSpec, SolutionPrompt
 from hs.stage_b import schematic as schematic_mod
 
@@ -139,18 +140,26 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
         schematic_mod.render_schematic(spec, tmp, subset_ids=present, stem=f"step{i + 1}")
         step_desc = steps_sorted[i].description if i < len(steps_sorted) else ""
         names = ", ".join(next((p.name for p in solution.concept.parts if p.id == pid), pid) for pid in present)
-        png = client.image_edit(
-            f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
-            f"Show exactly these parts assembled so far ({names}) on a workbench with ordinary "
-            f"shop tools, following the reference layout. The image carries no text.",
-            tmp / f"step{i + 1}.png")
-        images_used += 1
-        step_path = final_dir / f"_step{i + 1}.png"
-        step_path.write_bytes(png)
-        check = client.structured("light_check", LightCheck, "Light check.",
-                                  f"Does it show fabrication step {i + 1} ({step_desc}) with exactly these "
-                                  f"parts: {names}? Answer from the pixels.",
-                                  image_paths=[step_path])
+        try:
+            png = client.image_edit(
+                f"Photorealistic workshop scene, fabrication step {i + 1}: {step_desc}. "
+                f"Show exactly these parts assembled so far ({names}) on a workbench with ordinary "
+                f"shop tools, following the reference layout. The image carries no text.",
+                tmp / f"step{i + 1}.png")
+            images_used += 1
+            step_path = final_dir / f"_step{i + 1}.png"
+            step_path.write_bytes(png)
+            check = client.structured("light_check", LightCheck, "Light check.",
+                                      f"Does it show fabrication step {i + 1} ({step_desc}) with exactly these "
+                                      f"parts: {names}? Answer from the pixels.",
+                                      image_paths=[step_path])
+        except BudgetExceeded:
+            raise
+        except Exception as exc:  # a panel-D step must never sink the figure (run 02: content filter 400)
+            failed_steps.append(i + 1)
+            trace_notes.append(f"fabrication step {i + 1} could not be made or checked ({type(exc).__name__}: "
+                               f"{str(exc)[:160]}); not shown")
+            continue
         if check.ok:
             shipped.append((step_path, f"{i + 1}. {step_desc}"))
         else:

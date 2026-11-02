@@ -17,7 +17,6 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
 
 
 ## Tools
-- Manager should attach council-approved sketches as extra visual references when generating product images so the agreed part topology carries directly into rendering. [2026-11-02, run 20261102-033230_stair-climbing-hand-truck-for-parcel-cou]
 
 - Require manager edits to tie directly to evaluator rejection reason with converging scope; expanding edited sections without convergence does not resolve cap-reject loops. [2026-10-31, run 20261031-184531_stair-climbing-hand-truck-for-parcel-cou]
 
