@@ -76,7 +76,10 @@ def test_sam_tries_the_head_noun_when_the_phrase_misses(tmp_path: Path) -> None:
         def __init__(self) -> None:
             self.asked: list[str] = []
 
-        def sam_segment(self, phrase: str, _png: Path) -> str:
+        def structured(self, role, cls, *args, **kwargs):  # the judge: nothing rejected
+            return cls()
+
+        def sam_segment(self, phrase: str, _png: Path, metadata=None) -> str:
             self.asked.append(phrase)
             return "" if phrase == "metal frame" else "<|box;x1=10;y1=10;x2=50;y2=50;w=100;h=100|>"
 

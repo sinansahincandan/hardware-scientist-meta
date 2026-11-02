@@ -223,32 +223,45 @@ def _usage_from_response(resp: Any) -> dict[str, Any]:
 
 
 def search_sources(resp: Any) -> list[dict[str, Any]]:
-    """Every source a response's web searches returned (B8): `web_search_call.results` (needs
-    include=["web_search_call.results"], spec §14.2) plus any `url_citation` annotations.
-    Each: {url, title, snippet, query}; duplicates by URL dropped."""
-    found: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    """Every source a response's web searches touched (B8). Meta's search is a small browser: it searches
+    (`web_search_call.results`, needs include=["web_search_call.results"], spec §14.2; snippets come back empty),
+    opens and searches inside pages (open_page / find_in_page actions), and ties each sentence of the reply to its
+    source (url_citation annotations with character spans). Each source: {url, title, snippet, query, cited, read};
+    snippet is the cited sentence of the reply — what the member took from that source. Cited sources first."""
+    found: dict[str, dict[str, Any]] = {}
+    opened: set[str] = set()
     for item in getattr(resp, "output", []) or []:
         kind = getattr(item, "type", None)
         if kind == "web_search_call":
             action = getattr(item, "action", None)
+            atype = str(getattr(action, "type", "") or "") if action is not None else ""
+            if atype in ("open_page", "find_in_page"):
+                opened.add(str(getattr(action, "url", "") or ""))
+                continue
             query = str(getattr(action, "query", "") or "") if action is not None else ""
             for res in getattr(item, "results", None) or []:
                 get = (lambda k, r=res: r.get(k) if isinstance(r, dict) else getattr(r, k, None))
                 url = str(get("url") or "")
-                if url and url not in seen:
-                    seen.add(url)
-                    found.append({"url": url, "title": str(get("title") or ""),
-                                  "snippet": str(get("snippet") or ""), "query": query})
+                if url and url not in found:
+                    found[url] = {"url": url, "title": str(get("title") or ""), "snippet": str(get("snippet") or ""),
+                                  "query": query, "cited": False}
         elif kind == "message":
             for block in getattr(item, "content", []) or []:
+                text = str(getattr(block, "text", "") or "")
                 for ann in getattr(block, "annotations", []) or []:
                     url = str(getattr(ann, "url", "") or "")
-                    if getattr(ann, "type", None) == "url_citation" and url and url not in seen:
-                        seen.add(url)
-                        found.append({"url": url, "title": str(getattr(ann, "title", "") or ""),
-                                      "snippet": "", "query": ""})
-    return found
+                    if getattr(ann, "type", None) != "url_citation" or not url:
+                        continue
+                    a, b = getattr(ann, "start_index", None), getattr(ann, "end_index", None)
+                    said = " ".join(text[a:b].split()) if isinstance(a, int) and isinstance(b, int) and b > a else ""
+                    rec = found.setdefault(url, {"url": url, "title": str(getattr(ann, "title", "") or ""),
+                                                 "snippet": "", "query": "", "cited": False})
+                    rec["cited"] = True
+                    if said and said not in rec["snippet"]:
+                        rec["snippet"] = (rec["snippet"] + " " + said).strip()
+    for rec in found.values():
+        rec["read"] = rec["url"] in opened
+    return sorted(found.values(), key=lambda r: (not r["cited"], not r["read"]))
 
 
 def _output_text(resp: Any) -> str:
@@ -473,17 +486,23 @@ class MetaClient:
             im.save(buf, format="PNG")
             sent_size = im.size
         image_url = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
-        try:
-            stream = self._client().with_options(max_retries=0).responses.create(
-                model=config.SAM_MODEL,
-                input=[{"type": "message", "role": "user", "content": [
-                    {"type": "input_text", "text": phrase},
-                    {"type": "input_image", "image_url": image_url}]}],
-                stream=True, **({"metadata": metadata} if metadata else {}))
-        except Exception as exc:
-            if getattr(exc, "status_code", None) == 402:
-                raise BudgetExceeded(f"Meta billing error HTTP 402 (out of credit or billing problem; check the dashboard): {exc}") from exc
-            raise
+        for attempt in range(4):  # temporary provider errors (overload, rate limit) are retried with back-off
+            try:
+                stream = self._client().with_options(max_retries=0).responses.create(
+                    model=config.SAM_MODEL,
+                    input=[{"type": "message", "role": "user", "content": [
+                        {"type": "input_text", "text": phrase},
+                        {"type": "input_image", "image_url": image_url}]}],
+                    stream=True, **({"metadata": metadata} if metadata else {}))
+                break
+            except Exception as exc:
+                code = getattr(exc, "status_code", None)
+                if code == 402:
+                    raise BudgetExceeded(f"Meta billing error HTTP 402 (out of credit or billing problem; check the dashboard): {exc}") from exc
+                if code in (429, 500, 502, 503) and attempt < 3:
+                    time.sleep(5.0 * 2 ** attempt)
+                    continue
+                raise
         parts: list[str] = []
         events: list[str] = []
         final_text, usage = "", None

@@ -152,7 +152,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             render_path.write_bytes(ImageModel(client).edit(vlm, concept or round_dir / "schematic.png",
                                                             council_sketches=sketches))
         (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
-        meas = pm.measure(client, render_path, part_map, out_dir=round_dir)
+        meas = pm.measure(client, render_path, part_map, out_dir=round_dir, spec=spec)
         diffs = pm.differences(meas, part_map)
         rechecks = pm.recheck(meas, diffs, kept["sam"] if kept else None)
         pm.save_round(round_dir, meas, diffs, rechecks)

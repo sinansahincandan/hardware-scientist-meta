@@ -88,3 +88,26 @@ council's result afterwards; it is never given to the system.
   "attachments": []
 }
 ```
+
+---
+
+## 05 — Tactile fingertip sensor for robot hands (added round 4, owner asked for Meta-published problems, 2026-11-03)
+
+A problem Meta has published work on: Meta FAIR's Digit 360 (with GelSight, October 2024) is a finger-shaped tactile
+sensor that detects forces as small as 1 millinewton, with more than 18 sensing features, a wide-angle optical system
+and an on-device AI accelerator (https://ai.meta.com/blog/fair-robotics-open-source/). Earlier Meta touch sensors:
+DIGIT (open source, 2020) and ReSkin (magnetic skin). The two constraints below come from that page; the reference is
+for comparing afterwards and is never given to the system.
+
+```json
+{
+  "title": "Tactile fingertip sensor for robot hands",
+  "statement": "Robot hands drop and crush objects because they cannot feel what they hold. Design a fingertip for a robot hand that feels touch the way a human fingertip does: where it is touched, how hard, and when an object starts to slip.",
+  "constraints": [
+    "Shaped and sized like a human fingertip, mountable on a robot finger",
+    "Detects contact forces as small as about 1 mN"
+  ],
+  "criteria": [],
+  "attachments": []
+}
+```

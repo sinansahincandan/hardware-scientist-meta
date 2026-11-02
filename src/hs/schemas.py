@@ -323,6 +323,29 @@ class PartMap(BaseModel):
     parts: list[PartVisual] = Field(default_factory=list)
 
 
+class RenderPart(BaseModel):
+    """How one part looks in this render (written from the pixels), for the segmenter."""
+    part_id: str
+    visible: bool = True
+    phrases: list[str] = Field(default_factory=list)
+    box_1000: Box1000 | None = None
+
+
+class RenderParts(BaseModel):
+    parts: list[RenderPart] = Field(default_factory=list)
+
+
+class InstanceCheck(BaseModel):
+    index: int
+    is_part: bool
+    seen_as: str = ""
+
+
+class MaskCheck(BaseModel):
+    """Judge of segmenter output: does each outlined crop show the part it was found for."""
+    items: list[InstanceCheck] = Field(default_factory=list)
+
+
 class DesignerEval(BaseModel):
     pixel_description: str = ""
     regions: list[EvalRegion] = Field(default_factory=list)

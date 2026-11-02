@@ -201,8 +201,33 @@ def test_search_evidence_is_capped_per_query_and_deduplicated(tmp_path: Path) ->
     board = Whiteboard()
     runner = ToolRunner(board, tmp_path, tmp_path / "ev")
     sources = [{"url": f"https://ex.org/{i}", "title": f"t{i}", "query": "q"} for i in range(6)]
-    assert len(runner.web_search_evidence("A", sources)) == 3
-    assert runner.web_search_evidence("B", sources[:3] + [{"url": "https://ex.org/new", "title": "n", "query": "r"}]) == ["E4"]
+    assert len(runner.web_search_evidence("A", sources)) == 2  # uncited results: two per query
+    assert runner.web_search_evidence("B", sources[:2] + [{"url": "https://ex.org/new", "title": "n", "query": "r"}]) == ["E3"]
+
+
+def test_cited_source_keeps_the_members_sentence_and_read_status(tmp_path: Path) -> None:
+    from types import SimpleNamespace as NS
+
+    from hs.client import search_sources
+    from hs.stage_a.tools import ToolRunner
+    from hs.stage_a.whiteboard import Whiteboard
+
+    text = "BP-1 bulk density is about 1.6 g/cm3 loose. Other text."
+    resp = NS(output=[
+        NS(type="web_search_call", action=NS(type="search", query="bp-1 density"),
+           results=[{"url": "https://a.org/p.pdf", "title": "BP-1 study", "snippet": ""},
+                    {"url": "https://b.org", "title": "other", "snippet": ""}]),
+        NS(type="web_search_call", action=NS(type="open_page", url="https://a.org/p.pdf"), results=[]),
+        NS(type="message", content=[NS(type="output_text", text=text, annotations=[
+            NS(type="url_citation", url="https://a.org/p.pdf", title="BP-1 study", start_index=0, end_index=43)])])])
+    src = search_sources(resp)
+    assert src[0]["url"] == "https://a.org/p.pdf" and src[0]["cited"] and src[0]["read"]
+    assert src[0]["snippet"] == "BP-1 bulk density is about 1.6 g/cm3 loose."
+    board = Whiteboard()
+    ids = ToolRunner(board, tmp_path, tmp_path / "ev").web_search_evidence("Mara - Mobility", src)
+    first = next(e for e in board.evidence if e.id == ids[0])
+    assert "took from it: BP-1 bulk density" in first.output_full and "opened and read" in first.output_full
+    assert "not opened or cited" in next(e for e in board.evidence if e.id == ids[1]).output_full
 
 
 def test_evaluator_sees_not_ready_votes_with_reasons(tmp_path: Path) -> None:

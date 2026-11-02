@@ -19,7 +19,16 @@ from typing import Any
 import numpy as np
 from PIL import Image
 
-from hs.schemas import Box1000, Localization, LocalizedPart, PartMap, SchematicSpec, SolutionPrompt
+from hs.schemas import (
+    Box1000,
+    Localization,
+    LocalizedPart,
+    MaskCheck,
+    PartMap,
+    RenderParts,
+    SchematicSpec,
+    SolutionPrompt,
+)
 
 _BOX = re.compile(r"<\|box;x1=(-?\d+);y1=(-?\d+);x2=(-?\d+);y2=(-?\d+);w=(\d+);h=(\d+)(?:;[^|]*)?\|>")
 
@@ -53,12 +62,14 @@ def parse_sam(raw: str, img_w: int, img_h: int) -> list[tuple[float, float, floa
     return boxes
 
 
-def parse_masks(raw: str, img_w: int, img_h: int) -> np.ndarray | None:
-    """Union of SAM's masks for one phrase as a boolean image in render pixels (meta-sam-parser, owner-approved
-    2026-11-02); None when the text has no decodable mask (e.g. fake mode)."""
+def parse_instances(raw: str, img_w: int, img_h: int) -> list[dict[str, Any]]:
+    """Every object SAM returned, in render pixels: box, confidence (when asked for), object id and its own
+    boolean mask when decodable (meta-sam-parser, owner-approved 2026-11-02). Fake mode: boxes only."""
     frame = _BOX.search(raw or "")
     if frame is None:
-        return None
+        return []
+    fw, fh = int(frame.group(5)), int(frame.group(6))
+    sx, sy = img_w / max(fw, 1), img_h / max(fh, 1)
     try:
         import meta_sam_parser as msp
 
@@ -66,26 +77,45 @@ def parse_masks(raw: str, img_w: int, img_h: int) -> np.ndarray | None:
         parser.push(raw)
         records = parser.finish(msp.CompletedOutcome()).result.records
     except Exception:
-        return None
-    fw, fh = int(frame.group(5)), int(frame.group(6))
-    union = np.zeros((img_h, img_w), dtype=bool)
-    found = False
+        return [{"box": b, "conf": None, "object_id": str(i + 1), "mask": None}
+                for i, b in enumerate(parse_sam(raw, img_w, img_h))]
+    inst: dict[str, dict[str, Any]] = {}
     for rec in records:
-        if getattr(rec, "kind", "") != "mask":
-            continue
-        try:
-            raster = np.frombuffer(msp.decode_mask_to_raster(rec.mask), dtype=np.uint8)
-        except Exception:  # noqa: S112 — an undecodable mask leaves that object to its box
-            continue
-        mh, mw = rec.mask.height, rec.mask.width
-        b = rec.bounds
-        small = Image.fromarray((raster.reshape(mh, mw) * 255).astype(np.uint8))
-        x0, y0 = round(b.left * img_w / fw), round(b.top * img_h / fh)
-        x1, y1 = max(round(b.right * img_w / fw), x0 + 1), max(round(b.bottom * img_h / fh), y0 + 1)
-        big = np.asarray(small.resize((x1 - x0, y1 - y0))) > 127
-        union[y0:y0 + big.shape[0], x0:x0 + big.shape[1]] |= big[: img_h - y0, : img_w - x0]
-        found = True
-    return union if found else None
+        oid = str(getattr(rec, "object_id", "") or len(inst) + 1)
+        if rec.kind == "box":
+            inst.setdefault(oid, {"mask": None})
+            inst[oid].update(box=(rec.left * sx, rec.top * sy, rec.right * sx, rec.bottom * sy),
+                             conf=getattr(rec, "confidence", None), object_id=oid)
+        elif rec.kind == "mask":
+            try:
+                raster = np.frombuffer(msp.decode_mask_to_raster(rec.mask), dtype=np.uint8)
+            except Exception:  # noqa: S112 — an undecodable mask leaves that object to its box
+                continue
+            b = rec.bounds
+            small = Image.fromarray((raster.reshape(rec.mask.height, rec.mask.width) * 255).astype(np.uint8))
+            x0, y0 = round(b.left * sx), round(b.top * sy)
+            x1, y1 = max(round(b.right * sx), x0 + 1), max(round(b.bottom * sy), y0 + 1)
+            big = np.asarray(small.resize((x1 - x0, y1 - y0))) > 127
+            full = np.zeros((img_h, img_w), dtype=bool)
+            full[y0:y0 + big.shape[0], x0:x0 + big.shape[1]] = big[: img_h - y0, : img_w - x0]
+            inst.setdefault(oid, {"object_id": oid, "conf": getattr(rec, "confidence", None),
+                                  "box": (x0, y0, x1, y1)})["mask"] = full
+    kept = [v for v in inst.values() if "box" in v]
+    if not kept:  # text the parser does not take (no frame marker): boxes from the token pattern
+        return [{"box": b, "conf": None, "object_id": str(i + 1), "mask": None}
+                for i, b in enumerate(parse_sam(raw, img_w, img_h))]
+    return kept
+
+
+def parse_masks(raw: str, img_w: int, img_h: int) -> np.ndarray | None:
+    """Union of SAM's masks for one phrase as a boolean image in render pixels; None without masks."""
+    masks = [i["mask"] for i in parse_instances(raw, img_w, img_h) if i.get("mask") is not None]
+    if not masks:
+        return None
+    union = np.zeros((img_h, img_w), dtype=bool)
+    for m in masks:
+        union |= m
+    return union
 
 
 def _mask_stats(mask: np.ndarray) -> dict[str, float]:
@@ -103,27 +133,171 @@ def _mask_stats(mask: np.ndarray) -> dict[str, float]:
     return {"area": float(mask.sum()), "cx": cx, "cy": cy, "angle": round(angle, 1), "elongation": round(elong, 2)}
 
 
-def measure(client: Any, render_png: Path, part_map: PartMap, out_dir: Path | None = None) -> dict[str, Any]:
-    """One SAM call per part; boxes always, masks when decodable (saved as sam_masks/<part>.png)."""
+def locate_in_render(client: Any, render_png: Path, part_map: PartMap, spec: SchematicSpec) -> RenderParts:
+    """One look at the render (pixels first): for each part, whether it is visible, one to three short phrases
+    for how it looks here (colour or material + everyday noun, the segmenter's wording rules) and a rough box.
+    The phrases come from this picture, not from the design's vocabulary."""
+    labels = {n.id: n.label for n in spec.nodes}
+    parts = "\n".join(f"- {p.part_id}: {labels.get(p.part_id, p.part_id)} (first guess: '{p.visual_phrase}')"
+                      for p in part_map.parts)
+    return client.structured(
+        "sam_phrases", RenderParts,
+        "You prepare prompts for an image segmenter that finds one concept per short noun phrase.",
+        "Look at the picture first. For each part below: visible (can a viewer see it at all); phrases — one to "
+        "three alternatives, each a short noun phrase naming ONE object the way it looks in THIS picture: an "
+        "everyday noun with at most two attributes such as colour, material or shape ('grey spiked wheel', "
+        "'metal hopper', 'black cable', 'tall metal pole'); no plurals, no 'and'/'or', no positions, no "
+        "engineering names, no numbers; the first phrase must separate it from similar-looking parts in the picture "
+        "(a digging drum and a wheel must not get the same phrase). box_1000: a rough box around the part on a "
+        "0-1000 grid, origin top-left.\n\n"
+        f"PARTS:\n{parts}", image_paths=[render_png])
+
+
+def _box_prompt(boxes: dict[str, tuple[float, float, float, float]], w: int, h: int) -> tuple[str, dict[str, str]]:
+    """SAM box prompt for up to 16 objects in one call (docs /docs/sam/segmenting), coordinates on the image
+    as sent (long side at most 1024 px); returns the text and object id -> part id."""
+    s = min(1.0, 1024 / max(w, h))
+    sw, sh = round(w * s), round(h * s)
+    ids: dict[str, str] = {}
+    items = []
+    for k, (pid, b) in enumerate(list(boxes.items())[:16], start=1):
+        ids[str(k)] = pid
+        items.append(f"{k}<|box;x1={round(b[0] / 1000 * sw)};y1={round(b[1] / 1000 * sh)};"
+                     f"x2={round(b[2] / 1000 * sw)};y2={round(b[3] / 1000 * sh)};w={sw};h={sh}|>")
+    return "<0f>" + ",".join(items), ids
+
+
+def _crop(render: Image.Image, inst: dict[str, Any]) -> Image.Image:
+    """The instance with its mask outlined (or its box when there is no mask), padded, at most 512 px."""
+    from PIL import ImageDraw, ImageFilter
+
+    x0, y0, x1, y1 = inst["box"]
+    pad = 0.6 * max(x1 - x0, y1 - y0)  # enough surroundings to tell a part from look-alikes nearby
+    box = (max(int(x0 - pad), 0), max(int(y0 - pad), 0), min(int(x1 + pad), render.width), min(int(y1 + pad), render.height))
+    img = render.copy()
+    if inst.get("mask") is not None:
+        m = Image.fromarray((inst["mask"] * 255).astype(np.uint8))
+        edge = m.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.MaxFilter(5))
+        img.paste((255, 0, 200), (0, 0), edge)
+    else:
+        ImageDraw.Draw(img).rectangle([x0, y0, x1, y1], outline=(255, 0, 200), width=5)
+    out = img.crop(box)
+    out.thumbnail((512, 512))
+    return out
+
+
+def _judge(client: Any, render_png: Path, found: dict[str, list[dict[str, Any]]], labels: dict[str, str],
+           out_dir: Path | None) -> dict[str, list[str]]:
+    """'Checks: SAM + judges' (Fig. 2): one call shows each found object outlined in its own crop and asks whether
+    it is the part it was found for. Objects judged to be something else are dropped; returns what they were."""
+    import tempfile
+
+    render = Image.open(render_png).convert("RGB")
+    crops: list[tuple[str, int, Path]] = []
+    tmp = out_dir / "mask_check" if out_dir else Path(tempfile.mkdtemp())
+    tmp.mkdir(parents=True, exist_ok=True)
+    for pid, insts in found.items():
+        for j, inst in enumerate(insts[:4]):
+            if len(crops) >= 16:
+                break
+            path = tmp / f"crop_{len(crops) + 1}.png"
+            _crop(render, inst).save(path)
+            crops.append((pid, j, path))
+    if not crops:
+        return {}
+    lines = "\n".join(f"crop {k}: should show the {labels.get(pid, pid)}" for k, (pid, _, _) in enumerate(crops, 1))
+    check: MaskCheck = client.structured(
+        "mask_check", MaskCheck, "You check an image segmenter's output.",
+        "Each image below is a crop of one picture of a device; a magenta outline marks what the segmenter found. "
+        "For each crop, say whether the outlined thing is the named part of the device (is_part), and if not, what "
+        "it is (seen_as). The device's parts are: " + "; ".join(labels.values()) + ". The scene may also hold "
+        "things that are not part of the device (ground, load, a bin or container it fills, people, buildings); an "
+        "outline on such a thing is not the part, even if it looks similar. Judge the outlined object only.\n\n"
+        + lines, image_paths=[c[2] for c in crops])
+    (tmp / "check.json").write_text(json.dumps({"crops": [f"crop {k}: {pid}" for k, (pid, _, _) in enumerate(crops, 1)],
+                                                **check.model_dump()}, indent=2), encoding="utf-8")
+    verdict = {it.index: it for it in check.items}
+    rejected: dict[str, list[str]] = {}
+    for k, (pid, j, _) in sorted(enumerate(crops, 1), key=lambda t: -t[1][1]):
+        it = verdict.get(k)
+        if it is not None and not it.is_part:
+            rejected.setdefault(pid, []).append(it.seen_as or "another part")
+            found[pid][j] = {}
+    found.update({pid: [i for i in insts if i] for pid, insts in found.items()})
+    return rejected
+
+
+def measure(client: Any, render_png: Path, part_map: PartMap, out_dir: Path | None = None,
+            spec: SchematicSpec | None = None) -> dict[str, Any]:
+    """SAM per part (Fig. 2 'part map · SAM'): phrases written from this render, tried in turn; parts no phrase
+    finds are prompted with their rough box (one call, up to 16 objects); every found object is then checked by a
+    judge and misidentified ones are dropped. Boxes always, masks when decodable (sam_masks/<part>.png)."""
     with Image.open(render_png) as im:
         w, h = im.size
     out: dict[str, Any] = {"size": [w, h], "parts": {}}
+    seen: dict[str, Any] = {}
+    if spec is not None:
+        try:
+            seen = {p.part_id: p for p in locate_in_render(client, render_png, part_map, spec).parts}
+        except NotImplementedError:
+            seen = {}
+    meta = None if getattr(client, "is_fake", False) else {"include_confidence": "true"}
+    found: dict[str, list[dict[str, Any]]] = {}
     for part in part_map.parts:
-        phrase = part.visual_phrase
-        raw = client.sam_segment(phrase, render_png)
-        boxes = parse_sam(raw, w, h)
-        head = phrase.split()[-1] if len(phrase.split()) > 1 else ""
-        if not boxes and head:  # one plainer try: the head noun alone ("metal frame" -> "frame")
-            raw2 = client.sam_segment(head, render_png)
-            if parse_sam(raw2, w, h):
-                phrase, raw, boxes = head, raw2, parse_sam(raw2, w, h)
-        rec: dict[str, Any] = {"phrase": phrase, "boxes": boxes}
-        mask = parse_masks(raw, w, h)
-        if mask is not None and out_dir is not None:
-            (out_dir / "sam_masks").mkdir(parents=True, exist_ok=True)
-            Image.fromarray((mask * 255).astype(np.uint8)).save(out_dir / "sam_masks" / f"{part.part_id}.png")
-            rec["mask"] = {"file": f"sam_masks/{part.part_id}.png", **_mask_stats(mask)}
+        rp = seen.get(part.part_id)
+        tries = [*(rp.phrases if rp else []), part.visual_phrase]
+        head = part.visual_phrase.split()[-1] if len(part.visual_phrase.split()) > 1 else ""
+        tries = list(dict.fromkeys(t.strip().lower() for t in [*tries, head] if t and t.strip()))[:4]
+        rec: dict[str, Any] = {"phrase": tries[0] if tries else part.visual_phrase, "tried": [], "source": "none"}
+        for phrase in tries:
+            insts = parse_instances(client.sam_segment(phrase, render_png, metadata=meta), w, h)
+            rec["tried"].append(phrase)
+            if insts:
+                rec.update(phrase=phrase, source="phrase")
+                found[part.part_id] = insts
+                break
+        if rp is not None and not rp.visible:
+            rec["visible_to_vlm"] = False
         out["parts"][part.part_id] = rec
+    labels = {n.id: n.label for n in spec.nodes} if spec is not None else {}
+    try:  # judge the phrase finds; misidentified objects are dropped
+        rejected = _judge(client, render_png, found, labels, out_dir)
+    except NotImplementedError:
+        rejected = {}
+    found = {pid: insts for pid, insts in found.items() if insts}
+    missing = {pid: (b.x0, b.y0, b.x1, b.y1) for pid, rp in seen.items()
+               if pid in out["parts"] and pid not in found and rp.visible and (b := rp.box_1000) is not None
+               and b.x1 > b.x0 and b.y1 > b.y0}
+    if missing:  # parts no phrase found (or only wrongly): one box-prompt call, then judged the same way
+        text, ids = _box_prompt(missing, w, h)
+        boxed: dict[str, list[dict[str, Any]]] = {}
+        for inst in parse_instances(client.sam_segment(text, render_png, metadata=meta), w, h):
+            pid = ids.get(str(inst.get("object_id")))
+            if pid:
+                boxed.setdefault(pid, []).append(inst)
+        try:
+            for pid, why in _judge(client, render_png, boxed, labels, out_dir / "box_prompt" if out_dir else None).items():
+                rejected.setdefault(pid, []).extend(why)
+        except NotImplementedError:
+            pass
+        for pid, insts in boxed.items():
+            if insts:
+                found[pid] = insts
+                out["parts"][pid].update(source="box prompt", phrase=f"{labels.get(pid, pid)} (box prompt)")
+    for pid, rec in out["parts"].items():
+        insts = found.get(pid, [])
+        rec["boxes"] = [tuple(i["box"]) for i in insts]
+        rec["confidence"] = [round(i["conf"], 2) for i in insts if i.get("conf") is not None]
+        if pid in rejected:
+            rec["rejected_by_judge"] = rejected[pid]
+        masks = [i["mask"] for i in insts if i.get("mask") is not None]
+        if masks and out_dir is not None:
+            union = np.zeros((h, w), dtype=bool)
+            for m in masks:
+                union |= m
+            (out_dir / "sam_masks").mkdir(parents=True, exist_ok=True)
+            Image.fromarray((union * 255).astype(np.uint8)).save(out_dir / "sam_masks" / f"{pid}.png")
+            rec["mask"] = {"file": f"sam_masks/{pid}.png", **_mask_stats(union)}
     if out_dir is not None:
         out["contacts"] = _mask_contacts(out_dir, list(out["parts"]), w, h)
     return out

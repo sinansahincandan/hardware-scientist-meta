@@ -100,9 +100,12 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         "or change a concept whose geometry, mechanism or flow path matters; purely numerical turns need no sketch. "
         "Search the literature the way your persona implies (web_search): your own domain's directly relevant "
         "papers, standards and datasheets first, and neighbouring or distant fields where a transferable principle "
-        "may exist. Every result of your searches is posted on the whiteboard as evidence; read a source "
-        "(read_evidence) before you rely on it. When you borrow a principle from another field, say why it "
-        "should transfer. "
+        "may exist. Open and read the pages that matter (the search tool can open a page and find text in it) "
+        "instead of relying on titles. In your message, state in your own sentence the value, rule or finding you "
+        "take from each source, with its citation: that sentence is posted on the whiteboard with the source, so "
+        "the others and the Evaluator can check it. Then say what it means from your discipline's point of view "
+        "for this design, and answer what other members took from their sources when it bears on yours. When you "
+        "borrow a principle from another field, say why it should transfer. "
         + extra_instruction
     )
     prev_id: str | None = None

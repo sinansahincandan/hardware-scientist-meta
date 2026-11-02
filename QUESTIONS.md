@@ -126,3 +126,31 @@ blocked after that falls back to one general check (caption "(general check only
 S1 exhausted → Manager "reported as such" (Fig. 1); image-model callouts checked by SAM + judges with code
 fallback (Fig. 2); meta-sam-parser installed; Evaluator reviews each constraint in prose and may relax one with
 a reason (no scores).
+
+## 2026-11-03 — Why the content filter blocked the concept sketch of run 02 (owner asked) — SETTLED
+
+What is sent: every image request carries the text prompt plus the reference images in the same call
+(`POST /v1/images/edits`, `images` array: concept or council sketch first, then further sketches and the parts drawing),
+with `reasoning_strength: "high"`.
+Probes (scratchpad, $0.08 then $0.03): in run 02 the concept prompt was blocked, and blocked again after the number-free
+re-word; in a first reproduction each part of the prompt passed alone and the combination was blocked; the three council
+images passed alone. Later the same combined prompt — and two variants without the battery words or the mechanism
+sentence — all passed. The same request is therefore blocked at one time and passed at another: the filter is not keyed
+to fixed words in our text (most likely it screens the model's own generated reasoning or output, which differs per
+call). *Default chosen:* keep the client's number-free re-word and the plain second wording (redraw the hand sketches,
+plain part names); a block ends one try, never the step.
+
+## 2026-11-03 — SAM box prompts — SETTLED (verified)
+
+`<0f>1<|box;x1=..;y1=..;x2=..;y2=..;w=W;h=H|>,2<|box;...|>` (docs /docs/sam/segmenting): up to 16 objects in one call;
+coordinates on the image as sent (long side ≤1024 px). `metadata: {"include_confidence": "true"}` adds `c` per box and
+mask. Probe on run 04's render: 4 of 5 box-prompted parts returned masks with confidence 0.67–0.89. Used for parts no
+phrase finds (part_map.measure), followed by the mask judge.
+
+## 2026-11-03 — What web search returns — SETTLED (verified)
+
+Meta's hosted web search is agentic: `search` actions return results with title and URL and an EMPTY snippet;
+`open_page` and `find_in_page` actions read pages (no results field); the reply carries `url_citation` annotations with
+`start_index`/`end_index` into the reply text. *Default chosen:* evidence = each cited source with the sentence the
+member wrote from it (the annotation span) and whether the member opened the page; uncited results at most two per
+query, marked "not opened or cited". `search_context_size` raised from low to medium for members.

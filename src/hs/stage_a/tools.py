@@ -48,7 +48,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
      "description": "Search the knowledge library of earlier problems (engineering findings with their evidence). "
                     "Results are posted on the whiteboard as evidence.",
      "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}},
-    {"type": "web_search", "search_context_size": "low"},
+    {"type": "web_search", "search_context_size": "medium"},
 ]
 
 _NAME_RE = re.compile(r"^[a-zA-Z0-9_.-]+$")
@@ -235,27 +235,36 @@ class ToolRunner:
             return eid, f"{eid}: error: {exc}"
 
     def web_search_evidence(self, author: str, sources: list[dict[str, Any]], cycle: int = 0,
-                            per_query: int = 3) -> list[str]:
-        """One evidence item per search result (B8): who searched, the query, and the source. At most
-        `per_query` results per query, and a URL already on the board is not posted again (the first
-        real run posted 118 items for 20 searches in one cycle)."""
+                            per_query: int = 2) -> list[str]:
+        """One evidence item per source the member cited (with the sentence they took from it, and whether they
+        opened the page), plus at most `per_query` further results per query marked as found but not read. A source
+        already on the board is posted again only when it is cited with a new statement."""
         on_board = {r.get("url") for e in self.board.evidence for r in e.references}
+        said_before = {(r.get("url"), r.get("passage")) for e in self.board.evidence for r in e.references}
         taken: dict[str, int] = {}
         ids: list[str] = []
         for cit in sources:
             query = str(cit.get("query", "") or "")
-            if cit.get("url") in on_board or taken.get(query, 0) >= per_query:
+            cited, read = bool(cit.get("cited")), bool(cit.get("read"))
+            if cited:
+                if (cit.get("url"), cit.get("snippet", "")) in said_before:
+                    continue
+            elif cit.get("url") in on_board or taken.get(query, 0) >= per_query:
                 continue
-            taken[query] = taken.get(query, 0) + 1
+            else:
+                taken[query] = taken.get(query, 0) + 1
             on_board.add(cit.get("url"))
-            query = str(cit.get("query", "") or "")
             reference = resolve_citation(cit, query)
+            reference.update(cited=cited, read=read)
             passage = reference.get("passage", "")
-            eid = self._post(author, "web_search", f"search: {query}" if query else "search", query,
-                             format_reference(reference),
-                             full=(f"{format_reference(reference)}\nPassage returned by the search: {passage}"
-                                   if passage else f"{format_reference(reference)}\n(the search returned no passage text)"),
-                             cycle=cycle)
+            how = ("opened and read by the member" if read else "cited by the member") if cited else \
+                ("opened by the member, not cited" if read else "found by the search; not opened or cited")
+            summary = format_reference(reference)
+            full = (f"{summary}\n{author} took from it: {passage}\n({how})" if passage
+                    else f"{summary}\n({how})")
+            eid = self._post(author, "web_search", f"search: {query}" if query else "search (cited source)", query,
+                             summary + (f" — {author.split()[0]} took from it: {passage}" if passage else ""),
+                             full=full, cycle=cycle)
             ev = next(e for e in self.board.evidence if e.id == eid)
             ev.references = [reference]
             (self.evidence_dir / f"{eid}.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
