@@ -6,10 +6,10 @@ figure (panels A–D) — system view, critical part, measurement chain, fabrica
 
 A council of LLM experts argues around a shared whiteboard (Stage A); a Manager rewrites the
 Markdown master prompt from written feedback (TextGrad-style); Stage B turns the accepted
-concept into a schematic → image-model render → code-drawn annotation, judged by S1
-(schematic-faithful?) and S2 (design flaw revealed?). The image model may draw
-brief part callouts, checked by S1; after two label failures, labels fall back to
-code-drawn overlays (`SPEC_CHANGES.md`). Full brief: [HARDWARE_SCIENTIST_SPEC.md](HARDWARE_SCIENTIST_SPEC.md),
+concept into a mechanism sketch → photoreal image-model render → SAM 3.1 part measurements →
+designer evaluation (S1: faithful to the sketch? S2: design flaw revealed?), in a closed loop that
+keeps a round only when it fixed an earlier fault and broke nothing. The render carries no text;
+code draws every label from SAM boxes (round 3, `SPEC_CHANGES.md`). Full brief: [HARDWARE_SCIENTIST_SPEC.md](HARDWARE_SCIENTIST_SPEC.md),
 plan: [PLAN.md](PLAN.md), assumptions: [QUESTIONS.md](QUESTIONS.md).
 
 ## Setup
@@ -18,8 +18,10 @@ plan: [PLAN.md](PLAN.md), assumptions: [QUESTIONS.md](QUESTIONS.md).
 python3 -m venv .venv            # or: uv venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"          # or: uv pip install --python .venv/bin/python -e ".[dev]"
-export MODEL_API_KEY=...         # only needed for real runs (never commit it)
+export MODEL_API_KEY=...         # only needed for real runs (never commit it; ~/.zshrc works)
 ```
+
+Before committing: `.venv/bin/python scripts/secret_scan.py` (no key, no file over 50 MB).
 
 ## Demo
 
@@ -31,7 +33,11 @@ open runs/<id>/board.html                     # whiteboard replay
 hs compare runs/<a> runs/<b> runs/<c>         # side-by-side page
 hs feedback "the council never questioned the sensor bandwidth"
 hs examples --n 5                             # generate new problems (never overwrites)
+hs budget                                     # Meta spend from the ledger: spent, left, per run
+hs stageb runs/<id>                           # redraw an accepted solution (Stage B only, no meeting)
+hs showcase-build runs/<a> runs/<b> runs/<c> --out showcase
 ./demo.sh                                     # the three shipped examples + compare
+.venv/bin/python scripts/shoot.py page.html out/   # headless 1440 px page screenshots, sliced
 ```
 
 Every role's model and reasoning effort is configurable in `src/hs/config.py` (`ROLES`,
