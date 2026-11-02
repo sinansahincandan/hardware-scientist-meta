@@ -16,7 +16,7 @@ from hs.master_prompt import MasterPrompt, member_instructions
 from hs.stage_a.tools import TOOL_SCHEMAS, ToolRunner
 from hs.stage_a.whiteboard import Whiteboard
 
-COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc"}
+COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc", "search_knowledge"}
 
 
 def _unwrap_args(args: dict[str, Any]) -> dict[str, Any]:
@@ -215,6 +215,11 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                                                 str(args.get("python_source", "")),
                                                 dict(args.get("smoke_test_input", {}) or {}))
                     output = output if ok else f"error: {output}"
+                elif name == "search_knowledge":
+                    eid, output = tools.search_knowledge(member, str(args.get("query", "")), cycle=cycle)
+                    if history is not None:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid,
+                                        "tool": "search_knowledge"})
                 else:  # web_search is built-in; evidence posted by caller from citations
                     output = "web_search handled by the built-in tool"
             elif name in tools.new_tools:

@@ -93,7 +93,8 @@ class Manager:
             "same problem as the previous failure and which sections to revert if so. If a missing "
             "calculator caused the failure, you may add up to 2 entries to new_tool_proposals "
             "(name, description, JSON-schema parameters, python_source defining run(args), "
-            "smoke_test_input); each is smoke-tested in the sandbox and registered for all members."
+            "smoke_test_input); each is smoke-tested in the sandbox and registered for all members. A tool carried "
+            "from an earlier problem that misled the council may be retired (retire_tools, with your reason)."
         )
         gradients = self.client.structured("manager_gradients", Gradients,
                                            "You are the Manager, step 2: diagnose which prompt part or behaviour caused the output.",
@@ -134,6 +135,9 @@ class Manager:
                                                backward_chain(room, solution, self.master))
         gradients = self.diagnose(room, solution, feedback_text, iter_dir, output_gradient)
         tools_registered = self.register_proposed_tools(gradients, tools)
+        from hs.knowledge import retire_tool
+
+        retired = [r.name for r in gradients.retire_tools if retire_tool(r.name, r.reason, iter_dir.parent.parent.name)]
         reverted = self.master.apply_reverts(gradients)
         notes = [f"{h} reverted to the revision the Manager named" for h in reverted]
         base = dict(self.master.sections)
@@ -191,6 +195,7 @@ class Manager:
         report = self.master.commit(proposed, " ".join(n for n in change_notes if n), notes + reasons)
         report["reverted"] = reverted
         report["tools_registered"] = tools_registered
+        report["tools_retired"] = retired
         (iter_dir / "manager_edit.json").write_text(json.dumps(
             {k: v for k, v in report.items() if k != "gradients"}, indent=2), encoding="utf-8")
         return report

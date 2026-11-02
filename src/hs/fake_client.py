@@ -292,6 +292,12 @@ class FakeClient:
 
         return LabelCheck(wrong_labels=[], note="fake: labels ok")
 
+    def _fake_Insights(self, user_text: str):
+        from hs.schemas import InsightItem, Insights
+
+        return Insights(items=[InsightItem(title="Fake finding", text="A synthetic finding from fake mode.",
+                                           evidence_ids=["E1"])])
+
     def _fake_LightCheck(self, user_text: str) -> LightCheck:
         return LightCheck(ok=True, reason="Panel shows the requested parts.")
 

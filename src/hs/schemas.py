@@ -142,6 +142,11 @@ class FeedbackDecision(BaseModel):
     why: str
 
 
+class ToolRetirement(BaseModel):
+    name: str
+    reason: str
+
+
 class Gradients(BaseModel):
     feedback_decisions: list[FeedbackDecision] = Field(default_factory=list)
     per_member: list[MemberNote] = Field(default_factory=list)
@@ -153,6 +158,7 @@ class Gradients(BaseModel):
     repeat_explanation: str = ""
     revert_sections: list[RevertTarget] = Field(default_factory=list)
     new_tool_proposals: list[ToolProposal] = Field(default_factory=list)
+    retire_tools: list[ToolRetirement] = Field(default_factory=list)
 
 
 class OutputGradientItem(BaseModel):
@@ -337,8 +343,25 @@ class LessonCandidate(BaseModel):
     evidence: str = ""
 
 
+class LessonUse(BaseModel):
+    lesson_id: str
+    note: str  # did it help in this run, in one sentence
+
+
 class Lessons(BaseModel):
     candidates: list[LessonCandidate] = Field(default_factory=list)
+    uses: list[LessonUse] = Field(default_factory=list)
+
+
+class InsightItem(BaseModel):
+    title: str
+    text: str
+    evidence_ids: list[str] = Field(default_factory=list)
+
+
+class Insights(BaseModel):
+    items: list[InsightItem] = Field(default_factory=list)
+
 
 
 class Problem(BaseModel):

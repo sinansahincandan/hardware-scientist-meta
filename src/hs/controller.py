@@ -164,6 +164,8 @@ class Controller:
         evaluator = Evaluator(self.client)
         secretary = Secretary(self.client)
         returns_to_a = 0
+        room: Any = None
+        solution: Any = None
         best_pass: RoundResult | None = None
         last: RoundResult | None = None
         pending_eval_requests: list[str] = []
@@ -228,7 +230,7 @@ class Controller:
             best_pass = sb.best_pass or best_pass
             if sb.decision == "s1_pass" and sb.last is not None:
                 figure_path = self._compose(sb.last, run_dir, master, img_archive)
-                update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
+                self._update_knowledge(run_dir, trace, img_archive, problem, solution, room)
                 trace.log("run accepted; final figure composed")
                 return figure_path
             if sb.decision == "s1_exhausted":
@@ -264,8 +266,31 @@ class Controller:
             figure_path = self._compose(best_pass, run_dir, master, img_archive, best_effort=True)
         elif last is not None:
             trace.log("no faithful render exists; no final figure composed")
-        update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
+        if room is not None and solution is not None:
+            self._update_knowledge(run_dir, trace, img_archive, problem, solution, room)
+        else:
+            update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
         return figure_path
+
+    def _update_knowledge(self, run_dir: Path, trace: Trace, img_archive: ImageArchive, problem: Problem,
+                          solution: Any, room: Any) -> None:
+        """End of problem (Fig. 1 dotted arrow): lessons, insights and smoke-tested tools into knowledge/."""
+        from hs.knowledge import carry_tools, write_insights
+
+        update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
+        base = run_dir / "knowledge_fake_run" if getattr(self.client, "is_fake", False) else None
+        try:
+            path = write_insights(self.client, run_dir, problem.title, solution.model_dump_json(indent=2),
+                                  room.board.evidence, base)
+            if path is not None:
+                trace.log(f"knowledge: insights written to {path.relative_to(path.parents[2])}")
+        except BudgetExceeded:
+            raise
+        except Exception as exc:  # knowledge is an add-on; it must not lose the run
+            trace.log(f"knowledge: insights not written ({type(exc).__name__}: {exc})")
+        carried = carry_tools(run_dir, base)
+        if carried:
+            trace.log(f"knowledge: tools carried to later problems: {', '.join(carried)}")
 
     def _compose(self, rnd: RoundResult, run_dir: Path, master: MasterPrompt, img_archive: ImageArchive,
                  best_effort: bool = False) -> Path:

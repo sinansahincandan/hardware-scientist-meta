@@ -44,6 +44,10 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
          "name": {"type": "string"}, "description": {"type": "string"}, "parameters": {"type": "object"},
          "python_source": {"type": "string"}, "smoke_test_input": {"type": "object"}},
          "required": ["name", "description", "parameters", "python_source", "smoke_test_input"]}},
+    {"type": "function", "name": "search_knowledge",
+     "description": "Search the knowledge library of earlier problems (engineering findings with their evidence). "
+                    "Results are posted on the whiteboard as evidence.",
+     "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}},
     {"type": "web_search", "search_context_size": "low"},
 ]
 
@@ -138,6 +142,10 @@ class ToolRunner:
         return d
 
     def _load_registry(self) -> None:
+        from hs.knowledge import carried_tools
+
+        for name, record in carried_tools().items():  # knowledge/tools: tools from earlier problems
+            self.new_tools[name] = {**record, "carried_from": record.get("source_run", "an earlier problem")}
         for path in self._registry_dir().glob("*.json"):
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
@@ -254,11 +262,25 @@ class ToolRunner:
             ids.append(eid)
         return ids
 
+    def search_knowledge(self, author: str, query: str, cycle: int = 0) -> tuple[str, str]:
+        """knowledge/insights search (Fig. 1 knowledge/); the hits become one evidence item."""
+        from hs.knowledge import search_insights
+
+        hits = search_insights(query)
+        if not hits:
+            summary = "no finding in the knowledge library matches this query"
+            full = summary
+        else:
+            summary = "; ".join(f"{h['title']} (from {h['source']})" for h in hits)
+            full = "\n\n".join(f"{h['title']} — from {h['source']}\n{h['text']}" for h in hits)
+        eid = self._post(author, "search_knowledge", f"knowledge: {query}", query, summary, full=full, cycle=cycle)
+        return eid, f"{eid}: {full}"
+
     def new_tool(self, author: str, name: str, description: str, parameters: dict[str, Any],
                  python_source: str, smoke_test_input: dict[str, Any]) -> tuple[bool, str]:
         from hs import config as _cfg
 
-        if len(self.new_tools) >= _cfg.MAX_NEW_TOOLS:
+        if sum(1 for r in self.new_tools.values() if not r.get("carried_from")) >= _cfg.MAX_NEW_TOOLS:
             return False, f"new_tool cap {_cfg.MAX_NEW_TOOLS} reached"
         if not _NAME_RE.match(name) or name.count(".") > 1 or name in ("browser.search", "browser.open", "browser.find"):
             return False, f"invalid tool name {name}"

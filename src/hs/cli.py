@@ -63,7 +63,7 @@ def _cmd_feedback(args: argparse.Namespace) -> int:
     from hs.lessons import add_user_feedback
 
     add_user_feedback(args.text)
-    print("feedback appended to lessons.md ## User feedback")
+    print("feedback appended to knowledge/lessons.md ## User feedback")
     return 0
 
 

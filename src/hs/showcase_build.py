@@ -484,10 +484,10 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
                      f"root cause: {html.escape(_sentences(diag.get('root_cause', ''), 2))}"
                      + (f" Agenda: {html.escape(_sentences(diag.get('agenda', ''), 2))}" if diag.get("agenda") else "")
                      + "</div>")
-    lessons_file = ROOT / "lessons.md"
+    lessons_file = ROOT / "knowledge" / "lessons.md"
     added = [line for line in lessons_file.read_text(encoding="utf-8").splitlines()
              if f"run {run_dir.name}]" in line] if lessons_file.exists() else []
-    p.append("<p>Lessons this run added to lessons.md: " + (
+    p.append("<p>Lessons this run added to knowledge/lessons.md: " + (
         "</p><ul>" + "".join(f"<li>{html.escape(line.lstrip('- '))}</li>" for line in added) + "</ul>"
         if added else "none.</p>"))
     # TextGrad chain per meeting (D22): critique -> output gradient -> prompt gradient -> edit -> re-check
