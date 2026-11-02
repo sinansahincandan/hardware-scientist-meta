@@ -22,7 +22,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
          "concept_ids": {"type": "array", "items": {"type": "string"}},
          "key_claims": {"type": "array", "items": {"type": "object"}},
          "ready": {"type": "boolean"}, "reason": {"type": "string"}}, "required": ["action"]}},
-    {"type": "function", "name": "calc", "description": "Evaluate an expression with math/numpy/pint Q_.",
+    {"type": "function", "name": "calc", "description": "Evaluate an expression with math/numpy/pint Q_; convert the result to the unit you mean, e.g. (...).to('J').",
      "parameters": {"type": "object", "properties": {"expression": {"type": "string"}, "purpose": {"type": "string"}},
                     "required": ["expression", "purpose"]}},
     {"type": "function", "name": "simulate", "description": "Run a short numpy/scipy/pint script in the sandbox.",
@@ -50,7 +50,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
 _NAME_RE = re.compile(r"^[a-zA-Z0-9_.-]+$")
 
 
-_NUMBER = re.compile(r"(?<![\w.])-?\d+\.\d{4,}(?:[eE][-+]?\d+)?")
+_NUMBER = re.compile(r"(?<![\w.])-?(?:\d{4,}\.\d+|\d{1,3}\.\d{2,}|\d+\.\d+[eE][-+]?\d+)")
 
 
 def _three_sig(match: re.Match[str]) -> str:
@@ -152,7 +152,12 @@ class ToolRunner:
             "Q_ = ureg.Quantity\n"
             "import math, numpy as np\n"
             f"__r = ({expression})\n"
-            "print(__r)\n"
+            "if hasattr(__r, 'units'):\n"
+            "    print(format(__r.to_reduced_units(), '.3g~P'))\n"
+            "elif isinstance(__r, float):\n"
+            "    print(format(__r, '.3g'))\n"
+            "else:\n"
+            "    print(__r)\n"
         )
         result = sandbox.run_script(script)
         out = (result.stdout.strip() or result.stderr.strip())
