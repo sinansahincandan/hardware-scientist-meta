@@ -62,3 +62,29 @@ Run them in order 01 → 02 → 03 so `lessons.md` carries over.
   "attachments": []
 }
 ```
+
+---
+
+## 04 — Lunar regolith excavation robot (added round 4, owner-approved 2026-11-03)
+
+Chosen because real solutions are documented: NASA's review of ten years of the Lunabotics Robotic Mining Competition
+(Mueller, van Susante, Reiners, Metzger, ASCE Earth & Space 2021,
+https://ntrs.nasa.gov/api/citations/20210013143/downloads/ESC2021_Lunabotics_Mueller-PvS_v2_Redacted.pdf) classifies
+over 500 student robots by excavation, transport, storage, dumping and mobility mechanism and lists the winners per
+year. The constraints below are taken from that review's competition summary. The reference is for comparing the
+council's result afterwards; it is never given to the system.
+
+```json
+{
+  "title": "Lunar regolith excavation robot",
+  "statement": "Future lunar bases need loose surface soil (regolith) for building and for extracting oxygen. Design a small robot that drives over a bed of lunar soil simulant, digs it up, carries it and dumps it into a collection bin, operated remotely or autonomously by a team that cannot see or hear the robot.",
+  "constraints": [
+    "Robot mass at most 60 kg",
+    "Fits within 1.0 m long, 0.5 m wide and 0.5 m high at the start",
+    "Digs Black Point 1 (BP-1) lunar basalt regolith simulant",
+    "Controlled remotely or autonomously, with the operators out of sight and hearing of the robot"
+  ],
+  "criteria": [],
+  "attachments": []
+}
+```
