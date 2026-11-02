@@ -299,13 +299,14 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     canvas.paste(img, (0, 0))
     overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
-    for i, (pid, rec) in enumerate(data["parts"].items()):
-        color = SAM_COLORS[i % len(SAM_COLORS)]
+    for i, (pid, rec) in enumerate(data["parts"].items()):  # all fills first, so no fill covers a name tag
         mask_file = sam_json.parent / rec.get("mask", {}).get("file", "-")
         if mask_file.exists():  # fill the part's mask in its colour
             m = Image.open(mask_file).convert("L").resize((w, h))
-            tint = Image.new("RGBA", (w, h), color + (110,))
-            overlay.paste(tint, (0, 0), m.point(lambda v: 110 if v > 127 else 0))
+            tint = Image.new("RGBA", (w, h), SAM_COLORS[i % len(SAM_COLORS)] + (130,))
+            overlay.paste(tint, (0, 0), m.point(lambda v: 255 if v > 127 else 0))  # tint alpha applies once
+    for i, (pid, rec) in enumerate(data["parts"].items()):
+        color = SAM_COLORS[i % len(SAM_COLORS)]
         for j, (x0, y0, x1, y1) in enumerate(rec["boxes"]):
             draw.rectangle([x0, y0, x1, y1], outline=color + (255,), width=max(2, w // 600))
             if j == 0:
