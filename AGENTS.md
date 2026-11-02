@@ -9,7 +9,7 @@ Read `HARDWARE_SCIENTIST_SPEC.md` fully before writing code. It is the source of
 4. `HS_FAKE=1` must run the full pipeline offline with synthetic `usage`. Write tests in fake mode. Run `pytest -q` before ending any milestone.
 5. Never read or print `MODEL_API_KEY` except to construct the client. Never commit `runs/` outputs that contain keys.
 6. LLM-written code runs only via `src/hs/sandbox.py` (subprocess, timeout, allow-listed imports).
-7. Image model output contains no text; all labels/arrows/scale bars are drawn by code.
+7. The image model renders the device photoreal in its use context, with no labels or callouts; all labels/leaders/scale bars are drawn by code on the figure, never on the image the designer evaluation judges (round 3 C15/16a).
 7b. Every `calc`/`simulate`/`sketch`/`web_search` result is posted to the whiteboard as evidence by code. Members can never edit evidence. The evaluator never sees the transcript; it consults evidence when a claim looks doubtful and sends evidence requests back to the room.
 8. Enforce every cap in `config.py`; check the cost cap before every call; log every call's `usage` to `cost.json`.
 9. Spec §14 lists unverified API details. Settle each with the smoke test named in spec §11 and record the outcome in `QUESTIONS.md`; never build on an unverified shape without that test.

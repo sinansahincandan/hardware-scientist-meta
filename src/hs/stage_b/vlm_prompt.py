@@ -18,6 +18,10 @@ class VLMPromptWriter:
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"PREFERRED VIEW: {solution.figure_spec.preferred_view}\n\n"
             f"IMAGE ARCHIVE SUMMARY:\n{archive.summary_text()}\n\n"
+            "GOAL: a correct, photorealistic rendering of this device in its use context, with the workpiece or "
+            "load present, real materials, product-shot lighting and the mechanism readable. Correctness against "
+            "the mechanism sketch comes first, style second. The sketch's colours, circles and line style are "
+            "drawing conventions, not materials or parts: never ask for them.\n"
             "Write the image prompt plus a structured visual plan: view; spatial layout; "
             "operating moment (the device in its operating moment, workpiece/sample present); "
             "force/motion/signal transfer path; 4-7 focus parts each with material and purpose; real "
@@ -25,12 +29,16 @@ class VLMPromptWriter:
             "and its direct sketch neighbours, and every focus part must be visibly drawn (not hidden inside "
             "another part). Show fixed vs moving parts and the force/signal path. Keep the parts, their "
             "connections and relative sizes of the reference; perspective may differ. The image carries no "
-            "text at all: code adds every label afterwards.\n\n"
+            "text, labels, callouts, margins or scale bars: code adds every label afterwards. In must_not, name "
+            "kinds of things to avoid; never quote the text, numbers or names you want kept out of the image "
+            "(a quoted string gets drawn).\n\n"
             + (f"TARGETED CORRECTIONS FROM ACTUAL-IMAGE REVIEW (apply verbatim):\n{corrections}\n" if corrections else "")
         )
         vlm = self.client.structured("vlm_writer", VLMPrompt,
-                                     "You are the VLM prompt writer for a technical illustration.",
+                                     "You are the image-prompt writer for a photorealistic product rendering.",
                                      prompt, image_paths=[schematic_png, labeled_png])
-        return VLMPrompt(prompt=vlm.prompt, must_not=list(vlm.must_not),
+        # C15: an avoid-entry that quotes numbers gets drawn into the image; drop such entries.
+        must_not = [m for m in vlm.must_not if not any(ch.isdigit() for ch in m)]
+        return VLMPrompt(prompt=vlm.prompt, must_not=must_not,
                          changes_from_previous=vlm.changes_from_previous,
                          visual_plan=vlm.visual_plan, focus_parts=vlm.focus_parts)

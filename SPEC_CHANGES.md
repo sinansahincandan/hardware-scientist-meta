@@ -66,3 +66,11 @@ Manager's agenda is written into §4 by code. Only gradient_prompt.json is writt
 - B10: members, Manager and Evaluator check key results against everyday scales; the Evaluator
   names unsupported claims, re-derives deciding arithmetic, uses evidence_requests when a number
   looks off, and lists measurable deviations (C18 for Stage A).
+
+## SPEC-9 (round 3, C15 + 16a): photoreal use-context renders, labels by code
+Supersedes SPEC-1 (image-drawn labels) and the "clean technical illustration on white" wording of
+§0.5/§5.2 and AGENTS.md rule 7. The writer asks for a correct, photorealistic rendering in the use
+context (workpiece, real materials, product-shot lighting, mechanism readable), correctness first.
+The render carries no labels or callouts; code labels the figure only. The designer evaluation
+judges the unlabeled render (no burned margins, footer, panel letter or scale bar). must_not names
+kinds of things, never quoted text; code drops must_not entries containing digits.

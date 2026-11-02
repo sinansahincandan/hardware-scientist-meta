@@ -234,7 +234,7 @@ class FakeClient:
     def _fake_VLMPrompt(self, user_text: str) -> VLMPrompt:
         n = self._next("vlm")
         return VLMPrompt(
-            prompt=f"Clean technical illustration on white, round {n}: keep the parts, connections and relative sizes of the reference.",
+            prompt=f"Photorealistic rendering of the device in use, round {n}: keep the parts, connections and relative sizes of the reference.",
             must_not=[], changes_from_previous="Initial prompt." if n == 1 else "Clarified part separation after S1 differences.",
         )
 
