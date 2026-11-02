@@ -35,6 +35,9 @@ COPY_FILES = ("problem.json", "cost.json", "trace.md", "references.md",
               "report.html", "board.html", "REVIEW.md")
 
 
+ROOT = Path(__file__).resolve().parents[2]
+
+
 def _read_json(path: Path) -> dict[str, Any]:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -123,6 +126,7 @@ def _rounds(run_dir: Path) -> list[dict[str, Any]]:
         progress = sorted(rd.glob("progress_*.json"))
         rounds.append({
             "name": f"{rd.parent.name}/{rd.name}", "dir": rd,
+            "attempt": int(rd.parent.name.split("_")[-1]), "round": int(rd.name.split("_")[-1]),
             "decision": (rd / "decision.txt").read_text(encoding="utf-8").strip()
             if (rd / "decision.txt").exists() else "",
             "s1": ev.get("s1_faithful"), "s2": ev.get("s2_flaw"),
@@ -142,7 +146,7 @@ def _overlay_svg(fig: str, steps: list[str], fmap: dict[str, Any]) -> str:
     meta = fmap[fig]
     nodes: dict[str, list[float]] = meta["nodes"]
     vw, vh = meta["viewBox"]
-    svg_text = Path("docs", fig).read_text(encoding="utf-8")
+    svg_text = (ROOT / "docs" / fig).read_text(encoding="utf-8")
     inner = re.sub(r"^<svg[^>]*>|</svg>$", "", svg_text, flags=re.DOTALL).strip()
     parts = [f'<svg viewBox="0 0 {vw} {vh}" width="100%" xmlns="http://www.w3.org/2000/svg">',
              ('<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" '
@@ -169,42 +173,107 @@ def _overlay_svg(fig: str, steps: list[str], fmap: dict[str, Any]) -> str:
     return "".join(parts)
 
 
+def _sentences(text: str, n: int) -> str:
+    """The first n sentences, never cut mid-word."""
+    parts = re.split(r"(?<=[.!?])\s+", " ".join(str(text).split()))
+    return " ".join(parts[:n])
+
+
+def _archive(run_dir: Path) -> list[dict[str, Any]]:
+    path = run_dir / "archive.jsonl"
+    if not path.exists():
+        return []
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+DECISION_WORDS = {
+    "s1_pass": "the picture matched the mechanism sketch",
+    "s1_retry": "the picture did not match the mechanism sketch, so the image prompt was corrected",
+    "s1_exhausted": "the picture could not be drawn faithfully within the round limit; nothing was sent to the design",
+    "s2_return": "the designer evaluation saw a design flaw, so the concept went back to the council",
+}
+
+
 def _stage_a_steps(run_dir: Path, it: int) -> list[tuple[str, str]]:
-    """(fig1 node, plain sentence) per Stage A iteration, from artifacts."""
+    """(fig1 node, sentence) per Stage A iteration — every sentence read from that iteration's files (A2)."""
     it_dir = run_dir / "stage_a" / f"iter_{it:02d}"
-    steps: list[tuple[str, str]] = [("n-master", "The master prompt revision for this iteration set the council's roles, tools and meeting protocol.")]
-    if (it_dir / "solution.json").exists() or list(it_dir.glob("turns/*")):
-        steps.append(("n-council", "The council members took their seats with distinct domains."))
-        steps.append(("n-manager-seat", "The Manager sat in the room as process lead and steered at the end of each cycle."))
-        steps.append(("n-meeting", "The meeting ran in cycles on the shared whiteboard until the members closed it by consensus or the cycle cap closed it."))
+    entry = next((e for e in _archive(run_dir) if int(e.get("iteration", -1)) == it), {})
+    steps: list[tuple[str, str]] = []
+    rev = entry.get("revision")
+    if rev is not None:
+        rev_file = run_dir / "master_prompt" / f"rev_{int(rev):03d}.md"
+        roster = re.findall(r"^###\s+(.+?)\s*$", rev_file.read_text(encoding="utf-8").split("## 3.")[0],
+                            flags=re.MULTILINE) if rev_file.exists() else []
+        steps.append(("n-master", f"The council worked from master prompt revision {int(rev)}."))
+        if roster:
+            steps.append(("n-council", f"{len(roster)} members took part: {', '.join(roster)}."))
+    closure, board = _read_json(it_dir / "closure.json"), _read_json(it_dir / "whiteboard.json")
+    manager_turns = len(list(it_dir.glob("turns/c*_Manager.json")))
+    if manager_turns:
+        steps.append(("n-manager-seat", f"The Manager spoke {manager_turns} times, once at the end of each cycle."))
+    if closure:
+        ev = board.get("evidence", [])
+        tools: dict[str, int] = {}
+        for e in ev:
+            tools[str(e.get("tool", "")).split(":")[0]] = tools.get(str(e.get("tool", "")).split(":")[0], 0) + 1
+        objs = board.get("objections", [])
+        open_blocking = [o for o in objs if o.get("status") == "open" and o.get("blocking")]
+        proposal = board.get("proposal")
+        closed = "by consensus" if closure.get("closed_by") == "consensus" else "at the cycle cap without consensus"
+        steps.append(("n-meeting", (
+            f"The meeting ran {closure.get('cycles_used')} cycles and closed {closed}. The board holds "
+            f"{len(ev)} evidence items ({', '.join(f'{n} {t}' for t, n in sorted(tools.items())) or 'none'}), "
+            f"{len(objs)} objections ({len(open_blocking)} blocking still open) and "
+            + (f"proposal version {proposal.get('version')}." if proposal else "no proposal."))))
     verdict = _read_json(it_dir / "verdict.json")
     if verdict:
-        word = "accepted" if verdict.get("accept") else "rejected"
-        steps.append(("n-evaluator", f"The evaluator {word} the solution: {str(verdict.get('feedback', ''))[:180]}"))
-    if (it_dir / "rewrite.json").exists():
-        steps.append(("n-master", "The Manager diagnosed the failure in two steps (output gradient, then prompt gradient) and the optimizer rewrote prompt sections; the rewrite is saved as a new revision with a diff."))
-        steps.append(("n-lessons", "Lessons from earlier runs were applied through the master prompt."))
-    steps.append(("n-council-archive", "The solution, its status and the feedback were stored in the council archive for later inspirations."))
+        word = "accepted" if verdict.get("accept") else "sent back"
+        reqs = len(verdict.get("evidence_requests", []) or [])
+        steps.append(("n-evaluator", f"The Evaluator {word} the solution: {_sentences(verdict.get('feedback', ''), 2)}"
+                      + (f" It asked the room for {reqs} more pieces of evidence." if reqs else "")))
+    edit = _read_json(it_dir / "manager_edit.json")
+    if edit:
+        changed = edit.get("changed") or []
+        steps.append(("n-master", ("The Manager's two-step diagnosis led to a rewrite of " + ", ".join(changed) + "."
+                                   if changed else "The Manager's diagnosis changed no section of the master prompt.")))
+    if entry:
+        status = {"accepted": "accepted", "rejected": "rejected by the Evaluator",
+                  "rejected_by_designer": "rejected by the designer evaluation (design flaw)",
+                  "could_not_draw": "accepted, but could not be drawn faithfully"}.get(entry.get("status"), entry.get("status"))
+        steps.append(("n-council-archive", f"The council archive records this solution as {status}."))
     return steps
 
 
 def _stage_b_steps(rd: dict[str, Any]) -> list[tuple[str, str]]:
-    steps = [("n-accepted", "The accepted solution entered the visualization pipeline."),
-             ("n-schematic", "The mechanism sketch was drawn from the solution: part proportions, joint circles, motion and load arrows, key dimensions."),
-             ("n-vlm-writer", "The VLM prompt writer turned the sketch and solution into an image prompt."),
-             ("n-render", "The image model rendered the concept from the sketch."),
-             ("n-labels", "Part labels were placed on the render (drawn labels checked; code overlay as fallback)."),
-             ("n-designer-eval", f"Designer evaluation judged the render region by region: S1 faithful = {rd['s1']}, S2 design flaw = {rd['s2']}; decision {rd['decision']}.")]
+    """(fig2 node, sentence) per Stage B round — read from the round folder (A2)."""
+    d: Path = rd["dir"]
+    steps: list[tuple[str, str]] = []
+    geo = _read_json(d / "schematic.json")
+    if geo:
+        steps.append(("n-schematic", f"Code drew the mechanism sketch with {len(geo.get('boxes', {}))} parts."))
+    vlm = _read_json(d / "vlm_prompt.json")
+    if vlm:
+        change = _sentences(vlm.get("changes_from_previous", ""), 1)
+        steps.append(("n-vlm-writer", "The image prompt was written" + (f": {change}" if change else ".")))
+    if rd["render"].exists():
+        steps.append(("n-render", "The image model rendered the device from the sketch."))
+    loc = _read_json(d / "localization.json")
+    if loc:
+        parts = loc.get("parts", [])
+        found = [x.get("id") for x in parts if x.get("found")]
+        missing = [x.get("id") for x in parts if not x.get("found")]
+        steps.append(("n-labels", f"Code labelled {len(found)} of {len(parts)} parts"
+                      + (f"; not found in the picture: {', '.join(missing)}." if missing else ".")))
+    words = DECISION_WORDS.get(rd["decision"], rd["decision"])
+    steps.append(("n-designer-eval", f"The designer evaluation named {len(rd['regions'])} regions; {words}."))
     if rd["decision"] == "s2_return":
-        steps.append(("n-back-to-a", "A design flaw (source: the schematic or the solution) sent the concept back to the council."))
-    steps.append(("n-image-archive", "The round's prompt, render and evaluation were stored in the image archive."))
-    if rd["decision"] == "s1_pass":
-        steps.append(("n-figure", "The final four-panel figure was composed from the passing render."))
+        steps.append(("n-back-to-a", "The designer's feedback went back to the council."))
+    steps.append(("n-image-archive", "The prompt, render and evaluation were stored in the image archive."))
     return steps
 
 
-def build_showcase(run_dirs: list[Path], out: Path = Path("showcase")) -> Path:
-    fmap = json.loads(Path("docs/figures_map.json").read_text(encoding="utf-8"))
+def build_showcase(run_dirs: list[Path], out: Path = Path(__file__).resolve().parents[2] / "showcase") -> Path:
+    fmap = json.loads((ROOT / "docs" / "figures_map.json").read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
     cards: list[str] = []
     for run_dir in run_dirs:
@@ -217,14 +286,20 @@ def build_showcase(run_dirs: list[Path], out: Path = Path("showcase")) -> Path:
         revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) \
             if (run_dir / "master_prompt").exists() else []
         fig_rel = f"{slug}/final/figure.png"
-        evo = [f"Master prompt revisions: {len(revs)} (rev_000 to rev_{len(revs) - 1:03d})."]
+        seeded = _read_json(run_dir / "seeded_from.json")
+        evo: list[str] = []
+        if seeded:
+            evo.append(f"This run redrew the accepted solution of run {seeded.get('source_run')}; no council "
+                       "meeting ran in it.")
+        elif revs:
+            evo.append(f"The council met {len(_archive(run_dir))} times; the Manager rewrote the master prompt "
+                       f"{len(revs) - 1} times.")
         for rd in rounds:
-            fix = f" VLM prompt gradient fix mode: {rd['fix_mode']}." if rd["fix_mode"] else ""
-            kept = "".join(f" Local edit on {p['part']} kept: "
-                           f"{bool(p['fixed_region_pass'] and p['previous_pass'] and not p['seam_visible'])}."
-                           for p in rd["progress"])
-            evo.append(f"Stage B {rd['name']}: decision {rd['decision']} with "
-                       f"{len(rd['regions'])} evaluated regions.{fix}{kept}")
+            kept = [p_["part"] for p_ in rd["progress"]
+                    if p_["fixed_region_pass"] and p_["previous_pass"] and not p_["seam_visible"]]
+            evo.append(f"Picture {rd['attempt'] + 1}, round {rd['round'] + 1}: "
+                       f"{DECISION_WORDS.get(rd['decision'], rd['decision'])}"
+                       + (f"; a local repair of {', '.join(kept)} was kept" if kept else "") + ".")
         choices = "".join(f"<li>{html.escape(str(c))}</li>" for c in sol.get("decisive_choices", []))
         cards.append(f"""<section class="hero"><h1 style="color:#fff">{html.escape(str(problem.get('title', slug)))}</h1>
 <p class="mech">{html.escape(str(sol.get('mechanism_sentence', '')))}</p></section>
@@ -269,93 +344,86 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
                  f"<img src='final/panel_A.png' style='max-width:49%'></p>")
     refs = (run_dir / "references.md").read_text(encoding="utf-8") if (run_dir / "references.md").exists() else ""
     p.append("<h3>Reference list</h3><pre style='white-space:pre-wrap'>" + html.escape(refs) + "</pre>")
-    # J2 whiteboard over time
+    # 2. Whiteboard over time (facts per iteration)
     p.append("<h2>2. Whiteboard over time</h2>")
     iters = sorted(run_dir.glob("stage_a/iter_*"))
+    seeded = _read_json(run_dir / "seeded_from.json")
+    if seeded:
+        p.append(f"<p>No council meeting ran in this run: it redrew the accepted solution of run "
+                 f"{html.escape(str(seeded.get('source_run', '')))}.</p>")
     for it_dir in iters:
         wb = _read_json(it_dir / "whiteboard.json")
+        if not wb:
+            continue
         ev = wb.get("evidence", [])
         sketches = [e for e in ev if e.get("tool") == "sketch"]
-        objs = wb.get("objections", [])
+        proposal = wb.get("proposal")
         verdict = _read_json(it_dir / "verdict.json")
-        p.append(f"<div class='event'><b>{_ts(it_dir)} {it_dir.name}</b> — {len(ev)} evidence items, "
-                 f"{len(sketches)} sketches, {len(objs)} objections; evaluator accept = "
-                 f"{verdict.get('accept')}. Proposal: {html.escape(str(_read_json(it_dir / 'solution.json').get('title', '')))}. "
-                 f"<a href='board.html'>Board step</a></div>")
-    # J3 path overlays
+        verdict_words = ("The Evaluator accepted it." if verdict.get("accept") else "The Evaluator sent it back.") \
+            if verdict else ""
+        p.append(f"<div class='event'><b>Meeting {int(it_dir.name.split('_')[-1]) + 1}</b>: {len(ev)} evidence items, "
+                 f"{len(sketches)} sketches, {len(wb.get('objections', []))} objections. "
+                 + (f"Proposal: {html.escape(_sentences(proposal.get('text', ''), 1))} " if proposal else "No proposal. ")
+                 + f"{verdict_words} <a href='board.html'>Open the board</a></div>")
+    # 3. Path through the architecture: one overlay per stage (D22), sentences from the files (A2)
     p.append("<h2>3. Path through the architecture</h2>")
-    for idx, _it_dir in enumerate(iters):
-        steps = _stage_a_steps(run_dir, idx)
-        p.append(f"<h3>Stage A iteration {idx}</h3><div class='overlay'>"
-                 + _overlay_svg("fig1_architecture.svg", [s for s, _ in steps], fmap) + "</div>")
-        p.append("".join(f"<div class='event'><b>{i}.</b> {html.escape(text)}</div>"
-                         for i, (_n, text) in enumerate(steps, 1)))
-    for rd in rounds:
-        steps = _stage_b_steps(rd)
-        p.append(f"<h3>Stage B {rd['name']}</h3><div class='overlay'>"
-                 + _overlay_svg("fig1_architecture.svg",
-                                [s if s in fmap["fig1_architecture.svg"]["nodes"] else "n-designer-eval"
-                                 for s, _ in steps], fmap) + "</div>")
-        p.append("<div class='overlay'>" + _overlay_svg(
-            "fig2_visualization_pipeline.svg", [s for s, _ in steps], fmap) + "</div>")
-        p.append("".join(f"<div class='event'><b>{i}.</b> {html.escape(text)}</div>"
-                         for i, (_n, text) in enumerate(steps, 1)))
-        for reg in rd["regions"]:
-            p.append(f"<div class='event'>Region <b>{html.escape(str(reg.get('part_id')))}</b> "
-                     f"(box {reg.get('box')}, source {reg.get('source')}): observed "
-                     f"{html.escape(str(reg.get('observed', ''))[:200])} — expected "
-                     f"{html.escape(str(reg.get('expected', ''))[:200])}</div>")
-    # J4 conformance
-    p.append("<h2>4. Conformance table</h2>")
-    counts: dict[str, int] = {}
-    for idx in range(len(iters)):
-        for node, _t in _stage_a_steps(run_dir, idx):
-            counts[node] = counts.get(node, 0) + 1
-    for rd in rounds:
-        for node, _t in _stage_b_steps(rd):
-            counts[node] = counts.get(node, 0) + 1
-    rows = []
-    never: list[str] = []
-    for fig in ("fig1_architecture.svg", "fig2_visualization_pipeline.svg"):
-        for node in fmap[fig]["nodes"]:
-            n = counts.get(node, 0)
-            rows.append(f"<tr><td>{fig}</td><td>{node}</td><td>{n}</td></tr>")
-            if n == 0:
-                never.append(node)
-    p.append("<table><tr><th>Figure</th><th>Node</th><th>Times exercised</th></tr>" + "".join(rows) + "</table>")
-    p.append("<h3>Figure elements never exercised</h3><p>" + (
-        ", ".join(sorted(set(never))) if never else "none") +
-        ". Nodes with count 0 were not reached by this run (for example no S2 return, "
-        "or the lessons node when no rewrite happened).</p>")
-    p.append("<h3>Paths the run took that the figures do not show</h3><p>"
-             "The v2 additions run inside the drawn nodes but have no node of their own in the "
-             "owner's figures: the VLM prompt gradient and progress check (inside DesignerEval → "
-             "VLM writer), the local edit + composite, the speaking/turn check (inside Meeting), "
-             "citation resolution into the reference list, and the Manager's new_tool proposals. "
-             "This is a figure-versus-implementation difference, reported here as instructed; "
-             "the figures were not edited.</p>")
-    # J5 self-improvement
+    a_steps = [_stage_a_steps(run_dir, int(it.name.split("_")[-1])) for it in iters]
+    if a_steps:
+        path_nodes = list(dict.fromkeys(n for steps in a_steps for n, _ in steps))
+        p.append("<h3>Stage A</h3><div class='overlay'>"
+                 + _overlay_svg("fig1_architecture.svg", path_nodes, fmap) + "</div>")
+        for idx, steps in enumerate(a_steps):
+            p.append(f"<h4>Meeting {idx + 1}</h4>" + "".join(
+                f"<div class='event'>{html.escape(text)}</div>" for _n, text in steps))
+    if rounds:
+        b_steps = [_stage_b_steps(rd) for rd in rounds]
+        path_nodes = list(dict.fromkeys(n for steps in b_steps for n, _ in steps))
+        p.append("<h3>Stage B</h3><div class='overlay'>"
+                 + _overlay_svg("fig2_visualization_pipeline.svg", path_nodes, fmap) + "</div>")
+        for rd, steps in zip(rounds, b_steps, strict=True):
+            p.append(f"<h4>Picture {rd['attempt'] + 1}, round {rd['round'] + 1}</h4>" + "".join(
+                f"<div class='event'>{html.escape(text)}</div>" for _n, text in steps))
+            for reg in rd["regions"]:
+                p.append(f"<div class='event small'>Region on {html.escape(str(reg.get('part_id')))}: observed "
+                         f"{html.escape(str(reg.get('observed', '')))} — expected "
+                         f"{html.escape(str(reg.get('expected', '')))}</div>")
+    # 4. What ran and what did not (prose, from the files; replaces the conformance table)
+    p.append("<h2>4. What ran and what did not</h2>")
+    archive = _archive(run_dir)
+    edits = [it for it in iters if (it / "manager_edit.json").exists()]
+    decisions = [rd["decision"] for rd in rounds]
+    ran = []
+    if archive:
+        ran.append(f"The council met {len(archive)} times and the Manager diagnosed {len(edits)} failures")
+    if rounds:
+        ran.append(f"the picture loop ran {len(rounds)} rounds")
+    not_ran = []
+    if "s2_return" not in decisions:
+        not_ran.append("no picture sent the design back to the council")
+    if not any(rd["progress"] for rd in rounds):
+        not_ran.append("no local repair of a picture region was attempted")
+    if not any(it.glob("rewrite*.json") for it in iters):
+        not_ran.append("no master prompt rewrite happened")
+    p.append("<p>" + html.escape(("; ".join(ran) + ". ") if ran else "")
+             + html.escape(("In this run " + "; ".join(not_ran) + ".") if not_ran else "") + "</p>")
+    # 5. Self-improvement (facts)
     p.append("<h2>5. Self-improvement</h2>")
     revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) if (run_dir / "master_prompt").exists() else []
-    p.append(f"<p>Master prompt revisions in this run: {len(revs)}. "
-             f"Each applied rewrite is saved as rev_N.md with diff_N.md next to it.</p>")
+    p.append(f"<p>The master prompt has {len(revs)} saved revisions in this run"
+             + (" (revision 0 plus one per applied rewrite)." if revs else ".") + "</p>")
     for it_dir in iters:
         diag = _read_json(it_dir / "gradient_prompt.json") or _read_json(it_dir / "diagnosis.json")
         if diag:
-            p.append(f"<div class='event'><b>{it_dir.name}</b> Manager root cause: "
-                     f"{html.escape(str(diag.get('root_cause', ''))[:300])} Agenda: "
-                     f"{html.escape(str(diag.get('agenda', ''))[:200])}</div>")
-        for rd_name in ("gradient_output.json", "gradient_prompt.json", "rewrite.json"):
-            if (it_dir / rd_name).exists():
-                p.append(f"<p class='small'>{it_dir.name}/{rd_name} saved.</p>")
-    for rd in rounds:
-        if rd["fix_mode"]:
-            p.append(f"<div class='event'>Stage B {rd['name']}: VLM prompt gradient chose "
-                     f"fix_mode={rd['fix_mode']}.</div>")
-    lessons = Path("lessons.md")
-    if lessons.exists():
-        p.append("<p>Lessons file (project level): <a href='../../lessons.md'>lessons.md</a> "
-                 "is updated at the end of accepted runs.</p>")
+            p.append(f"<div class='event'><b>Meeting {int(it_dir.name.split('_')[-1]) + 1}</b> — the Manager's "
+                     f"root cause: {html.escape(_sentences(diag.get('root_cause', ''), 2))}"
+                     + (f" Agenda: {html.escape(_sentences(diag.get('agenda', ''), 2))}" if diag.get("agenda") else "")
+                     + "</div>")
+    lessons_file = ROOT / "lessons.md"
+    added = [line for line in lessons_file.read_text(encoding="utf-8").splitlines()
+             if f"run {run_dir.name}]" in line] if lessons_file.exists() else []
+    p.append("<p>Lessons this run added to lessons.md: " + (
+        "</p><ul>" + "".join(f"<li>{html.escape(line.lstrip('- '))}</li>" for line in added) + "</ul>"
+        if added else "none.</p>"))
     # J6 cost and wall clock
     p.append("<h2>6. Cost and wall-clock time</h2>")
     by_role: dict[str, dict[str, float]] = {}

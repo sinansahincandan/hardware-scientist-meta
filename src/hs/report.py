@@ -368,7 +368,7 @@ def showcase_html(run_dirs: list[Path]) -> str:
 
 def write_showcase(run_dirs: list[Path], out: Path | None = None) -> Path:
     if out is None:
-        out = Path("runs") / "showcase.html"
+        out = Path(__file__).resolve().parents[2] / "runs" / "showcase.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(showcase_html(run_dirs), encoding="utf-8")
     return out
@@ -376,7 +376,7 @@ def write_showcase(run_dirs: list[Path], out: Path | None = None) -> Path:
 
 def write_compare(run_dirs: list[Path], out: Path | None = None) -> Path:
     if out is None:
-        out = Path("runs") / f"compare_{datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
+        out = Path(__file__).resolve().parents[2] / "runs" / f"compare_{datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(compare_html(run_dirs), encoding="utf-8")
     return out
