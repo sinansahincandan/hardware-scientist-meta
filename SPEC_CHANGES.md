@@ -28,3 +28,9 @@ These head report.html in the deliverable layout.
 Members may call vetted_calc with one of the named functions in
 hs/stage_a/calculators.py next to free calc. Every input records its
 provenance (user / source / assumption) in the evidence entry.
+
+## SPEC-5 (round 3, item 0): project-wide budget ledger
+Spec §7 caps gain a cross-run cap: every real Meta call is checked before it is sent against
+`budget/ledger.jsonl` (worst-case estimate of that call) and appended after it; round-3 cap $55.
+HTTP 402 billing errors raise `BudgetExceeded`, never retried. Web searches (`web_search_call`
+items) and SAM calls are priced and counted. `hs budget` prints spent, remaining, per-run totals.

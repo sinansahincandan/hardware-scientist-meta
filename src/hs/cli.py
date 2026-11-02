@@ -1,4 +1,4 @@
-"""hs CLI (spec §8): run | examples | feedback | show | report | compare | board | spend."""
+"""hs CLI (spec §8): run | examples | feedback | show | report | compare | board | budget."""
 from __future__ import annotations
 
 import argparse
@@ -186,13 +186,15 @@ def _cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
-def _cmd_spend(args: argparse.Namespace) -> int:
-    from hs.client import SpendLedger
+def _cmd_budget(args: argparse.Namespace) -> int:
+    from hs.client import BudgetLedger
 
-    ledger = SpendLedger()
+    ledger = BudgetLedger()
     total = ledger.total()
-    print(f"real API spend: ${total:.4f} of ${ledger.cap_usd:.2f} cap "
-          f"(${ledger.cap_usd - total:.4f} left) - {ledger.path}")
+    print(f"Meta spend (ledger): ${total:.4f} of ${ledger.cap_usd:.2f} cap, ${ledger.cap_usd - total:.4f} left")
+    print(f"ledger: {ledger.path}")
+    for run_id, usd in ledger.per_run().items():
+        print(f"  {run_id}: ${usd:.4f}")
     return 0
 
 
@@ -236,8 +238,8 @@ def build_parser() -> argparse.ArgumentParser:
     scb.add_argument("run_dirs", nargs="+")
     scb.add_argument("--out", default="showcase")
     scb.set_defaults(func=_cmd_showcase_build)
-    sp = sub.add_parser("spend")
-    sp.set_defaults(func=_cmd_spend)
+    bud = sub.add_parser("budget")
+    bud.set_defaults(func=_cmd_budget)
     return parser
 
 

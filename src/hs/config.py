@@ -56,17 +56,19 @@ MAX_NEW_TOOLS = 2
 MAX_MANAGER_NEW_TOOLS = 2
 MAX_FIGURE_IMAGES = 8
 MAX_COST_USD_PER_RUN = 15.00
-# Cross-run cap on real API spend (all commands, all runs). The ledger is
-# re-read before every call so parallel runs share it. Fake mode never touches it.
-# Set 2026-11-02 when the dashboard showed $67 credit left.
-MAX_TOTAL_SPEND_USD = 50.00
-SPEND_LEDGER_PATH = Path(os.environ.get("HS_SPEND_LEDGER",
-                                        Path(__file__).resolve().parents[2] / "spend_ledger.json"))
+# Round-3 budget (item 0): one project-wide ledger of real Meta spend, checked before
+# every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).
+# Fake mode never touches it. HS_BUDGET_LEDGER overrides the path (tests).
+MAX_TOTAL_SPEND_USD = 55.00
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger.jsonl"))
 
 IMAGE_BACKEND = "edits"  # "edits" | "responses" (fallback, spec §5.3)
 SKETCH_SINGLE_REQUEST = True  # §14.3 fallback switch
 
-# Prices (spec §9). USD per 1M tokens unless noted.
+# Prices: USD per 1M tokens unless noted. Verified against https://dev.meta.ai/docs/pricing-rate-limits
+# on 2026-11-02 (muse-spark-1.3 standard mode; web search grounding; muse-image-1.0 flat per image;
+# sam-3.1 image segmentation $2.50 per 1,000 images).
 PRICES = {
     "input_per_1m": 1.25,
     "cached_input_per_1m": 0.15,

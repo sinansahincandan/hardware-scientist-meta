@@ -306,9 +306,9 @@ class Controller:
                             s1_diffs = (grad.summary + "\n" + "\n".join(
                                 f"{g.part_id}: {g.diagnosis} -> {g.prompt_fix}" for g in grad.per_region)
                                 + "\n" + s1_diffs)
-                    except Exception as exc:  # gradient path must never kill the run (budget guards still apply first)
-                        if "budget cap" in str(exc) or "hs run cost" in str(exc):
-                            raise
+                    except BudgetExceeded:
+                        raise
+                    except Exception as exc:  # gradient path must never kill the run
                         trace.log(f"iter {k} round {r}: VLM prompt gradient skipped: {exc}")
                 if decision != "s1_retry":
                     break

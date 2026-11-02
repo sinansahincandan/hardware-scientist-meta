@@ -57,15 +57,15 @@ $4.25 per 1M tokens; web search $2.50/1000; `muse-image-1.0` $0.01/image. The
 cost cap ($15/run default) is checked before every call; every call's usage is
 logged to `runs/<id>/cost.json`.
 
-**Total spend cap ($50, all runs).** Every real call is also checked against
-`spend_ledger.json` (repo root, git-ignored; `MAX_TOTAL_SPEND_USD` in
-`config.py`, path overridable with `HS_SPEND_LEDGER`) before it is sent, and
-added to it after. Each call prints a running line to stderr:
-`[spend] evaluator +$0.0123 | total $3.4567 of $50.00 | left $46.5433`.
-`hs spend` shows the current total. A call that would cross the cap, or an
-HTTP 402 billing error, raises `BudgetExceeded`, so a run ends through the
-best-effort path. Fake mode never writes the ledger. The ledger only counts
-calls made by this code; the Meta dashboard is the authority on credit left.
+**Budget ledger ($55 for round 3, all runs).** Every real Meta call is checked against
+`budget/ledger.jsonl` (git-ignored; one line per call: time, run id, role, model, tokens,
+images, SAM calls, searches, estimated USD; `MAX_TOTAL_SPEND_USD` in `config.py`) before it is
+sent, with a worst-case estimate of that call, and appended after it. Each call prints a running
+line to stderr: `[budget] evaluator +$0.0123 | total $3.4567 of $55.00 | left $51.5433`.
+`hs budget` prints spent, remaining and per-run totals. A call that could cross the cap, or a
+Meta HTTP 402 billing error, raises `BudgetExceeded` (never retried); the run then ends through
+the best-effort path with its files saved. Fake mode never writes the ledger. The ledger counts
+only calls made by this code; the Meta dashboard is the authority on credit left.
 
 Also: `hs showcase runs/<a> runs/<b> runs/<c>` writes `runs/showcase.html`
 (input prompt left, final figure right with click-to-enlarge, mechanism

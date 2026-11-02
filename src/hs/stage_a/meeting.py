@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from hs import config
+from hs.client import BudgetExceeded
 from hs.master_prompt import MasterPrompt, roster_of
 from hs.schemas import (
     ConceptBody,
@@ -145,9 +146,10 @@ class Meeting:
                 for rec in records:
                     if rec not in self.history:
                         self.history.append(rec)
-        except Exception as exc:
-            if "budget" in str(exc).lower():
-                raise
+        except BudgetExceeded:
+            raise
+        except Exception:
+            pass
         self.transcript.append({"cycle": cycle, "member": member, "message": _truncate_words(message)})
         self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
 

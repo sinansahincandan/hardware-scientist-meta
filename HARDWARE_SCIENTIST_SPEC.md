@@ -335,7 +335,7 @@ def run(problem):
 # every exit path ends with: Report.write(run_dir)  -> runs/<id>/report.html (§8)
 ```
 
-**Caps (`config.py`, overridable by CLI flags):** `MAX_A_ITERS=8`, `MAX_S1_ROUNDS=3`, `MAX_B_RETURNS=2`, `MIN_CYCLES=2`, `MAX_CYCLES=4`, `MAX_MEMBERS=5`, `MAX_TOOL_CALLS_PER_TURN=6`, `MAX_TURN_MESSAGE_WORDS=250`, `MAX_NEW_TOOLS=2`, `MAX_FIGURE_IMAGES=8`, `MAX_COST_USD_PER_RUN=15.00`. `BudgetExceeded` is raised by `client.py` **before** any call that would exceed the cap; the controller catches it and exits through the best-effort path.
+**Caps (`config.py`, overridable by CLI flags):** `MAX_A_ITERS=8`, `MAX_S1_ROUNDS=3`, `MAX_B_RETURNS=2`, `MIN_CYCLES=2`, `MAX_CYCLES=4`, `MAX_MEMBERS=5`, `MAX_TOOL_CALLS_PER_TURN=6`, `MAX_TURN_MESSAGE_WORDS=250`, `MAX_NEW_TOOLS=2`, `MAX_FIGURE_IMAGES=8`, `MAX_COST_USD_PER_RUN=15.00`. `BudgetExceeded` is raised by `client.py` **before** any call that would exceed the cap; the controller catches it and exits through the best-effort path. **(round 3)** A project-wide ledger `budget/ledger.jsonl` records every real call (run id, role, model, tokens, images, SAM calls, searches, USD) and caps total spend across runs at `MAX_TOTAL_SPEND_USD` ($55 for round 3); the same pre-call check uses a worst-case estimate of the call; HTTP 402 billing errors raise `BudgetExceeded` and are never retried.
 
 ---
 

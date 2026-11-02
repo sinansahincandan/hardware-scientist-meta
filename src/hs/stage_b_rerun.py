@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 from hs import config
+from hs.client import BudgetExceeded
 from hs.controller import Trace, build_references, make_run_dir
 from hs.schemas import Problem, SolutionPrompt
 from hs.stage_b import figure as figure_mod
@@ -161,9 +162,9 @@ def _rounds(client: Any, solution: SolutionPrompt, spec: Any, run_dir: Path,
                         if check.fixed_region_pass and check.previous_pass and not check.seam_visible:
                             current = comp_path
                             trace.log(f"stageb round {r}: local edit {region.part_id} kept")
+            except BudgetExceeded:
+                raise
             except Exception as exc:
-                if "budget cap" in str(exc) or "hs run cost" in str(exc):
-                    raise
                 trace.log(f"stageb round {r}: VLM prompt gradient skipped: {exc}")
         if decision != "s1_retry":
             break

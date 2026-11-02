@@ -3,5 +3,5 @@ runs/
 __pycache__/
 *.pyc
 .DS_Store
-spend_ledger.*
+budget/
 .env
