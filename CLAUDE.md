@@ -23,6 +23,7 @@ Owner: Sinan (mechanical engineer, PhD; no software background). He judges input
 8. Concept design: deviations are acceptable if the concept still works, but the system must notice and state them.
 9. Final figure: photoreal device in its use context, mechanism readable, directions/orientation/scale/connections correct. Flow views only when the physics calls for them and the council chose them.
 10. No random sampling or best-of-N seeds.
+11. Every model call inside HS runs (council, Manager, Evaluator, optimizer, VLM writer, critic, image generation, SAM, web search) goes to Meta models through the Meta Model API only. Never add a call to Claude, OpenAI or any other model or service in the runtime. Plain Python (mask measurement, label drawing, page building, Playwright checks) is fine.
 
 ## Budget (Meta credit)
 - Meta credit left: $67 (2026-11-02). Only hs runs and smoke tests use it; Claude Code's own work does not.
