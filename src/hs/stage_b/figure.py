@@ -114,6 +114,35 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     return True
 
 
+def plain_words(text: str) -> str:
+    """Text without numbers, units, ratings and product codes: the provider's content filter blocked
+    detailed checks that carried them (run 02), while the same images passed with plain wording."""
+    import re
+
+    words = [w for w in text.split() if not re.search(r"\d", w) and not re.fullmatch(r"[A-Z]{2,}[A-Za-z]*s?[,.;]?", w)]
+    return re.sub(r"\s+([,.;])", r"\1", " ".join(words)).strip(" ,;")
+
+
+def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, names: str,
+                image: Path) -> tuple[LightCheck, bool]:
+    """Detailed check in plain words; only if the content filter blocks it, one general check.
+    Returns (check, general_only)."""
+    try:
+        return client.structured(
+            "light_check", LightCheck, "Light check.",
+            f"Does it show fabrication step {step} ({plain_words(desc)}) with these parts: {plain_words(names)}? "
+            "Answer from the pixels.", image_paths=[image]), False
+    except BudgetExceeded:
+        raise
+    except Exception as exc:
+        if "content management policy" not in str(exc):
+            raise
+    return client.structured(
+        "light_check", LightCheck, "Light check.",
+        f"Does this workshop photo show a stage of building this device: {plain_words(solution.title)}? "
+        "Answer from the pixels.", image_paths=[image]), True
+
+
 def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localization: Localization,
                     panel_a: Path, notes: list[str]) -> None:
     """16a: labels that point at the wrong part are removed, never shown (run 02: 'PU box' on the control box)."""
@@ -176,10 +205,7 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
             images_used += 1
             step_path = final_dir / f"_step{i + 1}.png"
             step_path.write_bytes(png)
-            check = client.structured("light_check", LightCheck, "Light check.",
-                                      f"Does it show fabrication step {i + 1} ({step_desc}) with exactly these "
-                                      f"parts: {names}? Answer from the pixels.",
-                                      image_paths=[step_path])
+            check, general = _step_check(client, solution, i + 1, step_desc, names, step_path)
         except BudgetExceeded:
             raise
         except Exception as exc:  # a panel-D step must never sink the figure (run 02: content filter 400)
@@ -188,7 +214,10 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
                                f"{str(exc)[:160]}); not shown")
             continue
         if check.ok:
-            shipped.append((step_path, f"{i + 1}. {step_desc}"))
+            shipped.append((step_path, f"{i + 1}. {step_desc}" + (" (general check only)" if general else "")))
+            if general:
+                trace_notes.append(f"fabrication step {i + 1}: the detailed check was blocked by the provider's "
+                                   "content filter; it passed a general check only (caption marked)")
         else:
             failed_steps.append(i + 1)
             trace_notes.append(f"fabrication step {i + 1} failed its light check ({check.reason}); not shown")

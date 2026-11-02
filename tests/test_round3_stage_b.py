@@ -96,3 +96,24 @@ def test_unaddressed_segmenter_findings_are_detected() -> None:
         Deviation(what="pv_array panel count", measured="14", expected="12", matters=False, why="")])
     diffs = {"pv_array": ["expected 12, found 14"], "dc_cooler": ["not found"]}
     assert _unaddressed(diffs, ev) == ["dc_cooler"]
+
+
+def test_step_check_falls_back_to_a_general_check_only_on_the_content_filter(tmp_path: Path) -> None:
+    from types import SimpleNamespace
+
+    from hs.schemas import LightCheck
+    from hs.stage_b.figure import _step_check
+
+    prompts: list[str] = []
+
+    class Client:
+        def structured(self, role, model, instructions, prompt, image_paths=None):
+            prompts.append(prompt)
+            if len(prompts) == 1:
+                raise RuntimeError("Error code: 400 - triggering our content management policy.")
+            return LightCheck(ok=True, reason="a building stage")
+
+    check, general = _step_check(Client(), SimpleNamespace(title="Solar 48V cold room"), 2,
+                                 "wire MPPT 150V 60A controller", "48V LiFePO4 bank", tmp_path / "x.png")
+    assert check.ok and general and "150V" not in prompts[0] and "LiFePO4" not in prompts[0]
+    assert "Solar cold room" in prompts[1]
