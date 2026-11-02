@@ -192,3 +192,14 @@ def test_backward_chain_links_claim_evidence_turn_and_section(tmp_path: Path) ->
     assert "The wheel load is 294 N." in chain and "## 2. Roles / ### Mechanics" in chain
     assert "Open objection O1 by Thermal (blocking)" in chain
     assert "closed by cap after 4 cycles; no proposal formed" in chain
+
+
+def test_search_evidence_is_capped_per_query_and_deduplicated(tmp_path: Path) -> None:
+    from hs.stage_a.tools import ToolRunner
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    runner = ToolRunner(board, tmp_path, tmp_path / "ev")
+    sources = [{"url": f"https://ex.org/{i}", "title": f"t{i}", "query": "q"} for i in range(6)]
+    assert len(runner.web_search_evidence("A", sources)) == 3
+    assert runner.web_search_evidence("B", sources[:3] + [{"url": "https://ex.org/new", "title": "n", "query": "r"}]) == ["E4"]

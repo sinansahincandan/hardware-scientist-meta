@@ -105,3 +105,17 @@ the old single-file `hs showcase` page was removed in round 3 (D20).
   rule with turn checks, transcript compaction, resolved citations
   (`references.md` per run). Page screenshots could not be taken in
   the build sandbox — see `BLOCKED.md`.
+
+## Related work
+
+Each line says what Hardware Scientist takes from the work; every page was fetched on 2026-11-02.
+
+- **TextGrad** (Yuksekgonul et al., 2024, arXiv:2406.07496) — written feedback treated as a gradient and passed backward through the system: critique → output gradient → prompt gradient → targeted prompt edit, in Stage A (master prompt) and Stage B (image prompt).
+- **Agent Symbolic Learning** (Zhou et al., 2024, arXiv:2406.18532) — the agent pipeline itself (prompts, roles, tools) is the thing optimized; the Manager rewrites member roles, adds or merges members and registers tools.
+- **Trace** (Cheng et al., 2024, arXiv:2406.16218) — the execution trace carries the feedback; the Manager's backward chain links each claim to its evidence, the member turn and the prompt section that produced it.
+- **ACE — Agentic Context Engineering** (Zhang et al., 2025, arXiv:2510.04618) — improve the context, not the weights, with incremental edits that do not lose detail; section-wise rewrites with guards, the shrink check and saved revisions.
+- **Reflexion** (Shinn et al., 2023, arXiv:2303.11366) — written reflections on past failures kept as memory; the council archive, inspirations and the process lessons.
+- **OPT2I** (Mañas et al., 2024, arXiv:2403.17804) — an LLM rewrites the text-to-image prompt until the image matches; Stage B's VLM prompt writer and VLM prompt gradient.
+- **SAM 3** (Carion et al., 2025, arXiv:2511.16719) — concept segmentation from short text phrases; Stage B measures each part of a render and places code labels from SAM 3.1 boxes.
+- **Set-of-Mark prompting** (Yang et al., 2023, arXiv:2310.11441) — segment first, then let the VLM refer to marked regions; segmenter measurements are given to the critic as region evidence.
+- **Multi-agent debate** (Du et al., 2023, arXiv:2305.14325) — several agents critique each other over rounds before converging; the council meeting on a shared whiteboard with objections and votes.

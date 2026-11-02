@@ -52,6 +52,22 @@ def member_block(sections: list[tuple[str, str]], member: str) -> str:
     return (rest[: nxt.start()] if nxt else rest).strip()
 
 
+def replace_member_block(roles: str, name: str, text: str) -> str:
+    """Replace one member's ### block in the §2 body (matched by full heading, else by first name);
+    a name not on the roster becomes a new member."""
+    names = re.findall(r"^###\s+(.+?)\s*$", roles, flags=re.MULTILINE)
+    target = name if name in names else next(
+        (n for n in names if n.split()[0].lower() == name.split()[0].lower()), None)
+    body = re.sub(r"^###\s+.*\n?", "", text.strip(), count=1) if text.strip().startswith("###") else text.strip()
+    if target is None:
+        return roles.rstrip() + f"\n\n### {name}\n{body}"
+    start = re.search(rf"^###\s+{re.escape(target)}\s*$", roles, flags=re.MULTILINE)
+    assert start is not None
+    nxt = re.search(r"^###\s+", roles[start.end():], flags=re.MULTILINE)
+    end = start.end() + nxt.start() if nxt else len(roles)
+    return roles[:start.start()] + f"### {target}\n{body}\n\n" + roles[end:].lstrip("\n")
+
+
 def member_instructions(sections: list[tuple[str, str]], member: str) -> str:
     by = dict(sections)
     chunks = [f"### {member}\n{member_block(sections, member)}"]
@@ -217,6 +233,11 @@ class MasterPrompt:
         proposed: dict[str, str] = {}
         dropped: list[str] = []
         for section in rewrite.sections:
+            member = re.match(r"^###\s+(.+?)\s*$", section.heading.strip())
+            if member:  # a member's own block (the first real run's optimizer wrote these): edit it inside §2
+                roles = proposed.get("## 2. Roles", dict(self.sections).get("## 2. Roles", ""))
+                proposed["## 2. Roles"] = replace_member_block(roles, member.group(1), section.new_text)
+                continue
             canonical = self.resolve_heading(section.heading)
             if canonical is None or canonical == "## 1. Problem":
                 dropped.append(section.heading)

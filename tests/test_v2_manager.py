@@ -101,3 +101,16 @@ def test_rev0_saved_document_has_only_canonical_headings(tmp_path: Path) -> None
                         "## 4. Meeting protocol", "## 5. Criteria", "## 6. Lessons applied"]
     assert "stray" not in saved
     assert master.rev == 0
+
+
+def test_member_heading_rewrite_edits_that_block_inside_roles(tmp_path: Path) -> None:
+    """First real round-3 run: the optimizer wrote '### <member>' sections; they must land in §2."""
+    master = MasterPrompt(tmp_path, "t", [("## 1. Problem", "p"),
+                                          ("## 2. Roles", "### Maya — Mechanisms\nold maya\n\n### Leo — Structures\nold leo")])
+    master.save()
+    proposed, dropped = master.propose(MasterPromptRewrite(sections=[
+        RewriteSection(heading="### Maya — Mechanisms", new_text="Check the stair-edge load before proposing."),
+        RewriteSection(heading="### Ana — Brakes", new_text="New member for descent control.")], change_note="coach"))
+    roles = proposed["## 2. Roles"]
+    assert dropped == [] and "old maya" not in roles and "Check the stair-edge load" in roles
+    assert "old leo" in roles and "### Ana — Brakes\nNew member" in roles

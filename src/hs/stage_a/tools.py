@@ -209,10 +209,20 @@ class ToolRunner:
                              status="error", cycle=cycle)
             return eid, f"{eid}: error: {exc}"
 
-    def web_search_evidence(self, author: str, sources: list[dict[str, Any]], cycle: int = 0) -> list[str]:
-        """One evidence item per search result (B8): who searched, the query, and the source."""
+    def web_search_evidence(self, author: str, sources: list[dict[str, Any]], cycle: int = 0,
+                            per_query: int = 3) -> list[str]:
+        """One evidence item per search result (B8): who searched, the query, and the source. At most
+        `per_query` results per query, and a URL already on the board is not posted again (the first
+        real run posted 118 items for 20 searches in one cycle)."""
+        on_board = {r.get("url") for e in self.board.evidence for r in e.references}
+        taken: dict[str, int] = {}
         ids: list[str] = []
         for cit in sources:
+            query = str(cit.get("query", "") or "")
+            if cit.get("url") in on_board or taken.get(query, 0) >= per_query:
+                continue
+            taken[query] = taken.get(query, 0) + 1
+            on_board.add(cit.get("url"))
             query = str(cit.get("query", "") or "")
             reference = resolve_citation(cit, query)
             passage = reference.get("passage", "")
