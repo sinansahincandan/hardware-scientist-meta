@@ -45,14 +45,14 @@
   <path d="M12 6l0 13" />
   <path d="M21 6l0 13" />
 </g>
-<text x="1250.0" y="320" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#5F6368" text-anchor="middle">lessons.md</text>
-<text x="1250.0" y="344" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">structural lessons from past problems</text>
+<text x="1250.0" y="320" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#5F6368" text-anchor="middle">knowledge/</text>
+<text x="1250.0" y="344" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">lessons · insights · tools (past problems)</text>
 <rect x="50" y="380" width="760" height="495" rx="8" fill="none" stroke="#5F6368" stroke-width="1.5" stroke-dasharray="3 4"/>
 <text x="68" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#202124" text-anchor="start">Stage A · Design</text>
 <text x="232" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#5F6368" text-anchor="start" font-style="italic">instance optimization of the concept</text>
 <rect x="840" y="380" width="710" height="495" rx="8" fill="none" stroke="#5F6368" stroke-width="1.5" stroke-dasharray="3 4"/>
 <text x="858" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#202124" text-anchor="start">Stage B · Visualization</text>
-<text x="1082" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#5F6368" text-anchor="start" font-style="italic">pixels: image model · words: code  —  detail in Fig. 2</text>
+<text x="1082" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#5F6368" text-anchor="start" font-style="italic">detail in Fig. 2</text>
 <rect x="100" y="432" width="170" height="132" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#188038" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(168.0,444) scale(1.4166666666666667)" fill="none" stroke="#188038" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -74,7 +74,7 @@
   <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
 </g>
 <text x="368" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#D93025" text-anchor="start">Council</text>
-<text x="454" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="start">experts in one room, shared context</text>
+<text x="454" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="start">experts + manager in one room</text>
 <circle cx="372" cy="500" r="23" fill="#FFFFFF" stroke="#D93025" stroke-width="1.8"/>
 <g transform="translate(360,488) scale(1.0)" fill="none" stroke="#D93025" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -102,7 +102,7 @@
   <path d="M18.121 15.293l2.586 -2.586a1 1 0 0 0 0 -1.414l-7.586 -7.586a1 1 0 0 0 -1.414 0l-2.586 2.586a1 1 0 0 0 0 1.414l7.586 7.586a1 1 0 0 0 1.414 0" />
 </g>
 <text x="672" y="542" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#3C4043" text-anchor="middle">Fabrication</text>
-<text x="762" y="506" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#D93025" text-anchor="middle">…</text>
+<g id="n-manager-seat"><circle cx="748" cy="500" r="23" fill="#FEF1E6" stroke="#D93025" stroke-width="2.2"/><g transform="translate(736,488)" fill="none" stroke="#D93025" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M6 4v4" /><path d="M6 12v8" /><path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 4v10" /><path d="M12 18v2" /><path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M18 4v1" /><path d="M18 9v11" /></g><text x="748" y="542" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#202124" text-anchor="middle">Manager</text></g>
 <line x1="326" y1="556" x2="774" y2="556" stroke="#DADCE0" stroke-width="1"/>
 <text x="340" y="579" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#5F6368" text-anchor="start">shared tools:</text>
 <g transform="translate(442,565) scale(0.75)" fill="none" stroke="#202124" stroke-width="1.60" stroke-linecap="round" stroke-linejoin="round">
@@ -141,7 +141,7 @@
   <path d="M11 17a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -1" />
 </g>
 <text x="420.0" y="700" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#D93025" text-anchor="middle">Whiteboard meeting</text>
-<text x="420.0" y="724" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">2–5 cycles · consensus exit</text>
+<text x="420.0" y="724" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">2–4 cycles · consensus exit</text>
 <text x="420.0" y="744" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">→ solution prompt</text>
 <rect x="570" y="630" width="220" height="126" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#E37400" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(663.0,642) scale(1.4166666666666667)" fill="none" stroke="#E37400" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
@@ -151,7 +151,7 @@
   <path d="M13.41 10.59l2.59 -2.59" />
   <path d="M7 12a5 5 0 0 1 5 -5" />
 </g>
-<text x="680.0" y="700" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#E37400" text-anchor="middle">Evaluator + Manager</text>
+<text x="680.0" y="700" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#E37400" text-anchor="middle">Evaluator</text>
 <text x="680.0" y="724" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">written review → accept?</text>
 <text x="680.0" y="744" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">asks for evidence if doubtful</text>
 <rect x="1000" y="422" width="340" height="70" rx="6" fill="#FFFFFF" fill-opacity="0.85" stroke="#00796B" stroke-width="2" stroke-dasharray="7 5"/>
@@ -165,8 +165,8 @@
   <path d="M7.5 6v4" />
   <path d="M7.5 14v4" />
 </g>
-<text x="1056" y="453.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#00796B" text-anchor="start">1  Schematic</text>
-<text x="1056" y="474.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#3C4043" text-anchor="start">code · topology + size class</text>
+<text x="1056" y="453.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#00796B" text-anchor="start">1  Mechanism sketch</text>
+<text x="1056" y="474.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#3C4043" text-anchor="start">concept sketch · geometry, motion</text>
 <rect x="1000" y="512" width="340" height="70" rx="6" fill="#FFFFFF" fill-opacity="0.85" stroke="#D93025" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(1014,532.0) scale(1.25)" fill="none" stroke="#D93025" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -183,8 +183,8 @@
   <path d="M6.5 7.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
   <path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3" />
 </g>
-<text x="1056" y="633.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#00796B" text-anchor="start">3  Annotate</text>
-<text x="1056" y="654.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#3C4043" text-anchor="start">code · labels, arrows, scale bar</text>
+<text x="1056" y="633.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#00796B" text-anchor="start">3  Part map · SAM</text>
+<text x="1056" y="654.0" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#3C4043" text-anchor="start">masks · part connections · labels</text>
 <rect x="1000" y="692" width="340" height="126" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#E37400" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(1153.0,704) scale(1.4166666666666667)" fill="none" stroke="#E37400" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -192,8 +192,8 @@
   <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
 </g>
 <text x="1170.0" y="762" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#E37400" text-anchor="middle">4  Designer evaluation</text>
-<text x="1170.0" y="786" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">S1  render faithful to schematic?</text>
-<text x="1170.0" y="806" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">S2  does it reveal a design flaw?</text>
+<text x="1170.0" y="786" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">S1  render faithful to the sketch?</text>
+<text x="1170.0" y="806" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">S2  design flaw?  re-checks last regions</text>
 <rect x="1376" y="432" width="158" height="132" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#188038" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(1438.0,444) scale(1.4166666666666667)" fill="none" stroke="#188038" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -230,7 +230,7 @@
 <path d="M310 700 H232 V568" fill="none" stroke="#188038" stroke-width="2.2" marker-end="url(#m-188038)" stroke-linejoin="round"/>
 <path d="M640 756 V800 H185 V568" fill="none" stroke="#188038" stroke-width="2.2" marker-end="url(#m-188038)" stroke-linejoin="round"/>
 <path d="M740 756 V846 H40 V302 H416" fill="none" stroke="#E8710A" stroke-width="2.6" stroke-dasharray="9 6" marker-end="url(#m-E8710A)" stroke-linejoin="round"/>
-<text x="392" y="864" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#E8710A" text-anchor="middle">fail: written diagnosis → rewrite sections; same problem again → revert that section  (≤ 8 iter.)</text>
+<text x="392" y="864" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#E8710A" text-anchor="middle">fail: Manager’s 2-step gradient (output → prompt) → rewrite sections; revert on repeat (≤ 8)</text>
 <path d="M790 676 H872 V457 H996" fill="none" stroke="#202124" stroke-width="2.2" marker-end="url(#m-202124)" stroke-linejoin="round"/>
 <text x="884" y="572" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#3C4043" text-anchor="start">pass</text>
 <path d="M1170 492 V508" fill="none" stroke="#202124" stroke-width="2.2" marker-end="url(#m-202124)" stroke-linejoin="round"/>
@@ -242,18 +242,18 @@
 <text x="938" y="640" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#9334E6" text-anchor="start">S1 fail</text>
 <text x="938" y="660" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#9334E6" text-anchor="start">≤ 3×</text>
 <path d="M1100 818 V846 H742" fill="none" stroke="#E8710A" stroke-width="2.6" stroke-dasharray="9 6" stroke-linejoin="round"/>
-<text x="1110" y="862" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#E8710A" text-anchor="start">S2 fail: design flaw  (or S1 fails 3×)</text>
+<text x="1110" y="862" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#E8710A" text-anchor="start">S2: design flaw, only after a faithful render</text>
 <path d="M1340 780 H1690 V606" fill="none" stroke="#202124" stroke-width="2.2" marker-end="url(#m-202124)" stroke-linejoin="round"/>
 <text x="1480" y="770" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#3C4043" text-anchor="middle">S1 ok · S2 ok</text>
 <path d="M1640 470 V302 H1404" fill="none" stroke="#5F6368" stroke-width="2.2" stroke-dasharray="2 5" marker-end="url(#m-5F6368)" stroke-linejoin="round"/>
 <text x="1520" y="290" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#5F6368" text-anchor="middle">end of problem</text>
 <rect x="30" y="935" width="1060" height="470" rx="6" fill="#F8F9FA" stroke="#DADCE0" stroke-width="1.5"/>
 <text x="56" y="972" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#202124" text-anchor="start">Controller loop</text>
-<text x="56" y="1004.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">master = build_master_prompt(problem, lessons)</text>
+<text x="56" y="1004.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">master = build_master_prompt(problem, knowledge)</text>
 <text x="56" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">for k in range(8):</text>
 <text x="745" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># Stage A, best-so-far on exit</text>
 <text x="56" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    room = meeting(master, archive.inspirations())</text>
-<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># whiteboard, 2-5 cycles</text>
+<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># members + manager, 2-4 cycles</text>
 <text x="56" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    solution = secretary(room)</text>
 <text x="745" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># cites evidence where it exists</text>
 <text x="56" y="1090.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    verdict = evaluator(solution, room.evidence)</text>
@@ -262,41 +262,41 @@
 <text x="745" y="1111.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># rejected ones too</text>
 <text x="56" y="1133.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    if not verdict.accept:</text>
 <text x="56" y="1154.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        master = manager.edit(master, room, verdict); continue</text>
-<text x="745" y="1154.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># rewrite sections; revert on repeat</text>
-<text x="56" y="1176.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    schematic = draw_schematic(solution)</text>
-<text x="745" y="1176.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># Stage B, code</text>
+<text x="745" y="1154.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># 2 steps: output grad, prompt grad</text>
+<text x="56" y="1176.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    sketch = mechanism_sketch(solution)</text>
+<text x="745" y="1176.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># Stage B: concept sketch</text>
 <text x="56" y="1197.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    for t in range(3):</text>
-<text x="56" y="1219.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        render = image_model(writer(solution, schematic, image_archive))</text>
-<text x="56" y="1240.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        figure = annotate(render, schematic)</text>
-<text x="745" y="1240.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># code</text>
-<text x="56" y="1262.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        s1, s2 = designer_eval(figure, schematic, solution)</text>
+<text x="56" y="1219.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        render = image_model(writer(solution, sketch, image_archive))</text>
+<text x="56" y="1240.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        parts = part_map(render, sketch)</text>
+<text x="745" y="1240.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># SAM: parts + connections, evidence only</text>
+<text x="56" y="1262.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        s1, s2 = designer_eval(render, parts, sketch, prev_regions)</text>
 <text x="56" y="1283.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        d = decide(s1, s2)</text>
-<text x="745" y="1283.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># s1 faithful? s2 flaw? (yes/no + text)</text>
+<text x="745" y="1283.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># re-check last regions; keep or revert</text>
 <text x="56" y="1305.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">        if d != 's1_retry': break</text>
 <text x="56" y="1326.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    if d == 's1_pass': break</text>
 <text x="745" y="1326.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># done</text>
-<text x="56" y="1348.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    master = manager.edit(master, room, s2 or 'S1 x3')</text>
-<text x="745" y="1348.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># back to A</text>
-<text x="56" y="1369.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">lessons.update(trace); report(run); board(run)</text>
+<text x="56" y="1348.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    master = manager.edit(master, room, s2)</text>
+<text x="745" y="1348.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># back to A only on S2</text>
+<text x="56" y="1369.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">knowledge.update(trace); report(run); board(run); dossier(run)</text>
 <text x="745" y="1369.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># end of problem</text>
 <rect x="1120" y="935" width="650" height="470" rx="6" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1.5"/>
 <text x="1146" y="972" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#202124" text-anchor="start">Legend</text>
 <path d="M1146 1010 H1206" fill="none" stroke="#202124" stroke-width="2.2" marker-end="url(#m-202124)" stroke-linejoin="round"/>
 <text x="1222" y="1015" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Forward pass</text>
 <path d="M1146 1044 H1206" fill="none" stroke="#E8710A" stroke-width="2.6" stroke-dasharray="9 6" marker-end="url(#m-E8710A)" stroke-linejoin="round"/>
-<text x="1222" y="1049" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Textual gradient: edit master prompt, rerun Stage A</text>
+<text x="1222" y="1049" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Two-step textual gradient → master prompt, rerun A</text>
 <path d="M1146 1078 H1206" fill="none" stroke="#9334E6" stroke-width="2.6" stroke-dasharray="9 6" marker-end="url(#m-9334E6)" stroke-linejoin="round"/>
-<text x="1222" y="1083" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Rewrite VLM prompt (S1 fails, at most 3 rounds)</text>
+<text x="1222" y="1083" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">S1 fail: prompt gradient → local or full fix, keep/revert</text>
 <path d="M1146 1112 H1206" fill="none" stroke="#188038" stroke-width="2.2" marker-end="url(#m-188038)" stroke-linejoin="round"/>
 <text x="1222" y="1117" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Write to / read from an archive (within a problem)</text>
 <path d="M1146 1146 H1206" fill="none" stroke="#5F6368" stroke-width="2.2" stroke-dasharray="2 5" marker-end="url(#m-5F6368)" stroke-linejoin="round"/>
-<text x="1222" y="1151" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">End of problem: append structural lessons</text>
+<text x="1222" y="1151" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">End of problem: update knowledge/</text>
 <rect x="1150" y="1183" width="50" height="22" rx="4" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2" stroke-dasharray="6 4"/>
 <text x="1222" y="1200" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Optimized prompt (variable)</text>
 <rect x="1150" y="1215" width="50" height="22" rx="4" fill="#FFFFFF" stroke="#D93025" stroke-width="2" stroke-dasharray="6 4"/>
 <text x="1222" y="1232" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">LLM / image generator</text>
 <rect x="1150" y="1247" width="50" height="22" rx="4" fill="#FFFFFF" stroke="#00796B" stroke-width="2" stroke-dasharray="6 4"/>
-<text x="1222" y="1264" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Deterministic code (no LLM)</text>
+<text x="1222" y="1264" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Code or SAM perception (no LLM)</text>
 <rect x="1150" y="1279" width="50" height="22" rx="4" fill="#FFFFFF" stroke="#E37400" stroke-width="2" stroke-dasharray="6 4"/>
 <text x="1222" y="1296" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" fill="#3C4043" text-anchor="start">Evaluator (written feedback = text loss)</text>
 <rect x="1150" y="1311" width="50" height="22" rx="4" fill="#FFFFFF" stroke="#188038" stroke-width="2" stroke-dasharray="6 4"/>
