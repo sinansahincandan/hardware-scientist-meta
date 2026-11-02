@@ -260,7 +260,9 @@ class Secretary:
             prompt = (
                 "Synthesize the SolutionPrompt from the final whiteboard and transcript. "
                 "Copy evidence ids into key_estimates where they exist. Add nothing not on the board. "
-                "Also write: mechanism_sentence (one sentence stating the working principle); "
+                "Also write: mechanism_sentence (one sentence stating the working principle in plain words a "
+                "non-specialist can follow: no part ids, no product codes, units with a space, at most three "
+                "significant figures); "
                 "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works); "
                 "open_question (EXACTLY 1, the most important unresolved question); "
                 "transfer_line formatted exactly as: <governing quantity>: A -> B -> C | Measured: D -> E "

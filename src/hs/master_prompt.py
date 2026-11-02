@@ -55,7 +55,8 @@ def member_block(sections: list[tuple[str, str]], member: str) -> str:
 def member_instructions(sections: list[tuple[str, str]], member: str) -> str:
     by = dict(sections)
     chunks = [f"### {member}\n{member_block(sections, member)}"]
-    for heading in ["## 1. Problem", "## 3. Tools", "## 4. Meeting protocol", "## 5. Criteria", "## 6. Lessons applied"]:
+    # B12: §6 (process lessons) goes to the Manager and the optimizer, not into every member's prompt.
+    for heading in ["## 1. Problem", "## 3. Tools", "## 4. Meeting protocol", "## 5. Criteria"]:
         chunks.append(f"{heading}\n{by.get(heading, '')}")
     return "\n\n".join(chunks)
 

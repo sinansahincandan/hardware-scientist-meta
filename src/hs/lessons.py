@@ -74,7 +74,8 @@ def update_lessons(client: Any, trace_text: str, image_summary: str, run_id: str
     existing = load_lessons(p)
     result: Lessons = client.structured(
         "lessons", Lessons,
-        "Propose at most 5 structural lessons about how the team/pipeline works (never problem content).",
+        "Propose at most 5 structural lessons about how the council and the Manager should work (never problem "
+        "content, and never pipeline mechanics such as retries, caps, rounds, labels or gating — those live in code).",
         f"TRACE:\n{trace_text[-8000:]}\n\nIMAGE ARCHIVE:\n{image_summary}\n\nEXISTING LESSONS:\n{existing}")
     kept = filter_candidates(result.candidates, existing)
     by_cat: dict[str, list[str]] = {}
