@@ -167,3 +167,28 @@ def test_search_results_in_the_final_response_become_citable_evidence(tmp_path: 
     assert sent[0]["include"] == ["web_search_call.results"]
     assert sent[1]["previous_response_id"] == "r1" and "E1" in sent[1]["input_items"][0]["content"][0]["text"]
     assert text == "The SC3 listing (E1) gives 150 mm wheels."
+
+
+def test_backward_chain_links_claim_evidence_turn_and_section(tmp_path: Path) -> None:
+    """B13: claim -> evidence -> member turn -> master prompt section, plus process facts."""
+    from hs.schemas import KeyEstimate
+    from hs.stage_a.manager import backward_chain
+    from hs.stage_a.meeting import MeetingResult
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    board.add_evidence("Mechanics", "calc", "wheel load", "Q_(30,'kg')*9.81", "294 newton", cycle=2)
+    board.apply_op("Thermal", {"action": "add_function", "text": "climb"})
+    board.apply_op("Thermal", {"action": "raise_objection", "target_id": "F1", "text": "edge impact unchecked",
+                               "blocking": True})
+    room = MeetingResult(board=board, transcript=[{"cycle": 2, "member": "Mechanics",
+                                                   "message": "The wheel load is 294 N. More text."}],
+                         cycles_used=4, closed_by="cap")
+    solution = SimpleNamespace(key_estimates=[KeyEstimate(quantity="wheel load", value=294, unit="N",
+                                                          method="calc", evidence_ids=["E1"])])
+    master = MasterPrompt(tmp_path, "t", [("## 2. Roles", "### Mechanics\nx\n### Thermal\ny")])
+    chain = backward_chain(room, solution, master)
+    assert "Claim: wheel load = 294 N" in chain and "E1 (calc by Mechanics, cycle 2)" in chain
+    assert "The wheel load is 294 N." in chain and "## 2. Roles / ### Mechanics" in chain
+    assert "Open objection O1 by Thermal (blocking)" in chain
+    assert "closed by cap after 4 cycles; no proposal formed" in chain

@@ -46,6 +46,39 @@ def _sentences(text: str, n: int) -> str:
     return " ".join(parts[:n])
 
 
+def council_changes_html(run_dir: Path) -> str:
+    """B11: how each member's role block changed from one master prompt revision to the next."""
+    import difflib
+    from itertools import pairwise
+
+    from hs.master_prompt import member_block, roster_of, split_master_prompt
+
+    revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) if (run_dir / "master_prompt").exists() else []
+    if len(revs) < 2:
+        return "<p>The council's instructions were not rewritten in this run.</p>"
+    out: list[str] = []
+    for old_path, new_path in pairwise(revs):
+        old = split_master_prompt(old_path.read_text(encoding="utf-8"))
+        new = split_master_prompt(new_path.read_text(encoding="utf-8"))
+        old_roster, new_roster = roster_of(old), roster_of(new)
+        items: list[str] = []
+        for name in new_roster:
+            if name not in old_roster:
+                items.append(f"<li><b>{html.escape(name)}</b> joined the council.</li>")
+                continue
+            before, after = member_block(old, name), member_block(new, name)
+            if before.strip() != after.strip():
+                diff = [line for line in difflib.unified_diff(before.splitlines(), after.splitlines(), lineterm="", n=0)
+                        if line[:1] in "+-" and not line.startswith(("+++", "---"))]
+                items.append(f"<li><b>{html.escape(name)}</b>'s instructions changed:<pre>"
+                             + html.escape("\n".join(diff)) + "</pre></li>")
+        items += [f"<li><b>{html.escape(n)}</b> left the council.</li>" for n in old_roster if n not in new_roster]
+        n_new = int(new_path.stem.split("_")[-1])
+        out.append(f"<h3>Revision {n_new}</h3>" + (f"<ul>{''.join(items)}</ul>" if items else
+                                                    "<p>No member's instructions changed in this revision.</p>"))
+    return "".join(out)
+
+
 def _rel_img(path: Path, run_dir: Path, width: int = 900) -> str:
     """Relative-path image, display copy downscaled to <=1600 px, click to full."""
     if not path.exists():
@@ -162,6 +195,7 @@ def report_html(run_dir: Path, embed: bool = False) -> str:
         events.append(f"The Manager changed the council's instructions (<a href='master_prompt/{d.name}'>see the diff</a>).")
     events.append(f"The whole run cost ${_sf(float(cost.get('total_usd', 0)))}.")
     parts.append("".join(f"<div class='event'>{e}</div>" for e in events))
+    parts.append("<h2>How the council changed</h2>" + council_changes_html(run_dir))
     # 5. References
     refs = _read_text(run_dir / "references.md")
     parts.append("<h2>References</h2>")

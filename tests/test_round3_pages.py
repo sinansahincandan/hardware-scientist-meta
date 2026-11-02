@@ -46,3 +46,14 @@ def test_stage_b_rerun_pages_narrate_no_meeting(tmp_path: Path) -> None:
     slug = next(p for p in (tmp_path / "show2").iterdir() if p.is_dir())
     dossier = (slug / "dossier.html").read_text()
     assert "No council meeting ran in this run" in dossier and "The meeting ran" not in dossier
+
+
+def test_report_shows_member_block_changes(tmp_path: Path) -> None:
+    from hs.master_prompt import MasterPrompt
+    from hs.report import council_changes_html
+
+    master = MasterPrompt(tmp_path, "t", [("## 1. Problem", "p"), ("## 2. Roles", "### A\nold way\n### B\nb")])
+    master.save()
+    master.commit({"## 2. Roles": "### A\ncheck the edge load first\n### C\nnew member"}, "coach")
+    page = council_changes_html(tmp_path)
+    assert "check the edge load first" in page and "C</b> joined" in page and "B</b> left" in page

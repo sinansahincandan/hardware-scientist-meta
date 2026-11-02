@@ -135,7 +135,14 @@ class ToolProposal(BaseModel):
     smoke_test_input: dict[str, Any] = Field(default_factory=dict)
 
 
+class FeedbackDecision(BaseModel):
+    feedback_item: str
+    decision: str  # apply | defer | reject — read by people, not by code
+    why: str
+
+
 class Gradients(BaseModel):
+    feedback_decisions: list[FeedbackDecision] = Field(default_factory=list)
     per_member: list[MemberNote] = Field(default_factory=list)
     per_section: list[SectionNote] = Field(default_factory=list)
     sections_to_change: list[str] = Field(default_factory=list)
@@ -154,6 +161,7 @@ class OutputGradientItem(BaseModel):
 
 class OutputGradient(BaseModel):
     items: list[OutputGradientItem] = Field(default_factory=list)
+    process_cause: str = ""  # B13: when the rejection came from the process (no proposal, open objection)
     summary: str = ""
 
 
@@ -179,6 +187,8 @@ class ProgressCheck(BaseModel):
 class RewriteSection(BaseModel):
     heading: str
     new_text: str
+    reason: str = ""  # B11: why this section changes
+    answers: str = ""  # B11: the feedback item it answers
 
 
 class MasterPromptRewrite(BaseModel):
