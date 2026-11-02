@@ -232,13 +232,21 @@ class Controller:
                 trace.log("run accepted; final figure composed")
                 return figure_path
             if sb.decision == "s1_exhausted":
-                # A1/R4: the picture could not be drawn; nothing is sent back to the design.
+                # Fig. 1 (owner decision, SPEC-11): reported as such to the Manager, who decides in writing
+                # whether the design is under-specified; it is not presented as a design flaw.
                 archive.set_status(aid, "could_not_draw", feedback=sb.feedback)
                 (attempt_dir / "s1_exhausted.md").write_text(sb.feedback + "\n", encoding="utf-8")
                 trace.log(f"iter {k}: accepted design could not be drawn faithfully after {sb.rounds} rounds; "
-                          "no gradient sent to Stage A")
-                exit_reason = f"accepted design could not be drawn faithfully after {sb.rounds} rounds"
-                break
+                          "reported to the Manager as a drawing failure")
+                if returns_to_a >= self.max_b_returns:
+                    exit_reason = f"accepted design could not be drawn faithfully after {sb.rounds} rounds"
+                    break
+                returns_to_a += 1
+                manager.edit(room, solution, sb.feedback, iter_dir, tools=meeting.tools)
+                if manager.no_progress_streak >= 2:
+                    exit_reason = "two consecutive no_progress iterations"
+                    break
+                continue
             archive.set_status(aid, "rejected_by_designer", feedback=sb.feedback)
             trace.log(f"iter {k}: designer saw a design flaw (S2); back to Stage A")
             if returns_to_a >= self.max_b_returns:

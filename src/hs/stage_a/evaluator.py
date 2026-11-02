@@ -40,9 +40,17 @@ class Evaluator:
         open_objections = "\n".join(
             f"- {o.id} by {o.author} ({'blocking' if o.blocking else 'not blocking'}): {o.text}"
             for o in board.objections if o.status == "open") or "(none)"
+        try:
+            problem = json.loads(sections.get("## 1. Problem", "") or "{}")
+        except Exception:
+            problem = {}
+        given = [f"- constraint: {c}" for c in problem.get("constraints", []) or []] + \
+                [f"- criterion: {c}" for c in problem.get("criteria", []) or []]
         prompt = (
             f"PROBLEM AND CRITERIA:\n{sections.get('## 1. Problem', '')}\n{sections.get('## 5. Criteria', '')}\n\n"
-            f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
+            + ("GIVEN CONSTRAINTS AND CRITERIA (review each one in constraint_review):\n" + "\n".join(given) + "\n\n"
+               if given else "")
+            + f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"EVIDENCE TABLE:\n{evidence_table}\n\n"
             f"HOW THE MEETING CLOSED (facts, for your judgement): closed by "
             f"{'consensus' if closed_by == 'consensus' else 'the cycle cap without consensus'} after "
@@ -66,7 +74,11 @@ class Evaluator:
             "works physically and is buildable on sound analysis, accept it and put remaining test "
             "needs in your feedback text, not in evidence_requests. Judge in writing what the meeting facts "
             "above mean for acceptance (for example, whether an open objection or a missing proposal leaves "
-            "the concept unsettled); no rule decides this for you."
+            "the concept unsettled); no rule decides this for you. In constraint_review, go through every given "
+            "constraint and criterion in a sentence each: met, not met, or no longer valid for this concept (say "
+            "why, e.g. the council found from evidence that it does not apply). Accept when the concept works and "
+            "every constraint that still holds is met, or its shortfall is acceptable in your engineering judgement "
+            "and you say so. No scores."
         )
         verdict = self.client.structured(
             "evaluator", Verdict,

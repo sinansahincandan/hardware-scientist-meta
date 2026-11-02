@@ -16,6 +16,7 @@ dependencies = [
     "matplotlib",
     "Pillow",
     "pint",
+    "meta-sam-parser==0.1.0",
 ]
 
 [project.optional-dependencies]

@@ -103,6 +103,7 @@ class SolutionPrompt(BaseModel):
 
 
 class Verdict(BaseModel):
+    constraint_review: str = ""  # round 4: per given constraint/criterion, in prose; no scores
     feedback: str
     evidence_requests: list[str] = Field(default_factory=list)
     accept: bool

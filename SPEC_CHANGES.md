@@ -82,3 +82,15 @@ critic and the gradient; SAM boxes place code labels. Each evaluation rules on e
 (fixed / still wrong / regressed) and compares with the kept render; rounds that fix nothing or
 regress revert render and prompt; s1_pass needs every earlier fault fixed. Deviations are listed
 with whether they matter. EvalRegion.fixed, RequirementCheck and Localization.confidence removed.
+
+## SPEC-11 (round 4, owner decisions 2026-11-02): back to the figures
+The owner's figures (docs/fig1_architecture.svg, docs/fig2_visualization_pipeline.svg) are the target.
+1. S1 exhausted: as in Fig. 1 ("S2: design flaw, or S1 exhausted (reported as such)"): the outcome goes to the
+   Manager labelled "could not be drawn faithfully after N rounds" with the regions; the Manager decides in
+   writing whether the design is under-specified and should change. Supersedes A1's "nothing sent to the design".
+2. Callouts: as in Fig. 2 ("pixels + callouts: image model; checks: SAM + judges"): the image model draws short
+   callouts (part names only) for 4–7 focus parts; S1 checks each callout; SAM masks and a label check verify the
+   final panel; code labels are the fallback. Supersedes round-3 item 16a / SPEC-9's "no text in the render".
+3. SAM masks: meta-sam-parser 0.1.0 installed (owner approved); parts are measured from masks.
+4. Evaluator: sees, constraint by constraint, what is not satisfied and says so in writing; it may judge a
+   constraint no longer valid and accept with that reason. No scores, no strict quantification.

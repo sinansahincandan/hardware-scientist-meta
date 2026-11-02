@@ -222,8 +222,9 @@ def report_html(run_dir: Path) -> str:
             what = ("The picture did not match the mechanism sketch; the image prompt was corrected: "
                     + html.escape(_sentences(str(e.get("s1_differences", "")), 1)))
         elif dec == "s1_exhausted":
-            what = (f"The picture could not be drawn faithfully after {n_rounds} rounds. Nothing was sent back to "
-                    "the design, because a drawing failure says nothing about whether the design works.")
+            what = (f"The picture could not be drawn faithfully after {n_rounds} rounds. This was reported to the "
+                    "Manager as a drawing failure, not as a design flaw; the Manager decided whether the design "
+                    "needed more detail.")
         elif dec == "s2_return":
             what = ("The designer evaluation saw a design flaw in the picture, so the concept went back to the "
                     "council: " + html.escape(_sentences(str(e.get("s2_feedback", "")), 2)))

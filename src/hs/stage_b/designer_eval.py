@@ -39,8 +39,12 @@ def s2_feedback_text(ev: DesignerEval) -> str:
 
 def s1_exhausted_text(ev: DesignerEval, rounds: int) -> str:
     """Report text for an S1 exhaustion; never sent to the design."""
-    return (f"The render could not be drawn faithfully to the mechanism sketch after {rounds} rounds. "
-            f"Differences in the last round: {ev.s1_differences}")
+    regions = _regions_text(ev)
+    return (f"DRAWING FAILURE, not a verdict on the design: the render could not be drawn faithfully to the "
+            f"mechanism sketch after {rounds} rounds. Differences in the last round: {ev.s1_differences}"
+            + (f"\nRegions:\n{regions}" if regions else "")
+            + "\nDecide whether the design is under-specified (say what the council must specify) or whether "
+              "this says nothing about the design.")
 
 
 class DesignerEvalRunner:

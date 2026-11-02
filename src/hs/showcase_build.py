@@ -198,7 +198,7 @@ def _archive(run_dir: Path) -> list[dict[str, Any]]:
 DECISION_WORDS = {
     "s1_pass": "the picture matched the mechanism sketch",
     "s1_retry": "the picture did not match the mechanism sketch, so the image prompt was corrected",
-    "s1_exhausted": "the picture could not be drawn faithfully within the round limit; nothing was sent to the design",
+    "s1_exhausted": "the picture could not be drawn faithfully within the round limit; reported to the Manager as a drawing failure",
     "s2_return": "the designer evaluation saw a design flaw, so the concept went back to the council",
 }
 

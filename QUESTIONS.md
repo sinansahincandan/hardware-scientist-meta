@@ -121,3 +121,8 @@ blocked even with a general question. The filter cannot be inspected or switched
 blocked request is taken as a reason to re-word: the client retries it once with numbers, units and codes
 removed (every Responses call and image edit; `content_filter_retry_plain` marker in cost.json); a step check
 blocked after that falls back to one general check (caption "(general check only)"); blocked again → not shown.
+
+## 2026-11-02 — owner decisions for round 4 (see SPEC-11)
+S1 exhausted → Manager "reported as such" (Fig. 1); image-model callouts checked by SAM + judges with code
+fallback (Fig. 2); meta-sam-parser installed; Evaluator reviews each constraint in prose and may relax one with
+a reason (no scores).

@@ -100,6 +100,10 @@ class Whiteboard(BaseModel):
                 target_id=self.proposal.concept_ids[0] if self.proposal and self.proposal.concept_ids else "proposal",
                 text=req, blocking=True, status="open"))
 
+    @staticmethod
+    def _ids(items: list[Any]) -> str:
+        return ", ".join(x.id for x in items[-30:])
+
     # -- member ops (only write path) -------------------------------------------
     def apply_op(self, author: str, op: dict[str, Any]) -> tuple[bool, str]:
         action = op.get("action", "")
@@ -113,7 +117,8 @@ class Whiteboard(BaseModel):
             if action == "add_concept":
                 fid = str(op.get("function_id", ""))
                 if fid not in {f.id for f in self.functions}:
-                    return False, f"unknown function_id {fid}"
+                    return False, (f"unknown function_id '{fid}'; functions on the board: "
+                                   f"{self._ids(self.functions) or 'none yet — add_function first'}")
                 if not op.get("text"):
                     return False, "add_concept needs text"
                 c = WBConcept(id=f"C{len(self.concepts) + 1}", function_id=fid,
@@ -128,12 +133,12 @@ class Whiteboard(BaseModel):
                     if c.id == cid:
                         c.status = status
                         return True, cid
-                return False, f"unknown concept {cid}"
+                return False, f"unknown concept '{cid}'; concepts: {self._ids(self.concepts) or 'none'}"
             if action == "raise_objection":
                 target = str(op.get("target_id", ""))
                 known = {f.id for f in self.functions} | {c.id for c in self.concepts} | {"proposal"}
                 if target not in known:
-                    return False, f"unknown target_id {target}"
+                    return False, f"unknown target_id '{target}'; use 'proposal' or one of: {', '.join(sorted(known - {'proposal'})) or 'none'}"
                 if not op.get("text"):
                     return False, "raise_objection needs text"
                 o = WBObjection(id=f"O{len(self.objections) + 1}", author=author, target_id=target,
@@ -149,14 +154,15 @@ class Whiteboard(BaseModel):
                 known_e = {e.id for e in self.evidence}
                 for e in eids:
                     if e not in known_e:
-                        return False, f"unknown evidence id {e}"
+                        return False, f"unknown evidence id '{e}'; evidence on the board: {self._ids(self.evidence) or 'none'}"
                 for o in self.objections:
                     if o.id == oid:
                         o.status = "resolved"
                         o.resolution = resolution
                         o.evidence_ids = eids
                         return True, oid
-                return False, f"unknown objection {oid}"
+                return False, (f"unknown objection '{oid}'; open objections: "
+                               f"{', '.join(o.id for o in self.objections if o.status == 'open') or 'none'}")
             if action == "update_proposal":
                 if not op.get("text"):
                     return False, "update_proposal needs text"
@@ -164,7 +170,7 @@ class Whiteboard(BaseModel):
                 known_c = {c.id for c in self.concepts}
                 for c in cids:
                     if c not in known_c:
-                        return False, f"unknown concept id {c}"
+                        return False, f"unknown concept id '{c}'; concepts: {self._ids(self.concepts) or 'none'}"
                 claims = [WBClaim(claim=str(k.get("claim", "")), evidence_ids=list(k.get("evidence_ids", []) or []))
                           for k in (op.get("key_claims", []) or [])]
                 version = (self.proposal.version + 1) if self.proposal else 1
@@ -174,7 +180,7 @@ class Whiteboard(BaseModel):
                 return True, f"proposal v{version}"
             if action == "vote":
                 if self.proposal is None:
-                    return False, "no proposal to vote on"
+                    return False, "no proposal to vote on yet; someone must write one with update_proposal first"
                 self.votes[author] = WBVote(version=self.proposal.version,
                                             ready=bool(op.get("ready", False)),
                                             reason=str(op.get("reason", "")))
@@ -186,7 +192,7 @@ class Whiteboard(BaseModel):
                 for e in self.evidence:
                     if e.id == eid:
                         return True, e.output_full or e.output_summary
-                return False, f"unknown evidence id {eid}"
+                return False, f"unknown evidence id '{eid}'; pass it as id, e.g. id='E3'. Evidence: {self._ids(self.evidence) or 'none'}"
             return False, f"unknown whiteboard action {action}"
         except Exception as exc:
             return False, f"whiteboard op error: {exc}"

@@ -54,7 +54,10 @@ class Manager:
             "Step 1 (output gradient): for each feedback item or designer region, state in writing "
             "what in the solution or on the whiteboard must change. If the reason for the rejection lies in "
             "the meeting process (no proposal formed, an objection left unresolved, a vote before the "
-            "deciding quantity was computed), say so in process_cause. Do not diagnose the prompt yet."
+            "deciding quantity was computed), say so in process_cause. If the feedback is a DRAWING FAILURE "
+            "(the picture could not be drawn faithfully), judge whether the design is under-specified — parts, "
+            "connections or geometry the council never fixed — and if it is not, say that the design need not "
+            "change. Do not diagnose the prompt yet."
         )
         gradient = self.client.structured("manager_output_gradient", OutputGradient,
                                           "You are the Manager, step 1: judge the output against the feedback.",

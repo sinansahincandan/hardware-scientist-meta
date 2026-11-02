@@ -84,18 +84,18 @@ def test_fake_schematic_fail_returns_to_a(tmp_path):
     assert (run_dir / "final" / "figure.png").exists()  # second attempt passes
 
 
-def test_fake_s1_exhausted_is_not_a_design_flaw(tmp_path):
-    """A1: running out of S1 rounds is reported as such and sends nothing back to Stage A."""
+def test_fake_s1_exhausted_goes_to_the_manager_reported_as_such(tmp_path):
+    """SPEC-11 (Fig. 1): an exhausted picture loop is reported to the Manager as a drawing failure."""
     run_dir = _run(tmp_path, scenario="s1_three_fail")
     entries = [json.loads(l) for l in (run_dir / "image_archive.jsonl").read_text().splitlines() if l.strip()]
-    assert [e["decision"] for e in entries] == ["s1_retry", "s1_retry", "s1_exhausted"]
+    assert [e["decision"] for e in entries[:3]] == ["s1_retry", "s1_retry", "s1_exhausted"]
     archive = [json.loads(l) for l in (run_dir / "archive.jsonl").read_text().splitlines() if l.strip()]
-    assert archive[-1]["status"] == "could_not_draw"
+    assert any(e["status"] == "could_not_draw" and "DRAWING FAILURE" in e["feedback"] for e in archive)
     assert not any(e["status"] == "rejected_by_designer" for e in archive)
-    assert not (run_dir / "final" / "figure.png").exists()  # no faithful render, no figure
+    assert "reported to the Manager as a drawing failure" in (run_dir / "trace.md").read_text()
+    assert entries[-1]["decision"] == "s1_pass" and (run_dir / "final" / "figure.png").exists()
     report = (run_dir / "report.html").read_text()
-    assert "could not be drawn faithfully after 3 rounds" in report
-    assert "design flaw" not in report
+    assert "could not be drawn faithfully after 3 rounds" in report and "saw a design flaw" not in report
 
 
 def test_fake_s2_flaw_returns_to_a_with_regions(tmp_path):
