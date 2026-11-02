@@ -1,0 +1,14 @@
+{
+  "id": "E22",
+  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+  "tool": "sketch",
+  "purpose": "Sensor mast with dual FPV cameras, depth camera, IMU and LED bar overlooking bucket drum and hopper",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.set_title('Remote-operation mast layout (side view)')\n# chassis\nax.add_patch(plt.Rectangle((2,1.5,5,1.0), fill=False, linewidth=2))\nax.text(4.5,2.0,'chassis', ha='center')\n# wheels\nimport matplotlib.patches as mp\nax.add_patch(mp.Circle((2.8,1.2),0.6, fill=False, linewidth=2))\nax.add_patch(mp.Circle((6.2,1.2),0.6, fill=False, linewidth=2))\nax.text(2.8,0.3,'wheel', ha='center'); ax.text(6.2,0.3,'wheel', ha='center')\n# bucket drum front\nax.add_patch(mp.Circle((1.5,1.5),0.5, fill=False, linewidth=2))\nax.text(1.5,0.6,'bucket drum', ha='center')\n# hopper\nax.plot([3.5,4.0,6.0,6.5],[2.5,3.2,3.2,2.5],'k-', lw=2)\nax.text(5.0,3.4,'hopper', ha='center')\n# mast\nax.plot([6.5,6.5],[2.5,5.2],'k-', lw=2)\nax.text(6.8,3.8,'mast ~0.5m')\n# camera bar\nax.plot([5.9,7.1],[5.2,5.2],'k-', lw=2)\nax.add_patch(mp.Circle((6.1,5.2),0.15, fill=False))\nax.add_patch(mp.Circle((6.9,5.2),0.15, fill=False))\nax.text(6.5,5.5,'dual FPV cameras', ha='center')\nax.text(6.5,4.9,'depth camera + IMU + LED bar', ha='center')\n# view rays\nax.plot([6.1,0.8],[5.1,1.5],'k--', lw=1)\nax.plot([6.9,7.8],[5.1,1.5],'k--', lw=1)\nax.text(8.2,1.8,'view to bin', ha='center')\nax.text(0.5,2.5,'view to dig face', ha='center')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+  "inputs": {},
+  "output_summary": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "output_full": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E32",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "sortie energy from 341 W for 0.5 h",
+  "code_or_query": "341*0.5",
+  "inputs": {},
+  "output_summary": "170",
+  "output_full": "170",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

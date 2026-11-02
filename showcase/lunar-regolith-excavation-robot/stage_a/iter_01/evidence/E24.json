@@ -1,0 +1,24 @@
+{
+  "id": "E24",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+  "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+  "inputs": {},
+  "output_summary": "en.actec.dk — 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO — https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
+  "output_full": "en.actec.dk — 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO — https://en.actec.dk/media/documents/5BAA69612E3C.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "en.actec.dk",
+      "title": "24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO",
+      "year": "",
+      "url": "https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
+      "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

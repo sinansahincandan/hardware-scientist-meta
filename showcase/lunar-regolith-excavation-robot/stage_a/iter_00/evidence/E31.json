@@ -1,0 +1,24 @@
+{
+  "id": "E31",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics robot power battery size excavation",
+  "code_or_query": "NASA Lunabotics robot power battery size excavation",
+  "inputs": {},
+  "output_summary": "uklunabotics.co.uk — KICKOFF EVENT 6 OCTOBER 2025 — 2025 — http://uklunabotics.co.uk/Lunabotics/UKLunabotics_2025_LaunchSlides.pdf",
+  "output_full": "uklunabotics.co.uk — KICKOFF EVENT 6 OCTOBER 2025 — 2025 — http://uklunabotics.co.uk/Lunabotics/UKLunabotics_2025_LaunchSlides.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "uklunabotics.co.uk",
+      "title": "KICKOFF EVENT 6 OCTOBER 2025",
+      "year": "2025",
+      "url": "http://uklunabotics.co.uk/Lunabotics/UKLunabotics_2025_LaunchSlides.pdf",
+      "query": "NASA Lunabotics robot power battery size excavation",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

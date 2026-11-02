@@ -1,0 +1,23 @@
+{
+  "id": "E12",
+  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "tool": "calc",
+  "purpose": "drawbar pull ratio drum force over weight",
+  "code_or_query": "Q_(39,'N')/Q_(589,'N')",
+  "inputs": {
+    "arg0": {
+      "value": "39",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "589",
+      "unit": "N"
+    }
+  },
+  "output_summary": "0.0662",
+  "output_full": "0.0662",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

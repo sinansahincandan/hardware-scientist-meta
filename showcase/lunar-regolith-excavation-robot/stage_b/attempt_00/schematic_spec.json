@@ -1,0 +1,258 @@
+{
+  "view": "side",
+  "nodes": [
+    {
+      "id": "drum",
+      "label": "Front transverse digging drum",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 400.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
+    },
+    {
+      "id": "wheel",
+      "label": "Front grouser wheel",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 3
+      },
+      "color_hint": "#a9a9a9",
+      "aspect": 1.0
+    },
+    {
+      "id": "wheel_rear",
+      "label": "Rear grouser wheel",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 3
+      },
+      "color_hint": "#a9a9a9",
+      "aspect": 1.0
+    },
+    {
+      "id": "chassis",
+      "label": "Chassis frame and sealed box",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 450.0,
+        "max": 950.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#d5a76f",
+      "aspect": 1.9
+    },
+    {
+      "id": "hopper",
+      "label": "High-lift hopper",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 500.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 1
+      },
+      "color_hint": "#e0c27a",
+      "aspect": 1.2
+    },
+    {
+      "id": "lift",
+      "label": "Rear high-lift mast",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 1050.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 2
+      },
+      "color_hint": "#8fa8c8",
+      "aspect": 0.3
+    },
+    {
+      "id": "pmast",
+      "label": "Folding perception mast",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 450.0,
+        "max": 1000.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#8fa8c8",
+      "aspect": 0.25
+    },
+    {
+      "id": "sensors",
+      "label": "FPV cameras plus depth and IMU",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 20.0,
+        "max": 150.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 0
+      },
+      "color_hint": "#7fd5a3",
+      "aspect": 1.33
+    },
+    {
+      "id": "pack",
+      "label": "24 V battery pack",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#c46a5a",
+      "aspect": 1.5
+    },
+    {
+      "id": "compute",
+      "label": "Onboard computer and radio",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 50.0,
+        "max": 200.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 1
+      },
+      "color_hint": "#9a7fd5",
+      "aspect": 1.33
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "drum",
+      "to_id": "hopper",
+      "kind": "mechanical",
+      "label": "cuts soil and lifts into hopper",
+      "arrow": false
+    },
+    {
+      "from_id": "hopper",
+      "to_id": "lift",
+      "kind": "mechanical",
+      "label": "rides on lift guide",
+      "arrow": false
+    },
+    {
+      "from_id": "lift",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "mast load into frame",
+      "arrow": false
+    },
+    {
+      "from_id": "wheel",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "carries chassis load",
+      "arrow": false
+    },
+    {
+      "from_id": "wheel_rear",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "carries chassis load rear",
+      "arrow": false
+    },
+    {
+      "from_id": "pack",
+      "to_id": "drum",
+      "kind": "electrical",
+      "label": "24 V power to drum",
+      "arrow": true
+    },
+    {
+      "from_id": "pack",
+      "to_id": "compute",
+      "kind": "electrical",
+      "label": "24 V power to compute",
+      "arrow": true
+    },
+    {
+      "from_id": "sensors",
+      "to_id": "compute",
+      "kind": "wireless",
+      "label": "video and heartbeat to operator",
+      "arrow": true
+    },
+    {
+      "from_id": "sensors",
+      "to_id": "pmast",
+      "kind": "mechanical",
+      "label": "mounted on mast top",
+      "arrow": false
+    },
+    {
+      "from_id": "pmast",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "mast folded on frame",
+      "arrow": false
+    },
+    {
+      "from_id": "compute",
+      "to_id": "lift",
+      "kind": "electrical",
+      "label": "control to lift actuators",
+      "arrow": true
+    }
+  ],
+  "loads": [
+    {
+      "on_id": "hopper",
+      "label": "hopper plus soil weight for lift",
+      "direction": "down"
+    },
+    {
+      "on_id": "drum",
+      "label": "drum cutting reaction against weight",
+      "direction": "down"
+    },
+    {
+      "on_id": "wheel",
+      "label": "chassis weight for flotation",
+      "direction": "down"
+    }
+  ],
+  "critical_part_id": "lift",
+  "scale_bar_mm": 100.0,
+  "notes": [
+    "Side view: front drum to central hopper on rear lift to 1.05 m pour lip with 0.30 m overhang.",
+    "All 10 nodes connected via mechanical mounts plus electrical power and wireless link.",
+    "Stowed fits 1.0 x 0.5 x 0.5 m; deployed mast ~1.0 m eye."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E37",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "reconciled joint total replacing 2.92kg pack with 5.3kg COTS pack",
+  "code_or_query": "(50.6-2.92+5.3)",
+  "inputs": {},
+  "output_summary": "53",
+  "output_full": "53",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

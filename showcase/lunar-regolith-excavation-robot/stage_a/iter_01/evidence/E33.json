@@ -1,0 +1,14 @@
+{
+  "id": "E33",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "implied pack specific energy from 1000Wh in 2.92kg",
+  "code_or_query": "(1000/2.92)",
+  "inputs": {},
+  "output_summary": "342",
+  "output_full": "342",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

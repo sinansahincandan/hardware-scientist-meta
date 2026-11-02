@@ -1,0 +1,24 @@
+{
+  "id": "E28",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
+  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "inputs": {},
+  "output_summary": "zelladc.com — IP65 explained: why it matters for micro data centres — https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/",
+  "output_full": "zelladc.com — IP65 explained: why it matters for micro data centres — https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "zelladc.com",
+      "title": "IP65 explained: why it matters for micro data centres",
+      "year": "",
+      "url": "https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/",
+      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

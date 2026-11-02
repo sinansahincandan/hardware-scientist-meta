@@ -1,0 +1,443 @@
+{
+  "title": "Integrated wheeled drum rover with rear high-lift hopper dump",
+  "problem_restatement": "Drive over loose BP-1 simulant, excavate with low force, operate with no line-of-sight by remote link, and carry and high-lift dump regolith within 60 kg and 1.0 by 0.5 by 0.5 m start envelope.",
+  "mechanism_sentence": "Big spiky wheels roll over loose soil while a spinning front drum scoops soil into a bucket that is lifted about 1 m to pour into a bin, steered by video from a tall folding mast that stops the machine if the signal is lost.",
+  "decisive_choices": [
+    "Front transverse single drum with 30 mm shallow cut for low 39 N reaction instead of drag blade or deep cut",
+    "Rear high-lift mast with 0.15 m dual actuators through 4-to-1 chain at 0.80 efficiency to reach 1.05 m pour lip with 0.30 m overhang",
+    "Purchasable 24 V 20 Ah LiFePO4 pack for 480 Wh at 90.6 Wh per kg giving 53.0 kg total instead of 1000 Wh in 2.92 kg claim"
+  ],
+  "open_question": "Does the rear mast lift to the 1.05 m pour lip with 0.30 m overhang stay nose-down and within actuator force once deployed geometry and friction are proven by dimensioned sketch and static calculation?",
+  "transfer_line": "Load: Hopper -> Rear lift mast -> Wheels | Measured: IMU -> Onboard computer",
+  "assumed_constraints": [
+    {
+      "constraint": "Total mass must stay under 60 kg limit",
+      "source": "proposal v1 reconciled mass 53.0 kg",
+      "evidence_ids": [
+        "E37"
+      ]
+    },
+    {
+      "constraint": "Stowed fit must stay inside 1.0 by 0.5 by 0.5 m start box",
+      "source": "dimensioned stowed sketch E44 and stowed-plus-deployed sketch E48",
+      "evidence_ids": [
+        "E44",
+        "E48"
+      ]
+    },
+    {
+      "constraint": "Hopper must pour at 1.05 m lip from 0.45 m stowed pivot on 0.60 m guide",
+      "source": "Sam stowed-plus-deployed sketch E48",
+      "evidence_ids": [
+        "E48"
+      ]
+    },
+    {
+      "constraint": "Sortie is 0.5 h at about 341 W needing about 171 Wh",
+      "source": "sortie-energy calc E32 and runtime calc E36",
+      "evidence_ids": [
+        "E32",
+        "E36"
+      ]
+    },
+    {
+      "constraint": "Ground is Black Point 1 simulant with high friction and negligible cohesion",
+      "source": "friction source E1 and density source E2",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Drive over loose BP-1 simulant bed without excessive sinkage or slip, and climb out of dig pile",
+    "Excavate BP-1 simulant with low cutting force and load into hopper",
+    "Operate with no line-of-sight via remote link with sensing, onboard compute, and heartbeat stop-and-hold",
+    "Carry regolith in hopper and high-lift dump into collection bin within mass and start envelope"
+  ],
+  "concept": {
+    "working_principle": "Four 300 mm grouser wheels carry a frame with front 200 mm transverse drum taking 30 mm cuts into a central hopper, folding mast carries FPV cameras plus depth and IMU from 0.45 m stowed to about 1.0 m eye with heartbeat stop-hold, and rear mast raises the hopper on a 0.60 m guide from 0.45 m pivot to 1.05 m pour lip by 0.15 m dual actuators through 4-to-1 chain at 0.80 efficiency, powered by a 24 V 480 Wh pack for a 171 Wh half-hour sortie at 53.0 kg total.",
+    "parts": [
+      {
+        "id": "wheel",
+        "name": "Rigid grouser wheel",
+        "function": "Carry weight over loose simulant and climb dig pile",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 300.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "drum",
+        "name": "Front transverse digging drum",
+        "function": "Shallow cut and lift soil into hopper",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "hopper",
+        "name": "High-lift hopper",
+        "function": "Carry regolith and dump into collection bin",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 500.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "lift",
+        "name": "Rear high-lift mast with dual actuators and chain",
+        "function": "Raise hopper from 0.45 m to 1.05 m pour lip",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 1050.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "pmast",
+        "name": "Folding perception mast",
+        "function": "Carry cameras high and stow low",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 450.0,
+          "max": 1000.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "sensors",
+        "name": "FPV cameras plus depth sensor and motion sensor",
+        "function": "Remote view and orientation for teleoperation",
+        "material": "Electronics",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 150.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "pack",
+        "name": "24 V battery pack",
+        "function": "Store sortie energy",
+        "material": "LiFePO4 cells",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 300.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "compute",
+        "name": "Onboard computer and radio",
+        "function": "Heartbeat stop-hold and link",
+        "material": "Electronics",
+        "size_class_mm": {
+          "min": 50.0,
+          "max": 200.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "chassis",
+        "name": "Chassis frame and sealed box",
+        "function": "Carry loads and keep dust out",
+        "material": "Metal",
+        "size_class_mm": {
+          "min": 450.0,
+          "max": 950.0
+        },
+        "qty": 1
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "drum",
+        "to_id": "hopper",
+        "kind": "mechanical",
+        "label": "cuts soil and lifts into hopper"
+      },
+      {
+        "from_id": "hopper",
+        "to_id": "lift",
+        "kind": "mechanical",
+        "label": "rides on lift guide"
+      },
+      {
+        "from_id": "lift",
+        "to_id": "chassis",
+        "kind": "mechanical",
+        "label": "mast load into frame"
+      },
+      {
+        "from_id": "wheel",
+        "to_id": "chassis",
+        "kind": "mechanical",
+        "label": "carries chassis load"
+      },
+      {
+        "from_id": "pack",
+        "to_id": "drum",
+        "kind": "electrical",
+        "label": "24 V power to drive and lift"
+      },
+      {
+        "from_id": "sensors",
+        "to_id": "compute",
+        "kind": "wireless",
+        "label": "video and heartbeat to operator"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "hopper",
+        "label": "hopper plus soil weight for lift",
+        "direction": "down"
+      },
+      {
+        "on_id": "drum",
+        "label": "drum cutting reaction against weight",
+        "direction": "down"
+      },
+      {
+        "on_id": "wheel",
+        "label": "chassis weight for flotation",
+        "direction": "down"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "sortie energy",
+      "value": 170.0,
+      "unit": "Wh",
+      "method": "calc",
+      "evidence_ids": [
+        "E32"
+      ]
+    },
+    {
+      "quantity": "pack specific energy",
+      "value": 90.6,
+      "unit": "Wh/kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E34"
+      ]
+    },
+    {
+      "quantity": "reconciled total mass",
+      "value": 53.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E37"
+      ]
+    },
+    {
+      "quantity": "runtime at full load",
+      "value": 1.41,
+      "unit": "h",
+      "method": "calc",
+      "evidence_ids": [
+        "E36"
+      ]
+    },
+    {
+      "quantity": "actuator force total",
+      "value": 735.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E41"
+      ]
+    },
+    {
+      "quantity": "actuator input work",
+      "value": 110.0,
+      "unit": "J",
+      "method": "calc",
+      "evidence_ids": [
+        "E42"
+      ]
+    },
+    {
+      "quantity": "useful lift energy",
+      "value": 88.3,
+      "unit": "J",
+      "method": "calc",
+      "evidence_ids": [
+        "E38"
+      ]
+    },
+    {
+      "quantity": "tip stability factor",
+      "value": 4.66,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E43"
+      ]
+    },
+    {
+      "quantity": "front axle residual mass",
+      "value": 16.9,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E40"
+      ]
+    },
+    {
+      "quantity": "nominal ground pressure",
+      "value": 9820.0,
+      "unit": "N/m2",
+      "method": "calc",
+      "evidence_ids": [
+        "E10"
+      ]
+    },
+    {
+      "quantity": "robot weight at 60 kg",
+      "value": 589.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "quantity": "drawbar pull ratio",
+      "value": 0.0662,
+      "unit": "ratio",
+      "method": "calc",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "quantity": "stopping distance",
+      "value": 0.25,
+      "unit": "m",
+      "method": "calc",
+      "evidence_ids": [
+        "E19"
+      ]
+    },
+    {
+      "quantity": "autonomy power share",
+      "value": 29.0,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E20"
+      ]
+    },
+    {
+      "quantity": "autonomy mass share",
+      "value": 1.73,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E21"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "FPV cameras",
+      "interface": "video"
+    },
+    {
+      "stage": "sensor",
+      "name": "Depth sensor and IMU",
+      "interface": "digital ranging and motion"
+    },
+    {
+      "stage": "instrument",
+      "name": "5 GHz WiFi link with E-stop hold",
+      "interface": "wireless video and heartbeat"
+    },
+    {
+      "stage": "computer",
+      "name": "Onboard computer",
+      "interface": "hold-to-run control"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Assemble the frame and mount the four 300 mm wheels with traction bars",
+      "method": "assemble",
+      "parts_present": [
+        "chassis",
+        "wheel"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Mount the front spinning drum and the central bucket on the rear lifting mast",
+      "method": "assemble",
+      "parts_present": [
+        "drum",
+        "hopper",
+        "lift",
+        "chassis"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Mount the folding mast and fit the cameras and sensors on top",
+      "method": "assemble",
+      "parts_present": [
+        "pmast",
+        "sensors",
+        "compute"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Fit the battery pack and sealed electronics box under the frame",
+      "method": "install",
+      "parts_present": [
+        "pack",
+        "chassis",
+        "compute"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Single drum 39 N reaction slips wheels or raises power",
+      "mitigation": "Keep cut shallow near 30 mm and hopper load centred"
+    },
+    {
+      "risk": "Raised 15 kg load tips over rear axle due to moment-arm sensitivity",
+      "mitigation": "Fix overhang at 0.30 m and wheelbase at 0.70 m and verify by deployed side sketch to 1.05 m"
+    },
+    {
+      "risk": "Sortie energy and pack mass do not close under limit",
+      "mitigation": "Use purchasable 480 Wh pack for 1.41 h margin and re-sum mass"
+    }
+  ],
+  "novelty_claim": "Combination of front transverse drum with central hopper on rear high-lift mast plus folding 1.0 m perception mast with heartbeat stop-hold in 60 kg wheeled rover",
+  "cost_class": "$1k-10k",
+  "figure_spec": {
+    "system_view": "Side view showing stowed fit in start box and deployed lift to 1.05 m pour lip with overhang and wheelbase",
+    "critical_part_id": "lift",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "Does the rear mast lift to the 1.05 m pour lip with 0.30 m overhang stay nose-down and within actuator force once deployed geometry and friction are proven by dimensioned sketch and static calculation?",
+    "O2: Provide dimensioned side sketch plus static calculation of rear high-lift mast: pivot heights to 1.05 m pour lip, 150 mm stroke dual 500 N actuators through 4-to-1 chain with friction lifting hopper + 10 kg soil, and tip moment about rear axle with 0.30 m overhang to replace failed E56 and reconcile 7.1 vs 4.06 factors to close O2 - sketch plus calculation the room can perform."
+  ]
+}

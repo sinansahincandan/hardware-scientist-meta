@@ -1,0 +1,24 @@
+{
+  "id": "E13",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: FPV 5.8 GHz video latency teleoperation ground robot",
+  "code_or_query": "FPV 5.8 GHz video latency teleoperation ground robot",
+  "inputs": {},
+  "output_summary": "api-dev.govwhitepapers.com — Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments — 2026 — https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf",
+  "output_full": "api-dev.govwhitepapers.com — Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments — 2026 — https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "api-dev.govwhitepapers.com",
+      "title": "Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments",
+      "year": "2026",
+      "url": "https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf",
+      "query": "FPV 5.8 GHz video latency teleoperation ground robot",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

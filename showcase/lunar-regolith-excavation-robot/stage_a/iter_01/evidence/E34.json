@@ -1,0 +1,14 @@
+{
+  "id": "E34",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "Bioenno pack specific energy 480Wh over 5.3kg",
+  "code_or_query": "(24*20/5.3)",
+  "inputs": {},
+  "output_summary": "90.6",
+  "output_full": "90.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

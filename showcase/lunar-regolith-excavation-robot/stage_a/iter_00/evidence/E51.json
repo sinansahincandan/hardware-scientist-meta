@@ -1,0 +1,31 @@
+{
+  "id": "E51",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "static tip safety factor dumping over rear",
+  "code_or_query": "(Q_(40.6,\"kg\")*Q_(0.35,\"m\")/(Q_(10,\"kg\")*Q_(0.20,\"m\"))).to(\"\")",
+  "inputs": {
+    "arg0": {
+      "value": "40.6",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "0.35",
+      "unit": "m"
+    },
+    "arg2": {
+      "value": "10",
+      "unit": "kg"
+    },
+    "arg3": {
+      "value": "0.20",
+      "unit": "m"
+    }
+  },
+  "output_summary": "7.1",
+  "output_full": "7.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

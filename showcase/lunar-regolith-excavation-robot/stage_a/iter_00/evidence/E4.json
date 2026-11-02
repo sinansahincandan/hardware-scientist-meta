@@ -1,0 +1,24 @@
+{
+  "id": "E4",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+  "code_or_query": "lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+  "inputs": {},
+  "output_summary": "permanent.fdlp.gov — GRC_12625_TN18419-1.pdf — https://permanent.fdlp.gov/gpo56898/20150000897.pdf",
+  "output_full": "permanent.fdlp.gov — GRC_12625_TN18419-1.pdf — https://permanent.fdlp.gov/gpo56898/20150000897.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "permanent.fdlp.gov",
+      "title": "GRC_12625_TN18419-1.pdf",
+      "year": "",
+      "url": "https://permanent.fdlp.gov/gpo56898/20150000897.pdf",
+      "query": "lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

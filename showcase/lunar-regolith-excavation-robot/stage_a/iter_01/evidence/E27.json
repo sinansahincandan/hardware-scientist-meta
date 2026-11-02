@@ -1,0 +1,24 @@
+{
+  "id": "E27",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
+  "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+  "inputs": {},
+  "output_summary": "bioennopower.com — 24V 20Ah LiFePO4 Battery – Bioenno Power — https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+  "output_full": "bioennopower.com — 24V 20Ah LiFePO4 Battery – Bioenno Power — https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "bioennopower.com",
+      "title": "24V 20Ah LiFePO4 Battery – Bioenno Power",
+      "year": "",
+      "url": "https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+      "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

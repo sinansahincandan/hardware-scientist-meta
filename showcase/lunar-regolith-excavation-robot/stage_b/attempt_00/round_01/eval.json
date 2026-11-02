@@ -1,0 +1,83 @@
+{
+  "pixel_description": "Side-view photorealistic rover on dirt, white sky. Left to right: front transverse digging drum as spiked disc half-buried in dark soil pile with dust, connected by horizontal arm to chassis at front-wheel axle. Middle spiked grouser wheel under chassis front and larger rear spiked grouser wheel under chassis rear, both touching ground. Central chassis frame as rectangular open-sided metal box; inside left a battery box, inside right a computer box with black wiring. Front-mid tall folding perception mast: 3-stage telescoping rectangular column bolted via triangular base to chassis plus side hydraulic brace cylinder, topped with sensor head with left-pointing bullet camera, center dome, right antenna box with cable loop. CRITICAL PART Rear high-lift mast (lift): drawn as two parallel inclined telescopic hydraulic cylinders plus two parallel structural linkage arms with diagonal cross-brace forming a parallelogram; base pivoted with bolts on rear chassis deck, top pivoted with visible bolts to side plates of hopper; raised to about 2x chassis height. High-lift hopper is trapezoidal sheet bucket tilted nose-down overhanging behind rear axle, pouring continuous dark soil stream into large rectangular collection bin immediately behind rover that touches rover via short bracket. Callouts correctly spelled with no numbers: Folding Perception Mast to mast head, High Lift Hopper to hopper, Chassis Frame to chassis interior, Rear Lift Mast to rear mast cylinder/linkage, Front Digging Drum to drum metal hub/disc, Spiked Grouser Wheel to middle wheel.",
+  "regions": [],
+  "previous_regions": [
+    {
+      "part_id": "callout",
+      "fault": "Leader arrow ends on empty dust cloud left/above drum, not on drum metal",
+      "status": "fixed",
+      "note": "Fixed: in current render the Front Digging Drum leader tip lands on the front spiked drum metal hub/disc, not in empty dust."
+    }
+  ],
+  "comparison_with_previous": "Compared with previous render (third image) the geometry is otherwise identical, but the Front Digging Drum leader that ended in empty dust cloud left/above the drum now ends on the front spiked drum metal hub/disc. That listed callout fault is fixed and no new callout, text, or structural faults are introduced.",
+  "deviations": [
+    {
+      "what": "drum",
+      "measured": "segmenter found 0, pixels show 1 spiked transverse drum at far left in soil pile with drive arm to chassis",
+      "expected": "1 digging drum to be found",
+      "matters": false,
+      "why": "segmenter miss due to dust/angle; visually present at correct front-low position and ~200-300mm class for shallow cut, so working principle unchanged"
+    },
+    {
+      "what": "wheel",
+      "measured": "segmenter found 3 spiked discs total in side view",
+      "expected": "1 front grouser wheel visible in side view",
+      "matters": false,
+      "why": "extra counts are the rear wheel and the similar-looking front drum, not duplicated front wheels; 2 wheels + 1 drum matches sketch"
+    },
+    {
+      "what": "wheel_rear",
+      "measured": "segmenter found 3 spiked discs total in side view",
+      "expected": "1 rear grouser wheel visible in side view",
+      "matters": false,
+      "why": "same 3 discs as above; no extra axle, correct front and rear wheel positions under chassis, size similar to 300mm sketch wheels"
+    },
+    {
+      "what": "chassis",
+      "measured": "segmenter found 0, pixels show 1 rectangular open-sided chassis box with battery and computer inside",
+      "expected": "1 chassis metal frame to be found",
+      "matters": false,
+      "why": "segmenter miss on photorealistic box; visually present carrying all loads, correct length vs wheels and masts"
+    },
+    {
+      "what": "lift",
+      "measured": "segmenter found 0, pixels show raised dual-cylinder + linkage mast from rear deck to hopper",
+      "expected": "1 rear high-lift mast to be found",
+      "matters": false,
+      "why": "segmenter miss; visually present with parallelogram arms and actuators in deployed dump pose matching sketch lift to pour lip"
+    },
+    {
+      "what": "pmast",
+      "measured": "segmenter found 0, pixels show tall 3-stage telescoping vertical column at front of chassis",
+      "expected": "1 folding perception camera pole to be found",
+      "matters": false,
+      "why": "segmenter miss; visually present vertical, base-bolted to chassis with brace cylinder, height ~2x chassis matching sketch"
+    },
+    {
+      "what": "sensors",
+      "measured": "segmenter found 0, pixels show bullet camera + dome + antenna box on top of perception mast",
+      "expected": "small camera/sensors to be found",
+      "matters": false,
+      "why": "small size and photorealistic texture missed; visually present on mast head for remote view"
+    },
+    {
+      "what": "pack",
+      "measured": "segmenter found 0, pixels show box inside left of open chassis",
+      "expected": "1 battery box to be found",
+      "matters": false,
+      "why": "segmenter miss inside chassis; visually present and wired, correct stowed position for energy store"
+    },
+    {
+      "what": "compute",
+      "measured": "segmenter found 0, pixels show box with wiring inside right of open chassis",
+      "expected": "1 computer box to be found",
+      "matters": false,
+      "why": "segmenter miss inside chassis; visually present with cable loom to mast/lift, correct stowed position for control"
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "Only photorealistic shading/texture versus line sketch; same parts, same side-view arrangement, same relative sizes/orientations and dump/mast poses. Segmenter count/size noise does not change connections or function.",
+  "s2_flaw": false,
+  "s2_feedback": "With hopper raised and pouring over bin, both grouser wheels remain firmly on ground with no lift-off, no interference between hopper, mast, bin or chassis, and mast-to-chassis and wheel-to-chassis load paths remain intact. No impossible assembly, unreachable part, or failed load path is exposed.",
+  "notes": "Photorealistic render matches line-sketch layout exactly. Segmenter systematically misses photorealistic parts and overcounts similar spiked discs, but visual inspection confirms all 8 concept parts present with correct connections."
+}

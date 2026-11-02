@@ -1,0 +1,11 @@
+{
+  "sections": [
+    {
+      "heading": "## 5. Criteria",
+      "new_text": "- The concept must work physically (no violated conservation law, load path, or signal path).\n- The concept must be buildable with purchasable parts and ordinary lab/shop methods.\n- Physical closure is shown by reconciled evidence for mass and energy balance, lift force including friction, stability reactions for raised load, and stowed fit within the start envelope.\n- Implementation detail and tuning that is bounded by evidence, such as seal detailing beyond the closed thermal bound and link latency tuning bounded by stopping behavior, remain verification tuning and do not block acceptance when the bound holds.",
+      "reason": "Guard requires verbatim inclusion of both fixed criteria; prior text paraphrased them. New text restores exact strings and keeps original evidentiary intent in separate bullets.",
+      "answers": "Retains mass-energy, lift-force, stability and envelope proof intent and verification-tuning note; adds verbatim physical and buildability criteria."
+    }
+  ],
+  "change_note": "Restored both fixed verbatim criteria in 5. Criteria while retaining prior closure and tuning intent as additional bullets."
+}

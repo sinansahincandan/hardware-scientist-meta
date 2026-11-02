@@ -1,0 +1,27 @@
+{
+  "id": "E38",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "useful lift energy hopper plus soil",
+  "code_or_query": "Q_(15,'kg')*Q_(9.81,'m/s^2')*Q_(0.60,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "15",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s^2"
+    },
+    "arg2": {
+      "value": "0.60",
+      "unit": "m"
+    }
+  },
+  "output_summary": "88.3 kg\u22c5m\u00b2/s\u00b2",
+  "output_full": "88.3 kg\u22c5m\u00b2/s\u00b2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,23 @@
+{
+  "id": "E48",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "battery mass from energy density",
+  "code_or_query": "Q_(350,'Wh')/Q_(120,'Wh/kg')",
+  "inputs": {
+    "arg0": {
+      "value": "350",
+      "unit": "Wh"
+    },
+    "arg1": {
+      "value": "120",
+      "unit": "Wh/kg"
+    }
+  },
+  "output_summary": "2.92 kg",
+  "output_full": "2.92 kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

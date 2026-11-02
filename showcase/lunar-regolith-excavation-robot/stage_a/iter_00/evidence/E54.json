@@ -1,0 +1,14 @@
+{
+  "id": "E54",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "tip safety factor about rear axle empty CG vs payload overhang",
+  "code_or_query": "((40.6*9.81*0.35)/(10*9.81*0.20))",
+  "inputs": {},
+  "output_summary": "7.1",
+  "output_full": "7.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

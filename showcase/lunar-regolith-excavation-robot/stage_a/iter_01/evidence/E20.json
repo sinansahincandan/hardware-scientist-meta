@@ -1,0 +1,31 @@
+{
+  "id": "E20",
+  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+  "tool": "calc",
+  "purpose": "autonomy power share sum",
+  "code_or_query": "(Q_(15,'W')+Q_(6,'W')+Q_(5,'W')+Q_(3,'W')).to('W')",
+  "inputs": {
+    "arg0": {
+      "value": "15",
+      "unit": "W"
+    },
+    "arg1": {
+      "value": "6",
+      "unit": "W"
+    },
+    "arg2": {
+      "value": "5",
+      "unit": "W"
+    },
+    "arg3": {
+      "value": "3",
+      "unit": "W"
+    }
+  },
+  "output_summary": "29 W",
+  "output_full": "29 W",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

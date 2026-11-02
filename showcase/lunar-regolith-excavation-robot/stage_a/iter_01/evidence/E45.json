@@ -1,0 +1,14 @@
+{
+  "id": "E45",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "useful lift energy check 15kg through 0.60m rise",
+  "code_or_query": "15*9.81*0.60",
+  "inputs": {},
+  "output_summary": "88.3",
+  "output_full": "88.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

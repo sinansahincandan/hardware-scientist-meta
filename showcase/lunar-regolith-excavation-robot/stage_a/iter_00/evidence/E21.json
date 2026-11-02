@@ -1,0 +1,23 @@
+{
+  "id": "E21",
+  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+  "tool": "calc",
+  "purpose": "stopping distance from latency at crawl speed",
+  "code_or_query": "Q_(0.5,\"m/s\")*Q_(0.3,\"s\")",
+  "inputs": {
+    "arg0": {
+      "value": "0.5",
+      "unit": "m/s"
+    },
+    "arg1": {
+      "value": "0.3",
+      "unit": "s"
+    }
+  },
+  "output_summary": "0.15 m",
+  "output_full": "0.15 m",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

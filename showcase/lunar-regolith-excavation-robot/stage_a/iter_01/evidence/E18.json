@@ -1,0 +1,24 @@
+{
+  "id": "E18",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "inputs": {},
+  "output_summary": "makerselectronics.com — NVIDIA Jetson Orin Nano Developer Kit 8GB — https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/",
+  "output_full": "makerselectronics.com — NVIDIA Jetson Orin Nano Developer Kit 8GB — https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "makerselectronics.com",
+      "title": "NVIDIA Jetson Orin Nano Developer Kit 8GB",
+      "year": "",
+      "url": "https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/",
+      "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,5 @@
+{
+  "cycle": 4,
+  "member": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "message": "Mara, Theo and Sam, half-hour work sets a small store not a house day. The sortie-energy calc (E32) is 171 Watt-hour (Wh) from 341 Watt (W) for 0.5 hour (h), like a small electric-bicycle pack, which passes everyday scale.\n\nMara, Theo and Sam, the old pack claim fails pack scale and the purchasable pack fixes mass. The implied pack-energy calc (E33) is 342 Wh per kilogram (kg), about three times normal, against the Bioenno pack-density calc (E34) at 90.6 Wh per kg and the PowerTech density calc (E35) at 120 Wh per kg, where Lithium Iron Phosphate (LiFePO4) means olivine chemistry; the full-load runtime calc (E36) is 1.41 h from 480 Wh at 341 W and the reconciled-mass calc (E37) is 53.0 kg under the 60 kg limit, like large luggage, which passes everyday scale.\n\nMara, Theo and Sam, heat and dust couple to runtime because sealed electronics must reject drive plus compute heat without ingesting basalt dust, adding fan and enclosure mass and power draw. I am not ready because blocking objection (O2) on lift tip and stowed fit stays open."
+}

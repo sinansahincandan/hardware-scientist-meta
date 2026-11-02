@@ -1,0 +1,24 @@
+{
+  "id": "E8",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics mining robot mass size excavation rate rules",
+  "code_or_query": "NASA Lunabotics mining robot mass size excavation rate rules",
+  "inputs": {},
+  "output_summary": "yumpu.com — <strong>Senior</strong> < — https://www.yumpu.com/en/document/view/4215141/senior-design-day-final-presentations-posters-and-/22",
+  "output_full": "yumpu.com — <strong>Senior</strong> < — https://www.yumpu.com/en/document/view/4215141/senior-design-day-final-presentations-posters-and-/22\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "yumpu.com",
+      "title": "<strong>Senior</strong> <",
+      "year": "",
+      "url": "https://www.yumpu.com/en/document/view/4215141/senior-design-day-final-presentations-posters-and-/22",
+      "query": "NASA Lunabotics mining robot mass size excavation rate rules",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

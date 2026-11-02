@@ -1,0 +1,24 @@
+{
+  "id": "E39",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: electric linear actuator 12V 24V force stroke datasheet dump",
+  "code_or_query": "electric linear actuator 12V 24V force stroke datasheet dump",
+  "inputs": {},
+  "output_summary": "assets.northerntool.com — LINEAR ACTUATOR LIGHT DUTY SERIES — https://assets.northerntool.com/products/273/documents/manuals/27324.pdf",
+  "output_full": "assets.northerntool.com — LINEAR ACTUATOR LIGHT DUTY SERIES — https://assets.northerntool.com/products/273/documents/manuals/27324.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "assets.northerntool.com",
+      "title": "LINEAR ACTUATOR LIGHT DUTY SERIES",
+      "year": "",
+      "url": "https://assets.northerntool.com/products/273/documents/manuals/27324.pdf",
+      "query": "electric linear actuator 12V 24V force stroke datasheet dump",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

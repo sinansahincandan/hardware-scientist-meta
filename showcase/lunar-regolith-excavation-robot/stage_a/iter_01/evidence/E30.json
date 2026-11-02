@@ -1,0 +1,24 @@
+{
+  "id": "E30",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+  "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+  "inputs": {},
+  "output_summary": "cnskyt.com — IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose — https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/",
+  "output_full": "cnskyt.com — IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose — https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "cnskyt.com",
+      "title": "IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose",
+      "year": "",
+      "url": "https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/",
+      "query": "IP65 enclosure dust sealing standard electronics box",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

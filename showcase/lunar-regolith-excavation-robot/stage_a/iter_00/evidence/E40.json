@@ -1,0 +1,24 @@
+{
+  "id": "E40",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: electric linear actuator 12V 24V force stroke datasheet dump",
+  "code_or_query": "electric linear actuator 12V 24V force stroke datasheet dump",
+  "inputs": {},
+  "output_summary": "shanglinmotor.com — linear actuator sl la 25 — https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/",
+  "output_full": "shanglinmotor.com — linear actuator sl la 25 — https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "shanglinmotor.com",
+      "title": "linear actuator sl la 25",
+      "year": "",
+      "url": "https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/",
+      "query": "electric linear actuator 12V 24V force stroke datasheet dump",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,56 @@
+{
+  "per_region": [
+    {
+      "part_id": "drum",
+      "diagnosis": "what=drum: pixels show transverse spiked digging drum low at front left engaging soil pile, partially veiled by dust cloud and flying clods; segmenter 'not found as digging drum' is label/occlusion miss, not absence. Working principle intact (digging contact at front). Caused by sentence 'Transverse steel digging drum low at the front edge touching a loose pile' combined with dusty context obscuring metal; no structural fault.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "wheel",
+      "diagnosis": "what=wheel: pixels show front grouser wheel centered under mast plus rear grouser wheel, 2 chassis wheels visible in profile as required. Segmenter found 3 because it counts digging drum spiked disc as third wheel. Working principle intact (load path chassis to wheels). Count confusion does not matter; representative visible count acceptable.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "wheel_rear",
+      "diagnosis": "what=wheel_rear: pixels show large rear spiked grouser wheel under rear chassis, correctly supporting lift load. Segmenter found 3 for same drum-confusion reason. Geometry matches sketch (2 visible of 4 total). Does not affect flotation/load principle.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "chassis",
+      "diagnosis": "what=chassis: pixels show low rectangular aluminum chassis with open side bay exposing pack/compute and load path to wheels readable. Segmenter 'not found as metal frame' is wording miss (frame vs open box). Part present and matters for principle, but present.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "lift",
+      "diagnosis": "what=lift: pixels show twin inclined hydraulic arms of rear lift mast raised high at rear carrying hopper tipped forward pouring into bin behind. Segmenter 'not found as rear mast' is naming miss. Connection hopper-through-arms-into-chassis correct, matters and is correct.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "pmast",
+      "diagnosis": "what=pmast: pixels show tall slender folding perception mast vertical at front of chassis, person-height extended. Segmenter 'not found as camera pole' is label miss. Present, does not affect digging/lift load principle.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "sensors",
+      "diagnosis": "what=sensors: pixels show small camera head on top of mast pointing left plus small box/antenna. Segmenter 'not found as small camera' due to tiny size ~coarse x2 limit and white background. Present, not critical to mechanical working principle.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "pack",
+      "diagnosis": "what=pack: pixels show battery box in left chassis bay with cables. Segmenter 'not found as battery box' due to interior shadow/open-bay view. Present, supports power principle but depiction correct.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "compute",
+      "diagnosis": "what=compute: pixels show computer/radio box in right chassis bay with wiring. Segmenter 'not found as computer box' for same interior-visibility reason. Present, depiction correct.",
+      "prompt_fix": ""
+    },
+    {
+      "part_id": "callout",
+      "diagnosis": "what=callout Front Digging Drum: pixels show leader from 'Front Digging Drum' tag ends on empty dust cloud left/above drum, not on drum metal. Only structural mismatch; geometry otherwise matches sketch per WRITTEN DIFFERENCES. Caused by sentence 'Draw short clean callouts on small light tags in empty space with thin leader lines for each: ... Front Digging Drum ...' with no anchor rule, plus sentence 'Transverse steel digging drum low at the front edge touching a loose pile' allowing dust to cover anchor. Matters for readability but not for mechanical principle.",
+      "prompt_fix": "Keep Front Digging Drum callout leader terminating exactly on front transverse spiked drum metal disc, clear of dust cloud, flying clods and soil pile; keep drum rim exposed for anchor and offset dust outward so metal is visible."
+    }
+  ],
+  "fix_mode": "local",
+  "summary": "Geometry matches sketch: front drum, 2 visible grouser wheels, chassis with pack/compute, tall front mast with sensors, rear mast raised with hopper pouring into rear bin. 9 segmenter 'not found / 3 vs 1' are coarse detector/label misses, not principle faults; representative counts acceptable. Sole depiction fault is Front Digging Drum leader ending in air, needing local anchor fix, so fix_mode local."
+}

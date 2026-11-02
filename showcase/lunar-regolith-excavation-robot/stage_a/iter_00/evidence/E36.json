@@ -1,0 +1,24 @@
+{
+  "id": "E36",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: lunar regolith simulant BP-1 bulk density angle of repose",
+  "code_or_query": "lunar regolith simulant BP-1 bulk density angle of repose",
+  "inputs": {},
+  "output_summary": "ntrs.nasa.gov — Lunar Environments — https://ntrs.nasa.gov/api/citations/20230016971/downloads/Simulant%20Characterization%20Talk%20LSIC.pdf?attachment=true",
+  "output_full": "ntrs.nasa.gov — Lunar Environments — https://ntrs.nasa.gov/api/citations/20230016971/downloads/Simulant%20Characterization%20Talk%20LSIC.pdf?attachment=true\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ntrs.nasa.gov",
+      "title": "Lunar Environments",
+      "year": "",
+      "url": "https://ntrs.nasa.gov/api/citations/20230016971/downloads/Simulant%20Characterization%20Talk%20LSIC.pdf?attachment=true",
+      "query": "lunar regolith simulant BP-1 bulk density angle of repose",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

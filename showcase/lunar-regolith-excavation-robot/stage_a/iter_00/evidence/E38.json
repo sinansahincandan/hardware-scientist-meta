@@ -1,0 +1,24 @@
+{
+  "id": "E38",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: electric linear actuator 12V 24V force stroke datasheet dump",
+  "code_or_query": "electric linear actuator 12V 24V force stroke datasheet dump",
+  "inputs": {},
+  "output_summary": "docs.rs-online.com — RS PRO Miniature Electric Linear Actuator — https://docs.rs-online.com/b168/0900766b81683456.pdf",
+  "output_full": "docs.rs-online.com — RS PRO Miniature Electric Linear Actuator — https://docs.rs-online.com/b168/0900766b81683456.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "docs.rs-online.com",
+      "title": "RS PRO Miniature Electric Linear Actuator",
+      "year": "",
+      "url": "https://docs.rs-online.com/b168/0900766b81683456.pdf",
+      "query": "electric linear actuator 12V 24V force stroke datasheet dump",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

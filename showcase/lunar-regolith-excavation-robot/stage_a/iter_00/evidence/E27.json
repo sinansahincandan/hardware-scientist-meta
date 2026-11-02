@@ -1,0 +1,24 @@
+{
+  "id": "E27",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
+  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "inputs": {},
+  "output_summary": "a-m-c.com — ADVANCED Motion Controls — https://www.a-m-c.com/ip65-rating/",
+  "output_full": "a-m-c.com — ADVANCED Motion Controls — https://www.a-m-c.com/ip65-rating/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "a-m-c.com",
+      "title": "ADVANCED Motion Controls",
+      "year": "",
+      "url": "https://www.a-m-c.com/ip65-rating/",
+      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

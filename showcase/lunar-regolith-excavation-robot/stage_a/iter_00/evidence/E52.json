@@ -1,0 +1,14 @@
+{
+  "id": "E52",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "fan airflow for 80W internal with 20K rise",
+  "code_or_query": "80/(1.2*1005*20)",
+  "inputs": {},
+  "output_summary": "0.00332",
+  "output_full": "0.00332",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

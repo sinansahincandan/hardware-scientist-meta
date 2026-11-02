@@ -1,0 +1,1225 @@
+{
+  "inspirations": [
+    {
+      "archive_id": "A1",
+      "status": "rejected",
+      "feedback_summary": "Concept is physically plausible and COTS-buildable in kind - 4x rigid grouser wheels, front transverse drum, central hopper on rear mast, 24 V bus, sealed box, sensor mast, dual radio - no conservation, load-path or signal-path violation. RASSOR prior art does not invalidate it: single drum loses counter-rotating cancellation but 45.7 N reaction vs ~400-500 N weight gives traction ratio >5, and separate hopper + mast to 1.05 m adds tip moment and spill path but is ordinary Earth-gravity engineering, unlike RASSOR drum-as-hopper Z-stand.\nRe-derivation decides the vote: 341 W x 0.5 h = 171 Wh, not 1000 Wh. 1000 Wh / 2.92 kg = 342 Wh/kg pack. Everyday scale: LiFePO4 cells ~120-140 Wh/kg, pack ~90-110 Wh/kg; laptop NMC pack ~200-250 Wh/kg cells; 342 Wh/kg LiFePO4 pack is outside everyday scale by ~3x. Either energy is ~0.17-0.3 kWh and 2.92 kg is roughly right for NMC / light LiFePO4, or energy is 1 kWh and mass should be ~8-10 kg. Even corrected, 50.6 -2.92 +~9 = ~57 kg still under 60 kg, so likely closable, but not closed. Lift energy 2400 J E60 vs 15 kg x 9.81 x 1.05 m = ~155 J useful implies 15x overhead - model, friction or time-window error to check. 10 kg at 900 kg/m3 = 0.0111 m3 E49 is correct vs 0.00625 m3 E44 error, ~11 L bucket ~ person-size carry-on, plausible. 4.06 tip factor with 0.30 m overhang vs 7.1 earlier shows moment-arm sensitivity vs wheelbarrow experience - geometry must be fixed.\nKey claims resting on no evidence/source: actuator force with friction through linkage (E56 failed), runtime from pack at full load (E59 failed, E58 failed), dimensioned stowed 1.0x0.5x0.5 m envelope with 300 mm wheels + stowed 900 mm mast + 1050 mm hopper travel (sketches E11/E46/E57 show deployed topology only, E22/E45 failed), sealed-box 22 K rise E53 and 0.00332 m3/s for 80 W E52 are closed but IP65 dust claim has only generic search E27-E29, no seal/detail. Contact/torque/cutting E10, power E34, sensor power E47, hopper volume E49, stopping distance E21 have calc/simulate support.\nMeeting facts: closed by cycle cap without consensus, v2 by Sam, 1 ready (Mara) to 3 not-ready (Theo, Priya, Sam). Blocking O1 mass integration, O2 dump kinematics/tip, O4 battery mass-energy all point to same two missing proofs. In my judgement those objections are sound and leave the concept unsettled - not fundamentally unworkable, but buildable not proven on sound analysis. Hence not accept yet; on resubmittal with the two recomputes above and a stowed envelope sketch, this should be accept-ready, with dust/thermal and FPV latency left as test tuning in feedback, not as acceptance blockers.",
+      "why_useful": "Rejected but near-closable integrated rover example; shows how to catch 171Wh vs 1000Wh / 342Wh-per-kg pack error, lift-energy overhead, tip-moment sensitivity, and missing stowed-envelope proof before acceptance."
+    }
+  ],
+  "functions": [
+    {
+      "id": "F1",
+      "text": "Drive over loose BP-1 simulant bed without excessive sinkage or slip, and climb out of dig pile",
+      "author": "Mara \u2014 Excavation and Mobility Engineer"
+    },
+    {
+      "id": "F2",
+      "text": "Excavate BP-1 simulant with low cutting force and load into hopper",
+      "author": "Mara \u2014 Excavation and Mobility Engineer"
+    },
+    {
+      "id": "F3",
+      "text": "Operate with no line-of-sight and no hearing of robot via remote link with sensing, onboard compute, and heartbeat stop-and-hold",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer"
+    },
+    {
+      "id": "F4",
+      "text": "Carry regolith in hopper and high-lift dump into collection bin within mass and start envelope",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "C1",
+      "function_id": "F1",
+      "text": "Locomotion: four rigid wheels with grousers (traction bars), 300 mm diameter x 150 mm wide. Analogy: farm tractor and Mars rover wheels - large diameter spreads weight, grousers bite loose soil.",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C2",
+      "function_id": "F2",
+      "text": "Excavator: front transverse rotating drum (bucket-wheel style, RASSOR analogy) 200 mm dia x 400 mm wide, shallow cut 30 mm, lifts soil into central hopper. Alternative: drag blade. Drum chosen for continuous cut and low shock.",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C3",
+      "function_id": "F3",
+      "text": "Folding perception mast: two First Person View (FPV) cameras plus depth sensor and Inertial Measurement Unit (IMU) on folding mast, stowed flat under 0.5 m, deployed to ~1.0 m for view over hopper and drum. Analogy: sailboat mast and periscope - low stow, high eye.",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C4",
+      "function_id": "F3",
+      "text": "Heartbeat stop-and-hold teleoperation: 5 GHz WiFi link with heartbeat monitor, onboard compute hold-to-run autonomy, Emergency Stop (E-stop) latching stop-and-hold on link loss or latency exceedance. Analogy: industrial Automated Guided Vehicle (AGV) deadman switch.",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "status": "open"
+    },
+    {
+      "id": "C5",
+      "function_id": "F4",
+      "text": "Rear high-lift mast hopper dump: hopper pivot 0.45 m stowed rising to 1.05 m pour lip (0.60 m rise) via 0.15 m stroke dual actuators through 4-to-1 chain at 0.80 friction efficiency. Analogy forklift mast.",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
+      "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "inputs": {},
+      "output_summary": "hou.usra.edu \u2014 5068.PDF \u2014 2019 \u2014 https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+      "output_full": "hou.usra.edu \u2014 5068.PDF \u2014 2019 \u2014 https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "hou.usra.edu",
+          "title": "5068.PDF",
+          "year": "2019",
+          "url": "https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+          "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E2",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
+      "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "inputs": {},
+      "output_summary": "impact.colorado.edu \u2014 Sanchez, David Poster 2024 (12JUL24) \u2014 2024 \u2014 http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf",
+      "output_full": "impact.colorado.edu \u2014 Sanchez, David Poster 2024 (12JUL24) \u2014 2024 \u2014 http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "impact.colorado.edu",
+          "title": "Sanchez, David Poster 2024 (12JUL24)",
+          "year": "2024",
+          "url": "http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf",
+          "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E3",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
+      "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "inputs": {},
+      "output_summary": "impact.colorado.edu \u2014 | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | \u2014 https://impact.colorado.edu/lungradcon/presentations/142140b1",
+      "output_full": "impact.colorado.edu \u2014 | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | \u2014 https://impact.colorado.edu/lungradcon/presentations/142140b1\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "impact.colorado.edu",
+          "title": "| BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  |",
+          "year": "",
+          "url": "https://impact.colorado.edu/lungradcon/presentations/142140b1",
+          "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E4",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: RASSOR excavator drum cutting force lunar regolith",
+      "code_or_query": "RASSOR excavator drum cutting force lunar regolith",
+      "inputs": {},
+      "output_summary": "sciences.ucf.edu \u2014 ConstructionwithRegolith \u2014 2017 \u2014 https://sciences.ucf.edu/class/wp-content/uploads/sites/23/2017/03/CLASS-SSERVI-Robotic-Construction-Mueller-v1-March-2017.compressed.pdf",
+      "output_full": "sciences.ucf.edu \u2014 ConstructionwithRegolith \u2014 2017 \u2014 https://sciences.ucf.edu/class/wp-content/uploads/sites/23/2017/03/CLASS-SSERVI-Robotic-Construction-Mueller-v1-March-2017.compressed.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "sciences.ucf.edu",
+          "title": "ConstructionwithRegolith",
+          "year": "2017",
+          "url": "https://sciences.ucf.edu/class/wp-content/uploads/sites/23/2017/03/CLASS-SSERVI-Robotic-Construction-Mueller-v1-March-2017.compressed.pdf",
+          "query": "RASSOR excavator drum cutting force lunar regolith",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E5",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: RASSOR excavator drum cutting force lunar regolith",
+      "code_or_query": "RASSOR excavator drum cutting force lunar regolith",
+      "inputs": {},
+      "output_summary": "core.ac.uk \u2014 PowerPoint Presentation \u2014 https://core.ac.uk/download/pdf/80604896.pdf",
+      "output_full": "core.ac.uk \u2014 PowerPoint Presentation \u2014 https://core.ac.uk/download/pdf/80604896.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "core.ac.uk",
+          "title": "PowerPoint Presentation",
+          "year": "",
+          "url": "https://core.ac.uk/download/pdf/80604896.pdf",
+          "query": "RASSOR excavator drum cutting force lunar regolith",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E6",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "web_search",
+      "purpose": "search: RASSOR excavator drum cutting force lunar regolith",
+      "code_or_query": "RASSOR excavator drum cutting force lunar regolith",
+      "inputs": {},
+      "output_summary": "newatlas.com \u2014 NASA working on RASSOR robot space excavator \u2014 https://newatlas.com/nasa-rassor-robot-excavator/25994/",
+      "output_full": "newatlas.com \u2014 NASA working on RASSOR robot space excavator \u2014 https://newatlas.com/nasa-rassor-robot-excavator/25994/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "newatlas.com",
+          "title": "NASA working on RASSOR robot space excavator",
+          "year": "",
+          "url": "https://newatlas.com/nasa-rassor-robot-excavator/25994/",
+          "query": "RASSOR excavator drum cutting force lunar regolith",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E7",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "search_knowledge",
+      "purpose": "knowledge: wheel traction loose soil Bekker sinkage grouser",
+      "code_or_query": "wheel traction loose soil Bekker sinkage grouser",
+      "inputs": {},
+      "output_summary": "Light cold-box ground versus wind loads (from 20261102-112524_off-grid-solar-powered-cold-storage-for-)",
+      "output_full": "Light cold-box ground versus wind loads \u2014 from 20261102-112524_off-grid-solar-powered-cold-storage-for-\nA tonne of produce spread over a few square metres imposes only ~2.5 kPa floor and soil pressure, an order of magnitude below typical allowable soil bearing of tens to >50 kPa, so bearing rarely governs lightweight cold stores. Lateral wind governs anchoring: dynamic pressure follows ~0.6 x V^2, or ~540 Pa at 30 m/s gust, yielding ~2.9 kN on a ~5 m2 side wall that must be carried by anchors, plinth fixings and separate PV supports.\nEvidence: E47 (soil pressure under plinth without concrete self-weight: 2.51 kPa); E48 (floor loading from produce alone: 2.45 kPa); E64 (wind pressure at 30 m/s gust: 540 Pa); E65 (wind force on side wall: 2.86\u00d710\u00b3 N); E43 (search: concrete slab soil bearing capacity kPa small building foundation: spaworld.co.nz \u2014 Generic Concrete Slab or Pad Building Guide | Portable Spas \u2014 https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/); E44 (search: concrete slab soil bearing capacity kPa small building foundation: amcfoam.com \u2014 Revised: March 2010 \u2014 2010 \u2014 https://amcfoam.com/PDFs/Normal%20and%20Problem%20Soils.pdf)",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E8",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "search_knowledge",
+      "purpose": "knowledge: excavation cutting force lunar regolith drum blade",
+      "code_or_query": "excavation cutting force lunar regolith drum blade",
+      "inputs": {},
+      "output_summary": "ISO 11228-2 single-operator push-pull envelope (from 20261102-105608_stair-climbing-hand-truck-for-parcel-cou); Light cold-box ground versus wind loads (from 20261102-112524_off-grid-solar-powered-cold-storage-for-); Pedestrian crowd resonant force model (from 20261102-121628_vibration-retrofit-for-a-lively-pedestri)",
+      "output_full": "ISO 11228-2 single-operator push-pull envelope \u2014 from 20261102-105608_stair-climbing-hand-truck-for-parcel-cou\nISO 11228-2 and HSE guidance limit sustained one-person push-pull to roughly 200-250 N with brief heave below ~350 N using closed-loop grips at ~90-110 cm height. A 60 kg load dragged continuously up a stair slope needs ~441 N, exceeding the envelope; stepwise levered lifts in the ~226 N class or powered assist are needed to comply.\nEvidence: E7 (search: EN ISO hand truck safety standard 60 kg push pull force limits: mktg.idec.com \u2014 ISO 11228-2? \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en); E8 (search: EN ISO hand truck safety standard 60 kg push pull force limits: webarchive.nationalarchives.gov.uk \u2014 Microsoft Word - updated version of report 9648.doc \u2014 https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf); E12 (search: ISO 11228-2 push pull force limits ergonomics handles: mktg.idec.com \u2014 AWD ISO 11228 2.pdf \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr); E58 (stair heave lever effort brake torque tip margin 60kg: W=706.3N angle=38.7deg Fslope=441N Flever=226N T=98.9Nm Tsf=197.8Nm tip=21.8deg lean=25.0 margin=-3.2; energy per 0.2m riser=141J vs daily ~)\n\nLight cold-box ground versus wind loads \u2014 from 20261102-112524_off-grid-solar-powered-cold-storage-for-\nA tonne of produce spread over a few square metres imposes only ~2.5 kPa floor and soil pressure, an order of magnitude below typical allowable soil bearing of tens to >50 kPa, so bearing rarely governs lightweight cold stores. Lateral wind governs anchoring: dynamic pressure follows ~0.6 x V^2, or ~540 Pa at 30 m/s gust, yielding ~2.9 kN on a ~5 m2 side wall that must be carried by anchors, plinth fixings and separate PV supports.\nEvidence: E47 (soil pressure under plinth without concrete self-weight: 2.51 kPa); E48 (floor loading from produce alone: 2.45 kPa); E64 (wind pressure at 30 m/s gust: 540 Pa); E65 (wind force on side wall: 2.86\u00d710\u00b3 N); E43 (search: concrete slab soil bearing capacity kPa small building foundation: spaworld.co.nz \u2014 Generic Concrete Slab or Pad Building Guide | Portable Spas \u2014 https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/); E44 (search: concrete slab soil bearing capacity kPa small building foundation: amcfoam.com \u2014 Revised: March 2010 \u2014 2010 \u2014 https://amcfoam.com/PDFs/Normal%20and%20Problem%20Soils.pdf)\n\nPedestrian crowd resonant force model \u2014 from 20261102-121628_vibration-retrofit-for-a-lively-pedestri\nVertical walking force is modeled as ~700 N body weight with ~280 N (~40%) first harmonic at step resonance. Sparse walkers add linearly, but dense crowd Class III ~0.5 pedestrians/m2 uses imperfect synchronization: equivalent in-phase count Neq ~ 10.8*sqrt(zeta*N) acting together at resonance, producing kN-scale harmonic force and multi-m/s2 bare-deck acceleration when structural damping is ~0.5-1%.\nEvidence: E41 (search: Setra footbridge crowd load density synchronized pedestrians equivalent number: mdpi.com \u2014 Vibration Serviceability Assessment of a Historic Suspension Footbridge \u2014 http://mdpi.com/2075-5309/12/6/732/htm); E42 (search: Setra footbridge crowd load density synchronized pedestrians equivalent number: 1library.net \u2014 4.4.1 Dynamic load cases - Footbridge guide setra \u2014 https://1library.net/article/dynamic-load-cases-footbridge-guide-setra.ye693erq); E44 (search: Eurocode pedestrian vertical force harmonic walking frequency: eurocodes.jrc.ec.europa.eu \u2014 Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc \u2014 2021 \u2014 https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf); E49 (equivalent synchronized pedestrians dense crowd: 5.29); E50 (dense crowd resonant force from equivalent pedestrians: 1.48e+03)",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E9",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "calc",
+      "purpose": "robot weight 60kg",
+      "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s**2')",
+      "inputs": {
+        "arg0": {
+          "value": "60",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "9.81",
+          "unit": "m/s**2"
+        }
+      },
+      "output_summary": "589 kg\u22c5m/s\u00b2",
+      "output_full": "589 kg\u22c5m/s\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E10",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "calc",
+      "purpose": "nominal ground pressure 4 wheels contact 150x100mm",
+      "code_or_query": "Q_(589,'N')/(4*Q_(0.15,'m')*Q_(0.10,'m'))",
+      "inputs": {
+        "arg0": {
+          "value": "589",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "0.15",
+          "unit": "m"
+        },
+        "arg2": {
+          "value": "0.10",
+          "unit": "m"
+        }
+      },
+      "output_summary": "9.82\u00d710\u00b3 N/m\u00b2",
+      "output_full": "9.82\u00d710\u00b3 N/m\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E11",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "calc",
+      "purpose": "traction margin: half weight available vs 39N drum force",
+      "code_or_query": "(Q_(589,'N')*0.5+Q_(39,'N'))/Q_(589,'N')",
+      "inputs": {
+        "arg0": {
+          "value": "589",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "39",
+          "unit": "N"
+        },
+        "arg2": {
+          "value": "589",
+          "unit": "N"
+        }
+      },
+      "output_summary": "0.566",
+      "output_full": "0.566",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E12",
+      "author": "Mara \u2014 Excavation and Mobility Engineer",
+      "tool": "calc",
+      "purpose": "drawbar pull ratio drum force over weight",
+      "code_or_query": "Q_(39,'N')/Q_(589,'N')",
+      "inputs": {
+        "arg0": {
+          "value": "39",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "589",
+          "unit": "N"
+        }
+      },
+      "output_summary": "0.0662",
+      "output_full": "0.0662",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E13",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: 5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "code_or_query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "inputs": {},
+      "output_summary": "geekbuying.com \u2014 DJI RoboMaster S1 4WD FPV RC Robot Intelligent Scratch Python Coding \u2014 https://www.geekbuying.com/item/DJI-RoboMaster-S1-4WD-FPV-RC-Robot-Intelligent-Scratch-Python-Coding-417200.html",
+      "output_full": "geekbuying.com \u2014 DJI RoboMaster S1 4WD FPV RC Robot Intelligent Scratch Python Coding \u2014 https://www.geekbuying.com/item/DJI-RoboMaster-S1-4WD-FPV-RC-Robot-Intelligent-Scratch-Python-Coding-417200.html\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "geekbuying.com",
+          "title": "DJI RoboMaster S1 4WD FPV RC Robot Intelligent Scratch Python Coding",
+          "year": "",
+          "url": "https://www.geekbuying.com/item/DJI-RoboMaster-S1-4WD-FPV-RC-Robot-Intelligent-Scratch-Python-Coding-417200.html",
+          "query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E14",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: 5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "code_or_query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "inputs": {},
+      "output_summary": "robot-advance.com \u2014 Robomaster S1 DJI: DJI programmable educational robot \u2014 https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
+      "output_full": "robot-advance.com \u2014 Robomaster S1 DJI: DJI programmable educational robot \u2014 https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "robot-advance.com",
+          "title": "Robomaster S1 DJI: DJI programmable educational robot",
+          "year": "",
+          "url": "https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
+          "query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E15",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: 5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "code_or_query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "inputs": {},
+      "output_summary": "anodas.lt \u2014 DJI RoboMaster S1 \u2014 https://www.anodas.lt/en/dji-robomaster-s1",
+      "output_full": "anodas.lt \u2014 DJI RoboMaster S1 \u2014 https://www.anodas.lt/en/dji-robomaster-s1\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "anodas.lt",
+          "title": "DJI RoboMaster S1",
+          "year": "",
+          "url": "https://www.anodas.lt/en/dji-robomaster-s1",
+          "query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E16",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "inputs": {},
+      "output_summary": "technical.city \u2014 Jetson Orin Nano 4 GB \u2014 https://technical.city/en/video/Jetson-Orin-Nano-4-GB",
+      "output_full": "technical.city \u2014 Jetson Orin Nano 4 GB \u2014 https://technical.city/en/video/Jetson-Orin-Nano-4-GB\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "technical.city",
+          "title": "Jetson Orin Nano 4 GB",
+          "year": "",
+          "url": "https://technical.city/en/video/Jetson-Orin-Nano-4-GB",
+          "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E17",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "inputs": {},
+      "output_summary": "kamami.pl \u2014 NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM \u2014 https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
+      "output_full": "kamami.pl \u2014 NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM \u2014 https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "kamami.pl",
+          "title": "NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM",
+          "year": "",
+          "url": "https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
+          "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E18",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "web_search",
+      "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "inputs": {},
+      "output_summary": "makerselectronics.com \u2014 NVIDIA Jetson Orin Nano Developer Kit 8GB \u2014 https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/",
+      "output_full": "makerselectronics.com \u2014 NVIDIA Jetson Orin Nano Developer Kit 8GB \u2014 https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "makerselectronics.com",
+          "title": "NVIDIA Jetson Orin Nano Developer Kit 8GB",
+          "year": "",
+          "url": "https://makerselectronics.com/product/nvidia-jetson-orin-nano-developer-kit-8gb/",
+          "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E19",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "calc",
+      "purpose": "stopping distance from latency at crawl speed",
+      "code_or_query": "Q_(0.5,'m/s')*Q_(0.5,'s')",
+      "inputs": {
+        "arg0": {
+          "value": "0.5",
+          "unit": "m/s"
+        },
+        "arg1": {
+          "value": "0.5",
+          "unit": "s"
+        }
+      },
+      "output_summary": "0.25 m",
+      "output_full": "0.25 m",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E20",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "calc",
+      "purpose": "autonomy power share sum",
+      "code_or_query": "(Q_(15,'W')+Q_(6,'W')+Q_(5,'W')+Q_(3,'W')).to('W')",
+      "inputs": {
+        "arg0": {
+          "value": "15",
+          "unit": "W"
+        },
+        "arg1": {
+          "value": "6",
+          "unit": "W"
+        },
+        "arg2": {
+          "value": "5",
+          "unit": "W"
+        },
+        "arg3": {
+          "value": "3",
+          "unit": "W"
+        }
+      },
+      "output_summary": "29 W",
+      "output_full": "29 W",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E21",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "calc",
+      "purpose": "autonomy mass share sum",
+      "code_or_query": "(Q_(0.176,'kg')+Q_(0.1,'kg')+Q_(0.15,'kg')+Q_(1.0,'kg')+Q_(0.3,'kg')).to('kg')",
+      "inputs": {
+        "arg0": {
+          "value": "0.176",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "0.1",
+          "unit": "kg"
+        },
+        "arg2": {
+          "value": "0.15",
+          "unit": "kg"
+        },
+        "arg3": {
+          "value": "1.0",
+          "unit": "kg"
+        },
+        "arg4": {
+          "value": "0.3",
+          "unit": "kg"
+        }
+      },
+      "output_summary": "1.73 kg",
+      "output_full": "1.73 kg",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E22",
+      "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+      "tool": "sketch",
+      "purpose": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(figsize=(8,4)); ax.set_xlim(0,1.1); ax.set_ylim(0,1.2); ax.set_xlabel('length m'); ax.set_ylabel('height m');\n# chassis box\nimport matplotlib.patches as p; ax.add_patch(p.Rectangle((0.1,0.15),0.8,0.25,color='lightgray')); ax.text(0.3,0.25,'chassis');\n# wheels\nfor x in [0.2,0.8]:\n  c=plt.Circle((x,0.15),0.15,fill=False,lw=2); ax.add_patch(c); ax.text(x,0.05,'wheel 300mm',ha='center',fontsize=8);\n# drum front\nax.add_patch(p.Rectangle((0.9,0.1),0.08,0.2,color='gray')); ax.text(0.9,0.32,'drum',fontsize=8);\n# stowed mast flat\nax.plot([0.15,0.95],[0.42,0.42],'k-',lw=3); ax.text(0.5,0.44,'mast STOWED flat 0.8m <1.0m',ha='center',fontsize=8);\n# deployed mast\nax.plot([0.6,0.6],[0.4,1.0],'k-',lw=3); ax.plot([0.5,0.7],[1.0,1.0],'k-',lw=2); ax.text(0.62,0.8,'mast DEPLOYED 0.6m->1.0m',fontsize=8); ax.text(0.5,1.03,'cams+depth+antenna',fontsize=8);\nax.text(0.05,1.1,'STOWED height 0.45m <0.5m',fontsize=9); plt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+      "inputs": {},
+      "output_summary": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
+      "output_full": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
+      "sketch_path": "evidence/sketch_22.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E23",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "inputs": {},
+      "output_summary": "actec.dk \u2014 24v Lithium-Ion battery pack \u2014 https://actec.dk/media/documents/9C7D3794B117.pdf",
+      "output_full": "actec.dk \u2014 24v Lithium-Ion battery pack \u2014 https://actec.dk/media/documents/9C7D3794B117.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "actec.dk",
+          "title": "24v Lithium-Ion battery pack",
+          "year": "",
+          "url": "https://actec.dk/media/documents/9C7D3794B117.pdf",
+          "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E24",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "inputs": {},
+      "output_summary": "en.actec.dk \u2014 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO \u2014 https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
+      "output_full": "en.actec.dk \u2014 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO \u2014 https://en.actec.dk/media/documents/5BAA69612E3C.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "en.actec.dk",
+          "title": "24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO",
+          "year": "",
+          "url": "https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
+          "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E25",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+      "inputs": {},
+      "output_summary": "actec.dk \u2014 24v Lithium-Ion battery pack \u2014 https://actec.dk/media/documents/5BAA69612E3C.pdf",
+      "output_full": "actec.dk \u2014 24v Lithium-Ion battery pack \u2014 https://actec.dk/media/documents/5BAA69612E3C.pdf\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "actec.dk",
+          "title": "24v Lithium-Ion battery pack",
+          "year": "",
+          "url": "https://actec.dk/media/documents/5BAA69612E3C.pdf",
+          "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E26",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
+      "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "inputs": {},
+      "output_summary": "stevensmarine.com \u2014 Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) \u2014 2024 \u2014 https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
+      "output_full": "stevensmarine.com \u2014 Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) \u2014 2024 \u2014 https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "stevensmarine.com",
+          "title": "Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS)",
+          "year": "2024",
+          "url": "https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
+          "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E27",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
+      "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "inputs": {},
+      "output_summary": "bioennopower.com \u2014 24V 20Ah LiFePO4 Battery \u2013 Bioenno Power \u2014 https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+      "output_full": "bioennopower.com \u2014 24V 20Ah LiFePO4 Battery \u2013 Bioenno Power \u2014 https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "bioennopower.com",
+          "title": "24V 20Ah LiFePO4 Battery \u2013 Bioenno Power",
+          "year": "",
+          "url": "https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+          "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E28",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
+      "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "inputs": {},
+      "output_summary": "bioennopower.com \u2014 24V 20Ah LiFePO4 Battery \u2013 Bioenno Power \u2014 https://www.bioennopower.com/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+      "output_full": "bioennopower.com \u2014 24V 20Ah LiFePO4 Battery \u2013 Bioenno Power \u2014 https://www.bioennopower.com/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "bioennopower.com",
+          "title": "24V 20Ah LiFePO4 Battery \u2013 Bioenno Power",
+          "year": "",
+          "url": "https://www.bioennopower.com/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
+          "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E29",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+      "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+      "inputs": {},
+      "output_summary": "aluleader.com \u2014 Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader \u2014 https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
+      "output_full": "aluleader.com \u2014 Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader \u2014 https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "aluleader.com",
+          "title": "Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader",
+          "year": "",
+          "url": "https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
+          "query": "IP65 enclosure dust sealing standard electronics box",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E30",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+      "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+      "inputs": {},
+      "output_summary": "cnskyt.com \u2014 IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose \u2014 https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/",
+      "output_full": "cnskyt.com \u2014 IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose \u2014 https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "cnskyt.com",
+          "title": "IP54 vs IP65 Enclosures: Differences, Applications, and How to Choose",
+          "year": "",
+          "url": "https://www.cnskyt.com/ip54-vs-ip65-electrical-enclosures/",
+          "query": "IP65 enclosure dust sealing standard electronics box",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E31",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "web_search",
+      "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+      "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+      "inputs": {},
+      "output_summary": "gorugged.co.za \u2014 IP Ratings explained | Blogs | GoRugged SA \u2014 https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3",
+      "output_full": "gorugged.co.za \u2014 IP Ratings explained | Blogs | GoRugged SA \u2014 https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "gorugged.co.za",
+          "title": "IP Ratings explained | Blogs | GoRugged SA",
+          "year": "",
+          "url": "https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3",
+          "query": "IP65 enclosure dust sealing standard electronics box",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E32",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "sortie energy from 341 W for 0.5 h",
+      "code_or_query": "341*0.5",
+      "inputs": {},
+      "output_summary": "170",
+      "output_full": "170",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E33",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "implied pack specific energy from 1000Wh in 2.92kg",
+      "code_or_query": "(1000/2.92)",
+      "inputs": {},
+      "output_summary": "342",
+      "output_full": "342",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E34",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "Bioenno pack specific energy 480Wh over 5.3kg",
+      "code_or_query": "(24*20/5.3)",
+      "inputs": {},
+      "output_summary": "90.6",
+      "output_full": "90.6",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E35",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "PowerTech pack specific energy 819Wh over 6.8kg",
+      "code_or_query": "(819/6.8)",
+      "inputs": {},
+      "output_summary": "120",
+      "output_full": "120",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E36",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "runtime hours from 480Wh pack at 341W full load",
+      "code_or_query": "(480/341)",
+      "inputs": {},
+      "output_summary": "1.41",
+      "output_full": "1.41",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E37",
+      "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+      "tool": "calc",
+      "purpose": "reconciled joint total replacing 2.92kg pack with 5.3kg COTS pack",
+      "code_or_query": "(50.6-2.92+5.3)",
+      "inputs": {},
+      "output_summary": "53",
+      "output_full": "53",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E38",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "useful lift energy hopper plus soil",
+      "code_or_query": "Q_(15,'kg')*Q_(9.81,'m/s^2')*Q_(0.60,'m')",
+      "inputs": {
+        "arg0": {
+          "value": "15",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "9.81",
+          "unit": "m/s^2"
+        },
+        "arg2": {
+          "value": "0.60",
+          "unit": "m"
+        }
+      },
+      "output_summary": "88.3 kg\u22c5m\u00b2/s\u00b2",
+      "output_full": "88.3 kg\u22c5m\u00b2/s\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E39",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "recompute sortie energy reuse",
+      "code_or_query": "Q_(341,'W')*Q_(0.5,'h').to('Wh')",
+      "inputs": {
+        "arg0": {
+          "value": "341",
+          "unit": "W"
+        },
+        "arg1": {
+          "value": "0.5",
+          "unit": "h"
+        }
+      },
+      "output_summary": "failed: pint.errors.DimensionalityError: Cannot convert from 'hour' ([time]) to 'watt_hour' ([mass] * [length] ** 2 / [time] ** 2)",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-98pqpifr/hs_user_script.py\", line 5, in <module>\n    __r = (Q_(341,'W')*Q_(0.5,'h').to('Wh'))\n                       ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 585, in to\n    magnitude = self._convert_magnitude_not_inplace(other, *contexts, **ctx_kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 520, in _convert_magnitude_not_inplace\n    return self._REGISTRY.convert(self._magnitude, self._units, other, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1149, in convert\n    return self._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/context/registry.py\", line 418, in _convert\n    return super()._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/nonmultiplicative/registry.py\", line 263, in _convert\n    return super()._convert(value, src, dst, inplace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1184, in _convert\n    raise factor\npint.errors.DimensionalityError: Cannot convert from 'hour' ([time]) to 'watt_hour' ([mass] * [length] ** 2 / [time] ** 2)",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 1
+    },
+    {
+      "id": "E40",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "front axle residual mass tip check",
+      "code_or_query": "(Q_(43,'kg')*Q_(0.325,'m')-Q_(10,'kg')*Q_(0.30,'m'))/Q_(0.65,'m')",
+      "inputs": {
+        "arg0": {
+          "value": "43",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "0.325",
+          "unit": "m"
+        },
+        "arg2": {
+          "value": "10",
+          "unit": "kg"
+        },
+        "arg3": {
+          "value": "0.30",
+          "unit": "m"
+        },
+        "arg4": {
+          "value": "0.65",
+          "unit": "m"
+        }
+      },
+      "output_summary": "16.9 kg",
+      "output_full": "16.9 kg",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E41",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "actuator force 4 to 1 with friction",
+      "code_or_query": "Q_(147,'N')*4/0.8",
+      "inputs": {
+        "arg0": {
+          "value": "147",
+          "unit": "N"
+        }
+      },
+      "output_summary": "735 N",
+      "output_full": "735 N",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E42",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "input work actuator stroke",
+      "code_or_query": "Q_(735,'N')*Q_(0.15,'m')",
+      "inputs": {
+        "arg0": {
+          "value": "735",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "0.15",
+          "unit": "m"
+        }
+      },
+      "output_summary": "110 m\u22c5N",
+      "output_full": "110 m\u22c5N",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E43",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "tip stability factor moments",
+      "code_or_query": "Q_(43,'kg')*Q_(0.325,'m')/(Q_(10,'kg')*Q_(0.30,'m'))",
+      "inputs": {
+        "arg0": {
+          "value": "43",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "0.325",
+          "unit": "m"
+        },
+        "arg2": {
+          "value": "10",
+          "unit": "kg"
+        },
+        "arg3": {
+          "value": "0.30",
+          "unit": "m"
+        }
+      },
+      "output_summary": "4.66",
+      "output_full": "4.66",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E44",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "sketch",
+      "purpose": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,1.15); ax.set_ylim(0,0.65)\n# start box 1.0 x 0.5\nimport matplotlib.patches as patches\nax.add_patch(patches.Rectangle((0.02,0.02),1.0,0.5,fill=False,lw=2,label='start box'))\nax.text(0.52,0.54,'START BOX 1.00 x 0.50 m',ha='center',fontsize=9)\n# ground\nax.plot([0,1.12],[0.02,0.02],'k-',lw=2)\n# wheels 300mm dia at x=0.15 and 0.80, wheelbase 0.65\nimport matplotlib.patches as mp\nfor x in [0.17,0.82]:\n    c=plt.Circle((x,0.17),0.15,fill=False,lw=2)\n    ax.add_patch(c)\n    ax.text(x,0.17,'W\\n300mm',ha='center',va='center',fontsize=7)\nax.annotate('',xy=(0.17,0.06),xytext=(0.82,0.06),arrowprops=dict(arrowstyle='<->'))\nax.text(0.495,0.07,'wheelbase 0.65 m',ha='center',fontsize=8)\n# frame 0.95 long x 0.10 tall at y ~0.30\nax.add_patch(patches.Rectangle((0.05,0.30),0.95,0.10,fill=False,lw=2))\nax.text(0.52,0.35,'FRAME 0.95x0.48m',ha='center',fontsize=8)\n# lowered hopper inside frame\nax.add_patch(patches.Rectangle((0.55,0.32),0.30,0.12,fill=False,lw=2))\nax.text(0.70,0.38,'HOPPER\\nlowered',ha='center',fontsize=7)\n# folded mast flat to 0.45m height\nax.plot([0.15,0.90],[0.45,0.45],'k-',lw=3)\nax.text(0.52,0.47,'MAST stowed 0.45m high',ha='center',fontsize=8)\n# drum front transverse\nax.add_patch(patches.Rectangle((0.02,0.12),0.12,0.12,fill=False,lw=2))\nax.text(0.08,0.18,'DRUM',ha='center',fontsize=7)\n# dims length\nax.annotate('',xy=(0.02,0.60),xytext=(1.02,0.60),arrowprops=dict(arrowstyle='<->'))\nax.text(0.52,0.61,'1.00 m limit / frame 0.95 m',ha='center',fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+      "inputs": {},
+      "output_summary": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+      "output_full": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+      "sketch_path": "evidence/sketch_44.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E45",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "useful lift energy check 15kg through 0.60m rise",
+      "code_or_query": "15*9.81*0.60",
+      "inputs": {},
+      "output_summary": "88.3",
+      "output_full": "88.3",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E46",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "useful lift energy 15kg through 0.60m rise",
+      "code_or_query": "Q_(15,'kg')*Q_(9.81,'m/s**2')*Q_(0.60,'m')",
+      "inputs": {
+        "arg0": {
+          "value": "15",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "9.81",
+          "unit": "m/s**2"
+        },
+        "arg2": {
+          "value": "0.60",
+          "unit": "m"
+        }
+      },
+      "output_summary": "88.3 kg\u22c5m\u00b2/s\u00b2",
+      "output_full": "88.3 kg\u22c5m\u00b2/s\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
+    },
+    {
+      "id": "E47",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "calc",
+      "purpose": "verify useful lift energy 15kg 0.60m",
+      "code_or_query": "15*9.81*0.60",
+      "inputs": {},
+      "output_summary": "88.3",
+      "output_full": "88.3",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    },
+    {
+      "id": "E48",
+      "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+      "tool": "sketch",
+      "purpose": "Stowed 1.0x0.5x0.5m fit (frame 0.95m, wheels 300mm, mast folded 0.45m, hopper lowered) and deployed lift (pivot 0.45 to 1.05m pour lip, 0.60m guide, 0.15m actuator 4-to-1 chain, 0.30m overhang, 0.70m wheelbase)",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,4))\n# stowed\nax1.set_xlim(0,1.1); ax1.set_ylim(0,0.6); ax1.set_aspect('equal'); ax1.set_title('stowed in 1.0x0.5x0.5 box')\nimport matplotlib.patches as p\nax1.add_patch(p.Rectangle((0,0),1.0,0.5,fill=False,lw=2))\nax1.text(0.5,0.52,'1.0 m start box, h 0.5 m')\nfor x in [0.15,0.85]:\n    c=plt.Circle((x,0.15),0.15,fill=False,lw=2); ax1.add_patch(c); ax1.text(x,0.15,'300mm')\nax1.add_patch(p.Rectangle((0.05,0.28),0.90,0.06,fill=False,lw=2)); ax1.text(0.45,0.31,'frame 0.95m')\nax1.add_patch(p.Rectangle((0.35,0.34),0.30,0.08,fill=False,lw=2)); ax1.text(0.37,0.37,'hopper lowered')\nax1.plot([0.1,0.6],[0.42,0.45],lw=2); ax1.text(0.1,0.46,'mast folded 0.45m')\nax1.text(0.02,0.02,'w 0.5m ok')\n# deployed\nax2.set_xlim(0,1.2); ax2.set_ylim(0,1.3); ax2.set_aspect('equal'); ax2.set_title('deployed high-lift 1.05m lip')\nfor x in [0.3,1.0]:\n    c=plt.Circle((x,0.15),0.15,fill=False,lw=2); ax2.add_patch(c)\nax2.text(0.3,0.02,'front axle'); ax2.text(0.95,0.02,'rear axle')\nax2.plot([1.0,1.0],[0.3,1.05],lw=3); ax2.text(1.02,0.65,'guide 0.60m')\nax2.plot([0.85,0.85],[0.3,0.45],lw=3); ax2.text(0.6,0.35,'actuator 0.15m 4:1 chain')\nax2.add_patch(p.Rectangle((0.95,0.9),0.35,0.15,fill=False,lw=2)); ax2.text(0.97,0.97,'hopper 15kg')\nax2.text(1.02,1.1,'pour lip 1.05m pivot 0.45-1.05m')\nax2.annotate('',xy=(1.0,0.0),xytext=(0.3,0.0),arrowprops=dict(arrowstyle='<->')); ax2.text(0.55,0.05,'wheelbase 0.70m')\nax2.annotate('',xy=(1.30,0.9),xytext=(1.0,0.9),arrowprops=dict(arrowstyle='<->')); ax2.text(1.05,0.85,'overhang 0.30m')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+      "inputs": {},
+      "output_summary": "Stowed 1.0x0.5x0.5m fit (frame 0.95m, wheels 300mm, mast folded 0.45m, hopper lowered) and deployed lift (pivot 0.45 to 1.05m pour lip, 0.60m guide, 0.15m actuator 4-to-1 chain, 0.30m overhang, 0.70m wheelbase)",
+      "output_full": "Stowed 1.0x0.5x0.5m fit (frame 0.95m, wheels 300mm, mast folded 0.45m, hopper lowered) and deployed lift (pivot 0.45 to 1.05m pour lip, 0.60m guide, 0.15m actuator 4-to-1 chain, 0.30m overhang, 0.70m wheelbase)",
+      "sketch_path": "evidence/sketch_48.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    }
+  ],
+  "objections": [
+    {
+      "id": "O1",
+      "author": "Evaluator",
+      "target_id": "proposal",
+      "text": "Recompute 30-min energy from E34 341 W (341 W x 0.5 h = ~171 Wh plus margins) and size 24 V pack mass at realistic pack density near 90-120 Wh/kg LiFePO4 or state NMC chemistry, then re-sum joint total vs E50 50.6 kg to close O1/O4 - calculation the room can perform.",
+      "blocking": true,
+      "status": "resolved",
+      "resolution": "O1 closed",
+      "evidence_ids": []
+    },
+    {
+      "id": "O2",
+      "author": "Evaluator",
+      "target_id": "proposal",
+      "text": "Provide dimensioned side sketch plus static calculation of rear high-lift mast: pivot heights to 1.05 m pour lip, 150 mm stroke dual 500 N actuators through 4-to-1 chain with friction lifting hopper + 10 kg soil, and tip moment about rear axle with 0.30 m overhang to replace failed E56 and reconcile 7.1 vs 4.06 factors to close O2 - sketch plus calculation the room can perform.",
+      "blocking": true,
+      "status": "open",
+      "resolution": "",
+      "evidence_ids": []
+    }
+  ],
+  "proposal": {
+    "version": 1,
+    "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+    "text": "Integrated wheeled drum rover: four 300 mm grouser wheels (C1), front 200 mm transverse drum 30 mm cut (C2), folding 1.0 m perception mast with heartbeat stop-hold (C3,C4), rear high-lift mast hopper pivot 0.45 m stowed to 1.05 m pour lip on 0.60 m guide via 0.15 m dual actuators 4-to-1 chain at 0.80 efficiency (C5). Mass table reuses 53.0 kg reconciled total under 60 kg. No recompute: reuses sortie, pack, lift, tip and stow evidence.",
+    "concept_ids": [],
+    "key_claims": [
+      {
+        "claim": "sortie energy 171 Wh from 341 W for 0.5 h fits 480 Wh COTS pack for 1.41 h runtime",
+        "evidence_ids": [
+          "E32",
+          "E36"
+        ]
+      },
+      {
+        "claim": "pack density 90.6 Wh/kg gives 53.0 kg joint total under 60 kg limit",
+        "evidence_ids": [
+          "E34",
+          "E37"
+        ]
+      },
+      {
+        "claim": "lift 15 kg through 0.60 m rise needs 735 N total through 4-to-1 chain at 0.80 efficiency, 110 J input vs 88.3 J useful",
+        "evidence_ids": [
+          "E41",
+          "E42",
+          "E38"
+        ]
+      },
+      {
+        "claim": "raised load 0.30 m aft of rear axle on 0.70 m wheelbase leaves 16.9 kg front residual factor 4.66",
+        "evidence_ids": [
+          "E40",
+          "E43"
+        ]
+      },
+      {
+        "claim": "stowed 0.95 m frame with 300 mm wheels mast to 0.45 m hopper lowered fits 1.0x0.5x0.5 m box",
+        "evidence_ids": [
+          "E44"
+        ]
+      }
+    ]
+  },
+  "votes": {
+    "Sam \u2014 Structure, Mass and Material Handling Engineer": {
+      "version": 1,
+      "ready": true,
+      "reason": "Lift force with friction, tip reactions with stated overhang and wheelbase, useful-versus-input energy, stowed fit and reconciled mass all evidenced and scale-checked"
+    },
+    "Mara \u2014 Excavation and Mobility Engineer": {
+      "version": 1,
+      "ready": false,
+      "reason": "Not ready: blocking O2 on lift kinematics/tip and stowed fit remains open; traction/flotation and cutting close on my side but integration support conditioned on mass and dump proofs owned by others."
+    },
+    "Theo \u2014 Autonomy and Remote Operations Engineer": {
+      "version": 1,
+      "ready": true,
+      "reason": "Theo votes ready on v1: mast stow/deploy plus sensing mass/power and heartbeat stop-hold fit joint mass-energy and envelope with deployed lift geometry now evidenced."
+    },
+    "Priya \u2014 Power, Avionics and Lunar Environment Engineer": {
+      "version": 1,
+      "ready": true,
+      "reason": "mass-energy reconciled under limit and lift-tip-envelope now evidenced; vote ready on v1"
+    }
+  },
+  "closure": {
+    "closed_by": "cap",
+    "cycles_used": 4,
+    "open_blocking": [
+      "O2"
+    ]
+  }
+}

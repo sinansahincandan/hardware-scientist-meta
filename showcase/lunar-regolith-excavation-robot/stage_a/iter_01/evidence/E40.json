@@ -1,0 +1,35 @@
+{
+  "id": "E40",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "front axle residual mass tip check",
+  "code_or_query": "(Q_(43,'kg')*Q_(0.325,'m')-Q_(10,'kg')*Q_(0.30,'m'))/Q_(0.65,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "43",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "0.325",
+      "unit": "m"
+    },
+    "arg2": {
+      "value": "10",
+      "unit": "kg"
+    },
+    "arg3": {
+      "value": "0.30",
+      "unit": "m"
+    },
+    "arg4": {
+      "value": "0.65",
+      "unit": "m"
+    }
+  },
+  "output_summary": "16.9 kg",
+  "output_full": "16.9 kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

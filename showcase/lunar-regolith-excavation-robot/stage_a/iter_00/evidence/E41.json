@@ -1,0 +1,24 @@
+{
+  "id": "E41",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics collection bin height dump requirement",
+  "code_or_query": "NASA Lunabotics collection bin height dump requirement",
+  "inputs": {},
+  "output_summary": "web1.eng.famu.fsu.edu — Lunabotics Mining Competition Rules — 2011 — https://web1.eng.famu.fsu.edu/me/senior_design/2011/team19/papers/LMC Rules 2010.pdf",
+  "output_full": "web1.eng.famu.fsu.edu — Lunabotics Mining Competition Rules — 2011 — https://web1.eng.famu.fsu.edu/me/senior_design/2011/team19/papers/LMC Rules 2010.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "web1.eng.famu.fsu.edu",
+      "title": "Lunabotics Mining Competition Rules",
+      "year": "2011",
+      "url": "https://web1.eng.famu.fsu.edu/me/senior_design/2011/team19/papers/LMC Rules 2010.pdf",
+      "query": "NASA Lunabotics collection bin height dump requirement",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

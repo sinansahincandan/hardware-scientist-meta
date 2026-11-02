@@ -1,0 +1,24 @@
+{
+  "id": "E18",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
+  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "inputs": {},
+  "output_summary": "files.seeedstudio.com — INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth — https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf",
+  "output_full": "files.seeedstudio.com — INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth — https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "files.seeedstudio.com",
+      "title": "INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth",
+      "year": "",
+      "url": "https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf",
+      "query": "Intel RealSense depth camera range field of view datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

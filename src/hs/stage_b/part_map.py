@@ -294,7 +294,14 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     w, h = img.size
     font = _font(max(16, w // 70))
     missing = [f"{pid} ('{rec['phrase']}')" for pid, rec in data["parts"].items() if not rec["boxes"]]
-    strip_h = (font.size + 14) * (2 if missing else 1)  # type: ignore[attr-defined]
+    lines: list[str] = []  # the not-found list, wrapped to the picture width
+    for item in missing:
+        trial = (lines[-1] + "; " + item) if lines else "Not found: " + item
+        if lines and ImageDraw.Draw(img).textlength(trial, font=font) <= w - 20:
+            lines[-1] = trial
+        else:
+            lines.append(trial if not lines else item)
+    strip_h = (font.size + 14) * (1 + len(lines))  # type: ignore[attr-defined]
     canvas = Image.new("RGB", (w, h + strip_h), "white")
     canvas.paste(img, (0, 0))
     overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
@@ -321,6 +328,7 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     d.text((10, h + 6), f"SAM 3.1 found {found} of {len(data['parts'])} parts (each part's mask and box in its colour).",
            fill=(30, 30, 30), font=font)
     if missing:
-        d.text((10, h + 6 + font.size + 10), "Not found: " + "; ".join(missing), fill=(150, 30, 30), font=font)  # type: ignore[attr-defined]
+        for k, line in enumerate(lines):
+            d.text((10, h + 6 + (k + 1) * (font.size + 10)), line, fill=(150, 30, 30), font=font)  # type: ignore[attr-defined]
     canvas.save(out_png)
     return out_png

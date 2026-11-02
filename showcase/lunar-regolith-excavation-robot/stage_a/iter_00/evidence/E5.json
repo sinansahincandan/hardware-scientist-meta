@@ -1,0 +1,24 @@
+{
+  "id": "E5",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+  "code_or_query": "lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+  "inputs": {},
+  "output_summary": "publications.ri.cmu.edu — IJR370217 1550..1564 — 2010 — http://publications.ri.cmu.edu/storage/publications/pub_files/2010/10/Wettergreen-1550-64-1.pdf",
+  "output_full": "publications.ri.cmu.edu — IJR370217 1550..1564 — 2010 — http://publications.ri.cmu.edu/storage/publications/pub_files/2010/10/Wettergreen-1550-64-1.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "publications.ri.cmu.edu",
+      "title": "IJR370217 1550..1564",
+      "year": "2010",
+      "url": "http://publications.ri.cmu.edu/storage/publications/pub_files/2010/10/Wettergreen-1550-64-1.pdf",
+      "query": "lunar rover wheel traction loose soil Bekker grouser drawbar pull",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

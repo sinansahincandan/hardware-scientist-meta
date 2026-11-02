@@ -1,0 +1,24 @@
+{
+  "id": "E31",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+  "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+  "inputs": {},
+  "output_summary": "gorugged.co.za — IP Ratings explained | Blogs | GoRugged SA — https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3",
+  "output_full": "gorugged.co.za — IP Ratings explained | Blogs | GoRugged SA — https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "gorugged.co.za",
+      "title": "IP Ratings explained | Blogs | GoRugged SA",
+      "year": "",
+      "url": "https://www.gorugged.co.za/blog-articles/adelia-taljaard/NA/ip-ratings-explained/3",
+      "query": "IP65 enclosure dust sealing standard electronics box",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

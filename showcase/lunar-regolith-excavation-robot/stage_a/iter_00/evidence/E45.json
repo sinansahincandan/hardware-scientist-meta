@@ -1,0 +1,14 @@
+{
+  "id": "E45",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "sketch",
+  "purpose": "Side view of low tube frame with central hopper hinged at rear raised by linear actuator to dump over 1m bin lip",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax=plt.subplots(figsize=(8,5)); ax.set_aspect('equal'); ax.axis('off'); ax.set_xlim(0,10); ax.set_ylim(0,6)\n# ground\nax.plot([0,10],[0.5,0.5],'k-',lw=2); ax.text(0.2,0.2,'ground')\n# wheels\nimport matplotlib.patches as mp\nfor x in [2,7]:\n  c=plt.Circle((x,1.2),0.7,fill=False,lw=2); ax.add_patch(c); ax.text(x-0.3,1.1,'wheel')\n# frame\nax.add_patch(mp.Rectangle((1.5,1.9,6.2,0.3),fill=False,lw=2)); ax.text(3.5,2.25,'tube frame 0.95m')\n# belly pan\nax.plot([1.5,7.7],[1.9,1.9],'k-',lw=3); ax.text(3.5,1.65,'belly pan')\n# hopper stowed dashed + raised\nax.add_patch(mp.Rectangle((3,2.3,3.2,1.0),fill=False,lw=2,linestyle='--')); ax.text(3.1,3.4,'hopper stowed')\n# raised hopper tilted\nimport numpy as np\nax.plot([6.2,6.8,5.2,4.6,6.2],[2.5,4.2,4.5,2.8,2.5],'r-',lw=2); ax.text(5.0,4.6,'hopper raised',color='r')\n# actuator\nax.plot([4.0,5.0],[2.2,3.2],'b-',lw=2); ax.text(3.2,2.8,'linear actuator',color='b')\n# bin\nax.add_patch(mp.Rectangle((7.8,0.5,1.5,2.5),fill=False,lw=2)); ax.text(7.9,3.2,'bin 1m lip')\nax.plot([6.8,7.8],[4.0,3.1],'r--',lw=1); ax.text(6.9,3.7,'flow',color='r')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+  "inputs": {},
+  "output_summary": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "output_full": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

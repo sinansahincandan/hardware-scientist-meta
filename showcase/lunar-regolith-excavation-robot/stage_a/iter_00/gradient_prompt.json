@@ -1,0 +1,106 @@
+{
+  "feedback_decisions": [
+    {
+      "feedback_item": "Battery mass-energy inconsistency: 341W x 0.5h = 171Wh not 1000Wh, 1000Wh/2.92kg = 342Wh/kg vs LiFePO4 pack ~90-110Wh/kg",
+      "decision": "apply",
+      "why": "Pack claim violates everyday pack scale and decides mass margin and runtime. Must require recompute of sortie energy from power and duration and pack mass from cited pack specific energy, with joint total reconciliation."
+    },
+    {
+      "feedback_item": "Actuator force with friction through 4:1 linkage unproven (E56 failed) and lift energy 2400J vs ~155J useful (15x overhead)",
+      "decision": "apply",
+      "why": "Travel without force with friction leaves dump unproven and lift energy overhead signals model error. Must require pivot geometry plus linkage force with friction and useful-vs-input energy check."
+    },
+    {
+      "feedback_item": "Dump kinematics and tip moment unproven: 0.45m stowed frame to 1.0m lip, 0.50m hopper, 0.30m overhang, tip factor 4.06 vs 7.1 earlier",
+      "decision": "apply",
+      "why": "Tip factor swing shows moment-arm sensitivity. Must require fixed pivot geometry, overhang distance, wheelbase reactions and reconciled safety factor with sketch."
+    },
+    {
+      "feedback_item": "Dimensioned stowed 1.0x0.5x0.5m envelope missing: 300mm wheels + stowed 900mm mast + 1050mm hopper travel, sketches E11/E46/E57 deployed only",
+      "decision": "apply",
+      "why": "Deployed topology alone cannot prove start-box fit. Must require dimensioned stowed sketch showing frame, wheels, stowed mast and lowered hopper within limits."
+    },
+    {
+      "feedback_item": "Mass integration O1 and runtime from pack at full load unproven (E58/E59 failed)",
+      "decision": "apply",
+      "why": "Without joint mass table and runtime at full load, mass compliance and sortie closure stay open. Must require integrated total and runtime with evidence ids before vote."
+    },
+    {
+      "feedback_item": "Sealed-box thermal 22K rise E53 / 0.00332 m3/s for 80W E52 closed but IP65 dust claim only generic E27-E29, plus FPV latency / stopping 0.15m",
+      "decision": "defer",
+      "why": "Thermal bound is closed and dust-seal detail plus latency are test tuning, not acceptance blockers. Retain current sealed-box plus fan plus dual-link heartbeat behavior with no prompt acceptance change."
+    },
+    {
+      "feedback_item": "Traction/cutting/contact/torque E10, sensor power E47, hopper volume 0.0111m3 E49, overall physical plausibility and RASSOR distinction",
+      "decision": "defer",
+      "why": "Supported and plausible with no conservation/load/signal violation. Retain as-is with no prompt change."
+    }
+  ],
+  "per_member": [
+    {
+      "member": "Priya — Power, Avionics and Lunar Environment Engineer",
+      "what_went_wrong": "Posted pack mass for nominal pack energy without checking energy equals power times duration and without comparing implied specific energy to cited pack scale, leaving O4 and O1 open.",
+      "what_should_change": "Require Priya to derive sortie energy from average power and duration, compare implied specific energy against cited pack-level datasheet value, post corrected pack mass and runtime at full load with evidence ids, and reconcile with joint mass total before supporting integration.",
+      "explains": "E48 battery mass claim and O4 plus E34 power budget cited in Priya turn: pack energy-mass ratio outside cited datasheet pack scale, sortie energy not reconciled"
+    },
+    {
+      "member": "Sam — Structure, Mass and Material Handling Engineer",
+      "what_went_wrong": "Showed travel but not force with friction, showed tip factor without fixed geometry causing large swing, and showed deployed topology without dimensioned stowed fit, leaving O1/O2 open.",
+      "what_should_change": "Require Sam to post pivot positions, guide travel and linkage force with friction for the lift, tip moment arms with overhang and wheelbase reactions for raised load, and a dimensioned stowed sketch showing fit within start limits, reusing joint mass evidence and stating why any recompute differs.",
+      "explains": "E56 failed linkage force, E60 lift energy overhead, E55/E51 tip factor swing, missing stowed envelope E46/E57/E11 plus O1/O2 cited in Sam turns and Manager notes cycles 2-4"
+    },
+    {
+      "member": "Mara — Excavation and Mobility Engineer",
+      "what_went_wrong": "Voted ready on digging and flotation strength while dump, mass and pack blocks owned by others were still open, breaking survive-strongest-objection rule.",
+      "what_should_change": "Require Mara to withhold ready vote while blocking objections assigned to others remain open, to cite traction and cutting evidence ids for wheel-versus-track and drum-versus-ladder choice, and to condition support on closure of mass and dump proofs owned by Sam and Priya.",
+      "explains": "Mara ready vote while O1/O2/O4 open noted in Manager cycles 2-3 and member stats 1 ready to 3 not-ready"
+    },
+    {
+      "member": "Theo — Autonomy and Remote Operations Engineer",
+      "what_went_wrong": "Sensing and link behavior were supported but stowed mast fit and joint mass agreement were left implicit, so envelope integration stayed unclosed.",
+      "what_should_change": "Require Theo to post stowed versus deployed mast dimensions and mass/power share for joint table, to keep heartbeat stop-and-hold behavior tied to latency and stopping evidence, and to withhold ready until joint envelope and mass proofs close.",
+      "explains": "E47 sensor power and E21 stopping distance plus E23 mast stow/deploy cited in Theo turns; Theo correctly withheld ready but mast stow fit left to Sam"
+    }
+  ],
+  "per_section": [
+    {
+      "heading": "## 2. Roles / ### Priya — Power, Avionics and Lunar Environment Engineer",
+      "diagnosis": "Priya role owns power sizing and enclosure but does not force energy-mass consistency check against cited pack scale, so off-scale pack passed to proposal and joint total.",
+      "direction": "Add to Priya ownership: derive sortie energy from budget power and duration, check implied specific energy against cited pack datasheet, post corrected mass and runtime with evidence ids, and reconcile with joint total.",
+      "explains": "E48/E34/E50 and O4 battery mass-energy inconsistency"
+    },
+    {
+      "heading": "## 2. Roles / ### Sam — Structure, Mass and Material Handling Engineer",
+      "diagnosis": "Sam role owns hopper, dump and envelope but does not force pivot geometry, linkage force with friction, tip arms, and dimensioned stowed fit, so travel plausible but force, stability and fit stay unproven.",
+      "direction": "Add to Sam ownership: show pivot positions, guide travel and linkage force with friction, show tip reactions with overhang for raised load, and post stowed dimensioned sketch proving fit; reconcile changed safety factor with stated geometry change.",
+      "explains": "E56/E60/E55/E51/E46/E57 and O1/O2 dump and envelope gaps"
+    },
+    {
+      "heading": "## 4. Meeting protocol",
+      "diagnosis": "Protocol requires evidence and survive-strongest-objection voting but allowed early ready vote and proposal carryover without joint mass, force, stability and envelope evidence, so cap arrived with blocks open.",
+      "direction": "Strengthen protocol: require cited evidence ids for key claims, require joint mass table reconciliation on proposal change, require lift-force, tip-geometry and stowed-sketch evidence to close related blocks, and require withholding ready vote while assigned blocks stay open.",
+      "explains": "Meeting closed without consensus with 1 ready to 3 not-ready and O1/O2/O4 open; early Mara vote cycles 2-3"
+    },
+    {
+      "heading": "## 5. Criteria",
+      "diagnosis": "Criteria states work physically and buildable with shop methods but does not distinguish acceptance proofs from test tuning, so dust-seal detail and latency risk being treated as blockers on resubmittal.",
+      "direction": "Clarify that buildable requires closed mass-energy, lift-force, stability and envelope proofs with evidence, while seal implementation detail and link latency tuning remain verification tuning, not vote blockers when bounded.",
+      "explains": "Sealed-box thermal closed vs generic IP claim and FPV latency items marked no acceptance change"
+    }
+  ],
+  "sections_to_change": [
+    "## 2. Roles / ### Priya — Power, Avionics and Lunar Environment Engineer",
+    "## 2. Roles / ### Sam — Structure, Mass and Material Handling Engineer",
+    "## 2. Roles / ### Mara — Excavation and Mobility Engineer",
+    "## 2. Roles / ### Theo — Autonomy and Remote Operations Engineer",
+    "## 4. Meeting protocol",
+    "## 5. Criteria"
+  ],
+  "root_cause": "Roles lacked enforced consistency checks (energy equals power times duration versus pack scale; linkage force with friction and useful-vs-input energy; tip arms and stowed fit) and protocol allowed ready vote and proposal carryover without that evidence, so plausible concept reached cap with O1/O2/O4 sound but unclosed.",
+  "agenda": "Targeted failure, not broad unworkability: plausible wheeled drum rover closed traction, power, thermal and volume but left two recomputes open (pack energy-mass, lift force with tip and stowed envelope) when discussion ended without consensus. Fix by tightening domain checks in Roles and evidence gating in Meeting protocol/Criteria, not by redesign or roster change.",
+  "same_problem_as_before": false,
+  "repeat_explanation": "",
+  "revert_sections": [],
+  "new_tool_proposals": [],
+  "retire_tools": []
+}

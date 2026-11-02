@@ -1,0 +1,24 @@
+{
+  "id": "E19",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
+  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "inputs": {},
+  "output_summary": "thinkrobotics.com — Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i",
+  "output_full": "thinkrobotics.com — Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "thinkrobotics.com",
+      "title": "Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics",
+      "year": "",
+      "url": "https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i",
+      "query": "Intel RealSense depth camera range field of view datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

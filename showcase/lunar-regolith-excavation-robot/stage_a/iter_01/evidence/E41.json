@@ -1,0 +1,19 @@
+{
+  "id": "E41",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "actuator force 4 to 1 with friction",
+  "code_or_query": "Q_(147,'N')*4/0.8",
+  "inputs": {
+    "arg0": {
+      "value": "147",
+      "unit": "N"
+    }
+  },
+  "output_summary": "735 N",
+  "output_full": "735 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

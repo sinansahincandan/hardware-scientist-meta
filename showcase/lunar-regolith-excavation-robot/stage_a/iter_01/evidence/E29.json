@@ -1,0 +1,24 @@
+{
+  "id": "E29",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure dust sealing standard electronics box",
+  "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+  "inputs": {},
+  "output_summary": "aluleader.com — Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader — https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
+  "output_full": "aluleader.com — Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader — https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "aluleader.com",
+      "title": "Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader",
+      "year": "",
+      "url": "https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
+      "query": "IP65 enclosure dust sealing standard electronics box",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

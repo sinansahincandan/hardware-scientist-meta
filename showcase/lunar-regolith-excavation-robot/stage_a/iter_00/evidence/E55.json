@@ -1,0 +1,14 @@
+{
+  "id": "E55",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "tip safety factor with 0.30 m overhang",
+  "code_or_query": "((40.6*0.30)/(10*0.30))",
+  "inputs": {},
+  "output_summary": "4.06",
+  "output_full": "4.06",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

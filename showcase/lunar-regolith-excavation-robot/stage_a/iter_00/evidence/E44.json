@@ -1,0 +1,23 @@
+{
+  "id": "E44",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "hopper volume for 10kg BP-1 payload",
+  "code_or_query": "Q_(10,\"kg\")/Q_(1600,\"kg/m**3\")",
+  "inputs": {
+    "arg0": {
+      "value": "10",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "1600",
+      "unit": "kg/m**3"
+    }
+  },
+  "output_summary": "0.00625 m\u00b3",
+  "output_full": "0.00625 m\u00b3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

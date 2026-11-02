@@ -1,0 +1,24 @@
+{
+  "id": "E26",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
+  "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+  "inputs": {},
+  "output_summary": "stevensmarine.com — Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) — 2024 — https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
+  "output_full": "stevensmarine.com — Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) — 2024 — https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "stevensmarine.com",
+      "title": "Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS)",
+      "year": "2024",
+      "url": "https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
+      "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,23 @@
+{
+  "id": "E49",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "corrected hopper volume for 10kg at 900 kg/m3 loose BP-1",
+  "code_or_query": "Q_(10,\"kg\")/Q_(900,\"kg/m**3\")",
+  "inputs": {
+    "arg0": {
+      "value": "10",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "900",
+      "unit": "kg/m**3"
+    }
+  },
+  "output_summary": "0.0111 m\u00b3",
+  "output_full": "0.0111 m\u00b3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

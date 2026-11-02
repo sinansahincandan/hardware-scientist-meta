@@ -1,0 +1,24 @@
+{
+  "id": "E17",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "inputs": {},
+  "output_summary": "kamami.pl — NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM — https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
+  "output_full": "kamami.pl — NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM — https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "kamami.pl",
+      "title": "NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM",
+      "year": "",
+      "url": "https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
+      "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "E35",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: lunar regolith simulant BP-1 bulk density angle of repose",
+  "code_or_query": "lunar regolith simulant BP-1 bulk density angle of repose",
+  "inputs": {},
+  "output_summary": "larochelle.sdsmt.edu — untitled — 2015 — http://larochelle.sdsmt.edu/publications/2015-2019/Simulation of Soft Regolith Dynamic Anchors for Celestial Exploration.pdf",
+  "output_full": "larochelle.sdsmt.edu — untitled — 2015 — http://larochelle.sdsmt.edu/publications/2015-2019/Simulation of Soft Regolith Dynamic Anchors for Celestial Exploration.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "larochelle.sdsmt.edu",
+      "title": "untitled",
+      "year": "2015",
+      "url": "http://larochelle.sdsmt.edu/publications/2015-2019/Simulation of Soft Regolith Dynamic Anchors for Celestial Exploration.pdf",
+      "query": "lunar regolith simulant BP-1 bulk density angle of repose",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

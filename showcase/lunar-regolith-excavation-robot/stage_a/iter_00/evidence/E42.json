@@ -1,0 +1,24 @@
+{
+  "id": "E42",
+  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics collection bin height dump requirement",
+  "code_or_query": "NASA Lunabotics collection bin height dump requirement",
+  "inputs": {},
+  "output_summary": "ni.lithium.com — Fall 2011 NASA Lunabotics Mining Competition Systems Engineering Paper — 2011 — https://ni.lithium.com/ni/attachments/ni/3035/2049/1/Systems%20Engineering%20Report%20_Mile-High%20Miners.pdf",
+  "output_full": "ni.lithium.com — Fall 2011 NASA Lunabotics Mining Competition Systems Engineering Paper — 2011 — https://ni.lithium.com/ni/attachments/ni/3035/2049/1/Systems%20Engineering%20Report%20_Mile-High%20Miners.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ni.lithium.com",
+      "title": "Fall 2011 NASA Lunabotics Mining Competition Systems Engineering Paper",
+      "year": "2011",
+      "url": "https://ni.lithium.com/ni/attachments/ni/3035/2049/1/Systems%20Engineering%20Report%20_Mile-High%20Miners.pdf",
+      "query": "NASA Lunabotics collection bin height dump requirement",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E10",
+  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "tool": "simulate",
+  "purpose": "Traction and cutting force order-of-magnitude for 60kg robot on BP-1",
+  "code_or_query": "import numpy as np\nfrom pint import UnitRegistry\nQ_=UnitRegistry().Quantity\n# BP-1: friction angle ~45 deg, cohesion ~0, bulk density ~1600 kg/m3\nm=Q_(50,'kg'); g=Q_(9.81,'m/s**2')\nW=(m*g).to('N')\nphi=np.deg2rad(45)\n# traction: drawbar pull coeff ~ tan(phi)*0.5 derate for slip/sinkage -> ~0.3-0.4\nfor coeff in [0.3,0.4]:\n    DP=(W*coeff).to('N')\n    print(f\"DP coeff {coeff}: {DP:.2f}\")\n# cutting force: passive earth pressure on 0.4m wide, 0.05m deep blade\nrho=Q_(1600,'kg/m**3'); w=Q_(0.4,'m'); d=Q_(0.05,'m')\nKp=(1+np.sin(phi))/(1-np.sin(phi))\nF=(0.5*rho*g*d**2*w*Kp).to('N')\nprint(f\"Kp {Kp:.2f} cutting force {F:.2f}\")\n# wheel sinkage sanity: contact pressure 4 wheels 0.3x0.1\nA=(4*0.3*0.1)\np=(W.magnitude/A)\nprint(f\"contact pressure kPa {p/1000:.2f}\")\n# wheel torque to overcome DP per wheel\nR=Q_(0.15,'m'); Tw=((W*0.35/4)*R).to('N*m')\nprint(f\"torque per wheel {Tw:.2f}\")",
+  "inputs": {},
+  "output_summary": "Kp 5.83 cutting force 45.7 newton; contact pressure kPa 4.09; torque per wheel 6.44 meter * newton",
+  "output_full": "DP coeff 0.3: 147.15 newton\nDP coeff 0.4: 196.20 newton\nKp 5.83 cutting force 45.74 newton\ncontact pressure kPa 4.09\ntorque per wheel 6.44 meter * newton",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

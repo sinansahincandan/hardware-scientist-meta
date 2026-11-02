@@ -1,0 +1,24 @@
+{
+  "id": "E17",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: ISO 13849 emergency stop mobile robot standard",
+  "code_or_query": "ISO 13849 emergency stop mobile robot standard",
+  "inputs": {},
+  "output_summary": "robotics247.com — TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs — https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain",
+  "output_full": "robotics247.com — TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs — https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "robotics247.com",
+      "title": "TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs",
+      "year": "",
+      "url": "https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain",
+      "query": "ISO 13849 emergency stop mobile robot standard",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

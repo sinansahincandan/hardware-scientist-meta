@@ -1,0 +1,24 @@
+{
+  "id": "E20",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
+  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "inputs": {},
+  "output_summary": "thinkrobotics.com — Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435",
+  "output_full": "thinkrobotics.com — Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "thinkrobotics.com",
+      "title": "Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com",
+      "year": "",
+      "url": "https://thinkrobotics.com/products/intel-realsense-depth-camera-d435",
+      "query": "Intel RealSense depth camera range field of view datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "E12",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: FPV 5.8 GHz video latency teleoperation ground robot",
+  "code_or_query": "FPV 5.8 GHz video latency teleoperation ground robot",
+  "inputs": {},
+  "output_summary": "ivcan.com — FPV CVBS AV encoder decoder video stream over IP Ethernet — https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/",
+  "output_full": "ivcan.com — FPV CVBS AV encoder decoder video stream over IP Ethernet — https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ivcan.com",
+      "title": "FPV CVBS AV encoder decoder video stream over IP Ethernet",
+      "year": "",
+      "url": "https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/",
+      "query": "FPV 5.8 GHz video latency teleoperation ground robot",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

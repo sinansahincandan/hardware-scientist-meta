@@ -1,0 +1,24 @@
+{
+  "id": "E2",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
+  "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+  "inputs": {},
+  "output_summary": "impact.colorado.edu — Sanchez, David Poster 2024 (12JUL24) — 2024 — http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf",
+  "output_full": "impact.colorado.edu — Sanchez, David Poster 2024 (12JUL24) — 2024 — http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "impact.colorado.edu",
+      "title": "Sanchez, David Poster 2024 (12JUL24)",
+      "year": "2024",
+      "url": "http://impact.colorado.edu/lungradcon/2025/presentations/SanchezDavidPoster202412JUL24.pdf",
+      "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

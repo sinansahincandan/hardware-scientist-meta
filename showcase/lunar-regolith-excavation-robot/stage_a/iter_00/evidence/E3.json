@@ -1,0 +1,24 @@
+{
+  "id": "E3",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+  "code_or_query": "Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+  "inputs": {},
+  "output_summary": "impact.colorado.edu — | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | — https://impact.colorado.edu/lungradcon/presentations/142140b1",
+  "output_full": "impact.colorado.edu — | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | — https://impact.colorado.edu/lungradcon/presentations/142140b1\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "impact.colorado.edu",
+      "title": "| BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  |",
+      "year": "",
+      "url": "https://impact.colorado.edu/lungradcon/presentations/142140b1",
+      "query": "Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

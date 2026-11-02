@@ -1,0 +1,23 @@
+{
+  "id": "E42",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "calc",
+  "purpose": "input work actuator stroke",
+  "code_or_query": "Q_(735,'N')*Q_(0.15,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "735",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "0.15",
+      "unit": "m"
+    }
+  },
+  "output_summary": "110 m\u22c5N",
+  "output_full": "110 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

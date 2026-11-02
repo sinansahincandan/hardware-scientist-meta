@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "natural convection rise estimate sealed box",
+  "code_or_query": "(80/(0.52*7))",
+  "inputs": {},
+  "output_summary": "22",
+  "output_full": "22",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

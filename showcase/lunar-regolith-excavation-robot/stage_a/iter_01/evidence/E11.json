@@ -1,0 +1,27 @@
+{
+  "id": "E11",
+  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "tool": "calc",
+  "purpose": "traction margin: half weight available vs 39N drum force",
+  "code_or_query": "(Q_(589,'N')*0.5+Q_(39,'N'))/Q_(589,'N')",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "39",
+      "unit": "N"
+    },
+    "arg2": {
+      "value": "589",
+      "unit": "N"
+    }
+  },
+  "output_summary": "0.566",
+  "output_full": "0.566",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

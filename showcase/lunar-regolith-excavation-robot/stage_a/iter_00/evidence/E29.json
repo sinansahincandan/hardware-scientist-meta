@@ -1,0 +1,24 @@
+{
+  "id": "E29",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
+  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "inputs": {},
+  "output_summary": "optraffic.com — IP65 for Traffic Equipment: 5 Common Misconceptions Explained — https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/",
+  "output_full": "optraffic.com — IP65 for Traffic Equipment: 5 Common Misconceptions Explained — https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "optraffic.com",
+      "title": "IP65 for Traffic Equipment: 5 Common Misconceptions Explained",
+      "year": "",
+      "url": "https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/",
+      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

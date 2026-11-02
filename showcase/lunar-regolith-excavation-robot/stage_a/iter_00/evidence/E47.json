@@ -1,0 +1,14 @@
+{
+  "id": "E47",
+  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
+  "tool": "calc",
+  "purpose": "mast sensor plus LED power sum",
+  "code_or_query": "3.5+2*2.0+10+1.0",
+  "inputs": {},
+  "output_summary": "18.5",
+  "output_full": "18.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

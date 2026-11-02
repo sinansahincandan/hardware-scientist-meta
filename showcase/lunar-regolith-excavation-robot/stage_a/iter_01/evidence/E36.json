@@ -1,0 +1,14 @@
+{
+  "id": "E36",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "runtime hours from 480Wh pack at 341W full load",
+  "code_or_query": "(480/341)",
+  "inputs": {},
+  "output_summary": "1.41",
+  "output_full": "1.41",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -13,9 +13,10 @@ Every statement points to a file. Round 3 follows below, then the earlier rounds
   | 01 stair-climbing hand truck | `runs/20261102-105608_stair-climbing-hand-truck-for-parcel-cou` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.9362 |
   | 02 off-grid solar cold room | `runs/20261102-112524_off-grid-solar-powered-cold-storage-for-` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $2.2661 |
   | 03 footbridge vibration retrofit | `runs/20261102-121628_vibration-retrofit-for-a-lively-pedestri` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.6361 |
+  | 04 lunar regolith excavation robot (new, constraints from NASA's Lunabotics review) | `runs/20261102-153907_lunar-regolith-excavation-robot` | cap at meeting 1 → **rejected** → Manager rewrote Roles, Protocol, Criteria → cap at meeting 2 → **accepted**; picture failed round 1 on one callout → **local fix** → faithful in round 2 | $3.7716 |
 - **Test run kept:** `runs/20261102-104641_…` (Stage B redraw of a round-3 solution, $0.3269) — found the critic
   passing a picture it had itself faulted, SAM missing two-word phrases, crossing labels.
-- **Ledger:** $20.85 of the $55 cap after round 4 (round 4 spent $6.25: the test run, the three runs, a content-filter
+- **Ledger:** $24.62 of the $55 cap after round 4 (round 4 spent $10.02: the test run, four runs, a content-filter
   reproduction $0.08). `hs budget` lists every run.
 
 ## Fit to the owner's figures — what ran in the round-4 runs
@@ -28,8 +29,11 @@ Fig. 1 (`docs/fig1_architecture.svg`)
   (simulation E58) and fixed it (E60) before voting (transcript.md lines 75, 88).
 - **Evaluator: written review, constraint by constraint** — fired: `verdict.json` constraint_review in all three runs, in
   prose with the deciding numbers; no constraint was relaxed (none needed it).
-- **Fail → Manager two-step gradient → section rewrite → re-meeting** — **did not fire in round 4**: all three runs were
-  accepted at meeting 1. Code and tests are in place; the last real rewrite is round-3 smoke run 022817.
+- **Fail → Manager two-step gradient → section rewrite → re-meeting** — **fired in run 04**: the Evaluator re-derived
+  the battery numbers (1000 Wh in 2.92 kg ≈ 342 Wh/kg, three times a real pack) and rejected; the Manager wrote a
+  decision for each feedback item and rewrote §2, §4, §5, each new duty tied to a named item (`master_prompt/diff_001.md`);
+  meeting 2 replaced the pack (480 Wh, 5.3 kg), posted stowed sketches and lift-force calculations; the Evaluator
+  accepted, re-deriving the same arithmetic. Runs 01–03 were accepted at meeting 1.
 - **Council archive** — fired (archive.jsonl, status accepted).
 - **knowledge/ at the end of a problem** — fired: `knowledge/insights/<run>.md` for all three runs (4–5 findings each,
   with evidence ids), lessons L11–L14 added, 16 "used in run …" notes under existing lessons (run 01: 5, run 02: 4, run 03: 7).
@@ -46,8 +50,10 @@ Fig. 2 (`docs/fig2_visualization_pipeline.svg`)
 - **3 Part map · SAM masks and contacts** — fired: masks decoded with meta-sam-parser, filled in each part's colour
   (`sam_overlay.png`); found 5/7, 7/11, 4/7 parts. The head-noun retry found "strap" in run 01. SAM still misses or
   confuses parts (run 03: the mass was segmented as "metal cover").
-- **4 Designer evaluation S1/S2 with keep/revert** — fired, round 1 pass in all three. New guard: a part fault the critic
-  lists means not faithful (from the test run). Local/full fix and revert did not run (no second round needed).
+- **4 Designer evaluation S1/S2 with keep/revert** — round 1 pass in runs 01–03. **Run 04: S1 failed on one region (a
+  callout leader ending in the dust), the prompt gradient chose a local fix, the region was edited, the critic re-checked
+  it and marked it fixed, the round was kept** (`stage_b/attempt_00/round_00/vlm_gradient.json`, `edited_callout.png`,
+  `round_01/eval.json`). Full fix and revert did not occur. New guard: a part fault the critic lists means not faithful.
 - **Checks: SAM + judges on callouts, code labels as fallback** — fired in all three: image callouts judged wrong
   (3, 4, 5 of them) → removed by image edit → code labels → code labels checked again, wrong ones removed (1, 3, 3).
 - **Figure: panels A–D** — A in all; B in run 01 only (02: critical part fills the picture; 03: not located); C in 01
@@ -66,7 +72,8 @@ Fig. 2 (`docs/fig2_visualization_pipeline.svg`)
   size (bench / shop floor / site) — added after runs 02 and 03 started, not yet in a full run.
 
 ## Still not working / open
-- The reject → rewrite → re-meeting loop has not run on round-4 code; it needs a problem the Evaluator rejects.
+- Members searched the knowledge library only in run 04 (twice); both hits came from unrelated domains and were not used.
+- Run 04's render stands on Earth dirt against a white sky rather than a lunar test bed; SAM found 3 of 10 parts.
 - Panel A of run 03 keeps only two labels after the checks; SAM misses or confuses parts in every run.
 - Run 03's render hangs the damper far lower than the council's sketches; the concept sketch exaggerated it and the critic,
   comparing with the concept sketch, did not flag it.

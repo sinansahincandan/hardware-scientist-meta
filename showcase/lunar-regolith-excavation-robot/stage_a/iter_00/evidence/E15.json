@@ -1,0 +1,24 @@
+{
+  "id": "E15",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: ISO 13849 emergency stop mobile robot standard",
+  "code_or_query": "ISO 13849 emergency stop mobile robot standard",
+  "inputs": {},
+  "output_summary": "fairino-amr-doc.readthedocs.io — Functional Safety — https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf",
+  "output_full": "fairino-amr-doc.readthedocs.io — Functional Safety — https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "fairino-amr-doc.readthedocs.io",
+      "title": "Functional Safety",
+      "year": "",
+      "url": "https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf",
+      "query": "ISO 13849 emergency stop mobile robot standard",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

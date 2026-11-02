@@ -1,0 +1,89 @@
+{
+  "pixel_description": "Photorealistic side view of rover on dirt, left to right: dark soil pile with dust cloud, front-most spiked disk half-buried digging (front digging drum) connected by longitudinal arm to middle spiked wheel axle, middle spiked grouser wheel under front of open box chassis, rear spiked grouser wheel under rear of chassis, central rectangular chassis frame open on side showing left box (battery) and right beige box (computer) with black wiring, tall vertical telescoping mast mounted on front top of chassis rising about 2x chassis height with camera pointing left, sensor box, dome, antenna and loop cable on top head, rear lift assembly mounted on rear top of chassis rising up-back holding large tilted trapezoidal bucket (hopper) pouring continuous dark soil stream into separate open rectangular bin behind rover. Critical part Rear high-lift mast (lift): drawn as 4 long elements - two hydraulic cylinders and two structural flat arms in paired 4-bar/scissor arrangement, base pivoted with pins on rear of chassis, top pivoted with pins to sides of hopper, extended diagonally up-back to hold hopper high behind rear axle with clear overhang over bin lip in dumping pose.",
+  "regions": [
+    {
+      "box": [
+        88.0,
+        735.0,
+        200.0,
+        860.0
+      ],
+      "part_id": "callout",
+      "observed": "Leader arrow ends on empty dust cloud left/above drum, not on drum metal",
+      "expected": "Leader for Front Digging Drum ends on front spiked drum metal",
+      "source": "render"
+    }
+  ],
+  "previous_regions": [],
+  "comparison_with_previous": "No previous render provided for comparison; this is first evaluation.",
+  "deviations": [
+    {
+      "what": "drum",
+      "measured": "segmenter 0; pixels show 1 spiked drum at front-left half-buried throwing dust",
+      "expected": "1 front transverse digging drum visible in side view",
+      "matters": false,
+      "why": "Part is present and correctly connected via arm to chassis; segmenter miss due to dust occlusion and similarity to wheels. No impact on working principle."
+    },
+    {
+      "what": "wheel",
+      "measured": "segmenter 3; pixels show 1 middle grouser wheel + drum counted as wheel",
+      "expected": "1 front grouser wheel visible near-side",
+      "matters": false,
+      "why": "Overcount because spiked digging drum looks like spiked wheel. Actual grouser wheels present (middle and rear) correctly mounted under chassis. Does not change drive function."
+    },
+    {
+      "what": "wheel_rear",
+      "measured": "segmenter 3; pixels show 1 rear grouser wheel + middle wheel + drum counted",
+      "expected": "1 rear grouser wheel visible near-side",
+      "matters": false,
+      "why": "Same overcount as front wheel. Rear wheel present under rear chassis, correct size and spiked. Does not change flotation or tip geometry."
+    },
+    {
+      "what": "chassis",
+      "measured": "segmenter 0; pixels show 1 open rectangular chassis mid-frame with interior boxes",
+      "expected": "1 chassis frame box present",
+      "matters": false,
+      "why": "Clearly visible carrying wheels, mast base and lift base. Segmenter miss due to open side and interior detail. No functional deviation."
+    },
+    {
+      "what": "lift",
+      "measured": "segmenter 0; pixels show paired lift arms/cylinders at rear raising hopper",
+      "expected": "1 rear high-lift mast present",
+      "matters": false,
+      "why": "Critical part present with correct base-on-chassis and top-on-hopper pivots and deployed overhang. Segmenter miss due to thin arms. Geometry correct so no matter."
+    },
+    {
+      "what": "pmast",
+      "measured": "segmenter 0; pixels show 1 tall telescoping vertical column at front of chassis",
+      "expected": "1 folding perception mast pole present",
+      "matters": false,
+      "why": "Tall mast from 0.45m base to ~1m eye visible with sections and side actuator. Segmenter miss due to thin vertical. No functional deviation."
+    },
+    {
+      "what": "sensors",
+      "measured": "segmenter 0; pixels show camera left, box, dome, antenna and cable on mast top",
+      "expected": "camera/sensor head on mast top",
+      "matters": false,
+      "why": "Small head details visible. Segmenter miss due to small size. Remote-view function preserved."
+    },
+    {
+      "what": "pack",
+      "measured": "segmenter 0; pixels show rectangular box left side of open bay",
+      "expected": "1 battery box inside chassis",
+      "matters": false,
+      "why": "Present and wired. Segmenter miss due to interior shading and open bay. No energy-function change."
+    },
+    {
+      "what": "compute",
+      "measured": "segmenter 0; pixels show beige box with wiring right side of open bay",
+      "expected": "1 computer box inside chassis",
+      "matters": false,
+      "why": "Present with cable bundle. Segmenter miss due to interior. No link-function change."
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "Geometry matches sketch: drum digging front, 2 grouser wheels, chassis with pack/compute, tall front mast with sensors, rear mast raised with hopper dumping into bin with overhang. Same connections and directions. Only mismatch is depiction: Front Digging Drum callout leader misses drum and ends in air.",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw visible in this faithful geometry: rear lift base sits on chassis rear with load path to rear wheels, hopper clears bin lip with overhang and pours without hitting lift, front mast clears drum arm, wheels maintain ground contact with no tipping shown.",
+  "notes": "Photorealistic side view otherwise matches sketch geometry. Only depiction fault is Front Digging Drum leader missing metal. All segmenter 'not found' are segmenter misses, not absent parts."
+}

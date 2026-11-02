@@ -1,0 +1,24 @@
+{
+  "id": "E1",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+  "code_or_query": "Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+  "inputs": {},
+  "output_summary": "hou.usra.edu — 5068.PDF — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+  "output_full": "hou.usra.edu — 5068.PDF — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "hou.usra.edu",
+      "title": "5068.PDF",
+      "year": "2019",
+      "url": "https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+      "query": "Black Point 1 BP-1 lunar regolith simulant density cohesion friction angle",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

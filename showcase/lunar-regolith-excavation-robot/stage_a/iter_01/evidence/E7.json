@@ -1,0 +1,14 @@
+{
+  "id": "E7",
+  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "tool": "search_knowledge",
+  "purpose": "knowledge: wheel traction loose soil Bekker sinkage grouser",
+  "code_or_query": "wheel traction loose soil Bekker sinkage grouser",
+  "inputs": {},
+  "output_summary": "Light cold-box ground versus wind loads (from 20261102-112524_off-grid-solar-powered-cold-storage-for-)",
+  "output_full": "Light cold-box ground versus wind loads \u2014 from 20261102-112524_off-grid-solar-powered-cold-storage-for-\nA tonne of produce spread over a few square metres imposes only ~2.5 kPa floor and soil pressure, an order of magnitude below typical allowable soil bearing of tens to >50 kPa, so bearing rarely governs lightweight cold stores. Lateral wind governs anchoring: dynamic pressure follows ~0.6 x V^2, or ~540 Pa at 30 m/s gust, yielding ~2.9 kN on a ~5 m2 side wall that must be carried by anchors, plinth fixings and separate PV supports.\nEvidence: E47 (soil pressure under plinth without concrete self-weight: 2.51 kPa); E48 (floor loading from produce alone: 2.45 kPa); E64 (wind pressure at 30 m/s gust: 540 Pa); E65 (wind force on side wall: 2.86\u00d710\u00b3 N); E43 (search: concrete slab soil bearing capacity kPa small building foundation: spaworld.co.nz \u2014 Generic Concrete Slab or Pad Building Guide | Portable Spas \u2014 https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/); E44 (search: concrete slab soil bearing capacity kPa small building foundation: amcfoam.com \u2014 Revised: March 2010 \u2014 2010 \u2014 https://amcfoam.com/PDFs/Normal%20and%20Problem%20Soils.pdf)",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

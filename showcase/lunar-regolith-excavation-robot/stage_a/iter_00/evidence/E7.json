@@ -1,0 +1,24 @@
+{
+  "id": "E7",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics mining robot mass size excavation rate rules",
+  "code_or_query": "NASA Lunabotics mining robot mass size excavation rate rules",
+  "inputs": {},
+  "output_summary": "forums.ni.com — Mile-High Miners Nasa Lunabotics Project (Colorado School of Mines) — https://forums.ni.com/t5/Student-Projects/Mile-High-Miners-Nasa-Lunabotics-Project-Colorado-School-of/ta-p/3528955",
+  "output_full": "forums.ni.com — Mile-High Miners Nasa Lunabotics Project (Colorado School of Mines) — https://forums.ni.com/t5/Student-Projects/Mile-High-Miners-Nasa-Lunabotics-Project-Colorado-School-of/ta-p/3528955\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "forums.ni.com",
+      "title": "Mile-High Miners Nasa Lunabotics Project (Colorado School of Mines)",
+      "year": "",
+      "url": "https://forums.ni.com/t5/Student-Projects/Mile-High-Miners-Nasa-Lunabotics-Project-Colorado-School-of/ta-p/3528955",
+      "query": "NASA Lunabotics mining robot mass size excavation rate rules",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

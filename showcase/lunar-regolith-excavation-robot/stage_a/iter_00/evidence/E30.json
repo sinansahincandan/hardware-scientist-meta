@@ -1,0 +1,24 @@
+{
+  "id": "E30",
+  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics robot power battery size excavation",
+  "code_or_query": "NASA Lunabotics robot power battery size excavation",
+  "inputs": {},
+  "output_summary": "spacegrant.oregonstate.edu — PowerPoint Presentation — 2022 — https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf",
+  "output_full": "spacegrant.oregonstate.edu — PowerPoint Presentation — 2022 — https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "spacegrant.oregonstate.edu",
+      "title": "PowerPoint Presentation",
+      "year": "2022",
+      "url": "https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf",
+      "query": "NASA Lunabotics robot power battery size excavation",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

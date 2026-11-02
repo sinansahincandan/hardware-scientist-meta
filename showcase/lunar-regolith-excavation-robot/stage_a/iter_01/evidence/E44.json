@@ -1,0 +1,14 @@
+{
+  "id": "E44",
+  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "tool": "sketch",
+  "purpose": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,1.15); ax.set_ylim(0,0.65)\n# start box 1.0 x 0.5\nimport matplotlib.patches as patches\nax.add_patch(patches.Rectangle((0.02,0.02),1.0,0.5,fill=False,lw=2,label='start box'))\nax.text(0.52,0.54,'START BOX 1.00 x 0.50 m',ha='center',fontsize=9)\n# ground\nax.plot([0,1.12],[0.02,0.02],'k-',lw=2)\n# wheels 300mm dia at x=0.15 and 0.80, wheelbase 0.65\nimport matplotlib.patches as mp\nfor x in [0.17,0.82]:\n    c=plt.Circle((x,0.17),0.15,fill=False,lw=2)\n    ax.add_patch(c)\n    ax.text(x,0.17,'W\\n300mm',ha='center',va='center',fontsize=7)\nax.annotate('',xy=(0.17,0.06),xytext=(0.82,0.06),arrowprops=dict(arrowstyle='<->'))\nax.text(0.495,0.07,'wheelbase 0.65 m',ha='center',fontsize=8)\n# frame 0.95 long x 0.10 tall at y ~0.30\nax.add_patch(patches.Rectangle((0.05,0.30),0.95,0.10,fill=False,lw=2))\nax.text(0.52,0.35,'FRAME 0.95x0.48m',ha='center',fontsize=8)\n# lowered hopper inside frame\nax.add_patch(patches.Rectangle((0.55,0.32),0.30,0.12,fill=False,lw=2))\nax.text(0.70,0.38,'HOPPER\\nlowered',ha='center',fontsize=7)\n# folded mast flat to 0.45m height\nax.plot([0.15,0.90],[0.45,0.45],'k-',lw=3)\nax.text(0.52,0.47,'MAST stowed 0.45m high',ha='center',fontsize=8)\n# drum front transverse\nax.add_patch(patches.Rectangle((0.02,0.12),0.12,0.12,fill=False,lw=2))\nax.text(0.08,0.18,'DRUM',ha='center',fontsize=7)\n# dims length\nax.annotate('',xy=(0.02,0.60),xytext=(1.02,0.60),arrowprops=dict(arrowstyle='<->'))\nax.text(0.52,0.61,'1.00 m limit / frame 0.95 m',ha='center',fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+  "inputs": {},
+  "output_summary": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+  "output_full": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
+  "sketch_path": "evidence/sketch_44.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

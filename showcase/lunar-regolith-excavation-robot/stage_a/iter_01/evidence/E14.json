@@ -1,0 +1,24 @@
+{
+  "id": "E14",
+  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "tool": "web_search",
+  "purpose": "search: 5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+  "code_or_query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+  "inputs": {},
+  "output_summary": "robot-advance.com — Robomaster S1 DJI: DJI programmable educational robot — https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
+  "output_full": "robot-advance.com — Robomaster S1 DJI: DJI programmable educational robot — https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "robot-advance.com",
+      "title": "Robomaster S1 DJI: DJI programmable educational robot",
+      "year": "",
+      "url": "https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
+      "query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,134 @@
+{
+  "parts": [
+    {
+      "part_id": "drum",
+      "visual_phrase": "digging drum",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "wheel",
+      "size_ratio": 0.7,
+      "touches": [
+        "hopper",
+        "chassis"
+      ],
+      "note": "Front cross auger scooping soil into bucket"
+    },
+    {
+      "part_id": "wheel",
+      "visual_phrase": "front wheel",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "chassis",
+      "size_ratio": 0.33,
+      "touches": [
+        "chassis"
+      ],
+      "note": "Near-side front traction wheel on loose soil"
+    },
+    {
+      "part_id": "wheel_rear",
+      "visual_phrase": "rear wheel",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "chassis",
+      "size_ratio": 0.33,
+      "touches": [
+        "chassis"
+      ],
+      "note": "Near-side rear traction wheel carrying frame"
+    },
+    {
+      "part_id": "chassis",
+      "visual_phrase": "metal frame",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "wheel",
+      "size_ratio": 3.0,
+      "touches": [
+        "wheel",
+        "wheel_rear",
+        "drum",
+        "lift",
+        "pmast",
+        "pack",
+        "compute"
+      ],
+      "note": "Low central frame tying wheels and masts"
+    },
+    {
+      "part_id": "hopper",
+      "visual_phrase": "metal bucket",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "chassis",
+      "size_ratio": 0.45,
+      "touches": [
+        "lift",
+        "drum"
+      ],
+      "note": "Central soil bucket riding on rear mast"
+    },
+    {
+      "part_id": "lift",
+      "visual_phrase": "rear mast",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "chassis",
+      "size_ratio": 1.1,
+      "touches": [
+        "chassis",
+        "hopper"
+      ],
+      "note": "Tall rear rails lifting bucket to pour"
+    },
+    {
+      "part_id": "pmast",
+      "visual_phrase": "camera pole",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "chassis",
+      "size_ratio": 1.1,
+      "touches": [
+        "chassis",
+        "sensors"
+      ],
+      "note": "Thin folding pole for high camera view"
+    },
+    {
+      "part_id": "sensors",
+      "visual_phrase": "small camera",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "pmast",
+      "size_ratio": 0.1,
+      "touches": [
+        "pmast"
+      ],
+      "note": "Tiny eyes on top of camera pole"
+    },
+    {
+      "part_id": "pack",
+      "visual_phrase": "battery box",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "chassis",
+      "size_ratio": 0.3,
+      "touches": [
+        "chassis"
+      ],
+      "note": "Heavy box slung low under frame"
+    },
+    {
+      "part_id": "compute",
+      "visual_phrase": "computer box",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "pack",
+      "size_ratio": 0.6,
+      "touches": [
+        "chassis"
+      ],
+      "note": "Small electronics box for radio link"
+    }
+  ]
+}

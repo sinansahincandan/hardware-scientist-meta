@@ -1,0 +1,24 @@
+{
+  "id": "E9",
+  "author": "Mara — Excavation and Mobility Engineer",
+  "tool": "web_search",
+  "purpose": "search: NASA Lunabotics mining robot mass size excavation rate rules",
+  "code_or_query": "NASA Lunabotics mining robot mass size excavation rate rules",
+  "inputs": {},
+  "output_summary": "engprojects.tcnj.edu — Competition – NASA Lunabotics — https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/",
+  "output_full": "engprojects.tcnj.edu — Competition – NASA Lunabotics — https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "engprojects.tcnj.edu",
+      "title": "Competition – NASA Lunabotics",
+      "year": "",
+      "url": "https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/",
+      "query": "NASA Lunabotics mining robot mass size excavation rate rules",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

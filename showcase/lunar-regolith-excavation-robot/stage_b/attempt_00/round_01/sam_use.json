@@ -1,0 +1,45 @@
+{
+  "round": 1,
+  "sam_differences": {
+    "drum": [
+      "not found by the segmenter as 'digging drum'"
+    ],
+    "wheel": [
+      "expected 1 visible, found 3"
+    ],
+    "wheel_rear": [
+      "expected 1 visible, found 3"
+    ],
+    "chassis": [
+      "not found by the segmenter as 'metal frame'"
+    ],
+    "lift": [
+      "not found by the segmenter as 'rear mast'"
+    ],
+    "pmast": [
+      "not found by the segmenter as 'camera pole'"
+    ],
+    "sensors": [
+      "not found by the segmenter as 'small camera'"
+    ],
+    "pack": [
+      "not found by the segmenter as 'battery box'"
+    ],
+    "compute": [
+      "not found by the segmenter as 'computer box'"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "faithful, and every earlier fault is fixed",
+  "earlier_faults": [
+    {
+      "part_id": "callout",
+      "fault": "Leader arrow ends on empty dust cloud left/above drum, not on drum metal",
+      "status": "fixed",
+      "note": "Fixed: in current render the Front Digging Drum leader tip lands on the front spiked drum metal hub/disc, not in empty dust."
+    }
+  ]
+}

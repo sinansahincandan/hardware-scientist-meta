@@ -1,0 +1,14 @@
+{
+  "id": "E35",
+  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "tool": "calc",
+  "purpose": "PowerTech pack specific energy 819Wh over 6.8kg",
+  "code_or_query": "(819/6.8)",
+  "inputs": {},
+  "output_summary": "120",
+  "output_full": "120",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}
