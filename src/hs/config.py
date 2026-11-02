@@ -19,6 +19,7 @@ class RoleConfig:
 
 DEFAULT_MODEL = "muse-spark-1.3"
 IMAGE_MODEL = "muse-image-1.0"
+SAM_MODEL = "sam-3.1"
 
 ROLES: dict[str, RoleConfig] = {
     "member": RoleConfig(DEFAULT_MODEL, "medium", 8000),
@@ -72,6 +73,7 @@ PRICES = {
     "output_per_1m": 4.25,
     "web_search_per_query": 2.50 / 1000.0,
     "image_each": 0.01,
+    "sam_image_each": 2.50 / 1000.0,
 }
 
 FIXED_CRITERIA = [

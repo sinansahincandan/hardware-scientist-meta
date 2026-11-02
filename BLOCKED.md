@@ -26,3 +26,11 @@ all referenced files exist). The pages still need one human look in a
 normal browser before the hackathon demo.
 
 Everything else in the v2 brief is unaffected by this block.
+
+## SAM 3.1 returned no detections in the PHASE 1 check (2026-11-02) — open
+
+One `sam-3.1` call (phrase "metal disk", the 1600x1600 check render of a single red disk)
+was accepted and billed but streamed an empty `output_text`. Not retried in PHASE 1
+(one call per model). The item-16 smoke test settles the cause (event types, image size,
+phrase) before any SAM feature is built; if SAM stays unusable, item 16 falls back to the
+critic's own boxes as the brief says.

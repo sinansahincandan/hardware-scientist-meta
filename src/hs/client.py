@@ -33,12 +33,14 @@ def price_usage(usage: dict[str, Any]) -> float:
     out = int(usage.get("output_tokens", 0) or 0)
     searches = int(usage.get("searches", 0) or 0)
     images = int(usage.get("images", 0) or 0)
+    sam_calls = int(usage.get("sam_calls", 0) or 0)
     return (
         max(inp - cached, 0) * p["input_per_1m"] / 1e6
         + cached * p["cached_input_per_1m"] / 1e6
         + out * p["output_per_1m"] / 1e6
         + searches * p["web_search_per_query"]
         + images * p["image_each"]
+        + sam_calls * p["sam_image_each"]
     )
 
 
@@ -132,6 +134,7 @@ class CostLog:
                 "reasoning": int(usage.get("reasoning_tokens", 0) or 0),
                 "searches": int(usage.get("searches", 0) or 0),
                 "images": int(usage.get("images", 0) or 0),
+                "sam_calls": int(usage.get("sam_calls", 0) or 0),
                 "usd": round(usd, 6),
             }
         )
@@ -373,6 +376,29 @@ class MetaClient:
                 delay *= 2
         assert last is not None
         raise last
+
+    def sam_segment(self, phrase: str, image_png: Path) -> str:
+        """One sam-3.1 image call (docs /docs/sam/segmenting): a short noun phrase or a
+        box/point prompt string -> the raw box+mask token text (empty when nothing matches)."""
+        self.cost.check_budget(estimated_usd=0.01)
+        image_url = "data:image/png;base64," + base64.b64encode(Path(image_png).read_bytes()).decode()
+        try:
+            stream = self._client().with_options(max_retries=0).responses.create(
+                model=config.SAM_MODEL,
+                input=[{"type": "message", "role": "user", "content": [
+                    {"type": "input_text", "text": phrase},
+                    {"type": "input_image", "image_url": image_url}]}],
+                stream=True)
+        except Exception as exc:
+            if getattr(exc, "status_code", None) == 402:
+                raise BudgetExceeded(f"billing error HTTP 402: {exc}") from exc
+            raise
+        parts: list[str] = []
+        for event in stream:
+            if getattr(event, "type", "") == "response.output_text.delta":
+                parts.append(getattr(event, "delta", "") or "")
+        self.cost.record("sam", config.SAM_MODEL, {"sam_calls": 1})
+        return "".join(parts)
 
     def _image_via_responses(self, prompt: str, reference_png: Path, size: str) -> bytes:
         resp = self.responses(
