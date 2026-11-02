@@ -89,3 +89,23 @@ stochastic provider filter, not a request-shape error. Fix per the rule:
 management policy (like a 429, 3 attempts with backoff); all other 400s
 still raise immediately. Covered by tests/test_image_edit_errors.py
 (test_content_filter_400_is_retried, test_plain_400_still_raises).
+
+## 2026-11-02 — SAM 3.1 smoke test (round 3, item 16) — SETTLED (boxes), masks undecoded
+
+Calls (runs/meta_check_20261102-014036, runs/sam_probe_20261102-020841; $0.0025 each, 3 calls):
+- Shape that works: `POST /v1/responses`, `model: "sam-3.1"`, `stream: true`, one user message with
+  `input_text` = a short noun phrase and `input_image` = PNG data URL (sent at ≤ 1024 px long side);
+  optional `metadata: {"mask_encoding": "one_bit"}` accepted. Implemented in `MetaClient.sam_segment`.
+- Output: `response.output_text.delta` text, one comma-separated record per match:
+  `<0f>{id}<|box;x1=..;y1=..;x2=..;y2=..;w=..;h=..|><|mask;x=0;y=0;data=H,W,!<base85 body>|>`
+  (inclusive pixel box on the image as sent; mask raster H×W covers the box). Zero matches → empty
+  text and no delta event (seen on the first call; not an error).
+- Usage: `input_tokens=0, output_tokens=0, images_processed=1` → priced per image ($2.50/1000).
+- Phrase sensitivity (decisive): on a photo of one red brushed-metal disk, "metal disk" → 0 matches,
+  "red disk" → 1 correct box (285,311)-(729,718) of 1024². Part names must be mapped to plain visual
+  phrases (colour, material, shape) before SAM sees them.
+- Box prompts: documented (`<0f>1<|box;...|>`); not tested (not needed for measuring).
+- Masks: the body is arithmetic-coded base85 (protocol/sam3.md in github.com/meta-models/meta-sam);
+  decoding needs Meta's `meta-sam-parser` package. Installing it was refused by the session's
+  permission system (BLOCKED.md). *Default chosen:* measure from SAM boxes only (count, centre,
+  size, box aspect, size ratios, box contacts); no mask angles, no mask composite.

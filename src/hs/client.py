@@ -408,28 +408,55 @@ class MetaClient:
         assert last is not None
         raise last
 
-    def sam_segment(self, phrase: str, image_png: Path) -> str:
-        """One sam-3.1 image call (docs /docs/sam/segmenting): a short noun phrase or a
-        box/point prompt string -> the raw box+mask token text (empty when nothing matches)."""
+    def sam_segment(self, phrase: str, image_png: Path, metadata: dict[str, str] | None = None) -> str:
+        """One sam-3.1 image call (docs /docs/sam/segmenting): a short noun phrase or a box/point
+        prompt string -> the raw box+mask token text (empty when nothing matches). The image is sent
+        as PNG at most 1024 px on its long side. `self.last_sam` keeps the streamed event types and
+        any usage the provider reported, for the smoke test and the SAM log."""
+        import io
+
+        from PIL import Image
+
         self.cost.check_budget(estimated_usd=0.01)
-        image_url = "data:image/png;base64," + base64.b64encode(Path(image_png).read_bytes()).decode()
+        with Image.open(image_png) as im:
+            im = im.convert("RGB")
+            scale = min(1.0, 1024 / max(im.size))
+            if scale < 1.0:
+                im = im.resize((round(im.width * scale), round(im.height * scale)))
+            buf = io.BytesIO()
+            im.save(buf, format="PNG")
+            sent_size = im.size
+        image_url = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
         try:
             stream = self._client().with_options(max_retries=0).responses.create(
                 model=config.SAM_MODEL,
                 input=[{"type": "message", "role": "user", "content": [
                     {"type": "input_text", "text": phrase},
                     {"type": "input_image", "image_url": image_url}]}],
-                stream=True)
+                stream=True, **({"metadata": metadata} if metadata else {}))
         except Exception as exc:
             if getattr(exc, "status_code", None) == 402:
                 raise BudgetExceeded(f"Meta billing error HTTP 402 (out of credit or billing problem; check the dashboard): {exc}") from exc
             raise
         parts: list[str] = []
+        events: list[str] = []
+        final_text, usage = "", None
         for event in stream:
-            if getattr(event, "type", "") == "response.output_text.delta":
+            etype = getattr(event, "type", "")
+            events.append(etype)
+            if etype == "response.output_text.delta":
                 parts.append(getattr(event, "delta", "") or "")
+            elif etype == "response.output_text.done":
+                final_text = getattr(event, "text", "") or final_text
+            elif etype == "response.completed":
+                resp = getattr(event, "response", None)
+                usage = getattr(resp, "usage", None)
+                final_text = final_text or _output_text(resp)
         self.cost.record("sam", config.SAM_MODEL, {"sam_calls": 1})
-        return "".join(parts)
+        text = "".join(parts) or final_text
+        self.last_sam = {"phrase": phrase, "sent_size": sent_size, "event_types": sorted(set(events)),
+                         "usage": str(usage) if usage is not None else None, "chars": len(text)}
+        return text
 
     def _image_via_responses(self, prompt: str, reference_png: Path, size: str) -> bytes:
         resp = self.responses(
