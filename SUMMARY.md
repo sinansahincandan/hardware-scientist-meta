@@ -1,4 +1,82 @@
-# SUMMARY.md — Hardware Scientist, round 3 (Claude Code, 2026-11-02)
+# SUMMARY.md — Hardware Scientist, round 4 (Claude Code, 2026-11-03)
+
+Goal of round 4 (owner): fit the two architecture figures, run the critical loops with real tools, make it presentable.
+Every statement points to a file. Round 3 follows below, then the earlier rounds.
+
+## Where to look
+
+- **Showcase:** `showcase/index.html`; per problem `report.html`, `board.html` (now with the whiteboard picture),
+  `dossier.html`, `REVIEW.md`. Screens: `docs/screens/r4_*.png`.
+- **Final runs (round-4 code, real API, run fresh in order 01 → 02 → 03 so knowledge carries over):**
+  | Problem | Run | Outcome | Cost (ledger) |
+  |---|---|---|---|
+  | 01 stair-climbing hand truck | `runs/20261102-105608_stair-climbing-hand-truck-for-parcel-cou` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.9362 |
+  | 02 off-grid solar cold room | `runs/20261102-112524_off-grid-solar-powered-cold-storage-for-` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $2.2661 |
+  | 03 footbridge vibration retrofit | `runs/20261102-121628_vibration-retrofit-for-a-lively-pedestri` | consensus in cycle 4, accepted at meeting 1, picture faithful in round 1 | $1.6361 |
+- **Test run kept:** `runs/20261102-104641_…` (Stage B redraw of a round-3 solution, $0.3269) — found the critic
+  passing a picture it had itself faulted, SAM missing two-word phrases, crossing labels.
+- **Ledger:** $20.85 of the $55 cap after round 4 (round 4 spent $6.25: the test run, the three runs, a content-filter
+  reproduction $0.08). `hs budget` lists every run.
+
+## Fit to the owner's figures — what ran in the round-4 runs
+
+Fig. 1 (`docs/fig1_architecture.svg`)
+- **Master prompt rev 0 from knowledge/** — fired in all three runs; `knowledge_in.json` records what each inherited
+  (run 03: lessons L1–L14 and the insight files of runs 01 and 02).
+- **Council + Manager on the whiteboard with tools** — fired: 56–67 evidence items per run, 36–42 search hits, 17–25
+  calculations, sketches; the Manager spoke each cycle. Run 01's meeting caught its own negative tipping margin
+  (simulation E58) and fixed it (E60) before voting (transcript.md lines 75, 88).
+- **Evaluator: written review, constraint by constraint** — fired: `verdict.json` constraint_review in all three runs, in
+  prose with the deciding numbers; no constraint was relaxed (none needed it).
+- **Fail → Manager two-step gradient → section rewrite → re-meeting** — **did not fire in round 4**: all three runs were
+  accepted at meeting 1. Code and tests are in place; the last real rewrite is round-3 smoke run 022817.
+- **Council archive** — fired (archive.jsonl, status accepted).
+- **knowledge/ at the end of a problem** — fired: `knowledge/insights/<run>.md` for all three runs (4–5 findings each,
+  with evidence ids), lessons L11–L14 added, 16 "used in run …" notes under existing lessons (run 01: 5, run 02: 4, run 03: 7).
+  No member called search_knowledge in runs 02 or 03 (the inherited findings were about other domains). No member
+  wrote a new tool, so knowledge/tools/ is empty.
+- **S1 exhausted → Manager "could not be drawn"** — code and test in place; did not occur (every picture passed in round 1).
+
+Fig. 2 (`docs/fig2_visualization_pipeline.svg`)
+- **1 Concept sketch from the council's sketches** — fired in runs 01 and 03 (`stage_b/attempt_00/concept_sketch.png`,
+  checked); in run 02 blocked by Meta's content filter after the number-free retry. Reproduced: each prompt part passes
+  alone, the combination is blocked; a plainer second wording passed and is now built in (not yet in a full run).
+- **2 Render with image-model callouts** — fired in all three; the image model ignored "no numbers" in its callouts
+  (run 02) and the critic flagged each one.
+- **3 Part map · SAM masks and contacts** — fired: masks decoded with meta-sam-parser, filled in each part's colour
+  (`sam_overlay.png`); found 5/7, 7/11, 4/7 parts. The head-noun retry found "strap" in run 01. SAM still misses or
+  confuses parts (run 03: the mass was segmented as "metal cover").
+- **4 Designer evaluation S1/S2 with keep/revert** — fired, round 1 pass in all three. New guard: a part fault the critic
+  lists means not faithful (from the test run). Local/full fix and revert did not run (no second round needed).
+- **Checks: SAM + judges on callouts, code labels as fallback** — fired in all three: image callouts judged wrong
+  (3, 4, 5 of them) → removed by image edit → code labels → code labels checked again, wrong ones removed (1, 3, 3).
+- **Figure: panels A–D** — A in all; B in run 01 only (02: critical part fills the picture; 03: not located); C in 01
+  and 02; D 4/3/4 steps.
+
+## What round 4 changed (commits 3656ab4 … on main; JOURNAL.md has each step)
+- P1: Evaluator constraint review (prose); S1 exhausted → Manager as a drawing failure; whiteboard errors name valid ids.
+- P2: knowledge/ — lessons with ids and use notes, insights per problem with search_knowledge, carried tools, retirement.
+- P3: SAM masks, image-model callouts with checks, concept sketch from the council's sketches, panel D redraw.
+- P3 fixes from the test run: critic consistency guard; SAM head-noun retry; side-column labels that never cover their
+  part or cross; fallback labels checked; panel B from the render without callouts.
+- P4: whiteboard picture per meeting (function columns, sticky notes, calculations, objections, pinned sketches,
+  proposal with votes) on board.html and in the dossier; knowledge section in the dossier; figure layout with the
+  making steps full width; showcase strip council sketch → concept sketch → SAM → critical part → making.
+- P5 fixes: visible mask fills; concept sketch plain re-word after a filter block; making steps at the device's real
+  size (bench / shop floor / site) — added after runs 02 and 03 started, not yet in a full run.
+
+## Still not working / open
+- The reject → rewrite → re-meeting loop has not run on round-4 code; it needs a problem the Evaluator rejects.
+- Panel A of run 03 keeps only two labels after the checks; SAM misses or confuses parts in every run.
+- Run 03's render hangs the damper far lower than the council's sketches; the concept sketch exaggerated it and the critic,
+  comparing with the concept sketch, did not flag it.
+- Making steps of runs 02 and 03 show large structures on a workbench (fixed in code afterwards).
+- new_tool never used by a member; knowledge/tools/ empty; search_knowledge never called.
+- Content filter: unpredictable on combined wording; handled by re-wording, not avoidable.
+
+---
+
+# Round 3 (Claude Code, 2026-11-02)
 
 Every statement below points to a file. Earlier rounds (v1, v2) are kept at the end of this file.
 
