@@ -14,7 +14,9 @@ def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROU
     Only the critic's s2_flaw sends the concept back to Stage A. Running out of rounds is
     s1_exhausted: the picture could not be drawn faithfully, which says nothing about the design.
     """
-    if ev.s2_flaw:
+    # R4: a design flaw counts only on a faithful render, or when the critic traces it to the sketch or the
+    # design itself (a region with source "schematic"); otherwise it is a drawing fault like any other.
+    if ev.s2_flaw and (ev.s1_faithful or any(r.source == "schematic" for r in ev.regions)):
         return "s2_return"
     # C17: faithful only when the critic's own statuses leave no earlier fault unfixed.
     if ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions):
@@ -64,7 +66,9 @@ class DesignerEvalRunner:
             "STEP 3 — S1/S2: s1_faithful = same parts, same connections, same relative sizes, orientations and "
             "directions as the sketch (perspective may differ). s2_flaw = seeing the device exposes a real "
             "design problem (interference, impossible assembly, a load path that cannot work, an unreachable "
-            "part), or the flaw is already in the sketch or in the design itself. Do not blame the design for "
+            "part), or the flaw is already in the sketch or in the design itself (then mark those regions "
+            "source 'schematic'). Report a design flaw only when the render is faithful or the flaw is in the "
+            "sketch or design: a flaw seen only in an unfaithful render is a drawing fault. Do not blame the design for "
             "rendering mistakes; s2_feedback must point at a concrete feature of the image.\n"
             "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
             "proportions), including each one in the segmenter measurements below, and say whether it matters "

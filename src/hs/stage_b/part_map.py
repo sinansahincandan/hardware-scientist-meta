@@ -28,10 +28,12 @@ def build_part_map(client: Any, solution: SolutionPrompt, spec: SchematicSpec, o
     part_map = client.structured(
         "part_map", PartMap,
         "You prepare a part map for an image segmenter and an expectation table for checking a render.",
-        "For each part below write: visual_phrase — at most four plain words a person would use to point at "
-        "it in a photo, by colour, material and shape (for example 'black rubber wheel', 'steel tube frame'); "
-        "never an engineering name or an id. Then, from the design (which has the numbers), the coarse "
-        "expectation: count (how many instances are visible in a normal view), long_axis (horizontal, "
+        "For each part below write: visual_phrase — one to three plain words a person would use to point at "
+        "it in a photo: the commonest everyday noun first, with at most one colour or material word (for "
+        "example 'solar panel', 'black wheel', 'door', 'metal shelf', 'battery box'); never an engineering "
+        "name, a product type or an id. Then, from the design (which has the numbers), the coarse "
+        "expectation: count (how many instances a viewer can see and count in one normal view; for parts "
+        "present in large numbers, the number likely to be visible, not the total), long_axis (horizontal, "
         "vertical or any, as the part would appear in a side view of the working device), size_vs (the "
         "neighbouring part it is best compared with) and size_ratio (its longest dimension divided by that "
         "neighbour's), touches (ids of the parts it physically touches), and a one-line note.\n\n"

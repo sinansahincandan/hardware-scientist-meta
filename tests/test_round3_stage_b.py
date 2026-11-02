@@ -75,3 +75,14 @@ def test_happy_run_labels_come_from_sam_boxes(tmp_path: Path) -> None:
     loc = json.loads(next(run_dir.glob("stage_b/attempt_00/round_00/localization.json")).read_text())
     assert any(p["found"] for p in loc["parts"])
     assert (run_dir / "final" / "figure.png").exists()
+
+
+def test_design_flaw_counts_only_on_a_faithful_render_or_a_sketch_traced_region() -> None:
+    from hs.schemas import EvalRegion
+
+    render_only = EvalRegion(part_id="P6", observed="bare ice block", expected="tank", source="render")
+    assert decide(DesignerEval(s1_faithful=False, s2_flaw=True, regions=[render_only]), 0, 3) == "s1_retry"
+    assert decide(DesignerEval(s1_faithful=False, s2_flaw=True, regions=[render_only]), 2, 3) == "s1_exhausted"
+    in_sketch = EvalRegion(part_id="P6", observed="no drain", expected="drain", source="schematic")
+    assert decide(DesignerEval(s1_faithful=False, s2_flaw=True, regions=[in_sketch]), 0, 3) == "s2_return"
+    assert decide(DesignerEval(s1_faithful=True, s2_flaw=True), 0, 3) == "s2_return"

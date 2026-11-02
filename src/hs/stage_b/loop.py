@@ -48,10 +48,6 @@ class StageBResult:
     notes: list[str] = field(default_factory=list)
 
 
-def _fault_key(part_id: str, observed: str) -> str:
-    return f"{part_id}: {' '.join(observed.split())}"
-
-
 def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, attempt_dir: Path,
                 img_archive: ImageArchive, log: Any, *, attempt: int, max_rounds: int) -> StageBResult:
     """Run up to `max_rounds` rounds; `log(msg)` receives one trace line per event.
@@ -67,7 +63,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     result = StageBResult(decision="s1_exhausted", rounds=0)
     corrections = ""
     kept: dict[str, Any] | None = None  # {"render", "vlm", "ev", "sam", "round"}
-    earlier_faults: dict[str, str] = {}  # fault key -> part id, every fault flagged in any round
+    earlier_faults: dict[str, str] = {}  # part id -> the latest fault flagged on it in any round
     carry: tuple[Path, VLMPrompt] | None = None  # a kept local edit is the next round's render
     for r in range(max_rounds):
         round_dir = attempt_dir / f"round_{r:02d}"
@@ -93,7 +89,8 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
                                                              localization=pm.to_localization(meas, spec))
         ev = DesignerEvalRunner(client).run(
             render_path, round_dir / "schematic_labeled.png", solution, missing, measurements=sam_text,
-            earlier_faults=list(earlier_faults), previous_render=kept["render"] if kept else None)
+            earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
+            previous_render=kept["render"] if kept else None)
         decision = decide(ev, r, max_rounds)
         (round_dir / "eval.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
         (round_dir / "decision.txt").write_text(decision + "\n", encoding="utf-8")
@@ -105,8 +102,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         result.ev, result.rounds, result.decision = ev, r + 1, decision
         # C17 keep or revert, from the critic's own statuses and comparison
         statuses = [x.status for x in ev.previous_regions]
-        new_faults = [x for x in ev.regions if _fault_key(x.part_id, x.observed) not in earlier_faults
-                      and x.part_id not in set(earlier_faults.values())]
+        new_faults = [x for x in ev.regions if x.part_id not in earlier_faults]
         if kept is None:
             keep, why = True, "first round"
         elif "regressed" in statuses:
@@ -126,7 +122,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             if ev.s1_faithful and decision != "s2_return":
                 result.best_pass = this_round
         for x in ev.regions:
-            earlier_faults.setdefault(_fault_key(x.part_id, x.observed), x.part_id)
+            earlier_faults[x.part_id] = f"{x.observed} (expected: {x.expected})"
         if decision != "s1_retry":
             break
         if not keep:
