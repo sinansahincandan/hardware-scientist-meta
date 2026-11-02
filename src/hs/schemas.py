@@ -89,7 +89,6 @@ class SolutionPrompt(BaseModel):
     decisive_choices: list[str] = Field(default_factory=list)
     open_question: str = ""
     transfer_line: str = ""
-    flow_choice: str = ""
     assumed_constraints: list[AssumedConstraint] = Field(default_factory=list)
     functional_decomposition: list[str] = Field(default_factory=list)
     concept: ConceptBody
@@ -253,7 +252,6 @@ class VLMPrompt(BaseModel):
     changes_from_previous: str = ""
     visual_plan: VisualPlan = Field(default_factory=VisualPlan)
     focus_parts: list[FocusPart] = Field(default_factory=list)
-    label_mode: Literal["image", "code"] = "image"
 
 
 class Box1000(BaseModel):

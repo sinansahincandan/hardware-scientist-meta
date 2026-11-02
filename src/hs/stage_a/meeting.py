@@ -267,11 +267,9 @@ class Secretary:
                 "open_question (EXACTLY 1, the most important unresolved question); "
                 "transfer_line formatted exactly as: <governing quantity>: A -> B -> C | Measured: D -> E "
                 "where the governing quantity is the one that actually decides this design (Load, Heat, "
-                "Energy, Fluid, Signal...), naming the real parts/sensor stages of this concept; "
-                "flow_choice records the council's decision in the meeting: empty when no flow view is "
-                "needed, otherwise '<quantity>: <source> -> ... -> <sink> through <parts>'.\n\n"
+                "Energy, Fluid, Signal...), naming the real parts/sensor stages of this concept.\n\n"
                 f"WHITEBOARD:\n{result.board.render_markdown()}\n\n"
-                f"TRANSCRIPT:\n" + "\n".join(t["message"] for t in result.transcript)
+                "TRANSCRIPT:\n" + "\n".join(f"{t['member']}: {t['message']}" for t in result.transcript)
             )
             solution = self.client.structured("secretary", SolutionPrompt,
                                               "You are the Secretary. Output only the structured solution.",

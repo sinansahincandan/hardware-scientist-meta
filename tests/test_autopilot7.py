@@ -3,7 +3,6 @@ import math
 
 from hs.schemas import DesignerEval, SolutionPrompt, VLMPrompt, make_strict_schema
 from hs.stage_a.calculators import VETTED, run_vetted
-from hs.stage_b.designer_eval import label_failed
 
 
 def test_vetted_calculators_known_values():
@@ -27,10 +26,6 @@ def test_new_schemas_strict_and_defaults():
     for model in (VLMPrompt, DesignerEval, SolutionPrompt):
         schema = make_strict_schema(model)
         assert schema["type"] == "object" and schema["additionalProperties"] is False
-    ev = DesignerEval(s1_faithful=False, label_findings="wrong name on the motor label")
-    assert label_failed(ev)
-    ev_ok = DesignerEval(s1_faithful=True, label_findings="labels ok")
-    assert not label_failed(ev_ok)
 
 
 def test_vetted_calc_posts_evidence_with_provenance(tmp_path):

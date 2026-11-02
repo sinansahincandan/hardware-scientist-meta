@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -19,11 +20,8 @@ from hs.stage_a.manager import Manager
 from hs.stage_a.meeting import Meeting, Secretary
 from hs.stage_b import figure as figure_mod
 from hs.stage_b import schematic as schematic_mod
-from hs.stage_b.annotate import Annotator
-from hs.stage_b.designer_eval import DesignerEvalRunner, decide, feedback_text, label_failed
 from hs.stage_b.image_archive import ImageArchive
-from hs.stage_b.image_model import ImageModel
-from hs.stage_b.vlm_prompt import VLMPromptWriter
+from hs.stage_b.loop import RoundResult, run_stage_b
 
 
 @dataclass
@@ -48,7 +46,7 @@ class Trace:
         return self.path.read_text(encoding="utf-8") if self.path.exists() else ""
 
 
-def make_run_dir(problem: Problem, base: Path = Path("runs")) -> Path:
+def make_run_dir(problem: Problem, base: Path = config.PROJECT_ROOT / "runs") -> Path:
     slug = re.sub(r"[^a-z0-9]+", "-", problem.title.lower()).strip("-")[:40] or "problem"
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     candidate = base / f"{stamp}_{slug}"
@@ -110,7 +108,7 @@ class Controller:
         self.min_cycles = min_cycles
         self.max_cycles = max_cycles
 
-    def run(self, problem: Problem, base: Path = Path("runs")) -> RunResult:
+    def run(self, problem: Problem, base: Path = config.PROJECT_ROOT / "runs") -> RunResult:
         run_dir = make_run_dir(problem, base)
         (run_dir / "problem.json").write_text(problem.model_dump_json(indent=2), encoding="utf-8")
         if hasattr(self.client, "cost"):
@@ -144,6 +142,11 @@ class Controller:
     # -- internals ---------------------------------------------------------------
     def _loop(self, problem: Problem, run_dir: Path, trace: Trace, warnings: list[str]) -> Path | None:
         lessons_text = load_lessons()
+        # Fake runs read the real lessons but write their synthetic lessons into the run folder.
+        self._lessons_out: Path | None = None
+        if getattr(self.client, "is_fake", False) and not os.environ.get("HS_LESSONS_PATH"):
+            self._lessons_out = run_dir / "lessons_fake_run.md"
+            self._lessons_out.write_text(lessons_text, encoding="utf-8")
         master = MasterPrompt.rev0(self.client, problem, lessons_text, run_dir)
         from hs.master_prompt import roster_of
 
@@ -154,9 +157,8 @@ class Controller:
         evaluator = Evaluator(self.client)
         secretary = Secretary(self.client)
         returns_to_a = 0
-        label_failures_total = 0  # persists across Stage B attempts (AUTOPILOT §7.1 fallback)
-        best_pass: tuple[Any, ...] | None = None
-        last: tuple[Any, ...] | None = None
+        best_pass: RoundResult | None = None
+        last: RoundResult | None = None
         pending_eval_requests: list[str] = []
         pending_eval_feedback = ""
         exit_reason = "iterations exhausted"
@@ -210,143 +212,51 @@ class Controller:
                     break
                 continue
 
-            decision = "s2_return"
-            ev = None
-            s1_diffs = ""
-            label_failures = label_failures_total
             attempt_dir = run_dir / "stage_b" / f"attempt_{returns_to_a:02d}"
-            carry_render: Path | None = None
-            carry_vlm = None
-            for r in range(self.max_s1_rounds):
-                round_dir = attempt_dir / f"round_{r:02d}"
-                round_dir.mkdir(parents=True, exist_ok=True)
-                geometry = schematic_mod.render_schematic(spec, round_dir)
-                writer = VLMPromptWriter(self.client)
-                if carry_render is not None and carry_vlm is not None:
-                    vlm = carry_vlm
-                    render_path = round_dir / "render.png"
-                    render_path.write_bytes(carry_render.read_bytes())
-                    carry_render = None
-                else:
-                    vlm = writer.write(solution, spec, round_dir / "schematic.png",
-                                       round_dir / "schematic_labeled.png", img_archive,
-                                       s1_differences=s1_diffs, corrections=s1_diffs,
-                                       force_code_labels=label_failures >= 2)
-                    (round_dir / "vlm_prompt.json").write_text(vlm.model_dump_json(indent=2), encoding="utf-8")
-                    render_bytes = ImageModel(self.client).edit(vlm, round_dir / "schematic.png")
-                    render_path = round_dir / "render.png"
-                    render_path.write_bytes(render_bytes)
-                annotated_path, loc, missing = Annotator(self.client).run(
-                    render_path, spec, geometry, round_dir / "annotated.png",
-                    code_labels=(vlm.label_mode == "code"))
-                ev = DesignerEvalRunner(self.client).run(
-                    annotated_path, round_dir / "schematic_labeled.png", solution, missing)
-                decision = decide(ev, r, self.max_s1_rounds)
-                (round_dir / "eval.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
-                (round_dir / "decision.txt").write_text(decision + "\n", encoding="utf-8")
-                img_archive.add(attempt=returns_to_a, round_idx=r, vlm_prompt=vlm.prompt,
-                                render_path=str(render_path), annotated_path=str(annotated_path),
-                                s1_faithful=ev.s1_faithful, s1_differences=ev.s1_differences,
-                                s2_flaw=ev.s2_flaw, s2_feedback=ev.s2_feedback, decision=decision)
-                last = (solution, spec, annotated_path, loc, render_path)
-                if ev.s1_faithful:
-                    best_pass = last
-                trace.log(f"iter {k} round {r}: S1={ev.s1_faithful} S2={ev.s2_flaw} decision={decision}")
-                if label_failed(ev):
-                    label_failures += 1
-                    label_failures_total = label_failures
-                    trace.log(f"iter {k} round {r}: label failure {label_failures}/2 before code-label fallback")
-                # Targeted corrections from actual-image review, appended verbatim next round (§7.2).
-                s1_diffs = "\n".join(x for x in (ev.s1_differences, ev.label_findings,
-                                                 ev.pixel_description) if x)
-                if decision == "s1_retry":
-                    # Two-step chain for S1 (spec §5.5b): regions are the output
-                    # gradient; the VLM prompt gradient diagnoses each region.
-                    from hs.stage_b.prompt_gradient import VLMPromptGradientRunner, composite_region
-
-                    grad_runner = VLMPromptGradientRunner(self.client)
-                    try:
-                        grad = grad_runner.run(render_path, round_dir / "schematic_labeled.png", vlm, ev)
-                        (round_dir / "vlm_gradient.json").write_text(grad.model_dump_json(indent=2), encoding="utf-8")
-                        render_regions = [x for x in ev.regions if x.source == "render" and len(x.box) == 4]
-                        if grad.fix_mode == "local" and render_regions:
-                            current = render_path
-                            kept_any = False
-                            for region in render_regions:
-                                fix = next((g.prompt_fix for g in grad.per_region
-                                            if g.part_id == region.part_id), region.expected)
-                                edited_bytes = self.client.image_edit(
-                                    f"Change only this: {fix}. Keep everything else in the image identical.",
-                                    current)
-                                edited_path = round_dir / f"edited_{region.part_id}.png"
-                                edited_path.write_bytes(edited_bytes)
-                                comp_path = round_dir / f"local_{region.part_id}.png"
-                                assert_info = composite_region(current, edited_path, region.box, comp_path)
-                                (round_dir / f"composite_{region.part_id}.json").write_text(
-                                    json.dumps(assert_info), encoding="utf-8")
-                                if not assert_info["outside_unchanged"]:
-                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} reverted (outside-box pixels changed)")
-                                    continue
-                                ann_local, _loc2, _miss2 = Annotator(self.client).run(
-                                    comp_path, spec, geometry, round_dir / f"annotated_local_{region.part_id}.png",
-                                    code_labels=(vlm.label_mode == "code"))
-                                check = grad_runner.progress_check(ann_local, ev, fix)
-                                (round_dir / f"progress_{region.part_id}.json").write_text(
-                                    check.model_dump_json(indent=2), encoding="utf-8")
-                                if check.fixed_region_pass and check.previous_pass and not check.seam_visible:
-                                    current = comp_path
-                                    kept_any = True
-                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} kept")
-                                else:
-                                    trace.log(f"iter {k} round {r}: local edit {region.part_id} reverted by progress check")
-                            if kept_any:
-                                carry_render = current
-                                carry_vlm = vlm
-                        else:
-                            s1_diffs = (grad.summary + "\n" + "\n".join(
-                                f"{g.part_id}: {g.diagnosis} -> {g.prompt_fix}" for g in grad.per_region)
-                                + "\n" + s1_diffs)
-                    except BudgetExceeded:
-                        raise
-                    except Exception as exc:  # gradient path must never kill the run
-                        trace.log(f"iter {k} round {r}: VLM prompt gradient skipped: {exc}")
-                if decision != "s1_retry":
-                    break
-            if decision == "s1_retry":
-                decision = "s2_return"
-            if decision == "s1_pass" and last is not None:
-                sol, sp, annot, loc, _render = last
-                figure_path = figure_mod.compose(
-                    self.client, sol, sp, annotated_path=annot, localization=loc, run_dir=run_dir,
-                    master_history=master.history, s_history=img_archive.entries(),
-                    sources=self._sources(run_dir))
-                update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name)
+            sb = run_stage_b(self.client, solution, spec, attempt_dir, img_archive,
+                             lambda msg, k=k: trace.log(f"iter {k} {msg}"),
+                             attempt=returns_to_a, max_rounds=self.max_s1_rounds)
+            last = sb.last
+            best_pass = sb.best_pass or best_pass
+            if sb.decision == "s1_pass" and sb.last is not None:
+                figure_path = self._compose(sb.last, run_dir, master, img_archive)
+                update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
                 trace.log("run accepted; final figure composed")
                 return figure_path
-            assert ev is not None
-            fb = feedback_text(ev, self.max_s1_rounds - 1, self.max_s1_rounds)
-            archive.set_status(aid, "rejected_by_designer", feedback=fb)
-            trace.log(f"iter {k}: designer returned to Stage A: {fb[:160]}")
+            if sb.decision == "s1_exhausted":
+                # A1/R4: the picture could not be drawn; nothing is sent back to the design.
+                archive.set_status(aid, "could_not_draw", feedback=sb.feedback)
+                (attempt_dir / "s1_exhausted.md").write_text(sb.feedback + "\n", encoding="utf-8")
+                trace.log(f"iter {k}: accepted design could not be drawn faithfully after {sb.rounds} rounds; "
+                          "no gradient sent to Stage A")
+                exit_reason = f"accepted design could not be drawn faithfully after {sb.rounds} rounds"
+                break
+            archive.set_status(aid, "rejected_by_designer", feedback=sb.feedback)
+            trace.log(f"iter {k}: designer saw a design flaw (S2); back to Stage A")
             if returns_to_a >= self.max_b_returns:
                 exit_reason = "MAX_B_RETURNS reached (designer)"
                 break
             returns_to_a += 1
-            manager.edit(room, solution, fb, iter_dir, tools=meeting.tools)
+            manager.edit(room, solution, sb.feedback, iter_dir, tools=meeting.tools)
             if manager.no_progress_streak >= 2:
                 exit_reason = "two consecutive no_progress iterations"
                 break
 
         warnings.append(f"best effort: {exit_reason}")
-        src = best_pass or last
         figure_path = None
-        if src is not None:
-            sol, sp, annot, loc, _render = src
-            figure_path = figure_mod.compose(
-                self.client, sol, sp, annotated_path=annot, localization=loc, run_dir=run_dir,
-                master_history=master.history, s_history=img_archive.entries(),
-                sources=self._sources(run_dir), best_effort=True)
-        update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name)
+        if best_pass is not None:  # only a render the critic found faithful becomes a figure
+            figure_path = self._compose(best_pass, run_dir, master, img_archive, best_effort=True)
+        elif last is not None:
+            trace.log("no faithful render exists; no final figure composed")
+        update_lessons(self.client, trace.text(), img_archive.summary_text(), run_dir.name, self._lessons_out)
         return figure_path
+
+    def _compose(self, rnd: RoundResult, run_dir: Path, master: MasterPrompt, img_archive: ImageArchive,
+                 best_effort: bool = False) -> Path:
+        return figure_mod.compose(
+            self.client, rnd.solution, rnd.spec, annotated_path=rnd.annotated, render_path=rnd.render,
+            localization=rnd.localization, run_dir=run_dir, master_history=master.history,
+            s_history=img_archive.entries(), sources=self._sources(run_dir), best_effort=best_effort)
 
     def _best_effort_figure(self, run_dir: Path, trace: Trace) -> Path | None:
         # No accepted render exists on an early budget hit; record and return None.

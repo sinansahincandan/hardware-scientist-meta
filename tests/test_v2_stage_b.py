@@ -2,7 +2,7 @@
 from PIL import Image
 
 from hs.schemas import DesignerEval, EvalRegion, OutputGradient, VLMPromptGradient, make_strict_schema
-from hs.stage_b.designer_eval import decide
+from hs.stage_b.designer_eval import decide, s2_feedback_text
 from hs.stage_b.prompt_gradient import composite_region
 
 
@@ -19,13 +19,13 @@ def test_composite_keeps_outside_pixels(tmp_path):
     assert out.getpixel((100, 100)) == (200, 0, 0)  # inside box: edited
 
 
-def test_source_trace_routes_schematic_region_to_s2():
-    ev = DesignerEval(s1_faithful=False, regions=[
-        EvalRegion(box=[0, 0, 100, 100], part_id="P1", observed="x", expected="y", source="schematic")])
-    assert decide(ev, 0) == "s2_return"
-    ev2 = DesignerEval(s1_faithful=False, regions=[
-        EvalRegion(box=[0, 0, 100, 100], part_id="P1", observed="x", expected="y", source="render")])
-    assert decide(ev2, 0) == "s1_retry"
+def test_only_the_critics_s2_flag_returns_to_stage_a():
+    """A1/R4: a region traced to the sketch does not by itself make an S2 return; the critic decides."""
+    region = EvalRegion(box=[0, 0, 100, 100], part_id="P1", observed="x", expected="y", source="schematic")
+    assert decide(DesignerEval(s1_faithful=False, regions=[region]), 0) == "s1_retry"
+    flaw = DesignerEval(s1_faithful=True, s2_flaw=True, s2_feedback="the arm hits the frame.", regions=[region])
+    assert decide(flaw, 0) == "s2_return"
+    assert "the arm hits the frame." in s2_feedback_text(flaw) and "P1" in s2_feedback_text(flaw)
 
 
 def test_gradient_schemas_strict():

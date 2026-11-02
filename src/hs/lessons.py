@@ -16,7 +16,9 @@ ALL_HEADINGS = ["## Process", "## Prompts", "## Tools", "## Image model", "## Us
 
 def lessons_path() -> Path:
     override = os.environ.get("HS_LESSONS_PATH")
-    return Path(override) if override else Path("lessons.md")
+    from hs import config
+
+    return Path(override) if override else config.PROJECT_ROOT / "lessons.md"
 
 
 def load_lessons(path: Path | None = None) -> str:

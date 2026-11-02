@@ -38,6 +38,14 @@ def _sf(x: float) -> str:
     return f"{x:.3g}"
 
 
+def _sentences(text: str, n: int) -> str:
+    """The first n sentences of text, never cut mid-word."""
+    import re
+
+    parts = re.split(r"(?<=[.!?])\s+", " ".join(text.split()))
+    return " ".join(parts[:n])
+
+
 def _rel_img(path: Path, run_dir: Path, width: int = 900) -> str:
     """Relative-path image, display copy downscaled to <=1600 px, click to full."""
     if not path.exists():
@@ -86,7 +94,7 @@ def report_html(run_dir: Path, embed: bool = False) -> str:
         if (run_dir / "image_archive.jsonl").exists() else []
     cost = _read_json(run_dir / "cost.json")
     sol_files = sorted((run_dir / "stage_a").glob("iter_*/solution.json")) if (run_dir / "stage_a").exists() else []
-    sol = _read_json(sol_files[-1]) if sol_files else {}
+    sol = _read_json(sol_files[-1]) if sol_files else _read_json(run_dir / "seeded_solution.json")
     parts: list[str] = [("<!doctype html><html><head><meta charset='utf-8'>"
                          f"<title>{html.escape(str(problem.get('title', run_dir.name)))}</title>"
                          f"{REPORT_STYLE}</head><body><main>")]
@@ -97,11 +105,10 @@ def report_html(run_dir: Path, embed: bool = False) -> str:
         parts.append("<ul>" + "".join(f"<li>{html.escape(str(c))}</li>" for c in problem["constraints"]) + "</ul>")
     # 2. The final figure
     parts.append("<h2>The concept</h2>")
-    parts.append(_rel_img(run_dir / "final" / "figure.png", run_dir, width=1040))
-    ff = run_dir / "final" / "flow.png"
-    if ff.exists():
-        parts.append("<p>Flow view (the governing quantity, as decided by the council):</p>"
-                     + _rel_img(ff, run_dir, width=1040))
+    if (run_dir / "final" / "figure.png").exists():
+        parts.append(_rel_img(run_dir / "final" / "figure.png", run_dir, width=1040))
+    else:
+        parts.append("<p>No final figure: no render in this run was judged faithful to the mechanism sketch.</p>")
     # 3. Mechanism, choices, open question
     if sol:
         parts.append("<div class='hero'>")
@@ -114,22 +121,42 @@ def report_html(run_dir: Path, embed: bool = False) -> str:
     # 4. What happened (one plain sentence per event)
     parts.append("<h2>What happened</h2>")
     events: list[str] = []
+    seeded = _read_json(run_dir / "seeded_from.json")
+    if seeded:
+        events.append(f"This run redrew the accepted solution of run {html.escape(str(seeded.get('source_run', '')))}; "
+                      "no council meeting ran in this run.")
     for entry in archive:
         k = int(entry.get("iteration", 0))
         iter_dir = run_dir / "stage_a" / f"iter_{k:02d}"
         closure = _read_json(iter_dir / "closure.json")
-        closed = closure.get("closed_by", "")
-        events.append(f"The council meeting {'closed by consensus' if closed == 'consensus' else 'reached the cycle cap'} "
-                      f"after {closure.get('cycles_used', '?')} cycles.")
-        events.append(f"The evaluator {'accepted the concept' if entry.get('accept') else 'sent the concept back'}: "
-                      f"{html.escape(str(entry.get('feedback', ''))[:180])}")
+        if closure:
+            closed = closure.get("closed_by", "")
+            events.append(f"The council meeting {'closed by consensus' if closed == 'consensus' else 'reached the cycle cap without consensus'} "
+                          f"after {closure.get('cycles_used', '?')} cycles.")
+        verdict = _read_json(iter_dir / "verdict.json")
+        if verdict:
+            events.append(f"The evaluator {'accepted the concept' if verdict.get('accept') else 'sent the concept back'}: "
+                          f"{html.escape(_sentences(str(verdict.get('feedback', '')), 2))}")
+    rounds_by_attempt: dict[int, int] = {}
+    for e in img_entries:
+        rounds_by_attempt[int(e.get("attempt", 0))] = rounds_by_attempt.get(int(e.get("attempt", 0)), 0) + 1
     for e in img_entries:
         dec = str(e.get("decision", ""))
-        what = {"s1_pass": "The picture matched the mechanism sketch.",
-                "s2_return": "The picture showed a design flaw, so the concept went back to the council.",
-                "s1_retry": "The picture did not yet match the sketch, so it was corrected."}.get(dec, dec)
-        region = html.escape(str(e.get("s1_differences", ""))[:160])
-        events.append(f"Visualization attempt {e.get('attempt')}, round {e.get('round')}: {what} {region}")
+        n_rounds = rounds_by_attempt.get(int(e.get("attempt", 0)), 0)
+        if dec == "s1_pass":
+            what = "The picture matched the mechanism sketch."
+        elif dec == "s1_retry":
+            what = ("The picture did not match the mechanism sketch; the image prompt was corrected: "
+                    + html.escape(_sentences(str(e.get("s1_differences", "")), 1)))
+        elif dec == "s1_exhausted":
+            what = (f"The picture could not be drawn faithfully after {n_rounds} rounds. Nothing was sent back to "
+                    "the design, because a drawing failure says nothing about whether the design works.")
+        elif dec == "s2_return":
+            what = ("The designer evaluation saw a design flaw in the picture, so the concept went back to the "
+                    "council: " + html.escape(_sentences(str(e.get("s2_feedback", "")), 2)))
+        else:
+            what = html.escape(dec)
+        events.append(f"Picture {int(e.get('attempt', 0)) + 1}, round {int(e.get('round', 0)) + 1}: {what}")
     diffs = sorted((run_dir / "master_prompt").glob("diff_*.md"))
     for d in diffs:
         events.append(f"The Manager changed the council's instructions (<a href='master_prompt/{d.name}'>see the diff</a>).")

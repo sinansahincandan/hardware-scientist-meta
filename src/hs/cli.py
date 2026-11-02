@@ -26,57 +26,14 @@ def _cmd_run(args: argparse.Namespace) -> int:
     from hs.schemas import Problem
 
     problem = Problem.model_validate_json(Path(args.problem).read_text(encoding="utf-8"))
-    fake = bool(args.fake)
-    controller = Controller(None)  # client replaced below once run dir known
-    # Controller creates the run dir; FakeClient needs it for cost.json, so create client
-    # lazily: run with a provisional client, then re-point handled inside Controller via cost flush.
-    # Simpler: create run dir first through Controller helper.
-    from hs.controller import make_run_dir
-
-    # Use Controller.run but inject a client bound to a pre-created dir:
-    run_dir = make_run_dir(problem)
-    (run_dir / "problem.json").write_text(problem.model_dump_json(indent=2), encoding="utf-8")
-    client = _make_client(fake, run_dir=run_dir)
-    controller.client = client
-    # replicate Controller.run body with existing dir
-    result = _run_with_dir(controller, client, problem, run_dir)
+    client = _make_client(bool(args.fake))
+    result = Controller(client).run(problem)  # binds the client's cost log to the new run folder
     print(f"run folder: {result.run_dir}")
     print(f"final figure: {result.figure_path}")
     print(f"cost: ${result.cost_usd:.4f}")
     for warning in result.warnings:
         print(f"warning: {warning}")
     return 0
-
-
-def _run_with_dir(controller: Any, client: Any, problem: Any, run_dir: Path) -> Any:
-    from hs.client import BudgetExceeded
-    from hs.controller import RunResult, Trace
-
-    warnings: list[str] = []
-    figure_path = None
-    trace = Trace(run_dir)
-    try:
-        figure_path = controller._loop(problem, run_dir, trace, warnings)
-    except BudgetExceeded as exc:
-        warnings.append(f"best effort: cost cap hit ({exc})")
-        trace.log(f"BudgetExceeded: {exc}")
-        figure_path = controller._best_effort_figure(run_dir, trace)
-    finally:
-        try:
-            from hs.board import write_board
-            from hs.controller import build_references
-            from hs.report import write_report
-
-            build_references(run_dir)
-            write_report(run_dir)
-            write_board(run_dir)
-        except Exception as exc:
-            trace.log(f"report/board generation failed: {exc}")
-    cost = 0.0
-    cost_file = run_dir / "cost.json"
-    if cost_file.exists():
-        cost = float(json.loads(cost_file.read_text(encoding="utf-8")).get("total_usd", 0.0))
-    return RunResult(run_dir=run_dir, figure_path=figure_path, warnings=warnings, cost_usd=cost)
 
 
 def _cmd_examples(args: argparse.Namespace) -> int:

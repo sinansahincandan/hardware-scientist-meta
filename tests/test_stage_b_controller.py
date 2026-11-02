@@ -45,7 +45,7 @@ def _solution():
 def test_decide_routing():
     assert decide(DesignerEval(s1_faithful=True, s2_flaw=False), 0) == "s1_pass"
     assert decide(DesignerEval(s1_faithful=False, s2_flaw=False), 0) == "s1_retry"
-    assert decide(DesignerEval(s1_faithful=False, s2_flaw=False), 2) == "s2_return"
+    assert decide(DesignerEval(s1_faithful=False, s2_flaw=False), 2) == "s1_exhausted"
     assert decide(DesignerEval(s1_faithful=True, s2_flaw=True, s2_feedback="x"), 0) == "s2_return"
 
 
@@ -84,12 +84,26 @@ def test_fake_schematic_fail_returns_to_a(tmp_path):
     assert (run_dir / "final" / "figure.png").exists()  # second attempt passes
 
 
-def test_fake_s1_three_fail_then_pass(tmp_path):
+def test_fake_s1_exhausted_is_not_a_design_flaw(tmp_path):
+    """A1: running out of S1 rounds is reported as such and sends nothing back to Stage A."""
     run_dir = _run(tmp_path, scenario="s1_three_fail")
     entries = [json.loads(l) for l in (run_dir / "image_archive.jsonl").read_text().splitlines() if l.strip()]
-    assert [e["decision"] for e in entries[:3]] == ["s1_retry", "s1_retry", "s2_return"]
-    assert entries[-1]["decision"] == "s1_pass"
-    assert (run_dir / "final" / "figure.png").exists()
+    assert [e["decision"] for e in entries] == ["s1_retry", "s1_retry", "s1_exhausted"]
+    archive = [json.loads(l) for l in (run_dir / "archive.jsonl").read_text().splitlines() if l.strip()]
+    assert archive[-1]["status"] == "could_not_draw"
+    assert not any(e["status"] == "rejected_by_designer" for e in archive)
+    assert not (run_dir / "final" / "figure.png").exists()  # no faithful render, no figure
+    report = (run_dir / "report.html").read_text()
+    assert "could not be drawn faithfully after 3 rounds" in report
+    assert "design flaw" not in report
+
+
+def test_fake_s2_flaw_returns_to_a_with_regions(tmp_path):
+    run_dir = _run(tmp_path, scenario="s2_flaw")
+    archive = [json.loads(l) for l in (run_dir / "archive.jsonl").read_text().splitlines() if l.strip()]
+    flagged = [e for e in archive if e["status"] == "rejected_by_designer"]
+    assert flagged and "cannot be assembled" in flagged[0]["feedback"]
+    assert (run_dir / "final" / "figure.png").exists()  # the redesign is drawn faithfully
 
 
 def test_fake_cost_cap_best_effort(tmp_path):
