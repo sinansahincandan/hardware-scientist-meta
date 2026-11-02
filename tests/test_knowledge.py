@@ -41,7 +41,7 @@ def test_insights_search_and_search_knowledge_evidence(kdir: Path, tmp_path: Pat
     from hs.stage_a.whiteboard import Whiteboard
 
     board = Whiteboard()
-    eid, out = ToolRunner(board, tmp_path / "run", tmp_path / "ev").search_knowledge("A", "stair riser", cycle=1)
+    _eid, out = ToolRunner(board, tmp_path / "run", tmp_path / "ev").search_knowledge("A", "stair riser", cycle=1)
     assert board.evidence[0].tool == "search_knowledge" and "Stair riser heights" in out
 
 
