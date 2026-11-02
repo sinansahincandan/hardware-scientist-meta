@@ -1,5 +1,0 @@
-{
-  "cycle": 4,
-  "member": "Structural Dynamicist",
-  "message": "Retrofit and Maintenance Engineer, the device hangs almost still so the clamp sees static weight plus a small shake.\n\nTuned Mass Damper (TMD), a sprung mass moving out of phase, static weight is 7.85 kN per the static weight check (E34), total hung load is 9.81 kN per the hung load estimate (E29), about thirteen body weights like a small car engine hoist, while peak spring force is 266 N per the spring force estimate (E35) and damper force is 63.8 N per the damper force estimate (E36), so dynamic add is under 0.400 kN, under four percent of static.\n\nManager, the device tuning and comfort claim are unchanged and still gentle.\n\nDamped peak is 0.106 m/s2 below 0.700 m/s2 limit per the damped response sweep (E32), about 0.0108 times gravity like a still floor, with 800 kg at 1.83 Hz per the frozen sizing rerun (E33), and load path stays primary girders to cross-beam to support frame to springs plus damper to mass locked to bottom flange.\n\nNot ready, because blocking clamp slip proof O2 is still open."
-}

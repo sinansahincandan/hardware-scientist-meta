@@ -1,0 +1,14 @@
+{
+  "id": "E51",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "dense crowd bare acceleration scaling",
+  "code_or_query": "(1.75*1481/280)",
+  "inputs": {},
+  "output_summary": "9.26",
+  "output_full": "9.26",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

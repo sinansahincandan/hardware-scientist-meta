@@ -2,213 +2,270 @@
   "view": "side",
   "nodes": [
     {
-      "id": "P-array",
-      "label": "Solar array 4x550W",
+      "id": "pv_array",
+      "label": "PV array 2.4kWp",
       "shape": "plate",
       "size_class_mm": {
-        "min": 1130.0,
-        "max": 2280.0
+        "min": 1100.0,
+        "max": 1800.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 0
+      },
+      "color_hint": "#2e86c1",
+      "aspect": 3.0
+    },
+    {
+      "id": "battery_cabinet",
+      "label": "Battery cabinet 5kWh",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 400.0,
+        "max": 800.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 0.7
+    },
+    {
+      "id": "dc_wiring",
+      "label": "DC wiring",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 1000.0,
+        "max": 5000.0
       },
       "layout": {
         "col": 1,
         "row": 0
       },
-      "color_hint": "#2e86c1",
-      "aspect": 2.0
+      "color_hint": "#f39c12",
+      "aspect": 5.0
     },
     {
-      "id": "P-battery",
-      "label": "48V 100Ah battery",
+      "id": "cold_box",
+      "label": "100mm PU cold box",
       "shape": "rect",
-      "size_class_mm": {
-        "min": 200.0,
-        "max": 600.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 1
-      },
-      "color_hint": "#e67e22",
-      "aspect": 1.5
-    },
-    {
-      "id": "P-controller",
-      "label": "MPPT controller",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 100.0,
-        "max": 300.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 1
-      },
-      "color_hint": "#8e44ad",
-      "aspect": 1.33
-    },
-    {
-      "id": "P-box",
-      "label": "PU box 2.4x2x2.2m",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 960.0,
-        "max": 2400.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 2
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.5
-    },
-    {
-      "id": "P-base",
-      "label": "Steel skid base",
-      "shape": "beam",
       "size_class_mm": {
         "min": 2000.0,
         "max": 2400.0
       },
       "layout": {
-        "col": 1,
-        "row": 3
-      },
-      "color_hint": "#616a6b",
-      "aspect": 2.0
-    },
-    {
-      "id": "P-door",
-      "label": "800mm door",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 800.0,
-        "max": 2100.0
-      },
-      "layout": {
         "col": 2,
         "row": 2
       },
-      "color_hint": "#aab7b8",
-      "aspect": 0.6
+      "color_hint": "#aed6f1",
+      "aspect": 1.1
     },
     {
-      "id": "P-cooling",
-      "label": "DC cooler 1kW",
+      "id": "dc_chiller",
+      "label": "DC chiller",
       "shape": "rect",
       "size_class_mm": {
         "min": 300.0,
-        "max": 800.0
+        "max": 600.0
       },
       "layout": {
-        "col": 0,
+        "col": 4,
         "row": 1
       },
-      "color_hint": "#17a589",
-      "aspect": 1.33
+      "color_hint": "#7fb3d5",
+      "aspect": 1.2
     },
     {
-      "id": "P-crates",
-      "label": "50x vented crates",
+      "id": "airflow_kit",
+      "label": "Fan airflow kit",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 1200.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 1
+      },
+      "color_hint": "#aed6f1",
+      "aspect": 2.0
+    },
+    {
+      "id": "crates",
+      "label": "Vented crates",
       "shape": "rect",
       "size_class_mm": {
-        "min": 400.0,
+        "min": 300.0,
         "max": 600.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#82e0aa",
+      "aspect": 1.5
+    },
+    {
+      "id": "racks",
+      "label": "Side racks",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 900.0,
+        "max": 2000.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 3
+      },
+      "color_hint": "#a9a9a9",
+      "aspect": 1.2
+    },
+    {
+      "id": "plinth",
+      "label": "Concrete plinth",
+      "shape": "plate",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 2600.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 4
+      },
+      "color_hint": "#b2babb",
+      "aspect": 6.0
+    },
+    {
+      "id": "frame_rack",
+      "label": "Steel frame / PV rack",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 2000.0,
+        "max": 2600.0
       },
       "layout": {
         "col": 0,
         "row": 2
       },
-      "color_hint": "#229954",
-      "aspect": 1.5
+      "color_hint": "#7f8c8d",
+      "aspect": 2.5
+    },
+    {
+      "id": "door",
+      "label": "900mm insulated door",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 900.0,
+        "max": 1000.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 2
+      },
+      "color_hint": "#aed6f1",
+      "aspect": 0.5
     }
   ],
   "edges": [
     {
-      "from_id": "P-array",
-      "to_id": "P-controller",
+      "from_id": "pv_array",
+      "to_id": "battery_cabinet",
       "kind": "electrical",
-      "label": "day DC",
-      "arrow": false
+      "label": "DC charge via MPPT",
+      "arrow": true
     },
     {
-      "from_id": "P-controller",
-      "to_id": "P-battery",
+      "from_id": "battery_cabinet",
+      "to_id": "dc_chiller",
       "kind": "electrical",
-      "label": "charge 48V",
-      "arrow": false
+      "label": "48V DC supply",
+      "arrow": true
     },
     {
-      "from_id": "P-battery",
-      "to_id": "P-cooling",
-      "kind": "electrical",
-      "label": "night power",
-      "arrow": false
-    },
-    {
-      "from_id": "P-cooling",
-      "to_id": "P-box",
+      "from_id": "dc_chiller",
+      "to_id": "cold_box",
       "kind": "thermal",
-      "label": "1.0kW cooling",
+      "label": "cooling to 4-10C",
       "arrow": true
     },
     {
-      "from_id": "P-cooling",
-      "to_id": "P-crates",
+      "from_id": "airflow_kit",
+      "to_id": "cold_box",
       "kind": "fluid",
-      "label": "cold air",
+      "label": "uniform air over evaporator",
       "arrow": true
     },
     {
-      "from_id": "P-box",
-      "to_id": "P-base",
+      "from_id": "crates",
+      "to_id": "racks",
       "kind": "mechanical",
-      "label": "bolted",
+      "label": "stacked 3 high vent gaps",
       "arrow": false
     },
     {
-      "from_id": "P-array",
-      "to_id": "P-base",
+      "from_id": "racks",
+      "to_id": "plinth",
       "kind": "mechanical",
-      "label": "on rails",
+      "label": "stand free on plinth",
+      "arrow": true
+    },
+    {
+      "from_id": "cold_box",
+      "to_id": "plinth",
+      "kind": "mechanical",
+      "label": "anchored to plinth",
       "arrow": false
     },
     {
-      "from_id": "P-crates",
-      "to_id": "P-box",
+      "from_id": "frame_rack",
+      "to_id": "cold_box",
       "kind": "mechanical",
-      "label": "racked",
+      "label": "supports panels, PV separate",
       "arrow": false
     },
     {
-      "from_id": "P-door",
-      "to_id": "P-box",
+      "from_id": "door",
+      "to_id": "cold_box",
       "kind": "mechanical",
-      "label": "hinged seal",
+      "label": "sealed hinged closure",
       "arrow": false
+    },
+    {
+      "from_id": "dc_wiring",
+      "to_id": "battery_cabinet",
+      "kind": "electrical",
+      "label": "series pairs fuses",
+      "arrow": true
     }
   ],
   "loads": [
     {
-      "on_id": "P-array",
-      "label": "sun on 10m2 array",
+      "on_id": "pv_array",
+      "label": "Solar irradiance on array",
+      "direction": "up"
+    },
+    {
+      "on_id": "plinth",
+      "label": "1 tonne produce plus box weight",
       "direction": "down"
     },
     {
-      "on_id": "P-base",
-      "label": "1t in 50x20kg crates",
-      "direction": "down"
+      "on_id": "cold_box",
+      "label": "Wind gust on side wall",
+      "direction": "left"
     },
     {
-      "on_id": "P-box",
-      "label": "333kg/day field heat",
+      "on_id": "cold_box",
+      "label": "Ambient heat and door air",
       "direction": "in"
     }
   ],
-  "critical_part_id": "P-cooling",
+  "critical_part_id": "cold_box",
   "scale_bar_mm": 500.0,
   "notes": [
-    "Solar-only staged store: 2.2kW array -> MPPT -> 5.12kWh 48V -> 1kW DC cooler",
-    "100mm PU box U0.22 holds 5C; 333kg/day staged lot plus 185W leak",
-    "Door hinged sealed to box; box bolted to skid; crates racked in box"
+    "Side section: separate PV rack left, cold box center on plinth, chiller outside shaded, fan high inside, crates on low racks.",
+    "Energy: PV array -> battery cabinet -> DC chiller. Measured: Box air sensor -> thermostat holds 4-10C.",
+    "200kg/day warm cap, no intake on cloudy days; 1.42-day hold autonomy."
   ]
 }

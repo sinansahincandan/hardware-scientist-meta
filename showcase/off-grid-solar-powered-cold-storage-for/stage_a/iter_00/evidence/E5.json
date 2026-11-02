@@ -1,20 +1,20 @@
 {
   "id": "E5",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
-  "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+  "purpose": "search: 400W monocrystalline solar panel datasheet dimensions efficiency",
+  "code_or_query": "400W monocrystalline solar panel datasheet dimensions efficiency",
   "inputs": {},
-  "output_summary": "renewableoutdoors.com — SunGoldPower 550W Monocrystalline PERC Solar Panel — https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
-  "output_full": "renewableoutdoors.com — SunGoldPower 550W Monocrystalline PERC Solar Panel — https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel\n(the search returned no passage text)",
+  "output_summary": "device.report — DNA 108 BF10 400W Datasheet — https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74",
+  "output_full": "device.report — DNA 108 BF10 400W Datasheet — https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "renewableoutdoors.com",
-      "title": "SunGoldPower 550W Monocrystalline PERC Solar Panel",
+      "authors_or_org": "device.report",
+      "title": "DNA 108 BF10 400W Datasheet",
       "year": "",
-      "url": "https://renewableoutdoors.com/products/sungoldpower-550w-monocrystalline-perc-solar-panel",
-      "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+      "url": "https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74",
+      "query": "400W monocrystalline solar panel datasheet dimensions efficiency",
       "unresolved": false,
       "passage": ""
     }

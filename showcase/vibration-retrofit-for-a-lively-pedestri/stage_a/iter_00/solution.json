@@ -1,347 +1,249 @@
 {
-  "title": "Under-deck vertical TMD at midspan on clamped cross-frame with perforated screen",
-  "problem_restatement": "Lively 1.9 Hz vertical footbridge mode exceeds 0.7 m/s2 comfort limit and needs under-deck retrofit hung entirely from below with no deck closure or appearance change that dissipates mode energy to comfortable acceleration",
-  "mechanism_sentence": "A hidden 800 kg weight on soft springs and dampers under the middle of the bridge moves opposite to the deck to soak up the 1.9 Hz bounce and hold shaking near 0.11 m/s2 below the 0.7 m/s2 comfort limit.",
+  "title": "Under-deck vertical tuned mass damper at midspan on bolted clamp frame with staged install",
+  "problem_restatement": "40 m footbridge first vertical mode at 1.9 Hz lies in walking range with low damping and exceeds comfort under crowd loading, requiring concealed supplemental damping with staged retrofit without full closure",
+  "mechanism_sentence": "A 500 kg weight hung on tuned springs and dampers under the middle of the bridge sways to calm crowd shaking to a gentle feel.",
   "decisive_choices": [
-    "Tune 800 kg mass to 1.83 Hz with 12% damping at 4% mass ratio to cut 1.75 m/s2 bare to 0.106 m/s2 damped",
-    "Hang entire unit from girder bottom flanges on 8 friction clamps for 3.26 slip factor with no drilling and install from below",
-    "Recess unit in under-deck cassette behind color-matched perforated screen with plus-minus 30 mm stroke clearance and lock-off pin"
+    "Mount 500 kg tuned mass at midspan under deck tuned just below 1.9 Hz to 1.85 Hz",
+    "Support on helical springs plus viscous dashpots sized for 72.3 mm sag and 20.1 mm crowd stroke with plus-minus 50 mm stops",
+    "Clamp with bolted transverse bearers with staged night install and removable cover for re-tuning without deck change"
   ],
-  "open_question": "What are the existing girder bottom-flange thickness, clamp spacing and local bending stress under about 1.23 kN per clamp plus under 0.40 kN dynamic to close the flange-bending check?",
-  "transfer_line": "Energy: girders -> support frame -> moving mass | Measured: deck acceleration -> accelerometer",
+  "open_question": "Will field-measured first-mode frequency, modal mass and damping confirm the assumed 20000 kg at 1.9 Hz tuning so dense-crowd response stays below 1.0 m/s2 with clearance?",
+  "transfer_line": "Load: pedestrians -> deck -> damper mass | Measured: deck acceleration -> comfort check",
   "assumed_constraints": [
     {
-      "constraint": "Comfort target is peak vertical deck acceleration below 0.7 m/s2, max-comfort band, 1.9 Hz in critical 1.25-2.3 Hz range requiring check",
-      "source": "Serviceability and Crowd Loading Specialist",
+      "constraint": "vertical comfort target maximum comfort below 0.5 m/s2, minimum comfort below 1.0 m/s2, unacceptable above 2.5 m/s2 per Setra and HiVoSS comfort classes",
+      "source": "C1",
       "evidence_ids": [
-        "E13",
-        "E2"
+        "E38"
       ]
     },
     {
-      "constraint": "Modal mass 20000 kg assumed for Den Hartog sizing with 4% mass ratio",
-      "source": "Structural Dynamicist",
+      "constraint": "staged night installation plus under-bridge access: prefabricate frame plus TMD off site, lift from tower plus under-bridge inspection platform with one lane kept open, lock mass for transport and release after bolting, leave removable cover plus shim and threaded spring seats for inspection and re-tuning",
+      "source": "C4",
       "evidence_ids": [
-        "E33",
-        "E11"
+        "E26",
+        "E28",
+        "E32"
       ]
     },
     {
-      "constraint": "Bare steel damping near 0.4 percent of critical",
-      "source": "Structural Dynamicist",
+      "constraint": "dense-crowd verification case Class III 0.5 pedestrians per square metre, equivalent synchronized pedestrians from Setra 10.8*sqrt(zeta*N), single-pedestrian weight 700 N with 280 N first-harmonic amplitude at resonance",
+      "source": "C5",
       "evidence_ids": [
-        "E4"
-      ]
-    },
-    {
-      "constraint": "Added mass carried from existing girders entirely from below deck with no deck closure or deck appearance change",
-      "source": "Retrofit and Maintenance Engineer",
-      "evidence_ids": [
-        "E29",
-        "E12"
+        "E41",
+        "E42",
+        "E44"
       ]
     }
   ],
   "functional_decomposition": [
-    "Dissipate first vertical mode energy at 1.9 Hz to comfortable acceleration",
-    "Carry added damper mass from existing girders entirely from below deck with no deck closure or deck appearance change, and allow lock-off and inspection",
-    "Preserve deck appearance from eye-height with no visible change to parapet, floor or sightlines"
+    "Quantify first vertical mode modal mass, stiffness and damping of 40 m span",
+    "Suppress first vertical mode resonant response with supplemental damping",
+    "Concealed under-deck mounting, staged installation without full closure, and inspection plus re-tuning access for 40 m span",
+    "Verify pedestrian comfort against crowd loading for 40 m span"
   ],
   "concept": {
-    "working_principle": "Moving mass on coil springs plus viscous damper tuned to 1.83 Hz moves out of phase with 1.9 Hz deck mode to dissipate energy, hung from girder bottom flanges at midspan with no deck appearance change",
+    "working_principle": "lumped steel mass on helical steel springs plus viscous dashpots, tuned to first vertical mode, mounted at midspan under deck so deck appearance unchanged",
     "parts": [
       {
-        "id": "girder",
-        "name": "Existing longitudinal girder",
-        "function": "Carry deck and provide bottom-flange support",
-        "material": "Steel (existing)",
+        "id": "deck",
+        "name": "existing 40 m footbridge deck and girders",
+        "function": "carry pedestrian load and provide first vertical mode at 1.9 Hz",
+        "material": "steel",
         "size_class_mm": {
-          "min": 35000.0,
+          "min": 40000.0,
           "max": 40000.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "frame",
+        "name": "transverse steel bearer beams",
+        "function": "clamp to existing longitudinal girders to carry TMD without welding",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 1000.0,
+          "max": 3000.0
         },
         "qty": 2
       },
       {
-        "id": "crossbeam",
-        "name": "Transverse cross-beam",
-        "function": "Span between girders to carry TMD unit",
-        "material": "Hot-dip galvanized steel",
+        "id": "mass",
+        "name": "TMD steel mass 500 kg",
+        "function": "secondary tuned mass to absorb first vertical mode",
+        "material": "steel",
         "size_class_mm": {
-          "min": 1000.0,
-          "max": 2500.0
+          "min": 300.0,
+          "max": 800.0
         },
         "qty": 1
       },
       {
-        "id": "clamps",
-        "name": "Friction beam clamps",
-        "function": "Clamp cross-beam to girder bottom flanges without drilling",
-        "material": "Malleable iron, hot-dip galvanized",
+        "id": "spring",
+        "name": "helical steel springs",
+        "function": "provide tuned stiffness with static sag and re-tuning adjustment",
+        "material": "steel",
         "size_class_mm": {
           "min": 50.0,
-          "max": 150.0
-        },
-        "qty": 8
-      },
-      {
-        "id": "frame",
-        "name": "Bolted under-deck support frame",
-        "function": "Hold springs, damper and moving mass below deck",
-        "material": "Galvanized steel",
-        "size_class_mm": {
-          "min": 500.0,
-          "max": 1500.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "mass",
-        "name": "TMD moving mass",
-        "function": "Move out of phase to absorb 1.9 Hz mode energy",
-        "material": "Steel",
-        "size_class_mm": {
-          "min": 400.0,
-          "max": 600.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "springs",
-        "name": "Coil spring set",
-        "function": "Provide vertical stiffness tuned to 1.83 Hz",
-        "material": "Steel",
-        "size_class_mm": {
-          "min": 200.0,
-          "max": 400.0
+          "max": 500.0
         },
         "qty": 1
       },
       {
         "id": "damper",
-        "name": "Viscous damper",
-        "function": "Provide damping for energy dissipation",
-        "material": "Steel",
+        "name": "viscous dashpots",
+        "function": "provide tuned damping for resonant energy dissipation",
+        "material": "steel and oil",
         "size_class_mm": {
-          "min": 200.0,
-          "max": 400.0
+          "min": 100.0,
+          "max": 600.0
         },
         "qty": 1
       },
       {
-        "id": "screen",
-        "name": "Perforated soffit screen",
-        "function": "Hide cassette with shadow gap, no deck change",
-        "material": "Color-matched steel",
+        "id": "cover",
+        "name": "removable under-deck cover",
+        "function": "conceal TMD and allow inspection and re-tuning access",
+        "material": "steel",
         "size_class_mm": {
-          "min": 1000.0,
-          "max": 2500.0
+          "min": 500.0,
+          "max": 2000.0
         },
         "qty": 1
       },
       {
-        "id": "lockpin",
-        "name": "Maintenance lock-off pin",
-        "function": "Lock mass still for inspection",
-        "material": "Galvanized steel",
+        "id": "bolts",
+        "name": "preloaded high-strength bolts",
+        "function": "clamp bearer beams to girders without welding",
+        "material": "steel",
         "size_class_mm": {
-          "min": 50.0,
-          "max": 150.0
+          "min": 10.0,
+          "max": 30.0
         },
         "qty": 1
       }
     ],
     "connections": [
       {
-        "from_id": "girder",
-        "to_id": "clamps",
+        "from_id": "frame",
+        "to_id": "deck",
         "kind": "mechanical",
-        "label": "friction clamp to bottom flange"
+        "label": "clamped with preloaded bolts"
       },
       {
-        "from_id": "clamps",
-        "to_id": "crossbeam",
-        "kind": "mechanical",
-        "label": "carry cross-beam"
-      },
-      {
-        "from_id": "crossbeam",
+        "from_id": "spring",
         "to_id": "frame",
         "kind": "mechanical",
-        "label": "bolt support frame"
+        "label": "seated on frame"
       },
       {
-        "from_id": "frame",
-        "to_id": "springs",
-        "kind": "mechanical",
-        "label": "support springs"
-      },
-      {
-        "from_id": "frame",
-        "to_id": "damper",
-        "kind": "mechanical",
-        "label": "support damper"
-      },
-      {
-        "from_id": "springs",
+        "from_id": "spring",
         "to_id": "mass",
         "kind": "mechanical",
-        "label": "suspend mass vertically"
+        "label": "carries mass"
+      },
+      {
+        "from_id": "damper",
+        "to_id": "frame",
+        "kind": "mechanical",
+        "label": "connected to frame"
       },
       {
         "from_id": "damper",
         "to_id": "mass",
         "kind": "mechanical",
-        "label": "damp mass vertically"
+        "label": "damps mass motion"
       },
       {
-        "from_id": "frame",
-        "to_id": "screen",
+        "from_id": "cover",
+        "to_id": "frame",
         "kind": "mechanical",
-        "label": "fix perforated screen below"
-      },
-      {
-        "from_id": "lockpin",
-        "to_id": "mass",
-        "kind": "mechanical",
-        "label": "lock mass still for inspection"
+        "label": "removable cover below"
       }
     ],
     "loads": [
       {
-        "on_id": "frame",
-        "label": "total static hung load 9.81 kN",
-        "direction": "down"
-      },
-      {
-        "on_id": "clamps",
-        "label": "about 1.23 kN per clamp",
+        "on_id": "deck",
+        "label": "dense-crowd resonant force 1480 N on deck",
         "direction": "down"
       },
       {
         "on_id": "mass",
-        "label": "vertical resonance motion 1.9 Hz",
-        "direction": "up"
+        "label": "500 kg weight 4.90 kN on springs",
+        "direction": "down"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "peak vertical deck acceleration comfort limit",
-      "value": 0.7,
-      "unit": "m/s2",
-      "method": "web_search",
-      "evidence_ids": [
-        "E13",
-        "E2"
-      ]
-    },
-    {
-      "quantity": "bare single-walker resonant acceleration",
-      "value": 1.75,
-      "unit": "m/s2",
-      "method": "calc",
-      "evidence_ids": [
-        "E22"
-      ]
-    },
-    {
-      "quantity": "damped peak deck acceleration with TMD",
-      "value": 0.106,
-      "unit": "m/s2",
-      "method": "simulate",
-      "evidence_ids": [
-        "E32"
-      ]
-    },
-    {
-      "quantity": "TMD moving mass",
-      "value": 800.0,
+      "quantity": "modal mass",
+      "value": 20000.0,
       "unit": "kg",
-      "method": "vetted_calc",
-      "evidence_ids": [
-        "E11",
-        "E33"
-      ]
-    },
-    {
-      "quantity": "TMD tuning frequency",
-      "value": 1.83,
-      "unit": "Hz",
-      "method": "vetted_calc",
-      "evidence_ids": [
-        "E11",
-        "E33"
-      ]
-    },
-    {
-      "quantity": "TMD spring stiffness",
-      "value": 105412.0,
-      "unit": "N/m",
-      "method": "vetted_calc",
+      "method": "assumption for stiffness scaling",
       "evidence_ids": [
         "E11"
       ]
     },
     {
+      "quantity": "modal stiffness at 1.9 Hz",
+      "value": 2850000.0,
+      "unit": "N/m",
+      "method": "calc",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "quantity": "TMD mass",
+      "value": 500.0,
+      "unit": "kg",
+      "method": "calc from 2.5 percent ratio",
+      "evidence_ids": [
+        "E22",
+        "E54"
+      ]
+    },
+    {
+      "quantity": "TMD tuning frequency",
+      "value": 1.85,
+      "unit": "Hz",
+      "method": "Den Hartog tuning calc",
+      "evidence_ids": [
+        "E23",
+        "E54"
+      ]
+    },
+    {
       "quantity": "TMD damping ratio",
-      "value": 12.0,
-      "unit": "%",
-      "method": "vetted_calc",
-      "evidence_ids": [
-        "E11",
-        "E33"
-      ]
-    },
-    {
-      "quantity": "total static hung load TMD plus frame",
-      "value": 9.81,
-      "unit": "kN",
-      "method": "calc",
-      "evidence_ids": [
-        "E29",
-        "E44"
-      ]
-    },
-    {
-      "quantity": "TMD stroke in band",
-      "value": 2.52,
-      "unit": "mm",
-      "method": "simulate",
-      "evidence_ids": [
-        "E32"
-      ]
-    },
-    {
-      "quantity": "slip safety factor 8 clamps",
-      "value": 3.26,
+      "value": 0.0956,
       "unit": "ratio",
-      "method": "calc",
+      "method": "Den Hartog optimum re-check",
       "evidence_ids": [
-        "E45",
-        "E39"
+        "E54"
       ]
     },
     {
-      "quantity": "required response reduction factor",
-      "value": 2.5,
-      "unit": "ratio",
-      "method": "calc",
+      "quantity": "TMD stiffness",
+      "value": 67824.9,
+      "unit": "N/m",
+      "method": "Den Hartog calc",
       "evidence_ids": [
-        "E31"
+        "E24",
+        "E54"
       ]
     },
     {
-      "quantity": "static weight from 800 kg mass",
-      "value": 7850.0,
-      "unit": "N",
-      "method": "calc",
+      "quantity": "TMD viscous coefficient",
+      "value": 1090.0,
+      "unit": "N s/m",
+      "method": "Den Hartog calc",
       "evidence_ids": [
-        "E34"
+        "E24"
       ]
     },
     {
-      "quantity": "spring force from stroke",
-      "value": 266.0,
+      "quantity": "TMD weight",
+      "value": 4900.0,
       "unit": "N",
       "method": "calc",
       "evidence_ids": [
@@ -349,102 +251,140 @@
       ]
     },
     {
-      "quantity": "damper force estimate",
-      "value": 63.8,
+      "quantity": "factored frame design load",
+      "value": 12300.0,
       "unit": "N",
       "method": "calc",
       "evidence_ids": [
         "E36"
       ]
+    },
+    {
+      "quantity": "single-walker bare acceleration",
+      "value": 1.75,
+      "unit": "m/s2",
+      "method": "simulate resonant response",
+      "evidence_ids": [
+        "E47"
+      ]
+    },
+    {
+      "quantity": "single-walker TMD-controlled acceleration",
+      "value": 0.103,
+      "unit": "m/s2",
+      "method": "simulate resonant response",
+      "evidence_ids": [
+        "E47"
+      ]
+    },
+    {
+      "quantity": "dense-crowd resonant force",
+      "value": 1480.0,
+      "unit": "N",
+      "method": "calc dense crowd scaling",
+      "evidence_ids": [
+        "E50"
+      ]
+    },
+    {
+      "quantity": "dense-crowd bare acceleration",
+      "value": 9.26,
+      "unit": "m/s2",
+      "method": "calc dense crowd scaling",
+      "evidence_ids": [
+        "E51"
+      ]
+    },
+    {
+      "quantity": "dense-crowd TMD-controlled acceleration",
+      "value": 0.545,
+      "unit": "m/s2",
+      "method": "calc dense crowd scaling",
+      "evidence_ids": [
+        "E52"
+      ]
+    },
+    {
+      "quantity": "dense-crowd stroke",
+      "value": 20.1,
+      "unit": "mm",
+      "method": "calc dense crowd scaling",
+      "evidence_ids": [
+        "E53"
+      ]
+    },
+    {
+      "quantity": "static spring sag",
+      "value": 72.3,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E55"
+      ]
+    },
+    {
+      "quantity": "total spring compression static plus dynamic",
+      "value": 92.4,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E56"
+      ]
     }
   ],
-  "measurement_chain": [
-    {
-      "stage": "sensor",
-      "name": "deck vertical accelerometer",
-      "interface": "bolted to deck at midspan"
-    },
-    {
-      "stage": "conditioning",
-      "name": "signal conditioner",
-      "interface": "cable"
-    },
-    {
-      "stage": "instrument",
-      "name": "vibration data logger",
-      "interface": "cable"
-    },
-    {
-      "stage": "computer",
-      "name": "comfort assessment",
-      "interface": "comparison to 0.7 m/s2 limit"
-    }
-  ],
+  "measurement_chain": [],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Clamp cross-beam to girder bottom flanges from mobile lift below with no drilling",
-      "method": "clamp",
+      "description": "Build the two steel bearer beams and the 500 kg damper unit with springs and dampers off site",
+      "method": "off-site prefabrication",
       "parts_present": [
-        "girder",
-        "clamps",
-        "crossbeam"
+        "frame",
+        "mass",
+        "spring",
+        "damper"
       ]
     },
     {
       "step": 2,
-      "description": "Bolt support frame cassette to cross-beam and fit lock-off pin",
-      "method": "bolt",
+      "description": "Lift the unit under the middle of the bridge at night from a tower platform keeping one walkway open and clamp the beams to the girders with preloaded bolts",
+      "method": "night-time lifting and bolted clamping",
       "parts_present": [
-        "crossbeam",
+        "deck",
         "frame",
-        "lockpin"
+        "bolts"
       ]
     },
     {
       "step": 3,
-      "description": "Mount coil springs plus viscous damper plus 800 kg mass free only vertically with plus-minus 30 mm clearance",
-      "method": "assemble",
+      "description": "Unlock the mass for operation, fit the removable cover below and set the spring seats and shims for tuning",
+      "method": "release and covering",
       "parts_present": [
-        "frame",
-        "springs",
-        "damper",
-        "mass"
+        "mass",
+        "spring",
+        "cover"
       ]
     },
     {
       "step": 4,
-      "description": "Fit shadow-gap perforated color-matched soffit screen below frame with zero deck change",
-      "method": "fit",
+      "description": "Inspect the unit from below and re-tune with shims if shaking grows",
+      "method": "inspection and re-tuning",
       "parts_present": [
-        "frame",
-        "screen"
+        "cover",
+        "spring",
+        "damper"
       ]
     }
   ],
-  "risks": [
-    {
-      "risk": "Modal mass differs from assumed 20000 kg causing detuning",
-      "mitigation": "Freeze modal mass at 20000 kg and rerun Den Hartog sizing with measured mass"
-    },
-    {
-      "risk": "Clamp slip under hung TMD load",
-      "mitigation": "Share 9.81 kN hung load on 8 clamps for 32.0 kN capacity and 3.26 factor"
-    },
-    {
-      "risk": "Local girder flange bending under clamp point loads",
-      "mitigation": "Treat about 1.23 kN per clamp as person-scale non-critical at concept stage and do detailed check with flange thickness and spacing"
-    }
-  ],
-  "novelty_claim": "Recessed under-deck TMD cassette with shadow-gap perforated color-matched screen hiding tuned unit on clamped no-drill support with lock-off",
+  "risks": [],
+  "novelty_claim": "",
   "cost_class": "$1k-10k",
   "figure_spec": {
-    "system_view": "Side view of 40 m bridge midspan with end view showing frame locked to bottom flanges, mass free vertically, recessed cassette with screen",
+    "system_view": "Under-deck vertical tuned mass damper at midspan showing deck, bolted support frame, steel mass on springs plus dashpots with lockable cover below",
     "critical_part_id": "mass",
-    "preferred_view": "side"
+    "preferred_view": "isometric"
   },
   "open_questions": [
-    "What are the existing girder bottom-flange thickness, clamp spacing and local bending stress under about 1.23 kN per clamp plus under 0.40 kN dynamic to close the flange-bending check?",
-    "O2: Missing clamp slip capacity and flange bending check for hung TMD load installed entirely from below"
+    "Will field-measured first-mode frequency, modal mass and damping confirm the assumed 20000 kg at 1.9 Hz tuning so dense-crowd response stays below 1.0 m/s2 with clearance?"
   ]
 }

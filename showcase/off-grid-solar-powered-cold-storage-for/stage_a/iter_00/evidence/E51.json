@@ -1,24 +1,14 @@
 {
   "id": "E51",
-  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
-  "tool": "web_search",
-  "purpose": "search: manual handling weight limit 20kg crate OSHA NIOSH lifting",
-  "code_or_query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "calc",
+  "purpose": "steady electric watts from COP 2.5",
+  "code_or_query": "(376/2.5)",
   "inputs": {},
-  "output_summary": "fieldsafetytalk.com — Manual Handling Toolbox Talk — https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk",
-  "output_full": "fieldsafetytalk.com — Manual Handling Toolbox Talk — https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk\n(the search returned no passage text)",
+  "output_summary": "150",
+  "output_full": "150",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "fieldsafetytalk.com",
-      "title": "Manual Handling Toolbox Talk",
-      "year": "",
-      "url": "https://fieldsafetytalk.com/toolbox-talks/manual-handling-toolbox-talk",
-      "query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

@@ -1,14 +1,23 @@
 {
   "id": "E54",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
   "tool": "calc",
-  "purpose": "pawl tooth force from cluster torque",
-  "code_or_query": "184/0.03",
-  "inputs": {},
-  "output_summary": "6.13e+03",
-  "output_full": "6.13e+03",
+  "purpose": "pin double shear stress",
+  "code_or_query": "(Q_(\"3680N\")/2/(3.14159/4*Q_(\"8mm\")**2)).to(\"MPa\")",
+  "inputs": {
+    "arg0": {
+      "value": "\"3680N\"",
+      "unit": ""
+    },
+    "arg1": {
+      "value": "\"8mm\"",
+      "unit": ""
+    }
+  },
+  "output_summary": "36.6 MPa",
+  "output_full": "36.6 MPa",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

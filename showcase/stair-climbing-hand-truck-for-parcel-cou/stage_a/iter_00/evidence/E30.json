@@ -1,14 +1,24 @@
 {
   "id": "E30",
-  "author": "Tomas \u2014 Human Factors and Safety Engineer",
-  "tool": "calc",
-  "purpose": "handle pull from cluster torque and 1.2 m lever",
-  "code_or_query": "184/1.2",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
+  "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
   "inputs": {},
-  "output_summary": "153",
-  "output_full": "153",
+  "output_summary": "hxm-aluminum.com — 6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum — https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
+  "output_full": "hxm-aluminum.com — 6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum — https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "hxm-aluminum.com",
+      "title": "6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum",
+      "year": "",
+      "url": "https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
+      "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

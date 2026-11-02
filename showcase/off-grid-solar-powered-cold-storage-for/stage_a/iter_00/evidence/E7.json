@@ -1,20 +1,20 @@
 {
   "id": "E7",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
-  "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
   "inputs": {},
-  "output_summary": "yacht-supply24.com — Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
-  "output_full": "yacht-supply24.com — Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/\n(the search returned no passage text)",
+  "output_summary": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+  "output_full": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "yacht-supply24.com",
-      "title": "Victron BlueSolar MPPT 150/60-Tr Charge Controller - SCC010060200",
+      "authors_or_org": "bigweibattery.com.au",
+      "title": "48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid",
       "year": "",
-      "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc010060200-bluesolar-mppt-15060-drops/",
-      "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "url": "https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
+      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
       "unresolved": false,
       "passage": ""
     }

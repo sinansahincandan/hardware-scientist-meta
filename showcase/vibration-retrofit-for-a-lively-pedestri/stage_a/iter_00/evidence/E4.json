@@ -1,20 +1,20 @@
 {
   "id": "E4",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical mode 0.4 percent",
-  "code_or_query": "steel footbridge damping ratio vertical mode 0.4 percent",
+  "purpose": "search: pedestrian walking pacing frequency vertical footbridge resonance",
+  "code_or_query": "pedestrian walking pacing frequency vertical footbridge resonance",
   "inputs": {},
-  "output_summary": "matec-conferences.org — Vibration analysis of footbridges: an overview of the current practice — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_10002.pdf",
-  "output_full": "matec-conferences.org — Vibration analysis of footbridges: an overview of the current practice — 2018 — https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_10002.pdf\n(the search returned no passage text)",
+  "output_summary": "pure.ed.ac.uk — Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling — 2017 — https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf",
+  "output_full": "pure.ed.ac.uk — Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling — 2017 — https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "matec-conferences.org",
-      "title": "Vibration analysis of footbridges: an overview of the current practice",
-      "year": "2018",
-      "url": "https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_10002.pdf",
-      "query": "steel footbridge damping ratio vertical mode 0.4 percent",
+      "authors_or_org": "pure.ed.ac.uk",
+      "title": "Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling",
+      "year": "2017",
+      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf",
+      "query": "pedestrian walking pacing frequency vertical footbridge resonance",
       "unresolved": false,
       "passage": ""
     }

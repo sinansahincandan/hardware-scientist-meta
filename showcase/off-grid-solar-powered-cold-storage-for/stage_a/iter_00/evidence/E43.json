@@ -1,27 +1,24 @@
 {
   "id": "E43",
-  "author": "Chidi - Enclosure and Structural Designer",
-  "tool": "calc",
-  "purpose": "floor uniform pressure from 1 tonne produce",
-  "code_or_query": "(Q_(1000,'kg')*9.81*Q_(1,'m/s**2')/Q_(1,'')/Q_(4.8,'m**2')).to('kPa')",
-  "inputs": {
-    "arg0": {
-      "value": "1000",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "1",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "4.8",
-      "unit": "m**2"
-    }
-  },
-  "output_summary": "2.04 kPa",
-  "output_full": "2.04 kPa",
+  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
+  "tool": "web_search",
+  "purpose": "search: concrete slab soil bearing capacity kPa small building foundation",
+  "code_or_query": "concrete slab soil bearing capacity kPa small building foundation",
+  "inputs": {},
+  "output_summary": "spaworld.co.nz — Generic Concrete Slab or Pad Building Guide | Portable Spas — https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/",
+  "output_full": "spaworld.co.nz — Generic Concrete Slab or Pad Building Guide | Portable Spas — https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "spaworld.co.nz",
+      "title": "Generic Concrete Slab or Pad Building Guide | Portable Spas",
+      "year": "",
+      "url": "https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/",
+      "query": "concrete slab soil bearing capacity kPa small building foundation",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

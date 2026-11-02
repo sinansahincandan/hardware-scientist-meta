@@ -1,20 +1,20 @@
 {
   "id": "E9",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: tuned mass damper footbridge Den Hartog optimum mass ratio damping",
-  "code_or_query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+  "purpose": "search: steel footbridge damping ratio vertical bending mode",
+  "code_or_query": "steel footbridge damping ratio vertical bending mode",
   "inputs": {},
-  "output_summary": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
-  "output_full": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf\n(the search returned no passage text)",
+  "output_summary": "onlinelibrary.wiley.com — Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System — https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700",
+  "output_full": "onlinelibrary.wiley.com — Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System — https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "backend.orbit.dtu.dk",
-      "title": "TMD_nscm19.dvi",
+      "authors_or_org": "onlinelibrary.wiley.com",
+      "title": "Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System",
       "year": "",
-      "url": "https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
-      "query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700",
+      "query": "steel footbridge damping ratio vertical bending mode",
       "unresolved": false,
       "passage": ""
     }

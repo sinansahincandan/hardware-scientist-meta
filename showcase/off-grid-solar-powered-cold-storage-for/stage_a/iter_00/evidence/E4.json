@@ -1,20 +1,20 @@
 {
   "id": "E4",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
-  "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+  "purpose": "search: 400W monocrystalline solar panel datasheet dimensions efficiency",
+  "code_or_query": "400W monocrystalline solar panel datasheet dimensions efficiency",
   "inputs": {},
-  "output_summary": "tsolar.top — LVTOPSUN 550W Solar Panel — https://tsolar.top/products/lvtopsun-550w-solar-panel",
-  "output_full": "tsolar.top — LVTOPSUN 550W Solar Panel — https://tsolar.top/products/lvtopsun-550w-solar-panel\n(the search returned no passage text)",
+  "output_summary": "enfsolar.com — Lina Energy | Anthracite 400W | Solar Panel Datasheet | ENF Panel Directory — https://www.enfsolar.com/pv/panel-datasheet/crystalline/71744",
+  "output_full": "enfsolar.com — Lina Energy | Anthracite 400W | Solar Panel Datasheet | ENF Panel Directory — https://www.enfsolar.com/pv/panel-datasheet/crystalline/71744\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "tsolar.top",
-      "title": "LVTOPSUN 550W Solar Panel",
+      "authors_or_org": "enfsolar.com",
+      "title": "Lina Energy | Anthracite 400W | Solar Panel Datasheet | ENF Panel Directory",
       "year": "",
-      "url": "https://tsolar.top/products/lvtopsun-550w-solar-panel",
-      "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+      "url": "https://www.enfsolar.com/pv/panel-datasheet/crystalline/71744",
+      "query": "400W monocrystalline solar panel datasheet dimensions efficiency",
       "unresolved": false,
       "passage": ""
     }

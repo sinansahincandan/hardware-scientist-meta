@@ -1,67 +1,75 @@
 # References
 
-1. britishsc.co.uk — Spiral Stair Dimensions – At a Glance https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/
-2. shop.standards.ie — Buy BS ISO 11228-2:2007 | NSAI (2007) https://shop.standards.ie/en-ie/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
-3. inus04aapb1h3nprod.dxcloud.episerver.net — BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling (2007) https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
-4. intertekinform.com — Buy BS ISO 11228-2:2007 | Intertek Inform (2007) https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/
-5. sourcebyspec.com — Platform Trolley Guide — Types, Specs, Selection https://www.sourcebyspec.com/encyclopedia/platform-trolley.html
-6. cdn.standards.iteh.ai — SIST EN 1757 2022.pdf (2022) https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf
-7. dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase https://dreamcivil.com/staircase-design/
-8. pumpup.com.my — Pallet Tilter (1000kg) https://www.pumpup.com.my/product/pallet-tilter-1000kg/
-9. mobilitysmart.co.uk — Able Assist Adjustable Transfer Aid https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid
-10. officestandingdesk.com — Height Adjustable Ergonomic Pneumatic Desk Frame Manufacturer Height Adjustable Ergonomic Pneumatic Desk Frame from China https://www.officestandingdesk.com/pneumatic-standing-desk-pd58472092.html
-11. shoprbc.com — StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx
-12. oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks (1995) http://www.oandplibrary.org/poi/1995_03_188.asp
-13. github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254
-14. stacks.cdc.gov — Cdc 186349 Ds1 http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf
-15. supanet.com — What are Stair Climber Sack Trucks, and Why Are They Useful? https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html
-16. handtrucks2go.com — 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html
-17. handtrucks2go.com — Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html
-18. gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials https://gharpedia.com/blog/tread-and-riser-size/
-19. jmh-cu.com — 7075 aluminium round pipe price per kg https://www.jmh-cu.com/7075-Aluminum-Pipe.html
-20. imperialsupplies.com — 937824-5 Aluminum Rectangular Tube 6061: 36 in Overall Lg, 2 in Outside Ht, 4 in Outside Wd, Mill, Extruded | Imperial Supplies https://www.imperialsupplies.com/item/9378245
-21. rotaryforum.com — alu 6061 t6 vs alu 6063 t52 https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/
-22. vansdirect.co.uk — 2026 Citroen Berlingo: Everything You Need To Know | Vansdirect (2026) http://vansdirect.co.uk/blognews/2025-citroen-berlingo-everything-you-need-to-know/
-23. truckscout24.com — ⇒ CITROEN BERLINGO 1.5 AC AUTOMAAT EURO6 - TruckScout24.com 🏷️ https://www.truckscout24.com/tsp/ts-173-00-152
-24. vansdirect.co.uk — 2026 Citroen Berlingo: Everything You Need To Know (2026) https://www.vansdirect.co.uk/blognews/citroen-berlingo-everything-you-need-to-know/
-25. tradeproductsdirect.co.uk — Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150kg Capacity) https://www.tradeproductsdirect.co.uk/p/steel-stair-climbing-trolley-150kg/
-26. diy.com — Wheelbarrow Wheel Puncture Proof 14" 350mm with 25mm (1") & 16mm (5/8") Centre for Wheelbarrow Truck or Trolley https://www.diy.com/departments/wheelbarrow-wheel-puncture-proof-14-350mm-with-25mm-1-16mm-5-8-centre-for-wheelbarrow-truck-or-trolley/5061086700258_BQ.prd
-27. desertcart.com.kw — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart KUWAIT https://www.desertcart.com.kw/products/142165421-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber
-28. desertcart.es — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber
-29. rapidonline.com — HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432
-30. forankra.se — Premium 25 Rollo-Mini, LC250daN, S-hook https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/
-31. rapidonline.com — HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431
-32. brand-supermarket.com — Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html
-33. marketplacemedia.witglobal.net — Staircase trolley 3-star solid rubber wheels fitted with plastic rims and roller bearings make it easier to perform the https://marketplacemedia.witglobal.net/source/marketplace/stmedia/wuerth/documents/documents/std.lang.all/56193102.pdf
-34. winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch
-35. winchshop.co.uk — 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1
-36. winchshop.co.uk — 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch
-37. bestbuy.ca — VEVOR 3 in 1 Industrial Convertible Stair Climbing Cart, 770 lbs Max Load, Folding Hand Truck Dolly with Handle & Wheels, Stair Climbing Utility Trolley for Moving, Orange & Silver | Best Buy Canada https://www.bestbuy.ca/en-ca/product/vevor-3-in-1-industrial-convertible-stair-climbing-cart-770-lbs-max-load-folding-hand-truck-dolly-with-handle-wheels-stair-climbing-utility-trolley-for-moving-orange-silver/19783042
-38. desertcart.tw:443 — Stair Climbing Hand Truck 770lb Heavy Duty Dolly Cart Stairs | Desertcart Taiwan https://www.desertcart.tw:443/products/662036546-stair-climbing-hand-truck-440lb-heavy-duty-dolly-cart-stairs
-39. amazon.com — 260 LBS Stair Climbing Cart, Aluminum Trolley Dolly for Stairs, Folding Hand Truck Dolly, Grocery Shopping Cart with Mute Wheels, Telescoping Handle and Rubber Wheels for Moving, Shopping https://www.amazon.com/dp/B0C66JTD46/ref=btn_assoc_p-facebook_o-1_srctok-8d7973459d7525dc_ht-t
-40. amazon.com — Amazon.com: Heavy-Duty 330LB Capacity Hand Truck with Stair-Climbing Wheels & One-Touch Retractable Handle - Q235 Steel Collapsible Dolly Cart, 4.2-Inch Triple Wheels, Elastic Strap & Sponge Grip (Green) : Office Products https://www.amazon.com/dp/B0DSVY7WYR/ref=cm_sw_r_cso_cp_apan_dp_0GWY1AVDRC004T6DYAEY
-41. amazon.com — 260 LBS Stair Climbing Cart, Aluminum Trolley Dolly for Stairs, Folding Hand Truck Dolly, Grocery Shopping Cart with Mute Wheels, Telescoping Handle and Rubber Wheels for Moving, Shopping https://www.amazon.com/dp/B0C66JTD46/ref=btn_assoc_p-facebook_o-1_srctok-90ef7b2f582d2525_ht-t
-42. amazon.com — Heavy-Duty 220LB Capacity Stair Climbing Hand Trucks, Stair Climber Cart Dolly Hand Truck with 6 Wheels and One-Touch Retractable Handle for Home Stairs, Moving, Groceries, Warehouse(Yellow) https://www.amazon.com/dp/B0GCCZF5XL/ref=sspa_mw_detail_1
-43. amazon.com — Amazon.com: Heavy-Duty 330LB Capacity Hand Truck with Stair-Climbing Wheels & One-Touch Retractable Handle - Q235 Steel Collapsible Dolly Cart, 4.2-Inch Triple Wheels, Elastic Strap & Sponge Grip (Green) : Office Products https://www.amazon.com/dp/B0DSVY7WYR/ref=cm_sw_r_cso_cp_apin_dp_WKMBXCQW250DXZQAEGMQ
-44. vevor.com.au — VEVOR Stair Climbing Cart, 150 kg Stair-Climb Capacity, Aluminum Alloy Folding Trolley Cart with Telescoping Handle, 6 Wheels and 2 Bungee Cords, Stair Climber Dolly for Home, Groceries, Warehouse | VEVOR AU https://www.vevor.com.au/stair-climbing-cart-c_10486/vevor-stair-climbing-cart-150-kg-stair-climb-capacity-aluminum-alloy-folding-trolley-cart-with-telescoping-handle-6-wheels-and-2-bungee-cords-stair-climber-dolly-for-home-groceries-warehouse-p_010923682480
-45. vevor.com — VEVOR Stair Climbing Cart, 460 lbs Stair-Climbing Capacity, Heavy-Duty Folding Trolley Cart with Telescoping Handle, 6 Wheels and 2 Bungee Cords, Stair Climber Dolly for Home, Groceries, Warehouse | VEVOR US https://www.vevor.com/stair-climbing-cart-c_10486/vevor-stair-climbing-cart-220-lbs-stair-climbing-capacity-heavy-duty-folding-trolley-cart-with-telescoping-handle-6-wheels-and-2-bungee-cords-stair-climber-dolly-for-home-groceries-warehouse-p_010353528239
-46. eureka.patsnap.com — Synchronous gear electric manned stair car - Eureka | Patsnap https://eureka.patsnap.com/patent-CN108995697A
-47. patents.google.com — CN110240046B - Suspension type stair climbing machine https://patents.google.com/patent/CN110240046B/en
-48. patents.google.com — EP0099061B1 - Sackkarre mit Treppensteigvorrichtung https://patents.google.com/patent/EP0099061B1/ja
-49. patents.google.com — DE102010054328A1 - Motor powered climber for diagonal transportation of heavy loads over staircase, has seven climbing legs secured on endless chain for climbing staircase, where climbing legs are evenly spaced from each other along chain https://patents.google.com/patent/DE102010054328A1/en
-50. patents.Google.Com — US3288234A - Stair climbing conveyance https://patents.Google.Com/patent/US3288234A/en
-51. patentsencyclopedia.com — Motorized six wheel hand truck - Patent application https://www.patentsencyclopedia.com/app/20100294575
-52. patents.google.com — CN103192915A - Scooter capable of climbing stairs https://patents.google.com/patent/CN103192915A/en
-53. patents.google.com — US4960179A - Powered heavy-duty hand truck https://patents.google.com/patent/US4960179A/en
-54. eureka.patsnap.com — A kind of heavy object stair climbing machine - Eureka | Patsnap https://eureka.patsnap.com/patent-CN109484511B
-55. patents.google.com — CN216232654U - Integrated device based on climb building and travel https://patents.google.com/patent/CN216232654U/en
-56. patents.google.com — CN86201871U - Barrow for up and down stairs and ground https://patents.google.com/patent/CN86201871U/en
-57. eureka.patsnap.com — Stair climbing wheeled vehicle, and system and method of making and using same - Eureka | Patsnap https://eureka.patsnap.com/patent-US20130192907A1
-58. eureka.patsnap.com — Stair climbing wheeled vehicle, and system and method of making and using same - Eureka | Patsnap https://eureka.patsnap.com/patent-US20130274973A1
-59. eureka.patsnap.com — Stair-Climbing Wheeled Vehicle - Eureka | Patsnap https://eureka.patsnap.com/patent-US20100032911A1
-60. patentcut.com — Stair climbing wheel with multiple configurations https://patentcut.com/US8764028
-61. patentimages-storage-googleapis-comproxy.c9w.net — 1498409941652289001-04264082 https://patentimages-storage-googleapis-comproxy.c9w.net/a4/4a/8d/0fb55c7af7ac6a/US4264082.pdf
-62. patents.google.com — CA2644990A1 - Stairclimbing and descending hand truck https://patents.google.com/patent/CA2644990A1/en
-63. patents.google.com — CN205819271U - https://patents.google.com/patent/CN205819271U/en
-64. patents.google.com — EP1996440A1 - Stairclimbing and descending hand truck https://patents.google.com/patent/EP1996440A1/en
-65. patentsencyclopedia.com — HAND TRUCKS - Patent application https://www.patentsencyclopedia.com/app/20180229745
+1. homedit.com — Standard Stair Step Height and Code Guidelines https://www.homedit.com/step-height/
+2. casterconnection.com — Ergonomic Casters Education https://casterconnection.com/caster-education/ergonomic-casters-education
+3. mdpi.com — Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries https://www.mdpi.com/2313-576X/11/1/25
+4. mktg.idec.com — AWD ISO 11228 2.pdf https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr
+5. kruizinga.com — Transport trolley Fetra hand truck 2 long walls detachable https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24
+6. electrochannel.com — Manual pallet truck. Safety in loading and unloading products https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck
+7. shop.standards.ie — UNE-EN 1757-4:2003 Safety of industrial trucks (2003) https://shop.standards.ie/en-ie/standards/une-en-1757-4-2003-8914_saig_aenor_une_aenor_une_20042/
+8. online.documentine.com — push it or pull it erg033 alberta - rolling-ankles-in-when https://online.documentine.com/rolling-ankles-in-when-walking/1/push-it-or-pull-it-erg033-alberta.html
+9. Noon.com — Lafulaifu Office chair, comfortable ergonomic HEIGHT AND ARMREST ADJUSTABLE office chair for office and home, white 49*46*92cm | Best Price UAE | Dubai, Abu Dhabi https://www.Noon.com/uae-en/office-chair-comfortable-ergonomic-height-and-armrest-adjustable-office-chair-for-office-and-home-white-49-46-92cm/Z5BE59CFF58F8E45F240FZ/p/?o=z5be59cff58f8e45f240fz-1
+10. youbeli.com — BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator (2000) https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn
+11. engineerfix.com — How High Is a Stair? Standard Riser Heights Explained https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/
+12. officedepot.com — Global Hardlines Collapsible Handi Truck 220 Lb Capacity https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/
+13. michaels.com — Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720
+14. amazon.com — POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9
+15. amardeepsteel.com — Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html
+16. coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals https://www.coremarkmetals.com/6061-t6-aluminum-round-tube
+17. coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1
+18. patents.justia.com — U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search (1976) http://patents.justia.com/patent/3976209
+19. handtruckexpert.com — How to Open a Folding Hand Truck: Step by Step Guide https://handtruckexpert.com/how-to-open-a-folding-hand-truck/
+20. sylvanarms.com — AR HINGE (2017) https://sylvanarms.com/wp-content/uploads/2017/02/SylvanArms_AR-Hinge-Folding-Stock-Adapter-Manual_Mar2017_4x4-1b.pdf
+21. classicarchitecturetoday.com — Perfect Stair Dimensions for Safe, Stylish Spaces http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/
+22. hxm-aluminum.com — 6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html
+23. alibaba.com — Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html
+24. aviationaluminum.com — China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube – Miandi Manufacturers and Suppliers | Miandi https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html
+25. toolstash.com — DeWalt Compact Folding Hand Truck (DXWT-FT512) - Toolstash https://toolstash.com/tools/rfy7dl-folding-hand-truck-dxwt-ft512
+26. trolleyoutlet.com.au — RuXXac Longnose Folding Hand Truck 125 Kg https://www.trolleyoutlet.com.au/RuXXac-Cart/RuXXac-Longnose-Folding-Hand-Truck-125-Kg
+27. spacepac.com.au — RuXXac Cart Business XL Folding Hand Truck - Spacepac Industries https://www.spacepac.com.au/?p=17088
+28. hahn-kolb.cn — Buy FETRA Flat-bed hand truck with wire grid walls https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/
+29. media.witglobal.net — Product data sheet Flat-bed hand truck, 2-axle with drawbar eye https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf
+30. media.witglobal.net — Flatbed hand truck with wire grid walls https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf
+31. hemeco.nl — Alu stair climbing hand truck AK 1326 - Hemeco https://hemeco.nl/en/alu-stair-climbing-hand-truck-ak-1326/
+32. waltersmercedesbenzsprinter.com — How Big is a Sprinter Van Door? https://www.waltersmercedesbenzsprinter.com/how-big-is-a-sprinter-van-door/
+33. lagunasprintervans.com — 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length (2026) https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/
+34. carexpert.com.au — Ford Transit vs Mercedes-Benz Sprinter https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter
+35. desertcart.ro — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel
+36. desertcart.ec — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel
+37. global.microless.com — Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/
+38. apluswhs.com — Announcing the Inexpensive Stair Climbing Hand Truck https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck
+39. handle-it.com — Electric Stair Climbing Sack Trucks https://handle-it.com/xsto/
+40. mktg.idec.com — ISO 11228-2? https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en
+41. webarchive.nationalarchives.gov.uk — Microsoft Word - updated version of report 9648.doc https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf
+42. afita.com.au — Document Page (2020) http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf
+43. ajproducts.ie — Compact aluminium stair climbing sack truck https://www.ajproducts.ie/p/compact-aluminium-stair-climbing-sack-truck-440578-440576
+44. ajproducts.co.uk — Compact aluminium stair climbing sack truck https://www.ajproducts.co.uk/p/compact-aluminium-stair-climbing-sack-truck-440578-440576
+45. robertdyas.co.uk — Blue Sack Truck  | Robert Dyas https://www.robertdyas.co.uk/special-categories/blue-sack-truck?category=516
+46. huntoffice.ie — Hand Trolleys Ireland | Sack Trucks & Hand Carts | HuntOffice https://www.huntoffice.ie/hand-trucks
+47. qdmaterialhandling.com — Foot Stairclimber 120Kg Capacity|Sack Trucks|Material Handling Equipment http://www.qdmaterialhandling.com/Sack-Trucks-Foot-Stairclimber-120Kg-Capacity-136.html
+48. brand-supermarket.com — Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html
+49. diy.com — Heavy Duty Stair Climber Sack Truck, Steel Yellow Frame, 3 Linked Wheels, Folding Toe Plate For Extra Storage https://www.diy.com/departments/heavy-duty-stair-climber-sack-truck-steel-yellow-frame-3-linked-wheels-folding-toe-plate-for-extra-storage-200kg-capacity/5060139810678_BQ.prd
+50. screwfix.com — Sack Trucks | Manual Handling | Screwfix https://www.screwfix.com/c/storage-ladders/hand-trucks/cat831506
+51. uk.bestproducts.reviews — Best Stair Climbing Carts https://uk.bestproducts.reviews/stair-climbing-carts
+52. Toolstation.Com — Stair Climbing Sack Truck 120Kg https://www.Toolstation.Com/stair-climbing-sack-truck/p87414
+53. amazon.com — Amazon.com: Riosoc Electric Stair Climbing Hand Trucks, 200W 3 Adjustable Speeds with Light 440lbs Max Load Folding Dolly Cart Trolley, with 6 Wheels Motor Battery for Moving Furniture Home Warehouse Supermarket : Industrial & Scientific https://www.amazon.com/dp/B0BVV667V9/ref=cm_sw_r_cso_fb_apan_dp_H8787YC87AXTX0YZ8J7G
+54. device.report — VOLTSTAIR Dolly Titan Motorized Powered Stair Climbing Hand Truck User Manual https://device.report/manual/8505570
+55. top5best.com — Top 5 Best Stair Climbing Dolly (Expert Take) https://top5best.com/stair-climbing-dolly
+56. amazon.com — Upgraded Stair Climbing Cart, 280Lbs Heavy Duty Folding Hand Truck Dolly, Folding Shopping Cart, Portable Personal Stair Climbing Dolly with Bag for Moving, Luggage, Groceries, Travel, Office: Amazon.com: Industrial & Scientific https://www.amazon.com/dp/B0FS71JTYF/ref=cm_sw_r_cso_fm_apin_dp_M09285ZZASCT07Y0BYHW
+57. hasslefreehouse.com — 11 Best Stair Climbing Hand Trucks for Easy Moves https://hasslefreehouse.com/best-stair-climbing-hand-truck
+58. amazon.com — Stair Climbing Cart, 220 LBS Aluminum Stair Climber Dolly, Heavy Duty Folding Hand Truck Dolly with 6 Wheels, Telescoping Handle and Elastic Rope for Home, Moving, Groceries, Warehouse: Amazon.com: Industrial & Scientific https://www.amazon.com/dp/B0FP228P3S/ref=sr_1_9
+59. amazon.com — Upgraded Stair Climbing Cart, 280Lbs Heavy Duty Folding Hand Truck Dolly, Folding Shopping Cart, Portable Personal Stair Climbing Dolly with Bag for Moving, Luggage, Groceries, Travel, Office https://www.amazon.com/dp/B0FS71JTYF/ref=cm_sw_r_cso_cp_apan_dp_W24SGN6G4QCAJEW57NB0
+60. bestsportsgearpicks.com — Top 10 Stair Climbing Carts 2026 in the US | BestSportsGearPicks.com - Pro Reviews & Buying Guides https://www.bestsportsgearpicks.com/stair-climbing-carts
+61. patentcut.com — Stair climbing wheel with multiple configurations https://patentcut.com/US8764028
+62. bestreviews.guide — 10 Best Stair Climbing Carts 2026 in the US | There's One Clear Winner | BestReviews.guide https://www.bestreviews.guide/stair-climbing-carts
+63. patentsencyclopedia.com — STAIR CLIMBING DEVICE - Patent application https://www.patentsencyclopedia.com/app/20100108412
+64. patents.google.com — US20250027320A1 - Stair assistance device https://patents.google.com/patent/US20250027320A1/en
+65. patents.google.com — CN86201871U - Barrow for up and down stairs and ground https://patents.google.com/patent/CN86201871U/en
+66. patentimages-storage-googleapis-comproxy.boingomedia.com — 1498390519451722903-03512658 https://patentimages-storage-googleapis-comproxy.boingomedia.com/79/e3/4e/0cda66b16bfc58/US3512658.pdf
+67. eureka.patsnap.com — Self-adaptive mechanical power-assisted stair-climbing trolley - Eureka | Patsnap https://eureka.patsnap.com/patent-CN106080725A
+68. patents.google.com — US2772096A - Appliance hand truck provided with stair-climbing attachment https://patents.google.com/patent/US2772096A/en
+69. patents.google.com — AU2023207606A1 - Mechanical hand trucks with enhanced stair climbing and descending capability https://patents.google.com/patent/AU2023207606A1/en
+70. patents.google.com — US3191953A - Stair climbing wheel chair https://patents.google.com/patent/US3191953A/en
+71. patents.google.com — US11794798B2 - Mechanical hand trucks with enhanced stair climbing and descending capability https://patents.google.com/patent/US11794798B2/en
+72. patentcut.com — Fall arrest safety device https://patentcut.com/6837337
+73. patents.google.com — DE19951914A1 - https://patents.google.com/patent/DE19951914A1/en

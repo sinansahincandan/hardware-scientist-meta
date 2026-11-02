@@ -1,14 +1,24 @@
 {
   "id": "E14",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "sketch",
-  "purpose": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_aspect('equal'); ax.axis('off')\nax.set_title('tri-star on stairs + worm brake')\n# stairs\nfor i in range(3):\n    x0=i*0.28; y0=-i*0.17\n    ax.plot([x0,x0+0.28],[y0,y0],'k-')\n    ax.plot([x0+0.28,x0+0.28],[y0,y0-0.17],'k-')\n# cluster center and 3 wheels\nimport math\ncx, cy = 0.30, 0.10\nR=0.13\nfor k in range(3):\n    a=math.radians(90+k*120)\n    wx=cx+R*math.cos(a); wy=cy+R*math.sin(a)\n    c=plt.Circle((wx,wy),0.075,fill=False,lw=2); ax.add_patch(c)\n    ax.plot([cx,wx],[cy,wy],'k-')\nax.plot([cx],[cy],'ko')\nax.text(cx+0.02,cy+0.02,'axle+worm brake')\nax.text(0.05,0.35,'load frame')\nax.plot([cx,0.05],[cy,0.35],'k-')\nax.text(0.30,-0.35,'150mm wheels, 170 rise 280 going')\nfig.tight_layout(); fig.savefig('sketch.png',dpi=120)",
+  "author": "Jonas – Ergonomics and Courier Safety Specialist",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
+  "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
   "inputs": {},
-  "output_summary": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-  "output_full": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-  "sketch_path": "evidence/sketch_14.png",
-  "references": [],
+  "output_summary": "electrochannel.com — Manual pallet truck. Safety in loading and unloading products — https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
+  "output_full": "electrochannel.com — Manual pallet truck. Safety in loading and unloading products — https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "electrochannel.com",
+      "title": "Manual pallet truck. Safety in loading and unloading products",
+      "year": "",
+      "url": "https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
+      "query": "EN 1757 hand truck safety brake load restraint strap standard",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

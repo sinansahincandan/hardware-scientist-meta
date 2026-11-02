@@ -1,24 +1,14 @@
 {
   "id": "E25",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
-  "tool": "web_search",
-  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
-  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "sketch",
+  "purpose": "Insulated cold box section: PU panels, door seal, crates on slats, evaporator+fan high, condenser outside shaded",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig,ax=plt.subplots(figsize=(6,5))\nax.set_xlim(0,10); ax.set_ylim(0,10); ax.set_aspect('equal'); ax.axis('off')\nax.plot([1,1,8,8,1],[2,9,9,2,2],lw=3)\nax.plot([1,8],[9.3,9.3],lw=6); ax.text(4.5,9.5,'PU roof 100mm')\nax.text(0.0,5.5,'PU wall',rotation=90); ax.text(8.1,5.5,'PU wall',rotation=90)\nax.plot([3,3.2,6.8,7],[4,3.4,3.4,4],lw=2); ax.text(4,2.7,'slatted floor')\nfor x,y in [(3,4.5),(4.5,4.5),(6,4.5),(3,6),(4.5,6),(6,6)]:\n  ax.add_patch(plt.Rectangle((x,y),1.1,1.0,fill=False,lw=2)); ax.text(x+0.2,y+0.4,'crate',fontsize=8)\nax.add_patch(plt.Rectangle((2,7.5),2,1.0,fill=False,lw=2)); ax.text(2.2,7.8,'evaporator+fan')\nax.arrow(4,7.5,2.5,-1.2,lw=1.5); ax.arrow(6,7.5,-2.5,-1.2,lw=1.5)\nax.text(1.2,2.2,'door seal'); ax.plot([7,8],[2.5,2.5],lw=4)\nax.add_patch(plt.Rectangle((8.4,5),1.2,1.5,fill=False,lw=2)); ax.text(8.4,6.8,'condenser',fontsize=8)\nax.text(3,0.8,'cold box 2x2x2.2m inside, airflow loop')\nplt.savefig('sketch.png',dpi=120); print('saved')",
   "inputs": {},
-  "output_summary": "darment.eu — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://www.darment.eu/web/content/77489?download=false",
-  "output_full": "darment.eu — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://www.darment.eu/web/content/77489?download=false\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "darment.eu",
-      "title": "BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz",
-      "year": "",
-      "url": "https://www.darment.eu/web/content/77489?download=false",
-      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Insulated cold box section: PU panels, door seal, crates on slats, evaporator+fan high, condenser outside shaded",
+  "output_full": "saved\n",
+  "sketch_path": "evidence/sketch_25.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

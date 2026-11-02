@@ -1,0 +1,5 @@
+{
+  "cycle": 1,
+  "member": "Priya \u2013 Lightweight Foldable Structures Engineer",
+  "message": "The fold system is the mid-spine single fold hinge plus flip-up toe plate (C5): unfolded spine 1200 mm tall, folded slab under 750 by 550 by 150 mm from the folded-envelope target (C6). Flat-fold precedent is the DeWalt slab folding to 3-inch thick (E33), the RuXXac Longnose folding to 490 by 55 by 730 mm (E34) and the RuXXac XL folding to 55 mm thick (E35).\n\nTare stays liftable: 5 m of 30 by 2 mm tube at 0.475 kg per m from the tube mass calc (E39) totals 7.38 kg with wheels and locks from the tare budget calc (E40), under the 12 kg limit in the folded-envelope target (C6), like a carry-on not a bodyweight.\n\nUnfolded rigidity carries 60 kg plus bounce: section modulus 2310 cubic mm per tube from the section calc (E41) in alloy where T6 means solution heat-treated and artificially aged with 240 MPa yield from the aluminium tube datasheet (E30) and the 6061-T6 size chart (E23) gives stress near 31.8 MPa, factor above 7, locked by over-centre plates with spring pin and green-red indicator following the opening guidance (E27) and the side-view sketch (E42)."
+}

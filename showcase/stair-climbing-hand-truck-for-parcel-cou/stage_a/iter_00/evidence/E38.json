@@ -1,14 +1,24 @@
 {
   "id": "E38",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-  "tool": "calc",
-  "purpose": "bending moment spine under factored load",
-  "code_or_query": "(75*9.81*1.2/2).to('N*m') if False else 75*9.81*0.6",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety locking device folding",
+  "code_or_query": "EN 1757 hand truck safety locking device folding",
   "inputs": {},
-  "output_summary": "441",
-  "output_full": "441",
+  "output_summary": "media.witglobal.net — Flatbed hand truck with wire grid walls — https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf",
+  "output_full": "media.witglobal.net — Flatbed hand truck with wire grid walls — https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "media.witglobal.net",
+      "title": "Flatbed hand truck with wire grid walls",
+      "year": "",
+      "url": "https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf",
+      "query": "EN 1757 hand truck safety locking device folding",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,85 +1,68 @@
-Finding the closest solar cold-store match — searching products and papers.
-I've narrowed it to a few close candidates — now opening them to pin down the differences.
-**Closest existing: ColdHubs solar walk-in cold room, Nigeria**
+I'll search for the closest solar cold storage products and papers to compare against your concept.
+I've found strong candidates — now I'll gather detailed specs to pinpoint the closest match.
+**Closest: ColdHubs solar walk-in cold room - Nigeria**
 
-> 100% solar-powered walk-in cold rooms, installed in outdoor markets and farm clusters
+> `3 x 3 metres` roof-mounted solar, `up to 3 tonnes of food arranged in 30 kg crates`
 
-Configuration:
+> `installed at markets and farm co-operatives` `rent space` `pay per crate ... per day`
 
-> cold room: a 10 feet length, 10 feet width and 7 feet height, 120mm insulated cold room panel with floor made of stainless steel. This contains 3 tons of perishable food arranged in 150 units, 20kg stackable plastic crates
+> `Excess solar power is stored in batteries to ensure the hubs are kept cold at night and in bad weather.`
 
-> Solar power: rooftop solar panels generating 5.5kw/h, connected to a set of deep-cycle, long lasting batteries, off grid and on grid inverters
+Other listing describes same family as:
 
-Detail:
+> `plug and play modular, solar-powered walk-in cold room, for 24/7 off-grid storage`
 
-> Refrigeration unit: an R290 - propane refrigerant and energy efficient monoblock refrigeration unit for 24/7 refrigeration, using 658w/h
+> `made of 120mm insulating cold room panels`
 
-> Solar power: provided by rooftop solar panels generating 6kw/h, connected to a set of deep-cycle batteries
+Closest alternative for sizing reference: **Ecozen Ecofrost Micro Cold Storage:**
 
-> The cooling temperature is adjustable from five to 15 degree
+> `portable cold chain room that accommodates 5-6 metric tonne`
 
-Business model:
+> `Capacity: 5000-6000 kg`, `Temperature control: 2-10 degree C`
 
-> We charge farmers the equivalent of US$0.50 for each 20 kilogram crate of produce stored per day
+> `relies on solar panels of 2.5-3.5KW and stores power using thermal energy rather than conventional batteries`, `Can last 36 hours on backup`
 
-> model – where customers rent only the space they need for the day
+### Difference vs Concept: `Solar cold store for 1 tonne at 4-10 C`
 
-> hub stores 150 crates and serves 50 -100 customers per day
+1. **Scale down to 1-tonne cooperative build:**
+Concept is 1-tonne, `2 m box`, ~60 vented crates, 2 low racks, concrete plinth - vs ColdHubs 3-tonne 3x3 m pay-per-crate hub, vs Ecofrost 5-6 tonne `20 x 8 x 8 ft` portable unit.
 
-### Difference to proposed concept
+2. **Explicit solar-only sizing + operating rule:**
+Concept fixes `2.4 kWp + 5 kWh LiFePO4, 100 mm PU, 150 W hold / 0.4 kW batch` with `Cap warm intake at 200 kg per day and add no warm crates on cloudy days` and ~1.42-day no-batch autonomy. ColdHubs states only batteries for night/bad weather with no published batch cap; Ecofrost explicitly avoids electrochemical store by using `thermal energy rather than conventional batteries`.
 
-1. **Scale and loading strategy:** ColdHubs is **3-tonne / 150 x 20 kg** continuous pay-as-you-store hub vs concept **1-tonne / 50 x 20 kg staged over 3 days at ~333 kg/day** to fit 8 kWh/day solar + battery.
+3. **Construction / deployment:**
+Concept: anchored 100 mm PU box on raised washable concrete plinth + `PV rack separate` from box + bolted galvanized frame + 900 mm sealed hinged door for low-cost local build. ColdHubs: roof-mounted PV `have solar panels on the roof`, 120mm panels, operated as service; Ecofrost: factory-assembled portable `individually assembled in Pune` at `$18,058.00` with remote app `monitored remotely` `operated via an Android app`.
 
-2. **Power architecture:** ColdHubs uses **5.5-6 kW rooftop + deep-cycle batteries + off-grid/on-grid inverters + AC monoblock 658W**, vs concept **2.2 kW - 4x550W + 48V 100Ah 5.12 kWh LiFePO4 + MPPT 150V 60A -> variable-speed 1.0 kW DC cooler at COP ~2, no inverter, 13.8A peak night power.**
-
-3. **Chamber construction:** ColdHubs: **120 mm panels, stainless floor, 3x3x2 m fixed hub with roof-mounted array** vs concept **100 mm PU sandwich 2.4x2.0x2.2 m flat-pack cam-lock box on raised galvanized-steel skid with posts, roof rails, ground anchors, 800 mm gasketed door + rain canopy, cooperatively assemblable and transportable.**
-
-4. **Internal layout:** ColdHubs: **crates stacked on the floor** vs concept **side slatted racks + central aisle + 50 mm guard rails, 5-high vented crates for fan-forced aisle airflow, FIFO, outside sort, drain and washable food-safe interior.**
-
-Second-closest: Ecozen Ecofrost - **portable solar cold room 5-ton with thermal energy storage to provide backup of over 30 hours** vs concept electrochemical-only storage, no ice-core/thermal store.
-
-Patent US20140157794A1 *Solar Powered Refrigerated Container* is farther: small thermoelectric container maintaining **up to about 40° below ambient** with **solar collector on outer surface + internal battery + heat sinks/fans/vents** vs 1-tonne walk-in vapour-compression room.
+In short: ColdHubs = same **solar+battery + crates + cooperative/market** use, but 3x larger, roof-PV, service model; concept = smaller, fully specified 1-tonne PV-battery-DC-chiller + plinth + capped-batch rule to stay inside daily sun.
 
 
 Sources:
-- https://pmarketresearch.com/auto/solar-powered-cold-room-market/ — Solar Powered Cold Room Market
-- https://www.saurenergy.com/solar-energy-news/when-the-rain-falls-short-the-cold-chain-has-to-step-up-12047710 — When The Rain Falls Short, The Cold Chain Has To Step Up
-- https://srj0408.substack.com/p/p3-post-harvest-technologies-for — P3 - Post Harvest Technologies for Precision Agriculture - Part 2
-- http://prsync.com/grand-view-reesearch/solar-powered-cold-storage-market-investment-opportunities-in-emerging-regions-4863033/ — Solar Powered Cold Storage Market: Investment Opportunities in Emerging Regions
-- https://coldchainsa.com/powering-the-cold-chain-renewable-energy-solutions-for-south-african-cold-storage-operations/ — Powering the Cold Chain: Renewable Energy Solutions for South African Cold Storage Operations
-- https://germanclinic.co.za/MSK/solar/Solar-powered-cold-rooms-Tokelau_Thu-18-May-2023-41785.pdf — Solar powered cold rooms Tokelau
-- https://containerserviceforu1.co.za/sites/default/files/Solar-powered-cold-rooms-in-Pitcairn-Islands_Tue-28-Oct-2025-45608.pdf — Solar powered cold rooms in Pitcairn Islands
-- https://makingprosperity.com/solutions-details/coldhubs — Mohammed Bin Rashid Initiative for Global Prosperity
-- https://www.GrandViewResearch.com/industry-analysis/solar-powered-cold-storage-market-report — Solar Powered Cold Storage Market Size Report, 2025-2030
-- https://understandsolar.com/a-communal-solar-fridge-for-nigerian-farmers-markets/ — A Communal Solar Fridge for Nigerian Farmers Markets
-- https://vc.easychair.org/publications/preprint/hsMw/open — EasyChair Preprint
-- https://www.slideserve.com/teamijtsrd1123/design-and-fabrication-of-solar-powered-mobile-cold-room-powerpoint-ppt-presentation — PPT - Design and Fabrication of Solar Powered Mobile Cold Room PowerPoint Presentation - ID:9942777
-- https://www.researchgate.net/publication/352887974_Experimental_study_of_cold_storage_packed_domestic_refrigerator_with_solar_powered_variable_speed_compressor — (PDF) Experimental study of cold storage packed domestic refrigerator with solar powered variable speed compressor
-- https://www.scribd.com/document/682597654/8-Development-and-Performance-Evaluation-of-a-Solar-Energy-based-Portable-Micro-Cold-Storage-1 — Solar-Powered Micro Cold Storage System | PDF | Solar Power | Photovoltaics
-- https://www.scribd.com/document/435774142/Design-and-Fabrication-of-Solar-Powered-Mobile-Cold-Room — Design and Fabrication of Solar Powered Mobile Cold Room | PDF | Photovoltaic System | Solar Panel
-- http://repository.pnb.ac.id/5202/5/8.Simmirarity_Analysis%20Performance%20of%20Full%20Direct.pdf — FILE - 4. 109396.PDF v 8.0.7 - WML 4
-- https://1library.net/document/yd2g0nlq-power-refrigeration-trinath-kumar-mahesh-ramana-sambasiva-theresa.html — Solar Power Solid State RefrigerationN Trinath Kumar, P Sai Mahesh, S Ramana Chary, P Sambasiva Rao & G Baby Theresa
-- https://uatweb.usaid.gov/sites/default/files/2022-05/Powering-Health_Cold-Chain-Refrigeration.pdf — Powering Health: Cold Chain and Refrigeration
-- https://www.sciencedirect.com/science/article/abs/pii/S0038092X1930787X — Modelling and performance analysis of directly coupled vapor compression solar refrigeration system
-- https://patents.google.com/patent/US20140157794A1/en — US20140157794A1 - Solar Powered Refrigerated Container 
-        - Google Patents
-- https://patents.google.com/patent/EP3885677A1/en — EP3885677A1 - Autonomous refrigerating/freezing unit with supply dc or ac voltage power supply 
-        - Google Patents
-- https://www.patentsencyclopedia.com/app/20180106509 — BACKPACK FOR USE WITH A PORTABLE SOLAR POWERED REFRIGERATION BOX AND WATER     GENERATOR - Patent application
-- https://patents.google.com/patent/CN211380001U/en — CN211380001U - Solar refrigeration knapsack
-- https://patents.glgoo.top/patent/US7543455 — US7543455B1 - Solar-powered refrigerator using a mixture of glycerin, alcohol and water to store energy 
-        - Google Patents
-- https://patents.justia.com/patent/20150285541 — U.S. Patent Application for SOLAR POWERED THERMALLY CONDITIONED SPACE Patent Application (Application #20150285541 issued October 8, 2015) - Justia Patents Search
-- https://patents.google.com/patent/US20170336134A1/en — US20170336134A1 - Modular thermal device
-- https://patents.google.com/patent/US4367633A/en — US4367633A - Battery and solar powered refrigerating system
-- https://patents.justia.com/patent/10823478 — U.S. Patent for Modular thermal device Patent (Patent #  10,823,478 issued November 3, 2020) - Justia Patents Search
-- https://theindexproject.org/award/nominees/4322 — ColdHubs - solar cold rooms - The Index Project
-- https://foodplanetprize.org/initiatives/coldhubs-coldhubs-is-fixing-food-loss-with-off-grid-cool-rooms/ — ColdHubs is fixing food loss with off-grid cool rooms
-- https://solve.mit.edu/solutions/31462 — MIT Solve
-- https://agrinnovators.org/wp-content/uploads/2023/10/COLEACP-PAFO_FICHE-ENTREPRISE-ColdHubs-EN.pdf — innovation series
-- https://www.Nairaland.Com/5139810/how-nigerias-coldhubs-solar-refrigerating-farms — How Nigeria’s Coldhubs Is Solar-refrigerating Farms To Profitability - Agriculture - Nigeria
-- https://agrinnovators.org/business-profile/coldhubs/ — ColdHubs | Agrinnovators
-- https://www.freshplaza.com/north-america/article/9034925/nigerian-start-up-solar-refrigerating-farms-coldhubs/ — Nigerian start-up solar-refrigerating farms: ColdHubs
+- https://ismcontainers.com/talus-renewables-and-ism-containers-transform-fertilizer-production-in-kenya/ — Talus Renewables and ISM Containers Transform Fertilizer Production in Kenya
+- https://www.pv-magazine.com/2020/11/03/solar-powered-cooling-system-for-vegetable-storage/ — Solar-powered cooling system for crop storage
+- https://www.techwin.co.ke/coldstorages-equipment/coldrooms-storages/solar-cold-rooms — Solar Cold Rooms
+- https://www.pv-magazine.com/2021/06/08/solar-powered-cold-storage-service/ — Solar-powered cold storage service
+- https://www.techwin.co.ke/dairy-equipment/cold-storage-solutions/coid/solar-powered-cold-rooms — Solar Powered Cold Rooms
+- https://www.researchgate.net/publication/395704662_Mitigating_Post-Harvest_Losses_in_Sub-Saharan_Africa_A_Hybrid_Solar-Powered_Cold_Storage_System_with_Passive_Evaporative_Cooling_and_Smart_Monitoring_for_Smallholder_Farmers — Mitigating Post-Harvest Losses in Sub-Saharan Africa: A Hybrid Solar-Powered Cold Storage System with Passive Evaporative Cooling and Smart Monitoring for Smallholder Farmers
+- https://indiacleanenergy.com/solar-cold-storage/ — Solar-Cold-Storage
+- https://insulatedsystemsltd.com/solar-cold-rooms/ — Solar Cold Rooms – Insulated Systems
+- https://greenworldinvestor.com/all-you-wanted-to-know-about-solar-powered-cold-storage-mobile-units-in-india/ — all You Wanted to Know About Solar Powered Cold Storage Mobile Units in India
+- https://solarsolutions4everyone.co.za/nb/surs/Solar-Cold-Storage:-Powering-Food-Security_Fri-10-Jun-2022-3406.pdf — Solar Cold Storage: Powering Food Security
 - https://africaprize.raeng.org.uk/2018-cohort/nnaemeka-chidiebere-ikegwuonu — Nnaemeka Chidiebere Ikegwuonu
-- https://disruptafrica.com/2018/10/22/how-nigerias-coldhubs-is-solar-refrigerating-farms-to-profitability/ — How Nigeria’s ColdHubs is solar-refrigerating farms to profitability
-- https://businessday.ng/uncategorized/article/nnaemeka-ikegwuonu-lessons-in-penetrating-a-new-market/?amp — Nnaemeka Ikegwuonu: Lessons in penetrating a new market - Businessday NG
+- https://techxlab.org/solutions/cold-rooms-by-coldhubs/ — Cold Rooms by ColdHubs
+- https://understandsolar.com/a-communal-solar-fridge-for-nigerian-farmers-markets/ — A Communal Solar Fridge for Nigerian Farmers Markets
+- https://www.renewableenergymagazine.com/jane-marsh/the-rise-of-the-energy-entrepreneur-how-20261019 — The Rise of the Energy Entrepreneur: How Individuals Are Profiting From Renewables
+- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&oldid=304340 — ColdHubs - Solar Cold Rooms in Nigeria
+- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&direction=prev&oldid=304357 — ColdHubs - Solar Cold Rooms in Nigeria
+- https://afritechconnect.com/article/africa-loses-one-third-of-its-fish-to-spoilage-these-3-innovations-are-fighting-back — 3 African Innovations Fighting Fish Spoilage and Food Waste
+- https://www.ccacoalition.org/content/coldhubs-ltd — ColdHubs Ltd. | Climate & Clean Air Coalition
+- https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd — ColdHubs Ltd | Sidley Emerging Enterprises Pro Bono Program | Pro Bono | Sidley Austin LLP
+- https://ng.linkedin.com/company/coldhubslimited?trk=article-ssr-frontend-pulse_little-mention — ColdHubs Limited | LinkedIn
+- https://smartbuy.alibaba.com/buyingguides/ecozen-cold-storage — How to Choose Ecozen Cold Storage: A Complete Buyer's Guide
+- https://www.iiec.org/coolingdemo-technologies/720-cold-storage-and-food-processing/677-ecofrost-portable-solar-powered-cold-rooms-ecozen-solutions — Ecofrost - Portable, solar powered cold rooms (Ecozen solutions)
+- https://www.ecozensolutions.com/agriculture/ecofrost-in-kenya.html — ecofrost in Kenya
+- https://www.pv-magazine-india.com/2021/06/07/solar-powered-cold-storage-as-a-service/ — Solar-powered cold storage as a service
+- https://5.imimg.com/data5/SELLER/Doc/2022/12/LV/EM/KI/18386671/solar-powered-cold-storage.pdf — PowerPoint Presentation
+- https://www.engineeringforchange.org/solutions/product/ecofrost-micro-cold-storage/ — EcoFrost Micro Cold Storage
+- https://efficiencyforaccess.org/?p=3286 — High Hopes for Off-Grid Cold Chain Solutions in Rural Kenya - Efficiency for Access
+- https://www.eco-business.com/id/news/how-apps-ai-and-solar-powered-cold-rooms-are-driving-sustainable-agriculture/ — How apps, AI and solar-powered cold rooms are driving sustainable agriculture
+- https://www.indiamart.com/proddetail/ecofrost-solar-cold-room-20855381197.html — Ecofrost Solar Cold Room

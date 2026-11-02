@@ -1,0 +1,27 @@
+{
+  "id": "E54",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "Reaffirm Den Hartog optimum for 500kg TMD on 20t modal mass at 1.9Hz",
+  "code_or_query": "{\"args\": {\"main_frequency_hz\": 1.9, \"main_mass_kg\": 20000, \"mass_ratio\": 0.025}, \"input_sources\": {\"main_frequency_hz\": \"source\", \"main_mass_kg\": \"assumption\", \"mass_ratio\": \"assumption\"}}",
+  "inputs": {
+    "main_frequency_hz": {
+      "value": 1.9,
+      "source": "source"
+    },
+    "main_mass_kg": {
+      "value": 20000.0,
+      "source": "assumption"
+    },
+    "mass_ratio": {
+      "value": 0.025,
+      "source": "assumption"
+    }
+  },
+  "output_summary": "tmd_mass_kg=500.0 mixed (see keys), tmd_frequency_hz=1.853658536585366 mixed (see keys), tmd_damping_ratio=0.09563650695950075 mixed (see keys), tmd_stiffness_n_m=67824.9078175992 mixed (see keys), tm",
+  "output_full": "{\n  \"tmd_mass_kg\": 500.0,\n  \"tmd_frequency_hz\": 1.853658536585366,\n  \"tmd_damping_ratio\": 0.09563650695950075,\n  \"tmd_stiffness_n_m\": 67824.9078175992,\n  \"tmd_damping_ns_m\": 1113.8669279805224,\n  \"unit\": \"mixed (see keys)\",\n  \"inputs\": {\n    \"main_mass_kg\": 20000.0,\n    \"main_frequency_hz\": 1.9,\n    \"mass_ratio\": 0.025\n  },\n  \"provenance\": {\n    \"main_frequency_hz\": {\n      \"value\": 1.9,\n      \"source\": \"source\"\n    },\n    \"main_mass_kg\": {\n      \"value\": 20000.0,\n      \"source\": \"assumption\"\n    },\n    \"mass_ratio\": {\n      \"value\": 0.025,\n      \"source\": \"assumption\"\n    }\n  },\n  \"calculator\": \"tuned_mass_damper_den_hartog\"\n}",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

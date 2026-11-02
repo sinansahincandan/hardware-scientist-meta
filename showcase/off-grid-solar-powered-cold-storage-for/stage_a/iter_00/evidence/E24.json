@@ -1,24 +1,14 @@
 {
   "id": "E24",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
-  "tool": "web_search",
-  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
-  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "simulate",
+  "purpose": "steady cooling load and pull-down for 1 tonne box",
+  "code_or_query": "from pint import UnitRegistry\nQ_=UnitRegistry().Quantity\nk=0.022 # W/mK PU foam\nd=0.10 # m\nU=k/d\nA=2*(2*2+2*2.2+2*2.2)\ndT=33\nQcond=U*A*dT\nQresp=1000*0.05 # 50 mW/kg\nQfan=60\nQinf=80\nQsteady=Qcond+Qresp+Qfan+Qinf\nE_pull=(Q_(1000,'kg')*Q_(3.6,'kJ/kg/K')*Q_(25,'K')).to('kWh')\nP_pull=(E_pull/Q_(24,'h')).to('W')\nCOP=2.5\nE_day_elec=((Q_(Qsteady,'W')*Q_(24,'h')).to('kWh')/COP)\nprint(f\"U={U:.3f} W/m2K A={A:.1f} m2 Qcond={Qcond:.0f} W Qsteady={Qsteady:.0f} W E_pull={E_pull:.1f} P_pull={P_pull:.0f} E_day_elec={E_day_elec:.2f}\")",
   "inputs": {},
-  "output_summary": "manualmachine.com — Danfoss BD1.4F-FSD Data sheet — https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
-  "output_full": "manualmachine.com — Danfoss BD1.4F-FSD Data sheet — https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/\n(the search returned no passage text)",
+  "output_summary": "U=0.22 W/m2K A=25.6 m2 Qcond=186 W Qsteady=376 W E_pull=25.0 kilowatt_hour P_pull=1042 watt E_day_elec=3.61 kilowatt_hour",
+  "output_full": "U=0.220 W/m2K A=25.6 m2 Qcond=186 W Qsteady=376 W E_pull=25.0 kilowatt_hour P_pull=1042 watt E_day_elec=3.61 kilowatt_hour",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "manualmachine.com",
-      "title": "Danfoss BD1.4F-FSD Data sheet",
-      "year": "",
-      "url": "https://manualmachine.com/danfoss/bd14ffsd/18797569-data-sheet/",
-      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

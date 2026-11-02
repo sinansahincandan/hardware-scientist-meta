@@ -1,7 +1,5 @@
 {
-  "closed_by": "cap",
+  "closed_by": "consensus",
   "cycles_used": 4,
-  "open_blocking": [
-    "O2"
-  ]
+  "open_blocking": []
 }

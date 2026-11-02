@@ -1,225 +1,205 @@
-## Cycle 1 — Mara — Stair-Climbing Mechanism Engineer
-The tri-star wheel cluster (C1) fits normal stairs and proven trolleys, as drawn in the side view sketch of the cluster on two noses (E14). Small wheels roll on flat and arms step over each nose.
+## Cycle 1 — Maya – Stair-Climbing Mechanisms Engineer
+The device climbs home stairs with the tri-star wheel cluster (C1) that walks three small wheels over each nosing. International Residential Code (IRC) caps the home step at about 197 mm rise with 254 mm tread in the Standard Stair Step Height and Code Guidelines (E1) and How High Is a Stair? Standard Riser Heights Explained (E2), and sold tri-star trucks use 125 mm to 160 mm wheels in the Electric Stair Climbing Sack Trucks (E6) and the Alu stair climbing hand truck AK 1326 - Hemeco (E4), so a 140 mm orbit with 150 mm wheels clears the worst step.
 
-Rises of 170 to 220 mm (E1), rises of 150 to 170 mm (E2), and rises of 150 to 190 mm with treads of 250 to 300 mm (E3) support the assumed stair of 170 mm riser and 280 mm going (C3). Existing trolleys use 150 mm wheels with 60 kg on stairs (E4) and 160 mm wheels (E6).
+Pulling about 60 kg up that slope takes a hard one-step heave at the handles. The heave is about 300 N to 350 N against gravity, above the about 157 N push cap in the Microsoft Word - updated version of report 9648.doc (E8) and the push and pull limits in the ISO 11228-2? (E7), so it checks as about half the body weight of a 70 kg courier leaning in for one step at a time.
 
-Lifting is one small lift per step but axle torque is large, shown by the 100 joule step energy (E12) and the 184 newton metres cluster torque (E13). Each step is like lifting a heavy crate onto a counter, which one person can do with rests, but the handle needs leverage and reduction because 184 newton metres is far above a direct hand pull.
+Held tilted on the stairs the load sits with small margin before tipping behind the contacts. The lean is about 25 deg from upright with about 12 deg margin to tip-over, like a fridge leaned on a stair rail, so descent needs a locked hold on the nosing.
 
-Holding without grip comes from the self-locking worm drive plus pawl (C2), where worm drive means a screw gear that cannot be back-driven. The 3000kg self-locking worm winch (E7) and the 1500kg worm winch WW1500 (E8) show a worm transmission that holds the load at any height when cranking stops, which transfers to locking the cluster axle on stairs.
+Not ready, because step size, effort and tip margin still need board evidence and checks.
 
-Not ready, because brake torque and handle loads still need agreement with Tomas and Lena.
+## Cycle 1 — Jonas – Ergonomics and Courier Safety Specialist
+The device must stay inside one-person effort with rest between heaves, Maya. Sustained pull stays below 250 N and single-step heave stays below 350 N under the handle effort limit (C2), with handles at 90 cm to 110 cm at hip height, following push-pull limits in the AWD ISO 11228 2.pdf (E12) and the Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries (E11), plus handle guidance in the Ergonomic Casters Education (E10) and the push it or pull it erg033 alberta - rolling-ankles-in-when (E16); this is about half the body weight of a 70 kg courier, hard but plausible.
 
-## Cycle 1 — Tomas — Human Factors and Safety Engineer
-Mara, pulling on the tri-star wheel cluster (C1) is too heavy for stair work without extra leverage. 184 newton metres cluster torque (E13) on a 1.2 metre handle gives 153 newton handle estimate (E30), just above 150 newton sustained limit. This matches 180 to 200 newton maximum acceptable push in the wheelchair pushing study (E24), push limits in the Cdc 186349 Ds1 (E26), and two-hand scope in the BS ISO 11228-2 (E15). 153 newton is like holding a 15.6 kilogram bag every step, heavy for repeats.
+The device must fail safe on descent if courier lets go. A deadman lever, meaning a hold-to-release brake control, locks the tri-star wheel cluster (C1) through the friction brake plus pawl (C3), following the automatic brake example in the Transport trolley Fetra hand truck 2 long walls detachable (E13) and the parking brake requirement in the UNE-EN 1757-4:2003 Safety of industrial trucks — 2003 (E15); lift energy in the energy per step calculation (E19) is 116 J per step, about 58.0 W for a 2 s step, a short heave not continuous work.
 
-Lena, handle must let short and tall couriers push upright with two hands. Closed loop handle with 900 millimetre to 1100 millimetre height and 30 millimetre grip (C4) follows closed loop protection and 25 to 35 millimetre grip rule in the EN 1757 (E19), 900 millimetre height in the transfer aid (E21), and 1138 millimetre height in the pallet tilter (E20).
+Load must stay on the device and fingers must stay clear. The two-point harness plus heel stop (C4) retains the parcel on the toe plate with pinch guards at the tri-star wheel cluster (C1), and I am not ready because brake holding torque and harness strength need checks against the effort limit.
 
-Mara, holding on slope cannot depend on grip strength, especially going down. Self-locking worm drive plus pawl (C2) must hold cluster hands-free with dead-man brake, meaning a brake that locks when released, plus straps and heel guard, while 100 joule step energy (E12) is one crate lift per step with locked rests, following brake practice in the stair climber sack guide (E27) and the hydraulic brake hand truck (E28). Not ready, because 153 newton exceeds safe sustained effort and brake linkage needs joint sizing.
+## Cycle 1 — Priya – Lightweight Foldable Structures Engineer
+The fold system is the mid-spine single fold hinge plus flip-up toe plate (C5): unfolded spine 1200 mm tall, folded slab under 750 by 550 by 150 mm from the folded-envelope target (C6). Flat-fold precedent is the DeWalt slab folding to 3-inch thick (E33), the RuXXac Longnose folding to 490 by 55 by 730 mm (E34) and the RuXXac XL folding to 55 mm thick (E35).
 
-## Cycle 1 — Lena — Lightweight Structures and Folding Design Engineer
-Mara, the spine carries the parcel as a cantilever with margin for a light build, like holding a heavy suitcase at arm's length. The service moment estimate of 294 N·m (E31) rises to 441 N·m factored (E38), which the twin-tube spine in the L-frame concept (C5) carries with Safety Factor (SF) 2 on yield under the load plus SF assumption (C7), using 240 MPa minimum yield from the 7075 aluminium pipe (E32) and 40,000 psi yield from the alu 6061 t6 vs alu 6063 t52 (E34) with purchasable 36 in, 2 in by 4 in Aluminum Rectangular Tube 6061 (E33).
+Tare stays liftable: 5 m of 30 by 2 mm tube at 0.475 kg per m from the tube mass calc (E39) totals 7.38 kg with wheels and locks from the tare budget calc (E40), under the 12 kg limit in the folded-envelope target (C6), like a carry-on not a bodyweight.
 
-Tomas, folding must fit the van without lifting puzzles: toe folds then handle and wheels tuck to a flat slab shown in the L-frame side view sketch (E39). The two-step fold to flat envelope (C6) of under 1200x600x300 mm fits the 1817 mm load bay from the 2026 Citroen Berlingo (E35) and the 1980 mm length with 1280 mm width from the CITROEN BERLINGO EURO6 (E36).
+Unfolded rigidity carries 60 kg plus bounce: section modulus 2310 cubic mm per tube from the section calc (E41) in alloy where T6 means solution heat-treated and artificially aged with 240 MPa yield from the aluminium tube datasheet (E30) and the 6061-T6 size chart (E23) gives stress near 31.8 MPa, factor above 7, locked by over-centre plates with spring pin and green-red indicator following the opening guidance (E27) and the side-view sketch (E42).
 
-Mara and Tomas, joints must not collapse on stairs: steel inserts take step torque at locked hinges with positive locks for open versus folded. The 184 N·m cluster torque (E13) and 153 N handle pull (E30) size the slider and hinge in the L-frame concept (C5), with locked rests between the 100 J steps (E12). Not ready, because pin sizing and lock proof remain open.
+## Cycle 1 — Leo – Last-Mile Operations and Van Integration Specialist
+Priya, the folded pack fits a van niche with room to spare. Plain words, the device stows upright as a flat slab beside parcels. Folded length by width by height, meaning LxWxH, is 730 by 490 by 150 mm from the van parcel interface (C7), inside the proven class of the RuXXac Longnose Folding Hand Truck 125 Kg (E34) and the DeWalt Compact Folding Hand Truck (DXWT-FT512) - Toolstash (E33), and well under the about 51 in side-door width in the How Big is a Sprinter Van Door? (E43) and the 2026 Mercedes-Benz Sprinter Cargo Van Dimensions and Length (E44); about waist high, so one courier can slide it in.
 
-## Cycle 1 — Dario — Courier Operations and Serviceability Lead
-Mara and Lena, parcels must stay captive on stairs without wrestling. The parcel containment with toe plate and straps (C8) holds boxes to 800 mm side, where decanewton (daN) means ten newtons, by the 250 daN capacity in the HP 12225 Buckle Strap (E43) and the 250 daN rating in the Premium 25 Rollo-Mini S-hook (E44), against the 100 J per step demand in the energy to lift 60 kg one riser in joules corrected (E12), like one crate lift per step.
+Maya and Jonas, the platform holds the full parcel range without tipping overhang. Plain words, the toe plate carries small to large boxes strapped to the spine. The toe is 450 by 350 mm holding 40 by 30 by 30 to 60 by 40 by 40 cm parcels from the van parcel interface (C7), shown in the Van stow slab and toe plate with 60x40x40 parcel sketch (E49); about carry-on to checked bag, so load stays over the plate.
 
-Tomas and Lena, one person must stow the empty device between drops. The two-step fold to flat envelope (C6) gives a flat slab in the L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster (E39) under 1200x600x300 mm, fitting the 1817 mm bay in the 2026 Citroen Berlingo (E35), with a lift of 88.3 J in the lift energy 15 kg device into van floor 0.6 m (E46), like a suitcase lift.
-
-Mara, flats must not stop a round. Solid puncture-proof wheels in the van and service package (C9) are proven by the 100 kg rating in the Wheelbarrow Wheel Puncture Proof (E40) and the 80 kg capacity in the Relaxdays Hand Truck Tyre Non Flat Solid Rubber (E41), consistent with the Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150 kg Capacity) (E4). Not ready, because the 153 N handle load in the handle pull from cluster torque and 1.2 m lever (E30) still exceeds agreed effort.
+Priya, turnaround stays inside courier time and daily washdown. Plain words, the device unfolds with one hinge plus flip toe and wipes clean. Setup is under 30 s from the van parcel interface (C7), consistent with unfold in seconds in the Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania (E46); smooth aluminium plus solid tyres need no tools. Not ready, because brake hold and spine lock still need joint proof.
 
 ## Cycle 1 — Manager
-Mara and Tomas, stair effort exceeds repeatable courier effort with no reduction sized. The 153 N handle estimate (E30) from the 184 N·m cluster torque (E13) sits above the 150 N sustained limit (C4), like holding a 15.6 kg bag each step, heavy for repeats but human scale. Mara compute worm ratio and crank length to bring pull below limit, and Tomas confirm allowed repeat value.
+Maya, no proposal is on the board yet so please integrate your favoured concepts and write the proposal in your next turn. Plain words, the proposal must join the climbing, braking, retention and folding ideas into one buildable device. The folded slab is 730 by 490 by 150 millimetres from the van parcel interface (C7) and the tare budget is 7.38 kilograms from the tare weight budget frame plus wheels plus locks (E40), about carry-on weight against a 70 kilogram courier, so plausible.
 
-Lena and Dario, light frame claim lacks weight proof and strength numbers mismatch. The 294 N·m service moment (E31) rising to the 441 N·m factored moment (E38) is not twice service despite Safety Factor claim of 2, while the 15 kg device limit has no tube-by-tube mass breakdown. Lena compute spine tube size, mass breakdown and hinge pin size for the 184 N·m torque and 153 N pull.
+Maya and Priya, the vote cannot proceed because the safety proof is still missing under the blocking objection (O1). Plain words, nobody has shown the brake can hold the full load on a stair edge or the fold lock can carry it. The load is 60 kilograms with lift energy 116 joules per step from the energy per step lifting 60 kilogram one riser (E19), a short heave not daily household energy, but holding torque in Newton metres and pin shear in megapascals are still uncomputed, so Maya please compute brake torque and Priya please compute hinge-pin strength.
 
-Mara write proposal with update_proposal next turn integrating your cluster and hold with Tomas handle, Lena frame and fold, and Dario containment and service. The 100 J step energy (E12) and the 88.3 J van lift (E46) are tiny against household use and flat size fits van bay, so no result looks off scale. My position is not ready because effort reduction and frame weight remain unquantified.
+Priya, one key result falls outside everyday scale and needs correction before it is reused. Plain words, the metal density number is near air not metal. The value is 2.76 kilograms per cubic metre from the estimate aluminium frame mass (E29), while solid aluminium is about 2700 kilograms per cubic metre, about one thousand times larger, so please correct the units and recheck the mass per meter 30 by 2 millimetre aluminium tube (E39).
 
-Note on Mara: Mara quantified energy and torque but left reduction unsized.
-Note on Tomas: Tomas flagged overrun against human limits.
-Note on Lena: Lena carried moment and fold but left mass and pins open.
-Note on Dario: Dario tied stowage to field use but depends on effort fix.
+Note on Maya: effort and tip margin stated without torque calculation.
+Note on Jonas: limits and fail-safe stated without brake torque proof.
+Note on Priya: fold and tare plausible but density value off scale.
+Note on Leo: van fit and toe size plausible against door and parcel scales.
+Not ready, because blocking safety objection stands and no proposal exists.
 
-## Cycle 2 — Tomas — Human Factors and Safety Engineer
-Mara, direct pull on the tri-star wheel cluster (C1) is just over what a courier can repeat all day. The handle pull from cluster torque and 1.2 m lever (E30) is 153 N against the sustained pull under 150 N per operator (C4), like holding a 15.6 kg bag every step, which is human scale but heavy for repeats.
+## Cycle 2 — Jonas – Ergonomics and Courier Safety Specialist
+Maya, the descent brake must hold the full weight on one stair nose without the courier holding it. Plain words, the parked truck wants to rotate over its star arm. Total mass is 67.4 kg, meaning kilograms, load plus 7.38 kg tare, on a 0.14 m arm gives 92.5 N m, meaning newton metres, in the brake holding torque calculation (E50); like a 9 kg bucket on a 1 m wrench, far beyond hand grip, so a locked band is required.
 
-Mara, a small reduction fixes it, keeping the 100 J step energy (E12) as one crate lift per step with locked rests. The reduction ratio to bring handle pull below repeatable target (E47) is 1.70, so a worm ratio plus crank to give about 90.0 N at the hands, like holding a 9 kg bag, which is repeatable two-hand work.
+Priya, that lock must be fail safe if the hand lets go. Plain words, release needs grip but holding needs no grip. A deadman lever, meaning a hold-to-release brake control, squeezes the band clear with light finger force and springs locked on release through the friction brake plus pawl (C3), following the brake example in the Transport trolley Fetra hand truck 2 long walls detachable (E13) and the parking requirement in the UNE-EN 1757-4:2003 Safety of industrial trucks — 2003 (E15); one step stores 116 J, meaning joules, in the energy per step calculation (E19), a short heave not continuous work.
 
-Lena and Mara, slope holding cannot depend on grip, especially going down. The dead-man brake lever on closed-loop handle (C10) backs up the self-locking worm drive plus pawl (C2), meaning the brake locks when the lever is released, with the operator uphill and the brake locked each step. Not ready, because worm ratio and brake linkage sizing with Mara and Lena remain open.
+The parcel must stay on the toe and fingers must stay out of the star. Plain words, strap holds load and guards keep hands clear. The two-point harness plus heel stop (C4) retains the box over the tri-star wheel cluster (C1) with anti-slip and pinch guards.
 
-## Cycle 2 — Lena — Lightweight Structures and Folding Design Engineer
-Mara, the spine works as two light tubes with margin, like a suitcase frame carrying a person leaning on it. The service moment of 294 N·m (E31) rises to the factored moment of 441 N·m (E38), needing 3.67 cubic centimetres section modulus in the required section modulus (E48), which two 40 by 20 by 2 mm tubes from the purchasable Aluminum Rectangular Tube 6061 (E33) provide against 240 MPa yield in the 7075 aluminium pipe (E32) with Safety Factor (SF) 2, human scale and buildable.
+Not ready, because hinge-pin lock proof in the blocking objection (O1) is still missing.
 
-Tomas and Dario, the device stays liftable with one-hand stow, like a packed suitcase. Two spine tubes 1.33 kg plus toe plate 1.5 kg, telescopic handle 2 kg, two clusters with solid wheels 5 kg and straps plus locks 1.5 kg totals about 11.3 kg under the 15 kg limit, consistent with the 88.3 J van lift (E46) as one easy lift into the van.
+## Cycle 2 — Priya – Lightweight Foldable Structures Engineer
+Maya, my earlier metal density was wrong by a thousand and I correct it here. Plain words, solid aluminium weighs about as much as three cars per cubic metre, not near air. Correct density is 2700 kg per cubic m, giving 0.475 kg per m from the corrected tube mass (E52), which matches the mass per meter 30 by 2 mm Al tube (E39); tare stays 7.38 kg from the tare weight budget (E40), like a carry-on against a 70 kg courier.
 
-Mara, the fold locks carry stair torque without slipping, like a scaffold pin. The 184 N·m cluster torque (E13) on a 30 mm lock radius is 6.13 kN shear, carried by 12 mm steel pins in double shear at about 27.1 MPa, well below steel yield, with positive locks for open versus folded. Not ready, because worm ratio and brake linkage sizing with Mara and Tomas remain open.
+Jonas, the fold lock carries the full stair load with margin. Plain words, the spine hinge sees a strong pull when the load hangs off the toe. Load moment gives 3.68 kN, meaning kilonewtons with N meaning newtons, lock force from the hinge lock couple (E53), and an 8 mm pin in double shear sees 36.6 MPa, meaning megapascals, from the pin shear calc (E54), well below 240 MPa yield for alloy in the 6061 Aluminum Tubes supplier sheet (E30), factor above 6.
 
-## Cycle 2 — Dario — Courier Operations and Serviceability Lead
-Mara, parcels stay captive on stairs without wrestling.
+Leo, the pack and rigidity are unchanged. Plain words, the slab still fits the van niche and the spine stays stiff. Folded slab is 730 by 490 by 150 mm from the van parcel interface (C7) with spine section 2310 cubic mm per tube from the section calc (E41), locked by over-centre plates with green-red indicator in the side-view sketch (E42). Not ready, because brake hold proof in the blocking objection (O1) still needs Maya.
 
-The parcel containment with toe plate and straps (C8) holds boxes to 800 mm side, because strap capacity of 250 decanewton (daN), where decanewton means ten newtons, in the HP 12225 Buckle Strap (E43) and in the Premium 25 Rollo-Mini S-hook (E44) exceeds the 589 N weight of 60 kg by about four times, like a seatbelt holding a crate, which is human scale and buildable.
+## Cycle 2 — Leo – Last-Mile Operations and Van Integration Specialist
+Priya, the folded device stows upright beside parcels without blocking the door. Plain words, it is a flat waist-high slab one courier slides into a niche. Folded size is 730 by 490 by 150 mm from the van parcel interface (C7), inside the side-door opening in the How Big is a Sprinter Van Door? (E43) and the 2026 Mercedes-Benz Sprinter Cargo Van Dimensions and Length (E44), so fit plausible.
 
-Lena and Tomas, one person stows the empty device between drops.
+Maya and Jonas, the platform carries the full parcel range strapped to the spine without large overhang. Plain words, small to large boxes sit over the toe with a strap. Toe size is 450 by 350 mm holding 40 by 30 by 30 to 60 by 40 by 40 cm parcels from the van parcel interface (C7), shown in the Van stow slab and toe plate with 60x40x40 parcel sketch (E49); carry-on to checked-bag scale, so the load stays supported.
 
-The two-step fold to flat envelope (C6) shown in the L-frame side view sketch (E39) stays under 1200x600x300 mm and fits the 1817 mm bay in the 2026 Citroen Berlingo (E35), with the 11.3 kg total from Lena against the 15 kg limit lifting as 88.3 J in the lift energy into van floor (E46), like a suitcase lift, plus solid wheels proven by the 100 kg rating in the Wheelbarrow Wheel Puncture Proof (E40) and quick pins for 5 min service in the van and service package (C9).
+Priya, turnaround and cleaning suit daily use. Plain words, one hinge plus flip toe unfolds in seconds and wipes clean. Setup is under 30 s from the van parcel interface (C7), consistent with unfold in seconds in the Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania (E46); smooth aluminium and solid tyres need no tools. Not ready, no proposal on board and the blocking objection (O1) unresolved though brake torque 92.5 N m from the brake holding torque calculation (E50) and pin stress 36.6 MPa from the pin shear calc (E54) are posted.
 
-Mara, effort still gates my sign-off since the 153 N pull in the handle pull estimate (E30) exceeds the 150 N limit in the sustained pull assumption (C4), fixed by the 1.70 ratio in the reduction ratio estimate (E47) to about 90.0 N. Not ready, because the integrated proposal with sized reduction is still missing.
+## Cycle 2 — Maya – Stair-Climbing Mechanisms Engineer
+The tri-star wheel cluster (C1) steps over a 200 mm riser on a 250 mm going, 38.7 degree stair slope. Orbit radius 140 mm with 150 mm wheels bridges two nosings so one wheel always bears, as shown in the tri-star cluster sketch.
 
-## Cycle 2 — Mara — Stair-Climbing Mechanism Engineer
-Tomas, direct pull on the tri-star wheel cluster (C1) is just over the repeatable limit, so I sized the reduction, which needed a new calculation beyond the handle pull estimate (E30) and the reduction ratio estimate (E47). With 15 to 1 worm ratio at 50 percent efficiency and 0.25 m crank, hand force is 98.1 N in the hand pull with worm and crank calculation (E49), below the 150 N sustained limit in the sustained pull assumption (C4), like carrying a 10 kg bag with two hands, which is human scale and repeatable.
+Pulling 60 kg plus 12 kg tare straight up the slope needs 441 N, about a 45 kg lift and too much for one courier. Levering over the nosing contact with long handles cuts that to 226 N sustained, under the 250 N handle limit, with energy 141 J per step, about lifting a crate to a table.
 
-Lena and Tomas, holding on stairs does not need grip because the worm locks the axle. The 184 N·m cluster torque in the cluster torque calculation (E13) is held by the self-locking worm drive plus pawl (C2), backed by the dead-man brake lever on closed-loop handle (C10), so releasing the crank or lever leaves the load parked on two noses.
-
-Dario and Lena, the integrated proposal combines that climb and hold with your frame, fold and containment for a buildable truck. The 100 J step energy in the step energy calculation (E12) stays one crate lift per step with locked rests. Ready, because stair effort, holding torque and fold are now quantified together.
+Tip-over is 21.8 degrees from vertical for 0.70 m load height, so operate near 15 degrees lean for positive margin. Brake must hold 98.9 N m at the carrier, designed to 198 N m for safety factor 2, with fail-safe lock when released.
 
 ## Cycle 2 — Manager
-Mara and Tomas, climbing effort fits two-hand work. Worm crank pull calculation (E49) is 98.1 N, below 150 N limit in sustained pull assumption (C4), like carrying 10 kg with two hands, human scale, and 100 J step energy in step energy calculation (E12) is tiny versus megajoules daily household use.
+Maya, the tip margin is now negative and blocks a proposal until fixed. Plain words, the device as simulated would tip backward on the stairs. The lean is 25.0 degrees beyond the tip angle of 21.8 degrees, margin minus 3.2 degrees, from the stair heave simulation (E58), so please reduce operating lean to about 15 degrees or lower the load height in your proposal.
 
-Lena and Dario, frame strength claim fails and weight lacks breakdown. Service moment 294 N·m in frame bending moment estimate (E31) rising to factored moment 441 N·m in bending moment spine under factored load (E38) is factor 1.50, not 2.00 for Safety Factor (SF), where Safety Factor means margin on yield, while 11.3 kg total has no tube-by-tube calculation, though folded size fits van bay and person scale.
+Maya and Priya, the brake and hinge strengths now look plausible against everyday scales. Plain words, the brake needs a locked band not hand grip, and the pin is lightly stressed. Brake torque is 98.9 Newton metres, meaning twisting force times arm, designed to 198 Newton metres for safety factor 2 from the stair heave simulation (E58), like a 10 kilogram bucket on a 1 metre wrench, and pin stress is 36.6 megapascals, meaning force per area, from the pin shear calc (E54) well below 240 megapascals yield, while heave energy 141 joules per step is a crate lift not household daily use of millions of joules.
 
-Tomas and Mara, descent holding lacks brake sizing. 184 N·m cluster torque in tri-star cluster torque calculation (E13) is claimed held without grip, but dead-man lever force and linkage for that torque have no calculation, like parking heavy adult on slope without proof. My position is not ready because frame margin, mass proof and brake sizing block vote.
+Maya, no proposal is on the board so please write it in your next turn. Plain words, join climbing, braking, retention and folding into one buildable device. Integrate the tri-star wheel cluster (C1), descent control (C3), retention (C4) and mid-spine fold (C5) within the 250 Newton handle limit from the one-person handle effort limit (C2) with lever effort 226 Newtons from the stair heave simulation (E58), and folded slab 730 by 490 by 150 millimetres from the van parcel interface (C7), about waist-high against a door.
 
-Note on Mara: Mara sized reduction to 98.1 N but left brake linkage open.
-Note on Tomas: Tomas flagged overrun but has not confirmed brake hold force.
-Note on Lena: Lena gave tubes and fold but Safety Factor math and mass breakdown are missing.
-Note on Dario: Dario tied containment and stowage to field use but depends on effort and frame proof.
+Note on Maya: heave effort plausible but tip margin negative must be fixed.
+Note on Jonas: fail-safe logic clear but lean must respect tip result.
+Note on Priya: density corrected and pin margin strong.
+Note on Leo: van fit plausible but depends on tip fix.
+Not ready, because tip margin is negative under the new blocking objection (O2) and no proposal exists.
 
-## Cycle 3 — Lena — Lightweight Structures and Folding Design Engineer
-Mara, the spine meets full factor two after my correction, like two tent poles carrying a leaning adult. The service moment of 294 N·m in the frame bending moment estimate (E31) times two gives 588 N·m in the factored moment correction (E50), which I recomputed because the earlier 441 N·m was only factor one point five, needing 2.45 cm³ in the required modulus correction (E52), while two tubes give 2.88 cm³ from 1.44 cm³ each in the single-tube modulus calculation (E53), so Safety Factor (SF), where SF means margin on yield, is met and human scale holds.
+## Cycle 3 — Priya – Lightweight Foldable Structures Engineer
+Maya, the truck must stay more upright on the stairs to stop tipping backward. Plain words, lean less so the load stays over the wheels. Tip angle is 21.8 degrees, operating lean 15.0 degrees, margin 6.8 degrees from the tip margin simulation (E60), which corrects the negative margin of minus 3.2 degrees from the stair heave simulation (E58); a small but positive margin like a hand width on a door edge.
 
-Tomas and Dario, the device stays a one-person lift into the van, like a packed suitcase. Two spine tubes 1.33 kg plus toe plate 1.5 kg, handle 2 kg, two clusters 5 kg and straps plus locks 1.5 kg totals about 11.3 kg under the 15 kg limit, matching the 88.3 J van lift in the lift energy into van floor (E46) as one easy lift.
+Jonas, the fold lock still holds the stair load with large margin and stays liftable. Plain words, the hinge pin is lightly stressed and the frame is carry-on weight. Pin stress is 36.6 megapascals from the pin shear calculation (E54) well below 240 megapascals yield, and tare is 7.38 kilograms from the tare weight budget (E40), about one tenth of a 70 kilogram courier.
 
-Mara, the fold locks carry stair torque as pinned scaffold joints. The 184 N·m cluster torque in the tri-star cluster torque calculation (E13) on a 30 mm radius is 6.13 kN shear on 12 mm pins in double shear at about 27.1 MPa, well below steel yield, with positive open versus folded locks. Not ready, because dead-man brake lever force and linkage sizing with Mara and Tomas remain open.
+Leo, the folded pack and lock indication are unchanged. Plain words, the flat slab still fits the van niche and shows locked clearly. Folded size is 730 by 490 by 150 millimetres from the van parcel interface (C7) with green-red indicator in the side-view sketch (E42). Not ready, because no proposal is on the board and Maya must integrate the 15 degree lean.
 
-## Cycle 3 — Dario — Courier Operations and Serviceability Lead
-Mara, parcels stay captive on stairs without wrestling.
+## Cycle 3 — Leo – Last-Mile Operations and Van Integration Specialist
+Maya and Priya, the more upright push keeps the load over the wheels without changing the van pack. Plain words, leaning less stops backward tip. Tip angle is 21.8 degrees, operating lean is 15.0 degrees, margin is 6.8 degrees from the tip margin at 15 deg lean (E60), a hand-width margin like a door edge, so the 15 degree rule should stay in the proposal.
 
-The parcel box to 800 mm side on the toe plate and backrest in the parcel containment (C8) is held by strap capacity of 250 Decanewton (daN), where Decanewton means ten newtons, in the HP 12225 Buckle Low Lashing Strap (E43) and in the Premium 25 Rollo-Mini (E44), which exceeds the 589 N weight of 60 kg by about four times, like a seatbelt holding a crate, which is human scale and buildable.
+Jonas, small to large parcels both sit on the toe with a strap and no large overhang. Plain words, the platform covers the delivery range. Toe plate is 450 by 350 millimetre (mm) holding 40 by 30 by 30 to 60 by 40 by 40 centimetre (cm) parcels from the van parcel interface (C7), shown in the Van stow slab and toe plate with 60x40x40 parcel (E49), carry-on to checked-bag scale against a courier.
 
-Lena, one person stows the empty device between drops.
+Priya, the van turnaround stays within one quick stop. Plain words, one hinge plus flip toe unfolds in seconds and wipes clean. Folded slab is 730 by 490 by 150 mm from the van parcel interface (C7), inside the side-door opening in the How Big is a Sprinter Van Door? (E43), setup under 30 second (s) from the van parcel interface (C7) consistent with unfold in seconds in the Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania (E46). Not ready, because no proposal is on the board and Maya must integrate the 15 degree lean.
 
-The two-step fold to flat envelope (C6) shown in the L-frame side view sketch (E39) stays under 1200 by 600 by 300 mm and fits the 1817 mm bay in the 2026 Citroen Berlingo (E35), with total about 11.3 kg under the 15 kg limit lifting as 88.3 J in the lift energy into van floor (E46), like a suitcase lift, plus solid wheels proven by the 100 kg rating in the Wheelbarrow Wheel Puncture Proof (E40) and quick pins for 5 min service in the van and service package (C9).
+## Cycle 3 — Maya – Stair-Climbing Mechanisms Engineer
+Priya and Leo, the tri-star wheel cluster (C1) steps over domestic stairs without bridging gaps. Plain words, the three small wheels walk over each nose so one wheel always carries. It handles 200 mm riser height on 250 mm going depth at 38.7 degree slope from the stair heave simulation (E58), shown in the tri-star cluster sketch (E55), which matches ordinary hallway stairs against a door.
 
-Tomas, effort now fits but brake proof still gates me, since the 98.1 N hand force in the hand pull with worm and crank calculation (E49) is below the 150 N limit in the sustained pull assumption (C4). Not ready, because dead-man lever force for the 184 N·m torque in the cluster torque calculation (E13) has no sizing.
+Jonas, one courier can heave 60 kg plus tare with long handles used as a lever. Plain words, pulling straight up the slope is too hard but rocking over the nose makes it doable. Straight slope pull is 441 Newton, meaning push-pull force, about a 45 kg lift and too much, while lever effort is 226 Newton under the 250 Newton limit from the one-person handle effort limit (C2) from the stair heave simulation (E58), with energy 141 Joule per step like lifting a crate to a table.
 
-## Cycle 3 — Mara — Stair-Climbing Mechanism Engineer
-Tomas, holding on stairs does not need grip because the axle locks itself. The 184 N·m cluster torque in the tri-star cluster torque calculation (E13) puts 6.13 kN in the pawl tooth force calculation (E54) on the self-locking worm drive plus pawl (C2), like one corner of a small car resting on a steel tooth, which is human scale for shop steel and buildable.
+Manager, tipping and descent are now controlled with margin. Plain words, stay more upright and the brake holds the load if hands let go. Tip-over angle is 21.8 degrees from vertical so 15.0 degree lean gives 6.8 degree margin from the tip margin simulation (E60), and brake torque, meaning twisting force times arm, must hold 98.9 Newton metre designed to 198 Newton metre for safety factor 2 from the stair heave simulation (E58), like a 10 kg bucket on a 1 m wrench.
 
-Dario and Tomas, descent control stays light because the brake works on the fast worm shaft. The same torque through 15 to 1 reduction on a 40 mm disc with 5 to 1 linkage needs 61.3 N in the dead-man lever force calculation (E55) on the dead-man brake lever on closed-loop handle (C10), like squeezing a bicycle brake with two fingers, which is human scale and repeatable.
+Ready, because the proposal holds effort, tip and brake margins together.
 
-Lena, climbing effort stays below the repeatable limit with that reduction. Hand pull of 98.1 N in the hand pull with worm and crank calculation (E49) is below the 150 N limit in the sustained pull assumption (C4) for the tri-star wheel cluster (C1), like carrying a 10 kg bag with two hands. Ready, because stair lift, parked hold and lever force are now all sized together.
+## Cycle 3 — Jonas – Ergonomics and Courier Safety Specialist
+Maya, pull stays inside one-person strength with upright posture. Plain words, long handles work as lever so load rocks over nose rather than lifting dead weight. Lever effort is 226 Newton (N) under 250 N sustained limit from one-person handle effort limit (C2) in stair heave simulation (E58), like holding 23 kilogram suitcase, well below 70 kilogram courier body weight, with grips at 90 to 110 centimetre (cm) height.
 
-## Cycle 3 — Tomas — Human Factors and Safety Engineer
-Mara, direct pull on the stairs is just over repeatable work, but the reduction fixes it, where Newton (N) means unit of force. The handle pull from cluster torque and 1.2 m lever (E30) is 153 N against the sustained pull under 150 N per operator (C4), like holding a 15.6 kg bag every step, while the hand pull with worm and crank calculation (E49) is 98.1 N, like a 10 kg bag with two hands and repeatable.
+Priya and Maya, descent cannot run away if grip is lost. Plain words, brake stays locked unless deliberately held open. Holding torque, meaning twisting force times arm, is 98.9 Newton metre (Nm) designed to 198 Nm for safety factor (SF) 2 from stair heave simulation (E58), matching 92.5 Nm from brake holding torque calculation (E50), like 10 kilogram bucket on 1 metre wrench beyond hand grip, so friction brake plus pawl (C3) with deadman lever, meaning hold-to-release control, springs locked on release.
 
-Mara, parked holding on the slope does not need continuous grip because the axle locks. The tri-star cluster torque calculation (E13) is 184 N·m held by the self-locking worm drive plus pawl (C2), and the dead-man lever force calculation (E55) is 61.3 N on the dead-man brake lever on closed-loop handle (C10), like a two-finger bicycle squeeze, which is human scale for descent.
-
-Lena and Dario, posture and guards allow one-person work uphill of the load with the brake locked each step. The sustained pull assumption (C4) gives 900 to 1100 mm height with 30 mm grip under 150 N, backed by the heel guard and nosing pads in the dead-man brake lever on closed-loop handle (C10), fitting a door-scale device. Ready, because effort, holding and posture are all sized together.
+Leo, parcel stays on toe and fingers stay clear while leaning less to avoid tip. Plain words, strap holds box and guards keep hands out of moving star. Two-point harness plus heel stop (C4) retains parcel on anti-slip toe and shields tri-star wheel cluster (C1), and 15.0 degree lean against 21.8 degree tip gives 6.8 degree margin from tip margin simulation (E60), hand-width margin like door edge. Ready, because effort, fail-safe braking and retention with tip margin all meet safety limits.
 
 ## Cycle 3 — Manager
-Mara, Tomas, Lena and Dario, Tomas voted ready before Lena and Dario rechecked the new brake sizing. Hold is like a bicycle squeeze holding an adult on a slope, with the dead-man lever force calculation (E55) giving 61.3 N to hold the 184 N·m in the tri-star cluster torque calculation (E13), but Lena and Dario stayed not ready pending that sizing, so the vote came too early.
+Maya and Jonas, the proposal vote came too early because spine strength is unproven. Plain words, twin tubes are unproven for stair load with margin. Safety Factor (SF, ratio of yield strength to working stress) for 60 kg on 200 mm overhang from the section modulus 30x2 tube (E41) is missing, so Priya please compute bending stress against yield before the vote stands under blocking objection (O3).
 
-Mara, nobody computed crank turns per step and whether lowering by crank is practical. Pull is like carrying 10 kg, with the hand pull with worm and crank calculation (E49) giving 98.1 Newton (N), where Newton means unit of force, below the 150 N limit in the sustained pull assumption (C4), and the step energy calculation (E12) is 100 J, tiny against household megajoules, but turns, time per stair and lowering efficiency are missing, so Mara please compute them next.
+Maya and Priya, the tip fix looks plausible against everyday scale. Plain words, less lean keeps load over wheels. Tip angle 21.8 deg with lean 15.0 deg gives margin 6.8 deg from the tip margin simulation (E60), minus 3.2 deg from the stair heave simulation (E58), like a hand width on a door edge.
 
-Lena, the frame meets Safety Factor (SF), where Safety Factor means margin on yield, at door scale, with the required modulus correction (E52) needing 2.45 cm3 and the single-tube modulus calculation (E53) giving 1.44 cm3 each so two tubes give margin, yet the 11.3 kg total has no proof, so Lena please post the mass calculation. Not ready: early vote, missing turns and mass block.
-Note on Mara: Mara sized hold but left turns open.
-Note on Tomas: Tomas voted ready before brake recheck.
-Note on Lena: Lena fixed Safety Factor math but mass missing.
-Note on Dario: Dario waits on brake proof.
+Jonas and Leo, effort and brake look plausible against body scale but need spine proof. Plain words, lever makes pull doable and brake needs locked band. Lever effort 226 N under 250 N limit from the stair heave simulation (E58), like 23 kg suitcase versus 70 kg courier, and brake torque 98.9 Newton metre (Nm, twisting force times arm) designed to 198 Nm, like 10 kg bucket on 1 m wrench.
 
-## Cycle 4 — Dario — Courier Operations and Serviceability Lead
-Mara, parcels stay captive without wrestling.
+Note on Maya: lean fix integrated but spine proof missing.
+Note on Jonas: effort and fail-safe clear but vote premature.
+Note on Priya: pin and tare strong but spine calculation owed.
+Note on Leo: van pack plausible but rests on spine proof.
+Not ready, because blocking spine SF objection (O3) is open and votes cannot close it.
 
-Box to 800 mm side on toe plate and backrest in the parcel containment (C8) is held by 250 Decanewton (daN), where Decanewton means ten newtons, in the HP 12225 Buckle Low Lashing Strap (E43) and Premium 25 Rollo-Mini (E44), giving 2.50 kN against 589 N weight of 60 kg by about four times, like a seatbelt on a crate.
+## Cycle 4 — Leo – Last-Mile Operations and Van Integration Specialist
+Maya and Priya, the folded pack still fits the van while spine proof is open. Plain words, the flat slab stows upright in the side niche. Folded slab is 730 by 490 by 150 millimetre from the van parcel interface (C7), inside the side-door opening in the How Big is a Sprinter Van Door? (E43), suitcase scale against a van door.
 
-Lena, one person stows the device between drops.
+Jonas, parcels and turnaround stay within a courier stop. Plain words, small to large boxes sit on the toe and the truck opens in seconds and wipes clean. Toe plate is 450 by 350 millimetre holding 40 by 30 by 30 to 60 by 40 by 40 centimetre parcels from the van parcel interface (C7), shown in the Van stow slab sketch (E49), carry-on to checked-bag scale, and setup is under 30 second from the van parcel interface (C7) consistent with unfold in seconds in the Teprovo Dolly Cart article (E46).
 
-Two-step fold in the 2-step fold to flat (C6) shown in the L-frame side view sketch (E39) stays under 1200 by 600 by 300 mm and fits the 1817 mm bay in the 2026 Citroen Berlingo (E35), with about 11.3 kg under the 15 kg limit lifting as 88.3 J in the lift energy into van floor (E46), like a suitcase lift, plus solid wheels with 100 kg rating in the Wheelbarrow Wheel Puncture Proof (E40) and quick pins for 5 min service in the van and service package (C9).
+Manager, operations cannot close until frame strength is proven. Plain words, van fit means nothing if the spine bends. Spine bending Safety Factor (SF, ratio of yield strength to working stress) on 200 millimetre overhang from the section modulus calculation (E41) is still missing under the blocking spine objection (O3). Not ready, because spine proof blocks the proposal.
 
-Tomas, effort fits but stair time gates my workflow.
+## Cycle 4 — Maya – Stair-Climbing Mechanisms Engineer
+Manager, the spine proves strength with margin.
 
-98.1 N hand force in the hand pull with worm and crank calculation (E49) is below the 150 N limit in the sustained pull assumption (C4), and 61.3 N squeeze in the dead-man lever force calculation (E55) holds 184 N·m in the tri-star cluster torque calculation (E13), like a bicycle brake, but crank turns per step and time per stair are still missing. Not ready, because I cannot accept parcel workflow without that time.
+Each twin tube carries half the load on a short overhang with stress far below yield. Bending stress is 30.6 megapascal (MPa) per tube from the spine stress calculation (E61) using the section modulus 30x2 tube (E41), against 276 MPa yield for 6061-T6 Aluminum Round Tube (E24), giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from the safety factor calculation (E62), above 2, like a footbridge carrying a person.
 
-## Cycle 4 — Mara — Stair-Climbing Mechanism Engineer
-Manager, climbing by crank needs only a few handle turns per stair, like winding a trailer jack.
+Priya and Jonas, the device steps ordinary stairs and stays upright if kept more vertical.
 
-The crank turns per step calculation (E56) gives 5.00 turns for one 120 degree cluster step through the 15 to 1 worm, so at about one turn per second that is about 5.00 seconds per stair, which matches a slow stair walk and is human scale for a courier flight.
+The three-wheel star walks over each nose and tipping needs larger lean than used. Max step is 200 millimetre (mm) riser height on 250 mm going depth at 38.7 degree slope from the stair heave simulation (E58), shown in the tri-star cluster sketch (E55), doorway-stair scale, and tip-over angle is 21.8 degrees so 15.0 degree lean gives 6.8 degree margin from the tip margin simulation (E60), hand-width margin.
 
-Dario, lowering by crank is slow but safe and practical because the drive cannot run away, like a scaffold winch holding between cranks.
+Jonas and Leo, one courier can heave the load with lever action.
 
-The lift energy per riser calculation (E12) is 100 Joules, where Joule means energy unit, tiny against household kilojoules, so cranking down the same 5.00 turns per step returns little heat and needs only light guiding force, with the self-locking worm drive plus pawl (C2) holding the 184 Newton metres, where Newton means force unit, in the tri-star cluster torque calculation (E13) when the hands pause.
+Straight uphill pull is too heavy but rocking over the nose is doable. Slope pull is 441 Newton (N) for 60 kilogram (kg) plus tare, about a 45 kg lift and too much, while lever effort is 226 N under the 250 N limit from the one-person handle effort limit (C2) from the stair heave simulation (E58), like holding a 23 kg suitcase versus a 70 kg courier.
 
-Tomas and Lena, effort and parked hold already fit two-hand repeatable work with that reduction, like carrying a shopping bag with two hands.
+Ready, because spine Safety Factor, step, tip and effort margins all hold together.
 
-The hand pull with worm and crank calculation (E49) is 98.1 Newtons below the 150 Newtons limit in the sustained pull assumption (C4), and the dead-man lever force calculation (E55) is 61.3 Newtons to hold descent on the dead-man brake lever on closed-loop handle (C10). Ready, because turns, time, effort and hold are now all sized together.
+## Cycle 4 — Jonas – Ergonomics and Courier Safety Specialist
+Maya, pull stays inside one-person strength with upright posture. Plain words, long handles work as lever so load rocks over nose rather than lifting dead weight. Lever effort is 226 Newton (N) under 250 N sustained limit from the one-person handle effort limit (C2) in the stair heave simulation (E58), like holding a 23 kilogram suitcase against 70 kilogram body weight, with grips at 90 to 110 centimetre height.
 
-## Cycle 4 — Tomas — Human Factors and Safety Engineer
-Mara, direct pull over the limit is fixed by the reduction to repeatable two-hand work, where Newton (N) means unit of force. The handle pull from cluster torque and 1.2 m lever (E30) was 153 N against the sustained pull assumption (C4) limit of 150 N, like holding a 15.6 kg bag each step, while the hand pull with worm and crank calculation (E49) is 98.1 N, like a 10 kg shopping bag shared by two hands, which is human scale.
+Priya and Maya, descent cannot run away if grip is lost. Plain words, brake stays locked unless deliberately held open. Holding torque, meaning twisting force times arm, is 98.9 Newton metre (Nm) designed to 198 Nm for Safety Factor (SF, ratio of yield to working stress) 2 from the stair heave simulation (E58), matching 92.5 Nm from the brake holding torque calculation (E50), like a 10 kilogram bucket on a 1 metre wrench, so friction brake plus pawl with deadman lever, meaning hold-to-release control, springs locked on release.
 
-Mara, parked hold needs no continuous grip and descent stays a light squeeze. The tri-star cluster torque calculation (E13) of 184 N·m is held by the self-locking worm drive plus pawl (C2), with the dead-man lever force calculation (E55) of 61.3 N on the dead-man brake lever on closed-loop handle (C10), like a two-finger bicycle brake, which is human scale for a courier.
+Leo, parcel stays on toe and fingers stay clear while leaning less to avoid tip. Plain words, strap holds box and guards keep hands out of moving star. Two-point harness plus heel stop from the load retention concept (C4) retains parcel on anti-slip toe and shields the tri-star wheel cluster (C1), and 15.0 degree lean against 21.8 degree tip gives 6.8 degree margin from the tip margin simulation (E60), hand-width margin like a door edge. Ready, because effort, fail-safe braking and retention with tip margin all meet safety limits.
 
-Lena and Dario, the time cost of that safety is a few slow seconds per stair with uphill stance and guards. The crank turns per step calculation (E56) gives 5.00 turns and about 5.00 seconds per stair at one turn per second, moving only 100 J in the lift energy per riser calculation (E12), tiny against household kilojoules, fitting the 900 to 1100 mm handle and locked-brake stance in the dead-man brake lever on closed-loop handle (C10). Ready, because effort, hold and time are now sized together for one-person work.
+## Cycle 4 — Priya – Lightweight Foldable Structures Engineer
+Maya, the unfolded spine stays rigid and locked with large margin. Plain words mean twin tubes share the stair load and the hinge pin stays lightly stressed with a clear locked sign. Bending stress is 30.6 megapascal per tube from the spine stress calculation (E61) using the section modulus 30x2 tube (E41), giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from the safety factor calculation (E62) above 2, and pin stress is 36.6 megapascal from the pin shear calculation (E54) with green-red indication in the side-view sketch (E42), bridge-beam scale.
 
-## Cycle 4 — Lena — Lightweight Structures and Folding Design Engineer
-Mara, Tomas, Dario — the twin-tube L-frame spine (C5) carries the 60 kg load with Safety Factor (SF) 2.
+Jonas, one courier lifts the folded truck easily. Plain words mean the aluminium frame is carry-on weight. Tare is 7.38 kilogram from the tare weight budget (E40) using 0.475 kilogram per metre from the correct tube mass per meter (E52), about one tenth of a 70 kilogram courier, suitcase scale.
 
-Plain words: two aluminium tubes share the spine bending so unfactored stress stays well below yield, leaving margin after doubling the load. The numbers: 102 MPa unfactored from the spine stress calculation (E61), 2.88 cubic centimetres paired modulus against 2.45 required, margin 1.18 from the twin-tube margin calculation (E60) — like a bathroom scale reading half its rated limit.
-
-The device stays liftable and van-stowable with the 2-step fold to flat (C6) and the fold-lock pin sizing in the pin shear calculation (E59).
-
-Plain words: total mass is cabin-bag weight and the lock pin shear is low steel stress, folded slab fits a van door. The numbers: 11.3 kg total from the mass breakdown (E57) under 15 kg, 27.1 MPa pin stress, envelope under 1200x600x300 mm — I vote ready on the integrated proposal (v2).
+Leo, the flat slab still stows upright in the van niche. Plain words mean the folded size fits the side door opening. Folded slab is 730 by 490 by 150 millimetre from the van parcel interface (C7), suitcase scale against a van door. Ready, because spine, tare and fold-lock margins all hold.
 
 ## Cycle 4 — Manager
-Dario, the time block has numbers but no acceptance. Plain words the crank cost is a slow stair walk with shopping-bag effort, like winding a jack. The numbers are 5.00 turns per step in the crank turns per step calculation (E56), about 5.00 s per stair and 60.0 s for 12 stairs, with 98.1 N in the hand pull with worm and crank calculation (E49) below the 150 N limit in the sustained pull assumption (C4), where Newton (N) means unit of force, and 100 J in the lift energy per riser calculation (E12), tiny against household kilojoules, so Dario please confirm time and vote next.
+Maya, Priya and Jonas, spine strength closes blocking proof. Plain words, twin tubes stay far below yield. Bending stress is 30.6 MPa per tube from spine stress calculation (E61) using section modulus 30x2 tube (E41), against 276 MPa yield, giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from safety factor calculation (E62), above 2.
 
-Mara, nobody sized the pawl tooth holding the slope. Plain words a small tooth carries many body weights when parked, like standing on a key. The numbers are 6.13e3 N in the pawl tooth force calculation (E54) holding 184 N·m in the tri-star cluster torque calculation (E13), with no tooth area or stress shown, so Mara please compute tooth shear next.
+Maya and Jonas, tip, effort and brake hold at everyday scale. Plain words, upright lean keeps load over wheels, lever makes pull doable, brake locks descent. Tip is 21.8 deg with 15.0 deg lean giving 6.8 deg margin from tip margin simulation (E60), effort is 226 N under 250 N limit from stair heave simulation (E58), like 23 kg suitcase against 70 kg courier, and holding torque 98.9 Newton metre (Nm, twisting force times arm) sized to 198 Nm, like 10 kg bucket on 1 m wrench, with energy 141 J per 0.2 m riser trivial against household kilowatt-hours.
 
-Tomas and Lena, two ready votes with Dario pending and the handle effort objection (O1) still open is a vote that came too early. Not ready, because workflow acceptance and pawl sizing block.
-Note on Mara: Mara added turns and time but left pawl stress open.
-Note on Tomas: Tomas re-voted ready while workflow acceptance was pending.
-Note on Lena: Lena proved frame and mass but margin is thin.
-Note on Dario: Dario raised time and still needs to accept the new time.
+Priya and Leo, fold and tare fit courier and van. Plain words, carry-on weight stows like suitcase in door. Tare is 7.38 kg from tare weight budget (E40) under 12 kg, and folded slab 730 by 490 by 150 mm from van parcel interface (C7) fits van door.
 
-## Cycle 4 — Mara — Stair-Climbing Mechanism Engineer
-Manager, the parked tooth load is large but ordinary steel size carries it like a door latch holding a leaning adult.
+Note on Maya: mechanism, slope, lever quantified.
+Note on Jonas: ergonomics, fail-safe, retention quantified.
+Note on Priya: spine, pin, tare, fold-lock quantified.
+Note on Leo: van niche, parcel, setup bounded.
+Ready, because blocking objections resolved and results check against body, door and household scales.
 
-The pawl tooth force calculation (E54) gives 6.13e3 Newton (N), where Newton means unit of force, holding 184 N·m in the tri-star cluster torque calculation (E13) through the self-locking worm drive plus pawl (C2), which is about 625 kilogram force or ten body weights on a small hardened tooth, well within ordinary shop steel practice and purchasable worm boxes.
+## Cycle 4 — Maya – Stair-Climbing Mechanisms Engineer
+Priya and Jonas, the spine holds with margin. Each twin tube carries half the load on a short overhang with stress far below yield. Bending stress is 30.6 megapascal (MPa) per tube from the spine stress calculation (E61) using the section modulus 30x2 tube (E41), against 276 MPa yield for 6061-T6 Aluminum Round Tube (E24), giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from the safety factor calculation (E62), above 2, like a footbridge carrying a person.
 
-Dario, the crank time cost is a slow stair walk, not a workflow block, like winding a trailer jack.
+Priya and Jonas, the device climbs stairs and stays upright. The three-wheel star walks over each nose. Max step is 200 millimetre (mm) riser height on 250 mm going depth at 38.7 degree slope from the stair heave simulation (E58), shown in the tri-star cluster sketch (E55), and tip-over angle is 21.8 degrees so 15.0 degree lean gives 6.8 degree margin from the tip margin simulation (E60), hand-width margin.
 
-The crank turns per step calculation (E56) gives 5.00 turns per 120 degree cluster step, about 5.00 seconds per stair and 60.0 seconds for 12 stairs, at 98.1 N in the hand pull with worm and crank calculation (E49) below the 150 N limit in the sustained pull assumption (C4).
+Jonas and Leo, one courier can heave the load with lever action and the design is ready. Straight pull is too heavy but rocking is doable. Slope pull is 441 Newton (N) for 60 kilogram (kg) plus tare, about a 45 kg lift and too much, while lever effort is 226 N under the 250 N limit from the one-person handle effort limit (C2) from the stair heave simulation (E58), like holding a 23 kg suitcase versus a 70 kg courier, so spine Safety Factor, step, tip and effort margins all hold together.
 
-Tomas and Lena, effort, hold and energy already fit one-person repeatable work with that reduction, like carrying a shopping bag with two hands.
+## Cycle 4 — Jonas – Ergonomics and Courier Safety Specialist
+Maya, pull stays inside one-person strength with upright posture. Plainly, long handles work as lever so load rocks over nose rather than lifting deadweight. Lever effort is 226 Newton (N) under 250 N sustained limit from the one-person handle effort limit (C2) in the stair heave simulation (E58), like holding a 23 kilogram suitcase against 70 kilogram body weight, with grips at 90 to 110 centimetre height.
 
-The dead-man lever force calculation (E55) is 61.3 N on the dead-man brake lever on closed-loop handle (C10), and the lift energy per riser calculation (E12) is 100 Joule (J), where Joule means energy unit, tiny against household kilojoules. Ready, because climbing, holding and time are sized together and buildable.
+Priya and Maya, descent cannot run away if grip is lost. Plainly, brake stays locked unless deliberately held open. Holding torque, meaning twisting force times arm, is 98.9 Newton metre (Nm) designed to 198 Nm for Safety Factor (SF, ratio of yield to working stress) 2 from the stair heave simulation (E58), matching 92.5 Nm from the brake holding torque calculation (E50), like a 10 kilogram bucket on a 1 metre wrench, so friction brake plus pawl with deadman lever, meaning hold-to-release control, springs locked on release.
 
-## Cycle 4 — Tomas — Human Factors and Safety Engineer
-Mara, direct pull over the limit is fixed by the reduction to repeatable two-hand work, where Newton (N) means unit of force. The handle pull from cluster torque and 1.2 m lever (E30) was 153 N against the sustained pull assumption (C4) limit of 150 N, like holding a 15.6 kg bag each step, while the hand pull with worm and crank calculation (E49) is 98.1 N, like a 10 kg shopping bag shared by two hands, which is human scale.
+Leo, parcel stays on toe and fingers stay clear while leaning less to avoid tip. Plainly, strap holds box and guards keep hands out of moving star. Two-point harness plus heel stop from the load retention concept (C4) retains parcel on anti-slip toe and shields the tri-star wheel cluster (C1), and 15.0 degree lean against 21.8 degree tip gives 6.8 degree margin from the tip margin simulation (E60), hand-width margin like door edge. Ready, because effort, fail-safe braking and retention with tip margin all meet safety limits.
 
-Mara, parked hold needs no continuous grip and descent stays a light squeeze. The tri-star cluster torque calculation (E13) of 184 N·m is held by the self-locking worm drive plus pawl (C2), with the dead-man lever force calculation (E55) of 61.3 N on the dead-man brake lever on closed-loop handle (C10), like a two-finger bicycle brake, which is human scale for a courier.
+## Cycle 4 — Priya – Lightweight Foldable Structures Engineer
+Maya, the unfolded spine stays rigid and locked with large margin. Plain words mean twin tubes share the stair load and the hinge pin stays lightly stressed with a clear locked sign. Bending stress is 30.6 megapascal (MPa) per tube from the spine stress calculation (E61) using the section modulus 30x2 tube (E41), giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from the safety factor calculation (E62) above 2, and pin stress is 36.6 MPa from the pin shear calculation (E54) with green-red indication in the side-view sketch (E42), bridge-beam scale.
 
-Lena and Dario, the time cost of that safety is a few slow seconds per stair with uphill stance and guards. The crank turns per step calculation (E56) gives 5.00 turns and about 5.00 seconds per stair at one turn per second, moving only 100 J in the lift energy per riser calculation (E12), where Joule (J) means energy unit, tiny against household kilojoules, fitting the 900 to 1100 mm handle and locked-brake stance in the dead-man brake lever on closed-loop handle (C10). Ready, because effort, hold and time are now sized together for one-person work.
+Jonas, one courier lifts the folded truck easily. Plain words mean the aluminium frame is carry-on weight. Tare is 7.38 kilogram from the tare weight budget (E40) using 0.475 kilogram per metre from the correct tube mass per meter (E52), about one tenth of a 70 kilogram courier, suitcase scale.
 
-## Cycle 4 — Lena — Lightweight Structures and Folding Design Engineer
-Mara, Tomas, Dario — the twin-tube L-frame spine (C5) carries the 60 kg load with Safety Factor (SF) 2, where Safety Factor means required strength divided by working load.
+Leo, the flat slab still stows upright in the van niche. Plain words mean the folded size fits the side door opening. Folded slab is 730 by 490 by 150 millimetre from the van parcel interface (C7), suitcase scale against a van door. Ready, because spine, tare and fold-lock margins all hold.
 
-Plain words: two aluminium tubes share the spine bending so stress stays well below yield after doubling the load, like a bathroom scale reading half its rated limit. The numbers: 102 MPa unfactored stress from the spine stress calculation (E61), paired modulus 2.88 cubic centimetres against 2.45 required with margin 1.18 from the twin-tube margin calculation (E60).
+## Cycle 4 — Leo – Last-Mile Operations and Van Integration Specialist
+Maya and Priya, the folded pack stows in the van like a suitcase in a doorway. Folded slab is 730 by 490 by 150 millimetre (mm) from the van parcel interface (C7), inside the side-door opening from the How Big is a Sprinter Van Door? (E43), and tare is 7.38 kilogram from the tare weight budget (E40) under 12 kilogram, about one tenth of a courier.
 
-Mara, Tomas, Dario — the device stays liftable and van-stowable with the 2-step fold to flat (C6).
+Jonas, parcels sit securely on the toe and turnaround fits a courier stop. Toe plate is 450 by 350 mm holding 40 by 30 by 30 to 60 by 40 by 40 centimetre parcels from the van parcel interface (C7), shown in the Van stow slab sketch (E49), and setup is under 30 second from the van parcel interface (C7) consistent with unfold in seconds in the Teprovo Dolly Cart article (E46).
 
-Plain words: total mass is cabin-bag weight and the lock pin shear is low steel stress, folded slab fits a van door. The numbers: 11.3 kg total from the mass breakdown (E57) under 15 kg, 27.1 MPa pin stress from the pin shear calculation (E59), envelope under 1200x600x300 mm. I vote ready on the integrated proposal (v2).
-
-## Cycle 4 — Dario — Courier Operations and Serviceability Lead
-Mara, the crank time fits courier work between drops.
-
-Plain words the climb is a slow stair walk with shopping-bag effort, like winding a trailer jack, which is everyday scale. The numbers are 5.00 turns per step in the crank turns per step calculation (E56), about 5.00 s per stair and 60.0 s for 12 stairs, at 98.1 N in the hand pull with worm and crank calculation (E49) below the 150 N limit in the sustained pull assumption (C4).
-
-Lena, the folded device lifts into the van in one person lift.
-
-Plain words the slab is suitcase weight and fits a van door bay, which is everyday scale. The numbers are 11.3 kg in the total device mass calculation (E57) under 15 kg, envelope under 1200 by 600 by 300 mm in the 2-step fold to flat (C6) against the 1817 mm bay in the 2026 Citroen Berlingo (E35).
-
-Tomas, parcels stay captive and service stays fast.
-
-Plain words straps hold several times the parcel weight and wheels swap with one tool, like a seatbelt on a crate. The numbers are 2.50 kN strap rating in the HP 12225 Buckle Low Lashing Strap (E43) against 589 N weight, with 5 min service in the van and service package (C9). Ready, because time, stowage and containment are now sized together.
+Manager, van fit means operations stay viable now frame strength is proven with Safety Factor (SF, ratio of yield strength to working stress) 9.02 from the safety factor calculation (E62). Ready, because fold, parcel and setup meet van operation with strength and tare supporting daily use.

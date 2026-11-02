@@ -1,23 +1,19 @@
 {
   "id": "E35",
-  "author": "Structural Dynamicist",
+  "author": "Priya - Retrofit Constructability Engineer",
   "tool": "calc",
-  "purpose": "spring force from stroke",
-  "code_or_query": "(Q_(105412,'N/m')*Q_(0.00252,'m')).to('N')",
+  "purpose": "TMD weight for frame sizing",
+  "code_or_query": "Q_(500*9.81,\"N\").to(\"N\")",
   "inputs": {
     "arg0": {
-      "value": "105412",
-      "unit": "N/m"
-    },
-    "arg1": {
-      "value": "0.00252",
-      "unit": "m"
+      "value": "500*9.81",
+      "unit": "N"
     }
   },
-  "output_summary": "266 N",
-  "output_full": "266 N",
+  "output_summary": "4.9\u00d710\u00b3 N",
+  "output_full": "4.9\u00d710\u00b3 N",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

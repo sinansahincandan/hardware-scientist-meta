@@ -1,44 +1,23 @@
-# REVIEW — run 20261102-033230 (problem 01, stair-climbing hand truck), fresh run with the round-3 code
+# REVIEW — run 20261102-105608 (problem 01, stair-climbing hand truck), round 4 P5
 
-States only what this run's files show. Cost $1.7557 (cost.json); ledger total after the run $5.3891.
-This is the showcase run for problem 01 (the earlier run 025924 is kept as evidence of the cluster defect).
+Cost $1.9362 (cost.json). Every image listed below was viewed.
 
-## Stage A (stage_a/iter_00)
-- Roster (rev_000.md): Mara (stair-climbing mechanism), Tomas (human factors and safety), Lena
-  (lightweight structures and folding), Dario (courier operations and serviceability).
-- Meeting: 4 cycles, closed by consensus; proposal v2 by Mara; all four members ready on v2. One
-  non-blocking objection by Tomas stayed open (whiteboard.json).
-- Evidence: 36 search sources, 23 calculations, 2 sketches (3 failed items). 9 turns re-asked to shorten;
-  none cut.
-- Evaluator: accepted, no evidence requests; re-derived 100 J per 170 mm step, 184 N·m cluster torque,
-  153 N direct pull and 98 N crank effort through a 15:1 self-locking worm, with everyday-scale comparisons
-  (verdict.json).
-- Solution (solution.json): mechanism sentence in plain words ("Two three-wheeled side clusters roll over
-  each stair nose while a hand crank through a self-locking screw gear lifts a 60 kg parcel one 170 mm step
-  at a time with about 98 N of hand effort and holds it parked when you let go."); open question: pawl
-  tooth shear and wear under a 6.13 kN parking load.
-- No master-prompt rewrite (accepted in iteration 0).
+## Stage A
+- Roster (rev 0): Maya (stair-climbing mechanisms), Jonas (ergonomics and courier safety), Priya (lightweight foldable structures), Leo (last-mile operations and van integration).
+- Inherited (knowledge_in.json): lessons L1–L10; no insight files and no carried tools existed yet.
+- Meeting: 4 cycles, closed by consensus on proposal v1, all four ready (closure.json, whiteboard.json). 62 evidence items: 42 search hits, 3 failed calculations (shown in plain words on the pages), 3 objections. No search_knowledge call (the library was empty).
+- The meeting corrected itself: a member flagged that the stair-heave simulation (E58) gave a negative tipping margin (lean 25° beyond a 21.8° tip angle) and blocked the proposal until fixed; a later simulation (E60) at a 15° lean gives a +6.8° margin (transcript.md lines 75, 88).
+- Evaluator accepted at the first meeting. constraint_review: both given constraints (about 60 kg; one person) judged met, in prose with the deciding numbers. The feedback re-derives energy per riser, slope, slope force, brake torque, tube mass and safety factor. Because of the acceptance the reject → Manager rewrite → re-meeting chain did not fire in this run.
 
 ## Stage B (stage_b/attempt_00)
-- The council's sketches E14 and E39 were extra references (trace.md).
-- Round 0: S1 faithful, no regions; s1_pass. The critic's pixel_description describes the cluster as dark
-  star arms ending in solid wheels and counts five visible wheels.
-- SAM (round_00/sam.json) reported differences for all 8 mapped parts (several "not found"); the critic
-  listed each as a deviation and judged none to matter for the working principle (eval.json, sam_use.json
-  unnoticed = []).
-- Figure: panel C omitted (no measurement chain recorded). Fabrication steps 1–3 failed their light checks
-  (wrong handle type, missing parts) and are not shown; step 4 ships (rationale.md).
+- concept_sketch.png: a pencil drawing made from the council sketches sketch_55 and sketch_49. It shows the loop handle, brake lever with cable, twin spine, mid-spine fold hinge with lock, tri-star cluster with gear, a platform with caster wheels carrying a strapped parcel, and the stairs. It passed its check. The platform with casters comes from the council sketches; it is not an image-model invention.
+- round_00/render.png: photoreal truck on indoor stairs with the image model's callouts. A second, folded truck leans against the wall; this shows the fold but is not requested.
+- Critic: S1 faithful, S2 no flaw, no regions → s1_pass in round 0.
+- sam_overlay.png: SAM found 5 of 7 parts with masks (handle, brake lever, twin tubes ×2, platform ×2 — one of them is the folded truck — and strap ×2, where "strap" is the head-noun retry). The critical tri-star cluster ('wheel cluster' → 'cluster') and the hinge were not found.
+- Final callout check: the callouts "Brake Band Pawl", "Fold Hinge Lock" and "Harness Strap" were judged wrong. The callouts were removed by image edit (_render_without_callouts.png) and code labels drawn. The code-label check then removed "toe plate 450x350" (rationale.md, Figure notes).
 
-## What the images show (inspected by eye)
-- Panel A: photoreal hand truck on outdoor concrete stairs with a taped box; two side clusters with wheels
-  on star arms; code labels inside the frame; scale bar ~200 mm.
-- Panel B: crop of the cluster; three arms with wheels are readable; the worm housing is visible.
-- Panel D: one workshop step (step 4) with its caption.
-- Not checked by any judge: whether a hand crank is clearly visible in panel A (the critic says "a small
-  side crank with black knob protrudes").
-
-## Label check applied afterwards (scripts/relabel_figure.py, 2026-11-02)
-- This run predates saved schematic specs, so the labels were redrawn from the solution's part names.
-- The label check removed "self-locking worm drive plus pawl" as pointing at the wrong part (rationale.md).
-- Viewed panel A afterwards: the "L-frame spine twin tubes" leader ends near the strap, not clearly on a tube;
-  the relabelled image is not checked a second time.
+## Figure (final/figure.png)
+- Panel A: six code labels in side columns, leaders sideways, each ending on its part as viewed; ~200 mm scale bar.
+- Panel B: close crop of the tri-star cluster from the cleaned render.
+- Panel C: measurement chain (spring detent pin position → green-red lock indicator), from the solution.
+- Panel D: 4 workshop steps, all passed their checks. Captions are small at page size.

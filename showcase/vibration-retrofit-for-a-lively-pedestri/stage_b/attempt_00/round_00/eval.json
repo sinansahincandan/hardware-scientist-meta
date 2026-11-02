@@ -1,69 +1,123 @@
 {
-  "pixel_description": "Photorealistic oblique worm's-eye view from below-side of concrete footbridge deck with railing and pedestrian above. Top is stained concrete deck soffit. Below are two dark riveted longitudinal plate girders running fore-aft into depth on left and right with sky gap between. Spanning left-right between girders is a single light galvanized I cross-beam bolted at each end to vertical bracket assemblies with multiple bolts to girder webs. Hung centrally from cross-beam is a single rectangular square-tube cage support frame. Inside cage are four vertical steel coil springs at four corners plus one central vertical dark viscous cylinder with piston rod above it. Critical part mass: one single dark rust-brown rectangular block, wider than tall, centered below cage, its top face directly connected from above to bottom ends of the four springs and to bottom of central damper; clear air gap around sides for vertical motion. Below on left and right are two flat light perforated metal soffit screen panels hung horizontally by thin rods, with central rectangular gap exposing frame and mass. No text, numbers, arrows or callouts. No distinct small lock pin visible.",
-  "regions": [],
+  "pixel_description": "Photorealistic side view of footbridge with pedestrians on top. Rusty longitudinal girders form deck spanning between two concrete piers. Directly under midspan a silver bearer beam assembly is clamped to girder undersides via bolted brackets at left and right ends. Four inclined struts hang from beam in symmetric V: two inner helical coil springs and two outer cylindrical viscous dashpots. All four connect via pin lugs to top of critical part 500 kg TMD mass 1.85 Hz (mass): it is drawn as ONE single dark rusty rectangular steel block centered under bridge, with four top brackets, arranged with springs inside and dampers outside, connected above to frame and below via four thin vertical rods to a single silver trapezoidal removable cover plate floating below with air gap. Cover is roughly horizontal. Text callouts with leader lines surround: Bridge Deck top, Transverse Bearers top-right, Helical Springs left-mid, Clamp Bolts right-mid, Tuned Steel Mass left-mid, Viscous Dashpots bottom-right, Removable Cover bottom-left.",
+  "regions": [
+    {
+      "box": [
+        385.0,
+        25.0,
+        522.0,
+        130.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on pedestrian/railing above deck",
+      "expected": "Bridge Deck leader should end on deck steel plate/girder",
+      "source": "render"
+    },
+    {
+      "box": [
+        615.0,
+        78.0,
+        785.0,
+        190.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on existing rusty girder/deck edge, not on silver beam",
+      "expected": "Transverse Bearers leader should end on new silver bearer beam under deck",
+      "source": "render"
+    },
+    {
+      "box": [
+        220.0,
+        330.0,
+        350.0,
+        495.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends near left damper/beam joint, not on spring coil",
+      "expected": "Helical Springs leader should end on coil helix",
+      "source": "render"
+    },
+    {
+      "box": [
+        635.0,
+        415.0,
+        803.0,
+        510.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on cylindrical damper body mid-span",
+      "expected": "Clamp Bolts leader should end on top frame-to-girder bolted clamp brackets",
+      "source": "render"
+    },
+    {
+      "box": [
+        580.0,
+        615.0,
+        738.0,
+        735.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on side face of steel mass block",
+      "expected": "Viscous Dashpots leader should end on cylindrical dashpot unit above mass",
+      "source": "render"
+    }
+  ],
   "previous_regions": [],
-  "comparison_with_previous": "No previous evaluation; first assessment.",
+  "comparison_with_previous": "",
   "deviations": [
     {
-      "what": "girder",
-      "measured": "segmenter found 1",
-      "expected": "2 visible girders",
+      "what": "deck",
+      "measured": "in cropped perspective view deck visible length ~2x frame beam; frame does connect via top bolted brackets",
+      "expected": "deck ~20x frame length (40 m vs ~2 m) and clamped to frame",
       "matters": false,
-      "why": "Pixels show 2 dark riveted longitudinal girders running fore-aft left and right with sky gap between. Undercount is merging/occlusion. Load support from both girders present, working principle unchanged."
-    },
-    {
-      "what": "clamps",
-      "measured": "not found by segmenter",
-      "expected": "8 friction clamps as metal clamp",
-      "matters": false,
-      "why": "Pixels show bolted bracket assemblies at both ends of cross-beam to girder webs/flanges. 8 small individual clamps not resolvable as separate metal clamp labels but mechanical girder-to-crossbeam connection present. Count/appearance difference does not change hung load path."
-    },
-    {
-      "what": "crossbeam",
-      "measured": "not found by segmenter",
-      "expected": "1 transverse cross-beam",
-      "matters": false,
-      "why": "Pixels show 1 light galvanized I-beam spanning left-right between girders carrying central cage. Present and correctly oriented. Segmenter label miss, no real deviation."
+      "why": "Crop and perspective foreshorten 40 m deck; connection is via clamp brackets visible under girders, not a gap. No change to load path deck->frame."
     },
     {
       "what": "frame",
-      "measured": "segmenter found 2",
-      "expected": "1 support frame visible",
+      "measured": "1 prominent silver longitudinal bearer beam plus 2 end transverse clamp assemblies visible; all bolted to girders",
+      "expected": "2 transverse bearer beams visible, touching deck",
       "matters": false,
-      "why": "Pixels show 1 central rectangular square-tube cage hung from cross-beam. Extra count is cross-beam double-counted as frame. Single frame holds springs/damper/mass correctly."
+      "why": "View merges the two transverse bearers into end brackets of one beam assembly as in sketch; support function preserved."
     },
     {
-      "what": "springs",
-      "measured": "segmenter found 4",
-      "expected": "1 visible spring set",
+      "what": "bolts",
+      "measured": "rows of bolts visible on both end brackets under girders but too small for segmenter",
+      "expected": "preloaded bolts at clamp interface",
       "matters": false,
-      "why": "Pixels show 4 vertical coil springs at four corners of cage connecting frame top to mass top, all vertical. One tuned set realized as 4 coils still provides vertical stiffness tuned to 1.83 Hz and suspends mass vertically. Count increase does not change principle."
+      "why": "Segmenter miss due to small size; bolts are drawn, clamping function intact."
+    },
+    {
+      "what": "spring",
+      "measured": "2 inner coil helices tilted ~15-20 deg from vertical in symmetric V, frame to mass top; segmenter long-axis horizontal is error",
+      "expected": "2 coil springs, near-vertical tilted V, seated on frame carrying mass",
+      "matters": false,
+      "why": "Tilt matches sketch for lateral stability; vertical component provides 1.85 Hz tuning. Count 2 springs +2 dashpots =4 struts, not 4 springs."
     },
     {
       "what": "damper",
-      "measured": "segmenter found 2",
-      "expected": "1 viscous damper visible",
+      "measured": "2 outer cylindrical dashpots tilted symmetric, frame underside to mass top lugs, clearly visible",
+      "expected": "2 viscous dashpots outer, frame to mass",
       "matters": false,
-      "why": "Pixels show 1 central vertical dark cylinder plus piston rod between frame top and mass top. Split into cylinder and rod gives 2 detections. Single vertical damping path present, orientation correct."
+      "why": "Segmenter miss; dashpots present and connected as in sketch and hand sketches."
     },
     {
-      "what": "lockpin",
-      "measured": "not found by segmenter",
-      "expected": "1 lock-off pin 50-150 mm",
+      "what": "mass",
+      "measured": "single dark rusty rectangular block centered, 4 top lugs to springs/dashpots, 4 thin rods below to cover",
+      "expected": "single 500 kg steel block mass under midspan",
       "matters": false,
-      "why": "No distinct small pin resolved in pixels; pin is tiny and likely occluded inside frame or omitted in exposed view. Secondary inspection function only; primary mass-spring-damper energy dissipation intact."
+      "why": "Segmenter miss; critical mass is drawn as one element with correct connections. Size/perspective does not alter tuning principle."
     },
     {
-      "what": "screen",
-      "measured": "2 found at 0.72x frame",
-      "expected": "1 perforated screen about 1.8x frame",
+      "what": "cover",
+      "measured": "1 trapezoidal silver plate roughly horizontal below mass suspended by 4 rods; faceting split into 3 by segmenter; gap to frame is stroke gap by design",
+      "expected": "1 removable cover, roughly horizontal below mass with stroke gap, not attached to frame",
       "matters": false,
-      "why": "Pixels show 2 perforated soffit leaves left and right with central gap exposing mass for illustration, hung below by thin rods. Two leaves are one screen shown open/retracted as cutaway. Size ratio measures single open leaf in perspective vs full closed screen. Aesthetic cover only, does not affect TMD dynamics."
+      "why": "Matches sketch where cover hangs below mass; apart from frame is intended for motion/inspection, not a fault. Tilt 34 deg is facet shading error."
     }
   ],
   "s1_faithful": true,
-  "s1_differences": "All primary load-path parts present with correct connections, orientations and relative positions: 2 girders, 1 transverse cross-beam on end brackets, 1 central cage frame, 4 vertical coils representing 1 spring set, 1 central vertical damper, 1 block mass below, perforated screen shown as 2 open leaves. Differences are only 1 set rendered as 4 coils and 1 screen shown split open for visibility, plus unresolved tiny lock pin; none change vertical TMD working principle.",
+  "s1_differences": "Mechanism parts, connections and orientations match sketch: deck clamped to bearer frame, 2 inner springs +2 outer dashpots in tilted V from frame to single mass block, cover suspended below with gap. Relative sizes/orientations same allowing for perspective. Only differences are callout leader endpoints offset onto wrong features; no missing, extra, floating or misconnected structural part.",
   "s2_flaw": false,
-  "s2_feedback": "Central cage shows four vertical springs and central vertical damper with clear air gap around block mass, cross-beam bolted to both girders, screens hung below without touching mass; load path girders->cross-beam->frame->springs/damper->mass continuous with free vertical travel, no interference, impossible assembly or unreachable part visible.",
-  "notes": "Photorealistic render, no labels or diagram overlay. Screen shown open as illustrative cutaway to reveal TMD; lock pin too small to resolve. Segmenter over/undercounts verified against pixels as detection artefacts."
+  "s2_feedback": "Bearer beam stays bolted to both girders, four inclined spring/damper struts carry single mass clear between piers with cover below leaving stroke gap; no interference, no impossible assembly, load path pedestrians->deck->frame->springs/dampers->mass continuous. No design flaw exposed.",
+  "notes": "Segmenter undercounts due to perspective, small bolts, and tilt; all parts visible on pixels. Callout leaders are misplaced but mechanism geometry matches labeled sketch and both hand sketches."
 }

@@ -1,58 +1,67 @@
 # References
 
-1. matec-conferences.org — Assessment of human-induced vibrations of a cable-stayed footbridge (2018) https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_09001.pdf
-2. sbi.se — Analysis of Footbridge Comfort Vibrations (2024) https://www.sbi.se/wp-content/uploads/2024/05/Analysis-of-Footbridge-Comfort-Vibrations-A-Parametric-Study_Ruuth_Henrik-and-Thuresson_Niklas.pdf
-3. mentisia.org — Biodynamic Synchronized Coupled Model for Crowd-Footbridge Interaction | European Journal of Formal Sciences and Engineering https://mentisia.org/files/articles/ejfe_v9_n2_26/Toso.pdf
-4. link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link https://link.springer.com/article/10.1186/s43251-025-00188-y
-5. mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715
-6. mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) https://www.mdpi.com/2071-1050/17/23/10456
-7. WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders https://WWW.mdpi.com/2076-3417/10/13/4505
-8. mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra-Lightweight FRP Footbridge https://www.mdpi.com/2076-3417/11/14/6654
-9. mdpi.com — A Review of Evaluation Methods of Standards for Structural Vibration Serviceability under Crowd Walking https://www.mdpi.com/2075-5309/14/3/675
-10. core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges https://core.ac.uk/download/pdf/192164607.pdf
-11. mdpi.com — Identification of a Human-Structure Interaction Model on an Ultra https://www.mdpi.com/2076-3417/11/14/6654/html
-12. grampianfasteners.com — Type CF High Friction Clamp, Galvanised - Grampian Fasteners https://www.grampianfasteners.com/product/24037
-13. barbourproductsearch.info — Lindapter's M24 Type AF Steelwork Fixing https://www.barbourproductsearch.info/lindapter-s-m24-type-af-steelwork-fixing-news011686.html
-14. ancon.co.nz — Steelwork and Rail Fixings https://www.ancon.co.nz/products/lindapter-weld-free-steel-connectors/product-range/steelwork-and-rail-fixings
-15. accio.com — 4x4 Square Metal Post: Durable & Rust-Resistant https://www.accio.com/plp/4x4-square-metal-post
-16. nzta.govt.nz — SPECIFICATION FOR COATING STEELWORK ON HIGHWAY STRUCTURES https://www.nzta.govt.nz/assets/resources/specification-for-coating-steelwork-on-highway-structures/s9-specification-for-coating-steelwork-on-highway-structures-202010.pdf
-17. rosensteelga.com — Hot Dip Galvanized Material https://www.rosensteelga.com/steel-raw-materials/hot-dip-galvanized-steel.html
-18. mdpi.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge http://mdpi.com/2412-3811/8/6/100/htm
-19. fixingsmith.com — Lindapter Beam Clamp Type FL for Flange | Clearance Bargains https://fixingsmith.com/products/lindapter-beam-clamp-type-fl
-20. lindapter.com — Lindapter | Type F3 Beam Flange Clamp https://www.lindapter.com/us/product/type-f3-beam-flange-clamp
-21. lindapter.com — Lindapter | Type F3 Beam Flange Clamp https://www.lindapter.com/product/type-f3-beam-flange-clamp?lang=en
-22. matec-conferences.org — Vibration analysis of footbridges: an overview of the current practice (2018) https://www.matec-conferences.org/articles/matecconf/pdf/2018/70/matecconf_vetomacxiv2018_10002.pdf
-23. 1library.net — Guarda Footbridge in Portugal - Design of Footbridges https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq
-24. jstage.jst.go.jp — Microsoft Word - Wahyuni_ITS.doc (2009) https://www.jstage.jst.go.jp/article/eastpro/2009/0/2009_0_303/_pdf
-25. digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y
-26. mdpi-res.com — | Article |  | https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf
-27. backend.orbit.dtu.dk — TMD_nscm19.dvi https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf
-28. structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper https://structechnique.com/download/15/free/aO4RBDPc
-29. mediatum.ub.tum.de — Donaubruecken_Final.pdf https://mediatum.ub.tum.de/doc/1762603/document.pdf
-30. fstructures.com — Pedestrian Bridge Dynamics: Footfall-Induced Vibration and Damping http://fstructures.com/structures/pedestrian-bridge-vibration-dynamics/
-31. files.kgf.cz — Tuned Mass Dampers for Vibration Control of https://files.kgf.cz/6btngt25so12/Tuned%20Mass%20Dampers%20for%20Vibration%20Control%20of%20Footbridges%20from%20an%20Architectural%20Point%20of%20View_KGF%20hydraulika_Jiri%20Kucera_Bridges%20in%20Danube%20Bas.pdf?download
-32. api.repository.cam.ac.uk — Content https://api.repository.cam.ac.uk/server/api/core/bitstreams/3afdf7af-401b-44f6-8bdb-b40f25db454f/content
-33. ioa.org.uk — ICSV22 Template https://www.ioa.org.uk/system/files/publications/C MEINHARDT D NEWLAND J TALBOT D TAYLOR VIBRATION PERFORMANCE OF LONDONS MILLENNIUM FOOTBRIDGE.pdf
-34. fullscaledynamics.com — Vibration Simulations and Tuned Mass Damper Design for Castle Bridge, Bristol https://www.fullscaledynamics.com/project/vibration-simulations-and-tuned-mass-damper-design-for-castle-bridge-bristol/
-35. scribd.com — Design Criteria for Tuned Mass Dampers | PDF https://www.scribd.com/document/467340093/P-1
-36. dspace.vut.cz — Tuned mass dampers ‐ evaluation of the effect on two real footbridges https://dspace.vut.cz/server/api/core/bitstreams/fe91b2bb-e77d-41e7-847d-e32cfb3c7d2a/content
-37. pmarketresearch.com — Passive Tuned Mass Damper Market https://pmarketresearch.com/auto/passive-tuned-mass-damper-market/
-38. core.ac.uk — Mitigation of Traffic-Induced Bridge Vibrations through Passive https://core.ac.uk/download/pdf/4431304.pdf
-39. pmarketresearch.com — Tuned Mass Damper System Market https://pmarketresearch.com/auto/tuned-mass-damper-system-market/
-40. dataintelo.com — Active Tuned Mass Dampers Market Size, Share & Forecast Report 2025 to 2034 | Dataintelo https://dataintelo.com/report/active-tuned-mass-dampers-market
-41. dataintelo.com — Bridge Wind Vibration Tuned Mass Dampers Market Research Report 2033 https://dataintelo.com/report/bridge-wind-vibration-tuned-mass-dampers-market
-42. pmarketresearch.com — Worldwide Tuned Mass Damper (TMD) Market 2026 https://pmarketresearch.com/worldwide-tuned-mass-damper-tmd-market-research/
-43. market.us — Tuned Mass Damper (TMD) Market https://market.us/report/tuned-mass-damper-market/
-44. growthmarketreports.com — Bridge Wind Vibration Tuned Mass Dampers Market Research Report 2033 https://growthmarketreports.com/report/bridge-wind-vibration-tuned-mass-dampers-market
-45. scribd.com — Seismic Protection with Mass Dampers | PDF | Resonance | Mechanics https://www.scribd.com/document/312613078/Mass-Dampers
-46. patents.google.com — US6292967B1 - TMD-damped stay cable and method and TMD https://patents.google.com/patent/US6292967B1/en
-47. eureka.patsnap.com — Permanent-magnet tuned mass damping device for stayed cable vibration damping control - Eureka | Patsnap https://eureka.patsnap.com/patent-CN103758029A
-48. patents.google.com — CN112227180A - Stay cable combined vibration reduction device and method https://patents.google.com/patent/CN112227180A/en
-49. patents.google.com — CN113737633A - Low-frequency tuned mass damper https://patents.google.com/patent/CN113737633A/en
-50. patents.google.com — CN103774771A - Rigidity and dampness integrating horizontal omnidirectional tuned mass damper https://patents.google.com/patent/CN103774771A/en
-51. eureka.patsnap.com — Ultra-low frequency tuned liquid mass damper and design method of the same - Eureka | Patsnap http://eureka.patsnap.com/patent-US10634205B2
-52. eureka.patsnap.com — Adjustable damping energy storage type tuned mass damper and energy storage method thereof - Eureka | Patsnap https://eureka.patsnap.com/patent-CN102493572B
-53. eureka.patsnap.com — Ultra-low frequency tuned liquid mass damper and design method of the same - Eureka | Patsnap https://eureka.patsnap.com/patent-US20190249740A1
-54. patents.google.com — CN102888904B - Novel two-dimensional tuning mass damper https://patents.google.com/patent/CN102888904B/en
-55. patents.google.com — CN102561174A - Green shock and vibration absorbing bridge tower https://patents.google.com/patent/CN102561174A/en
-56. patents.google.com — CN108797311B - https://patents.google.com/patent/CN108797311B/en
+1. mdpi.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge http://mdpi.com/2412-3811/8/6/100/htm
+2. mdpi-res.com — | Article |  | https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf
+3. backend.orbit.dtu.dk — TMD_nscm19.dvi https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf
+4. digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y
+5. mdpi-res.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge https://mdpi-res.com/d_attachment/infrastructures/infrastructures-08-00100/article_deploy/infrastructures-08-00100.pdf?version=1685430798
+6. structurae.net — [PREVIEW] Model-based Tmd Design for the Footbridge "Inwilerstrasse" in Switzerland and its Experimental Verification https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download
+7. nature.com — Scientific Reports https://www.nature.com/articles/s41598-026-71374-9_reference.pdf
+8. patents.google.com — CN107119959A - Combined type mono-pendulum type tuned mass damper structural system and construction method 
+        - Google Patents https://patents.google.com/patent/CN107119959A/en
+9. jcaa.caa-aca.ca — VIBRATION https://jcaa.caa-aca.ca/index.php/jcaa/article/download/901/618/1008
+10. mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715
+11. trea.com — Inertial mass amplification type tuned mass damper https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea
+12. structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper https://structechnique.com/download/15/free/aO4RBDPc
+13. engmech.cz — 229 (2006) https://www.engmech.cz/improc/2006/Urushadze-229-PT.pdf
+14. fullscaledynamics.com — Vibration Simulations and Tuned Mass Damper Design for Castle Bridge, Bristol https://www.fullscaledynamics.com/project/vibration-simulations-and-tuned-mass-damper-design-for-castle-bridge-bristol/
+15. scribd.com — HSFG Bolt Design Capacities Analysis | PDF | Screw | Beam (Structure) https://www.scribd.com/document/423875628/Ultimate-Design-Capacity-of-High-Strength-Friction-Grip
+16. mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) https://www.mdpi.com/2071-1050/17/23/10456
+17. milsons.co.nz — High Strength Friction Grip (HSFG) bolts (2023) https://milsons.co.nz/wp-content/uploads/2023/10/High-Strength-Friction-Grip-HSFG-bolts-230307.pdf
+18. panchsheelfasteners.net — Electro Zinc Plated HSFG Bolts Manufacturer,Electro Zinc Plated HSFG Bolts Supplier,Exporter https://www.panchsheelfasteners.net/electro-zinc-plated-hsfg-bolts-1943210.html
+19. canadianrentalservice.com — Mobile Platforms To Assist In Bridge Inspections - Canadian Rental Service https://www.canadianrentalservice.com/mobile-platforms-to-assist-in-bridge-inspections-1249/
+20. patents.google.com — CN204125835U - A kind of bridge inspection vehicle https://patents.google.com/patent/CN204125835U/en
+21. mcclain1.com — What Makes A Snooper™ Truck Ideal For Bridge Inspections? | Underbridge and Aerial Access Equipment Rentals | McClain & Co., Inc. https://mcclain1.com/what-makes-a-snooper-truck-ideal-for-bridge-inspections/
+22. WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders https://WWW.mdpi.com/2076-3417/10/13/4505
+23. files.eccomasproceedia.org — COMPDYN 2015 (2015) https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609
+24. pure.ed.ac.uk — Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling (2017) https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf
+25. mdpi-res.com — Article Experimental and Numerical Study on Dynamics of https://mdpi-res.com/d_attachment/applsci/applsci-10-04505/article_deploy/applsci-10-04505.pdf
+26. mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge http://mdpi.com/2075-5309/12/6/732/htm
+27. 1library.net — 4.4.1 Dynamic load cases - Footbridge guide setra https://1library.net/article/dynamic-load-cases-footbridge-guide-setra.ye693erq
+28. spiral.imperial.ac.uk — Guidance for footbridge design: a new simplified method for the accurate evaluation of the structural response in serviceability conditions https://spiral.imperial.ac.uk/server/api/core/bitstreams/e6ce776b-5d6c-4267-b59a-349774ebfc32/content
+29. eurocodes.jrc.ec.europa.eu — Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc (2021) https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf
+30. fileserver-az.core.ac.uk — Microsoft Word - tv_22_2015_2_527-537 (2015) https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf
+31. 1library.net — Modeling spatially unrestricted pedestrian traffic on footbridges https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html
+32. mjwstructures.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS (2011) https://www.mjwstructures.com/userfiles/Pubblicazione/files/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf
+33. majowiecki.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS (2009) https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf
+34. researchgate.net — (PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge
+35. enviro2014.vgtu.lt — Microsoft Word - 733-2322-1-PB_NDdoi (2014) http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf
+36. onlinelibrary.wiley.com — Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700
+37. oa.upm.es — Human…structure interaction effects on lightweight footbridges with tuned mass dampers https://oa.upm.es/84638/1/10218266.pdf
+38. externalworksindex.co.uk — Warren truss footbridge over Tamworth railway https://www.externalworksindex.co.uk/entry/139497/CTS-Bridges/Warren-truss-footbridge-over-Tamworth-railway/
+39. deicon.com — | Pedestrian Bridge Vibration |  |  | https://deicon.com/wp-content/uploads/2022/04/Pedestrian-Bridge-vibration-control-using-tuned-mass-dampers.pdf
+40. bwk.kuleuven.be — Vibration mitigation by means of hysteretic tuned mass dampers https://bwk.kuleuven.be/apps/bwm/eurodyn2011/papers/MS09-531.pdf
+41. iopscience.iop.org — | IOP Conference Series: |  | https://iopscience.iop.org/article/10.1088/1755-1315/1205/1/012051/pdf
+42. mdpi-res.com — Implementation and Numerical Validation of a Semi-Active Tuned Mass Damper for Vibration Mitigation in Lightweight Pedestrian Structures https://mdpi-res.com/d_attachment/actuators/actuators-15-00389/article_deploy/actuators-15-00389.pdf?version=1783689180
+43. core.ac.uk — Estimating robust optimum parameters of tuned mass dampers using multiobjective genetic algorithms https://core.ac.uk/download/pdf/51398928.pdf
+44. idus.us.es — Estimating robust optimum parameters of tuned mass dampers using multiobjective genetic algorithms https://idus.us.es/bitstream/handle/11441/36164/CMMoST%202015_Jimenez-Alonso_Estimating.pdf?sequence=1&isAllowed=y
+45. fstructures.com — Pedestrian Bridge Dynamics: Footfall-Induced Vibration and Damping http://fstructures.com/structures/pedestrian-bridge-vibration-dynamics/
+46. scribd.com — Gerald Epp's Timber Bridge Design in Banff https://www.scribd.com/document/381300829/Banff-Suspension
+47. electronicsandbooks.com — Crowd-induced random vibration of footbridge and vibration control using multiple tuned mass dampers http://www.electronicsandbooks.com/edt/manual/Magazine/J/Journal of Sound and Vibration/2010_v329/19/4068-4092.pdf
+48. research.unipd.it — Microsoft Word - bt_ImprovementofdynamicbehaviouroftheVaresine-GaribaldifootbridgeMilanItalywithTMD.docx https://www.research.unipd.it/retrieve/e14fb26a-9712-3de1-e053-1705fe0ac030/morb.pdf
+49. 608698.6bgr9ubv.asia — Characteristic Vertical Response of a Footbridge Due to Crowd Loading https://608698.6bgr9ubv.asia/bitstream/handle/20.500.12065/3213/Characteristic%20Vertical%20Response%20of%20a%20Footbridge%20Due%20to%20Crowd%20Loading.pdf?sequence=1&isAllowed=y
+50. structurae.net — Dynamic analysis of the Bercy-Tolbiac footbridge | Structurae https://structurae.net/en/literature/conference-paper/dynamic-analysis-of-the-bercy-tolbiac-footbridge
+51. researchgate.net — (PDF) Characteristic Vertical Response of a Footbridge Due to Crowd Loading https://www.researchgate.net/publication/238523383_Characteristic_Vertical_Response_of_a_Footbridge_Due_to_Crowd_Loading
+52. core.ac.uk — Proposal for vibration testing of Mezzanine Bridge, Changi Airport Line https://core.ac.uk/download/pdf/43096651.pdf
+53. youtube.com — How Walking Made a Bridge Sway — The Millennium Bridge Physics https://www.youtube.com/watch?v=_XIA65v_Pd8
+54. patents.google.com — CN215714562U - Pendulum type multidirectional multiple-tuning mass damper https://patents.google.com/patent/CN215714562U/en
+55. patents.google.com — CN112227180A - Stay cable combined vibration reduction device and method https://patents.google.com/patent/CN112227180A/en
+56. patents.google.com — CN109518826A - A kind of hydroenergy storage station mill construction vibration control apparatus and control method https://patents.google.com/patent/CN109518826A/en
+57. eureka.patsnap.com — Rotatable MTMD (multiple tuned mass dampers) system for assisting arched steel bridge tower to control vibration - Eureka | Patsnap https://eureka.patsnap.com/patent-CN103410091A
+58. patents.google.com — CN211472127U - Damping device for building bridge https://patents.google.com/patent/CN211472127U/en
+59. patentsencyclopedia.com — MULTI-RESPONSE VIBRATION DAMPER ASSEMBLY - Patent application https://www.patentsencyclopedia.com/app/20130061466
+60. eureka.patsnap.com — Multiple tuned mass damper and suspension line damping method - Eureka | Patsnap https://eureka.patsnap.com/patent-CN109869438A
+61. eureka.patsnap.com — Piezoelectric energy-harvesting tuned mass damper - Eureka | Patsnap https://eureka.patsnap.com/patent-CN103276664A
+62. eureka.patsnap.com — A permanent magnet tuned mass damping device for bridge expansion joint disease control - Eureka | Patsnap https://eureka.patsnap.com/patent-CN107354867B
+63. patents.google.com — CN103774771A - Rigidity and dampness integrating horizontal omnidirectional tuned mass damper https://patents.google.com/patent/CN103774771A/en
+64. patents.google.com — US6292967B1 - TMD-damped stay cable and method and TMD https://patents.google.com/patent/US6292967B1/en

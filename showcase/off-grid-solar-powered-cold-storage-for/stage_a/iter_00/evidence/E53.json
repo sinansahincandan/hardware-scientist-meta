@@ -1,24 +1,14 @@
 {
   "id": "E53",
-  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
-  "tool": "web_search",
-  "purpose": "search: food grade plastic crate ventilated produce washable food safety",
-  "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "calc",
+  "purpose": "pulldown hours for 25 kWh at 0.5 kW net",
+  "code_or_query": "(25/0.5)",
   "inputs": {},
-  "output_summary": "m.indiamart.com — Super Market Crate — https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
-  "output_full": "m.indiamart.com — Super Market Crate — https://m.indiamart.com/proddetail/super-market-crate-22170947948.html\n(the search returned no passage text)",
+  "output_summary": "50",
+  "output_full": "50",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "m.indiamart.com",
-      "title": "Super Market Crate",
-      "year": "",
-      "url": "https://m.indiamart.com/proddetail/super-market-crate-22170947948.html",
-      "query": "food grade plastic crate ventilated produce washable food safety",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

@@ -1,14 +1,14 @@
 {
   "id": "E60",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-  "tool": "calc",
-  "purpose": "twin-tube modulus margin vs SF2 requirement",
-  "code_or_query": "2*1.44e3/2.45e3",
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+  "tool": "simulate",
+  "purpose": "tip margin at 15 deg lean",
+  "code_or_query": "import math\ntip=21.8\nlean=15.0\nmargin=tip-lean\nprint(f\"tip {tip} lean {lean} margin {margin}\")",
   "inputs": {},
-  "output_summary": "1.18",
-  "output_full": "1.18",
+  "output_summary": "tip 21.8 lean 15.0 margin 6.8",
+  "output_full": "tip 21.8 lean 15.0 margin 6.800000000000001",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 3
 }

@@ -1,24 +1,14 @@
 {
   "id": "E42",
-  "author": "Dario — Courier Operations and Serviceability Lead",
-  "tool": "web_search",
-  "purpose": "search: solid puncture proof rubber wheels hand truck load capacity",
-  "code_or_query": "solid puncture proof rubber wheels hand truck load capacity",
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+  "tool": "sketch",
+  "purpose": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+  "code_or_query": "import matplotlib.pyplot as plt\nfig,ax=plt.subplots(1,2,figsize=(8,3))\nax[0].plot([0,0.6,1.2],[0,0.6,1.2],lw=4,color='steelblue');ax[0].plot(0.6,0.6,'ro',ms=8);ax[0].text(0.6,0.65,'lock hinge',ha='center',fontsize=8);ax[0].plot([0,0.4],[0,0],'k',lw=6);ax[0].set_title('unfolded 1200mm spine');ax[0].set_aspect('equal');ax[0].axis('off')\nax[1].plot([0,1.2],[0.1,0.1],lw=6,color='steelblue');ax[1].plot([0,1.2],[0.0,0.0],lw=4,color='gray');ax[1].text(0.6,0.2,'folded ~120mm thick',ha='center',fontsize=8);ax[1].set_title('folded flat');ax[1].set_aspect('equal');ax[1].axis('off')\nplt.tight_layout();plt.savefig('sketch.png',dpi=150)",
   "inputs": {},
-  "output_summary": "desertcart.es — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain — https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-  "output_full": "desertcart.es — Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain — https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "desertcart.es",
-      "title": "Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain",
-      "year": "",
-      "url": "https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-      "query": "solid puncture proof rubber wheels hand truck load capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+  "output_full": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+  "sketch_path": "evidence/sketch_42.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

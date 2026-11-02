@@ -1,20 +1,20 @@
 {
   "id": "E9",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
-  "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
   "inputs": {},
-  "output_summary": "leadingedgepower.com — Victron Blue Solar 60A MPPT Charge Controller — https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html",
-  "output_full": "leadingedgepower.com — Victron Blue Solar 60A MPPT Charge Controller — https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html\n(the search returned no passage text)",
+  "output_summary": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+  "output_full": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "leadingedgepower.com",
-      "title": "Victron Blue Solar 60A MPPT Charge Controller",
+      "authors_or_org": "thesolarstore.com",
+      "title": "EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery",
       "year": "",
-      "url": "https://www.leadingedgepower.com/victron-bluesolar-mppt-charge-1261370.html",
-      "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "url": "https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
+      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
       "unresolved": false,
       "passage": ""
     }

@@ -1,5 +1,0 @@
-{
-  "cycle": 2,
-  "member": "Tomas \u2014 Human Factors and Safety Engineer",
-  "message": "Mara, direct pull on the tri-star wheel cluster (C1) is just over what a courier can repeat all day. The handle pull from cluster torque and 1.2 m lever (E30) is 153 N against the sustained pull under 150 N per operator (C4), like holding a 15.6 kg bag every step, which is human scale but heavy for repeats.\n\nMara, a small reduction fixes it, keeping the 100 J step energy (E12) as one crate lift per step with locked rests. The reduction ratio to bring handle pull below repeatable target (E47) is 1.70, so a worm ratio plus crank to give about 90.0 N at the hands, like holding a 9 kg bag, which is repeatable two-hand work.\n\nLena and Mara, slope holding cannot depend on grip, especially going down. The dead-man brake lever on closed-loop handle (C10) backs up the self-locking worm drive plus pawl (C2), meaning the brake locks when the lever is released, with the operator uphill and the brake locked each step. Not ready, because worm ratio and brake linkage sizing with Mara and Lena remain open."
-}

@@ -1,27 +1,24 @@
 {
   "id": "E12",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "calc",
-  "purpose": "energy to lift 60 kg one riser in joules corrected",
-  "code_or_query": "(Q_(60,'kg')*Q_(9.81,'m/s**2')*Q_(0.17,'m')).to('J')",
-  "inputs": {
-    "arg0": {
-      "value": "60",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "0.17",
-      "unit": "m"
-    }
-  },
-  "output_summary": "100 J",
-  "output_full": "100 J",
+  "author": "Jonas – Ergonomics and Courier Safety Specialist",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
+  "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
+  "inputs": {},
+  "output_summary": "mktg.idec.com — AWD ISO 11228 2.pdf — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
+  "output_full": "mktg.idec.com — AWD ISO 11228 2.pdf — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mktg.idec.com",
+      "title": "AWD ISO 11228 2.pdf",
+      "year": "",
+      "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
+      "query": "ISO 11228-2 push pull force limits ergonomics handles",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

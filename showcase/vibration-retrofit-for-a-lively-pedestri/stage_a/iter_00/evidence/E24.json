@@ -1,24 +1,14 @@
 {
   "id": "E24",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "web_search",
-  "purpose": "search: beam clamp friction connection retrofit steelwork Lindapter capacity",
-  "code_or_query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "TMD stiffness and viscous coefficient",
+  "code_or_query": "((2*3.14159*1.854)**2*500, 2*500*2*3.14159*1.854*0.0933)",
   "inputs": {},
-  "output_summary": "barbourproductsearch.info — Lindapter's M24 Type AF Steelwork Fixing — https://www.barbourproductsearch.info/lindapter-s-m24-type-af-steelwork-fixing-news011686.html",
-  "output_full": "barbourproductsearch.info — Lindapter's M24 Type AF Steelwork Fixing — https://www.barbourproductsearch.info/lindapter-s-m24-type-af-steelwork-fixing-news011686.html\n(the search returned no passage text)",
+  "output_summary": "(6.78e+04, 1.09e+03)",
+  "output_full": "(67849.78362240356, 1086.8531666759998)",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "barbourproductsearch.info",
-      "title": "Lindapter's M24 Type AF Steelwork Fixing",
-      "year": "",
-      "url": "https://www.barbourproductsearch.info/lindapter-s-m24-type-af-steelwork-fixing-news011686.html",
-      "query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

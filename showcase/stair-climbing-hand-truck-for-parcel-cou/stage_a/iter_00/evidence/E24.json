@@ -1,20 +1,20 @@
 {
   "id": "E24",
-  "author": "Tomas — Human Factors and Safety Engineer",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
   "tool": "web_search",
-  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+  "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
   "inputs": {},
-  "output_summary": "oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks — 1995 — http://www.oandplibrary.org/poi/1995_03_188.asp",
-  "output_full": "oandplibrary.org — Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks — 1995 — http://www.oandplibrary.org/poi/1995_03_188.asp\n(the search returned no passage text)",
+  "output_summary": "coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals — https://www.coremarkmetals.com/6061-t6-aluminum-round-tube",
+  "output_full": "coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals — https://www.coremarkmetals.com/6061-t6-aluminum-round-tube\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "oandplibrary.org",
-      "title": "Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks",
-      "year": "1995",
-      "url": "http://www.oandplibrary.org/poi/1995_03_188.asp",
-      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "authors_or_org": "coremarkmetals.com",
+      "title": "6061 T6 Aluminum Round Tube | Coremark Metals",
+      "year": "",
+      "url": "https://www.coremarkmetals.com/6061-t6-aluminum-round-tube",
+      "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
       "unresolved": false,
       "passage": ""
     }

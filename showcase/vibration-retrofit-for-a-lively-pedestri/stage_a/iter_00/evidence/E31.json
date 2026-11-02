@@ -1,14 +1,24 @@
 {
   "id": "E31",
-  "author": "Serviceability and Crowd Loading Specialist",
-  "tool": "calc",
-  "purpose": "required response reduction factor bare to target",
-  "code_or_query": "1.75/0.7",
+  "author": "Priya - Retrofit Constructability Engineer",
+  "tool": "web_search",
+  "purpose": "search: steel bolted beam clamp retrofit HSFG bolts datasheet",
+  "code_or_query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
   "inputs": {},
-  "output_summary": "2.5",
-  "output_full": "2.5",
+  "output_summary": "panchsheelfasteners.net — Electro Zinc Plated HSFG Bolts Manufacturer,Electro Zinc Plated HSFG Bolts Supplier,Exporter — https://www.panchsheelfasteners.net/electro-zinc-plated-hsfg-bolts-1943210.html",
+  "output_full": "panchsheelfasteners.net — Electro Zinc Plated HSFG Bolts Manufacturer,Electro Zinc Plated HSFG Bolts Supplier,Exporter — https://www.panchsheelfasteners.net/electro-zinc-plated-hsfg-bolts-1943210.html\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "panchsheelfasteners.net",
+      "title": "Electro Zinc Plated HSFG Bolts Manufacturer,Electro Zinc Plated HSFG Bolts Supplier,Exporter",
+      "year": "",
+      "url": "https://www.panchsheelfasteners.net/electro-zinc-plated-hsfg-bolts-1943210.html",
+      "query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

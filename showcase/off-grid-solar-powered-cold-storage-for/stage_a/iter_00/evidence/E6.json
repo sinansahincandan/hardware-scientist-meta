@@ -1,20 +1,20 @@
 {
   "id": "E6",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: 550W monocrystalline solar panel datasheet efficiency dimensions",
-  "code_or_query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+  "purpose": "search: 400W monocrystalline solar panel datasheet dimensions efficiency",
+  "code_or_query": "400W monocrystalline solar panel datasheet dimensions efficiency",
   "inputs": {},
-  "output_summary": "tsolar.top — Znshine 550W Solar Panel — https://tsolar.top/products/znshine-550w-solar-panel",
-  "output_full": "tsolar.top — Znshine 550W Solar Panel — https://tsolar.top/products/znshine-550w-solar-panel\n(the search returned no passage text)",
+  "output_summary": "jslpowerin.com — 400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET — 2026 — https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf",
+  "output_full": "jslpowerin.com — 400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET — 2026 — https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "tsolar.top",
-      "title": "Znshine 550W Solar Panel",
-      "year": "",
-      "url": "https://tsolar.top/products/znshine-550w-solar-panel",
-      "query": "550W monocrystalline solar panel datasheet efficiency dimensions",
+      "authors_or_org": "jslpowerin.com",
+      "title": "400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET",
+      "year": "2026",
+      "url": "https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf",
+      "query": "400W monocrystalline solar panel datasheet dimensions efficiency",
       "unresolved": false,
       "passage": ""
     }

@@ -1,12 +1,25 @@
 {
   "id": "E60",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
   "tool": "calc",
-  "purpose": "peak electrical power from pulldown plus transmission at COP2 plus fan",
-  "code_or_query": "((1040+185)/2+50)",
-  "inputs": {},
-  "output_summary": "662",
-  "output_full": "662",
+  "purpose": "peak electric kW for 200kg batch over 8h plus steady load COP2.5",
+  "code_or_query": "((5*Q_('kWh')/8/Q_('h'))+376*Q_('W')).to('kW')/2.5",
+  "inputs": {
+    "arg0": {
+      "value": "'kWh'",
+      "unit": ""
+    },
+    "arg1": {
+      "value": "'h'",
+      "unit": ""
+    },
+    "arg2": {
+      "value": "'W'",
+      "unit": ""
+    }
+  },
+  "output_summary": "0.4 kW",
+  "output_full": "0.4 kW",
   "sketch_path": null,
   "references": [],
   "status": "ok",

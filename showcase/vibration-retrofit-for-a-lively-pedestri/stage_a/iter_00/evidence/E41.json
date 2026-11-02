@@ -1,14 +1,24 @@
 {
   "id": "E41",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "calc",
-  "purpose": "slip safety factor 8xM16",
-  "code_or_query": "(8*3.4)/9.81",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "web_search",
+  "purpose": "search: Setra footbridge crowd load density synchronized pedestrians equivalent number",
+  "code_or_query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
   "inputs": {},
-  "output_summary": "2.77",
-  "output_full": "2.77",
+  "output_summary": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — http://mdpi.com/2075-5309/12/6/732/htm",
+  "output_full": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — http://mdpi.com/2075-5309/12/6/732/htm\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mdpi.com",
+      "title": "Vibration Serviceability Assessment of a Historic Suspension Footbridge",
+      "year": "",
+      "url": "http://mdpi.com/2075-5309/12/6/732/htm",
+      "query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

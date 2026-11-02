@@ -1,33 +1,39 @@
 {
   "round": 0,
   "sam_differences": {
-    "girder": [
-      "expected 2 visible, found 1"
-    ],
-    "clamps": [
-      "not found by the segmenter as 'metal clamp'"
-    ],
-    "crossbeam": [
-      "not found by the segmenter as 'cross beam'"
+    "deck": [
+      "size against frame: expected about 20 times, measured 2 times",
+      "expected to touch frame, but they are apart in the picture"
     ],
     "frame": [
-      "expected 1 visible, found 2"
+      "expected 2 visible, found 1",
+      "expected to touch deck, but they are apart in the picture",
+      "expected to touch spring, but they are apart in the picture",
+      "expected to touch cover, but they are apart in the picture"
     ],
-    "springs": [
-      "expected 1 visible, found 4"
+    "bolts": [
+      "not found by the segmenter as 'bolt'"
+    ],
+    "spring": [
+      "expected 4 visible, found 2",
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch frame, but they are apart in the picture"
     ],
     "damper": [
-      "expected 1 visible, found 2"
+      "not found by the segmenter as 'damper'"
     ],
-    "lockpin": [
-      "not found by the segmenter as 'metal pin'"
+    "mass": [
+      "not found by the segmenter as 'steel block'"
     ],
-    "screen": [
-      "expected 1 visible, found 2",
-      "size against frame: expected about 1.8 times, measured 0.72 times"
+    "cover": [
+      "expected 1 visible, found 3",
+      "expected a horizontal long axis, measured tilted about 34 degrees",
+      "expected to touch frame, but they are apart in the picture"
     ]
   },
-  "critique_part_ids": [],
+  "critique_part_ids": [
+    "callout"
+  ],
   "sam_parts_used_by_critique": [],
   "unnoticed_sam_deviations": [],
   "kept": true,

@@ -1,0 +1,14 @@
+{
+  "id": "E47",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "simulate",
+  "purpose": "Resonant response with and without TMD to estimate comfort reduction",
+  "code_or_query": "import numpy as np\nM=20000.0\nf1=1.9\nw1=2*np.pi*f1\nk1=M*w1**2\nz1=0.004\nc1=2*z1*np.sqrt(k1*M)\nm=500.0\nft=1.85\nwt=2*np.pi*ft\nk2=m*wt**2\nzt=0.0933\nc2=2*zt*np.sqrt(k2*m)\nF0=280.0\nw=w1\n# without TMD steady accel amplitude: F/(2*z*M)\na_bare=F0/(2*z1*M)\n# with TMD: solve 2DOF frequency response\n# equations: (-M w^2 +1j w c1 +k1 +1j w c2 +k2) X1 - (k2+1j w c2) X2 = F ; -(k2+1j w c2)X1 + (-m w^2 +k2+1j w c2)X2=0\nA11=-M*w**2+1j*w*(c1+c2)+(k1+k2)\nA12=-(k2+1j*w*c2)\nA21=A12\nA22=-m*w**2+k2+1j*w*c2\ndet=A11*A22-A12*A21\nX1=F0*A22/det\na_tmd=abs(X1)*w**2\nprint(f\"k1={k1:.3g} c1={c1:.3g} k2={k2:.3g} c2={c2:.3g}\")\nprint(f\"a_bare={a_bare:.3f} a_tmd={abs(a_tmd):.3f} ratio={a_bare/abs(a_tmd):.2f}\")\n# stroke relative\nX2=(k2+1j*w*c2)*X1/A22 if A22!=0 else 0  # actually from second eq: X2=(k2+iwc2)/A22 *X1\nX2=(k2+1j*w*c2)*X1/A22\nprint(f\"X1={abs(X1)*1000:.1f}mm X2rel={abs(X2-X1)*1000:.1f}mm\")\n",
+  "inputs": {},
+  "output_summary": "k1=2.85e+06 c1=1.91e+03 k2=6.76e+04 c2=1.08e+03; a_bare=1.75 a_tmd=0.103 ratio=17; X1=0.7mm X2rel=3.8mm",
+  "output_full": "k1=2.85e+06 c1=1.91e+03 k2=6.76e+04 c2=1.08e+03\na_bare=1.750 a_tmd=0.103 ratio=16.96\nX1=0.7mm X2rel=3.8mm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

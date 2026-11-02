@@ -1,24 +1,14 @@
 {
   "id": "E23",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "web_search",
-  "purpose": "search: beam clamp friction connection retrofit steelwork Lindapter capacity",
-  "code_or_query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "Den Hartog tuning frequency and damping",
+  "code_or_query": "(1.9/1.025, (3*0.025/(8*1.025**3))**0.5)",
   "inputs": {},
-  "output_summary": "grampianfasteners.com — Type CF High Friction Clamp, Galvanised - Grampian Fasteners — https://www.grampianfasteners.com/product/24037",
-  "output_full": "grampianfasteners.com — Type CF High Friction Clamp, Galvanised - Grampian Fasteners — https://www.grampianfasteners.com/product/24037\n(the search returned no passage text)",
+  "output_summary": "(1.85, 0.0933)",
+  "output_full": "(1.853658536585366, 0.09330390922878123)",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "grampianfasteners.com",
-      "title": "Type CF High Friction Clamp, Galvanised - Grampian Fasteners",
-      "year": "",
-      "url": "https://www.grampianfasteners.com/product/24037",
-      "query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

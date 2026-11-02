@@ -1,20 +1,20 @@
 {
   "id": "E16",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: HIVOSS footbridge comfort classes vertical acceleration limits",
-  "code_or_query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+  "purpose": "search: Setra HiVoSS footbridge damping requirement TMD design",
+  "code_or_query": "Setra HiVoSS footbridge damping requirement TMD design",
   "inputs": {},
-  "output_summary": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
-  "output_full": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715\n(the search returned no passage text)",
+  "output_summary": "structurae.net — [PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification — https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download",
+  "output_full": "structurae.net — [PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification — https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi-res.com",
-      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
+      "authors_or_org": "structurae.net",
+      "title": "[PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification",
       "year": "",
-      "url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
-      "query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+      "url": "https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download",
+      "query": "Setra HiVoSS footbridge damping requirement TMD design",
       "unresolved": false,
       "passage": ""
     }

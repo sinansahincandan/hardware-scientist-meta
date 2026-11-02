@@ -1,20 +1,20 @@
 {
   "id": "E6",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical mode 0.4 percent",
-  "code_or_query": "steel footbridge damping ratio vertical mode 0.4 percent",
+  "purpose": "search: pedestrian walking pacing frequency vertical footbridge resonance",
+  "code_or_query": "pedestrian walking pacing frequency vertical footbridge resonance",
   "inputs": {},
-  "output_summary": "jstage.jst.go.jp — Microsoft Word - Wahyuni_ITS.doc — 2009 — https://www.jstage.jst.go.jp/article/eastpro/2009/0/2009_0_303/_pdf",
-  "output_full": "jstage.jst.go.jp — Microsoft Word - Wahyuni_ITS.doc — 2009 — https://www.jstage.jst.go.jp/article/eastpro/2009/0/2009_0_303/_pdf\n(the search returned no passage text)",
+  "output_summary": "majowiecki.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2009 — https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
+  "output_full": "majowiecki.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2009 — https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "jstage.jst.go.jp",
-      "title": "Microsoft Word - Wahyuni_ITS.doc",
+      "authors_or_org": "majowiecki.com",
+      "title": "INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS",
       "year": "2009",
-      "url": "https://www.jstage.jst.go.jp/article/eastpro/2009/0/2009_0_303/_pdf",
-      "query": "steel footbridge damping ratio vertical mode 0.4 percent",
+      "url": "https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
+      "query": "pedestrian walking pacing frequency vertical footbridge resonance",
       "unresolved": false,
       "passage": ""
     }

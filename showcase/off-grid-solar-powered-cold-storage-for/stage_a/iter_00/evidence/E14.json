@@ -1,20 +1,20 @@
 {
   "id": "E14",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
   "tool": "web_search",
-  "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
-  "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+  "purpose": "search: polyurethane sandwich panel thermal conductivity cold room insulation thickness",
+  "code_or_query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
   "inputs": {},
-  "output_summary": "link.springer.com — Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link — http://link.springer.com/article/10.1186/s40807-025-00162-2",
-  "output_full": "link.springer.com — Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link — http://link.springer.com/article/10.1186/s40807-025-00162-2\n(the search returned no passage text)",
+  "output_summary": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+  "output_full": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "link.springer.com",
-      "title": "Assessment of solar resource potential and estimation of direct and diffuse solar irradiation from sunshine hours data for Eastern Zone of Tigray, Northern Ethiopia | Sustainable Energy Research | Springer Nature Link",
+      "authors_or_org": "shsandwichpanel.com",
+      "title": "Cold Room PU Sandwich Panel - Shandong Shanghe",
       "year": "",
-      "url": "http://link.springer.com/article/10.1186/s40807-025-00162-2",
-      "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
+      "url": "https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
+      "query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
       "unresolved": false,
       "passage": ""
     }

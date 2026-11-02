@@ -1,20 +1,20 @@
 {
   "id": "E10",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "purpose": "search: MPPT charge controller 48V 60A datasheet solar off-grid",
+  "code_or_query": "MPPT charge controller 48V 60A datasheet solar off-grid",
   "inputs": {},
-  "output_summary": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
-  "output_full": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery\n(the search returned no passage text)",
+  "output_summary": "au.renogy.com — Rover Lite 12V/ 24V/ 36V/ 48V 60A MPPT Solar Charge Controller — https://au.renogy.com/products/rover-lite-12v-24v-36v-48v-60a-mppt-solar-charge-controller",
+  "output_full": "au.renogy.com — Rover Lite 12V/ 24V/ 36V/ 48V 60A MPPT Solar Charge Controller — https://au.renogy.com/products/rover-lite-12v-24v-36v-48v-60a-mppt-solar-charge-controller\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "thesolarstore.com",
-      "title": "EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery",
+      "authors_or_org": "au.renogy.com",
+      "title": "Rover Lite 12V/ 24V/ 36V/ 48V 60A MPPT Solar Charge Controller",
       "year": "",
-      "url": "https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
-      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "url": "https://au.renogy.com/products/rover-lite-12v-24v-36v-48v-60a-mppt-solar-charge-controller",
+      "query": "MPPT charge controller 48V 60A datasheet solar off-grid",
       "unresolved": false,
       "passage": ""
     }

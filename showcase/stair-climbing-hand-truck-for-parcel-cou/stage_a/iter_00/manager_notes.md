@@ -1,46 +1,52 @@
 
 ## Cycle 1
-Mara and Tomas, stair effort exceeds repeatable courier effort with no reduction sized. The 153 N handle estimate (E30) from the 184 N·m cluster torque (E13) sits above the 150 N sustained limit (C4), like holding a 15.6 kg bag each step, heavy for repeats but human scale. Mara compute worm ratio and crank length to bring pull below limit, and Tomas confirm allowed repeat value.
+Maya, no proposal is on the board yet so please integrate your favoured concepts and write the proposal in your next turn. Plain words, the proposal must join the climbing, braking, retention and folding ideas into one buildable device. The folded slab is 730 by 490 by 150 millimetres from the van parcel interface (C7) and the tare budget is 7.38 kilograms from the tare weight budget frame plus wheels plus locks (E40), about carry-on weight against a 70 kilogram courier, so plausible.
 
-Lena and Dario, light frame claim lacks weight proof and strength numbers mismatch. The 294 N·m service moment (E31) rising to the 441 N·m factored moment (E38) is not twice service despite Safety Factor claim of 2, while the 15 kg device limit has no tube-by-tube mass breakdown. Lena compute spine tube size, mass breakdown and hinge pin size for the 184 N·m torque and 153 N pull.
+Maya and Priya, the vote cannot proceed because the safety proof is still missing under the blocking objection (O1). Plain words, nobody has shown the brake can hold the full load on a stair edge or the fold lock can carry it. The load is 60 kilograms with lift energy 116 joules per step from the energy per step lifting 60 kilogram one riser (E19), a short heave not daily household energy, but holding torque in Newton metres and pin shear in megapascals are still uncomputed, so Maya please compute brake torque and Priya please compute hinge-pin strength.
 
-Mara write proposal with update_proposal next turn integrating your cluster and hold with Tomas handle, Lena frame and fold, and Dario containment and service. The 100 J step energy (E12) and the 88.3 J van lift (E46) are tiny against household use and flat size fits van bay, so no result looks off scale. My position is not ready because effort reduction and frame weight remain unquantified.
+Priya, one key result falls outside everyday scale and needs correction before it is reused. Plain words, the metal density number is near air not metal. The value is 2.76 kilograms per cubic metre from the estimate aluminium frame mass (E29), while solid aluminium is about 2700 kilograms per cubic metre, about one thousand times larger, so please correct the units and recheck the mass per meter 30 by 2 millimetre aluminium tube (E39).
 
-Note on Mara: Mara quantified energy and torque but left reduction unsized.
-Note on Tomas: Tomas flagged overrun against human limits.
-Note on Lena: Lena carried moment and fold but left mass and pins open.
-Note on Dario: Dario tied stowage to field use but depends on effort fix.
+Note on Maya: effort and tip margin stated without torque calculation.
+Note on Jonas: limits and fail-safe stated without brake torque proof.
+Note on Priya: fold and tare plausible but density value off scale.
+Note on Leo: van fit and toe size plausible against door and parcel scales.
+Not ready, because blocking safety objection stands and no proposal exists.
 
 ## Cycle 2
-Mara and Tomas, climbing effort fits two-hand work. Worm crank pull calculation (E49) is 98.1 N, below 150 N limit in sustained pull assumption (C4), like carrying 10 kg with two hands, human scale, and 100 J step energy in step energy calculation (E12) is tiny versus megajoules daily household use.
+Maya, the tip margin is now negative and blocks a proposal until fixed. Plain words, the device as simulated would tip backward on the stairs. The lean is 25.0 degrees beyond the tip angle of 21.8 degrees, margin minus 3.2 degrees, from the stair heave simulation (E58), so please reduce operating lean to about 15 degrees or lower the load height in your proposal.
 
-Lena and Dario, frame strength claim fails and weight lacks breakdown. Service moment 294 N·m in frame bending moment estimate (E31) rising to factored moment 441 N·m in bending moment spine under factored load (E38) is factor 1.50, not 2.00 for Safety Factor (SF), where Safety Factor means margin on yield, while 11.3 kg total has no tube-by-tube calculation, though folded size fits van bay and person scale.
+Maya and Priya, the brake and hinge strengths now look plausible against everyday scales. Plain words, the brake needs a locked band not hand grip, and the pin is lightly stressed. Brake torque is 98.9 Newton metres, meaning twisting force times arm, designed to 198 Newton metres for safety factor 2 from the stair heave simulation (E58), like a 10 kilogram bucket on a 1 metre wrench, and pin stress is 36.6 megapascals, meaning force per area, from the pin shear calc (E54) well below 240 megapascals yield, while heave energy 141 joules per step is a crate lift not household daily use of millions of joules.
 
-Tomas and Mara, descent holding lacks brake sizing. 184 N·m cluster torque in tri-star cluster torque calculation (E13) is claimed held without grip, but dead-man lever force and linkage for that torque have no calculation, like parking heavy adult on slope without proof. My position is not ready because frame margin, mass proof and brake sizing block vote.
+Maya, no proposal is on the board so please write it in your next turn. Plain words, join climbing, braking, retention and folding into one buildable device. Integrate the tri-star wheel cluster (C1), descent control (C3), retention (C4) and mid-spine fold (C5) within the 250 Newton handle limit from the one-person handle effort limit (C2) with lever effort 226 Newtons from the stair heave simulation (E58), and folded slab 730 by 490 by 150 millimetres from the van parcel interface (C7), about waist-high against a door.
 
-Note on Mara: Mara sized reduction to 98.1 N but left brake linkage open.
-Note on Tomas: Tomas flagged overrun but has not confirmed brake hold force.
-Note on Lena: Lena gave tubes and fold but Safety Factor math and mass breakdown are missing.
-Note on Dario: Dario tied containment and stowage to field use but depends on effort and frame proof.
+Note on Maya: heave effort plausible but tip margin negative must be fixed.
+Note on Jonas: fail-safe logic clear but lean must respect tip result.
+Note on Priya: density corrected and pin margin strong.
+Note on Leo: van fit plausible but depends on tip fix.
+Not ready, because tip margin is negative under the new blocking objection (O2) and no proposal exists.
 
 ## Cycle 3
-Mara, Tomas, Lena and Dario, Tomas voted ready before Lena and Dario rechecked the new brake sizing. Hold is like a bicycle squeeze holding an adult on a slope, with the dead-man lever force calculation (E55) giving 61.3 N to hold the 184 N·m in the tri-star cluster torque calculation (E13), but Lena and Dario stayed not ready pending that sizing, so the vote came too early.
+Maya and Jonas, the proposal vote came too early because spine strength is unproven. Plain words, twin tubes are unproven for stair load with margin. Safety Factor (SF, ratio of yield strength to working stress) for 60 kg on 200 mm overhang from the section modulus 30x2 tube (E41) is missing, so Priya please compute bending stress against yield before the vote stands under blocking objection (O3).
 
-Mara, nobody computed crank turns per step and whether lowering by crank is practical. Pull is like carrying 10 kg, with the hand pull with worm and crank calculation (E49) giving 98.1 Newton (N), where Newton means unit of force, below the 150 N limit in the sustained pull assumption (C4), and the step energy calculation (E12) is 100 J, tiny against household megajoules, but turns, time per stair and lowering efficiency are missing, so Mara please compute them next.
+Maya and Priya, the tip fix looks plausible against everyday scale. Plain words, less lean keeps load over wheels. Tip angle 21.8 deg with lean 15.0 deg gives margin 6.8 deg from the tip margin simulation (E60), minus 3.2 deg from the stair heave simulation (E58), like a hand width on a door edge.
 
-Lena, the frame meets Safety Factor (SF), where Safety Factor means margin on yield, at door scale, with the required modulus correction (E52) needing 2.45 cm3 and the single-tube modulus calculation (E53) giving 1.44 cm3 each so two tubes give margin, yet the 11.3 kg total has no proof, so Lena please post the mass calculation. Not ready: early vote, missing turns and mass block.
-Note on Mara: Mara sized hold but left turns open.
-Note on Tomas: Tomas voted ready before brake recheck.
-Note on Lena: Lena fixed Safety Factor math but mass missing.
-Note on Dario: Dario waits on brake proof.
+Jonas and Leo, effort and brake look plausible against body scale but need spine proof. Plain words, lever makes pull doable and brake needs locked band. Lever effort 226 N under 250 N limit from the stair heave simulation (E58), like 23 kg suitcase versus 70 kg courier, and brake torque 98.9 Newton metre (Nm, twisting force times arm) designed to 198 Nm, like 10 kg bucket on 1 m wrench.
+
+Note on Maya: lean fix integrated but spine proof missing.
+Note on Jonas: effort and fail-safe clear but vote premature.
+Note on Priya: pin and tare strong but spine calculation owed.
+Note on Leo: van pack plausible but rests on spine proof.
+Not ready, because blocking spine SF objection (O3) is open and votes cannot close it.
 
 ## Cycle 4
-Dario, the time block has numbers but no acceptance. Plain words the crank cost is a slow stair walk with shopping-bag effort, like winding a jack. The numbers are 5.00 turns per step in the crank turns per step calculation (E56), about 5.00 s per stair and 60.0 s for 12 stairs, with 98.1 N in the hand pull with worm and crank calculation (E49) below the 150 N limit in the sustained pull assumption (C4), where Newton (N) means unit of force, and 100 J in the lift energy per riser calculation (E12), tiny against household kilojoules, so Dario please confirm time and vote next.
+Maya, Priya and Jonas, spine strength closes blocking proof. Plain words, twin tubes stay far below yield. Bending stress is 30.6 MPa per tube from spine stress calculation (E61) using section modulus 30x2 tube (E41), against 276 MPa yield, giving Safety Factor (SF, ratio of yield strength to working stress) 9.02 from safety factor calculation (E62), above 2.
 
-Mara, nobody sized the pawl tooth holding the slope. Plain words a small tooth carries many body weights when parked, like standing on a key. The numbers are 6.13e3 N in the pawl tooth force calculation (E54) holding 184 N·m in the tri-star cluster torque calculation (E13), with no tooth area or stress shown, so Mara please compute tooth shear next.
+Maya and Jonas, tip, effort and brake hold at everyday scale. Plain words, upright lean keeps load over wheels, lever makes pull doable, brake locks descent. Tip is 21.8 deg with 15.0 deg lean giving 6.8 deg margin from tip margin simulation (E60), effort is 226 N under 250 N limit from stair heave simulation (E58), like 23 kg suitcase against 70 kg courier, and holding torque 98.9 Newton metre (Nm, twisting force times arm) sized to 198 Nm, like 10 kg bucket on 1 m wrench, with energy 141 J per 0.2 m riser trivial against household kilowatt-hours.
 
-Tomas and Lena, two ready votes with Dario pending and the handle effort objection (O1) still open is a vote that came too early. Not ready, because workflow acceptance and pawl sizing block.
-Note on Mara: Mara added turns and time but left pawl stress open.
-Note on Tomas: Tomas re-voted ready while workflow acceptance was pending.
-Note on Lena: Lena proved frame and mass but margin is thin.
-Note on Dario: Dario raised time and still needs to accept the new time.
+Priya and Leo, fold and tare fit courier and van. Plain words, carry-on weight stows like suitcase in door. Tare is 7.38 kg from tare weight budget (E40) under 12 kg, and folded slab 730 by 490 by 150 mm from van parcel interface (C7) fits van door.
+
+Note on Maya: mechanism, slope, lever quantified.
+Note on Jonas: ergonomics, fail-safe, retention quantified.
+Note on Priya: spine, pin, tare, fold-lock quantified.
+Note on Leo: van niche, parcel, setup bounded.
+Ready, because blocking objections resolved and results check against body, door and household scales.

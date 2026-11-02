@@ -1,89 +1,78 @@
-# Rationale — Solar-only 1-tonne staged cold store with flat-pack chamber
+# Rationale — Solar cold store for 1 tonne at 4-10 C
 
-Provide solar-only day-and-night power for 1 tonne produce cold storage, maintain chill with insulation, refrigeration and air circulation, in a weatherproof transportable cooperatively assemblable chamber with 1-tonne crate layout.
+Provide solar-only power with day-night autonomy to keep 1 tonne of produce at 4-10 C in a washable racked cold box on a low-cost plinth that a cooperative can use daily.
 
 ## Key estimates
-- array power for 8 kWh per day at 5 peak sun hours: 2.13 kW (calc; evidence ['E16'])
-- staged daily electrical need: 8.0 kWh/day (calc; evidence ['E16', 'E31', 'E56'])
-- wall transmission leak: 185.0 W (simulate; evidence ['E31'])
-- steady cooling load: 315.0 W (simulate; evidence ['E31'])
-- steady electrical power at COP 2: 157.0 W (simulate; evidence ['E31'])
-- steady daily electricity: 3.78 kWh/day (simulate; evidence ['E31'])
-- product pull-down thermal energy 1 tonne 25K: 25.0 kWh (calc; evidence ['E56'])
-- average pull-down cooling power over 24h: 1040.0 W (calc; evidence ['E57'])
-- peak electrical power pulldown plus leak at COP 2 plus fan: 662.0 W (calc; evidence ['E60', 'E57', 'E31'])
-- peak battery current at 48V for 662W: 13.8 A (calc; evidence ['E61'])
-- battery usable store 48V 100Ah: 5.12 kWh (datasheet; evidence ['E10'])
-- chamber inner volume: 10.6 m3 (simulate; evidence ['E44'])
-- produce volume fill fraction: 27.1 % (simulate; evidence ['E44'])
-- floor uniform pressure from 1 tonne: 2.04 kPa (calc; evidence ['E43', 'E44'])
-- wall U from 100mm polyurethane: 0.22 W/m2K (simulate; evidence ['E31'])
+- Steady cooling load: 376.0 W (simulate; evidence ['E24'])
+- Conduction heat gain: 186.0 W (simulate; evidence ['E24'])
+- Full-tonne pull-down thermal energy: 25.0 kWh (simulate; evidence ['E24'])
+- Steady electric input: 150.0 W (calc; evidence ['E51'])
+- Daily holding electric energy: 3.6 kWh (calc; evidence ['E52', 'E24'])
+- Daily PV yield from 2.4 kWp: 8.1 kWh (calc; evidence ['E54'])
+- Batch electric for 200 kg: 2.0 kWh (calc; evidence ['E55'])
+- Night energy 14 h at 150 W: 2.1 kWh (calc; evidence ['E57'])
+- Night fraction of battery: 0.41 ratio (calc; evidence ['E58'])
+- Fraction of PV yield used: 0.691 ratio (calc; evidence ['E56'])
+- Peak electric for 200 kg batch over 8 h plus steady: 0.4 kW (calc; evidence ['E60'])
+- Peak DC current at 48 V: 8.33 A (calc; evidence ['E62'])
+- Soil pressure under plinth: 2.51 kPa (calc; evidence ['E47'])
+- Floor loading from produce: 2.45 kPa (calc; evidence ['E48'])
+- Wind pressure at 30 m/s gust: 540.0 Pa (calc; evidence ['E64'])
+- Wind force on side wall: 2860.0 N (calc; evidence ['E65'])
+- Holding-only autonomy: 1.42 days (calc; evidence ['E66'])
+- Thermal buffer 1 tonne for 2 K rise: 1.94 kWh (calc; evidence ['E67'])
 
 ## Risks
-- One-shot 1-tonne pull-down of 25 kWh exceeds solar day and battery — mitigation: Stage loading over 3 days at ~333 kg per day with outside sort
-- Running 662 W peak all night empties battery — mitigation: Run steady 157 W hold with duty cycling; night need ~1.88-4 kWh within 5.12 kWh store
-- Warm air infiltration and spoilage spread from damaged produce — mitigation: 800 mm door with double gaskets, 3 mm squeeze, brief openings for 1-2 crates and FIFO rotation
+- Full-tonne pull-down energy exceeds daily PV yield and battery store — mitigation: Cap warm intake at 200 kg per day and pause intake when cloudy
+- Cloudy stretch beyond 1.42-day autonomy lets box drift out of 4-10 C — mitigation: Hold only with sealed door and fan mixing using produce thermal buffer and battery reserve
+- Wind gust loads panels and light box while soil must carry full weight — mitigation: Keep PV rack separate from cold box and anchor box to plinth
 
 ## Novelty
-Flat-pack cam-lock insulated chamber on steel skid with roof array rails combining 1.0 kW variable-speed DC cooling, 50x20 kg vented crates on side racks with aisle, and 3-day staged loading with outside sort and FIFO to fit 2.2 kW solar and 5.12 kWh store
+One buildable unit combining PU box plus DC chiller plus airflow plus PV-battery plus crates-racks plus plinth-frame-door for 1 tonne at 4-10 C with capped batch and no-batch cloudy rule.
 
 ## Sources
-- https://pmarketresearch.com/auto/solar-powered-cold-room-market/
-- https://www.saurenergy.com/solar-energy-news/when-the-rain-falls-short-the-cold-chain-has-to-step-up-12047710
-- https://srj0408.substack.com/p/p3-post-harvest-technologies-for
-- http://prsync.com/grand-view-reesearch/solar-powered-cold-storage-market-investment-opportunities-in-emerging-regions-4863033/
-- https://coldchainsa.com/powering-the-cold-chain-renewable-energy-solutions-for-south-african-cold-storage-operations/
-- https://germanclinic.co.za/MSK/solar/Solar-powered-cold-rooms-Tokelau_Thu-18-May-2023-41785.pdf
-- https://containerserviceforu1.co.za/sites/default/files/Solar-powered-cold-rooms-in-Pitcairn-Islands_Tue-28-Oct-2025-45608.pdf
-- https://makingprosperity.com/solutions-details/coldhubs
-- https://www.GrandViewResearch.com/industry-analysis/solar-powered-cold-storage-market-report
-- https://understandsolar.com/a-communal-solar-fridge-for-nigerian-farmers-markets/
-- https://vc.easychair.org/publications/preprint/hsMw/open
-- https://www.slideserve.com/teamijtsrd1123/design-and-fabrication-of-solar-powered-mobile-cold-room-powerpoint-ppt-presentation
-- https://www.researchgate.net/publication/352887974_Experimental_study_of_cold_storage_packed_domestic_refrigerator_with_solar_powered_variable_speed_compressor
-- https://www.scribd.com/document/682597654/8-Development-and-Performance-Evaluation-of-a-Solar-Energy-based-Portable-Micro-Cold-Storage-1
-- https://www.scribd.com/document/435774142/Design-and-Fabrication-of-Solar-Powered-Mobile-Cold-Room
-- http://repository.pnb.ac.id/5202/5/8.Simmirarity_Analysis%20Performance%20of%20Full%20Direct.pdf
-- https://1library.net/document/yd2g0nlq-power-refrigeration-trinath-kumar-mahesh-ramana-sambasiva-theresa.html
-- https://uatweb.usaid.gov/sites/default/files/2022-05/Powering-Health_Cold-Chain-Refrigeration.pdf
-- https://www.sciencedirect.com/science/article/abs/pii/S0038092X1930787X
-- https://patents.google.com/patent/US20140157794A1/en
-- https://patents.google.com/patent/EP3885677A1/en
-- https://www.patentsencyclopedia.com/app/20180106509
-- https://patents.google.com/patent/CN211380001U/en
-- https://patents.glgoo.top/patent/US7543455
-- https://patents.justia.com/patent/20150285541
-- https://patents.google.com/patent/US20170336134A1/en
-- https://patents.google.com/patent/US4367633A/en
-- https://patents.justia.com/patent/10823478
-- https://theindexproject.org/award/nominees/4322
-- https://foodplanetprize.org/initiatives/coldhubs-coldhubs-is-fixing-food-loss-with-off-grid-cool-rooms/
-- https://solve.mit.edu/solutions/31462
-- https://agrinnovators.org/wp-content/uploads/2023/10/COLEACP-PAFO_FICHE-ENTREPRISE-ColdHubs-EN.pdf
-- https://www.Nairaland.Com/5139810/how-nigerias-coldhubs-solar-refrigerating-farms
-- https://agrinnovators.org/business-profile/coldhubs/
-- https://www.freshplaza.com/north-america/article/9034925/nigerian-start-up-solar-refrigerating-farms-coldhubs/
+- https://ismcontainers.com/talus-renewables-and-ism-containers-transform-fertilizer-production-in-kenya/
+- https://www.pv-magazine.com/2020/11/03/solar-powered-cooling-system-for-vegetable-storage/
+- https://www.techwin.co.ke/coldstorages-equipment/coldrooms-storages/solar-cold-rooms
+- https://www.pv-magazine.com/2021/06/08/solar-powered-cold-storage-service/
+- https://www.techwin.co.ke/dairy-equipment/cold-storage-solutions/coid/solar-powered-cold-rooms
+- https://www.researchgate.net/publication/395704662_Mitigating_Post-Harvest_Losses_in_Sub-Saharan_Africa_A_Hybrid_Solar-Powered_Cold_Storage_System_with_Passive_Evaporative_Cooling_and_Smart_Monitoring_for_Smallholder_Farmers
+- https://indiacleanenergy.com/solar-cold-storage/
+- https://insulatedsystemsltd.com/solar-cold-rooms/
+- https://greenworldinvestor.com/all-you-wanted-to-know-about-solar-powered-cold-storage-mobile-units-in-india/
+- https://solarsolutions4everyone.co.za/nb/surs/Solar-Cold-Storage:-Powering-Food-Security_Fri-10-Jun-2022-3406.pdf
 - https://africaprize.raeng.org.uk/2018-cohort/nnaemeka-chidiebere-ikegwuonu
-- https://disruptafrica.com/2018/10/22/how-nigerias-coldhubs-is-solar-refrigerating-farms-to-profitability/
-- https://businessday.ng/uncategorized/article/nnaemeka-ikegwuonu-lessons-in-penetrating-a-new-market/?amp
+- https://techxlab.org/solutions/cold-rooms-by-coldhubs/
+- https://understandsolar.com/a-communal-solar-fridge-for-nigerian-farmers-markets/
+- https://www.renewableenergymagazine.com/jane-marsh/the-rise-of-the-energy-entrepreneur-how-20261019
+- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&oldid=304340
+- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&direction=prev&oldid=304357
+- https://afritechconnect.com/article/africa-loses-one-third-of-its-fish-to-spoilage-these-3-innovations-are-fighting-back
+- https://www.ccacoalition.org/content/coldhubs-ltd
+- https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd
+- https://ng.linkedin.com/company/coldhubslimited?trk=article-ssr-frontend-pulse_little-mention
+- https://smartbuy.alibaba.com/buyingguides/ecozen-cold-storage
+- https://www.iiec.org/coolingdemo-technologies/720-cold-storage-and-food-processing/677-ecofrost-portable-solar-powered-cold-rooms-ecozen-solutions
+- https://www.ecozensolutions.com/agriculture/ecofrost-in-kenya.html
+- https://www.pv-magazine-india.com/2021/06/07/solar-powered-cold-storage-as-a-service/
+- https://5.imimg.com/data5/SELLER/Doc/2022/12/LV/EM/KI/18386671/solar-powered-cold-storage.pdf
+- https://www.engineeringforchange.org/solutions/product/ecofrost-micro-cold-storage/
+- https://efficiencyforaccess.org/?p=3286
+- https://www.eco-business.com/id/news/how-apps-ai-and-solar-powered-cold-rooms-are-driving-sustainable-agriculture/
+- https://www.indiamart.com/proddetail/ecofrost-solar-cold-room-20855381197.html
 
 ## Master prompt revision history
 
 ## S1/S2 history
 - attempt 0 round 0: S1 faithful=True S2 flaw=False decision=s1_pass
 
-Fabrication steps not shown because they failed their light check: [2, 3, 4, 5]
+Fabrication steps not shown because they failed their light check: [2]
 
 ## Figure notes
-- fabrication step 2 could not be made or checked (BadRequestError: Error code: 400 - The response was filtered due to the prompt triggering our content management policy.); not shown
-- fabrication step 3 could not be made or checked (BadRequestError: Error code: 400 - The response was filtered due to the prompt triggering our content management policy.); not shown
-- fabrication step 4 could not be made or checked (BadRequestError: Error code: 400 - The response was filtered due to the prompt triggering our content management policy.); not shown
-- fabrication step 5 could not be made or checked (BadRequestError: Error code: 400 - The response was filtered due to the prompt triggering our content management policy.); not shown
-- labels removed because they pointed at the wrong part: PU box 2.4x2x2.2m
-
-## Fabrication steps re-checked (plain-word check)
-- fabrication step 1 re-checked: shown — Pixels show raised galvanized skid on bench with plywood spreader boards, vertical corner posts bolted to skid and to upper roof rails, screw-type ground anchors at corners, and light-gray sandwich insulated box mounted on top.
-- fabrication step 2 re-checked: shown — Pixels show sandwich insulated box on stand with hinged insulated door, black perimeter gasket seal, hinges/latch, and metal rain canopy above door - matching fabrication step 2 parts.
-- fabrication step 3: both checks blocked by the content filter; not shown
-- fabrication step 4 re-checked: not shown — Array is mounted indoors on wall above controller, not ground-mounted beside room; no ground mount or roof rails/anchors visible. Skid, controller, battery and panels present but step 4 configuration not shown.
-- fabrication step 5: both checks blocked by the content filter; not shown
+- callouts DC Chiller Unit, Airflow Fan Kit, Concrete Plinth Base, Steel Support Frame pointed at the wrong part or were misspelled; the callouts were removed and code labelled the parts instead
+- labels removed because they pointed at the wrong part: 100mm PU cold box, Fan airflow kit, Steel frame / PV rack
+- the critical part (100mm PU cold box) fills most of the picture; panel B would repeat panel A, omitted
+- fabrication step 2 not shown: failed its light check twice (Pixels show only insulated-panel box shell on steel frame with door cut-out under assembly; no solar, refrigeration unit, capacity label, or temperature evidence visible to confirm solar cold store for tonne at C.)
+- fabrication step 3: the detailed check was blocked by the provider's content filter; it passed a general check only (caption marked)
+- fabrication step 4: the detailed check was blocked by the provider's content filter; it passed a general check only (caption marked)
+- fabrication step 4 passed after one redraw (first attempt: Pixels show a small insulated box sitting on a wooden workbench with hand-tools for scale, concrete plinth bolted to wood, produce crates and loose copper/electrics and unconnected PV leaning nearby. Scale and support are incompatible with a 1-tonne cold store build stage - it's a bench model/composite, not tonne-scale construction.)

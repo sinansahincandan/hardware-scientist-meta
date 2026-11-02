@@ -1,20 +1,20 @@
 {
   "id": "E3",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
-  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "purpose": "search: peak sun hours tropical hot region solar sizing kWh per kWp per day",
+  "code_or_query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
   "inputs": {},
-  "output_summary": "la.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
-  "output_full": "la.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
+  "output_summary": "trexon.my — Off-Grid Solar Malaysia: Sabah & Sarawak Guide — https://trexon.my/blog/off-grid-solar-malaysia-sabah-sarawak-guide",
+  "output_full": "trexon.my — Off-Grid Solar Malaysia: Sabah & Sarawak Guide — https://trexon.my/blog/off-grid-solar-malaysia-sabah-sarawak-guide\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "la.china-yiteng.com",
-      "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+      "authors_or_org": "trexon.my",
+      "title": "Off-Grid Solar Malaysia: Sabah & Sarawak Guide",
       "year": "",
-      "url": "https://la.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
-      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "url": "https://trexon.my/blog/off-grid-solar-malaysia-sabah-sarawak-guide",
+      "query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
       "unresolved": false,
       "passage": ""
     }

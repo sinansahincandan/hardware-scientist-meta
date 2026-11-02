@@ -1,0 +1,5 @@
+{
+  "cycle": 2,
+  "member": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+  "message": "The tri-star wheel cluster (C1) steps over a 200 mm riser on a 250 mm going, 38.7 degree stair slope. Orbit radius 140 mm with 150 mm wheels bridges two nosings so one wheel always bears, as shown in the tri-star cluster sketch.\n\nPulling 60 kg plus 12 kg tare straight up the slope needs 441 N, about a 45 kg lift and too much for one courier. Levering over the nosing contact with long handles cuts that to 226 N sustained, under the 250 N handle limit, with energy 141 J per step, about lifting a crate to a table.\n\nTip-over is 21.8 degrees from vertical for 0.70 m load height, so operate near 15 degrees lean for positive margin. Brake must hold 98.9 N m at the carrier, designed to 198 N m for safety factor 2, with fail-safe lock when released."
+}

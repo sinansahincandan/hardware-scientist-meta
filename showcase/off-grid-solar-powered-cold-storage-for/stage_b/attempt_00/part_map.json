@@ -1,106 +1,149 @@
 {
   "parts": [
     {
-      "part_id": "P-array",
+      "part_id": "pv_array",
       "visual_phrase": "solar panel",
-      "count": 4,
+      "count": 6,
       "long_axis": "horizontal",
-      "size_vs": "P-box",
-      "size_ratio": 0.95,
+      "size_vs": "cold_box",
+      "size_ratio": 1.5,
       "touches": [
-        "P-base"
+        "frame_rack"
       ],
-      "note": "tilted ground/roof row beside chamber powering daytime load"
+      "note": "Six tilted panels on separate rack apart from box."
     },
     {
-      "part_id": "P-battery",
+      "part_id": "battery_cabinet",
       "visual_phrase": "battery box",
       "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "P-controller",
-      "size_ratio": 2.0,
-      "touches": [
-        "P-box",
-        "P-controller"
-      ],
-      "note": "night store inside/on chamber wall wired to controller"
-    },
-    {
-      "part_id": "P-controller",
-      "visual_phrase": "control box",
-      "count": 1,
       "long_axis": "vertical",
-      "size_vs": "P-battery",
-      "size_ratio": 0.5,
+      "size_vs": "dc_chiller",
+      "size_ratio": 1.3,
       "touches": [
-        "P-box",
-        "P-battery"
+        "dc_wiring",
+        "plinth"
       ],
-      "note": "small wall box between panels and battery"
+      "note": "Small power cabinet set beside cold room."
     },
     {
-      "part_id": "P-box",
-      "visual_phrase": "insulated box",
+      "part_id": "dc_wiring",
+      "visual_phrase": "cable",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "battery_cabinet",
+      "size_ratio": 5.0,
+      "touches": [
+        "pv_array",
+        "battery_cabinet",
+        "dc_chiller"
+      ],
+      "note": "Thin run from panels to cabinet to cooler."
+    },
+    {
+      "part_id": "cold_box",
+      "visual_phrase": "white box",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "P-base",
-      "size_ratio": 1.0,
+      "size_vs": "plinth",
+      "size_ratio": 0.85,
       "touches": [
-        "P-base",
-        "P-door",
-        "P-cooling",
-        "P-crates"
+        "plinth",
+        "frame_rack",
+        "door",
+        "dc_chiller",
+        "airflow_kit"
       ],
-      "note": "thick insulated chamber holding crates and cold air"
+      "note": "Thick foam room holding crates and cold air."
     },
     {
-      "part_id": "P-base",
-      "visual_phrase": "metal skid",
-      "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "P-box",
-      "size_ratio": 1.0,
-      "touches": [
-        "P-box",
-        "P-array"
-      ],
-      "note": "raised frame carrying chamber and panel rails"
-    },
-    {
-      "part_id": "P-door",
-      "visual_phrase": "door",
-      "count": 1,
-      "long_axis": "vertical",
-      "size_vs": "P-box",
-      "size_ratio": 0.95,
-      "touches": [
-        "P-box"
-      ],
-      "note": "sealed front access for person and crates"
-    },
-    {
-      "part_id": "P-cooling",
+      "part_id": "dc_chiller",
       "visual_phrase": "cooler",
       "count": 1,
       "long_axis": "any",
-      "size_vs": "P-battery",
-      "size_ratio": 1.33,
+      "size_vs": "battery_cabinet",
+      "size_ratio": 0.7,
       "touches": [
-        "P-box"
+        "cold_box",
+        "dc_wiring"
       ],
-      "note": "fan unit blowing cold air over crates to drain"
+      "note": "Small outdoor unit cooling the box interior."
     },
     {
-      "part_id": "P-crates",
+      "part_id": "airflow_kit",
+      "visual_phrase": "fan",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "cold_box",
+      "size_ratio": 0.5,
+      "touches": [
+        "cold_box"
+      ],
+      "note": "High fan mixing air over crates inside box."
+    },
+    {
+      "part_id": "crates",
       "visual_phrase": "plastic crate",
       "count": 12,
       "long_axis": "horizontal",
-      "size_vs": "P-box",
-      "size_ratio": 0.25,
+      "size_vs": "racks",
+      "size_ratio": 0.3,
       "touches": [
-        "P-box"
+        "racks"
       ],
-      "note": "stacked vented lots on side racks with centre aisle"
+      "note": "Stacked vented boxes 3 high on both racks."
+    },
+    {
+      "part_id": "racks",
+      "visual_phrase": "metal shelf",
+      "count": 2,
+      "long_axis": "horizontal",
+      "size_vs": "cold_box",
+      "size_ratio": 0.9,
+      "touches": [
+        "crates",
+        "plinth"
+      ],
+      "note": "Two low side shelves with centre aisle."
+    },
+    {
+      "part_id": "plinth",
+      "visual_phrase": "concrete slab",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "cold_box",
+      "size_ratio": 1.2,
+      "touches": [
+        "cold_box",
+        "racks",
+        "frame_rack"
+      ],
+      "note": "Raised washable base carrying box and racks."
+    },
+    {
+      "part_id": "frame_rack",
+      "visual_phrase": "metal frame",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "pv_array",
+      "size_ratio": 1.0,
+      "touches": [
+        "pv_array",
+        "cold_box",
+        "plinth"
+      ],
+      "note": "Bolted supports for box panels and panels rack."
+    },
+    {
+      "part_id": "door",
+      "visual_phrase": "door",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "cold_box",
+      "size_ratio": 0.45,
+      "touches": [
+        "cold_box"
+      ],
+      "note": "Sealed front closure for daily loading."
     }
   ]
 }

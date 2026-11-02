@@ -1,20 +1,20 @@
 {
   "id": "E8",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: MPPT charge controller 150V 60A datasheet Victron off-grid",
-  "code_or_query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
   "inputs": {},
-  "output_summary": "yacht-supply24.com — Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
-  "output_full": "yacht-supply24.com — Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211 — https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/\n(the search returned no passage text)",
+  "output_summary": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+  "output_full": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "yacht-supply24.com",
-      "title": "Victron SmartSolar MPPT 150/60-Tr Charge Controller - SCC115060211",
+      "authors_or_org": "nabellasstores.com",
+      "title": "LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores",
       "year": "",
-      "url": "https://yacht-supply24.com/catalog/marine-electrical-equipment/victron-energy-electrical-equipment/victron-energy-scc115060211-smartsolar-mppt-15060-tr/",
-      "query": "MPPT charge controller 150V 60A datasheet Victron off-grid",
+      "url": "https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
+      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
       "unresolved": false,
       "passage": ""
     }

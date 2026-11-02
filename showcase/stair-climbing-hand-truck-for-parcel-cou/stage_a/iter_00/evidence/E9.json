@@ -1,20 +1,20 @@
 {
   "id": "E9",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: self locking worm gearbox hand winch brake holding load",
-  "code_or_query": "self locking worm gearbox hand winch brake holding load",
+  "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+  "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
   "inputs": {},
-  "output_summary": "winchshop.co.uk — 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop — https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch",
-  "output_full": "winchshop.co.uk — 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop — https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch\n(the search returned no passage text)",
+  "output_summary": "afita.com.au — Document Page — 2020 — http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf",
+  "output_full": "afita.com.au — Document Page — 2020 — http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "winchshop.co.uk",
-      "title": "4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop",
-      "year": "",
-      "url": "https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch",
-      "query": "self locking worm gearbox hand winch brake holding load",
+      "authors_or_org": "afita.com.au",
+      "title": "Document Page",
+      "year": "2020",
+      "url": "http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf",
+      "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "unresolved": false,
       "passage": ""
     }

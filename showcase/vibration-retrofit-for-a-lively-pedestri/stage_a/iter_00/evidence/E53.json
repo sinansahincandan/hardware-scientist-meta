@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "dense crowd stroke scaling",
+  "code_or_query": "(3.8*1481/280)",
+  "inputs": {},
+  "output_summary": "20.1",
+  "output_full": "20.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

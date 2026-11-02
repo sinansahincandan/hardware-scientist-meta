@@ -1,24 +1,14 @@
 {
   "id": "E25",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "web_search",
-  "purpose": "search: beam clamp friction connection retrofit steelwork Lindapter capacity",
-  "code_or_query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "sketch",
+  "purpose": "Under-deck vertical TMD at midspan: deck, support frame, steel mass on springs plus dashpots",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(8,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.text(5,5.5,'deck (fixed to bridge)',ha='center',fontsize=10)\nax.fill_between([0,10],[5.0,5.0],[5.3,5.3],color='gray',alpha=0.6)\nax.plot([2,2],[3.5,5.0],color='black',lw=2); ax.plot([8,8],[3.5,5.0],color='black',lw=2)\nax.text(1.0,4.2,'support frame',rotation=90,fontsize=8)\nax.fill_between([3,7],[2.0,2.0],[3.0,3.0],color='gray',alpha=0.8)\nax.text(5,2.4,'steel mass ~500 kg (moving)',ha='center',fontsize=9)\n# springs\nfor x in [3.7,6.3]:\n  ax.plot([x,x],[3.0,3.5],color='black',lw=1.5)\n  ax.text(x,3.3,'spring',ha='center',fontsize=7)\n# dashpots\nfor x in [4.5,5.5]:\n  ax.plot([x,x],[3.0,3.5],color='black',lw=1.5,ls='--')\n  ax.text(x,3.15,'dashpot',ha='center',fontsize=7)\nax.annotate('',xy=(5,1.5),xytext=(5,2.0),arrowprops=dict(arrowstyle='<->'))\nax.text(5.3,1.7,'vertical motion',fontsize=8)\nax.text(5,0.8,'anchored under deck at midspan - hidden from deck view',ha='center',fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
   "inputs": {},
-  "output_summary": "ancon.co.nz — Steelwork and Rail Fixings — https://www.ancon.co.nz/products/lindapter-weld-free-steel-connectors/product-range/steelwork-and-rail-fixings",
-  "output_full": "ancon.co.nz — Steelwork and Rail Fixings — https://www.ancon.co.nz/products/lindapter-weld-free-steel-connectors/product-range/steelwork-and-rail-fixings\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "ancon.co.nz",
-      "title": "Steelwork and Rail Fixings",
-      "year": "",
-      "url": "https://www.ancon.co.nz/products/lindapter-weld-free-steel-connectors/product-range/steelwork-and-rail-fixings",
-      "query": "beam clamp friction connection retrofit steelwork Lindapter capacity",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Under-deck vertical TMD at midspan: deck, support frame, steel mass on springs plus dashpots",
+  "output_full": "Under-deck vertical TMD at midspan: deck, support frame, steel mass on springs plus dashpots",
+  "sketch_path": "evidence/sketch_25.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

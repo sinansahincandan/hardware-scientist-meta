@@ -1,23 +1,24 @@
 {
   "id": "E45",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "calc",
-  "purpose": "slip safety factor 8xM16 clamps",
-  "code_or_query": "(Q_(8*4.0,'kN')/Q_(9.81,'kN')).to('')",
-  "inputs": {
-    "arg0": {
-      "value": "8*4.0",
-      "unit": "kN"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "kN"
-    }
-  },
-  "output_summary": "3.26",
-  "output_full": "3.26",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "web_search",
+  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
+  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "inputs": {},
+  "output_summary": "fileserver-az.core.ac.uk — Microsoft Word - tv_22_2015_2_527-537 — 2015 — https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf",
+  "output_full": "fileserver-az.core.ac.uk — Microsoft Word - tv_22_2015_2_527-537 — 2015 — https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "fileserver-az.core.ac.uk",
+      "title": "Microsoft Word - tv_22_2015_2_527-537",
+      "year": "2015",
+      "url": "https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf",
+      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

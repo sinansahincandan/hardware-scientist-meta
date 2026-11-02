@@ -1,20 +1,20 @@
 {
   "id": "E1",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "purpose": "search: residential stair riser going dimensions building code max step height",
+  "code_or_query": "residential stair riser going dimensions building code max step height",
   "inputs": {},
-  "output_summary": "britishsc.co.uk — Spiral Stair Dimensions – At a Glance — https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
-  "output_full": "britishsc.co.uk — Spiral Stair Dimensions – At a Glance — https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/\n(the search returned no passage text)",
+  "output_summary": "homedit.com — Standard Stair Step Height and Code Guidelines — https://www.homedit.com/step-height/",
+  "output_full": "homedit.com — Standard Stair Step Height and Code Guidelines — https://www.homedit.com/step-height/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "britishsc.co.uk",
-      "title": "Spiral Stair Dimensions – At a Glance",
+      "authors_or_org": "homedit.com",
+      "title": "Standard Stair Step Height and Code Guidelines",
       "year": "",
-      "url": "https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
-      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "url": "https://www.homedit.com/step-height/",
+      "query": "residential stair riser going dimensions building code max step height",
       "unresolved": false,
       "passage": ""
     }

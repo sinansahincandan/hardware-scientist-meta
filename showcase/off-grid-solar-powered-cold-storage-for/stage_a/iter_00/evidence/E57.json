@@ -1,23 +1,14 @@
 {
   "id": "E57",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
   "tool": "calc",
-  "purpose": "average pull-down cooling power over 24h",
-  "code_or_query": "(25*Q_('kWh')/24/Q_('h')).to('W')",
-  "inputs": {
-    "arg0": {
-      "value": "'kWh'",
-      "unit": ""
-    },
-    "arg1": {
-      "value": "'h'",
-      "unit": ""
-    }
-  },
-  "output_summary": "1.04\u00d710\u00b3 W",
-  "output_full": "1.04\u00d710\u00b3 W",
+  "purpose": "night energy at 150W for 14h",
+  "code_or_query": "(150*14/1000)",
+  "inputs": {},
+  "output_summary": "2.1",
+  "output_full": "2.1",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 2
+  "cycle": 3
 }

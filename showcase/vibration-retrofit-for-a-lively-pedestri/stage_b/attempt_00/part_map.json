@@ -1,123 +1,97 @@
 {
   "parts": [
     {
-      "part_id": "girder",
-      "visual_phrase": "steel beam",
-      "count": 2,
-      "long_axis": "horizontal",
-      "size_vs": "crossbeam",
-      "size_ratio": 21.4,
-      "touches": [
-        "clamps"
-      ],
-      "note": "Long existing bridge beams carrying everything from below deck."
-    },
-    {
-      "part_id": "clamps",
-      "visual_phrase": "metal clamp",
-      "count": 8,
-      "long_axis": "any",
-      "size_vs": "crossbeam",
-      "size_ratio": 0.06,
-      "touches": [
-        "girder",
-        "crossbeam"
-      ],
-      "note": "Small no-drill clips gripping girder flanges to hang unit."
-    },
-    {
-      "part_id": "crossbeam",
-      "visual_phrase": "cross beam",
+      "part_id": "deck",
+      "visual_phrase": "bridge deck",
       "count": 1,
       "long_axis": "horizontal",
       "size_vs": "frame",
-      "size_ratio": 1.75,
+      "size_ratio": 20.0,
       "touches": [
-        "clamps",
-        "frame"
+        "frame",
+        "bolts"
       ],
-      "note": "Single transverse beam spanning between girders."
+      "note": "long bridge span overhead with TMD hung at midspan below"
     },
     {
       "part_id": "frame",
-      "visual_phrase": "metal frame",
-      "count": 1,
+      "visual_phrase": "steel beam",
+      "count": 2,
       "long_axis": "horizontal",
       "size_vs": "mass",
-      "size_ratio": 2.0,
+      "size_ratio": 3.0,
       "touches": [
-        "crossbeam",
-        "springs",
+        "deck",
+        "bolts",
+        "spring",
         "damper",
-        "screen",
-        "lockpin"
+        "cover"
       ],
-      "note": "Bolted cassette hung from cross-beam holding TMD parts."
+      "note": "paired cross beams clamped under deck carrying the unit"
     },
     {
-      "part_id": "springs",
-      "visual_phrase": "steel spring",
-      "count": 1,
+      "part_id": "bolts",
+      "visual_phrase": "bolt",
+      "count": 8,
       "long_axis": "vertical",
-      "size_vs": "mass",
-      "size_ratio": 0.6,
+      "size_vs": "frame",
+      "size_ratio": 0.01,
+      "touches": [
+        "deck",
+        "frame"
+      ],
+      "note": "small fasteners at clamp points holding beams to girders"
+    },
+    {
+      "part_id": "spring",
+      "visual_phrase": "coil spring",
+      "count": 4,
+      "long_axis": "vertical",
+      "size_vs": "damper",
+      "size_ratio": 0.8,
       "touches": [
         "frame",
         "mass"
       ],
-      "note": "Vertical coils suspending mass tuned to 1.83 Hz."
+      "note": "coils between frame and block carrying 72mm sag"
+    },
+    {
+      "part_id": "damper",
+      "visual_phrase": "damper",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "mass",
+      "size_ratio": 0.8,
+      "touches": [
+        "frame",
+        "mass"
+      ],
+      "note": "upright cylinders beside springs linking block to frame"
     },
     {
       "part_id": "mass",
       "visual_phrase": "steel block",
       "count": 1,
-      "long_axis": "any",
-      "size_vs": "frame",
-      "size_ratio": 0.5,
+      "long_axis": "horizontal",
+      "size_vs": "spring",
+      "size_ratio": 1.5,
       "touches": [
-        "springs",
-        "damper",
-        "lockpin"
+        "spring",
+        "damper"
       ],
-      "note": "Hidden 800 kg block moving opposite deck bounce."
+      "note": "heavy central block hung on springs at midspan"
     },
     {
-      "part_id": "damper",
-      "visual_phrase": "metal cylinder",
-      "count": 1,
-      "long_axis": "vertical",
-      "size_vs": "mass",
-      "size_ratio": 0.6,
-      "touches": [
-        "frame",
-        "mass"
-      ],
-      "note": "Upright energy absorber alongside springs."
-    },
-    {
-      "part_id": "lockpin",
-      "visual_phrase": "metal pin",
+      "part_id": "cover",
+      "visual_phrase": "metal cover",
       "count": 1,
       "long_axis": "horizontal",
       "size_vs": "mass",
-      "size_ratio": 0.2,
-      "touches": [
-        "frame",
-        "mass"
-      ],
-      "note": "Small removable pin locking mass for inspection."
-    },
-    {
-      "part_id": "screen",
-      "visual_phrase": "metal screen",
-      "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "frame",
-      "size_ratio": 1.75,
+      "size_ratio": 2.0,
       "touches": [
         "frame"
       ],
-      "note": "Color-matched cover hiding cassette from view."
+      "note": "flat plate below unit concealing block for access"
     }
   ]
 }

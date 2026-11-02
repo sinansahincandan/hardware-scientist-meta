@@ -1,0 +1,14 @@
+{
+  "id": "E67",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "calc",
+  "purpose": "thermal buffer 1 tonne for 2K rise",
+  "code_or_query": "(1000*3500*2/3.6e6)",
+  "inputs": {},
+  "output_summary": "1.94",
+  "output_full": "1.94",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

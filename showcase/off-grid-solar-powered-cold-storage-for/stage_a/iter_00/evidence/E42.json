@@ -1,31 +1,24 @@
 {
   "id": "E42",
-  "author": "Chidi - Enclosure and Structural Designer",
-  "tool": "calc",
-  "purpose": "floor pressure versus produce volume check",
-  "code_or_query": "Q_(1000,'kg')*Q_(1,'m')/Q_(4.6,'m**2')/Q_(1000,'kg/m**3')",
-  "inputs": {
-    "arg0": {
-      "value": "1000",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "1",
-      "unit": "m"
-    },
-    "arg2": {
-      "value": "4.6",
-      "unit": "m**2"
-    },
-    "arg3": {
-      "value": "1000",
-      "unit": "kg/m**3"
-    }
-  },
-  "output_summary": "0.217 m\u00b2",
-  "output_full": "0.217 m\u00b2",
+  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
+  "tool": "web_search",
+  "purpose": "search: galvanized steel angle 40x40 datasheet weight size",
+  "code_or_query": "galvanized steel angle 40x40 datasheet weight size",
+  "inputs": {},
+  "output_summary": "lsdsteel.com — High Quality Professional China Cold Rolled Galvanized Steel Sheet - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda — http://www.lsdsteel.com/professional-china-cold-rolled-galvanized-steel-sheet-profile-steel-lishengda-2-product/",
+  "output_full": "lsdsteel.com — High Quality Professional China Cold Rolled Galvanized Steel Sheet - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda — http://www.lsdsteel.com/professional-china-cold-rolled-galvanized-steel-sheet-profile-steel-lishengda-2-product/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "lsdsteel.com",
+      "title": "High Quality Professional China Cold Rolled Galvanized Steel Sheet - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda",
+      "year": "",
+      "url": "http://www.lsdsteel.com/professional-china-cold-rolled-galvanized-steel-sheet-profile-steel-lishengda-2-product/",
+      "query": "galvanized steel angle 40x40 datasheet weight size",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

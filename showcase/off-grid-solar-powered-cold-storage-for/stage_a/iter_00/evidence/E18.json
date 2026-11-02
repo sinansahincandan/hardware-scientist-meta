@@ -1,20 +1,20 @@
 {
   "id": "E18",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
   "tool": "web_search",
-  "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
-  "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+  "purpose": "search: small cold storage 1 tonne cooling load kW respiration heat fresh produce",
+  "code_or_query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
   "inputs": {},
-  "output_summary": "fao.org — Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) — https://www.fao.org/4/v5030E/V5030E0r.htm",
-  "output_full": "fao.org — Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.) — https://www.fao.org/4/v5030E/V5030E0r.htm\n(the search returned no passage text)",
+  "output_summary": "icar.org.in — ICAR-CIAE, Bhopal developes Low Cost, Low Energy based on-farm storage system for enhancing the shelf life of fresh agro commodities: A boon for farmers and stakeholders — http://www.icar.org.in/en/icar-ciae-bhopal-developes-low-cost-low-energy-based-farm-storage-system-enhancing-shelf-life-fresh",
+  "output_full": "icar.org.in — ICAR-CIAE, Bhopal developes Low Cost, Low Energy based on-farm storage system for enhancing the shelf life of fresh agro commodities: A boon for farmers and stakeholders — http://www.icar.org.in/en/icar-ciae-bhopal-developes-low-cost-low-energy-based-farm-storage-system-enhancing-shelf-life-fresh\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "fao.org",
-      "title": "Fruit and vegetable processing - Ch09 Vegetable specific processing technologies (cont.)",
+      "authors_or_org": "icar.org.in",
+      "title": "ICAR-CIAE, Bhopal developes Low Cost, Low Energy based on-farm storage system for enhancing the shelf life of fresh agro commodities: A boon for farmers and stakeholders",
       "year": "",
-      "url": "https://www.fao.org/4/v5030E/V5030E0r.htm",
-      "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "url": "http://www.icar.org.in/en/icar-ciae-bhopal-developes-low-cost-low-energy-based-farm-storage-system-enhancing-shelf-life-fresh",
+      "query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
       "unresolved": false,
       "passage": ""
     }

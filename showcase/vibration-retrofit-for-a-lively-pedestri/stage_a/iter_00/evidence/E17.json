@@ -1,20 +1,20 @@
 {
   "id": "E17",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: HIVOSS footbridge comfort classes vertical acceleration limits",
-  "code_or_query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+  "purpose": "search: Setra HiVoSS footbridge damping requirement TMD design",
+  "code_or_query": "Setra HiVoSS footbridge damping requirement TMD design",
   "inputs": {},
-  "output_summary": "mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://www.mdpi.com/2071-1050/17/23/10456",
-  "output_full": "mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://www.mdpi.com/2071-1050/17/23/10456\n(the search returned no passage text)",
+  "output_summary": "nature.com — Scientific Reports — https://www.nature.com/articles/s41598-026-71374-9_reference.pdf",
+  "output_full": "nature.com — Scientific Reports — https://www.nature.com/articles/s41598-026-71374-9_reference.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi.com",
-      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
+      "authors_or_org": "nature.com",
+      "title": "Scientific Reports",
       "year": "",
-      "url": "https://www.mdpi.com/2071-1050/17/23/10456",
-      "query": "HIVOSS footbridge comfort classes vertical acceleration limits",
+      "url": "https://www.nature.com/articles/s41598-026-71374-9_reference.pdf",
+      "query": "Setra HiVoSS footbridge damping requirement TMD design",
       "unresolved": false,
       "passage": ""
     }

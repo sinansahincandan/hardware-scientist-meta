@@ -1,20 +1,20 @@
 {
   "id": "E13",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: Setra footbridge vibration comfort limits vertical acceleration 0.7",
-  "code_or_query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+  "purpose": "search: footbridge tuned mass damper mass ratio tuning Den Hartog",
+  "code_or_query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
   "inputs": {},
-  "output_summary": "sbi.se — Analysis of Footbridge Comfort Vibrations — 2024 — https://www.sbi.se/wp-content/uploads/2024/05/Analysis-of-Footbridge-Comfort-Vibrations-A-Parametric-Study_Ruuth_Henrik-and-Thuresson_Niklas.pdf",
-  "output_full": "sbi.se — Analysis of Footbridge Comfort Vibrations — 2024 — https://www.sbi.se/wp-content/uploads/2024/05/Analysis-of-Footbridge-Comfort-Vibrations-A-Parametric-Study_Ruuth_Henrik-and-Thuresson_Niklas.pdf\n(the search returned no passage text)",
+  "output_summary": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
+  "output_full": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "sbi.se",
-      "title": "Analysis of Footbridge Comfort Vibrations",
-      "year": "2024",
-      "url": "https://www.sbi.se/wp-content/uploads/2024/05/Analysis-of-Footbridge-Comfort-Vibrations-A-Parametric-Study_Ruuth_Henrik-and-Thuresson_Niklas.pdf",
-      "query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+      "authors_or_org": "backend.orbit.dtu.dk",
+      "title": "TMD_nscm19.dvi",
+      "year": "",
+      "url": "https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
+      "query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
       "unresolved": false,
       "passage": ""
     }

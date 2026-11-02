@@ -1,24 +1,14 @@
 {
   "id": "E37",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "web_search",
-  "purpose": "search: Lindapter beam clamp safe working load slip capacity kN",
-  "code_or_query": "Lindapter beam clamp safe working load slip capacity kN",
+  "author": "Priya - Retrofit Constructability Engineer",
+  "tool": "sketch",
+  "purpose": "Bolted under-deck support frame: transverse bearers clamped to girders, TMD mass on springs plus dashpots, lockable cover below",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,10); ax.set_ylim(0,7); ax.set_aspect('equal'); ax.axis('off')\nax.text(5,6.6,'deck (unchanged above)',ha='center',fontsize=11)\nax.fill_between([0,10],[5.8,5.8],[6.2,6.2],color='gray',alpha=0.5)\nax.text(1.2,5.2,'girder',fontsize=10); ax.text(8.0,5.2,'girder',fontsize=10)\nax.fill_between([0.8,1.8],[4.5,4.5],[5.8,5.8],color='dimgray',alpha=0.6)\nax.fill_between([8.2,9.2],[4.5,4.5],[5.8,5.8],color='dimgray',alpha=0.6)\nax.plot([0.5,3.0],[5.0,5.0],'k-',lw=4); ax.plot([7.0,9.5],[5.0,5.0],'k-',lw=4)\nax.text(5,5.2,'transverse bearer beams',ha='center',fontsize=10)\nfor x in [1.3,8.7]:\n    for y in [5.0,5.35,5.65]:\n        ax.plot(x,y,'ko',ms=5)\nax.text(8.7,4.4,'HSFG bolt clamps',ha='right',fontsize=9)\n# springs and dashpots\nfor x in [3.6,6.4]:\n    ax.plot([x,x],[5.0,3.4],'k-',lw=1)\n    ax.plot(x,4.2,'k>',ms=8); ax.plot(x,4.6,'k<',ms=8)\n    ax.text(x+0.15,4.4,'spring',fontsize=8)\nax.plot([3.0,3.0],[5.0,3.4],'b-',lw=2); ax.plot([7.0,7.0],[5.0,3.4],'b-',lw=2)\nax.text(2.0,4.0,'dashpot',color='b',fontsize=8); ax.text(7.1,4.0,'dashpot',color='b',fontsize=8)\nax.fill_between([2.8,7.2],[2.2,2.2],[3.4,3.4],color='gray',alpha=0.7)\nax.text(5,2.8,'500 kg steel mass',ha='center',fontsize=10)\nax.plot([2.8,7.2],[2.0,2.0],'k--',lw=1)\nax.text(5,1.6,'lockable cover + access',ha='center',fontsize=9)\nax.text(5,1.0,'threaded seats + shims for retune',ha='center',fontsize=9)\nax.annotate('',xy=(5,3.4),xytext=(5,2.2),arrowprops=dict(arrowstyle='<->'))\nax.text(5.3,2.6,'stroke gap',fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=110)",
   "inputs": {},
-  "output_summary": "fixingsmith.com — Lindapter Beam Clamp Type FL for Flange | Clearance Bargains — https://fixingsmith.com/products/lindapter-beam-clamp-type-fl",
-  "output_full": "fixingsmith.com — Lindapter Beam Clamp Type FL for Flange | Clearance Bargains — https://fixingsmith.com/products/lindapter-beam-clamp-type-fl\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "fixingsmith.com",
-      "title": "Lindapter Beam Clamp Type FL for Flange | Clearance Bargains",
-      "year": "",
-      "url": "https://fixingsmith.com/products/lindapter-beam-clamp-type-fl",
-      "query": "Lindapter beam clamp safe working load slip capacity kN",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Bolted under-deck support frame: transverse bearers clamped to girders, TMD mass on springs plus dashpots, lockable cover below",
+  "output_full": "Bolted under-deck support frame: transverse bearers clamped to girders, TMD mass on springs plus dashpots, lockable cover below",
+  "sketch_path": "evidence/sketch_37.png",
+  "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

@@ -1,24 +1,27 @@
 {
   "id": "E19",
-  "author": "Tomas — Human Factors and Safety Engineer",
-  "tool": "web_search",
-  "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
-  "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
-  "inputs": {},
-  "output_summary": "cdn.standards.iteh.ai — SIST EN 1757 2022.pdf — 2022 — https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
-  "output_full": "cdn.standards.iteh.ai — SIST EN 1757 2022.pdf — 2022 — https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "cdn.standards.iteh.ai",
-      "title": "SIST EN 1757 2022.pdf",
-      "year": "2022",
-      "url": "https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
-      "query": "EN 1757 hand truck safety handle height brake requirements",
-      "unresolved": false,
-      "passage": ""
+  "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+  "tool": "calc",
+  "purpose": "energy per step lifting 60 kg one riser",
+  "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s^2')*Q_(0.197,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s^2"
+    },
+    "arg2": {
+      "value": "0.197",
+      "unit": "m"
     }
-  ],
+  },
+  "output_summary": "116 kg\u22c5m\u00b2/s\u00b2",
+  "output_full": "116 kg\u22c5m\u00b2/s\u00b2",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

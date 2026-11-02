@@ -1,20 +1,20 @@
 {
   "id": "E45",
-  "author": "Dario — Courier Operations and Serviceability Lead",
+  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
   "tool": "web_search",
-  "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
-  "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+  "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
+  "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
   "inputs": {},
-  "output_summary": "rapidonline.com — HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 — https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431",
-  "output_full": "rapidonline.com — HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 — https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431\n(the search returned no passage text)",
+  "output_summary": "carexpert.com.au — Ford Transit vs Mercedes-Benz Sprinter — https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
+  "output_full": "carexpert.com.au — Ford Transit vs Mercedes-Benz Sprinter — https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "rapidonline.com",
-      "title": "HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2",
+      "authors_or_org": "carexpert.com.au",
+      "title": "Ford Transit vs Mercedes-Benz Sprinter",
       "year": "",
-      "url": "https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431",
-      "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "url": "https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
+      "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
       "unresolved": false,
       "passage": ""
     }

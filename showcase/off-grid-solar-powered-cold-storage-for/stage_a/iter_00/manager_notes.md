@@ -1,49 +1,40 @@
 
 ## Cycle 1
-Amara and Baraka, night store cannot cover steady holding and first cooling pending agreed daily need. Daily need is 8 kilowatt hour (kWh) per day in array sizing calculation (E16) versus 3.78 kWh per day with 12.5 kWh one-off pull-down in steady load simulation (E31), exceeding 5.12 kWh store in battery bank concept (C2). Both steady values are below one household day and plausible but pull-down is not. Baraka please recompute failed pull-down calculation (E30) and Amara please resize array and store after that.
+Surya, Lena, the day night energy balance is still open and it decides panel and battery size. Plain words, the box needs steady cooling each day plus storage for the night. Numbers are 3.61 kilowatt hour per day electric and 376 watt steady thermal from the steady cooling load and pull-down for 1 tonne box (E24), sane at about one third of a household day, and Surya please compute in your next turn whether the array and store cover that with cloudy margin.
 
-Chidi and Dalia, box size and floor load are ordinary, but door seal and rack fixing stay open. Inner volume 10.6 cubic metre (m3) in chamber simulation (E44) is small bedroom scale, floor pressure 2.04 kilopascal (kPa) in floor pressure calculation (E43) is about one tenth person standing, and crate mass 20 kilogram (kg) is airport luggage scale, so none look off, as drawn with fan flow in cold room sketch (E32). Please fix door gasket compression and rack guard height for handling.
+Lena, Farah, Kofi, the pull down rate needs a larger chiller than steady leak alone. Plain words, cooling a full warm tonne quickly takes about three times the steady power. Numbers are 1042 watt pull down thermal against 376 watt steady thermal from the steady cooling load and pull-down for 1 tonne box (E24), and Lena please confirm required electric input and pull down time in your next turn.
 
-Chidi please write proposal next turn integrating your favoured box, frame and crate concepts with agreed thermal and power sizes, since no proposal is on board. I am not ready because blocking energy mismatch objection (O1) stops sizing.
-
-Note on Amara: array size open pending agreed daily use.
-Note on Baraka: steady load done but pull-down failed, peak open.
-Note on Chidi: volume and load plausible but door and rack open.
-Note on Dalia: crate flow workable but guard and wait open.
+Lena, please write the full proposal in your next turn integrating your favoured cold box and airflow with Surya and Farah and Kofi interfaces. My position is not ready, because energy balance and pull down sizing and an integrated proposal are missing.
+Note on Surya: Energy case is stated but not yet matched to panels and store.
+Note on Lena: Steady and pull down loads are quantified but chiller size is open.
+Note on Farah: Crate and aisle layout fits a person and a door.
+Note on Kofi: Plinth pressure looks light against body weight and soil capacity.
 
 ## Cycle 2
-Baraka and Amara, staged loading makes daily energy fit but the written cooler size no longer matches the peak you now need. Staged need is about 8 kilowatt hours per day in the array sizing (E16), from 3.78 kilowatt hours per day steady in the steady load simulation (E31) plus staged pull from 25 kilowatt hours in the pull-down energy (E56) at about 1040 watts in the pull-down power (E57); daily use is below one household day so plausible, while one-shot 25 is about three household days so not plausible in one solar day. Baraka please update cooling concept (C5) to about 1000 watts and compute peak electricity, Amara please confirm wiring for that peak.
+Surya, Lena, Farah, the full warm tonne cannot be cooled in one go on this power. Plain words, the cooling energy for a warm tonne is several times what the sun field makes in a day and what the store holds overnight. Numbers are 25.0 kilowatt hour pull-down energy from the steady cooling load and pull-down for 1 tonne box (E24), sane at about two household days, against 8.10 kilowatt hour per day yield from the daily PV yield from 2.4 kWp (E54) and 5.12 kilowatt hour stored from the EG4 LifePower4 battery datasheet (E9), where Photovoltaic (PV) means solar panels. Lena, please compute the allowed warm batch in kilogram per day and its electric need in your next turn.
 
-Chidi and Dalia, the box and handling loads look ordinary but door sealing and rack guarding still block a buildable store. Inner volume is 10.6 cubic metres in the chamber simulation (E44), small bedroom scale, floor pressure is 2.04 kilopascals in the floor pressure calculation (E43), about one tenth of a person standing, with 20 kilogramme crates in the stacking crate (E36), luggage scale. Chidi please sketch door seal compression and rack guards, Dalia please define door discipline to limit warm air entry.
+Lena, the chiller size for that batch is still missing. Plain words, steady holding power is small but fast cooling needs several times more electric input. Numbers are 376 watt steady thermal and 1042 watt pull-down thermal from the steady cooling load and pull-down for 1 tonne box (E24) against only 150 watt steady electric from the steady electric watts from COP 2.5 (E51), where Coefficient of Performance (COP) means cooling per electric watt. Lena, please confirm batch electric watts and hours before wire sizes freeze.
 
-Chidi, the proposal still lists the old cooler so a vote would come too early. The proposal (v1) includes 300 watt cooling while staged peak needs about 1040 watts in the pull-down power (E57) plus 315 watts steady in the steady load simulation (E31). Chidi please revise the proposal after peak is agreed.
-
-Note on Amara: daytime fit shown pending peak wiring check.
-Note on Baraka: pull-down fixed but cooler update still open.
-Note on Chidi: volume and floor plausible but seal, guards and proposal open.
-Note on Dalia: staged hand work fits but door operation open.
-Not ready because blocking energy mismatch objection (O1) still stops sizing until peak and proposal match.
+Kofi, the proposal cannot be voted ready while the batch limit is open. Plain words, the store, door and racks fit people and crates but the energy balance decides if it stays cold. Numbers are 900 mm door from the Interior plan and section (E36), sane against a household doorway, held by my blocking objection on the batch limit. My position is not ready, because daily batch energy and chiller size are unproven.
+Note on Surya: Daily yield is quantified but not yet matched to batch load plus cloudy margin.
+Note on Lena: Steady and pull-down heat are quantified but batch electric and time are open.
+Note on Farah: Crate count and aisle fit a person but daily intake kilogram is open.
+Note on Kofi: Plinth load looks light against soil but rack fixings to panels are open.
 
 ## Cycle 3
-Baraka and Amara, the peak agrees but the written cooler still lists the old size so a vote would come too early. Staged cooling needs a bigger cooler and the electrics follow from it. The need is about 1.04e3 W in the pull-down power (E57) plus 185 W leak in the steady load simulation (E31), giving 662 W electric in the peak power calculation (E60) and 13.8 A at 48 V in the peak current calculation (E61), microwave scale so plausible, but cooling concept (C5) and proposal (v1) still list 300 W. Baraka please update cooling concept (C5), Chidi please revise proposal (v1) after that.
-
-Chidi and Dalia, the door and rack guarding now look buildable. The seal squeezes shut and a lip stops crates falling out. The seal is 3 mm squeeze on the 800 mm door in the seal detail sketch (E59), house door scale passing the 600 by 400 mm crate in the stacking crate (E36), with 50 mm rail and 2.04 kPa floor pressure in the floor pressure calculation (E43), about one tenth of a person standing so ordinary.
-
-Amara and Baraka, daily energy fits staged loading. One lot per day plus holding fits sun and night store. The need is 8 kWh per day in the array sizing (E16) from 3.78 kWh per day steady in the steady load simulation (E31) plus staged share of 25 kWh in the pull-down energy (E56), met by 5.12 kWh store in the battery datasheet (E10), about half a household day so plausible.
-Note on Amara: wiring check done pending concept update.
-Note on Baraka: peak computed but concept update still open.
-Note on Chidi: seal sketch done but proposal revision still open.
-Note on Dalia: door discipline defined and plausible.
-Not ready because blocking energy mismatch objection (O1) still stops sizing until concept and proposal match.
+Surya, Lena and Farah, sunny balance closes but cloudy stays open. Plain words, one day feeds holding plus capped batch with margin, half a household day. Numbers are 5.60 kWh per day need from daily batch electric for 200 kg (E55) against 8.10 kWh per day from daily PV yield from 2.4 kWp (E54) and 2.10 kWh night use from night energy at 150 W (E57), where Photovoltaic (PV) means solar panels. Surya, please compute sunless days.
 
 ## Cycle 4
-Chidi, Baraka, Amara and Dalia, cooler size and proposal now match so the single vote came too early. Plainly staged field heat plus wall leak now needs the bigger cooler in the proposal. The need is 1.04e3 W in pull-down power (E57) plus 185 W leak in steady load simulation (E31), giving 662 W electric in peak power calculation (E60), microwave scale so plausible, and proposal (v2) carries upsized cooling concept (C13) without old size.
+Kofi, Surya, Lena and Farah, sunny and cloudy energy both quantify with margin.
 
-Amara, night store through darkness is still unproven and you must compute it. Plainly running peak all night would empty battery. The peak is 662 W in peak power calculation (E60) for 12.0 h equals 7.94 kWh, larger than 5.12 kWh store in battery datasheet (E10), about half household day, so compute overnight electrical energy with realistic duty cycling and state shortfall.
+Plain words, one sunny day feeds holding plus capped warm batch, and one night uses less than half the battery for about one and a half days holding with no additions. Numbers are 5.60 kWh per day need against 8.10 kWh per day from photovoltaic yield from 2.4 kWp (E54), and 2.10 kWh per night at 150 W for 14h (E57) giving 1.42 days from autonomy days holding only (E66), sane against half household day.
 
-Dalia, Baraka and Chidi, box and handling look buildable. Plainly person with crate still passes and floor stays lightly loaded. The 800 mm door in seal detail sketch (E59) is house-door scale against 600 by 400 mm crate in stacking crate source (E36), and 2.04 kPa in floor pressure calculation (E43) is about one tenth person standing.
-Note on Amara: night energy proof open.
-Note on Baraka: staged peak defined but duty and infiltration proof open.
-Note on Chidi: proposal revised and one vote cast but others pending.
-Note on Dalia: crate workflow and door discipline plausible.
-Not ready because night-energy proof and three remaining votes on v2 still missing.
+Kofi, wind and ground quantify as small against weight and soil, but your vote still blocks.
+
+Plain words, side wind pushes like three people leaning while store weighs like a small car, and ground pressure is like a few people standing. Numbers are 540 Pa from wind pressure at 30 m per s gust (E64) giving 2.86 kN from wind force on side wall (E65), and 2.51 kPa from soil pressure under plinth (E47) below 50 kPa from Generic Concrete Slab guide (E43), sane against body weight and doorway scales. Kofi, confirm wind separation and soil margin and update your vote.
+
+Not ready, because Kofi remains not ready despite technical closure.
+Note on Surya: closed sunny margin and night reserve with quantified autonomy.
+Note on Lena: closed thermal buffer and steady electric with fridge-scale check.
+Note on Farah: closed operable no-batch rule with crate and door scales.
+Note on Kofi: closed wind and soil with margin but vote still blocks.

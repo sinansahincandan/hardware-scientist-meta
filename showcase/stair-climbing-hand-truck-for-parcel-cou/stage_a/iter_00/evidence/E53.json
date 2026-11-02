@@ -1,35 +1,31 @@
 {
   "id": "E53",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
   "tool": "calc",
-  "purpose": "section modulus one tube",
-  "code_or_query": "(Q_(40,\"mm\")*Q_(20,\"mm\")**3 - Q_(36,\"mm\")*Q_(16,\"mm\")**3)/6/Q_(20,\"mm\")",
+  "purpose": "hinge lock couple force",
+  "code_or_query": "(Q_(\"60kg\")*Q_(\"9.81m/s**2\")*Q_(\"0.25m\")/Q_(\"0.04m\")).to(\"N\")",
   "inputs": {
     "arg0": {
-      "value": "40",
-      "unit": "mm"
+      "value": "\"60kg\"",
+      "unit": ""
     },
     "arg1": {
-      "value": "20",
-      "unit": "mm"
+      "value": "\"9.81m/s**2\"",
+      "unit": ""
     },
     "arg2": {
-      "value": "36",
-      "unit": "mm"
+      "value": "\"0.25m\"",
+      "unit": ""
     },
     "arg3": {
-      "value": "16",
-      "unit": "mm"
-    },
-    "arg4": {
-      "value": "20",
-      "unit": "mm"
+      "value": "\"0.04m\"",
+      "unit": ""
     }
   },
-  "output_summary": "1.44\u00d710\u00b3 mm\u00b3",
-  "output_full": "1.44\u00d710\u00b3 mm\u00b3",
+  "output_summary": "3.68\u00d710\u00b3 N",
+  "output_full": "3.68\u00d710\u00b3 N",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

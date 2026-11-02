@@ -1,0 +1,186 @@
+{
+  "view": "side",
+  "nodes": [
+    {
+      "id": "p_star",
+      "label": "tri-star wheel cluster",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 140.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 4
+      },
+      "color_hint": "#5d6d7e",
+      "aspect": 1.0
+    },
+    {
+      "id": "p_spine",
+      "label": "twin spine tubes",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 1200.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 0.08
+    },
+    {
+      "id": "p_toe",
+      "label": "toe plate 450x350",
+      "shape": "plate",
+      "size_class_mm": {
+        "min": 5.0,
+        "max": 450.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 4
+      },
+      "color_hint": "#a9cce3",
+      "aspect": 7.0
+    },
+    {
+      "id": "p_brake",
+      "label": "brake band + pawl + deadman",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 20.0,
+        "max": 200.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 3
+      },
+      "color_hint": "#c0392b",
+      "aspect": 1.2
+    },
+    {
+      "id": "p_handle",
+      "label": "closed-loop handles",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 900.0,
+        "max": 1100.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 0
+      },
+      "color_hint": "#7dcea0",
+      "aspect": 0.75
+    },
+    {
+      "id": "p_strap",
+      "label": "harness strap + heel stop",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 600.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 3
+      },
+      "color_hint": "#f0c27a",
+      "aspect": 0.15
+    },
+    {
+      "id": "p_hinge",
+      "label": "mid-spine fold hinge + lock",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 150.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#f1948a",
+      "aspect": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "p_spine",
+      "to_id": "p_star",
+      "kind": "mechanical",
+      "label": "spine tubes to carrier axle",
+      "arrow": false
+    },
+    {
+      "from_id": "p_spine",
+      "to_id": "p_toe",
+      "kind": "mechanical",
+      "label": "spine to toe plate",
+      "arrow": false
+    },
+    {
+      "from_id": "p_spine",
+      "to_id": "p_handle",
+      "kind": "mechanical",
+      "label": "spine to handles",
+      "arrow": false
+    },
+    {
+      "from_id": "p_brake",
+      "to_id": "p_star",
+      "kind": "mechanical",
+      "label": "brake band and pawl on carrier",
+      "arrow": false
+    },
+    {
+      "from_id": "p_handle",
+      "to_id": "p_brake",
+      "kind": "mechanical",
+      "label": "deadman lever to brake",
+      "arrow": true
+    },
+    {
+      "from_id": "p_hinge",
+      "to_id": "p_spine",
+      "kind": "mechanical",
+      "label": "fold hinge joins spine",
+      "arrow": false
+    },
+    {
+      "from_id": "p_strap",
+      "to_id": "p_toe",
+      "kind": "mechanical",
+      "label": "harness to toe plate",
+      "arrow": false
+    }
+  ],
+  "loads": [
+    {
+      "on_id": "p_toe",
+      "label": "60 kg parcel weight",
+      "direction": "down"
+    },
+    {
+      "on_id": "p_handle",
+      "label": "226 N lever heave",
+      "direction": "up"
+    },
+    {
+      "on_id": "p_star",
+      "label": "stair nosing reaction",
+      "direction": "up"
+    }
+  ],
+  "critical_part_id": "p_star",
+  "scale_bar_mm": 100.0,
+  "notes": [
+    "Side view unfolded at 15 deg lean on 200mm riser / 250mm going: star at nosing, spine leans back, toe forward, handles top.",
+    "Fail-safe: brake band + pawl spring-locked on release, deadman lever at handles, hold 198 N-m.",
+    "Twin 30x2mm spine with mid-hinge lock + green-red indicator; SF 9.02, pin 36.6 MPa.",
+    "Folds to 730x490x150 slab for van niche, tare 7.38 kg, toe holds 40x30x30 to 60x40x40 cm parcel."
+  ]
+}

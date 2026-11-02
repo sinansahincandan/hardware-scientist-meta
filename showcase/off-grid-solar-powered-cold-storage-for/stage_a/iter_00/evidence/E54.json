@@ -1,24 +1,14 @@
 {
   "id": "E54",
-  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
-  "tool": "web_search",
-  "purpose": "search: food grade plastic crate ventilated produce washable food safety",
-  "code_or_query": "food grade plastic crate ventilated produce washable food safety",
+  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "daily PV yield from 2.4kWp",
+  "code_or_query": "2.4*4.5*0.75",
   "inputs": {},
-  "output_summary": "life-solutions.in — Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha — https://www.life-solutions.in/supermarket-racks.html",
-  "output_full": "life-solutions.in — Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha — https://www.life-solutions.in/supermarket-racks.html\n(the search returned no passage text)",
+  "output_summary": "8.1",
+  "output_full": "8.1",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "life-solutions.in",
-      "title": "Supermarket Racks - Super Market Crate Trader - Wholesaler / Distributor from Alappuzha",
-      "year": "",
-      "url": "https://www.life-solutions.in/supermarket-racks.html",
-      "query": "food grade plastic crate ventilated produce washable food safety",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

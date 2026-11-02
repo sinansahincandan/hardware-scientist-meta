@@ -1,24 +1,24 @@
 {
   "id": "E38",
-  "author": "Retrofit and Maintenance Engineer",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
   "tool": "web_search",
-  "purpose": "search: Lindapter beam clamp safe working load slip capacity kN",
-  "code_or_query": "Lindapter beam clamp safe working load slip capacity kN",
+  "purpose": "search: Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "code_or_query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
   "inputs": {},
-  "output_summary": "lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/us/product/type-f3-beam-flange-clamp",
-  "output_full": "lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/us/product/type-f3-beam-flange-clamp\n(the search returned no passage text)",
+  "output_summary": "WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders — https://WWW.mdpi.com/2076-3417/10/13/4505",
+  "output_full": "WWW.mdpi.com — Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders — https://WWW.mdpi.com/2076-3417/10/13/4505\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "lindapter.com",
-      "title": "Lindapter | Type F3 Beam Flange Clamp",
+      "authors_or_org": "WWW.mdpi.com",
+      "title": "Experimental and Numerical Study on Dynamics of Two Footbridges with Different Shapes of Girders",
       "year": "",
-      "url": "https://www.lindapter.com/us/product/type-f3-beam-flange-clamp",
-      "query": "Lindapter beam clamp safe working load slip capacity kN",
+      "url": "https://WWW.mdpi.com/2076-3417/10/13/4505",
+      "query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
       "unresolved": false,
       "passage": ""
     }
   ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

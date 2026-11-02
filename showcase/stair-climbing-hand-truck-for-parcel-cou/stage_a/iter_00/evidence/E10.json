@@ -1,23 +1,24 @@
 {
   "id": "E10",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "calc",
-  "purpose": "energy to lift 60 kg one riser",
-  "code_or_query": "Q_(60,'kg')*9.81*Q_(0.17,'m')",
-  "inputs": {
-    "arg0": {
-      "value": "60",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "0.17",
-      "unit": "m"
-    }
-  },
-  "output_summary": "100 kg\u22c5m",
-  "output_full": "100 kg\u22c5m",
+  "author": "Jonas – Ergonomics and Courier Safety Specialist",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
+  "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
+  "inputs": {},
+  "output_summary": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education",
+  "output_full": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "casterconnection.com",
+      "title": "Ergonomic Casters Education",
+      "year": "",
+      "url": "https://casterconnection.com/caster-education/ergonomic-casters-education",
+      "query": "ISO 11228-2 push pull force limits ergonomics handles",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

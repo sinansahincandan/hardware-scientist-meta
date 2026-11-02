@@ -1,5 +1,0 @@
-{
-  "cycle": 4,
-  "member": "Baraka - Refrigeration and Thermal Engineer",
-  "message": "Amara, Chidi and Dalia, the cooler grows to cover one daily lot plus steady leak through the new upsized cooling concept (C13).\n\nPlainly staged field heat plus wall leak sets the cooling size. The average pull-down is 1.04e3 W in the pull-down power (E57) plus 185 W wall leak in the steady load simulation (E31), so about 1.00e3 W cooling from variable-speed Direct Current unit, where Direct Current (DC) means battery-type power, covers the peak, like a small room air conditioner so plausible.\n\nAmara, Chidi and Dalia, that cooling stays modest on wires at good efficiency.\n\nPlainly cooling divided by efficiency plus fans sets electricity. The peak is 662 W in the peak power calculation (E60) at Coefficient of Performance near 2, where Coefficient of Performance (COP) means cooling per electricity, giving 13.8 A at 48 V in the peak current calculation (E61), like a small microwave so ordinary solar cable carries it. I am not ready, because the proposal (v1) still lists the old cooler and Chidi must revise it to the new upsized cooling concept (C13) before a vote."
-}

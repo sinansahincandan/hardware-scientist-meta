@@ -1,20 +1,20 @@
 {
   "id": "E8",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: self locking worm gearbox hand winch brake holding load",
-  "code_or_query": "self locking worm gearbox hand winch brake holding load",
+  "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+  "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
   "inputs": {},
-  "output_summary": "winchshop.co.uk — 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop — https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1",
-  "output_full": "winchshop.co.uk — 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop — https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1\n(the search returned no passage text)",
+  "output_summary": "webarchive.nationalarchives.gov.uk — Microsoft Word - updated version of report 9648.doc — https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
+  "output_full": "webarchive.nationalarchives.gov.uk — Microsoft Word - updated version of report 9648.doc — https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "winchshop.co.uk",
-      "title": "1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop",
+      "authors_or_org": "webarchive.nationalarchives.gov.uk",
+      "title": "Microsoft Word - updated version of report 9648.doc",
       "year": "",
-      "url": "https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1",
-      "query": "self locking worm gearbox hand winch brake holding load",
+      "url": "https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
+      "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "unresolved": false,
       "passage": ""
     }

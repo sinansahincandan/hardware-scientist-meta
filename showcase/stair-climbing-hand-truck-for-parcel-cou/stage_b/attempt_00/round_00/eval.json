@@ -1,69 +1,62 @@
 {
-  "pixel_description": "Render-only: outdoor photo of hand truck tilted back on concrete stairs carrying a taped cardboard box. Twin parallel silver tubes form the spine from top to base, joined by two small cross plates and telescopic collars near top. Top ends bend back into a handle with two black rubber grips, brake lever under right grip. Bottom ends bolt to a bulky dark grey cast housing. A small side crank with black knob protrudes from the housing. Critical part tri-star wheel cluster: centered on that housing/axle, made of dark metal star arms ending in black solid rubber wheels with silver hubs. Five wheels resolved: three on left in clear triangular 120-deg arrangement - one touching the vertical riser, one on upper tread, one rearward - plus two on near/right side - one sitting on lower tread nose under the toe, one partly hidden behind frame. Arms converge to common transverse axle bolted to spine base. Light wood-colored toe plate L-bolted to spine base brackets sits under box bottom and touches lower step edge. Box sits on toe, leans against spine tubes. Two black fabric straps wrap box in X-cross. Wheels physically touch stair concrete at two noses, toe touches box and step, housing touches spine and star arms, star arms touch wheels, spine touches handle via collars.",
+  "pixel_description": "Render-only: bright stairwell with light wood stairs on right, white wall. Center is stair trolley leaning diagonal. Two parallel silver twin spine tubes run from bottom bracket up to top U-loop handle with black grip on left side. Black brake deadman lever clamped under handle on left tube with black coiled cable running down left side to lower mechanism. Mid-spine is silver fold hinge lock bracket with pivots and lock lever joining upper and lower tubes. Bottom of spine clamps to tri-star mechanism and to silver toe plate. Toe plate is flat rectangular platform angled on steps supporting large cardboard parcel strapped with dark webbing cross straps with buckle. Under toe plate are two small swivel caster wheels bearing on stair treads. Critical part p_star tri-star wheel cluster: drawn at lower end of spine on lower stair nosing as central toothed hub with three radial metal arms at ~120 deg, each arm ending in small black solid-tyre wheel; bottom wheel contacts lower nosing, second wheel forward-right visible, third arm/wheel partially occluded behind bracket/brake band but star geometry evident; partially encircled by thin curved brake band/pawl ring connected to cable; forward bracket connects cluster to toe plate frame. Left side leaning against wall is folded flat slab with wheels at bottom showing stowed configuration.",
   "regions": [],
   "previous_regions": [],
-  "comparison_with_previous": "",
+  "comparison_with_previous": "No previous render - first evaluation.",
   "deviations": [
     {
-      "what": "cluster visible count",
-      "measured": "1 distinct hub segmented, 2 side clusters seen by eye",
-      "expected": "2 visible clusters",
+      "what": "p_star",
+      "measured": "pixels show central toothed hub with 3 radial arms each ending in small black wheel on stair nosing, segmenter missed label due to overlap with brake band",
+      "expected": "tri-star wheel cluster detectable as 'wheel cluster' with 3 wheels on orbit",
       "matters": false,
-      "why": "3/4 view merges the two mirrored side clusters onto one central housing. Five rubber wheels in triangular star arrangement are resolved, the sixth hidden behind frame/toe. Tri-star triangle and central axle preserved, so this is occlusion/segmentation, not missing function."
+      "why": "viewpoint and brake band overlap confuse segmenter but 3-arm orbit geometry is visibly present and bears on nosing as designed"
     },
     {
-      "what": "worm detection",
-      "measured": "not segmented as 'metal box' but bulky dark cast housing visible",
-      "expected": "metal box worm housing present",
+      "what": "p_spine",
+      "measured": "pixels show 2 parallel silver tubes from loop handle to lower bracket, joined to toe/star bracket at base; apparent gap is segmentation/occlusion",
+      "expected": "1 visible spine and touching toe plate",
       "matters": false,
-      "why": "Label mismatch. Dark bolted housing at spine base with side crank knob sits exactly on cluster axle to spine load path, matching self-locking worm plus pawl location. Function intact."
+      "why": "twin tubes qty 2 is design intent; connection to toe is via metal bracket visible at base, so 2-count and apart flag is not a working-principle change"
     },
     {
-      "what": "spine count and spine-vs-handle scale",
-      "measured": "2 silver tubes seen but segmented as 1; 7.7x segmented handle length",
-      "expected": "2 tubes visible, about 1.1x handle length",
+      "what": "p_toe",
+      "measured": "pixels show main toe plate under parcel joined to spine/star bracket plus second toe appearance as part of folded slab leaning on left wall",
+      "expected": "1 visible toe plate touching spine",
       "matters": false,
-      "why": "Segmenter merged the twin tubes and measured only the black grip as handle. By eye twin parallel aluminium tubes with cross-braces and telescopic collars run full length ~1000-1200mm, similar to full handle loop length. Carry function unchanged."
+      "why": "second detection is intentional folded-slab view per figure_spec unfolded plus folded slab, not a duplicated part; main toe is connected"
     },
     {
-      "what": "toe detection",
-      "measured": "not segmented as 'foot plate' but light plate visible under box",
-      "expected": "foot plate present",
+      "what": "p_brake",
+      "measured": "pixels show black deadman lever mounted directly under loop handle with coiled cable running down spine to star brake",
+      "expected": "brake lever touching handle",
       "matters": false,
-      "why": "Label/shape mismatch. Light wooden/metal plate under cardboard box bolted to spine base brackets, supporting parcel weight. Hinge line implied. Present and loaded correctly."
+      "why": "design connection handle to brake is via cable, so physical separation along cable is expected and does not break fail-safe function"
     },
     {
-      "what": "handle orientation and scale",
-      "measured": "grips measured horizontal, 0.13x spine length",
-      "expected": "vertical long axis, about 0.9x spine length",
+      "what": "p_handle",
+      "measured": "pixels show transverse U-loop at top with horizontal grip, diagonal spine, lever clamped to handle; loop size ~0.38x spine",
+      "expected": "vertical long axis handle ~0.83x spine and touching brake",
       "matters": false,
-      "why": "Perspective and partial measurement. Spine is inclined ~45deg on stairs, handle loop continues then bends back with near-horizontal grips for two-hand push. Segmenter measured only short grip, not full telescopic closed-loop tubes which are ~900-1100mm with spine. Relative orientation follows spine as in OPEN L sketch, brake lever under right grip visible."
+      "why": "horizontal is correct for loop grip across top; small size is loop only not full handle length; cable provides brake connection"
     },
     {
-      "what": "strap count",
-      "measured": "1 segmented, X-cross seen by eye",
-      "expected": "2 visible straps",
+      "what": "p_strap",
+      "measured": "pixels show 2 webbing legs crossing over parcel on inclined toe with buckle, anchored to toe, tilted ~124 deg, ~0.64x toe",
+      "expected": "1 vertical strap ~1.3x toe",
       "matters": false,
-      "why": "Two black polyester bands crossing in X around box merged in segmentation. Both secure parcel to frame/toe. Count difference is merging, not missing securement."
+      "why": "2 detections are 2 legs of one two-point harness assembly; tilt and smaller projected length follow inclined toe/parcel perspective, retention function unchanged"
     },
     {
-      "what": "wheel visible count",
-      "measured": "5 wheels resolved",
-      "expected": "3 visible wheels",
+      "what": "p_hinge",
+      "measured": "pixels show mid-spine silver bracket with side plates, pivots and lock lever joining upper/lower tubes with cable guide",
+      "expected": "metal hinge detectable",
       "matters": false,
-      "why": "Side-view expectation vs 3/4 photo showing both left and right clusters. Three left wheels form 120-deg triangle, two right wheels show second cluster, sixth occluded behind housing. Total 6 implied, solid black rubber with hubs. Extra visibility is viewpoint, not extra parts; stair-nose contact on two noses preserved."
-    },
-    {
-      "what": "pin detection",
-      "measured": "not segmented as 'metal pin'",
-      "expected": "metal pin present",
-      "matters": false,
-      "why": "12-30mm quick pins/skid pads too small to segment at this distance. Bolts/rivets visible on spine-tube joints, telescopic collars and toe hinge brackets provide lock points. Absence in segmentation is resolution, not missing fold-lock function."
+      "why": "segmenter missed label but hinge-lock is clearly visible and connects spine segments as designed"
     }
   ],
   "s1_faithful": true,
-  "s1_differences": "No structural difference. Same parts, same connections, same relative sizes and directions allowing for 3/4 photo perspective vs abstract node diagram: twin-tube spine to toe hinge to parcel, spine to telescopic closed-loop handle with brake lever, cluster axle to worm housing with crank to spine, wheels on cluster arms contacting two stair noses, straps securing parcel.",
+  "s1_differences": "No material difference from sketch: same twin spine, loop handle with lever and cable, mid hinge lock, toe with strapped box, tri-star on nosing with toe casters, plus folded slab view as specified. Only perspective occlusion of one star wheel and cable routing.",
   "s2_flaw": false,
-  "s2_feedback": "No design flaw exposed. Load path handle-spine-worm-cluster-stairs is continuous, toe clears stair nose and supports box, five of six wheels show rolling/climbing contact without interference, crank and brake lever are reachable and separate from parcel, frame shows no buckling or impossible assembly.",
-  "notes": "Photorealistic render with no overlaid text/diagram. Segmenter misses are label, merging and occlusion effects. Human inspection confirms twin tubes, worm housing with crank, two tri-star side sets, toe plate, closed-loop handle with dead-man lever, X straps, bolts at joints."
+  "s2_feedback": "No design flaw exposed: tri-star hub bears on lower nosing, toe casters bear on upper treads without interference, spine-to-toe/star bracket carries load, brake cable runs clear of mid-hinge, loop handle and hinge lever remain reachable.",
+  "notes": "Callouts verified: Loop Handles, Twin Spine Tubes, Fold Hinge Lock, Brake Band Pawl, Tri Star Wheels, Harness Strap, Toe Plate all correctly spelled, no numbers, leaders end on correct parts. No extra text, numbers, scale bars. Photorealistic render, not diagram/cartoon/wireframe. Folded slab on left is required second view per figure_spec."
 }

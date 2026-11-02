@@ -1,65 +1,63 @@
-I'll search for the closest tri-star stair trucks and self-locking patents to map your concept.
-A manual tri-wheel cart with pawl braking looks like the closest match — I'll pull its full details to compare.
-Closest match is patent application **US 20100294575 - Motorized six wheel hand truck**.
+Your tri-star courier concept is in hand — now hunting its closest real-world match to map the differences.
+I've surfaced a promising product and patent — now digging into the details to pinpoint the differences.
+Closest match: **AJ Products Compact aluminium stair climbing sack truck – Art. 15-6647 – tri-star folding truck**
 
-What it discloses:
+> Folding sack truck with triple-wheel system designed to move goods up and down stairs
 
-* Two `wheel connector members` each with `three equally spaced wheel attachment points` - i.e. tri-star / Y-shaped cluster, `three wheel members respectively` per side.
-* `Y-shaped` connectors `adapted to easily move up and down each stair member`.
-* Drive is `An electric motor, through a worm drive, drives a gear box connected to the axle`, specifically `worm gear mechanically attached to said motor member` and to `round gear` attached to `axle member, to thereby mechanically rotate said axle member and wheel connectors`.
-* Self-locking hold: `The worm gear (21) prevents the axle member (14) from moving when the motor (16) is not running. That way, the hand truck (10) will not accidentally roll downwards when climbing stairs`.
-* Variant where `motor member is a removable, reversible, and cordless drill` to provide `low cost and versatile` truck.
+Why it is closest:
 
-Second very close manual art: **CN86201871U - Barrow for up and down stairs and ground**:
-
-* `Besides the adoption of the existing triangle wheel and the pawl braking mechanism` with `lever reinforcement mechanism`.
-* Known `tri-star wheel mechanism and ratchet stop mechanism have wherein been adopted`.
-* `braking ratchet (10)` : `make the engagement of ratchet and three tooth papillaes wheel, prevent tri-star wheel reversing downslide` upstairs.
+* Same working principle: `3 star wheel system where three small, solid rubber wheels rotate in the housing as the truck goes over the edge of each stair`
+* Same materials / format: `made entirely of aluminium` with `Tyre tread: Solid rubber`
+* Same folding van logic: `telescopic handle, fold up toe plate and folding wheels`, `folds down completely to save space`, `Folding toe plate: Yes`, `Collapsible: Yes`
+* Same retention: `supplied load strap can be used to prevent goods from falling off`
+* Same nominal load: `Load capacity: 60 kg`, `Weight: 3.5 kg`, `Height: 1050 mm`
 
 ### Difference to this concept
 
-The concept is a **manual, sized, folding** integration, not a motor/drill drive:
+1. **No fail-safe descent brake:** AJ relies on controlled handling – `easier and more controlled for you to handle` – concept adds `friction brake band with nosing pawl and deadman lever` locked on release, sized to `198 N m` hold / `98.9 N m` calculation.
 
-1.  **Manual crank + worm + pawl combined:** concept uses `hand crank through 15 to 1 reduction` with `0.25 m crank for 98.1 N effort` and `self-locking worm plus pawl` for hands-free hold. Prior US art uses powered worm only, no manual crank sizing, no redundant pawl, no backlash-free claim beyond motor-stop. Prior CN art uses pawl + lever / driving ratchet, no worm at all.
+Closest patent for brake function is US11794798B2 `Mechanical hand trucks with enhanced stair climbing and descending capability`, where `brake system includes a stabilizer mechanism that controls the brake during descending, after landing on each stair, so that it automatically brakes` – but that patent uses `lever member` + `shoe assembly` lever-lift, not tri-star orbit.
 
-2.  **Sized linkage:** concept specifically sizes `tri-star clusters with 150 mm wheels for 170 mm risers`, `184 N m cluster torque`, `6130 N pawl tooth force`, `5 turns per step`, `61.3 N dead-man lever`. Neither prior art gives riser/wheel sizing, effort, tooth load or crank turns.
+2. **Stair rating halved:** AJ: `can handle 60 kg safely when used on flat ground and 30 kg on stairs` – concept claims full `60 kg` on `200 mm riser` stairs at `226 N` heave, `15 deg lean`.
 
-3.  **Lightweight folding van package:** concept claims `twin-tube aluminium spine with 2-step fold to 1200x600x300 mm under 15 kg`, `11.3 kg`, `6061-T6 with steel inserts`, hinged toe plate, telescopic closed-loop handle, parcel straps. US art is frame + handle + support platform with no fold-flat envelope or <15 kg target; CN art is household barrow with sliding handgrip gear-shift, not van-stowage fold.
+3. **Different scale / geometry:**
+   * AJ: `Wheel diameter: 58 mm`, `Load area size (lxw): 387x270 mm`
+   * Concept: `150 mm wheels on 140 mm orbit`, `toe plate 450x350 mm`, `twin 30x2 mm spine`, `folded slab 730x490x150 mm`.
 
-In short: US20100294575 = tri-star + motor-worm self-lock. CN86201871U = tri-star + pawl + manual lever boost. This concept = tri-star + **manual-crank worm + pawl + dead-man brake + lightweight 2-step fold**, dimensioned to 60 kg / 170 mm / 98 N.
+4. **Different fold:** AJ: telescopic handle + inward-folding wheels / toe plate – concept: `mid-spine fold hinge with lock indicator`, `twin spine tubes` to rigid lock with `SF 9.02`, pin stress, green-red indicator – not present on AJ product.
 
 
 Sources:
-- https://www.bestbuy.ca/en-ca/product/vevor-3-in-1-industrial-convertible-stair-climbing-cart-770-lbs-max-load-folding-hand-truck-dolly-with-handle-wheels-stair-climbing-utility-trolley-for-moving-orange-silver/19783042 — VEVOR 3 in 1 Industrial Convertible Stair Climbing Cart, 770 lbs Max Load, Folding Hand Truck Dolly with Handle & Wheels, Stair Climbing Utility Trolley for Moving, Orange & Silver | Best Buy Canada
-- https://www.desertcart.tw:443/products/662036546-stair-climbing-hand-truck-440lb-heavy-duty-dolly-cart-stairs — Stair Climbing Hand Truck 770lb Heavy Duty Dolly Cart Stairs | Desertcart Taiwan
-- https://www.amazon.com/dp/B0C66JTD46/ref=btn_assoc_p-facebook_o-1_srctok-8d7973459d7525dc_ht-t — 260 LBS Stair Climbing Cart, Aluminum Trolley Dolly for Stairs, Folding Hand Truck Dolly, Grocery Shopping Cart with Mute Wheels, Telescoping Handle and Rubber Wheels for Moving, Shopping
-- https://www.amazon.com/dp/B0DSVY7WYR/ref=cm_sw_r_cso_cp_apan_dp_0GWY1AVDRC004T6DYAEY — Amazon.com: Heavy-Duty 330LB Capacity Hand Truck with Stair-Climbing Wheels & One-Touch Retractable Handle - Q235 Steel Collapsible Dolly Cart, 4.2-Inch Triple Wheels, Elastic Strap & Sponge Grip (Green) : Office Products
-- https://www.amazon.com/dp/B0C66JTD46/ref=btn_assoc_p-facebook_o-1_srctok-90ef7b2f582d2525_ht-t — 260 LBS Stair Climbing Cart, Aluminum Trolley Dolly for Stairs, Folding Hand Truck Dolly, Grocery Shopping Cart with Mute Wheels, Telescoping Handle and Rubber Wheels for Moving, Shopping
-- https://www.amazon.com/dp/B0GCCZF5XL/ref=sspa_mw_detail_1 — Heavy-Duty 220LB Capacity Stair Climbing Hand Trucks, Stair Climber Cart Dolly Hand Truck with 6 Wheels and One-Touch Retractable Handle for Home Stairs, Moving, Groceries, Warehouse(Yellow)
-- https://www.amazon.com/dp/B0DSVY7WYR/ref=cm_sw_r_cso_cp_apin_dp_WKMBXCQW250DXZQAEGMQ — Amazon.com: Heavy-Duty 330LB Capacity Hand Truck with Stair-Climbing Wheels & One-Touch Retractable Handle - Q235 Steel Collapsible Dolly Cart, 4.2-Inch Triple Wheels, Elastic Strap & Sponge Grip (Green) : Office Products
-- https://www.vevor.com.au/stair-climbing-cart-c_10486/vevor-stair-climbing-cart-150-kg-stair-climb-capacity-aluminum-alloy-folding-trolley-cart-with-telescoping-handle-6-wheels-and-2-bungee-cords-stair-climber-dolly-for-home-groceries-warehouse-p_010923682480 — VEVOR Stair Climbing Cart, 150 kg Stair-Climb Capacity, Aluminum Alloy Folding Trolley Cart with Telescoping Handle, 6 Wheels and 2 Bungee Cords, Stair Climber Dolly for Home, Groceries, Warehouse | VEVOR AU
-- https://www.vevor.com/stair-climbing-cart-c_10486/vevor-stair-climbing-cart-220-lbs-stair-climbing-capacity-heavy-duty-folding-trolley-cart-with-telescoping-handle-6-wheels-and-2-bungee-cords-stair-climber-dolly-for-home-groceries-warehouse-p_010353528239 — VEVOR Stair Climbing Cart, 460 lbs Stair-Climbing Capacity, Heavy-Duty Folding Trolley Cart with Telescoping Handle, 6 Wheels and 2 Bungee Cords, Stair Climber Dolly for Home, Groceries, Warehouse | VEVOR US
-- https://eureka.patsnap.com/patent-CN108995697A — Synchronous gear electric manned stair car - Eureka | Patsnap
-- https://patents.google.com/patent/CN110240046B/en — CN110240046B - Suspension type stair climbing machine 
-        - Google Patents
-- https://patents.google.com/patent/EP0099061B1/ja — EP0099061B1 - Sackkarre mit Treppensteigvorrichtung
-- https://patents.google.com/patent/DE102010054328A1/en — DE102010054328A1 - Motor powered climber for diagonal transportation of heavy loads over staircase, has seven climbing legs secured on endless chain for climbing staircase, where climbing legs are evenly spaced from each other along chain 
-        - Google Patents
-- https://patents.Google.Com/patent/US3288234A/en — US3288234A - Stair climbing conveyance
-- https://www.patentsencyclopedia.com/app/20100294575 — Motorized six wheel hand truck - Patent application
-- https://patents.google.com/patent/CN103192915A/en — CN103192915A - Scooter capable of climbing stairs 
-        - Google Patents
-- https://patents.google.com/patent/US4960179A/en — US4960179A - Powered heavy-duty hand truck
-- https://eureka.patsnap.com/patent-CN109484511B — A kind of heavy object stair climbing machine - Eureka | Patsnap
-- https://patents.google.com/patent/CN216232654U/en — CN216232654U - Integrated device based on climb building and travel
-- https://patents.google.com/patent/CN86201871U/en — CN86201871U - Barrow for up and down stairs and ground
-- https://eureka.patsnap.com/patent-US20130192907A1 — Stair climbing wheeled vehicle, and system and method of making and using same - Eureka | Patsnap
-- https://eureka.patsnap.com/patent-US20130274973A1 — Stair climbing wheeled vehicle, and system and method of making and using same - Eureka | Patsnap
-- https://eureka.patsnap.com/patent-US20100032911A1 — Stair-Climbing Wheeled Vehicle - Eureka | Patsnap
+- https://www.ajproducts.ie/p/compact-aluminium-stair-climbing-sack-truck-440578-440576 — Compact aluminium stair climbing sack truck
+- https://www.ajproducts.co.uk/p/compact-aluminium-stair-climbing-sack-truck-440578-440576 — Compact aluminium stair climbing sack truck
+- https://www.robertdyas.co.uk/special-categories/blue-sack-truck?category=516 — Blue Sack Truck  | Robert Dyas
+- https://www.huntoffice.ie/hand-trucks — Hand Trolleys Ireland | Sack Trucks & Hand Carts | HuntOffice
+- http://www.qdmaterialhandling.com/Sack-Trucks-Foot-Stairclimber-120Kg-Capacity-136.html — Foot Stairclimber 120Kg Capacity|Sack Trucks|Material Handling Equipment
+- https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html — Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands
+- https://www.diy.com/departments/heavy-duty-stair-climber-sack-truck-steel-yellow-frame-3-linked-wheels-folding-toe-plate-for-extra-storage-200kg-capacity/5060139810678_BQ.prd — Heavy Duty Stair Climber Sack Truck, Steel Yellow Frame, 3 Linked Wheels, Folding Toe Plate For Extra Storage
+- https://www.screwfix.com/c/storage-ladders/hand-trucks/cat831506 — Sack Trucks | Manual Handling | Screwfix
+- https://uk.bestproducts.reviews/stair-climbing-carts — Best Stair Climbing Carts
+- https://www.Toolstation.Com/stair-climbing-sack-truck/p87414 — Stair Climbing Sack Truck 120Kg
+- https://www.amazon.com/dp/B0BVV667V9/ref=cm_sw_r_cso_fb_apan_dp_H8787YC87AXTX0YZ8J7G — Amazon.com: Riosoc Electric Stair Climbing Hand Trucks, 200W 3 Adjustable Speeds with Light 440lbs Max Load Folding Dolly Cart Trolley, with 6 Wheels Motor Battery for Moving Furniture Home Warehouse Supermarket : Industrial & Scientific
+- https://device.report/manual/8505570 — VOLTSTAIR Dolly Titan Motorized Powered Stair Climbing Hand Truck User Manual
+- https://top5best.com/stair-climbing-dolly — Top 5 Best Stair Climbing Dolly (Expert Take)
+- https://www.amazon.com/dp/B0FS71JTYF/ref=cm_sw_r_cso_fm_apin_dp_M09285ZZASCT07Y0BYHW — Upgraded Stair Climbing Cart, 280Lbs Heavy Duty Folding Hand Truck Dolly, Folding Shopping Cart, Portable Personal Stair Climbing Dolly with Bag for Moving, Luggage, Groceries, Travel, Office: Amazon.com: Industrial & Scientific
+- https://hasslefreehouse.com/best-stair-climbing-hand-truck — 11 Best Stair Climbing Hand Trucks for Easy Moves
+- https://www.amazon.com/dp/B0FP228P3S/ref=sr_1_9 — Stair Climbing Cart, 220 LBS Aluminum Stair Climber Dolly, Heavy Duty Folding Hand Truck Dolly with 6 Wheels, Telescoping Handle and Elastic Rope for Home, Moving, Groceries, Warehouse: Amazon.com: Industrial & Scientific
+- https://www.amazon.com/dp/B0FS71JTYF/ref=cm_sw_r_cso_cp_apan_dp_W24SGN6G4QCAJEW57NB0 — Upgraded Stair Climbing Cart, 280Lbs Heavy Duty Folding Hand Truck Dolly, Folding Shopping Cart, Portable Personal Stair Climbing Dolly with Bag for Moving, Luggage, Groceries, Travel, Office
+- https://www.bestsportsgearpicks.com/stair-climbing-carts — Top 10 Stair Climbing Carts 2026 in the US | BestSportsGearPicks.com - Pro Reviews & Buying Guides
 - https://patentcut.com/US8764028 — Stair climbing wheel with multiple configurations
-- https://patentimages-storage-googleapis-comproxy.c9w.net/a4/4a/8d/0fb55c7af7ac6a/US4264082.pdf — 1498409941652289001-04264082
-- https://patents.google.com/patent/CA2644990A1/en — CA2644990A1 - Stairclimbing and descending hand truck
-- https://patents.google.com/patent/CN205819271U/en — CN205819271U - 
-        Three-wheel electric stair climbing truck
-- https://patents.google.com/patent/EP1996440A1/en — EP1996440A1 - Stairclimbing and descending hand truck
-- https://www.patentsencyclopedia.com/app/20180229745 — HAND TRUCKS - Patent application
+- https://www.bestreviews.guide/stair-climbing-carts — 10 Best Stair Climbing Carts 2026 in the US | There's One Clear Winner | BestReviews.guide
+- https://www.patentsencyclopedia.com/app/20100108412 — STAIR CLIMBING DEVICE - Patent application
+- https://patents.google.com/patent/US20250027320A1/en — US20250027320A1 - Stair assistance device 
+      - Google Patents
+- https://patents.google.com/patent/CN86201871U/en — CN86201871U - Barrow for up and down stairs and ground
+- https://patentimages-storage-googleapis-comproxy.boingomedia.com/79/e3/4e/0cda66b16bfc58/US3512658.pdf — 1498390519451722903-03512658
+- https://eureka.patsnap.com/patent-CN106080725A — Self-adaptive mechanical power-assisted stair-climbing trolley - Eureka | Patsnap
+- https://patents.google.com/patent/US2772096A/en — US2772096A - Appliance hand truck provided with stair-climbing attachment
+- https://patents.google.com/patent/AU2023207606A1/en — AU2023207606A1 - Mechanical hand trucks with enhanced stair climbing and descending capability
+- https://patents.google.com/patent/US3191953A/en — US3191953A - Stair climbing wheel chair
+- https://patents.google.com/patent/US11794798B2/en — US11794798B2 - Mechanical hand trucks with enhanced stair climbing and descending capability
+- https://patentcut.com/6837337 — Fall arrest safety device
+- https://patents.google.com/patent/DE19951914A1/en — DE19951914A1 - 
+  Wheel arrangement, in particular for handicapped stair climbing devices

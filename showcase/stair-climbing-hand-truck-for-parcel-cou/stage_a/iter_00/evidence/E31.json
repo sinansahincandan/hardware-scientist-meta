@@ -1,14 +1,24 @@
 {
   "id": "E31",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-  "tool": "calc",
-  "purpose": "frame bending moment estimate 60kg at 0.5m",
-  "code_or_query": "60*9.81*0.5",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
+  "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
   "inputs": {},
-  "output_summary": "294",
-  "output_full": "294",
+  "output_summary": "alibaba.com — Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com — https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html",
+  "output_full": "alibaba.com — Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com — https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "alibaba.com",
+      "title": "Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com",
+      "year": "",
+      "url": "https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html",
+      "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

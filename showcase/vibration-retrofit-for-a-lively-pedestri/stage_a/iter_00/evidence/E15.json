@@ -1,20 +1,20 @@
 {
   "id": "E15",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: Setra footbridge vibration comfort limits vertical acceleration 0.7",
-  "code_or_query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+  "purpose": "search: Setra HiVoSS footbridge damping requirement TMD design",
+  "code_or_query": "Setra HiVoSS footbridge damping requirement TMD design",
   "inputs": {},
-  "output_summary": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link — https://link.springer.com/article/10.1186/s43251-025-00188-y",
-  "output_full": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link — https://link.springer.com/article/10.1186/s43251-025-00188-y\n(the search returned no passage text)",
+  "output_summary": "mdpi-res.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge — https://mdpi-res.com/d_attachment/infrastructures/infrastructures-08-00100/article_deploy/infrastructures-08-00100.pdf?version=1685430798",
+  "output_full": "mdpi-res.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge — https://mdpi-res.com/d_attachment/infrastructures/infrastructures-08-00100/article_deploy/infrastructures-08-00100.pdf?version=1685430798\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "link.springer.com",
-      "title": "Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section | Advances in Bridge Engineering | Springer Nature Link",
+      "authors_or_org": "mdpi-res.com",
+      "title": "Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge",
       "year": "",
-      "url": "https://link.springer.com/article/10.1186/s43251-025-00188-y",
-      "query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+      "url": "https://mdpi-res.com/d_attachment/infrastructures/infrastructures-08-00100/article_deploy/infrastructures-08-00100.pdf?version=1685430798",
+      "query": "Setra HiVoSS footbridge damping requirement TMD design",
       "unresolved": false,
       "passage": ""
     }

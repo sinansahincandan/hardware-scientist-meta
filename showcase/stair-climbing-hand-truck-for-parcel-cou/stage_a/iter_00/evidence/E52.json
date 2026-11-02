@@ -1,23 +1,27 @@
 {
   "id": "E52",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
   "tool": "calc",
-  "purpose": "required section modulus SF2 corrected",
-  "code_or_query": "(Q_(588,\"N*m\")/Q_(240,\"MPa\")).to(\"cm**3\")",
+  "purpose": "correct tube mass per meter",
+  "code_or_query": "(Q_(\"2700kg/m**3\")*3.14159/4*(Q_(\"30mm\")**2-Q_(\"26mm\")**2)).to(\"kg/m\")",
   "inputs": {
     "arg0": {
-      "value": "588",
-      "unit": "N*m"
+      "value": "\"2700kg/m**3\"",
+      "unit": ""
     },
     "arg1": {
-      "value": "240",
-      "unit": "MPa"
+      "value": "\"30mm\"",
+      "unit": ""
+    },
+    "arg2": {
+      "value": "\"26mm\"",
+      "unit": ""
     }
   },
-  "output_summary": "2.45 cm\u00b3",
-  "output_full": "2.45 cm\u00b3",
+  "output_summary": "0.475 kg/m",
+  "output_full": "0.475 kg/m",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

@@ -1,14 +1,14 @@
 {
   "id": "E58",
-  "author": "Chidi - Enclosure and Structural Designer",
-  "tool": "sketch",
-  "purpose": "Door seal compression section and rack guard for crate tiers",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,4))\n# Door seal section\nax1.set_title(\"Door seal section (plan view)\")\nax1.set_xlim(0,10); ax1.set_ylim(0,10)\n# wall panel\nax1.fill([0,2,2,0],[1,1,9,9], color='lightgray')\nax1.text(0.3,5,\"wall 100mm\", rotation=90, fontsize=8)\n# door leaf\nax1.fill([6,8,8,6],[1.5,1.5,8.5,8.5], color='tan')\nax1.text(6.2,5,\"door leaf\", rotation=90, fontsize=8)\n# gasket uncompressed vs compressed\nax1.plot([2,6],[8,8],'k--')\nax1.plot([2,6],[2,2],'k--')\nax1.fill([2,6,6,2],[3,3,4,4], color='black')\nax1.text(2.5,6.5,\"magnetic gasket\\n3mm compression\", fontsize=8)\nax1.annotate(\"fixed wall\", xy=(1,9), fontsize=8)\nax1.annotate(\"moving door\", xy=(7,9), fontsize=8)\nax1.set_xticks([]); ax1.set_yticks([])\n# Rack guard\nax2.set_title(\"Rack tier with guard rail\")\nax2.set_xlim(0,10); ax2.set_ylim(0,10)\nax2.fill([1,9,9,1],[1,1,2,2], color='gray')\nax2.text(4,1.3,\"rack shelf\", fontsize=8)\nfor x in [2,4,6,8]:\n    ax2.fill([x-0.8,x+0.8,x+0.8,x-0.8],[3,3,5,5], color='green', alpha=0.6)\nax2.text(3.5,4,\"20kg crates\", fontsize=8)\nax2.plot([1,9],[6,6],'r-', linewidth=3)\nax2.text(4,6.5,\"guard rail 50mm above shelf\", fontsize=8, color='red')\nax2.plot([1,1],[1,6],'k-', linewidth=2)\nax2.plot([9,9],[1,6],'k-', linewidth=2)\nax2.text(1.2,7.5,\"fixed posts\", fontsize=8)\nax2.set_xticks([]); ax2.set_yticks([])\nfig.tight_layout()\n",
+  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "night fraction of 5.12kWh battery",
+  "code_or_query": "(150*14/1000/5.12)",
   "inputs": {},
-  "output_summary": "failed: findfont: Font family 'Comic Neue' not found.",
-  "output_full": "failed: findfont: Font family 'Comic Neue' not found.",
+  "output_summary": "0.41",
+  "output_full": "0.41",
   "sketch_path": null,
   "references": [],
-  "status": "error",
+  "status": "ok",
   "cycle": 3
 }

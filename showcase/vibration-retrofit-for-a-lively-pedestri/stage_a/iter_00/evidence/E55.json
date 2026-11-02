@@ -1,0 +1,14 @@
+{
+  "id": "E55",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "calc",
+  "purpose": "static spring sag under TMD weight",
+  "code_or_query": "4900/67800",
+  "inputs": {},
+  "output_summary": "0.0723",
+  "output_full": "0.0723",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

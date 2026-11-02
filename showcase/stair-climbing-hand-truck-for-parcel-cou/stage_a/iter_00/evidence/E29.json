@@ -1,24 +1,19 @@
 {
   "id": "E29",
-  "author": "Tomas — Human Factors and Safety Engineer",
-  "tool": "web_search",
-  "purpose": "search: deadman brake lever hand truck stair climber safety",
-  "code_or_query": "deadman brake lever hand truck stair climber safety",
-  "inputs": {},
-  "output_summary": "handtrucks2go.com — Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... — https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html",
-  "output_full": "handtrucks2go.com — Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... — https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "handtrucks2go.com",
-      "title": "Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable...",
-      "year": "",
-      "url": "https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html",
-      "query": "deadman brake lever hand truck stair climber safety",
-      "unresolved": false,
-      "passage": ""
+  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+  "tool": "calc",
+  "purpose": "estimate aluminium frame mass",
+  "code_or_query": "Q_(2700,'kg/m**3')*(2*1.2*3.14159*((0.03**2-0.026**2)/4)+0.5*0.4*0.003)*1.0",
+  "inputs": {
+    "arg0": {
+      "value": "2700",
+      "unit": "kg/m**3"
     }
-  ],
+  },
+  "output_summary": "2.76 kg/m\u00b3",
+  "output_full": "2.76 kg/m\u00b3",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

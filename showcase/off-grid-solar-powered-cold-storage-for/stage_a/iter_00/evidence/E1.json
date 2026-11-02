@@ -1,20 +1,20 @@
 {
   "id": "E1",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
-  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "purpose": "search: peak sun hours tropical hot region solar sizing kWh per kWp per day",
+  "code_or_query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
   "inputs": {},
-  "output_summary": "ms.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
-  "output_full": "ms.china-yiteng.com — What Is an Off Grid Solar System? How It Works and What You Need — https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html\n(the search returned no passage text)",
+  "output_summary": "howphilippines.com — On-Grid vs. Off-Grid vs. Hybrid: Which Solar Panel Setup Suits Your Philippine Household? — https://howphilippines.com/which-solar-panel-setup-suits/",
+  "output_full": "howphilippines.com — On-Grid vs. Off-Grid vs. Hybrid: Which Solar Panel Setup Suits Your Philippine Household? — https://howphilippines.com/which-solar-panel-setup-suits/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "ms.china-yiteng.com",
-      "title": "What Is an Off Grid Solar System? How It Works and What You Need",
+      "authors_or_org": "howphilippines.com",
+      "title": "On-Grid vs. Off-Grid vs. Hybrid: Which Solar Panel Setup Suits Your Philippine Household?",
       "year": "",
-      "url": "https://ms.china-yiteng.com/news/industry-news/what-is-an-off-grid-solar-system-how-it-works.html",
-      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "url": "https://howphilippines.com/which-solar-panel-setup-suits/",
+      "query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
       "unresolved": false,
       "passage": ""
     }

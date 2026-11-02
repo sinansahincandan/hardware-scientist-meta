@@ -1,14 +1,24 @@
 {
   "id": "E48",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-  "tool": "calc",
-  "purpose": "required section modulus for factored moment",
-  "code_or_query": "441/120e6",
+  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "tool": "web_search",
+  "purpose": "search: folding hand truck setup time seconds unfold",
+  "code_or_query": "folding hand truck setup time seconds unfold",
   "inputs": {},
-  "output_summary": "3.67e-06",
-  "output_full": "3.67e-06",
+  "output_summary": "global.microless.com — Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. — https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
+  "output_full": "global.microless.com — Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. — https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "global.microless.com",
+      "title": "Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping.",
+      "year": "",
+      "url": "https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
+      "query": "folding hand truck setup time seconds unfold",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

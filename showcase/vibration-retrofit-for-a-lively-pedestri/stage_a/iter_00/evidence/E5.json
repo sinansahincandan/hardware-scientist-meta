@@ -1,20 +1,20 @@
 {
   "id": "E5",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical mode 0.4 percent",
-  "code_or_query": "steel footbridge damping ratio vertical mode 0.4 percent",
+  "purpose": "search: pedestrian walking pacing frequency vertical footbridge resonance",
+  "code_or_query": "pedestrian walking pacing frequency vertical footbridge resonance",
   "inputs": {},
-  "output_summary": "1library.net — Guarda Footbridge in Portugal - Design of Footbridges — https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq",
-  "output_full": "1library.net — Guarda Footbridge in Portugal - Design of Footbridges — https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq\n(the search returned no passage text)",
+  "output_summary": "mjwstructures.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2011 — https://www.mjwstructures.com/userfiles/Pubblicazione/files/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
+  "output_full": "mjwstructures.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2011 — https://www.mjwstructures.com/userfiles/Pubblicazione/files/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "1library.net",
-      "title": "Guarda Footbridge in Portugal - Design of Footbridges",
-      "year": "",
-      "url": "https://1library.net/article/guarda-footbridge-in-portugal-design-of-footbridges.y64e10nq",
-      "query": "steel footbridge damping ratio vertical mode 0.4 percent",
+      "authors_or_org": "mjwstructures.com",
+      "title": "INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS",
+      "year": "2011",
+      "url": "https://www.mjwstructures.com/userfiles/Pubblicazione/files/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
+      "query": "pedestrian walking pacing frequency vertical footbridge resonance",
       "unresolved": false,
       "passage": ""
     }

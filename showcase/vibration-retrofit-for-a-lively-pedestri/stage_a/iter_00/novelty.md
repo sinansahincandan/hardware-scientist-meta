@@ -1,75 +1,61 @@
-I'll search for the closest existing TMD products, patents, and papers to compare against your under-deck concept.
-I've found several close under-deck retrofits — now I'll dig into the most similar case to nail down the differences.
-Closest existing:
+I'll search for the closest existing damped footbridge retrofit to compare against your under-deck concept.
+Early results show under-deck midspan dampers are already in use. I'll dig into the closest matches to detail the differences.
+Closest existing **product** is **DEICON - Pedestrian Bridge TMDs**:
 
-**Paper / retrofit: Robertson – Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper – single vertical TMD under-deck footbridge retrofit.**
+> TMDs `include an inertia element (mass) suspended by a restoring (resilient) element and an energy dissipating (damping) device.`
 
-* What it is:
+> `Figure 1 TMDs installed underneath, near the edge of, the balcony`
 
-> `vertically oscillating dead weight, usually solid steel, supported on springs` with `damping elements` in parallel `adjusted to required damping`
+> `two tuned mass dampers with a combined moving mass of 500 kg. The dampers were installed at the bridge midspan adjacent to the two main girders.`
 
-> `relative small mass` `oscillates with larger magnitude and just out of phase` with bridge deck to `suppressing motion`
+> `Figure 1 shows one of the TMDs being lowered into its housing cavity. Integrating the units within the bridge structure allowed the vibration-control system to remain`concealed while maintaining direct influence `acceleration at midspan`
 
-> `can be bolted to the structure in the most effective location` `custom designed to fit in available space within or underneath the structure`
+> `effective damping increased by nearly a factor of 3 for the 1.1 Hz mode and nearly doubling for the 2.8 Hz mode.`
 
-> Installed `as close as possible to point of maximum displacement under the deck between the two main steel beams`
+### Why it is the closest:
 
-> After installation `vertical movement ... barely perceptible`
+Same architecture as concept: under-deck, midspan, concealed, vertical-bending control, **identical 500 kg moving mass**.
 
-* Sizing in that paper:
+### Differences from this concept:
 
-> `mt = 2000 kg kt = 420500 N/m ct = 4350 kg/s`
+1. **Tuning target:** DEICON `dominant modes near 1.1 Hz and 2.4 Hz, corresponding to the bridge's primary bending and twisting modes.` `tuned to an intermediate frequency between the two, allowing a single implementation to provide damping to both` vs concept single mode 1.9 Hz tuned to 1.85 Hz per Den Hartog.
 
-> Bridge `m* = 12000 kg` `k* = 3000000 N/m` giving `maximum displacement 9.3mm` bare, `approximately 0.1mm` with TMD,
+2. **Mounting / retrofit method:** DEICON lowered into `housing cavity` integrated in structure vs concept bolted transverse bearer clamp-frame, no welding, prefabricated off-site, night lift with one lane open, transport lock + removable cover + shim/threaded seats for re-tuning.
 
-Second close product example for size reference:
+3. **Closest paper variant for bolted detail:**
+Eagles Meadow paper describes `vertically oscillating dead weight, usually solid steel, supported on springs. In parallel to the springs, damping elements are arranged, which can be adjusted` `can be bolted to the structure in the most effective location. The device would be custom designed to fit in the available space within or underneath` with `1 Reinforced concrete deck 2 Main steel beams 3 Adjustable steel mass 4 Adjustable vertical steel springs 5 Adjustable damping elements` `fitted to the bridge as close as possible to the point of maximum displacement under the deck between the two main steel beams` but with `mt = 2000 kg kt = 420500 N/m ct = 4350 kg/s` for 12,000 kg modal mass, not 500 kg / 20,000 kg, and no staged-closure / stops / sag-stroke design.
 
-**Full Scale Dynamics / CTS Bridges – Castle Bridge, Bristol – 600 kg under-deck TMD:**
-
-> `design and fabricate a Tuned Mass Damper that could be installed under the bridge deck`
-
-> `performance ... with and without the 600kg moving mass Tuned Mass Damper was tested` to `reduce accelerations to acceptable level` and `bringing bridge in line with required Eurocode standards`
-
-### Difference to this concept
-
-1. **Mounting:** Prior art is `bolted to the structure`. This concept is specifically **non-drilled**: 8 friction beam-clamps on girder bottom flanges carrying transverse cross-beam + bolted cassette, installable entirely from below.
-
-2. **Concealment / service package:** Prior art shows exposed `Tuned Mass Damper Installed Under Bridge Deck` with `Adjustable steel mass` + `Adjustable vertical steel springs` + `Adjustable damping elements`. This concept adds **recessed cassette + color-matched perforated soffit screen with shadow-gap, ±30 mm stroke clearance, and maintenance lock-off pin** – not disclosed in Eagles Meadow or Castle Bridge descriptions.
-
-3. **Tuning point:** Prior art: 2000 kg unit, `kt = 420500 N/m` on 12000 kg modal mass bridge. This concept: **800 kg, 1.83 Hz, ~105,412 N/m, 12% TMD damping, 4% mass ratio on 20,000 kg modal mass for 1.9 Hz mode**, targeting 1.75 m/s2 → 0.106 m/s2 vs 0.7 m/s2 limit – different bridge frequency, mass ratio and performance target.
-
-In short: same working principle – under-deck vertical out-of-phase mass-spring-damper – but novel combination here is **clamped no-drill midspan cross-frame + hidden screened cassette + lockable 800 kg / 1.83 Hz unit**.
+No patent found with bolted transverse-bearer + locked-mass night install + +/-50 mm stops + 72.3 mm sag / 20.1 mm stroke combination.
 
 
 Sources:
+- https://oa.upm.es/84638/1/10218266.pdf — Human…structure interaction effects on lightweight footbridges with tuned mass dampers
+- https://www.externalworksindex.co.uk/entry/139497/CTS-Bridges/Warren-truss-footbridge-over-Tamworth-railway/ — Warren truss footbridge over Tamworth railway
+- https://deicon.com/wp-content/uploads/2022/04/Pedestrian-Bridge-vibration-control-using-tuned-mass-dampers.pdf — | Pedestrian Bridge Vibration |  |  |
 - https://structechnique.com/download/15/free/aO4RBDPc — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper
-- https://mediatum.ub.tum.de/doc/1762603/document.pdf — Donaubruecken_Final.pdf
+- https://bwk.kuleuven.be/apps/bwm/eurodyn2011/papers/MS09-531.pdf — Vibration mitigation by means of hysteretic tuned mass dampers
+- https://iopscience.iop.org/article/10.1088/1755-1315/1205/1/012051/pdf — | IOP Conference Series: |  |
+- https://mdpi-res.com/d_attachment/actuators/actuators-15-00389/article_deploy/actuators-15-00389.pdf?version=1783689180 — Implementation and Numerical Validation of a Semi-Active Tuned Mass Damper for Vibration Mitigation in Lightweight Pedestrian Structures
+- https://core.ac.uk/download/pdf/51398928.pdf — Estimating robust optimum parameters of tuned mass dampers using multiobjective genetic algorithms
+- https://idus.us.es/bitstream/handle/11441/36164/CMMoST%202015_Jimenez-Alonso_Estimating.pdf?sequence=1&isAllowed=y — Estimating robust optimum parameters of tuned mass dampers using multiobjective genetic algorithms
 - http://fstructures.com/structures/pedestrian-bridge-vibration-dynamics/ — Pedestrian Bridge Dynamics: Footfall-Induced Vibration and Damping
-- https://files.kgf.cz/6btngt25so12/Tuned%20Mass%20Dampers%20for%20Vibration%20Control%20of%20Footbridges%20from%20an%20Architectural%20Point%20of%20View_KGF%20hydraulika_Jiri%20Kucera_Bridges%20in%20Danube%20Bas.pdf?download — Tuned Mass Dampers for Vibration Control of
-- https://api.repository.cam.ac.uk/server/api/core/bitstreams/3afdf7af-401b-44f6-8bdb-b40f25db454f/content — Content
-- https://www.ioa.org.uk/system/files/publications/C MEINHARDT D NEWLAND J TALBOT D TAYLOR VIBRATION PERFORMANCE OF LONDONS MILLENNIUM FOOTBRIDGE.pdf — ICSV22 Template
-- https://www.fullscaledynamics.com/project/vibration-simulations-and-tuned-mass-damper-design-for-castle-bridge-bristol/ — Vibration Simulations and Tuned Mass Damper Design for Castle Bridge, Bristol
-- https://www.scribd.com/document/467340093/P-1 — Design Criteria for Tuned Mass Dampers | PDF
-- https://dspace.vut.cz/server/api/core/bitstreams/fe91b2bb-e77d-41e7-847d-e32cfb3c7d2a/content — Tuned mass dampers ‐ evaluation of the effect on two real footbridges
-- https://pmarketresearch.com/auto/passive-tuned-mass-damper-market/ — Passive Tuned Mass Damper Market
-- https://core.ac.uk/download/pdf/4431304.pdf — Mitigation of Traffic-Induced Bridge Vibrations through Passive
-- https://pmarketresearch.com/auto/tuned-mass-damper-system-market/ — Tuned Mass Damper System Market
-- https://dataintelo.com/report/active-tuned-mass-dampers-market — Active Tuned Mass Dampers Market Size, Share & Forecast Report 2025 to 2034 | Dataintelo
-- https://dataintelo.com/report/bridge-wind-vibration-tuned-mass-dampers-market — Bridge Wind Vibration Tuned Mass Dampers Market Research Report 2033
-- https://pmarketresearch.com/worldwide-tuned-mass-damper-tmd-market-research/ — Worldwide Tuned Mass Damper (TMD) Market 2026
-- https://market.us/report/tuned-mass-damper-market/ — Tuned Mass Damper (TMD) Market
-- https://growthmarketreports.com/report/bridge-wind-vibration-tuned-mass-dampers-market — Bridge Wind Vibration Tuned Mass Dampers Market Research Report 2033
-- https://www.scribd.com/document/312613078/Mass-Dampers — Seismic Protection with Mass Dampers | PDF | Resonance | Mechanics
+- https://www.scribd.com/document/381300829/Banff-Suspension — Gerald Epp's Timber Bridge Design in Banff
+- http://www.electronicsandbooks.com/edt/manual/Magazine/J/Journal of Sound and Vibration/2010_v329/19/4068-4092.pdf — Crowd-induced random vibration of footbridge and vibration control using multiple tuned mass dampers
+- https://www.research.unipd.it/retrieve/e14fb26a-9712-3de1-e053-1705fe0ac030/morb.pdf — Microsoft Word - bt_ImprovementofdynamicbehaviouroftheVaresine-GaribaldifootbridgeMilanItalywithTMD.docx
+- https://608698.6bgr9ubv.asia/bitstream/handle/20.500.12065/3213/Characteristic%20Vertical%20Response%20of%20a%20Footbridge%20Due%20to%20Crowd%20Loading.pdf?sequence=1&isAllowed=y — Characteristic Vertical Response of a Footbridge Due to Crowd Loading
+- https://structurae.net/en/literature/conference-paper/dynamic-analysis-of-the-bercy-tolbiac-footbridge — Dynamic analysis of the Bercy-Tolbiac footbridge | Structurae
+- https://www.researchgate.net/publication/238523383_Characteristic_Vertical_Response_of_a_Footbridge_Due_to_Crowd_Loading — (PDF) Characteristic Vertical Response of a Footbridge Due to Crowd Loading
+- https://core.ac.uk/download/pdf/43096651.pdf — Proposal for vibration testing of Mezzanine Bridge, Changi Airport Line
+- https://www.youtube.com/watch?v=_XIA65v_Pd8 — How Walking Made a Bridge Sway — The Millennium Bridge Physics
+- https://patents.google.com/patent/CN215714562U/en — CN215714562U - Pendulum type multidirectional multiple-tuning mass damper
+- https://patents.google.com/patent/CN112227180A/en — CN112227180A - Stay cable combined vibration reduction device and method
+- https://patents.google.com/patent/CN109518826A/en — CN109518826A - A kind of hydroenergy storage station mill construction vibration control apparatus and control method
+- https://eureka.patsnap.com/patent-CN103410091A — Rotatable MTMD (multiple tuned mass dampers) system for assisting arched steel bridge tower to control vibration - Eureka | Patsnap
+- https://patents.google.com/patent/CN211472127U/en — CN211472127U - Damping device for building bridge
+- https://www.patentsencyclopedia.com/app/20130061466 — MULTI-RESPONSE VIBRATION DAMPER ASSEMBLY - Patent application
+- https://eureka.patsnap.com/patent-CN109869438A — Multiple tuned mass damper and suspension line damping method - Eureka | Patsnap
+- https://eureka.patsnap.com/patent-CN103276664A — Piezoelectric energy-harvesting tuned mass damper - Eureka | Patsnap
+- https://eureka.patsnap.com/patent-CN107354867B — A permanent magnet tuned mass damping device for bridge expansion joint disease control - Eureka | Patsnap
+- https://patents.google.com/patent/CN103774771A/en — CN103774771A - Rigidity and dampness integrating horizontal omnidirectional tuned mass damper
 - https://patents.google.com/patent/US6292967B1/en — US6292967B1 - TMD-damped stay cable and method and TMD 
         - Google Patents
-- https://eureka.patsnap.com/patent-CN103758029A — Permanent-magnet tuned mass damping device for stayed cable vibration damping control - Eureka | Patsnap
-- https://patents.google.com/patent/CN112227180A/en — CN112227180A - Stay cable combined vibration reduction device and method
-- https://patents.google.com/patent/CN113737633A/en — CN113737633A - Low-frequency tuned mass damper
-- https://patents.google.com/patent/CN103774771A/en — CN103774771A - Rigidity and dampness integrating horizontal omnidirectional tuned mass damper
-- http://eureka.patsnap.com/patent-US10634205B2 — Ultra-low frequency tuned liquid mass damper and design method of the same - Eureka | Patsnap
-- https://eureka.patsnap.com/patent-CN102493572B — Adjustable damping energy storage type tuned mass damper and energy storage method thereof - Eureka | Patsnap
-- https://eureka.patsnap.com/patent-US20190249740A1 — Ultra-low frequency tuned liquid mass damper and design method of the same - Eureka | Patsnap
-- https://patents.google.com/patent/CN102888904B/en — CN102888904B - Novel two-dimensional tuning mass damper
-- https://patents.google.com/patent/CN102561174A/en — CN102561174A - Green shock and vibration absorbing bridge tower
-- https://patents.google.com/patent/CN108797311B/en — CN108797311B - 
-        An eddy current tuned mass damper for a cableway bridge and its design method

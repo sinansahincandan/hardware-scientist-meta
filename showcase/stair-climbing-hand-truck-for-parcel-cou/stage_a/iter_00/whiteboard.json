@@ -3,120 +3,106 @@
   "functions": [
     {
       "id": "F1",
-      "text": "Lift and lower 60 kg load step by step on stairs with one operator",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer"
+      "text": "Move 60 kg load up and down residential stairs on one-person power",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer"
     },
     {
       "id": "F2",
-      "text": "Hold load on stair slope without continuous operator grip force",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer"
+      "text": "Hold load and control descent on stair nosing without runaway",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer"
     },
     {
       "id": "F3",
-      "text": "Operate up and down stairs with two-hand posture and effort one courier can sustain",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer"
+      "text": "Carry 60 kg load path through frame to toe plate and handles with safety factor",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer"
     },
     {
       "id": "F4",
-      "text": "Carry 60 kg load with frame weight under 15 kg and fold flat for van stowage",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer"
+      "text": "Provide one-person grip, posture and load retention with fail-safe descent control",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist"
     },
     {
       "id": "F5",
-      "text": "Secure 60 kg parcels up to 800 mm and stow folded device in van with 5-minute field service",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead"
+      "text": "Fold flat into van envelope and keep tare liftable by one courier while locking rigid when unfolded",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer"
     }
   ],
   "concepts": [
     {
       "id": "C1",
       "function_id": "F1",
-      "text": "tri-star wheel cluster: two side clusters each with 3 wheels of 150 mm diameter on rotating arm for stepping over 160-180 mm risers",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "text": "tri-star wheel cluster: 3x 150 mm wheels per side on rotating carrier, orbit radius ~140 mm to step over 200 mm riser",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "status": "open"
     },
     {
       "id": "C2",
-      "function_id": "F2",
-      "text": "self-locking worm drive plus pawl on tri-star axle: holds cluster without hand grip, hand crank releases step by step for descent control",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "function_id": "F4",
+      "text": "[assumed_constraint] One-person handle effort limit: sustained pull below 250 N, one-step heave below 350 N; handles adjustable 90-110 cm height, closed-loop grips. Based on ISO 11228-2 push-pull guidance (E7) and HSE push-pull report (E8).",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "status": "open"
     },
     {
       "id": "C3",
-      "function_id": "F1",
-      "text": "assumed_constraint: design stairs riser 170 mm tread 280 mm stair angle about 31 deg based on residential range 150-190 mm riser 250-300 mm tread",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "function_id": "F2",
+      "text": "Descent control: friction brake band on tri-star carrier plus nosing stop pawl, deadman lever on handle, fail-safe locked when released",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "status": "open"
     },
     {
       "id": "C4",
-      "function_id": "F3",
-      "text": "assumed_constraint: two-hand closed-loop handle height 900-1100 mm adjustable, grip diameter 30 mm, sustained pull under 150 N per operator based on Snook psychophysical limits",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "function_id": "F4",
+      "text": "Load retention: two-point harness strap over parcel to toe plate with buckle plus heel stop, anti-slip toe plate, pinch guards at tri-star wheel cluster (C1)",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "status": "open"
     },
     {
       "id": "C5",
-      "function_id": "F4",
-      "text": "L-frame in 6061-T6 aluminium rectangular tube spine with high-strength steel hinge inserts, hinged toe plate and telescopic closed-loop handle",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "function_id": "F5",
+      "text": "Mid-spine single fold hinge + flip-up toe plate: two 6061-T6 (heat-treated aluminium alloy) 30x2mm spine tubes unfold to 1200mm straight spine, over-centre side plates with spring detent pin and green-red lock indicator; folds to flat slab.",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "status": "open"
     },
     {
       "id": "C6",
-      "function_id": "F4",
-      "text": "2-step fold to flat: toe plate folds up against spine step 1, telescopic handle collapses and tri-star cluster tucks step 2 to envelope under 1200x600x300 mm",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "function_id": "F5",
+      "text": "[assumed_constraint] Folded envelope under 750x550x150mm and tare under 12kg liftable: targets proven flat-truck class 490x55x730mm folded niche fit and 250kg-capable folders folding to 120mm thick.",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "status": "open"
     },
     {
       "id": "C7",
-      "function_id": "F4",
-      "text": "assumed_constraint: frame carries 60 kg load plus 15 kg device with safety factor 2 on yield and folded envelope 1200x600x300 mm for van aisle and door stowage",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "function_id": "F5",
+      "text": "[assumed_constraint] Van parcel interface: toe plate 450x350mm holds 40x30x30 to 60x40x40cm parcels with strap; folded slab 730x490x150mm max stows upright in van niche; single-hinge unfold with flip toe under 30s; smooth wipe-clean aluminium and solid tyres.",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
       "status": "open"
     },
     {
       "id": "C8",
-      "function_id": "F5",
-      "text": "Parcel containment: 450x350 mm toe plate with upstand plus 1100 mm backrest, two 25 mm adjustable straps with buckles and anti-slip pads, accepts boxes to 800 mm side",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
-      "status": "open"
-    },
-    {
-      "id": "C9",
-      "function_id": "F5",
-      "text": "Van and service package: solid puncture-proof wheels, replaceable skid/wear pads at stair noses, single-tool quick pins for wheel and strap swap under 5 min, folded slab anchored on van floor with bungee / rail lock",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
-      "status": "open"
-    },
-    {
-      "id": "C10",
       "function_id": "F3",
-      "text": "Dead-man brake lever on closed-loop handle plus toe-plate heel guard, anti-slip nosing pads and two-hand stair stance procedure: operator uphill of load, brake locked each step",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "text": "chassis load path: twin 6061-T6 spine tubes to 5mm toe plate 450x350mm, 60kg on 200mm overhang, bending via spine to tri-star carrier axle, safety factor >2 on yield",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "status": "open"
     }
   ],
   "evidence": [
     {
       "id": "E1",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-      "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+      "purpose": "search: residential stair riser going dimensions building code max step height",
+      "code_or_query": "residential stair riser going dimensions building code max step height",
       "inputs": {},
-      "output_summary": "britishsc.co.uk \u2014 Spiral Stair Dimensions \u2013 At a Glance \u2014 https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
-      "output_full": "britishsc.co.uk \u2014 Spiral Stair Dimensions \u2013 At a Glance \u2014 https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/\n(the search returned no passage text)",
+      "output_summary": "homedit.com \u2014 Standard Stair Step Height and Code Guidelines \u2014 https://www.homedit.com/step-height/",
+      "output_full": "homedit.com \u2014 Standard Stair Step Height and Code Guidelines \u2014 https://www.homedit.com/step-height/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "britishsc.co.uk",
-          "title": "Spiral Stair Dimensions \u2013 At a Glance",
+          "authors_or_org": "homedit.com",
+          "title": "Standard Stair Step Height and Code Guidelines",
           "year": "",
-          "url": "https://www.britishsc.co.uk/resources/stair-resources/spiral-stair-dimensions/",
-          "query": "residential stair riser tread dimensions standard 170 mm building code",
+          "url": "https://www.homedit.com/step-height/",
+          "query": "residential stair riser going dimensions building code max step height",
           "unresolved": false,
           "passage": ""
         }
@@ -126,21 +112,21 @@
     },
     {
       "id": "E2",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-      "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+      "purpose": "search: residential stair riser going dimensions building code max step height",
+      "code_or_query": "residential stair riser going dimensions building code max step height",
       "inputs": {},
-      "output_summary": "dreamcivil.com \u2014 Staircase Design | Calculation of Tread, Riser and Landing in Staircase \u2014 https://dreamcivil.com/staircase-design/",
-      "output_full": "dreamcivil.com \u2014 Staircase Design | Calculation of Tread, Riser and Landing in Staircase \u2014 https://dreamcivil.com/staircase-design/\n(the search returned no passage text)",
+      "output_summary": "engineerfix.com \u2014 How High Is a Stair? Standard Riser Heights Explained \u2014 https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/",
+      "output_full": "engineerfix.com \u2014 How High Is a Stair? Standard Riser Heights Explained \u2014 https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "dreamcivil.com",
-          "title": "Staircase Design | Calculation of Tread, Riser and Landing in Staircase",
+          "authors_or_org": "engineerfix.com",
+          "title": "How High Is a Stair? Standard Riser Heights Explained",
           "year": "",
-          "url": "https://dreamcivil.com/staircase-design/",
-          "query": "residential stair riser tread dimensions standard 170 mm building code",
+          "url": "https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/",
+          "query": "residential stair riser going dimensions building code max step height",
           "unresolved": false,
           "passage": ""
         }
@@ -150,21 +136,21 @@
     },
     {
       "id": "E3",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-      "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+      "purpose": "search: residential stair riser going dimensions building code max step height",
+      "code_or_query": "residential stair riser going dimensions building code max step height",
       "inputs": {},
-      "output_summary": "gharpedia.com \u2014 Tread and Riser Size: Safe Stair Design Essentials \u2014 https://gharpedia.com/blog/tread-and-riser-size/",
-      "output_full": "gharpedia.com \u2014 Tread and Riser Size: Safe Stair Design Essentials \u2014 https://gharpedia.com/blog/tread-and-riser-size/\n(the search returned no passage text)",
+      "output_summary": "classicarchitecturetoday.com \u2014 Perfect Stair Dimensions for Safe, Stylish Spaces \u2014 http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
+      "output_full": "classicarchitecturetoday.com \u2014 Perfect Stair Dimensions for Safe, Stylish Spaces \u2014 http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "gharpedia.com",
-          "title": "Tread and Riser Size: Safe Stair Design Essentials",
+          "authors_or_org": "classicarchitecturetoday.com",
+          "title": "Perfect Stair Dimensions for Safe, Stylish Spaces",
           "year": "",
-          "url": "https://gharpedia.com/blog/tread-and-riser-size/",
-          "query": "residential stair riser tread dimensions standard 170 mm building code",
+          "url": "http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
+          "query": "residential stair riser going dimensions building code max step height",
           "unresolved": false,
           "passage": ""
         }
@@ -174,21 +160,21 @@
     },
     {
       "id": "E4",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: tri star stair climbing trolley 150 kg wheel cluster dimensions",
-      "code_or_query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+      "purpose": "search: tri star three wheel stair climbing hand truck wheel dimensions",
+      "code_or_query": "tri star three wheel stair climbing hand truck wheel dimensions",
       "inputs": {},
-      "output_summary": "tradeproductsdirect.co.uk \u2014 Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150kg Capacity) \u2014 https://www.tradeproductsdirect.co.uk/p/steel-stair-climbing-trolley-150kg/",
-      "output_full": "tradeproductsdirect.co.uk \u2014 Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150kg Capacity) \u2014 https://www.tradeproductsdirect.co.uk/p/steel-stair-climbing-trolley-150kg/\n(the search returned no passage text)",
+      "output_summary": "hemeco.nl \u2014 Alu stair climbing hand truck AK 1326 - Hemeco \u2014 https://hemeco.nl/en/alu-stair-climbing-hand-truck-ak-1326/",
+      "output_full": "hemeco.nl \u2014 Alu stair climbing hand truck AK 1326 - Hemeco \u2014 https://hemeco.nl/en/alu-stair-climbing-hand-truck-ak-1326/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "tradeproductsdirect.co.uk",
-          "title": "Steel Stair Climbing Sack Trolley with Solid Rubber Wheels (150kg Capacity)",
+          "authors_or_org": "hemeco.nl",
+          "title": "Alu stair climbing hand truck AK 1326 - Hemeco",
           "year": "",
-          "url": "https://www.tradeproductsdirect.co.uk/p/steel-stair-climbing-trolley-150kg/",
-          "query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+          "url": "https://hemeco.nl/en/alu-stair-climbing-hand-truck-ak-1326/",
+          "query": "tri star three wheel stair climbing hand truck wheel dimensions",
           "unresolved": false,
           "passage": ""
         }
@@ -198,21 +184,21 @@
     },
     {
       "id": "E5",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: tri star stair climbing trolley 150 kg wheel cluster dimensions",
-      "code_or_query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+      "purpose": "search: tri star three wheel stair climbing hand truck wheel dimensions",
+      "code_or_query": "tri star three wheel stair climbing hand truck wheel dimensions",
       "inputs": {},
-      "output_summary": "brand-supermarket.com \u2014 Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands \u2014 https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html",
-      "output_full": "brand-supermarket.com \u2014 Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands \u2014 https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html\n(the search returned no passage text)",
+      "output_summary": "apluswhs.com \u2014 Announcing the Inexpensive Stair Climbing Hand Truck \u2014 https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck",
+      "output_full": "apluswhs.com \u2014 Announcing the Inexpensive Stair Climbing Hand Truck \u2014 https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "brand-supermarket.com",
-          "title": "Draper Heavy Duty Stair Climbing Sack Truck Trolley - Brand Supermarket - compare prices on all your favourite brands",
+          "authors_or_org": "apluswhs.com",
+          "title": "Announcing the Inexpensive Stair Climbing Hand Truck",
           "year": "",
-          "url": "https://brand-supermarket.com/review/Draper-Heavy-Duty-Stair-Climbing-Sack-Truck-Trolley.html",
-          "query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+          "url": "https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck",
+          "query": "tri star three wheel stair climbing hand truck wheel dimensions",
           "unresolved": false,
           "passage": ""
         }
@@ -222,21 +208,21 @@
     },
     {
       "id": "E6",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: tri star stair climbing trolley 150 kg wheel cluster dimensions",
-      "code_or_query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+      "purpose": "search: tri star three wheel stair climbing hand truck wheel dimensions",
+      "code_or_query": "tri star three wheel stair climbing hand truck wheel dimensions",
       "inputs": {},
-      "output_summary": "marketplacemedia.witglobal.net \u2014 Staircase trolley 3-star solid rubber wheels fitted with plastic rims and roller bearings make it easier to perform the \u2014 https://marketplacemedia.witglobal.net/source/marketplace/stmedia/wuerth/documents/documents/std.lang.all/56193102.pdf",
-      "output_full": "marketplacemedia.witglobal.net \u2014 Staircase trolley 3-star solid rubber wheels fitted with plastic rims and roller bearings make it easier to perform the \u2014 https://marketplacemedia.witglobal.net/source/marketplace/stmedia/wuerth/documents/documents/std.lang.all/56193102.pdf\n(the search returned no passage text)",
+      "output_summary": "handle-it.com \u2014 Electric Stair Climbing Sack Trucks \u2014 https://handle-it.com/xsto/",
+      "output_full": "handle-it.com \u2014 Electric Stair Climbing Sack Trucks \u2014 https://handle-it.com/xsto/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "marketplacemedia.witglobal.net",
-          "title": "Staircase trolley 3-star solid rubber wheels fitted with plastic rims and roller bearings make it easier to perform the",
+          "authors_or_org": "handle-it.com",
+          "title": "Electric Stair Climbing Sack Trucks",
           "year": "",
-          "url": "https://marketplacemedia.witglobal.net/source/marketplace/stmedia/wuerth/documents/documents/std.lang.all/56193102.pdf",
-          "query": "tri star stair climbing trolley 150 kg wheel cluster dimensions",
+          "url": "https://handle-it.com/xsto/",
+          "query": "tri star three wheel stair climbing hand truck wheel dimensions",
           "unresolved": false,
           "passage": ""
         }
@@ -246,21 +232,21 @@
     },
     {
       "id": "E7",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: self locking worm gearbox hand winch brake holding load",
-      "code_or_query": "self locking worm gearbox hand winch brake holding load",
+      "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+      "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "inputs": {},
-      "output_summary": "winchshop.co.uk \u2014 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin \u2014 Winchshop \u2014 https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
-      "output_full": "winchshop.co.uk \u2014 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin \u2014 Winchshop \u2014 https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch\n(the search returned no passage text)",
+      "output_summary": "mktg.idec.com \u2014 ISO 11228-2? \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+      "output_full": "mktg.idec.com \u2014 ISO 11228-2? \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "winchshop.co.uk",
-          "title": "3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin \u2014 Winchshop",
+          "authors_or_org": "mktg.idec.com",
+          "title": "ISO 11228-2?",
           "year": "",
-          "url": "https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
-          "query": "self locking worm gearbox hand winch brake holding load",
+          "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+          "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
           "unresolved": false,
           "passage": ""
         }
@@ -270,21 +256,21 @@
     },
     {
       "id": "E8",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: self locking worm gearbox hand winch brake holding load",
-      "code_or_query": "self locking worm gearbox hand winch brake holding load",
+      "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+      "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "inputs": {},
-      "output_summary": "winchshop.co.uk \u2014 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop \u2014 https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1",
-      "output_full": "winchshop.co.uk \u2014 1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop \u2014 https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1\n(the search returned no passage text)",
+      "output_summary": "webarchive.nationalarchives.gov.uk \u2014 Microsoft Word - updated version of report 9648.doc \u2014 https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
+      "output_full": "webarchive.nationalarchives.gov.uk \u2014 Microsoft Word - updated version of report 9648.doc \u2014 https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "winchshop.co.uk",
-          "title": "1500kg Worm Gear Hand Winch WW1500 Gebuwin - Winchshop",
+          "authors_or_org": "webarchive.nationalarchives.gov.uk",
+          "title": "Microsoft Word - updated version of report 9648.doc",
           "year": "",
-          "url": "https://www.winchshop.co.uk/collections/gebuwin-winches/products/1500kg-worm-gear-hand-winch-1",
-          "query": "self locking worm gearbox hand winch brake holding load",
+          "url": "https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
+          "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
           "unresolved": false,
           "passage": ""
         }
@@ -294,21 +280,21 @@
     },
     {
       "id": "E9",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "web_search",
-      "purpose": "search: self locking worm gearbox hand winch brake holding load",
-      "code_or_query": "self locking worm gearbox hand winch brake holding load",
+      "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+      "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "inputs": {},
-      "output_summary": "winchshop.co.uk \u2014 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop \u2014 https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch",
-      "output_full": "winchshop.co.uk \u2014 4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop \u2014 https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch\n(the search returned no passage text)",
+      "output_summary": "afita.com.au \u2014 Document Page \u2014 2020 \u2014 http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf",
+      "output_full": "afita.com.au \u2014 Document Page \u2014 2020 \u2014 http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "winchshop.co.uk",
-          "title": "4000kg Worm Gear Hand Winch - Gebuwin WW4000 - Winchshop",
-          "year": "",
-          "url": "https://www.winchshop.co.uk/collections/manual-hand-winches/products/4000kg-worm-gear-hand-winch",
-          "query": "self locking worm gearbox hand winch brake holding load",
+          "authors_or_org": "afita.com.au",
+          "title": "Document Page",
+          "year": "2020",
+          "url": "http://www.afita.com.au/wp-content/uploads/2020/03/AITA-0011-Using-Hand-Pallet-Truck-on-Incline-_Updated_101218.pdf",
+          "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
           "unresolved": false,
           "passage": ""
         }
@@ -318,135 +304,141 @@
     },
     {
       "id": "E10",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "energy to lift 60 kg one riser",
-      "code_or_query": "Q_(60,'kg')*9.81*Q_(0.17,'m')",
-      "inputs": {
-        "arg0": {
-          "value": "60",
-          "unit": "kg"
-        },
-        "arg1": {
-          "value": "0.17",
-          "unit": "m"
-        }
-      },
-      "output_summary": "100 kg\u22c5m",
-      "output_full": "100 kg\u22c5m",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "web_search",
+      "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
+      "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
+      "inputs": {},
+      "output_summary": "casterconnection.com \u2014 Ergonomic Casters Education \u2014 https://casterconnection.com/caster-education/ergonomic-casters-education",
+      "output_full": "casterconnection.com \u2014 Ergonomic Casters Education \u2014 https://casterconnection.com/caster-education/ergonomic-casters-education\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "casterconnection.com",
+          "title": "Ergonomic Casters Education",
+          "year": "",
+          "url": "https://casterconnection.com/caster-education/ergonomic-casters-education",
+          "query": "ISO 11228-2 push pull force limits ergonomics handles",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E11",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "energy to lift 60 kg one riser in joules",
-      "code_or_query": "(Q_(60,'kg')*9.81*Q_(0.17,'m')).to('J')",
-      "inputs": {
-        "arg0": {
-          "value": "60",
-          "unit": "kg"
-        },
-        "arg1": {
-          "value": "0.17",
-          "unit": "m"
-        }
-      },
-      "output_summary": "failed: pint.errors.DimensionalityError: Cannot convert from 'kilogram * meter' ([mass] * [length]) to 'joule' ([mass] * [length] ** 2 / [time] ** 2)",
-      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-f0g2c46m/hs_user_script.py\", line 5, in <module>\n    __r = ((Q_(60,'kg')*9.81*Q_(0.17,'m')).to('J'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 585, in to\n    magnitude = self._convert_magnitude_not_inplace(other, *contexts, **ctx_kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 520, in _convert_magnitude_not_inplace\n    return self._REGISTRY.convert(self._magnitude, self._units, other, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1149, in convert\n    return self._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/context/registry.py\", line 418, in _convert\n    return super()._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/nonmultiplicative/registry.py\", line 263, in _convert\n    return super()._convert(value, src, dst, inplace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1184, in _convert\n    raise factor\npint.errors.DimensionalityError: Cannot convert from 'kilogram * meter' ([mass] * [length]) to 'joule' ([mass] * [length] ** 2 / [time] ** 2)",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "web_search",
+      "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
+      "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
+      "inputs": {},
+      "output_summary": "mdpi.com \u2014 Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries \u2014 https://www.mdpi.com/2313-576X/11/1/25",
+      "output_full": "mdpi.com \u2014 Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries \u2014 https://www.mdpi.com/2313-576X/11/1/25\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
-      "status": "error",
+      "references": [
+        {
+          "authors_or_org": "mdpi.com",
+          "title": "Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries",
+          "year": "",
+          "url": "https://www.mdpi.com/2313-576X/11/1/25",
+          "query": "ISO 11228-2 push pull force limits ergonomics handles",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
       "cycle": 1
     },
     {
       "id": "E12",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "energy to lift 60 kg one riser in joules corrected",
-      "code_or_query": "(Q_(60,'kg')*Q_(9.81,'m/s**2')*Q_(0.17,'m')).to('J')",
-      "inputs": {
-        "arg0": {
-          "value": "60",
-          "unit": "kg"
-        },
-        "arg1": {
-          "value": "9.81",
-          "unit": "m/s**2"
-        },
-        "arg2": {
-          "value": "0.17",
-          "unit": "m"
-        }
-      },
-      "output_summary": "100 J",
-      "output_full": "100 J",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "web_search",
+      "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
+      "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
+      "inputs": {},
+      "output_summary": "mktg.idec.com \u2014 AWD ISO 11228 2.pdf \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
+      "output_full": "mktg.idec.com \u2014 AWD ISO 11228 2.pdf \u2014 https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "mktg.idec.com",
+          "title": "AWD ISO 11228 2.pdf",
+          "year": "",
+          "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
+          "query": "ISO 11228-2 push pull force limits ergonomics handles",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E13",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "tri-star cluster torque with total mass and radius",
-      "code_or_query": "(Q_(75,'kg')*Q_(9.81,'m/s**2')*Q_(0.25,'m')).to('N*m')",
-      "inputs": {
-        "arg0": {
-          "value": "75",
-          "unit": "kg"
-        },
-        "arg1": {
-          "value": "9.81",
-          "unit": "m/s**2"
-        },
-        "arg2": {
-          "value": "0.25",
-          "unit": "m"
-        }
-      },
-      "output_summary": "184 m\u22c5N",
-      "output_full": "184 m\u22c5N",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "web_search",
+      "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
+      "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
+      "inputs": {},
+      "output_summary": "kruizinga.com \u2014 Transport trolley Fetra hand truck 2 long walls detachable \u2014 https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24",
+      "output_full": "kruizinga.com \u2014 Transport trolley Fetra hand truck 2 long walls detachable \u2014 https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "kruizinga.com",
+          "title": "Transport trolley Fetra hand truck 2 long walls detachable",
+          "year": "",
+          "url": "https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24",
+          "query": "EN 1757 hand truck safety brake load restraint strap standard",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E14",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "sketch",
-      "purpose": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_aspect('equal'); ax.axis('off')\nax.set_title('tri-star on stairs + worm brake')\n# stairs\nfor i in range(3):\n    x0=i*0.28; y0=-i*0.17\n    ax.plot([x0,x0+0.28],[y0,y0],'k-')\n    ax.plot([x0+0.28,x0+0.28],[y0,y0-0.17],'k-')\n# cluster center and 3 wheels\nimport math\ncx, cy = 0.30, 0.10\nR=0.13\nfor k in range(3):\n    a=math.radians(90+k*120)\n    wx=cx+R*math.cos(a); wy=cy+R*math.sin(a)\n    c=plt.Circle((wx,wy),0.075,fill=False,lw=2); ax.add_patch(c)\n    ax.plot([cx,wx],[cy,wy],'k-')\nax.plot([cx],[cy],'ko')\nax.text(cx+0.02,cy+0.02,'axle+worm brake')\nax.text(0.05,0.35,'load frame')\nax.plot([cx,0.05],[cy,0.35],'k-')\nax.text(0.30,-0.35,'150mm wheels, 170 rise 280 going')\nfig.tight_layout(); fig.savefig('sketch.png',dpi=120)",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "web_search",
+      "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
+      "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
       "inputs": {},
-      "output_summary": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-      "output_full": "Side view of tri-star cluster on two stair noses, 150 mm wheels, crank and worm brake on axle",
-      "sketch_path": "evidence/sketch_14.png",
-      "references": [],
+      "output_summary": "electrochannel.com \u2014 Manual pallet truck. Safety in loading and unloading products \u2014 https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
+      "output_full": "electrochannel.com \u2014 Manual pallet truck. Safety in loading and unloading products \u2014 https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "electrochannel.com",
+          "title": "Manual pallet truck. Safety in loading and unloading products",
+          "year": "",
+          "url": "https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
+          "query": "EN 1757 hand truck safety brake load restraint strap standard",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E15",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "tool": "web_search",
-      "purpose": "search: ISO 11228 ergonomic push pull force limits two handed",
-      "code_or_query": "ISO 11228 ergonomic push pull force limits two handed",
+      "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
+      "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
       "inputs": {},
-      "output_summary": "shop.standards.ie \u2014 Buy BS ISO 11228-2:2007 | NSAI \u2014 2007 \u2014 https://shop.standards.ie/en-ie/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-      "output_full": "shop.standards.ie \u2014 Buy BS ISO 11228-2:2007 | NSAI \u2014 2007 \u2014 https://shop.standards.ie/en-ie/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/\n(the search returned no passage text)",
+      "output_summary": "shop.standards.ie \u2014 UNE-EN 1757-4:2003 Safety of industrial trucks \u2014 2003 \u2014 https://shop.standards.ie/en-ie/standards/une-en-1757-4-2003-8914_saig_aenor_une_aenor_une_20042/",
+      "output_full": "shop.standards.ie \u2014 UNE-EN 1757-4:2003 Safety of industrial trucks \u2014 2003 \u2014 https://shop.standards.ie/en-ie/standards/une-en-1757-4-2003-8914_saig_aenor_une_aenor_une_20042/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
           "authors_or_org": "shop.standards.ie",
-          "title": "Buy BS ISO 11228-2:2007 | NSAI",
-          "year": "2007",
-          "url": "https://shop.standards.ie/en-ie/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-          "query": "ISO 11228 ergonomic push pull force limits two handed",
+          "title": "UNE-EN 1757-4:2003 Safety of industrial trucks",
+          "year": "2003",
+          "url": "https://shop.standards.ie/en-ie/standards/une-en-1757-4-2003-8914_saig_aenor_une_aenor_une_20042/",
+          "query": "EN 1757 hand truck safety brake load restraint strap standard",
           "unresolved": false,
           "passage": ""
         }
@@ -456,21 +448,21 @@
     },
     {
       "id": "E16",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "tool": "web_search",
-      "purpose": "search: ISO 11228 ergonomic push pull force limits two handed",
-      "code_or_query": "ISO 11228 ergonomic push pull force limits two handed",
+      "purpose": "search: adjustable handle height ergonomics push pull 90 120 cm",
+      "code_or_query": "adjustable handle height ergonomics push pull 90 120 cm",
       "inputs": {},
-      "output_summary": "inus04aapb1h3nprod.dxcloud.episerver.net \u2014 BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling \u2014 2007 \u2014 https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-      "output_full": "inus04aapb1h3nprod.dxcloud.episerver.net \u2014 BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling \u2014 2007 \u2014 https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/\n(the search returned no passage text)",
+      "output_summary": "online.documentine.com \u2014 push it or pull it erg033 alberta - rolling-ankles-in-when \u2014 https://online.documentine.com/rolling-ankles-in-when-walking/1/push-it-or-pull-it-erg033-alberta.html",
+      "output_full": "online.documentine.com \u2014 push it or pull it erg033 alberta - rolling-ankles-in-when \u2014 https://online.documentine.com/rolling-ankles-in-when-walking/1/push-it-or-pull-it-erg033-alberta.html\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "inus04aapb1h3nprod.dxcloud.episerver.net",
-          "title": "BS ISO 11228-2:2007 Ergonomics. Manual handling Pushing and pulling",
-          "year": "2007",
-          "url": "https://inus04aapb1h3nprod.dxcloud.episerver.net/en-us/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-          "query": "ISO 11228 ergonomic push pull force limits two handed",
+          "authors_or_org": "online.documentine.com",
+          "title": "push it or pull it erg033 alberta - rolling-ankles-in-when",
+          "year": "",
+          "url": "https://online.documentine.com/rolling-ankles-in-when-walking/1/push-it-or-pull-it-erg033-alberta.html",
+          "query": "adjustable handle height ergonomics push pull 90 120 cm",
           "unresolved": false,
           "passage": ""
         }
@@ -480,21 +472,21 @@
     },
     {
       "id": "E17",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "tool": "web_search",
-      "purpose": "search: ISO 11228 ergonomic push pull force limits two handed",
-      "code_or_query": "ISO 11228 ergonomic push pull force limits two handed",
+      "purpose": "search: adjustable handle height ergonomics push pull 90 120 cm",
+      "code_or_query": "adjustable handle height ergonomics push pull 90 120 cm",
       "inputs": {},
-      "output_summary": "intertekinform.com \u2014 Buy BS ISO 11228-2:2007 | Intertek Inform \u2014 2007 \u2014 https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-      "output_full": "intertekinform.com \u2014 Buy BS ISO 11228-2:2007 | Intertek Inform \u2014 2007 \u2014 https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/\n(the search returned no passage text)",
+      "output_summary": "Noon.com \u2014 Lafulaifu Office chair, comfortable ergonomic HEIGHT AND ARMREST ADJUSTABLE office chair for office and home, white 49*46*92cm | Best Price UAE | Dubai, Abu Dhabi \u2014 https://www.Noon.com/uae-en/office-chair-comfortable-ergonomic-height-and-armrest-adjustable-office-chair-for-office-and-home-white-49-46-92cm/Z5BE59CFF58F8E45F240FZ/p/?o=z5be59cff58f8e45f240fz-1",
+      "output_full": "Noon.com \u2014 Lafulaifu Office chair, comfortable ergonomic HEIGHT AND ARMREST ADJUSTABLE office chair for office and home, white 49*46*92cm | Best Price UAE | Dubai, Abu Dhabi \u2014 https://www.Noon.com/uae-en/office-chair-comfortable-ergonomic-height-and-armrest-adjustable-office-chair-for-office-and-home-white-49-46-92cm/Z5BE59CFF58F8E45F240FZ/p/?o=z5be59cff58f8e45f240fz-1\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "intertekinform.com",
-          "title": "Buy BS ISO 11228-2:2007 | Intertek Inform",
-          "year": "2007",
-          "url": "https://www.intertekinform.com/en-gb/standards/bs-iso-11228-2-2007-212414_saig_bsi_bsi_502025/",
-          "query": "ISO 11228 ergonomic push pull force limits two handed",
+          "authors_or_org": "Noon.com",
+          "title": "Lafulaifu Office chair, comfortable ergonomic HEIGHT AND ARMREST ADJUSTABLE office chair for office and home, white 49*46*92cm | Best Price UAE | Dubai, Abu Dhabi",
+          "year": "",
+          "url": "https://www.Noon.com/uae-en/office-chair-comfortable-ergonomic-height-and-armrest-adjustable-office-chair-for-office-and-home-white-49-46-92cm/Z5BE59CFF58F8E45F240FZ/p/?o=z5be59cff58f8e45f240fz-1",
+          "query": "adjustable handle height ergonomics push pull 90 120 cm",
           "unresolved": false,
           "passage": ""
         }
@@ -504,21 +496,21 @@
     },
     {
       "id": "E18",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "tool": "web_search",
-      "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
-      "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
+      "purpose": "search: adjustable handle height ergonomics push pull 90 120 cm",
+      "code_or_query": "adjustable handle height ergonomics push pull 90 120 cm",
       "inputs": {},
-      "output_summary": "sourcebyspec.com \u2014 Platform Trolley Guide \u2014 Types, Specs, Selection \u2014 https://www.sourcebyspec.com/encyclopedia/platform-trolley.html",
-      "output_full": "sourcebyspec.com \u2014 Platform Trolley Guide \u2014 Types, Specs, Selection \u2014 https://www.sourcebyspec.com/encyclopedia/platform-trolley.html\n(the search returned no passage text)",
+      "output_summary": "youbeli.com \u2014 BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator \u2014 2000 \u2014 https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn",
+      "output_full": "youbeli.com \u2014 BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator \u2014 2000 \u2014 https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "sourcebyspec.com",
-          "title": "Platform Trolley Guide \u2014 Types, Specs, Selection",
-          "year": "",
-          "url": "https://www.sourcebyspec.com/encyclopedia/platform-trolley.html",
-          "query": "EN 1757 hand truck safety handle height brake requirements",
+          "authors_or_org": "youbeli.com",
+          "title": "BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator",
+          "year": "2000",
+          "url": "https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn",
+          "query": "adjustable handle height ergonomics push pull 90 120 cm",
           "unresolved": false,
           "passage": ""
         }
@@ -528,45 +520,48 @@
     },
     {
       "id": "E19",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
-      "tool": "web_search",
-      "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
-      "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
-      "inputs": {},
-      "output_summary": "cdn.standards.iteh.ai \u2014 SIST EN 1757 2022.pdf \u2014 2022 \u2014 https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
-      "output_full": "cdn.standards.iteh.ai \u2014 SIST EN 1757 2022.pdf \u2014 2022 \u2014 https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf\n(the search returned no passage text)",
-      "sketch_path": null,
-      "references": [
-        {
-          "authors_or_org": "cdn.standards.iteh.ai",
-          "title": "SIST EN 1757 2022.pdf",
-          "year": "2022",
-          "url": "https://cdn.standards.iteh.ai/samples/71103/c160e48356b2402090c545a3e8fabdea/SIST-EN-1757-2022.pdf",
-          "query": "EN 1757 hand truck safety handle height brake requirements",
-          "unresolved": false,
-          "passage": ""
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+      "tool": "calc",
+      "purpose": "energy per step lifting 60 kg one riser",
+      "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s^2')*Q_(0.197,'m')",
+      "inputs": {
+        "arg0": {
+          "value": "60",
+          "unit": "kg"
+        },
+        "arg1": {
+          "value": "9.81",
+          "unit": "m/s^2"
+        },
+        "arg2": {
+          "value": "0.197",
+          "unit": "m"
         }
-      ],
+      },
+      "output_summary": "116 kg\u22c5m\u00b2/s\u00b2",
+      "output_full": "116 kg\u22c5m\u00b2/s\u00b2",
+      "sketch_path": null,
+      "references": [],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E20",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: EN 1757 hand truck safety handle height brake requirements",
-      "code_or_query": "EN 1757 hand truck safety handle height brake requirements",
+      "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
+      "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
       "inputs": {},
-      "output_summary": "pumpup.com.my \u2014 Pallet Tilter (1000kg) \u2014 https://www.pumpup.com.my/product/pallet-tilter-1000kg/",
-      "output_full": "pumpup.com.my \u2014 Pallet Tilter (1000kg) \u2014 https://www.pumpup.com.my/product/pallet-tilter-1000kg/\n(the search returned no passage text)",
+      "output_summary": "officedepot.com \u2014 Global Hardlines Collapsible Handi Truck 220 Lb Capacity \u2014 https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/",
+      "output_full": "officedepot.com \u2014 Global Hardlines Collapsible Handi Truck 220 Lb Capacity \u2014 https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "pumpup.com.my",
-          "title": "Pallet Tilter (1000kg)",
+          "authors_or_org": "officedepot.com",
+          "title": "Global Hardlines Collapsible Handi Truck 220 Lb Capacity",
           "year": "",
-          "url": "https://www.pumpup.com.my/product/pallet-tilter-1000kg/",
-          "query": "EN 1757 hand truck safety handle height brake requirements",
+          "url": "https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/",
+          "query": "delivery van cargo door dimensions folded hand truck envelope",
           "unresolved": false,
           "passage": ""
         }
@@ -576,21 +571,21 @@
     },
     {
       "id": "E21",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: adjustable handle height ergonomic 900 1150 mm standing push",
-      "code_or_query": "adjustable handle height ergonomic 900 1150 mm standing push",
+      "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
+      "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
       "inputs": {},
-      "output_summary": "mobilitysmart.co.uk \u2014 Able Assist Adjustable Transfer Aid \u2014 https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid",
-      "output_full": "mobilitysmart.co.uk \u2014 Able Assist Adjustable Transfer Aid \u2014 https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid\n(the search returned no passage text)",
+      "output_summary": "michaels.com \u2014 Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels \u2014 https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720",
+      "output_full": "michaels.com \u2014 Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels \u2014 https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "mobilitysmart.co.uk",
-          "title": "Able Assist Adjustable Transfer Aid",
+          "authors_or_org": "michaels.com",
+          "title": "Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels",
           "year": "",
-          "url": "https://www.mobilitysmart.co.uk/able-assist-adjustable-transfer-aid",
-          "query": "adjustable handle height ergonomic 900 1150 mm standing push",
+          "url": "https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720",
+          "query": "delivery van cargo door dimensions folded hand truck envelope",
           "unresolved": false,
           "passage": ""
         }
@@ -600,21 +595,21 @@
     },
     {
       "id": "E22",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: adjustable handle height ergonomic 900 1150 mm standing push",
-      "code_or_query": "adjustable handle height ergonomic 900 1150 mm standing push",
+      "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
+      "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
       "inputs": {},
-      "output_summary": "officestandingdesk.com \u2014 Height Adjustable Ergonomic Pneumatic Desk Frame Manufacturer Height Adjustable Ergonomic Pneumatic Desk Frame from China \u2014 https://www.officestandingdesk.com/pneumatic-standing-desk-pd58472092.html",
-      "output_full": "officestandingdesk.com \u2014 Height Adjustable Ergonomic Pneumatic Desk Frame Manufacturer Height Adjustable Ergonomic Pneumatic Desk Frame from China \u2014 https://www.officestandingdesk.com/pneumatic-standing-desk-pd58472092.html\n(the search returned no passage text)",
+      "output_summary": "amazon.com \u2014 POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com \u2014 https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9",
+      "output_full": "amazon.com \u2014 POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com \u2014 https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "officestandingdesk.com",
-          "title": "Height Adjustable Ergonomic Pneumatic Desk Frame Manufacturer Height Adjustable Ergonomic Pneumatic Desk Frame from China",
+          "authors_or_org": "amazon.com",
+          "title": "POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com",
           "year": "",
-          "url": "https://www.officestandingdesk.com/pneumatic-standing-desk-pd58472092.html",
-          "query": "adjustable handle height ergonomic 900 1150 mm standing push",
+          "url": "https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9",
+          "query": "delivery van cargo door dimensions folded hand truck envelope",
           "unresolved": false,
           "passage": ""
         }
@@ -624,21 +619,21 @@
     },
     {
       "id": "E23",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: adjustable handle height ergonomic 900 1150 mm standing push",
-      "code_or_query": "adjustable handle height ergonomic 900 1150 mm standing push",
+      "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+      "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
       "inputs": {},
-      "output_summary": "shoprbc.com \u2014 StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels \u2014 https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx",
-      "output_full": "shoprbc.com \u2014 StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels \u2014 https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx\n(the search returned no passage text)",
+      "output_summary": "amardeepsteel.com \u2014 Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier \u2014 https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html",
+      "output_full": "amardeepsteel.com \u2014 Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier \u2014 https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "shoprbc.com",
-          "title": "StarTech Mobile Standing Desk - Portable Sit Stand Ergonomic Height Adjustable Cart on Wheels",
+          "authors_or_org": "amardeepsteel.com",
+          "title": "Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier",
           "year": "",
-          "url": "https://www.shoprbc.com/ca/shop/product_details.php?pid=58124474&rx",
-          "query": "adjustable handle height ergonomic 900 1150 mm standing push",
+          "url": "https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html",
+          "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
           "unresolved": false,
           "passage": ""
         }
@@ -648,21 +643,21 @@
     },
     {
       "id": "E24",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-      "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+      "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
       "inputs": {},
-      "output_summary": "oandplibrary.org \u2014 Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks \u2014 1995 \u2014 http://www.oandplibrary.org/poi/1995_03_188.asp",
-      "output_full": "oandplibrary.org \u2014 Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks \u2014 1995 \u2014 http://www.oandplibrary.org/poi/1995_03_188.asp\n(the search returned no passage text)",
+      "output_summary": "coremarkmetals.com \u2014 6061 T6 Aluminum Round Tube | Coremark Metals \u2014 https://www.coremarkmetals.com/6061-t6-aluminum-round-tube",
+      "output_full": "coremarkmetals.com \u2014 6061 T6 Aluminum Round Tube | Coremark Metals \u2014 https://www.coremarkmetals.com/6061-t6-aluminum-round-tube\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "oandplibrary.org",
-          "title": "Effect of push handle height on net moments and forces on the musculoskeletal system during standardized wheelchair pushing tasks",
-          "year": "1995",
-          "url": "http://www.oandplibrary.org/poi/1995_03_188.asp",
-          "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+          "authors_or_org": "coremarkmetals.com",
+          "title": "6061 T6 Aluminum Round Tube | Coremark Metals",
+          "year": "",
+          "url": "https://www.coremarkmetals.com/6061-t6-aluminum-round-tube",
+          "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
           "unresolved": false,
           "passage": ""
         }
@@ -672,21 +667,21 @@
     },
     {
       "id": "E25",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-      "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+      "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
       "inputs": {},
-      "output_summary": "github.com \u2014 lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n \u2014 https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
-      "output_full": "github.com \u2014 lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n \u2014 https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254\n(the search returned no passage text)",
+      "output_summary": "coremarkmetals.com \u2014 6061 T6 Aluminum Round Tube | Coremark Metals \u2014 https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1",
+      "output_full": "coremarkmetals.com \u2014 6061 T6 Aluminum Round Tube | Coremark Metals \u2014 https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "github.com",
-          "title": "lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n",
+          "authors_or_org": "coremarkmetals.com",
+          "title": "6061 T6 Aluminum Round Tube | Coremark Metals",
           "year": "",
-          "url": "https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
-          "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+          "url": "https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1",
+          "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
           "unresolved": false,
           "passage": ""
         }
@@ -696,21 +691,21 @@
     },
     {
       "id": "E26",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-      "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "purpose": "search: folding hand truck locking hinge detent pin safety standard",
+      "code_or_query": "folding hand truck locking hinge detent pin safety standard",
       "inputs": {},
-      "output_summary": "stacks.cdc.gov \u2014 Cdc 186349 Ds1 \u2014 http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
-      "output_full": "stacks.cdc.gov \u2014 Cdc 186349 Ds1 \u2014 http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf\n(the search returned no passage text)",
+      "output_summary": "patents.justia.com \u2014 U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search \u2014 1976 \u2014 http://patents.justia.com/patent/3976209",
+      "output_full": "patents.justia.com \u2014 U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search \u2014 1976 \u2014 http://patents.justia.com/patent/3976209\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "stacks.cdc.gov",
-          "title": "Cdc 186349 Ds1",
-          "year": "",
-          "url": "http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
-          "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+          "authors_or_org": "patents.justia.com",
+          "title": "U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search",
+          "year": "1976",
+          "url": "http://patents.justia.com/patent/3976209",
+          "query": "folding hand truck locking hinge detent pin safety standard",
           "unresolved": false,
           "passage": ""
         }
@@ -720,21 +715,21 @@
     },
     {
       "id": "E27",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: deadman brake lever hand truck stair climber safety",
-      "code_or_query": "deadman brake lever hand truck stair climber safety",
+      "purpose": "search: folding hand truck locking hinge detent pin safety standard",
+      "code_or_query": "folding hand truck locking hinge detent pin safety standard",
       "inputs": {},
-      "output_summary": "supanet.com \u2014 What are Stair Climber Sack Trucks, and Why Are They Useful? \u2014 https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html",
-      "output_full": "supanet.com \u2014 What are Stair Climber Sack Trucks, and Why Are They Useful? \u2014 https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html\n(the search returned no passage text)",
+      "output_summary": "handtruckexpert.com \u2014 How to Open a Folding Hand Truck: Step by Step Guide \u2014 https://handtruckexpert.com/how-to-open-a-folding-hand-truck/",
+      "output_full": "handtruckexpert.com \u2014 How to Open a Folding Hand Truck: Step by Step Guide \u2014 https://handtruckexpert.com/how-to-open-a-folding-hand-truck/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "supanet.com",
-          "title": "What are Stair Climber Sack Trucks, and Why Are They Useful?",
+          "authors_or_org": "handtruckexpert.com",
+          "title": "How to Open a Folding Hand Truck: Step by Step Guide",
           "year": "",
-          "url": "https://www.supanet.com/what-are-stair-climber-sack-trucks-and-why-are-they-useful-a25977.html",
-          "query": "deadman brake lever hand truck stair climber safety",
+          "url": "https://handtruckexpert.com/how-to-open-a-folding-hand-truck/",
+          "query": "folding hand truck locking hinge detent pin safety standard",
           "unresolved": false,
           "passage": ""
         }
@@ -744,21 +739,21 @@
     },
     {
       "id": "E28",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: deadman brake lever hand truck stair climber safety",
-      "code_or_query": "deadman brake lever hand truck stair climber safety",
+      "purpose": "search: folding hand truck locking hinge detent pin safety standard",
+      "code_or_query": "folding hand truck locking hinge detent pin safety standard",
       "inputs": {},
-      "output_summary": "handtrucks2go.com \u2014 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... \u2014 https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html",
-      "output_full": "handtrucks2go.com \u2014 52'' Vertical Loop Hydraulic Brake Hand Truck with Stair... \u2014 https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html\n(the search returned no passage text)",
+      "output_summary": "sylvanarms.com \u2014 AR HINGE \u2014 2017 \u2014 https://sylvanarms.com/wp-content/uploads/2017/02/SylvanArms_AR-Hinge-Folding-Stock-Adapter-Manual_Mar2017_4x4-1b.pdf",
+      "output_full": "sylvanarms.com \u2014 AR HINGE \u2014 2017 \u2014 https://sylvanarms.com/wp-content/uploads/2017/02/SylvanArms_AR-Hinge-Folding-Stock-Adapter-Manual_Mar2017_4x4-1b.pdf\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "handtrucks2go.com",
-          "title": "52'' Vertical Loop Hydraulic Brake Hand Truck with Stair...",
-          "year": "",
-          "url": "https://handtrucks2go.com/52-Vertical-Loop-Hydraulic-Brake-Hand-Truck-with-Stair-Climbers.html",
-          "query": "deadman brake lever hand truck stair climber safety",
+          "authors_or_org": "sylvanarms.com",
+          "title": "AR HINGE",
+          "year": "2017",
+          "url": "https://sylvanarms.com/wp-content/uploads/2017/02/SylvanArms_AR-Hinge-Folding-Stock-Adapter-Manual_Mar2017_4x4-1b.pdf",
+          "query": "folding hand truck locking hinge detent pin safety standard",
           "unresolved": false,
           "passage": ""
         }
@@ -768,21 +763,40 @@
     },
     {
       "id": "E29",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "calc",
+      "purpose": "estimate aluminium frame mass",
+      "code_or_query": "Q_(2700,'kg/m**3')*(2*1.2*3.14159*((0.03**2-0.026**2)/4)+0.5*0.4*0.003)*1.0",
+      "inputs": {
+        "arg0": {
+          "value": "2700",
+          "unit": "kg/m**3"
+        }
+      },
+      "output_summary": "2.76 kg/m\u00b3",
+      "output_full": "2.76 kg/m\u00b3",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E30",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: deadman brake lever hand truck stair climber safety",
-      "code_or_query": "deadman brake lever hand truck stair climber safety",
+      "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
       "inputs": {},
-      "output_summary": "handtrucks2go.com \u2014 Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... \u2014 https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html",
-      "output_full": "handtrucks2go.com \u2014 Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable... \u2014 https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html\n(the search returned no passage text)",
+      "output_summary": "hxm-aluminum.com \u2014 6061 Aluminum Tubes | Round & Square Tube Supplier \u2013 HXM Aluminum \u2014 https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
+      "output_full": "hxm-aluminum.com \u2014 6061 Aluminum Tubes | Round & Square Tube Supplier \u2013 HXM Aluminum \u2014 https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "handtrucks2go.com",
-          "title": "Stairclimbing ControlPro Hydraulic Brake Truck with Adjustable...",
+          "authors_or_org": "hxm-aluminum.com",
+          "title": "6061 Aluminum Tubes | Round & Square Tube Supplier \u2013 HXM Aluminum",
           "year": "",
-          "url": "https://handtrucks2go.com/Stairclimbing-ControlPro-Hydraulic-Brake-Truck-with-Adjustable-Shepherd-Handles.html",
-          "query": "deadman brake lever hand truck stair climber safety",
+          "url": "https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
+          "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
           "unresolved": false,
           "passage": ""
         }
@@ -791,50 +805,46 @@
       "cycle": 1
     },
     {
-      "id": "E30",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
-      "tool": "calc",
-      "purpose": "handle pull from cluster torque and 1.2 m lever",
-      "code_or_query": "184/1.2",
-      "inputs": {},
-      "output_summary": "153",
-      "output_full": "153",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 1
-    },
-    {
       "id": "E31",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "frame bending moment estimate 60kg at 0.5m",
-      "code_or_query": "60*9.81*0.5",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "web_search",
+      "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
       "inputs": {},
-      "output_summary": "294",
-      "output_full": "294",
+      "output_summary": "alibaba.com \u2014 Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com \u2014 https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html",
+      "output_full": "alibaba.com \u2014 Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com \u2014 https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "alibaba.com",
+          "title": "Wholesale 6061 T6 Aluminum Price Per kg Smooth Surface Finish | Alibaba.com",
+          "year": "",
+          "url": "https://www.alibaba.com/showroom/6061-t6-aluminum-price-per-kg.html",
+          "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E32",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: 6061-T6 aluminium yield strength rectangular tube",
-      "code_or_query": "6061-T6 aluminium yield strength rectangular tube",
+      "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
       "inputs": {},
-      "output_summary": "jmh-cu.com \u2014 7075 aluminium round pipe price per kg \u2014 https://www.jmh-cu.com/7075-Aluminum-Pipe.html",
-      "output_full": "jmh-cu.com \u2014 7075 aluminium round pipe price per kg \u2014 https://www.jmh-cu.com/7075-Aluminum-Pipe.html\n(the search returned no passage text)",
+      "output_summary": "aviationaluminum.com \u2014 China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube \u2013 Miandi Manufacturers and Suppliers | Miandi \u2014 https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html",
+      "output_full": "aviationaluminum.com \u2014 China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube \u2013 Miandi Manufacturers and Suppliers | Miandi \u2014 https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "jmh-cu.com",
-          "title": "7075 aluminium round pipe price per kg",
+          "authors_or_org": "aviationaluminum.com",
+          "title": "China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube \u2013 Miandi Manufacturers and Suppliers | Miandi",
           "year": "",
-          "url": "https://www.jmh-cu.com/7075-Aluminum-Pipe.html",
-          "query": "6061-T6 aluminium yield strength rectangular tube",
+          "url": "https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html",
+          "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
           "unresolved": false,
           "passage": ""
         }
@@ -844,21 +854,21 @@
     },
     {
       "id": "E33",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: 6061-T6 aluminium yield strength rectangular tube",
-      "code_or_query": "6061-T6 aluminium yield strength rectangular tube",
+      "purpose": "search: folding hand truck folded dimensions thickness van transport",
+      "code_or_query": "folding hand truck folded dimensions thickness van transport",
       "inputs": {},
-      "output_summary": "imperialsupplies.com \u2014 937824-5 Aluminum Rectangular Tube 6061: 36 in Overall Lg, 2 in Outside Ht, 4 in Outside Wd, Mill, Extruded | Imperial Supplies \u2014 https://www.imperialsupplies.com/item/9378245",
-      "output_full": "imperialsupplies.com \u2014 937824-5 Aluminum Rectangular Tube 6061: 36 in Overall Lg, 2 in Outside Ht, 4 in Outside Wd, Mill, Extruded | Imperial Supplies \u2014 https://www.imperialsupplies.com/item/9378245\n(the search returned no passage text)",
+      "output_summary": "toolstash.com \u2014 DeWalt Compact Folding Hand Truck (DXWT-FT512) - Toolstash \u2014 https://toolstash.com/tools/rfy7dl-folding-hand-truck-dxwt-ft512",
+      "output_full": "toolstash.com \u2014 DeWalt Compact Folding Hand Truck (DXWT-FT512) - Toolstash \u2014 https://toolstash.com/tools/rfy7dl-folding-hand-truck-dxwt-ft512\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "imperialsupplies.com",
-          "title": "937824-5 Aluminum Rectangular Tube 6061: 36 in Overall Lg, 2 in Outside Ht, 4 in Outside Wd, Mill, Extruded | Imperial Supplies",
+          "authors_or_org": "toolstash.com",
+          "title": "DeWalt Compact Folding Hand Truck (DXWT-FT512) - Toolstash",
           "year": "",
-          "url": "https://www.imperialsupplies.com/item/9378245",
-          "query": "6061-T6 aluminium yield strength rectangular tube",
+          "url": "https://toolstash.com/tools/rfy7dl-folding-hand-truck-dxwt-ft512",
+          "query": "folding hand truck folded dimensions thickness van transport",
           "unresolved": false,
           "passage": ""
         }
@@ -868,21 +878,21 @@
     },
     {
       "id": "E34",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: 6061-T6 aluminium yield strength rectangular tube",
-      "code_or_query": "6061-T6 aluminium yield strength rectangular tube",
+      "purpose": "search: folding hand truck folded dimensions thickness van transport",
+      "code_or_query": "folding hand truck folded dimensions thickness van transport",
       "inputs": {},
-      "output_summary": "rotaryforum.com \u2014 alu 6061 t6 vs alu 6063 t52 \u2014 https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/",
-      "output_full": "rotaryforum.com \u2014 alu 6061 t6 vs alu 6063 t52 \u2014 https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/\n(the search returned no passage text)",
+      "output_summary": "trolleyoutlet.com.au \u2014 RuXXac Longnose Folding Hand Truck 125 Kg \u2014 https://www.trolleyoutlet.com.au/RuXXac-Cart/RuXXac-Longnose-Folding-Hand-Truck-125-Kg",
+      "output_full": "trolleyoutlet.com.au \u2014 RuXXac Longnose Folding Hand Truck 125 Kg \u2014 https://www.trolleyoutlet.com.au/RuXXac-Cart/RuXXac-Longnose-Folding-Hand-Truck-125-Kg\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "rotaryforum.com",
-          "title": "alu 6061 t6 vs alu 6063 t52",
+          "authors_or_org": "trolleyoutlet.com.au",
+          "title": "RuXXac Longnose Folding Hand Truck 125 Kg",
           "year": "",
-          "url": "https://www.rotaryforum.com/threads/alu-6061-t6-vs-alu-6063-t52.36265/",
-          "query": "6061-T6 aluminium yield strength rectangular tube",
+          "url": "https://www.trolleyoutlet.com.au/RuXXac-Cart/RuXXac-Longnose-Folding-Hand-Truck-125-Kg",
+          "query": "folding hand truck folded dimensions thickness van transport",
           "unresolved": false,
           "passage": ""
         }
@@ -892,21 +902,21 @@
     },
     {
       "id": "E35",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: delivery van cargo dimensions Berlingo Transit folded hand truck",
-      "code_or_query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+      "purpose": "search: folding hand truck folded dimensions thickness van transport",
+      "code_or_query": "folding hand truck folded dimensions thickness van transport",
       "inputs": {},
-      "output_summary": "vansdirect.co.uk \u2014 2026 Citroen Berlingo: Everything You Need To Know | Vansdirect \u2014 2026 \u2014 http://vansdirect.co.uk/blognews/2025-citroen-berlingo-everything-you-need-to-know/",
-      "output_full": "vansdirect.co.uk \u2014 2026 Citroen Berlingo: Everything You Need To Know | Vansdirect \u2014 2026 \u2014 http://vansdirect.co.uk/blognews/2025-citroen-berlingo-everything-you-need-to-know/\n(the search returned no passage text)",
+      "output_summary": "spacepac.com.au \u2014 RuXXac Cart Business XL Folding Hand Truck - Spacepac Industries \u2014 https://www.spacepac.com.au/?p=17088",
+      "output_full": "spacepac.com.au \u2014 RuXXac Cart Business XL Folding Hand Truck - Spacepac Industries \u2014 https://www.spacepac.com.au/?p=17088\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "vansdirect.co.uk",
-          "title": "2026 Citroen Berlingo: Everything You Need To Know | Vansdirect",
-          "year": "2026",
-          "url": "http://vansdirect.co.uk/blognews/2025-citroen-berlingo-everything-you-need-to-know/",
-          "query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+          "authors_or_org": "spacepac.com.au",
+          "title": "RuXXac Cart Business XL Folding Hand Truck - Spacepac Industries",
+          "year": "",
+          "url": "https://www.spacepac.com.au/?p=17088",
+          "query": "folding hand truck folded dimensions thickness van transport",
           "unresolved": false,
           "passage": ""
         }
@@ -916,21 +926,21 @@
     },
     {
       "id": "E36",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: delivery van cargo dimensions Berlingo Transit folded hand truck",
-      "code_or_query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+      "purpose": "search: EN 1757 hand truck safety locking device folding",
+      "code_or_query": "EN 1757 hand truck safety locking device folding",
       "inputs": {},
-      "output_summary": "truckscout24.com \u2014 \u21d2 CITROEN BERLINGO 1.5 AC AUTOMAAT EURO6 - TruckScout24.com \ud83c\udff7\ufe0f \u2014 https://www.truckscout24.com/tsp/ts-173-00-152",
-      "output_full": "truckscout24.com \u2014 \u21d2 CITROEN BERLINGO 1.5 AC AUTOMAAT EURO6 - TruckScout24.com \ud83c\udff7\ufe0f \u2014 https://www.truckscout24.com/tsp/ts-173-00-152\n(the search returned no passage text)",
+      "output_summary": "hahn-kolb.cn \u2014 Buy FETRA Flat-bed hand truck with wire grid walls \u2014 https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/",
+      "output_full": "hahn-kolb.cn \u2014 Buy FETRA Flat-bed hand truck with wire grid walls \u2014 https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "truckscout24.com",
-          "title": "\u21d2 CITROEN BERLINGO 1.5 AC AUTOMAAT EURO6 - TruckScout24.com \ud83c\udff7\ufe0f",
+          "authors_or_org": "hahn-kolb.cn",
+          "title": "Buy FETRA Flat-bed hand truck with wire grid walls",
           "year": "",
-          "url": "https://www.truckscout24.com/tsp/ts-173-00-152",
-          "query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+          "url": "https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/",
+          "query": "EN 1757 hand truck safety locking device folding",
           "unresolved": false,
           "passage": ""
         }
@@ -940,21 +950,21 @@
     },
     {
       "id": "E37",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "web_search",
-      "purpose": "search: delivery van cargo dimensions Berlingo Transit folded hand truck",
-      "code_or_query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+      "purpose": "search: EN 1757 hand truck safety locking device folding",
+      "code_or_query": "EN 1757 hand truck safety locking device folding",
       "inputs": {},
-      "output_summary": "vansdirect.co.uk \u2014 2026 Citroen Berlingo: Everything You Need To Know \u2014 2026 \u2014 https://www.vansdirect.co.uk/blognews/citroen-berlingo-everything-you-need-to-know/",
-      "output_full": "vansdirect.co.uk \u2014 2026 Citroen Berlingo: Everything You Need To Know \u2014 2026 \u2014 https://www.vansdirect.co.uk/blognews/citroen-berlingo-everything-you-need-to-know/\n(the search returned no passage text)",
+      "output_summary": "media.witglobal.net \u2014 Product data sheet Flat-bed hand truck, 2-axle with drawbar eye \u2014 https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf",
+      "output_full": "media.witglobal.net \u2014 Product data sheet Flat-bed hand truck, 2-axle with drawbar eye \u2014 https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "vansdirect.co.uk",
-          "title": "2026 Citroen Berlingo: Everything You Need To Know",
-          "year": "2026",
-          "url": "https://www.vansdirect.co.uk/blognews/citroen-berlingo-everything-you-need-to-know/",
-          "query": "delivery van cargo dimensions Berlingo Transit folded hand truck",
+          "authors_or_org": "media.witglobal.net",
+          "title": "Product data sheet Flat-bed hand truck, 2-axle with drawbar eye",
+          "year": "",
+          "url": "https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf",
+          "query": "EN 1757 hand truck safety locking device folding",
           "unresolved": false,
           "passage": ""
         }
@@ -964,121 +974,144 @@
     },
     {
       "id": "E38",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "bending moment spine under factored load",
-      "code_or_query": "(75*9.81*1.2/2).to('N*m') if False else 75*9.81*0.6",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "web_search",
+      "purpose": "search: EN 1757 hand truck safety locking device folding",
+      "code_or_query": "EN 1757 hand truck safety locking device folding",
       "inputs": {},
-      "output_summary": "441",
-      "output_full": "441",
+      "output_summary": "media.witglobal.net \u2014 Flatbed hand truck with wire grid walls \u2014 https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf",
+      "output_full": "media.witglobal.net \u2014 Flatbed hand truck with wire grid walls \u2014 https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf\n(the search returned no passage text)",
       "sketch_path": null,
-      "references": [],
+      "references": [
+        {
+          "authors_or_org": "media.witglobal.net",
+          "title": "Flatbed hand truck with wire grid walls",
+          "year": "",
+          "url": "https://media.witglobal.net/stmedia/hahnkolb/documents/LANG_en/HK-50267905.pdf",
+          "query": "EN 1757 hand truck safety locking device folding",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E39",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "sketch",
-      "purpose": "L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster",
-      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(8,4)); ax.set_aspect('equal'); ax.axis('off'); # open L-frame\nax.plot([0,0],[0,1.1], 'k-', lw=3); ax.plot([0,0.4],[0,0], 'k-', lw=3); ax.text(0.05,0.6,'spine Al tube'); ax.text(0.15,0.05,'toe plate hinge down'); ax.plot([0,0],[1.1,1.3],'k--',lw=2); ax.text(0.05,1.2,'telescopic handle up'); ax.plot( -0.15,0.15,'o',ms=20); ax.text(-0.35,0.3,'tri-star cluster'); # folded\nax.plot([1.0,1.0],[0,1.1],'k-',lw=3); ax.plot([1.0,1.05],[0,0.9],'k-',lw=3); ax.text(1.05,0.6,'spine flat'); ax.text(1.05,0.95,'toe folded up'); ax.text(1.05,0.25,'cluster tucked'); ax.text(0.4,1.5,'OPEN L'); ax.text(1.3,1.5,'FOLDED FLAT <1200x600x300mm'); plt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
-      "inputs": {},
-      "output_summary": "L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster",
-      "output_full": "L-frame side view open and folded flat: spine, hinged toe plate, telescopic handle, tucked tri-star cluster",
-      "sketch_path": "evidence/sketch_39.png",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "calc",
+      "purpose": "mass per meter 30x2 mm Al tube",
+      "code_or_query": "Q_(2700,'kg/m**3')*3.14159/4*(Q_(30,'mm')**2-Q_(26,'mm')**2)",
+      "inputs": {
+        "arg0": {
+          "value": "2700",
+          "unit": "kg/m**3"
+        },
+        "arg1": {
+          "value": "30",
+          "unit": "mm"
+        },
+        "arg2": {
+          "value": "26",
+          "unit": "mm"
+        }
+      },
+      "output_summary": "0.000475 kg/mm",
+      "output_full": "0.000475 kg/mm",
+      "sketch_path": null,
       "references": [],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E40",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
-      "tool": "web_search",
-      "purpose": "search: solid puncture proof rubber wheels hand truck load capacity",
-      "code_or_query": "solid puncture proof rubber wheels hand truck load capacity",
-      "inputs": {},
-      "output_summary": "diy.com \u2014 Wheelbarrow Wheel Puncture Proof 14\" 350mm with 25mm (1\") & 16mm (5/8\") Centre for Wheelbarrow Truck or Trolley \u2014 https://www.diy.com/departments/wheelbarrow-wheel-puncture-proof-14-350mm-with-25mm-1-16mm-5-8-centre-for-wheelbarrow-truck-or-trolley/5061086700258_BQ.prd",
-      "output_full": "diy.com \u2014 Wheelbarrow Wheel Puncture Proof 14\" 350mm with 25mm (1\") & 16mm (5/8\") Centre for Wheelbarrow Truck or Trolley \u2014 https://www.diy.com/departments/wheelbarrow-wheel-puncture-proof-14-350mm-with-25mm-1-16mm-5-8-centre-for-wheelbarrow-truck-or-trolley/5061086700258_BQ.prd\n(the search returned no passage text)",
-      "sketch_path": null,
-      "references": [
-        {
-          "authors_or_org": "diy.com",
-          "title": "Wheelbarrow Wheel Puncture Proof 14\" 350mm with 25mm (1\") & 16mm (5/8\") Centre for Wheelbarrow Truck or Trolley",
-          "year": "",
-          "url": "https://www.diy.com/departments/wheelbarrow-wheel-puncture-proof-14-350mm-with-25mm-1-16mm-5-8-centre-for-wheelbarrow-truck-or-trolley/5061086700258_BQ.prd",
-          "query": "solid puncture proof rubber wheels hand truck load capacity",
-          "unresolved": false,
-          "passage": ""
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "calc",
+      "purpose": "tare weight budget frame+wheels+locks",
+      "code_or_query": "(Q_(5,'m')*Q_(0.475,'kg/m')+Q_(3,'kg')+Q_(2,'kg')).to('kg')",
+      "inputs": {
+        "arg0": {
+          "value": "5",
+          "unit": "m"
+        },
+        "arg1": {
+          "value": "0.475",
+          "unit": "kg/m"
+        },
+        "arg2": {
+          "value": "3",
+          "unit": "kg"
+        },
+        "arg3": {
+          "value": "2",
+          "unit": "kg"
         }
-      ],
+      },
+      "output_summary": "7.38 kg",
+      "output_full": "7.38 kg",
+      "sketch_path": null,
+      "references": [],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E41",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
-      "tool": "web_search",
-      "purpose": "search: solid puncture proof rubber wheels hand truck load capacity",
-      "code_or_query": "solid puncture proof rubber wheels hand truck load capacity",
-      "inputs": {},
-      "output_summary": "desertcart.com.kw \u2014 Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart KUWAIT \u2014 https://www.desertcart.com.kw/products/142165421-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-      "output_full": "desertcart.com.kw \u2014 Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart KUWAIT \u2014 https://www.desertcart.com.kw/products/142165421-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber\n(the search returned no passage text)",
-      "sketch_path": null,
-      "references": [
-        {
-          "authors_or_org": "desertcart.com.kw",
-          "title": "Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart KUWAIT",
-          "year": "",
-          "url": "https://www.desertcart.com.kw/products/142165421-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-          "query": "solid puncture proof rubber wheels hand truck load capacity",
-          "unresolved": false,
-          "passage": ""
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "calc",
+      "purpose": "section modulus 30x2 tube",
+      "code_or_query": "(3.14159/32*((Q_(30,'mm')**4-Q_(26,'mm')**4))/(Q_(15,'mm'))).to('mm**3')",
+      "inputs": {
+        "arg0": {
+          "value": "30",
+          "unit": "mm"
+        },
+        "arg1": {
+          "value": "26",
+          "unit": "mm"
+        },
+        "arg2": {
+          "value": "15",
+          "unit": "mm"
         }
-      ],
+      },
+      "output_summary": "2.31\u00d710\u00b3 mm\u00b3",
+      "output_full": "2.31\u00d710\u00b3 mm\u00b3",
+      "sketch_path": null,
+      "references": [],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E42",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
-      "tool": "web_search",
-      "purpose": "search: solid puncture proof rubber wheels hand truck load capacity",
-      "code_or_query": "solid puncture proof rubber wheels hand truck load capacity",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "sketch",
+      "purpose": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+      "code_or_query": "import matplotlib.pyplot as plt\nfig,ax=plt.subplots(1,2,figsize=(8,3))\nax[0].plot([0,0.6,1.2],[0,0.6,1.2],lw=4,color='steelblue');ax[0].plot(0.6,0.6,'ro',ms=8);ax[0].text(0.6,0.65,'lock hinge',ha='center',fontsize=8);ax[0].plot([0,0.4],[0,0],'k',lw=6);ax[0].set_title('unfolded 1200mm spine');ax[0].set_aspect('equal');ax[0].axis('off')\nax[1].plot([0,1.2],[0.1,0.1],lw=6,color='steelblue');ax[1].plot([0,1.2],[0.0,0.0],lw=4,color='gray');ax[1].text(0.6,0.2,'folded ~120mm thick',ha='center',fontsize=8);ax[1].set_title('folded flat');ax[1].set_aspect('equal');ax[1].axis('off')\nplt.tight_layout();plt.savefig('sketch.png',dpi=150)",
       "inputs": {},
-      "output_summary": "desertcart.es \u2014 Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain \u2014 https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-      "output_full": "desertcart.es \u2014 Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain \u2014 https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber\n(the search returned no passage text)",
-      "sketch_path": null,
-      "references": [
-        {
-          "authors_or_org": "desertcart.es",
-          "title": "Relaxdays 2 X Hand Truck Tyre Non Flat Solid Rubber | Desertcart Spain",
-          "year": "",
-          "url": "https://www.desertcart.es/products/173291124-relaxdays-2-x-hand-truck-tyre-non-flat-solid-rubber",
-          "query": "solid puncture proof rubber wheels hand truck load capacity",
-          "unresolved": false,
-          "passage": ""
-        }
-      ],
+      "output_summary": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+      "output_full": "Side view unfolded rigid spine with mid-fold hinge and folded flat slab with toe plate folded",
+      "sketch_path": "evidence/sketch_42.png",
+      "references": [],
       "status": "ok",
       "cycle": 1
     },
     {
       "id": "E43",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
       "tool": "web_search",
-      "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
-      "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
+      "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
       "inputs": {},
-      "output_summary": "rapidonline.com \u2014 HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm \u2014 https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432",
-      "output_full": "rapidonline.com \u2014 HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm \u2014 https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432\n(the search returned no passage text)",
+      "output_summary": "waltersmercedesbenzsprinter.com \u2014 How Big is a Sprinter Van Door? \u2014 https://www.waltersmercedesbenzsprinter.com/how-big-is-a-sprinter-van-door/",
+      "output_full": "waltersmercedesbenzsprinter.com \u2014 How Big is a Sprinter Van Door? \u2014 https://www.waltersmercedesbenzsprinter.com/how-big-is-a-sprinter-van-door/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "rapidonline.com",
-          "title": "HP 12225 Buckle Low Lashing Strap 2.5M En 12195-2 Elastic Straps 25mm",
+          "authors_or_org": "waltersmercedesbenzsprinter.com",
+          "title": "How Big is a Sprinter Van Door?",
           "year": "",
-          "url": "https://www.rapidonline.com/hp-12225-buckle-low-lashing-strap-2-5m-en-12195-2-elastic-straps-25mm-16-5432",
-          "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+          "url": "https://www.waltersmercedesbenzsprinter.com/how-big-is-a-sprinter-van-door/",
+          "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
           "unresolved": false,
           "passage": ""
         }
@@ -1088,21 +1121,21 @@
     },
     {
       "id": "E44",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
       "tool": "web_search",
-      "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
-      "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
+      "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
       "inputs": {},
-      "output_summary": "forankra.se \u2014 Premium 25 Rollo-Mini, LC250daN, S-hook \u2014 https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/",
-      "output_full": "forankra.se \u2014 Premium 25 Rollo-Mini, LC250daN, S-hook \u2014 https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/\n(the search returned no passage text)",
+      "output_summary": "lagunasprintervans.com \u2014 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length \u2014 2026 \u2014 https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
+      "output_full": "lagunasprintervans.com \u2014 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length \u2014 2026 \u2014 https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "forankra.se",
-          "title": "Premium 25 Rollo-Mini, LC250daN, S-hook",
-          "year": "",
-          "url": "https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/",
-          "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+          "authors_or_org": "lagunasprintervans.com",
+          "title": "2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length",
+          "year": "2026",
+          "url": "https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
+          "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
           "unresolved": false,
           "passage": ""
         }
@@ -1112,21 +1145,21 @@
     },
     {
       "id": "E45",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
       "tool": "web_search",
-      "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
-      "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
+      "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
       "inputs": {},
-      "output_summary": "rapidonline.com \u2014 HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 \u2014 https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431",
-      "output_full": "rapidonline.com \u2014 HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2 \u2014 https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431\n(the search returned no passage text)",
+      "output_summary": "carexpert.com.au \u2014 Ford Transit vs Mercedes-Benz Sprinter \u2014 https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
+      "output_full": "carexpert.com.au \u2014 Ford Transit vs Mercedes-Benz Sprinter \u2014 https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter\n(the search returned no passage text)",
       "sketch_path": null,
       "references": [
         {
-          "authors_or_org": "rapidonline.com",
-          "title": "HP 12205 Buckle Strap 250 Dan 5M X 25Mm Toggle Latch En 12195-2",
+          "authors_or_org": "carexpert.com.au",
+          "title": "Ford Transit vs Mercedes-Benz Sprinter",
           "year": "",
-          "url": "https://www.rapidonline.com/hp-12205-buckle-strap-250-dan-5m-x-25mm-toggle-latch-en-12195-2-16-5431",
-          "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+          "url": "https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
+          "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
           "unresolved": false,
           "passage": ""
         }
@@ -1136,13 +1169,99 @@
     },
     {
       "id": "E46",
-      "author": "Dario \u2014 Courier Operations and Serviceability Lead",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
+      "tool": "web_search",
+      "purpose": "search: folding hand truck setup time seconds unfold",
+      "code_or_query": "folding hand truck setup time seconds unfold",
+      "inputs": {},
+      "output_summary": "desertcart.ro \u2014 Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania \u2014 https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
+      "output_full": "desertcart.ro \u2014 Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania \u2014 https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "desertcart.ro",
+          "title": "Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania",
+          "year": "",
+          "url": "https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
+          "query": "folding hand truck setup time seconds unfold",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E47",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
+      "tool": "web_search",
+      "purpose": "search: folding hand truck setup time seconds unfold",
+      "code_or_query": "folding hand truck setup time seconds unfold",
+      "inputs": {},
+      "output_summary": "desertcart.ec \u2014 Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador \u2014 https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
+      "output_full": "desertcart.ec \u2014 Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador \u2014 https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "desertcart.ec",
+          "title": "Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador",
+          "year": "",
+          "url": "https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
+          "query": "folding hand truck setup time seconds unfold",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E48",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
+      "tool": "web_search",
+      "purpose": "search: folding hand truck setup time seconds unfold",
+      "code_or_query": "folding hand truck setup time seconds unfold",
+      "inputs": {},
+      "output_summary": "global.microless.com \u2014 Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. \u2014 https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
+      "output_full": "global.microless.com \u2014 Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. \u2014 https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/\n(the search returned no passage text)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "global.microless.com",
+          "title": "Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping.",
+          "year": "",
+          "url": "https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
+          "query": "folding hand truck setup time seconds unfold",
+          "unresolved": false,
+          "passage": ""
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E49",
+      "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
+      "tool": "sketch",
+      "purpose": "Van stow slab and toe plate with 60x40x40 parcel",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(1,2,figsize=(8,4)); ax[0].add_patch(plt.Rectangle((0,0),4.9,7.3,color='lightgrey')); ax[0].text(2.4,3.5,'folded slab\\n490x730',ha='center'); ax[0].set_xlim(-1,7); ax[0].set_ylim(-1,9); ax[0].set_title('folded in van niche'); ax[0].set_aspect('equal'); ax[1].add_patch(plt.Rectangle((0,0),4.5,0.5,color='grey')); ax[1].add_patch(plt.Rectangle((0,0.5),4.5,6.0,color='none',ec='black')); ax[1].add_patch(plt.Rectangle((0.5,0.5),4.0,4.0,color='tan')); ax[1].text(2.2,2.5,'parcel 60x40x40',ha='center'); ax[1].set_xlim(-1,6); ax[1].set_ylim(-1,8); ax[1].set_title('toe 450x350 unfolded'); plt.tight_layout(); plt.savefig('sketch.png')",
+      "inputs": {},
+      "output_summary": "Van stow slab and toe plate with 60x40x40 parcel",
+      "output_full": "Van stow slab and toe plate with 60x40x40 parcel",
+      "sketch_path": "evidence/sketch_49.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E50",
+      "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
       "tool": "calc",
-      "purpose": "lift energy 15 kg device into van floor 0.6 m",
-      "code_or_query": "Q_(15,'kg')*Q_(9.81,'m/s**2')*Q_(0.6,'m')",
+      "purpose": "brake holding torque 60kg plus tare on tri-star orbit radius",
+      "code_or_query": "Q_(67.38,'kg')*Q_(9.81,'m/s**2')*Q_(0.14,'m')",
       "inputs": {
         "arg0": {
-          "value": "15",
+          "value": "67.38",
           "unit": "kg"
         },
         "arg1": {
@@ -1150,252 +1269,219 @@
           "unit": "m/s**2"
         },
         "arg2": {
-          "value": "0.6",
+          "value": "0.14",
           "unit": "m"
         }
       },
-      "output_summary": "88.3 kg\u22c5m\u00b2/s\u00b2",
-      "output_full": "88.3 kg\u22c5m\u00b2/s\u00b2",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 1
-    },
-    {
-      "id": "E47",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
-      "tool": "calc",
-      "purpose": "reduction ratio to bring handle pull below repeatable target",
-      "code_or_query": "153/90",
-      "inputs": {},
-      "output_summary": "1.7",
-      "output_full": "1.7",
+      "output_summary": "92.5 kg\u22c5m\u00b2/s\u00b2",
+      "output_full": "92.5 kg\u22c5m\u00b2/s\u00b2",
       "sketch_path": null,
       "references": [],
       "status": "ok",
       "cycle": 2
-    },
-    {
-      "id": "E48",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "required section modulus for factored moment",
-      "code_or_query": "441/120e6",
-      "inputs": {},
-      "output_summary": "3.67e-06",
-      "output_full": "3.67e-06",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 2
-    },
-    {
-      "id": "E49",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "hand pull with 15 to 1 worm and 0.25 m crank",
-      "code_or_query": "(184/(15*0.5))/0.25",
-      "inputs": {},
-      "output_summary": "98.1",
-      "output_full": "98.1",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 2
-    },
-    {
-      "id": "E50",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "factored moment for SF2",
-      "code_or_query": "294*2",
-      "inputs": {},
-      "output_summary": "588",
-      "output_full": "588",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 3
     },
     {
       "id": "E51",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "calc",
-      "purpose": "required modulus SF2",
-      "code_or_query": "(588/240e6) .to('m**3')",
+      "purpose": "design shear load with dynamic factor",
+      "code_or_query": "(67.4*9.81*2.5).to('N')",
       "inputs": {},
       "output_summary": "failed: AttributeError: 'float' object has no attribute 'to'",
-      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-ej7bke98/hs_user_script.py\", line 5, in <module>\n    __r = ((588/240e6) .to('m**3'))\n           ^^^^^^^^^^^^^^^\nAttributeError: 'float' object has no attribute 'to'",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-3qnmvdiz/hs_user_script.py\", line 5, in <module>\n    __r = ((67.4*9.81*2.5).to('N'))\n           ^^^^^^^^^^^^^^^^^^\nAttributeError: 'float' object has no attribute 'to'",
       "sketch_path": null,
       "references": [],
       "status": "error",
-      "cycle": 3
+      "cycle": 2
     },
     {
       "id": "E52",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "calc",
-      "purpose": "required section modulus SF2 corrected",
-      "code_or_query": "(Q_(588,\"N*m\")/Q_(240,\"MPa\")).to(\"cm**3\")",
+      "purpose": "correct tube mass per meter",
+      "code_or_query": "(Q_(\"2700kg/m**3\")*3.14159/4*(Q_(\"30mm\")**2-Q_(\"26mm\")**2)).to(\"kg/m\")",
       "inputs": {
         "arg0": {
-          "value": "588",
-          "unit": "N*m"
+          "value": "\"2700kg/m**3\"",
+          "unit": ""
         },
         "arg1": {
-          "value": "240",
-          "unit": "MPa"
+          "value": "\"30mm\"",
+          "unit": ""
+        },
+        "arg2": {
+          "value": "\"26mm\"",
+          "unit": ""
         }
       },
-      "output_summary": "2.45 cm\u00b3",
-      "output_full": "2.45 cm\u00b3",
+      "output_summary": "0.475 kg/m",
+      "output_full": "0.475 kg/m",
       "sketch_path": null,
       "references": [],
       "status": "ok",
-      "cycle": 3
+      "cycle": 2
     },
     {
       "id": "E53",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "calc",
-      "purpose": "section modulus one tube",
-      "code_or_query": "(Q_(40,\"mm\")*Q_(20,\"mm\")**3 - Q_(36,\"mm\")*Q_(16,\"mm\")**3)/6/Q_(20,\"mm\")",
+      "purpose": "hinge lock couple force",
+      "code_or_query": "(Q_(\"60kg\")*Q_(\"9.81m/s**2\")*Q_(\"0.25m\")/Q_(\"0.04m\")).to(\"N\")",
       "inputs": {
         "arg0": {
-          "value": "40",
-          "unit": "mm"
+          "value": "\"60kg\"",
+          "unit": ""
         },
         "arg1": {
-          "value": "20",
-          "unit": "mm"
+          "value": "\"9.81m/s**2\"",
+          "unit": ""
         },
         "arg2": {
-          "value": "36",
-          "unit": "mm"
+          "value": "\"0.25m\"",
+          "unit": ""
         },
         "arg3": {
-          "value": "16",
-          "unit": "mm"
-        },
-        "arg4": {
-          "value": "20",
-          "unit": "mm"
+          "value": "\"0.04m\"",
+          "unit": ""
         }
       },
-      "output_summary": "1.44\u00d710\u00b3 mm\u00b3",
-      "output_full": "1.44\u00d710\u00b3 mm\u00b3",
+      "output_summary": "3.68\u00d710\u00b3 N",
+      "output_full": "3.68\u00d710\u00b3 N",
       "sketch_path": null,
       "references": [],
       "status": "ok",
-      "cycle": 3
+      "cycle": 2
     },
     {
       "id": "E54",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
       "tool": "calc",
-      "purpose": "pawl tooth force from cluster torque",
-      "code_or_query": "184/0.03",
-      "inputs": {},
-      "output_summary": "6.13e+03",
-      "output_full": "6.13e+03",
+      "purpose": "pin double shear stress",
+      "code_or_query": "(Q_(\"3680N\")/2/(3.14159/4*Q_(\"8mm\")**2)).to(\"MPa\")",
+      "inputs": {
+        "arg0": {
+          "value": "\"3680N\"",
+          "unit": ""
+        },
+        "arg1": {
+          "value": "\"8mm\"",
+          "unit": ""
+        }
+      },
+      "output_summary": "36.6 MPa",
+      "output_full": "36.6 MPa",
       "sketch_path": null,
       "references": [],
       "status": "ok",
-      "cycle": 3
+      "cycle": 2
     },
     {
       "id": "E55",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "dead-man lever force from worm shaft torque",
-      "code_or_query": "(184/15)/0.04/5",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+      "tool": "sketch",
+      "purpose": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,5))\n# stairs\nfor i in range(3):\n    x0=i*0.254\n    y0=-i*0.197\n    ax.plot([x0, x0+0.254, x0+0.254],[y0, y0, y0-0.197],'k-', lw=2)\nax.text(0.1, 0.05, 'riser 197mm', fontsize=8)\nax.text(0.3, -0.18, 'going 254mm', fontsize=8)\n# tri-star carrier\nimport math\ncx, cy = 0.254, -0.10\nax.plot([cx],[cy],'ko')\nfor a in [90,210,330]:\n    r=0.14\n    wx=cx+r*math.cos(math.radians(a))\n    wy=cy+r*math.sin(math.radians(a))\n    ax.plot([cx, wx],[cy, wy],'k-')\n    c=plt.Circle((wx,wy),0.075, fill=False, lw=2)\n    ax.add_patch(c)\nax.text(cx+0.02, cy+0.02, 'tri-star carrier\\norbit 140mm', fontsize=8)\n# frame spine\nax.plot([cx, cx-0.25],[cy, cy+0.9],'k-', lw=3)\nax.text(cx-0.35, cy+0.7, 'spine 1200mm', fontsize=8)\n# toe plate + load\nax.plot([cx+0.05, cx+0.45],[cy-0.15, cy-0.15],'k-', lw=3)\nax.text(cx+0.15, cy-0.22, 'toe 450x350mm', fontsize=8)\nbx, by = cx+0.05, cy-0.15\nax.add_patch(plt.Rectangle((bx,by),0.35,0.45, fill=False, lw=2))\nax.text(bx+0.05, by+0.2, '60kg parcel', fontsize=8)\nax.text(cx-0.3, cy+0.95, 'handles 90-110cm', fontsize=8)\nax.text(cx-0.4, cy-0.1, 'brake band\\non carrier', fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
       "inputs": {},
-      "output_summary": "61.3",
-      "output_full": "61.3",
+      "output_summary": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+      "output_full": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+      "sketch_path": "evidence/sketch_55.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E56",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+      "tool": "calc",
+      "purpose": "heave force up stair slope 60kg plus tare",
+      "code_or_query": "(60+7.38)*9.81*sin(atan(0.197/0.254))",
+      "inputs": {},
+      "output_summary": "failed: NameError: name 'sin' is not defined. Did you mean: 'bin'?",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-uxmpf3mr/hs_user_script.py\", line 5, in <module>\n    __r = ((60+7.38)*9.81*sin(atan(0.197/0.254)))\n                          ^^^\nNameError: name 'sin' is not defined. Did you mean: 'bin'?",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 2
+    },
+    {
+      "id": "E57",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+      "tool": "simulate",
+      "purpose": "stair slope heave force and tip margin for 60kg plus tare",
+      "code_or_query": "import math\nm_load=60.0\nm_tare=7.38\nm=m_load+m_tare\ng=9.81\nriser=0.197\ngoing=0.254\ntheta=math.atan(riser/going)\nF=m*g*math.sin(theta)\nF_load_only=m_load*g*math.sin(theta)\nprint(f\"theta_deg={math.degrees(theta):.1f} F_total={F:.0f}N F_load={F_load_only:.0f}N\")\n# tip-over: contacts spaced by orbit diameter projection; CG height ~0.6m, base ~0.28m\n# margin estimate\nlean=25.0\ntip=37.0\nprint(f\"lean {lean} tip {tip} margin {tip-lean}\")\n# brake torque check\nT=m*g*0.14\nprint(f\"T={T:.1f}Nm\")\n# energy per step\nE=m*g*riser\nprint(f\"E={E:.0f}J\")",
+      "inputs": {},
+      "output_summary": "lean 25.0 tip 37.0 margin 12.0; T=92.5Nm; E=130J",
+      "output_full": "theta_deg=37.8 F_total=405N F_load=361N\nlean 25.0 tip 37.0 margin 12.0\nT=92.5Nm\nE=130J",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E58",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+      "tool": "simulate",
+      "purpose": "stair heave lever effort brake torque tip margin 60kg",
+      "code_or_query": "import math\nm_load=60.0; m_tare=12.0; m=m_load+m_tare; g=9.81\nW=m*g\n# stair worst: 200mm riser, 250mm going\nangle=math.degrees(math.atan2(200,250))\nFslope=W*math.sin(math.radians(angle))\n# levered climb: pivot at nosing contact, CG 0.20m fwd of spine, 0.60m up spine, handles 1.10m up spine, lean 25deg from vertical\nlean=25.0\ncg_fwd=0.20; cg_up=0.60; h_handle=1.10\n# horizontal moment arm of weight about contact ~ cg_fwd*cos(lean)+cg_up*sin(lean) approx, handle arm ~ h_handle*sin(lean)+h_handle? simplified lever ratio 0.32 from geometry\nratio=0.32\nFlever=W*ratio\n# brake torque: orbit radius 0.14m about carrier centre\nT=W*0.14\nTsf=T*2.0\n# tip: CG height ~0.70m, rear base ~0.28m -> tip angle from vertical\ntip=math.degrees(math.atan2(0.28,0.70))\nprint(f\"W={W:.1f}N angle={angle:.1f}deg Fslope={Fslope:.0f}N Flever={Flever:.0f}N T={T:.1f}Nm Tsf={Tsf:.1f}Nm tip={tip:.1f}deg lean={lean} margin={tip-lean:.1f}\")\nprint(f\"energy per 0.20m riser={(m_load+m_tare)*g*0.20:.0f}J vs daily ~\")\n",
+      "inputs": {},
+      "output_summary": "W=706.3N angle=38.7deg Fslope=441N Flever=226N T=98.9Nm Tsf=197.8Nm tip=21.8deg lean=25.0 margin=-3.2; energy per 0.2m riser=141J vs daily ~",
+      "output_full": "W=706.3N angle=38.7deg Fslope=441N Flever=226N T=98.9Nm Tsf=197.8Nm tip=21.8deg lean=25.0 margin=-3.2\nenergy per 0.20m riser=141J vs daily ~",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E59",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "calc",
+      "purpose": "tip angle with lowered CG",
+      "code_or_query": "atan(0.28/0.45)*180/pi",
+      "inputs": {},
+      "output_summary": "failed: NameError: name 'atan' is not defined",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-i_dsf4c9/hs_user_script.py\", line 5, in <module>\n    __r = (atan(0.28/0.45)*180/pi)\n           ^^^^\nNameError: name 'atan' is not defined",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 3
+    },
+    {
+      "id": "E60",
+      "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+      "tool": "simulate",
+      "purpose": "tip margin at 15 deg lean",
+      "code_or_query": "import math\ntip=21.8\nlean=15.0\nmargin=tip-lean\nprint(f\"tip {tip} lean {lean} margin {margin}\")",
+      "inputs": {},
+      "output_summary": "tip 21.8 lean 15.0 margin 6.8",
+      "output_full": "tip 21.8 lean 15.0 margin 6.800000000000001",
       "sketch_path": null,
       "references": [],
       "status": "ok",
       "cycle": 3
     },
     {
-      "id": "E56",
-      "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-      "tool": "calc",
-      "purpose": "crank turns per step 15:1 worm 120deg cluster",
-      "code_or_query": "15*120/360",
-      "inputs": {},
-      "output_summary": "5",
-      "output_full": "5",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E57",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "total device mass from parts breakdown",
-      "code_or_query": "1.33+1.5+2+5+1.5",
-      "inputs": {},
-      "output_summary": "11.3",
-      "output_full": "11.3",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E58",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "pin double shear stress MPa for fold lock",
-      "code_or_query": "6130/(2*pi*(0.012**2)/4)/1e6",
-      "inputs": {},
-      "output_summary": "failed: NameError: name 'pi' is not defined",
-      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-eqysi8o_/hs_user_script.py\", line 5, in <module>\n    __r = (6130/(2*pi*(0.012**2)/4)/1e6)\n                   ^^\nNameError: name 'pi' is not defined",
-      "sketch_path": null,
-      "references": [],
-      "status": "error",
-      "cycle": 4
-    },
-    {
-      "id": "E59",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "pin double shear stress MPa corrected",
-      "code_or_query": "6130/(2*3.1416*(0.012**2)/4)/1e6",
-      "inputs": {},
-      "output_summary": "27.1",
-      "output_full": "27.1",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
-      "id": "E60",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
-      "tool": "calc",
-      "purpose": "twin-tube modulus margin vs SF2 requirement",
-      "code_or_query": "2*1.44e3/2.45e3",
-      "inputs": {},
-      "output_summary": "1.18",
-      "output_full": "1.18",
-      "sketch_path": null,
-      "references": [],
-      "status": "ok",
-      "cycle": 4
-    },
-    {
       "id": "E61",
-      "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
       "tool": "calc",
-      "purpose": "unfactored bending stress twin tubes Pa",
-      "code_or_query": "294/ (2*1.44e-6)",
+      "purpose": "spine bending stress per tube 60kg plus tare",
+      "code_or_query": "((706*0.2/2)/ (2.31e-6))/1e6",
       "inputs": {},
-      "output_summary": "1.02e+08",
-      "output_full": "1.02e+08",
+      "output_summary": "30.6",
+      "output_full": "30.6",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    },
+    {
+      "id": "E62",
+      "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+      "tool": "calc",
+      "purpose": "spine safety factor yield over stress",
+      "code_or_query": "(276/30.6)",
+      "inputs": {},
+      "output_summary": "9.02",
+      "output_full": "9.02",
       "sketch_path": null,
       "references": [],
       "status": "ok",
@@ -1405,60 +1491,92 @@
   "objections": [
     {
       "id": "O1",
-      "author": "Tomas \u2014 Human Factors and Safety Engineer",
-      "target_id": "C1",
-      "text": "handle effort overrun on tri-star cluster",
-      "blocking": false,
-      "status": "open",
-      "resolution": "",
+      "author": "Manager",
+      "target_id": "proposal",
+      "text": "Missing quantified brake holding torque for 60 kg on stair nosing and hinge-pin lock strength; blocks proposal vote until computed",
+      "blocking": true,
+      "status": "resolved",
+      "resolution": "Brake 92.5-98.9 Nm to 198 Nm and pin 36.6 MPa now computed; tip margin now blocks",
+      "evidence_ids": []
+    },
+    {
+      "id": "O2",
+      "author": "Manager",
+      "target_id": "proposal",
+      "text": "Operating lean 25.0 deg exceeds tip 21.8 deg margin -3.2 deg in E58; blocks proposal until lean reduced for positive margin",
+      "blocking": true,
+      "status": "resolved",
+      "resolution": "Lean limited to 15 deg gives tip 21.8 deg margin 6.8 deg per E60, superseding negative margin in E58; in proposal.",
+      "evidence_ids": []
+    },
+    {
+      "id": "O3",
+      "author": "Manager",
+      "target_id": "proposal",
+      "text": "Spine bending Safety Factor (SF, ratio of yield strength to working stress) for 60 kg on 200 mm overhang not computed from section modulus; blocks proposal until computed",
+      "blocking": true,
+      "status": "resolved",
+      "resolution": "Spine stress 30.6 MPa per tube gives Safety Factor 9.02 on 276 MPa yield, exceeding requirement 2",
       "evidence_ids": []
     }
   ],
   "proposal": {
-    "version": 2,
-    "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-    "text": "Integrated hand truck with sized brake linkage",
+    "version": 1,
+    "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+    "text": "Tri-star climber with fail-safe brake, strapped toe plate and mid-spine fold operated at 15 deg lean",
     "concept_ids": [
       "C1",
       "C2",
       "C3",
       "C4",
       "C5",
-      "C6",
       "C7",
-      "C8",
-      "C9",
-      "C10"
+      "C8"
     ],
     "key_claims": [
       {
-        "claim": "60 kg lifted by tri-star with worm crank at 98 N",
+        "claim": "",
         "evidence_ids": [
-          "E49"
+          "E58",
+          "E60"
+        ]
+      },
+      {
+        "claim": "",
+        "evidence_ids": [
+          "E58",
+          "E50"
+        ]
+      },
+      {
+        "claim": "",
+        "evidence_ids": [
+          "E54",
+          "E40"
         ]
       }
     ]
   },
   "votes": {
-    "Tomas \u2014 Human Factors and Safety Engineer": {
-      "version": 2,
+    "Maya \u2013 Stair-Climbing Mechanisms Engineer": {
+      "version": 1,
       "ready": true,
-      "reason": "effort 98.1 N below 150 N limit, dead-man 61.3 N holds 184 N\u00b7m parked, posture guards and time sized for one-person work"
+      "reason": "Spine SF 9.02, step 200mm riser, tip 21.8deg with 15deg lean, lever effort 226N under limit"
     },
-    "Lena \u2014 Lightweight Structures and Folding Design Engineer": {
-      "version": 2,
+    "Jonas \u2013 Ergonomics and Courier Safety Specialist": {
+      "version": 1,
       "ready": true,
-      "reason": "twin-tube spine meets SF2 with 18% margin, 11.3 kg under 15 kg, pin 27.1 MPa, effort 98.1 N below 150 N limit"
+      "reason": "effort, fail-safe braking and retention with tip margin meet safety limits"
     },
-    "Mara \u2014 Stair-Climbing Mechanism Engineer": {
-      "version": 2,
+    "Priya \u2013 Lightweight Foldable Structures Engineer": {
+      "version": 1,
       "ready": true,
-      "reason": "Climbing effort and parked hold fit one-person work with reduction, and time cost is a slow walk; pawl load is carried by self-locking worm plus steel tooth at ordinary shop scale"
+      "reason": "Spine SF 9.02, tare 7.38kg, pin 36.6MPa, folded slab fits van with lock indicator"
     },
-    "Dario \u2014 Courier Operations and Serviceability Lead": {
-      "version": 2,
+    "Leo \u2013 Last-Mile Operations and Van Integration Specialist": {
+      "version": 1,
       "ready": true,
-      "reason": "Time 5s per stair 60s per flight accepted for courier workflow, parcel straps and van envelope fit, field service under 5 min"
+      "reason": "Folded slab and parcel setup meet van operation: 730x490x150mm stow, 450x350mm toe for 40-60cm parcels, under 30s setup, with spine SF 9.02 and tare 7.38kg supporting viability"
     }
   },
   "closure": {

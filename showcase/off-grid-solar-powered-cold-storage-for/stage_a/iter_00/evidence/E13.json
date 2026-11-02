@@ -1,24 +1,23 @@
 {
   "id": "E13",
-  "author": "Amara - Off-Grid Solar Power Lead",
-  "tool": "web_search",
-  "purpose": "search: global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
-  "code_or_query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
-  "inputs": {},
-  "output_summary": "medium.com — Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium — https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
-  "output_full": "medium.com — Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium — https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "medium.com",
-      "title": "Harnessing the Sun: A Bright Future for Africa | by Zachariya Sow | Medium",
-      "year": "",
-      "url": "https://medium.com/@zachariya.sow/harnessing-the-sun-a-bright-future-for-africa-03f64606e235",
-      "query": "global horizontal irradiation Sub-Saharan Africa peak sun hours kWh per m2 per day",
-      "unresolved": false,
-      "passage": ""
+  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "tool": "calc",
+  "purpose": "PV kWp for 10kWh per day example",
+  "code_or_query": "Q_(10,'kWh')/(Q_(5,'h')*0.75)",
+  "inputs": {
+    "arg0": {
+      "value": "10",
+      "unit": "kWh"
+    },
+    "arg1": {
+      "value": "5",
+      "unit": "h"
     }
-  ],
+  },
+  "output_summary": "2.67 kWh/h",
+  "output_full": "2.67 kWh/h",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

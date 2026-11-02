@@ -1,20 +1,20 @@
 {
   "id": "E38",
-  "author": "Chidi - Enclosure and Structural Designer",
+  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
   "tool": "web_search",
-  "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
-  "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+  "purpose": "search: PU sandwich panel cold room weight kg per m2 100mm",
+  "code_or_query": "PU sandwich panel cold room weight kg per m2 100mm",
   "inputs": {},
-  "output_summary": "solentplastics.co.uk — Plastic Storage Solutions by Sector | Solent Plastics — 1960 — https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
-  "output_full": "solentplastics.co.uk — Plastic Storage Solutions by Sector | Solent Plastics — 1960 — https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960\n(the search returned no passage text)",
+  "output_summary": "yuyan-refrigeration.en.made-in-china.com — Wall Panel for Freezer Room with PU Foam - 2026 Polyurethane Sandwich Panel, Sandwich Panel price | Made-in-china.com — 2026 — https://yuyan-refrigeration.en.made-in-china.com/product/mNhxXusOXTcf/China-Wall-Panel-for-Freezer-Room-with-PU-Foam.html",
+  "output_full": "yuyan-refrigeration.en.made-in-china.com — Wall Panel for Freezer Room with PU Foam - 2026 Polyurethane Sandwich Panel, Sandwich Panel price | Made-in-china.com — 2026 — https://yuyan-refrigeration.en.made-in-china.com/product/mNhxXusOXTcf/China-Wall-Panel-for-Freezer-Room-with-PU-Foam.html\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "solentplastics.co.uk",
-      "title": "Plastic Storage Solutions by Sector | Solent Plastics",
-      "year": "1960",
-      "url": "https://www.solentplastics.co.uk/sectors?heightf=103%2C1297%2C1618%2C136%2C1960",
-      "query": "plastic ventilated produce crate dimensions 600x400 stacking",
+      "authors_or_org": "yuyan-refrigeration.en.made-in-china.com",
+      "title": "Wall Panel for Freezer Room with PU Foam - 2026 Polyurethane Sandwich Panel, Sandwich Panel price | Made-in-china.com",
+      "year": "2026",
+      "url": "https://yuyan-refrigeration.en.made-in-china.com/product/mNhxXusOXTcf/China-Wall-Panel-for-Freezer-Room-with-PU-Foam.html",
+      "query": "PU sandwich panel cold room weight kg per m2 100mm",
       "unresolved": false,
       "passage": ""
     }

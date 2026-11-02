@@ -1,20 +1,20 @@
 {
   "id": "E20",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
-  "code_or_query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+  "purpose": "search: tuned mass damper viscous damper datasheet stroke load bridge",
+  "code_or_query": "tuned mass damper viscous damper datasheet stroke load bridge",
   "inputs": {},
-  "output_summary": "core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges — https://core.ac.uk/download/pdf/192164607.pdf",
-  "output_full": "core.ac.uk — Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges — https://core.ac.uk/download/pdf/192164607.pdf\n(the search returned no passage text)",
+  "output_summary": "trea.com — Inertial mass amplification type tuned mass damper — https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea",
+  "output_full": "trea.com — Inertial mass amplification type tuned mass damper — https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "core.ac.uk",
-      "title": "Requirements of technical standards for the dynamic analysis of the load-bearing structures of footbridges",
+      "authors_or_org": "trea.com",
+      "title": "Inertial mass amplification type tuned mass damper",
       "year": "",
-      "url": "https://core.ac.uk/download/pdf/192164607.pdf",
-      "query": "ISO 10137 pedestrian dynamic load footbridge 1.9 Hz",
+      "url": "https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea",
+      "query": "tuned mass damper viscous damper datasheet stroke load bridge",
       "unresolved": false,
       "passage": ""
     }

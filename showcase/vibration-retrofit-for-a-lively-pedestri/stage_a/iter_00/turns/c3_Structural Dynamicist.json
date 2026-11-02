@@ -1,5 +1,0 @@
-{
-  "cycle": 3,
-  "member": "Structural Dynamicist",
-  "message": "As Structural Dynamicist owner of tuning and connection ground truth, the device is sound.\n\nThe under-deck vertical Tuned Mass Damper (TMD) (C1) at midspan with the clamped under-deck support frame (C3) and recessed cassette (C4) meets the comfort target (C2). Damped peak is 0.106 m/s\u00b2 below the 0.700 m/s\u00b2 limit, about 0.011 g, a gentle lift, not a bounce. Stroke is 2.52 mm inside \u00b130.0 mm clearance.\n\nSizing is frozen on 20000 kg modal mass: 800 kg moving mass, 4.00% ratio, tuned to 1.83 Hz from 1.90 Hz bridge mode, 12.0% damper ratio, 105 kN/m spring stiffness. Hung load is 9.81 kN, about 13 adults, carried entirely from below with lock-off for maintenance.\n\nLoad path is primary longitudinal girders -> transverse cross-beams -> TMD support frame -> spring plus viscous damper plus moving mass -> locked to girder bottom flange, no deck-top change and no appearance change from eye height."
-}

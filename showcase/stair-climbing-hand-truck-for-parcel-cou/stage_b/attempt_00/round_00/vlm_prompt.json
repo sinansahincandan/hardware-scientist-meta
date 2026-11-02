@@ -1,64 +1,69 @@
 {
-  "prompt": "Photorealistic side-profile product shot of a stair-climbing hand truck paused mid-climb on a concrete residential stair flight, no text or labels. Two three-wheeled tri-star clusters with 150mm solid black rubber wheels on steel tri-arms contact two adjacent stair noses. Central steel worm gearbox housing mounted visibly on the cluster axle between the frames, with small pawl block and short hand crank. Twin parallel brushed aluminium spine tubes run diagonally parallel to the stair slope, L-shaped. At the lower end a hinged aluminium toe plate sticks out horizontally carrying a large brown cardboard parcel strapped vertically against the spine with black polyester webbing. At the upper end a telescopic closed-loop aluminium handle with steel dead-man lever. Real materials: brushed aluminium, dark steel, matte black rubber, plywood-like toe, corrugated cardboard. Soft daylight product lighting, sharp focus on mechanism, shallow depth of field, residential stairwell context, operating tilt, all six wheels, both clusters, gearbox, spine, toe, parcel and handle clearly visible and correctly connected.",
+  "prompt": "Photorealistic product rendering, true side view of a stair-climbing parcel trolley on residential stairs with load present. A tall twin-tube aluminium trolley leans slightly back on stair nosings, pulled by a courier's hands on a closed-loop handle at top. At the base, a triangular tri-star cluster on each side with three small solid-rubber wheels, one wheel bearing on the stair nosing edge, mid-rotation over the step. Twin parallel spine tubes run from the axle up to the handles. A steel brake band wraps the star carrier with a small pawl engaging it, cable running up the spine to a deadman lever under the handles. A flat aluminium toe plate juts forward at the base carrying a large taped cardboard parcel about knee-high, secured by two fabric harness straps with buckle over the top. Mid-spine shows a chunky fold hinge with lock plates and small lock window. In soft background, a thin folded-flat trolley slab leans against the stair wall to show stow shape. Real materials: brushed aluminium, black rubber tyres, steel hardware, brown cardboard, dark webbing. Soft daylight with product-shot fill, sharp focus on mechanism, stairs and wall simple light tone for contrast. Show fixed spine and toe versus rotating star wheels and moving brake lever. Add clean legible callouts on small light tags in empty space with thin leader lines to each part: Tri Star Wheels, Twin Spine Tubes, Brake Band Pawl, Toe Plate, Loop Handles, Fold Hinge Lock, Harness Strap, and no other text.",
   "must_not": [
-    "written labels or annotations",
-    "numeric readouts or dimensions",
-    "arrow diagrams or leader lines",
-    "margins, borders or scale bars",
-    "transparent or cutaway views",
-    "cartoon or wireframe styling"
+    "pencil sketch or line-drawing style",
+    "diagram color fills and solid circles",
+    "hand-drawn arrows and annotation marks",
+    "dimension numbers and measurement grids",
+    "extra labels logos or watermarks",
+    "scale bars borders or margins"
   ],
-  "changes_from_previous": "Initial version, no prior image to revise.",
+  "changes_from_previous": "",
   "visual_plan": {
-    "view": "true side elevation, camera perpendicular to stair flight, full device and two steps visible",
-    "spatial_layout": "Side view perpendicular to stair flight. Stair flight diagonals from lower left to upper right with 170mm riser 280mm tread profile. Cluster centered on stair noses in middle ground. Spine diagonal above cluster parallel to slope. Toe and parcel low-forward over steps. Handle high to upper right. Fixed stair below, moving cluster mid-rotation, fixed spine and toe relative to each other during hold.",
-    "operating_moment": "Paused mid-step ascent with load aboard: one wheel of each tri-star on lower tread nose and one on upper nose, parcel strapped on toe, spine reclined ~30 deg, worm holding position without hand grip, showing lift of one riser.",
-    "transfer_path": "Hand pull at closed-loop handle into spine and via crank into self-locking worm to tri-star axle to stair nose reaction lifting toe and parcel one step.",
-    "interactions": "Wheels roll on stair noses, tri-arms pivot about central axle, worm gearbox locks axle to spine, spine carries parcel weight to axle, toe hinge supports parcel from below with straps clamping parcel to spine, handle loop transmits pull into spine and crank into worm.",
+    "view": "side view, unfolded working view with folded slab context",
+    "spatial_layout": "Side elevation, slightly angled for depth. Foreground: three stair treads rising right to left. Trolley diagonal across steps, toe and parcel forward over lower tread, star clusters on nosing, spine rising to upper left, handles at hip-to-chest height with hands. Folded flat slab propped against wall in blurred background lower left. Empty sky/wall space around for callout tags.",
+    "operating_moment": "Mid-climb heave: trolley leaned back, tri-star mid-rotation with one small wheel on the nosing edge and another lifting to next tread, parcel strapped on toe, courier pulling loop handles, brake pawl holding carrier to prevent runaway.",
+    "transfer_path": "Load path toe plate into twin spine tubes into tri-star carrier into stair nosing; control path deadman lever via cable to brake band and pawl on carrier; lock state path hinge pin position to visual lock window.",
+    "interactions": "Toe plate bolted to lower spine carries parcel weight up into tubes; tubes bolt to tri-star axle; brake band wraps star carrier and pawl drops into carrier teeth, released by cable from deadman lever on handles; harness straps clamp parcel down to toe and spine; mid-spine hinge joins upper and lower tubes and locks with pin.",
     "avoid": [
-      "hiding gearbox inside frame",
-      "showing wrong wheel count per cluster",
-      "flat schematic colors",
-      "floating parts without contact",
-      "top or front view"
+      "sketch shading and diagram colors",
+      "arrows and handwritten notes",
+      "printed numbers and grids",
+      "extra text and logos"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "cluster",
-      "material": "steel tri-arm with black rubber wheels",
-      "purpose": "rotate 120 deg to step over risers and lift load",
-      "callout": "tri-star wheel cluster"
+      "part_id": "p_star",
+      "material": "solid rubber tyres on steel hubs",
+      "purpose": "walk over stair nosings with one wheel always bearing",
+      "callout": "Tri Star Wheels"
     },
     {
-      "part_id": "wheel",
-      "material": "solid black rubber on steel hub",
-      "purpose": "roll on stair noses, three per cluster side",
-      "callout": "solid puncture-proof wheels"
+      "part_id": "p_spine",
+      "material": "brushed aluminium tubes",
+      "purpose": "carry parcel load in bending to axle",
+      "callout": "Twin Spine Tubes"
     },
     {
-      "part_id": "worm",
-      "material": "steel gearbox housing with crank",
-      "purpose": "reduce crank effort and hold cluster hands-free",
-      "callout": "self-locking worm drive plus pawl"
+      "part_id": "p_brake",
+      "material": "steel band and pawl with cable",
+      "purpose": "hold on nosing fail-safe when lever released",
+      "callout": "Brake Band Pawl"
     },
     {
-      "part_id": "spine",
-      "material": "brushed 6061-T6 aluminium tubes with steel inserts",
-      "purpose": "carry load as main structure and fold flat",
-      "callout": "L-frame spine twin tubes"
+      "part_id": "p_toe",
+      "material": "aluminium tread plate",
+      "purpose": "support large parcel from below",
+      "callout": "Toe Plate"
     },
     {
-      "part_id": "toe",
-      "material": "aluminium plate with anti-slip pads",
-      "purpose": "support parcel from below and fold for stowage",
-      "callout": "hinged toe plate with backrest"
+      "part_id": "p_handle",
+      "material": "aluminium tube with rubber grips",
+      "purpose": "one-person lever heave at hip height",
+      "callout": "Loop Handles"
     },
     {
-      "part_id": "handle",
-      "material": "aluminium loop with steel brake lever",
-      "purpose": "two-hand pull and dead-man descent control",
-      "callout": "telescopic closed-loop handle"
+      "part_id": "p_hinge",
+      "material": "aluminium hinge with steel pin",
+      "purpose": "fold flat for stow and lock rigid unfolded",
+      "callout": "Fold Hinge Lock"
+    },
+    {
+      "part_id": "p_strap",
+      "material": "fabric webbing with metal buckle",
+      "purpose": "retain parcel on toe plate",
+      "callout": "Harness Strap"
     }
   ]
 }

@@ -1,20 +1,20 @@
 {
   "id": "E2",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
-  "code_or_query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+  "purpose": "search: peak sun hours tropical hot region solar sizing kWh per kWp per day",
+  "code_or_query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
   "inputs": {},
-  "output_summary": "elevatehomeguide.space — Off-Grid Cabin EV Charging: Solar + Battery Sizing — https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
-  "output_full": "elevatehomeguide.space — Off-Grid Cabin EV Charging: Solar + Battery Sizing — https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin\n(the search returned no passage text)",
+  "output_summary": "themescenter.online — How Many Solar Panels Do I Need? — https://www.themescenter.online/blog/how-many-solar-panels/index.html",
+  "output_full": "themescenter.online — How Many Solar Panels Do I Need? — https://www.themescenter.online/blog/how-many-solar-panels/index.html\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "elevatehomeguide.space",
-      "title": "Off-Grid Cabin EV Charging: Solar + Battery Sizing",
+      "authors_or_org": "themescenter.online",
+      "title": "How Many Solar Panels Do I Need?",
       "year": "",
-      "url": "https://www.elevatehomeguide.space/articles/ev-charger-off-grid-solar-cabin",
-      "query": "off grid solar cold storage 1 tonne peak sun hours sizing kWh per day",
+      "url": "https://www.themescenter.online/blog/how-many-solar-panels/index.html",
+      "query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
       "unresolved": false,
       "passage": ""
     }

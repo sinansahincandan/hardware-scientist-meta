@@ -1,20 +1,20 @@
 {
   "id": "E28",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
   "tool": "web_search",
-  "purpose": "search: polyurethane panel cold room insulation thickness thermal conductivity",
-  "code_or_query": "polyurethane panel cold room insulation thickness thermal conductivity",
+  "purpose": "search: vented plastic crate dimensions food grade 600x400 fresh produce stacking",
+  "code_or_query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
   "inputs": {},
-  "output_summary": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
-  "output_full": "shsandwichpanel.com — Cold Room PU Sandwich Panel - Shandong Shanghe — https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html\n(the search returned no passage text)",
+  "output_summary": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-76-kg/",
+  "output_full": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-76-kg/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "shsandwichpanel.com",
-      "title": "Cold Room PU Sandwich Panel - Shandong Shanghe",
+      "authors_or_org": "plastic2go.com.au",
+      "title": "Best Folding Vented 600x400 Plastic Crates for Sale",
       "year": "",
-      "url": "https://www.shsandwichpanel.com/150mm-coolroom/cool-room-panels.html",
-      "query": "polyurethane panel cold room insulation thickness thermal conductivity",
+      "url": "https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-76-kg/",
+      "query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
       "unresolved": false,
       "passage": ""
     }

@@ -1,20 +1,20 @@
 {
   "id": "E25",
-  "author": "Tomas — Human Factors and Safety Engineer",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
   "tool": "web_search",
-  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+  "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
   "inputs": {},
-  "output_summary": "github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n — https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
-  "output_full": "github.com — lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n — https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254\n(the search returned no passage text)",
+  "output_summary": "coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals — https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1",
+  "output_full": "coremarkmetals.com — 6061 T6 Aluminum Round Tube | Coremark Metals — https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "github.com",
-      "title": "lukehamond1001/one-token-organism - W2 (SIM_DESIGN.md 4.1, 4.2, 4.10, A3-A10, A22, A25, C6, C7, C34; the build plan's W2): the parent's motion: every hold on the G1 a capped spring at a person's caps, never a weld; her body yields and n",
+      "authors_or_org": "coremarkmetals.com",
+      "title": "6061 T6 Aluminum Round Tube | Coremark Metals",
       "year": "",
-      "url": "https://github.com/lukehamond1001/one-token-organism/commit/ff03bcb9125f33ffbc28bcaa23858e564f1b0254",
-      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "url": "https://www.coremarkmetals.com/6061-t6-aluminum-round-tube?dmA=1",
+      "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
       "unresolved": false,
       "passage": ""
     }

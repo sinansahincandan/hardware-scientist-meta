@@ -1,14 +1,14 @@
 {
   "id": "E49",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "calc",
-  "purpose": "hand pull with 15 to 1 worm and 0.25 m crank",
-  "code_or_query": "(184/(15*0.5))/0.25",
+  "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
+  "tool": "sketch",
+  "purpose": "Van stow slab and toe plate with 60x40x40 parcel",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(1,2,figsize=(8,4)); ax[0].add_patch(plt.Rectangle((0,0),4.9,7.3,color='lightgrey')); ax[0].text(2.4,3.5,'folded slab\\n490x730',ha='center'); ax[0].set_xlim(-1,7); ax[0].set_ylim(-1,9); ax[0].set_title('folded in van niche'); ax[0].set_aspect('equal'); ax[1].add_patch(plt.Rectangle((0,0),4.5,0.5,color='grey')); ax[1].add_patch(plt.Rectangle((0,0.5),4.5,6.0,color='none',ec='black')); ax[1].add_patch(plt.Rectangle((0.5,0.5),4.0,4.0,color='tan')); ax[1].text(2.2,2.5,'parcel 60x40x40',ha='center'); ax[1].set_xlim(-1,6); ax[1].set_ylim(-1,8); ax[1].set_title('toe 450x350 unfolded'); plt.tight_layout(); plt.savefig('sketch.png')",
   "inputs": {},
-  "output_summary": "98.1",
-  "output_full": "98.1",
-  "sketch_path": null,
+  "output_summary": "Van stow slab and toe plate with 60x40x40 parcel",
+  "output_full": "Van stow slab and toe plate with 60x40x40 parcel",
+  "sketch_path": "evidence/sketch_49.png",
   "references": [],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

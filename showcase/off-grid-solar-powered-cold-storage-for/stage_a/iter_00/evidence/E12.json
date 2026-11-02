@@ -1,20 +1,20 @@
 {
   "id": "E12",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "purpose": "search: MPPT charge controller 48V 60A datasheet solar off-grid",
+  "code_or_query": "MPPT charge controller 48V 60A datasheet solar off-grid",
   "inputs": {},
-  "output_summary": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
-  "output_full": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/\n(the search returned no passage text)",
+  "output_summary": "solar.se.com — Conext™ MPPT 60 150 solar charge controller — 2021 — https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf",
+  "output_full": "solar.se.com — Conext™ MPPT 60 150 solar charge controller — 2021 — https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "nabellasstores.com",
-      "title": "LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores",
-      "year": "",
-      "url": "https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
-      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "authors_or_org": "solar.se.com",
+      "title": "Conext™ MPPT 60 150 solar charge controller",
+      "year": "2021",
+      "url": "https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf",
+      "query": "MPPT charge controller 48V 60A datasheet solar off-grid",
       "unresolved": false,
       "passage": ""
     }

@@ -4,146 +4,148 @@
     1280
   ],
   "parts": {
-    "girder": {
-      "phrase": "steel beam",
+    "deck": {
+      "phrase": "bridge deck",
       "boxes": [
         [
-          288.75,
-          359.8243045387994,
-          1404.375,
-          580.9663250366033
+          0.0,
+          134.93411420204978,
+          1920.0,
+          519.1215226939971
         ]
-      ]
-    },
-    "clamps": {
-      "phrase": "metal clamp",
-      "boxes": []
-    },
-    "crossbeam": {
-      "phrase": "cross beam",
-      "boxes": []
+      ],
+      "mask": {
+        "file": "sam_masks/deck.png",
+        "area": 249021.0,
+        "cx": 954.3846425589312,
+        "cy": 291.0022801721369,
+        "angle": 173.0,
+        "elongation": 13.36
+      }
     },
     "frame": {
-      "phrase": "metal frame",
+      "phrase": "beam",
       "boxes": [
         [
-          286.875,
-          356.0761346998536,
-          1404.375,
-          580.9663250366033
-        ],
-        [
-          729.375,
-          547.2327964860908,
-          1263.75,
-          993.2650073206443
+          451.875,
+          365.4465592972182,
+          1389.375,
+          487.2620790629576
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/frame.png",
+        "area": 47956.0,
+        "cx": 950.3452866295033,
+        "cy": 429.8487394957983,
+        "angle": 175.7,
+        "elongation": 14.26
+      }
     },
-    "springs": {
-      "phrase": "steel spring",
+    "bolts": {
+      "phrase": "bolt",
+      "boxes": []
+    },
+    "spring": {
+      "phrase": "coil spring",
       "boxes": [
         [
-          815.625,
-          640.9370424597365,
-          864.375,
-          950.1610541727672
+          744.375,
+          459.1508052708638,
+          894.375,
+          708.4040995607613
         ],
         [
-          1153.125,
-          685.9150805270864,
-          1185.0,
-          931.4202049780381
-        ],
-        [
-          1072.5,
-          609.077598828697,
-          1123.125,
-          912.679355783309
-        ],
-        [
-          918.75,
-          745.8857979502196,
-          954.375,
-          940.7906295754027
+          1014.375,
+          500.38067349926797,
+          1164.375,
+          729.0190336749635
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/spring.png",
+        "area": 22266.0,
+        "cx": 951.4248788368336,
+        "cy": 598.9276611021361,
+        "angle": 172.3,
+        "elongation": 2.11
+      }
+    },
+    "damper": {
+      "phrase": "damper",
+      "boxes": []
     },
     "mass": {
       "phrase": "steel block",
-      "boxes": [
-        [
-          795.0,
-          912.679355783309,
-          1226.25,
-          1173.1771595900439
-        ]
-      ]
-    },
-    "damper": {
-      "phrase": "metal cylinder",
-      "boxes": [
-        [
-          980.625,
-          616.5739385065885,
-          1010.625,
-          732.7672035139093
-        ],
-        [
-          961.875,
-          732.7672035139093,
-          1040.625,
-          929.5461200585652
-        ]
-      ]
-    },
-    "lockpin": {
-      "phrase": "metal pin",
       "boxes": []
     },
-    "screen": {
-      "phrase": "metal screen",
+    "cover": {
+      "phrase": "metal cover",
       "boxes": [
         [
-          1284.375,
-          732.7672035139093,
-          1920.0,
-          1115.0805270863837
+          1533.75,
+          427.29136163982434,
+          1597.5,
+          590.3367496339678
         ],
         [
-          0.0,
-          907.0571010248902,
-          810.0,
-          1231.2737920937043
+          725.625,
+          997.0131771595901,
+          1186.875,
+          1071.9765739385066
+        ],
+        [
+          781.875,
+          745.8857979502196,
+          1136.25,
+          871.4494875549049
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/cover.png",
+        "area": 76805.0,
+        "cx": 1032.086280646844,
+        "cy": 859.4330725091288,
+        "angle": 33.9,
+        "elongation": 2.45
+      }
     }
   },
+  "contacts": [
+    [
+      "deck",
+      "cover"
+    ]
+  ],
   "differences": {
-    "girder": [
-      "expected 2 visible, found 1"
-    ],
-    "clamps": [
-      "not found by the segmenter as 'metal clamp'"
-    ],
-    "crossbeam": [
-      "not found by the segmenter as 'cross beam'"
+    "deck": [
+      "size against frame: expected about 20 times, measured 2 times",
+      "expected to touch frame, but they are apart in the picture"
     ],
     "frame": [
-      "expected 1 visible, found 2"
+      "expected 2 visible, found 1",
+      "expected to touch deck, but they are apart in the picture",
+      "expected to touch spring, but they are apart in the picture",
+      "expected to touch cover, but they are apart in the picture"
     ],
-    "springs": [
-      "expected 1 visible, found 4"
+    "bolts": [
+      "not found by the segmenter as 'bolt'"
+    ],
+    "spring": [
+      "expected 4 visible, found 2",
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch frame, but they are apart in the picture"
     ],
     "damper": [
-      "expected 1 visible, found 2"
+      "not found by the segmenter as 'damper'"
     ],
-    "lockpin": [
-      "not found by the segmenter as 'metal pin'"
+    "mass": [
+      "not found by the segmenter as 'steel block'"
     ],
-    "screen": [
-      "expected 1 visible, found 2",
-      "size against frame: expected about 1.8 times, measured 0.72 times"
+    "cover": [
+      "expected 1 visible, found 3",
+      "expected a horizontal long axis, measured tilted about 34 degrees",
+      "expected to touch frame, but they are apart in the picture"
     ]
   },
   "rechecks": []

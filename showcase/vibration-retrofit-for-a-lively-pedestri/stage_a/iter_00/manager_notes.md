@@ -1,48 +1,46 @@
 
 ## Cycle 1
-Structural Dynamicist, the damped comfort proof and moving travel are missing, so the vote is blocked. No one has computed deck acceleration with the Tuned Mass Damper (TMD) installed or the TMD stroke, and modal mass remains assumed. Deciding numbers are target 0.700 m/s², bare response 1.75 m/s² per the bare single-ped resonant accel estimate (E22), and moving mass 800 kg per the Size under-deck TMD mass tuning and damping for 1.9 Hz mode (E11). Compute damped acceleration and stroke next.
+Elena, Marcus, Priya, Tomas, single walker fails comfort so dense crowd decides design. Resonant simulation (E47) gives 1.75 m/s2 bare and 0.103 m/s2 with Tuned Mass Damper (TMD, a secondary mass tuned to the bridge mode) for one 280 N walker, 0.178 times gravity and barely felt, but dense crowd verification case (C5) at 0.500 pedestrians per square metre was never converted to force and acceleration, and equivalent pedestrian calculation (E48) leaves gap open. Tomas, compute dense crowd resonant acceleration with and without TMD next turn.
 
-Serviceability and Crowd Loading Specialist, Retrofit and Maintenance Engineer and Under-Deck Integration Designer, the results on the board check against everyday scales with nothing off-scale. Comfort target is a small fraction of gravity, bare response is about twice target like a lively floor, and the hung package is hardware scale. Deciding numbers are 0.0713 g target, 0.178 g bare, and 9.81 kN hung load per the total static hung load TMD plus frame (E29), about thirteen body weights.
+Marcus, stroke clearance under dense crowd load is missing before build. TMD stiffness and viscous coefficient (E24) at 67.8 kN/m and 1.09 kN s/m with 500 kg TMD mass (E22), about seven body weights, gives 3.80 mm motion for one walker, about fingernail width and plausible, but scaled to dense crowd it grows and must fit bolted frame sketch (E37). Marcus, confirm dense crowd stroke and clearance next turn.
 
-Structural Dynamicist, with no proposal on the board, please write the proposal integrating your C1 with C3 and C4 with update_proposal in your next turn.
-Note on Structural Dynamicist: Sizing is done but damped proof is missing.
-Note on Serviceability and Crowd Loading Specialist: Target and bare response are clear.
-Note on Retrofit and Maintenance Engineer: Support path is workable but load trace needs freeze.
-Note on Under-Deck Integration Designer: Package is separated well but depth waits on stroke.
-Position: not ready, because damped acceleration, stroke and proposal are missing.
+No proposal is on board, so Marcus, integrate under-deck vertical Tuned Mass Damper (C2) with bolted frame and staged access (C3, C4) and comfort limits (C1, C6) and write proposal next turn. Not ready, because blocking objection O1 on dense crowd acceleration and stroke is open.
+Note on Elena: modal scale set with stiffness assumption.
+Note on Marcus: TMD sizing plausible on person scales but stroke sweep missing.
+Note on Priya: frame loads plausible at 12.3 kN but slip and clearance pending.
+Note on Tomas: walker reduction strong but dense crowd proof missing so ready early.
 
 ## Cycle 2
-Structural Dynamicist, strong damped claim still rests on assumed mass, so single vote came too early. Plainly lively-to-still cut looks larger than small added mass usually gives. Deciders are bare 1.75 m/s² per bare single-ped resonant accel estimate (E22) falling to damped 0.106 m/s² per damped response sweep (E32), factor 16.5, from 4% mass ratio per Den Hartog sizing (E11), implying about 20,000 kg unfrozen modal mass.
+Elena, Marcus, Priya, Tomas, dense crowd numbers close blocking gap but uncontrolled value fails everyday scale. In plain words uncontrolled bridge would throw people while controlled feel is gentle braking, then numbers that decide are dense-crowd resonant force estimate (E50) of 1.48e3 N giving bare-deck acceleration scaling (E51) of 9.26 m/s2, which is 0.944 times gravity and outside what footbridges show because it assumes linear resonance with no pedestrian limit, versus Tuned Mass Damper (TMD, a secondary mass tuned to the bridge mode) controlled acceleration scaling (E52) of 0.545 m/s2, which is 0.0556 times gravity and plausible.
 
-Serviceability and Crowd Loading Specialist, Retrofit and Maintenance Engineer and Under-Deck Integration Designer, checks and votes still needed to pass. Plainly comfort, clamp load and hidden depth still need explicit agreement. Deciders are target 0.700 m/s², stroke 2.52 mm inside plus-minus 30 mm clearance per damped response sweep (E32), and hung load 9.81 kN per hung load estimate (E29).
+Marcus, Priya, Tomas, stroke clearance is buildable on person scale. In plain words moving mass motion is thumbnail width with margin to stops, then numbers that decide are dense-crowd stroke scaling (E53) of 20.1 mm against plus-minus 50.0 mm stops in bolted frame sketch (E37), giving 2.49 times margin.
 
-Structural Dynamicist, please freeze modal mass and re-run Tuned Mass Damper (TMD), a sprung mass moving out of phase, sizing with named inputs. Plainly everyday scales look normal so doubt is modelling not size. Deciders are 0.178 g bare, 0.0108 g damped like still floor, and 9.81 kN about thirteen body weights, nothing off-scale.
-Note on Structural Dynamicist: Proof was posted but mass is assumed.
-Note on Serviceability and Crowd Loading Specialist: Comfort is clear but vote is needed.
-Note on Retrofit and Maintenance Engineer: Clamp is clear but vote is needed.
-Note on Under-Deck Integration Designer: Screen is clear but vote is needed.
-Position: not ready, because blocking O1 needs mass freeze and three votes.
+Marcus, no proposal is on board so integrate your under-deck vertical Tuned Mass Damper (C2) with bolted frame and staged access (C3, C4) and comfort limits (C1, C6) and write proposal using update_proposal next turn. Not ready, because proposal is still missing despite closed calculations.
+Note on Elena: tuning check consistent on body-weight scales.
+Note on Marcus: crowd numbers supplied but proposal owed.
+Note on Priya: frame margins plausible at car and thumbnail scales.
+Note on Tomas: comfort tied to controlled case with everyday check.
 
 ## Cycle 3
-Structural Dynamicist, the resonance proof ties to a frozen mass so the old block is closed, but a support block stops the vote. Plainly the still-floor claim looks normal and buildable. Deciders are damped peak 0.106 m/s2 per the damped response sweep (E32), about 0.0108 g like a still floor, and Tuned Mass Damper (TMD), a sprung out-of-phase mass, at 800 kg tuned to 1.83 Hz per the frozen sizing rerun (E33).
+Elena, Marcus, Priya, Tomas, the uncontrolled crowd number fails everyday scale while the controlled number is plausible. In plain words the bare bridge would throw people and the damped bridge feels like gentle braking, then the numbers that decide are the dense-crowd resonant force estimate (E50) of 1.48e3 N giving the bare-deck acceleration scaling (E51) of 9.26 m/s2, which is 0.944 times gravity and outside what footbridges show because linear resonance overpredicts, versus the Tuned Mass Damper (TMD, secondary mass tuned to the bridge mode) controlled acceleration scaling (E52) of 0.545 m/s2, which is 0.0556 times gravity and plausible.
 
-Retrofit and Maintenance Engineer, compute clamp slip capacity and flange bending for the hung load before claiming install. Plainly thirteen body weights hung below needs slip proof, not just total weight. Deciders are hung load 9.81 kN per the hung load estimate (E29), thirteen body weights which is normal, with stroke 2.52 mm inside plus-minus 30.0 mm per the damped response sweep (E32), fingernail travel that fits.
+Marcus, the spring sag plus shake clearance is the critical quantity nobody computed for buildability. In plain words the springs must sag under weight and still shake without hitting stops or deck, then the numbers that decide are the TMD weight calculation (E35) of 4.90 kN on the stiffness in the TMD stiffness and viscous coefficient (E24) of 67.8 kN/m, plus the dense-crowd stroke scaling (E53) of 20.1 mm against plus-minus 50.0 mm stops in the bolted frame sketch (E37), so please compute static deflection and total headroom next turn.
 
-Serviceability and Crowd Loading Specialist, Under-Deck Integration Designer, Structural Dynamicist and Retrofit and Maintenance Engineer, your ready votes cannot yet pass while the clamp block is open. Plainly comfort and hiding are agreed but support is not. Deciders are target 0.700 m/s2 against 0.106 m/s2 per the damped response sweep (E32).
-Note on Structural Dynamicist: Freeze and rerun supplied.
-Note on Serviceability and Crowd Loading Specialist: Comfort stated but support proof open.
-Note on Retrofit and Maintenance Engineer: Load stated but slip capacity missing.
-Note on Under-Deck Integration Designer: Depth fits stroke but support proof open.
-Position: not ready, because blocking O2 on clamp capacity is open.
+Not ready, because static plus dynamic travel and the first votes on the new proposal are still missing.
+Note on Elena: modal scale consistent on body-weight checks.
+Note on Marcus: proposal written but static travel still owed.
+Note on Priya: frame demand at car scale but headroom confirmation pending.
+Note on Tomas: comfort case tied to plausible controlled value.
 
 ## Cycle 4
-Retrofit and Maintenance Engineer, the slip calculation now exists but the flange bending check still has no calculation so the support block must stay open. Plainly eight clamps sharing one hung weight looks ample for slip, but local flange bending was only asserted. Deciders are hung load 9.81 kN per the total static hung load TMD plus frame (E44), about thirteen body weights which is ordinary, against capacity 32.0 kN and factor 3.26 per the slip safety factor 8xM16 clamps (E45).
+Elena, Marcus, Priya, Tomas, bare response is outside everyday scale while controlled is plausible. Bare would throw people and damped feels like gentle bus braking, with force estimate (E50) of 1.48e3 N giving bare acceleration scaling (E51) of 9.26 m/s2, 0.944 times gravity and outside footbridge range as linear resonance overpredicts, versus Tuned Mass Damper (TMD, secondary mass tuned to the bridge mode) controlled scaling (E52) of 0.545 m/s2, 0.0556 times gravity and plausible.
 
-Structural Dynamicist and Retrofit and Maintenance Engineer, your ready votes came too early while a blocking objection is open and cannot pass yet. Plainly comfort and hiding are agreed but support is not yet fully proved. Deciders are damped peak 0.106 m/s2 per the damped response sweep (E32), about 0.0108 g like a still floor which is normal, against target 0.700 m/s2.
+Sag plus shake fits below deck. Fist-height sag plus thumbnail shake is hand-width travel without hitting stops, with static sag calculation (E55) of 72.3 mm from weight calculation (E35) of 4.90 kN on stiffness in stiffness and viscous coefficient (E24) of 67.8 kN per m, plus stroke scaling (E53) of 20.1 mm giving total compression calculation (E56) of 92.4 mm, with 2.49 times margin to plus-minus 50.0 mm stops in frame sketch (E37).
 
-Serviceability and Crowd Loading Specialist and Under-Deck Integration Designer, your not ready holds until flange bending is computed with flange thickness, clamp spacing and stress.
-Note on Retrofit and Maintenance Engineer: Slip numbers supplied, flange bending still missing.
-Note on Structural Dynamicist: Tuning and comfort unchanged, vote premature.
-Note on Serviceability and Crowd Loading Specialist: Comfort proof holds, waiting on support.
-Note on Under-Deck Integration Designer: Appearance frozen, waiting on support.
-Position: not ready, because blocking O2 on clamp slip plus flange bending is only half evidenced.
+Tuning and frame demand close on buildable hardware. Child-scale mass steadies bus-scale deck and frame carries car-scale load, with optimum re-check (E54) of 1.85 Hz at 0.0956 damping ratio with simulation (E47) falling from 1.75 to 0.103 m/s2, and frame design load (E36) of 12.3 kN.
+
+Ready, because travel, comfort and tuning close jointly unanimously.
+Note on Elena: mass and stiffness checked against body weights.
+Note on Marcus: tuning reduction shown with plausible controlled acceleration.
+Note on Priya: car-scale load and thumbnail shake against stops close.
+Note on Tomas: comfort tied to plausible value, bare overprediction flagged.

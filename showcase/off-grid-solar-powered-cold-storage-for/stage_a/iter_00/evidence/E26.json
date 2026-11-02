@@ -1,20 +1,20 @@
 {
   "id": "E26",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
   "tool": "web_search",
-  "purpose": "search: Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
-  "code_or_query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+  "purpose": "search: vented plastic crate dimensions food grade 600x400 fresh produce stacking",
+  "code_or_query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
   "inputs": {},
-  "output_summary": "assets.danfoss.com — BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz — https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
-  "output_full": "assets.danfoss.com — BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz — https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf\n(the search returned no passage text)",
+  "output_summary": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/",
+  "output_full": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "assets.danfoss.com",
-      "title": "BD1.4F-FSD Direct Current Compressor R134a, 12-24V DC &amp; 100-240V AC 50/60Hz",
+      "authors_or_org": "plastic2go.com.au",
+      "title": "Best Folding Vented 600x400 Plastic Crates for Sale",
       "year": "",
-      "url": "https://assets.danfoss.com/documents/latest/178525/AI376431795232en-000101.pdf",
-      "query": "Secop Danfoss BD DC compressor 12V 24V datasheet COP cooling capacity",
+      "url": "https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/",
+      "query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
       "unresolved": false,
       "passage": ""
     }

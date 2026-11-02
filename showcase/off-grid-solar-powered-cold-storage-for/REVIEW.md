@@ -1,32 +1,21 @@
-# REVIEW — run 20261102-053545 (problem 02, off-grid solar cold room), showcase run
+# REVIEW — run 20261102-112524 (problem 02, off-grid solar cold store), round 4 P5
 
-States only what this run's files show. Cost $1.9229 plus one label-check call afterwards (ledger).
-Earlier 02 runs (035951 crash, 042726, 050118) are kept with their own REVIEW.md as evidence of the fixes.
+Cost $2.2661 (cost.json). Every image listed below was viewed.
 
-## Stage A (stage_a/iter_00)
-- Roster: Amara (off-grid solar), Baraka (refrigeration and thermal), Chidi (enclosure and structure),
-  Dalia (cooperative use and produce preservation).
-- Meeting: 4 cycles, consensus; proposal v2 by Chidi; all four members ready on v2; the Manager's blocking
-  objection O1 was resolved (whiteboard.json).
-- Evidence: 45 search sources, 9 calculations, 2 simulations, 5 sketches (3 failed items).
-- Evaluator: accepted, no evidence requests; cites the closure facts ("consensus after 4 cycles on Proposal
-  v2 with all four roles ready and no open objections") and re-derives the energy balance (2.2 kW array for
-  ~8 kWh/day staged load, 5.12 kWh night store, 1 kW staged cooling, 50 × 20 kg crates for 1 t).
-- Mechanism sentence (plain words): "Sunlight from about 10 m2 of panels makes and stores electricity that
-  runs a small cooler blowing cold air around vented crates inside a thick insulated box, cooling about
-  333 kg of fresh produce per day down to 5 degC." Open question: overnight use against the 5.12 kWh store.
+## Stage A
+- Roster (rev 0): Surya (off-grid solar power), Lena (refrigeration and thermal insulation), Farah (post-harvest and cooperative operations), Kofi (structural enclosure and low-cost fabrication).
+- Inherited (knowledge_in.json): lessons L1–L10 and the insight file of run 20261102-105608 (problem 01). No member searched the library (no search_knowledge evidence); the inherited findings are about stairs and hand trucks.
+- Meeting: 4 cycles, closed by consensus; 67 evidence items.
+- Evaluator accepted at the first meeting. constraint_review: "solar only" met (PV array, battery and DC chiller against the daily holding and intake load, night on battery); "about 1 tonne" met (box with racks and vented crates, with a daily warm-intake cap). The reject → rewrite chain did not fire.
 
-## Stage B (stage_b/attempt_00)
-- Council sketches E45, E59 as extra references; round 0 faithful, s1_pass.
-- Deviations: the critic listed 8 (one per segmenter finding), none judged to matter; sam_use.json
-  unnoticed = [] (the C18 completeness fix held; no re-ask was needed).
+## Stage B
+- Concept sketch: blocked by Meta's content filter, also after the client's number-free retry; the code sketch was used. Reproduced afterwards (scratchpad, $0.04): each part of the prompt passes alone, the combination is blocked, and the council sketches pass. A plainer wording (redraw the hand sketches, plain part names, no mechanism sentence) passed and gives a clear pencil sketch. That wording is now the second try (loop.concept_sketch); this run did not have it.
+- round_00/render.png: photoreal walk-in cold room in a farmyard, cut open to show racks of crates and the evaporator fan, door, a person for scale, outdoor chiller unit, battery cabinet and a tilted solar array. The image model added callouts with numbers ("six 400W", "48V"), dimension arrows and airflow arrows, although the writer asked for plain names without numbers.
+- Critic: S1 faithful, no S2 flaw → s1_pass in round 0.
+- sam_overlay.png (redrawn with visible masks): 7 of 11 parts found; battery box, cable, white box and cooler not found. "concrete slab ×3" boxes include regions that are not the plinth.
+- Final checks: 4 image callouts judged wrong → callouts removed, code labels drawn; 3 code labels then removed (cold box, fan kit, steel frame). Remaining labels (crates, racks, plinth, PV array, battery cabinet, DC chiller) end on those parts as viewed.
 
-## Figure (inspected by eye)
-- Panel A: photoreal insulated cold room on a galvanized skid in a farmyard, four roof panels on a tilted
-  frame, open door, crates on two racks, cooler inside, electrical box outside. One code label ("PU box
-  2.4x2x2.2m") pointed at the electrical box; the new label check (scripts/relabel_figure.py) removed it
-  (rationale.md). The remaining labels point at their parts.
-- Panel B: crop of the cooler with a ~200 mm scale bar. Panel C: the recorded chain (logger → MPPT
-  sensing → MPPT meter); its content comes from the Secretary.
-- Panel D: fabrication steps 2–5 were blocked by the provider's content filter (HTTP 400, cause unknown)
-  and are not shown; step 1 ships.
+## Figure (final/figure.png, recomposed with the round-4 layout)
+- Panel B omitted: the critical part (the cold box) fills most of the picture.
+- Panel C: box air sensor → thermostat.
+- Panel D: 3 steps shown. Step 2 failed its check twice; steps 3 and 4 passed only the general check (detailed check blocked by the content filter; captions marked). The steps show a full walk-in room standing on a workbench in a workshop — wrong scale. Cause: the step prompt always said "workbench with ordinary shop tools". Changed since: the setting follows the device's real size (bench, shop floor, or the site itself).

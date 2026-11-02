@@ -1,14 +1,24 @@
 {
   "id": "E31",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
-  "tool": "simulate",
-  "purpose": "cooling load first order for 1 tonne cold room",
-  "code_or_query": "import pint; u=pint.UnitRegistry()\nm=1000 #kg\ncp=3600 # J/kgK\ndT=25 # K from 30C to 5C\nE=m*cp*dT/3.6e6 # kWh\nP_avg=E/24 # kW over 24h\nprint(f\"pull-down energy {E:.1f} kWh, avg power {P_avg*1000:.0f} W\")\n# transmission\nk=0.022; d=0.10; U=k/d\nA=6*(2*2) # 2m cube\ndT2=35\nQtrans=U*A*dT2\nprint(f\"U {U:.3f} W/m2K, Qtrans {Qtrans:.0f} W\")\nQresp=80 # W typical\nQfan=50\nQtotal=Qtrans+Qresp+Qfan\nprint(f\"steady cooling ~ {Qtotal:.0f} W\")\n# electrical with COP 2\nCOP=2.0\nPe=Qtotal/COP\nprint(f\"electrical steady {Pe:.0f} W, daily elec {Pe*24/1000:.2f} kWh/day, plus pulldown elec {(E/COP):.1f} kWh one-off\")\n",
+  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: fresh produce bulk density kg per cubic metre cold storage tomato potato",
+  "code_or_query": "fresh produce bulk density kg per cubic metre cold storage tomato potato",
   "inputs": {},
-  "output_summary": "U 0.22 W/m2K, Qtrans 185 W; steady cooling ~ 315 W; electrical steady 157 W, daily elec 3.78 kWh/day, plus pulldown elec 12.5 kWh one-off",
-  "output_full": "pull-down energy 25.0 kWh, avg power 1042 W\nU 0.220 W/m2K, Qtrans 185 W\nsteady cooling ~ 315 W\nelectrical steady 157 W, daily elec 3.78 kWh/day, plus pulldown elec 12.5 kWh one-off",
+  "output_summary": "mjae.journals.ekb.eg — EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES — https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf",
+  "output_full": "mjae.journals.ekb.eg — EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES — https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mjae.journals.ekb.eg",
+      "title": "EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES",
+      "year": "",
+      "url": "https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf",
+      "query": "fresh produce bulk density kg per cubic metre cold storage tomato potato",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

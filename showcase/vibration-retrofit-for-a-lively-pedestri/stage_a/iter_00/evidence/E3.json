@@ -1,20 +1,20 @@
 {
   "id": "E3",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
-  "code_or_query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+  "purpose": "search: footbridge vertical acceleration comfort limit Setra HiVoSS",
+  "code_or_query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
   "inputs": {},
-  "output_summary": "mdpi.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge — http://mdpi.com/2412-3811/8/6/100/htm",
-  "output_full": "mdpi.com — Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge — http://mdpi.com/2412-3811/8/6/100/htm\n(the search returned no passage text)",
+  "output_summary": "mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://www.mdpi.com/2071-1050/17/23/10456",
+  "output_full": "mdpi.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://www.mdpi.com/2071-1050/17/23/10456\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
       "authors_or_org": "mdpi.com",
-      "title": "Experimental Tests and Numerical Analyses for the Dynamic Characterization of a Steel and Wooden Cable-Stayed Footbridge",
+      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
       "year": "",
-      "url": "http://mdpi.com/2412-3811/8/6/100/htm",
-      "query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+      "url": "https://www.mdpi.com/2071-1050/17/23/10456",
+      "query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
       "unresolved": false,
       "passage": ""
     }

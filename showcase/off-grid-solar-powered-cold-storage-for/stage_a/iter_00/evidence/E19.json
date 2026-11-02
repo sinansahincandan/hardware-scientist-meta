@@ -1,20 +1,20 @@
 {
   "id": "E19",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
   "tool": "web_search",
-  "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
-  "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+  "purpose": "search: small cold storage 1 tonne cooling load kW respiration heat fresh produce",
+  "code_or_query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
   "inputs": {},
-  "output_summary": "fao.org — Small-Scale Postharvest Handling Practices — http://www.fao.org/4/ae075e/ae075e14.htm",
-  "output_full": "fao.org — Small-Scale Postharvest Handling Practices — http://www.fao.org/4/ae075e/ae075e14.htm\n(the search returned no passage text)",
+  "output_summary": "scribd.com — Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables — https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf",
+  "output_full": "scribd.com — Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables — https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "fao.org",
-      "title": "Small-Scale Postharvest Handling Practices",
+      "authors_or_org": "scribd.com",
+      "title": "Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables",
       "year": "",
-      "url": "http://www.fao.org/4/ae075e/ae075e14.htm",
-      "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "url": "https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf",
+      "query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
       "unresolved": false,
       "passage": ""
     }

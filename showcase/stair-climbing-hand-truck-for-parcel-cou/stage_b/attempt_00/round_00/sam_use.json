@@ -1,31 +1,32 @@
 {
   "round": 0,
   "sam_differences": {
-    "cluster": [
-      "expected 2 visible, found 1"
+    "p_star": [
+      "not found by the segmenter as 'wheel cluster'"
     ],
-    "worm": [
-      "not found by the segmenter as 'metal box'"
+    "p_spine": [
+      "expected 1 visible, found 2",
+      "expected to touch p_toe, but they are apart in the picture"
     ],
-    "spine": [
-      "expected 2 visible, found 1",
-      "size against handle: expected about 1.1 times, measured 7.7 times"
+    "p_toe": [
+      "expected 1 visible, found 2",
+      "expected to touch p_spine, but they are apart in the picture"
     ],
-    "toe": [
-      "not found by the segmenter as 'foot plate'"
+    "p_brake": [
+      "expected to touch p_handle, but they are apart in the picture"
     ],
-    "handle": [
+    "p_handle": [
       "expected a vertical long axis, measured horizontal",
-      "size against spine: expected about 0.9 times, measured 0.13 times"
+      "size against p_spine: expected about 0.83 times, measured 0.38 times",
+      "expected to touch p_brake, but they are apart in the picture"
     ],
-    "strap": [
-      "expected 2 visible, found 1"
+    "p_strap": [
+      "expected 1 visible, found 2",
+      "expected a vertical long axis, measured tilted about 124 degrees",
+      "size against p_toe: expected about 1.3 times, measured 0.64 times"
     ],
-    "wheel": [
-      "expected 3 visible, found 5"
-    ],
-    "pin": [
-      "not found by the segmenter as 'metal pin'"
+    "p_hinge": [
+      "not found by the segmenter as 'metal hinge'"
     ]
   },
   "critique_part_ids": [],

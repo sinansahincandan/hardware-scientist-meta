@@ -1,0 +1,23 @@
+{
+  "id": "E62",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "tool": "calc",
+  "purpose": "peak DC current in amps for wire and fuse",
+  "code_or_query": "(400*Q_('W')/(48*Q_('V'))).to('A')",
+  "inputs": {
+    "arg0": {
+      "value": "'W'",
+      "unit": ""
+    },
+    "arg1": {
+      "value": "'V'",
+      "unit": ""
+    }
+  },
+  "output_summary": "8.33 A",
+  "output_full": "8.33 A",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

@@ -1,20 +1,20 @@
 {
   "id": "E7",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: tuned mass damper footbridge Den Hartog optimum mass ratio damping",
-  "code_or_query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+  "purpose": "search: steel footbridge damping ratio vertical bending mode",
+  "code_or_query": "steel footbridge damping ratio vertical bending mode",
   "inputs": {},
-  "output_summary": "digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers — https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y",
-  "output_full": "digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers — https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y\n(the search returned no passage text)",
+  "output_summary": "researchgate.net — (PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge — https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge",
+  "output_full": "researchgate.net — (PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge — https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "digitallibrary.aau.ac.ae",
-      "title": "Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers",
+      "authors_or_org": "researchgate.net",
+      "title": "(PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge",
       "year": "",
-      "url": "https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y",
-      "query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+      "url": "https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge",
+      "query": "steel footbridge damping ratio vertical bending mode",
       "unresolved": false,
       "passage": ""
     }

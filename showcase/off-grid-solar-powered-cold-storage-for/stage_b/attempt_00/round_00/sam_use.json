@@ -1,37 +1,45 @@
 {
   "round": 0,
   "sam_differences": {
-    "P-array": [
-      "size against P-box: expected about 0.95 times, measured 3.1 times",
-      "expected to touch P-base, but they are apart in the picture"
+    "pv_array": [
+      "expected 6 visible, found 1",
+      "expected a horizontal long axis, measured tilted about 147 degrees"
     ],
-    "P-battery": [
+    "battery_cabinet": [
       "not found by the segmenter as 'battery box'"
     ],
-    "P-controller": [
-      "expected 1 visible, found 4"
+    "dc_wiring": [
+      "not found by the segmenter as 'cable'"
     ],
-    "P-box": [
-      "expected 1 visible, found 29"
+    "cold_box": [
+      "not found by the segmenter as 'white box'"
     ],
-    "P-base": [
-      "expected 1 visible, found 4",
-      "expected a horizontal long axis, measured vertical",
-      "expected to touch P-array, but they are apart in the picture"
-    ],
-    "P-door": [
-      "expected 1 visible, found 2",
-      "size against P-box: expected about 0.95 times, measured 3 times"
-    ],
-    "P-cooling": [
+    "dc_chiller": [
       "not found by the segmenter as 'cooler'"
     ],
-    "P-crates": [
-      "expected 12 visible, found 25",
-      "size against P-box: expected about 0.25 times, measured 0.51 times"
+    "airflow_kit": [
+      "expected 1 visible, found 2"
+    ],
+    "crates": [
+      "expected 12 visible, found 6",
+      "size against racks: expected about 0.3 times, measured 0.92 times"
+    ],
+    "racks": [
+      "expected 2 visible, found 6",
+      "expected to touch plinth, but they are apart in the picture"
+    ],
+    "plinth": [
+      "expected 1 visible, found 3",
+      "expected to touch racks, but they are apart in the picture"
+    ],
+    "frame_rack": [
+      "expected 1 visible, found 4",
+      "expected a vertical long axis, measured horizontal"
     ]
   },
-  "critique_part_ids": [],
+  "critique_part_ids": [
+    "callout"
+  ],
   "sam_parts_used_by_critique": [],
   "unnoticed_sam_deviations": [],
   "kept": true,

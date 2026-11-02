@@ -1,20 +1,20 @@
 {
   "id": "E2",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "purpose": "search: residential stair riser going dimensions building code max step height",
+  "code_or_query": "residential stair riser going dimensions building code max step height",
   "inputs": {},
-  "output_summary": "dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase — https://dreamcivil.com/staircase-design/",
-  "output_full": "dreamcivil.com — Staircase Design | Calculation of Tread, Riser and Landing in Staircase — https://dreamcivil.com/staircase-design/\n(the search returned no passage text)",
+  "output_summary": "engineerfix.com — How High Is a Stair? Standard Riser Heights Explained — https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/",
+  "output_full": "engineerfix.com — How High Is a Stair? Standard Riser Heights Explained — https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "dreamcivil.com",
-      "title": "Staircase Design | Calculation of Tread, Riser and Landing in Staircase",
+      "authors_or_org": "engineerfix.com",
+      "title": "How High Is a Stair? Standard Riser Heights Explained",
       "year": "",
-      "url": "https://dreamcivil.com/staircase-design/",
-      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "url": "https://engineerfix.com/how-high-is-a-stair-standard-riser-heights-explained/",
+      "query": "residential stair riser going dimensions building code max step height",
       "unresolved": false,
       "passage": ""
     }

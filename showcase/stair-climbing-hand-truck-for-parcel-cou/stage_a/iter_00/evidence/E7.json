@@ -1,20 +1,20 @@
 {
   "id": "E7",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: self locking worm gearbox hand winch brake holding load",
-  "code_or_query": "self locking worm gearbox hand winch brake holding load",
+  "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
+  "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
   "inputs": {},
-  "output_summary": "winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop — https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
-  "output_full": "winchshop.co.uk — 3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop — https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch\n(the search returned no passage text)",
+  "output_summary": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+  "output_full": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "winchshop.co.uk",
-      "title": "3000kg Worm Gear Hand Winch, Self-Locking - Gebuwin — Winchshop",
+      "authors_or_org": "mktg.idec.com",
+      "title": "ISO 11228-2?",
       "year": "",
-      "url": "https://www.winchshop.co.uk/collections/gebuwin-ww-winch-range/products/3000kg-worm-gear-hand-winch",
-      "query": "self locking worm gearbox hand winch brake holding load",
+      "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+      "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
       "unresolved": false,
       "passage": ""
     }

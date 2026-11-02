@@ -1,20 +1,20 @@
 {
   "id": "E11",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Surya — Off-Grid Solar Power Specialist",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+  "purpose": "search: MPPT charge controller 48V 60A datasheet solar off-grid",
+  "code_or_query": "MPPT charge controller 48V 60A datasheet solar off-grid",
   "inputs": {},
-  "output_summary": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
-  "output_full": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/\n(the search returned no passage text)",
+  "output_summary": "tsolar.top — PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with — https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller",
+  "output_full": "tsolar.top — PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with — https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "bigweibattery.com.au",
-      "title": "48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid",
+      "authors_or_org": "tsolar.top",
+      "title": "PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with",
       "year": "",
-      "url": "https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
-      "query": "LiFePO4 48V 100Ah battery datasheet usable capacity off-grid solar",
+      "url": "https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller",
+      "query": "MPPT charge controller 48V 60A datasheet solar off-grid",
       "unresolved": false,
       "passage": ""
     }

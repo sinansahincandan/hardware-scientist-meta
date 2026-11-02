@@ -1,0 +1,23 @@
+{
+  "id": "E65",
+  "author": "Kofi \u2014 Structural Enclosure and Low-Cost Fabrication Specialist",
+  "tool": "calc",
+  "purpose": "wind force on side wall",
+  "code_or_query": "(Q_(540,'Pa')*Q_(5.3,'m**2')).to('N')",
+  "inputs": {
+    "arg0": {
+      "value": "540",
+      "unit": "Pa"
+    },
+    "arg1": {
+      "value": "5.3",
+      "unit": "m**2"
+    }
+  },
+  "output_summary": "2.86\u00d710\u00b3 N",
+  "output_full": "2.86\u00d710\u00b3 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

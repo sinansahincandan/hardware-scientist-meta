@@ -1,0 +1,14 @@
+{
+  "id": "E50",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "dense crowd resonant force from equivalent pedestrians",
+  "code_or_query": "(5.29*280)",
+  "inputs": {},
+  "output_summary": "1.48e+03",
+  "output_full": "1.48e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

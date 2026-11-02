@@ -1,20 +1,20 @@
 {
   "id": "E26",
-  "author": "Tomas — Human Factors and Safety Engineer",
+  "author": "Priya – Lightweight Foldable Structures Engineer",
   "tool": "web_search",
-  "purpose": "search: Snook Ciriello push pull maximum acceptable force 200 N two hands",
-  "code_or_query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+  "purpose": "search: folding hand truck locking hinge detent pin safety standard",
+  "code_or_query": "folding hand truck locking hinge detent pin safety standard",
   "inputs": {},
-  "output_summary": "stacks.cdc.gov — Cdc 186349 Ds1 — http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
-  "output_full": "stacks.cdc.gov — Cdc 186349 Ds1 — http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf\n(the search returned no passage text)",
+  "output_summary": "patents.justia.com — U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search — 1976 — http://patents.justia.com/patent/3976209",
+  "output_full": "patents.justia.com — U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search — 1976 — http://patents.justia.com/patent/3976209\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "stacks.cdc.gov",
-      "title": "Cdc 186349 Ds1",
-      "year": "",
-      "url": "http://stacks.cdc.gov/view/cdc/186349/cdc_186349_DS1.pdf",
-      "query": "Snook Ciriello push pull maximum acceptable force 200 N two hands",
+      "authors_or_org": "patents.justia.com",
+      "title": "U.S. Patent for Pick-up truck loading ramp Patent (Patent #  3,976,209 issued August 24, 1976) - Justia Patents Search",
+      "year": "1976",
+      "url": "http://patents.justia.com/patent/3976209",
+      "query": "folding hand truck locking hinge detent pin safety standard",
       "unresolved": false,
       "passage": ""
     }

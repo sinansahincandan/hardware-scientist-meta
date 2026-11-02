@@ -1,24 +1,14 @@
 {
   "id": "E49",
-  "author": "Dalia - Cooperative Use and Produce Preservation Specialist",
-  "tool": "web_search",
-  "purpose": "search: manual handling weight limit 20kg crate OSHA NIOSH lifting",
-  "code_or_query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
+  "author": "Kofi \u2014 Structural Enclosure and Low-Cost Fabrication Specialist",
+  "tool": "sketch",
+  "purpose": "Cold store structure: concrete plinth, PU panel box, steel angle frame, hinged door, PV ground rack",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(8,6)); ax.set_aspect('equal'); ax.axis('off'); ax.set_xlim(0,10); ax.set_ylim(0,8)\n# plinth\nax.add_patch(plt.Rectangle((1,0.5),6,0.6,color='lightgray')); ax.text(4,0.7,'concrete plinth 2.6x2.6m',ha='center',fontsize=9)\n# box walls\nax.add_patch(plt.Rectangle((1.5,1.1),5,4,color='wheat',ec='black')); ax.text(4,4.5,'PU panels 100mm',ha='center',fontsize=10); ax.text(4,3.9,'1 tonne crates on racks',ha='center',fontsize=9)\n# door\nax.add_patch(plt.Rectangle((3,1.1),2,2.5,color='lightblue',ec='black')); ax.text(4,2.2,'900mm door',ha='center',fontsize=9)\n# canopy\nax.plot([1.5,7.5],[5.5,5.5],'k-'); ax.text(4.5,5.7,'canopy shade',fontsize=9)\n# PV rack\nax.plot([7.5,9.5],[0.5,2.5],'k-'); ax.plot([7.5,9.5],[0.5,0.5],'k-'); ax.text(8.5,1.2,'PV rack',ha='center',fontsize=9)\nplt.savefig('sketch.png',dpi=120)",
   "inputs": {},
-  "output_summary": "legalclarity.org — OSHA Lifting Standards: Weight Limits, Rules & Penalties — https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/",
-  "output_full": "legalclarity.org — OSHA Lifting Standards: Weight Limits, Rules & Penalties — https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "legalclarity.org",
-      "title": "OSHA Lifting Standards: Weight Limits, Rules & Penalties",
-      "year": "",
-      "url": "https://legalclarity.org/osha-lifting-standards-weight-limits-and-regulations/",
-      "query": "manual handling weight limit 20kg crate OSHA NIOSH lifting",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Cold store structure: concrete plinth, PU panel box, steel angle frame, hinged door, PV ground rack",
+  "output_full": "Cold store structure: concrete plinth, PU panel box, steel angle frame, hinged door, PV ground rack",
+  "sketch_path": "evidence/sketch_49.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

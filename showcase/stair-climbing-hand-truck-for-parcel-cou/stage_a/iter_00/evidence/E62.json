@@ -1,0 +1,14 @@
+{
+  "id": "E62",
+  "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+  "tool": "calc",
+  "purpose": "spine safety factor yield over stress",
+  "code_or_query": "(276/30.6)",
+  "inputs": {},
+  "output_summary": "9.02",
+  "output_full": "9.02",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

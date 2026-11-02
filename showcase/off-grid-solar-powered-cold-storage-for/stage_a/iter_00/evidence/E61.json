@@ -1,12 +1,21 @@
 {
   "id": "E61",
-  "author": "Amara - Off-Grid Solar Power Lead",
+  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
   "tool": "calc",
-  "purpose": "peak battery current at 48V for 662W",
-  "code_or_query": "662/48",
-  "inputs": {},
-  "output_summary": "13.8",
-  "output_full": "13.8",
+  "purpose": "compressor peak current at 48V for wire sizing",
+  "code_or_query": "400*Q_('W')/48/Q_('V')",
+  "inputs": {
+    "arg0": {
+      "value": "'W'",
+      "unit": ""
+    },
+    "arg1": {
+      "value": "'V'",
+      "unit": ""
+    }
+  },
+  "output_summary": "8.33 W/V",
+  "output_full": "8.33 W/V",
   "sketch_path": null,
   "references": [],
   "status": "ok",

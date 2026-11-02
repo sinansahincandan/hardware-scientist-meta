@@ -1,24 +1,24 @@
 {
   "id": "E39",
-  "author": "Retrofit and Maintenance Engineer",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
   "tool": "web_search",
-  "purpose": "search: Lindapter beam clamp safe working load slip capacity kN",
-  "code_or_query": "Lindapter beam clamp safe working load slip capacity kN",
+  "purpose": "search: Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "code_or_query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
   "inputs": {},
-  "output_summary": "lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/product/type-f3-beam-flange-clamp?lang=en",
-  "output_full": "lindapter.com — Lindapter | Type F3 Beam Flange Clamp — https://www.lindapter.com/product/type-f3-beam-flange-clamp?lang=en\n(the search returned no passage text)",
+  "output_summary": "files.eccomasproceedia.org — COMPDYN 2015 — 2015 — https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609",
+  "output_full": "files.eccomasproceedia.org — COMPDYN 2015 — 2015 — https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "lindapter.com",
-      "title": "Lindapter | Type F3 Beam Flange Clamp",
-      "year": "",
-      "url": "https://www.lindapter.com/product/type-f3-beam-flange-clamp?lang=en",
-      "query": "Lindapter beam clamp safe working load slip capacity kN",
+      "authors_or_org": "files.eccomasproceedia.org",
+      "title": "COMPDYN 2015",
+      "year": "2015",
+      "url": "https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609",
+      "query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
       "unresolved": false,
       "passage": ""
     }
   ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

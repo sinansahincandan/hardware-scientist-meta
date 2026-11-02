@@ -1,23 +1,24 @@
 {
   "id": "E44",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "calc",
-  "purpose": "total static hung load TMD plus frame",
-  "code_or_query": "(Q_(1000,'kg')*Q_(9.81,'m/s**2')).to('kN')",
-  "inputs": {
-    "arg0": {
-      "value": "1000",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    }
-  },
-  "output_summary": "9.81 kN",
-  "output_full": "9.81 kN",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "web_search",
+  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
+  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "inputs": {},
+  "output_summary": "eurocodes.jrc.ec.europa.eu — Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc — 2021 — https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf",
+  "output_full": "eurocodes.jrc.ec.europa.eu — Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc — 2021 — https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "eurocodes.jrc.ec.europa.eu",
+      "title": "Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc",
+      "year": "2021",
+      "url": "https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf",
+      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

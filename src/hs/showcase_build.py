@@ -304,6 +304,7 @@ ol{padding-left:20px;font-size:15px;line-height:1.55}
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#262d36}
 .strip a{position:relative;display:block;background:#0f1216}
 .strip img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+.strip a.wide img{object-position:left top}
 .strip span{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.78);color:#fff;padding:4px 9px;border-radius:8px;font-size:13px}
 .links{padding:14px 28px;font-size:15px}.links a{color:#7cc4ff;margin-right:18px}
 @media (max-width:900px){.top{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}}
@@ -347,12 +348,16 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
         sketches = sorted(dest.glob("stage_a/iter_*/evidence/sketch_*.png"),
                           key=lambda q: int(q.stem.split("_")[-1]) if q.stem.split("_")[-1].isdigit() else 0)
         overlays = sorted(dest.glob("stage_b/attempt_*/round_*/sam_overlay.png"))
+        concept = sorted(dest.glob("stage_b/attempt_*/concept_sketch.png"))
         thumbs = [(sketches[-1] if sketches else None, "The council's own sketch"),
+                  (concept[-1] if concept else None, "Concept sketch (image model)"),
                   (overlays[-1] if overlays else None, "What SAM 3.1 saw"),
                   (dest / "final" / "panel_B.png", "Critical part"),
                   (dest / "final" / "panel_D.png", "How it is made")]
-        strip = "".join(f"<a href='{slug}/{t.relative_to(dest).as_posix()}'><img src='{slug}/{t.relative_to(dest).as_posix()}'>"
-                        f"<span>{html.escape(cap)}</span></a>" for t, cap in thumbs if t is not None and t.exists())
+        shown = [(t, cap) for t, cap in thumbs if t is not None and t.exists()]
+        strip = "".join(f"<a href='{slug}/{t.relative_to(dest).as_posix()}'{' class=wide' if t.name == 'panel_D.png' else ''}>"
+                        f"<img src='{slug}/{t.relative_to(dest).as_posix()}'><span>{html.escape(cap)}</span></a>"
+                        for t, cap in shown)
         stats = "".join(f"<span><b>{html.escape(v)}</b>{html.escape(k)}</span>" for v, k in _stats(run_dir))
         choices = "".join(f"<li>{html.escape(str(c))}</li>" for c in sol.get("decisive_choices", []))
         hero = f"{slug}/final/panel_A.png" if (dest / "final" / "panel_A.png").exists() else ""
@@ -364,7 +369,7 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
 <div class="stats">{stats}</div>
 <ol>{choices}</ol>
 <div class="q"><b>Open question:</b> {html.escape(str(sol.get('open_question', '')))}</div></div></div>
-<div class="strip">{strip}</div>
+<div class="strip" style="grid-template-columns:repeat({len(shown)},1fr)">{strip}</div>
 <div class="links"><a href="{slug}/final/figure.png">Full figure</a><a href="{slug}/board.html">The council's whiteboard</a>
 <a href="{slug}/report.html">Report</a><a href="{slug}/dossier.html">Dossier</a><a href="{slug}/REVIEW.md">Review</a></div></section>""")
     (out / "index.html").write_text(
@@ -399,6 +404,7 @@ def _knowledge_html(run_dir: Path, iters: list[Path]) -> str:
     notes = [line.strip() for line in lessons_file.read_text(encoding="utf-8").splitlines()
              if line.startswith("  - used in run " + run_dir.name)] if lessons_file.exists() else []
     tools = k_in.get("tools", {})
+    k_in["lessons"] = sorted(k_in.get("lessons", []), key=lambda x: int(x[1:]) if x[1:].isdigit() else 0)
     out = ["<h3>Knowledge carried between problems</h3><ul>",
            f"<li>Inherited: {_n(len(k_in.get('lessons', [])), 'process lesson')} "
            f"({', '.join(k_in.get('lessons', [])) or 'none'}) given to the Manager and the optimizer; "
@@ -408,7 +414,7 @@ def _knowledge_html(run_dir: Path, iters: list[Path]) -> str:
     out.append("<li>Used in this run: " + ("</li><ul>" + "".join(f"<li>{html.escape(u)}</li>" for u in used) + "</ul>"
                                          if used else "no library search or carried tool was used.</li>"))
     out.append("<li>Lesson notes recorded for this run: " + (
-        "</li><ul>" + "".join(f"<li>{html.escape(n.lstrip('- '))}</li>" for n in notes) + "</ul>" if notes else "none.</li>"))
+        "</li><ul>" + "".join(f"<li>{html.escape(n.split(': ', 1)[-1])}</li>" for n in notes) + "</ul>" if notes else "none.</li>"))
     ins = ROOT / "knowledge" / "insights" / f"{run_dir.name}.md"
     if ins.exists():
         titles = [line[3:] for line in ins.read_text(encoding="utf-8").splitlines() if line.startswith("## ")]
@@ -506,9 +512,9 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     decisions = [rd["decision"] for rd in rounds]
     ran = []
     if archive:
-        ran.append(f"The council met {_times(len(archive))} and the Manager diagnosed {_n(len(edits), 'failure')}")
+        ran.append(f"The council met {_times(len(archive))} and the Manager diagnosed " + (_n(len(edits), 'failure') if edits else 'no failure'))
     if rounds:
-        ran.append(f"the picture loop ran {len(rounds)} rounds")
+        ran.append(f"the picture loop ran {_n(len(rounds), 'round')}")
     not_ran = []
     if "s2_return" not in decisions:
         not_ran.append("no picture sent the design back to the council")
@@ -521,7 +527,7 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     # 5. Self-improvement (facts)
     p.append("<h2>5. Self-improvement</h2>")
     revs = sorted((run_dir / "master_prompt").glob("rev_*.md")) if (run_dir / "master_prompt").exists() else []
-    p.append(f"<p>The master prompt has {len(revs)} saved revisions in this run"
+    p.append(f"<p>The master prompt has {_n(len(revs), 'saved revision')} in this run"
              + (" (revision 0 plus one per applied rewrite)." if revs else ".") + "</p>")
     for it_dir in iters:
         diag = _read_json(it_dir / "gradient_prompt.json") or _read_json(it_dir / "diagnosis.json")

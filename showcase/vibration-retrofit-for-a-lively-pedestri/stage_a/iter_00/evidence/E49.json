@@ -1,0 +1,14 @@
+{
+  "id": "E49",
+  "author": "Marcus - Vibration Control and Damping Specialist",
+  "tool": "calc",
+  "purpose": "equivalent synchronized pedestrians dense crowd",
+  "code_or_query": "10.8*(0.004*60)**0.5",
+  "inputs": {},
+  "output_summary": "5.29",
+  "output_full": "5.29",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

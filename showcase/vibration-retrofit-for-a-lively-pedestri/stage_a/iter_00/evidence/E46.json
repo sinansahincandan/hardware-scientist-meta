@@ -1,0 +1,24 @@
+{
+  "id": "E46",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "web_search",
+  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
+  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "inputs": {},
+  "output_summary": "1library.net — Modeling spatially unrestricted pedestrian traffic on footbridges — https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html",
+  "output_full": "1library.net — Modeling spatially unrestricted pedestrian traffic on footbridges — https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html\n(the search returned no passage text)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "1library.net",
+      "title": "Modeling spatially unrestricted pedestrian traffic on footbridges",
+      "year": "",
+      "url": "https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html",
+      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

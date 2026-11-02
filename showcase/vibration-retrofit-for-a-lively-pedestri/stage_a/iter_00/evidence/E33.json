@@ -1,27 +1,24 @@
 {
   "id": "E33",
-  "author": "Structural Dynamicist",
-  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
-  "purpose": "Freeze modal mass 20000 kg and rerun Den Hartog TMD sizing for 1.9 Hz mode",
-  "code_or_query": "{\"args\": {\"main_frequency_hz\": 1.9, \"main_mass_kg\": 20000.0, \"mass_ratio\": 0.04}, \"input_sources\": {\"main_frequency_hz\": \"source\", \"main_mass_kg\": \"assumption\", \"mass_ratio\": \"assumption\"}}",
-  "inputs": {
-    "main_frequency_hz": {
-      "value": 1.9,
-      "source": "source"
-    },
-    "main_mass_kg": {
-      "value": 20000.0,
-      "source": "assumption"
-    },
-    "mass_ratio": {
-      "value": 0.04,
-      "source": "assumption"
-    }
-  },
-  "output_summary": "tmd_mass_kg=800.0 mixed (see keys), tmd_frequency_hz=1.8269230769230769 mixed (see keys), tmd_damping_ratio=0.12009611535381534 mixed (see keys), tmd_stiffness_n_m=105412.04700571769 mixed (see keys),",
-  "output_full": "{\n  \"tmd_mass_kg\": 800.0,\n  \"tmd_frequency_hz\": 1.8269230769230769,\n  \"tmd_damping_ratio\": 0.12009611535381534,\n  \"tmd_stiffness_n_m\": 105412.04700571769,\n  \"tmd_damping_ns_m\": 2205.7133540566624,\n  \"unit\": \"mixed (see keys)\",\n  \"inputs\": {\n    \"main_mass_kg\": 20000.0,\n    \"main_frequency_hz\": 1.9,\n    \"mass_ratio\": 0.04\n  },\n  \"provenance\": {\n    \"main_frequency_hz\": {\n      \"value\": 1.9,\n      \"source\": \"source\"\n    },\n    \"main_mass_kg\": {\n      \"value\": 20000.0,\n      \"source\": \"assumption\"\n    },\n    \"mass_ratio\": {\n      \"value\": 0.04,\n      \"source\": \"assumption\"\n    }\n  },\n  \"calculator\": \"tuned_mass_damper_den_hartog\"\n}",
+  "author": "Priya - Retrofit Constructability Engineer",
+  "tool": "web_search",
+  "purpose": "search: under bridge inspection platform mobile staging pedestrian footbridge",
+  "code_or_query": "under bridge inspection platform mobile staging pedestrian footbridge",
+  "inputs": {},
+  "output_summary": "patents.google.com — CN204125835U - A kind of bridge inspection vehicle — https://patents.google.com/patent/CN204125835U/en",
+  "output_full": "patents.google.com — CN204125835U - A kind of bridge inspection vehicle — https://patents.google.com/patent/CN204125835U/en\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "patents.google.com",
+      "title": "CN204125835U - A kind of bridge inspection vehicle",
+      "year": "",
+      "url": "https://patents.google.com/patent/CN204125835U/en",
+      "query": "under bridge inspection platform mobile staging pedestrian footbridge",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 1
 }

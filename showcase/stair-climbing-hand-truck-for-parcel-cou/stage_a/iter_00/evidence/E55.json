@@ -1,14 +1,14 @@
 {
   "id": "E55",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "calc",
-  "purpose": "dead-man lever force from worm shaft torque",
-  "code_or_query": "(184/15)/0.04/5",
+  "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
+  "tool": "sketch",
+  "purpose": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,5))\n# stairs\nfor i in range(3):\n    x0=i*0.254\n    y0=-i*0.197\n    ax.plot([x0, x0+0.254, x0+0.254],[y0, y0, y0-0.197],'k-', lw=2)\nax.text(0.1, 0.05, 'riser 197mm', fontsize=8)\nax.text(0.3, -0.18, 'going 254mm', fontsize=8)\n# tri-star carrier\nimport math\ncx, cy = 0.254, -0.10\nax.plot([cx],[cy],'ko')\nfor a in [90,210,330]:\n    r=0.14\n    wx=cx+r*math.cos(math.radians(a))\n    wy=cy+r*math.sin(math.radians(a))\n    ax.plot([cx, wx],[cy, wy],'k-')\n    c=plt.Circle((wx,wy),0.075, fill=False, lw=2)\n    ax.add_patch(c)\nax.text(cx+0.02, cy+0.02, 'tri-star carrier\\norbit 140mm', fontsize=8)\n# frame spine\nax.plot([cx, cx-0.25],[cy, cy+0.9],'k-', lw=3)\nax.text(cx-0.35, cy+0.7, 'spine 1200mm', fontsize=8)\n# toe plate + load\nax.plot([cx+0.05, cx+0.45],[cy-0.15, cy-0.15],'k-', lw=3)\nax.text(cx+0.15, cy-0.22, 'toe 450x350mm', fontsize=8)\nbx, by = cx+0.05, cy-0.15\nax.add_patch(plt.Rectangle((bx,by),0.35,0.45, fill=False, lw=2))\nax.text(bx+0.05, by+0.2, '60kg parcel', fontsize=8)\nax.text(cx-0.3, cy+0.95, 'handles 90-110cm', fontsize=8)\nax.text(cx-0.4, cy-0.1, 'brake band\\non carrier', fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
   "inputs": {},
-  "output_summary": "61.3",
-  "output_full": "61.3",
-  "sketch_path": null,
+  "output_summary": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+  "output_full": "Tri-star cluster on stair nosings with frame, brake band and toe plate load",
+  "sketch_path": "evidence/sketch_55.png",
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

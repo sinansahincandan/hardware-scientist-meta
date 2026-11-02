@@ -1,20 +1,20 @@
 {
   "id": "E44",
-  "author": "Dario — Courier Operations and Serviceability Lead",
+  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
   "tool": "web_search",
-  "purpose": "search: cargo lashing strap EN 12195-2 250 daN hand truck",
-  "code_or_query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+  "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
+  "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
   "inputs": {},
-  "output_summary": "forankra.se — Premium 25 Rollo-Mini, LC250daN, S-hook — https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/",
-  "output_full": "forankra.se — Premium 25 Rollo-Mini, LC250daN, S-hook — https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/\n(the search returned no passage text)",
+  "output_summary": "lagunasprintervans.com — 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length — 2026 — https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
+  "output_full": "lagunasprintervans.com — 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length — 2026 — https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "forankra.se",
-      "title": "Premium 25 Rollo-Mini, LC250daN, S-hook",
-      "year": "",
-      "url": "https://www.forankra.se/en/premium-25-rollo-mini-lc250dan-s-hook/",
-      "query": "cargo lashing strap EN 12195-2 250 daN hand truck",
+      "authors_or_org": "lagunasprintervans.com",
+      "title": "2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length",
+      "year": "2026",
+      "url": "https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
+      "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
       "unresolved": false,
       "passage": ""
     }

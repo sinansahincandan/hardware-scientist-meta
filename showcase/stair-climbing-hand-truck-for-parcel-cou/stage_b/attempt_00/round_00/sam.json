@@ -4,124 +4,169 @@
     1280
   ],
   "parts": {
-    "cluster": {
+    "p_star": {
       "phrase": "wheel cluster",
-      "boxes": [
-        [
-          245.625,
-          637.1888726207907,
-          748.125,
-          1184.4216691068814
-        ]
-      ]
-    },
-    "worm": {
-      "phrase": "metal box",
       "boxes": []
     },
-    "spine": {
-      "phrase": "metal frame",
+    "p_spine": {
+      "phrase": "metal tube",
       "boxes": [
         [
-          669.375,
-          33.733528550512446,
-          1728.75,
-          1083.2210834553441
+          639.375,
+          170.54172767203514,
+          971.25,
+          845.2122986822841
+        ],
+        [
+          759.375,
+          206.1493411420205,
+          1038.75,
+          818.9751098096633
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/p_spine.png",
+        "area": 43031.0,
+        "cx": 852.2152016353838,
+        "cy": 506.5114291023973,
+        "angle": 113.8,
+        "elongation": 5.34
+      }
     },
-    "toe": {
-      "phrase": "foot plate",
-      "boxes": []
-    },
-    "handle": {
-      "phrase": "handle bar",
+    "p_toe": {
+      "phrase": "metal plate",
       "boxes": [
         [
-          1717.5,
-          29.98535871156662,
-          1854.375,
-          125.56368960468521
+          1113.75,
+          667.1742313323573,
+          1618.125,
+          888.316251830161
+        ],
+        [
+          133.125,
+          545.3587115666179,
+          288.75,
+          1133.8213762811129
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/p_toe.png",
+        "area": 67748.0,
+        "cx": 576.6824224519941,
+        "cy": 823.81353028065,
+        "angle": 2.8,
+        "elongation": 3.96
+      }
     },
-    "strap": {
-      "phrase": "fabric strap",
+    "p_brake": {
+      "phrase": "brake lever",
       "boxes": [
         [
-          901.875,
-          646.5592972181552,
-          1342.5,
-          1188.1698389458272
+          560.625,
+          219.2679355783309,
+          676.875,
+          318.59443631039534
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/p_brake.png",
+        "area": 3090.0,
+        "cx": 627.9560155239327,
+        "cy": 262.16041397153947,
+        "angle": 35.1,
+        "elongation": 3.56
+      }
     },
-    "wheel": {
-      "phrase": "rubber wheel",
+    "p_handle": {
+      "phrase": "metal handle",
       "boxes": [
         [
-          530.625,
-          985.7686676427526,
-          729.375,
-          1184.4216691068814
-        ],
-        [
-          245.625,
-          637.1888726207907,
-          406.875,
-          796.4860907759883
-        ],
-        [
-          320.625,
-          788.9897510980967,
-          519.375,
-          983.8945827232797
-        ],
-        [
-          412.5,
-          684.0409956076135,
-          564.375,
-          837.7159590043924
-        ],
-        [
-          635.625,
-          888.316251830161,
-          750.0,
-          1019.502196193265
+          534.375,
+          18.740849194729137,
+          791.25,
+          204.2752562225476
         ]
-      ]
+      ],
+      "mask": {
+        "file": "sam_masks/p_handle.png",
+        "area": 16650.0,
+        "cx": 662.4661545847335,
+        "cy": 105.01728276524244,
+        "angle": 17.4,
+        "elongation": 1.74
+      }
     },
-    "pin": {
-      "phrase": "metal pin",
+    "p_strap": {
+      "phrase": "strap",
+      "boxes": [
+        [
+          1492.5,
+          558.4773060029282,
+          1565.625,
+          680.2928257686676
+        ],
+        [
+          1222.5,
+          491.01024890190337,
+          1400.625,
+          813.3528550512445
+        ]
+      ],
+      "mask": {
+        "file": "sam_masks/p_strap.png",
+        "area": 15063.0,
+        "cx": 1346.5122470713525,
+        "cy": 645.5495207667732,
+        "angle": 124.3,
+        "elongation": 1.52
+      }
+    },
+    "p_hinge": {
+      "phrase": "metal hinge",
       "boxes": []
     }
   },
+  "contacts": [
+    [
+      "p_spine",
+      "p_brake"
+    ],
+    [
+      "p_spine",
+      "p_handle"
+    ],
+    [
+      "p_toe",
+      "p_strap"
+    ]
+  ],
   "differences": {
-    "cluster": [
-      "expected 2 visible, found 1"
+    "p_star": [
+      "not found by the segmenter as 'wheel cluster'"
     ],
-    "worm": [
-      "not found by the segmenter as 'metal box'"
+    "p_spine": [
+      "expected 1 visible, found 2",
+      "expected to touch p_toe, but they are apart in the picture"
     ],
-    "spine": [
-      "expected 2 visible, found 1",
-      "size against handle: expected about 1.1 times, measured 7.7 times"
+    "p_toe": [
+      "expected 1 visible, found 2",
+      "expected to touch p_spine, but they are apart in the picture"
     ],
-    "toe": [
-      "not found by the segmenter as 'foot plate'"
+    "p_brake": [
+      "expected to touch p_handle, but they are apart in the picture"
     ],
-    "handle": [
+    "p_handle": [
       "expected a vertical long axis, measured horizontal",
-      "size against spine: expected about 0.9 times, measured 0.13 times"
+      "size against p_spine: expected about 0.83 times, measured 0.38 times",
+      "expected to touch p_brake, but they are apart in the picture"
     ],
-    "strap": [
-      "expected 2 visible, found 1"
+    "p_strap": [
+      "expected 1 visible, found 2",
+      "expected a vertical long axis, measured tilted about 124 degrees",
+      "size against p_toe: expected about 1.3 times, measured 0.64 times"
     ],
-    "wheel": [
-      "expected 3 visible, found 5"
-    ],
-    "pin": [
-      "not found by the segmenter as 'metal pin'"
+    "p_hinge": [
+      "not found by the segmenter as 'metal hinge'"
     ]
   },
   "rechecks": []

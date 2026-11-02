@@ -1,0 +1,5 @@
+{
+  "cycle": 3,
+  "member": "Elena - Structural Dynamics Engineer",
+  "message": "Marcus, Priya, Tomas, the first vertical mode mass and stiffness are sensible for a 40 m steel deck and set the damper size. In plain words the deck moves like a full bus load on a stiff spring, then the numbers that decide are the modal stiffness calculation (E11) with 20000 kg modal mass, about 286 body weights, giving 2.85 MN/m at 1.90 Hz.\n\nMarcus, Priya, Tomas, placing the Tuned Mass Damper (TMD, secondary mass tuned to the bridge mode) at midspan where the mode shape peaks gives maximum effect with correct just-below tuning. In plain words a small extra weight tames a large deck motion, then the numbers that decide are the Den Hartog optimum re-check (E54) with 1.85 Hz and 0.0956 damping ratio, and the resonant response simulation (E47) falling from 1.75 m/s2, about 0.178 times gravity and strongly felt, to 0.103 m/s2, barely felt, a factor 17 reduction.\n\nMarcus, Priya, Tomas, the modal numbers survive everyday checks but the integrated design is not yet on the board. Not ready, because the proposal combining the damper, frame and comfort case is still missing."
+}

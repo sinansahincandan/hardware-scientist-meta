@@ -1,19 +1,24 @@
 {
   "id": "E29",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "calc",
-  "purpose": "total static hung load TMD plus frame",
-  "code_or_query": "Q_((800+200)*9.81,'N').to('kN')",
-  "inputs": {
-    "arg0": {
-      "value": "(800+200",
-      "unit": ""
-    }
-  },
-  "output_summary": "9.81 kN",
-  "output_full": "9.81 kN",
+  "author": "Priya - Retrofit Constructability Engineer",
+  "tool": "web_search",
+  "purpose": "search: steel bolted beam clamp retrofit HSFG bolts datasheet",
+  "code_or_query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
+  "inputs": {},
+  "output_summary": "scribd.com — HSFG Bolt Design Capacities Analysis | PDF | Screw | Beam (Structure) — https://www.scribd.com/document/423875628/Ultimate-Design-Capacity-of-High-Strength-Friction-Grip",
+  "output_full": "scribd.com — HSFG Bolt Design Capacities Analysis | PDF | Screw | Beam (Structure) — https://www.scribd.com/document/423875628/Ultimate-Design-Capacity-of-High-Strength-Friction-Grip\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "scribd.com",
+      "title": "HSFG Bolt Design Capacities Analysis | PDF | Screw | Beam (Structure)",
+      "year": "",
+      "url": "https://www.scribd.com/document/423875628/Ultimate-Design-Capacity-of-High-Strength-Friction-Grip",
+      "query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,20 +1,20 @@
 {
   "id": "E14",
-  "author": "Serviceability and Crowd Loading Specialist",
+  "author": "Marcus - Vibration Control and Damping Specialist",
   "tool": "web_search",
-  "purpose": "search: Setra footbridge vibration comfort limits vertical acceleration 0.7",
-  "code_or_query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+  "purpose": "search: footbridge tuned mass damper mass ratio tuning Den Hartog",
+  "code_or_query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
   "inputs": {},
-  "output_summary": "mentisia.org — Biodynamic Synchronized Coupled Model for Crowd-Footbridge Interaction | European Journal of Formal Sciences and Engineering — https://mentisia.org/files/articles/ejfe_v9_n2_26/Toso.pdf",
-  "output_full": "mentisia.org — Biodynamic Synchronized Coupled Model for Crowd-Footbridge Interaction | European Journal of Formal Sciences and Engineering — https://mentisia.org/files/articles/ejfe_v9_n2_26/Toso.pdf\n(the search returned no passage text)",
+  "output_summary": "digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers — https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y",
+  "output_full": "digitallibrary.aau.ac.ae — Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers — https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mentisia.org",
-      "title": "Biodynamic Synchronized Coupled Model for Crowd-Footbridge Interaction | European Journal of Formal Sciences and Engineering",
+      "authors_or_org": "digitallibrary.aau.ac.ae",
+      "title": "Control of Vibrations of Common Pedestrian Bridges in Jordan Using Tuned Mass Dampers",
       "year": "",
-      "url": "https://mentisia.org/files/articles/ejfe_v9_n2_26/Toso.pdf",
-      "query": "Setra footbridge vibration comfort limits vertical acceleration 0.7",
+      "url": "https://digitallibrary.aau.ac.ae/bitstream/handle/123456789/555/Control%20of%20Vibrations%20of%20Common%20Pedestrian%20Bridges%20in%20Jordan%20Using%20Tuned%20Mass%20Dampers.pdf?sequence=1&isAllowed=y",
+      "query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
       "unresolved": false,
       "passage": ""
     }

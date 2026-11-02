@@ -1,20 +1,20 @@
 {
   "id": "E3",
-  "author": "Mara — Stair-Climbing Mechanism Engineer",
+  "author": "Maya – Stair-Climbing Mechanisms Engineer",
   "tool": "web_search",
-  "purpose": "search: residential stair riser tread dimensions standard 170 mm building code",
-  "code_or_query": "residential stair riser tread dimensions standard 170 mm building code",
+  "purpose": "search: residential stair riser going dimensions building code max step height",
+  "code_or_query": "residential stair riser going dimensions building code max step height",
   "inputs": {},
-  "output_summary": "gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials — https://gharpedia.com/blog/tread-and-riser-size/",
-  "output_full": "gharpedia.com — Tread and Riser Size: Safe Stair Design Essentials — https://gharpedia.com/blog/tread-and-riser-size/\n(the search returned no passage text)",
+  "output_summary": "classicarchitecturetoday.com — Perfect Stair Dimensions for Safe, Stylish Spaces — http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
+  "output_full": "classicarchitecturetoday.com — Perfect Stair Dimensions for Safe, Stylish Spaces — http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "gharpedia.com",
-      "title": "Tread and Riser Size: Safe Stair Design Essentials",
+      "authors_or_org": "classicarchitecturetoday.com",
+      "title": "Perfect Stair Dimensions for Safe, Stylish Spaces",
       "year": "",
-      "url": "https://gharpedia.com/blog/tread-and-riser-size/",
-      "query": "residential stair riser tread dimensions standard 170 mm building code",
+      "url": "http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
+      "query": "residential stair riser going dimensions building code max step height",
       "unresolved": false,
       "passage": ""
     }

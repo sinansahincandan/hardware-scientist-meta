@@ -1,14 +1,27 @@
 {
   "id": "E50",
-  "author": "Lena \u2014 Lightweight Structures and Folding Design Engineer",
+  "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
   "tool": "calc",
-  "purpose": "factored moment for SF2",
-  "code_or_query": "294*2",
-  "inputs": {},
-  "output_summary": "588",
-  "output_full": "588",
+  "purpose": "brake holding torque 60kg plus tare on tri-star orbit radius",
+  "code_or_query": "Q_(67.38,'kg')*Q_(9.81,'m/s**2')*Q_(0.14,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "67.38",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.14",
+      "unit": "m"
+    }
+  },
+  "output_summary": "92.5 kg\u22c5m\u00b2/s\u00b2",
+  "output_full": "92.5 kg\u22c5m\u00b2/s\u00b2",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

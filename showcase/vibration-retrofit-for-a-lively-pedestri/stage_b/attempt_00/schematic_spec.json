@@ -2,11 +2,11 @@
   "view": "side",
   "nodes": [
     {
-      "id": "girder",
-      "label": "Existing girder",
+      "id": "deck",
+      "label": "40 m deck 1.9 Hz",
       "shape": "beam",
       "size_class_mm": {
-        "min": 35000.0,
+        "min": 40000.0,
         "max": 40000.0
       },
       "layout": {
@@ -14,216 +14,175 @@
         "row": 0
       },
       "color_hint": "#7fb3d5",
-      "aspect": 6.0
+      "aspect": 4.0
     },
     {
-      "id": "clamps",
-      "label": "Friction clamps",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 50.0,
-        "max": 150.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 1
-      },
-      "color_hint": "#82c46a",
-      "aspect": 1.0
-    },
-    {
-      "id": "crossbeam",
-      "label": "Cross-beam",
+      "id": "frame",
+      "label": "transverse bearers",
       "shape": "beam",
       "size_class_mm": {
         "min": 1000.0,
-        "max": 2500.0
+        "max": 3000.0
       },
       "layout": {
         "col": 2,
         "row": 1
       },
       "color_hint": "#a0a0a0",
-      "aspect": 1.0
-    },
-    {
-      "id": "frame",
-      "label": "Support frame",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 500.0,
-        "max": 1500.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 2
-      },
-      "color_hint": "#b0b7bd",
-      "aspect": 2.5
-    },
-    {
-      "id": "springs",
-      "label": "Coil springs 1.83Hz",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 200.0,
-        "max": 400.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 3
-      },
-      "color_hint": "#d988bc",
-      "aspect": 0.35
-    },
-    {
-      "id": "mass",
-      "label": "800kg mass",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 400.0,
-        "max": 600.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 3
-      },
-      "color_hint": "#e67e22",
-      "aspect": 1.1
-    },
-    {
-      "id": "damper",
-      "label": "Viscous damper",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 200.0,
-        "max": 400.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 3
-      },
-      "color_hint": "#5dade2",
-      "aspect": 0.35
-    },
-    {
-      "id": "lockpin",
-      "label": "Lock pin",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 50.0,
-        "max": 150.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 2
-      },
-      "color_hint": "#f1c40f",
       "aspect": 3.0
     },
     {
-      "id": "screen",
-      "label": "Perforated screen",
+      "id": "bolts",
+      "label": "HS bolts",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 10.0,
+        "max": 30.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#5d6d7e",
+      "aspect": 1.0
+    },
+    {
+      "id": "spring",
+      "label": "helical springs 67.8 kN/m",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 50.0,
+        "max": 500.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 2
+      },
+      "color_hint": "#85c1e9",
+      "aspect": 0.6
+    },
+    {
+      "id": "damper",
+      "label": "dashpots 1090 Ns/m",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 100.0,
+        "max": 600.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#85c1e9",
+      "aspect": 0.6
+    },
+    {
+      "id": "mass",
+      "label": "500 kg TMD mass 1.85 Hz",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 300.0,
+        "max": 800.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#2e86c1",
+      "aspect": 1.5
+    },
+    {
+      "id": "cover",
+      "label": "removable cover",
       "shape": "plate",
       "size_class_mm": {
-        "min": 1000.0,
-        "max": 2500.0
+        "min": 500.0,
+        "max": 2000.0
       },
       "layout": {
         "col": 2,
         "row": 4
       },
       "color_hint": "#aab7b8",
-      "aspect": 6.0
+      "aspect": 2.5
     }
   ],
   "edges": [
     {
-      "from_id": "girder",
-      "to_id": "clamps",
+      "from_id": "frame",
+      "to_id": "deck",
       "kind": "mechanical",
-      "label": "friction to bottom flange",
+      "label": "clamped with preloaded bolts",
       "arrow": false
     },
     {
-      "from_id": "clamps",
-      "to_id": "crossbeam",
-      "kind": "mechanical",
-      "label": "carry cross-beam",
-      "arrow": false
-    },
-    {
-      "from_id": "crossbeam",
+      "from_id": "spring",
       "to_id": "frame",
       "kind": "mechanical",
-      "label": "bolt frame",
+      "label": "seated on frame",
       "arrow": false
     },
     {
-      "from_id": "frame",
-      "to_id": "springs",
-      "kind": "mechanical",
-      "label": "support springs",
-      "arrow": false
-    },
-    {
-      "from_id": "frame",
-      "to_id": "damper",
-      "kind": "mechanical",
-      "label": "support damper",
-      "arrow": false
-    },
-    {
-      "from_id": "springs",
+      "from_id": "spring",
       "to_id": "mass",
       "kind": "mechanical",
-      "label": "suspend mass",
+      "label": "carries mass",
+      "arrow": false
+    },
+    {
+      "from_id": "damper",
+      "to_id": "frame",
+      "kind": "mechanical",
+      "label": "connected to frame",
       "arrow": false
     },
     {
       "from_id": "damper",
       "to_id": "mass",
       "kind": "mechanical",
-      "label": "damp mass",
+      "label": "damps mass motion",
       "arrow": false
     },
     {
-      "from_id": "frame",
-      "to_id": "screen",
+      "from_id": "cover",
+      "to_id": "frame",
       "kind": "mechanical",
-      "label": "fix screen below",
+      "label": "removable cover below",
       "arrow": false
     },
     {
-      "from_id": "lockpin",
-      "to_id": "mass",
+      "from_id": "bolts",
+      "to_id": "frame",
       "kind": "mechanical",
-      "label": "lock mass",
+      "label": "clamp bearers to girders",
+      "arrow": false
+    },
+    {
+      "from_id": "bolts",
+      "to_id": "deck",
+      "kind": "mechanical",
+      "label": "preload into deck girders",
       "arrow": false
     }
   ],
   "loads": [
     {
-      "on_id": "frame",
-      "label": "total static hung load 9.81 kN",
-      "direction": "down"
-    },
-    {
-      "on_id": "clamps",
-      "label": "about 1.23 kN per clamp",
+      "on_id": "deck",
+      "label": "dense-crowd resonant force 1480 N on deck",
       "direction": "down"
     },
     {
       "on_id": "mass",
-      "label": "vertical resonance motion 1.9 Hz",
-      "direction": "up"
+      "label": "500 kg weight 4.90 kN on springs",
+      "direction": "down"
     }
   ],
   "critical_part_id": "mass",
   "scale_bar_mm": 500.0,
   "notes": [
-    "Side view at midspan: girders top, clamped cross-beam, under-deck frame with vertical mass on springs+damper, screen below.",
-    "800kg tuned to 1.83Hz 12% damping cuts 1.75 to 0.106 m/s2 <0.7 limit.",
-    "+-30mm stroke clearance in recessed cassette, lock-pin for inspection."
+    "500 kg mass tuned to 1.85 Hz below 1.9 Hz deck mode with 72.3 mm sag",
+    "Dense-crowd stroke 20.1 mm within +-50 mm stops, controlled 0.545 m/s2",
+    "Bolted clamp frame allows staged night install without welding",
+    "Bolts preload bearer beams to longitudinal girders, part of load path"
   ]
 }

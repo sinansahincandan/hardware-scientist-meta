@@ -1,14 +1,24 @@
 {
   "id": "E40",
-  "author": "Retrofit and Maintenance Engineer",
-  "tool": "calc",
-  "purpose": "total slip capacity 8 clamps",
-  "code_or_query": "8*1.8",
+  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "tool": "web_search",
+  "purpose": "search: Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "code_or_query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
   "inputs": {},
-  "output_summary": "14.4",
-  "output_full": "14.4",
+  "output_summary": "mdpi-res.com — Article Experimental and Numerical Study on Dynamics of — https://mdpi-res.com/d_attachment/applsci/applsci-10-04505/article_deploy/applsci-10-04505.pdf",
+  "output_full": "mdpi-res.com — Article Experimental and Numerical Study on Dynamics of — https://mdpi-res.com/d_attachment/applsci/applsci-10-04505/article_deploy/applsci-10-04505.pdf\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mdpi-res.com",
+      "title": "Article Experimental and Numerical Study on Dynamics of",
+      "year": "",
+      "url": "https://mdpi-res.com/d_attachment/applsci/applsci-10-04505/article_deploy/applsci-10-04505.pdf",
+      "query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

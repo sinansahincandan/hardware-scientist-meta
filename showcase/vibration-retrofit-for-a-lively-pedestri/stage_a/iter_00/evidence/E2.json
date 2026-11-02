@@ -1,20 +1,20 @@
 {
   "id": "E2",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
-  "code_or_query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+  "purpose": "search: footbridge vertical acceleration comfort limit Setra HiVoSS",
+  "code_or_query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
   "inputs": {},
-  "output_summary": "mdpi.com — A Review of Evaluation Methods of Standards for Structural Vibration Serviceability under Crowd Walking — https://www.mdpi.com/2075-5309/14/3/675",
-  "output_full": "mdpi.com — A Review of Evaluation Methods of Standards for Structural Vibration Serviceability under Crowd Walking — https://www.mdpi.com/2075-5309/14/3/675\n(the search returned no passage text)",
+  "output_summary": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
+  "output_full": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi.com",
-      "title": "A Review of Evaluation Methods of Standards for Structural Vibration Serviceability under Crowd Walking",
+      "authors_or_org": "mdpi-res.com",
+      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
       "year": "",
-      "url": "https://www.mdpi.com/2075-5309/14/3/675",
-      "query": "footbridge vertical acceleration comfort limit HIVOSS Setra 0.7 m/s2",
+      "url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
+      "query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
       "unresolved": false,
       "passage": ""
     }

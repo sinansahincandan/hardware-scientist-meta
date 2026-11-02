@@ -1,20 +1,20 @@
 {
   "id": "E20",
-  "author": "Baraka - Refrigeration and Thermal Engineer",
+  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
   "tool": "web_search",
-  "purpose": "search: FAO fruit vegetable cold storage temperature humidity 0-10C",
-  "code_or_query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+  "purpose": "search: DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
+  "code_or_query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
   "inputs": {},
-  "output_summary": "freshliance.com — Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain — https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
-  "output_full": "freshliance.com — Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain — https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792\n(the search returned no passage text)",
+  "output_summary": "sino-cold.en.made-in-china.com — 12V 24V Micro Refrigerator Compressor Zh2012A Zh2024A Zh2048A - 24V Refrigerator Compressor and Mini Refrigerator Compressor — 2012 — https://sino-cold.en.made-in-china.com/product/oxFrMvVArjkW/China-12V-24V-Micro-Refrigerator-Compressor-Zh2012A-Zh2024A-Zh2048A.html",
+  "output_full": "sino-cold.en.made-in-china.com — 12V 24V Micro Refrigerator Compressor Zh2012A Zh2024A Zh2048A - 24V Refrigerator Compressor and Mini Refrigerator Compressor — 2012 — https://sino-cold.en.made-in-china.com/product/oxFrMvVArjkW/China-12V-24V-Micro-Refrigerator-Compressor-Zh2012A-Zh2024A-Zh2048A.html\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "freshliance.com",
-      "title": "Temperature and Humidity Data Loggers for Fruit and Vegetable Cold Chain",
-      "year": "",
-      "url": "https://www.freshliance.com/index.php?m=home&c=View&a=index&aid=792",
-      "query": "FAO fruit vegetable cold storage temperature humidity 0-10C",
+      "authors_or_org": "sino-cold.en.made-in-china.com",
+      "title": "12V 24V Micro Refrigerator Compressor Zh2012A Zh2024A Zh2048A - 24V Refrigerator Compressor and Mini Refrigerator Compressor",
+      "year": "2012",
+      "url": "https://sino-cold.en.made-in-china.com/product/oxFrMvVArjkW/China-12V-24V-Micro-Refrigerator-Compressor-Zh2012A-Zh2024A-Zh2048A.html",
+      "query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
       "unresolved": false,
       "passage": ""
     }

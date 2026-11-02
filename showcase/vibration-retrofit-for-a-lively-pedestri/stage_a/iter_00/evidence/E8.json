@@ -1,20 +1,20 @@
 {
   "id": "E8",
-  "author": "Structural Dynamicist",
+  "author": "Elena - Structural Dynamics Engineer",
   "tool": "web_search",
-  "purpose": "search: tuned mass damper footbridge Den Hartog optimum mass ratio damping",
-  "code_or_query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+  "purpose": "search: steel footbridge damping ratio vertical bending mode",
+  "code_or_query": "steel footbridge damping ratio vertical bending mode",
   "inputs": {},
-  "output_summary": "mdpi-res.com — | Article |  | — https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf",
-  "output_full": "mdpi-res.com — | Article |  | — https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf\n(the search returned no passage text)",
+  "output_summary": "enviro2014.vgtu.lt — Microsoft Word - 733-2322-1-PB_NDdoi — 2014 — http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf",
+  "output_full": "enviro2014.vgtu.lt — Microsoft Word - 733-2322-1-PB_NDdoi — 2014 — http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf\n(the search returned no passage text)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi-res.com",
-      "title": "| Article |  |",
-      "year": "",
-      "url": "https://mdpi-res.com/d_attachment/applsci/applsci-12-06204/article_deploy/applsci-12-06204.pdf",
-      "query": "tuned mass damper footbridge Den Hartog optimum mass ratio damping",
+      "authors_or_org": "enviro2014.vgtu.lt",
+      "title": "Microsoft Word - 733-2322-1-PB_NDdoi",
+      "year": "2014",
+      "url": "http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf",
+      "query": "steel footbridge damping ratio vertical bending mode",
       "unresolved": false,
       "passage": ""
     }

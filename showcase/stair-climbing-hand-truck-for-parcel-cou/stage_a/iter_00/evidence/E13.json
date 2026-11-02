@@ -1,27 +1,24 @@
 {
   "id": "E13",
-  "author": "Mara \u2014 Stair-Climbing Mechanism Engineer",
-  "tool": "calc",
-  "purpose": "tri-star cluster torque with total mass and radius",
-  "code_or_query": "(Q_(75,'kg')*Q_(9.81,'m/s**2')*Q_(0.25,'m')).to('N*m')",
-  "inputs": {
-    "arg0": {
-      "value": "75",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "0.25",
-      "unit": "m"
-    }
-  },
-  "output_summary": "184 m\u22c5N",
-  "output_full": "184 m\u22c5N",
+  "author": "Jonas – Ergonomics and Courier Safety Specialist",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
+  "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
+  "inputs": {},
+  "output_summary": "kruizinga.com — Transport trolley Fetra hand truck 2 long walls detachable — https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24",
+  "output_full": "kruizinga.com — Transport trolley Fetra hand truck 2 long walls detachable — https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "kruizinga.com",
+      "title": "Transport trolley Fetra hand truck 2 long walls detachable",
+      "year": "",
+      "url": "https://www.kruizinga.com/transport-trolley-fetra-hand-truck-2-long-walls-detachable/854051_24",
+      "query": "EN 1757 hand truck safety brake load restraint strap standard",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

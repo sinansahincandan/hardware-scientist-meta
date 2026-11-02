@@ -1,24 +1,14 @@
 {
   "id": "E36",
-  "author": "Chidi - Enclosure and Structural Designer",
-  "tool": "web_search",
-  "purpose": "search: plastic ventilated produce crate dimensions 600x400 stacking",
-  "code_or_query": "plastic ventilated produce crate dimensions 600x400 stacking",
+  "author": "Farah \u2014 Post-Harvest and Cooperative Operations Specialist",
+  "tool": "sketch",
+  "purpose": "Interior plan and section: two side racks, centre aisle, 900 mm door, wall and floor air gaps",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,(a,b)=plt.subplots(1,2,figsize=(9,4));\na.set_title('plan: racks + aisle + door'); a.set_xlim(0,2); a.set_ylim(0,2); a.set_aspect('equal');\na.add_patch(plt.Rectangle((0.05,0.05),0.6,1.9,fill=False,lw=2)); a.add_patch(plt.Rectangle((1.35,0.05),0.6,1.9,fill=False,lw=2));\na.text(0.35,1.0,'rack',ha='center',fontsize=8); a.text(1.65,1.0,'rack',ha='center',fontsize=8); a.text(1.0,1.0,'aisle',ha='center',fontsize=8);\na.plot([0.7,1.3],[0.02,0.02],lw=3); a.text(1.0,0.15,'900 door',ha='center',fontsize=8);\nb.set_title('section: 3-high crates + air gaps'); b.set_xlim(0,2); b.set_ylim(0,2.2); b.set_aspect('equal');\nb.add_patch(plt.Rectangle((0.05,0.3),0.6,1.5,fill=False,lw=2)); b.add_patch(plt.Rectangle((1.35,0.3),0.6,1.5,fill=False,lw=2));\nfor y in [0.3,0.8,1.3]:\n  b.add_patch(plt.Rectangle((0.08,y+0.05),0.54,0.4,fill=False)); b.add_patch(plt.Rectangle((1.38,y+0.05),0.54,0.4,fill=False));\nb.text(1.0,0.15,'raised slats',ha='center',fontsize=8); plt.tight_layout(); plt.savefig('sketch.png',dpi=100); print('ok')",
   "inputs": {},
-  "output_summary": "directindustry.com — Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated — https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
-  "output_full": "directindustry.com — Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated — https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "directindustry.com",
-      "title": "Stacking crate - 06032 - Fletcher European Containers Ltd - polypropylene / handling / perforated",
-      "year": "",
-      "url": "https://www.directindustry.com/prod/fletcher-european-containers-ltd/product-176840-2079047.html",
-      "query": "plastic ventilated produce crate dimensions 600x400 stacking",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "Interior plan and section: two side racks, centre aisle, 900 mm door, wall and floor air gaps",
+  "output_full": "ok\n",
+  "sketch_path": "evidence/sketch_36.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,23 +1,24 @@
 {
   "id": "E34",
-  "author": "Structural Dynamicist",
-  "tool": "calc",
-  "purpose": "check static weight from 800 kg mass",
-  "code_or_query": "Q_(800,'kg')*Q_(9.81,'m/s**2')",
-  "inputs": {
-    "arg0": {
-      "value": "800",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    }
-  },
-  "output_summary": "7.85\u00d710\u00b3 kg\u22c5m/s\u00b2",
-  "output_full": "7.85\u00d710\u00b3 kg\u22c5m/s\u00b2",
+  "author": "Priya - Retrofit Constructability Engineer",
+  "tool": "web_search",
+  "purpose": "search: under bridge inspection platform mobile staging pedestrian footbridge",
+  "code_or_query": "under bridge inspection platform mobile staging pedestrian footbridge",
+  "inputs": {},
+  "output_summary": "mcclain1.com — What Makes A Snooper™ Truck Ideal For Bridge Inspections? | Underbridge and Aerial Access Equipment Rentals | McClain & Co., Inc. — https://mcclain1.com/what-makes-a-snooper-truck-ideal-for-bridge-inspections/",
+  "output_full": "mcclain1.com — What Makes A Snooper™ Truck Ideal For Bridge Inspections? | Underbridge and Aerial Access Equipment Rentals | McClain & Co., Inc. — https://mcclain1.com/what-makes-a-snooper-truck-ideal-for-bridge-inspections/\n(the search returned no passage text)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mcclain1.com",
+      "title": "What Makes A Snooper™ Truck Ideal For Bridge Inspections? | Underbridge and Aerial Access Equipment Rentals | McClain & Co., Inc.",
+      "year": "",
+      "url": "https://mcclain1.com/what-makes-a-snooper-truck-ideal-for-bridge-inspections/",
+      "query": "under bridge inspection platform mobile staging pedestrian footbridge",
+      "unresolved": false,
+      "passage": ""
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }
