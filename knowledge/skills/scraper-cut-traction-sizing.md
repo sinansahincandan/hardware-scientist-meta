@@ -13,3 +13,4 @@ source: run 20261102-214939_lunar-regolith-excavation-robot (2026-11-02)
 
 ## Use notes
 - run 20261103-105032_lunar-regolith-excavation-robot (Excavation and Regolith Handling Lead): Helped - set shallow cut at 129 N and justified vibrating share to 90.3 N against 222 N traction with margin.
+- run 20261103-142845_lunar-regolith-excavation-robot (Excavation Handling Lead): Helped: sized 400 mm blade at 25 mm cut to 172 N pull within 305 N traction margin needing 51.6 W draft.

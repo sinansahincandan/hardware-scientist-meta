@@ -1,0 +1,22 @@
+# Insights from Lunar regolith excavation robot
+Source run: 20261103-142845_lunar-regolith-excavation-robot
+
+## BP-1 simulant density and friction regime
+Black Point-1 basaltic lunar simulant packs to 1.5-1.6 g/cm3 bulk density with peak friction angle 39-51 deg. Consequence for any excavation, transport or storage: volumetric fill is heavy, ~38-40 kg per 25 L, piles stand steep near 40 deg, shear strength is high for traction but tools and hoppers see dense abrasive granular mass requiring steep mass-flow walls.
+Evidence: E1 (search: BP-1 lunar regolith simulant bulk density geotechnical properties: ares.jsc.nasa.gov — ARES | Exploration Science Projects | Lunar Regolith Simulants | BP-1 — https://ares.jsc.nasa.gov/projects/simulants/bp-1.html); E10 (search: lunar regolith simulant angle of repose BP-1 friction angle: hou.usra.edu — Developing  a New  Space Economy (2019)  5068.pdf Lightning Talk or Poster — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf); E16 (hopper soil mass at 25L and mid bulk density: 38.8)
+
+## Friction-limited drawbar and draft power on loose soil
+Light wheeled vehicles on loose frictional soil live in a drawbar budget: usable pull is bounded by normal load times tan(phi), sinkage is held down by keeping per-wheel contact pressure of order 10-12 kPa with wide balloon grouser tires. Example regime: ~170 N draft for a 0.4 m wide x 25 mm deep shallow slice in loose sand leaves a few-hundred-newton margin, e.g. ~305 N, when phi ~39 deg. Mechanical draft power is pull times speed, e.g. ~52 W at 0.3 m/s crawl, scaling linearly with speed, width and depth.
+Evidence: E31 (traction margin from friction at 39 deg minus 172 N pull: 305); E33 (per-wheel ground pressure loaded: 12.1 kPa); E26 (draft power from 172N pull at 0.3 m/s cap: 51.6); E10 (search: lunar regolith simulant angle of repose BP-1 friction angle: hou.usra.edu — Developing  a New  Space Economy (2019)  5068.pdf Lightning Talk or Poster — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf)
+
+## Small sealed LiFePO4 pack energy class
+Sealed 12.8 V 20 Ah lithium-iron-phosphate module class stores ~256 Wh at ~2.6 kg pack mass, about 95-100 Wh/kg packed. At ~100-120 W mean mixed crawl-plus-work load this yields ~2 h untethered runtime. General sizing: usable energy = nominal V x Ah, runtime = energy / mean load, mass penalty ~10 g per Wh.
+Evidence: E23 (sealed module energy from 12.8V 20Ah pack: 256 h⋅W); E20 (search: LiFePO4 12V 20Ah sealed battery weight datasheet: bioennopower.com — 12V 20Ah LiFePO4 Battery – Sealed ABS High-Output | BLF-1220AS | Bioenno Powe — https://www.bioennopower.com/products/12v-20ah-lfp-battery-abs-blf-1220as?srsltid=AfmBOoqSkow7FBh0d0cfBbjh2EH-eFlg0J7JqWnJAAnWjMbf6fWCCyMe); E29 (runtime from sealed pack at mixed dig-drive load: 2.13 Wh/W)
+
+## Rear-dump tip-over moment balance
+Rear-hinge dumping with payload overhung behind the rear ground contact creates an overturning moment = payload weight x overhang that must be balanced by restoring moment = forward chassis weight x forward CG distance. At ~35-40 kg payload scale both moments are order 100-115 N m, e.g. 114 N m overturning vs 103 N m restoring leaving ~11 N m deficit and unloading the front axle by tens of newtons. Any rear-dump loader in this class overturns unless the tipped load path is closed to ground via outrigger, prop, or locked-brake stance.
+Evidence: E34 (restoring moment empty chassis forward of rear axle: 103); E35 (overturning moment from full hopper behind rear axle at dump: 114); E36 (tip deficit from overturn vs restoring moments: 11); E30 (estimate front axle unload from trailing blade drag about ground: 43)
+
+## Link-loss coast distance rule
+Teleoperated crawlers under heartbeat supervision coast coast distance = capped speed x link-loss stop latency. Example regime: 0.3 m/s cap with 0.5 s detection-plus-brake delay coasts ~0.15 m. General rule for any remote wheeled machine: set speed cap and failsafe latency together to keep uncontrolled travel within clearance to obstacles, bins, or personnel.
+Evidence: E24 (link-loss coast distance at capped speed: 0.15); E27 (skill: link-loss-stop-sizing: Use when sizing any teleoperated wheeled robot for safe stop under link-loss latency.); E22 (search: 2.4 GHz teleoperation latency failsafe robot remote control: repository.cern — DRD8 — https://repository.cern/records/80gt4-mc858/files/DRD8_milestone_report%20M1.2.1%20July%202026.pdf?download=1)

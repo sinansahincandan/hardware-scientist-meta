@@ -10,3 +10,4 @@ source: run 20261103-105032_lunar-regolith-excavation-robot (2026-11-03)
 4. Check: runtime meets work target (~40.4 min work statement) with low ballast placement retained.
 
 ## Use notes
+- run 20261103-142845_lunar-regolith-excavation-robot (Systems Autonomy Lead): Helped: sized sealed 256 Wh pack for mixed dig-drive load with 51.6 W draft component.
