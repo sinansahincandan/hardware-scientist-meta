@@ -111,3 +111,5 @@ for comparing afterwards and is never given to the system.
   "attachments": []
 }
 ```
+
+**Wording changed 2026-11-03 (owner):** "Robot mass at most 60 kg" did not say whose mass; the constraints now say "the whole robot, including its battery" and that it may unfold after the start. Run 20261102-153907 received the earlier wording (shown on its pages exactly as received).
