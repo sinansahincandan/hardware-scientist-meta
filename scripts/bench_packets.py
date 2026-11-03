@@ -22,7 +22,19 @@ def hs_markdown(run: Path) -> str:
     sol = json.loads(sol_path.read_text(encoding="utf-8"))
     verdict = json.loads((sol_path.parent / "verdict.json").read_text(encoding="utf-8"))
     parts = [f"- {p['name']} — {p['function']}" for p in sol["concept"]["parts"]]
-    nums = [f"- {k['quantity']}: {k['value']:g} {k['unit']} ({k['method']})" for k in sol.get("key_estimates", [])]
+    board = json.loads((sol_path.parent / "whiteboard.json").read_text(encoding="utf-8"))
+    ev = {e["id"]: e for e in board.get("evidence", [])}
+
+    def basis(k: dict) -> str:  # the calculation behind a number, as it stands on HS's whiteboard
+        parts = []
+        for eid in k.get("evidence_ids", [])[:2]:
+            e = ev.get(eid)
+            if e:
+                code = " ".join(str(e.get("code_or_query", "")).split())[:220]
+                parts.append(f"{e['purpose']}: {code} → {str(e.get('output_summary', ''))[:120]}")
+        return "; ".join(parts) or k["method"]
+
+    nums = [f"- {k['quantity']}: {k['value']:g} {k['unit']} ({basis(k)})" for k in sol.get("key_estimates", [])]
     steps = [f"- {s['action']}" for s in sol.get("operating_sequence", [])]
     risks = [f"- {r['risk']} — {r['mitigation']}" for r in sol.get("risks", [])]
     return (f"# {sol['title']}\n\n## How it works\n{sol.get('mechanism_sentence', '')} "
