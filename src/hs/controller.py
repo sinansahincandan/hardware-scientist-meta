@@ -11,7 +11,7 @@ from typing import Any
 
 from hs import config
 from hs.client import BudgetExceeded
-from hs.lessons import load_lessons, update_lessons
+from hs.lessons import load_lessons, load_light, update_lessons
 from hs.master_prompt import MasterPrompt
 from hs.schemas import Problem
 from hs.stage_a.archive import CouncilArchive
@@ -148,12 +148,12 @@ class Controller:
 
     # -- internals ---------------------------------------------------------------
     def _loop(self, problem: Problem, run_dir: Path, trace: Trace, warnings: list[str]) -> Path | None:
-        lessons_text = load_lessons()
+        lessons_text = load_light()  # the light copy; the full record stays in knowledge/lessons_full.md
         # Fake runs read the real lessons but write their synthetic lessons into the run folder.
         self._lessons_out: Path | None = None
         if getattr(self.client, "is_fake", False) and not os.environ.get("HS_LESSONS_PATH"):
-            self._lessons_out = run_dir / "lessons_fake_run.md"
-            self._lessons_out.write_text(lessons_text, encoding="utf-8")
+            self._lessons_out = run_dir / "lessons_full_fake_run.md"
+            self._lessons_out.write_text(load_lessons(), encoding="utf-8")
         _record_knowledge_in(run_dir, lessons_text)
         master = MasterPrompt.rev0(self.client, problem, lessons_text, run_dir)
         from hs.master_prompt import roster_of
@@ -289,6 +289,16 @@ class Controller:
             raise
         except Exception as exc:  # knowledge is an add-on; it must not lose the run
             trace.log(f"knowledge: insights not written ({type(exc).__name__}: {exc})")
+        try:
+            from hs.skills import update_skills
+
+            for line in update_skills(self.client, run_dir.name, problem.title, solution.model_dump_json(indent=2),
+                                      room.board.evidence, base):
+                trace.log(f"knowledge: {line}")
+        except BudgetExceeded:
+            raise
+        except Exception as exc:  # knowledge is an add-on; it must not lose the run
+            trace.log(f"knowledge: skills not updated ({type(exc).__name__}: {exc})")
         carried = carry_tools(run_dir, base)
         if carried:
             trace.log(f"knowledge: tools carried to later problems: {', '.join(carried)}")
@@ -326,4 +336,5 @@ def _record_knowledge_in(run_dir: Path, lessons_text: str) -> None:
         "lessons": re.findall(r"^- (L\d+):", lessons_text, flags=re.MULTILINE),
         "insight_runs": insights,
         "tools": {name: rec.get("source_run", "") for name, rec in carried_tools().items()},
+        "skills": [s.get("name", "") for s in __import__("hs.skills", fromlist=["list_skills"]).list_skills()],
     }, indent=2), encoding="utf-8")

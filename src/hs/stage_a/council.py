@@ -16,7 +16,7 @@ from hs.master_prompt import MasterPrompt, member_instructions
 from hs.stage_a.tools import TOOL_SCHEMAS, ToolRunner
 from hs.stage_a.whiteboard import Whiteboard
 
-COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc", "search_knowledge"}
+COUNTED_TOOLS = {"calc", "simulate", "sketch", "web_search", "new_tool", "vetted_calc", "search_knowledge", "use_skill"}
 
 
 def _unwrap_args(args: dict[str, Any]) -> dict[str, Any]:
@@ -114,6 +114,7 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
             "contradict it with a source of your own. "
             + _others_sources(tools, member)) if cycle >= 2 else "")
         + extra_instruction
+        + "\n" + _skill_index()
     )
     prev_id: str | None = None
     new_search_ids: list[str] = []
@@ -225,6 +226,11 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                                                 str(args.get("python_source", "")),
                                                 dict(args.get("smoke_test_input", {}) or {}))
                     output = output if ok else f"error: {output}"
+                elif name == "use_skill":
+                    eid, output = tools.use_skill(member, str(args.get("name", "")), cycle=cycle)
+                    if history is not None and eid:
+                        history.append({"cycle": cycle, "member": member, "kind": "evidence", "evidence_id": eid,
+                                        "tool": "use_skill"})
                 elif name == "search_knowledge":
                     eid, output = tools.search_knowledge(member, str(args.get("query", "")), cycle=cycle)
                     if history is not None:
@@ -273,3 +279,9 @@ def _others_sources(tools: ToolRunner, member: str, limit: int = 8) -> str:
         if ev.tool == "web_search" and ev.author != member and ref.get("passage"):
             rows.append(f"{ev.id} ({ev.author.split()[0]}): {ref.get('title', '')[:70]} — {ref['passage'][:160]}")
     return ("Sources other members took something from:\n" + "\n".join(rows[-limit:]) + "\n") if rows else ""
+
+
+def _skill_index() -> str:
+    from hs.skills import index_text
+
+    return index_text()

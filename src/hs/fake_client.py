@@ -303,6 +303,12 @@ class FakeClient:
         idx = [int(i) for i in re.findall(r"^crop (\d+):", user_text, flags=re.MULTILINE)]
         return MaskCheck(items=[InstanceCheck(index=i, is_part=True) for i in idx])
 
+    def _fake_SkillUpdate(self, user_text: str):
+        from hs.schemas import NewSkill, SkillUpdate
+
+        return SkillUpdate(new=[NewSkill(name="fake sizing check", description="Use in fake mode only.",
+                                         body="1. A synthetic step from fake mode.")])
+
     def _fake_LabelCheck(self, user_text: str):
         from hs.schemas import LabelCheck
 

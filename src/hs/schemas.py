@@ -382,6 +382,24 @@ class InsightItem(BaseModel):
     evidence_ids: list[str] = Field(default_factory=list)
 
 
+class SkillNote(BaseModel):
+    name: str
+    note: str
+    retire: bool = False
+    why: str = ""
+
+
+class NewSkill(BaseModel):
+    name: str
+    description: str
+    body: str
+
+
+class SkillUpdate(BaseModel):
+    notes: list[SkillNote] = Field(default_factory=list)
+    new: list[NewSkill] = Field(default_factory=list)
+
+
 class Insights(BaseModel):
     items: list[InsightItem] = Field(default_factory=list)
 

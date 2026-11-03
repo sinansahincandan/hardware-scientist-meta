@@ -48,6 +48,10 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
      "description": "Search the knowledge library of earlier problems (engineering findings with their evidence). "
                     "Results are posted on the whiteboard as evidence.",
      "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}},
+    {"type": "function", "name": "use_skill",
+     "description": "Open a skill from earlier problems by its name (the list is in your turn): a reusable "
+                    "engineering procedure with steps, checks and typical values. It is posted on the whiteboard.",
+     "parameters": {"type": "object", "properties": {"name": {"type": "string"}}, "required": ["name"]}},
     {"type": "web_search", "search_context_size": "medium"},
 ]
 
@@ -296,6 +300,18 @@ class ToolRunner:
             (self.evidence_dir / f"{ev.id}.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
             noted.append(ev.id)
         return noted
+
+    def use_skill(self, author: str, name: str, cycle: int = 0) -> tuple[str, str]:
+        """knowledge/skills: the procedure, posted on the whiteboard so everyone sees which skill was used."""
+        from hs.skills import index_text, read_skill, slug
+
+        body = read_skill(name)
+        if body is None:
+            return "", f"error: no skill named '{name}'. {index_text() or 'The library has no skills yet.'}"
+        first = next((ln for ln in body.splitlines() if ln.startswith("description:")), "")
+        eid = self._post(author, "use_skill", f"skill: {slug(name)}", slug(name),
+                         first.replace("description:", "").strip() or slug(name), full=body, cycle=cycle)
+        return eid, f"{eid}: {body}"
 
     def search_knowledge(self, author: str, query: str, cycle: int = 0) -> tuple[str, str]:
         """knowledge/insights search (Fig. 1 knowledge/); the hits become one evidence item."""

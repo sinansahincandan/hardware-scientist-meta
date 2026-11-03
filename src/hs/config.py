@@ -43,6 +43,7 @@ ROLES: dict[str, RoleConfig] = {
     "light_check": RoleConfig(DEFAULT_MODEL, "low", 2000),
     "lessons": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "insights": RoleConfig(DEFAULT_MODEL, "medium", 6000),
+    "skills": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "example_generator": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "master_rev0": RoleConfig(DEFAULT_MODEL, "medium", 8000),
 }

@@ -48,7 +48,7 @@ def test_knowledge_in_recorded(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("HS_KNOWLEDGE_DIR", str(base))
     _record_knowledge_in(tmp_path, "# Lessons\n- L1: a [d]\n- L2: b [d]\n")
     rec = json.loads((tmp_path / "knowledge_in.json").read_text(encoding="utf-8"))
-    assert rec == {"lessons": ["L1", "L2"], "insight_runs": ["run_a"], "tools": {"t": "run_a"}}
+    assert rec == {"lessons": ["L1", "L2"], "insight_runs": ["run_a"], "tools": {"t": "run_a"}, "skills": []}
 
 
 def test_critic_listing_a_part_fault_is_not_a_pass() -> None:
