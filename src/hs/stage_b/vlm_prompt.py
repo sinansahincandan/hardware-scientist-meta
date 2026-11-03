@@ -6,6 +6,7 @@ from typing import Any
 
 from hs.schemas import SchematicSpec, SolutionPrompt, VLMPrompt
 from hs.stage_b.image_archive import ImageArchive
+from hs.stage_b.schematic import overall_size_mm, scale_reference
 
 
 class VLMPromptWriter:
@@ -20,6 +21,10 @@ class VLMPromptWriter:
             f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"PREFERRED VIEW: {solution.figure_spec.preferred_view}\n\n"
             f"WHERE IT WORKS (from the problem): {solution.problem_restatement}\n\n"
+            f"OVERALL SIZE: the whole device is about {overall_size_mm(spec):.0f} mm across; show it with "
+            f"{scale_reference(overall_size_mm(spec)).split(',')[0]} or another everyday object of known size in "
+            "the scene, so a viewer reads its true size; a small device is shown close up in the hand or on the "
+            "thing it mounts to, never as a large block.\n\n"
             f"IMAGE ARCHIVE SUMMARY:\n{archive.summary_text()}\n\n"
             "GOAL: a correct, photorealistic rendering of this device in its use context, with the workpiece or "
             "load present, real materials, product-shot lighting and the mechanism readable. Correctness against "

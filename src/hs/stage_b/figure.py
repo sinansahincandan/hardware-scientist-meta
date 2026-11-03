@@ -116,14 +116,17 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
 
 
 def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, names: str,
-                image: Path) -> tuple[LightCheck, bool]:
+                image: Path, size_mm: float = 0.0) -> tuple[LightCheck, bool]:
     """Detailed check (the client re-words it once without numbers if the content filter blocks it); only
     if that is blocked too, one general check. Returns (check, general_only)."""
     try:
         return client.structured(
             "light_check", LightCheck, "Light check.",
             f"Does it show fabrication step {step} ({desc}) with these parts: {names}? The numbers are "
-            "references only; judge the parts and the stage, not exact sizes. Answer from the pixels.",
+            "references only; judge the parts and the stage, not exact sizes"
+            + (f", except overall scale: the whole device is about {size_mm:.0f} mm across, and one drawn many times "
+               "larger or smaller than that against the grey scale silhouette fails" if size_mm else "")
+            + ". Answer from the pixels.",
             image_paths=[image]), False
     except BudgetExceeded:
         raise
@@ -132,7 +135,7 @@ def _step_check(client: Any, solution: SolutionPrompt, step: int, desc: str, nam
             raise
     return client.structured(
         "light_check", LightCheck, "Light check.",
-        f"Does this photo show a stage of building this device, at a believable size next to the person silhouette: {plain_words(solution.title)}? "
+        f"Does this photo show a stage of building this device, at its true size next to the scale silhouette (the whole device is about {size_mm:.0f} mm across): {plain_words(solution.title)}? "
         "Answer from the pixels.", image_paths=[image]), True
 
 
@@ -223,14 +226,16 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
                     f"Photorealistic product photo, fabrication step {i + 1}: {step_desc}. The first reference "
                     f"image shows the finished device; show it at this stage of building, with only these parts "
                     f"assembled so far ({names}) as in the second reference. Plain light-grey studio backdrop, no "
-                    f"room, no workbench, no tools; one standing person beside it, drawn as a simple neutral grey "
-                    f"silhouette, so its true size can be read. Same viewpoint as the first reference. The image "
+                    f"room, no workbench, no tools; beside it, as a simple neutral grey silhouette for scale, "
+                    f"{schematic_mod.scale_reference(schematic_mod.overall_size_mm(spec))}. The device keeps its "
+                    f"true size against that silhouette. Same viewpoint as the first reference. The image "
                     f"carries no text."
                     + (f" The previous attempt was rejected because: {reason} Fix that." if reason else ""),
                     render_path, extra_refs=[tmp / f"step{i + 1}.png"])
                 images_used += 1
                 step_path.write_bytes(png)
-                check, general = _step_check(client, solution, i + 1, step_desc, names, step_path)
+                check, general = _step_check(client, solution, i + 1, step_desc, names, step_path,
+                                                schematic_mod.overall_size_mm(spec))
             except BudgetExceeded:
                 raise
             except Exception as exc:  # a panel-D step must never sink the figure (run 02: content filter 400)

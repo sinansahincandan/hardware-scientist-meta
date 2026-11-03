@@ -62,6 +62,7 @@ class DesignerEvalRunner:
             previous_render: Path | None = None, critical_part: str = "",
             council_sketches: list[Path] | None = None) -> DesignerEval:
         earlier = "\n".join(f"- {f}" for f in earlier_faults or [])
+        size_mm = max((p.size_class_mm.max for p in solution.concept.parts), default=0.0)
         prompt = (
             "The first image is the render to judge. It carries short callouts drawn by the image model: each "
             "callout must name the part its leader line ends on, spelled correctly, with no numbers; a wrong, "
@@ -97,6 +98,10 @@ class DesignerEvalRunner:
                "connected). If its working geometry is not visible as in the sketch and the engineers' sketches, "
                "the render is not faithful. A segmenter that cannot find a part is not proof that the part is "
                "absent or present: look at the pixels yourself.\n" if critical_part else "")
+            + (f"STEP 3c — SIZE AND SHAPE: the whole device is about {size_mm:.0f} mm across and is meant for: "
+               f"{solution.problem_restatement} Judge its size against the people, hands or objects in the "
+               "scene and its overall shape against what the problem asks for; drawn many times too large or "
+               "small, or in a shape the problem rules out, the render is not faithful.\n" if size_mm else "")
             + "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
             "proportions), including each one in the segmenter measurements below, and say whether it matters "
             "for the working principle (in concept design a deviation may be acceptable, but it must be noticed).\n"

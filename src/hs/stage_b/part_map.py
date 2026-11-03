@@ -211,8 +211,9 @@ def _judge(client: Any, render_png: Path, found: dict[str, list[dict[str, Any]]]
         "Each image below is a crop of one picture of a device; a magenta outline marks what the segmenter found. "
         "For each crop, say whether the outlined thing is the named part of the device (is_part), and if not, what "
         "it is (seen_as). The device's parts are: " + "; ".join(labels.values()) + ". The scene may also hold "
-        "things that are not part of the device (ground, load, a bin or container it fills, people, buildings); an "
-        "outline on such a thing is not the part, even if it looks similar. Judge the outlined object only.\n\n"
+        "things that are not part of the device (ground, load, a bin or container it fills, an object pressing on "
+        "or held by it, people, buildings, out-of-focus things in the background); an outline on such a thing is "
+        "not the part, even if it looks similar. Judge the outlined object only.\n\n"
         + lines, image_paths=[c[2] for c in crops])
     (tmp / "check.json").write_text(json.dumps({"crops": [f"crop {k}: {pid}" for k, (pid, _, _) in enumerate(crops, 1)],
                                                 **check.model_dump()}, indent=2), encoding="utf-8")

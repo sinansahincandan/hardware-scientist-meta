@@ -181,7 +181,8 @@ class Meeting:
             "checks a design of this kind needs, whatever the design: the parts summed against each size and mass "
             "limit, one value per quantity (two different densities or loads on the board must be reconciled), and "
             "every flow the device carries — material, energy, signal — traced from start to end with the part "
-            "that does each step. You never propose design "
+            "that does each step. When votes or objections say the proposal is out of date, name the member who updates "
+            "it this cycle, before the votes. You never propose design "
             "concepts and you never vote. Keep short notes: end your message with one line "
             "'Note on <member>: ...' for each member you observed. " + SPEAKING_RULE)
         message = self._turn("Manager", cycle, instructions_override=instructions, role="manager",

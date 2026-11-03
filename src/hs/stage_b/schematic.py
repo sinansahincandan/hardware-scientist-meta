@@ -213,3 +213,20 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
         plt.close(fig)
     (out_dir / f"{stem}.json").write_text(json.dumps(geometry, indent=2), encoding="utf-8")
     return geometry
+
+
+def overall_size_mm(spec: SchematicSpec) -> float:
+    """The device's largest dimension, from the parts' size classes (the biggest part sets the scale)."""
+    return max((n.size_class_mm.max for n in spec.nodes), default=0.0)
+
+
+def scale_reference(size_mm: float) -> str:
+    """A familiar thing to show next to the device so its true size can be read; never one that would make the
+    image model enlarge or shrink it (a full person beside a fingertip-sized part made the part grow)."""
+    if size_mm <= 60:
+        return "an adult human hand and fingertip, shown at true scale (the device is about fingertip or coin size)"
+    if size_mm <= 400:
+        return "an adult human hand and forearm, shown at true scale (the device is about hand or shoebox size)"
+    if size_mm <= 2500:
+        return "one standing adult person, shown at true scale (the device is between knee and head height)"
+    return "one standing adult person, small beside it (the device is larger than a person)"
