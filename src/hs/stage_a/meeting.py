@@ -39,6 +39,14 @@ MANAGER_ACTIONS = {"raise_objection", "resolve_objection", "read_evidence", "add
                    "select_concept", "update_proposal", "close_meeting"}
 
 
+def chief_context(sections: list[tuple[str, str]]) -> str:
+    """The master-prompt sections the chief designer decides by: the problem with its constraints, the meeting
+    protocol, the criteria and the process lessons (B12). These are the optimized sections, so a Manager rewrite
+    after a rejection reaches the chief's next meeting (Fig. 1: master prompt -> council, Manager included)."""
+    by = dict(sections)
+    return "\n\n".join(f"{h}\n{by[h]}" for h in ("## 1. Problem", "## 4. Meeting protocol", "## 5. Criteria",
+                                                   "## 6. Lessons applied") if by.get(h))
+
 class Meeting:
     def __init__(self, client: Any, master: MasterPrompt, run_dir: Path, iteration: int,
                  min_cycles: int = config.MIN_CYCLES, max_cycles: int = config.MAX_CYCLES) -> None:
@@ -264,7 +272,7 @@ class Meeting:
                 "hardware is a bench test to name in the synthesis, not an open point. ")
         instructions = role + task + (
             " Keep short notes: end your message with one line 'Note on <member>: ...' for each member you "
-            "observed. " + SPEAKING_RULE)
+            "observed. " + SPEAKING_RULE) + "\n\n" + chief_context(self.master.sections)
         message = self._turn("Manager", cycle, instructions_override=instructions, role="manager",
                              allowed_actions=MANAGER_ACTIONS)
         message = self._shorten_if_long("Manager", message, instructions, "manager", cycle)

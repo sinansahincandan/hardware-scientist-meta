@@ -151,3 +151,15 @@ def test_callout_faults_do_not_block_a_faithful_pass() -> None:
         s1_faithful=True, s2_flaw=False, regions=[],
         previous_regions=[PreviousRegionStatus(part_id="callout", fault="leader on the cup", status="still_wrong")])
     assert decide(ev, 0) == "s1_pass"
+
+
+def test_chief_sees_problem_constraints_protocol_and_criteria() -> None:
+    """The chief's turn once carried no problem text: it decided without the 60 kg / box limits."""
+    from hs.stage_a.meeting import chief_context
+
+    sections = [("## 1. Problem", '{"constraints": ["at most 60 kg"]}'), ("## 2. Roles", "### A\nx"),
+                ("## 4. Meeting protocol", "Cycle 1: functions"), ("## 5. Criteria", "works"),
+                ("## 6. Lessons applied", "L1")]
+    text = chief_context(sections)
+    assert "60 kg" in text and "Cycle 1: functions" in text and "works" in text and "L1" in text
+    assert "### A" not in text
