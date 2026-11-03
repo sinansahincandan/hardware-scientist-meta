@@ -324,7 +324,19 @@ def _layout(panel_a: Path, panel_b: Path | None, panel_c: Path | None, panel_d: 
     a = a.resize((width - 20, int((width - 20) * a.size[1] / max(a.size[0], 1))))
     rows: list[tuple[list[Image.Image], int]] = []
     bc = [Image.open(p).convert("RGB") for p in (panel_b, panel_c) if p is not None]
-    if bc:
+    if len(bc) == 2:  # the close-up keeps at least 40 % of the row: the chain diagram is shrunk, not the picture
+        b_im, c_im = bc
+        b_h = 560  # a readable close-up at any aspect: fixed height, width from the crop, at most 45 % of the row
+        b_w = min(int(b_im.width * b_h / max(b_im.height, 1)), int((width - 32) * 0.45))
+        b_h = int(b_im.height * b_w / max(b_im.width, 1))
+        c_w = width - 32 - b_w
+        c_h = int(c_im.height * c_w / max(c_im.width, 1))
+        h = max(b_h, c_h)
+        row = Image.new("RGB", (width - 20, h), "white")
+        row.paste(b_im.resize((b_w, b_h)), (0, (h - b_h) // 2))
+        row.paste(c_im.resize((c_w, c_h)), (b_w + 12, (h - c_h) // 2))
+        rows.append(([row], h))
+    elif bc:
         rows.append(_fit_row(bc, 420, width))
     if panel_d is not None:
         rows.append(_fit_row([Image.open(panel_d).convert("RGB")], 2000, width))

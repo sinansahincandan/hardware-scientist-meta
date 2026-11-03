@@ -28,8 +28,14 @@ class Evaluator:
             f"- {c.get('url', '')} — {c.get('title', '')}" for c in citations)
         (iter_dir / "novelty.md").write_text(novelty_md, encoding="utf-8")
         # 2) verdict (structured; free-text judgment + accept + evidence requests)
+        def _read_note(e: Any) -> str:
+            ref = e.references[0] if e.references else {}
+            if e.tool != "web_search":
+                return ""
+            return " (page opened by the member)" if ref.get("read") else " (search result only; page not opened)"
+
         evidence_table = "\n".join(
-            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}" for e in board.evidence)
+            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}{_read_note(e)}" for e in board.evidence)
         if board.proposal is None:
             proposal_fact = "No proposal was formed on the whiteboard in this meeting."
         else:
@@ -78,7 +84,18 @@ class Evaluator:
             "constraint and criterion in a sentence each: met, not met, or no longer valid for this concept (say "
             "why, e.g. the council found from evidence that it does not apply). Accept when the concept works and "
             "every constraint that still holds is met, or its shortfall is acceptable in your engineering judgement "
-            "and you say so. No scores."
+            "and you say so. Four checks a concept review must not skip, each written out in your feedback: "
+            "(1) for every size or mass limit, add up the parts the board names along that direction (widths across "
+            "the axle including what sits outside the frame, lengths front to back, heights stacked; masses of all "
+            "parts) and state the sum against the limit; a limit argued only by a sketch annotation is not shown. "
+            "(2) when the board gives two different values for the same quantity (a density, a load, a size), say "
+            "which one the design used and whether the calculations that depend on it used the sourced one. "
+            "(3) trace every flow the device must carry from start to end — material or workpiece, energy, "
+            "signal — and name the part that does each step; a step no part does is a missing function, and the "
+            "concept does not work until it has one. (4) a blocking objection still open means the room did not "
+            "settle that point: say in writing whether the evidence settles it or not. A literature value that rests "
+            "on a search result whose page was never opened is weaker than one read from the page; say so where it "
+            "decides acceptance. No scores."
         )
         verdict = self.client.structured(
             "evaluator", Verdict,

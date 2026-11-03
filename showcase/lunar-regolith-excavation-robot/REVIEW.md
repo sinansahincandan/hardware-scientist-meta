@@ -59,3 +59,12 @@ NASA's review of the 2010–2019 Lunabotics robots (EXAMPLE_PROBLEMS.md, problem
 mobility by four fixed wheels 173. The council's design — a front transverse drum, a hopper raised and tipped by a rear
 mast, four fixed grouser wheels — matches the most common dumping and mobility choices; its digging tool is a
 drum-type cutter feeding a separate hopper, a less common choice than the bucket ladder that dominated the competition.
+
+## Independent review (2026-11-03, a second model given only the files; key claims re-checked by hand)
+- **Start box not met by the council's own numbers.** Frame 0.48 m wide (iter_01 transcript) plus four 150 mm wheels outside it is about 0.78 m against 0.5 m; length 0.70 m wheelbase + two wheel radii = 1.00 m before the drum and the hopper overhang. The width "proof" is an annotation on sketch_48; the two stowed sketches disagree. The Evaluator wrote "met" while noting width was "not separately dimensioned".
+- **Lift load on the wrong density.** Meeting 1 sized the hopper for 10 kg at 0.90 g/cm³; meeting 2 posted BP-1 at 1.6–1.9 g/cm³ but kept the 15 kg lift load (E41, E43). A full 11 L hopper holds about 18–21 kg, so the lift force exceeds the stated actuator rating.
+- **No soil path from drum to hopper.** The drum is at the front, the hopper on the rear mast; no conveyor or chute in any meeting, sketch or render.
+- **Picture deviations not stated.** The render draws the lift as a cylinder linkage, not the chain-driven slide; the bin is far shorter than the 1.0 m the lift exists for; the setting is a grassy field, not a simulant bed; panel C listed the stages out of signal order.
+- **Both meetings closed at the cycle cap; O2 stayed open on the accepted board.** The Manager's rewrite also wrote design-specific duties into the prompt and dropped the numeric limits from the role text.
+- **Search:** in this run (older code) no source carried a statement and no page was opened; counts on the pages were search results, not sources read.
+Changes made in HS because of this review are listed in JOURNAL.md (2026-11-03): Evaluator sums parts against limits, reconciles conflicting values, traces every flow, weighs open objections and unread sources; the Manager settles open blocking objections before the last cycle; the optimizer writes general duties and keeps limits; the critic checks mechanism kind, visible flows and context sizes; the image prompt carries the problem's setting; the Secretary orders the measurement chain by signal.

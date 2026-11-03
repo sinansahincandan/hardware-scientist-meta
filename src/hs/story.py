@@ -159,7 +159,7 @@ def loop_map(dest: Path) -> str:
         (20, 40, "Problem", "plain words + constraints", 1),
         (200, 40, "knowledge/", f"{len(k_in.get('lessons', []))} lessons in", len(k_in.get("lessons", []))),
         (380, 40, "Master prompt", f"{len(iters)} revision{'s' if len(iters) != 1 else ''}", len(iters)),
-        (560, 40, "Council meeting", f"{searches} sources searched", len(iters)),
+        (560, 40, "Council meeting", f"{searches} search results", len(iters)),
         (740, 40, "Evaluator", f"{rejects} rejected", len(iters)),
         (920, 40, "Accepted", "solution prompt", 1 if iters and _verdict(iters[-1]).get("accept") else 0),
         (560, 170, "Manager gradient", "diagnosis + rewrite", rewrites),
@@ -236,7 +236,7 @@ def build_story(slugs: list[str], out: Path = ROOT / "showcase") -> Path:
              "<span>Meta Model API only</span></div>"
              f"<div class='kpis'><div class='kpi'><b>{len(dests)}</b><span>design problems</span></div>"
              f"<div class='kpi'><b>{totals['meetings']}</b><span>council meetings</span></div>"
-             f"<div class='kpi'><b>{totals['sources']}</b><span>sources on the whiteboards</span></div>"
+             f"<div class='kpi'><b>{totals['sources']}</b><span>search results on the whiteboards</span></div>"
              f"<div class='kpi'><b>{totals['calcs']}</b><span>calculations & simulations</span></div>"
              f"<div class='kpi'><b>{totals['rounds']}</b><span>picture rounds</span></div>"
              f"<div class='kpi'><b>${totals['cost']:.2f}</b><span>Meta API cost, all problems</span></div></div>"
@@ -263,7 +263,10 @@ def build_story(slugs: list[str], out: Path = ROOT / "showcase") -> Path:
         ready = sum(1 for v in board.get("votes", {}).values() if v.get("ready"))
         p.append(f"<div class='step a'><div class='dot'>{n}</div><h3>Council meeting {it + 1}"
                  f"<small>{closure.get('cycles_used')} rounds · {len(board.get('evidence', []))} evidence items · "
-                 f"{ready} of {len(board.get('votes', {}))} members ready</small></h3>"
+                 f"{ready} of {len(board.get('votes', {}))} members ready"
+                 + (f" · {n_open} blocking objection{'s' if n_open != 1 else ''} still open" if (n_open := sum(
+                     1 for o in board.get('objections', []) if o.get('blocking') and o.get('status') != 'resolved')) else "")
+                 + "</small></h3>"
                  f"<div class='wbwrap'>{board_picture_html(board, out, it_dir, _members(board), str(prob.get('title', '')), int(closure.get('cycles_used') or 0), 4)}</div></div>")
         v = _verdict(it_dir)
         if v:

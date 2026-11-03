@@ -150,7 +150,11 @@ class Manager:
             "Write engineering content only "
             "(design knowledge, checks, member behaviour, protocol); never write pipeline rules such as retry "
             "limits, caps or gating — those live in code. Never put design answers or numbers into a role, "
-            "and never tell members to drop an objection or to treat an unchecked item as done.",
+            "and never tell members to drop an objection or to treat an unchecked item as done. Write duties that "
+            "would hold for any design of this problem (a check, a habit, a responsibility), never this design's "
+            "parts, mechanisms or values. Keep the problem's stated limits and the existing protocol rules in the "
+            "sections you rewrite unless the notes say one of them caused the failure; a rewrite adds or sharpens, "
+            "it does not quietly drop.",
             f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES (step-2 prompt gradient; consume this only):\n"
             f"{notes_json}", iter_dir / "rewrite.json")
         change_notes = [rewrite.change_note]
