@@ -242,7 +242,12 @@ class MasterPrompt:
             if canonical is None or canonical == "## 1. Problem":
                 dropped.append(section.heading)
                 continue
-            proposed[canonical] = section.new_text
+            # the optimizer often repeats the heading as the first line of new_text; join_sections writes it
+            # again, so it doubled in every revision (run 105035 rev_001)
+            body = section.new_text.strip()
+            while body.startswith("#") and self.resolve_heading(body.splitlines()[0].strip()) == canonical:
+                body = "\n".join(body.splitlines()[1:]).strip()
+            proposed[canonical] = body
         return proposed, dropped
 
     def commit(self, new_texts: dict[str, str], change_note: str, notes: list[str] | None = None) -> dict[str, Any]:

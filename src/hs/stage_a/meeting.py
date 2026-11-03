@@ -256,6 +256,16 @@ class Meeting:
                 "members; name the members who still owe one; name the two weakest functions, for which members "
                 "should bring a distant analogy with a written mapping in cycle 2. Point out a critical quantity "
                 "nobody computed. " + every_cycle)
+        elif self.board.proposal is not None and not unselected:
+            task = (
+                f"END OF CYCLE {cycle} of {self.max_cycles}: your selections and proposal v{self.board.proposal.version} "
+                "are on the board. Read this cycle's evidence, objections and readiness opinions. Change a selection "
+                "(select_concept with a rationale) or the proposal (update_proposal) only where the evidence or an "
+                "opinion requires it, and say what changed and why: a new proposal version clears every member's "
+                "opinion, so an unchanged rewrite only delays the decision. " + every_cycle
+                + "When the proposal is settled — no blocking objection open, every member's opinion on the current "
+                "version given and answered — close the meeting with close_meeting(synthesis); a test that needs built "
+                "hardware is a bench test to name in the synthesis, not an open point. ")
         else:
             task = (
                 f"END OF CYCLE {cycle} of {self.max_cycles}: select and integrate now. "
@@ -264,9 +274,13 @@ class Meeting:
                 "that compares the chosen concept with each alternative for that function (better / same / worse on "
                 "the criteria, with evidence ids); a function that needs no separate means gets an empty concept_id "
                 "and the reason. Before you compose, check every interface between the selected concepts: what one "
-                "hands to the next (material, energy, signal) must match, and a hand-over no part does is a missing "
-                "function — add it. Then call update_proposal(text, key_claims) from your selections, each claim "
-                "with its evidence ids. " + every_cycle
+                "hands to the next (material, energy, signal) must match, and the two parts must meet where the layout "
+                "puts them (a part at one end of the device cannot feed a part at the other end without a part that "
+                "carries the flow between them); a hand-over no part does is a missing function — add it, and a part the "
+                "text places in two different places is a contradiction to settle. Then call update_proposal(text, key_claims) from your selections, each claim "
+                "with its evidence ids; among the claims, the sum of the parts' masses against every mass limit and "
+                "the stacked sizes against every size limit, each with its calc evidence id (compute it with calc, "
+                "or name the member who owes each missing part mass or size). " + every_cycle
                 + "When the proposal is settled — no blocking objection open, every member's opinion on the current "
                 "version given and answered — close the meeting with close_meeting(synthesis); a test that needs built "
                 "hardware is a bench test to name in the synthesis, not an open point. ")

@@ -163,3 +163,14 @@ def test_chief_sees_problem_constraints_protocol_and_criteria() -> None:
     text = chief_context(sections)
     assert "60 kg" in text and "Cycle 1: functions" in text and "works" in text and "L1" in text
     assert "### A" not in text
+
+
+def test_rewrite_does_not_double_the_heading(tmp_path) -> None:
+    from hs.master_prompt import MasterPrompt
+    from hs.schemas import MasterPromptRewrite
+
+    mp = MasterPrompt(tmp_path, "t", [("## 1. Problem", "p"), ("## 4. Meeting protocol", "Cycle 1: x")])
+    rw = MasterPromptRewrite.model_construct(sections=[type("S", (), {
+        "heading": "## 4. Meeting protocol", "new_text": "## 4. Meeting protocol\nCycle 1: y"})()])
+    proposed, dropped = mp.propose(rw)
+    assert proposed == {"## 4. Meeting protocol": "Cycle 1: y"} and not dropped
