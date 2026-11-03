@@ -1,0 +1,14 @@
+{
+  "id": "E35",
+  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+  "tool": "calc",
+  "purpose": "base capacitance pF for 2.5mm taxel",
+  "code_or_query": "8.85e-12*3* (2.5e-3*2.5e-3)/(0.5e-3)*1e12",
+  "inputs": {},
+  "output_summary": "0.332",
+  "output_full": "0.332",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

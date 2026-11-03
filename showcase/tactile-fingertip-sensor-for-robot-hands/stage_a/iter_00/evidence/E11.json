@@ -1,0 +1,32 @@
+{
+  "id": "E11",
+  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "web_search",
+  "purpose": "search: fingerprint ridges tactile sensor friction slip enhancement",
+  "code_or_query": "fingerprint ridges tactile sensor friction slip enhancement",
+  "inputs": {},
+  "output_summary": "arxiv.org — [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip — 2008 — https://arxiv.org/abs/2008.06904",
+  "output_full": "arxiv.org — [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip — 2008 — https://arxiv.org/abs/2008.06904\n(opened by the member, not cited)\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "arxiv.org",
+      "title": "[2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip",
+      "year": "2008",
+      "url": "https://arxiv.org/abs/2008.06904",
+      "query": "fingerprint ridges tactile sensor friction slip enhancement",
+      "unresolved": false,
+      "passage": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

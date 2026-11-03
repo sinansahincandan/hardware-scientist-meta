@@ -1,0 +1,60 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "skin": [
+      "expected to touch pillars, but they are apart in the picture"
+    ],
+    "pillars": [
+      "expected 8 visible, found 1",
+      "expected a vertical long axis, measured horizontal",
+      "size against pcb: expected about 0.12 times, measured 0.72 times",
+      "expected to touch pcb, but they are apart in the picture",
+      "expected to touch skin, but they are apart in the picture"
+    ],
+    "pcb": [
+      "expected to touch pillars, but they are apart in the picture",
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "core": [
+      "expected to touch pcb, but they are apart in the picture",
+      "expected to touch readout, but they are apart in the picture"
+    ],
+    "readout": [
+      "size against pcb: expected about 0.8 times, measured 0.29 times",
+      "expected to touch core, but they are apart in the picture",
+      "expected to touch tail, but they are apart in the picture"
+    ],
+    "tail": [
+      "expected to touch readout, but they are apart in the picture",
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "screws": [
+      "expected 2 visible, found 1",
+      "expected a vertical long axis, measured horizontal",
+      "size against core: expected about 0.15 times, measured 0.79 times"
+    ]
+  },
+  "critique_part_ids": [
+    "callout",
+    "film",
+    "pcb",
+    "pillars",
+    "skin"
+  ],
+  "sam_parts_used_by_critique": [
+    "pcb",
+    "pillars",
+    "skin"
+  ],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": [],
+  "outcome_next_round": {
+    "callout": "still_wrong",
+    "pillars": "still_wrong",
+    "pcb": "still_wrong",
+    "skin": "still_wrong",
+    "film": "still_wrong"
+  }
+}

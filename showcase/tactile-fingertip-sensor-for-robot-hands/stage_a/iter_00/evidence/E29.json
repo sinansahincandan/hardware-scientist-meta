@@ -1,0 +1,32 @@
+{
+  "id": "E29",
+  "author": "Sam — Robot Hand Integration and Manipulation",
+  "tool": "web_search",
+  "purpose": "search: robot grasp slip drop prevention grip force control fragile objects",
+  "code_or_query": "robot grasp slip drop prevention grip force control fragile objects",
+  "inputs": {},
+  "output_summary": "spacedaily.com — Human taught tactile control lets robots grasp diverse objects — https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html",
+  "output_full": "spacedaily.com — Human taught tactile control lets robots grasp diverse objects — https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html\n(found by the search; not opened or cited)\nSam — Robot Hand Integration and Manipulation said about it: The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "spacedaily.com",
+      "title": "Human taught tactile control lets robots grasp diverse objects",
+      "year": "",
+      "url": "https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html",
+      "query": "robot grasp slip drop prevention grip force control fragile objects",
+      "unresolved": false,
+      "passage": "The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Sam — Robot Hand Integration and Manipulation",
+          "text": "The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

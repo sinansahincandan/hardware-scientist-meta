@@ -1,0 +1,36 @@
+{
+  "id": "E25",
+  "author": "Sam — Robot Hand Integration and Manipulation",
+  "tool": "web_search",
+  "purpose": "search: robot hand fingertip dimensions mount Robotiq Allegro grip force",
+  "code_or_query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+  "inputs": {},
+  "output_summary": "cdn.elmark.com.pl — Hand-E Instruction Manual — https://cdn.elmark.com.pl/35994",
+  "output_full": "cdn.elmark.com.pl — Hand-E Instruction Manual — https://cdn.elmark.com.pl/35994\n(opened by the member, not cited)\nSam — Robot Hand Integration and Manipulation said about it: The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32).\nSam — Robot Hand Integration and Manipulation said about it: Nominal grip is 30 N at 100 kPa over 300 mm squared, survival proof is 139 N at 463 kPa from the Hand-E Instruction Manual (E25) and the mount load versus grip check (E32), and normal work is 14.8 N for a 1 kg object at 5.00 m per s squared, which checks as a milk bottle against hanging a 14.2 kg bag for survival.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "cdn.elmark.com.pl",
+      "title": "Hand-E Instruction Manual",
+      "year": "",
+      "url": "https://cdn.elmark.com.pl/35994",
+      "query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+      "unresolved": false,
+      "passage": "The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Sam — Robot Hand Integration and Manipulation",
+          "text": "The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32)."
+        },
+        {
+          "by": "Sam — Robot Hand Integration and Manipulation",
+          "text": "Nominal grip is 30 N at 100 kPa over 300 mm squared, survival proof is 139 N at 463 kPa from the Hand-E Instruction Manual (E25) and the mount load versus grip check (E32), and normal work is 14.8 N for a 1 kg object at 5.00 m per s squared, which checks as a milk bottle against hanging a 14.2 kg bag for survival."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

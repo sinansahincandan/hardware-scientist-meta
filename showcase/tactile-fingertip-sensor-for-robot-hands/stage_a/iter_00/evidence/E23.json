@@ -1,0 +1,14 @@
+{
+  "id": "E23",
+  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+  "tool": "simulate",
+  "purpose": "data rate and Nyquist for 48 taxels plus vibration channel",
+  "code_or_query": "taxels=48; f_static=25; bits=16; rate_static=taxels*f_static*bits; f_vib=2000; bits_vib=12; rate_vib=f_vib*bits_vib; print(f\"static {rate_static} bps, vib {rate_vib} bps, total {(rate_static+rate_vib)/1000} kbps\"); print(f\"Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x\")",
+  "inputs": {},
+  "output_summary": "static 19200 bps, vib 24000 bps, total 43.2 kbps; Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
+  "output_full": "static 19200 bps, vib 24000 bps, total 43.2 kbps\nNyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E1",
+  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "tool": "web_search",
+  "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
+  "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+  "inputs": {},
+  "output_summary": "en.wikipedia.org — Two-point discrimination — https://en.wikipedia.org/wiki/Two-point_discrimination",
+  "output_full": "en.wikipedia.org — Two-point discrimination — https://en.wikipedia.org/wiki/Two-point_discrimination\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "en.wikipedia.org",
+      "title": "Two-point discrimination",
+      "year": "",
+      "url": "https://en.wikipedia.org/wiki/Two-point_discrimination",
+      "query": "human fingertip tactile spatial resolution two-point discrimination",
+      "unresolved": false,
+      "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

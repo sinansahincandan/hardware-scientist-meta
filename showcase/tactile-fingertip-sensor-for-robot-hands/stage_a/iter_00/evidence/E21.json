@@ -1,0 +1,26 @@
+{
+  "id": "E21",
+  "author": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+  "code_or_query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+  "inputs": {},
+  "output_summary": "scales.arabpsychology.com — VIBRATION RECEPTOR Definition & Meaning — https://scales.arabpsychology.com/trm/vibration-receptor/",
+  "output_full": "scales.arabpsychology.com — VIBRATION RECEPTOR Definition & Meaning — https://scales.arabpsychology.com/trm/vibration-receptor/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "scales.arabpsychology.com",
+      "title": "VIBRATION RECEPTOR Definition & Meaning",
+      "year": "",
+      "url": "https://scales.arabpsychology.com/trm/vibration-receptor/",
+      "query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

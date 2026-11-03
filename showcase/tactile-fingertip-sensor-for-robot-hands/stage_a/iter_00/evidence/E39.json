@@ -1,0 +1,19 @@
+{
+  "id": "E39",
+  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "calc",
+  "purpose": "effective pillar modulus from area fraction",
+  "code_or_query": "Q_(1,'MPa')*0.02",
+  "inputs": {
+    "arg0": {
+      "value": "1",
+      "unit": "MPa"
+    }
+  },
+  "output_summary": "0.02 MPa",
+  "output_full": "0.02 MPa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

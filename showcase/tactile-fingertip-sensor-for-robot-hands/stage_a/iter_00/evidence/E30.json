@@ -1,0 +1,26 @@
+{
+  "id": "E30",
+  "author": "Sam — Robot Hand Integration and Manipulation",
+  "tool": "web_search",
+  "purpose": "search: robot grasp slip drop prevention grip force control fragile objects",
+  "code_or_query": "robot grasp slip drop prevention grip force control fragile objects",
+  "inputs": {},
+  "output_summary": "spacemart.com — Human taught tactile control lets robots grasp diverse objects — https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
+  "output_full": "spacemart.com — Human taught tactile control lets robots grasp diverse objects — https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "spacemart.com",
+      "title": "Human taught tactile control lets robots grasp diverse objects",
+      "year": "",
+      "url": "https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
+      "query": "robot grasp slip drop prevention grip force control fragile objects",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

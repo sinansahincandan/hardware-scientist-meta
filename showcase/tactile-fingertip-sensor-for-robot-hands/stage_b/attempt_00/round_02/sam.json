@@ -1,0 +1,353 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "skin": {
+      "phrase": "grey ridged skin",
+      "tried": [
+        "grey ridged skin"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          403.125,
+          372.9428989751098,
+          1323.75,
+          590.3367496339678
+        ]
+      ],
+      "confidence": [
+        0.62
+      ],
+      "mask": {
+        "file": "sam_masks/skin.png",
+        "area": 119031.0,
+        "cx": 851.6997176660393,
+        "cy": 490.0166711481581,
+        "angle": 2.7,
+        "elongation": 5.76
+      }
+    },
+    "film": {
+      "phrase": "vibration sensing film (box prompt)",
+      "tried": [
+        "clear plastic film",
+        "translucent thin sheet"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          406.875,
+          524.7437774524158,
+          1320.0,
+          633.4407027818448
+        ]
+      ],
+      "confidence": [
+        0.9
+      ],
+      "rejected_by_judge": [
+        "rear flexible tail"
+      ],
+      "mask": {
+        "file": "sam_masks/film.png",
+        "area": 42316.0,
+        "cx": 855.1748887415964,
+        "cy": 587.3994886847836,
+        "angle": 3.1,
+        "elongation": 12.54
+      }
+    },
+    "pillars": {
+      "phrase": "silicone pillar dielectric x48 (box prompt)",
+      "tried": [
+        "clear plastic pillar",
+        "translucent cylindrical pillar",
+        "rubber pillars",
+        "pillars"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          414.375,
+          612.8257686676428,
+          1314.375,
+          796.4860907759883
+        ]
+      ],
+      "confidence": [
+        0.59
+      ],
+      "mask": {
+        "file": "sam_masks/pillars.png",
+        "area": 69452.0,
+        "cx": 772.81589525669,
+        "cy": 703.95153324911,
+        "angle": 1.2,
+        "elongation": 5.2
+      }
+    },
+    "pcb": {
+      "phrase": "green circuit board",
+      "tried": [
+        "green circuit board"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          412.5,
+          727.1449487554905,
+          1318.125,
+          875.1976573938507
+        ]
+      ],
+      "confidence": [
+        0.89
+      ],
+      "rejected_by_judge": [
+        "multiplexed readout electronics (readout circuit board)"
+      ],
+      "mask": {
+        "file": "sam_masks/pcb.png",
+        "area": 55115.0,
+        "cx": 809.461958500182,
+        "cy": 805.4654532216964,
+        "angle": 4.1,
+        "elongation": 11.22
+      }
+    },
+    "core": {
+      "phrase": "grey plastic block",
+      "tried": [
+        "grey plastic block"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          466.875,
+          935.1683748169839,
+          886.875,
+          1085.095168374817
+        ],
+        [
+          892.5,
+          897.6866764275256,
+          1258.125,
+          1043.865300146413
+        ],
+        [
+          468.75,
+          1094.4655929721816,
+          888.75,
+          1229.3997071742315
+        ]
+      ],
+      "confidence": [
+        0.83,
+        0.82,
+        0.73
+      ],
+      "rejected_by_judge": [
+        "outer touch skin (ridged)",
+        "black mounting base below the rigid mounting core"
+      ],
+      "mask": {
+        "file": "sam_masks/core.png",
+        "area": 122886.0,
+        "cx": 809.3759599114929,
+        "cy": 1044.9423402316804,
+        "angle": 14.0,
+        "elongation": 3.17
+      }
+    },
+    "readout": {
+      "phrase": "black computer chip",
+      "tried": [
+        "black computer chip"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          973.125,
+          824.597364568082,
+          1081.875,
+          893.9385065885798
+        ],
+        [
+          993.75,
+          745.8857979502196,
+          1085.625,
+          802.108345534407
+        ],
+        [
+          1130.625,
+          830.2196193265007,
+          1235.625,
+          882.6939970717424
+        ],
+        [
+          1119.375,
+          736.515373352855,
+          1220.625,
+          790.8638360175696
+        ],
+        [
+          1102.5,
+          807.7306002928258,
+          1200.0,
+          848.9604685212299
+        ]
+      ],
+      "confidence": [
+        0.62,
+        0.73,
+        0.77,
+        0.75,
+        0.69
+      ],
+      "rejected_by_judge": [
+        "rear flexible tail"
+      ],
+      "mask": {
+        "file": "sam_masks/readout.png",
+        "area": 19572.0,
+        "cx": 1108.7241520228852,
+        "cy": 817.9378831221904,
+        "angle": 2.8,
+        "elongation": 1.67
+      }
+    },
+    "tail": {
+      "phrase": "orange flat cable",
+      "tried": [
+        "orange flat cable"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1331.25,
+          691.5373352855052,
+          1858.125,
+          938.9165446559298
+        ]
+      ],
+      "confidence": [
+        0.9
+      ],
+      "mask": {
+        "file": "sam_masks/tail.png",
+        "area": 30412.0,
+        "cx": 1592.6451104100947,
+        "cy": 800.9960567823343,
+        "angle": 166.3,
+        "elongation": 2.65
+      }
+    },
+    "screws": {
+      "phrase": "metal screw",
+      "tried": [
+        "metal screw"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1093.125,
+          1019.502196193265,
+          1170.0,
+          1098.2137628111275
+        ],
+        [
+          566.25,
+          1075.7247437774524,
+          646.875,
+          1156.3103953147877
+        ]
+      ],
+      "confidence": [
+        0.74,
+        0.73
+      ],
+      "mask": {
+        "file": "sam_masks/screws.png",
+        "area": 9069.0,
+        "cx": 855.1864257382107,
+        "cy": 1090.0326134861173,
+        "angle": 6.2,
+        "elongation": 13.43
+      }
+    }
+  },
+  "contacts": [
+    [
+      "skin",
+      "film"
+    ],
+    [
+      "film",
+      "pillars"
+    ],
+    [
+      "pillars",
+      "pcb"
+    ],
+    [
+      "pillars",
+      "readout"
+    ],
+    [
+      "pcb",
+      "readout"
+    ],
+    [
+      "core",
+      "screws"
+    ]
+  ],
+  "differences": {
+    "skin": [
+      "size against core: expected about 1 times, measured 2.2 times",
+      "expected to touch pillars, but they are apart in the picture"
+    ],
+    "pillars": [
+      "expected 8 visible, found 1",
+      "expected a vertical long axis, measured horizontal",
+      "size against pcb: expected about 0.12 times, measured 0.99 times",
+      "expected to touch skin, but they are apart in the picture"
+    ],
+    "pcb": [
+      "size against core: expected about 1 times, measured 2.2 times",
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "core": [
+      "expected 1 visible, found 3",
+      "size against skin: expected about 1 times, measured 0.46 times",
+      "expected to touch pcb, but they are apart in the picture",
+      "expected to touch readout, but they are apart in the picture"
+    ],
+    "readout": [
+      "expected 1 visible, found 5",
+      "size against pcb: expected about 0.8 times, measured 0.12 times",
+      "expected to touch core, but they are apart in the picture",
+      "expected to touch tail, but they are apart in the picture"
+    ],
+    "tail": [
+      "size against readout: expected about 1 times, measured 4.8 times",
+      "expected to touch readout, but they are apart in the picture",
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "screws": [
+      "expected a vertical long axis, measured horizontal"
+    ]
+  },
+  "rechecks": [
+    "skin: last round expected to touch pillars, but they are apart in the picture -> now size against core: expected about 1 times, measured 2.2 times; expected to touch pillars, but they are apart in the picture",
+    "pillars: last round expected 8 visible, found 1; expected a vertical long axis, measured horizontal; size against pcb: expected about 0.12 times, measured 0.72 times; expected to touch pcb, but they are apart in the picture; expected to touch skin, but they are apart in the picture -> now expected 8 visible, found 1; expected a vertical long axis, measured horizontal; size against pcb: expected about 0.12 times, measured 0.99 times; expected to touch skin, but they are apart in the picture",
+    "pcb: last round expected to touch pillars, but they are apart in the picture; expected to touch core, but they are apart in the picture -> now size against core: expected about 1 times, measured 2.2 times; expected to touch core, but they are apart in the picture",
+    "core: last round expected to touch pcb, but they are apart in the picture; expected to touch readout, but they are apart in the picture -> now expected 1 visible, found 3; size against skin: expected about 1 times, measured 0.46 times; expected to touch pcb, but they are apart in the picture; expected to touch readout, but they are apart in the picture",
+    "readout: last round size against pcb: expected about 0.8 times, measured 0.29 times; expected to touch core, but they are apart in the picture; expected to touch tail, but they are apart in the picture -> now expected 1 visible, found 5; size against pcb: expected about 0.8 times, measured 0.12 times; expected to touch core, but they are apart in the picture; expected to touch tail, but they are apart in the picture",
+    "tail: last round expected to touch readout, but they are apart in the picture; expected to touch core, but they are apart in the picture -> now size against readout: expected about 1 times, measured 4.8 times; expected to touch readout, but they are apart in the picture; expected to touch core, but they are apart in the picture",
+    "screws: last round expected 2 visible, found 1; expected a vertical long axis, measured horizontal; size against core: expected about 0.15 times, measured 0.79 times -> now expected a vertical long axis, measured horizontal"
+  ]
+}

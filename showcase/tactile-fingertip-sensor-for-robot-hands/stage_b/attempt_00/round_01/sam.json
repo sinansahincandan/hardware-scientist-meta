@@ -1,0 +1,298 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "skin": {
+      "phrase": "grey ridged cap",
+      "tried": [
+        "grey ridged cap"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          498.75,
+          356.0761346998536,
+          1095.0,
+          541.6105417276721
+        ]
+      ],
+      "confidence": [
+        0.94
+      ],
+      "mask": {
+        "file": "sam_masks/skin.png",
+        "area": 68583.0,
+        "cx": 792.0371495327103,
+        "cy": 461.4251168224299,
+        "angle": 179.1,
+        "elongation": 4.22
+      }
+    },
+    "film": {
+      "phrase": "clear plastic sheet",
+      "tried": [
+        "clear plastic sheet",
+        "translucent thin sheet",
+        "plastic film",
+        "film"
+      ],
+      "source": "none",
+      "boxes": [],
+      "confidence": [],
+      "rejected_by_judge": [
+        "silicone pillar dielectric x48"
+      ]
+    },
+    "pillars": {
+      "phrase": "translucent silicone pillar",
+      "tried": [
+        "translucent silicone pillar",
+        "clear plastic pin",
+        "rubber pillars",
+        "pillars"
+      ],
+      "source": "none",
+      "boxes": [],
+      "confidence": [],
+      "rejected_by_judge": [
+        "taxel electrode circuit board"
+      ]
+    },
+    "pcb": {
+      "phrase": "green circuit board",
+      "tried": [
+        "green circuit board"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          300.0,
+          730.8931185944364,
+          1284.375,
+          803.9824304538799
+        ]
+      ],
+      "confidence": [
+        0.56
+      ],
+      "rejected_by_judge": [
+        "multiplexed readout electronics"
+      ],
+      "mask": {
+        "file": "sam_masks/pcb.png",
+        "area": 26009.0,
+        "cx": 801.0439782439782,
+        "cy": 781.942501942502,
+        "angle": 0.2,
+        "elongation": 21.95
+      }
+    },
+    "core": {
+      "phrase": "grey plastic block",
+      "tried": [
+        "grey plastic block"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          354.375,
+          903.3089311859444,
+          1222.5,
+          1040.117130307467
+        ],
+        [
+          498.75,
+          356.0761346998536,
+          1095.0,
+          543.484626647145
+        ]
+      ],
+      "confidence": [
+        0.81,
+        0.78
+      ],
+      "rejected_by_judge": [
+        "holder dark mounting base",
+        "grey upper support housing under touch skin",
+        "grey upper support housing under touch skin"
+      ],
+      "mask": {
+        "file": "sam_masks/core.png",
+        "area": 181585.0,
+        "cx": 790.0915767120864,
+        "cy": 779.0521589099275,
+        "angle": 89.3,
+        "elongation": 1.13
+      }
+    },
+    "readout": {
+      "phrase": "black computer chip",
+      "tried": [
+        "black computer chip"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1089.375,
+          828.3455344070278,
+          1192.5,
+          871.4494875549049
+        ],
+        [
+          1076.25,
+          807.7306002928258,
+          1171.875,
+          843.3382137628112
+        ],
+        [
+          575.625,
+          830.2196193265007,
+          686.25,
+          873.3235724743778
+        ],
+        [
+          935.625,
+          830.2196193265007,
+          1020.0,
+          871.4494875549049
+        ],
+        [
+          931.875,
+          807.7306002928258,
+          1010.625,
+          835.8418740849195
+        ]
+      ],
+      "confidence": [
+        0.6,
+        0.55,
+        0.66,
+        0.62,
+        0.57
+      ],
+      "mask": {
+        "file": "sam_masks/readout.png",
+        "area": 14292.0,
+        "cx": 939.5532324621734,
+        "cy": 841.7964236588721,
+        "angle": 1.5,
+        "elongation": 12.79
+      }
+    },
+    "tail": {
+      "phrase": "orange flat cable",
+      "tried": [
+        "orange flat cable"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1316.25,
+          732.7672035139093,
+          1846.875,
+          1068.2284040995607
+        ]
+      ],
+      "confidence": [
+        0.85
+      ],
+      "mask": {
+        "file": "sam_masks/tail.png",
+        "area": 40712.0,
+        "cx": 1615.8103380503144,
+        "cy": 872.9602987421383,
+        "angle": 149.9,
+        "elongation": 2.47
+      }
+    },
+    "screws": {
+      "phrase": "silver metal screw",
+      "tried": [
+        "silver metal screw"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1053.75,
+          1038.2430453879942,
+          1136.25,
+          1148.814055636896
+        ],
+        [
+          446.25,
+          1038.2430453879942,
+          530.625,
+          1148.814055636896
+        ]
+      ],
+      "confidence": [
+        0.71,
+        0.71
+      ],
+      "mask": {
+        "file": "sam_masks/screws.png",
+        "area": 12240.0,
+        "cx": 788.6638491547465,
+        "cy": 1098.8927178153447,
+        "angle": 0.0,
+        "elongation": 9.92
+      }
+    }
+  },
+  "contacts": [
+    [
+      "skin",
+      "core"
+    ],
+    [
+      "pcb",
+      "readout"
+    ],
+    [
+      "core",
+      "screws"
+    ]
+  ],
+  "differences": {
+    "film": [
+      "not found by the segmenter as 'plastic film'"
+    ],
+    "pillars": [
+      "not found by the segmenter as 'rubber pillars'"
+    ],
+    "pcb": [
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "core": [
+      "expected 1 visible, found 2",
+      "expected to touch pcb, but they are apart in the picture",
+      "expected to touch readout, but they are apart in the picture"
+    ],
+    "readout": [
+      "expected 1 visible, found 5",
+      "size against pcb: expected about 0.8 times, measured 0.11 times",
+      "expected to touch core, but they are apart in the picture",
+      "expected to touch tail, but they are apart in the picture"
+    ],
+    "tail": [
+      "expected a horizontal long axis, measured tilted about 150 degrees",
+      "size against readout: expected about 1 times, measured 4.8 times",
+      "expected to touch readout, but they are apart in the picture",
+      "expected to touch core, but they are apart in the picture"
+    ],
+    "screws": [
+      "expected a vertical long axis, measured horizontal"
+    ]
+  },
+  "rechecks": [
+    "skin: last round expected to touch pillars, but they are apart in the picture -> now matches the expectation",
+    "pillars: last round expected 8 visible, found 1; expected a vertical long axis, measured horizontal; size against pcb: expected about 0.12 times, measured 0.72 times; expected to touch pcb, but they are apart in the picture; expected to touch skin, but they are apart in the picture -> now not found by the segmenter as 'rubber pillars'",
+    "pcb: last round expected to touch pillars, but they are apart in the picture; expected to touch core, but they are apart in the picture -> now expected to touch core, but they are apart in the picture",
+    "core: last round expected to touch pcb, but they are apart in the picture; expected to touch readout, but they are apart in the picture -> now expected 1 visible, found 2; expected to touch pcb, but they are apart in the picture; expected to touch readout, but they are apart in the picture",
+    "readout: last round size against pcb: expected about 0.8 times, measured 0.29 times; expected to touch core, but they are apart in the picture; expected to touch tail, but they are apart in the picture -> now expected 1 visible, found 5; size against pcb: expected about 0.8 times, measured 0.11 times; expected to touch core, but they are apart in the picture; expected to touch tail, but they are apart in the picture",
+    "tail: last round expected to touch readout, but they are apart in the picture; expected to touch core, but they are apart in the picture -> now expected a horizontal long axis, measured tilted about 150 degrees; size against readout: expected about 1 times, measured 4.8 times; expected to touch readout, but they are apart in the picture; expected to touch core, but they are apart in the picture",
+    "screws: last round expected 2 visible, found 1; expected a vertical long axis, measured horizontal; size against core: expected about 0.15 times, measured 0.79 times -> now expected a vertical long axis, measured horizontal"
+  ]
+}

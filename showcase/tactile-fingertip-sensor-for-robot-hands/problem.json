@@ -1,0 +1,10 @@
+{
+  "title": "Tactile fingertip sensor for robot hands",
+  "statement": "Robot hands drop and crush objects because they cannot feel what they hold. Design a fingertip for a robot hand that feels touch the way a human fingertip does: where it is touched, how hard, and when an object starts to slip.",
+  "constraints": [
+    "Shaped and sized like a human fingertip, mountable on a robot finger",
+    "Detects contact forces as small as about 1 mN"
+  ],
+  "criteria": [],
+  "attachments": []
+}

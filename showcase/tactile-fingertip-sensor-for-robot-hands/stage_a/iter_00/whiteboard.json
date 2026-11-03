@@ -1,0 +1,1222 @@
+{
+  "inspirations": [],
+  "functions": [
+    {
+      "id": "F1",
+      "text": "Localize contact on fingertip surface",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics"
+    },
+    {
+      "id": "F2",
+      "text": "Measure normal and shear contact force from 1 mN to grip force",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics"
+    },
+    {
+      "id": "F3",
+      "text": "Detect slip onset and vibration/texture",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics"
+    },
+    {
+      "id": "F4",
+      "text": "Mount fingertip to robot finger and route wiring while surviving grip loads",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "C1",
+      "function_id": "F2",
+      "text": "Capacitive normal+shear taxel array: comb electrodes on PCB with silicone pillar dielectric, taxel pitch ~2.5 mm; static force channel. Abbreviation: PCB (printed circuit board).",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "status": "open"
+    },
+    {
+      "id": "C2",
+      "function_id": "F3",
+      "text": "Piezoelectric polymer film (PVDF, polyvinylidene fluoride) overlay for high-frequency vibration/slip transients; complements static channel like Pacinian corpuscle. Abbreviation: PVDF (polyvinylidene fluoride).",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "status": "open"
+    },
+    {
+      "id": "C3",
+      "function_id": "F1",
+      "text": "assumed_constraint: fingertip contact area ~15 mm x 20 mm with 2.5 mm taxel pitch gives ~48 taxels, matching human 2-8 mm two-point threshold; grip force range to ~30 N from hand datasheets.",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "status": "open"
+    },
+    {
+      "id": "C4",
+      "function_id": "F2",
+      "text": "C4 compliant skin stack: 1.5-3 mm silicone outer skin Shore A 30 over molded pillar dielectric on rigid core; assumed_constraint fingertip hemisphere 15-20 mm diameter mountable cap. Abbreviation: LSR (liquid silicone rubber).",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "status": "open"
+    },
+    {
+      "id": "C5",
+      "function_id": "F2",
+      "text": "C5 multiplexed dual-rate readout: 48 capacitive taxels in 6x8 row-column mux to one CDC sampling static force at 25 Hz, plus separate PVDF vibration channel through charge amp to fast ADC at 2 kHz, fused in fingertip MCU to single 4-wire bus. Abbreviations: CDC (capacitance-to-digital converter), MCU (microcontroller unit), ADC (analog-to-digital converter), I2C (inter-integrated circuit bus).",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "status": "open"
+    },
+    {
+      "id": "C6",
+      "function_id": "F4",
+      "text": "stiff quick-change fingertip cartridge: rigid core on fingertip holder with 2x M3 screws, rear-exit 4-wire flex tail, skin as replaceable cap. Abbreviations: M3 (3 mm metric screw), NBR (nitrile rubber).",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
+      "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+      "inputs": {},
+      "output_summary": "en.wikipedia.org \u2014 Two-point discrimination \u2014 https://en.wikipedia.org/wiki/Two-point_discrimination",
+      "output_full": "en.wikipedia.org \u2014 Two-point discrimination \u2014 https://en.wikipedia.org/wiki/Two-point_discrimination\n(opened by the member, not cited)\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "en.wikipedia.org",
+          "title": "Two-point discrimination",
+          "year": "",
+          "url": "https://en.wikipedia.org/wiki/Two-point_discrimination",
+          "query": "human fingertip tactile spatial resolution two-point discrimination",
+          "unresolved": false,
+          "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E2",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
+      "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "inputs": {},
+      "output_summary": "humanoidsdaily.com \u2014 Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration \u2014 https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
+      "output_full": "humanoidsdaily.com \u2014 Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration \u2014 https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration\n(opened by the member, not cited)\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "humanoidsdaily.com",
+          "title": "Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration",
+          "year": "",
+          "url": "https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
+          "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+          "unresolved": false,
+          "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E3",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
+      "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "inputs": {},
+      "output_summary": "github.com \u2014 terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md \u2014 https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
+      "output_full": "github.com \u2014 terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md \u2014 https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md\n(opened by the member, not cited)\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "github.com",
+          "title": "terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md",
+          "year": "",
+          "url": "https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
+          "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+          "unresolved": false,
+          "passage": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E4",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
+      "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+      "inputs": {},
+      "output_summary": "webot.org \u2014 Two-point Discrimination - Encyclopedia Information \u2014 https://webot.org/info/en/?search=Two-point_discrimination",
+      "output_full": "webot.org \u2014 Two-point Discrimination - Encyclopedia Information \u2014 https://webot.org/info/en/?search=Two-point_discrimination\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "webot.org",
+          "title": "Two-point Discrimination - Encyclopedia Information",
+          "year": "",
+          "url": "https://webot.org/info/en/?search=Two-point_discrimination",
+          "query": "human fingertip tactile spatial resolution two-point discrimination",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E5",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: capacitive piezoresistive tactile taxel array specifications datasheet",
+      "code_or_query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+      "inputs": {},
+      "output_summary": "borowiecki.dev \u2014 Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery \u2014 https://borowiecki.dev/pdf/2610.10346",
+      "output_full": "borowiecki.dev \u2014 Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery \u2014 https://borowiecki.dev/pdf/2610.10346\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "borowiecki.dev",
+          "title": "Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery",
+          "year": "",
+          "url": "https://borowiecki.dev/pdf/2610.10346",
+          "query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E6",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "web_search",
+      "purpose": "search: capacitive piezoresistive tactile taxel array specifications datasheet",
+      "code_or_query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+      "inputs": {},
+      "output_summary": "arxiv.org \u2014 Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery \u2014 https://arxiv.org/pdf/2610.10346",
+      "output_full": "arxiv.org \u2014 Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery \u2014 https://arxiv.org/pdf/2610.10346\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "arxiv.org",
+          "title": "Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2610.10346",
+          "query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E7",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "calc",
+      "purpose": "pressure from 1 mN on 2.5mm taxel",
+      "code_or_query": "Q_(0.001,'N')/Q_(2.5*2.5,'mm^2') .to('Pa')",
+      "inputs": {
+        "arg0": {
+          "value": "0.001",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "2.5*2.5",
+          "unit": "mm^2"
+        }
+      },
+      "output_summary": "failed: pint.errors.DimensionalityError: Cannot convert from 'millimeter ** 2' ([length] ** 2) to 'pascal' ([mass] / [length] / [time] ** 2)",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-i19qu5pb/hs_user_script.py\", line 5, in <module>\n    __r = (Q_(0.001,'N')/Q_(2.5*2.5,'mm^2') .to('Pa'))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 585, in to\n    magnitude = self._convert_magnitude_not_inplace(other, *contexts, **ctx_kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 520, in _convert_magnitude_not_inplace\n    return self._REGISTRY.convert(self._magnitude, self._units, other, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1149, in convert\n    return self._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/context/registry.py\", line 418, in _convert\n    return super()._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/nonmultiplicative/registry.py\", line 263, in _convert\n    return super()._convert(value, src, dst, inplace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1184, in _convert\n    raise factor\npint.errors.DimensionalityError: Cannot convert from 'millimeter ** 2' ([length] ** 2) to 'pascal' ([mass] / [length] / [time] ** 2)",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 1
+    },
+    {
+      "id": "E8",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "simulate",
+      "purpose": "pressure from 1mN on taxel and fingertip area estimate",
+      "code_or_query": "import pint; Q=pint.UnitRegistry().Quantity\np_1mN_taxel = Q(0.001,'newton')/Q(6.25,'mm**2')\nprint('p taxel Pa:', p_1mN_taxel.to('Pa'))\n# fingertip contact area ~ 15x20 mm\nA_tip = Q(300,'mm**2')\nprint('fingertip area m2:', A_tip.to('m**2'))\n# taxel count for 2.5mm pitch over 15x20mm\nprint('taxels:', (15/2.5)*(20/2.5))\n# capacitive estimate: parallel plate C=epsA/d\nimport math\neps0=8.85e-12\nA=Q(2.5,'mm')*Q(2.5,'mm')\nd=Q(0.5,'mm')\nC=(eps0*A.to('m**2').magnitude/d.to('m').magnitude)\nprint('C base pF:', C*1e12)",
+      "inputs": {},
+      "output_summary": "fingertip area m2: 0.0003 meter ** 2; taxels: 48.0; C base pF: 0.111",
+      "output_full": "p taxel Pa: 160.0 pascal\nfingertip area m2: 0.0003 meter ** 2\ntaxels: 48.0\nC base pF: 0.110625",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E9",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "sketch",
+      "purpose": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(5,5.5,'outer skin + PVDF film (vibration)',ha='center')\nax.add_patch(plt.Rectangle((1,4.2),8,0.6,fill=False,lw=2))\nax.text(5,3.5,'silicone pillars (dielectric)',ha='center')\nfor x in [2,4,6,8]:\n  ax.add_patch(plt.Rectangle((x-0.3,2.8),0.6,0.8,fill=False,lw=2))\nax.text(5,2.2,'PCB with comb electrodes (taxels 2.5mm pitch)',ha='center')\nax.add_patch(plt.Rectangle((1,1.7),8,0.4,fill=False,lw=2))\nax.text(5,1.0,'rigid fingertip core (fixed)',ha='center')\nax.annotate('contact force',xy=(5,4.8),xytext=(8.5,5.2),arrowprops=dict(arrowstyle='->',lw=2))\nplt.tight_layout(); plt.savefig('sketch.png')",
+      "inputs": {},
+      "output_summary": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
+      "output_full": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
+      "sketch_path": "evidence/sketch_9.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E10",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+      "code_or_query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+      "inputs": {},
+      "output_summary": "siliconedabojin.com \u2014 A Complete Guide to Silicone Product Design \u2014 https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/",
+      "output_full": "siliconedabojin.com \u2014 A Complete Guide to Silicone Product Design \u2014 https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/\n(opened by the member, not cited)\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm, so 1.5 mm skin from your hemispherical cap sketch (E17) keeps 2.5 mm taxels distinct at thimble scale, while static force at 25 Hz plus vibration at 2 kHz from the data rate check (E23) keeps slip buzz alive.\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 to 3 mm, so 1.5 mm skin plus 1.0 mm pillars from the hemispherical cap sketch (E17) fit a 15 to 20 mm diameter cap at thimble scale in LSR, where LSR means liquid silicone rubber.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 mm to 3 mm, so 1.5 mm skin from the hemispherical cap sketch (E17) keeps 2.5 mm pitch distinct at thimble scale.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "siliconedabojin.com",
+          "title": "A Complete Guide to Silicone Product Design",
+          "year": "",
+          "url": "https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/",
+          "query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+          "unresolved": false,
+          "passage": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm, so 1.5 mm skin from your hemispherical cap sketch (E17) keeps 2.5 mm taxels distinct at thimble scale, while static force at 25 Hz plus vibration at 2 kHz from the data rate check (E23) keeps slip buzz alive."
+            },
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 to 3 mm, so 1.5 mm skin plus 1.0 mm pillars from the hemispherical cap sketch (E17) fit a 15 to 20 mm diameter cap at thimble scale in LSR, where LSR means liquid silicone rubber."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 mm to 3 mm, so 1.5 mm skin from the hemispherical cap sketch (E17) keeps 2.5 mm pitch distinct at thimble scale."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E11",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: fingerprint ridges tactile sensor friction slip enhancement",
+      "code_or_query": "fingerprint ridges tactile sensor friction slip enhancement",
+      "inputs": {},
+      "output_summary": "arxiv.org \u2014 [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip \u2014 2008 \u2014 https://arxiv.org/abs/2008.06904",
+      "output_full": "arxiv.org \u2014 [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip \u2014 2008 \u2014 https://arxiv.org/abs/2008.06904\n(opened by the member, not cited)\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "arxiv.org",
+          "title": "[2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip",
+          "year": "2008",
+          "url": "https://arxiv.org/abs/2008.06904",
+          "query": "fingerprint ridges tactile sensor friction slip enhancement",
+          "unresolved": false,
+          "passage": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E12",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: human fingertip diameter size anthropometry",
+      "code_or_query": "human fingertip diameter size anthropometry",
+      "inputs": {},
+      "output_summary": "researchgate.net \u2014 Percentile values of hand dimensions (mm) in right and left hands. \u2014 https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087",
+      "output_full": "researchgate.net \u2014 Percentile values of hand dimensions (mm) in right and left hands. \u2014 https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087\n(found by the search; not opened or cited)\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: (E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "researchgate.net",
+          "title": "Percentile values of hand dimensions (mm) in right and left hands.",
+          "year": "",
+          "url": "https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087",
+          "query": "human fingertip diameter size anthropometry",
+          "unresolved": false,
+          "passage": "(E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30.",
+          "cited": true,
+          "read": false,
+          "statements": [
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "(E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E13",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: human fingertip diameter size anthropometry",
+      "code_or_query": "human fingertip diameter size anthropometry",
+      "inputs": {},
+      "output_summary": "researchgate.net \u2014 Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087 \u2014 https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087",
+      "output_full": "researchgate.net \u2014 Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087 \u2014 https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "researchgate.net",
+          "title": "Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087",
+          "year": "",
+          "url": "https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087",
+          "query": "human fingertip diameter size anthropometry",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E14",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+      "code_or_query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+      "inputs": {},
+      "output_summary": "finres-sa.com \u2014 RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105 \u2014 https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/",
+      "output_full": "finres-sa.com \u2014 RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105 \u2014 https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "finres-sa.com",
+          "title": "RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105",
+          "year": "",
+          "url": "https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/",
+          "query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E15",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "web_search",
+      "purpose": "search: fingerprint ridges tactile sensor friction slip enhancement",
+      "code_or_query": "fingerprint ridges tactile sensor friction slip enhancement",
+      "inputs": {},
+      "output_summary": "technologynetworks.com \u2014 Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research \u2014 https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454",
+      "output_full": "technologynetworks.com \u2014 Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research \u2014 https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454\n(found by the search; not opened or cited)\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: The Getting a Grip fingerprint finding (E15) that ridges raise friction helps me, since larger stick-slip means larger PVDF (polyvinylidene fluoride) voltage.\nSam \u2014 Robot Hand Integration and Manipulation said about it: Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly slow force holds grip while fast buzz catches slip, and the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip voltage for my PVDF, where PVDF means polyvinylidene fluoride, sampled at 2 kHz from the data rate check (E23) for under 5 ms latency, with per-taxel baseline plus gain stored in the MCU, where MCU means microcontroller unit, to remove 5 to 10 percent hysteresis and drift.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds a milk bottle without nearing the 139 N survival proof.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from sensing physics means larger high-frequency strain for the PVDF, where PVDF means polyvinylidene fluoride, vibration film sampled at 2 kHz.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds without nearing survival load.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: I confirm the Getting a Grip finding (E15) that ridges raise friction, which from electronics means larger stick-slip voltage for polyvinylidene fluoride, where PVDF means polyvinylidene fluoride.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: The fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one capacitance-to-digital converter, where CDC means capacitance-to-digital converter, at 25 Hz static with vibration at 2 kHz from the data rate check (E23), like feeling slip before drop, and I confirm the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip signal.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The Getting a Grip finding (E15) that ridges increase friction means the work point holds without crush.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "technologynetworks.com",
+          "title": "Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research",
+          "year": "",
+          "url": "https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454",
+          "query": "fingerprint ridges tactile sensor friction slip enhancement",
+          "unresolved": false,
+          "passage": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+          "cited": true,
+          "read": false,
+          "statements": [
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "The Getting a Grip fingerprint finding (E15) that ridges raise friction helps me, since larger stick-slip means larger PVDF (polyvinylidene fluoride) voltage."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "Plainly slow force holds grip while fast buzz catches slip, and the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip voltage for my PVDF, where PVDF means polyvinylidene fluoride, sampled at 2 kHz from the data rate check (E23) for under 5 ms latency, with per-taxel baseline plus gain stored in the MCU, where MCU means microcontroller unit, to remove 5 to 10 percent hysteresis and drift."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds a milk bottle without nearing the 139 N survival proof."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from sensing physics means larger high-frequency strain for the PVDF, where PVDF means polyvinylidene fluoride, vibration film sampled at 2 kHz."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds without nearing survival load."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "I confirm the Getting a Grip finding (E15) that ridges raise friction, which from electronics means larger stick-slip voltage for polyvinylidene fluoride, where PVDF means polyvinylidene fluoride."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "The fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one capacitance-to-digital converter, where CDC means capacitance-to-digital converter, at 25 Hz static with vibration at 2 kHz from the data rate check (E23), like feeling slip before drop, and I confirm the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip signal."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The Getting a Grip finding (E15) that ridges increase friction means the work point holds without crush."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E16",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "calc",
+      "purpose": "pressure of 1mN on one 2.5mm taxel",
+      "code_or_query": "Q_(1,'mN')/Q_(6.25,'mm**2')",
+      "inputs": {
+        "arg0": {
+          "value": "1",
+          "unit": "mN"
+        },
+        "arg1": {
+          "value": "6.25",
+          "unit": "mm**2"
+        }
+      },
+      "output_summary": "0.16 mN/mm\u00b2",
+      "output_full": "0.16 mN/mm\u00b2",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E17",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "sketch",
+      "purpose": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(5,4))\nax.set_aspect('equal'); ax.axis('off')\n# rigid core\nimport matplotlib.patches as patches\ncore = patches.Rectangle((1,0.5), 4, 1.2, fill=True, color='lightgray', label='core')\nax.add_patch(core)\nax.text(3, 1.1, 'rigid core', ha='center', fontsize=8)\n# PCB\nax.plot([1,5],[1.7,1.7], linewidth=4, color='green')\nax.text(3,1.85,'PCB electrodes', ha='center', fontsize=8)\n# pillars\nfor x in [1.5,2.5,3.5,4.5]:\n    ax.add_patch(patches.Rectangle((x-0.15,1.9),0.3,0.8, fill=True, color='pink'))\nax.text(4.8,2.3,'pillars', fontsize=8)\n# outer skin dome\nimport numpy as np\nth=np.linspace(0,180,100)*np.pi/180\nR=2.6; cx=3; y0=2.7\nax.plot(cx+R*np.cos(th), y0+R*np.sin(th)*0.9, color='black', linewidth=2)\nax.text(3,5.2,'ridged skin 1.5-3mm', ha='center', fontsize=8)\nax.text(3,0.2,'finger mount (fixed)', ha='center', fontsize=8)\nax.arrow(3,5.8,0,-0.5, head_width=0.15, length_includes_head=True)\nax.text(3.3,5.7,'contact load', fontsize=8)\nplt.tight_layout()\nplt.savefig('sketch.png', dpi=150)",
+      "inputs": {},
+      "output_summary": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+      "output_full": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+      "sketch_path": "evidence/sketch_17.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E18",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "web_search",
+      "purpose": "search: capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "code_or_query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "inputs": {},
+      "output_summary": "ar5iv.labs.arxiv.org \u2014 A Flexible and Robust Large Scale Capacitive Tactile System for Robots \u2014 https://ar5iv.labs.arxiv.org/html/1411.6837",
+      "output_full": "ar5iv.labs.arxiv.org \u2014 A Flexible and Robust Large Scale Capacitive Tactile System for Robots \u2014 https://ar5iv.labs.arxiv.org/html/1411.6837\n(opened by the member, not cited)\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows compressible capacitive pillars scanned in rows and columns work at hand scale, which confirms molded silicone pillars can be the spring and the sensing gap together.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: The 48 taxels from the fingertip area estimate (E8) would need 49 wires direct, falling to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the fingertip signal path sketch (E24), and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning at 25 Hz works at hand scale, which confirms this multiplexing from my side.\nSam \u2014 Robot Hand Integration and Manipulation said about it: Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanned compressible pillars work at hand scale, which confirms from sensing physics that pillars can be the spring and the gap together if guarded against 10 pF stray.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: The fingertip area estimate (E8) gives 48 taxels, the fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one CDC, where CDC means capacitance-to-digital converter, at 25 Hz static, and the large-scale capacitive system (E18) confirms row-column scanning works at hand scale, which from signal processing means 14 lines replace 49 wires.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: I set aside 0.111 pF from the pressure from 1mN on taxel and fingertip area estimate (E8) and solid 1 MPa stiffness as the wrong solid-gap assumption, and 10 pF stray is rejected as common-mode by guarded row-column scanning in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The 1.5 mm skin plus 1.0 mm pillars from my hemispherical cap sketch (E17) fit in 15 to 20 mm diameter, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows such compressible pillars scanned in rows and columns work at hand scale, which from materials means pillars and skin molded together in LSR, where LSR means liquid silicone rubber, avoid a peel line.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode.\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) from Priya, which from my side means sparse pillars stay soft for sensitivity without extra wires because row-column scanning carries 48 points on few lines.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode.\nLeo \u2014 Soft Materials, Skin Mechanics and Fabrication said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning rejects stray capacitance, which from skin mechanics means sparse pillars keep 0.02 MPa softness from the effective pillar modulus (E39) while fitting 1.5 mm skin from the hemispherical cap sketch (E17) at thimble scale.\nSam \u2014 Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) finding that row-column scanning carries 48 points on 14 lines, which from integration means one flexible tail survives bending where 49 direct wires would not.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "ar5iv.labs.arxiv.org",
+          "title": "A Flexible and Robust Large Scale Capacitive Tactile System for Robots",
+          "year": "",
+          "url": "https://ar5iv.labs.arxiv.org/html/1411.6837",
+          "query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+          "unresolved": false,
+          "passage": "Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18)."
+            },
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows compressible capacitive pillars scanned in rows and columns work at hand scale, which confirms molded silicone pillars can be the spring and the sensing gap together."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "The 48 taxels from the fingertip area estimate (E8) would need 49 wires direct, falling to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the fingertip signal path sketch (E24), and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning at 25 Hz works at hand scale, which confirms this multiplexing from my side."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanned compressible pillars work at hand scale, which confirms from sensing physics that pillars can be the spring and the gap together if guarded against 10 pF stray."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "The fingertip area estimate (E8) gives 48 taxels, the fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one CDC, where CDC means capacitance-to-digital converter, at 25 Hz static, and the large-scale capacitive system (E18) confirms row-column scanning works at hand scale, which from signal processing means 14 lines replace 49 wires."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "I set aside 0.111 pF from the pressure from 1mN on taxel and fingertip area estimate (E8) and solid 1 MPa stiffness as the wrong solid-gap assumption, and 10 pF stray is rejected as common-mode by guarded row-column scanning in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18)."
+            },
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The 1.5 mm skin plus 1.0 mm pillars from my hemispherical cap sketch (E17) fit in 15 to 20 mm diameter, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows such compressible pillars scanned in rows and columns work at hand scale, which from materials means pillars and skin molded together in LSR, where LSR means liquid silicone rubber, avoid a peel line."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode."
+            },
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) from Priya, which from my side means sparse pillars stay soft for sensitivity without extra wires because row-column scanning carries 48 points on few lines."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode."
+            },
+            {
+              "by": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+              "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning rejects stray capacitance, which from skin mechanics means sparse pillars keep 0.02 MPa softness from the effective pillar modulus (E39) while fitting 1.5 mm skin from the hemispherical cap sketch (E17) at thimble scale."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) finding that row-column scanning carries 48 points on 14 lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E19",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "web_search",
+      "purpose": "search: human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "code_or_query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "inputs": {},
+      "output_summary": "iiab.me \u2014 Mechanoreceptor \u2014 2022 \u2014 https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor",
+      "output_full": "iiab.me \u2014 Mechanoreceptor \u2014 2022 \u2014 https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor\n(opened by the member, not cited)\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push.\nPriya \u2014 Embedded Electronics, Signal Processing and Slip Detection said about it: Pacinian vibration is about 200 Hz to 300 Hz from the Mechanoreceptor (E19), so the 2 kHz sampling from the data rate and Nyquist check (E23) exceeds the 1 kHz minimum for a 500 Hz slip band and gives under 5 ms latency.\nMaya \u2014 Tactile Transduction and Sensing Physics said about it: Human Pacinian vibration about 200 to 300 Hz from the Mechanoreceptor (E19) needs the 2 kHz sampling from the data rate check (E23), well above the 1 kHz minimum.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "iiab.me",
+          "title": "Mechanoreceptor",
+          "year": "2022",
+          "url": "https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor",
+          "query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+          "unresolved": false,
+          "passage": "Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push.",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push."
+            },
+            {
+              "by": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+              "text": "Pacinian vibration is about 200 Hz to 300 Hz from the Mechanoreceptor (E19), so the 2 kHz sampling from the data rate and Nyquist check (E23) exceeds the 1 kHz minimum for a 500 Hz slip band and gives under 5 ms latency."
+            },
+            {
+              "by": "Maya \u2014 Tactile Transduction and Sensing Physics",
+              "text": "Human Pacinian vibration about 200 to 300 Hz from the Mechanoreceptor (E19) needs the 2 kHz sampling from the data rate check (E23), well above the 1 kHz minimum."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E20",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "web_search",
+      "purpose": "search: capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "code_or_query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "inputs": {},
+      "output_summary": "mdpi-res.com \u2014 Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper \u2014 https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677",
+      "output_full": "mdpi-res.com \u2014 Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper \u2014 https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "mdpi-res.com",
+          "title": "Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper",
+          "year": "",
+          "url": "https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677",
+          "query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E21",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "web_search",
+      "purpose": "search: human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "code_or_query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "inputs": {},
+      "output_summary": "scales.arabpsychology.com \u2014 VIBRATION RECEPTOR Definition & Meaning \u2014 https://scales.arabpsychology.com/trm/vibration-receptor/",
+      "output_full": "scales.arabpsychology.com \u2014 VIBRATION RECEPTOR Definition & Meaning \u2014 https://scales.arabpsychology.com/trm/vibration-receptor/\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "scales.arabpsychology.com",
+          "title": "VIBRATION RECEPTOR Definition & Meaning",
+          "year": "",
+          "url": "https://scales.arabpsychology.com/trm/vibration-receptor/",
+          "query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E22",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "calc",
+      "purpose": "dummy to test calc format",
+      "code_or_query": "Q_(48,'')/(Q_(25,'Hz'))",
+      "inputs": {
+        "arg0": {
+          "value": "25",
+          "unit": "Hz"
+        }
+      },
+      "output_summary": "1.92 1/Hz",
+      "output_full": "1.92 1/Hz",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E23",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "simulate",
+      "purpose": "data rate and Nyquist for 48 taxels plus vibration channel",
+      "code_or_query": "taxels=48; f_static=25; bits=16; rate_static=taxels*f_static*bits; f_vib=2000; bits_vib=12; rate_vib=f_vib*bits_vib; print(f\"static {rate_static} bps, vib {rate_vib} bps, total {(rate_static+rate_vib)/1000} kbps\"); print(f\"Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x\")",
+      "inputs": {},
+      "output_summary": "static 19200 bps, vib 24000 bps, total 43.2 kbps; Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
+      "output_full": "static 19200 bps, vib 24000 bps, total 43.2 kbps\nNyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E24",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "sketch",
+      "purpose": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
+      "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(1,5,title if False else \"48 taxels\\n6x8 grid\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(4.5,5,\"CDC mux\\nstatic 25Hz\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(1,2.5,\"PVDF film\\nvibration\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(4.5,2.5,\"charge amp\\n+ 2kHz ADC\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(7.5,3.8,\"MCU\", fontsize=10, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(7.5,2,\"4-wire bus\\nPWR GND SDA SCL\", fontsize=8, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.annotate(\"\", xy=(4.4,5), xytext=(2.8,5), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(4.4,2.5), xytext=(2.8,2.5), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.0,4.2), xytext=(5.9,4.8), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.0,3.6), xytext=(5.9,2.7), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.5,2.6), xytext=(7.5,3.3), arrowprops=dict(arrowstyle=\"->\"))\nax.text(5,0.8,\"fixed: rigid core + PCB  wires move with finger\", fontsize=8)\nplt.tight_layout(); plt.savefig(\"sketch.png\")",
+      "inputs": {},
+      "output_summary": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
+      "output_full": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
+      "sketch_path": "evidence/sketch_24.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E25",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot hand fingertip dimensions mount Robotiq Allegro grip force",
+      "code_or_query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+      "inputs": {},
+      "output_summary": "cdn.elmark.com.pl \u2014 Hand-E Instruction Manual \u2014 https://cdn.elmark.com.pl/35994",
+      "output_full": "cdn.elmark.com.pl \u2014 Hand-E Instruction Manual \u2014 https://cdn.elmark.com.pl/35994\n(opened by the member, not cited)\nSam \u2014 Robot Hand Integration and Manipulation said about it: The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32).\nSam \u2014 Robot Hand Integration and Manipulation said about it: Nominal grip is 30 N at 100 kPa over 300 mm squared, survival proof is 139 N at 463 kPa from the Hand-E Instruction Manual (E25) and the mount load versus grip check (E32), and normal work is 14.8 N for a 1 kg object at 5.00 m per s squared, which checks as a milk bottle against hanging a 14.2 kg bag for survival.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "cdn.elmark.com.pl",
+          "title": "Hand-E Instruction Manual",
+          "year": "",
+          "url": "https://cdn.elmark.com.pl/35994",
+          "query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+          "unresolved": false,
+          "passage": "The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32).",
+          "cited": true,
+          "read": true,
+          "statements": [
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The rigid core bolts to the fingertip holder with two M3 screws, where M3 means 3 millimetre metric screw, and carries the 139 N fingertip limit from the Hand-E Instruction Manual (E25) with 463 kPa worst-case pressure and 100 kPa at 30 N grip from the mount load vs grip and drop check (E32)."
+            },
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "Nominal grip is 30 N at 100 kPa over 300 mm squared, survival proof is 139 N at 463 kPa from the Hand-E Instruction Manual (E25) and the mount load versus grip check (E32), and normal work is 14.8 N for a 1 kg object at 5.00 m per s squared, which checks as a milk bottle against hanging a 14.2 kg bag for survival."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E26",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot hand fingertip dimensions mount Robotiq Allegro grip force",
+      "code_or_query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+      "inputs": {},
+      "output_summary": "idec-fs.com \u2014 Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd. \u2014 https://www.idec-fs.com/en/robotiq/Products/",
+      "output_full": "idec-fs.com \u2014 Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd. \u2014 https://www.idec-fs.com/en/robotiq/Products/\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "idec-fs.com",
+          "title": "Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd.",
+          "year": "",
+          "url": "https://www.idec-fs.com/en/robotiq/Products/",
+          "query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E27",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot gripper finger flex cable routing bending radius 4-wire I2C",
+      "code_or_query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
+      "inputs": {},
+      "output_summary": "manualslib.com \u2014 Wiring; Tool Data; Digital I/O Wires - OnRobot Gecko Gripper Original User Manual [Page 59] \u2014 https://www.manualslib.com/manual/2876864/Onrobot-Gecko-Gripper.html?page=59",
+      "output_full": "manualslib.com \u2014 Wiring; Tool Data; Digital I/O Wires - OnRobot Gecko Gripper Original User Manual [Page 59] \u2014 https://www.manualslib.com/manual/2876864/Onrobot-Gecko-Gripper.html?page=59\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "manualslib.com",
+          "title": "Wiring; Tool Data; Digital I/O Wires - OnRobot Gecko Gripper Original User Manual [Page 59]",
+          "year": "",
+          "url": "https://www.manualslib.com/manual/2876864/Onrobot-Gecko-Gripper.html?page=59",
+          "query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E28",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot gripper finger flex cable routing bending radius 4-wire I2C",
+      "code_or_query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
+      "inputs": {},
+      "output_summary": "manualslib.com \u2014 Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18] \u2014 https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18",
+      "output_full": "manualslib.com \u2014 Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18] \u2014 https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "manualslib.com",
+          "title": "Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18]",
+          "year": "",
+          "url": "https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18",
+          "query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E29",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot grasp slip drop prevention grip force control fragile objects",
+      "code_or_query": "robot grasp slip drop prevention grip force control fragile objects",
+      "inputs": {},
+      "output_summary": "spacedaily.com \u2014 Human taught tactile control lets robots grasp diverse objects \u2014 https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html",
+      "output_full": "spacedaily.com \u2014 Human taught tactile control lets robots grasp diverse objects \u2014 https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html\n(found by the search; not opened or cited)\nSam \u2014 Robot Hand Integration and Manipulation said about it: The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle.",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "spacedaily.com",
+          "title": "Human taught tactile control lets robots grasp diverse objects",
+          "year": "",
+          "url": "https://www.spacedaily.com/reports/Human_taught_tactile_control_lets_robots_grasp_diverse_objects_999.html",
+          "query": "robot grasp slip drop prevention grip force control fragile objects",
+          "unresolved": false,
+          "passage": "The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle.",
+          "cited": true,
+          "read": false,
+          "statements": [
+            {
+              "by": "Sam \u2014 Robot Hand Integration and Manipulation",
+              "text": "The Human taught tactile control lets robots grasp diverse objects (E29) increases grip when unstable and holds steady when stable, and the same mount load vs grip and drop check (E32) shows a 1 kg object with 5.00 metres per second squared acceleration needs only 14.8 N grip, like a milk bottle."
+            }
+          ]
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E30",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "web_search",
+      "purpose": "search: robot grasp slip drop prevention grip force control fragile objects",
+      "code_or_query": "robot grasp slip drop prevention grip force control fragile objects",
+      "inputs": {},
+      "output_summary": "spacemart.com \u2014 Human taught tactile control lets robots grasp diverse objects \u2014 https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
+      "output_full": "spacemart.com \u2014 Human taught tactile control lets robots grasp diverse objects \u2014 https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/\n(found by the search; not opened or cited)",
+      "sketch_path": null,
+      "references": [
+        {
+          "authors_or_org": "spacemart.com",
+          "title": "Human taught tactile control lets robots grasp diverse objects",
+          "year": "",
+          "url": "https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
+          "query": "robot grasp slip drop prevention grip force control fragile objects",
+          "unresolved": false,
+          "passage": "",
+          "cited": false,
+          "read": false
+        }
+      ],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E31",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "calc",
+      "purpose": "worst-case pressure on fingertip area",
+      "code_or_query": "Q_(139,'N')/Q_(300,'mm**2').to('kPa')",
+      "inputs": {
+        "arg0": {
+          "value": "139",
+          "unit": "N"
+        },
+        "arg1": {
+          "value": "300",
+          "unit": "mm**2"
+        }
+      },
+      "output_summary": "failed: pint.errors.DimensionalityError: Cannot convert from 'millimeter ** 2' ([length] ** 2) to 'kilopascal' ([mass] / [length] / [time] ** 2)",
+      "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-k2jgrt24/hs_user_script.py\", line 5, in <module>\n    __r = (Q_(139,'N')/Q_(300,'mm**2').to('kPa'))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 585, in to\n    magnitude = self._convert_magnitude_not_inplace(other, *contexts, **ctx_kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/quantity.py\", line 520, in _convert_magnitude_not_inplace\n    return self._REGISTRY.convert(self._magnitude, self._units, other, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1149, in convert\n    return self._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/context/registry.py\", line 418, in _convert\n    return super()._convert(value, src, dst, inplace, **ctx_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/nonmultiplicative/registry.py\", line 263, in _convert\n    return super()._convert(value, src, dst, inplace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/.venv/lib/python3.12/site-packages/pint/facets/plain/registry.py\", line 1184, in _convert\n    raise factor\npint.errors.DimensionalityError: Cannot convert from 'millimeter ** 2' ([length] ** 2) to 'kilopascal' ([mass] / [length] / [time] ** 2)",
+      "sketch_path": null,
+      "references": [],
+      "status": "error",
+      "cycle": 1
+    },
+    {
+      "id": "E32",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "simulate",
+      "purpose": "mount load vs grip and drop check",
+      "code_or_query": "area_m2=15e-3*20e-3\nFmax=139.0\nFgrip=30.0\np_max=Fmax/area_m2\np_grip=Fgrip/area_m2\n# friction hold for 1kg object: need mu*F_grip*2 fingers >= m*(g+a) with a=5 m/s2\nm=1.0; g=9.81; a=5.0\nF_needed=m*(g+a)/(2*0.5)\nprint(f\"area_m2 {area_m2} p_max_kPa {p_max/1000:.1f} p_grip_kPa {p_grip/1000:.1f} F_needed_N {F_needed:.1f}\")",
+      "inputs": {},
+      "output_summary": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
+      "output_full": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E33",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "sketch",
+      "purpose": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+      "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig,ax=plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.text(5,5.5,'FINGERTIP CARTRIDGE ON HOLDER',ha='center',fontsize=10)\nax.add_patch(plt.Rectangle((2,2),5,2.5,fc='lightgray',ec='black'))\nax.add_patch(plt.Rectangle((2,1),5,1,fc='dimgray',ec='black'))\nax.text(4.5,3.2,'rigid core\\n+ skin',ha='center',fontsize=8)\nax.text(4.5,1.5,'fingertip holder',ha='center',fontsize=8,color='white')\nfor x in [3,6]:\n    ax.plot([x,x],[1,2],color='black',lw=3); ax.text(x,0.6,'M3',ha='center',fontsize=8)\nax.annotate('rear 4-wire tail',xy=(7,2.5),xytext=(8.2,3.5),arrowprops=dict(arrowstyle='->'),fontsize=8)\nax.annotate('grip F',xy=(2,3.5),xytext=(0.5,4.2),arrowprops=dict(arrowstyle='->'),fontsize=9)\nax.annotate('shear / weight',xy=(4.5,4.5),xytext=(6.5,5),arrowprops=dict(arrowstyle='->'),fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120)",
+      "inputs": {},
+      "output_summary": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+      "output_full": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+      "sketch_path": "evidence/sketch_33.png",
+      "references": [],
+      "status": "ok",
+      "cycle": 1
+    },
+    {
+      "id": "E34",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "calc",
+      "purpose": "skin compressive strain at worst-case pressure assuming 1 MPa modulus for Shore A 30 silicone",
+      "code_or_query": "Q_(463,'kPa')/Q_(1.0,'MPa')",
+      "inputs": {
+        "arg0": {
+          "value": "463",
+          "unit": "kPa"
+        },
+        "arg1": {
+          "value": "1.0",
+          "unit": "MPa"
+        }
+      },
+      "output_summary": "0.463",
+      "output_full": "0.463",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E35",
+      "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+      "tool": "calc",
+      "purpose": "base capacitance pF for 2.5mm taxel",
+      "code_or_query": "8.85e-12*3* (2.5e-3*2.5e-3)/(0.5e-3)*1e12",
+      "inputs": {},
+      "output_summary": "0.332",
+      "output_full": "0.332",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E36",
+      "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+      "tool": "calc",
+      "purpose": "strain at 1mN with soft 20kPa effective pillars",
+      "code_or_query": "Q_(160,'Pa')/Q_(20000,'Pa')",
+      "inputs": {
+        "arg0": {
+          "value": "160",
+          "unit": "Pa"
+        },
+        "arg1": {
+          "value": "20000",
+          "unit": "Pa"
+        }
+      },
+      "output_summary": "0.008",
+      "output_full": "0.008",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 2
+    },
+    {
+      "id": "E37",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "calc",
+      "purpose": "PCB mass estimate for fingertip cartridge",
+      "code_or_query": "Q_(15*20*1.6,'mm**3')*Q_(1.85,'g/cm**3')",
+      "inputs": {
+        "arg0": {
+          "value": "15*20*1.6",
+          "unit": "mm**3"
+        },
+        "arg1": {
+          "value": "1.85",
+          "unit": "g/cm**3"
+        }
+      },
+      "output_summary": "0.888 g",
+      "output_full": "0.888 g",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 3
+    },
+    {
+      "id": "E38",
+      "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+      "tool": "calc",
+      "purpose": "mass sum fingertip cartridge for mount payload",
+      "code_or_query": "Q_(0.888,'g')+Q_(2,'g')+Q_(2,'g')",
+      "inputs": {
+        "arg0": {
+          "value": "0.888",
+          "unit": "g"
+        },
+        "arg1": {
+          "value": "2",
+          "unit": "g"
+        },
+        "arg2": {
+          "value": "2",
+          "unit": "g"
+        }
+      },
+      "output_summary": "4.89 g",
+      "output_full": "4.89 g",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    },
+    {
+      "id": "E39",
+      "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+      "tool": "calc",
+      "purpose": "effective pillar modulus from area fraction",
+      "code_or_query": "Q_(1,'MPa')*0.02",
+      "inputs": {
+        "arg0": {
+          "value": "1",
+          "unit": "MPa"
+        }
+      },
+      "output_summary": "0.02 MPa",
+      "output_full": "0.02 MPa",
+      "sketch_path": null,
+      "references": [],
+      "status": "ok",
+      "cycle": 4
+    }
+  ],
+  "objections": [
+    {
+      "id": "O1",
+      "author": "Manager",
+      "target_id": "proposal",
+      "text": "Two base capacitances (0.111 pF vs 0.332 pF) and two stiffnesses (1 MPa solid vs 20 kPa effective pillars) give conflicting 1 mN margins (0.053 fF vs 2.66 fF); reconcile to one stiffness and one delta-C vs parasitics/noise, plus missing mass sum and calibration flow, before vote.",
+      "blocking": true,
+      "status": "open",
+      "resolution": "",
+      "evidence_ids": []
+    }
+  ],
+  "proposal": {
+    "version": 1,
+    "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+    "text": "Integrated fingertip cartridge: rigid core with 2x M3 holder screws carries PCB with capacitive taxels plus PVDF vibration film under silicone pillar dielectric and outer skin, readout by row-column mux to MCU to rear 4-wire bus. Radial stack PCB 1.6 mm plus pillars 1.0 mm plus PVDF 0.11 mm plus skin 1.5 mm equals 4.21 mm, fits in 15-20 mm diameter hemispherical cap with 7 mm core for screws. Single design load 30 N nominal grip (100 kPa over 300 mm2); 139 N Hand-E limit is survival proof only; 14.8 N for 1 kg at 5 m/s2 is normal operating point inside envelope. Energy flow grip load into rigid holder not skin mount; signal flow contact compression to capacitance plus charge to CDC plus charge amp to MCU to bus; grasp law increase grip on slip transient, hold steady when stable.",
+    "concept_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6"
+    ],
+    "key_claims": [
+      {
+        "claim": "",
+        "evidence_ids": [
+          "E8"
+        ]
+      },
+      {
+        "claim": "",
+        "evidence_ids": [
+          "E32"
+        ]
+      },
+      {
+        "claim": "",
+        "evidence_ids": [
+          "E24"
+        ]
+      }
+    ]
+  },
+  "votes": {
+    "Maya \u2014 Tactile Transduction and Sensing Physics": {
+      "version": 1,
+      "ready": false,
+      "reason": "Proposal v1 still cites 0.111pF (E8) wrong solid case instead of single reconciled 0.332pF (E35) with 0.008 strain (E36) at 160Pa (E16) giving 2.66fF above noise; mass 4.89g (E38) and per-taxel zero+gain calibration not in proposal, so blocking O1 stands."
+    },
+    "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication": {
+      "version": 1,
+      "ready": false,
+      "reason": "Proposal v1 still cites wrong 0.111pF (E8) not reconciled 0.332pF (E35) with 0.008 strain (E36) at 160Pa (E16) giving 2.66fF, lacks 4.89g mass (E38) and per-taxel zero+gain calibration, so blocking O1 stands."
+    },
+    "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection": {
+      "version": 1,
+      "ready": false,
+      "reason": "Proposal v1 still cites wrong solid case and lacks single margin mass and calibration so blocking O1 stands"
+    },
+    "Sam \u2014 Robot Hand Integration and Manipulation": {
+      "version": 1,
+      "ready": false,
+      "reason": "Proposal v1 still cites wrong 0.111pF solid case (E8) not single reconciled 0.332pF (E35) with 0.008 strain (E36) at 160Pa (E16) giving 2.66fF, and lacks 4.89g mass (E38) plus per-taxel zero+gain calibration, so blocking O1 stands."
+    }
+  },
+  "closure": {
+    "closed_by": "cap",
+    "cycles_used": 4,
+    "open_blocking": [
+      "O1"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E12",
+  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "web_search",
+  "purpose": "search: human fingertip diameter size anthropometry",
+  "code_or_query": "human fingertip diameter size anthropometry",
+  "inputs": {},
+  "output_summary": "researchgate.net — Percentile values of hand dimensions (mm) in right and left hands. — https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087",
+  "output_full": "researchgate.net — Percentile values of hand dimensions (mm) in right and left hands. — https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087\n(found by the search; not opened or cited)\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: (E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "researchgate.net",
+      "title": "Percentile values of hand dimensions (mm) in right and left hands.",
+      "year": "",
+      "url": "https://www.researchgate.net/figure/Percentile-values-of-hand-dimensions-mm-in-right-and-left-hands_tbl2_286964087",
+      "query": "human fingertip diameter size anthropometry",
+      "unresolved": false,
+      "passage": "(E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+          "text": "(E12) supports finger widths 20 to 25 mm, so I set cap diameter 15 to 20 mm and skin 1.5 to 3 mm at Shore A (rubber hardness scale) 30."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

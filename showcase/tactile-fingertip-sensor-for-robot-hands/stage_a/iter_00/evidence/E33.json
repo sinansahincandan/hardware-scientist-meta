@@ -1,0 +1,14 @@
+{
+  "id": "E33",
+  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+  "tool": "sketch",
+  "purpose": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig,ax=plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.text(5,5.5,'FINGERTIP CARTRIDGE ON HOLDER',ha='center',fontsize=10)\nax.add_patch(plt.Rectangle((2,2),5,2.5,fc='lightgray',ec='black'))\nax.add_patch(plt.Rectangle((2,1),5,1,fc='dimgray',ec='black'))\nax.text(4.5,3.2,'rigid core\\n+ skin',ha='center',fontsize=8)\nax.text(4.5,1.5,'fingertip holder',ha='center',fontsize=8,color='white')\nfor x in [3,6]:\n    ax.plot([x,x],[1,2],color='black',lw=3); ax.text(x,0.6,'M3',ha='center',fontsize=8)\nax.annotate('rear 4-wire tail',xy=(7,2.5),xytext=(8.2,3.5),arrowprops=dict(arrowstyle='->'),fontsize=8)\nax.annotate('grip F',xy=(2,3.5),xytext=(0.5,4.2),arrowprops=dict(arrowstyle='->'),fontsize=9)\nax.annotate('shear / weight',xy=(4.5,4.5),xytext=(6.5,5),arrowprops=dict(arrowstyle='->'),fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=120)",
+  "inputs": {},
+  "output_summary": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+  "output_full": "Fingertip cartridge on holder with 2x M3 screws and rear 4-wire tail; grip and shear loads into holder.",
+  "sketch_path": "evidence/sketch_33.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

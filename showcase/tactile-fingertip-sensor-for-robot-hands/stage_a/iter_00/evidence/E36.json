@@ -1,0 +1,23 @@
+{
+  "id": "E36",
+  "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
+  "tool": "calc",
+  "purpose": "strain at 1mN with soft 20kPa effective pillars",
+  "code_or_query": "Q_(160,'Pa')/Q_(20000,'Pa')",
+  "inputs": {
+    "arg0": {
+      "value": "160",
+      "unit": "Pa"
+    },
+    "arg1": {
+      "value": "20000",
+      "unit": "Pa"
+    }
+  },
+  "output_summary": "0.008",
+  "output_full": "0.008",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

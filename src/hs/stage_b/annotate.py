@@ -1,7 +1,6 @@
 """Annotate: localization call + Pillow overlay + scale bar (spec §5.4). All words drawn by code."""
 from __future__ import annotations
 
-import math
 from pathlib import Path
 from typing import Any
 
@@ -50,6 +49,20 @@ def nice_scale_mm(size_mm: float) -> float:
 
     exp = 10 ** _m.floor(_m.log10(max(size_mm, 0.01)))
     return max(m * exp for m in (1, 2, 5) if m * exp <= max(size_mm, exp))
+
+
+def px_per_mm(spec: SchematicSpec, boxes_px: dict[str, tuple[float, float, float, float]]) -> tuple[float, float]:
+    """Picture scale from the largest located part: its longer box side is its largest stated size. A small part's
+    box (one of many pillars, a whole array boxed as one) gave scale bars off by an order of magnitude.
+    Returns (pixels per mm, that part's size in mm), or (0, 0) when no part is located."""
+    best = None
+    for n in spec.nodes:
+        if n.id in boxes_px and (best is None or n.size_class_mm.max > best.size_class_mm.max):
+            best = n
+    if best is None or best.size_class_mm.max <= 0:
+        return 0.0, 0.0
+    x0, y0, x1, y1 = boxes_px[best.id]
+    return max(x1 - x0, y1 - y0) / best.size_class_mm.max, best.size_class_mm.max
 
 
 class Annotator:
@@ -156,12 +169,10 @@ class Annotator:
         img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
         draw = ImageDraw.Draw(img)
         missing = [p.id for p in loc.parts if not p.found]
-        crit = next((n for n in spec.nodes if n.id == spec.critical_part_id), None)
-        if crit is not None and spec.critical_part_id in boxes_px:
-            cx0, _, cx1, _ = boxes_px[spec.critical_part_id]
-            gm = math.sqrt(max(crit.size_class_mm.min, 0.01) * max(crit.size_class_mm.max, 0.01))
-            bar_mm = nice_scale_mm(gm)  # code-chosen: the spec's scale_bar_mm was 10 mm on a 1 m truck
-            bar_px = bar_mm * max((cx1 - cx0) / gm, 0.01)
+        ppm, ref_mm = px_per_mm(spec, boxes_px)
+        if ppm > 0:
+            bar_mm = nice_scale_mm(ref_mm / 3)  # a round length about a third of the largest part
+            bar_px = bar_mm * ppm
             if 10 < bar_px < w / 2:
                 bx, by = 20, h - 40
                 draw.rectangle([bx - 8, by - small.size - 14, bx + bar_px + 8, by + 10], fill=(255, 255, 255))  # type: ignore[attr-defined]

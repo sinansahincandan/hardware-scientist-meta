@@ -1,0 +1,135 @@
+{
+  "pixel_description": "Render only: human fingertip pressing top gray ridged circular disc (skin). Below disc a wide transparent wavy sheet (film). Below that ~40+ translucent white rounded-top pins (silicone pillar dielectric) in grid ~6x8 rows, sitting on top green wavy PCB with small chips at sides, dented down in middle under finger. Below that a second transparent wavy sheet. Below that ~17-20 rigid silver-black telescopic cylinders in single front row (multiple rows deep) standing between second green flat PCB below and the upper wavy PCB above. Below that second green flat PCB, a third lower green chip-covered PCB with black ICs and copper traces, with orange multi-line flexible ribbon (tail) exiting right rear in S-curve. Below that a solid light-gray rectangular block (core) then two vertical threaded screws with cross heads through to black base plate. All layers separated by air gaps in exploded view but stacked vertically in order: finger-skin-film-upper pins-upper board-membrane-lower pins-middle board-lower board-core-screws-base. Critical pillars: drawn as two distinct arrays, not one: upper soft translucent array compressed in center and connected only to upper PCB top, lower rigid metallic pin array connecting middle PCB to upper membrane, neither touching skin directly.",
+  "regions": [
+    {
+      "box": [
+        610.0,
+        520.0,
+        685.0,
+        572.0
+      ],
+      "part_id": "callout",
+      "observed": "leader for Taxel Electrode Board ends on silver-black pin shafts mid-array",
+      "expected": "leader for Taxel Electrode Board must end on green electrode PCB",
+      "source": "render"
+    },
+    {
+      "box": [
+        154.0,
+        515.0,
+        663.0,
+        615.0
+      ],
+      "part_id": "pillars",
+      "observed": "second array of rigid silver-black telescopic pins between two PCBs",
+      "expected": "single array of soft silicone pillars between film and electrode PCB",
+      "source": "render"
+    },
+    {
+      "box": [
+        151.0,
+        592.0,
+        665.0,
+        640.0
+      ],
+      "part_id": "pcb",
+      "observed": "third green PCB middle layer creating three-board stack",
+      "expected": "only two boards: taxel electrode PCB and readout PCB",
+      "source": "render"
+    },
+    {
+      "box": [
+        151.0,
+        438.0,
+        665.0,
+        498.0
+      ],
+      "part_id": "pcb",
+      "observed": "green electrode board drawn wavy/bent following finger dent",
+      "expected": "rigid flat electrode board carried by core, only skin/film deflect",
+      "source": "render"
+    },
+    {
+      "box": [
+        264.0,
+        234.0,
+        608.0,
+        364.0
+      ],
+      "part_id": "skin",
+      "observed": "small isolated circular disc narrower than stack, floating above",
+      "expected": "full-width ridged outer skin cap covering fingertip stack",
+      "source": "render"
+    },
+    {
+      "box": [
+        152.0,
+        483.0,
+        667.0,
+        522.0
+      ],
+      "part_id": "film",
+      "observed": "second translucent membrane between upper PCB and lower pins",
+      "expected": "single vibration film between skin and pillars",
+      "source": "render"
+    }
+  ],
+  "previous_regions": [],
+  "comparison_with_previous": "No prior render evaluation; first comparison against mechanism sketch.",
+  "deviations": [
+    {
+      "what": "skin",
+      "measured": "skin disc floats above film with air gap in exploded view",
+      "expected": "skin touches pillars via film",
+      "matters": false,
+      "why": "exploded visualization separates layers but preserves order skin-film-pillars; gap is intentional, not missing contact"
+    },
+    {
+      "what": "pillars",
+      "measured": "two separate vertical arrays: upper ~40 translucent pins on wavy board plus lower ~18 large silver-black rigid pins 0.72x pcb, both gapped from skin/pcb",
+      "expected": "48 soft vertical pillars ~0.12x pcb touching pcb and skin",
+      "matters": true,
+      "why": "upper array approximates soft pillars but lower rigid telescopic pin array is wrong mechanism and oversize; doubles pillar function and breaks single compressible-gap principle"
+    },
+    {
+      "what": "pcb",
+      "measured": "pcb layers gapped from pillars and core in exploded view; upper pcb drawn wavy",
+      "expected": "single taxel electrode pcb touches pillars and core",
+      "matters": false,
+      "why": "gaps are exploded view; waviness is shape fault listed separately, contact order is preserved"
+    },
+    {
+      "what": "core",
+      "measured": "gray block gapped from boards above and base below",
+      "expected": "rigid core touches pcb and readout",
+      "matters": false,
+      "why": "exploded separation for illustration; stack order core between readout and screws/holder is correct"
+    },
+    {
+      "what": "readout",
+      "measured": "lower green chip board ~0.29x pcb in segmenter measure, gapped from core and tail junction but tail overlaps board edge",
+      "expected": "readout ~0.8x pcb touches core and tail",
+      "matters": false,
+      "why": "size difference is perspective/coarse segmentation; board still carries chips and rear tail exit, function preserved"
+    },
+    {
+      "what": "tail",
+      "measured": "orange ribbon overlaps readout board edge but shows gap to core in exploded view",
+      "expected": "flexible tail touches readout and core rear",
+      "matters": false,
+      "why": "rear-exit routing is preserved; gap is exploded separation, tail is continuous wavy ribbon"
+    },
+    {
+      "what": "screws",
+      "measured": "pixels show 2 vertical screws left and right through core to base; segmenter found 1 horizontal 0.79x due to coarse error and foreground close-up",
+      "expected": "2 vertical metal screws ~0.15x core",
+      "matters": false,
+      "why": "segmenter miscount/orientation error; visually screws clamp core to holder vertically, function preserved"
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "Sketch has skin full-width cap, single film, single soft-pillar array on flat electrode PCB, plus readout PCB, core, screws and rear tail. Render adds second rigid pin array, third PCB, second membrane, bends rigid PCB, shrinks skin to small disc, and misplaces Taxel Electrode Board callout onto pins.",
+  "s2_flaw": false,
+  "s2_feedback": "Exploded stack shows correct order skin-film-pillars-PCB-core-screws with rear tail exit and no interference; gaps are visualization separation, no design interference or unreachable assembly seen.",
+  "notes": "Segmenter undercounts pillars and screws and mis-reports orientation due to exploded close-up; gaps are exploded-view style shared with sketch. Core faults are extra board, extra rigid pin array, bent electrode PCB, small isolated skin cap, and misplaced Taxel callout."
+}

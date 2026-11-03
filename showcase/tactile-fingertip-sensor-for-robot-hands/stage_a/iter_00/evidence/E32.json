@@ -1,0 +1,14 @@
+{
+  "id": "E32",
+  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+  "tool": "simulate",
+  "purpose": "mount load vs grip and drop check",
+  "code_or_query": "area_m2=15e-3*20e-3\nFmax=139.0\nFgrip=30.0\np_max=Fmax/area_m2\np_grip=Fgrip/area_m2\n# friction hold for 1kg object: need mu*F_grip*2 fingers >= m*(g+a) with a=5 m/s2\nm=1.0; g=9.81; a=5.0\nF_needed=m*(g+a)/(2*0.5)\nprint(f\"area_m2 {area_m2} p_max_kPa {p_max/1000:.1f} p_grip_kPa {p_grip/1000:.1f} F_needed_N {F_needed:.1f}\")",
+  "inputs": {},
+  "output_summary": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
+  "output_full": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,66 @@
+{
+  "prompt": "Photorealistic studio product rendering of 20mm robot fingertip tactile cartridge in operating moment, sectioned close-up isometric side view with slight vertical exploded gaps for visibility but preserving functional touching order. On plain seamless light-grey studio backdrop with soft product lighting. Bottom: small dark rigid finger holder block cut off cleanly at backdrop, stiff light-grey rigid mounting core bolted to it with two small vertical metal screws. Exactly two flat rigid horizontal green PCBs total in whole stack, both perfectly flat and unb bent: large lower readout board about 0.8x stack width with chips on rigid core, and thin upper taxel electrode board above it. Single soft-pillar array ONLY: one dense array of tiny translucent rounded vertical silicone pillars 1-2mm tall between electrode PCB and film above; absolutely no metal pins, no silver-black shafts, no second array. Exactly one thin translucent vibration film ONLY directly under skin and above soft pillars; no second membrane under electrode board. Full-width matte grey ridged silicone touch skin cap with same footprint as boards covering entire top of stack, not a small disc. An adult human index fingertip presses center of ridged skin for scale showing whole device about 20mm across, only skin and upper film dent in center, central pillars compressed more than outer, both green PCBs stay perfectly flat rigid horizontal. Thin flat flexible orange-brown rear tail stays visibly connected exiting rear edge of lower readout board and looping back. Show clean legible callouts on small light tags in empty space with thin leader lines and no other text: Ridged Touch Skin leader to grey cap edge, Vibration Sensing Film leader to translucent layer directly under skin, Soft Pillar Array leader to translucent pillars, Taxel Electrode Board leader must land on edge of flat green upper electrode PCB never on pillars pins or membranes, Readout Circuit Board leader to lower green board edge, Rigid Mounting Core leader to grey block, Flexible Rear Tail leader to orange tail, no margins or scale bars. Real materials, sharp focus, mechanism readable.",
+  "must_not": [
+    "metal pins or telescopic shafts or second pillar array",
+    "third or middle circuit board or wavy bent boards",
+    "second membrane or film under electrode board",
+    "small isolated disc cap narrower than stack",
+    "numbers symbols or extra words on callout tags",
+    "room landscape sky furniture tools clutter or extra people"
+  ],
+  "changes_from_previous": "Full rewrite to lock exactly two flat green PCBs, single translucent soft-pillar array with no pins, single upper film under full-width skin, boards stay flat under press, and explicit callout landing on PCB edge.",
+  "visual_plan": {
+    "view": "sectioned close-up isometric side view with slight vertical exploded gaps preserving order holder-core-readout-electrode-pillars-film-skin",
+    "spatial_layout": "Bottom holder block, rigid core on holder, lower readout PCB on core, upper electrode PCB above, single pillar array above electrode, single film above pillars, full-width skin cap on top, fingertip on skin center, orange tail exiting rear of lower board",
+    "operating_moment": "Adult fingertip pressing center of full-width ridged skin, skin and film dented, central soft pillars compressed more than outer, rigid PCBs and core remain flat and still",
+    "transfer_path": "Load: outer touch skin -> vibration film -> silicone pillar dielectric -> rigid mounting core to holder | Measured: capacitive taxel array and film -> readout controller to rear tail bus",
+    "interactions": "Fingertip dents skin and film; film presses pillars; pillars compress sensing gap on flat electrode PCB; electrode and film signals go to readout; readout to connected rear tail; core and holder stay fixed carrying load",
+    "avoid": [
+      "extra pin array, extra PCB, extra membrane, bent rigid board, shrunken disc skin, mis-grounded leaders, numbered callouts"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "skin",
+      "material": "matte grey silicone rubber",
+      "purpose": "protects stack and spreads grip load",
+      "callout": "Ridged Touch Skin"
+    },
+    {
+      "part_id": "film",
+      "material": "translucent PVDF polymer film",
+      "purpose": "senses slip vibration transients",
+      "callout": "Vibration Sensing Film"
+    },
+    {
+      "part_id": "pillars",
+      "material": "translucent silicone rubber",
+      "purpose": "compressible spring and sensing gap",
+      "callout": "Soft Pillar Array"
+    },
+    {
+      "part_id": "pcb",
+      "material": "green printed circuit board",
+      "purpose": "carries capacitive taxel electrodes",
+      "callout": "Taxel Electrode Board"
+    },
+    {
+      "part_id": "readout",
+      "material": "green printed circuit board with chips",
+      "purpose": "converts signals to digital bus",
+      "callout": "Readout Circuit Board"
+    },
+    {
+      "part_id": "core",
+      "material": "rigid light-grey plastic",
+      "purpose": "carries stack and bolts to finger",
+      "callout": "Rigid Mounting Core"
+    },
+    {
+      "part_id": "tail",
+      "material": "orange-brown flexible circuit",
+      "purpose": "carries bus out rear of finger",
+      "callout": "Flexible Rear Tail"
+    }
+  ]
+}

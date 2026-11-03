@@ -1,0 +1,36 @@
+{
+  "id": "E2",
+  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "tool": "web_search",
+  "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
+  "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+  "inputs": {},
+  "output_summary": "humanoidsdaily.com — Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration — https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
+  "output_full": "humanoidsdaily.com — Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration — https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "humanoidsdaily.com",
+      "title": "Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration",
+      "year": "",
+      "url": "https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
+      "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "unresolved": false,
+      "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
+        },
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

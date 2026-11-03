@@ -1,0 +1,23 @@
+{
+  "id": "E37",
+  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+  "tool": "calc",
+  "purpose": "PCB mass estimate for fingertip cartridge",
+  "code_or_query": "Q_(15*20*1.6,'mm**3')*Q_(1.85,'g/cm**3')",
+  "inputs": {
+    "arg0": {
+      "value": "15*20*1.6",
+      "unit": "mm**3"
+    },
+    "arg1": {
+      "value": "1.85",
+      "unit": "g/cm**3"
+    }
+  },
+  "output_summary": "0.888 g",
+  "output_full": "0.888 g",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

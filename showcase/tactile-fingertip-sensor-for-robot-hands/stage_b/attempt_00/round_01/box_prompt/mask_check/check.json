@@ -1,0 +1,18 @@
+{
+  "crops": [
+    "crop 1: film",
+    "crop 2: pillars"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "silicone pillar dielectric x48"
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "taxel electrode circuit board"
+    }
+  ]
+}

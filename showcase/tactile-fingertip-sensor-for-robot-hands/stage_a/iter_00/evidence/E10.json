@@ -1,0 +1,44 @@
+{
+  "id": "E10",
+  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "web_search",
+  "purpose": "search: silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+  "code_or_query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+  "inputs": {},
+  "output_summary": "siliconedabojin.com — A Complete Guide to Silicone Product Design — https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/",
+  "output_full": "siliconedabojin.com — A Complete Guide to Silicone Product Design — https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/\n(opened by the member, not cited)\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands.\nMaya — Tactile Transduction and Sensing Physics said about it: The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm, so 1.5 mm skin from your hemispherical cap sketch (E17) keeps 2.5 mm taxels distinct at thimble scale, while static force at 25 Hz plus vibration at 2 kHz from the data rate check (E23) keeps slip buzz alive.\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 to 3 mm, so 1.5 mm skin plus 1.0 mm pillars from the hemispherical cap sketch (E17) fit a 15 to 20 mm diameter cap at thimble scale in LSR, where LSR means liquid silicone rubber.\nMaya — Tactile Transduction and Sensing Physics said about it: The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 mm to 3 mm, so 1.5 mm skin from the hemispherical cap sketch (E17) keeps 2.5 mm pitch distinct at thimble scale.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "siliconedabojin.com",
+      "title": "A Complete Guide to Silicone Product Design",
+      "year": "",
+      "url": "https://siliconedabojin.com/a-guide-to-designing-products-with-silicone/",
+      "query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+      "unresolved": false,
+      "passage": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+          "text": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm and 1.5 to 3 mm silicone over rigid backing for soft grips, and the Percentile values of hand dimensions (mm) in right and left hands."
+        },
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "The A Complete Guide to Silicone Product Design (E10) gives uniform walls typically 0.5 to 3 mm, so 1.5 mm skin from your hemispherical cap sketch (E17) keeps 2.5 mm taxels distinct at thimble scale, while static force at 25 Hz plus vibration at 2 kHz from the data rate check (E23) keeps slip buzz alive."
+        },
+        {
+          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+          "text": "The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 to 3 mm, so 1.5 mm skin plus 1.0 mm pillars from the hemispherical cap sketch (E17) fit a 15 to 20 mm diameter cap at thimble scale in LSR, where LSR means liquid silicone rubber."
+        },
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "The A Complete Guide to Silicone Product Design (E10) allows uniform walls 0.5 mm to 3 mm, so 1.5 mm skin from the hemispherical cap sketch (E17) keeps 2.5 mm pitch distinct at thimble scale."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

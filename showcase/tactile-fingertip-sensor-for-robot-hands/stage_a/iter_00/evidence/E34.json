@@ -1,0 +1,23 @@
+{
+  "id": "E34",
+  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "calc",
+  "purpose": "skin compressive strain at worst-case pressure assuming 1 MPa modulus for Shore A 30 silicone",
+  "code_or_query": "Q_(463,'kPa')/Q_(1.0,'MPa')",
+  "inputs": {
+    "arg0": {
+      "value": "463",
+      "unit": "kPa"
+    },
+    "arg1": {
+      "value": "1.0",
+      "unit": "MPa"
+    }
+  },
+  "output_summary": "0.463",
+  "output_full": "0.463",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -455,7 +455,10 @@ def _dossier(run_dir: Path, dest: Path, fmap: dict[str, Any]) -> Path:
     p.append("<h2>2. Whiteboard over time</h2>")
     iters = sorted(run_dir.glob("stage_a/iter_*"))
     seeded = _read_json(run_dir / "seeded_from.json")
-    if seeded:
+    if seeded and iters:
+        p.append(f"<p>The meeting below ran in run {html.escape(str(seeded.get('source_run', '')))}; this folder "
+                 "redrew its accepted solution with the later picture rules.</p>")
+    elif seeded:
         p.append(f"<p>No council meeting ran in this run: it redrew the accepted solution of run "
                  f"{html.escape(str(seeded.get('source_run', '')))}.</p>")
     for it_dir in iters:

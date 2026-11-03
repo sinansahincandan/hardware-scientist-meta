@@ -1,0 +1,27 @@
+{
+  "id": "E38",
+  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
+  "tool": "calc",
+  "purpose": "mass sum fingertip cartridge for mount payload",
+  "code_or_query": "Q_(0.888,'g')+Q_(2,'g')+Q_(2,'g')",
+  "inputs": {
+    "arg0": {
+      "value": "0.888",
+      "unit": "g"
+    },
+    "arg1": {
+      "value": "2",
+      "unit": "g"
+    },
+    "arg2": {
+      "value": "2",
+      "unit": "g"
+    }
+  },
+  "output_summary": "4.89 g",
+  "output_full": "4.89 g",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

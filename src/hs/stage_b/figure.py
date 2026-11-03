@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import math
 import textwrap
 from pathlib import Path
 from typing import Any
@@ -99,12 +98,13 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
     panel.paste(crop, (0, head))
     draw = ImageDraw.Draw(panel)
     draw.text((8, 6), f"B  Critical part: {node.label}", fill=(0, 0, 0), font=font)
-    gm = math.sqrt(max(node.size_class_mm.min, 0.01) * max(node.size_class_mm.max, 0.01))
-    px_per_mm = (x1 - x0) * max(scale, 1.0) / gm if x1 > x0 else 0.0
-    from hs.stage_b.annotate import nice_scale_mm
+    from hs.stage_b.annotate import nice_scale_mm, px_per_mm
 
-    bar_mm = nice_scale_mm(gm)
-    bar_px = bar_mm * px_per_mm
+    boxes_px = {p.id: (p.box_1000.x0 / 1000 * w, p.box_1000.y0 / 1000 * h, p.box_1000.x1 / 1000 * w,
+                       p.box_1000.y1 / 1000 * h) for p in localization.parts if p.found}
+    ppm, _ref_mm = px_per_mm(spec, boxes_px)  # the whole picture's scale, applied to the enlarged crop
+    bar_mm = nice_scale_mm(max(crop.size[0] / max(ppm * max(scale, 1.0), 1e-6) / 4, 0.01)) if ppm else 0.0
+    bar_px = bar_mm * ppm * max(scale, 1.0)
     if 10 < bar_px < crop.size[0] - 20:
         y = panel.size[1] - 18
         draw.rectangle([6, y - 26, 16 + bar_px, panel.size[1] - 2], fill=(255, 255, 255))

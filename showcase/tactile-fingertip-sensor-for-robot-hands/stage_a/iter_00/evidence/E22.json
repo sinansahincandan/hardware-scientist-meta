@@ -1,0 +1,19 @@
+{
+  "id": "E22",
+  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
+  "tool": "calc",
+  "purpose": "dummy to test calc format",
+  "code_or_query": "Q_(48,'')/(Q_(25,'Hz'))",
+  "inputs": {
+    "arg0": {
+      "value": "25",
+      "unit": "Hz"
+    }
+  },
+  "output_summary": "1.92 1/Hz",
+  "output_full": "1.92 1/Hz",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

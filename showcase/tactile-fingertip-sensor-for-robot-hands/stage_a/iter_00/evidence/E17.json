@@ -1,0 +1,14 @@
+{
+  "id": "E17",
+  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "sketch",
+  "purpose": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(5,4))\nax.set_aspect('equal'); ax.axis('off')\n# rigid core\nimport matplotlib.patches as patches\ncore = patches.Rectangle((1,0.5), 4, 1.2, fill=True, color='lightgray', label='core')\nax.add_patch(core)\nax.text(3, 1.1, 'rigid core', ha='center', fontsize=8)\n# PCB\nax.plot([1,5],[1.7,1.7], linewidth=4, color='green')\nax.text(3,1.85,'PCB electrodes', ha='center', fontsize=8)\n# pillars\nfor x in [1.5,2.5,3.5,4.5]:\n    ax.add_patch(patches.Rectangle((x-0.15,1.9),0.3,0.8, fill=True, color='pink'))\nax.text(4.8,2.3,'pillars', fontsize=8)\n# outer skin dome\nimport numpy as np\nth=np.linspace(0,180,100)*np.pi/180\nR=2.6; cx=3; y0=2.7\nax.plot(cx+R*np.cos(th), y0+R*np.sin(th)*0.9, color='black', linewidth=2)\nax.text(3,5.2,'ridged skin 1.5-3mm', ha='center', fontsize=8)\nax.text(3,0.2,'finger mount (fixed)', ha='center', fontsize=8)\nax.arrow(3,5.8,0,-0.5, head_width=0.15, length_includes_head=True)\nax.text(3.3,5.7,'contact load', fontsize=8)\nplt.tight_layout()\nplt.savefig('sketch.png', dpi=150)",
+  "inputs": {},
+  "output_summary": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+  "output_full": "Hemispherical fingertip cap on rigid core with silicone skin pillars and ridged outer skin; contact load spreads",
+  "sketch_path": "evidence/sketch_17.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

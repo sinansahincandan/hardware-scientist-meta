@@ -1,0 +1,56 @@
+{
+  "per_region": [
+    {
+      "part_id": "callout",
+      "diagnosis": "Cause is callout sentence: 'Show clean legible callouts on small light tags... Ridged Touch Skin, Vibration Sensing Film, Soft Pillar Array, Taxel Electrode Board...' with no landing-pad definition. Pixels show leader for Taxel Electrode Board ending on silver-black pin shafts mid-array instead of green PCB edge. Deviation what=callout: mis-grounded leader. Matters critically - mislabels electrode vs mechanical pins, breaks readability of working principle.",
+      "prompt_fix": "Taxel Electrode Board callout leader must land on the edge of the flat green upper taxel electrode PCB, never on pillars, pins or membranes."
+    },
+    {
+      "part_id": "pillars",
+      "diagnosis": "Cause is stack sentence: 'Above core: green printed circuit readout board... then thin taxel electrode board, then dense array of tiny translucent silicone pillars...' with no ONLY / NO-pins ban, plus MUST NOT lacks pins. Pixels show second array of rigid silver-black telescopic pins between two PCBs vs expected single soft silicone pillars between film and electrode PCB. Segmenter #2 what=pillars: reports 1 found vs 8, horizontal vs vertical, 0.72x vs 0.12x pcb, apart from pcb/skin because detector latched onto metal pins not translucent pillars. Matters critically - invents wrong rigid-pin transduction vs compliant capacitive pillars.",
+      "prompt_fix": "Single soft-pillar array ONLY: one dense array of tiny translucent rounded silicone pillars 1-2 mm tall between electrode PCB and vibration film; absolutely NO metal pins, NO silver-black telescopic shafts, NO second array."
+    },
+    {
+      "part_id": "pcb",
+      "diagnosis": "Cause is same stack sentence with no total count: 'green printed circuit readout board with tiny chips, then thin taxel electrode board' allows split. Pixels show third green PCB middle layer creating three-board stack vs expected only two boards. Segmenter #3 what=pcb: pcb apart from pillars and core, #5 readout 0.29x vs 0.8x pcb because split shrinks readout. Matters critically - breaks electrical stack.",
+      "prompt_fix": "Exactly two flat rigid green PCBs total in whole stack: lower readout board with chips and upper thin taxel electrode board; NO third PCB, NO middle board."
+    },
+    {
+      "part_id": "pcb",
+      "diagnosis": "Cause is press sentence: 'An adult human index fingertip presses the center... denting it visibly, central pillars compressed more...' overpowered fixed-sentence 'Fixed parts rigid core, boards, holder stay still'. Pixels show green electrode board drawn wavy/bent following finger dent vs expected rigid flat carried by core. Matters critically - confuses rigid vs moving, implies bendable electronics.",
+      "prompt_fix": "Both green PCBs stay perfectly flat, rigid and horizontal under finger press; only the grey skin and translucent upper film dent in center, electrode board does not bend or wave."
+    },
+    {
+      "part_id": "skin",
+      "diagnosis": "Cause is skin phrase: 'matte grey ridged silicone touch skin cap about fingertip-nail size covering top.' Nail-size read as small disc plus 'slightly exploded vertically'. Pixels show small isolated circular disc narrower than stack floating above vs expected full-width ridged cap. Segmenter #1 what=skin: skin apart from pillars - gap partly intentional exploded, but width loss matters - breaks force spreading and seal. Matters critically for cover function.",
+      "prompt_fix": "Ridged touch skin is a full-width matte grey cap with same footprint as boards covering entire top of stack, not a small isolated disc."
+    },
+    {
+      "part_id": "film",
+      "diagnosis": "Cause is film phrase 'then thin translucent vibration film' with no count/location lock plus exploded view. Pixels show second translucent membrane between upper PCB and lower pins vs expected single film between skin and pillars. Matters critically - duplicates sensing layer, implies two vibration films.",
+      "prompt_fix": "Exactly one thin translucent vibration film ONLY, directly under the skin and above the soft pillars; NO second membrane under the electrode board."
+    },
+    {
+      "part_id": "core",
+      "diagnosis": "Cause is view sentence: 'sectioned close-up isometric side view slightly exploded vertically to reveal stack.' Segmenter #4 what=core: core apart from pcb and apart from readout, #3 pcb apart from core. Pixels show vertical gaps holder-core-boards. Intentional exploded gaps for visibility, not functional disconnect. Does not matter for principle if order preserved, but needs explicit order to avoid disconnected-blocks reading.",
+      "prompt_fix": "Keep slight vertical exploded gaps for visibility but preserve functional touching order: holder - core - readout PCB - electrode PCB - pillars - film - skin; core rigidly carries both boards."
+    },
+    {
+      "part_id": "readout",
+      "diagnosis": "Segmenter #5 what=readout: size 0.29x vs 0.8x pcb, apart from core and tail. Pixels show lower green readout board with chips shrunken due to three-board split and separated by exploded gap from core below and orange tail at rear. Size shrink matters for legibility but not principle; disconnected tail matters for electrical continuity. Cause is extra-board hallucination + exploded sentence.",
+      "prompt_fix": "Lower readout PCB is large, about 0.8x width of stack, flat under electrode board on rigid core, with rear orange tail exiting its rear edge; representative chip detail acceptable."
+    },
+    {
+      "part_id": "tail",
+      "diagnosis": "Segmenter #6 what=tail: tail apart from readout and apart from core. Pixels show thin flat orange-brown tail looping back with air gap at board rear due to exploded view. Cause is 'thin flat flexible orange-brown tail cable exits the rear of the boards and loops back' without stating stays connected during explode. Matters for principle - must show electrical exit, gap is illustrative not disconnect.",
+      "prompt_fix": "Thin flat flexible orange-brown rear tail stays connected exiting the rear edge of the lower readout board and looping back, small exploded gap allowed but connection must be visible."
+    },
+    {
+      "part_id": "screws",
+      "diagnosis": "Segmenter #7 what=screws: expected 2 visible found 1, vertical vs horizontal, 0.79x vs 0.15x core. Pixels show oversized vertical screws spanning exploded core-holder gap in side close-up. Cause is 'bolted to it' with no count/size anchor plus exploded stretch. Count is hard for image model; orientation/size exaggeration matters for rigid-mount reading but exact count does not affect sensing principle.",
+      "prompt_fix": "Two small vertical metal screws mounting core to holder, representative count acceptable, screws small about 0.15x core height, vertical axis."
+    }
+  ],
+  "fix_mode": "full",
+  "summary": "Spread structural hallucination: extra pin array, extra PCB, extra membrane, bent rigid board, shrunken skin, mis-grounded callout. Requires full rewrite locking exactly-two flat PCBs, single soft-pillar array with NO metal pins, single upper film, full-width skin, flat-boards-stay-flat under press, and explicit callout landings while keeping slight exploded gaps explanatory."
+}

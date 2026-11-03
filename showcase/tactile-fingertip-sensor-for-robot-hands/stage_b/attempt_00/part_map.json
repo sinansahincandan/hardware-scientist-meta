@@ -1,0 +1,111 @@
+{
+  "parts": [
+    {
+      "part_id": "skin",
+      "visual_phrase": "rubber skin",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "core",
+      "size_ratio": 1.0,
+      "touches": [
+        "film",
+        "pillars"
+      ],
+      "note": "ridged cap on top, takes all touch load"
+    },
+    {
+      "part_id": "film",
+      "visual_phrase": "plastic film",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "skin",
+      "size_ratio": 0.95,
+      "touches": [
+        "skin",
+        "pillars"
+      ],
+      "note": "thin sheet just under skin for slip buzz"
+    },
+    {
+      "part_id": "pillars",
+      "visual_phrase": "rubber pillars",
+      "count": 8,
+      "long_axis": "vertical",
+      "size_vs": "pcb",
+      "size_ratio": 0.12,
+      "touches": [
+        "film",
+        "pcb",
+        "skin"
+      ],
+      "note": "one row of soft bumps visible in section"
+    },
+    {
+      "part_id": "pcb",
+      "visual_phrase": "circuit board",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "core",
+      "size_ratio": 1.0,
+      "touches": [
+        "pillars",
+        "core",
+        "readout"
+      ],
+      "note": "flat board with electrodes under pillars"
+    },
+    {
+      "part_id": "core",
+      "visual_phrase": "plastic block",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "skin",
+      "size_ratio": 1.0,
+      "touches": [
+        "pcb",
+        "screws",
+        "readout"
+      ],
+      "note": "stiff block carrying stack, bolted to finger"
+    },
+    {
+      "part_id": "readout",
+      "visual_phrase": "computer chip",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "pcb",
+      "size_ratio": 0.8,
+      "touches": [
+        "pcb",
+        "core",
+        "tail"
+      ],
+      "note": "small electronics under board to bus"
+    },
+    {
+      "part_id": "tail",
+      "visual_phrase": "flat cable",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "readout",
+      "size_ratio": 1.0,
+      "touches": [
+        "readout",
+        "core"
+      ],
+      "note": "flat cable exiting rear to finger wiring"
+    },
+    {
+      "part_id": "screws",
+      "visual_phrase": "metal screws",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "core",
+      "size_ratio": 0.15,
+      "touches": [
+        "core"
+      ],
+      "note": "pair of small bolts through core base"
+    }
+  ]
+}

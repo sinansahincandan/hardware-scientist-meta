@@ -1,0 +1,26 @@
+{
+  "id": "E4",
+  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "tool": "web_search",
+  "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
+  "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+  "inputs": {},
+  "output_summary": "webot.org — Two-point Discrimination - Encyclopedia Information — https://webot.org/info/en/?search=Two-point_discrimination",
+  "output_full": "webot.org — Two-point Discrimination - Encyclopedia Information — https://webot.org/info/en/?search=Two-point_discrimination\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "webot.org",
+      "title": "Two-point Discrimination - Encyclopedia Information",
+      "year": "",
+      "url": "https://webot.org/info/en/?search=Two-point_discrimination",
+      "query": "human fingertip tactile spatial resolution two-point discrimination",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

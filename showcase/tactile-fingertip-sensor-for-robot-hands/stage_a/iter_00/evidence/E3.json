@@ -1,0 +1,36 @@
+{
+  "id": "E3",
+  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "tool": "web_search",
+  "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
+  "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+  "inputs": {},
+  "output_summary": "github.com — terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md — https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
+  "output_full": "github.com — terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md — https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "github.com",
+      "title": "terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md",
+      "year": "",
+      "url": "https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
+      "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "unresolved": false,
+      "passage": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
+        },
+        {
+          "by": "Maya — Tactile Transduction and Sensing Physics",
+          "text": "Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,23 @@
+{
+  "id": "E16",
+  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+  "tool": "calc",
+  "purpose": "pressure of 1mN on one 2.5mm taxel",
+  "code_or_query": "Q_(1,'mN')/Q_(6.25,'mm**2')",
+  "inputs": {
+    "arg0": {
+      "value": "1",
+      "unit": "mN"
+    },
+    "arg1": {
+      "value": "6.25",
+      "unit": "mm**2"
+    }
+  },
+  "output_summary": "0.16 mN/mm\u00b2",
+  "output_full": "0.16 mN/mm\u00b2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}
