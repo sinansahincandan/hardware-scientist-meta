@@ -170,6 +170,9 @@ class Annotator:
                     ax, ay = min(max(cx, rect[0] + 12), rect[2] - 12), rect[1]
                 draw.line([ax, ay, cx, cy], fill=(0, 80, 80, 255), width=max(2, w // 600))
                 draw.ellipse([cx - 6, cy - 6, cx + 6, cy + 6], fill=(0, 80, 80, 255), outline=(255, 255, 255, 255))
+                # the leader's end dot is kept clear too: a step marker on it hid which part a label names
+                # (run 152604: the hopper's dot under marker 4, its leader seemed to end on the mast)
+                label_rects.append([cx - 10, cy - 10, cx + 10, cy + 10])
                 draw.rounded_rectangle(rect, radius=6, fill=(255, 255, 255, 232), outline=(0, 80, 80, 255))
                 draw.text((lx, ly), text, fill=(0, 60, 60, 255), font=font)
         img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")

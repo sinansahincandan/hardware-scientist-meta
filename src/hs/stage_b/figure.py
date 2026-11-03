@@ -225,8 +225,9 @@ def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localiz
             continue
         bx0, by0, bx1, by1 = b.x0 / 1000 * w, b.y0 / 1000 * h, b.x1 / 1000 * w, b.y1 / 1000 * h
         # the part's centre first, then a grid of points inside the part: the first one clear of labels and markers
-        cands = [((bx0 + bx1) / 2, (by0 + by1) / 2)] + [(bx0 + (bx1 - bx0) * i / 6, by0 + (by1 - by0) * j / 6)
-                                                        for j in range(1, 6) for i in range(1, 6)]
+        mx, my = (bx0 + bx1) / 2, (by0 + by1) / 2
+        cands = sorted([(bx0 + (bx1 - bx0) * i / 8, by0 + (by1 - by0) * j / 8) for j in range(1, 8) for i in range(1, 8)],
+                       key=lambda q: (q[0] - mx) ** 2 + (q[1] - my) ** 2)  # nearest the part's centre first
         cx, cy = next(((x, y) for x, y in cands if free(x, y)), cands[0])
         placed.append((cx, cy))
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(200, 60, 40), outline=(255, 255, 255), width=4)
