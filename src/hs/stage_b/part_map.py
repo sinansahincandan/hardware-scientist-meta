@@ -435,6 +435,23 @@ def evidence_text(diffs: dict[str, list[str]], rechecks: list[str], part_map: Pa
     return "\n".join(lines)
 
 
+def extent_text(meas: dict[str, Any], spec: SchematicSpec) -> str:
+    """The whole device as drawn, in mm: the box around every located part, at the picture scale the figure's scale
+    bar uses (median of each part's box over its stated size). A fact for the critic, who judged a 70 cm turbine
+    as "about 400 mm" by eye against a 45 cm limit (run 170525)."""
+    from hs.stage_b.annotate import px_per_mm
+
+    boxes = {n.id: b for n in spec.nodes if (b := _main(meas["parts"].get(n.id, {}).get("boxes", []))) is not None}
+    ppm, largest = px_per_mm(spec, boxes)
+    if ppm <= 0 or len(boxes) < 2:
+        return ""
+    x0, y0 = min(b[0] for b in boxes.values()), min(b[1] for b in boxes.values())
+    x1, y1 = max(b[2] for b in boxes.values()), max(b[3] for b in boxes.values())
+    return (f"Whole device as drawn (code measurement, coarse): the located parts span about {(x1 - x0) / ppm:.0f} mm "
+            f"across by {(y1 - y0) / ppm:.0f} mm high in the picture, at the scale the parts' stated sizes give "
+            f"(the largest part is stated as {largest:.0f} mm). Compare it with the problem's size limits and the "
+            "design's own dimensions, and say whether the drawn proportions break a limit.")
+
 def to_localization(meas: dict[str, Any], spec: SchematicSpec) -> Localization:
     w, h = meas["size"]
     parts: list[LocalizedPart] = []

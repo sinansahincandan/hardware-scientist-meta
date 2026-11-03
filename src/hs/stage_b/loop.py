@@ -157,7 +157,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         rechecks = pm.recheck(meas, diffs, kept["sam"] if kept else None)
         pm.save_round(round_dir, meas, diffs, rechecks)
         pm.draw_overlay(render_path, round_dir / "sam.json", round_dir / "sam_overlay.png")
-        sam_text = pm.evidence_text(diffs, rechecks, part_map)
+        sam_text = "\n".join(t for t in (pm.evidence_text(diffs, rechecks, part_map), pm.extent_text(meas, spec)) if t)
         annotated_path, loc, missing = Annotator(client).run(render_path, spec, geometry, round_dir / "annotated.png",
                                                              localization=pm.to_localization(meas, spec),
                                                              draw_labels=False)  # Fig. 2: callouts are in the render
