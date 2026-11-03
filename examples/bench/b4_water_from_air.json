@@ -1,0 +1,11 @@
+{
+  "title": "Machine that makes drinking water from air",
+  "statement": "Communities without clean water sources need drinking water. Design a machine that pulls water out of the air and delivers drinking water, running only on renewable energy.",
+  "constraints": [
+    "Delivers at least 2,000 litres of drinking water per day",
+    "Runs only on renewable energy (no grid power, no fuel)",
+    "Total cost of the water, equipment and running costs together, is at most 2 US cents per litre"
+  ],
+  "criteria": [],
+  "attachments": []
+}

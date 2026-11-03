@@ -1,0 +1,12 @@
+{
+  "title": "Small wind turbine for a wind-tunnel competition",
+  "statement": "Design a small wind turbine that produces as much electricity as possible in a wind tunnel, survives strong gusts, and shuts itself down safely on command or when its electrical load is disconnected.",
+  "constraints": [
+    "Every part of the turbine (rotor and body) fits inside a 45 cm cube; only the mounting post below it may be outside",
+    "Survives continuous wind of 22 m/s without damage",
+    "Produces power between 5 and 11 m/s wind",
+    "When the load is disconnected or on command, the rotor slows to below 10% of its top speed within 10 seconds and stays there"
+  ],
+  "criteria": [],
+  "attachments": []
+}

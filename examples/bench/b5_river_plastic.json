@@ -1,0 +1,11 @@
+{
+  "title": "Floating machine that stops river plastic before it reaches the sea",
+  "statement": "Most ocean plastic comes from a small number of rivers. Design a floating machine anchored in a river that catches floating plastic waste, lifts it out of the water and stores it until it is collected, working on its own day and night.",
+  "constraints": [
+    "Runs only on solar power, with no fuel and no grid connection",
+    "Removes up to 50,000 kg of floating waste per day",
+    "Boats and wildlife can still pass the river"
+  ],
+  "criteria": [],
+  "attachments": []
+}
