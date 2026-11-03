@@ -35,7 +35,8 @@ class MeetingResult:
 
 
 VOTE_ONLY_ACTIONS = {"vote", "raise_objection", "read_evidence"}
-MANAGER_ACTIONS = {"raise_objection", "resolve_objection", "read_evidence"}
+MANAGER_ACTIONS = {"raise_objection", "resolve_objection", "read_evidence", "add_function", "set_concept_status",
+                   "select_concept", "update_proposal", "close_meeting"}
 
 
 class Meeting:
@@ -154,46 +155,95 @@ class Meeting:
         self.transcript.append({"cycle": cycle, "member": member, "message": message})
         self.history.append({"cycle": cycle, "member": member, "kind": "turn_end"})
 
-    def _run_manager_turn(self, roster: list[str], cycle: int) -> None:
-        """Manager's end-of-cycle steering turn (spec §4.3 v2). Never designs, never votes."""
+    def _fake_chief(self, cycle: int, opening: bool) -> str:
+        """Fake mode: the chief designer's board actions, scripted (offline runs exercise the same board code)."""
+        if opening:
+            if not self.board.functions:
+                self.board.apply_op("Manager", {"action": "add_function", "text": "Support and move the load",
+                                                "flows": "in: load weight, operator force; out: load moved"})
+                self.board.apply_op("Manager", {"action": "add_function", "text": "Sense state and keep the operator safe",
+                                                "flows": "in: position signal; out: stop signal"})
+            return "Chief designer: the function structure is on the board; every member posts a concept per function."
+        if cycle >= 2:
+            for f in self.board.functions:
+                cid = next((c.id for c in self.board.concepts if c.function_id == f.id and c.status != "dropped"), "")
+                self.board.apply_op("Manager", {"action": "select_concept", "function_id": f.id, "concept_id": cid,
+                                                "rationale": "Best supported by the evidence on the board; the "
+                                                             "alternatives are worse on load path and cost."
+                                                if cid else "No separate means needed: covered by the frame."})
+            if self.board.proposal is None:
+                self.board.apply_op("Manager", {"action": "update_proposal",
+                                                "text": "Integrated concept from the selected concept per function.",
+                                                "key_claims": [{"claim": "Rated load force is supported",
+                                                                "evidence_ids": []}]})
+            self.board.apply_op("Manager", {"action": "close_meeting",
+                                            "synthesis": "Every member's opinion is answered on the board; settled."})
+        return "Chief designer: selections and the proposal are on the board."
+
+    def _run_manager_turn(self, roster: list[str], cycle: int, opening: bool = False, closing: bool = False) -> None:
+        """The Manager is the chief designer (owner decision 2026-11-03, docs/brainstorm/functional_council.md):
+        opens the meeting with the function structure, selects a concept per function in prose, checks the
+        interfaces, writes the proposal and decides when it is settled. Members advise. Never votes."""
+        tag = "c0_Manager" if opening else (f"c{cycle}_Manager_final" if closing else f"c{cycle}_Manager")
         if getattr(self.client, "is_fake", False):
-            message = ("The Manager has reviewed this cycle. The room has evidence on the board; "
-                       "the next cycle should test the weakest claim before voting.")
-            self.transcript.append({"cycle": cycle, "member": "Manager", "message": message})
-            self.history.append({"cycle": cycle, "member": "Manager", "kind": "turn_end"})
-            (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
+            message = self._fake_chief(cycle, opening)
+            self.transcript.append({"cycle": 0 if opening else cycle, "member": "Manager", "message": message})
+            self.history.append({"cycle": 0 if opening else cycle, "member": "Manager", "kind": "turn_end"})
+            (self.iter_dir / "turns" / f"{tag}.json").write_text(
                 json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
             return
         from hs.stage_a.council import SPEAKING_RULE
 
-        instructions = (
-            "You are the Manager, process lead of this council. You steer the process only: point out a "
-            "critical quantity nobody computed, an objection closed without evidence, a vote that came too "
-            "early, or a missing expertise; ask a named member to compute, sketch or look something up; you "
-            "may raise or resolve process objections on the whiteboard (whether one of your objections blocks "
-            "the vote is your judgement from its content) and register a new tool. From cycle 2, if no "
-            "proposal is on the board, name the member whose favored concepts should be integrated and ask "
-            "them to write the proposal (update_proposal) in their next turn. Check the key results on the board "
-            "against everyday scales (accelerations in g, sizes against a person or a door, loads against body "
-            "weights, energies against daily household use) and name any that look off. Before the last cycle, go "
-            "through every open blocking objection: resolve it on the whiteboard when the evidence on the board "
-            "settles it (cite that evidence), or name the member who must settle it this cycle. Ask for the "
-            "checks a design of this kind needs, whatever the design: the parts summed against each size and mass "
-            "limit, one value per quantity (two different densities or loads on the board must be reconciled), and "
-            "every flow the device carries — material, energy, signal — traced from start to end with the part "
-            "that does each step. When votes or objections say the proposal is out of date, name the member who updates "
-            "it this cycle, before the votes. You never propose design "
-            "concepts and you never vote. Keep short notes: end your message with one line "
-            "'Note on <member>: ...' for each member you observed. " + SPEAKING_RULE)
+        role = (
+            "You are the Manager of this council and its chief designer. The members are domain experts who "
+            "advise you: they post concepts, evidence and objections, and give a readiness opinion with a reason. "
+            "You decide the design. You do not invent concepts of your own: you select, combine and integrate the "
+            "members' concepts, and when a function has no adequate concept you ask named members for more. "
+            "Data outranks opinion: weigh each member's advice by the evidence behind it, and say so. ")
+        if opening:
+            task = (
+                "OPENING TURN, before the members speak. Read the problem and write its function structure on the "
+                "whiteboard with add_function: 4 to 8 functions, each a verb and a noun that does not presuppose a "
+                "solution ('lift the soil', not 'run the bucket ladder'), each with flows: what goes in and out "
+                "(energy, material, signal). Cover the whole job the device must do, including every hand-over "
+                "between functions. Then tell the members: every member posts, for every function, at least one "
+                "concept from their field, or says in one line that their field has none. Do not post concepts.")
+        elif closing:
+            task = (
+                "CLOSING TURN: the cycles are over. Read the members' readiness opinions. If the proposal is settled, "
+                "close the meeting (close_meeting) with a synthesis that answers every member's opinion by name and "
+                "says how you weighed it; if a blocking objection is still open or an opinion raises a problem the "
+                "evidence has not settled, do not close: say what remains open.")
+        else:
+            task = (
+                "END-OF-CYCLE TURN. "
+                "Cycle 1: check that every function has concepts from at least two members; name the members who "
+                "still owe one; name the two weakest functions, for which members should bring a distant analogy "
+                "with a written mapping in cycle 2. Point out a critical quantity nobody computed. "
+                "From cycle 2: for each function, select one concept with select_concept and a written rationale "
+                "that compares it with each alternative for that function (better / same / worse on the criteria, "
+                "with evidence ids); a function that needs no separate means gets an empty concept_id and the reason. "
+                "Before you compose, check every interface between the selected concepts: what one hands to the "
+                "next (material, energy, signal) must match, and a hand-over no part does is a missing function — add "
+                "it. Then write or update the proposal (update_proposal) from your selections, with the key claims "
+                "and their evidence ids. "
+                "Every cycle: check key results against everyday scales; sum the parts against each size and mass "
+                "limit; reconcile two values for one quantity; go through open blocking objections and resolve "
+                "those the evidence settles (cite it) or name who must settle them. Answer each readiness opinion. "
+                "When the proposal is settled — no blocking objection open, every member's opinion on the current "
+                "version given and answered — close the meeting with close_meeting and a synthesis. ")
+        instructions = role + task + (
+            " Keep short notes: end your message with one line 'Note on <member>: ...' for each member you "
+            "observed. " + SPEAKING_RULE)
         message = self._turn("Manager", cycle, instructions_override=instructions, role="manager",
                              allowed_actions=MANAGER_ACTIONS)
         message = self._shorten_if_long("Manager", message, instructions, "manager", cycle)
-        self.transcript.append({"cycle": cycle, "member": "Manager", "message": message})
-        self.history.append({"cycle": cycle, "member": "Manager", "kind": "turn_end"})
-        (self.iter_dir / "turns" / f"c{cycle}_Manager.json").write_text(
+        self.transcript.append({"cycle": 0 if opening else cycle, "member": "Manager", "message": message})
+        self.history.append({"cycle": 0 if opening else cycle, "member": "Manager", "kind": "turn_end"})
+        (self.iter_dir / "turns" / f"{tag}.json").write_text(
             json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
         with (self.iter_dir / "manager_notes.md").open("a", encoding="utf-8") as fh:
-            fh.write(f"\n## Cycle {cycle}\n{message}\n")
+            fh.write(f"\n## {'Opening' if opening else ('Closing' if closing else f'Cycle {cycle}')}\n{message}\n")
 
     # -- main loop ---------------------------------------------------------------------
     def run(self) -> MeetingResult:
@@ -203,6 +253,8 @@ class Meeting:
                                             for m in roster}
         closed_by = "cap"
         cycles_used = 0
+        self.board.roster = list(roster)
+        self._run_manager_turn(roster, 1, opening=True)  # the chief designer writes the function structure
         for cycle in range(1, self.max_cycles + 1):
             cycles_used = cycle
             # spec §4.3: cycle c starts with member (c-1) mod n
@@ -219,7 +271,10 @@ class Meeting:
                 if cycle >= self.min_cycles and self.board.consensus_reached(roster):
                     break
             self._run_manager_turn(roster, cycle)
-            # A4: consensus is decided after the Manager's turn, so an objection it raised counts.
+            # A4: closure is decided after the Manager's turn, so an objection it raised counts.
+            if cycle >= self.min_cycles and self.board.chief_closed():
+                closed_by = "chief"
+                break
             if cycle >= self.min_cycles and self.board.consensus_reached(roster):
                 closed_by = "consensus"
                 break
@@ -235,6 +290,10 @@ class Meeting:
                     self._run_real_turn(member, roster, self.max_cycles, vote_only=True)
             if self.board.consensus_reached(roster):
                 closed_by = "consensus"
+            else:
+                self._run_manager_turn(roster, self.max_cycles, closing=True)
+                if self.board.chief_closed():
+                    closed_by = "chief"
         open_blocking = [o.id for o in self.board.objections if o.blocking and o.status == "open"]
         self.board.closure.closed_by = closed_by
         self.board.closure.cycles_used = cycles_used
@@ -270,7 +329,8 @@ class Secretary:
                 "Also write: mechanism_sentence (one sentence stating the working principle in plain words a "
                 "non-specialist can follow: no part ids, no product codes, units with a space, at most three "
                 "significant figures); "
-                "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works); "
+                "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works, taken from the "
+                "chief designer's selections on the whiteboard with the reason each beat its alternatives); "
                 "open_question (EXACTLY 1, the most important unresolved question); "
                 "fabrication_steps: 3 to 5 coarse stages of how the device is made, each in plain words a "
                 "non-specialist can follow (for example 'Assemble the frame and mount the wheels'); mention a size or "

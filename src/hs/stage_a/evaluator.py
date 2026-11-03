@@ -41,8 +41,13 @@ class Evaluator:
         else:
             votes = [f"{m}: {'ready' if v.ready else 'NOT ready'} ({v.reason})" for m, v in board.votes.items()
                      if v.version == board.proposal.version]
-            proposal_fact = (f"Proposal v{board.proposal.version} by {board.proposal.author}. Votes on it: "
-                             + ("; ".join(votes) if votes else "none") + ".")
+            proposal_fact = (f"Proposal v{board.proposal.version} by {board.proposal.author}. Members' readiness "
+                             "opinions on it: " + ("; ".join(votes) if votes else "none") + "."
+                             + ("\nCHIEF DESIGNER'S SELECTIONS:\n" + "\n".join(
+                                 f"- {x.function_id} -> {x.concept_id or 'no separate means'}: {x.rationale}"
+                                 for x in board.selections) if board.selections else "")
+                             + (f"\nCHIEF DESIGNER'S CLOSING SYNTHESIS: {board.closure.chief_decision}"
+                                if board.closure.chief_decision else ""))
         open_objections = "\n".join(
             f"- {o.id} by {o.author} ({'blocking' if o.blocking else 'not blocking'}): {o.text}"
             for o in board.objections if o.status == "open") or "(none)"
@@ -59,7 +64,7 @@ class Evaluator:
             + f"SOLUTION:\n{solution.model_dump_json(indent=2)}\n\n"
             f"EVIDENCE TABLE:\n{evidence_table}\n\n"
             f"HOW THE MEETING CLOSED (facts, for your judgement): closed by "
-            f"{'consensus' if closed_by == 'consensus' else 'the cycle cap without consensus'} after "
+            f"{'consensus' if closed_by == 'consensus' else ('the chief designer’s decision (members advise; read their opinions)' if closed_by == 'chief' else 'the cycle cap without consensus')} after "
             f"{board.closure.cycles_used} cycles. {proposal_fact}\nOPEN OBJECTIONS:\n{open_objections}\n\n"
             f"PRIOR ART:\n{novelty}\n\n"
             "Write your judgment as free text. Consult cited evidence only when a claim looks doubtful; "
@@ -85,6 +90,8 @@ class Evaluator:
             "why, e.g. the council found from evidence that it does not apply). Accept when the concept works and "
             "every constraint that still holds is met, or its shortfall is acceptable in your engineering judgement "
             "and you say so. Four checks a concept review must not skip, each written out in your feedback: "
+            "(0) every function on the board has a means in the solution (a part that does it), or the chief designer "
+            "wrote why it needs none; a function with neither is a missing function. "
             "(1) for every size or mass limit, add up the parts the board names along that direction (widths across "
             "the axle including what sits outside the frame, lengths front to back, heights stacked; masses of all "
             "parts) and state the sum against the limit; a limit argued only by a sketch annotation is not shown. "

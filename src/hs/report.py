@@ -204,7 +204,7 @@ def report_html(run_dir: Path) -> str:
         closure = _read_json(iter_dir / "closure.json")
         if closure:
             closed = closure.get("closed_by", "")
-            events.append(f"The council meeting {'closed by consensus' if closed == 'consensus' else 'reached the cycle cap without consensus'} "
+            events.append(f"The council meeting {'closed by consensus' if closed == 'consensus' else ('closed by the chief designer’s decision' if closed == 'chief' else 'reached the cycle cap without consensus')} "
                           f"after {closure.get('cycles_used', '?')} cycles.")
         verdict = _read_json(iter_dir / "verdict.json")
         if verdict:

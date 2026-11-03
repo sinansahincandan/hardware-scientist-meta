@@ -64,7 +64,7 @@ MAX_COST_USD_PER_RUN = 15.00
 # Round-3 budget (item 0): one project-wide ledger of real Meta spend, checked before
 # every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).
 # Fake mode never touches it. HS_BUDGET_LEDGER overrides the path (tests).
-MAX_TOTAL_SPEND_USD = 55.00
+MAX_TOTAL_SPEND_USD = 62.35  # owner 2026-11-03: $20 more on top of the $42.35 spent
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger.jsonl"))
 
@@ -89,18 +89,22 @@ FIXED_CRITERIA = [
 
 # A5: who integrates the proposal, and when. Part of rev 0's §4 (the optimizer may revise it later).
 PROPOSAL_RULE = (
-    "Proposal: from cycle 2, the member whose concepts are favored for the most functions integrates them "
-    "into one proposal with update_proposal (the concepts, and the key claims with their evidence ids) in "
-    "their turn. If no proposal is on the board when cycle 2 ends, the Manager names the member who writes "
-    "it in cycle 3. Every later change to the design goes through update_proposal, which clears the votes."
+    "Roles: the members advise; the Manager is the chief designer and decides. The Manager writes the function "
+    "structure at the start, selects one concept per function with a written comparison, checks the interfaces "
+    "between the selected concepts, writes the proposal and closes the meeting when it is settled. Members do not "
+    "write proposals: they post concepts and evidence, raise objections, and give a readiness opinion (vote) with "
+    "their reason on each proposal version; the Manager answers every opinion."
 )
 
 DEFAULT_PROTOCOL = (
-    "Cycle 1: decompose the problem into functions, propose concepts per function "
-    "(distant cross-domain analogies welcome), search the literature, standards and datasheets, and post "
-    "first order-of-magnitude estimates as evidence. "
-    "Cycles 2+: attack and defend with evidence, raise and resolve objections, integrate a proposal, "
-    "vote ready only when the proposal survives your strongest objection. "
+    "Cycle 1: the Manager opens with the function structure (verb + noun functions with what flows in and out). "
+    "Every member then posts, for EVERY function, at least one concept from their own field (add_concept), or says "
+    "in one line that their field has none for it; a member who sees a missing function adds it. Search the "
+    "literature, standards and datasheets of your field and post first order-of-magnitude estimates as evidence. "
+    "Cycles 2+: develop and test your own concepts with evidence before adopting another member's; for the "
+    "functions the Manager names weakest, bring one concept by analogy from a distant field and write how it maps "
+    "onto this problem (drop it if it does not map); attack and defend with evidence, raise and resolve objections; "
+    "give your readiness opinion on each proposal version, ready only when it survives your strongest objection. "
     "Missing constraints are established from standards, literature or datasheets via web_search and posted "
     "as concepts tagged assumed_constraint, citing the search evidence. A source may be cited only when it is "
     "on the whiteboard as search evidence. "
@@ -112,6 +116,6 @@ DEFAULT_PROTOCOL = (
     "person or a door, loads against body weights, energies against daily household use) before relying on it. "
     "Read existing evidence before computing and reuse it by id unless you state why you recompute. "
     "Post a labeled sketch when proposing or changing a concept whose geometry, mechanism or flow "
-    "path matters. The Manager speaks last in every cycle and steers the process; it does not design. "
+    "path matters. The Manager speaks first in the meeting and last in every cycle. "
     + PROPOSAL_RULE
 )

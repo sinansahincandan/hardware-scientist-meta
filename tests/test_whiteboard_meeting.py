@@ -41,9 +41,11 @@ def test_update_proposal_clears_votes():
 def test_meeting_consensus_cycle2(tmp_path):
     meeting = _meeting(tmp_path)
     result = meeting.run()
-    assert result.closed_by == "consensus"
-    assert result.cycles_used == 2
-    assert result.board.proposal is not None
+    # The chief designer writes the proposal at the end of cycle 2; members' opinions on it come in cycle 3.
+    assert result.closed_by in ("consensus", "chief")
+    assert result.cycles_used == 3
+    assert result.board.proposal is not None and result.board.proposal.author == "Manager"
+    assert {x.function_id for x in result.board.selections} == {f.id for f in result.board.functions}
     assert result.board.evidence  # calc/simulate/sketch posted evidence
     tools_used = {e.tool for e in result.board.evidence}
     assert "calc" in tools_used
@@ -66,3 +68,32 @@ def test_evaluator_request_keeps_meeting_open_until_resolved(tmp_path):
     resolved = [o for o in result.board.objections if o.author == "Evaluator"]
     assert resolved and all(o.status == "resolved" for o in resolved)
     assert resolved[0].evidence_ids
+
+
+def test_members_advise_and_only_the_chief_writes_and_closes() -> None:
+    from hs.stage_a.whiteboard import Whiteboard
+
+    b = Whiteboard(roster=["A", "B"])
+    assert b.apply_op("Manager", {"action": "add_function", "text": "lift soil", "flows": "in: power; out: soil"})[0]
+    assert b.apply_op("Manager", {"action": "add_function", "text": "carry soil"})[0]
+    assert b.apply_op("A", {"action": "add_concept", "function_id": "F1", "text": "bucket ladder"})[0]
+    assert b.apply_op("B", {"action": "add_concept", "function_id": "F1", "text": "drum"})[0]
+    ok, msg = b.apply_op("A", {"action": "update_proposal", "text": "x"})
+    assert not ok and "chief designer" in msg
+    assert not b.apply_op("A", {"action": "select_concept", "function_id": "F1", "concept_id": "C1",
+                                "rationale": "r"})[0]
+    assert b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "concept_id": "C1",
+                                  "rationale": "ladder beats drum on continuous lift (E3); same on mass"})[0]
+    ok, msg = b.apply_op("Manager", {"action": "update_proposal", "text": "x"})
+    assert not ok and "F2" in msg  # every function needs a selection first
+    assert b.apply_op("Manager", {"action": "select_concept", "function_id": "F2", "concept_id": "",
+                                  "rationale": "the ladder's top bucket drops into the frame bin; no separate means"})[0]
+    assert b.apply_op("Manager", {"action": "update_proposal", "text": "ladder rover"})[0]
+    assert b.proposal.concept_ids == ["C1"]
+    assert not b.apply_op("Manager", {"action": "close_meeting", "synthesis": "s"})[0]  # no opinions yet
+    b.apply_op("A", {"action": "vote", "ready": True, "reason": "ok"})
+    b.apply_op("B", {"action": "vote", "ready": False, "reason": "drum would dig faster"})
+    assert b.apply_op("Manager", {"action": "close_meeting",
+                                  "synthesis": "B's speed point is real but E3 shows the ladder lifts continuously"})[0]
+    assert b.chief_closed() and not b.consensus_reached(["A", "B"])
+    assert "concepts from: A, B" in b.render_markdown()

@@ -228,7 +228,8 @@ def _stage_a_steps(run_dir: Path, it: int) -> list[tuple[str, str]]:
         objs = board.get("objections", [])
         open_blocking = [o for o in objs if o.get("status") == "open" and o.get("blocking")]
         proposal = board.get("proposal")
-        closed = "by consensus" if closure.get("closed_by") == "consensus" else "at the cycle cap without consensus"
+        closed = {"consensus": "by consensus", "chief": "by the chief designer's decision"}.get(
+            closure.get("closed_by"), "at the cycle cap without consensus")
         steps.append(("n-meeting", (
             f"The meeting ran {closure.get('cycles_used')} cycles and closed {closed}. The board holds "
             f"{len(ev)} evidence items ({', '.join(f'{n} {t}' for t, n in sorted(tools.items())) or 'none'}), "
@@ -328,7 +329,7 @@ def _stats(run_dir: Path) -> list[tuple[str, str]]:
            (str(count[("calc", "vetted_calc", "simulate")]), "calculations"), (str(count[("sketch",)]), "sketches")]
     if closure:
         out.append((f"{closure.get('cycles_used')} cycles",
-                    "consensus" if closure.get("closed_by") == "consensus" else "cycle cap"))
+                    {"consensus": "consensus", "chief": "chief designer"}.get(closure.get("closed_by"), "cycle cap")))
     if verdict:
         out.append(("accepted" if verdict.get("accept") else "sent back", f"meeting {len(iters)}"))
     out += [(str(rounds), "picture rounds"), (f"${cost:.2f}", "Meta API cost")]

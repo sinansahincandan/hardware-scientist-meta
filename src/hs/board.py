@@ -236,7 +236,7 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
         closure = _read(iter_dir / "closure.json")
         if closure:
             body.append(f"<p class='small'>The meeting closed "
-                        f"{'by consensus' if closure.get('closed_by') == 'consensus' else 'at the cycle cap without consensus'} "
+                        f"{'by consensus' if closure.get('closed_by') == 'consensus' else ('by the chief designer’s decision' if closure.get('closed_by') == 'chief' else 'at the cycle cap without consensus')} "
                         f"after {closure.get('cycles_used')} cycles.</p>")
         verdict = _read(iter_dir / "verdict.json")
         if verdict:

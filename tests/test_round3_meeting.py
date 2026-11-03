@@ -70,17 +70,18 @@ def test_consensus_is_rechecked_after_the_managers_turn(tmp_path: Path, monkeypa
     meeting = Meeting(client, master, tmp_path, 0, min_cycles=2, max_cycles=3)
     original = Meeting._run_manager_turn
 
-    def manager_objects_in_cycle_2(self: Meeting, roster: list[str], cycle: int) -> None:
-        original(self, roster, cycle)
-        if cycle == 2:
+    def manager_objects_in_cycle_2(self: Meeting, roster: list[str], cycle: int, **kw) -> None:
+        original(self, roster, cycle, **kw)
+        if cycle == 2 and not kw:
             self.board.apply_op("Manager", {"action": "raise_objection", "target_id": "proposal",
                                             "text": "The critical load was never computed.", "blocking": True})
 
     monkeypatch.setattr(Meeting, "_run_manager_turn", manager_objects_in_cycle_2)
     result = meeting.run()
-    # Without the objection this fake meeting closes by consensus in cycle 2; with it, it must not.
-    assert result.cycles_used == 3
-    assert not (result.closed_by == "consensus" and result.board.closure.open_blocking)
+    # Without the objection this fake meeting closes in cycle 3 (opinions follow the chief's cycle-2 proposal);
+    # with it, it must not close while the objection is open.
+    assert result.cycles_used >= 3
+    assert not (result.closed_by in ("consensus", "chief") and result.board.closure.open_blocking)
 
 
 def test_manager_turn_cannot_vote(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:

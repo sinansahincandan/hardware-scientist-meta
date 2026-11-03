@@ -12,6 +12,15 @@ class WBFunction(BaseModel):
     id: str
     text: str
     author: str
+    flows: str = ""  # what goes in and out: energy, material, signal (Pahl & Beitz function structure)
+
+
+class WBSelection(BaseModel):
+    """The Manager's (chief designer's) choice for one function, in prose: why it beats each alternative."""
+    function_id: str
+    concept_id: str = ""  # "" = the function needs no separate means; the rationale says why
+    rationale: str
+    author: str
 
 
 class WBConcept(BaseModel):
@@ -68,9 +77,11 @@ class WBVote(BaseModel):
 
 
 class WBClosure(BaseModel):
-    closed_by: str = "cap"  # consensus | cap
+    closed_by: str = "cap"  # consensus | chief | cap
     cycles_used: int = 0
     open_blocking: list[str] = Field(default_factory=list)
+    chief_decision: str = ""  # the Manager's written closing synthesis (answers every member's opinion)
+    decided_version: int = 0
 
 
 class Whiteboard(BaseModel):
@@ -80,7 +91,9 @@ class Whiteboard(BaseModel):
     evidence: list[WBEvidence] = Field(default_factory=list)
     objections: list[WBObjection] = Field(default_factory=list)
     proposal: WBProposal | None = None
-    votes: dict[str, WBVote] = Field(default_factory=dict)
+    votes: dict[str, WBVote] = Field(default_factory=dict)  # members' readiness opinions (advice, not a ballot)
+    selections: list[WBSelection] = Field(default_factory=list)
+    roster: list[str] = Field(default_factory=list)
     closure: WBClosure = Field(default_factory=WBClosure)
 
     # -- evidence is written by CODE only -------------------------------------
@@ -111,7 +124,8 @@ class Whiteboard(BaseModel):
             if action == "add_function":
                 if not op.get("text"):
                     return False, "add_function needs text"
-                fn = WBFunction(id=f"F{len(self.functions) + 1}", text=str(op["text"]), author=author)
+                fn = WBFunction(id=f"F{len(self.functions) + 1}", text=str(op["text"]), author=author,
+                                flows=str(op.get("flows", "") or ""))
                 self.functions.append(fn)
                 return True, fn.id
             if action == "add_concept":
@@ -163,10 +177,55 @@ class Whiteboard(BaseModel):
                         return True, oid
                 return False, (f"unknown objection '{oid}'; open objections: "
                                f"{', '.join(o.id for o in self.objections if o.status == 'open') or 'none'}")
+            if action == "select_concept":
+                if author != "Manager":
+                    return False, ("only the Manager (chief designer) selects concepts; give your comparison and "
+                                   "evidence in your message and as objections")
+                fid, cid = str(op.get("function_id", "")), str(op.get("concept_id", "") or "")
+                if fid not in {f.id for f in self.functions}:
+                    return False, f"unknown function_id '{fid}'; functions: {self._ids(self.functions) or 'none'}"
+                if cid and not any(c.id == cid and c.function_id == fid for c in self.concepts):
+                    return False, (f"concept '{cid}' is not a concept for {fid}; its concepts: "
+                                   f"{', '.join(c.id for c in self.concepts if c.function_id == fid) or 'none'}")
+                if not str(op.get("rationale", "")).strip():
+                    return False, ("select_concept needs a rationale: why it beats each alternative for this function "
+                                   "(better / same / worse on the criteria, with evidence ids)")
+                self.selections = [x for x in self.selections if x.function_id != fid]
+                self.selections.append(WBSelection(function_id=fid, concept_id=cid, author=author,
+                                                   rationale=str(op["rationale"])))
+                for c in self.concepts:
+                    if c.id == cid:
+                        c.status = "favored"
+                return True, f"{fid} -> {cid or 'no separate means'}"
+            if action == "close_meeting":
+                if author != "Manager":
+                    return False, "only the Manager (chief designer) closes the meeting"
+                if self.proposal is None:
+                    return False, "no proposal to close on"
+                if any(o.blocking and o.status == "open" for o in self.objections):
+                    return False, ("blocking objections are open: " + ", ".join(
+                        o.id for o in self.objections if o.blocking and o.status == "open")
+                                   + "; resolve each with evidence or keep the meeting going")
+                missing = [m for m in self.roster if m not in self.votes or self.votes[m].version != self.proposal.version]
+                if missing:
+                    return False, ("these members have given no readiness opinion on the current proposal: "
+                                   + ", ".join(missing))
+                if not str(op.get("synthesis", "")).strip():
+                    return False, "close_meeting needs a synthesis that answers every member's opinion"
+                self.closure.chief_decision = str(op["synthesis"])
+                self.closure.decided_version = self.proposal.version
+                return True, f"meeting closed by the chief designer on v{self.proposal.version}"
             if action == "update_proposal":
                 if not op.get("text"):
                     return False, "update_proposal needs text"
-                cids = list(op.get("concept_ids", []) or [])
+                if self.roster and author != "Manager":
+                    return False, ("the Manager (chief designer) writes the proposal; post concepts, evidence, "
+                                   "objections and your readiness opinion (vote) instead")
+                uncovered = [f.id for f in self.functions if f.id not in {x.function_id for x in self.selections}]
+                if self.roster and uncovered:
+                    return False, ("select a concept (or state why none is needed) for every function first: "
+                                   + ", ".join(uncovered))
+                cids = list(op.get("concept_ids", []) or []) or [x.concept_id for x in self.selections if x.concept_id]
                 known_c = {c.id for c in self.concepts}
                 for c in cids:
                     if c not in known_c:
@@ -198,6 +257,10 @@ class Whiteboard(BaseModel):
             return False, f"whiteboard op error: {exc}"
 
     # -- closing rule --------------------------------------------------------------
+    def chief_closed(self) -> bool:
+        return bool(self.closure.chief_decision) and self.proposal is not None \
+            and self.closure.decided_version == self.proposal.version
+
     def consensus_reached(self, roster: list[str]) -> bool:
         if self.proposal is None:
             return False
@@ -218,7 +281,12 @@ class Whiteboard(BaseModel):
                 lines.append(f"- {ins.get('archive_id')}: {ins.get('feedback_summary', '')}")
         lines.append("## Functions")
         for f in self.functions:
-            lines.append(f"- {f.id} [{f.author}] {f.text}")
+            lines.append(f"- {f.id} [{f.author}] {f.text}" + (f" (flows: {f.flows})" if f.flows else ""))
+            by = sorted({c.author for c in self.concepts if c.function_id == f.id})
+            missing = [m for m in self.roster if m not in by]
+            if self.roster:
+                lines.append(f"  concepts from: {', '.join(by) or 'nobody yet'}"
+                             + (f"; not yet from: {', '.join(missing)}" if missing else ""))
         lines.append("## Concepts")
         for c in self.concepts:
             if c.status == "dropped":
@@ -235,6 +303,10 @@ class Whiteboard(BaseModel):
                 lines.append(f"- {o.id} (resolved) {o.text}")
             else:
                 lines.append(f"- {o.id} [{o.author} -> {o.target_id}, blocking={o.blocking}] {o.text}")
+        if self.selections:
+            lines.append("## Chief designer's selections")
+            for x in self.selections:
+                lines.append(f"- {x.function_id} -> {x.concept_id or 'no separate means'}: {x.rationale}")
         lines.append("## Proposal")
         if self.proposal:
             lines.append(f"- v{self.proposal.version} [{self.proposal.author}] {self.proposal.text} concepts={self.proposal.concept_ids}")
@@ -242,7 +314,7 @@ class Whiteboard(BaseModel):
                 lines.append(f"  - claim: {claim.claim} evidence={claim.evidence_ids}")
         else:
             lines.append("- (none)")
-        lines.append("## Votes")
+        lines.append("## Readiness opinions (members advise; the chief designer decides)")
         for member, vote in self.votes.items():
             lines.append(f"- {member}: ready={vote.ready} (v{vote.version}) {vote.reason}")
         return "\n".join(lines) + "\n"
