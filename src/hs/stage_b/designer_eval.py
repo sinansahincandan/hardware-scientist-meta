@@ -20,7 +20,8 @@ def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROU
         return "s2_return"
     # C17: faithful only when the critic's own statuses leave no earlier fault unfixed, and (round 4) when it
     # lists no picture fault on a part of the device; callout faults are fixed by the label check instead.
-    if ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions) and not part_faults(ev):
+    if (ev.s1_faithful and all(x.status == "fixed" for x in ev.previous_regions if x.part_id != "callout")
+            and not part_faults(ev)):
         return "s1_pass"
     if round_idx + 1 < max_rounds:
         return "s1_retry"

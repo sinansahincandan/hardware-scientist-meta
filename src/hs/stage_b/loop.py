@@ -233,7 +233,9 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         (round_dir / "vlm_gradient.json").write_text(grad.model_dump_json(indent=2), encoding="utf-8")
         corrections = (grad.summary + "\n" + "\n".join(
             f"{g.part_id}: {g.diagnosis} -> {g.prompt_fix}" for g in grad.per_region) + "\n" + corrections)
-        render_regions = [x for x in ev.regions if x.source == "render" and len(x.box) == 4]
+        # callout faults are not edited here: the label check on panel A removes wrong callouts and code labels
+        # each part from the SAM boxes (figure.relabel_panel_a); editing them cost rounds in the round-2 benchmark
+        render_regions = [x for x in ev.regions if x.source == "render" and len(x.box) == 4 and x.part_id != "callout"]
         if grad.fix_mode != "local" or not render_regions:
             continue
         current = render_path

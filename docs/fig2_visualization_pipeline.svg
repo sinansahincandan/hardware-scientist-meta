@@ -80,7 +80,7 @@
 <rect x="60" y="620" width="250" height="120" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#5F6368" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(168.0,632) scale(1.4166666666666667)" fill="none" stroke="#5F6368" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></g>
 <text x="185.0" y="692" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#5F6368" text-anchor="middle">knowledge/</text>
-<text x="185.0" y="716" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="13.5" fill="#3C4043" text-anchor="middle"><tspan font-weight="400">lessons · insights · tools</tspan></text>
+<text x="185.0" y="716" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="13.5" fill="#3C4043" text-anchor="middle"><tspan font-weight="400">lessons · skills · insights · tools</tspan></text>
 </g>
 <g id="n-image-archive" class="node">
 <rect x="360" y="620" width="250" height="120" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#188038" stroke-width="2" stroke-dasharray="7 5"/>

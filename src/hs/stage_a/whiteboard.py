@@ -2,10 +2,16 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
 from pydantic import BaseModel, Field
+
+
+def _truthy(v: Any) -> bool:
+    """A vote's ready flag: models send true/false, or the strings "true"/"False"."""
+    return v.strip().lower() in ("true", "yes", "ready", "1") if isinstance(v, str) else bool(v)
 
 
 class WBFunction(BaseModel):
@@ -129,7 +135,11 @@ class Whiteboard(BaseModel):
                 self.functions.append(fn)
                 return True, fn.id
             if action == "add_concept":
-                fid = str(op.get("function_id", ""))
+                fid = str(op.get("function_id", "") or "")
+                if not fid:  # models often name the function only in the text ("for F4: ..."); take it if unique
+                    named = {m for m in re.findall(r"\bF\d+\b", str(op.get("text", "")))
+                             if m in {f.id for f in self.functions}}
+                    fid = named.pop() if len(named) == 1 else ""
                 if fid not in {f.id for f in self.functions}:
                     return False, (f"unknown function_id '{fid}'; functions on the board: "
                                    f"{self._ids(self.functions) or 'none yet — add_function first'}")
@@ -142,7 +152,10 @@ class Whiteboard(BaseModel):
             if action == "set_concept_status":
                 cid, status = str(op.get("id", "")), str(op.get("status", ""))
                 if status not in ("open", "favored", "dropped"):
-                    return False, f"bad concept status {status}"
+                    if status in ("selected", "chosen", "accepted", "select"):
+                        return False, (f"'{status}' is not a status: the chief designer selects with "
+                                       "select_concept(function_id, concept_id, rationale)")
+                    return False, f"bad concept status {status}; use open, favored or dropped"
                 for c in self.concepts:
                     if c.id == cid:
                         c.status = status
@@ -181,7 +194,12 @@ class Whiteboard(BaseModel):
                 if author != "Manager":
                     return False, ("only the Manager (chief designer) selects concepts; give your comparison and "
                                    "evidence in your message and as objections")
-                fid, cid = str(op.get("function_id", "")), str(op.get("concept_id", "") or "")
+                fid = str(op.get("function_id", "") or "")
+                cid = str(op.get("concept_id", "") or op.get("id", "") or "")
+                if "rationale" not in op and (op.get("text") or op.get("reason")):
+                    op = {**op, "rationale": op.get("text") or op.get("reason")}
+                if not fid and cid:  # the concept names its function
+                    fid = next((c.function_id for c in self.concepts if c.id == cid), "")
                 if fid not in {f.id for f in self.functions}:
                     return False, f"unknown function_id '{fid}'; functions: {self._ids(self.functions) or 'none'}"
                 if cid and not any(c.id == cid and c.function_id == fid for c in self.concepts):
@@ -210,9 +228,9 @@ class Whiteboard(BaseModel):
                 if missing:
                     return False, ("these members have given no readiness opinion on the current proposal: "
                                    + ", ".join(missing))
-                if not str(op.get("synthesis", "")).strip():
+                if not str(op.get("synthesis", "") or op.get("text", "")).strip():
                     return False, "close_meeting needs a synthesis that answers every member's opinion"
-                self.closure.chief_decision = str(op["synthesis"])
+                self.closure.chief_decision = str(op.get("synthesis") or op.get("text"))
                 self.closure.decided_version = self.proposal.version
                 return True, f"meeting closed by the chief designer on v{self.proposal.version}"
             if action == "update_proposal":
@@ -223,15 +241,19 @@ class Whiteboard(BaseModel):
                                    "objections and your readiness opinion (vote) instead")
                 uncovered = [f.id for f in self.functions if f.id not in {x.function_id for x in self.selections}]
                 if self.roster and uncovered:
-                    return False, ("select a concept (or state why none is needed) for every function first: "
+                    return False, ("select a concept for every function first with select_concept(function_id, "
+                                   "concept_id, rationale) — concept_id empty if none is needed. Not yet selected: "
                                    + ", ".join(uncovered))
                 cids = list(op.get("concept_ids", []) or []) or [x.concept_id for x in self.selections if x.concept_id]
                 known_c = {c.id for c in self.concepts}
                 for c in cids:
                     if c not in known_c:
                         return False, f"unknown concept id '{c}'; concepts: {self._ids(self.concepts) or 'none'}"
-                claims = [WBClaim(claim=str(k.get("claim", "")), evidence_ids=list(k.get("evidence_ids", []) or []))
-                          for k in (op.get("key_claims", []) or [])]
+                # models write a claim as {claim|text, evidence_ids|evidence}; 90 of 256 claims in the round-1/2
+                # runs used text/evidence and were stored empty
+                claims = [WBClaim(claim=str(k.get("claim") or k.get("text") or ""),
+                                  evidence_ids=list(k.get("evidence_ids") or k.get("evidence") or []))
+                          for k in (op.get("key_claims", []) or []) if isinstance(k, dict)]
                 version = (self.proposal.version + 1) if self.proposal else 1
                 self.proposal = WBProposal(version=version, author=author, text=str(op["text"]),
                                            concept_ids=cids, key_claims=claims)
@@ -241,7 +263,7 @@ class Whiteboard(BaseModel):
                 if self.proposal is None:
                     return False, "no proposal to vote on yet; someone must write one with update_proposal first"
                 self.votes[author] = WBVote(version=self.proposal.version,
-                                            ready=bool(op.get("ready", False)),
+                                            ready=_truthy(op.get("ready", False)),
                                             reason=str(op.get("reason", "")))
                 return True, f"vote recorded for v{self.proposal.version}"
             if action == "read_evidence":

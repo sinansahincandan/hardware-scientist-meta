@@ -148,6 +148,16 @@ class Meeting:
                 extra_instruction=("\nThis is the final vote-only round: the cycles are over. Read the current "
                                    "proposal, the open objections and the evidence, then vote on the proposal "
                                    "with your reason, or raise an objection. No other board actions."))
+            vote = self.board.votes.get(member)
+            if self.board.proposal is not None and (vote is None or vote.version != self.board.proposal.version):
+                # an opinion written only in the message is not on the board, and the chief cannot close without it
+                # (replay on run 105032: one member spoke without calling vote); ask once more
+                self.history.append({"cycle": cycle, "member": member, "kind": "vote_reask"})
+                self._turn(member, cycle, allowed_actions=VOTE_ONLY_ACTIONS,
+                           tool_schemas=[t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard"],
+                           extra_instruction=("\nYour last message gave no readiness opinion on the board. Call the "
+                                              "whiteboard tool now with action vote, ready true or false, and your "
+                                              "reason in one or two sentences."))
         else:
             message = self._turn(member, cycle)
         message = self._shorten_if_long(member, message, member_instructions(self.master.sections, member),
@@ -185,6 +195,10 @@ class Meeting:
         opens the meeting with the function structure, selects a concept per function in prose, checks the
         interfaces, writes the proposal and decides when it is settled. Members advise. Never votes."""
         tag = "c0_Manager" if opening else (f"c{cycle}_Manager_final" if closing else f"c{cycle}_Manager")
+        base, n = tag, 1
+        while (self.iter_dir / "turns" / f"{tag}.json").exists():
+            n += 1
+            tag = f"{base}_{n}"
         if getattr(self.client, "is_fake", False):
             message = self._fake_chief(cycle, opening)
             self.transcript.append({"cycle": 0 if opening else cycle, "member": "Manager", "message": message})
@@ -200,6 +214,12 @@ class Meeting:
             "You decide the design. You do not invent concepts of your own: you select, combine and integrate the "
             "members' concepts, and when a function has no adequate concept you ask named members for more. "
             "Data outranks opinion: weigh each member's advice by the evidence behind it, and say so. ")
+        selected = {x.function_id for x in self.board.selections}
+        unselected = [f.id for f in self.board.functions if f.id not in selected]
+        every_cycle = (
+            "Check key results against everyday scales; sum the parts against each size and mass limit; reconcile "
+            "two values for one quantity; go through open blocking objections and resolve those the evidence "
+            "settles (cite it) or name who must settle them. Answer each readiness opinion. ")
         if opening:
             task = (
                 "OPENING TURN, before the members speak. Read the problem and write its function structure on the "
@@ -210,28 +230,38 @@ class Meeting:
                 "concept from their field, or says in one line that their field has none. Do not post concepts.")
         elif closing:
             task = (
-                "CLOSING TURN: the cycles are over. Read the members' readiness opinions. If the proposal is settled, "
+                "CLOSING TURN: the cycles are over. "
+                + (f"Functions without a selection: {', '.join(unselected)} — select them now with select_concept. "
+                   if unselected else "")
+                + ("There is no proposal on the board: write it now with update_proposal(text, key_claims) — the "
+                   "Evaluator judges the proposal you write. " if self.board.proposal is None else "")
+                + "Read the members' readiness opinions. If the proposal is settled, "
                 "close the meeting (close_meeting) with a synthesis that answers every member's opinion by name and "
                 "says how you weighed it; if a blocking objection is still open or an opinion raises a problem the "
-                "evidence has not settled, do not close: say what remains open.")
+                "evidence has not settled, do not close: say what remains open. This is concept design: the meeting "
+                "settles what calculation, simulation and sources can settle. A test that needs built hardware "
+                "cannot be done here and is no reason to keep the meeting open; name it as a bench test in your "
+                "synthesis.")
+        elif cycle == 1:
+            task = (
+                f"END OF CYCLE 1 of {self.max_cycles}. Check that every function has concepts from at least two "
+                "members; name the members who still owe one; name the two weakest functions, for which members "
+                "should bring a distant analogy with a written mapping in cycle 2. Point out a critical quantity "
+                "nobody computed. " + every_cycle)
         else:
             task = (
-                "END-OF-CYCLE TURN. "
-                "Cycle 1: check that every function has concepts from at least two members; name the members who "
-                "still owe one; name the two weakest functions, for which members should bring a distant analogy "
-                "with a written mapping in cycle 2. Point out a critical quantity nobody computed. "
-                "From cycle 2: for each function, select one concept with select_concept and a written rationale "
-                "that compares it with each alternative for that function (better / same / worse on the criteria, "
-                "with evidence ids); a function that needs no separate means gets an empty concept_id and the reason. "
-                "Before you compose, check every interface between the selected concepts: what one hands to the "
-                "next (material, energy, signal) must match, and a hand-over no part does is a missing function — add "
-                "it. Then write or update the proposal (update_proposal) from your selections, with the key claims "
-                "and their evidence ids. "
-                "Every cycle: check key results against everyday scales; sum the parts against each size and mass "
-                "limit; reconcile two values for one quantity; go through open blocking objections and resolve "
-                "those the evidence settles (cite it) or name who must settle them. Answer each readiness opinion. "
-                "When the proposal is settled — no blocking objection open, every member's opinion on the current "
-                "version given and answered — close the meeting with close_meeting and a synthesis. ")
+                f"END OF CYCLE {cycle} of {self.max_cycles}: select and integrate now. "
+                + (f"Functions without a selection: {', '.join(unselected)}. " if unselected else "")
+                + "For each function, call select_concept(function_id, concept_id, rationale) with a rationale "
+                "that compares the chosen concept with each alternative for that function (better / same / worse on "
+                "the criteria, with evidence ids); a function that needs no separate means gets an empty concept_id "
+                "and the reason. Before you compose, check every interface between the selected concepts: what one "
+                "hands to the next (material, energy, signal) must match, and a hand-over no part does is a missing "
+                "function — add it. Then call update_proposal(text, key_claims) from your selections, each claim "
+                "with its evidence ids. " + every_cycle
+                + "When the proposal is settled — no blocking objection open, every member's opinion on the current "
+                "version given and answered — close the meeting with close_meeting(synthesis); a test that needs built "
+                "hardware is a bench test to name in the synthesis, not an open point. ")
         instructions = role + task + (
             " Keep short notes: end your message with one line 'Note on <member>: ...' for each member you "
             "observed. " + SPEAKING_RULE)
@@ -244,6 +274,29 @@ class Meeting:
             json.dumps({"cycle": cycle, "member": "Manager", "message": message}, indent=2), encoding="utf-8")
         with (self.iter_dir / "manager_notes.md").open("a", encoding="utf-8") as fh:
             fh.write(f"\n## {'Opening' if opening else ('Closing' if closing else f'Cycle {cycle}')}\n{message}\n")
+
+    def _closing_rounds(self, roster: list[str]) -> str:
+        """After the cycles: members give readiness opinions on the proposal (vote-only round, spec §4.3), then the
+        chief's closing turn. A closing turn that revises the proposal clears the opinions, so the revision gets one
+        more round of opinions and one more closing turn; the loop then ends either way."""
+        for _ in range(2):
+            version = self.board.proposal.version if self.board.proposal else 0
+            for member in roster:
+                if getattr(self.client, "is_fake", False):
+                    turn = self.client.scripted_turn(member, roster, self.max_cycles, self.board)
+                    if turn.get("vote") is not None:
+                        self.board.apply_op(member, {"action": "vote", "ready": turn["vote"]["ready"],
+                                                     "reason": turn["vote"]["reason"]})
+                else:
+                    self._run_real_turn(member, roster, self.max_cycles, vote_only=True)
+            if self.board.consensus_reached(roster):
+                return "consensus"
+            self._run_manager_turn(roster, self.max_cycles, closing=True)
+            if self.board.chief_closed():
+                return "chief"
+            if self.board.proposal is None or self.board.proposal.version == version:
+                break
+        return "cap"
 
     # -- main loop ---------------------------------------------------------------------
     def run(self) -> MeetingResult:
@@ -278,22 +331,12 @@ class Meeting:
             if cycle >= self.min_cycles and self.board.consensus_reached(roster):
                 closed_by = "consensus"
                 break
-        if closed_by != "consensus" and self.board.proposal is not None:
-            # vote-only round (spec §4.3): only vote / raise_objection
-            for member in roster:
-                if getattr(self.client, "is_fake", False):
-                    turn = self.client.scripted_turn(member, roster, self.max_cycles, self.board)
-                    if turn.get("vote") is not None:
-                        self.board.apply_op(member, {"action": "vote", "ready": turn["vote"]["ready"],
-                                                     "reason": turn["vote"]["reason"]})
-                else:
-                    self._run_real_turn(member, roster, self.max_cycles, vote_only=True)
-            if self.board.consensus_reached(roster):
-                closed_by = "consensus"
-            else:
-                self._run_manager_turn(roster, self.max_cycles, closing=True)
-                if self.board.chief_closed():
-                    closed_by = "chief"
+        if closed_by == "cap" and self.board.roster and self.board.proposal is None:
+            # the chief never wrote a proposal in the cycles: it selects and writes one now, so members can
+            # give their opinions on it and the Evaluator judges a proposal, not loose concepts
+            self._run_manager_turn(roster, self.max_cycles, closing=True)
+        if closed_by == "cap" and self.board.proposal is not None:
+            closed_by = self._closing_rounds(roster)
         open_blocking = [o.id for o in self.board.objections if o.blocking and o.status == "open"]
         self.board.closure.closed_by = closed_by
         self.board.closure.cycles_used = cycles_used

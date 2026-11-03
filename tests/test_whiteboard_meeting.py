@@ -64,7 +64,7 @@ def test_evaluator_request_keeps_meeting_open_until_resolved(tmp_path):
     meeting = _meeting(tmp_path)
     meeting.pin_evaluator_requests(["Compute the worst-case load with units and cite it."], "feedback")
     result = meeting.run()
-    assert result.closed_by == "consensus"
+    assert result.closed_by in ("consensus", "chief")
     resolved = [o for o in result.board.objections if o.author == "Evaluator"]
     assert resolved and all(o.status == "resolved" for o in resolved)
     assert resolved[0].evidence_ids
@@ -97,3 +97,57 @@ def test_members_advise_and_only_the_chief_writes_and_closes() -> None:
                                   "synthesis": "B's speed point is real but E3 shows the ladder lifts continuously"})[0]
     assert b.chief_closed() and not b.consensus_reached(["A", "B"])
     assert "concepts from: A, B" in b.render_markdown()
+
+
+def test_board_tool_schema_declares_every_action_and_field_the_board_reads() -> None:
+    """Round-2 benchmark bug: select_concept/close_meeting and their fields were missing from the schema the model
+    sees, so the chief sent id/text and status 'selected' and never got a selection onto the board."""
+    from hs.stage_a.meeting import MANAGER_ACTIONS, VOTE_ONLY_ACTIONS
+    from hs.stage_a.tools import TOOL_SCHEMAS
+
+    wb = next(t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard")
+    props = wb["parameters"]["properties"]
+    assert MANAGER_ACTIONS | VOTE_ONLY_ACTIONS | {"add_concept", "update_proposal"} <= set(props["action"]["enum"])
+    for field in ("function_id", "concept_id", "rationale", "synthesis", "flows", "ready", "reason", "key_claims"):
+        assert field in props, field
+        assert field in wb["description"] or field in ("ready", "reason", "key_claims"), field
+
+
+def test_board_accepts_the_shapes_the_model_actually_sent() -> None:
+    """Shapes copied from runs/20261103-10503*/stage_a/iter_00/whiteboard_history.jsonl."""
+    from hs.stage_a.whiteboard import Whiteboard
+
+    b = Whiteboard(problem_title="t", roster=["A", "B"])
+    assert b.apply_op("Manager", {"action": "add_function", "text": "Convert wind to shaft power"})[0]
+    assert b.apply_op("Manager", {"action": "add_function", "text": "Convert shaft power to current"})[0]
+    # member names the function only in the text
+    ok, msg = b.apply_op("A", {"action": "add_concept", "id": "C26", "text": "Plumbing analogy for F2: buffer cap"})
+    assert ok and b.concepts[-1].function_id == "F2", msg
+    assert b.apply_op("B", {"action": "add_concept", "function_id": "F1", "text": "3-blade rotor"})[0]
+    # 'selected' is not a status; the error points to select_concept
+    ok, msg = b.apply_op("Manager", {"action": "set_concept_status", "id": "C2", "status": "selected"})
+    assert not ok and "select_concept" in msg
+    # chief sends id/text instead of concept_id/rationale
+    ok, msg = b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "id": "C2",
+                                     "text": "C2 gives shaft power; better than none"})
+    assert ok, msg
+    ok, msg = b.apply_op("Manager", {"action": "select_concept", "concept_id": "C1", "rationale": "only buffer"})
+    assert ok and {s.function_id for s in b.selections} == {"F1", "F2"}, msg
+    assert b.apply_op("Manager", {"action": "update_proposal", "text": "rotor + cap",
+                                  "key_claims": [{"text": "33 W at 11 m/s", "evidence_ids": ["E9"]},
+                                                 {"claim": "brake stops", "evidence": ["E2"]}]})[0]
+    assert [(c.claim, c.evidence_ids) for c in b.proposal.key_claims] == [("33 W at 11 m/s", ["E9"]),
+                                                                          ("brake stops", ["E2"])]
+    # 'False' as a string is not ready
+    assert b.apply_op("A", {"action": "vote", "ready": "False", "reason": "brake unproven"})[0]
+    assert b.votes["A"].ready is False
+
+
+def test_callout_faults_do_not_block_a_faithful_pass() -> None:
+    from hs.schemas import DesignerEval, PreviousRegionStatus
+    from hs.stage_b.designer_eval import decide
+
+    ev = DesignerEval.model_construct(
+        s1_faithful=True, s2_flaw=False, regions=[],
+        previous_regions=[PreviousRegionStatus(part_id="callout", fault="leader on the cup", status="still_wrong")])
+    assert decide(ev, 0) == "s1_pass"

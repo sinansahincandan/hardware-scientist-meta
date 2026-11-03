@@ -185,7 +185,8 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
             if name == "whiteboard":
                 wb_calls += 1
                 op_action = str(_unwrap_args(args).get("action", ""))
-                if wb_calls > config.MAX_WHITEBOARD_CALLS_PER_TURN:
+                if wb_calls > (config.MAX_CHIEF_WHITEBOARD_CALLS_PER_TURN if member == "Manager"
+                               else config.MAX_WHITEBOARD_CALLS_PER_TURN):
                     output = "whiteboard budget exhausted — write your message now"
                 elif allowed_actions is not None and op_action not in allowed_actions:
                     output = (f"error: action {op_action} is not available in this turn; "

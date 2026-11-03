@@ -56,6 +56,8 @@ MIN_CYCLES = 2
 MAX_CYCLES = 4
 MAX_TOOL_CALLS_PER_TURN = 6
 MAX_WHITEBOARD_CALLS_PER_TURN = 8
+# the chief designer selects one concept per function (4-8), writes the proposal and closes in one turn
+MAX_CHIEF_WHITEBOARD_CALLS_PER_TURN = 16
 MAX_TURN_MESSAGE_WORDS = 250
 MAX_NEW_TOOLS = 2
 MAX_MANAGER_NEW_TOOLS = 2

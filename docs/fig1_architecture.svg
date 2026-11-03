@@ -46,7 +46,7 @@
   <path d="M21 6l0 13" />
 </g>
 <text x="1250.0" y="320" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#5F6368" text-anchor="middle">knowledge/</text>
-<text x="1250.0" y="344" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">lessons · insights · tools (past problems)</text>
+<text x="1250.0" y="344" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">lessons · skills · insights · tools</text>
 <rect x="50" y="380" width="760" height="495" rx="8" fill="none" stroke="#5F6368" stroke-width="1.5" stroke-dasharray="3 4"/>
 <text x="68" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#202124" text-anchor="start">Stage A · Design</text>
 <text x="232" y="406" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#5F6368" text-anchor="start" font-style="italic">instance optimization of the concept</text>
@@ -253,7 +253,7 @@
 <text x="56" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">for k in range(8):</text>
 <text x="745" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># Stage A, best-so-far on exit</text>
 <text x="56" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    room = meeting(master, archive.inspirations())</text>
-<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># members advise; Manager selects, decides</text>
+<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># advise; chief selects, decides</text>
 <text x="56" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    solution = secretary(room)</text>
 <text x="745" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># cites evidence where it exists</text>
 <text x="56" y="1090.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    verdict = evaluator(solution, room.evidence)</text>
