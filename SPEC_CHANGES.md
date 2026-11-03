@@ -94,3 +94,15 @@ The owner's figures (docs/fig1_architecture.svg, docs/fig2_visualization_pipelin
 3. SAM masks: meta-sam-parser 0.1.0 installed (owner approved); parts are measured from masks.
 4. Evaluator: sees, constraint by constraint, what is not satisfied and says so in writing; it may judge a
    constraint no longer valid and accept with that reason. No scores, no strict quantification.
+
+## SPEC-12 (2026-11-03, owner): members advise, the Manager is the chief designer
+Owner decision after reviewing functional design (METU ME407, Dieter & Schmidt) and Kate Fu's work; reasoning in
+docs/brainstorm/functional_council.md. Members stay domain experts and advise: concepts for every function (or "none
+from my field"), evidence, objections, a readiness opinion per proposal version. The Manager (meeting turn) is the chief
+designer: opens the meeting with the function structure (verb + noun, flows in/out), selects one concept per function
+with a written comparison (`select_concept`), checks interfaces between selections, writes the proposal (only the
+Manager may; every function must be selected or explained), and closes the meeting with a written synthesis that
+answers every opinion (`close_meeting`, closed_by "chief"); all-ready consensus still closes too. The Evaluator's
+first check is that every function has a means. The gradient Manager (rewrite after rejection) is unchanged and now
+also rewrites the chief's instructions. Fig. 1 labels updated with the owner's permission (council and meeting boxes,
+controller comment); layout unchanged.

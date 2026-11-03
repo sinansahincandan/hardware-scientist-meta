@@ -74,7 +74,7 @@
   <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
 </g>
 <text x="368" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#D93025" text-anchor="start">Council</text>
-<text x="454" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="start">experts + manager in one room</text>
+<text x="454" y="457" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="start">experts advise · Manager = chief designer</text>
 <circle cx="372" cy="500" r="23" fill="#FFFFFF" stroke="#D93025" stroke-width="1.8"/>
 <g transform="translate(360,488) scale(1.0)" fill="none" stroke="#D93025" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -141,8 +141,8 @@
   <path d="M11 17a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -1" />
 </g>
 <text x="420.0" y="700" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#D93025" text-anchor="middle">Whiteboard meeting</text>
-<text x="420.0" y="724" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">2–4 cycles · consensus exit</text>
-<text x="420.0" y="744" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">→ solution prompt</text>
+<text x="420.0" y="724" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">functions → concepts</text>
+<text x="420.0" y="744" font-family="InterEmb, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#3C4043" text-anchor="middle">chief selects → solution</text>
 <rect x="570" y="630" width="220" height="126" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#E37400" stroke-width="2" stroke-dasharray="7 5"/>
 <g transform="translate(663.0,642) scale(1.4166666666666667)" fill="none" stroke="#E37400" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round">
   
@@ -253,7 +253,7 @@
 <text x="56" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">for k in range(8):</text>
 <text x="745" y="1025.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># Stage A, best-so-far on exit</text>
 <text x="56" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    room = meeting(master, archive.inspirations())</text>
-<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># members + manager, 2-4 cycles</text>
+<text x="745" y="1047.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># members advise; Manager selects, decides</text>
 <text x="56" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    solution = secretary(room)</text>
 <text x="745" y="1068.5" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#188038"># cites evidence where it exists</text>
 <text x="56" y="1090.0" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#202124" xml:space="preserve">    verdict = evaluator(solution, room.evidence)</text>
