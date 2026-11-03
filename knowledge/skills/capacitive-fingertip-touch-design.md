@@ -21,3 +21,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 10. Budget bus: **~43.2 kbps total (~19.2 kbps static + 24 kbps vibration)** fits 4-wire serial [run 20261102-184913_tactile-fingertip-sensor-for-robot-hands E23,E18].
 
 ## Use notes
+- run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (Chen — Slip Dynamics and Grip Control Signal): Helped: guided row-column shear taxel plus 100-500 Hz / 1 kHz vibration dual-channel slip flag and 10 ms budget that keeps fall within 1 mm.

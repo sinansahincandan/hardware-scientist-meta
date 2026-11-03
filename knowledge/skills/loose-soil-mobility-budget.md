@@ -16,3 +16,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 7. Allow **teleoperation overhead ~29 W and ~1.73 kg for Jetson Orin Nano-class compute, cameras, depth and radio** [run 20261102-153907_lunar-regolith-excavation-robot E16,E20,E21].
 
 ## Use notes
+- run 20261102-214939_lunar-regolith-excavation-robot (Kaito — Mobility, Chassis and Deployment): Helped size wide grouser wheels and traction budget for loose bed.

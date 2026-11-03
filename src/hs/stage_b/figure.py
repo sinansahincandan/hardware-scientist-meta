@@ -48,7 +48,14 @@ def _panel_c(solution: SolutionPrompt, path: Path) -> bool:
     if not stages:
         return False
     title, body = _font(26), _font(20)
-    wrapped = [textwrap.wrap(stage.name, width=17) or [""] for stage in stages]
+    names = {p.id: p.name for p in solution.concept.parts}
+
+    def readable(name: str) -> str:  # a part id or snake_case written as a name -> the part's plain name
+        if name in names:
+            return names[name]
+        return name.replace("_", " ") if re.fullmatch(r"[a-z0-9_]+", name) else name
+
+    wrapped = [textwrap.wrap(readable(stage.name), width=17) or [""] for stage in stages]
     box_h = 60 + 26 * max(len(w) for w in wrapped)
     img = Image.new("RGB", (max(1000, 240 * len(stages) + 20), 100 + box_h), "white")
     draw = ImageDraw.Draw(img)
@@ -203,14 +210,24 @@ def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localiz
     font = _font(max(18, w // 60))
     small = _font(max(18, w // 75))
     draw = ImageDraw.Draw(img)
+    labels_file = panel_a.with_suffix(".labels.json")
+    blocked: list[list[float]] = json.loads(labels_file.read_text(encoding="utf-8")) if labels_file.exists() else []
     placed: list[tuple[float, float]] = []
+
+    def free(x: float, y: float) -> bool:
+        if any(abs(x - px) < 2.2 * r and abs(y - py) < 2.2 * r for px, py in placed):
+            return False
+        return not any(x0 - r < x < x1 + r and y0 - r < y < y1 + r for x0, y0, x1, y1 in blocked)
+
     for k, st in enumerate(steps, 1):
         b = where.get(st.part_id)
         if b is None:
             continue
-        cx, cy = (b.x0 + b.x1) / 2000 * w, (b.y0 + b.y1) / 2000 * h
-        while any(abs(cx - px) < 2.2 * r and abs(cy - py) < 2.2 * r for px, py in placed):  # never on top of another
-            cy += 2.4 * r
+        bx0, by0, bx1, by1 = b.x0 / 1000 * w, b.y0 / 1000 * h, b.x1 / 1000 * w, b.y1 / 1000 * h
+        # the part's centre first, then a grid of points inside the part: the first one clear of labels and markers
+        cands = [((bx0 + bx1) / 2, (by0 + by1) / 2)] + [(bx0 + (bx1 - bx0) * i / 6, by0 + (by1 - by0) * j / 6)
+                                                        for j in range(1, 6) for i in range(1, 6)]
+        cx, cy = next(((x, y) for x, y in cands if free(x, y)), cands[0])
         placed.append((cx, cy))
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(200, 60, 40), outline=(255, 255, 255), width=4)
         tw = draw.textlength(str(k), font=font)

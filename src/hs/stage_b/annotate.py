@@ -1,6 +1,7 @@
 """Annotate: localization call + Pillow overlay + scale bar (spec §5.4). All words drawn by code."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -149,6 +150,7 @@ class Annotator:
         # bottom by the part's height, so leaders run sideways and never cross another label.
         items = [(pid, (b[0] + b[2]) / 2, (b[1] + b[3]) / 2) for pid, b in boxes_px.items()] if draw_labels else []
         pad, gap = 10, 12
+        label_rects: list[list[float]] = []
         for side in ("left", "right"):
             col = sorted([it for it in items if (it[1] < w / 2) == (side == "left")], key=lambda it: it[2])
             next_top = 8.0
@@ -162,6 +164,7 @@ class Annotator:
                     ly = min(max(cy + 2 * fs, next_top), h - fs - 16)
                 next_top = ly + fs + pad + gap
                 rect = (lx - 6, ly - 4, lx + tw + 6, ly + fs + 6)
+                label_rects.append([*rect])
                 ax, ay = (rect[2] if side == "left" else rect[0]), (rect[1] + rect[3]) / 2
                 if below:
                     ax, ay = min(max(cx, rect[0] + 12), rect[2] - 12), rect[1]
@@ -184,4 +187,5 @@ class Annotator:
         draw.text((12, 8), panel_letter, fill=(0, 0, 0), font=font)
         out_png.parent.mkdir(parents=True, exist_ok=True)
         img.save(out_png)
+        out_png.with_suffix(".labels.json").write_text(json.dumps(label_rects), encoding="utf-8")  # for the step markers
         return out_png, loc, missing

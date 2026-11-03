@@ -283,7 +283,7 @@ class Secretary:
                 "open_questions; "
                 "measurement_chain: the stages in the order the signal travels (the sensing element, then its "
                 "conditioning, then the instrument or link, then the computer or operator that acts on it), each a real "
-                "part of this concept; "
+                "part of this concept named in plain words (never an id or a snake_case name); "
                 "transfer_line formatted exactly as: <governing quantity>: A -> B -> C | Measured: D -> E "
                 "where the governing quantity is the one that actually decides this design (Load, Heat, "
                 "Energy, Fluid, Signal...), naming the real parts/sensor stages of this concept.\n\n"
