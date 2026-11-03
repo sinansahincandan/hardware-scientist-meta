@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def hs_markdown(run: Path) -> str:
-    sol_path = sorted(run.glob("stage_a/iter_*/solution.json"))[-1]
+    sol_path = max(run.glob("stage_a/iter_*/solution.json"))
     sol = json.loads(sol_path.read_text(encoding="utf-8"))
     verdict = json.loads((sol_path.parent / "verdict.json").read_text(encoding="utf-8"))
     parts = [f"- {p['name']} — {p['function']}" for p in sol["concept"]["parts"]]
