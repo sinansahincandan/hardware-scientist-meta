@@ -12,3 +12,4 @@ source: run 20261102-214939_lunar-regolith-excavation-robot (2026-11-02)
 6. Size drive from Fcut + rolling: torque per wheel (e.g., 11 N-m [E41]) and cutting power P = Fcut*v (e.g., 27.5 W at 0.1 m/s [E17]).
 
 ## Use notes
+- run 20261103-105032_lunar-regolith-excavation-robot (Excavation and Regolith Handling Lead): Helped - set shallow cut at 129 N and justified vibrating share to 90.3 N against 222 N traction with margin.

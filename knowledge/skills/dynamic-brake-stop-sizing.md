@@ -12,3 +12,4 @@ source: run 20261102-214943_small-wind-turbine-for-a-wind-tunnel-com (2026-11-02
 Typical: R=1 gives 324 W peak, R=2 gives 162 W, R=5 gives 65 W (E32); 2 ohm gives tau 2.22 s (E33) and t10 5.11 s (E42, E46); peak brake torque 0.54 N-m (E47); pad needs 37.5 N for hold (E48) with 180 J into resistor (E49).
 
 ## Use notes
+- run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Safety-Control Engineer): Helped: sized dump plus friction brake for stop time and zero-speed hold with large margin.

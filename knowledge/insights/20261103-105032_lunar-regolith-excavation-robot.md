@@ -1,0 +1,22 @@
+# Insights from Lunar regolith excavation robot
+Source run: 20261103-105032_lunar-regolith-excavation-robot
+
+## BP-1 simulant bulk regime
+Black Point-1 basaltic lunar simulant is a loose frictional-cohesive regime with bulk density about 1.43 to 1.86 g/cc and cohesion about 0 to 2.0 kPa. Cutting, traction, and flow calculations for excavation or ISRU handling must use this low-density, low-cohesion range, not dense terrestrial soil values.
+Evidence: E6 (search: Black Point 1 BP-1 lunar simulant bulk density angle of repose cohesion: simulantdb.com — Planetary Simulant Database — https://www.simulantdb.com/simulants/bp1.html); E30 (search: BP-1 lunar simulant cohesion angle repose bulk density: impact.colorado.edu — Sanchez, David Poster 2024 (12JUL24) — 2024 — https://impact.colorado.edu/lungradcon/presentations/SanchezDavidPoster202412JUL24.pdf); E31 (search: BP-1 lunar simulant cohesion angle repose bulk density: impact.colorado.edu — | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | — https://impact.colorado.edu/lungradcon/presentations/142140b1)
+
+## Vibratory draft reduction rule
+Superimposed mechanical vibration on a drag share or subsoiler in granular soil reduces steady draft by roughly 30%, for example about 129 N static cut scaling to about 90 N vibrated. Budget traction against the vibrated value but retain large margin for slip and inhomogeneity.
+Evidence: E26 (search: vibratory subsoiler tillage draft force reduction vibration: repository.ipb.ac.id — Desain bajak subsoil getar dengan pemupuk mekanis untuk budidaya tebu lahan kering — http://repository.ipb.ac.id:8080/handle/123456789/59019); E27 (search: vibratory subsoiler tillage draft force reduction vibration: redalyc.org — Effect of Vibrations and Operational Parameters in Frequency and Amplitude of a Vibratory Subsoiler — https://www.redalyc.org/journal/932/93267412003/); E32 (vibrated draft estimate from 129 N cut: 90.3); E7 (scale cut force to shallow scraper cut: 129)
+
+## Soft-soil flotation pressure
+Wheeled travel on loose simulant needs average contact pressure on the order of 11 kPa, for example about 650 N total operating weight spread over wheel patches. Pressure is total weight divided by summed contact area; reaching ~10 kPa class requires wide wheels, tracks, or mats and stays at or below human footprint pressure.
+Evidence: E48 (total operating weight for pressure check: 650 kg⋅m/s²); E49 (average ground pressure from total weight over estimated wheel contact patches: 1.08e+04); E33 (traction estimate vs vibrated draft: 222)
+
+## Small LiFePO4 pack endurance
+Small 12 V 20 Ah-class lithium-iron-phosphate packs store about 256 Wh at a few kg mass. At mixed mobile digging loads of 350 to 380 W including drive plus conveying plus ~30 W eccentric vibration, endurance is only about 40 to 44 min. Power budgeting must use pack energy divided by continuous mixed load.
+Evidence: E18 (search: lithium iron phosphate battery pack energy density datasheet 12V 20Ah weight: mylithiumbattery.com — 12v Lithium-Ion battery pack — https://www.mylithiumbattery.com/wp-content/uploads/specs/PowerBrick_STANDARD_12V_20Ah_Lithium-Ion_battery.pdf); E23 (runtime from 256Wh pack at 350W mixed load: 43.9 min); E46 (revised runtime at higher load: 40.4 min); E35 (search: small eccentric vibration motor 12V power watt concrete vibrator datasheet: manomano.co.uk — DC 12V 30W Adjustable Electric Vibration Motor Concrete Vibrator Brushless Motor — https://www.manomano.co.uk/p/dc-12v-30w-adjustable-electric-vibration-motor-concrete-vibrator-brushless-motor-95288155)
+
+## Dust-tight enclosure standard
+IEC 60529 IP65/IP67 dust-tight means first digit 6: complete protection against dust ingress, plus second digit 5 for water jets or 7 for temporary immersion. Electronics exposed to abrasive regolith dust require fully sealed dust-tight boxes, shrouds, and conditioned power to protect signals and links.
+Evidence: E19 (search: IEC 60529 IP65 IP67 dust tight enclosure definition: rlx1688.com — Industrial Sensor IP Ratings: IP65 vs IP67 vs IP69K — https://www.rlx1688.com/knowledge/industrial-sensor-ip-ratings-explained.html); E21 (search: IEC 60529 IP65 IP67 dust tight enclosure definition: accesscomms.com.au — IP Ratings Explained: A Complete Guide to Ingress Protection (AS 60529) | Access Communications — https://www.accesscomms.com.au/ingress-protection/)

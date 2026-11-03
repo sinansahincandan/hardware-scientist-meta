@@ -12,3 +12,4 @@ source: run 20261102-214943_small-wind-turbine-for-a-wind-tunnel-com (2026-11-02
 Typical: gust at 22 m/s gives thrust 36.1 N (E11) to 45.1 N verification (E19); moment 13.5 N-m at mount (E20); chassis tube stress 3.64 MPa passes 6061-T6 (E21, E13).
 
 ## Use notes
+- run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Aero-Rotor Designer): Helped: provided survival thrust method checked against disc-area dynamic pressure for post mount.

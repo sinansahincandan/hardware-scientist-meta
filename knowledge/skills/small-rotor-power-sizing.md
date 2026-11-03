@@ -12,3 +12,4 @@ source: run 20261102-214943_small-wind-turbine-for-a-wind-tunnel-com (2026-11-02
 Typical: 44 cm rotor gives 124 W available at 11 m/s (E7, E30); Cp 0.35 gives 43.4 W shaft (E10); TSR 6 gives 300 rad/s (E29, E38) = 2.86e+03 rpm (E39); shaft torque ~0.145 N-m at 11 m/s (E37).
 
 ## Use notes
+- run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Aero-Rotor Designer): Helped: framed rotor capture calc and delivered operating speed and survival loads used for selection.

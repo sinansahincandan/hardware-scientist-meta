@@ -17,3 +17,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 
 ## Use notes
 - run 20261102-214939_lunar-regolith-excavation-robot (Kaito — Mobility, Chassis and Deployment): Helped size wide grouser wheels and traction budget for loose bed.
+- run 20261103-105032_lunar-regolith-excavation-robot (Mobility and Deployable Chassis Lead): Helped - budgeted floatation and stability for soft soil, yielding 10.8 kPa ground pressure and 56.3 deg side-tip hold.
