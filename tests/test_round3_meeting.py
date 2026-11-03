@@ -253,3 +253,18 @@ def test_evaluator_sees_not_ready_votes_with_reasons(tmp_path: Path) -> None:
     Evaluator(Client()).judge(SimpleNamespace(sections=[]), SimpleNamespace(model_dump_json=lambda **k: "{}"),
                               board, "cap", tmp_path)
     assert "B: NOT ready (no cloudy-day rule)" in prompts[0] and "A: ready (fine)" in prompts[0]
+
+
+def test_what_a_speaker_said_about_a_source_is_kept_on_it(tmp_path: Path) -> None:
+    from hs.stage_a.tools import ToolRunner
+    from hs.stage_a.whiteboard import Whiteboard
+
+    board = Whiteboard()
+    runner = ToolRunner(board, tmp_path, tmp_path / "ev")
+    [eid] = runner.web_search_evidence("Mara", [{"url": "https://a.org/x", "title": "Fingertip size", "query": "q"}])
+    runner.note_citations("Theo", f"Adult index tips are about 17 mm wide ({eid}). Unrelated sentence.")
+    ev = next(e for e in board.evidence if e.id == eid)
+    assert ev.references[0]["cited"] and ev.references[0]["passage"].startswith("Adult index tips")
+    assert "Theo said about it: Adult index tips are about 17 mm wide" in ev.output_full
+    runner.note_citations("Theo", f"Adult index tips are about 17 mm wide ({eid}).")  # same sentence: not twice
+    assert ev.output_full.count("Theo said about it") == 1

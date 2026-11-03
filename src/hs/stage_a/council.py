@@ -105,7 +105,12 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         "take from each source, with its citation: that sentence is posted on the whiteboard with the source, so "
         "the others and the Evaluator can check it. Then say what it means from your discipline's point of view "
         "for this design, and answer what other members took from their sources when it bears on yours. When you "
-        "borrow a principle from another field, say why it should transfer. "
+        "borrow a principle from another field, say why it should transfer. Open the page behind any number you "
+        "rely on rather than trusting a title. "
+        + (("From this round on, take up at least one source another member put on the board that bears on your "
+            "area, name it by its id, and say what it means from your discipline: confirm it, qualify it, or "
+            "contradict it with a source of your own. "
+            + _others_sources(tools, member)) if cycle >= 2 else "")
         + extra_instruction
     )
     prev_id: str | None = None
@@ -254,4 +259,15 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     import re as _re
 
     cleaned = _re.sub(r"\[\d+†[^\]]*\]", "", last_text or "")
+    tools.note_citations(member, cleaned)  # what the speaker took from each search source they named
     return cleaned.strip() or "(no message)"
+
+
+def _others_sources(tools: ToolRunner, member: str, limit: int = 8) -> str:
+    """A short list of the search sources other members cited (id, who, what they took from it)."""
+    rows = []
+    for ev in tools.board.evidence:
+        ref = ev.references[0] if ev.references else {}
+        if ev.tool == "web_search" and ev.author != member and ref.get("passage"):
+            rows.append(f"{ev.id} ({ev.author.split()[0]}): {ref.get('title', '')[:70]} — {ref['passage'][:160]}")
+    return ("Sources other members took something from:\n" + "\n".join(rows[-limit:]) + "\n") if rows else ""

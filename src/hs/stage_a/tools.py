@@ -271,6 +271,32 @@ class ToolRunner:
             ids.append(eid)
         return ids
 
+    def note_citations(self, author: str, message: str) -> list[str]:
+        """After a turn: every search source the speaker named by id gets the sentence they said about it, as what
+        they took from it (the speech is written after the search, so it carries no citation spans). Code records
+        it; the source itself is unchanged. Returns the ids noted."""
+        sentences = re.split(r"(?<=[.!?])\s+", " ".join(message.split()))
+        noted: list[str] = []
+        for ev in self.board.evidence:
+            if ev.tool != "web_search" or not ev.references:
+                continue
+            said = [s for s in sentences if re.search(rf"\b{re.escape(ev.id)}\b", s)]
+            if not said:
+                continue
+            ref = ev.references[0]
+            statements = ref.setdefault("statements", [])
+            new = [s for s in said if {"by": author, "text": s} not in statements]
+            if not new:
+                continue
+            statements.extend({"by": author, "text": s} for s in new)
+            ref["cited"] = True
+            if not ref.get("passage"):
+                ref["passage"] = new[0]
+            ev.output_full += "".join(f"\n{author} said about it: {s}" for s in new)
+            (self.evidence_dir / f"{ev.id}.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
+            noted.append(ev.id)
+        return noted
+
     def search_knowledge(self, author: str, query: str, cycle: int = 0) -> tuple[str, str]:
         """knowledge/insights search (Fig. 1 knowledge/); the hits become one evidence item."""
         from hs.knowledge import search_insights

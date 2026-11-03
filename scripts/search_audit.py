@@ -35,6 +35,10 @@ def main() -> int:
         for member, items in by.items():
             refs = [(e, (e.get("references") or [{}])[0]) for e in items]
             cited = [(e, r) for e, r in refs if r.get("cited") and r.get("passage")]
+            if not cited:  # runs before note_citations: the speaker's own sentences that name the source
+                sents = re.split(r"(?<=[.!?])\s+", " ".join(t.get("message", "") for t in turns if t.get("member") == member))
+                cited = [(e, {**r, "passage": next(s for s in sents if re.search(rf"\b{e['id']}\b", s))})
+                         for e, r in refs if any(re.search(rf"\b{e['id']}\b", s) for s in sents)]
             read = sum(1 for _, r in refs if r.get("read"))
             queries = sorted({e["code_or_query"] for e in items if e["code_or_query"]})
             speech = " ".join(t.get("message", "") for t in turns if t.get("member") == member)
