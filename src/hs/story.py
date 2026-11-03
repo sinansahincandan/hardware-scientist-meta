@@ -5,7 +5,6 @@ headings and the one-line explanations of what a step is."""
 from __future__ import annotations
 
 import html
-import json
 import re
 from pathlib import Path
 from typing import Any
@@ -13,7 +12,7 @@ from typing import Any
 from PIL import Image, ImageDraw
 
 from hs.board_picture import PICTURE_STYLE, board_picture_html
-from hs.showcase_build import ROOT, _overlay_svg, _read_json, _sentences, _stage_a_steps, _stats
+from hs.showcase_build import ROOT, _read_json, _sentences, _stats
 
 STYLE = """<style>
 :root{--bg:#0b0e13;--panel:#141922;--line:#263040;--ink:#e8edf4;--mute:#9aa7b8;--acc:#5eb3ff;--red:#ff6b6b;
@@ -145,8 +144,72 @@ def _loops(dest: Path) -> list[tuple[str, bool]]:
             ("knowledge library searched", searched), ("concept sketch", bool(list(dest.glob("stage_b/attempt_*/concept_sketch.png"))))]
 
 
+def loop_map(dest: Path) -> str:
+    """Both loops as one diagram (code-drawn SVG): Stage A on top, Stage B below; a box is lit with its count when
+    the run's files show it ran, and the two feedback arrows are lit when they fired."""
+    iters = sorted(dest.glob("stage_a/iter_*"))
+    rounds = sorted(dest.glob("stage_b/attempt_*/round_*"))
+    rejects = sum(1 for i in iters if _verdict(i) and not _verdict(i).get("accept"))
+    rewrites = sum(1 for i in iters if _read_json(i / "manager_edit.json").get("changed"))
+    searches = sum(1 for i in iters for e in _read_json(i / "whiteboard.json").get("evidence", []) if e.get("tool") == "web_search")
+    fixes = sum(1 for r in rounds if (r / "vlm_gradient.json").exists())
+    concept = bool(list(dest.glob("stage_b/attempt_*/concept_sketch.png")))
+    k_in = _read_json(dest / "knowledge_in.json")
+    boxes = [  # (x, y, title, detail, count or flag)
+        (20, 40, "Problem", "plain words + constraints", 1),
+        (200, 40, "knowledge/", f"{len(k_in.get('lessons', []))} lessons in", len(k_in.get("lessons", []))),
+        (380, 40, "Master prompt", f"{len(iters)} revision{'s' if len(iters) != 1 else ''}", len(iters)),
+        (560, 40, "Council meeting", f"{searches} sources searched", len(iters)),
+        (740, 40, "Evaluator", f"{rejects} rejected", len(iters)),
+        (920, 40, "Accepted", "solution prompt", 1 if iters and _verdict(iters[-1]).get("accept") else 0),
+        (560, 170, "Manager gradient", "diagnosis + rewrite", rewrites),
+        (20, 330, "Concept sketch", "from council sketches", int(concept)),
+        (200, 330, "Render", "image model", len(rounds)),
+        (380, 330, "SAM 3.1", "masks + judge", len(rounds)),
+        (560, 330, "Critic S1/S2", "regions, keep/revert", len(rounds)),
+        (740, 330, "Figure", "panels A–D", int((dest / "final" / "figure.png").exists())),
+        (920, 330, "knowledge/", "lessons + findings out", 1),
+        (380, 460, "Local fix", "region redrawn", fixes),
+    ]
+    svg = [("<svg viewBox='0 0 1100 540' width='100%' xmlns='http://www.w3.org/2000/svg' "
+            "style='background:#0f141c;border:1px solid #263040;border-radius:16px'>"),
+           ("<defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' "
+           "orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#5eb3ff'/></marker>"
+           "<marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' "
+           "orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#ff6b6b'/></marker></defs>"),
+           "<text x='20' y='26' fill='#9aa7b8' font-size='14' font-family='sans-serif'>STAGE A · DESIGN</text>",
+           "<text x='120' y='310' fill='#9aa7b8' font-size='14' font-family='sans-serif'>STAGE B · PICTURE</text>"]
+    for a, b in [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12)]:
+        x0, y0 = boxes[a][0] + 160, boxes[a][1] + 40
+        svg.append(f"<line x1='{x0}' y1='{y0}' x2='{boxes[b][0]}' y2='{boxes[b][1] + 40}' stroke='#5eb3ff' "
+                   "stroke-width='2.5' marker-end='url(#ah)'/>")
+    svg.append("<path d='M1000,120 L1000,288 L100,288 L100,328' stroke='#5eb3ff' stroke-width='2.5' fill='none' "
+               "marker-end='url(#ah)'/>")
+    col = "#ff6b6b" if rejects else "#3a4556"
+    svg.append(f"<path d='M820,120 L820,210 L720,210' stroke='{col}' stroke-width='3' fill='none' marker-end='url(#ar)'/>"
+               f"<path d='M560,210 L460,210 L460,122' stroke='{col}' stroke-width='3' fill='none' marker-end='url(#ar)'/>"
+               f"<text x='828' y='170' fill='{col}' font-size='13' font-family='sans-serif'>reject</text>")
+    col = "#ff6b6b" if fixes else "#3a4556"
+    svg.append(f"<path d='M640,410 L640,500 L542,500' stroke='{col}' stroke-width='3' fill='none' marker-end='url(#ar)'/>"
+               f"<path d='M380,500 L280,500 L280,412' stroke='{col}' stroke-width='3' fill='none' marker-end='url(#ar)'/>"
+               f"<text x='648' y='460' fill='{col}' font-size='13' font-family='sans-serif'>not faithful</text>")
+    for x, y, title, detail, count in boxes:
+        on = bool(count)
+        svg.append(f"<rect x='{x}' y='{y}' width='160' height='80' rx='12' fill='{'#13304d' if on else '#151b25'}' "
+                   f"stroke='{'#5eb3ff' if on else '#2a3444'}' stroke-width='{2.5 if on else 1.5}'/>"
+                   f"<text x='{x + 12}' y='{y + 30}' fill='{'#e8edf4' if on else '#5d6878'}' font-size='16' "
+                   f"font-weight='700' font-family='sans-serif'>{_e(title)}</text>"
+                   f"<text x='{x + 12}' y='{y + 54}' fill='{'#9fc6ea' if on else '#4d5767'}' font-size='13' "
+                   f"font-family='sans-serif'>{_e(detail)}</text>")
+        if on and count > 1:
+            svg.append(f"<circle cx='{x + 148}' cy='{y + 4}' r='15' fill='#ffc857'/><text x='{x + 148}' y='{y + 9}' "
+                       f"text-anchor='middle' font-size='14' font-weight='700' font-family='sans-serif' "
+                       f"fill='#111'>×{count if count < 100 else '99+'}</text>")
+    svg.append("</svg>")
+    return "".join(svg)
+
+
 def build_story(slugs: list[str], out: Path = ROOT / "showcase") -> Path:
-    fmap = json.loads((ROOT / "docs" / "figures_map.json").read_text(encoding="utf-8"))
     dests = [out / s for s in slugs if (out / s).exists()]
     assets = out / "story_assets"
     assets.mkdir(parents=True, exist_ok=True)
@@ -271,17 +334,10 @@ def build_story(slugs: list[str], out: Path = ROOT / "showcase") -> Path:
     if m:
         p.append(f"<div class='card' style='margin-top:10px'><div class='k'>Compared with what real teams built "
                  f"(never shown to the system)</div><p>{_e(' '.join(m.group(1).split()))}</p></div>")
-    # the path through the owner's figures
-    a_nodes = [node for it in range(len(iters)) for node, _ in _stage_a_steps(hero, it)]
-    b_nodes = ["n-accepted", "n-schematic", "n-vlm-writer", "n-render", "n-labels", "n-designer-eval"]
-    if len(rounds) > 1:
-        b_nodes += ["n-vlm-writer", "n-render", "n-labels", "n-designer-eval"]
-    b_nodes += ["n-image-archive", "n-figure", "n-lessons"]
-    p.append("<h3 style='margin-top:36px'>The path it took through the architecture</h3><div class='figs'>"
-             f"<div class='card'>{_overlay_svg('fig1_architecture.svg', a_nodes, fmap)}</div>"
-             f"<div class='card'>{_overlay_svg('fig2_visualization_pipeline.svg', b_nodes, fmap)}</div></div>"
-             "</div></section>")
-
+    p.append("<h3 style='margin-top:36px'>The path it took through the architecture</h3>"
+             "<p class='sub' style='color:var(--mute)'>Lit boxes ran in this problem; numbers say how often. Drawn from "
+             "the run's files, after the owner's architecture figures (<a href='../docs/fig1_architecture.svg'>Fig. 1"
+             "</a>, <a href='../docs/fig2_visualization_pipeline.svg'>Fig. 2</a>).</p>" + loop_map(hero) + "</div></section>")
     # -- every problem --
     p.append("<section><div class='wrap'><h2>Every problem</h2><p class='sub'>Input in plain words, output as a "
              "concept figure, and which loops fired.</p><div class='problems'>")

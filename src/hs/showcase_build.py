@@ -31,7 +31,7 @@ dialog img{max-width:94vw;max-height:92vh}
 </style>"""
 
 COPY_DIRS = ("final", "master_prompt")
-COPY_FILES = ("problem.json", "cost.json", "trace.md", "references.md",
+COPY_FILES = ("problem.json", "knowledge_in.json", "cost.json", "trace.md", "references.md",
               "report.html", "board.html", "REVIEW.md")
 
 
