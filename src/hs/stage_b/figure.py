@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import textwrap
 from pathlib import Path
 from typing import Any
@@ -185,6 +186,60 @@ def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localiz
     return render_path
 
 
+def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localization, notes: list[str]) -> bool:
+    """How it works, on the picture (code only): a numbered marker on the part that does each step of the
+    solution's operating sequence, and a legend under the picture ('1 · drum — digs loose soil'). Steps whose part
+    was not located are listed in the legend without a marker."""
+    from hs.stage_b.annotate import _font
+
+    steps = solution.operating_sequence[:6]
+    if not steps:
+        return False
+    img = Image.open(panel_a).convert("RGB")
+    w, h = img.size
+    where = {p.id: p.box_1000 for p in localization.parts if p.found}
+    names = {p.id: p.name for p in solution.concept.parts}
+    r = max(22, w // 55)
+    font = _font(max(18, w // 60))
+    small = _font(max(18, w // 75))
+    draw = ImageDraw.Draw(img)
+    placed: list[tuple[float, float]] = []
+    for k, st in enumerate(steps, 1):
+        b = where.get(st.part_id)
+        if b is None:
+            continue
+        cx, cy = (b.x0 + b.x1) / 2000 * w, (b.y0 + b.y1) / 2000 * h
+        while any(abs(cx - px) < 2.2 * r and abs(cy - py) < 2.2 * r for px, py in placed):  # never on top of another
+            cy += 2.4 * r
+        placed.append((cx, cy))
+        draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(200, 60, 40), outline=(255, 255, 255), width=4)
+        tw = draw.textlength(str(k), font=font)
+        draw.text((cx - tw / 2, cy - font.size / 1.6), str(k), fill=(255, 255, 255), font=font)  # type: ignore[attr-defined]
+    def short(name: str) -> str:
+        words = re.split(r"\s+(?:with|and|plus|on|for)\s+", name)[0].split()
+        return " ".join(words[:4])
+
+    lines = [f"{k} · {short(names.get(st.part_id, st.part_id))} — {st.action}"
+             + ("" if st.part_id in where else " (not located)")
+             for k, st in enumerate(steps, 1)]
+    line_h = small.size + 12  # type: ignore[attr-defined]
+    widest = max(draw.textlength(t, font=small) for t in lines)
+    cols = 2 if len(lines) > 3 and widest < w / 2 - 30 else 1
+    rows = (len(lines) + cols - 1) // cols
+    strip = Image.new("RGB", (w, 26 + line_h * (rows + 1)), "white")
+    d = ImageDraw.Draw(strip)
+    d.text((16, 10), "How it works", fill=(30, 30, 30), font=small)
+    for i, text in enumerate(lines):
+        col, row = divmod(i, rows)
+        d.text((16 + col * w // 2, 14 + line_h * (row + 1)), text, fill=(150, 45, 30), font=small)
+    out = Image.new("RGB", (w, h + strip.height), "white")
+    out.paste(img, (0, 0))
+    out.paste(strip, (0, h))
+    out.save(panel_a)
+    notes.append(f"how it works: {len(steps)} numbered steps drawn on panel A")
+    return True
+
+
 def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
             annotated_path: Path, render_path: Path, localization: Localization, run_dir: Path,
             master_history: list[dict[str, Any]], s_history: list[dict[str, Any]],
@@ -196,6 +251,7 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     panel_a = final_dir / "panel_A.png"
     Image.open(annotated_path).convert("RGB").save(panel_a)
     shown = relabel_panel_a(client, spec, render_path, localization, panel_a, trace_notes)
+    draw_sequence(panel_a, solution, localization, trace_notes)
     panel_b = final_dir / "panel_B.png"
     has_b = _panel_b(shown, spec, localization, panel_b, trace_notes)
     panel_c = final_dir / "panel_C.png"

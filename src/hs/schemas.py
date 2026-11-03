@@ -64,6 +64,12 @@ class MeasurementStage(BaseModel):
     interface: str
 
 
+class OperatingStep(BaseModel):
+    """One step of how the device works, in the order it happens, on the part that does it (drawn on the figure)."""
+    part_id: str
+    action: str
+
+
 class FabricationStep(BaseModel):
     step: int
     description: str
@@ -94,6 +100,7 @@ class SolutionPrompt(BaseModel):
     concept: ConceptBody
     key_estimates: list[KeyEstimate] = Field(default_factory=list)
     measurement_chain: list[MeasurementStage] = Field(default_factory=list)
+    operating_sequence: list[OperatingStep] = Field(default_factory=list)
     fabrication_steps: list[FabricationStep] = Field(default_factory=list)
     risks: list[Risk] = Field(default_factory=list)
     novelty_claim: str = ""

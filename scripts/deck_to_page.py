@@ -6,6 +6,7 @@ blob_map.json maps each /_blob/<id> used by the slides to a local image file.
 """
 from __future__ import annotations
 
+import base64
 import html
 import json
 import re
@@ -15,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from PIL import Image
 from playwright.sync_api import sync_playwright
 from shoot import _cached_chromium
 
@@ -55,7 +57,10 @@ def main() -> int:
             png = out_dir / f"{k:02d}_{sid}.png"
             page.screenshot(path=str(png))
             tmp.unlink()
-            parts.append(f"<div class='slide'><img src='story_assets/deck/{png.name}' alt='slide {k}'>"
+            jpg = png.with_suffix(".jpg")  # embedded, so the page shows its pictures wherever it is opened
+            Image.open(png).convert("RGB").save(jpg, quality=86)
+            data = base64.b64encode(jpg.read_bytes()).decode()
+            parts.append(f"<div class='slide'><img src='data:image/jpeg;base64,{data}' alt='slide {k}'>"
                          + (f"<p>{html.escape(' '.join(notes.group(1).split()))}</p>" if notes else "") + "</div>")
         browser.close()
     (ROOT / "showcase" / "story.html").write_text(
