@@ -81,7 +81,7 @@ def concept_sketch(client: Any, solution: SolutionPrompt, spec: SchematicSpec, a
                 "A clean engineer's pencil concept sketch on white paper, side view, of this device in use: "
                 f"{solution.mechanism_sentence or solution.concept.working_principle} Draw every part with its real "
                 f"shape and proportion ({parts}), how the parts connect and which ones move (small motion arrows), "
-                "the load or workpiece and the ground or structure it works on. Follow the engineers' hand sketches "
+                "the load or workpiece and the ground or structure it works on, on blank paper with nothing else drawn. Follow the engineers' hand sketches "
                 "given as references for geometry and arrangement. Line drawing only, light grey shading, no colour, "
                 "no text.", sketches[0], extra_refs=refs))
         except Exception as exc:
