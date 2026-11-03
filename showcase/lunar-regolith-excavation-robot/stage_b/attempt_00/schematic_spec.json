@@ -17,6 +17,51 @@
       "aspect": 1.33
     },
     {
+      "id": "hopper",
+      "label": "High-lift hopper",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 500.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 1
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
+    },
+    {
+      "id": "lift",
+      "label": "Rear high-lift mast",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 1050.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 1
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
+    },
+    {
+      "id": "chassis",
+      "label": "Chassis frame",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 450.0,
+        "max": 950.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
+    },
+    {
       "id": "wheel",
       "label": "Front grouser wheel",
       "shape": "circle",
@@ -28,7 +73,7 @@
         "col": 1,
         "row": 3
       },
-      "color_hint": "#a9a9a9",
+      "color_hint": "#7fb3d5",
       "aspect": 1.0
     },
     {
@@ -43,53 +88,8 @@
         "col": 3,
         "row": 3
       },
-      "color_hint": "#a9a9a9",
+      "color_hint": "#7fb3d5",
       "aspect": 1.0
-    },
-    {
-      "id": "chassis",
-      "label": "Chassis frame and sealed box",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 450.0,
-        "max": 950.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 2
-      },
-      "color_hint": "#d5a76f",
-      "aspect": 1.9
-    },
-    {
-      "id": "hopper",
-      "label": "High-lift hopper",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 200.0,
-        "max": 500.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 1
-      },
-      "color_hint": "#e0c27a",
-      "aspect": 1.2
-    },
-    {
-      "id": "lift",
-      "label": "Rear high-lift mast",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 150.0,
-        "max": 1050.0
-      },
-      "layout": {
-        "col": 4,
-        "row": 2
-      },
-      "color_hint": "#8fa8c8",
-      "aspect": 0.3
     },
     {
       "id": "pmast",
@@ -100,25 +100,25 @@
         "max": 1000.0
       },
       "layout": {
-        "col": 1,
-        "row": 1
+        "col": 2,
+        "row": 0
       },
-      "color_hint": "#8fa8c8",
-      "aspect": 0.25
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
     },
     {
       "id": "sensors",
-      "label": "FPV cameras plus depth and IMU",
+      "label": "Cameras + depth + IMU",
       "shape": "rect",
       "size_class_mm": {
         "min": 20.0,
         "max": 150.0
       },
       "layout": {
-        "col": 1,
+        "col": 2,
         "row": 0
       },
-      "color_hint": "#7fd5a3",
+      "color_hint": "#7fb3d5",
       "aspect": 1.33
     },
     {
@@ -130,25 +130,25 @@
         "max": 300.0
       },
       "layout": {
-        "col": 2,
-        "row": 3
+        "col": 1,
+        "row": 2
       },
-      "color_hint": "#c46a5a",
-      "aspect": 1.5
+      "color_hint": "#7fb3d5",
+      "aspect": 1.33
     },
     {
       "id": "compute",
-      "label": "Onboard computer and radio",
+      "label": "Onboard computer + radio",
       "shape": "rect",
       "size_class_mm": {
         "min": 50.0,
         "max": 200.0
       },
       "layout": {
-        "col": 2,
+        "col": 1,
         "row": 1
       },
-      "color_hint": "#9a7fd5",
+      "color_hint": "#7fb3d5",
       "aspect": 1.33
     }
   ],
@@ -178,7 +178,7 @@
       "from_id": "wheel",
       "to_id": "chassis",
       "kind": "mechanical",
-      "label": "carries chassis load",
+      "label": "carries chassis load front",
       "arrow": false
     },
     {
@@ -189,46 +189,46 @@
       "arrow": false
     },
     {
-      "from_id": "pack",
-      "to_id": "drum",
-      "kind": "electrical",
-      "label": "24 V power to drum",
-      "arrow": true
+      "from_id": "pmast",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "mast mounted on frame",
+      "arrow": false
     },
     {
-      "from_id": "pack",
-      "to_id": "compute",
-      "kind": "electrical",
-      "label": "24 V power to compute",
-      "arrow": true
+      "from_id": "sensors",
+      "to_id": "pmast",
+      "kind": "mechanical",
+      "label": "sensors on mast top",
+      "arrow": false
     },
     {
       "from_id": "sensors",
       "to_id": "compute",
       "kind": "wireless",
       "label": "video and heartbeat to operator",
-      "arrow": true
-    },
-    {
-      "from_id": "sensors",
-      "to_id": "pmast",
-      "kind": "mechanical",
-      "label": "mounted on mast top",
-      "arrow": false
-    },
-    {
-      "from_id": "pmast",
-      "to_id": "chassis",
-      "kind": "mechanical",
-      "label": "mast folded on frame",
       "arrow": false
     },
     {
       "from_id": "compute",
-      "to_id": "lift",
+      "to_id": "pack",
       "kind": "electrical",
-      "label": "control to lift actuators",
-      "arrow": true
+      "label": "control power and hold-to-run",
+      "arrow": false
+    },
+    {
+      "from_id": "pack",
+      "to_id": "drum",
+      "kind": "electrical",
+      "label": "24 V power to drive and lift",
+      "arrow": false
+    },
+    {
+      "from_id": "pack",
+      "to_id": "chassis",
+      "kind": "electrical",
+      "label": "power to chassis bus",
+      "arrow": false
     }
   ],
   "loads": [
@@ -249,10 +249,10 @@
     }
   ],
   "critical_part_id": "lift",
-  "scale_bar_mm": 100.0,
+  "scale_bar_mm": 10.0,
   "notes": [
-    "Side view: front drum to central hopper on rear lift to 1.05 m pour lip with 0.30 m overhang.",
-    "All 10 nodes connected via mechanical mounts plus electrical power and wireless link.",
-    "Stowed fits 1.0 x 0.5 x 0.5 m; deployed mast ~1.0 m eye."
+    "Side view: front drum to central hopper on rear lift to 1.05m pour lip, 0.30m overhang.",
+    "Stowed fit in 1.0x0.5x0.5m box, mast folds 0.45m to 1.0m eye.",
+    "Load path: Hopper -> Rear lift mast -> Wheels; IMU -> Onboard computer."
   ]
 }

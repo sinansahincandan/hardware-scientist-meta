@@ -1,0 +1,24 @@
+{
+  "crops": [
+    "crop 1: drum",
+    "crop 2: lift",
+    "crop 3: chassis"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "chain-driven lift system"
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

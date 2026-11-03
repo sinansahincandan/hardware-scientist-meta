@@ -21,3 +21,9 @@ Cost $1.9362 (cost.json). Every image listed below was viewed.
 - Panel B: close crop of the tri-star cluster from the cleaned render.
 - Panel C: measurement chain (spring detent pin position → green-red lock indicator), from the solution.
 - Panel D: 4 workshop steps, all passed their checks. Captions are small at page size.
+
+## Picture redraw attempt (2026-11-03, runs/20261102-203446_…, $0.7547) — could not be drawn
+Three rounds on a plain backdrop; the critic rejected all three: the image model drew a single spine, ordinary gears and
+casters under the toe plate instead of the two triple-wheel clusters. Ended as a DRAWING FAILURE (not a verdict on the
+design). The figure in the showcase is still the round-4 one, in which the triple-wheel cluster is not readable either —
+the picture does not show a truck that could climb stairs.

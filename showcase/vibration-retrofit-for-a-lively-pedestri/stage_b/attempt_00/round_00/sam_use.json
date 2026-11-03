@@ -2,32 +2,36 @@
   "round": 0,
   "sam_differences": {
     "deck": [
-      "size against frame: expected about 20 times, measured 2 times",
-      "expected to touch frame, but they are apart in the picture"
+      "expected 1 visible, found 3",
+      "size against frame: expected about 20 times, measured 1 times",
+      "expected to touch bolts, but they are apart in the picture"
     ],
     "frame": [
-      "expected 2 visible, found 1",
-      "expected to touch deck, but they are apart in the picture",
-      "expected to touch spring, but they are apart in the picture",
+      "expected 2 visible, found 3",
+      "expected to touch damper, but they are apart in the picture",
       "expected to touch cover, but they are apart in the picture"
     ],
     "bolts": [
-      "not found by the segmenter as 'bolt'"
+      "expected 8 visible, found 1",
+      "expected a vertical long axis, measured horizontal",
+      "size against frame: expected about 0.01 times, measured 0.043 times",
+      "expected to touch deck, but they are apart in the picture"
     ],
     "spring": [
       "expected 4 visible, found 2",
-      "expected a vertical long axis, measured horizontal",
-      "expected to touch frame, but they are apart in the picture"
+      "expected a vertical long axis, measured horizontal"
     ],
     "damper": [
-      "not found by the segmenter as 'damper'"
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch frame, but they are apart in the picture",
+      "expected to touch mass, but they are apart in the picture"
     ],
     "mass": [
-      "not found by the segmenter as 'steel block'"
+      "expected to touch damper, but they are apart in the picture"
     ],
     "cover": [
-      "expected 1 visible, found 3",
-      "expected a horizontal long axis, measured tilted about 34 degrees",
+      "expected 1 visible, found 2",
+      "size against mass: expected about 2.4 times, measured 1.1 times",
       "expected to touch frame, but they are apart in the picture"
     ]
   },

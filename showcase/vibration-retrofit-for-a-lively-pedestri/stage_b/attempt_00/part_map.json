@@ -11,15 +11,15 @@
         "frame",
         "bolts"
       ],
-      "note": "long bridge span overhead with TMD hung at midspan below"
+      "note": "Long span overhead that everything hangs from at midspan."
     },
     {
       "part_id": "frame",
-      "visual_phrase": "steel beam",
+      "visual_phrase": "steel beams",
       "count": 2,
       "long_axis": "horizontal",
       "size_vs": "mass",
-      "size_ratio": 3.0,
+      "size_ratio": 4.0,
       "touches": [
         "deck",
         "bolts",
@@ -27,11 +27,11 @@
         "damper",
         "cover"
       ],
-      "note": "paired cross beams clamped under deck carrying the unit"
+      "note": "Two cross beams clamped under deck carrying the unit."
     },
     {
       "part_id": "bolts",
-      "visual_phrase": "bolt",
+      "visual_phrase": "bolts",
       "count": 8,
       "long_axis": "vertical",
       "size_vs": "frame",
@@ -40,33 +40,33 @@
         "deck",
         "frame"
       ],
-      "note": "small fasteners at clamp points holding beams to girders"
+      "note": "Small clamps holding beams to deck girders."
     },
     {
       "part_id": "spring",
-      "visual_phrase": "coil spring",
+      "visual_phrase": "coil springs",
       "count": 4,
       "long_axis": "vertical",
       "size_vs": "damper",
-      "size_ratio": 0.8,
+      "size_ratio": 1.0,
       "touches": [
         "frame",
         "mass"
       ],
-      "note": "coils between frame and block carrying 72mm sag"
+      "note": "Upright coils between beams and block taking sag."
     },
     {
       "part_id": "damper",
-      "visual_phrase": "damper",
+      "visual_phrase": "shock absorbers",
       "count": 2,
       "long_axis": "vertical",
-      "size_vs": "mass",
-      "size_ratio": 0.8,
+      "size_vs": "spring",
+      "size_ratio": 1.0,
       "touches": [
         "frame",
         "mass"
       ],
-      "note": "upright cylinders beside springs linking block to frame"
+      "note": "Upright cylinders between beams and block absorbing motion."
     },
     {
       "part_id": "mass",
@@ -74,12 +74,12 @@
       "count": 1,
       "long_axis": "horizontal",
       "size_vs": "spring",
-      "size_ratio": 1.5,
+      "size_ratio": 1.7,
       "touches": [
         "spring",
         "damper"
       ],
-      "note": "heavy central block hung on springs at midspan"
+      "note": "Heavy block hung on springs at midspan."
     },
     {
       "part_id": "cover",
@@ -87,11 +87,11 @@
       "count": 1,
       "long_axis": "horizontal",
       "size_vs": "mass",
-      "size_ratio": 2.0,
+      "size_ratio": 2.4,
       "touches": [
         "frame"
       ],
-      "note": "flat plate below unit concealing block for access"
+      "note": "Flat enclosure below unit hiding block for access."
     }
   ]
 }

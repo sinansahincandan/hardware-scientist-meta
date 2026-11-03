@@ -5,148 +5,349 @@
   ],
   "parts": {
     "drum": {
-      "phrase": "digging drum",
-      "boxes": []
-    },
-    "wheel": {
-      "phrase": "wheel",
+      "phrase": "Front transverse digging drum (box prompt)",
+      "tried": [
+        "spiked cutting drum",
+        "grey toothed drum",
+        "digging drum",
+        "drum"
+      ],
+      "source": "box prompt",
       "boxes": [
         [
-          1080.0,
-          922.0497803806735,
-          1344.375,
-          1176.9253294289897
-        ],
-        [
-          545.625,
-          965.1537335285506,
-          772.5,
-          1175.051244509517
-        ],
-        [
-          238.125,
-          953.909224011713,
-          470.625,
-          1161.9326500732066
+          151.875,
+          878.9458272327965,
+          399.375,
+          1131.9472913616398
         ]
       ],
-      "mask": {
-        "file": "sam_masks/wheel.png",
-        "area": 106915.0,
-        "cx": 822.3103100108448,
-        "cy": 1062.106054373434,
-        "angle": 0.6,
-        "elongation": 6.46
-      }
-    },
-    "wheel_rear": {
-      "phrase": "wheel",
-      "boxes": [
-        [
-          1080.0,
-          922.0497803806735,
-          1344.375,
-          1176.9253294289897
-        ],
-        [
-          545.625,
-          965.1537335285506,
-          772.5,
-          1175.051244509517
-        ],
-        [
-          238.125,
-          953.909224011713,
-          470.625,
-          1161.9326500732066
-        ]
+      "confidence": [
+        0.88
       ],
       "mask": {
-        "file": "sam_masks/wheel_rear.png",
-        "area": 106919.0,
-        "cx": 822.333009273108,
-        "cy": 1062.1034998504338,
-        "angle": 0.6,
-        "elongation": 6.46
+        "file": "sam_masks/drum.png",
+        "area": 32653.0,
+        "cx": 266.29368575624085,
+        "cy": 1006.9106705824768,
+        "angle": 98.8,
+        "elongation": 1.18
       }
-    },
-    "chassis": {
-      "phrase": "metal frame",
-      "boxes": []
     },
     "hopper": {
-      "phrase": "metal bucket",
+      "phrase": "grey metal bucket",
+      "tried": [
+        "grey metal bucket"
+      ],
+      "source": "phrase",
       "boxes": [
         [
-          1408.125,
-          916.4275256222547,
-          1850.625,
-          1175.051244509517
+          1173.75,
+          200.52708638360176,
+          1610.625,
+          530.3660322108345
         ]
+      ],
+      "confidence": [
+        0.66
       ],
       "mask": {
         "file": "sam_masks/hopper.png",
-        "area": 106217.0,
-        "cx": 1633.1225462598056,
-        "cy": 1043.7438726870098,
-        "angle": 0.4,
-        "elongation": 1.64
+        "area": 66619.0,
+        "cx": 1387.9811456707098,
+        "cy": 365.1895040230575,
+        "angle": 151.1,
+        "elongation": 2.62
       }
     },
     "lift": {
-      "phrase": "rear mast",
-      "boxes": []
+      "phrase": "grey lifting frame",
+      "tried": [
+        "grey lifting frame"
+      ],
+      "source": "phrase",
+      "boxes": [],
+      "confidence": [],
+      "rejected_by_judge": [
+        "Folding perception mast",
+        "chain-driven lift system"
+      ]
+    },
+    "chassis": {
+      "phrase": "Chassis frame (box prompt)",
+      "tried": [
+        "dark metal beam",
+        "black metal bar",
+        "metal frame"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          601.875,
+          878.9458272327965,
+          1359.375,
+          989.5168374816984
+        ]
+      ],
+      "confidence": [
+        0.89
+      ],
+      "rejected_by_judge": [
+        "Rear high-lift mast"
+      ],
+      "mask": {
+        "file": "sam_masks/chassis.png",
+        "area": 45603.0,
+        "cx": 1005.2073765404734,
+        "cy": 949.4683925879954,
+        "angle": 2.1,
+        "elongation": 8.86
+      }
+    },
+    "wheel": {
+      "phrase": "small spiked wheel",
+      "tried": [
+        "small spiked wheel"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          393.75,
+          867.701317715959,
+          631.875,
+          1137.5695461200587
+        ]
+      ],
+      "confidence": [
+        0.75
+      ],
+      "rejected_by_judge": [
+        "Front transverse digging drum",
+        "Rear grouser wheel",
+        "Rear grouser wheel"
+      ],
+      "mask": {
+        "file": "sam_masks/wheel.png",
+        "area": 32159.0,
+        "cx": 519.4732643649508,
+        "cy": 1030.2273463791598,
+        "angle": 129.2,
+        "elongation": 1.13
+      }
+    },
+    "wheel_rear": {
+      "phrase": "large spiked wheel",
+      "tried": [
+        "large spiked wheel"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1280.625,
+          848.9604685212299,
+          1603.125,
+          1135.6954612005857
+        ],
+        [
+          1243.125,
+          987.6427525622255,
+          1338.75,
+          1124.4509516837481
+        ]
+      ],
+      "confidence": [
+        0.86,
+        0.56
+      ],
+      "rejected_by_judge": [
+        "Front transverse digging drum",
+        "Front grouser wheel"
+      ],
+      "mask": {
+        "file": "sam_masks/wheel_rear.png",
+        "area": 72786.0,
+        "cx": 1430.8141310916983,
+        "cy": 1003.7039723092138,
+        "angle": 11.1,
+        "elongation": 1.21
+      }
     },
     "pmast": {
-      "phrase": "camera pole",
-      "boxes": []
+      "phrase": "grey metal post",
+      "tried": [
+        "thin silver pole",
+        "grey metal post"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          493.125,
+          288.6090775988287,
+          643.125,
+          830.2196193265007
+        ]
+      ],
+      "confidence": [
+        0.6
+      ],
+      "rejected_by_judge": [
+        "Rear high-lift mast",
+        "Rear high-lift mast"
+      ],
+      "mask": {
+        "file": "sam_masks/pmast.png",
+        "area": 31840.0,
+        "cx": 567.0835112394826,
+        "cy": 543.7094060027628,
+        "angle": 100.2,
+        "elongation": 7.64
+      }
     },
     "sensors": {
-      "phrase": "small camera",
-      "boxes": []
+      "phrase": "small black lens",
+      "tried": [
+        "black camera",
+        "small black lens"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          442.5,
+          118.06734992679355,
+          483.75,
+          159.29721815519767
+        ]
+      ],
+      "confidence": [
+        0.52
+      ],
+      "mask": {
+        "file": "sam_masks/sensors.png",
+        "area": 1392.0,
+        "cx": 461.5661971830986,
+        "cy": 138.05070422535212,
+        "angle": 23.5,
+        "elongation": 1.09
+      }
     },
     "pack": {
-      "phrase": "battery box",
-      "boxes": []
+      "phrase": "black rectangular box",
+      "tried": [
+        "black rectangular box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          714.375,
+          852.7086383601758,
+          903.75,
+          946.4128843338214
+        ],
+        [
+          1492.5,
+          775.8711566617862,
+          1803.75,
+          914.5534407027819
+        ]
+      ],
+      "confidence": [
+        0.65,
+        0.66
+      ],
+      "mask": {
+        "file": "sam_masks/pack.png",
+        "area": 52656.0,
+        "cx": 1387.7279272451685,
+        "cy": 861.3594543387646,
+        "angle": 3.7,
+        "elongation": 11.29
+      }
     },
     "compute": {
-      "phrase": "computer box",
-      "boxes": []
+      "phrase": "dark control box",
+      "tried": [
+        "small grey cube",
+        "dark control box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          714.375,
+          852.7086383601758,
+          903.75,
+          953.909224011713
+        ]
+      ],
+      "confidence": [
+        0.66
+      ],
+      "mask": {
+        "file": "sam_masks/compute.png",
+        "area": 16952.0,
+        "cx": 808.0330266572305,
+        "cy": 900.966265628686,
+        "angle": 1.4,
+        "elongation": 2.02
+      }
     }
   },
   "contacts": [
     [
-      "wheel",
+      "drum",
+      "wheel"
+    ],
+    [
+      "chassis",
+      "wheel"
+    ],
+    [
+      "chassis",
       "wheel_rear"
+    ],
+    [
+      "chassis",
+      "pack"
+    ],
+    [
+      "chassis",
+      "compute"
+    ],
+    [
+      "wheel_rear",
+      "pack"
+    ],
+    [
+      "pack",
+      "compute"
     ]
   ],
   "differences": {
     "drum": [
-      "not found by the segmenter as 'digging drum'"
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
     ],
-    "wheel": [
-      "expected 1 visible, found 3"
-    ],
-    "wheel_rear": [
-      "expected 1 visible, found 3"
-    ],
-    "chassis": [
-      "not found by the segmenter as 'metal frame'"
+    "hopper": [
+      "expected to touch drum, but they are apart in the picture"
     ],
     "lift": [
-      "not found by the segmenter as 'rear mast'"
+      "not found by the segmenter as 'metal mast'"
+    ],
+    "chassis": [
+      "expected to touch drum, but they are apart in the picture",
+      "expected to touch pmast, but they are apart in the picture"
+    ],
+    "wheel": [
+      "expected 2 visible, found 1"
     ],
     "pmast": [
-      "not found by the segmenter as 'camera pole'"
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch sensors, but they are apart in the picture"
     ],
     "sensors": [
-      "not found by the segmenter as 'small camera'"
+      "expected 2 visible, found 1",
+      "expected to touch pmast, but they are apart in the picture"
     ],
     "pack": [
-      "not found by the segmenter as 'battery box'"
-    ],
-    "compute": [
-      "not found by the segmenter as 'computer box'"
+      "expected 1 visible, found 2"
     ]
   },
   "rechecks": []

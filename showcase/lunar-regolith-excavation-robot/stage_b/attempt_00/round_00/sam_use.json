@@ -2,31 +2,32 @@
   "round": 0,
   "sam_differences": {
     "drum": [
-      "not found by the segmenter as 'digging drum'"
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
     ],
-    "wheel": [
-      "expected 1 visible, found 3"
-    ],
-    "wheel_rear": [
-      "expected 1 visible, found 3"
-    ],
-    "chassis": [
-      "not found by the segmenter as 'metal frame'"
+    "hopper": [
+      "expected to touch drum, but they are apart in the picture"
     ],
     "lift": [
-      "not found by the segmenter as 'rear mast'"
+      "not found by the segmenter as 'metal mast'"
+    ],
+    "chassis": [
+      "expected to touch drum, but they are apart in the picture",
+      "expected to touch pmast, but they are apart in the picture"
+    ],
+    "wheel": [
+      "expected 2 visible, found 1"
     ],
     "pmast": [
-      "not found by the segmenter as 'camera pole'"
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch sensors, but they are apart in the picture"
     ],
     "sensors": [
-      "not found by the segmenter as 'small camera'"
+      "expected 2 visible, found 1",
+      "expected to touch pmast, but they are apart in the picture"
     ],
     "pack": [
-      "not found by the segmenter as 'battery box'"
-    ],
-    "compute": [
-      "not found by the segmenter as 'computer box'"
+      "expected 1 visible, found 2"
     ]
   },
   "critique_part_ids": [
@@ -36,8 +37,5 @@
   "unnoticed_sam_deviations": [],
   "kept": true,
   "why": "first round",
-  "earlier_faults": [],
-  "outcome_next_round": {
-    "callout": "fixed"
-  }
+  "earlier_faults": []
 }

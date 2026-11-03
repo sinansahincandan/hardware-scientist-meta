@@ -3,7 +3,7 @@
   "nodes": [
     {
       "id": "deck",
-      "label": "40 m deck 1.9 Hz",
+      "label": "40m deck + girders 1.9Hz",
       "shape": "beam",
       "size_class_mm": {
         "min": 40000.0,
@@ -14,11 +14,11 @@
         "row": 0
       },
       "color_hint": "#7fb3d5",
-      "aspect": 4.0
+      "aspect": 6.0
     },
     {
       "id": "frame",
-      "label": "transverse bearers",
+      "label": "transverse bearer frame",
       "shape": "beam",
       "size_class_mm": {
         "min": 1000.0,
@@ -29,26 +29,26 @@
         "row": 1
       },
       "color_hint": "#a0a0a0",
-      "aspect": 3.0
+      "aspect": 4.0
     },
     {
       "id": "bolts",
-      "label": "HS bolts",
+      "label": "HS bolts clamp",
       "shape": "circle",
       "size_class_mm": {
         "min": 10.0,
         "max": 30.0
       },
       "layout": {
-        "col": 1,
+        "col": 4,
         "row": 1
       },
-      "color_hint": "#5d6d7e",
+      "color_hint": "#404040",
       "aspect": 1.0
     },
     {
       "id": "spring",
-      "label": "helical springs 67.8 kN/m",
+      "label": "helical springs 67.8kN/m",
       "shape": "cylinder",
       "size_class_mm": {
         "min": 50.0,
@@ -58,8 +58,8 @@
         "col": 1,
         "row": 2
       },
-      "color_hint": "#85c1e9",
-      "aspect": 0.6
+      "color_hint": "#f0c040",
+      "aspect": 0.35
     },
     {
       "id": "damper",
@@ -73,12 +73,12 @@
         "col": 3,
         "row": 2
       },
-      "color_hint": "#85c1e9",
-      "aspect": 0.6
+      "color_hint": "#e08020",
+      "aspect": 0.4
     },
     {
       "id": "mass",
-      "label": "500 kg TMD mass 1.85 Hz",
+      "label": "500kg TMD mass 1.85Hz",
       "shape": "rect",
       "size_class_mm": {
         "min": 300.0,
@@ -88,12 +88,12 @@
         "col": 2,
         "row": 3
       },
-      "color_hint": "#2e86c1",
-      "aspect": 1.5
+      "color_hint": "#c0504d",
+      "aspect": 1.0
     },
     {
       "id": "cover",
-      "label": "removable cover",
+      "label": "removable cover +/-50mm stops",
       "shape": "plate",
       "size_class_mm": {
         "min": 500.0,
@@ -103,8 +103,8 @@
         "col": 2,
         "row": 4
       },
-      "color_hint": "#aab7b8",
-      "aspect": 2.5
+      "color_hint": "#90c090",
+      "aspect": 5.0
     }
   ],
   "edges": [
@@ -113,6 +113,13 @@
       "to_id": "deck",
       "kind": "mechanical",
       "label": "clamped with preloaded bolts",
+      "arrow": false
+    },
+    {
+      "from_id": "bolts",
+      "to_id": "frame",
+      "kind": "mechanical",
+      "label": "clamps frame to girders",
       "arrow": false
     },
     {
@@ -149,20 +156,6 @@
       "kind": "mechanical",
       "label": "removable cover below",
       "arrow": false
-    },
-    {
-      "from_id": "bolts",
-      "to_id": "frame",
-      "kind": "mechanical",
-      "label": "clamp bearers to girders",
-      "arrow": false
-    },
-    {
-      "from_id": "bolts",
-      "to_id": "deck",
-      "kind": "mechanical",
-      "label": "preload into deck girders",
-      "arrow": false
     }
   ],
   "loads": [
@@ -180,9 +173,8 @@
   "critical_part_id": "mass",
   "scale_bar_mm": 500.0,
   "notes": [
-    "500 kg mass tuned to 1.85 Hz below 1.9 Hz deck mode with 72.3 mm sag",
-    "Dense-crowd stroke 20.1 mm within +-50 mm stops, controlled 0.545 m/s2",
-    "Bolted clamp frame allows staged night install without welding",
-    "Bolts preload bearer beams to longitudinal girders, part of load path"
+    "Side view at midspan: deck on top, bolted transverse bearers below, springs+dashpots hung vertically carrying 500kg mass, cover below.",
+    "Tuned to 1.85Hz just below 1.9Hz mode, mu=2.5%, zeta_opt~0.0956, static sag 72.3mm, crowd stroke 20.1mm within +/-50mm stops.",
+    "Staged night install: prefab off-site, lift from under-bridge platform, lock mass for transport then release, shim + threaded seats for re-tuning."
   ]
 }

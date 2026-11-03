@@ -68,3 +68,7 @@ drum-type cutter feeding a separate hopper, a less common choice than the bucket
 - **Both meetings closed at the cycle cap; O2 stayed open on the accepted board.** The Manager's rewrite also wrote design-specific duties into the prompt and dropped the numeric limits from the role text.
 - **Search:** in this run (older code) no source carried a statement and no page was opened; counts on the pages were search results, not sources read.
 Changes made in HS because of this review are listed in JOURNAL.md (2026-11-03): Evaluator sums parts against limits, reconciles conflicting values, traces every flow, weighs open objections and unread sources; the Manager settles open blocking objections before the last cycle; the optimizer writes general duties and keeps limits; the critic checks mechanism kind, visible flows and context sizes; the image prompt carries the problem's setting; the Secretary orders the measurement chain by signal.
+
+## Picture redraw on a plain backdrop (2026-11-03, this folder)
+Stage B only, seeded from the accepted solution above, with the plain-backdrop, size and scale rules. Faithful in round 1;
+every image viewed. Panel A labels and scale bar redrawn with the median-based scale.

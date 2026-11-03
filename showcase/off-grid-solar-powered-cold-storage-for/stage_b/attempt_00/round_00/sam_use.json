@@ -2,44 +2,47 @@
   "round": 0,
   "sam_differences": {
     "pv_array": [
-      "expected 6 visible, found 1",
-      "expected a horizontal long axis, measured tilted about 147 degrees"
-    ],
-    "battery_cabinet": [
-      "not found by the segmenter as 'battery box'"
-    ],
-    "dc_wiring": [
-      "not found by the segmenter as 'cable'"
-    ],
-    "cold_box": [
-      "not found by the segmenter as 'white box'"
-    ],
-    "dc_chiller": [
-      "not found by the segmenter as 'cooler'"
-    ],
-    "airflow_kit": [
-      "expected 1 visible, found 2"
-    ],
-    "crates": [
-      "expected 12 visible, found 6",
-      "size against racks: expected about 0.3 times, measured 0.92 times"
-    ],
-    "racks": [
-      "expected 2 visible, found 6",
-      "expected to touch plinth, but they are apart in the picture"
-    ],
-    "plinth": [
-      "expected 1 visible, found 3",
-      "expected to touch racks, but they are apart in the picture"
+      "expected a horizontal long axis, measured tilted about 143 degrees",
+      "size against cold_box: expected about 0.75 times, measured 0.15 times",
+      "expected to touch dc_wiring, but they are apart in the picture"
     ],
     "frame_rack": [
-      "expected 1 visible, found 4",
-      "expected a vertical long axis, measured horizontal"
+      "expected a vertical long axis, measured tilted about 142 degrees",
+      "size against cold_box: expected about 1.1 times, measured 0.38 times",
+      "expected to touch cold_box, but they are apart in the picture"
+    ],
+    "dc_wiring": [
+      "size against battery_cabinet: expected about 6 times, measured 0.54 times",
+      "expected to touch pv_array, but they are apart in the picture",
+      "expected to touch dc_chiller, but they are apart in the picture"
+    ],
+    "battery_cabinet": [
+      "size against cold_box: expected about 0.4 times, measured 0.15 times",
+      "expected to touch dc_chiller, but they are apart in the picture"
+    ],
+    "cold_box": [
+      "expected to touch frame_rack, but they are apart in the picture"
+    ],
+    "airflow_kit": [
+      "size against cold_box: expected about 0.5 times, measured 0.076 times"
+    ],
+    "racks": [
+      "size against cold_box: expected about 0.9 times, measured 0.28 times",
+      "expected to touch plinth, but they are apart in the picture"
+    ],
+    "crates": [
+      "expected 12 visible, found 9",
+      "size against racks: expected about 0.3 times, measured 0.72 times"
+    ],
+    "dc_chiller": [
+      "size against battery_cabinet: expected about 0.75 times, measured 6.6 times",
+      "expected to touch battery_cabinet, but they are apart in the picture"
+    ],
+    "plinth": [
+      "expected to touch racks, but they are apart in the picture"
     ]
   },
-  "critique_part_ids": [
-    "callout"
-  ],
+  "critique_part_ids": [],
   "sam_parts_used_by_critique": [],
   "unnoticed_sam_deviations": [],
   "kept": true,

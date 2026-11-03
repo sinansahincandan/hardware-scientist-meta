@@ -1,4 +1,4 @@
 {
-  "ok": true,
-  "reason": "Image1 shows deck span on 2 piers with under-deck bearer beam bolt-clamped, 2 inner helical coils for springs + 2 outer cylinders for dashpots angled to central box mass with lower suspended plate as cover, matching Image2 layout of transverse bearers, HSFG clamps, inner springs / outer dashpots, 500kg mass, lockable cover."
+  "ok": false,
+  "reason": "First sketch swaps inboard/outboard positions vs second sketch pixels: hand sketch shows blue dashpot lines outboard at mass edges and spring lines inboard, concept shows coils outermost and cylinders inboard. Bearer mounting also differs: hand sketch shows transverse bearer clamped directly to girder webs with HSFG dots, concept shows drop-hanger brackets under deck carrying a separate cross-beam."
 }

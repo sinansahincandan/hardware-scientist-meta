@@ -1,63 +1,63 @@
 {
-  "prompt": "Photorealistic side-view product rendering of a compact wheeled drum excavator rover on a loose dark gray granular soil bed, front at left, rear at right. Low rectangular aluminum chassis on four large knee-high steel spiked grouser wheels, two visible in profile. Transverse steel digging drum low at the front edge touching a loose pile. Tall slender folding perception mast vertical at front of chassis, about person-height when extended, with small camera head on top. Central sheet-steel hopper now raised high at rear on twin inclined arms of rear lift mast, tipped forward pouring a visible stream of granular soil into an open steel collection bin behind the rover. Daylight product-shot lighting, real metals, dusty field test context. Show load path readable from hopper through lift arms into chassis to wheels. Draw short clean callouts on small light tags in empty space with thin leader lines for each: Rear Lift Mast, High Lift Hopper, Chassis Frame, Front Digging Drum, Spiked Grouser Wheel, Folding Perception Mast, no other text, no margins, no scale bars.",
+  "prompt": "Photorealistic studio product rendering, true side elevation of integrated wheeled drum rover doing rear high-lift dump. Long low chassis about knee-high, about twice as long as tall, riding on four large spiked grouser steel wheels, two visible in profile, front pair at left, rear pair at right, sitting on a thin cut-off patch of dark loose granular simulant soil that ends cleanly at a plain seamless light-grey studio backdrop with soft product lighting. At front left, transverse steel digging drum mounted low between front wheels, teeth engaged in a small soil pile and shallow cut groove. Mid-chassis rectangular frame with battery box and electronics box slung low. Tall slender folding perception mast rising vertically near front third, topped with cameras and antenna, about head-high on the machine. At rear right, vertical rear high-lift mast as a straight chain-driven slide guide with twin actuator cylinders and roller chain and sprockets visible, fully extended, carrying a large steel tilting hopper on top tipped rearward beyond the wheels, pouring a visible continuous stream of dark soil down into a standard plastic tote collection bin placed behind the rover for scale. Hopper overhangs behind rear axle, pour lip well above the bin. Show steel as painted and bare metal, rubber-free rigid wheels with triangular grousers, fabric hopper interior with soil load. Fixed vs moving readable: chassis and masts fixed, wheels and drum rotating, lift slider extended, hopper tilted. Material flow visible front to rear: cut soil at drum to hopper to falling stream to bin. Add short callouts with thin leader lines for each focus part, clean legible text on small light tags placed in empty space, no other text in image.",
   "must_not": [
-    "tracked undercarriage or extra axles",
-    "hoppers hidden inside body or missing pour stream",
-    "sketch style lines and flat color blocks",
-    "dimension lines and measurement graphics",
-    "captions and logo badges",
-    "people or clutter blocking mechanism"
+    "people and animals",
+    "room interiors landscapes sky and vegetation",
+    "furniture tools and clutter",
+    "extra vehicles and extra scale figures",
+    "hand sketch styling arrows and dimension lines",
+    "large text blocks margins and scale bars"
   ],
-  "changes_from_previous": "First rendering from mechanism sketches, no prior image to revise.",
+  "changes_from_previous": "Initial rendering - no previous version, new side-view dump moment from sketches.",
   "visual_plan": {
-    "view": "side elevation with slight three-quarter depth to show wheel width and bin, mechanism fully readable",
-    "spatial_layout": "True side elevation, eye-level, front of rover left, rear right. Foreground soil bed, background open yard. Left to right: dig pile and drum, front wheel, chassis box, perception mast rising above, rear wheel, raised mast arms leaning back, tipped hopper overhanging steel bin at far right.",
-    "operating_moment": "Deployed working moment with rear hopper fully raised and tipped dumping granular regolith into collection bin while front drum is engaged with dig pile and tall mast is erect for remote driving.",
-    "transfer_path": "Load: hopper soil weight down into rear lift mast arms into chassis frame down into grouser wheels to ground; Signal: camera head on perception mast down to onboard box for remote link.",
-    "interactions": "Front drum contacts soil pile to scoop; chassis sits on four grouser wheels; hopper bottom rides in rear lift mast guides and is tipped by linkage; perception mast fixed upright at front carrying camera head; falling soil stream connects hopper lip to bin pile.",
+    "view": "side",
+    "spatial_layout": "Side view, left to right: digging drum low at front between front wheels, grouser wheels fore and aft under chassis, perception mast vertical mid-front, low chassis with boxes center, rear lift mast vertical over rear wheels, tilted hopper high above and slightly behind rear, soil stream falling to tote bin at far right on same soil patch; light-grey seamless backdrop all around; bin provides known-size scale next to waist-high lift.",
+    "operating_moment": "Deployed high-lift dump moment: rover stationary nose-down stable, front drum in soil cut, perception mast fully raised, rear mast fully extended with hopper raised and tipped pouring soil stream into collection bin full of soil behind.",
+    "transfer_path": "Load: soil from drum cut into hopper, hopper weight up rear lift mast via chain into chassis into wheels to ground, then tipped pour into bin; Measured: cameras and motion sensor on mast to onboard computer via radio heartbeat for stop-hold remote operation.",
+    "interactions": "Front drum teeth bite shallow cut and throw soil toward central hopper path; chassis carries mast loads down into four grouser wheels pressing into simulant; rear mast chain slide lifts and supports tilted hopper; hopper lip pours soil stream into tote bin; perception mast stands fixed while cameras look forward over drum.",
     "avoid": [
-      "tracks, extra wheels, hidden hopper",
-      "sketch look, diagram colors, wireframe",
-      "any printed numbers, dimensions, paragraphs",
-      "cutaway or transparent body"
+      "stowed flat transport pose inside start box",
+      "linkage or hydraulic arm replacing vertical chain slide",
+      "hopper hidden inside chassis or level carry pose",
+      "drum hidden behind wheels or replaced by blade"
     ]
   },
   "focus_parts": [
     {
       "part_id": "lift",
-      "material": "painted steel",
-      "purpose": "raises hopper to high pour position",
-      "callout": "Rear Lift Mast"
+      "material": "Steel",
+      "purpose": "Raise hopper on chain slide to pour lip",
+      "callout": "Rear lift mast"
     },
     {
       "part_id": "hopper",
-      "material": "sheet steel",
-      "purpose": "carries soil and tips to dump",
-      "callout": "High Lift Hopper"
+      "material": "Steel",
+      "purpose": "Carry soil and tip to dump into bin",
+      "callout": "High lift hopper"
     },
     {
       "part_id": "chassis",
-      "material": "aluminum",
-      "purpose": "carries loads and seals electronics",
-      "callout": "Chassis Frame"
+      "material": "Painted steel",
+      "purpose": "Carry mast loads into wheels",
+      "callout": "Chassis frame"
     },
     {
       "part_id": "drum",
-      "material": "steel",
-      "purpose": "shallow cuts and scoops soil",
-      "callout": "Front Digging Drum"
+      "material": "Steel",
+      "purpose": "Shallow cut and lift soil to hopper",
+      "callout": "Digging drum"
     },
     {
       "part_id": "wheel",
-      "material": "steel",
-      "purpose": "rolls over loose soil bed",
-      "callout": "Spiked Grouser Wheel"
+      "material": "Steel",
+      "purpose": "Carry weight over loose simulant",
+      "callout": "Grouser wheel"
     },
     {
       "part_id": "pmast",
-      "material": "aluminum",
-      "purpose": "holds cameras high for remote view",
-      "callout": "Folding Perception Mast"
+      "material": "Aluminum",
+      "purpose": "Hold cameras high for remote view",
+      "callout": "Perception mast"
     }
   ]
 }

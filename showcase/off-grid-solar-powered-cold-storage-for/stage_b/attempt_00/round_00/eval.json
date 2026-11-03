@@ -1,240 +1,83 @@
 {
-  "pixel_description": "Photorealistic outdoor render only: center is single large white rectangular cold_box enclosure, open cutaway at front, yellow foam thickness visible at front edges and floor, flat roof with corner bolts, sitting directly anchored on grey raised concrete plinth slab. Inside box: two metal side racks left and right with 3 shelves each, centre aisle with raised slats floor, 6 blue vented plastic crates (3-high per rack) with green produce, air gaps between shelves. High on rear inside wall is cylindrical metallic evaporator coil + fan unit with light-blue down arrows showing cold air circulation over crates. Right side wall has light-blue insulated door with metal frame and handle hinged closed. Outside right beside box on small concrete pad sits white outdoor condenser box with circular fan grille plus taller grey battery cabinet box behind it, connected to box side wall by copper refrigerant lines through-wall. Behind to the right stands separate tilted PV array of dark-blue monocrystalline panels on galvanized A-frame rack on strip footing, not touching box. Gravel ground, man standing by door, blue sky. Critical cold_box: drawn as ONE continuous box volume (walls+roof+floor panels as single enclosure), wall/roof/floor panels arranged as closed room with front open for section view and side door opening, anchored to plinth, containing 2 side racks with 3-high crates and centre aisle and raised slats, with evaporator high inside and condenser outside, matching sketch section plan racks+aisle+door and 3-high+air gaps and engineers sketches PU panels 100mm on concrete plinth 2.6x2.6m with 900mm door and separate PV rack.",
-  "regions": [
-    {
-      "box": [
-        42.0,
-        64.0,
-        161.0,
-        143.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'PU panels 100mm polyurethane foam' includes numbers and extra words",
-      "expected": "callout with part name only, no numbers: cold box",
-      "source": "render"
-    },
-    {
-      "box": [
-        446.0,
-        39.0,
-        613.0,
-        98.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'evaporator coil + fan cold air circulation' includes extra description beyond name",
-      "expected": "callout with part name only, no numbers: airflow kit",
-      "source": "render"
-    },
-    {
-      "box": [
-        703.0,
-        89.0,
-        871.0,
-        166.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'chiller condenser unit fan grille, galvanized steel' includes extra description",
-      "expected": "callout with part name only, no numbers: dc chiller",
-      "source": "render"
-    },
-    {
-      "box": [
-        808.0,
-        223.0,
-        980.0,
-        298.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'PV rack six 400W monocrystalline panels' includes numbers",
-      "expected": "callout with part name only, no numbers: frame rack",
-      "source": "render"
-    },
-    {
-      "box": [
-        20.0,
-        327.0,
-        162.0,
-        456.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'blue vented crates 1 tonne crates on racks, 3-high with air gaps' includes numbers",
-      "expected": "callout with part name only, no numbers: crates",
-      "source": "render"
-    },
-    {
-      "box": [
-        24.0,
-        671.0,
-        144.0,
-        762.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'centre aisle with raised slats floor' extra description",
-      "expected": "callout with part name only, no extra text",
-      "source": "render"
-    },
-    {
-      "box": [
-        47.0,
-        826.0,
-        222.0,
-        914.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'reinforced concrete plinth 2.6x2.6m raised slab' includes numbers",
-      "expected": "callout with part name only, no numbers: plinth",
-      "source": "render"
-    },
-    {
-      "box": [
-        10.0,
-        926.0,
-        106.0,
-        991.0
-      ],
-      "part_id": "callout",
-      "observed": "scale bar graphic with 'scale bar 1 m' numbers",
-      "expected": "no scale bar, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        530.0,
-        380.0,
-        560.0,
-        770.0
-      ],
-      "part_id": "callout",
-      "observed": "vertical dimension arrow with '2.0m internal height' numbers",
-      "expected": "no dimensions/numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        468.0,
-        872.0,
-        542.0,
-        917.0
-      ],
-      "part_id": "callout",
-      "observed": "dimension label '2.6 m width' with arrow includes numbers",
-      "expected": "no dimensions/numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        813.0,
-        763.0,
-        978.0,
-        830.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'copper refrigerant lines insulated, through-wall' extra description",
-      "expected": "callout with part name only, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        833.0,
-        828.0,
-        978.0,
-        906.0
-      ],
-      "part_id": "callout",
-      "observed": "callout 'battery cabinet 48V battery storage' includes numbers",
-      "expected": "callout with part name only, no numbers: battery cabinet",
-      "source": "render"
-    },
-    {
-      "box": [
-        640.0,
-        874.0,
-        821.0,
-        960.0
-      ],
-      "part_id": "callout",
-      "observed": "callout '900mm insulated door sealed gasket, stainless handle' includes numbers",
-      "expected": "callout with part name only, no numbers: door",
-      "source": "render"
-    }
-  ],
+  "pixel_description": "Photorealistic cutaway: left large white 100mm PU cold box as single 2m cube with thick white foam walls roof floor and back wall visible in section, left outer panel and corner steel brackets, open white 900mm hinged door swung 90deg to right, box sits flat on common grey concrete plinth. Inside two low steel side racks left and right with centre aisle, each 3-high blue vented crates with tomatoes lettuce zucchini lemons. Ceiling centre high evaporator cassette with fan and fins blowing translucent blue downflow over crates. Copper pipes run along inside back wall, exit right wall and run down outside to grey DC chiller condenser box with fan on plinth. Orange DC cables loop from chiller to adjacent dark grey battery control cabinet and toward tilted 6-panel solar array on A-frame to far right. Adult man standing between door and battery gives scale: box roof just above head, door ~ man height, overall width ~3x man height ~5m. Touches: racks stand on box floor, crates stacked on racks, evaporator screwed to roof, pipes penetrate wall chiller to evaporator, cables terminal to chiller and battery, all units bear on plinth, door hinged to box front. Critical cold_box: drawn as one insulated enclosure of 5 foam panels plus hinged door, 2m class, anchored to plinth, containing 2 racks with aisle, supporting high evaporator, penetrated by cooling pipes, closed by sealed door - working section geometry as in sketch and engineers plan/section with 3-high crates and air gaps and separate PV rack.",
+  "regions": [],
   "previous_regions": [],
-  "comparison_with_previous": "",
+  "comparison_with_previous": "First evaluation, no previous render to compare.",
   "deviations": [
     {
       "what": "pv_array",
-      "measured": "single joined tilted array behind box to right, tilted about 147 deg long axis (~30 deg tilt to horizontal), ~6-8 cell panels in 2 rows",
-      "expected": "6 visible panels, horizontal long axis",
+      "measured": "tilted ~30deg fixed-tilt 6-panel array on A-frame, ~0.6x box width in perspective, orange cable run on plinth toward battery",
+      "expected": "horizontal long axis, 0.75x cold_box, touching dc_wiring",
       "matters": false,
-      "why": "Tilt is required for solar capture and separate PV rack is per concept; total area/kWp similar, still shows PV supply separate from box, does not change energy principle."
-    },
-    {
-      "what": "battery_cabinet",
-      "measured": "grey tall cabinet box visible on side concrete pad behind condenser, not found by segmenter",
-      "expected": "1 battery cabinet visible",
-      "matters": false,
-      "why": "Part is present beside cold box with plausible electrical proximity to PV and chiller; segmenter miss, no working-principle change."
-    },
-    {
-      "what": "dc_wiring",
-      "measured": "no thin copper DC cable resolved at this distance",
-      "expected": "1 DC wiring run visible/implied",
-      "matters": false,
-      "why": "Wiring is thin/buried and not resolvable in photorealistic distance view; electrical chain PV->battery->chiller still implied by placement, does not change principle."
-    },
-    {
-      "what": "cold_box",
-      "measured": "large white box present dominating center, not found as 'white box' by segmenter",
-      "expected": "1 white 100mm PU box visible",
-      "matters": false,
-      "why": "Critical part is present as single enclosure on plinth; segmenter label miss, geometry correct, no change to insulation principle."
-    },
-    {
-      "what": "dc_chiller",
-      "measured": "split system visible: cylindrical indoor evaporator+fan high on rear wall plus white outdoor condenser with fan grille and copper lines, not found as 'cooler'",
-      "expected": "1 DC chiller (indoor evaporator + outdoor condenser)",
-      "matters": false,
-      "why": "Both halves present with through-wall copper refrigerant lines showing thermal connection to box; segmenter label miss."
-    },
-    {
-      "what": "airflow_kit",
-      "measured": "2 fan-like detections: indoor evaporator fan plus outdoor condenser fan",
-      "expected": "1 airflow kit visible",
-      "matters": false,
-      "why": "Second fan belongs to dc_chiller condenser, not duplicate kit; indoor unit with blue down-arrows correctly shows uniform low-velocity air over crates."
-    },
-    {
-      "what": "crates",
-      "measured": "6 blue vented crates visible (3-high on each of 2 racks) with produce, size ~0.92x rack width filling shelf",
-      "expected": "12 visible crates for illustration, ~0.3x rack size",
-      "matters": false,
-      "why": "Partial load illustration is explicitly acceptable; still shows vented crates stacked 3-high with air gaps on racks, size large due to perspective filling shelf, does not change housing/cooling principle."
-    },
-    {
-      "what": "racks",
-      "measured": "2 side rack shelf units visible inside box standing on raised slats floor inside box on plinth; segmenter counted uprights/shelves as 6 and reports gap",
-      "expected": "2 side racks touching plinth (via box)",
-      "matters": false,
-      "why": "Racks stand on box floor which is anchored to plinth - correct indirect load path, not floating; extra counts are sub-elements, does not change support principle."
-    },
-    {
-      "what": "plinth",
-      "measured": "3 concrete pieces: main raised slab under box plus small pad under condenser/battery plus strip footing under PV rack; racks apart via box floor",
-      "expected": "1 concrete plinth touching racks",
-      "matters": false,
-      "why": "Main plinth correctly carries box+racks+produce; extra pads are appropriate for separate PV rack and outdoor units per concept keep PV rack separate, does not change support principle."
+      "why": "Tilt is required by design; apparent size small from perspective; electrical connection present via cables, power path unchanged."
     },
     {
       "what": "frame_rack",
-      "measured": "tilted/horizontal A-frame PV rack supporting array separate from box plus white panel corner framing; counted as 4 frames",
-      "expected": "1 steel support frame, vertical long axis",
+      "measured": "corner angle brackets vertical on box plus separate tilted A-frame under PV; combined fragment 0.38x box",
+      "expected": "vertical long axis, 1.1x cold_box, touching cold_box",
       "matters": false,
-      "why": "Tilted orientation is correct for PV support and wind load, separate from cold box per mitigation; extra counts are panel/rack sub-frames, does not change support principle."
+      "why": "Design requires PV rack separate from cold box and box anchored to plinth; separation is intentional for wind load, support function unchanged."
+    },
+    {
+      "what": "dc_wiring",
+      "measured": "short orange cables plus copper pipes linking battery-chiller-box-PV along plinth, compact runs",
+      "expected": "6x battery_cabinet, touching pv_array and dc_chiller",
+      "matters": false,
+      "why": "Short low-loss runs are better; cables visibly touch/connect units at terminals, electrical continuity shown."
+    },
+    {
+      "what": "battery_cabinet",
+      "measured": "dark grey cabinet ~0.3x box height on plinth next to chiller with small service gap, linked by orange cables",
+      "expected": "0.4x cold_box, touching dc_chiller",
+      "matters": false,
+      "why": "400-800mm cabinet vs 2000mm box is correctly small; gap with cable connection is correct for electrical not mechanical joint."
+    },
+    {
+      "what": "cold_box",
+      "measured": "white box with corner brackets in contact, PV A-frame separate across plinth",
+      "expected": "touching frame_rack",
+      "matters": false,
+      "why": "Corner frame touches box; PV frame separation is required separate rack, not a missing support."
+    },
+    {
+      "what": "airflow_kit",
+      "measured": "ceiling cassette with fan ~0.3x box width plus large blue airflow plume filling box",
+      "expected": "0.5x cold_box",
+      "matters": false,
+      "why": "Fan unit small but plume shows uniform low-velocity air over evaporator as required; cooling distribution unchanged."
+    },
+    {
+      "what": "racks",
+      "measured": "two steel side racks inside box 3-high, standing on insulated floor above plinth",
+      "expected": "0.9x cold_box, touching plinth",
+      "matters": false,
+      "why": "Racks stand free inside box on floor which sits on plinth; indirect bearing via box floor is by design, ergonomic height preserved."
+    },
+    {
+      "what": "crates",
+      "measured": "9 crates visible 3 left +6 right, 3-high with vent slots and produce, ~0.4m crates on racks",
+      "expected": "12 visible, 0.3x racks",
+      "matters": false,
+      "why": "Partial load illustration for 60-crate store; count and apparent large size from close view do not change washable vented housing principle."
+    },
+    {
+      "what": "dc_chiller",
+      "measured": "grey outdoor unit with fan ~1.1x battery cabinet, beside battery with cable loop and copper pipes to box",
+      "expected": "0.75x battery_cabinet, touching battery_cabinet",
+      "matters": false,
+      "why": "Localizer missed but pixels show unit clearly; size similar to battery as specified 300-600mm, segmenter 6.6x includes pipes; cable/pipe connection provides thermal/electrical path."
+    },
+    {
+      "what": "plinth",
+      "measured": "common grey concrete slab under box, chiller, battery and PV; racks bear via box floor",
+      "expected": "touching racks",
+      "matters": false,
+      "why": "Raised slab carries 1-tonne plus box uniformly; direct rack-plinth gap is insulation thickness, load path intact."
     }
   ],
   "s1_faithful": true,
-  "s1_differences": "Partial crate load (6 shown vs full tonne), PV joined tilted array, extra concrete pads for PV and condenser/battery, thin DC wiring not resolved, racks supported via box floor not direct on plinth. None change parts, connections, relative sizes/orientations for working principle.",
+  "s1_differences": "Only illustrative differences: 9 crates visible vs 12 counted representing 60-crate full store, short cable/pipe runs, small service gaps between battery-chiller and racks-plinth via insulated floor, PV tilt perspective. Same 11 parts, same electrical thermal fluid mechanical connections, same relative sizes orientations and flow directions as sketch and hand sketches.",
   "s2_flaw": false,
-  "s2_feedback": "No design flaw exposed: white box anchored on main plinth with clear centre aisle and side door swing, indoor evaporator high with down-air over 3-high vented crates, outdoor condenser+battery on side pad with short through-wall copper lines and clearance, PV rack separate on own footing avoiding shade/wind on box. Load paths and access plausible.",
-  "notes": "Photorealistic view, not diagram. Mechanism faithful but all callouts violate no-numbers/no-extra-text rule and dimension/scale graphics are present - listed as callout depiction faults to fix annotation only. Segmenter misses for battery, wiring, cold box, chiller verified present by pixels."
+  "s2_feedback": "Box fully bears on plinth, racks with centre aisle and 900mm door allow human reach, copper pipes and orange cables have clear runs without kinks, door swing clears chiller, PV rack separate so no extra wind on box; no interference, impossible assembly or failed load path seen.",
+  "notes": "Segmenter sizes coarse x2 and long-axis only; localizer missed dc_chiller but it is clearly visible outside beside door. Callouts spelled correctly with no numbers and no extra text/scale bars. Photorealistic render, not diagram."
 }

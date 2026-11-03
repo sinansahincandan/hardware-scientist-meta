@@ -19,3 +19,7 @@ Cost $2.2661 (cost.json). Every image listed below was viewed.
 - Panel B omitted: the critical part (the cold box) fills most of the picture.
 - Panel C: box air sensor → thermostat.
 - Panel D: 3 steps shown. Step 2 failed its check twice; steps 3 and 4 passed only the general check (detailed check blocked by the content filter; captions marked). The steps show a full walk-in room standing on a workbench in a workshop — wrong scale. Cause: the step prompt always said "workbench with ordinary shop tools". Changed since: the setting follows the device's real size (bench, shop floor, or the site itself).
+
+## Picture redraw on a plain backdrop (2026-11-03, this folder)
+Stage B only, seeded from the accepted solution above, with the plain-backdrop, size and scale rules. Faithful in round 1;
+every image viewed. Panel A labels and scale bar redrawn with the median-based scale.

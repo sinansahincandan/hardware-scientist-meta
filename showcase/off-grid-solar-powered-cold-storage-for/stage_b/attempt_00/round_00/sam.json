@@ -5,248 +5,403 @@
   ],
   "parts": {
     "pv_array": {
-      "phrase": "solar panel",
+      "phrase": "tilted blue solar panel",
+      "tried": [
+        "tilted blue solar panel"
+      ],
+      "source": "phrase",
       "boxes": [
         [
-          1496.25,
-          547.2327964860908,
-          1920.0,
-          807.7306002928258
+          1623.75,
+          661.5519765739385,
+          1781.25,
+          787.1156661786238
+        ],
+        [
+          1438.125,
+          659.6778916544656,
+          1601.25,
+          792.7379209370425
+        ],
+        [
+          1711.875,
+          792.7379209370425,
+          1882.5,
+          940.7906295754027
+        ],
+        [
+          1620.0,
+          794.6120058565155,
+          1796.25,
+          946.4128843338214
+        ],
+        [
+          1516.875,
+          796.4860907759883,
+          1698.75,
+          953.909224011713
+        ],
+        [
+          1531.875,
+          659.6778916544656,
+          1693.125,
+          788.9897510980967
         ]
+      ],
+      "confidence": [
+        0.9,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
+        0.91
       ],
       "mask": {
         "file": "sam_masks/pv_array.png",
-        "area": 57239.0,
-        "cx": 1714.919714165616,
-        "cy": 671.3919013591145,
-        "angle": 147.4,
-        "elongation": 2.38
+        "area": 73650.0,
+        "cx": 1654.3988282521427,
+        "cy": 805.8217424324617,
+        "angle": 142.7,
+        "elongation": 1.81
+      }
+    },
+    "frame_rack": {
+      "phrase": "tilted solar stand",
+      "tried": [
+        "tilted solar stand"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1434.375,
+          659.6778916544656,
+          1886.25,
+          987.6427525622255
+        ]
+      ],
+      "confidence": [
+        0.93
+      ],
+      "mask": {
+        "file": "sam_masks/frame_rack.png",
+        "area": 90177.0,
+        "cx": 1647.5901951241096,
+        "cy": 818.3533471970267,
+        "angle": 142.1,
+        "elongation": 1.52
+      }
+    },
+    "dc_wiring": {
+      "phrase": "copper cable",
+      "tried": [
+        "orange cable",
+        "copper cable"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1316.25,
+          912.679355783309,
+          1400.625,
+          1008.2576866764275
+        ]
+      ],
+      "confidence": [
+        0.54
+      ],
+      "rejected_by_judge": [
+        "evaporator copper piping",
+        "chiller refrigerant pipe",
+        "concrete plinth"
+      ],
+      "mask": {
+        "file": "sam_masks/dc_wiring.png",
+        "area": 3010.0,
+        "cx": 1370.6602739726027,
+        "cy": 969.3424657534247,
+        "angle": 74.7,
+        "elongation": 1.83
       }
     },
     "battery_cabinet": {
-      "phrase": "battery box",
-      "boxes": []
-    },
-    "dc_wiring": {
-      "phrase": "cable",
-      "boxes": []
-    },
-    "cold_box": {
-      "phrase": "white box",
-      "boxes": []
-    },
-    "dc_chiller": {
-      "phrase": "cooler",
-      "boxes": []
-    },
-    "airflow_kit": {
-      "phrase": "fan",
+      "phrase": "control cabinet",
+      "tried": [
+        "dark grey cabinet",
+        "grey cabinet",
+        "control cabinet"
+      ],
+      "source": "phrase",
       "boxes": [
         [
-          517.5,
-          309.22401171303073,
-          581.25,
-          397.3060029282577
-        ],
-        [
-          1481.25,
-          813.3528550512445,
-          1552.5,
-          957.6573938506589
+          1351.875,
+          826.4714494875549,
+          1488.75,
+          1002.6354319180089
         ]
+      ],
+      "confidence": [
+        0.57
+      ],
+      "mask": {
+        "file": "sam_masks/battery_cabinet.png",
+        "area": 20442.0,
+        "cx": 1426.6938381301911,
+        "cy": 907.8559011010237,
+        "angle": 107.0,
+        "elongation": 1.44
+      }
+    },
+    "cold_box": {
+      "phrase": "white container",
+      "tried": [
+        "white insulated container",
+        "white container"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          106.875,
+          172.41581259150806,
+          1291.875,
+          1073.8506588579796
+        ]
+      ],
+      "confidence": [
+        0.66
+      ],
+      "mask": {
+        "file": "sam_masks/cold_box.png",
+        "area": 615230.0,
+        "cx": 659.0957844930263,
+        "cy": 587.059649716558,
+        "angle": 3.0,
+        "elongation": 1.45
+      }
+    },
+    "airflow_kit": {
+      "phrase": "cooling fan",
+      "tried": [
+        "ceiling cooling fan",
+        "cooling fan"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          613.125,
+          301.7276720351391,
+          697.5,
+          391.68374816983896
+        ]
+      ],
+      "confidence": [
+        0.7
+      ],
+      "rejected_by_judge": [
+        "DC chiller shaded"
       ],
       "mask": {
         "file": "sam_masks/airflow_kit.png",
-        "area": 12392.0,
-        "cx": 1159.8796895213454,
-        "cy": 688.6836998706339,
-        "angle": 151.1,
-        "elongation": 18.0
+        "area": 6808.0,
+        "cx": 653.9134045077105,
+        "cy": 346.55516014234877,
+        "angle": 113.0,
+        "elongation": 1.12
+      }
+    },
+    "racks": {
+      "phrase": "grey metal shelf",
+      "tried": [
+        "grey metal shelf"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          365.625,
+          665.3001464128844,
+          562.5,
+          982.0204978038067
+        ],
+        [
+          660.0,
+          663.4260614934115,
+          995.625,
+          957.6573938506589
+        ]
+      ],
+      "confidence": [
+        0.76,
+        0.73
+      ],
+      "mask": {
+        "file": "sam_masks/racks.png",
+        "area": 31100.0,
+        "cx": 670.2790821771612,
+        "cy": 801.8999466382071,
+        "angle": 1.8,
+        "elongation": 2.21
       }
     },
     "crates": {
       "phrase": "plastic crate",
-      "boxes": [
-        [
-          753.75,
-          815.2269399707175,
-          956.25,
-          890.190336749634
-        ],
-        [
-          401.25,
-          717.7745241581259,
-          675.0,
-          794.6120058565155
-        ],
-        [
-          403.125,
-          590.3367496339678,
-          673.125,
-          659.6778916544656
-        ],
-        [
-          751.875,
-          699.0336749633968,
-          958.125,
-          766.5007320644216
-        ],
-        [
-          751.875,
-          588.4626647144948,
-          958.125,
-          648.4333821376281
-        ],
-        [
-          403.125,
-          845.2122986822841,
-          675.0,
-          933.294289897511
-        ]
+      "tried": [
+        "blue vented crate",
+        "plastic crate"
       ],
-      "mask": {
-        "file": "sam_masks/crates.png",
-        "area": 77585.0,
-        "cx": 661.5362004950495,
-        "cy": 749.3972772277227,
-        "angle": 5.2,
-        "elongation": 1.63
-      }
-    },
-    "racks": {
-      "phrase": "metal shelf",
+      "source": "phrase",
       "boxes": [
         [
-          738.75,
-          644.6852122986822,
-          918.75,
-          661.5519765739385
+          669.375,
+          599.7071742313324,
+          748.125,
+          667.1742313323573
         ],
         [
-          397.5,
-          655.9297218155198,
-          686.25,
-          672.796486090776
+          663.75,
+          714.0263543191801,
+          757.5,
+          783.3674963396779
         ],
         [
-          397.5,
-          907.0571010248902,
-          691.875,
-          946.4128843338214
+          663.75,
+          826.4714494875549,
+          746.25,
+          899.5607613469986
         ],
         [
-          738.75,
-          867.701317715959,
-          920.625,
-          903.3089311859444
+          373.125,
+          717.7745241581259,
+          549.375,
+          803.9824304538799
         ],
         [
-          395.625,
-          779.6193265007321,
-          686.25,
-          809.6046852122987
+          746.25,
+          714.0263543191801,
+          982.5,
+          792.7379209370425
+        ],
+        [
+          365.625,
+          588.4626647144948,
+          545.625,
+          670.9224011713031
+        ],
+        [
+          742.5,
+          832.0937042459736,
+          982.5,
+          918.3016105417277
         ],
         [
           740.625,
-          755.2562225475842,
-          920.625,
-          777.7452415812592
+          592.2108345534407,
+          982.5,
+          669.0483162518302
+        ],
+        [
+          373.125,
+          847.086383601757,
+          549.375,
+          938.9165446559298
         ]
       ],
-      "mask": {
-        "file": "sam_masks/racks.png",
-        "area": 17895.0,
-        "cx": 642.5243110015684,
-        "cy": 790.1958323997311,
-        "angle": 5.7,
-        "elongation": 1.51
-      }
-    },
-    "plinth": {
-      "phrase": "concrete slab",
-      "boxes": [
-        [
-          1314.375,
-          927.6720351390923,
-          1747.5,
-          1060.732064421669
-        ],
-        [
-          1681.875,
-          813.3528550512445,
-          1920.0,
-          878.9458272327965
-        ],
-        [
-          131.25,
-          987.6427525622255,
-          1314.375,
-          1205.0366032210834
-        ]
+      "confidence": [
+        0.83,
+        0.81,
+        0.83,
+        0.92,
+        0.89,
+        0.93,
+        0.89,
+        0.9,
+        0.92
       ],
       "mask": {
-        "file": "sam_masks/plinth.png",
-        "area": 89766.0,
-        "cx": 927.802370132763,
-        "cy": 1061.5862959992871,
-        "angle": 7.3,
-        "elongation": 8.33
-      }
-    },
-    "frame_rack": {
-      "phrase": "metal frame",
-      "boxes": [
-        [
-          733.125,
-          524.7437774524158,
-          958.125,
-          940.7906295754027
-        ],
-        [
-          1492.5,
-          547.2327964860908,
-          1920.0,
-          850.8345534407028
-        ],
-        [
-          393.75,
-          519.1215226939971,
-          691.875,
-          989.5168374816984
-        ],
-        [
-          1053.75,
-          292.3572474377745,
-          1267.5,
-          998.887262079063
-        ]
-      ],
-      "mask": {
-        "file": "sam_masks/frame_rack.png",
-        "area": 101785.0,
-        "cx": 982.9889251852442,
-        "cy": 693.9337104613178,
-        "angle": 5.6,
-        "elongation": 2.04
+        "file": "sam_masks/crates.png",
+        "area": 101496.0,
+        "cx": 683.0361701292071,
+        "cy": 756.8597572948985,
+        "angle": 1.7,
+        "elongation": 1.87
       }
     },
     "door": {
-      "phrase": "door",
+      "phrase": "white hinged door",
+      "tried": [
+        "white hinged door"
+      ],
+      "source": "phrase",
       "boxes": [
         [
-          1065.0,
-          314.8462664714495,
-          1258.125,
-          985.7686676427526
+          1074.375,
+          271.7423133235725,
+          1273.125,
+          983.8945827232797
         ]
+      ],
+      "confidence": [
+        0.75
       ],
       "mask": {
         "file": "sam_masks/door.png",
-        "area": 119814.0,
-        "cx": 1162.2875812613095,
-        "cy": 644.5240935594129,
-        "angle": 89.6,
-        "elongation": 3.49
+        "area": 111554.0,
+        "cx": 1163.5158437466432,
+        "cy": 599.0087006337499,
+        "angle": 87.8,
+        "elongation": 3.44
+      }
+    },
+    "dc_chiller": {
+      "phrase": "outdoor chiller",
+      "tried": [
+        "grey outdoor chiller",
+        "grey fan box",
+        "outdoor chiller"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          106.875,
+          172.41581259150806,
+          1276.875,
+          1073.8506588579796
+        ]
+      ],
+      "confidence": [
+        0.59
+      ],
+      "mask": {
+        "file": "sam_masks/dc_chiller.png",
+        "area": 828956.0,
+        "cx": 660.8532015707185,
+        "cy": 612.3984176894209,
+        "angle": 2.5,
+        "elongation": 1.35
+      }
+    },
+    "plinth": {
+      "phrase": "grey concrete slab",
+      "tried": [
+        "grey concrete slab"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          43.125,
+          961.4055636896047,
+          1906.875,
+          1169.428989751098
+        ]
+      ],
+      "confidence": [
+        0.89
+      ],
+      "mask": {
+        "file": "sam_masks/plinth.png",
+        "area": 150762.0,
+        "cx": 909.6165343669525,
+        "cy": 1062.9143812886612,
+        "angle": 2.9,
+        "elongation": 15.88
       }
     }
   },
@@ -256,61 +411,122 @@
       "frame_rack"
     ],
     [
-      "crates",
-      "racks"
-    ],
-    [
-      "crates",
-      "frame_rack"
-    ],
-    [
-      "racks",
-      "frame_rack"
-    ],
-    [
-      "plinth",
-      "frame_rack"
+      "pv_array",
+      "plinth"
     ],
     [
       "frame_rack",
+      "battery_cabinet"
+    ],
+    [
+      "frame_rack",
+      "plinth"
+    ],
+    [
+      "dc_wiring",
+      "battery_cabinet"
+    ],
+    [
+      "dc_wiring",
+      "plinth"
+    ],
+    [
+      "battery_cabinet",
+      "plinth"
+    ],
+    [
+      "cold_box",
+      "airflow_kit"
+    ],
+    [
+      "cold_box",
+      "racks"
+    ],
+    [
+      "cold_box",
+      "crates"
+    ],
+    [
+      "cold_box",
       "door"
+    ],
+    [
+      "cold_box",
+      "dc_chiller"
+    ],
+    [
+      "cold_box",
+      "plinth"
+    ],
+    [
+      "airflow_kit",
+      "dc_chiller"
+    ],
+    [
+      "racks",
+      "crates"
+    ],
+    [
+      "racks",
+      "dc_chiller"
+    ],
+    [
+      "crates",
+      "dc_chiller"
+    ],
+    [
+      "door",
+      "dc_chiller"
+    ],
+    [
+      "door",
+      "plinth"
+    ],
+    [
+      "dc_chiller",
+      "plinth"
     ]
   ],
   "differences": {
     "pv_array": [
-      "expected 6 visible, found 1",
-      "expected a horizontal long axis, measured tilted about 147 degrees"
-    ],
-    "battery_cabinet": [
-      "not found by the segmenter as 'battery box'"
-    ],
-    "dc_wiring": [
-      "not found by the segmenter as 'cable'"
-    ],
-    "cold_box": [
-      "not found by the segmenter as 'white box'"
-    ],
-    "dc_chiller": [
-      "not found by the segmenter as 'cooler'"
-    ],
-    "airflow_kit": [
-      "expected 1 visible, found 2"
-    ],
-    "crates": [
-      "expected 12 visible, found 6",
-      "size against racks: expected about 0.3 times, measured 0.92 times"
-    ],
-    "racks": [
-      "expected 2 visible, found 6",
-      "expected to touch plinth, but they are apart in the picture"
-    ],
-    "plinth": [
-      "expected 1 visible, found 3",
-      "expected to touch racks, but they are apart in the picture"
+      "expected a horizontal long axis, measured tilted about 143 degrees",
+      "size against cold_box: expected about 0.75 times, measured 0.15 times",
+      "expected to touch dc_wiring, but they are apart in the picture"
     ],
     "frame_rack": [
-      "expected 1 visible, found 4",
-      "expected a vertical long axis, measured horizontal"
+      "expected a vertical long axis, measured tilted about 142 degrees",
+      "size against cold_box: expected about 1.1 times, measured 0.38 times",
+      "expected to touch cold_box, but they are apart in the picture"
+    ],
+    "dc_wiring": [
+      "size against battery_cabinet: expected about 6 times, measured 0.54 times",
+      "expected to touch pv_array, but they are apart in the picture",
+      "expected to touch dc_chiller, but they are apart in the picture"
+    ],
+    "battery_cabinet": [
+      "size against cold_box: expected about 0.4 times, measured 0.15 times",
+      "expected to touch dc_chiller, but they are apart in the picture"
+    ],
+    "cold_box": [
+      "expected to touch frame_rack, but they are apart in the picture"
+    ],
+    "airflow_kit": [
+      "size against cold_box: expected about 0.5 times, measured 0.076 times"
+    ],
+    "racks": [
+      "size against cold_box: expected about 0.9 times, measured 0.28 times",
+      "expected to touch plinth, but they are apart in the picture"
+    ],
+    "crates": [
+      "expected 12 visible, found 9",
+      "size against racks: expected about 0.3 times, measured 0.72 times"
+    ],
+    "dc_chiller": [
+      "size against battery_cabinet: expected about 0.75 times, measured 6.6 times",
+      "expected to touch battery_cabinet, but they are apart in the picture"
+    ],
+    "plinth": [
+      "expected to touch racks, but they are apart in the picture"
     ]
   },
   "rechecks": []

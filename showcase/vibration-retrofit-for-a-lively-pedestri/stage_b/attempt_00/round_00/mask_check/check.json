@@ -1,0 +1,102 @@
+{
+  "crops": [
+    "crop 1: deck",
+    "crop 2: deck",
+    "crop 3: deck",
+    "crop 4: deck",
+    "crop 5: frame",
+    "crop 6: frame",
+    "crop 7: frame",
+    "crop 8: frame",
+    "crop 9: spring",
+    "crop 10: spring",
+    "crop 11: damper",
+    "crop 12: damper",
+    "crop 13: mass",
+    "crop 14: cover",
+    "crop 15: cover",
+    "crop 16: cover"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "transverse bearer frame"
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "transverse bearer frame"
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 7,
+      "is_part": false,
+      "seen_as": "40m deck + girders 1.9Hz"
+    },
+    {
+      "index": 8,
+      "is_part": false,
+      "seen_as": "500kg TMD mass 1.85Hz"
+    },
+    {
+      "index": 9,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 10,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 11,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 12,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 13,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 14,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 15,
+      "is_part": false,
+      "seen_as": "500kg TMD mass 1.85Hz"
+    },
+    {
+      "index": 16,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

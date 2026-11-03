@@ -19,3 +19,7 @@ Cost $1.6361 (cost.json). Every image listed below was viewed.
 ## Figure (final/figure.png)
 - Panel B omitted (critical part not located), panel C omitted (no measurement chain recorded).
 - Panel D: 4 steps — off-site assembly in a workshop, night lift from a tower platform under the bridge, unlocking under the bridge (passed after one redraw), inspection (shown on a bench under the bridge). This run started before the real-scale setting change.
+
+## Picture redraw on a plain backdrop (2026-11-03, this folder)
+Stage B only, seeded from the accepted solution above, with the plain-backdrop, size and scale rules. Faithful in round 1;
+every image viewed. Panel A labels and scale bar redrawn with the median-based scale.

@@ -1,14 +1,5 @@
 # Trace
-- master prompt rev 0 written; roster=Mara — Excavation and Mobility Engineer, Theo — Autonomy and Remote Operations Engineer, Priya — Power, Avionics and Lunar Environment Engineer, Sam — Structure, Mass and Material Handling Engineer
-- iter 0: meeting closed_by=cap cycles=4
-- iter 0: evaluator accept=False archive=A1
-- iter 0: manager edit changed=['## 2. Roles', '## 4. Meeting protocol', '## 5. Criteria'] reverted=[]
-- iter 1: meeting closed_by=cap cycles=4
-- iter 1: evaluator accept=True archive=A2
-- iter 1 attempt 0: council sketches used as extra references: ['sketch_48.png', 'sketch_44.png']
-- iter 1 concept sketch drawn from the council's sketches and checked; used as the primary reference
-- iter 1 attempt 0 round 0: S1=False S2=False decision=s1_retry; kept (first round)
-- iter 1 attempt 0 round 0: local edit callout kept
-- iter 1 attempt 0 round 1: S1=True S2=False decision=s1_pass; kept (faithful, and every earlier fault is fixed)
-- knowledge: insights written to knowledge/insights/20261102-153907_lunar-regolith-excavation-robot.md
-- run accepted; final figure composed
+- stage B rerun seeded from runs/20261102-153907_lunar-regolith-excavation-robot (stage_a/iter_01/solution.json); no Stage A in this run
+- attempt 0: council sketches used as extra references: ['sketch_48.png', 'sketch_44.png']
+- concept sketch drawn from the council's sketches and checked; used as the primary reference
+- attempt 0 round 0: S1=True S2=False decision=s1_pass; kept (first round)

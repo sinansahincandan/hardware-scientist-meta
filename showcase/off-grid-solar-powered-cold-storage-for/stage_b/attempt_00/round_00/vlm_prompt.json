@@ -1,67 +1,67 @@
 {
-  "prompt": "Photorealistic three-quarter section product rendering of solar cold store in outdoor cooperative yard in bright daylight. Cut away front-left thick white polyurethane sandwich-panel walls and roof to reveal interior, keeping wall thickness visibly thick relative to door. Inside, two low side steel racks hold blue vented crates stacked three high with air gaps, filled with fresh vegetables, with centre aisle and raised slats. High inside rear wall show evaporator coil with small fan unit blowing cold air over crates. Outside to side in shade show compact steel chiller condenser box with fan grille piped through wall. Box sits anchored on low raised reinforced concrete plinth slab. Galvanized steel angle corner frame around box edges, and separate tilted PV panel rack with six dark monocrystalline panels standing apart behind box, with grey battery cabinet and copper cabling beside box. Single thick insulated door person-height at front, shown closed and sealed with gasket and handle, adult person standing beside for scale. Real materials: smooth white foam panels, galvanized metal, brushed concrete, blue food-grade plastic crates, green produce. Product-shot lighting, sharp focus, operating midday holding moment with fan running and produce fully loaded. Show thin leader-line callouts with plain names on small light tags in empty space for each focus part, clean and legible, and no other text.",
+  "prompt": "Photorealistic product rendering of solar cold store for 1 tonne produce, shown as section cutaway at work on plain seamless light-grey studio backdrop. Center: 2m thick white foam sandwich-panel cold box with front cut away to reveal interior, anchored to raised grey concrete plinth. Inside: two low steel side racks with centre aisle, stacked vented light food-grade crates full of fresh produce, high evaporator with small fan. Front: single insulated hinged door with seal, shown closed beside cut opening, door height to adult chest. Outside shaded beside box: compact steel DC chiller unit with condenser. Beside box: dark battery controller cabinet on plinth with copper DC wiring to chiller. Separate to side: fixed-tilt rack with six dark blue monocrystalline panels tilted to sun. Include one standing adult beside door for true scale of 5m overall span; scale person is only extra. Small patch of concrete ground under plinth cut cleanly to backdrop, no landscape. Real materials, product-shot softbox lighting, mechanism readable, fixed panels and plinth vs moving air and door swing. Show energy flow PV to battery to chiller to box interior and cool air mixing over crates. Clean legible callouts on small light tags in empty space with thin leader lines to each focus part: Solar Panel Array, Battery Control Cabinet, DC Chiller Unit, Insulated Cold Box, Vented Produce Crates, Insulated Hinged Door, Concrete Support Plinth. No other text, no margins, no scale bars.",
   "must_not": [
-    "schematic arrows and circle symbols",
-    "dimension lines and measurement annotations",
-    "hand sketch shading and wavy lines",
-    "extra paragraphs and legend boxes",
-    "margins and scale bars"
+    "landscapes or skies or rooms",
+    "furniture or tools or clutter",
+    "generic fields or extra buildings",
+    "drawing colors or sketch circles or line styles",
+    "printed values or labels beyond callouts"
   ],
-  "changes_from_previous": "First rendering - new section cutaway showing insulated box with full produce load and solar power chain.",
+  "changes_from_previous": "Initial version, no prior image to revise.",
   "visual_plan": {
-    "view": "Front three-quarter section view, slightly above eye level, side wall and part of roof removed to show interior while exterior PV, plinth, door and chiller remain readable.",
-    "spatial_layout": "Raised concrete slab at bottom, 2m square box centered on it about taller than door, door on front face person-height, interior left and right racks with aisle in middle and crates three-high, fan high rear, chiller box outside right wall in shade, PV tilted rack and battery cabinet set apart behind left side, person beside door for scale.",
-    "operating_moment": "Steady daytime holding at cold temperature with full one-tonne produce load present, door closed, evaporator fan circulating air, chiller running on solar with battery charging, cooperative daily use.",
-    "transfer_path": "Sunlight onto PV array to battery cabinet via DC wiring to DC chiller to cold interior, with sensed box air looping to thermostat switching chiller, and fan driving uniform air over vented crates.",
-    "interactions": "Box anchored to plinth, steel frame clamps panel corners, door hinged and gasket-sealed to box front, crates sit on side racks raised off floor with vent gaps, fan unit mounted high blows across evaporator over crates, chiller outside piped through wall to evaporator, PV rack separate from box wired to battery cabinet to chiller.",
+    "view": "Section cutaway three-quarter front view, eye-level, front wall cut to show interior racks and crates while roof and side walls remain",
+    "spatial_layout": "Front three-quarter section view. Foreground: concrete plinth slab. Middle: cold box volume with cut front revealing left and right racks and centre aisle and crates. Door on front face. Right-rear outside: chiller and battery cabinet adjacent to box wall in shade. Left-rear separate: tilted PV array on low steel rack. Adult person standing at door side for scale, head above door mid-height, box about taller than person",
+    "operating_moment": "Sunny daytime holding operation with full produce load present, chiller running steady, fan mixing air through crate vents, door sealed shut, battery charging while powering cooling",
+    "transfer_path": "Energy: PV array -> Battery cabinet -> DC chiller -> cold box interior; Measured: box air sensor in crate gap -> thermostat switching chiller",
+    "interactions": "PV rack stands separate from box to reduce wind load; battery cabinet feeds chiller by cable; chiller blows cold through high evaporator fan over vented crates; crates sit 3-high on side racks with air gaps; racks stand free on plinth; box anchored to plinth; door seals box wall",
     "avoid": [
-      "cutting through crates or hiding fan behind wall",
-      "floating parts without support contact",
-      "cartoon or wireframe look"
+      "landscape, sky, room interior, furniture, tools, clutter",
+      "sketch colors and diagram circles as materials",
+      "extra text, numbers, logos, scale bars"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "cold_box",
-      "material": "Polyurethane",
-      "purpose": "Maintain cold insulated volume with low heat gain",
-      "callout": "Insulated Cold Box"
+      "part_id": "pv_array",
+      "material": "monocrystalline silicon",
+      "purpose": "Supply solar-only electricity from sunlight",
+      "callout": "Solar Panel Array"
+    },
+    {
+      "part_id": "battery_cabinet",
+      "material": "LiFePO4",
+      "purpose": "Store daytime power for night cooling",
+      "callout": "Battery Control Cabinet"
     },
     {
       "part_id": "dc_chiller",
       "material": "steel",
-      "purpose": "Provide steady cooling to box interior",
+      "purpose": "Provide vapor-compression cooling to box",
       "callout": "DC Chiller Unit"
     },
     {
-      "part_id": "airflow_kit",
-      "material": "plastic",
-      "purpose": "Circulate uniform low-velocity cold air",
-      "callout": "Airflow Fan Kit"
+      "part_id": "cold_box",
+      "material": "Polyurethane",
+      "purpose": "Maintain insulated volume at cool holding temperature",
+      "callout": "Insulated Cold Box"
     },
     {
       "part_id": "crates",
       "material": "food-grade plastic",
-      "purpose": "House washable produce load with vent gaps",
+      "purpose": "Hold produce with airflow for uniform cooling",
       "callout": "Vented Produce Crates"
-    },
-    {
-      "part_id": "plinth",
-      "material": "reinforced concrete",
-      "purpose": "Support full weight on washable raised base",
-      "callout": "Concrete Plinth Base"
-    },
-    {
-      "part_id": "frame_rack",
-      "material": "galvanized steel",
-      "purpose": "Anchor panels and carry wind load",
-      "callout": "Steel Support Frame"
     },
     {
       "part_id": "door",
       "material": "Polyurethane",
-      "purpose": "Sealed daily access for loading",
-      "callout": "Insulated Access Door"
+      "purpose": "Sealed daily access with low heat gain",
+      "callout": "Insulated Hinged Door"
+    },
+    {
+      "part_id": "plinth",
+      "material": "reinforced concrete",
+      "purpose": "Support full weight on washable base",
+      "callout": "Concrete Support Plinth"
     }
   ]
 }

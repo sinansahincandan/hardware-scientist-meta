@@ -6,36 +6,38 @@
       "count": 1,
       "long_axis": "any",
       "size_vs": "wheel",
-      "size_ratio": 0.7,
+      "size_ratio": 1.3,
       "touches": [
-        "hopper",
-        "chassis"
+        "chassis",
+        "hopper"
       ],
-      "note": "Front cross auger scooping soil into bucket"
+      "note": "Front spinning cutter feeding soil back into bucket."
     },
     {
-      "part_id": "wheel",
-      "visual_phrase": "front wheel",
+      "part_id": "hopper",
+      "visual_phrase": "metal bucket",
       "count": 1,
-      "long_axis": "any",
+      "long_axis": "horizontal",
       "size_vs": "chassis",
-      "size_ratio": 0.33,
+      "size_ratio": 0.44,
       "touches": [
-        "chassis"
+        "drum",
+        "lift"
       ],
-      "note": "Near-side front traction wheel on loose soil"
+      "note": "Central soil container riding on rear mast."
     },
     {
-      "part_id": "wheel_rear",
-      "visual_phrase": "rear wheel",
+      "part_id": "lift",
+      "visual_phrase": "metal mast",
       "count": 1,
-      "long_axis": "any",
+      "long_axis": "vertical",
       "size_vs": "chassis",
-      "size_ratio": 0.33,
+      "size_ratio": 1.17,
       "touches": [
-        "chassis"
+        "chassis",
+        "hopper"
       ],
-      "note": "Near-side rear traction wheel carrying frame"
+      "note": "Rear vertical guide lifting bucket to pour lip."
     },
     {
       "part_id": "chassis",
@@ -45,58 +47,56 @@
       "size_vs": "wheel",
       "size_ratio": 3.0,
       "touches": [
-        "wheel",
-        "wheel_rear",
         "drum",
         "lift",
+        "wheel",
+        "wheel_rear",
         "pmast",
         "pack",
         "compute"
       ],
-      "note": "Low central frame tying wheels and masts"
+      "note": "Low frame carrying wheels, drum and masts."
     },
     {
-      "part_id": "hopper",
-      "visual_phrase": "metal bucket",
-      "count": 1,
+      "part_id": "wheel",
+      "visual_phrase": "spiked wheel",
+      "count": 2,
       "long_axis": "any",
       "size_vs": "chassis",
-      "size_ratio": 0.45,
+      "size_ratio": 0.33,
       "touches": [
-        "lift",
-        "drum"
+        "chassis"
       ],
-      "note": "Central soil bucket riding on rear mast"
+      "note": "Left and right spiked front drivers."
     },
     {
-      "part_id": "lift",
-      "visual_phrase": "rear mast",
-      "count": 1,
-      "long_axis": "vertical",
+      "part_id": "wheel_rear",
+      "visual_phrase": "spiked wheel",
+      "count": 2,
+      "long_axis": "any",
       "size_vs": "chassis",
-      "size_ratio": 1.1,
+      "size_ratio": 0.33,
       "touches": [
-        "chassis",
-        "hopper"
+        "chassis"
       ],
-      "note": "Tall rear rails lifting bucket to pour"
+      "note": "Left and right spiked rear drivers."
     },
     {
       "part_id": "pmast",
-      "visual_phrase": "camera pole",
+      "visual_phrase": "thin pole",
       "count": 1,
       "long_axis": "vertical",
-      "size_vs": "chassis",
-      "size_ratio": 1.1,
+      "size_vs": "lift",
+      "size_ratio": 0.95,
       "touches": [
         "chassis",
         "sensors"
       ],
-      "note": "Thin folding pole for high camera view"
+      "note": "Tall thin pole carrying cameras high."
     },
     {
       "part_id": "sensors",
-      "visual_phrase": "small camera",
+      "visual_phrase": "black camera",
       "count": 2,
       "long_axis": "any",
       "size_vs": "pmast",
@@ -104,7 +104,7 @@
       "touches": [
         "pmast"
       ],
-      "note": "Tiny eyes on top of camera pole"
+      "note": "Small lenses on top of thin pole."
     },
     {
       "part_id": "pack",
@@ -112,23 +112,25 @@
       "count": 1,
       "long_axis": "horizontal",
       "size_vs": "chassis",
-      "size_ratio": 0.3,
+      "size_ratio": 0.28,
       "touches": [
-        "chassis"
+        "chassis",
+        "compute"
       ],
-      "note": "Heavy box slung low under frame"
+      "note": "Flat energy box slung under frame."
     },
     {
       "part_id": "compute",
-      "visual_phrase": "computer box",
+      "visual_phrase": "black box",
       "count": 1,
       "long_axis": "any",
       "size_vs": "pack",
       "size_ratio": 0.6,
       "touches": [
-        "chassis"
+        "chassis",
+        "pack"
       ],
-      "note": "Small electronics box for radio link"
+      "note": "Small electronics box next to battery."
     }
   ]
 }

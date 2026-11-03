@@ -1,68 +1,65 @@
 {
-  "prompt": "Photorealistic isometric product rendering of a footbridge midspan with under-deck vertical tuned mass damper, viewed in a low three-quarter isometric from side and below so both walkway top with pedestrians and underside mechanism are visible. Long steel footbridge deck spanning between two concrete piers over grass, two longitudinal steel girders under deck. At midspan, two transverse galvanized bearer beams clamped across under girders with rows of dark high-strength bolts. Hung below bearers in a V-arrangement: two inner tall coiled helical steel springs and two outer inclined stainless viscous dashpot cylinders with rod ends, all pinned to a central rectangular dark steel block mass about the size of a large travel trunk, roughly half the depth of the main girders. Removable sheet-steel cover panel shown lowered on four short hanger rods well below the mass so mass, springs and dashpots remain fully visible, not enclosed. Operating moment: daytime dense crowd walking on deck above, deck fixed, central mass shown suspended in vertical motion out of phase to calm vibration. Real outdoor daylight with soft product lighting, real materials - weathered painted steel, galvanized beams, oiled coil springs, machined dashpots. Fixed vs moving clearly: deck, bearers and bolts fixed; steel mass and spring coils moving vertically. Clean legible callouts with thin leader lines on small light tags in empty space for Bridge Deck, Transverse Bearers, Tuned Steel Mass, Helical Springs, Viscous Dashpots, Clamp Bolts, Removable Cover, no other text, numbers, logos or markings.",
+  "prompt": "Photorealistic studio product rendering, isometric view from slightly below and to the side, on a plain seamless light-grey studio backdrop with soft product lighting. Show a close-up cropped midspan segment of a steel footbridge deck, cut off cleanly at the backdrop, not the full span: horizontal deck slab on top with two longitudinal girders beneath. Clamped across the girders with preloaded high-strength bolts are two transverse steel bearer beams. Suspended centrally below the frame on vertical helical steel springs and vertical viscous dashpot cylinders is a large rectangular tuned steel mass block about waist-high relative to girder depth, free to move vertically with a visible stroke gap above a removable under-deck cover panel shown lowered and offset to reveal the moving parts. Fixed parts are deck, girders, bearer frame and bolt clamps; moving part is the steel mass on springs with dashpots stroking vertically. Show real materials: painted deck steel, dark structural frame, solid machined mass, bright coiled springs with threaded seats and shims, cylindrical oil dampers. Show load path pedestrians to deck to frame to springs and dampers to moving mass. Add a short callout with thin leader line for each focus part on a small light tag placed in empty space: Bridge Deck Section, Transverse Bearer Frame, Tuned Steel Mass, Helical Support Springs, Viscous Dashpots, Removable Cover Panel. Clean legible callouts, no other text, no margins, no scale bars.",
   "must_not": [
-    "hand-sketched or diagrammatic line style",
-    "abstract color blocks and symbolic circles",
-    "closed cover that hides mass springs and dashpots",
-    "welded joints or altered deck surface",
-    "additional text blocks, grids, margins or scale bars"
+    "people, hands or crowd figures",
+    "rooms, landscapes, sky, vegetation or buildings",
+    "furniture, tools, scaffolding or lifting towers",
+    "diagram arrows, circles, colour blocks or line sketches",
+    "overlaid numbers, values or engineering notes",
+    "dimension lines, scale bars, margins or title blocks",
+    "welded joints or altered deck top surface"
   ],
-  "changes_from_previous": "First version - no previous rendering, new isometric under-deck view created from sketches.",
+  "changes_from_previous": "First rendering from mechanism sketches, no previous image to revise.",
   "visual_plan": {
-    "view": "isometric three-quarter from side-below, low enough to see underside mechanism and deck top with crowd, midspan centered",
-    "spatial_layout": "deck horizontal across top between piers; girders running lengthwise below deck; two transverse bearers crosswise at center midspan; four inclined struts down in V to single centered block mass; cover plate floating below mass on rods; pedestrians on deck top for scale, mass about waist-high relative to person standing below",
-    "operating_moment": "dense crowd walking at resonance on deck top while under-deck steel mass oscillates vertically on springs with dashpots stroking, cover lowered to reveal motion",
-    "transfer_path": "pedestrians -> deck vibration -> clamped bearer frame -> springs and dashpots -> oscillating tuned mass where energy is absorbed, deck acceleration reduced to comfortable feel",
-    "interactions": "bearer beams clamp-locked to longitudinal girders with preloaded bolts; springs seated on bearers and carrying mass from above; dashpots pinned between bearers and mass lugs; mass hangs free to slide vertically; cover hangs on rods below mass detached for view",
+    "view": "isometric from below-side, slightly under deck level looking up at midspan unit",
+    "spatial_layout": "Top: cropped horizontal deck slab. Beneath: two parallel girders left-right. Across them: two transverse bearer beams front-back. Center: rectangular mass block. Between frame and mass: four outer coil springs and two inner dashpot cylinders vertical. Below: thin cover panel offset downward. Isometric from below-side so deck, frame, springs, dashpots, mass and cover gap are all readable, cut edges fading to light-grey void.",
+    "operating_moment": "In-service resonant operation at midspan with deck excited from above and lock released: steel mass free to bounce vertically on springs while dashpots stroke, cover opened for visibility, deck top unchanged and concealed in normal use.",
+    "transfer_path": "Pedestrian crowd load into deck to girders to bolted bearer frame to helical springs and viscous dashpots to tuned steel mass moving out of phase, deck acceleration reduced to comfortable level.",
+    "interactions": "Bearer frame bolt-clamped to girders without welding; springs seated on frame and carrying mass from below; dashpots pinned between frame and mass; mass floats with static sag plus vertical stroke clearance to stops; cover hung below frame, shown detached to expose mechanism but aligned for re-fit.",
     "avoid": [
-      "hiding mass inside closed cover",
-      "sketch style or symbolic colors",
-      "extra annotations or measurement graphics",
-      "welding or deck alteration"
+      "full landscape, sky, river or street setting",
+      "people or crowd on deck",
+      "sketch colours, arrows or handwritten notes",
+      "text values, units or dimension lines in image",
+      "hiding mass, springs or dashpots inside cover"
     ]
   },
   "focus_parts": [
     {
       "part_id": "deck",
-      "material": "painted steel with asphalt walkway",
+      "material": "painted steel",
       "purpose": "carries crowd load and vibrates in first vertical mode",
-      "callout": "Bridge Deck"
+      "callout": "Bridge Deck Section"
     },
     {
       "part_id": "frame",
-      "material": "galvanized structural steel",
+      "material": "structural steel",
       "purpose": "clamps to girders to carry damper without welding",
-      "callout": "Transverse Bearers"
+      "callout": "Transverse Bearer Frame"
     },
     {
       "part_id": "mass",
-      "material": "painted carbon steel block",
-      "purpose": "moves vertically to absorb deck resonance",
+      "material": "machined steel block",
+      "purpose": "moves vertically to absorb bridge resonance",
       "callout": "Tuned Steel Mass"
     },
     {
       "part_id": "spring",
       "material": "coiled spring steel",
-      "purpose": "supports mass weight and provides tuned stiffness",
-      "callout": "Helical Springs"
+      "purpose": "supports mass and sets tuned frequency",
+      "callout": "Helical Support Springs"
     },
     {
       "part_id": "damper",
-      "material": "steel cylinders with oil",
-      "purpose": "dissipates resonant energy as damping",
+      "material": "steel and oil",
+      "purpose": "dissipates resonant energy as mass moves",
       "callout": "Viscous Dashpots"
     },
     {
-      "part_id": "bolts",
-      "material": "dark high-strength steel",
-      "purpose": "preload-clamps bearers to existing girders",
-      "callout": "Clamp Bolts"
-    },
-    {
       "part_id": "cover",
-      "material": "painted sheet steel",
-      "purpose": "conceals unit and lowers for inspection and retuning",
-      "callout": "Removable Cover"
+      "material": "sheet steel",
+      "purpose": "conceals unit and opens for inspection and retuning",
+      "callout": "Removable Cover Panel"
     }
   ]
 }

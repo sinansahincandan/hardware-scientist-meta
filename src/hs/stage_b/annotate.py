@@ -52,17 +52,20 @@ def nice_scale_mm(size_mm: float) -> float:
 
 
 def px_per_mm(spec: SchematicSpec, boxes_px: dict[str, tuple[float, float, float, float]]) -> tuple[float, float]:
-    """Picture scale from the largest located part: its longer box side is its largest stated size. A small part's
-    box (one of many pillars, a whole array boxed as one) gave scale bars off by an order of magnitude.
-    Returns (pixels per mm, that part's size in mm), or (0, 0) when no part is located."""
-    best = None
+    """Picture scale: for every located part, its longer box side over its largest stated size; the median of those
+    estimates. One part alone misleads (a pillar boxed as a whole array, a solar array only partly boxed).
+    Returns (pixels per mm, the largest located part's size in mm), or (0, 0) when no part is located."""
+    est: list[float] = []
+    largest = 0.0
     for n in spec.nodes:
-        if n.id in boxes_px and (best is None or n.size_class_mm.max > best.size_class_mm.max):
-            best = n
-    if best is None or best.size_class_mm.max <= 0:
+        if n.id in boxes_px and n.size_class_mm.max > 0:
+            x0, y0, x1, y1 = boxes_px[n.id]
+            est.append(max(x1 - x0, y1 - y0) / n.size_class_mm.max)
+            largest = max(largest, n.size_class_mm.max)
+    if not est:
         return 0.0, 0.0
-    x0, y0, x1, y1 = boxes_px[best.id]
-    return max(x1 - x0, y1 - y0) / best.size_class_mm.max, best.size_class_mm.max
+    est.sort()
+    return est[len(est) // 2], largest
 
 
 class Annotator:

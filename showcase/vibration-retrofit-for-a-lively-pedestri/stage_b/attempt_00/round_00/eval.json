@@ -1,123 +1,75 @@
 {
-  "pixel_description": "Photorealistic side view of footbridge with pedestrians on top. Rusty longitudinal girders form deck spanning between two concrete piers. Directly under midspan a silver bearer beam assembly is clamped to girder undersides via bolted brackets at left and right ends. Four inclined struts hang from beam in symmetric V: two inner helical coil springs and two outer cylindrical viscous dashpots. All four connect via pin lugs to top of critical part 500 kg TMD mass 1.85 Hz (mass): it is drawn as ONE single dark rusty rectangular steel block centered under bridge, with four top brackets, arranged with springs inside and dampers outside, connected above to frame and below via four thin vertical rods to a single silver trapezoidal removable cover plate floating below with air gap. Cover is roughly horizontal. Text callouts with leader lines surround: Bridge Deck top, Transverse Bearers top-right, Helical Springs left-mid, Clamp Bolts right-mid, Tuned Steel Mass left-mid, Viscous Dashpots bottom-right, Removable Cover bottom-left.",
+  "pixel_description": "Render only: top shows two long parallel dark steel I-girders spanning beyond frame left-right, with splice plates and rows of bolts on webs. Directly below girders sits transverse bearer frame of short I-beams perpendicular to girders, clamped via bolted brackets with vertical bolts and nuts metal-to-metal. Hanging from frame are four vertical elements in two pairs: left pair black cylinder left and bright coiled helix right; right pair coiled helix left and black cylinder right. Coils are helical support springs with top eyelets to frame beam and bottom eyelets to top face of mass. Black cylinders are viscous dashpots with top clevis to frame and bottom clevis to top face of mass. Critical part 500kg TMD mass 1.85Hz is drawn as ONE solid rectangular steel block, horizontally elongated, centered under frame, top face carries 4 connections (2 springs + 2 dampers near ends left-right), bottom face above cover with clear vertical stroke gap, no other blocks, floating or duplicated. Below mass are two flat rectangular tray panels shown hinged open outward as removable cover panel, with hinge hardware and small links, forming a split cover with gap to mass. Callouts: Bridge Deck Section to rear girder, Transverse Bearer Frame to cross beam, Tuned Steel Mass to block, Removable Cover Panel to lower tray, Viscous Dashpots to right black cylinder, Helical Support Springs leader ends on left black cylinder (damper) not a coil. No people, hands, numbers, scale bars. Overall shape is under-deck hung mass at midspan, consistent with concealed damping for 40m footbridge; close-up scale plausible, not many times too large/small.",
   "regions": [
     {
       "box": [
-        385.0,
-        25.0,
-        522.0,
-        130.0
+        69.0,
+        496.0,
+        239.0,
+        544.0
       ],
       "part_id": "callout",
-      "observed": "leader ends on pedestrian/railing above deck",
-      "expected": "Bridge Deck leader should end on deck steel plate/girder",
-      "source": "render"
-    },
-    {
-      "box": [
-        615.0,
-        78.0,
-        785.0,
-        190.0
-      ],
-      "part_id": "callout",
-      "observed": "leader ends on existing rusty girder/deck edge, not on silver beam",
-      "expected": "Transverse Bearers leader should end on new silver bearer beam under deck",
-      "source": "render"
-    },
-    {
-      "box": [
-        220.0,
-        330.0,
-        350.0,
-        495.0
-      ],
-      "part_id": "callout",
-      "observed": "leader ends near left damper/beam joint, not on spring coil",
-      "expected": "Helical Springs leader should end on coil helix",
-      "source": "render"
-    },
-    {
-      "box": [
-        635.0,
-        415.0,
-        803.0,
-        510.0
-      ],
-      "part_id": "callout",
-      "observed": "leader ends on cylindrical damper body mid-span",
-      "expected": "Clamp Bolts leader should end on top frame-to-girder bolted clamp brackets",
-      "source": "render"
-    },
-    {
-      "box": [
-        580.0,
-        615.0,
-        738.0,
-        735.0
-      ],
-      "part_id": "callout",
-      "observed": "leader ends on side face of steel mass block",
-      "expected": "Viscous Dashpots leader should end on cylindrical dashpot unit above mass",
+      "observed": "label 'Helical Support Springs' with leader dot ending on black cylindrical viscous damper",
+      "expected": "Helical Support Springs label leader should end on coiled helical spring",
       "source": "render"
     }
   ],
   "previous_regions": [],
-  "comparison_with_previous": "",
+  "comparison_with_previous": "First review - no previous render to compare; evaluated against mechanism sketch and engineers' hand sketches.",
   "deviations": [
     {
       "what": "deck",
-      "measured": "in cropped perspective view deck visible length ~2x frame beam; frame does connect via top bolted brackets",
-      "expected": "deck ~20x frame length (40 m vs ~2 m) and clamped to frame",
+      "measured": "2 long parallel girders in close-up midspan section ~3-4x visible frame length, clamp bolts connect frame below girders",
+      "expected": "1 deck assembly ~20x frame, full 40m, touching bolts",
       "matters": false,
-      "why": "Crop and perspective foreshorten 40 m deck; connection is via clamp brackets visible under girders, not a gap. No change to load path deck->frame."
+      "why": "Only a midspan section is shown, not full 40m. Two girders are one deck. Load path deck-bolts-frame preserved in pixels."
     },
     {
       "what": "frame",
-      "measured": "1 prominent silver longitudinal bearer beam plus 2 end transverse clamp assemblies visible; all bolted to girders",
-      "expected": "2 transverse bearer beams visible, touching deck",
+      "measured": "3-4 transverse I-beams stacked as clamp sandwich; dampers/springs hang from lowest beam; cover hinged below with gap",
+      "expected": "2 bearer beams touching damper and cover",
       "matters": false,
-      "why": "View merges the two transverse bearers into end brackets of one beam assembly as in sketch; support function preserved."
+      "why": "Extra members are clamp sandwich detail for bolted transverse bearers. Vertical load path frame to springs/dampers to mass preserved, cover below with clearance."
     },
     {
       "what": "bolts",
-      "measured": "rows of bolts visible on both end brackets under girders but too small for segmenter",
-      "expected": "preloaded bolts at clamp interface",
+      "measured": "dozens visible: horizontal splice bolts on girder webs plus vertical clamp bolts; clamp bolts ~0.043x frame in close-up",
+      "expected": "8+ HS bolts vertical ~0.01x frame touching deck",
       "matters": false,
-      "why": "Segmenter miss due to small size; bolts are drawn, clamping function intact."
+      "why": "Mixed orientations are different functions (splice vs clamp). Count larger, size larger due to close-up perspective, but clamping metal-to-metal preserved."
     },
     {
       "what": "spring",
-      "measured": "2 inner coil helices tilted ~15-20 deg from vertical in symmetric V, frame to mass top; segmenter long-axis horizontal is error",
-      "expected": "2 coil springs, near-vertical tilted V, seated on frame carrying mass",
+      "measured": "2 bright coiled helices vertical, one per side, eyelet top to frame, eyelet bottom to mass top",
+      "expected": "4 coil springs vertical",
       "matters": false,
-      "why": "Tilt matches sketch for lateral stability; vertical component provides 1.85 Hz tuning. Count 2 springs +2 dashpots =4 struts, not 4 springs."
+      "why": "2 springs + 2 dashpots = 4 legs as in engineers sketches. Pixels are vertical, segmenter horizontal is wrong. Symmetric vertical support preserved."
     },
     {
       "what": "damper",
-      "measured": "2 outer cylindrical dashpots tilted symmetric, frame underside to mass top lugs, clearly visible",
-      "expected": "2 viscous dashpots outer, frame to mass",
+      "measured": "2 black cylinders vertical, clevis top to frame, clevis bottom to mass top",
+      "expected": "dashpots vertical touching frame and mass",
       "matters": false,
-      "why": "Segmenter miss; dashpots present and connected as in sketch and hand sketches."
+      "why": "Pixels show vertical orientation and connection both ends. Segmenter horizontal/apart claims are threshold errors. Damping load path intact."
     },
     {
       "what": "mass",
-      "measured": "single dark rusty rectangular block centered, 4 top lugs to springs/dashpots, 4 thin rods below to cover",
-      "expected": "single 500 kg steel block mass under midspan",
+      "measured": "single rectangular block touched at top by 2 springs + 2 dampers via eyelets/clevises",
+      "expected": "steel block touching damper",
       "matters": false,
-      "why": "Segmenter miss; critical mass is drawn as one element with correct connections. Size/perspective does not alter tuning principle."
+      "why": "Direct visible connection frame to mass. Segmenter apart claim false. Mass free to move vertically for tuning."
     },
     {
       "what": "cover",
-      "measured": "1 trapezoidal silver plate roughly horizontal below mass suspended by 4 rods; faceting split into 3 by segmenter; gap to frame is stroke gap by design",
-      "expected": "1 removable cover, roughly horizontal below mass with stroke gap, not attached to frame",
+      "measured": "2 open tray panels below mass forming split cover ~1.1x mass in perspective, hinged with stroke gap to mass",
+      "expected": "1 cover ~2.4x mass touching frame",
       "matters": false,
-      "why": "Matches sketch where cover hangs below mass; apart from frame is intended for motion/inspection, not a fault. Tilt 34 deg is facet shading error."
+      "why": "Two panels are open halves of one removable cover assembly shown open for view. Gap provides +/-50mm stroke clearance. Concealment when closed retained."
     }
   ],
   "s1_faithful": true,
-  "s1_differences": "Mechanism parts, connections and orientations match sketch: deck clamped to bearer frame, 2 inner springs +2 outer dashpots in tilted V from frame to single mass block, cover suspended below with gap. Relative sizes/orientations same allowing for perspective. Only differences are callout leader endpoints offset onto wrong features; no missing, extra, floating or misconnected structural part.",
+  "s1_differences": "Close-up midspan section shows only girder length near TMD not full 40m; frame shown as stacked clamp sandwich; springs 2 coils + 2 dashpots vs schematic symbols; cover shown as two open panels vs one closed box; Helical Support Springs callout leader ends on damper instead of spring. Parts, vertical connections frame-to-mass, orientations and concealed under-deck arrangement match sketch.",
   "s2_flaw": false,
-  "s2_feedback": "Bearer beam stays bolted to both girders, four inclined spring/damper struts carry single mass clear between piers with cover below leaving stroke gap; no interference, no impossible assembly, load path pedestrians->deck->frame->springs/dampers->mass continuous. No design flaw exposed.",
-  "notes": "Segmenter undercounts due to perspective, small bolts, and tilt; all parts visible on pixels. Callout leaders are misplaced but mechanism geometry matches labeled sketch and both hand sketches."
+  "s2_feedback": "Mass hangs vertically on 2 springs + 2 dashpots from bearer frame with clear stroke gap above open cover panels; deck-frame clamp, spring-mass and damper-mass load paths continuous with no interference or impossible assembly visible.",
+  "notes": "Photorealistic render, not diagram/CAD wireframe. Segmenter touch/orientation flags are coarse threshold errors - springs/dampers are vertical and connected in pixels. Only annotation fault requiring fix is Helical Support Springs leader ending on damper. No people/scale objects to misjudge 40m context; close-up midspan section is appropriate."
 }
