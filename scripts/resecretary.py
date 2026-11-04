@@ -39,6 +39,8 @@ def main() -> int:
     old = json.loads((src / "solution.json").read_text(encoding="utf-8"))
     print("BEFORE:", [p["name"] for p in old["concept"]["parts"]])
     print("AFTER: ", [p.name for p in solution.concept.parts])
+    print("sizes BEFORE:", [(p["name"], p["size_class_mm"]["min"], p["size_class_mm"]["max"]) for p in old["concept"]["parts"]])
+    print("sizes AFTER: ", [(p.name, p.size_class_mm.min, p.size_class_mm.max) for p in solution.concept.parts])
     print("steps: ", [f"{s.part_id}: {s.action}" for s in solution.operating_sequence])
     print(f"cost ${client.cost.total_usd:.4f}")
     return 0

@@ -55,9 +55,11 @@ class VLMPromptWriter:
             + ("CALLOUTS (Fig. 2): the image model draws a short callout with a thin leader line for each focus "
                "part; set each focus part's callout to its plain name exactly as it should read (2 to 4 words, no "
                "numbers, no units, no ids). Ask for clean, legible callouts on light tags placed in empty space, and "
-               "no other text, margins or scale bars. "
+               "no other text, margins, scale bars, envelope or limit boxes, dimension lines or other drawn guides. "
                if callouts else
-               "The image carries no text, labels, callouts, margins or scale bars: code adds every label afterwards. ")
+               "The image carries no text, labels, callouts, margins, scale bars, envelope or limit boxes, dimension "
+               "lines or other drawn guides (a size limit is shown by the device's true size beside the scale "
+               "object): code adds every label afterwards. ")
             + "In must_not, name kinds of things to avoid; never quote the text, numbers or names you want kept out "
             "of the image (a quoted string gets drawn).\n\n"
             + (f"KEPT PROMPT (the last render that was kept came from this prompt; edit it where the "

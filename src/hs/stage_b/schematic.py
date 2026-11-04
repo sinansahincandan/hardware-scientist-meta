@@ -230,8 +230,8 @@ def scale_reference(size_mm: float) -> str:
     image model enlarge or shrink it (a full person beside a fingertip-sized part made the part grow)."""
     if size_mm <= 60:
         return "an adult human hand and fingertip, shown at true scale (the device is about fingertip or coin size)"
-    if size_mm <= 400:
-        return "an adult human hand and forearm, shown at true scale (the device is about hand or shoebox size)"
+    if size_mm <= 600:  # 400 sent a 410 mm turbine to "between knee and head height" and it was drawn ~1 m tall
+        return "an adult human hand and forearm, shown at true scale (the device is about hand to shoebox size)"
     if size_mm <= 2500:
         return "one standing adult person, shown at true scale (the device is between knee and head height)"
     return "one standing adult person, small beside it (the device is larger than a person)"
