@@ -95,10 +95,17 @@ def main() -> int:
     total_cells = "".join(f"<td class='n'><b>{tot[w]['score']}/{top * n}</b><br><span class='t'>"
                           f"{tot[w]['s'] / 60:.0f} min · ${tot[w]['c']:.2f}</span></td>" for w in whos)
     best_line = "; ".join(f"{WHO[w]} {tot[w]['best']}" for w in whos)
-    prev_note = ("\"Old council\" is the Hardware Scientist run of 2026-11-02 (members wrote the proposal); "
+    if "hs_open" in whos:
+        prev_note = ("\"Hardware Scientist\" runs on the Meta Model API with the 2026-11-04 loops (board carried "
+                     "between meetings, re-checked critique). \"Open weights\" is the same system in another folder on "
+                     "Meta's open Muse Spark (Baseten) with SAM 3 on Modal and Muse Image for pictures, at its "
+                     "2026-11-03 version; its times and costs are its meeting runs (picture redraws of $0.40 and $0.49 "
+                     "for the fingertip and the turbine not included).")
+    else:
+        prev_note = ("\"Old council\" is the Hardware Scientist run of 2026-11-02 (members wrote the proposal); "
                  "\"Hardware Scientist\" is the run with the advisor council and chief designer (2026-11-03)."
-                 if "hs_prev" in whos else
-                 "\"Hardware Scientist\" is the run with the advisor council and chief designer (2026-11-03). The judge "
+                     if "hs_prev" in whos else
+                     "\"Hardware Scientist\" is the run with the advisor council and chief designer (2026-11-03). The judge "
                  "also scored an earlier Hardware Scientist version, left out here; its letter can appear in the "
                  "judge's words.")
     page = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'>

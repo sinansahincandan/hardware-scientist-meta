@@ -40,7 +40,7 @@ def main() -> int:
                         "-af", "apad=pad_dur=0.6", "-c:v", "libx264", "-tune", "stillimage", "-pix_fmt", "yuv420p",
                         "-vf", "scale=1920:1080", "-r", "25", "-c:a", "aac", "-b:a", "160k", "-shortest", str(clip)],
                        check=True)
-        probe = subprocess.run([ffmpeg, "-i", str(clip)], capture_output=True, text=True).stderr
+        probe = subprocess.run([ffmpeg, "-i", str(clip)], capture_output=True, text=True, check=False).stderr  # ffmpeg -i exits 1 by design
         d = re.search(r"Duration: (\d+):(\d+):([\d.]+)", probe)
         secs = int(d.group(1)) * 3600 + int(d.group(2)) * 60 + float(d.group(3)) if d else 0.0
         total += secs
