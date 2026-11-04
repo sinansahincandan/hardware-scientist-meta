@@ -85,6 +85,12 @@ def main() -> int:
     total_cells = "".join(f"<td class='n'><b>{tot[w]['score']}/{25 * n}</b><br><span class='t'>"
                           f"{tot[w]['s'] / 60:.0f} min · ${tot[w]['c']:.2f}</span></td>" for w in whos)
     best_line = "; ".join(f"{WHO[w]} {tot[w]['best']}" for w in whos)
+    prev_note = ("\"Old council\" is the Hardware Scientist run of 2026-11-02 (members wrote the proposal); "
+                 "\"Hardware Scientist\" is the run with the advisor council and chief designer (2026-11-03)."
+                 if "hs_prev" in whos else
+                 "\"Hardware Scientist\" is the run with the advisor council and chief designer (2026-11-03). The judge "
+                 "also scored an earlier Hardware Scientist version, left out here; its letter can appear in the "
+                 "judge's words.")
     page = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'>
 <title>Hardware Scientist vs a single prompt</title><style>
 body{{margin:0;background:#f4f6f9;color:#16202c;font:16px/1.5 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif}}
@@ -109,10 +115,8 @@ A/B/C in mixed order.</p>
 <table><tr><th>Problem</th>{head}<th>Judge's best</th></tr>{''.join(rows)}
 <tr><td><b>Total</b></td>{total_cells}<td>{best_line}</td></tr></table>
 <div class='note'><b>Read with care.</b> Three problems, one judge, one run per system and problem: a small sample.
-"Old council" is the Hardware Scientist run of 2026-11-02 (members wrote the proposal); "Hardware Scientist" is the
-run with the advisor council and chief designer (2026-11-03). Both HS documents are built by the same code, so the
-judge could tell them apart from the single prompt by format, though not which HS is which. Every HS design document
-lists each key number with the calculation behind it, as it stands on HS's whiteboard.</div>
+{prev_note} Every HS design document lists each key number with the calculation behind it, as it stands on HS's
+whiteboard, so the judge could tell HS from the single prompt by format.</div>
 {''.join(blocks)}</div></body></html>"""
     out.write_text(page, encoding="utf-8")
     print(out)
