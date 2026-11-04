@@ -10,3 +10,4 @@ source: run 20261103-210007_lunar-regolith-excavation-robot (2026-11-03)
 Typical values: 500 mm mast E28-E33, 10 Hz heartbeat 0.5 s auto-brake E30-E31 with 0.0533 m stop distance E35, <2% drift over sortie.
 
 ## Use notes
+- run 20261104-123502_lunar-regolith-excavation-robot (Dr. Priya Sharma — Power, Sensing & Remote Autonomy): Did not help this run - skill opened at E32 and web searches E34-E35 for IP65 stereo cameras were done, but no evidence shows mast height, baseline, FOV, stowed vs deployed clearance for VIO, or dusty feature-poor degradation sizing. Transfer line mentions folding mast VIO generically but no calculation, simulation or decisive choice cites mast geometry or VIO performance.

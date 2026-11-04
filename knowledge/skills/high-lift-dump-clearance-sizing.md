@@ -11,3 +11,4 @@ source: run 20261103-152604_lunar-regolith-excavation-robot (2026-11-03)
 5. Check stability at tilt: restoring moment from chassis and tracks must exceed overturning from raised load. Typical margin 205 Nm holds upright (E44).
 
 ## Use notes
+- run 20261104-121345_lunar-regolith-excavation-robot (Prof. James Okoro — Mobility & Excavation Systems Specialist): Helped. Sized 55deg single 24V actuator (C6) to clear fixed 300mm bin lip (E40) while keeping CG forward of rear axle for stability. Enabled F4 trade that tilt geometry provides clearance with self-lock.

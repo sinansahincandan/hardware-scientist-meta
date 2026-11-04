@@ -12,3 +12,4 @@ source: run 20261103-201819_lunar-regolith-excavation-robot (2026-11-03)
 6. Check payload mass if needed: mass = effective volume * bulk density - e.g., use 1.4 t/m3 => 0.0224 t scale factor [E20]
 
 ## Use notes
+- run 20261104-121345_lunar-regolith-excavation-robot (Prof. James Okoro — Mobility & Excavation Systems Specialist): Helped. Bounding-box 45L at 1.55 g/cm3 predicts 69.8 kg full hopper (E45, E56) which exceeds 60kg robot limit (E13) and would violate tip margin. Established need to limit batch to 15-20 kg and question on bridging/fill sensing, showing wall-angle volume loss must be sized, not bounding box.

@@ -13,3 +13,4 @@ source: run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (2026-11-02
 Typical values: 14.3 ms allows only 1 mm fall (E39); 10 ms sense-to-flag gives 0.491 mm fall (E41); 64 ms window gives 20.1 mm fall and exceeds 1 mm (E27).
 
 ## Use notes
+- run 20261104-123505_tactile-fingertip-sensor-for-robot-hands (Dr. Priya Desai — Electronics & Signal Processing): Helped - Sized detect-to-flag loop to <15ms (200Hz stick-ratio COP + 30-200Hz micro-vibration at 1-2kHz CDC burst) to catch 1mm drop before t=14.3ms (0.49mm at 10ms, 1.1mm at 15ms). Justified dual-path vs single-path C6/C7 failure. Evidence E52,E53,E54 and Priya-F4 choice.

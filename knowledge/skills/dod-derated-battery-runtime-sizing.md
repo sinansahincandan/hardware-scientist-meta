@@ -11,3 +11,4 @@ source: run 20261103-210007_lunar-regolith-excavation-robot (2026-11-03)
 Typical values: 222 Wh nameplate E36, 189 Wh usable at 85% DoD E43 E47, 2.1 h @90W E48.
 
 ## Use notes
+- run 20261104-123502_lunar-regolith-excavation-robot (Dr. Priya Sharma — Power, Sensing & Remote Autonomy): Helped - provided the quantitative energy basis for the architecture decision. E38 calculates 24V*10Ah=240 Wh nameplate, E55/E87 derates to 144 Wh at 60% DoD, and E53/E56-E58/E88-E89 convert to 0.343h at 420W peak and 0.873h at 165W avg interleaved, which is cited in F4->C14+F6->C17 choice to justify a separate sealed battery bay vs ventilated pack and 20.6 vs 52.4 min runtime.

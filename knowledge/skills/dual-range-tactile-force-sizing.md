@@ -12,3 +12,4 @@ Checks: PASS if low-end delta-C > CDC resolution (E10, E11) AND high-end compres
 Typical values: 1 mN threshold (E6), 30 N grip with 90 N proof mount margin (E43, E18), 30000:1 range.
 
 ## Use notes
+- run 20261104-123505_tactile-fingertip-sensor-for-robot-hands (Dr. Kenji Tanaka — Soft Materials & Compliant Structures): Helped - Verified single array spans mN touch to tens-of-N grip without saturation: worst-case ΔC 0.9fF >30x noise 0.05fF at 1mN while 10-30N compression stays <0.5mm gap with posts preventing short. Evidence E19,E57 and F2 dual-range to 10-30N.

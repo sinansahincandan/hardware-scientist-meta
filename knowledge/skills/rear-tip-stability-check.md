@@ -11,3 +11,4 @@ source: run 20261102-214939_lunar-regolith-excavation-robot (2026-11-02)
 5. If fails, move battery/low mass forward, limit tip angle, or shorten overhang.
 
 ## Use notes
+- run 20261104-121345_lunar-regolith-excavation-robot (Prof. James Okoro — Mobility & Excavation Systems Specialist): Helped. Used to verify 55deg rear-pivot dump does not tip. Restoring moment 243 Nm (E51) vs overturning moment 49.1 Nm for 20kg at 0.25m behind axle (E52) = 4.95x margin (E55). Directly supported decisive choice F4 vs C13/C26.

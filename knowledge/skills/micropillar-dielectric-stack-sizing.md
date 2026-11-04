@@ -11,3 +11,4 @@ source: run 20261103-210010_tactile-fingertip-sensor-for-robot-hands (2026-11-03
 5. Gate on electronics: need CDC resolution <0.05 fF and range ±4 pF to 17 pF e.g. AD7746 [E29,E30] / AD7147 [E36,E37]; require margin >20x: 0.88/0.02=44x passes, else increase fill or reduce gap.
 
 ## Use notes
+- run 20261104-123505_tactile-fingertip-sensor-for-robot-hands (Dr. Kenji Tanaka — Soft Materials & Compliant Structures): Helped - Sized 1.5x1.5mm taxel, 0.5mm air-gap, C0 39.8fF to map 1mN -> 17.8um (3.6% strain) -> ΔC 0.9-1.5fF, SNR 18-30 vs 0.02-0.05fF AD7746 noise floor. Ensures detection at 1 mN without saturation to 10-30N within 13mm envelope. Evidence E19,E20,E57 decisive choice F2/C15.
