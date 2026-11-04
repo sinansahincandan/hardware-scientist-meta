@@ -127,7 +127,8 @@ class OpenClient(MetaClient):
             raise RuntimeError(f"previous response {previous_response_id} not found or expired")
         history = list(self._chains.get(previous_response_id, [])) + list(input_items)
         searching = any(t.get("type") == "web_search" for t in tools or [])
-        sent_tools = [t for t in tools or [] if t.get("type") != "web_search"] + (SEARCH_TOOLS if searching else [])
+        # Search tools first: listed after the board tools, Muse Spark Open never chose them (replay_member_a).
+        sent_tools = (SEARCH_TOOLS if searching else []) + [t for t in tools or [] if t.get("type") != "web_search"]
         kwargs: dict[str, Any] = {"model": config.OPEN_TEXT_MODEL, "instructions": instructions,
                                   "reasoning": {"effort": config.OPEN_EFFORT.get(rc.effort, "medium")},
                                   "max_output_tokens": max_tokens}

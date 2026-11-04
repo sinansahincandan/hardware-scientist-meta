@@ -15,8 +15,10 @@ from typing import Any
 SEARCH_TOOLS: list[dict[str, Any]] = [
     {"type": "function", "name": "web_search",
      "description": "Search the web (papers, standards, datasheets, manufacturer pages). Returns up to 8 results "
-                    "with title, URL and a short snippet. Open the pages that matter with open_page. When you use "
-                    "a source, put its full URL right after the sentence that takes something from it.",
+                    "with title, URL and a short snippet. The meeting's rule: constraints and numbers come from the "
+                    "literature, and a source counts only when it was found by this search, so search before you "
+                    "post concepts or numbers that rest on a source. Open the pages that matter with open_page. "
+                    "When you use a source, put its full URL right after the sentence that takes something from it.",
      "parameters": {"type": "object", "additionalProperties": False, "required": ["query"],
                     "properties": {"query": {"type": "string"}}}},
     {"type": "function", "name": "open_page",
