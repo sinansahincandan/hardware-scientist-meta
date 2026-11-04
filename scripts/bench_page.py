@@ -10,6 +10,7 @@ import base64
 import html
 import io
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -17,7 +18,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 CRIT = {"C1": "Meets the constraints", "C2": "Physically works", "C3": "Numbers right and supported",
-        "C4": "Picture shows the design", "C5": "Buildable and honest"}
+        "C4": "Picture shows the design", "C5": "Buildable and honest", "C6": "Explains how it works",
+        "C7": "Tells how to make it", "C8": "Picture free of generator mistakes"}
 WHO = {"baseline": "Single prompt", "hs_prev": "Hardware Scientist, old council", "hs": "Hardware Scientist"}
 ORDER = ["baseline", "hs_prev", "hs"]
 
@@ -45,6 +47,9 @@ def main() -> int:
     out = Path(sys.argv[3])
     e = html.escape
     whos = [w for w in ORDER if any(w in k.values() for k in key.values())]
+    first = next(iter(scores.values()))
+    crits = [c for c in CRIT if c in first[next(lab for lab in "ABC" if lab in first)]]  # rubric v1 or v2
+    top = 5 * len(crits)
     tot = {w: {"score": 0, "s": 0.0, "c": 0.0, "best": 0} for w in whos}
     rows, blocks = [], []
     for pid in sorted(scores):
@@ -52,7 +57,7 @@ def main() -> int:
         label = {v: lab for lab, v in k.items() if lab in ("A", "B", "C")}
         prob_file = next((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
         prob = json.loads(prob_file.read_text(encoding="utf-8"))
-        bdir = ROOT / "runs" / "baseline" / prob_file.stem
+        bdir = ROOT / "runs" / os.environ.get("BASELINE_OUT", "baseline") / prob_file.stem
         base_rec = json.loads((bdir / "record.json").read_text(encoding="utf-8")) | {"_dir": str(bdir)}
         best = {lab: w for w, lab in label.items()}[sc["better"]]
         cells, cols = [], []
@@ -64,11 +69,11 @@ def main() -> int:
             tot[w]["c"] += c
             tot[w]["best"] += best == w
             took = f"{s / 60:.0f} min" if s >= 120 else f"{s:.0f} s"
-            cells.append(f"<td class='n'>{'<b>' if best == w else ''}{total}/25{'</b>' if best == w else ''}"
+            cells.append(f"<td class='n'>{'<b>' if best == w else ''}{total}/{top}{'</b>' if best == w else ''}"
                          f"<br><span class='t'>{took} · ${c:.2f}</span></td>")
             crit = "".join(f"<tr><td>{CRIT[x]}</td><td class='n'>{sc[label[w]][x]['score']}</td>"
-                           f"<td>{e(sc[label[w]][x]['why'])}</td></tr>" for x in CRIT)
-            cols.append(f"<div class='col{' best' if best == w else ''}'><h3>{WHO[w]} <span class='tot'>{total}/25"
+                           f"<td>{e(sc[label[w]][x]['why'])}</td></tr>" for x in crits)
+            cols.append(f"<div class='col{' best' if best == w else ''}'><h3>{WHO[w]} <span class='tot'>{total}/{top}"
                         f"</span></h3><p class='t'>design {label[w]} for the judge · {took} · ${c:.2f}</p>"
                         f"<img src='{_img(fig)}'><table class='crit'>{crit}</table></div>")
         rows.append(f"<tr><td>{e(prob['title'])}</td>{''.join(cells)}<td><b>{WHO[best]}</b></td></tr>")
@@ -82,7 +87,7 @@ def main() -> int:
             "</section>")
     n = len(scores)
     head = "".join(f"<th>{WHO[w]}</th>" for w in whos)
-    total_cells = "".join(f"<td class='n'><b>{tot[w]['score']}/{25 * n}</b><br><span class='t'>"
+    total_cells = "".join(f"<td class='n'><b>{tot[w]['score']}/{top * n}</b><br><span class='t'>"
                           f"{tot[w]['s'] / 60:.0f} min · ${tot[w]['c']:.2f}</span></td>" for w in whos)
     best_line = "; ".join(f"{WHO[w]} {tot[w]['best']}" for w in whos)
     prev_note = ("\"Old council\" is the Hardware Scientist run of 2026-11-02 (members wrote the proposal); "
@@ -110,7 +115,7 @@ border-radius:12px;padding:20px;margin:26px 0}}.prob{{color:#33404f;margin:4px 0
 </style></head><body><div class='wrap'><h1>Hardware Scientist vs a single prompt</h1>
 <p class='sub'>Same Meta models, same problem text. Single prompt: one Muse Spark call with web search + one Muse Image
 call. Hardware Scientist: council, Evaluator, Manager, picture loop. Scored blind by an independent judge (Claude Opus)
-on the rubric written before any result (examples/bench/RUBRIC.md), 5 criteria × 1–5; the judge saw the designs as
+on a rubric written before any result (examples/bench/RUBRIC.md, RUBRIC_v2.md), {len(crits)} criteria × 1–5; the judge saw the designs as
 A/B/C in mixed order.</p>
 <table><tr><th>Problem</th>{head}<th>Judge's best</th></tr>{''.join(rows)}
 <tr><td><b>Total</b></td>{total_cells}<td>{best_line}</td></tr></table>
