@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -81,7 +82,9 @@ class Evaluator:
             "paragraph: does the working principle hold, what worries you most, would you let this go to detail "
             "design, and how does it compare with the closest prior art. Write to colleagues: full sentences, plain "
             "nouns first, the deciding numbers with units, an evidence id in parentheses after the thing it "
-            "supports; never an id as the subject of a sentence, never telegraphic lists of equations. Then cover "
+            "supports; never an id as the subject of a sentence, never telegraphic lists of equations. Your accept "
+            "field must say the same as that paragraph: if you would release it only after more work, accept is false "
+            "and each piece of that work is an evidence_request. Then cover "
             "each check below in prose: what you found, how you checked it, and why it matters.\n"
             "FORMULAS, NOT ONLY ARITHMETIC. For every number that decides acceptance, state the physical relation "
             "you would use (the formula, the regime and its assumptions), compare it with the calculation on the "
@@ -153,13 +156,16 @@ class Evaluator:
         system = ("You are the Evaluator, a senior engineer at a design review. Judge whether it works, whether every "
                   "deciding number holds, and whether it can be built; write your review as clear prose for colleagues.")
         verdict = self.client.structured("evaluator", Verdict, system, prompt)
-        if verdict.accept and verdict.evidence_requests:
+        conditional = re.search(r"\b(only after|not yet|would not (?:yet )?(?:release|accept|let)|before (?:release|"
+                                r"detail design|it goes)|conditioned on|conditional on|once the room)\b",
+                                verdict.feedback[:1500], re.IGNORECASE)
+        if verdict.accept and (verdict.evidence_requests or conditional):
             # an accept that still asks the room for work contradicts the review's own rule; the model reconciles it
             # (run 224916 re-judge: "stays-parked hold ... shown in words only" yet accepted with five requests)
             verdict = self.client.structured(
                 "evaluator", Verdict, system,
-                prompt + "\n\nYOUR FIRST VERDICT:\n" + verdict.model_dump_json(indent=2) + "\n\nYou accepted and "
-                "also asked the room for the evidence above. An evidence_request is only for a gap that could make "
+                prompt + "\n\nYOUR FIRST VERDICT:\n" + verdict.model_dump_json(indent=2) + "\n\nYou accepted, but "
+                "your review also asks for more work before release (in evidence_requests or in your opening paragraph). An evidence_request is only for a gap that could make "
                 "the concept fail or leave a stated limit unshown; the room does that work only if you send the "
                 "concept back. Decide again, in writing: either reject so the room settles those items, or keep "
                 "accept and move every item that is not needed for a stated limit or the working principle into "
