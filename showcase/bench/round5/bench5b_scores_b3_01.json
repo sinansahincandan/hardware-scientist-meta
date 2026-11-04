@@ -1,0 +1,105 @@
+{
+ "b3": {
+  "A": {
+   "faults": [
+    {"where": "figure, rotor hub", "fault": "Rotor is drawn with four blades on a four-clamp pitch hub; the text says three blades.", "checked_by": "zoomed crop of the hub: four blade roots and four clamps", "severity": "major"},
+    {"where": "figure", "fault": "No scale bar, hand or person, so the 45 cm cube fit cannot be checked against the picture.", "checked_by": "looked at the full image", "severity": "minor"},
+    {"where": "Parts / Risks", "fault": "Servo 'holds feather without power draw' is not physical for a hobby servo; the risk section separately adds a return spring, which is the real fail-safe and should be in the parts.", "checked_by": "read both sections", "severity": "minor"},
+    {"where": "Key numbers, braking", "fault": "Stop target '<300 rpm' is above 10% of the stated 2890 rpm rated speed (289 rpm); the 2-3 s stop is KE/25 W only and ignores aero torque during the stop and the short-circuit current and relay rating.", "checked_by": "0.5*0.0012*314^2 = 59 J; 59/25 = 2.4 s; 0.1*2890 = 289 rpm", "severity": "minor"}
+   ],
+   "C1": {"score": 4, "why": "Every constraint is addressed with a computed value (fit dimensions, feathered and operating thrust, 2.9-31 W over 5-11 m/s, a 2-3 s stop with latch); fit and stop are approximate but consistent."},
+   "C2": {"score": 4, "why": "Collective pitch-to-feather plus a latched generator short is a sound way to survive 22 m/s and stop and hold; loss-of-load power comes from a supercap."},
+   "C3": {"score": 4, "why": "Re-derived wind power 9.6/102 W, shaft 36.9 W, 2890 rpm, thrust 32/3.7 N and 59 J all check; the braking estimate is simplified."},
+   "C4": {"score": 3, "why": "Photoreal render shows the pitch hub, pushrods, nacelle, tail and E-stop/dump box, but the rotor has four blades instead of three and there is no scale."},
+   "C5": {"score": 4, "why": "Buildable with hobby parts and CNC; risks are honest (linkage jam, resistor heating, false trips)."},
+   "C6": {"score": 4, "why": "Clear account of normal running, power limiting above 11 m/s and the shutdown sequence."},
+   "C7": {"score": 4, "why": "Concrete processes: printed moulds with vacuum-bagged carbon layup, CNC 6061 hub and nacelle, wiring, balancing and test plan."},
+   "C8": {"score": 3, "why": "Clean render, but the wrong blade count is a generator mistake that changes the design."},
+   "total": 30
+  },
+  "B": {
+   "faults": [
+    {"where": "How it works / Risks / Parts", "fault": "Shutdown does not work as described. By its own numbers the 2.5 ohm dump gives about 0.08 N m against 0.10 N m aero torque at 11 m/s and 0.41 N m at 22 m/s. The fix it relies on, pitching to Ct 0.2, has no pitch actuator in the parts list, and the rotor is called 'fixed-pitch'. The disc caliper has no actuator and no torque rating. So the <10% in 10 s and 'stays there' constraint is not met by the described mechanism.", "checked_by": "Ke = 1/(380 rpm/V) = 0.0251 V s/rad; Ke^2*302/2.5 = 0.076 N m; compared with its stated aero torques", "severity": "fatal"},
+    {"where": "How it works", "fault": "Contradiction: 'fixed-pitch rotor' and 'pitch-to-feather above 8 m/s' in the same paragraph.", "checked_by": "read text", "severity": "major"},
+    {"where": "Constraint check", "fault": "Section is empty ('Manual evaluation - see text'); no constraint is shown met with a computed value.", "checked_by": "read text", "severity": "major"},
+    {"where": "Key numbers, survival", "fault": "The 22 m/s case is only argued for feathered thrust (7.5 N, 2.25 N m). The unfeathered 29.8 N and runaway speed, which apply since there is no pitch actuator, get no stress or speed check.", "checked_by": "0.5*1.225*0.1257*22^2*0.8 = 29.8 N", "severity": "major"},
+    {"where": "Key numbers / Parts, power", "fault": "Electric output over 5-11 m/s is never stated. Open-circuit voltage at 5 m/s is 3.5 V, below the stated 5-15 V MPPT range, so power at 5 m/s is unsupported.", "checked_by": "0.0251*137.5 rad/s = 3.46 V", "severity": "major"},
+    {"where": "figure, rotor", "fault": "Rotor appears to have four blades (two above the hub, two below) against three in the text.", "checked_by": "zoomed crop of rotor", "severity": "major"},
+    {"where": "figure", "fault": "Generator and dump resistor are marked 'not located'; the brake caliper and any pitch mechanism are not shown; the measurement chain calls the slip ring an 'instrument'.", "checked_by": "read legend and panels", "severity": "minor"},
+    {"where": "Key numbers", "fault": "Each line is a raw, truncated code/search dump that repeats the same snippet; hard to read.", "checked_by": "read text", "severity": "minor"},
+    {"where": "Risks", "fault": "Blade root said to carry 1090 N tension, yet sized 'for 29.8 N ultimate'.", "checked_by": "read text", "severity": "minor"},
+    {"where": "How it is made / figure", "fault": "Tower tube is 300 mm in the text, but the figure shows about 160 mm. A 300 mm tower under a 200 mm rotor radius gives 500 mm of height if the tower counts as body.", "checked_by": "measured against the 100 mm scale bar (about 220 px)", "severity": "minor"}
+   ],
+   "C1": {"score": 2, "why": "The shutdown constraint is not met by the described mechanism; the other constraints are unchecked."},
+   "C2": {"score": 2, "why": "Turning and generating would work, but the stop/hold, and survival without a pitch actuator, fail by its own numbers."},
+   "C3": {"score": 2, "why": "Individual figures (Ke, 7.6 V, 160 J, 0.095 N m) re-derive correctly, but the deciding brake and power claims are contradicted or missing."},
+   "C4": {"score": 2, "why": "Scale and rotor size check out, but the rotor appears four-bladed and the generator, dump, brake and pitch are not shown."},
+   "C5": {"score": 2, "why": "It honestly admits the dump is weaker than the aero torque, but the design depends on parts that do not exist in it."},
+   "C6": {"score": 2, "why": "The explanation is a jumble of component codes and code dumps; the stop sequence is unclear."},
+   "C7": {"score": 2, "why": "Coarse assembly steps only, explicitly 'no recipes'; no materials or processes."},
+   "C8": {"score": 3, "why": "Clean photo, but the extra blade and an unexplained cutaway mechanism are generator errors."},
+   "total": 17
+  },
+  "C": {
+   "faults": [
+    {"where": "figure vs Key numbers (fit)", "fault": "The picture shows the device far larger than the cube: blade tip to tail vane is about 780 mm against its own 100 mm scale bar (the hand agrees), and one blade radius is about 270 mm against 200 mm. The tail boom sticks out aft instead of being 'folded beside the nacelle' for the claimed 380 mm stack.", "checked_by": "pixel measurement against the scale bar (about 153 px per 100 mm in display) and the hand", "severity": "major"},
+    {"where": "Key numbers / Constraint check, 'stays parked'", "fault": "The sprung park pad that keeps the rotor below 10% has no holding torque or actuation figure; in the figure the spring sits at the yaw sleeve, not on the rotor shaft.", "checked_by": "read text; inspected figure", "severity": "major"},
+    {"where": "Key numbers, braking", "fault": "Inertia is inconsistent: stored energy uses J = 0.0016 kg m^2 (87.1 J) and the stop simulation uses J = 0.0012 (65 J kinetic). '79.2 J matched to 87.1 J' compares unlike things. With 0.0016 the stop is about 1.8 s, still well under 10 s.", "checked_by": "0.5*0.0016*330^2 = 87.1 J; 0.5*0.0012*330^2 = 65.3 J", "severity": "minor"},
+    {"where": "Key numbers, mass", "fault": "Total mass 0.81 kg sums five items while nine parts are listed.", "checked_by": "counted terms", "severity": "minor"},
+    {"where": "Constraint check, power at 5 m/s", "fault": "Electric power at 5 m/s is not stated (about 2.9 W follows); cut-in torque 0.022 N m is not compared with cogging or friction.", "checked_by": "9.62*0.35*0.855 = 2.9 W", "severity": "minor"},
+    {"where": "figure legend", "fault": "Marker 4 (yaw slip ring) sits at the post base rather than at the yaw joint; the detector loop is 'not located'; blade lengths look uneven.", "checked_by": "inspected figure", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Every constraint gets a computed check (fit stack, 15.2 MPa post stress, 30.7 W, 1.34 s stop, over-speed trip for 22 m/s), but the picture contradicts the fit and the 'stays parked' hold is unsized."},
+   "C2": {"score": 4, "why": "A latched phase-short with over-speed/over-voltage/manual trip plus a spring pad is a sound stop-and-hold; the post and blade checks are conservative (Ct = 1)."},
+   "C3": {"score": 3, "why": "Re-derived 102 W, 35.9 W, 3150 rpm, 0.109 N m, 37.3 N, 15.2 MPa, 0.37 mm and 9.85 V all check; but the park-hold torque is missing and the inertia values are inconsistent."},
+   "C4": {"score": 3, "why": "Shows the rotor, cutaway generator, phase-short box and tail, but the drawn size and unfolded tail contradict the 45 cm fit claim."},
+   "C5": {"score": 4, "why": "Buildable with standard parts (rated MOSFET, slip ring); the claims are largely backed by computation."},
+   "C6": {"score": 4, "why": "Clear chain from wind to load, and of the trip logic, with plain-language summary lines."},
+   "C7": {"score": 3, "why": "Make steps name processes (sheet aluminium, printed shell on carbon spar) but stay coarse."},
+   "C8": {"score": 3, "why": "Good photo, but the proportions are oversized against its own scale and the spring brake is placed at the wrong spot."},
+   "total": 27
+  },
+  "better": "A",
+  "better_why": "A and C both work on paper with numbers that check. A's pitch-to-feather plus latched short addresses all four constraints with consistent numbers and concrete manufacturing, and its main flaw is a blade-count picture error. C's picture contradicts its own cube fit and its park hold is unsized. B fails the shutdown constraint by its own numbers."
+ },
+ "01": {
+  "A": {
+   "faults": [
+    {"where": "Key numbers, spine bending", "fault": "The section modulus is doubled: pi/32*(D^4-d^4)/(D/2) was used instead of /D. The correct Z for a 30x2 tube is 1155 mm^3, so stress is about 61 MPa and the safety factor about 4.5, not 30.6 MPa and 9.0. The 0.2 m moment arm is also unexplained.", "checked_by": "pi/32*(30^4-26^4)/30 = 1155 mm^3; 70.6 N m/1155 mm^3 = 61 MPa", "severity": "major"},
+    {"where": "figure, toe plate", "fault": "The toe plate is drawn as a near-flat platform lying along the stairs on four casters (not in the parts list), touching two treads 200 mm apart in height. That contradicts a tri-star truck lifting a toe-plate load and is not physically consistent. The tri-star also has an extra large hoop ring not described.", "checked_by": "zoomed crop of the wheels and stairs", "severity": "major"},
+    {"where": "Key numbers, tare", "fault": "Tare is inconsistent: 12 kg in the effort/brake calculation, 7.38 kg in the budget (which leaves only 5 kg for six wheels, clusters, brake, toe plate and handles).", "checked_by": "5 m*0.475 kg/m + 3 + 2 = 7.38 kg vs m_tare = 12", "severity": "minor"},
+    {"where": "Key numbers, lever effort / tip margin", "fault": "The 226 N heave derivation is truncated and unsupported. The 'tip margin' at 15 deg lean is set by choosing a lean after the 25 deg case came out negative. The figure's spine leans about 23 deg, beyond the stated 21.8 deg tip angle.", "checked_by": "read code fragment; measured spine angle in figure", "severity": "minor"},
+    {"where": "Key numbers, hinge pin", "fault": "The 3680 N pin load has no stated origin.", "checked_by": "36.6 MPa re-derives from 3680 N on an 8 mm pin in double shear; load source missing", "severity": "minor"}
+   ],
+   "C1": {"score": 4, "why": "60 kg and one-person operation are addressed with computed effort (226 N), brake torque and fold size (730x490x150 mm for the van); some values are unsupported."},
+   "C2": {"score": 4, "why": "Tri-star clusters with a deadman band brake and pawl, a strap and a locking mid-fold is a workable stair truck."},
+   "C3": {"score": 3, "why": "W = 706 N, 38.7 deg, 441 N, 98.9 N m and the 141 J per step check, but the spine stress is off by 2x and the tare is inconsistent."},
+   "C4": {"score": 3, "why": "Shows the loop handle, deadman lever, twin spine, fold hinge, strap, tri-star and a folded unit, but the toe plate on casters across the stairs misrepresents how it climbs."},
+   "C5": {"score": 4, "why": "Buildable from aluminium tube and stock wheels; the risks are concrete and mitigated."},
+   "C6": {"score": 4, "why": "Clear on how the clusters walk, how the brake holds when released, and how it folds."},
+   "C7": {"score": 3, "why": "Assembly order with dimensions, but few process details."},
+   "C8": {"score": 3, "why": "Extra casters, a hoop ring and the impossible flat plate on two treads are generator mistakes."},
+   "total": 28
+  },
+  "B": {
+   "faults": [
+    {"where": "Key numbers / Constraint check", "fault": "Load capacity is claimed only by citing existing products' ratings. There is no spine, toe-plate or axle strength figure; the pawl is 'sized for 353 N per side x1.5' with no geometry.", "checked_by": "read text; 72*9.81/2 = 353 N re-derives", "severity": "major"},
+    {"where": "figure, wheels", "fault": "Only one tri-star cluster is visible. The other side shows two small casters under the toe plate, and the toe plate carries casters not in the parts list (text: two clusters, six wheels).", "checked_by": "zoomed crop of the wheel area", "severity": "major"},
+    {"where": "Key numbers, handle force", "fault": "214 N is a static balance for an assumed 0.40 m CG offset; the climbing heave per step is not computed.", "checked_by": "60*9.81*0.40/1.10 = 214 N", "severity": "minor"},
+    {"where": "figure vs text", "fault": "The text gives about 30 deg tilt; the figure shows about 20 deg; the folded state and skids are hardly shown.", "checked_by": "inspected figure", "severity": "minor"},
+    {"where": "How it is made", "fault": "TIG-welded 6061 loses much of its T6 strength in the heat-affected zone; not addressed.", "checked_by": "materials knowledge", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "60 kg and one-person operation are claimed largely by precedent; the fold size is given; load capacity is unsupported by calculation."},
+   "C2": {"score": 4, "why": "A conventional tri-star truck with edge-brake pawls and skids is a proven, workable concept."},
+   "C3": {"score": 2, "why": "The few numbers given are right (214 N, 353 N), but the deciding strength and brake numbers are borrowed or missing."},
+   "C4": {"score": 3, "why": "Clear render of a tri-star truck with a strapped box on stairs, but one side shows casters instead of a cluster."},
+   "C5": {"score": 4, "why": "Honest and very buildable; it openly follows existing products."},
+   "C6": {"score": 4, "why": "Climb, descent brake and fold sequence are explained clearly."},
+   "C7": {"score": 4, "why": "Concrete processes: bent and TIG-welded tube, injection-moulded glass-filled nylon spiders, press-braked deck, bought-in parts."},
+   "C8": {"score": 3, "why": "Asymmetric wheel set and extra toe-plate casters are generator mistakes."},
+   "total": 27
+  },
+  "better": "A",
+  "better_why": "Both are tri-star trucks with similar picture faults. A adds a fail-safe deadman brake, real load, effort and brake calculations (one with a 2x section-modulus error that still leaves margin) and a defined fold size. B rests its load and brake claims on product precedent, without calculation."
+ }
+}

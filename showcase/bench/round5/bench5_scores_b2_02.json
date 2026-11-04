@@ -1,0 +1,109 @@
+{
+ "b2": {
+  "A": {
+   "faults": [
+    {"where": "Key numbers / slip", "fault": "Incipient-slip flag '<10 ms from marker divergence' cannot come from a 60 fps camera (16.7 ms per frame); only the vibration channel could be that fast. The text also says 3-500 Hz sampled at 4 kHz while the parts list says the microphone/PVDF covers 100 Hz-5 kHz.", "checked_by": "1/60 s = 16.7 ms > 10 ms; compared the two frequency statements", "severity": "major"},
+    {"where": "Constraint check, 1 mN", "fault": "1 mN called MET from a Hertz indentation of ~25 um, which is about one pixel at the quoted 25-50 um/pixel; no image-noise or depth-resolution figure shows the dent is actually resolved. Calibration also starts at 1 mN, so the threshold has no margin.", "checked_by": "Re-derived Hertz d = 24.3 um, contact radius 0.44 mm (E*=70 kPa, R=8 mm); compared with pixel size", "severity": "major"},
+    {"where": "Figure, main view", "fault": "The camera lens faces sideways out of the cutaway, at right angles to the dome, but the text says an inward-facing camera images the inner membrane of the dome tip. The picture does not show the optical path that the concept depends on.", "checked_by": "Looked at the figure: the lens axis is perpendicular to the finger axis and points at the viewer", "severity": "major"},
+    {"where": "Figure, inset", "fault": "The inset shows a threaded screw post running up through the middle of the gel dome, with no camera or LEDs. A screw there would block the camera's view of the membrane. The radiating arrows have no meaning in the text.", "checked_by": "Looked at the inset", "severity": "major"},
+    {"where": "Figure", "fault": "There is no scale bar, hand or object, so the claimed 16 mm x 24 mm size and the use context cannot be checked. The MEMS microphone/PVDF, thermistor and mount are not identifiable.", "checked_by": "Looked at the figure", "severity": "minor"},
+    {"where": "Key numbers, size", "fault": "Says the size 'matches' BioTac SP 26x20x25 mm while stating 16 mm diameter. The 12 g mass is not derived.", "checked_by": "Compared the stated dimensions", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "The size is plausible and stated, but the 1 mN claim rests on a dent about one pixel deep with no noise check (major)."},
+   "C2": {"score": 3, "why": "Optical tactile sensing plus a vibration channel is a sound concept, but the slip-latency claim contradicts the 60 fps camera."},
+   "C3": {"score": 3, "why": "The Hertz depth and 86 dB range check out. The slip latency, the frequency band and the mass are inconsistent or underived."},
+   "C4": {"score": 2, "why": "An attractive render, but the camera points the wrong way, the inset shows a screw through the gel, and there is no scale or object."},
+   "C5": {"score": 4, "why": "Buildable from known vision-tactile practice, and the risks are candid (abrasion, LED heating, creep, latency)."},
+   "C6": {"score": 4, "why": "Photometric stereo, marker flow and the vibration channel are explained clearly."},
+   "C7": {"score": 4, "why": "Casting, coating, marker printing, assembly and calibration steps are concrete."},
+   "C8": {"score": 3, "why": "Screw post through the gel in the inset, meaningless arrows, and a fleshy part behind the clear dome."},
+   "total": 26
+  },
+  "B": {
+   "faults": [
+    {"where": "Key numbers, wall stack vs shear", "fault": "The 2.91 mm radial wall budget has only 1.0 mm of silicone skin and no thickness for the 'firm transition layer'. The shear-shift calculation uses a 2 mm Ecoflex layer, so the width check and the shear check use different stacks.", "checked_by": "Summed the stack: 1.0+0.11+0.5+0.3+1.0 = 2.91 mm; compared with the 2 mm layer in the shear calc", "severity": "major"},
+    {"where": "Key numbers, shear signal", "fault": "The 1.22 fF shear signal assumes a 5 um shift (constants 110 and 900 unexplained), while the same page computes a 77.5 um shift at 0.5 mN. It is also labelled 'per newton' but is per mN.", "checked_by": "Re-derived shift 1.256 kPa x 2 mm / 32.4 kPa = 0.0775 mm", "severity": "minor"},
+    {"where": "Constraint check, mount", "fault": "Uses a 22 N pinch for the 11 N shear limit but 35 N for screw stress. Each number is right by itself (22.3 MPa) but the inputs differ.", "checked_by": "35 N / (2 x pi x 1^2 / 4 mm^2) = 22.3 MPa", "severity": "minor"},
+    {"where": "Detection floor", "fault": "The 22.7x and 5x margins are taken over the 16-bit converter LSB, not measured noise, and the femtofarad signal travels down a tail to a converter in the base box. Guarding is named but its parasitic effect is not quantified.", "checked_by": "16 pF / 2^16 = 0.244 fF; read the chain", "severity": "minor"},
+    {"where": "Figure, panel A/B", "fault": "The picture stacks skin, pillars and flex axially on top of a separate domed core sitting in a clear lower housing. The text describes a 2.91 mm wall wrapped radially around a 9.18 mm core. The pillar layer is drawn about 2.7 mm tall against 0.5 mm in the text, so the side and pad faces have no sensing layer in the picture.", "checked_by": "Measured against the ~5 mm scale bar (~25.6 px/mm in the display): pillar block ~70 px = 2.7 mm, fingertip ~278 px = 10.9 mm vs 15 mm in the text", "severity": "major"},
+    {"where": "Figure, flange", "fault": "The flange shows four screws; the text says two M2 screws.", "checked_by": "Zoomed the flange", "severity": "minor"},
+    {"where": "Figure, build strip", "fault": "Build steps are numbered 1, 3, 4 (step 2 is missing). The step-3 image shows the finished, crumb-covered tip rather than the wrapping step.", "checked_by": "Looked at the build strip", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Width and 1 mN are both computed, but the width stack omits the firm layer that the shear check relies on (major)."},
+   "C2": {"score": 4, "why": "Quad-electrode pillar capacitance gives normal force, shear and position, and the scan time sits inside the fall-time budget; a credible concept."},
+   "C3": {"score": 3, "why": "Most arithmetic re-derives exactly, but the stack thickness, the shear shift and the mount loads are internally inconsistent."},
+   "C4": {"score": 2, "why": "The picture shows an axial stack above a separate dome core, not the wrapped wall, with the pillar layer about 5x too thick."},
+   "C5": {"score": 4, "why": "Buildable with cast silicone and a flex circuit; the risks about yield and fF noise are honest."},
+   "C6": {"score": 3, "why": "The principle is stated, but the key numbers are raw code dumps and the 'how it works' text is terse."},
+   "C7": {"score": 3, "why": "Four short make steps with little process detail."},
+   "C8": {"score": 4, "why": "A clean render; small issues are the four-screw flange, the missing step 2 and exaggerated pillar buckling."},
+   "total": 26
+  },
+  "C": {
+   "faults": [
+    {"where": "Constraint check, size", "fault": "A 15 mm wide bone inside a 16 mm wide envelope leaves 0.5 mm per side for a 1.5 mm skin/pillar stack plus the flex. The 22 mm bone is also longer than the 20 mm envelope (the text admits only the length mismatch). The stated sizes do not close.", "checked_by": "(16-15)/2 = 0.5 mm < 0.8+0.7 mm stack", "severity": "major"},
+    {"where": "Constraint check, 1 mN chain", "fault": "The 44x margin uses an AD7746 noise of ~0.02 fF, but that part converts only a few channels at tens of Hz. 30 taxels at 500 Hz (15 kS/s) cannot have that noise floor with that converter, so the 1 mN detection at the stated rate is unsupported.", "checked_by": "30 x 500 = 15,000 conversions/s vs a slow two-channel 24-bit converter", "severity": "major"},
+    {"where": "Key numbers, Hertz", "fault": "With the stated E* = 0.02 MPa the 1 mN contact radius is 0.669 mm, not 0.737 mm; 0.737 mm needs E* = 15 kPa. The 'solid 0.3 MPa' case gives 0.271 mm, not 0.299 mm. Pressure (586 Pa) and dC (0.88 fF) follow from the stated radius.", "checked_by": "a = (3FR/4E*)^(1/3) recomputed", "severity": "minor"},
+    {"where": "Text", "fault": "The 'How it works' paragraph is duplicated word for word. Key numbers are cluttered with search strings and code, and the '20 mm' envelope line cites only search hits.", "checked_by": "Read", "severity": "minor"},
+    {"where": "Figure, labels", "fault": "Marker 4 ('dynamic slip film') sits on the hexagonal taxel array; marker 3 ('curved taxel array') sits on the white bone; markers 2 ('micropillar layer') and 5 ('circuit board') both sit on the PCB in the lumen; marker 1 is 'not located'.", "checked_by": "Zoomed the labelled region", "severity": "major"},
+    {"where": "Figure, geometry/scale", "fault": "The device reads as a round disk with a dark clamp above the sensing dome, so the mount sits where contact should happen, not a fingertip on a finger. The micropillars are drawn as long external fins on the flanks, not 0.5 mm pillars under the skin. About 80 hexagonal taxels are visible against 30 in the text. The panel-B scale bar of ~0.5 mm would make the whole tip about 3 mm wide.", "checked_by": "Looked at the figure and compared with the scale bar and the text", "severity": "major"},
+    {"where": "Figure, build strip", "fault": "The step images are consistent with the text, but the hand silhouettes give no consistent size.", "checked_by": "Looked", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Both constraints are called met, but the size stack-up does not close and the 1 mN margin uses a noise floor incompatible with the scan rate."},
+   "C2": {"score": 3, "why": "A capacitive taxel array plus a PVDF slip film is workable in principle; the converter and rate choice undercut it."},
+   "C3": {"score": 2, "why": "The Hertz radii do not follow from the stated moduli, the converter noise/rate is unsupported, and the sizes do not close."},
+   "C4": {"score": 1, "why": "Labels point to the wrong parts, the shape is a disk with a clamp over the dome, the taxel count is wrong, and the scale bar is off by an order of magnitude."},
+   "C5": {"score": 3, "why": "Openly flags weak sources and a size mismatch, but leaves the larger stack-up error unnoticed."},
+   "C6": {"score": 3, "why": "The mechanism chain is stated, but the text is duplicated and cluttered with search strings."},
+   "C7": {"score": 4, "why": "Make steps give concrete thicknesses, pitches, materials and bend radius."},
+   "C8": {"score": 2, "why": "Mislabelled markers, fins in place of pillars, an implausible clamp over the tip, and a wrong scale bar."},
+   "total": 21
+  },
+  "better": "B",
+  "better_why": "A and B tie on points. B's signal chain re-derives almost exactly and it has fewer major faults (one number inconsistency, one picture mismatch). A's slip-latency claim contradicts its own camera rate and its picture misplaces the camera. C has the most faults in both its numbers and its picture."
+ },
+ "02": {
+  "A": {
+   "faults": [
+    {"where": "Parts / Key numbers, PV", "fault": "A 2.5 kWp rooftop array of 4x625 W modules needs about 12 m^2 (each module ~2.4x1.3 m), but the roof of a ~2.6x2.0 m room is about 5 m^2, so the array cannot sit on the roof as stated. The picture shows four small panels, about 0.5 kWp worth.", "checked_by": "2500 W / ~210 W/m^2 = 11.9 m^2 vs ~5.2 m^2; compared panel size with the person", "severity": "major"},
+    {"where": "Key numbers, energy", "fault": "The 7-9 kWh/day electric demand is not derived from a heat load, and the 10-12.5 kWh/day PV yield omits system losses (~7.5-9.4 kWh after a 0.75 performance ratio), leaving no margin. Freezing 200-300 kg of ice (about 23 kWh thermal, roughly 10 kWh electric) is not in the budget, so the solar-only 24/7 claim is not shown.", "checked_by": "250 kg x 334 kJ/kg = 23.2 kWh; 2.5 kWp x 4-5 h x 0.75; envelope load 0.2 x 26.3 m^2 x 30 K = 158 W", "severity": "major"},
+    {"where": "Key numbers, cooling power", "fault": "0.8-1.0 kW electric would be 19-24 kWh/day if run continuously, against 7-9 kWh/day; the duty cycle is not stated. The '658 W/h' unit is garbled.", "checked_by": "Arithmetic", "severity": "minor"},
+    {"where": "Key numbers vs constraint check, volume", "fault": "A 2.4x1.8x2.1 m interior is 9.1 m^3, not '~7 m^3 gross' or '6-7 m^3'.", "checked_by": "2.4 x 1.8 x 2.1 = 9.07", "severity": "minor"},
+    {"where": "How it works / Parts, ice bank", "fault": "The monoblock chiller is specified for 4-8 C room air, but freezing water needs a sub-zero evaporator circuit. How the ice bank is charged and discharged is not described.", "checked_by": "Physics of ice-making", "severity": "minor"},
+    {"where": "Figure", "fault": "About half the insulated box is a machinery bay holding the chiller, tanks and battery, open to the cold room, with cold air drawn from it. That puts compressor and condenser heat inside the cold envelope and halves the storage volume, so the 40 crates are not shown to fit.", "checked_by": "Looked at the figure", "severity": "major"},
+    {"where": "Figure, airflow", "fault": "Cold-air arrows stream out of the open door and down through the floor slots onto the ground, contradicting the airtight-room description. The door opening is only about shoulder height on the person.", "checked_by": "Looked", "severity": "minor"},
+    {"where": "Climate", "fault": "A 4-8 C setpoint for mixed produce including tomatoes and mangoes (shown in the picture) risks chilling injury; this is not noted.", "checked_by": "Postharvest practice", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Solar-only and 1 tonne are claimed by precedent; the energy budget does not close once ice-making and losses are counted, and the PV does not fit the roof."},
+   "C2": {"score": 3, "why": "Vapour compression with batteries and ice storage works in principle, but as pictured the machinery heat is inside the cold room."},
+   "C3": {"score": 2, "why": "Only the field-heat figure is derived. Demand, cooling power, PV area, room volume and ice-making energy are unsupported or inconsistent."},
+   "C4": {"score": 2, "why": "A machinery bay inside the cold room, too few small panels, and cold air pouring out under the floor."},
+   "C5": {"score": 3, "why": "Buildable from standard parts and the risks are named, but the energy shortfalls go unnoticed."},
+   "C6": {"score": 4, "why": "Clear explanation of the day/night operation and the envelope."},
+   "C7": {"score": 4, "why": "Sensible steps: skid, panels, PV rack, commissioning."},
+   "C8": {"score": 3, "why": "Air arrows pass through the floor and ground, a short door opening, and an ambiguous tank cluster."},
+   "total": 24
+  },
+  "B": {
+   "faults": [
+    {"where": "Constraint check, capacity", "fault": "'About 60 vented crates' on 'two low side racks' is asserted with no crate size or rack layout. The picture shows three levels with roughly 27 crates' worth of space, so 1 tonne is not shown to fit as drawn. The box volume (2x2x2.2 m) could hold it with taller racking.", "checked_by": "Counted crate positions in the figure; 1000/60 = 16.7 kg per crate", "severity": "major"},
+    {"where": "Key numbers, electric", "fault": "The 60 W fan load is counted as heat but not added as a separate electric draw; electric should be about 186 W (4.5 kWh/day), not 150 W (3.6 kWh/day). The budget still closes at about 6.5 of 8.1 kWh/day.", "checked_by": "(376-60)/2.5 + 60 = 186 W", "severity": "minor"},
+    {"where": "Key numbers, wind/autonomy", "fault": "Side-wall area is 5.3 m^2 although the box is 2x2.2 m (4.4 m^2). The 1.42-day autonomy assumes 100% depth of discharge.", "checked_by": "Arithmetic", "severity": "minor"},
+    {"where": "Figure, scale", "fault": "The ~1000 mm scale bar (~150 px) makes the box about 5 m wide and 5 m tall, against 2-2.4 m in the text and against the person standing beside it.", "checked_by": "Measured box ~780 px vs scale bar ~150 px", "severity": "major"},
+    {"where": "Figure", "fault": "The front wall is removed without being marked as a cutaway, cold haze spills out under the plinth, the plinth is larger than the stated 2.6 m square, and the measurement chain stops after two boxes.", "checked_by": "Looked", "severity": "minor"},
+    {"where": "Design", "fault": "No humidity control, and a 4 C floor risks chilling injury for tropical produce.", "checked_by": "Postharvest practice", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "The solar-only energy budget is computed and closes, with the warm-intake cap and battery night use. The 1-tonne capacity is asserted but not laid out (major)."},
+   "C2": {"score": 4, "why": "A conventional, well-sized PV-battery-DC chiller with the heat load derived; the condenser sits outside the box."},
+   "C3": {"score": 4, "why": "The heat load, pull-down, PV yield, battery, current, soil and wind numbers all re-derive; only the fan double-count and the wall area slip."},
+   "C4": {"score": 3, "why": "Shows the parts in sensible places with the condensing unit and PV outside, but the scale bar is off by about 2.5x and fewer crates are shown than claimed."},
+   "C5": {"score": 4, "why": "Honest about full-tonne pull-down exceeding PV and caps intake at 200 kg/day; buildable."},
+   "C6": {"score": 3, "why": "Correct but terse, and key numbers are buried in code dumps; parts reasons are copy-pasted."},
+   "C7": {"score": 4, "why": "A clear four-step build with a matching image strip."},
+   "C8": {"score": 4, "why": "Mostly clean; an unmarked cutaway, haze under the plinth and a truncated chain."},
+   "total": 29
+  },
+  "better": "B",
+  "better_why": "B derives its heat load and solar budget and they close, with an honest intake cap and the condenser outside. A's budget leaves out ice-making and losses, its array cannot fit on its roof, and its picture puts the machinery inside the cold room."
+ }
+}

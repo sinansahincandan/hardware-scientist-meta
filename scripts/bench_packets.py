@@ -66,7 +66,9 @@ def main() -> int:
     for arg in [a for a in args if not a.startswith(("salt=", "prev_", "open_", "openfig_"))]:
         pid, run = arg.split("=", 1)
         run = Path(run)
-        prob_file = next((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
+        # b1…b5 are the benchmark problems; 01…03 the owner's first problems in examples/
+        prob_file = next(iter(sorted((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
+                              or sorted((ROOT / "examples").glob(f"{pid}_*.json"))))
         base = ROOT / "runs" / os.environ.get("BASELINE_OUT", "baseline") / prob_file.stem
         designs = {"hs": run, "baseline": base} | ({"hs_prev": prev[pid]} if pid in prev else {}) \
             | ({"hs_open": opn[pid]} if pid in opn else {})

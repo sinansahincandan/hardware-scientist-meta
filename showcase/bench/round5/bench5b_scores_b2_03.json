@@ -1,0 +1,447 @@
+{
+ "b2": {
+  "A": {
+   "faults": [
+    {
+     "where": "Key numbers: capacitance vs wall stack",
+     "fault": "Wall budget gives a 0.5 mm pillar dielectric, but the baseline capacitance (443 fF) and 1 mN change use a 200 um gap; with 0.5 mm the baseline is ~177 fF and the 1 mN change ~2.2 fF (still above the step, but the stated numbers do not follow from the stated stack).",
+     "checked_by": "recomputed eps0*2.5*4mm2/gap for 200 um and 0.5 mm",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: shear signal",
+     "fault": "Shear differential of 1.22 fF is computed for a 5 um shift from an unexplained formula (2*110*5/900), while the design's own shear-shift number is 77.5 um at 0.5 mN; '1.22 fF/mN' is just a relabel. Shear sensitivity at 1 mN is unsupported.",
+     "checked_by": "compared the two shear lines; recomputed shift 0.5mN/(pi a^2)*2mm/32.4kPa = 77.5 um",
+     "severity": "major"
+    },
+    {
+     "where": "How it works / Constraint check: slip",
+     "fault": "Claims a 1 kHz vibration tap, but the only sensor is the 24-taxel array with a 12 ms full scan (~83 Hz) and no separate vibration element is listed; slip warning rests on an assumed friction coefficient (0.5) and the simulation line is incoherent (warning at 84 ms vs 64 ms fall time to 20 mm).",
+     "checked_by": "recomputed scan rate 1/12 ms and fall times sqrt(2h/g) = 14.3 ms and 64 ms",
+     "severity": "major"
+    },
+    {
+     "where": "Picture vs text: layer geometry",
+     "fault": "Text and 'How it is made' wrap the circuit and pillars onto the domed core in a 2.91 mm radial wall; the picture shows a flat flex plate on a bridge above the dome, a large air cavity around the dome, and a pillar block ~3-4 mm tall (2 mm inset bar) instead of 0.5 mm. Load from the tip reaches the core only through the side walls.",
+     "checked_by": "measured pillar height against the ~2 mm inset scale bar; compared with stack list",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: size",
+     "fault": "By the ~5 mm scale bar the skin is ~11 mm wide, not the stated 15 mm; overall ~30 mm tall.",
+     "checked_by": "pixel measurement against the scale bar",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: mount",
+     "fault": "Flange shows four screws whose threaded ends stick down beside the base cylinder into nothing; text says two M2 screws. Callout 6 'rigid domed core' sits on the lower cylinder, not the dome.",
+     "checked_by": "zoomed crop of flange",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: shear shift input",
+     "fault": "Shear-shift calc uses a 2 mm Ecoflex layer, while the stack lists a 1.0 mm skin; local Hertz shear stress applied uniformly through the layer.",
+     "checked_by": "compared inputs",
+     "severity": "minor"
+    },
+    {
+     "where": "Constraint check: converter floor",
+     "fault": "Margins (22.7x, 5x) are taken over the converter LSB (0.244 fF = 16 pF/2^16), not over its noise; noise is never estimated.",
+     "checked_by": "recomputed 16 pF/65536",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: mount load",
+     "fault": "Shear limit uses 22 N pinch while the screw check uses 35 N; inputs inconsistent (conservative). Location 'to 1 mm' claimed, not computed. Ground textile in stack but not in parts; step 2 panel missing.",
+     "checked_by": "read through",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Fingertip size by arithmetic (15 mm) and 1 mN by a computed capacitance chain that still holds when I correct the gap; margin is over the LSB, not noise."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Capacitive micro-pillar normal/shear sensing is a working principle, but the slip channel has no fast sensor and the drawn layer stack has a load-path gap."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Many numbers recompute exactly (Hertz 0.356 mm, 2.51 kPa, 443 fF, 22.3 N/mm2), but gap, shear signal and slip timing contradict their own inputs."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Labelled cut-away is readable, but flat flex over a hollow dome, oversized pillars and ~11 mm width contradict the text."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable from cast silicone and printed core; risks named; LSB presented as a detection floor overstates margins."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Sum/difference capacitance idea is stated, but text is dense pipeline jargon and slip mechanism is vague."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four steps with materials (Ecoflex, Dragon Skin, PLA, two screws); few dimensions or bonding details."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; only screws ending in air and chaotic pillar bending."
+   },
+   "total": 24
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Constraint check: converter",
+     "fault": "Uses an AD7746 (2-channel converter, update rate roughly 10-90 Hz; ~aF noise only at slow rates) to sample a 30-taxel array at 500 Hz with 0.02 fF noise; no multiplexed converter capable of that rate is named.",
+     "checked_by": "general datasheet knowledge of AD7746 (not checked online); 30*500 = 15000 conversions/s",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: Hertz spread",
+     "fault": "Contact radius uses E* = E*(1-nu^2) instead of E/(1-nu^2): 0.737 mm should be ~0.61-0.67 mm and pressure ~710-860 Pa, not 586 Pa (conservative direction).",
+     "checked_by": "recomputed (3FR/4E*)^(1/3) for E = 0.02 MPa with and without the factor",
+     "severity": "minor"
+    },
+    {
+     "where": "Constraint check: geometry and mass",
+     "fault": "Admits the 22 mm bone does not fit the 20 mm envelope and leaves it unresolved; a 12x15x22 mm nylon/PEEK bone is ~4-5 g solid, so a 4.52 g total (with ~2 g for the bone) is unsupported.",
+     "checked_by": "volume x density 3.96 cm3 x 1.14 g/cm3",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: labels and evidence",
+     "fault": "Lines are mislabelled or unsupported: '20 mm' backed only by unopened search snippets, 'Slip ridges and power/bend: 0.3 mm', 'Bilayer stack 1.5 mm' attached to an unrelated pressure calc; 45 mW is never derived (240 kbps does check: 30x500x16).",
+     "checked_by": "read each line against its evidence",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: shape",
+     "fault": "Device is drawn as a round puck with dark mounts at both top and bottom, not a fingertip-shaped dome on a single dovetail as described.",
+     "checked_by": "visual",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: callouts",
+     "fault": "Callout 4 (slip film) sits on the hex taxel array, 3 (taxel array) on the bone lumen board, 2 (micropillar layer) on the board; 1 marked 'not located'.",
+     "checked_by": "visual against legend",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: micropillars",
+     "fault": "Pillars appear as long orange bristles hanging below the arc at the sides, not a 0.5 mm layer between skin and taxels; the skin-pillar-taxel-bone stack is not shown.",
+     "checked_by": "visual against 'How it is made' step 2-4",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: scale",
+     "fault": "Inset scale bar says ~0.5 mm across a view of the whole ~16-20 mm fingertip (implies ~3.5 mm device).",
+     "checked_by": "pixel ratio of bar to inset width",
+     "severity": "major"
+    },
+    {
+     "where": "How it works",
+     "fault": "Paragraph duplicated verbatim.",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: C0",
+     "fault": "Baseline uses air permittivity although the gap is 30%-fill Ecoflex pillars (conservative).",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: PVDF slip film",
+     "fault": "Dynamic slip film is not identifiable in the image.",
+     "checked_by": "visual",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "1 mN chain is computed (0.88 fF on 39.8 fF, 44x noise) and size is argued, but the converter cannot run the stated array rate and the bone does not fit the envelope."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Air-gap pillar capacitance plus PVDF slip film is sound physics; electronics as specified cannot deliver the 500 Hz array."
+   },
+   "C3": {
+    "score": 2,
+    "why": "C0, change and pressure recompute, but Hertz factor slip, mislabelled lines, unsupported mass and power."
+   },
+   "C4": {
+    "score": 1,
+    "why": "Puck shape, wrong callouts, misplaced pillars and a 0.5 mm scale bar on a 20 mm part: the picture contradicts the text throughout."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Detailed and materials are real; candid about weak evidence and the stack mismatch, but leaves it unfixed."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Clear signal chain from touch to capacitance to slip; duplicated paragraph."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Specific materials, thicknesses, pillar pitch/fill, taxel count/pitch, PVDF thickness, bend radius."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Double mounts, bristle pillars and an unexplained puck body are generator errors."
+   },
+   "total": 21
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Constraint check: 1 mN",
+     "fault": "'MET by design' rests on precedent: 24 um indentation over a ~0.44 mm contact radius is about one pixel at the stated 25-50 um/pixel; no shading-signal or noise calculation shows a 1 mN touch is resolved.",
+     "checked_by": "recomputed Hertz d = 24.3 um, a = sqrt(R d) = 0.44 mm, 16 mm/480 px = 33 um/px",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: slip timing",
+     "fault": "'<10 ms incipient-slip flag from marker divergence' is impossible from 60 fps video (16.7 ms per frame); vibration band given as 3-500 Hz here but 100 Hz-5 kHz in Parts.",
+     "checked_by": "1/60 s; compared sections",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: camera direction",
+     "fault": "Camera and RGB LEDs sit below the dome and face sideways out of the cut-away toward the viewer, not inward at the membrane as the text requires.",
+     "checked_by": "visual",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: inset",
+     "fault": "Inset shows a solid clear gel dome clamped by a central screw stud with outward arrows: no hollow cavity, reflective coat or markers, and the stud would block the camera view.",
+     "checked_by": "zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: packaging",
+     "fault": "No optical working-distance, LED heat or power check for fitting camera, LED ring, mic, PVDF and thermistor in a 16 mm dome; 12 g mass not derived.",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: generator",
+     "fault": "Peach skin-coloured shell merged behind the translucent cap; no labels or scale bar, so parts and size cannot be checked.",
+     "checked_by": "visual",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: range/accuracy",
+     "fault": "0.001-20 N, 5%/10% accuracy and 0.3 mm location are quoted from precedent only (86 dB arithmetic checks).",
+     "checked_by": "20 log10(20000) = 86 dB",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Size argued against real devices; 1 mN claimed from a correct indentation number but not shown to be resolvable."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Vision-based gel tactile sensing with markers and a vibration channel is proven physics, but stated slip timing cannot come from the video channel."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Hertz indentation and dB check, but most numbers are precedent quotes and the slip timing is wrong."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Shows a finger with camera and RGB LEDs, but the camera faces the wrong way and the inset contradicts the hollow imaged dome; no labels or scale."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Builds on a mature sensor class; risks are specific and honest."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clearly explains where (shading), how hard (indentation), shear (marker flow) and slip (divergence plus vibration)."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Cast, coat, print markers, assemble, calibrate with materials and thicknesses."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Merged skin shell, sideways camera and a screw-through-dome inset."
+   },
+   "total": 25
+  },
+  "better": "C",
+  "better_why": "Narrowly C: its working principle and explanation are clearest and its risks honest, while A's careful arithmetic is undercut by internal contradictions (gap, shear, slip rate) and a picture that disagrees with its stack; B's picture contradicts its text throughout."
+ },
+ "03": {
+  "A": {
+   "faults": [
+    {
+     "where": "Constraint check: comfort",
+     "fault": "Never checks comfort ('No criteria were given') although the task asks for a comfortable level; its own dense-crowd result 0.545 m/s2 exceeds the usual 0.5 m/s2 maximum-comfort limit unremarked, and that value is read exactly at 1.9 Hz between the split peaks; the peak over frequency is ~0.69 m/s2.",
+     "checked_by": "2-DOF frequency sweep with its M, zeta, m, f_t, zeta_t, 280 N",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: crowd load",
+     "fault": "'5.29 equivalent pedestrians' is not derived; it matches 10.8*sqrt(0.004*60), i.e. a sparse 0.5 p/m2 crowd, not a dense one (1.85*sqrt(120) ~ 20), and is applied as a point force at midspan; bare 9.26 m/s2 (~1 g) is not credible.",
+     "checked_by": "recomputed both crowd formulas",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: TMD damping",
+     "fault": "Damping listed as 0.0956 but 0.0933 used for the 1090 N s/m dashpot; Den Hartog gives 0.0933.",
+     "checked_by": "sqrt(3mu/(8(1+mu)^3))",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: modal mass",
+     "fault": "20 t modal mass is an assumption with no deck mass per metre given; no modal test before tuning.",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Risks",
+     "fault": "Risks section is empty (detuning, stroke limits, clamp fatigue, other modes not discussed).",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: scale",
+     "fault": "By the 500 mm bar the main girders are ~0.15-0.25 m deep, far too shallow for a 40 m span at 1.9 Hz; the mass block is ~1.3 m long by the bar but ~3 m by the person in the step panels; a solid steel block of either size weighs well over 500 kg (~0.064 m3 needed).",
+     "checked_by": "pixel measurement vs scale bar and silhouette; 500/7850",
+     "severity": "major"
+    },
+    {
+     "where": "Picture vs text: springs",
+     "fault": "Springs drawn as tension coils on eye hooks hanging the mass, while the text sizes 'spring compression' with 'spring seats and shims'.",
+     "checked_by": "visual vs text",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: stops",
+     "fault": "'+/-50 mm stops' appear only in a label, not in the text.",
+     "checked_by": "read",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Midspan TMD tuned to the 1.9 Hz mode on a 40 m span; the comfort goal is not checked and its own crowd result sits above the 0.5 m/s2 line."
+   },
+   "C2": {
+    "score": 4,
+    "why": "A single tuned mass damper tuned by Den Hartog is a proven fix for this problem and the drawn hardware can work."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Modal stiffness, TMD stiffness, dashpot, sag and single-walker response all recompute; crowd model and at-1.9-Hz reading are flawed."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Clear labelled under-deck view matching the numbers, but girder and mass scale are wrong."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable staged install with bolted clamps; empty risks section."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Plain explanation, short and somewhat ungrammatical."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four install steps: off-site build, night lift, unlock/cover, re-tune with shims."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; scale inconsistency between bar and silhouettes."
+   },
+   "total": 27
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Key numbers: acceleration",
+     "fault": "Bare 2.0 m/s2 is taken from precedent, not computed from a crowd load, so '0.3 m/s2, comfort MET' is not derived; 'Q 100 to 8' is a 12.5x cut, not the stated ~7x. (My 2-DOF with its mu and zeta gives ~14x, so the claim is conservative.)",
+     "checked_by": "2-DOF sweep with M 22 t, zeta 0.5%, 2x500 kg, 1.817 Hz, 12.2%",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: stroke",
+     "fault": "+/-60 mm from 7 mm x 6 = 42 mm does not follow, and uses the pre-TMD deck amplitude; with the TMD acting, stroke is ~3 mm at its own 2.0 m/s2 bare level (stops oversized, harmless).",
+     "checked_by": "1/(2pi 1.9)^2 = 7.0 mm; sqrt(1+2/mu) = 6.7",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Dashpot coefficient not given; citation markers empty ('precedent .').",
+     "checked_by": "read",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: dashpots",
+     "fault": "Dashpots run diagonally from the girder brackets to the TMD frame's own corner, not to the moving mass, so as drawn they damp nothing; text says they dissipate the mass motion.",
+     "checked_by": "zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: deck",
+     "fault": "Deck slab drawn with a broken, scooped notch under the orange arrow and odd cruciform blocks through the slab, reading as a cut deck against 'no change from the deck'.",
+     "checked_by": "visual",
+     "severity": "major"
+    },
+    {
+     "where": "Picture: springs",
+     "fault": "Four springs drawn per unit (8 total) versus four spring packs total in the text; an extra mass-like block outside the left frame.",
+     "checked_by": "count",
+     "severity": "minor"
+    },
+    {
+     "where": "Picture: scale",
+     "fault": "No scale bar, person or labels; the 1.4x0.9x0.7 m envelope cannot be checked.",
+     "checked_by": "visual",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Addresses span, mode, comfort and appearance explicitly; comfort result rests on an assumed bare level."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Twin Den Hartog TMDs with guides and stops are a proven, workable fix."
+   },
+   "C3": {
+    "score": 3,
+    "why": "mu 4.5%, 1.82 Hz, 12.2%, 66 kN/m, 74 mm sag all recompute; the response level is assumed and stroke reasoning loose."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Shows twin guided spring-mass units under the deck, but dashpots bypass the mass, the deck looks cut and nothing is labelled or scaled."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Modal test first, tuning range, redundancy, inspection; honest about assumptions."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear plain explanation of out-of-phase masses and peak splitting."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four stages with access, fabrication, clamping and tuning detail."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Damaged deck, dashpots to nowhere and a stray block."
+   },
+   "total": 26
+  },
+  "better": "A",
+  "better_why": "Narrowly A: it computes the structural response and its picture shows the mechanism correctly with matching labels, while B's stronger text rests on an assumed bare acceleration and its picture breaks the damping load path and appears to cut the deck."
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "b1": {
+    "A": "hs",
+    "B": "baseline",
+    "C": "hs_open",
+    "hs_run": "20261103-234812_lunar-regolith-excavation-robot",
+    "hs_open_run": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-210007_lunar-regolith-excavation-robot",
+    "hs_open_fig": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-210007_lunar-regolith-excavation-robot"
+  },
+  "b2": {
+    "A": "hs",
+    "B": "hs_open",
+    "C": "baseline",
+    "hs_run": "20261104-005633_tactile-fingertip-sensor-for-robot-hands",
+    "hs_open_run": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-210010_tactile-fingertip-sensor-for-robot-hands",
+    "hs_open_fig": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-222117_tactile-fingertip-sensor-for-robot-hands"
+  },
+  "b3": {
+    "A": "baseline",
+    "B": "hs_open",
+    "C": "hs",
+    "hs_run": "20261103-224916_small-wind-turbine-for-a-wind-tunnel-com",
+    "hs_open_run": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-210013_small-wind-turbine-for-a-wind-tunnel-com",
+    "hs_open_fig": "/Users/sinancandan/Downloads/HardwareScientist_OpenWeights/runs/20261103-215821_small-wind-turbine-for-a-wind-tunnel-com"
+  },
+  "01": {
+    "A": "hs",
+    "B": "baseline",
+    "hs_run": "stair-climbing-hand-truck-for-parcel-cou"
+  },
+  "02": {
+    "A": "hs",
+    "B": "baseline",
+    "hs_run": "off-grid-solar-powered-cold-storage-for"
+  },
+  "03": {
+    "A": "hs",
+    "B": "baseline",
+    "hs_run": "vibration-retrofit-for-a-lively-pedestri"
+  }
+}

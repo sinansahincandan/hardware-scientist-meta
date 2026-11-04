@@ -1,0 +1,405 @@
+{
+ "b1": {
+  "A": {
+   "faults": [
+    {
+     "where": "Key numbers: stowed width/height; Constraint check",
+     "fault": "Box fit not credible and by its own numbers violated: width stack gives wheels only 0.04 m per side, yet the sinkage calc uses wheel width b=0.15 m (outboard wheels -> 0.32+2x0.15=0.62 m > 0.5 m); the height stack (0.42 m) contains no wheels (~0.33 m dia by scale bar) and no tub body, so tucking wheels under adds >=0.33 m (>0.5 m). No arrangement of four 0.33x0.15 m wheels fits the stated 0.1/0.1/0.08 m margins.",
+     "checked_by": "Re-summed the stacks; compared b=0.15 m in Bekker calc and 0.12 m2 contact area (0.03 m2/wheel needs >=0.75 m contact length at 0.04 m width); wheel diameter measured against ~200 mm scale bar",
+     "severity": "fatal"
+    },
+    {
+     "where": "Key numbers: ground pressure / sinkage",
+     "fault": "Contact area 0.12 m2 is inconsistent with its own result: a ~0.33 m rigid wheel sinking 4 mm has a contact chord ~0.07 m, so 4x0.15x0.07 ~0.044 m2; real pressure ~2.7x higher (~8.7 kPa empty) and sinkage larger.",
+     "checked_by": "2*sqrt(D*z) chord calc",
+     "severity": "major"
+    },
+    {
+     "where": "Figure A: conveyor (3) to hopper (4/5)",
+     "fault": "The transfer conveyor runs downhill from the ladder top and ends at deck level below and beside the hopper; the hopper mouth is ~0.25 m higher. Soil would have to jump up into the hopper; the text says the belt lifts it in.",
+     "checked_by": "Zoomed crop of the conveyor end and hopper",
+     "severity": "major"
+    },
+    {
+     "where": "Figure A vs How it works",
+     "fault": "Text: the whole lidded hopper tips backward through a chute. Picture: hopper stays upright with closed lid; a separate large tilted container (6, 'rear tip frame with discharge chute') pours into the bin with no drawn path from the hopper to it; markers 4 and 5 both on the static hopper.",
+     "checked_by": "Compared steps 4-6 with drawn parts",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: cut force vs traction",
+     "fault": "128 N cut vs 153 N traction is only 1.2x margin, uses an unsourced 15 kPa cutting coefficient and ignores rolling resistance in loose soil.",
+     "checked_by": "Recomputed 0.3*0.025*15000+2000*0.3*0.025=128 N and 38.9*0.4*9.81=153 N",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: tip safety factor",
+     "fault": "Overturning moment 56.9 N m is given with no derivation.",
+     "checked_by": "Read the calc string",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers / assembly strip",
+     "fault": "Calc strings truncated mid-code; assembly strip skips step 2; dig runtime only ~25 min at 450 W.",
+     "checked_by": "Read text; 222*0.85/450*60=25.2 min",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 2,
+    "why": "Mass 38.9 kg is shown, but the stowed box is violated by the design's own wheel width and an incomplete height stack (fatal)."
+   },
+   "C2": {
+    "score": 2,
+    "why": "Bucket ladder, belt and tipping hopper is a proven chain, but the fatal stowage fault caps this, and the drawn conveyor cannot feed the hopper."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Most arithmetic re-derives (mass, cut, traction, fill 33 s, payload 23 kg, thermal 54 C, stop 0.53 m), but contact area/sinkage is self-inconsistent and the stow stacks omit parts."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Labelled photoreal view with scale bar, bin, 4 wheels and mast, but the conveyor end and the separate tipping container contradict the text."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable from shop parts and risks are quantified, but the box-fit claim is presented as met without a credible stack."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear step-by-step sequence from dig to dump and the link-loss behaviour."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four coarse assembly steps with materials; little detail on folding joints or ladder drive."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Clean render and legible labels; no garbled text, but the transfer geometry and duplicate-looking container are picture errors."
+   },
+   "total": 23
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Key numbers: dig rate",
+     "fault": "Inputs give 14 buckets x 0.45 L x 0.4 x 30 rpm = 75.6 L/min ~117 kg/min, not 7.5 kg/min (15x off); the 7.5 matches only ~30 buckets/min. Text also cites a precedent with 8 buckets.",
+     "checked_by": "Recomputed",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check: digs BP-1",
+     "fault": "No cut/draft force vs traction check; 'MET' is claimed from bucket material and bulk density only.",
+     "checked_by": "Searched text for any force/traction number",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / Constraint check: stowed size",
+     "fault": "0.96x0.48x0.44 m attributed to 'CAD stacking' that is not shown; four 0.15 m wide wheels leave 0.18 m for chassis and 25 L hopper; the picture has a ~1.1 m camera mast never said to fold.",
+     "checked_by": "Ground-patch width from text; mast height against wheel size in figure",
+     "severity": "major"
+    },
+    {
+     "where": "Figure vs How it works",
+     "fault": "Text: ladder top-dumps into one hopper and the whole hopper is winch-tipped. Picture: a front open hopper receives soil while a second separate rear bin is tipped by a strut cylinder over the bin.",
+     "checked_by": "Compared figure with text",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: ground pressure",
+     "fault": "52 kg and 90 kg over 4x0.28x0.15 m = 3.0 and 5.3 kPa, not 4.5 and 8 kPa (conservative).",
+     "checked_by": "Recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers: dig power",
+     "fault": "'Lifting ~80 W' for 0.12 kg/s needs ~68 m of lift; ~1 m lift is ~1.2 W (conservative overestimate).",
+     "checked_by": "0.12*9.81*1",
+     "severity": "minor"
+    },
+    {
+     "where": "Parts / Constraint check text",
+     "fault": "Parts list names only the chassis; stray garbled fragment 'handling display.'",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "Figure",
+     "fault": "Bucket ladder drawn as a rigid staircase of buckets with no return strand or sprockets; bottom bucket sits in a separate tray on a clean floor; decorative gold foil; no scale bar or labels.",
+     "checked_by": "Zoomed crop of ladder",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass budget 52 kg sums correctly, but box fit and digging BP-1 are only claimed (two majors)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Bucket-ladder hauler is a sound concept, but no draft vs traction check supports that it digs BP-1."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Dig rate is 15x inconsistent with its own inputs; pressure and lift power do not follow from inputs; few numbers derived."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Unlabelled render without scale; shows two hoppers and a strut tipper where the text describes one winch-tipped hopper."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Off-the-shelf, buildable, risks listed, but 'CAD stacking' and MET claims are unsupported."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Prose sequence is clear, but the parts list has one item and the ladder drive and tipping mechanism are not explained."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four concrete stages with materials and processes (5052 sheet, TIG, Hardox, sealing, run-in)."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Photoreal and free of text artefacts, but the staircase ladder, separate tray and duplicate hopper are generator errors."
+   },
+   "total": 23
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Constraint check / Key numbers: stowed envelope",
+     "fault": "Own stack calc gives 1.22 m stowed length > 1.0 m and the text admits it is 'not shown'; a welded rigid 1.0 m chassis plus front blade, and the frame is ~1.0 m tall by the scale bar vs 0.5 m box height; key number still reports '1 m'.",
+     "checked_by": "Read calc 800+420 mm; measured frame height against 200 mm bar",
+     "severity": "fatal"
+    },
+    {
+     "where": "How it works / Figure: blade to hopper",
+     "fault": "A front blade peeling 10-15 mm is said to feed soil rearward into a hopper between the axles by forward motion with no conveyor; the hopper lip sits above the wheel tops (~0.45 m) behind the front wheel and the concave dozer blade pushes soil forward. The picture shows soil flying in an arc over the wheel. The core dig-to-hopper step cannot happen.",
+     "checked_by": "Geometry in figure and parts text",
+     "severity": "fatal"
+    },
+    {
+     "where": "Key numbers: dry mass 13.9 kg",
+     "fault": "Budget omits or understates parts: four 35 N m 250 W gear hub motors alone are ~12-16 kg; wheels, 30 L lined hopper, 500 N actuator, vibrator, mast and radios do not fit in the remaining terms.",
+     "checked_by": "Summed terms (13.9 kg) and compared with listed parts",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: traction / drawbar / pressure",
+     "fault": "933 N is hub-motor torque force (4x35 N m/0.15 m), not soil traction. With its own 13.9 kg mass, weight is 136 N, so traction ~55-80 N is below the 40-85 N vibrated draft. Drawbar ratio and pressure use 589 N (60 kg), so the '>10x margin' is false.",
+     "checked_by": "Recomputed 4*35/0.15 and 13.9*9.81",
+     "severity": "major"
+    },
+    {
+     "where": "Figure A: scale",
+     "fault": "The person is about as tall as the robot frame; by the 200 mm scale bar he is ~0.95 m tall, and the wheels are ~0.42 m vs 300 mm stated.",
+     "checked_by": "Pixel measurement of person, frame, wheel and bar",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Ground-pressure calc is shown as failed (DimensionalityError) yet 9.8 kPa is reported; energy 170 Wh vs 222/189 Wh; 90 W average is unsupported.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "Figure",
+     "fault": "No collection bin drawn; soil dumps onto the ground; markers 1 and 4 are on the same wheel.",
+     "checked_by": "Viewed figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Title / Key numbers",
+     "fault": "Title 'Synthesized SolutionPrompt v1'; key numbers are polluted with search strings and evidence ids (E44, p1).",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 1,
+    "why": "Admits the stowed box is exceeded (1.22 m) and the rigid frame is too tall; the mass budget is implausibly low."
+   },
+   "C2": {
+    "score": 1,
+    "why": "No mechanism lifts the peeled soil over the front wheel into the raised hopper, and traction with its own mass is below the draft."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Some arithmetic re-derives (48 kg payload, 0.053 m stop, 2.1 h), but deciding mass and traction numbers are wrong or misapplied."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Labelled view with scale bar, but the scale contradicts the person, there is no bin, and it draws the impossible soil arc."
+   },
+   "C5": {
+    "score": 2,
+    "why": "Credit for stating the envelope is not met, but it keeps false margins and misses the fatal transfer flaw."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Sequence and parts roles are stated, but the explanation hides the transfer step and is buried in pipeline text."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four specific build steps (6061 TIG frame, actuator, wiring gauges, fusing)."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Ballistic soil arc, person/scale mismatch and ghost hopper; labels legible."
+   },
+   "total": 17
+  },
+  "better": "A",
+  "better_why": "A and B tie on total, but A re-derives its deciding numbers (mass, cut vs traction, fill, power, thermal, stop) and its faults are packaging and drawing errors. B's core dig rate is 15x off and digging BP-1 is unchecked. C fails at its core soil transfer and its envelope."
+ },
+ "02": {
+  "A": {
+   "faults": [
+    {
+     "where": "Key numbers: steady electric input",
+     "fault": "The 60 W fan is counted only as heat divided by COP, not as direct electricity: electric = 376/2.5+60 = 210 W -> 5.05 kWh/day; with the 200 kg batch that is 7.05 of 8.1 kWh PV (87%, not 69%); night 2.94 kWh = 57% of battery; holding autonomy ~1.0 day, not 1.42.",
+     "checked_by": "Recomputed",
+     "severity": "major"
+    },
+    {
+     "where": "Figure A: scale",
+     "fault": "The ~1000 mm scale bar (~145 px) makes the box ~5 m tall; against the person the box is ~3 m tall and the door ~2.5 m, vs a stated 2.2 m box and 900 mm door.",
+     "checked_by": "Pixel measurement of person, box, door and bar",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: cooling load",
+     "fault": "No solar/radiant gain on a sun-exposed box in a hot region; 80 W infiltration with door openings in ~40 C air is unsupported.",
+     "checked_by": "Checked load terms",
+     "severity": "minor"
+    },
+    {
+     "where": "Store 1 tonne",
+     "fault": "~60 crates in a 1.8x1.8x2.0 m interior with a centre aisle and 'low' racks needs ~6 levels; the packing is not shown; the picture shows ~15 crates (cutaway).",
+     "checked_by": "Crate-count geometry",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Specific heat used inconsistently (25 kWh implies 3.6 kJ/kgK x 25 K; buffer uses 3.5); autonomy uses 100% battery depth.",
+     "checked_by": "Recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Figure",
+     "fault": "Cold air drawn spilling out beneath the box onto the plinth; measurement chain only two boxes.",
+     "checked_by": "Viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Solar-only daily balance and night battery are computed, and 1 tonne holding with an honest 200 kg/day intake cap; still met after correcting the fan term."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Standard PV, LiFePO4, DC chiller and PU room; conduction 186 W re-derives, and the pull-down limit is recognised."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Nearly all arithmetic re-derives, but the fan electricity omission understates daily energy and night draw by ~40%."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Labelled cutaway with condensing unit, battery, six panels, plinth and crates, but the scale bar and person-relative size contradict the stated 2 m box."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Off-the-shelf and honest about pull-down exceeding PV and the intake cap."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear energy and cooling path in plain words."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four sensible but generic steps."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Clean, legible, correct panel count; scale bar error is a picture fault."
+   },
+   "total": 28
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Key numbers: cooling power/energy",
+     "fault": "No heat-load calculation; 2.0-2.5 kW thermal and 7-9 kWh/day are asserted from precedents. Own envelope: U 0.2 x 26 m2 x 33 K ~173 W conduction, ~3 kWh/day holding; pull-down 24 kWh thermal re-derives.",
+     "checked_by": "Recomputed",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers: PV yield",
+     "fault": "10-12.5 kWh/day from 2.5 kWp x 4-5 h ignores system losses; at ~75% it is 7.5-9.4 kWh against a 7-9 kWh need, no margin left for ice-making.",
+     "checked_by": "Recomputed",
+     "severity": "major"
+    },
+    {
+     "where": "How it works / Parts: ice bank",
+     "fault": "A 4-8 C DC monoblock cannot freeze water; it needs a sub-zero evaporator or a second circuit. Freezing 200-300 kg needs 18.6-27.8 kWh thermal, more than the whole PV budget; the charge/discharge path is not described.",
+     "checked_by": "334 kJ/kg latent heat",
+     "severity": "major"
+    },
+    {
+     "where": "Figure vs Parts",
+     "fault": "Half the box is an equipment bay inside the insulated envelope (chiller, battery, tanks) with no outside heat rejection; the produce room is shown about one crate wide holding ~10 crates, not 40 crates in 2.4x1.8 m; cold-air arrows pass through the partition and spill out under the box.",
+     "checked_by": "Zoomed interior crop; man-relative size",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "2.4x1.8x2.1 m = 9.1 m3, not ~7 m3; '658W/h' unit garble; battery 10 kWh vs 7-10 kWh.",
+     "checked_by": "Recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Figure",
+     "fault": "Ice-bank tanks drawn as pressure gas cylinders; no scale bar or labels.",
+     "checked_by": "Viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Solar-only and 1 tonne are claimed from precedents; the energy balance is not closed with losses."
+   },
+   "C2": {
+    "score": 3,
+    "why": "PV-battery chiller room works, but the ice bank as described cannot be charged by the stated chiller."
+   },
+   "C3": {
+    "score": 2,
+    "why": "No load calculation; optimistic PV; ice-bank energy not budgeted; only the pull-down figure re-derives."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Unlabelled, no scale; the produce room is far smaller than stated, and the machinery sits inside the cold envelope."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Off-the-shelf and cites real precedents, with honest risks, but key performance is asserted."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Readable concept narrative; ice-bank and airflow mechanism unexplained."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Specific steps (galvanised skid, cam-lock PIR panels, R290 vacuum test, commissioning)."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Airflow through walls and out of the box, gas-cylinder tanks, interior inconsistent with the stated room."
+   },
+   "total": 22
+  },
+  "better": "A",
+  "better_why": "A closes a computed load and energy budget (with one fixable fan-electricity error) and honestly caps warm intake. B asserts loads from precedents, overstates PV yield, has an ice bank its chiller cannot charge, and its picture contradicts the stated room."
+ }
+}

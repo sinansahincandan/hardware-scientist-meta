@@ -1,0 +1,115 @@
+{
+ "b1": {
+  "A": {
+   "faults": [
+    {"where": "Key numbers, dig rate", "fault": "14 buckets x 0.45 L x 40% fill x 30 rpm chain gives ~117 kg/min, not 7.5 kg/min; 7.5 kg/min needs ~27 bucket passes per minute, so the stated inputs do not produce the stated rate", "checked_by": "python: 14*30*0.45*0.4*1.55 = 117 kg/min", "severity": "major"},
+    {"where": "Constraint check, stowed size; figure", "fault": "Stowed 0.96x0.48x0.44 m is only claimed from 'CAD stacking' that is not shown; the figure shows a tall two-camera mast about twice the chassis height that the text never mentions or folds, so the 0.5 m stowed height is not demonstrated", "checked_by": "read text; looked at figure", "severity": "major"},
+    {"where": "Constraint check, digs BP-1", "fault": "'MET' is only asserted: no cutting/draft force versus traction check, no chain or ladder torque check against the stated 400 W motor", "checked_by": "searched text for draft/traction numbers; none", "severity": "major"},
+    {"where": "Figure vs text, hopper", "fault": "Text has one 25 L hopper that the ladder fills and a winch tips; figure shows a front open hopper under the ladder head plus a separate rear tipping box pouring into the bin, with no transfer between them", "checked_by": "zoomed crop of figure centre", "severity": "major"},
+    {"where": "Key numbers, ground pressure", "fault": "52-90 kg over 4 x 0.28 x 0.15 m gives 3.0-5.3 kPa, not 4.5-8 kPa (conservative error)", "checked_by": "python", "severity": "minor"},
+    {"where": "Key numbers, dig power", "fault": "Lifting 0.125 kg/s about 1 m needs ~1.2 W, not ~80 W; 120-180 W total is unsupported (conservative)", "checked_by": "python: 0.125*9.81*1.0", "severity": "minor"},
+    {"where": "Figure, ladder angle", "fault": "Ladder drawn at ~54 deg from horizontal vs 35 deg in text", "checked_by": "measured endpoints on figure", "severity": "minor"},
+    {"where": "Figure, context", "fault": "Robot stands on a bare floor digging from a small tray, not driving over a soil bed; no scale bar or person, so size against the 1.0 m box cannot be checked", "checked_by": "looked at figure", "severity": "minor"},
+    {"where": "Parts; constraint check", "fault": "Parts list names only the chassis; stray garbled text 'handling display.'", "checked_by": "read text", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Mass is shown by a bottom-up 52 kg budget, but stowed size and BP-1 digging are only claimed, and the drawn mast is not in the stow plan."},
+   "C2": {"score": 3, "why": "Bucket-ladder digging with a tipping hopper is a proven arrangement, but the drawn two-hopper path has no transfer step and no draft/torque check exists."},
+   "C3": {"score": 2, "why": "The dig rate does not follow from its own inputs (off ~15x), ground pressure and lift power do not follow either; only mass and battery arithmetic are right."},
+   "C4": {"score": 3, "why": "Ladder, buckets, tipping box and bin are visible, but two hoppers, an unmentioned tall mast and a 54 deg ladder contradict the text."},
+   "C5": {"score": 3, "why": "Buildable from common parts; 'proven effective' and CAD claims are asserted rather than shown."},
+   "C6": {"score": 3, "why": "The dig-carry-dump cycle is clear, but the parts list is one line and the ladder-to-hopper hand-off is not explained."},
+   "C7": {"score": 4, "why": "Four stages with materials and processes (5052 sheet, TIG ladder plates, bought BLDC motors, sealing, run-in)."},
+   "C8": {"score": 4, "why": "Clean photoreal render without garbled text or floating parts; the extra hopper is the main oddity."},
+   "total": 25
+  },
+  "B": {
+   "faults": [
+    {"where": "Key numbers stowed envelope; constraint check", "fault": "Own stack check gives 800 + 420 = 1220 mm, over the 1.0 m stowed length; the constraint check admits it is 'Not shown', while Key numbers says 'Stowed envelope: 1 m'. The stowed-size constraint is violated as designed", "checked_by": "read the stack calc; arithmetic", "severity": "fatal"},
+    {"where": "Stowed height", "fault": "500 mm mast on top of a frame with 300 mm wheels and an elevated hopper; no height check; figure shows the body ~1 m tall without the mast by its own scale bar", "checked_by": "measured figure against the ~200 mm bar", "severity": "major"},
+    {"where": "Key numbers, dry mass 13.9 kg", "fault": "Sum covers frame 1.56 + battery 0.841 + four unnamed items; four 35 N m gear hub motors, 300 mm wheels, vibrator, 500 N actuator, mast, camera and radios cannot fit in the rest; implausibly low (the limit is probably still met)", "checked_by": "python sum = 13.9; listed parts vs terms", "severity": "major"},
+    {"where": "Key numbers traction/drawbar; risks", "fault": "'Peak traction 933 N' is motor force 4 x 35 N m / 0.15 m, not soil traction; the drawbar ratio uses 589 N (60 kg) instead of the 13.9 kg robot. Empty, draft 40-85 N is 0.29-0.62 of the robot's weight, at or above the drawbar a wheel gets in loose soil, so '>10x margin' is false", "checked_by": "python: 4*35/0.15 = 933; 40/(13.9*9.81) = 0.29, 85/136 = 0.62", "severity": "major"},
+    {"where": "Figure, blade to hopper", "fault": "A dozer blade sits ahead of the front wheel and the hopper sits high in the frame; the soil is drawn arcing ~0.5 m up over the wheel into the hopper. A pushing blade forms a berm and cannot load a raised hopper; the text says the blade is at the front axle line feeding a low hopper", "checked_by": "zoomed figure", "severity": "major"},
+    {"where": "Figure scale", "fault": "By the ~200 mm bar the robot is ~2 m long and the person ~1 m tall; either way the robot is far larger than a 1.0 m chassis and the 1.0x0.5x0.5 m box", "checked_by": "pixel measurement against the scale bar and the person", "severity": "major"},
+    {"where": "Hopper lift actuator", "fault": "500 N, 150 mm actuator not checked against tipping ~50 kg 45 deg (rough estimate ~700 N); drawn as a vertical screw mid-frame, not at the rear pivot", "checked_by": "rough moment estimate; figure", "severity": "minor"},
+    {"where": "Figure", "fault": "No collection bin drawn (dumps onto a ground pile); a person stands beside the robot although the operators must be out of sight", "checked_by": "looked at figure", "severity": "minor"},
+    {"where": "Title and Key numbers text", "fault": "Title 'Synthesized SolutionPrompt v1'; key numbers carry raw code, duplicated search strings and a failed pint DimensionalityError", "checked_by": "read text", "severity": "minor"}
+   ],
+   "C1": {"score": 2, "why": "The stowed-length constraint is violated by the design's own stack check; mass and remote operation are argued, digging only in principle."},
+   "C2": {"score": 2, "why": "Fatal envelope violation; the drawn blade-to-raised-hopper transfer cannot work and empty-robot traction against draft is marginal."},
+   "C3": {"score": 2, "why": "Battery, runtime and stopping arithmetic are right, but the mass omits major parts and the traction margin rests on motor force and the wrong weight."},
+   "C4": {"score": 2, "why": "The picture shows a dozer blade throwing soil over the wheel, no bin, and a robot far bigger than the box, contradicting the text."},
+   "C5": {"score": 3, "why": "Honestly flags the stow length as not shown, but the very low mass and >10x traction claims are not honest numbers."},
+   "C6": {"score": 3, "why": "Functions and parts are listed, but the explanation is buried in code dumps and search strings."},
+   "C7": {"score": 4, "why": "Concrete build steps: TIG-welded 6061 frame, UHMW-lined hopper, wire gauges, fusing, buck converters."},
+   "C8": {"score": 3, "why": "Clean render with a clear ghosted dump position, but an impossible soil arc and a scale bar that disagrees with the person."},
+   "total": 21
+  },
+  "C": {
+   "faults": [
+    {"where": "Figure, conveyor to hopper", "fault": "The transfer conveyor runs down from the ladder head and discharges at deck level, below the hopper mouth, which sits ~0.15 m higher on a pedestal; soil cannot enter the hopper as drawn", "checked_by": "zoomed crop of figure centre", "severity": "major"},
+    {"where": "Figure vs text, dump", "fault": "Text: the whole hopper rear-tips through a chute. Figure: the hopper stands fixed upright on a pedestal and a separate tilted rear box (6) pours into the bin, with no visible path from hopper to chute", "checked_by": "zoomed figure; labels 4/5/6", "severity": "major"},
+    {"where": "Key numbers, stowed width/height", "fault": "Width allows 0.04 m per side for 'tucked' wheels while the sinkage calc uses 0.15 m wide wheels; the height stack omits the wheels (~0.3 m dia in figure). The stowed box fit is not actually shown", "checked_by": "compared stack terms with b = 0.15 m in Bekker calc; figure scale", "severity": "major"},
+    {"where": "Figure, bucket chain", "fault": "Bucket chain hangs slack beside the ladder from the top sprocket with no return run on the ladder", "checked_by": "looked at figure", "severity": "minor"},
+    {"where": "Constraint check", "fault": "Lists only mass and the three box dimensions; BP-1 digging and out-of-sight control are not in the check (covered elsewhere by cut vs traction and Hold-on-link-loss)", "checked_by": "read text", "severity": "minor"},
+    {"where": "Risks vs Key numbers", "fault": "22.3 A is called 'average' in risks but computed as peak (495 W / 22.2 V)", "checked_by": "python", "severity": "minor"},
+    {"where": "Key numbers, braking", "fault": "Stopping calc uses 60 kg instead of the 38.9 kg robot; 4 kg covers all motors and drivers for ~480 W, light; margin term truncated", "checked_by": "python: a = 4.59 m/s2, x = 0.027 m", "severity": "minor"},
+    {"where": "Figure, build panel; scale", "fault": "Build strip skips step 2; deck ~0.94 m by the scale bar vs 0.70 m tub in text", "checked_by": "pixel measurement", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Mass is shown by a named 38.9 kg sum and the box dimensions are summed, but the wheel width/height terms do not hold, so the stow fit is not really shown."},
+   "C2": {"score": 3, "why": "Bucket ladder with a cut force (128 N) below traction (153 N) on the empty robot is credible, but the drawn conveyor-to-hopper and hopper-to-chute transfers do not work."},
+   "C3": {"score": 3, "why": "Nearly every number re-derives (mass, pressures, Bekker sinkage, cut force, traction, fill time, braking, box temperature); the stow-width term is the major gap."},
+   "C4": {"score": 2, "why": "Two major contradictions: the conveyor ends below the hopper mouth, and a fixed hopper plus a separate tipping box instead of a tipping hopper."},
+   "C5": {"score": 4, "why": "Honest margins (128 vs 153 N, 25 min runtime, 54 C box) and bench tests named as follow-ups; buildable."},
+   "C6": {"score": 4, "why": "Clear six-step cycle with each part's job named."},
+   "C7": {"score": 3, "why": "Build steps are short ('bolted, shop assembled') with few processes or dimensions."},
+   "C8": {"score": 3, "why": "Clean render, but a slack bucket chain, two markers on one hopper and a missing build step."},
+   "total": 25
+  },
+  "better": "C",
+  "better_why": "A and C tie on total, but C's numbers almost all re-derive and it checks cut force against traction and every box dimension, while A's dig rate does not follow from its own inputs and its stow and digging claims are unsupported. B violates the stowed-length constraint by its own calc and its picture shows a blade that cannot load its hopper."
+ },
+ "01": {
+  "A": {
+   "faults": [
+    {"where": "Key numbers, spine bending stress", "fault": "Section modulus uses pi/32*(D^4-d^4)/c, double the correct pi/64*(D^4-d^4)/c; the true value is 1155 mm^3, so the stress is 61 MPa and the safety factor 4.5, not 30.6 MPa and 9.02", "checked_by": "python", "severity": "major"},
+    {"where": "How it is made step 4; How it works", "fault": "Folded slab 730x490x150 mm is impossible with tri-star clusters of 140 mm arm radius and 150 mm wheels: the least width of the cluster is ~360 mm", "checked_by": "python: 1.5*140 + 150 = 360 mm", "severity": "major"},
+    {"where": "Figure, load platform", "fault": "The box rides on a long horizontal platform with four casters on the upper treads, 2-3 steps above the tri-star; not in the parts list and contrary to a 450x350 toe plate at the spine foot. The casters would have to climb the risers as drawn", "checked_by": "zoomed figure", "severity": "major"},
+    {"where": "Figure lean vs text", "fault": "Spine drawn at ~25 deg from vertical, the lean the design's own calc shows is past tipping (margin -3.2 deg); the text says operate at 15 deg", "checked_by": "measured spine endpoints on figure", "severity": "major"},
+    {"where": "Key numbers, tare", "fault": "Main calc uses 12 kg tare and the budget says 7.38 kg; brake torque is 98.9 vs 92.5 N m for the two", "checked_by": "python: 72*9.81*0.14 = 98.9; 67.38*9.81*0.14 = 92.5", "severity": "minor"},
+    {"where": "Tare budget", "fault": "5 kg for six wheels, two clusters, brake band, pawl, toe plate and handles is optimistic and unsupported", "checked_by": "judgment against listed parts", "severity": "minor"},
+    {"where": "Figure, wheel cluster and fold", "fault": "Tri-star cluster merged with a large ring wheel and gear; the folded slab by the wall shows plain small wheels, no clusters", "checked_by": "zoomed figure", "severity": "minor"},
+    {"where": "Key numbers", "fault": "226 N lever derivation truncated; the 350 N one-step limit and the 3680 N pin load are unsourced", "checked_by": "read text", "severity": "minor"}
+   ],
+   "C1": {"score": 3, "why": "Load and one-person operation are shown with numbers (226 N heave, brake torque), but the fold-into-van size is wrong."},
+   "C2": {"score": 3, "why": "A braked tri-star climber works, with a narrow 6.8 deg tip margin; the drawn caster platform could not climb."},
+   "C3": {"score": 2, "why": "Section modulus off by 2x, an impossible fold thickness and inconsistent tare; energy, slope force and pin shear re-derive."},
+   "C4": {"score": 2, "why": "The picture shows a caster platform spanning steps and a lean the text calls unsafe, contradicting the design."},
+   "C5": {"score": 3, "why": "States its tip-margin problem and fixes the lean, but the fold size and stress safety factor are overstated."},
+   "C6": {"score": 4, "why": "Clear account of the orbiting cluster, lever, fail-safe brake and fold."},
+   "C7": {"score": 3, "why": "Steps give sizes (1200 mm tubes, 150 mm wheels, 450x350 plate) but every process is just 'Assemble'."},
+   "C8": {"score": 2, "why": "Merged ring/gear wheel, an invented caster platform and a fold slab without clusters."},
+   "total": 22
+  },
+  "B": {
+   "faults": [
+    {"where": "How it works / Key numbers, descent brake", "fault": "Step-edge pawls 'sized for 353 N per side' with no geometry or check of how a pawl engages a nosing while the star rotates; descent safety, central to 'safely', is only claimed", "checked_by": "read text; 72*9.81/2 = 353 N is only the static load", "severity": "major"},
+    {"where": "Key numbers, handle force", "fault": "214 N uses only the 60 kg load (no 11-12 kg tare) and is a static hold, not the per-step lift; the 0.40 m CG offset is unsupported", "checked_by": "python: 60*9.81*0.4/1.1 = 214", "severity": "minor"},
+    {"where": "Constraint check", "fault": "Met by analogy to existing tri-star trucks; no spine or fold-hinge strength check", "checked_by": "read text", "severity": "minor"},
+    {"where": "Figure vs text", "fault": "Two small casters under the toe plate (4-wheel mode) contradict 'rolls as a normal 2-wheel truck' and are not in the parts list", "checked_by": "looked at figure", "severity": "minor"},
+    {"where": "Figure, cluster mount", "fault": "A second frame strut appears to reach the upper wheel hub, which would stop the star rotating (ambiguous); only one cluster visible; skids and pawls not clearly shown", "checked_by": "zoomed crop", "severity": "minor"},
+    {"where": "Figure context", "fault": "No courier, van or flight of stairs shown; the truck stands untilted at a two-step landing", "checked_by": "looked at figure", "severity": "minor"}
+   ],
+   "C1": {"score": 4, "why": "60 kg stair rating and one-person handle force are shown, partly by product reference; fold size is consistent with the cluster size."},
+   "C2": {"score": 4, "why": "A proven manual tri-star arrangement; the descent brake is the weak, unchecked point."},
+   "C3": {"score": 3, "why": "The few numbers given re-derive, but the descent brake and structure are unsupported."},
+   "C4": {"score": 4, "why": "The picture matches the text (tri-star, toe plate, strap, loop handle), apart from extra toe casters."},
+   "C5": {"score": 4, "why": "Openly based on existing products, honest about risks such as hollow stairs; readily buildable."},
+   "C6": {"score": 4, "why": "Clear account of tilt, orbiting cluster, skids and fold."},
+   "C7": {"score": 4, "why": "Names processes and materials: laser-cut, TIG-welded 6061, injection-moulded glass-filled nylon spiders, press-braked toe plate."},
+   "C8": {"score": 4, "why": "Clean, plausible render; one ambiguous strut at the cluster."},
+   "total": 31
+  },
+  "better": "B",
+  "better_why": "B is a modest but self-consistent tri-star truck whose picture matches its text. A does more analysis, but its stress is off 2x, its 150 mm fold is impossible with its clusters, and its picture shows a caster platform and an unsafe lean that contradict the design."
+ }
+}
