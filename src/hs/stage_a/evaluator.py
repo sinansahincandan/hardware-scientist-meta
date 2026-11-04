@@ -76,12 +76,33 @@ class Evaluator:
             f"{'consensus' if closed_by == 'consensus' else ('the chief designer’s decision (members advise; read their opinions)' if closed_by == 'chief' else 'the cycle cap without consensus')} after "
             f"{board.closure.cycles_used} cycles. {proposal_fact}\nOPEN OBJECTIONS:\n{open_objections}\n\n"
             f"PRIOR ART:\n{novelty}\n\n"
+            "HOW TO WRITE THIS REVIEW. You are the senior engineer at a design review. Read the whole solution and "
+            "the evidence before you check anything, and open your feedback with your overall judgment in one short "
+            "paragraph: does the working principle hold, what worries you most, would you let this go to detail "
+            "design, and how does it compare with the closest prior art. Write to colleagues: full sentences, plain "
+            "nouns first, the deciding numbers with units, an evidence id in parentheses after the thing it "
+            "supports; never an id as the subject of a sentence, never telegraphic lists of equations. Then cover "
+            "each check below in prose: what you found, how you checked it, and why it matters.\n"
+            "FORMULAS, NOT ONLY ARITHMETIC. For every number that decides acceptance, state the physical relation "
+            "you would use (the formula, the regime and its assumptions), compare it with the calculation on the "
+            "board (its [computed as: ...] code), and recompute it yourself. A wrong formula, a wrong section "
+            "property or coefficient, a model used outside its regime, or an input that is not the design's own "
+            "value is a fault even when the arithmetic is right: name it and give the corrected value.\n"
+            "THE DESIGN AGREES WITH ITSELF. Sizes, counts and placements in the parts list, connections, loads, "
+            "operating sequence, constraint table and the sketches on the board must agree: a part placed in two "
+            "places, a width that cannot hold the parts it names, a moving part whose path crosses another, or a "
+            "mode stated two ways (fixed and moving, folded and deployed) is a contradiction.\n"
+            "WORST CASE OF EVERY LIMIT. For each stated limit ask whether the design meets it in the hardest "
+            "condition the problem implies (strongest wind, full load, folded state, cold start), not only at the "
+            "nominal point. A limit that must keep holding over time (stays stopped, stays sealed, stays below a "
+            "temperature, stays upright) needs the holding force, torque or margin set against the largest load "
+            "that can act while it must hold; a dynamic result at the nominal point does not show it.\n"
             "Write your judgment as free text. Consult cited evidence only when a claim looks doubtful; "
             "add one evidence_request per doubtful critical claim. The evidence table lists every calculation, "
             "simulation, sketch and literature source on the board: point out in your feedback each key claim "
             "that rests on no evidence or source. Check the key numbers against everyday scales and known "
             "regimes (accelerations in g, sizes against a person or a door, loads against body weights, energies "
-            "against daily household use) and re-derive the arithmetic that decides acceptance; when a number "
+            "against daily household use) and re-derive the formula and the arithmetic that decide acceptance; when a number "
             "looks off, add an evidence_request. List the deviations you can measure between the solution's "
             "numbers and the problem or its own evidence, and say for each whether it matters for the working "
             "principle (a deviation can be acceptable in concept design, but it must be noticed). "
@@ -95,7 +116,7 @@ class Evaluator:
             "needs in your feedback text, not in evidence_requests. Judge in writing what the meeting facts "
             "above mean for acceptance (for example, whether an open objection or a missing proposal leaves "
             "the concept unsettled); no rule decides this for you. In constraint_review, go through every given "
-            "constraint and criterion in a sentence each: met, not met, or no longer valid for this concept (say "
+            "constraint and criterion in one or two plain sentences each, with the design's computed value: met, not met, or no longer valid for this concept (say "
             "why, e.g. the council found from evidence that it does not apply). Accept when the concept works and "
             "every constraint that still holds is met, or its shortfall is acceptable in your engineering judgement "
             "and you say so. Four checks a concept review must not skip, each written out in your feedback: "
@@ -123,25 +144,35 @@ class Evaluator:
             "on a search result whose page was never opened is weaker than one read from the page; say so where it "
             "decides acceptance. No scores."
             + (("\n\nTHE SAME ISSUES ARE RE-CHECKED FIRST (the loop's rule). Your previous verdict asked the room "
-                "for:\n" + "\n".join(f"- {r}" for r in previous_requests) + "\nStart your feedback by saying for "
-                "each whether the board now meets it, with the evidence id. When every one is met and the concept "
+                "for:\n" + "\n".join(f"- {r}" for r in previous_requests) + "\nRight after your opening paragraph, "
+                "say for each whether the board now meets it and how you know, with the evidence id. When every one is met and the concept "
                 "works with every stated limit shown, accept. A new gap you find now is an evidence_request only if "
                 "it could make the concept fail or break a stated limit; any other improvement goes in your "
                 "feedback text as advice, not as a reason to reject. ") if previous_requests else "")
         )
-        verdict = self.client.structured(
-            "evaluator", Verdict,
-            "You are the Evaluator, a senior engineer. Judge whether it works and can be built.",
-            prompt)
+        system = ("You are the Evaluator, a senior engineer at a design review. Judge whether it works, whether every "
+                  "deciding number holds, and whether it can be built; write your review as clear prose for colleagues.")
+        verdict = self.client.structured("evaluator", Verdict, system, prompt)
+        if verdict.accept and verdict.evidence_requests:
+            # an accept that still asks the room for work contradicts the review's own rule; the model reconciles it
+            # (run 224916 re-judge: "stays-parked hold ... shown in words only" yet accepted with five requests)
+            verdict = self.client.structured(
+                "evaluator", Verdict, system,
+                prompt + "\n\nYOUR FIRST VERDICT:\n" + verdict.model_dump_json(indent=2) + "\n\nYou accepted and "
+                "also asked the room for the evidence above. An evidence_request is only for a gap that could make "
+                "the concept fail or leave a stated limit unshown; the room does that work only if you send the "
+                "concept back. Decide again, in writing: either reject so the room settles those items, or keep "
+                "accept and move every item that is not needed for a stated limit or the working principle into "
+                "your feedback as advice (evidence_requests then empty). Keep your review text and change only what "
+                "this decision changes.")
         if not verdict.feedback.strip() or (not verdict.accept and not verdict.evidence_requests):
             # Muse Spark Open once wrote the whole judgment into constraint_review and left feedback and the
             # requests empty (braille run 223206, meeting 2), so the next meeting got no requests to work on.
             verdict = self.client.structured(
-                "evaluator", Verdict,
-                "You are the Evaluator, a senior engineer. Judge whether it works and can be built.",
+                "evaluator", Verdict, system,
                 prompt + "\n\nYour previous reply put the judgment in the wrong fields. constraint_review holds only "
-                "one sentence per given constraint or criterion; feedback holds your judgment in prose; every gap that "
-                "blocks acceptance is one entry in evidence_requests.\nYOUR PREVIOUS REPLY:\n"
+                "one or two sentences per given constraint or criterion; feedback holds your judgment in prose; every "
+                "gap that blocks acceptance is one entry in evidence_requests.\nYOUR PREVIOUS REPLY:\n"
                 + verdict.model_dump_json()[:6000])
         (iter_dir / "verdict.json").write_text(
             json.dumps({**verdict.model_dump(), "source": "evaluator"}, indent=2), encoding="utf-8")

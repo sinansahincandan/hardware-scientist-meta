@@ -319,7 +319,9 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
                 break
             reason = check.reason
         if check is not None and check.ok:
-            shipped.append((step_path, f"{i + 1}. {step_desc}" + (" (general check only)" if general else "")))
+            method = steps_sorted[i].method if i < len(steps_sorted) else ""
+            shipped.append((step_path, f"{i + 1}. {step_desc}" + (f" — {method}" if method else "")
+                            + (" (general check only)" if general else "")))
             if general:
                 trace_notes.append(f"fabrication step {i + 1}: the detailed check was blocked by the provider's "
                                    "content filter; it passed a general check only (caption marked)")

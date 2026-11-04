@@ -106,3 +106,38 @@ answers every opinion (`close_meeting`, closed_by "chief"); all-ready consensus 
 first check is that every function has a means. The gradient Manager (rewrite after rejection) is unchanged and now
 also rewrites the chief's instructions. Fig. 1 labels updated with the owner's permission (council and meeting boxes,
 controller comment); layout unchanged.
+
+## SPEC-13 (2026-11-03, owner): growing context, no word limits, re-check first
+Owner decisions after the round-2/3 benchmark (HS 53 vs single prompt 49 of 75, rounds not converging):
+1. The council never starts again on an empty board: meeting k+1 continues on meeting k's whiteboard (functions,
+   concepts, selections, proposal, objections, all evidence and its files); readiness opinions and the closure are
+   cleared; the Evaluator's requests are pinned on it as open blocking objections; the chief's opening turn assigns
+   each request and each uncomputed numeric constraint to a named member.
+2. No word limits on speech: members and the chief are asked to write compactly; the chief ends each cycle with a
+   compact RECORD of the meeting's state, which goes on the board (Whiteboard.records) and stands for older turns
+   when the transcript is compacted.
+3. The Evaluator re-checks its previous requests first (met / not met with evidence ids), accepts when they are met
+   and every limit is shown, and turns only concept-breaking new gaps into requests (loop rule: the same issue
+   re-checked). It sees each calculation's expression; part sums name their terms.
+4. Protocol: members first bring the best existing solutions (competition winners, products, papers, with source);
+   behaviour over time is shown with simulate; numeric constraints get an owner and a method in the chief's opening.
+   Tool calls per turn 6 → 10.
+5. The solution carries a constraint table (constraint, design value, how shown, evidence ids) and making methods.
+6. Benchmark rubric v2 (examples/bench/RUBRIC_v2.md) adds: explains how it works, tells how to make it, picture free
+   of image-generator mistakes; the single prompt is also asked how it is made (runs/baseline_v2).
+
+## SPEC-14 (2026-11-04, owner): the review loops judge like an engineer, the picture is checked against the text, making plans are concrete
+Reason: the round-5 audit (two blind judges, fault-first rubric, six problems) tied HS with one Meta prompt (26.1 vs
+26.6 of 40). HS lost most on making plans (19.5 vs 24 of 30), and its major faults were picture-vs-text contradictions
+(15 of 34) and formula errors (8 of 34) that the loops let through.
+- Evaluator (§4.5): opens with an overall engineer's judgment, checks formulas and regimes (not only arithmetic), the
+  design's agreement with itself, and the worst case of every limit, including limits that must keep holding; writes
+  for colleagues in full sentences. An accept that still carries evidence requests is re-asked once; the model decides.
+- Manager gradients and rewrite (§4.6): each item says what was claimed, what is true and how we know, what must
+  change and why; every new rule carries its reason.
+- Designer evaluation (§5.5): new STEP 3d compares the render with the solution text (counts, contacts, placement and
+  state, flow path, size against the scale reference); a contradiction is a region with source "text" (a drawing fault
+  to fix). Every segmenter finding must be answered with a region or a written pixel reason; a required contact the
+  pixels do not show is a fault.
+- Picture loop: a local edit is pasted over the union of the critic's box and SAM's box for that part.
+- Fabrication (§6 D): stages say what and why in this order; method names process, material and identifying sizes.

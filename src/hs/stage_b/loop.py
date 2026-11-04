@@ -173,7 +173,9 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             ev = DesignerEvalRunner(client).run(
                 render_path, concept or round_dir / "schematic_labeled.png", solution, missing,
                 measurements=sam_text + "\nYOUR PREVIOUS ANSWER DID NOT ADDRESS THESE FINDINGS: " + ", ".join(missed)
-                + ". Answer again in full, with a deviation for each of them.",
+                + ". Answer again in full: for each of them either a region to fix, or a deviation whose why says what "
+                "the pixels show and why the measurement or the expectation is wrong or does not change how the device "
+                "works.",
                 earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
                 previous_render=kept["render"] if kept else None,
                 critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
@@ -235,7 +237,8 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             f"{g.part_id}: {g.diagnosis} -> {g.prompt_fix}" for g in grad.per_region) + "\n" + corrections)
         # callout faults are not edited here: the label check on panel A removes wrong callouts and code labels
         # each part from the SAM boxes (figure.relabel_panel_a); editing them cost rounds in the round-2 benchmark
-        render_regions = [x for x in ev.regions if x.source == "render" and len(x.box) == 4 and x.part_id != "callout"]
+        render_regions = [x for x in ev.regions if x.source in ("render", "text") and len(x.box) == 4
+                          and x.part_id != "callout"]
         if grad.fix_mode != "local" or not render_regions:
             continue
         current = render_path
@@ -245,7 +248,11 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             edited_path.write_bytes(client.image_edit(
                 f"Change only this: {fix}. Keep everything else in the image identical.", current))
             comp_path = round_dir / f"local_{region.part_id}.png"
-            info = composite_region(current, edited_path, region.box, comp_path)
+            # the editor works on where SAM found the part as well as the critic's box: an image model asked to fix
+            # one part forgets where it is (owner, round 6); the mask's box keeps the paste on the part itself
+            box, box_source = _edit_box(region.box, region.part_id, round_dir / "sam.json")
+            info = composite_region(current, edited_path, box, comp_path)
+            info["edit_box_source"], info["edit_box"] = box_source, box
             (round_dir / f"composite_{region.part_id}.json").write_text(json.dumps(info), encoding="utf-8")
             if not info["outside_unchanged"]:
                 log(f"attempt {attempt} round {r}: local edit {region.part_id} reverted (outside-box pixels changed)")
@@ -268,10 +275,33 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
     return result
 
 
+def _edit_box(critic_box: list[float], part_id: str, sam_json: Path) -> tuple[list[float], str]:
+    """Union of the critic's region box and SAM's box for the same part, on the 0-1000 grid."""
+    try:
+        sam = json.loads(sam_json.read_text(encoding="utf-8"))
+        w, h = sam["size"]
+        boxes = sam["parts"].get(part_id, {}).get("boxes") or []
+    except (OSError, KeyError, ValueError, TypeError):
+        return critic_box, "critic"
+    if not boxes:
+        return critic_box, "critic"
+    x0, y0, x1, y1 = boxes[0]
+    b = [x0 / w * 1000, y0 / h * 1000, x1 / w * 1000, y1 / h * 1000]
+    return [min(critic_box[0], b[0]), min(critic_box[1], b[1]), max(critic_box[2], b[2]),
+            max(critic_box[3], b[3])], "critic+sam"
+
+
 def _unaddressed(diffs: dict[str, list[str]], ev: DesignerEval) -> list[str]:
+    """Segmenter findings the critic did not answer. A finding is answered by a region on that part, a deviation on it
+    that matters, or a deviation that does not matter with a reason in words (round 5: the excavator's 'conveyor
+    apart from hopper' was waved through as matters=False with no reason, and the judges found exactly that)."""
     mentioned = {x.part_id for x in ev.regions}
-    text = " ".join(f"{d.what} {d.measured} {d.expected}" for d in ev.deviations).lower()
-    return [pid for pid in diffs if pid not in mentioned and pid.lower() not in text]
+    answered = set(mentioned)
+    for pid in diffs:
+        for d in ev.deviations:
+            if pid.lower() in f"{d.what} {d.measured} {d.expected}".lower() and (d.matters or len(d.why.split()) >= 10):
+                answered.add(pid)
+    return [pid for pid in diffs if pid not in answered]
 
 
 def _log_sam_use(round_dir: Path, attempt_dir: Path, r: int, diffs: dict[str, list[str]], ev: DesignerEval,

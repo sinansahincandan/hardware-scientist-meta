@@ -2,7 +2,9 @@
 section rewrite, then meeting 2 on the new master prompt with the Evaluator's requests pinned, the Secretary and
 the Evaluator again — the controller's loop body (controller.py, `if not verdict.accept`), no Stage B.
 
-Usage: .venv/bin/python scripts/replay_reject_loop.py <run_dir> <rejected_verdict.json> <out_dir>
+Usage: .venv/bin/python scripts/replay_reject_loop.py <run_dir> <rejected_verdict.json> <out_dir> [--gradients-only]
+--gradients-only stops after the Manager's gradients and rewrite (about $0.1; no second meeting).
+Meeting 2 continues on meeting 1's board and the Evaluator re-checks its own requests first, as the controller does.
 """
 from __future__ import annotations
 
@@ -38,7 +40,7 @@ def main() -> int:
         if (run / d).exists():
             shutil.copytree(run / d, out / d)
 
-    client = MetaClient(run_dir=out, max_cost=3.0)
+    client = MetaClient(run_dir=out, max_cost=3.5)
     problem = Problem.model_validate_json((out / "problem.json").read_text(encoding="utf-8"))
     master = MasterPrompt(out, problem.title, split_master_prompt(rev0.read_text(encoding="utf-8")))
     it0 = out / "stage_a" / "iter_00"
@@ -58,8 +60,11 @@ def main() -> int:
     manager = Manager(client, master)
     report = manager.edit(room, solution, verdict.feedback, it0, tools=ToolRunner(board, out, it0 / "evidence"))
     print("manager edit:", json.dumps({k: report.get(k) for k in ("changed", "reverted", "no_progress")}))
+    if "--gradients-only" in sys.argv:
+        return 0
 
     meeting = Meeting(client, master, out, 1)
+    meeting.carry_from(it0)  # controller.py: the next meeting continues on the previous board
     meeting.pin_inspirations(manager.inspirations(archive))
     meeting.pin_evaluator_requests(list(verdict.evidence_requests), verdict.feedback)
     room2 = meeting.run()
@@ -68,7 +73,8 @@ def main() -> int:
           f"proposal={'v' + str(room2.board.proposal.version) if room2.board.proposal else 'none'}")
     it1 = out / "stage_a" / "iter_01"
     solution2 = Secretary(client).synthesize(room2, problem, it1)
-    verdict2 = Evaluator(client).judge(master, solution2, room2.board, room2.closed_by, it1)
+    verdict2 = Evaluator(client).judge(master, solution2, room2.board, room2.closed_by, it1,
+                                       previous_requests=list(verdict.evidence_requests))
     print("evaluator 2: accept", verdict2.accept)
     return 0
 

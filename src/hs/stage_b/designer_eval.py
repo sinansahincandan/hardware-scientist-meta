@@ -29,8 +29,9 @@ def decide(ev: DesignerEval, round_idx: int, max_rounds: int = config.MAX_S1_ROU
 
 
 def part_faults(ev: DesignerEval) -> list[str]:
-    """Regions where the critic itself says the render differs from the sketch on a part (not a callout)."""
-    return [r.part_id for r in ev.regions if r.source == "render" and r.part_id != "callout"]
+    """Regions where the critic itself says the render differs from the sketch or contradicts the solution text on
+    a part (not a callout)."""
+    return [r.part_id for r in ev.regions if r.source in ("render", "text") and r.part_id != "callout"]
 
 
 def _regions_text(ev: DesignerEval) -> str:
@@ -104,9 +105,24 @@ class DesignerEvalRunner:
                f"{solution.problem_restatement} Judge its size against the people, hands or objects in the "
                "scene and its overall shape against what the problem asks for; drawn many times too large or "
                "small, or in a shape the problem rules out, the render is not faithful.\n" if size_mm else "")
+            + "STEP 3d — TEXT CHECK: now read the SOLUTION SUMMARY below and compare the render with it, not only "
+            "with the sketch: part counts (qty), which parts touch (connections), where each part sits and in which "
+            "state (folded or deployed, tipped or upright, as the operating sequence says), the path the material, "
+            "energy or signal takes from part to part, the device's size against the people, hands or objects in "
+            "the scene (size_class_mm and every constraint_table row that states a size), and every part the text "
+            "names that the picture does not show or shows elsewhere. A contradiction between picture and text is "
+            "a region: source 'text' when the sketch agrees with the text (the picture is wrong: a drawing fault to "
+            "fix), source 'schematic' when the sketch itself contradicts the text (say which, in s2_feedback). A "
+            "picture that contradicts the text is not faithful, however good it looks.\n"
             + "STEP 4 — DEVIATIONS: list every visible deviation you can measure (scale, counts, orientations, "
             "proportions), including each one in the segmenter measurements below, and say whether it matters "
-            "for the working principle (in concept design a deviation may be acceptable, but it must be noticed).\n"
+            "for the working principle (in concept design a deviation may be acceptable, but it must be noticed). "
+            "The segmenter measured the render part by part; answer every one of its findings. A finding on a "
+            "contact the design requires (two parts that must touch drawn apart), on the count or axis of the "
+            "critical part, or on the device's size against the scale reference is a region to fix unless you can "
+            "show from the pixels that the segmenter or the expectation is wrong; then say so in that deviation's "
+            "why, naming what the pixels show. A required contact the pixels do not show is a fault, not a "
+            "deviation.\n"
             + (("STEP 5 — EARLIER FAULTS: for EVERY fault below (flagged in earlier rounds) set previous_regions: "
                 "fixed, still_wrong or regressed, with a note. A fault flagged earlier may not quietly pass now. "
                 "Then write comparison_with_previous: compared with the previous render (third image), did this "
@@ -117,7 +133,7 @@ class DesignerEvalRunner:
             + f"PARTS THE LOCALIZER COULD NOT FIND IN THE RENDER: {missing_parts}\n"
         )
         return self.client.structured("designer_eval", DesignerEval,
-                                      "You are the designer-evaluator (VLM). Compare the render with the mechanism sketch.",
+                                      "You are the designer-evaluator (VLM). Compare the render with the mechanism sketch and with the solution text.",
                                       prompt, image_paths=[render_png, sketch_png]
                                       + ([previous_render] if previous_render is not None else [])
                                       + list(council_sketches or []))

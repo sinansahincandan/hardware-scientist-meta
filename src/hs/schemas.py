@@ -307,7 +307,9 @@ class EvalRegion(BaseModel):
     part_id: str = ""
     observed: str = ""
     expected: str = ""
-    source: Literal["render", "schematic"] = "render"
+    # render: differs from the sketch; text: contradicts the solution text while the sketch agrees with the text
+    # (both are drawing faults); schematic: the sketch itself is wrong or silent, or contradicts the text
+    source: Literal["render", "text", "schematic"] = "render"
 
 
 class PreviousRegionStatus(BaseModel):

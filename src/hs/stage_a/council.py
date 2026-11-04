@@ -92,7 +92,7 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
         f"PEOPLE IN THIS ROOM (address them only by these names): {people}\n\n"
         f"WHITEBOARD:\n{board.render_markdown()}\n\n"
         f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + _compact_transcript(since[-8:])
-        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). {SPEAKING_RULE}\n"
+        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now: what you found or propose, why it matters for the device, the numbers that decide it with units and their evidence ids; do not repeat what is already on the board (the chief designer keeps the board compact). {SPEAKING_RULE}\n"
         "Use the whiteboard tool to write to the board; use calc/vetted_calc/simulate/sketch/web_search for evidence. "
         "Read the evidence already on the board before computing: reuse an existing evidence item by its id "
         "unless you state in your message why you recompute it. Post a labeled sketch (sketch tool, hand-drawn "
