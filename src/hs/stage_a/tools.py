@@ -34,7 +34,9 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
          "key_claims": {"type": "array", "items": {"type": "object", "properties": {
              "claim": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}}},
          "ready": {"type": "boolean"}, "reason": {"type": "string"}}, "required": ["action"]}},
-    {"type": "function", "name": "calc", "description": "Evaluate an expression with math/numpy/pint Q_; convert the result to the unit you mean, e.g. (...).to('J').",
+    {"type": "function", "name": "calc", "description": "Evaluate an expression with math/numpy/pint Q_; convert the result to the unit you mean, e.g. (...).to('J'). "
+                    "For a sum of parts (a mass or size budget), name every term so the board shows what was added: "
+                    "sum({'chassis': 8, 'wheels x4': 10, 'hopper': 4}.values()).",
      "parameters": {"type": "object", "properties": {"expression": {"type": "string"}, "purpose": {"type": "string"}},
                     "required": ["expression", "purpose"]}},
     {"type": "function", "name": "simulate", "description": "Run a short numpy/scipy/pint script in the sandbox.",

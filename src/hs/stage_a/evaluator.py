@@ -34,8 +34,17 @@ class Evaluator:
                 return ""
             return " (page opened by the member)" if ref.get("read") else " (search result only; page not opened)"
 
+        def _how(e: Any) -> str:
+            # the calculation itself, so a sum's terms can be checked (without it the Evaluator asked three meetings
+            # running for an itemized mass table the board already held: run 194659)
+            if str(e.tool).split(":")[0] not in ("calc", "vetted_calc", "simulate"):
+                return ""
+            code = " ".join(str(e.code_or_query).split())
+            return f" [computed as: {code[:400]}{' …' if len(code) > 400 else ''}]"
+
         evidence_table = "\n".join(
-            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}{_read_note(e)}" for e in board.evidence)
+            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}{_how(e)}{_read_note(e)}"
+            for e in board.evidence)
         if board.proposal is None:
             proposal_fact = "No proposal was formed on the whiteboard in this meeting."
         else:
