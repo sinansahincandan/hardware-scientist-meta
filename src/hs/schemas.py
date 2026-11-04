@@ -77,6 +77,14 @@ class FabricationStep(BaseModel):
     parts_present: list[str] = Field(default_factory=list)
 
 
+class ConstraintRow(BaseModel):
+    """One given constraint against the design's own value, as the board shows it (no score; prose and ids)."""
+    constraint: str
+    design_value: str  # the design's computed value with units, or "not computed"
+    how_shown: str  # one sentence: what was calculated, simulated or sourced
+    evidence_ids: list[str] = Field(default_factory=list)
+
+
 class Risk(BaseModel):
     risk: str
     mitigation: str
@@ -99,6 +107,7 @@ class SolutionPrompt(BaseModel):
     functional_decomposition: list[str] = Field(default_factory=list)
     concept: ConceptBody
     key_estimates: list[KeyEstimate] = Field(default_factory=list)
+    constraint_table: list[ConstraintRow] = Field(default_factory=list)
     measurement_chain: list[MeasurementStage] = Field(default_factory=list)
     operating_sequence: list[OperatingStep] = Field(default_factory=list)
     fabrication_steps: list[FabricationStep] = Field(default_factory=list)

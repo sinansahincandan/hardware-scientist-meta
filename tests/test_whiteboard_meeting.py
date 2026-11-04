@@ -186,3 +186,26 @@ def test_reselection_unfavours_the_earlier_choice() -> None:
     b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "concept_id": "C1", "rationale": "x"})
     b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "concept_id": "C2", "rationale": "tips"})
     assert [c.status for c in b.concepts] == ["open", "favored"]
+
+
+def test_next_meeting_continues_on_the_previous_board(tmp_path) -> None:
+    """Owner 2026-11-03: the council never starts again on an empty board."""
+    from hs.stage_a.whiteboard import WBVote, Whiteboard
+
+    m1 = _meeting(tmp_path)
+    prev = m1.iter_dir
+    b = Whiteboard(roster=["A"])
+    b.apply_op("Manager", {"action": "add_function", "text": "Stop the rotor"})
+    b.add_evidence("A", "sketch", "brake layout", "x", "ok", sketch_path="evidence/sketch_1.png")
+    b.votes["A"] = WBVote(version=1, ready=True, reason="fine")
+    b.save(prev / "whiteboard.json")
+    (prev / "evidence").mkdir(exist_ok=True)
+    (prev / "evidence" / "sketch_1.png").write_bytes(b"png")
+    from hs.stage_a.meeting import Meeting
+
+    m2 = Meeting(m1.client, m1.master, m1.run_dir, 1)
+    assert m2.carry_from(prev)
+    assert [f.text for f in m2.board.functions] == ["Stop the rotor"] and not m2.board.votes
+    assert (m2.iter_dir / "evidence" / "sketch_1.png").exists() and m2.tools.board is m2.board
+    m2.pin_evaluator_requests(["Simulate the stop time."], "fb")
+    assert m2.board.objections[-1].author == "Evaluator" and m2.board.evidence[0].id == "E1"

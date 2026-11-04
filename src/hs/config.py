@@ -118,6 +118,8 @@ PROPOSAL_RULE = (
 
 DEFAULT_PROTOCOL = (
     "Cycle 1: the Manager opens with the function structure (verb + noun functions with what flows in and out). "
+    "Every member first searches for the best existing solutions to this problem in their own field (competition "
+    "winners, products, papers) and posts each as a concept for the function it serves, with its source. "
     "Every member then posts, for EVERY function, at least one concept from their own field (add_concept), or says "
     "in one line that their field has none for it; a member who sees a missing function adds it. A concept is a "
     "way to perform the function (a working principle and the part that does it), so concepts for one function "
@@ -128,6 +130,8 @@ DEFAULT_PROTOCOL = (
     "functions the Manager names weakest, bring one concept by analogy from a distant field and write how it maps "
     "onto this problem (drop it if it does not map); attack and defend with evidence, raise and resolve objections; "
     "give your readiness opinion on each proposal version, ready only when it survives your strongest objection. "
+    "A behaviour over time (stopping, tipping, heating, deflecting, filling) is shown with simulate, not asserted; "
+    "a sum of parts names every term. "
     "This is concept design: what calculation, simulation and sources can settle is settled in the meeting; a test "
     "that needs built hardware cannot be done here, so name it as a bench test and judge readiness on the evidence. "
     "Missing constraints are established from standards, literature or datasheets via web_search and posted "

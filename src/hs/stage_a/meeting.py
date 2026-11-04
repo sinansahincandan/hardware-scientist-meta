@@ -63,8 +63,29 @@ class Meeting:
         self.history = HistoryLog(self.iter_dir / "whiteboard_history.jsonl")
         self.tools = ToolRunner(self.board, run_dir, self.iter_dir / "evidence")
         self.transcript: list[dict[str, Any]] = []
+        self.carried_from = ""
 
     # -- setup ---------------------------------------------------------------------
+    def carry_from(self, prev_iter_dir: Path) -> bool:
+        """The next meeting continues on the previous meeting's board (owner decision 2026-11-03: the council never
+        starts again on an empty board). Functions, concepts, selections, the proposal, objections and every piece
+        of evidence (with its files) carry over; readiness opinions and the closure are cleared, so the members
+        judge the proposal again under the rewritten prompt. Returns False when there is no board to carry."""
+        import shutil
+
+        prev = prev_iter_dir / "whiteboard.json"
+        if not prev.exists():
+            return False
+        board = Whiteboard.load(prev)
+        board.votes.clear()
+        board.closure = type(board.closure)()
+        if (prev_iter_dir / "evidence").exists():
+            shutil.copytree(prev_iter_dir / "evidence", self.iter_dir / "evidence", dirs_exist_ok=True)
+        self.board = board
+        self.tools.board = board
+        self.carried_from = prev_iter_dir.name
+        return True
+
     def pin_inspirations(self, inspirations: list[dict[str, Any]]) -> None:
         self.board.inspirations = inspirations
 
@@ -228,14 +249,27 @@ class Meeting:
             "Check key results against everyday scales; sum the parts against each size and mass limit; reconcile "
             "two values for one quantity; go through open blocking objections and resolve those the evidence "
             "settles (cite it) or name who must settle them. Answer each readiness opinion. ")
-        if opening:
+        assign = (
+            "Name, for every constraint that states a number and for every behaviour over time the problem asks "
+            "about (stopping, tipping, heating, deflecting, filling), the member who will compute it and how: calc "
+            "for a sum or a formula, simulate for anything that changes over time. ")
+        if opening and self.carried_from:
+            task = (
+                f"OPENING TURN of a continued meeting: the board carries the design and the evidence of the previous "
+                f"meeting ({self.carried_from}); the Evaluator's requests are open blocking objections on it. Keep "
+                "what stands. Assign every open Evaluator request to a named member with the method. " + assign
+                + "Change a function, a selection or the proposal only where the evidence requires it.")
+        elif opening:
             task = (
                 "OPENING TURN, before the members speak. Read the problem and write its function structure on the "
                 "whiteboard with add_function: 4 to 8 functions, each a verb and a noun that does not presuppose a "
                 "solution ('lift the soil', not 'run the bucket ladder'), each with flows: what goes in and out "
                 "(energy, material, signal). Cover the whole job the device must do, including every hand-over "
-                "between functions. Then tell the members: every member posts, for every function, at least one "
-                "concept from their field, or says in one line that their field has none. Do not post concepts.")
+                "between functions. Then tell the members: every member first brings the best existing solutions "
+                "to this problem from their field (competition winners, products, papers, with the source) and "
+                "posts each as a concept for the function it serves; then every member posts, for every function, "
+                "at least one concept from their field, or says in one line that their field has none. " + assign
+                + "Do not post concepts.")
         elif closing:
             task = (
                 "CLOSING TURN: the cycles are over. "
@@ -406,11 +440,14 @@ class Secretary:
                 "decisive_choices (EXACTLY 3, the choices that most determine whether this concept works, taken from the "
                 "chief designer's selections on the whiteboard with the reason each beat its alternatives); "
                 "open_question (EXACTLY 1, the most important unresolved question); "
+                "constraint_table: one row per constraint given in the problem, in the problem's words, with the "
+                "design's own value for it as the board computed it (units, at most three significant figures; "
+                "'not computed' when the board has none), one sentence on how it was shown, and the evidence ids; "
                 "fabrication_steps: 3 to 5 coarse stages of how the device is made, each in plain words a "
                 "non-specialist can follow (for example 'Assemble the frame and mount the wheels'); mention at most one "
-                "size or rating per stage, only where it helps to recognise it, and give no stations, wiring details or "
-                "process recipes — "
-                "this is a concept figure, not build instructions; "
+                "size or rating per stage, only where it helps to recognise it, with the making method in 'method' (for "
+                "example 'laser-cut aluminium sheet, bolted', 'cast silicone in a 3D-printed mould'); no stations, "
+                "wiring details or process recipes; "
                 "operating_sequence: 3 to 6 steps of how the device works, in the order they happen when it is "
                 "used, each on the part that does it (part_id from the parts list) with a plain action of at most 8 "
                 "words a non-specialist understands (for example 'digs loose soil', 'lifts the full bucket', 'tips "
