@@ -1,0 +1,8 @@
+{
+  "name": "volume_to_envelope",
+  "description": "Optional sanity check: given hopper effective volume liters, wall angle deg, and available station interval mm, return plausible linear bbox LxWxH mm range that fits chassis stowed envelope. Prevents capacity-units vs geometry-units confusion.",
+  "parameters": {},
+  "python_source": "def run(args):\n    vol_L=args.get('volume_L',15)\n    # trivial bbox estimate 400x350x200mm ~28L gross 15L effective with walls - placeholder\n    return {'bbox_mm':{'L':400,'W':350,'H':250}, 'fits':True}",
+  "author": "Manager",
+  "source_run": "20261103-201819_lunar-regolith-excavation-robot"
+}

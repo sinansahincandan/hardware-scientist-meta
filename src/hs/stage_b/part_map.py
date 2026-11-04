@@ -584,7 +584,8 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
         for j, (x0, y0, x1, y1) in enumerate(rec["boxes"]):
             draw.rectangle([x0, y0, x1, y1], outline=color + (255,), width=max(2, w // 600))
             if j == 0:
-                text = f"{rec['phrase']} ×{len(rec['boxes'])}" if len(rec["boxes"]) > 1 else rec["phrase"]
+                phrase = " ".join(str(rec["phrase"]).split())  # a phrase written over two lines is drawn on one
+                text = f"{phrase} ×{len(rec['boxes'])}" if len(rec["boxes"]) > 1 else phrase
                 tw = draw.textlength(text, font=font)
                 ty = max(y0 - font.size - 8, 0)  # type: ignore[attr-defined]
                 draw.rectangle([x0, ty, x0 + tw + 10, ty + font.size + 6], fill=color + (230,))  # type: ignore[attr-defined]
@@ -592,7 +593,7 @@ def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:
     canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
     d = ImageDraw.Draw(canvas)
     found = sum(1 for rec in data["parts"].values() if rec["boxes"])
-    d.text((10, h + 6), f"SAM 3.1 found {found} of {len(data['parts'])} parts (each part's mask and box in its colour).",
+    d.text((10, h + 6), f"SAM 3 found {found} of {len(data['parts'])} parts (each part's mask and box in its colour).",
            fill=(30, 30, 30), font=font)
     if missing:
         for k, line in enumerate(lines):

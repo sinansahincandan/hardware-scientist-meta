@@ -36,13 +36,22 @@ _HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWeb
 
 
 def web_search(query: str, max_results: int = 8) -> list[dict[str, str]]:
-    """[{url, title, snippet}] for a query; empty on any search error (the member is told so)."""
+    """[{url, title, snippet}] for a query; empty when every try fails (the member is told so). With three runs
+    searching at once the free engines often answer "No results found" for a sound query (10-11 of ~35 searches
+    per run on 2026-11-04) and answer it seconds later, so an empty answer is retried twice after a pause."""
+    import time
+
     from ddgs import DDGS
 
-    try:
-        hits = DDGS().text(query, max_results=max_results) or []
-    except Exception:
-        return []
+    hits: list[dict[str, Any]] = []
+    for pause in (0.0, 3.0, 8.0):
+        time.sleep(pause)
+        try:
+            hits = DDGS().text(query, max_results=max_results, backend="auto") or []
+        except Exception:
+            hits = []
+        if hits:
+            break
     return [{"url": str(h.get("href", "")), "title": str(h.get("title", "")), "snippet": str(h.get("body", ""))}
             for h in hits if h.get("href")]
 
