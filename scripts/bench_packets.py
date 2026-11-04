@@ -2,7 +2,9 @@
 the same format (design.md with the same headings + one picture), labelled A and B by a fixed hash; the key is
 written outside the packet folder.
 
-Usage: .venv/bin/python scripts/bench_packets.py <packets_dir> <key_file> b1=<hs_run_dir> b2=<hs_run_dir> …
+Usage: .venv/bin/python scripts/bench_packets.py <packets_dir> <key_file> [salt=<text>] b1=<hs_run_dir> b2=<hs_run_dir> …
+salt changes the fixed A/B labelling (round 1 put HS on B for b1–b3; round 2 uses salt=r2).
+prev_b1=<run> adds an earlier Hardware Scientist run as a third design (labels A/B/C, mixed by the same hash).
 """
 from __future__ import annotations
 
@@ -48,14 +50,21 @@ def main() -> int:
     packets, key_file = Path(sys.argv[1]), Path(sys.argv[2])
     packets.mkdir(parents=True, exist_ok=True)
     key: dict[str, dict[str, str]] = {}
-    for arg in sys.argv[3:]:
+    args = sys.argv[3:]
+    salt = next((a.split("=", 1)[1] for a in args if a.startswith("salt=")), "")
+    prev = {a.split("=", 1)[0][5:]: Path(a.split("=", 1)[1]) for a in args if a.startswith("prev_")}
+    for arg in [a for a in args if not a.startswith(("salt=", "prev_"))]:
         pid, run = arg.split("=", 1)
         run = Path(run)
         prob_file = next((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
         base = ROOT / "runs" / "baseline" / prob_file.stem
-        hs_first = int(hashlib.sha256(pid.encode()).hexdigest(), 16) % 2 == 0
-        order = {"A": "hs", "B": "baseline"} if hs_first else {"A": "baseline", "B": "hs"}
-        key[pid] = {**order, "hs_run": run.name}
+        designs = {"hs": run, "baseline": base} | ({"hs_prev": prev[pid]} if pid in prev else {})
+        # labels by a fixed hash of problem + salt + design, so neither system always sits first
+        ranked = sorted(designs, key=lambda who: hashlib.sha256((pid + salt + who).encode()).hexdigest()) \
+            if prev else (["hs", "baseline"] if int(hashlib.sha256((pid + salt).encode()).hexdigest(), 16) % 2 == 0
+                          else ["baseline", "hs"])
+        order = dict(zip("ABC", ranked, strict=False))
+        key[pid] = {**order, "hs_run": run.name} | ({"hs_prev_run": prev[pid].name} if pid in prev else {})
         d = packets / pid
         if d.exists():
             shutil.rmtree(d)
@@ -63,9 +72,9 @@ def main() -> int:
         shutil.copy(prob_file, d / "problem.json")
         for label, who in order.items():
             (d / label).mkdir()
-            if who == "hs":
-                (d / label / "design.md").write_text(hs_markdown(run), encoding="utf-8")
-                src = run / "final" / "panel_A.png"
+            if who in ("hs", "hs_prev"):
+                (d / label / "design.md").write_text(hs_markdown(designs[who]), encoding="utf-8")
+                src = designs[who] / "final" / "panel_A.png"
             else:
                 shutil.copy(base / "design.md", d / label / "design.md")
                 src = base / "figure.png"
@@ -75,7 +84,6 @@ def main() -> int:
     key_file.write_text(json.dumps(key, indent=2), encoding="utf-8")
     print(f"{len(key)} packets in {packets}")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

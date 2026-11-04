@@ -14,3 +14,4 @@ Typical: R=1 gives 324 W peak, R=2 gives 162 W, R=5 gives 65 W (E32); 2 ohm give
 ## Use notes
 - run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Safety-Control Engineer): Helped: sized dump plus friction brake for stop time and zero-speed hold with large margin.
 - run 20261103-201825_small-wind-turbine-for-a-wind-tunnel-com (Samir — Safety, Brake & Controls Lead): Helped. Samir E28 used it to sweep dump R: R=6.3 ohm tau 10.8s t10 24.8s ratio 0.33x fail, R=8 ohm t10 31.5s, peak power 32.2W at R=2 vs 10.2W at R=6.3. This rejected single 6.3 ohm path C15 and drove decisive choice F6->C19 to 2-3 ohm 100W dump achieving 5.11s to <10% (289 rpm) tau 2.22s with hold, coordinated with C2 pitch and E25 dump sizing R=6.3 ohm for 31W at 14V E25.
+- run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Volt — Electrical Power and Safety Shutdown Lead): Helped - framed fail-safe dump-brake for 10s stop requirement and park-hold question.

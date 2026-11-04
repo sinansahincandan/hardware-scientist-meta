@@ -208,6 +208,10 @@ class Whiteboard(BaseModel):
                 if not str(op.get("rationale", "")).strip():
                     return False, ("select_concept needs a rationale: why it beats each alternative for this function "
                                    "(better / same / worse on the criteria, with evidence ids)")
+                previous = {x.concept_id for x in self.selections if x.function_id == fid}
+                for c in self.concepts:  # a changed selection: the earlier choice is no longer the favoured one
+                    if c.id in previous and c.id != cid and c.status == "favored":
+                        c.status = "open"
                 self.selections = [x for x in self.selections if x.function_id != fid]
                 self.selections.append(WBSelection(function_id=fid, concept_id=cid, author=author,
                                                    rationale=str(op["rationale"])))

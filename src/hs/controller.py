@@ -188,7 +188,8 @@ class Controller:
             trace.log(f"iter {k}: meeting closed_by={room.closed_by} cycles={room.cycles_used}")
             iter_dir = run_dir / "stage_a" / f"iter_{k:02d}"
             solution = secretary.synthesize(room, problem, iter_dir)
-            verdict = evaluator.judge(master, solution, room.board, room.closed_by, iter_dir)
+            verdict = evaluator.judge(master, solution, room.board, room.closed_by, iter_dir,
+                                      previous_requests=pending_eval_requests)
             status = "accepted" if verdict.accept else "rejected"
             aid = archive.add(solution, iteration=k, revision=master.rev, status=status,
                               accept=verdict.accept, feedback=verdict.feedback,

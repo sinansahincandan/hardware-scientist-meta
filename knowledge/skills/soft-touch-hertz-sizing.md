@@ -14,3 +14,4 @@ Typical values: 1 mN on Shore 10A gives 0.247 mm radius (E9); 1 mN over 1 mm2 ta
 
 ## Use notes
 - run 20261103-210010_tactile-fingertip-sensor-for-robot-hands (Dr. Maya Chen — Biomimetic Structure & Mounting Interface): Helped. Supplied quantitative Hertz spread that justified chosen bilayer: solid 0.3 MPa = 0.299 mm radius / 0.598 mm dia at 3.57 kPa vs structured ~0.02 MPa micropillar stack = 586 Pa over ~1.47 mm patch for 1 mN [E8,E17]. This enables F2 choice C12 0.8 mm Dragon Skin 10A [E21] + 0.7 mm Ecoflex 00-30 0.5 mm tall 30% fill [E20] and rejects C2/C7/C19 lacking quantified moduli. Retire:false.
+- run 20261103-194701_tactile-fingertip-sensor-for-robot-hands (Derma — Soft Skin and Contact Mechanics Owner): Helped: sized soft skin to spread 1 mN touch over multiple taxels for centroid and signal.

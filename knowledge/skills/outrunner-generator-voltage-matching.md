@@ -11,3 +11,4 @@ source: run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (2026-11-03
 5. Check dump-resistor brake power V^2/R (e.g., 70.8 W at 2 ohm 11.9 V (E33), 47.2 W at 3 ohm (E48)) and current V/R against yaw slip-ring limit (e.g., 3.97 A vs 4 A limit (E50)(E18)).
 
 ## Use notes
+- run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Volt — Electrical Power and Safety Shutdown Lead): Helped - matched direct-drive Kv to stay usable at low wind and safe at top wind.

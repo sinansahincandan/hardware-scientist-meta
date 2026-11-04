@@ -15,7 +15,7 @@ class Evaluator:
         self.client = client
 
     def judge(self, master: MasterPrompt, solution: SolutionPrompt, board: Whiteboard,
-              closed_by: str, iter_dir: Path) -> Verdict:
+              closed_by: str, iter_dir: Path, previous_requests: list[str] | None = None) -> Verdict:
         sections = dict(master.sections)
         # 1) prior-art check (free text + web_search)
         novelty, citations = self.client.free_text(
@@ -34,8 +34,17 @@ class Evaluator:
                 return ""
             return " (page opened by the member)" if ref.get("read") else " (search result only; page not opened)"
 
+        def _how(e: Any) -> str:
+            # the calculation itself, so a sum's terms can be checked (without it the Evaluator asked three meetings
+            # running for an itemized mass table the board already held: run 194659)
+            if str(e.tool).split(":")[0] not in ("calc", "vetted_calc", "simulate"):
+                return ""
+            code = " ".join(str(e.code_or_query).split())
+            return f" [computed as: {code[:400]}{' …' if len(code) > 400 else ''}]"
+
         evidence_table = "\n".join(
-            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}{_read_note(e)}" for e in board.evidence)
+            f"{e.id} [{e.tool}, {e.author}] {e.purpose}: {e.output_summary}{_how(e)}{_read_note(e)}"
+            for e in board.evidence)
         if board.proposal is None:
             proposal_fact = "No proposal was formed on the whiteboard in this meeting."
         else:
@@ -97,7 +106,12 @@ class Evaluator:
             "parts) and state the sum against the limit; a limit argued only by a sketch annotation is not shown. "
             "A limit the board gives no part masses or sizes to sum is unknown, not a shortfall: an unknown is "
             "missing analysis the room can do, so ask for the sum with an evidence_request instead of accepting on "
-            "the hope that it fits. "
+            "the hope that it fits. A sum must carry every part of the solution: name any part it leaves out; a sum "
+            "with parts missing does not show the limit. "
+            "(1b) every constraint that states a number (a time, a speed, a force, a size, a mass, a power) is met "
+            "only when the board computes the design's own value of that quantity and sets it against the number; "
+            "a constraint met in words only, or marked not yet calculated, is unknown: ask for the calculation "
+            "with an evidence_request rather than accept on it. "
             "(2) when the board gives two different values for the same quantity (a density, a load, a size), say "
             "which one the design used and whether the calculations that depend on it used the sourced one. "
             "(3) trace every flow the device must carry from start to end — material or workpiece, energy, "
@@ -108,6 +122,12 @@ class Evaluator:
             "settle that point: say in writing whether the evidence settles it or not. A literature value that rests "
             "on a search result whose page was never opened is weaker than one read from the page; say so where it "
             "decides acceptance. No scores."
+            + (("\n\nTHE SAME ISSUES ARE RE-CHECKED FIRST (the loop's rule). Your previous verdict asked the room "
+                "for:\n" + "\n".join(f"- {r}" for r in previous_requests) + "\nStart your feedback by saying for "
+                "each whether the board now meets it, with the evidence id. When every one is met and the concept "
+                "works with every stated limit shown, accept. A new gap you find now is an evidence_request only if "
+                "it could make the concept fail or break a stated limit; any other improvement goes in your "
+                "feedback text as advice, not as a reason to reject. ") if previous_requests else "")
         )
         verdict = self.client.structured(
             "evaluator", Verdict,

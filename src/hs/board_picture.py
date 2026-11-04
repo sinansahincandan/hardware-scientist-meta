@@ -84,9 +84,16 @@ def _note(text: str) -> str:
     return text if len(words) <= 16 else " ".join(words[:14]).rstrip(",;:") + " …"
 
 
+# compound units as pint prints them when a member did not convert (display only; the evidence keeps its text)
+_UNITS = {"kg⋅m/s²": "N", "kg·m/s²": "N", "h⋅W": "Wh", "W⋅h": "Wh", "h·W": "Wh", "kg⋅m²/s²": "J", "N⋅m": "N m",
+          "Wh/W": "h", "m/s⋅s": "m"}
+
+
 def _value(summary: str) -> str:
     """The first one or two results of a calculation, numbers at three significant figures."""
     text = re.sub(r"\s*mixed \(see keys\)", "", str(summary)).rstrip(", ")
+    for raw, plain in _UNITS.items():
+        text = text.replace(raw, plain)
     pairs = re.findall(r"([A-Za-z][\w ]{0,30}?)\s*=\s*(-?[\d.]+(?:e[+-]?\d+)?)\s*([A-Za-z/%°]*)", text)
     if not pairs:
         return " ".join(text.split()[:10])
@@ -119,7 +126,7 @@ def board_picture_html(board: dict[str, Any], run_dir: Path, iter_dir: Path, mem
     funcs = board.get("functions", [])
     cols: list[str] = []
     concepts = board.get("concepts", [])
-    for f in funcs[:4]:
+    for f in funcs[:8]:  # every function (the chief writes 4 to 8); four columns per row
         notes = "".join(
             f"<span class='note {_e(c.get('status', ''))}' style='background:{sticky.get(c.get('author'), '#fff4a3')}'>"
             f"{_e(_note(c.get('text', '')))}<small>— {_e(first.get(c.get('author'), c.get('author')))}</small></span>"
@@ -139,6 +146,6 @@ def board_picture_html(board: dict[str, Any], run_dir: Path, iter_dir: Path, mem
                    and (iter_dir / e["sketch_path"]).exists())
     return (f"<div class='wb'><div class='wb-top'><div><h3>{_e(title)}</h3><div class='who'>{who}</div>"
             f"<span class='badge'>cycle {cycles} / {max_cycles}</span></div>{prop_html}</div>"
-            f"<div class='cols' style='grid-template-columns:repeat({max(len(cols), 1)},1fr)'>{''.join(cols)}</div>"
+            f"<div class='cols' style='grid-template-columns:repeat({min(max(len(cols), 1), 4)},1fr)'>{''.join(cols)}</div>"
             + (f"<div>{ev_html}</div>" if ev_html else "") + (f"<div>{objs}</div>" if objs else "")
             + (f"<div class='pins'>{pins}</div>" if pins else "") + "<div class='tray'>" + "".join(f"<i style='background:{c}'></i>" for c in INK[:5]) + "</div></div>")
