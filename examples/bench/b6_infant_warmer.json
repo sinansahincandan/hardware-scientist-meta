@@ -1,0 +1,10 @@
+{
+  "title": "Infant warmer for clinics without reliable power",
+  "statement": "Premature and low-birth-weight babies in places without incubators or reliable electricity die of hypothermia in their first days. Design a device that keeps a newborn warm at a safe body temperature where power is scarce.",
+  "constraints": [
+    "Keeps the baby at about 37 °C for at least 4 hours without electricity",
+    "Costs at most 100 US dollars"
+  ],
+  "criteria": [],
+  "attachments": []
+}

@@ -3,6 +3,8 @@
 Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechanics lessons and duplicates removed 2026-11-02; members do not receive them). Each lesson has an id; indented notes say whether it helped in a later run.
 
 ## Process
+- L31: Council consensus should explicitly confirm the enclosing function of the low-wall open-tub (p1) relative to infant and thermal layers so verification judges containment versus background surface. [2026-11-03, run 20261103-223203_infant-warmer-for-clinics-without-reliab]
+
 - L29: Council consensus should separate mechanical-structure commitments from annotation-text commitments so Manager briefs and verification judge spelling faults as redraw-only, not S1 mechanical failure. [2026-11-03, run 20261103-201819_lunar-regolith-excavation-robot]
   - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Ignored: iter 0 round 0 faithful=True was treated as not faithful due to p04 faults without separating mechanical-structure commitments from non-structural faults as redraw-only.
 - L29: Council consensus should separate exterior-form commitments from interior-sequence commitments for section views so verification judges overall shape adaptation separately from internal order. [2026-11-03, run 20261103-194701_tactile-fingertip-sensor-for-robot-hands]
@@ -39,6 +41,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: viewpoint-specific front-to-rear layout agreement helped judge front rotor placement faithful.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: explicit stacking-order agreement helped judge the rendering faithful on agreed structure despite orientation adaptation.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: explicit stack-order agreement helped judge cross-section layer placement faithful in round 0.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: explicit viewpoint-specific vertical stacking order (p2 PCM pouches under p4) agreement helped judge midline cutaway rendering faithful on structure in round 1.
 
 - L14: Council consensus should record which capacity or quantity depictions may be representative rather than literal so visual verification judges structural intent over exact counts. [2026-11-02, run 20261102-112524_off-grid-solar-powered-cold-storage-for-]
   - used in run 20261102-121628_vibration-retrofit-for-a-lively-pedestri: Applied: judging structural intent over exact counts helped accept S1 pass with S2=False as faithful.
@@ -82,6 +85,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: 4-cycle close among distinct Aero, Struct, and Volt owners suggests explicit domain constraints helped integrate expertise to evaluator accept.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: 4-cycle consensus close among distinct Skin/Flex/Mount/Slip owners suggests explicit domain constraints helped integrate expertise to evaluator accept.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: distinct domain roster closing in 4 cycles suggests explicit constraints helped integrate expertise to evaluator accept.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: 4-cycle consensus among Thermal Systems, Clinical Safety, Manufacturing/Materials, and Human Factors owners suggests explicit domain constraints and tradeoffs were articulated before agreement to evaluator accept.
 
 - L3: When a meeting closes by cap and the evaluator rejects, require the manager edit to target Roles and Meeting protocol in addition to Criteria to restore consensus close in the next iteration. [2026-10-31, run 20261031-220800_vibration-retrofit-for-a-lively-pedestri]
   - used in run 20261102-153907_lunar-regolith-excavation-robot: Applied: targeting Roles and Meeting protocol plus Criteria after cap-close rejection helped convert iter 0 reject into iter 1 accept.
@@ -92,6 +96,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
 - L5: Require cited evidence ids before any ready vote in the meeting protocol. [2026-10-31, run 20261031-154319_stair-climbing-hand-truck-for-parcel-cou]
 
 ## Prompts
+- L32: Manager briefs for section-cut medical warmers should translate agreed stack order into cutaway layer language (bottom-to-top zones) so generation maintains buildable thermal contact. [2026-11-03, run 20261103-223203_infant-warmer-for-clinics-without-reliab]
+
 - L30: Manager briefs should require the council to designate a single primary reference source for generation so council sketches supplement rather than replace validated schematic ground truth. [2026-11-03, run 20261103-201819_lunar-regolith-excavation-robot]
 - L30: Manager image briefs should specify cross-section cut treatment with retained exterior envelope alongside viewpoint so generation preserves interior order within recognizable overall form. [2026-11-03, run 20261103-194701_tactile-fingertip-sensor-for-robot-hands]
 
@@ -122,6 +128,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: stating isometric three-quarter view from front-left-above in the brief helped share framing between agreement and verification.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: stating side section cutaway viewpoint plus studio setting in the brief helped share framing between agreement and verification.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: stating cross-section viewpoint in the brief helped share framing between agreement and verification.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: stating side section cutaway through midline viewpoint plus studio product rendering setting in brief helped share framing between agreement and verification to correct fragmentation.
 
 - L6: Master prompts should specify connection topology between parts, not just a parts list, so council deliberation and visual verification share the same structural ground truth. [2026-11-02, run 20261102-025924_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: topology-rich prompt helped achieve S1 faithful=True with no material difference.
@@ -139,6 +146,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: connection-rich agreement on rotor-to-generator-to-conditioner topology helped achieve S1 faithful=True with matching mechanism.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: connection-topology ground truth on stack order helped achieve S1 faithful=True with matching arrangement despite cutaway adaptation.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: connection-topology load-path agreement helped achieve S1 faithful=True with matching stack and base connections.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: master prompt with connection topology (low-wall tub enclosing thermal stack, PCM pouches under conductive layer) helped achieve S1 faithful=True in round 1 after round 0 topology faults (p3 duplicated, missing p5 flap).
 
 - L7: Council rosters should define complementary specialties with explicit ownership areas so deliberation covers all domains without overlap or gaps. [2026-11-02, run 20261102-022817_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: complementary roster with distinct ownership helped reach fast consensus without gaps.
@@ -160,6 +168,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: complementary Aero-Rotor, Structures-Integration, and Electrical-Safety roster helped cover domains without gaps to first-iteration accept.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: complementary Compliant Contact, Transduction, Integration, and Slip roster helped cover domains without gaps to first-iteration accept.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: complementary Transduction, Skin, Integration, Slip ownership helped cover domains without gaps to chief close in 4 cycles.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: complementary roster Dr. Maya Okoro - Thermal Systems, Dr. Samuel Chen - Clinical Neonatology & Safety, Aisha Patel - Manufacturing & Materials, James Okafor - Industrial Design & Human Factors covered thermal, safety, cost, usability without gaps to consensus.
 
 ## Tools
 
@@ -187,6 +196,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: prioritizing presence, placement, and connectivity helped accept S1 pass with S2=False as faithful.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: prioritizing presence, placement, and connectivity over exact depiction helped accept S1 pass with S2=False as faithful.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: prioritizing presence, placement, and connectivity helped confirm faithful rendering despite S2=False.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: prioritizing presence, placement and connectivity of major thermal stack over exact counts helped accept S1 pass with 2x PCM pouches as representative faithful.
 
 - L10: Image prompts for multi-part products should enumerate all major structures and their visible connections from the chosen viewpoint to achieve faithful rendering. [2026-11-02, run 20261102-025924_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: enumerating major structures and connections helped produce faithful first-round rendering.
@@ -203,5 +213,6 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com: Applied: enumerating major structures and visible connections in the isometric brief helped produce faithful first-round rendering.
   - used in run 20261103-170523_tactile-fingertip-sensor-for-robot-hands: Applied: enumerating major structures and visible cutaway connections helped produce faithful first-round rendering.
   - used in run 20261103-194701_tactile-fingertip-sensor-for-robot-hands: Applied: enumerating major structures and visible cross-section connections helped produce faithful first-round rendering.
+  - used in run 20261103-223203_infant-warmer-for-clinics-without-reliab: Applied: enumerating all 8 parts and visible midline cutaway connections in image brief helped produce round 1 faithful rendering enumerating p1 tub, p2 PCM pouches, p4 etc. with correct topology.
 
 ## User feedback

@@ -1,0 +1,10 @@
+{
+  "title": "Affordable refreshable braille display",
+  "statement": "Refreshable braille displays let blind people read digital text, but each braille cell costs tens of dollars, so a display costs thousands. Design a refreshable braille display a blind student can afford.",
+  "constraints": [
+    "Shows one line of at least 20 standard braille cells",
+    "Component cost at most 5 US dollars per cell"
+  ],
+  "criteria": [],
+  "attachments": []
+}

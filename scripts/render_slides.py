@@ -1,7 +1,8 @@
 """Render the open-weights slides (showcase/open_weights/slides/*.html) headless at 1920x1080 to PNG and JPG,
 and the comparison page to a full-page PNG. Never opens the owner's browser.
 
-Usage: <python with playwright> scripts/render_slides.py
+Usage: <python with playwright> scripts/render_slides.py [slides_dir]
+(default: showcase/open_weights/slides; the comparison page is rendered only for the default)
 """
 from __future__ import annotations
 
@@ -32,7 +33,10 @@ def main() -> int:
         except Exception:
             browser = p.chromium.launch(executable_path=_cached_chromium())
         page = browser.new_page(viewport={"width": 1920, "height": 1080})
-        for html in sorted((OUT / "slides").glob("*.html")):
+        slides = Path(sys.argv[1]) if len(sys.argv) > 1 else OUT / "slides"
+        for html in sorted(slides.resolve().glob("*.html")):
+            if html.name == "index.html":
+                continue
             page.goto(html.as_uri())
             page.wait_for_load_state("networkidle")
             png = html.with_suffix(".png")
@@ -40,7 +44,7 @@ def main() -> int:
             Image.open(png).convert("RGB").save(png.with_suffix(".jpg"), quality=90)
             print(png)
         index = OUT / "index.html"
-        if index.exists():
+        if index.exists() and len(sys.argv) == 1:
             page = browser.new_page(viewport={"width": 1440, "height": 900})
             page.goto(index.as_uri())
             page.wait_for_load_state("networkidle")

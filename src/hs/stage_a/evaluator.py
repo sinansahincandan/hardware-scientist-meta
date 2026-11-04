@@ -133,6 +133,16 @@ class Evaluator:
             "evaluator", Verdict,
             "You are the Evaluator, a senior engineer. Judge whether it works and can be built.",
             prompt)
+        if not verdict.feedback.strip() or (not verdict.accept and not verdict.evidence_requests):
+            # Muse Spark Open once wrote the whole judgment into constraint_review and left feedback and the
+            # requests empty (braille run 223206, meeting 2), so the next meeting got no requests to work on.
+            verdict = self.client.structured(
+                "evaluator", Verdict,
+                "You are the Evaluator, a senior engineer. Judge whether it works and can be built.",
+                prompt + "\n\nYour previous reply put the judgment in the wrong fields. constraint_review holds only "
+                "one sentence per given constraint or criterion; feedback holds your judgment in prose; every gap that "
+                "blocks acceptance is one entry in evidence_requests.\nYOUR PREVIOUS REPLY:\n"
+                + verdict.model_dump_json()[:6000])
         (iter_dir / "verdict.json").write_text(
             json.dumps({**verdict.model_dump(), "source": "evaluator"}, indent=2), encoding="utf-8")
         return verdict

@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TextGrad in action</title><link rel="stylesheet" href="style.css">
+<style>
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 44px; }
+  .step { background: var(--card); border: 2px solid var(--line); padding: 24px 24px; position: relative; }
+  .step .k { font-size: 20px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .step.rej .k { color: #b3261e; } .step.ok .k { color: #1e7d3a; }
+  .step h3 { font-size: 29px; margin: 8px 0 10px; }
+  .step p { font-size: 23px; line-height: 1.42; color: #2c333b; }
+  .step q { font-style: italic; }
+  .take { margin-top: 40px; font-size: 30px; line-height: 1.45; max-width: 1650px; }
+  .chain { display: flex; align-items: stretch; gap: 10px; margin-top: 44px; }
+  .chain span { flex: 1; background: #e8f0fb; border: 2px solid #c9dbf5; padding: 16px 14px; font-size: 22px;
+    font-weight: 700; text-align: center; line-height: 1.3; }
+  .chain span.ok { background: #e6f4ea; border-color: #b7dfc3; }
+  .chain small { font-weight: 400; color: var(--muted); font-size: 18px; }
+  .chain i { align-self: center; font-style: normal; font-size: 30px; color: var(--muted); }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">TextGrad in action · braille display</div>
+  <h1>A rejection that changed the design</h1>
+  <div class="steps">
+    <div class="step rej"><div class="k">Meeting 1 · rejected</div><h3>4 written requests</h3>
+      <p>The Evaluator accepts the idea but not the proof: <q>calculate the magnetic latch force</q>, show how one motor
+        selects any dot, check the pins under sideways drag, open the motor datasheet.</p></div>
+    <div class="step"><div class="k">Prompt gradient</div><h3>Manager rewrites</h3>
+      <p>Each request is traced to the prompt section that let it through; Roles, Tools and the meeting protocol are
+        rewritten (revision 1, then 2). Nothing else changes.</p></div>
+    <div class="step"><div class="k">Meetings 2–3 · same board</div><h3>The latch is computed</h3>
+      <p>The council continues on the same board. The calculation shows the ferrite sheet holds a dot with
+        <span class="num">0.034 N</span>; a reading finger presses <span class="num">0.15–0.30 N</span>. It fails.</p></div>
+    <div class="step ok"><div class="k">Re-checked · accepted</div><h3>Magnets instead</h3>
+      <p>Small N48 magnet discs hold <span class="num">1.6 N</span> per dot. The requests are re-checked first, then
+        accepted at <span class="num">$2.27</span> per cell against the $5 limit.</p></div>
+  </div>
+  <div class="chain">
+    <span>Written critique</span><i>→</i><span>Output gradient<br><small>what in the design is wrong</small></span><i>→</i>
+    <span>Prompt gradient<br><small>which prompt section let it through</small></span><i>→</i>
+    <span>Targeted edit<br><small>only that section</small></span><i>→</i>
+    <span>Same issue re-checked<br><small>next meeting, same board</small></span><i>→</i><span class="ok">Keep or revert</span>
+  </div>
+  <p class="take">The loop did more than polish text: a requested calculation exposed a part that could not work, and the
+    concept was changed before anyone built it.</p>
+</div></body></html>

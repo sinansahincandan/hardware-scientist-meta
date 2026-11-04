@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Picture loop</title><link rel="stylesheet" href="style.css">
+<style>
+  .row { display: flex; gap: 40px; margin-top: 40px; align-items: flex-start; }
+  .col { flex: 1; }
+  .col img { width: 100%; }
+  .tag { font-size: 22px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .tag.r { color: #b3261e; } .tag.g { color: #1e7d3a; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">Picture loop · infant warmer</div>
+  <h1>The picture is checked, not trusted</h1>
+  <div class="row">
+    <div class="col"><div class="tag r">Round 0 · sent back</div><img class="shot" src="assets/warmer_r0.jpg">
+      <div class="cap">The critic measures the pixels against the design: the warmer is drawn <b>2.7× too large</b> for its
+        65 cm, and the heating mat that touches the baby is not visible. A targeted redraw prompt follows.</div></div>
+    <div class="col"><div class="tag g">Round 1 · faithful</div><img class="shot" src="assets/warmer_r1_sam.jpg">
+      <div class="cap"><b>SAM finds all 8 parts</b> where the design puts them: wax pouches under the mat, foam spacer,
+        clear canopy, temperature strip. Only then are the labels, scale bar and assembly steps added.</div></div>
+  </div>
+</div></body></html>

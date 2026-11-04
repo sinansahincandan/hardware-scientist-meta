@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Do the concepts work</title><link rel="stylesheet" href="style.css">
+<style>
+  table { margin-top: 36px; }
+  td, th { font-size: 23px; padding: 15px 18px; line-height: 1.35; }
+  td:first-child { font-weight: 700; width: 15%; }
+  td.v { color: #1e7d3a; font-weight: 700; }
+  .foot { margin-top: 26px; font-size: 25px; line-height: 1.45; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">Concept level, not CAD · does each concept work?</div>
+  <h1>Every deciding limit is computed, not claimed</h1>
+  <table>
+    <tr><th>Concept</th><th>The check that decides it</th><th>Limit</th><th>Design value</th><th>Left for the bench</th></tr>
+    <tr><td>Infant warmer</td><td>Wax heat store keeps the baby warm, without power</td><td>37 °C for 4 h</td>
+      <td class="v">36.8 °C for 6.0 h (70 Wh stored, 20 Wh needed)</td><td>Clinic drafts on a thermal manikin</td></tr>
+    <tr><td>Braille display</td><td>Raised dots hold under a reading finger; cost per cell</td><td>> 0.30 N · ≤ $5</td>
+      <td class="v">1.6 N magnets · $2.27</td><td>Pin drag at reading speed</td></tr>
+    <tr><td>Robot fingertip</td><td>A 1 mN touch gives a readable signal</td><td>1 mN</td>
+      <td class="v">0.88 fF change, 44× the converter's noise</td><td>Creep and drift of the soft layer</td></tr>
+    <tr><td>Wind turbine</td><td>Fits the cube; makes usable voltage</td><td>45 cm cube</td>
+      <td class="v">400 mm rotor, 25 mm clearance · 7.55 V at 11 m/s</td><td>Open: feathering needs a pitch actuator</td></tr>
+    <tr><td>Lunar excavator</td><td>Mass and stowed size; digging force against traction</td><td>60 kg · 1.0 m box</td>
+      <td class="v">24.4 kg · 0.9 m · 67.5 N cut vs 749 N grip</td><td>Slip in BP-1 simulant</td></tr>
+  </table>
+  <p class="foot">Hardware Scientist stays at concept level: working principle, part choices and the numbers that decide
+    them, each a calculation, simulation or opened source on the board. What only hardware can show is named as a bench
+    test, not assumed.</p>
+</div></body></html>
