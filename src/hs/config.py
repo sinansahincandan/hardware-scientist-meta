@@ -67,7 +67,7 @@ MAX_COST_USD_PER_RUN = 15.00
 # every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).
 # Fake mode never touches it. HS_BUDGET_LEDGER overrides the path (tests).
 # Open-weights copy: its own ledger (Baseten text + Meta pictures + Modal SAM), never the main folder's.
-MAX_TOTAL_SPEND_USD = 60.00  # owner 2026-11-03: Baseten $100 hackathon credit, Modal $30; pictures on Meta credit
+MAX_TOTAL_SPEND_USD = 80.00  # owner 2026-11-04 13:00: raised from $60 within the Baseten $100 credit; Modal $30; pictures on Meta credit
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger_open.jsonl"))
 
