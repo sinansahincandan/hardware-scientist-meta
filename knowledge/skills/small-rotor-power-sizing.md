@@ -14,3 +14,4 @@ Typical: 44 cm rotor gives 124 W available at 11 m/s (E7, E30); Cp 0.35 gives 43
 ## Use notes
 - run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Aero-Rotor Designer): Helped: framed rotor capture calc and delivered operating speed and survival loads used for selection.
 - run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Aero — Rotor Aerodynamics Lead): Helped - sized operating-range shaft power and speed for 40cm rotor decision F1.
+- run 20261103-224916_small-wind-turbine-for-a-wind-tunnel-com (Electrical Power Engineer): Helped: sized shaft and electrical power and rpm over 5 to 11 m/s operating range.

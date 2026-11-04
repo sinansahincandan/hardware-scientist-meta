@@ -14,3 +14,4 @@ Typical: R=1 gives 324 W peak, R=2 gives 162 W, R=5 gives 65 W (E32); 2 ohm give
 ## Use notes
 - run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Safety-Control Engineer): Helped: sized dump plus friction brake for stop time and zero-speed hold with large margin.
 - run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Volt — Electrical Power and Safety Shutdown Lead): Helped - framed fail-safe dump-brake for 10s stop requirement and park-hold question.
+- run 20261103-224916_small-wind-turbine-for-a-wind-tunnel-com (Electrical Power Engineer): Helped: quantified dump-resistor stop as too slow, forcing phase-short choice.

@@ -12,3 +12,4 @@ source: run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (2026-11-03
 
 ## Use notes
 - run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Volt — Electrical Power and Safety Shutdown Lead): Helped - matched direct-drive Kv to stay usable at low wind and safe at top wind.
+- run 20261103-224916_small-wind-turbine-for-a-wind-tunnel-com (Electrical Power Engineer): Helped: set Kv/back-EMF to keep wild voltage in converter range and justify direct-drive.
