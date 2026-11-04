@@ -420,7 +420,8 @@ def _layout(panel_a: Path, panel_b: Path | None, panel_c: Path | None, panel_d: 
     elif bc:
         rows.append(_fit_row(bc, 420, width))
     if panel_d is not None:
-        rows.append(_fit_row([Image.open(panel_d).convert("RGB")], 2000, width))
+        d_im = Image.open(panel_d).convert("RGB")  # natural size: one making step must not fill the page (quick run)
+        rows.append(_fit_row([d_im], d_im.height, width))
     height = 20 + a.size[1] + sum(12 + h for _, h in rows)
     canvas = Image.new("RGB", (width, height), "white")
     canvas.paste(a, (10, 10))
