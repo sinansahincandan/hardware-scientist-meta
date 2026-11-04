@@ -278,9 +278,11 @@ class Meeting:
                 "puts them (a part at one end of the device cannot feed a part at the other end without a part that "
                 "carries the flow between them); a hand-over no part does is a missing function — add it, and a part the "
                 "text places in two different places is a contradiction to settle. Then call update_proposal(text, key_claims) from your selections, each claim "
-                "with its evidence ids; among the claims, the sum of the parts' masses against every mass limit and "
-                "the stacked sizes against every size limit, each with its calc evidence id (compute it with calc, "
-                "or name the member who owes each missing part mass or size). " + every_cycle
+                "with its evidence ids; among the claims, for every constraint that states a number, the design's own "
+                "value against it (the sum of every part's mass against a mass limit, the stacked sizes against a "
+                "size limit, the computed time, speed, force or power against a time, speed, force or power "
+                "limit), each with its calc evidence id (compute it with calc, or name the member who owes each "
+                "missing value). " + every_cycle
                 + "When the proposal is settled — no blocking objection open, every member's opinion on the current "
                 "version given and answered — close the meeting with close_meeting(synthesis); a test that needs built "
                 "hardware is a bench test to name in the synthesis, not an open point. ")
