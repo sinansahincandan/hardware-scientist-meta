@@ -1,22 +1,30 @@
 {
   "id": "E28",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
-  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "purpose": "search: skid steer wheel odometry IMU drift localization accuracy",
+  "code_or_query": "skid steer wheel odometry IMU drift localization accuracy",
   "inputs": {},
-  "output_summary": "zelladc.com — IP65 explained: why it matters for micro data centres — https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/",
-  "output_full": "zelladc.com — IP65 explained: why it matters for micro data centres — https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/\n(the search returned no passage text)",
+  "output_summary": "1library.net — Absolute and relative localization — https://1library.net/article/absolute-relative-localization-description-navigation-processes-cobot-proje.q0j09nvz",
+  "output_full": "1library.net — Absolute and relative localization — https://1library.net/article/absolute-relative-localization-description-navigation-processes-cobot-proje.q0j09nvz\n(opened by the member, not cited)\nAutonomy and Blind Operations Lead said about it: This follows the fuse wheel odometry and IMU to improve localization precision because skid steering must skid to turn rule from the Absolute and relative localization (E28) and the maximum horizontal position drifts are all less than 2 percent finding from the A Comparison of Three Measurement Models for the Wheel-Mounted MEMS IMU-Based Dead Reckoning System (E31).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "zelladc.com",
-      "title": "IP65 explained: why it matters for micro data centres",
+      "authors_or_org": "1library.net",
+      "title": "Absolute and relative localization",
       "year": "",
-      "url": "https://www.zelladc.com/insights/ip65-explained-what-it-means-and-why-it-matters/",
-      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "url": "https://1library.net/article/absolute-relative-localization-description-navigation-processes-cobot-proje.q0j09nvz",
+      "query": "skid steer wheel odometry IMU drift localization accuracy",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the fuse wheel odometry and IMU to improve localization precision because skid steering must skid to turn rule from the Absolute and relative localization (E28) and the maximum horizontal position drifts are all less than 2 percent finding from the A Comparison of Three Measurement Models for the Wheel-Mounted MEMS IMU-Based Dead Reckoning System (E31).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the fuse wheel odometry and IMU to improve localization precision because skid steering must skid to turn rule from the Absolute and relative localization (E28) and the maximum horizontal position drifts are all less than 2 percent finding from the A Comparison of Three Measurement Models for the Wheel-Mounted MEMS IMU-Based Dead Reckoning System (E31)."
+        }
+      ]
     }
   ],
   "status": "ok",

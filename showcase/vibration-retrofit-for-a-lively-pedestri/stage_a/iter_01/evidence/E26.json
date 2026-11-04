@@ -1,0 +1,14 @@
+{
+  "id": "E26",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "TMD static weight from 800kg mass",
+  "code_or_query": "800*9.81",
+  "inputs": {},
+  "output_summary": "7.85e+03",
+  "output_full": "7.85e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

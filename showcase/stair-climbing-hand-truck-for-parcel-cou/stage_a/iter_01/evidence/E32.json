@@ -1,0 +1,32 @@
+{
+  "id": "E32",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: adjustable handle height ergonomics push cart elbow height",
+  "code_or_query": "adjustable handle height ergonomics push cart elbow height",
+  "inputs": {},
+  "output_summary": "online.documentine.com — push it or pull it erg033 - m-and-m-you-pull-it — https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html",
+  "output_full": "online.documentine.com — push it or pull it erg033 - m-and-m-you-pull-it — https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "online.documentine.com",
+      "title": "push it or pull it erg033 - m-and-m-you-pull-it",
+      "year": "",
+      "url": "https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html",
+      "query": "adjustable handle height ergonomics push cart elbow height",
+      "unresolved": false,
+      "passage": "I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

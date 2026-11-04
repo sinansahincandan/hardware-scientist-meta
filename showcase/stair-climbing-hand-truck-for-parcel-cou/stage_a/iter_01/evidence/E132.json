@@ -1,0 +1,14 @@
+{
+  "id": "E132",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "per-side lock torque from total 74.6Nm",
+  "code_or_query": "74.6/2",
+  "inputs": {},
+  "output_summary": "37.3",
+  "output_full": "37.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

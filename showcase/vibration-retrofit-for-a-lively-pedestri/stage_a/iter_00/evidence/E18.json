@@ -1,22 +1,30 @@
 {
   "id": "E18",
-  "author": "Marcus - Vibration Control and Damping Specialist",
+  "author": "Bridge Retrofit Engineer",
   "tool": "web_search",
-  "purpose": "search: tuned mass damper viscous damper datasheet stroke load bridge",
-  "code_or_query": "tuned mass damper viscous damper datasheet stroke load bridge",
+  "purpose": "search: Setra HiVoSS footbridge frequency range vertical comfort 1.25 2.3 Hz damping",
+  "code_or_query": "Setra HiVoSS footbridge frequency range vertical comfort 1.25 2.3 Hz damping",
   "inputs": {},
-  "output_summary": "patents.google.com — CN107119959A - Combined type mono-pendulum type tuned mass damper structural system and construction method \n        - Google Patents — https://patents.google.com/patent/CN107119959A/en",
-  "output_full": "patents.google.com — CN107119959A - Combined type mono-pendulum type tuned mass damper structural system and construction method \n        - Google Patents — https://patents.google.com/patent/CN107119959A/en\n(the search returned no passage text)",
+  "output_summary": "zenodo.org — Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc — https://zenodo.org/records/14335021/files/fulltext.pdf",
+  "output_full": "zenodo.org — Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc — https://zenodo.org/records/14335021/files/fulltext.pdf\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: Moving first mode from 1.9 Hz to 2.3 Hz needs 46.5 percent more bending stiffness from the stiffness-increase calculation (E27), and to 2.5 Hz needs 73.1 percent more from the higher-target calculation (E28), while 1.9 Hz sits inside the 1.25 to 2.3 Hz critical vertical range reported in the Human-Induced Vibration on Lightweight Footbridges — 2024 (E19) and the comfort-class review in the Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc (E18).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "patents.google.com",
-      "title": "CN107119959A - Combined type mono-pendulum type tuned mass damper structural system and construction method \n        - Google Patents",
+      "authors_or_org": "zenodo.org",
+      "title": "Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc",
       "year": "",
-      "url": "https://patents.google.com/patent/CN107119959A/en",
-      "query": "tuned mass damper viscous damper datasheet stroke load bridge",
+      "url": "https://zenodo.org/records/14335021/files/fulltext.pdf",
+      "query": "Setra HiVoSS footbridge frequency range vertical comfort 1.25 2.3 Hz damping",
       "unresolved": false,
-      "passage": ""
+      "passage": "Moving first mode from 1.9 Hz to 2.3 Hz needs 46.5 percent more bending stiffness from the stiffness-increase calculation (E27), and to 2.5 Hz needs 73.1 percent more from the higher-target calculation (E28), while 1.9 Hz sits inside the 1.25 to 2.3 Hz critical vertical range reported in the Human-Induced Vibration on Lightweight Footbridges — 2024 (E19) and the comfort-class review in the Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc (E18).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "Moving first mode from 1.9 Hz to 2.3 Hz needs 46.5 percent more bending stiffness from the stiffness-increase calculation (E27), and to 2.5 Hz needs 73.1 percent more from the higher-target calculation (E28), while 1.9 Hz sits inside the 1.25 to 2.3 Hz critical vertical range reported in the Human-Induced Vibration on Lightweight Footbridges — 2024 (E19) and the comfort-class review in the Microsoft Word - IJLCPE010105 VENUTI_no downsample.doc (E18)."
+        }
+      ]
     }
   ],
   "status": "ok",

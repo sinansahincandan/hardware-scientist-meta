@@ -1,0 +1,32 @@
+{
+  "id": "E42",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: flexible flat cable ZIF connector mating cycles reliability FPC",
+  "code_or_query": "flexible flat cable ZIF connector mating cycles reliability FPC",
+  "inputs": {},
+  "output_summary": "jlcpcb.com — FPC Connector Guide : Types and Reliability Considerations — https://jlcpcb.com/blog/fpc-connector-guide",
+  "output_full": "jlcpcb.com — FPC Connector Guide : Types and Reliability Considerations — https://jlcpcb.com/blog/fpc-connector-guide\n(opened by the member, not cited)\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "jlcpcb.com",
+      "title": "FPC Connector Guide : Types and Reliability Considerations",
+      "year": "",
+      "url": "https://jlcpcb.com/blog/fpc-connector-guide",
+      "query": "flexible flat cable ZIF connector mating cycles reliability FPC",
+      "unresolved": false,
+      "passage": "B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

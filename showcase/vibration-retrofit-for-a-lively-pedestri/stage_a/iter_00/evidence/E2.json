@@ -1,22 +1,30 @@
 {
   "id": "E2",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "web_search",
-  "purpose": "search: footbridge vertical acceleration comfort limit Setra HiVoSS",
-  "code_or_query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
+  "purpose": "search: footbridge tuned mass damper retrofit Millennium Bridge damping",
+  "code_or_query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
   "inputs": {},
-  "output_summary": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
-  "output_full": "mdpi-res.com — Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) — https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715\n(the search returned no passage text)",
+  "output_summary": "timenote.info — Millennium Bridge, London — https://timenote.info/en/Millennium-Bridge-London",
+  "output_full": "timenote.info — Millennium Bridge, London — https://timenote.info/en/Millennium-Bridge-London\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi-res.com",
-      "title": "Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland)",
+      "authors_or_org": "timenote.info",
+      "title": "Millennium Bridge, London",
       "year": "",
-      "url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-10456/article_deploy/sustainability-17-10456.pdf?version=1763982715",
-      "query": "footbridge vertical acceleration comfort limit Setra HiVoSS",
+      "url": "https://timenote.info/en/Millennium-Bridge-London",
+      "query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
       "unresolved": false,
-      "passage": ""
+      "passage": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2)."
+        }
+      ]
     }
   ],
   "status": "ok",

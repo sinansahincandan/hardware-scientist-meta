@@ -1,24 +1,14 @@
 {
   "id": "E24",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
-  "tool": "web_search",
-  "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
-  "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "sketch",
+  "purpose": "side and top view folding chassis with four grouser wheels and clearances to digger and hopper",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, (ax1, ax2) = plt.subplots(2,1, figsize=(8,6))\n# side view\nax1.set_xlim(0,1.0); ax1.set_ylim(0,0.55)\nax1.set_title(\"side view: chassis, wheels, ladder, hopper\")\n# frame\nax1.add_patch(plt.Rectangle((0.15,0.30),0.65,0.12, fill=False, linewidth=2))\nax1.text(0.45,0.36,\"frame\", ha='center')\n# wheels\nfor x in [0.25,0.70]:\n    ax1.add_patch(plt.Circle((x,0.15),0.10, fill=False, linewidth=2))\n    ax1.text(x,0.15,\"wheel D0.2\", ha='center', fontsize=8)\n# ladder front\nax1.plot([0.15,0.02],[0.32,0.10], linewidth=3)\nax1.text(0.03,0.22,\"ladder\", fontsize=8)\n# hopper\nax1.add_patch(plt.Rectangle((0.5,0.42),0.25,0.08, fill=False, linewidth=2))\nax1.text(0.62,0.46,\"hopper\", ha='center', fontsize=8)\nax1.set_aspect('equal'); ax1.set_xlabel(\"length m\"); ax1.set_ylabel(\"height m\")\n# top view\nax2.set_xlim(0,1.0); ax2.set_ylim(0,0.6)\nax2.set_title(\"top view stowed vs deployed track\")\nax2.add_patch(plt.Rectangle((0.05,0.15),0.9,0.30, fill=False, linewidth=2))\nax2.text(0.5,0.3,\"stowed 0.9x0.45 inside 1.0x0.5 box\", ha='center', fontsize=8)\nfor x,y in [(0.2,0.15),(0.7,0.15),(0.2,0.45),(0.7,0.45)]:\n    ax2.add_patch(plt.Rectangle((x-0.07,y-0.05),0.14,0.10, fill=False, linewidth=2))\nax2.text(0.5,0.08,\"deployed track widens by fold arms\", ha='center', fontsize=8)\nax2.set_aspect('equal'); ax2.set_xlabel(\"length m\"); ax2.set_ylabel(\"width m\")\nplt.tight_layout()\nplt.savefig(\"sketch.png\")",
   "inputs": {},
-  "output_summary": "en.actec.dk — 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO — https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
-  "output_full": "en.actec.dk — 24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO — https://en.actec.dk/media/documents/5BAA69612E3C.pdf\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "en.actec.dk",
-      "title": "24v Lithium-Ion battery pack 24V battery pack - Lithium Iron-Phosphate (LiFePO",
-      "year": "",
-      "url": "https://en.actec.dk/media/documents/5BAA69612E3C.pdf",
-      "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "side and top view folding chassis with four grouser wheels and clearances to digger and hopper",
+  "output_full": "side and top view folding chassis with four grouser wheels and clearances to digger and hopper",
+  "sketch_path": "evidence/sketch_24.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

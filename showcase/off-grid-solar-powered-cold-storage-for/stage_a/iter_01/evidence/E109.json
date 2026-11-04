@@ -1,0 +1,14 @@
+{
+  "id": "E109",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "single thermal total conduction respiration door pulldown fans",
+  "code_or_query": "(203*24/1000 + 1.2 + 0.17 + 6.25 + 0.96)",
+  "inputs": {},
+  "output_summary": "13.5",
+  "output_full": "13.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

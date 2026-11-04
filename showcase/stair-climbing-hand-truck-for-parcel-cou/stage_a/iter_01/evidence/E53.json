@@ -1,0 +1,32 @@
+{
+  "id": "E53",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull force limits sustained",
+  "code_or_query": "ISO 11228-2 push pull force limits sustained",
+  "inputs": {},
+  "output_summary": "copyprogramming.com — Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object — 2026 — https://copyprogramming.com/howto/ability-to-push-and-pull-objects-theory",
+  "output_full": "copyprogramming.com — Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object — 2026 — https://copyprogramming.com/howto/ability-to-push-and-pull-objects-theory\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object (E53, Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object) that ISO 11228-2, meaning International Organization for Standardization push-pull standard, recommends under 200 N horizontal sustained, and I take from GSO ISO 11228-2:2015 (E54, GSO ISO 11228-2:2015) that sustained force means force to keep an object at constant velocity.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "copyprogramming.com",
+      "title": "Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object",
+      "year": "2026",
+      "url": "https://copyprogramming.com/howto/ability-to-push-and-pull-objects-theory",
+      "query": "ISO 11228-2 push pull force limits sustained",
+      "unresolved": false,
+      "passage": "I take from Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object (E53, Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object) that ISO 11228-2, meaning International Organization for Standardization push-pull standard, recommends under 200 N horizontal sustained, and I take from GSO ISO 11228-2:2015 (E54, GSO ISO 11228-2:2015) that sustained force means force to keep an object at constant velocity.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object (E53, Push or Pull on an Object: Physics Theory, Ergonomics, and 2026 Best Practices - Push or pull on an object) that ISO 11228-2, meaning International Organization for Standardization push-pull standard, recommends under 200 N horizontal sustained, and I take from GSO ISO 11228-2:2015 (E54, GSO ISO 11228-2:2015) that sustained force means force to keep an object at constant velocity."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

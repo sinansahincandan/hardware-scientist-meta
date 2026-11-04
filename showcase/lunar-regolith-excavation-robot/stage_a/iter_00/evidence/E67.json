@@ -1,0 +1,14 @@
+{
+  "id": "E67",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "mass margin vs 60kg limit",
+  "code_or_query": "60-46",
+  "inputs": {},
+  "output_summary": "14",
+  "output_full": "14",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

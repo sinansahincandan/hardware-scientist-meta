@@ -1,0 +1,64 @@
+{
+  "prompt": "Photorealistic studio product rendering, side elevation eye-level view of compact 40cm three-blade wind turbine on post, left-to-right wind. Leftmost small three-blade rotor about forearm length across with slight motion blur spinning, bolted to central hub and horizontal steel shaft. Shaft runs rightward on aluminum nacelle bedplate housing with two bearings, passing through exposed steel brake disc with top caliper on small rails, then into compact cylindrical outrunner generator. Small controller and finned dump resistor boxes sit at rear of bedplate with visible orange and green cables from generator forward to boxes and thin safety-loop wiring to brake caliper. Nacelle bolted to vertical aluminum tube post below center, base held near an adult human hand and forearm for scale cropped at backdrop. Plain seamless light-grey studio backdrop, small clean mount patch cut off at backdrop, product-shot lighting, real materials. Show fixed nacelle and post vs spinning rotor, shaft, disc and generator bell. Add short callouts with thin leader lines on light tags in empty space for: Three Blade Rotor, Hub Shaft Assembly, Nacelle Housing, Outrunner Generator, Spring Disc Brake, Support Post, no other text.",
+  "must_not": [
+    "oversized utility-scale turbines",
+    "outdoor landscapes and skies",
+    "room interiors and furniture",
+    "tools and workshop clutter",
+    "faces and full figures",
+    "sketch colors and diagram circles",
+    "extra text blocks and scale bars"
+  ],
+  "changes_from_previous": "Initial rendering - no previous image, new side-elevation studio view built from mechanism sketches.",
+  "visual_plan": {
+    "view": "side elevation, eye-level, left-to-right flow, full 400mm rotor and post in frame close-up with hand scale",
+    "spatial_layout": "side view left to right: rotor far left facing wind, then hub-shaft, then brake disc with top caliper, then generator, all above long nacelle bedplate; controller and dump boxes at rear right of bedplate; vertical support post centered below bedplate; adult hand and forearm gripping lower post for scale against empty studio backdrop",
+    "operating_moment": "in normal generation with blades spinning in left-to-right wind feeding regulated power to rear load boxes, spring disc caliper visible straddling disc ready to clamp for shutdown",
+    "transfer_path": "wind push left to right spins rotor to hub shaft to generator to rectifier-regulator to dump and tunnel load; safety chain signal wire from loop to spring caliper applies friction torque to hub to stop and park",
+    "interactions": "rotor bolted to hub, hub shaft carried in two nacelle bearings, brake disc fixed on shaft squeezed by rail-mounted caliper, generator coaxial on same shaft, nacelle bolted to post, power and safety cables routed along nacelle clear of disc",
+    "avoid": [
+      "landscape, sky, room or furniture",
+      "large turbines, tools, clutter",
+      "sketch colors and line conventions",
+      "hidden internal parts, extra text or scale bars"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "rotor",
+      "material": "matte 3D-printed plastic SD7080 blades",
+      "purpose": "capture wind energy while spinning",
+      "callout": "Three Blade Rotor"
+    },
+    {
+      "part_id": "hub",
+      "material": "plastic hub with polished steel shaft",
+      "purpose": "carry rotor torque to generator",
+      "callout": "Hub Shaft Assembly"
+    },
+    {
+      "part_id": "nacelle",
+      "material": "brushed 6061-T6 aluminum bedplate",
+      "purpose": "hold shaft alignment stiff",
+      "callout": "Nacelle Housing"
+    },
+    {
+      "part_id": "generator",
+      "material": "copper winding steel outrunner motor",
+      "purpose": "convert spin to electricity",
+      "callout": "Outrunner Generator"
+    },
+    {
+      "part_id": "disc_brake",
+      "material": "steel disc with friction pad caliper",
+      "purpose": "squeeze disc to stop rotor",
+      "callout": "Spring Disc Brake"
+    },
+    {
+      "part_id": "post",
+      "material": "6061-T6 aluminum tube post",
+      "purpose": "mount nacelle and resist thrust",
+      "callout": "Support Post"
+    }
+  ]
+}

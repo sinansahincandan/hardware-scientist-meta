@@ -1,5 +1,7 @@
 {
-  "closed_by": "consensus",
+  "closed_by": "chief",
   "cycles_used": 4,
-  "open_blocking": []
+  "open_blocking": [],
+  "chief_decision": "Manual tri-star hand truck for 60 kg parcel: twin-tube backbone with clip-on brace, strap, paired-wheel flat roll, tri-star climb, spring-applied dead-man disc plus tooth park lock, folding toe plus sliding handle, van floor strap. Total 66.7 kg on stairs, tare 6.70 kg suitcase lift, folded 730x380x190 mm for 52.7 L with 390 mm door clearance, stress 51.1 MPa for factor 5.40 static 3.60 with impact, braced 13.8 mm, stair 209 N pull 188 N hold in 67.0 N m lock. Bench test with hardware: one-tired-hand lever release force and tooth engagement reliability on 197 mm riser both directions.",
+  "decided_version": 2
 }

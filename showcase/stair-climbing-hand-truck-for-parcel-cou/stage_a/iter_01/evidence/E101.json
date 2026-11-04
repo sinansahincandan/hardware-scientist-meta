@@ -1,0 +1,14 @@
+{
+  "id": "E101",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "corrected hand release force",
+  "code_or_query": "1550/8/4.5/0.75",
+  "inputs": {},
+  "output_summary": "57.4",
+  "output_full": "57.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

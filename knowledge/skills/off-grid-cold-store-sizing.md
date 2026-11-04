@@ -19,3 +19,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 8. Sanity-check pack mass with **COTS 24 V LiFePO4 pack ~90-120 Wh/kg at pack level (480 Wh / 5.3 kg = 90.6 Wh/kg; 819 Wh / 6.8 kg ~120 Wh/kg)**; reject claims **>150-200 Wh/kg (e.g. 1000 Wh in 2.92 kg = 342 Wh/kg)** as cell-only or erroneous [run 20261102-153907_lunar-regolith-excavation-robot E34,E35,E33].
 
 ## Use notes
+- run 20261104-142333_off-grid-solar-powered-cold-storage-for- (Enclosure and Structural Designer): Helped size holding vs pull-down vs PV vs autonomy for 1-tonne 5C store at 43C ambient.

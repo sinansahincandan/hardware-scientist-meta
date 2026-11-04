@@ -1,0 +1,56 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "chassis": [
+      "expected to touch arms, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture",
+      "expected to touch computer, but they are apart in the picture"
+    ],
+    "wheels": [
+      "expected 2 visible, found 1",
+      "size against arms: expected about 0.8 times, measured 0.33 times"
+    ],
+    "arms": [
+      "expected 2 visible, found 1",
+      "expected a horizontal long axis, measured tilted about 137 degrees",
+      "size against wheels: expected about 1.2 times, measured 3 times",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "kerf": [
+      "expected 1 visible, found 2",
+      "expected a horizontal long axis, measured vertical",
+      "expected to touch ladder, but they are apart in the picture"
+    ],
+    "ladder": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch kerf, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
+    ],
+    "hopper": [
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch ladder, but they are apart in the picture"
+    ],
+    "screw": [
+      "expected 1 visible, found 31",
+      "size against hopper: expected about 0.64 times, measured 0.092 times"
+    ],
+    "battery": [
+      "expected 2 visible, found 1",
+      "size against hopper: expected about 0.5 times, measured 1.6 times"
+    ],
+    "cameras": [
+      "expected 3 visible, found 1",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "computer": [
+      "size against battery: expected about 0.7 times, measured 0.19 times",
+      "expected to touch chassis, but they are apart in the picture"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": []
+}

@@ -1,22 +1,24 @@
 {
   "id": "E37",
-  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
+  "author": "Enclosure and Structural Designer",
   "tool": "web_search",
-  "purpose": "search: PU sandwich panel cold room weight kg per m2 100mm",
-  "code_or_query": "PU sandwich panel cold room weight kg per m2 100mm",
+  "purpose": "search: food grade plastic crate 600x400 ventilation produce storage stacking",
+  "code_or_query": "food grade plastic crate 600x400 ventilation produce storage stacking",
   "inputs": {},
-  "output_summary": "bestsuppliers.com — PU polyurethane foam 100mm insulation board cold room panel sandwich panels — https://www.bestsuppliers.com/products/1jdhuf4pdpsp/pu-polyurethane-foam-100mm-insulation-board-cold-room-panel-sandwich-panels",
-  "output_full": "bestsuppliers.com — PU polyurethane foam 100mm insulation board cold room panel sandwich panels — https://www.bestsuppliers.com/products/1jdhuf4pdpsp/pu-polyurethane-foam-100mm-insulation-board-cold-room-panel-sandwich-panels\n(the search returned no passage text)",
+  "output_summary": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-87-kg/",
+  "output_full": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-87-kg/\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "bestsuppliers.com",
-      "title": "PU polyurethane foam 100mm insulation board cold room panel sandwich panels",
+      "authors_or_org": "plastic2go.com.au",
+      "title": "Best Folding Vented 600x400 Plastic Crates for Sale",
       "year": "",
-      "url": "https://www.bestsuppliers.com/products/1jdhuf4pdpsp/pu-polyurethane-foam-100mm-insulation-board-cold-room-panel-sandwich-panels",
-      "query": "PU sandwich panel cold room weight kg per m2 100mm",
+      "url": "https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-87-kg/",
+      "query": "food grade plastic crate 600x400 ventilation produce storage stacking",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

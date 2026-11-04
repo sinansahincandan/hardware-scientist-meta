@@ -1,0 +1,14 @@
+{
+  "id": "E86",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "tare lift with clip-on brace",
+  "code_or_query": "(6.5+0.2)*9.81",
+  "inputs": {},
+  "output_summary": "65.7",
+  "output_full": "65.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

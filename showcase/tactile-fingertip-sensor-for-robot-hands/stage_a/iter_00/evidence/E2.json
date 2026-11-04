@@ -1,32 +1,40 @@
 {
   "id": "E2",
-  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
   "tool": "web_search",
-  "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
-  "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+  "purpose": "search: GelSight soft elastomer fingertip sensor silicone skin",
+  "code_or_query": "GelSight soft elastomer fingertip sensor silicone skin",
   "inputs": {},
-  "output_summary": "humanoidsdaily.com — Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration — https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
-  "output_full": "humanoidsdaily.com — Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration — https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+  "output_summary": "mdpi.com — GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force — https://www.mdpi.com/1424-8220/17/12/2762/",
+  "output_full": "mdpi.com — GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force — https://www.mdpi.com/1424-8220/17/12/2762/\n(opened by the member, not cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs.\nDr. Amara Okafor — Soft Skin Mechanics said about it: The Convert Durometer to Young's Modulus (E4) gives about 0.667 MPa for Shore A 10 silicone, soft enough for the 1 mN spot above yet moldable and durable, and the edge must be primer-bonded and clamped to a nail-backed core so grip load goes into the finger while the soft stack above transduction stays under 2.5 mm thick per the GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2).\nManager said about it: The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76).\nManager said about it: The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "humanoidsdaily.com",
-      "title": "Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration",
+      "authors_or_org": "mdpi.com",
+      "title": "GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force",
       "year": "",
-      "url": "https://www.humanoidsdaily.com/news/giving-the-robot-fingerprints-xela-robotics-shrinks-sensors-for-tesollo-hand-integration",
-      "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "url": "https://www.mdpi.com/1424-8220/17/12/2762/",
+      "query": "GelSight soft elastomer fingertip sensor silicone skin",
       "unresolved": false,
-      "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+      "passage": "The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs.",
       "cited": true,
       "read": true,
       "statements": [
         {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs."
         },
         {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The Convert Durometer to Young's Modulus (E4) gives about 0.667 MPa for Shore A 10 silicone, soft enough for the 1 mN spot above yet moldable and durable, and the edge must be primer-bonded and clamped to a nail-backed core so grip load goes into the finger while the soft stack above transduction stays under 2.5 mm thick per the GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2)."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76)."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface."
         }
       ]
     }

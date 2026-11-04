@@ -1,0 +1,14 @@
+{
+  "id": "E37",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "open-circuit volts at low wind Kv220",
+  "code_or_query": "1430/220",
+  "inputs": {},
+  "output_summary": "6.5",
+  "output_full": "6.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

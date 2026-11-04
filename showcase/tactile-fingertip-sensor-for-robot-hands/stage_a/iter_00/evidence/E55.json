@@ -1,0 +1,14 @@
+{
+  "id": "E55",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "check deltaC fF from base pF times strain",
+  "code_or_query": "0.269*5.78/435*1000",
+  "inputs": {},
+  "output_summary": "3.57",
+  "output_full": "3.57",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

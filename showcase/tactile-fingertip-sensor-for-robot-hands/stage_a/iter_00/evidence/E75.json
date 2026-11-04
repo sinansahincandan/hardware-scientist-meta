@@ -1,0 +1,26 @@
+{
+  "id": "E75",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: railway track circuit fail-safe normally energized broken wire indicates danger",
+  "code_or_query": "railway track circuit fail-safe normally energized broken wire indicates danger",
+  "inputs": {},
+  "output_summary": "patents.google.com — US1059828A - System for vehicle control. \n      - Google Patents — https://patents.google.com/patent/US1059828A/en",
+  "output_full": "patents.google.com — US1059828A - System for vehicle control. \n      - Google Patents — https://patents.google.com/patent/US1059828A/en\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "patents.google.com",
+      "title": "US1059828A - System for vehicle control. \n      - Google Patents",
+      "year": "",
+      "url": "https://patents.google.com/patent/US1059828A/en",
+      "query": "railway track circuit fail-safe normally energized broken wire indicates danger",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

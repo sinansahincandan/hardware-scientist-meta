@@ -1,0 +1,14 @@
+{
+  "id": "E104",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "term-by-term thermal total with latent door",
+  "code_or_query": "(0.203*24 + 1.2 + 0.66 + 6.25)",
+  "inputs": {},
+  "output_summary": "13",
+  "output_full": "13",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

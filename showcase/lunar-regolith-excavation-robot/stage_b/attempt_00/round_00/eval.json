@@ -1,130 +1,89 @@
 {
-  "pixel_description": "Photoreal side view of wheeled rover on dark soil strip, light background. Front left: spiked cutting-drum disc in soil pile with side arm bolted to chassis; just behind it a spiked grouser front wheel partially hidden by arm, under front of dark low-profile horizontal frame. Tall silver perception mast bolted to front top of frame with diagonal folding brace, topped by stacked camera head with multiple lenses plus antenna boxes. Mid-frame: large black battery box with small top box and antenna, cable to smaller control and radio box with antenna rear-mid, both sitting on frame. Rear: large spiked grouser wheel under frame, vertical rear high-lift mast bolted to frame above wheel. Critical part Rear high-lift mast (lift) is drawn as one visible light-gray vertical guide column with bolted foot to chassis and pivot bolts at top, one visible black hydraulic actuator cylinder parallel inboard, one visible vertical roller chain outboard with top sprocket/pinion under hopper and bottom roller above frame, second column/actuator hidden by side-view occlusion. Large open metal hopper pivoted on top of guide, tilted rear-down, pouring continuous soil stream into black open collection bin sitting on rear frame extension behind wheel. Frame length ~3x wheel diameter, wheels ~300mm class, lift raises hopper ~3x wheel diameter to ~1.05m lip with rear overhang. Short callout labels with leader lines present.",
+  "pixel_description": "Photorealistic side view on soil with standing man right for scale. Twin-tube chassis frame is horizontal silver rails center, carrying wheels below and hopper/ladder above. Two rigid grouser wheels visible side-on (four total) bolted under chassis. Vertical narrow kerf chain at extreme front-left digging a slot. CRITICAL PART inclined bucket ladder: drawn as one long straight inclined steel truss/ladder frame from low front to high middle, about 50-60deg above horizontal, with 7 trapezoidal open buckets each heaped with brown soil spaced evenly along its left/up side from bottom to top, lower end pin-joined to chassis front adjacent to kerf chain collection box, mid supported by A-frame strut to chassis, upper discharge end free in air at top-center. Steep wedge hopper is single tapered sheet-steel tub center-right, pivot-bolted to chassis, tilted up rearward with large soil heap inside, pouring stream from rear discharge chute into small metal bin on ground right. Tilt screw discharge is screw conveyor visible diagonally under hopper plus rear chute. Two mast cameras on poles bolted to chassis front and mid. Black cables in chassis bay. Ladder top is far above and left of hopper with empty white air between; no chute connects ladder discharge to hopper inlet.",
   "regions": [
     {
       "box": [
-        329.0,
-        148.0,
-        510.0,
-        182.0
+        440.0,
+        110.0,
+        650.0,
+        550.0
       ],
-      "part_id": "callout",
-      "observed": "text '3x RGB Cameras + Antenna' contains numbers '3x'",
-      "expected": "callout names sensor part only, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        762.0,
-        139.0,
-        894.0,
-        208.0
-      ],
-      "part_id": "callout",
-      "observed": "text 'Tilting Hopper (15kg Capacity)' contains '15kg'",
-      "expected": "callout names hopper part only, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        347.0,
-        828.0,
-        469.0,
-        888.0
-      ],
-      "part_id": "callout",
-      "observed": "text 'Spiked Grouser Wheels • 300mm' contains '300mm'",
-      "expected": "callout names wheel part only, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        500.0,
-        819.0,
-        614.0,
-        880.0
-      ],
-      "part_id": "callout",
-      "observed": "text 'Low-Profile Frame • 0.95m' contains '0.95m'",
-      "expected": "callout names chassis frame only, no numbers",
-      "source": "render"
-    },
-    {
-      "box": [
-        840.0,
-        840.0,
-        969.0,
-        902.0
-      ],
-      "part_id": "callout",
-      "observed": "text 'High-Lift Actuators • 1.05m Lift' contains '1.05m'",
-      "expected": "callout names lift actuators only, no numbers",
+      "part_id": "ladder",
+      "observed": "ladder top end free in air high above/left of hopper, buckets full and spilling, white air gap with no chute to hopper; hopper separately full and tilting",
+      "expected": "ladder top sprocket positioned over hopper with gravity chute dropping to hopper per sketch connection ladder->hopper and transfer line kerf -> ladder -> hopper",
       "source": "render"
     }
   ],
   "previous_regions": [],
-  "comparison_with_previous": "No previous render to compare; first evaluation.",
+  "comparison_with_previous": "First evaluation - no previous render to compare.",
   "deviations": [
     {
-      "what": "drum",
-      "measured": "drum disc in soil at front left linked by side arm to chassis; hopper raised on rear mast ~0.7m away pouring to bin",
-      "expected": "drum touches chassis and feeds hopper",
+      "what": "chassis",
+      "measured": "segmenter says apart",
+      "expected": "chassis to touch hopper (carries ladder and hopper)",
       "matters": false,
-      "why": "deployed high-lift dump pose separates drum and hopper by design; connection is via arm/frame, not edge touch; feed occurs when hopper lowered"
+      "why": "pixels show twin-tube side rail with hopper rear pivot bracket bolted directly to it at center-right; contact present, segmenter gap is mask error, load path intact so does not matter"
+    },
+    {
+      "what": "arm",
+      "measured": "segmenter not found as 'metal arm'",
+      "expected": "folding wheel arms present supporting wheels",
+      "matters": false,
+      "why": "side view foreshortens lateral arms; pixels show wheel hub housings and frame end blocks where arms mount, wheels carried by chassis; track-widen function not visible side-on but dig/lift unaffected"
+    },
+    {
+      "what": "kerf",
+      "measured": "vertical in picture",
+      "expected": "segmenter expected horizontal long axis",
+      "matters": false,
+      "why": "pixels show narrow vertical trenching chain digging into soil slot at front-left, matching 100mm wide 50mm deep kerf design and hand sketch; horizontal expectation is wrong, vertical is correct"
+    },
+    {
+      "what": "ladder",
+      "measured": "tilted about 47 degrees",
+      "expected": "segmenter expected vertical long axis",
+      "matters": false,
+      "why": "pixels show long straight inclined truss ~55-60deg from horizontal with buckets; 'inclined bucket ladder' must be tilted, vertical expectation is wrong"
     },
     {
       "what": "hopper",
-      "measured": "hopper tilted high on rear mast pouring soil stream into rear bin, far from front drum",
-      "expected": "hopper touches drum",
+      "measured": "found 5, 39x auger, apart from auger and chassis",
+      "expected": "1 hopper ~0.82x auger, touching auger and chassis",
       "matters": false,
-      "why": "same deployed pose separation; hopper only adjacent to drum in lowered carry position"
+      "why": "pixels show one steep wedge hopper pivot-bolted to chassis, filled with soil and tilted to discharge; extra 4 counts are soil heaps and ladder buckets mistaken for hoppers, 39x scale compares soil pile to screw diameter, screw under hopper attached and pivot shows chassis contact"
     },
     {
-      "what": "lift",
-      "measured": "vertical lift assembly clearly visible at rear: guide post + actuator + chain with sprockets carrying tilted hopper",
-      "expected": "metal mast present for lift",
+      "what": "auger",
+      "measured": "found 6, 0.026x hopper, apart from hopper",
+      "expected": "1 auger ~1.2x hopper, touching hopper",
       "matters": false,
-      "why": "segmenter miss; side view shows single post/cylinder/chain with second set occluded, consistent with dual design"
+      "why": "pixels show single screw conveyor under tilted hopper plus rear discharge chute pouring to bin, attached at rear pivot; extra 5 counts are grouser teeth/chain links mistaken for screws, inverted ratio due to wrong segmentation, contact present"
     },
     {
-      "what": "chassis",
-      "measured": "dark horizontal beam linked to drum via bolted side arm and to pmast via bolted foot; coarse mask shows gap",
-      "expected": "chassis touches drum and pmast",
+      "what": "battery",
+      "measured": "not found",
+      "expected": "2 lithium phosphate battery boxes 100-400mm",
       "matters": false,
-      "why": "connections via brackets/arms, not direct mask adjacency; pixels show bolted joints"
+      "why": "pixels show enclosed dark chassis bay between wheels with cables where packs mount per fabrication step; internal packs not required externally visible in side photoview, electrical function not broken"
     },
     {
-      "what": "wheel",
-      "measured": "1 fully visible rear spiked wheel plus front spiked wheel partially occluded behind cutting-drum arm; drum disc looks like third disc",
-      "expected": "2 wheels visible in side view",
+      "what": "camera",
+      "measured": "apart from chassis",
+      "expected": "camera set to touch chassis",
       "matters": false,
-      "why": "side-view occlusion; 4x300mm wheels total, opposite side hidden; does not change flotation/drive"
+      "why": "pixels show two mast cameras (front-left and mid) with vertical poles bolted to chassis frame; thin masts cause mask gap, third camera of qty 3 occluded in side view; mounting present, 2-vs-3 is acceptable occlusion"
     },
     {
-      "what": "pmast",
-      "measured": "tall silver mast with diagonal brace bolted to front frame, top carries multi-camera head; small mask gap",
-      "expected": "pmast touches chassis and sensors",
+      "what": "whole_device",
+      "measured": "located span ~2081mm across x 1881mm high scaled by ~1700mm person",
+      "expected": "largest part 1050mm, stowed 0.90x0.42x0.45m fits 1.0x0.5x0.5m box",
       "matters": false,
-      "why": "bolted foot and head mount visible; gap is segmentation artifact, attachment present"
-    },
-    {
-      "what": "sensors",
-      "measured": "single head with 3 stacked lens blocks + antenna boxes mounted atop mast, touching via mount",
-      "expected": "sensors on pmast, 2 visible",
-      "matters": false,
-      "why": "multiple cameras merged in one head in side view; count difference does not change remote-view function"
-    },
-    {
-      "what": "pack",
-      "measured": "large black battery box mid-frame plus smaller control & radio box rear-mid linked by cable; segmenter counted both as pack",
-      "expected": "1 battery pack box",
-      "matters": false,
-      "why": "second box is compute/radio, not second pack; both required parts present"
+      "why": "pixels show chassis ~0.9-1.0m vs person consistent with spec; extra span is deployed pose: raised ladder height plus front kerf to rear discharge reach over bin, not stowed box; does not break box limit which applies stowed/folded"
     }
   ],
-  "s1_faithful": true,
-  "s1_differences": "No mechanism difference; same parts, connections, relative sizes, orientations and dump direction as labeled sketch in deployed high-lift pose. Only depiction differences are callout labels containing disallowed numbers/sizes.",
+  "s1_faithful": false,
+  "s1_differences": "Ladder lift does not feed hopper: ladder discharge floats free while hopper is separate, breaking required kerf->ladder->hopper soil path. Otherwise chassis, kerf, wheels, hopper tilt, screw discharge to bin, and cameras match sketch arrangement.",
   "s2_flaw": false,
-  "s2_feedback": "No design flaw visible: rear guide, actuator cylinder and chain are clear of wheel and frame, hopper pivot clears mast and pours into bin behind with front axle still loaded, drum arm clears soil, mast foot and cable routing reachable. Deployed geometry matches 1.05m lip/0.30m overhang intent without interference or impossible load path.",
-  "notes": "Segmenter gaps/touches are coarse-mask artifacts and side-view occlusion in deployed dump pose. Mechanism itself matches sketch. Only faults to redraw are callout labels containing numbers/sizes/units, which are depiction faults with part_id callout and do not change working principle."
+  "s2_feedback": "No design flaw claimed: hopper pivot on chassis and screw under hopper look supported with no interference; ladder-hopper air gap is a drawing fault in unfaithful render, not proof of impossible assembly.",
+  "notes": "Photorealistic side view, not diagram/cartoon/CAD. Six callouts correctly spelled with no numbers pointing to correct assemblies. Standing person right is scale reference, metal tub is bin use-context. Ladder-hopper disconnect is the only fix-required fault."
 }

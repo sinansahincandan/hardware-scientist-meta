@@ -1,22 +1,30 @@
 {
   "id": "E14",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: FPV 5.8 GHz video latency teleoperation ground robot",
-  "code_or_query": "FPV 5.8 GHz video latency teleoperation ground robot",
+  "purpose": "search: skid steer four wheel drive lunar rover grouser wheel regolith traction",
+  "code_or_query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
   "inputs": {},
-  "output_summary": "robot-advance.com — Robomaster S1 DJI: DJI programmable educational robot — https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
-  "output_full": "robot-advance.com — Robomaster S1 DJI: DJI programmable educational robot — https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm\n(the search returned no passage text)",
+  "output_summary": "robotics.estec.esa.int — Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design — 2014 — http://robotics.estec.esa.int/i-SAIRAS/isairas2014/Data/Session%202a/ISAIRAS_FinalPaper_0114.pdf",
+  "output_full": "robotics.estec.esa.int — Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design — 2014 — http://robotics.estec.esa.int/i-SAIRAS/isairas2014/Data/Session%202a/ISAIRAS_FinalPaper_0114.pdf\n(opened by the member, not cited)\nMobility and Deployable Chassis Lead said about it: The Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design (E14) built 200 mm diameter wheels with 10 mm grousers and reported good travel to about 10 deg loose slope, so I use that wheel size for soft soil.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "robot-advance.com",
-      "title": "Robomaster S1 DJI: DJI programmable educational robot",
-      "year": "",
-      "url": "https://www.robot-advance.com/EN/art-dji-robomaster-s1-eu-2608.htm",
-      "query": "FPV 5.8 GHz video latency teleoperation ground robot",
+      "authors_or_org": "robotics.estec.esa.int",
+      "title": "Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design",
+      "year": "2014",
+      "url": "http://robotics.estec.esa.int/i-SAIRAS/isairas2014/Data/Session%202a/ISAIRAS_FinalPaper_0114.pdf",
+      "query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
       "unresolved": false,
-      "passage": ""
+      "passage": "The Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design (E14) built 200 mm diameter wheels with 10 mm grousers and reported good travel to about 10 deg loose slope, so I use that wheel size for soft soil.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "The Development and Field Testing of Moonraker: a Four-Wheel Rover in Minimal Design (E14) built 200 mm diameter wheels with 10 mm grousers and reported good travel to about 10 deg loose slope, so I use that wheel size for soft soil."
+        }
+      ]
     }
   ],
   "status": "ok",

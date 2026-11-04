@@ -1,0 +1,54 @@
+{
+  "round": 1,
+  "sam_differences": {
+    "xb": [
+      "expected to touch cs, but they are apart in the picture",
+      "expected to touch vd, but they are apart in the picture",
+      "expected to touch es, but they are apart in the picture"
+    ],
+    "tm": [
+      "expected to touch vd, but they are apart in the picture"
+    ],
+    "cs": [
+      "expected a vertical long axis, measured horizontal",
+      "size against tm: expected about 0.6 times, measured 1.5 times",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "vd": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch xb, but they are apart in the picture",
+      "expected to touch tm, but they are apart in the picture"
+    ],
+    "hb": [
+      "expected 2 visible, found 27"
+    ],
+    "es": [
+      "expected 2 visible, found 1",
+      "size against tm: expected about 0.2 times, measured 0.57 times",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "ac": [
+      "expected 1 visible, found 2",
+      "size against es: expected about 0.3 times, measured 1.8 times"
+    ],
+    "cs__spring": [
+      "expected a vertical long axis, measured horizontal"
+    ],
+    "vd__damper": [
+      "expected a vertical long axis, measured horizontal"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "faithful, and every earlier fault is fixed",
+  "earlier_faults": [
+    {
+      "part_id": "callout",
+      "fault": "leader dot ends on bare top flange of cross-beam mid-span, not on bolts (expected: Clamp Bolt Set leader should end on HSFG bolt groups at beam-to-girder ends)",
+      "status": "fixed",
+      "note": "Now ends on left beam-to-girder bolted plate with multiple bolts. Top-flange mid-span dot is now Transverse Cross Beam leader, correct."
+    }
+  ]
+}

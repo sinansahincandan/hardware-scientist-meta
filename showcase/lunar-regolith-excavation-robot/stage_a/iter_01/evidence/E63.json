@@ -1,0 +1,14 @@
+{
+  "id": "E63",
+  "author": "Power Structure and Integration Lead",
+  "tool": "calc",
+  "purpose": "stiffened twin-rail tip sag under half robot plus soil load",
+  "code_or_query": "300*0.5**3/(3*68.9e9*4.58e-08)",
+  "inputs": {},
+  "output_summary": "0.00396",
+  "output_full": "0.00396",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

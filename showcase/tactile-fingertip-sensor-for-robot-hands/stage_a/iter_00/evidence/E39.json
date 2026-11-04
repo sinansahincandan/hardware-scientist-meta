@@ -1,19 +1,23 @@
 {
   "id": "E39",
-  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
+  "author": "Dr. Elena Vasquez \u2014 Contact Dynamics and Slip Detection",
   "tool": "calc",
-  "purpose": "effective pillar modulus from area fraction",
-  "code_or_query": "Q_(1,'MPa')*0.02",
+  "purpose": "ridge frequency: 0.4 mm pitch at 50 mm/s slip speed",
+  "code_or_query": "Q_(0.4,'mm')/Q_(50,'mm/s')*1000",
   "inputs": {
     "arg0": {
-      "value": "1",
-      "unit": "MPa"
+      "value": "0.4",
+      "unit": "mm"
+    },
+    "arg1": {
+      "value": "50",
+      "unit": "mm/s"
     }
   },
-  "output_summary": "0.02 MPa",
-  "output_full": "0.02 MPa",
+  "output_summary": "8 s",
+  "output_full": "8 s",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

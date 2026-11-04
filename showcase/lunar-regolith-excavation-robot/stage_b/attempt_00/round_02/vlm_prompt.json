@@ -1,0 +1,69 @@
+{
+  "prompt": "Photorealistic product rendering, side view, on plain seamless light-grey studio backdrop with soft product-shot lighting. Compact four-wheel digging robot chest-high max and about 1050 mm long overall, shown with one standing adult person beside it for true size reading as the only scale extra. Device sits on a small patch of loose soil bed cut off cleanly at the backdrop, with one collection bin at the rear. Front narrow steel trenching chain oriented vertically, engaged downward in a thin slot in the soil with small side spoil rows. Center inclined steel bucket ladder rising from front dig point with its upper head sprocket terminating immediately above and just inside the hopper throat, joined by a short enclosed gravity chute with no air gap, buckets tipping directly into hopper and visibly carrying soil upward. One single mid-rear smooth steel steep wedge hopper tilted up at the rear pivot - one container only. One single visible rear steel screw discharge chute at hopper rear pouring soil down into bin - one screw unit only with thread texture as one piece. Twin aluminium tube chassis as continuous low frame with steep wedge hopper pivot-bolted directly on top of it with metal-on-metal contact, no visible gap, low between four rigid steel grouser wheels with folding aluminium arms tucked directly behind side frame, mostly occluded in side view with only two wheels prominent. Small onboard cameras on slender vertical masts bolted to chassis and standing above it over dig point and frame, mast-height air gap intentional. Lithium phosphate battery pack housed low inside chassis frame, allowed to be hidden in exterior side view, no separate visible box. Cap ladder top just above hopper lip. Real materials: brushed aluminium frame, dark steel wheels and chains, smooth painted steel hopper. Show operating moment of discharge while digging edge remains at soil: soil in slot, soil on ladder buckets, soil heaped in hopper, soil stream falling into bin. Draw thin leader-line callouts on small light tags placed in empty space for Narrow Kerf Chain, Inclined Bucket Ladder, Steep Wedge Hopper, Tilt Screw Discharge, Rigid Grouser Wheels, Twin Tube Chassis, Onboard Guide Cameras, each leader to its own part with camera leader to mast camera not to ladder sprocket, clean and legible, and no other text in image.",
+  "must_not": [
+    "room interiors, landscapes, skies, fields or furniture",
+    "extra people, tools, clutter or vehicles",
+    "operator stations, control rooms, chargers or base stations on device",
+    "generic text blocks, margins, scale bars or legends",
+    "multiple hoppers, multiple screws or fragmented thread pieces",
+    "towering ladder disconnected in air or free-pouring to air"
+  ],
+  "changes_from_previous": "Fixed ladder->hopper disconnect by terminating ladder head inside hopper throat with enclosed chute and no air gap; capped overall to chest-high max ~1050mm long; clarified chassis-hopper metal contact, vertically oriented kerf, tucked arms occluded, single hopper and single screw, hidden battery, mast-mounted cameras with correct leader to camera not sprocket.",
+  "visual_plan": {
+    "view": "side view, exterior profile showing length ~1050mm and chest-high height against person",
+    "spatial_layout": "Side profile: front vertical kerf in soil patch, center diagonal ladder from ground to hopper throat, mid-rear wedge hopper on low tube chassis, rear screw chute over bin, two grouser wheels fore-aft below chassis, two mast cameras above, adult person beside for scale, soil patch and bin cut off at backdrop.",
+    "operating_moment": "Simultaneous digging and discharging: front chain in soil slot, ladder full of soil tipping into heaped hopper, rear screw pouring continuous stream into rear bin.",
+    "transfer_path": "Soil: narrow kerf slot side spoil -> inclined bucket ladder -> enclosed gravity chute -> steep wedge hopper -> rear tilt screw -> bin; Signal: mast dig cameras -> telemetry to off-image operator.",
+    "interactions": "Kerf cuts slot leaving side spoil rows feeding ladder pickup; ladder buckets lift and tip through enclosed chute into hopper; hopper pivot-bolted on chassis tilts at rear pivot while rear screw meters flow into bin; chassis carries wheels via tucked arms; mast cameras overlook dig point and frame.",
+    "avoid": [
+      "landscape, sky, room, furniture, tools, clutter, extra people",
+      "off-device stations or chargers",
+      "extra text, scale bars, margins",
+      "multiple hoppers or screws, floating ladder discharge"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "kerf",
+      "material": "steel",
+      "purpose": "loosen narrow slot",
+      "callout": "Narrow Kerf Chain"
+    },
+    {
+      "part_id": "ladder",
+      "material": "steel",
+      "purpose": "lift loosened soil to hopper",
+      "callout": "Inclined Bucket Ladder"
+    },
+    {
+      "part_id": "hopper",
+      "material": "smooth steel",
+      "purpose": "contain carried soil",
+      "callout": "Steep Wedge Hopper"
+    },
+    {
+      "part_id": "auger",
+      "material": "steel",
+      "purpose": "meter pour over bin lip",
+      "callout": "Tilt Screw Discharge"
+    },
+    {
+      "part_id": "wheel",
+      "material": "steel",
+      "purpose": "traverse loose soil",
+      "callout": "Rigid Grouser Wheels"
+    },
+    {
+      "part_id": "chassis",
+      "material": "6061-T6 aluminium",
+      "purpose": "carry loads and keep alignment",
+      "callout": "Twin Tube Chassis"
+    },
+    {
+      "part_id": "camera",
+      "material": "electronics",
+      "purpose": "enable blind teleoperation",
+      "callout": "Onboard Guide Cameras"
+    }
+  ]
+}

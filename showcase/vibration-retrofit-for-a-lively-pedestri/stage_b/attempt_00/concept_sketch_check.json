@@ -1,4 +1,4 @@
 {
   "ok": false,
-  "reason": "First sketch swaps inboard/outboard positions vs second sketch pixels: hand sketch shows blue dashpot lines outboard at mass edges and spring lines inboard, concept shows coils outermost and cylinders inboard. Bearer mounting also differs: hand sketch shows transverse bearer clamped directly to girder webs with HSFG dots, concept shows drop-hanger brackets under deck carrying a separate cross-beam."
+  "reason": "Shapes for all 7 items are drawn plausibly, but layout contradicts image2: image2 requires transverse cross-beam beam-to-girder-web with 2 HSFG connections, 2x 400kg mass on spring+damper, all below soffit WITHIN girder depth, between girders at midspan. Image1 shows cross-beam clamped to pier-like columns on ground footings, 4 clamp sets with 2 outer dummies, masses swinging near ground well below girder depth, plus 6-unit deck accelerometer array not in image2."
 }

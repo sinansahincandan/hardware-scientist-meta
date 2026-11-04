@@ -1,0 +1,52 @@
+{
+  "id": "E35",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: folding hand truck folded dimensions telescopic handle toe plate",
+  "code_or_query": "folding hand truck folded dimensions telescopic handle toe plate",
+  "inputs": {},
+  "output_summary": "slingsby.com — Compact folding sack truck, capacity 90kg — https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html",
+  "output_full": "slingsby.com — Compact folding sack truck, capacity 90kg — https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html\n(opened by the member, not cited)\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity.\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against 29 kg self-weight for 200 kg powered capacity from the Powered Stair Climbing Sack Truck (E37).\nElena Ruiz — Human Factors & Single-Operator Safety said about it: The numbers that decide it are folded 730 by 380 by 190 mm at 6.5 kg tare from the folding sack truck source (E35, Compact folding sack truck, capacity 90kg) fitting the 1120 by 1235 mm door from the van cargo source (E36, Ford Transit Courier), so I keep my descent-hold objection on the tri-star wheel cluster (C1) open: not ready, because lever release force and tooth engagement with one tired hand remain a bench test with Kenji Tanaka and axle mount stress with Mara Voss.\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare, I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor 1802 mm long, and I take from the News | Insurance Factory (E64) that the Courier has six tie-down points with 590 kg payload.\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against total carry 66.5 kg from the total mass calc (E41).\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity, which from my discipline means one-person suitcase lift at 65.7 N from the tare lift with clip-on brace (E86) is acceptable while I take from ISO 11228-2?",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "slingsby.com",
+      "title": "Compact folding sack truck, capacity 90kg",
+      "year": "",
+      "url": "https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html",
+      "query": "folding hand truck folded dimensions telescopic handle toe plate",
+      "unresolved": false,
+      "passage": "I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against 29 kg self-weight for 200 kg powered capacity from the Powered Stair Climbing Sack Truck (E37)."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "The numbers that decide it are folded 730 by 380 by 190 mm at 6.5 kg tare from the folding sack truck source (E35, Compact folding sack truck, capacity 90kg) fitting the 1120 by 1235 mm door from the van cargo source (E36, Ford Transit Courier), so I keep my descent-hold objection on the tri-star wheel cluster (C1) open: not ready, because lever release force and tooth engagement with one tired hand remain a bench test with Kenji Tanaka and axle mount stress with Mara Voss."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare, I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor 1802 mm long, and I take from the News | Insurance Factory (E64) that the Courier has six tie-down points with 590 kg payload."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against total carry 66.5 kg from the total mass calc (E41)."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity, which from my discipline means one-person suitcase lift at 65.7 N from the tare lift with clip-on brace (E86) is acceptable while I take from ISO 11228-2?"
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

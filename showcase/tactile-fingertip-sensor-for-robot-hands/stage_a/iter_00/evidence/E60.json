@@ -1,0 +1,52 @@
+{
+  "id": "E60",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: human fingertip size dimensions width length mm",
+  "code_or_query": "human fingertip size dimensions width length mm",
+  "inputs": {},
+  "output_summary": "mdpi.com — Free and Forced Vibration Modes of the Human Fingertip — https://www.mdpi.com/2076-3417/11/12/5709/xml",
+  "output_full": "mdpi.com — Free and Forced Vibration Modes of the Human Fingertip — https://www.mdpi.com/2076-3417/11/12/5709/xml\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The Free and Forced Vibration Modes of the Human Fingertip (E60) gives fingertip width 18.0 mm and length 28.0 mm as finger scale.\nManager said about it: The numbers that decide it are 0.470 mm spot at 5.78 kPa in the Hertz contact radius (E14) on 0.269 pF base in the base capacitance gap (E26) giving 3.57 fF change in the check deltaC (E55) which corrects 0.00357 fF in the delta capacitance calculation (E28) as a unit slip, giving 14.6 Least Significant Bit, where Least Significant Bit means LSB, steps in the signal margin counts (E62), spanning to 213 kPa at 50 N in the dual-range sweep (E64), with 20.0 mm by 22.0 mm size inside 26 by 20 by 25 mm precedent in the BioTac Product Manual (E43) and 18.0 mm by 28.0 mm finger in the Free and Forced Vibration Modes (E60), 14.0 g mass in the mass budget sum (E53) about one-and-a-half teaspoons, 0.0991 W power in the power budget sum (E51) about one-tenth of a small lamp, 51.2 kbit per s rate in the SPI rate (E52), and 30.0 ms window inside 43.2 ms gap in the slip gap calculation (E84) from 53.6 ms to 96.8 ms in the stick-to-slip simulation (E38) needing 96.8 thousand multiply-accumulate, where multiply-accumulate means MAC, per s in the FIR rate (E78) for the 44-tap Finite Impulse Response, where Finite Impulse Response means FIR, filter, all everyday finger, blink and hum scales.\nManager said about it: RECORD: Decided F1 molded Shore A 10 dome plus ridges plus sipes, F2 nail-backed faceted core with M2 plus dovetail, F3 capacitive plus PVDF, F4 2.00 mm pitch centroid to 1 mm, F5 100 to 500 Hz power plus shear check in 30 ms, F6 fail-safe heartbeat plus interrupt plus SPI; numbers that stand are 0.470 mm at 5.78 kPa (E14), 0.269 pF base (E26), 3.57 fF change (E55 corrects E28), 14.6 LSB (E62), to 213 kPa (E64), 43.2 ms gap (E84) with 30 ms window (E38), 14.0 g (E53), 0.0991 W (E51), 51.2 kbit per s (E52), 20.0 by 22.0 mm (E43 E60); still open are member votes on proposal v1 and three bench tests, no blocking objection open.\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: The Free and Forced Vibration Modes of the Human Fingertip (E60) gives 18.0 mm width by 28.0 mm length, so our 20.0 mm by 22.0 mm body in the BioTac Product Manual (E43) is finger scale about a fingertip wide, and the required normal per finger calculation (E85) needs 9.81 N per finger to hold 1.00 kg at friction 0.500, about a milk bottle on each fingertip, well inside the 50.0 N grip rating, with 14.0 g mass in the mass budget sum (E53) about one-and-a-half teaspoons.\nManager said about it: The numbers that decide it are 0.470 mm spot at 5.78 kPa in the Hertz contact radius (E14) on 0.269 pF base in the base capacitance gap (E26) giving 3.57 fF change in the check deltaC (E55) which corrects 0.00357 fF in the delta capacitance calculation (E28) as a thousand-fold unit slip, giving 14.6 steps where LSB means Least Significant Bit in the signal margin counts (E62), spanning to 213 kPa at 50 N in the dual-range sweep (E64) with 125 kPa hold in the pressure at hold (E93) from 9.81 N per finger in the required normal calculation (E85), in 20.0 mm by 22.0 mm size inside 18.0 mm by 28.0 mm finger in the Free and Forced Vibration Modes (E60), at 14.0 g mass in the mass budget sum (E53) about one-and-half teaspoons, 0.0991 W power in the power budget sum (E51) about one-tenth of a small lamp, 51.2 kbit per s rate in the SPI rate (E52), and 30.0 ms window inside 43.2 ms gap in the slip gap calculation (E84) from 53.6 ms to 96.8 ms in the stick-to-slip simulation (E38) needing 96.8 thousand accumulations per s where MAC means multiply-accumulate in the FIR rate (E78) where FIR means Finite Impulse Response.\nManager said about it: RECORD: Decided F1 molded Shore A 10 dome plus ridges plus sipes, F2 nail-backed faceted core with M2 plus dovetail, F3 capacitive plus PVDF, F4 2.00 mm pitch centroid to 1 mm, F5 100 to 500 Hz power plus shear check in 30 ms, F6 fail-safe heartbeat plus interrupt plus SPI; numbers that stand are 0.470 mm at 5.78 kPa (E14), 0.269 pF base (E26), 3.57 fF change (E55 corrects E28), 14.6 LSB (E62), to 213 kPa (E64) with 125 kPa hold (E93) from 9.81 N (E85), 43.2 ms gap (E84) with 30 ms window (E38), 14.0 g (E53), 0.0991 W (E51), 51.2 kbit per s (E52), 20.0 by 22.0 mm (E43 E60); still open are only named bench tests owed as hardware proof, no blocking objection open, all four members voted ready on v1 and answered.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mdpi.com",
+      "title": "Free and Forced Vibration Modes of the Human Fingertip",
+      "year": "",
+      "url": "https://www.mdpi.com/2076-3417/11/12/5709/xml",
+      "query": "human fingertip size dimensions width length mm",
+      "unresolved": false,
+      "passage": "The Free and Forced Vibration Modes of the Human Fingertip (E60) gives fingertip width 18.0 mm and length 28.0 mm as finger scale.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The Free and Forced Vibration Modes of the Human Fingertip (E60) gives fingertip width 18.0 mm and length 28.0 mm as finger scale."
+        },
+        {
+          "by": "Manager",
+          "text": "The numbers that decide it are 0.470 mm spot at 5.78 kPa in the Hertz contact radius (E14) on 0.269 pF base in the base capacitance gap (E26) giving 3.57 fF change in the check deltaC (E55) which corrects 0.00357 fF in the delta capacitance calculation (E28) as a unit slip, giving 14.6 Least Significant Bit, where Least Significant Bit means LSB, steps in the signal margin counts (E62), spanning to 213 kPa at 50 N in the dual-range sweep (E64), with 20.0 mm by 22.0 mm size inside 26 by 20 by 25 mm precedent in the BioTac Product Manual (E43) and 18.0 mm by 28.0 mm finger in the Free and Forced Vibration Modes (E60), 14.0 g mass in the mass budget sum (E53) about one-and-a-half teaspoons, 0.0991 W power in the power budget sum (E51) about one-tenth of a small lamp, 51.2 kbit per s rate in the SPI rate (E52), and 30.0 ms window inside 43.2 ms gap in the slip gap calculation (E84) from 53.6 ms to 96.8 ms in the stick-to-slip simulation (E38) needing 96.8 thousand multiply-accumulate, where multiply-accumulate means MAC, per s in the FIR rate (E78) for the 44-tap Finite Impulse Response, where Finite Impulse Response means FIR, filter, all everyday finger, blink and hum scales."
+        },
+        {
+          "by": "Manager",
+          "text": "RECORD: Decided F1 molded Shore A 10 dome plus ridges plus sipes, F2 nail-backed faceted core with M2 plus dovetail, F3 capacitive plus PVDF, F4 2.00 mm pitch centroid to 1 mm, F5 100 to 500 Hz power plus shear check in 30 ms, F6 fail-safe heartbeat plus interrupt plus SPI; numbers that stand are 0.470 mm at 5.78 kPa (E14), 0.269 pF base (E26), 3.57 fF change (E55 corrects E28), 14.6 LSB (E62), to 213 kPa (E64), 43.2 ms gap (E84) with 30 ms window (E38), 14.0 g (E53), 0.0991 W (E51), 51.2 kbit per s (E52), 20.0 by 22.0 mm (E43 E60); still open are member votes on proposal v1 and three bench tests, no blocking objection open."
+        },
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "The Free and Forced Vibration Modes of the Human Fingertip (E60) gives 18.0 mm width by 28.0 mm length, so our 20.0 mm by 22.0 mm body in the BioTac Product Manual (E43) is finger scale about a fingertip wide, and the required normal per finger calculation (E85) needs 9.81 N per finger to hold 1.00 kg at friction 0.500, about a milk bottle on each fingertip, well inside the 50.0 N grip rating, with 14.0 g mass in the mass budget sum (E53) about one-and-a-half teaspoons."
+        },
+        {
+          "by": "Manager",
+          "text": "The numbers that decide it are 0.470 mm spot at 5.78 kPa in the Hertz contact radius (E14) on 0.269 pF base in the base capacitance gap (E26) giving 3.57 fF change in the check deltaC (E55) which corrects 0.00357 fF in the delta capacitance calculation (E28) as a thousand-fold unit slip, giving 14.6 steps where LSB means Least Significant Bit in the signal margin counts (E62), spanning to 213 kPa at 50 N in the dual-range sweep (E64) with 125 kPa hold in the pressure at hold (E93) from 9.81 N per finger in the required normal calculation (E85), in 20.0 mm by 22.0 mm size inside 18.0 mm by 28.0 mm finger in the Free and Forced Vibration Modes (E60), at 14.0 g mass in the mass budget sum (E53) about one-and-half teaspoons, 0.0991 W power in the power budget sum (E51) about one-tenth of a small lamp, 51.2 kbit per s rate in the SPI rate (E52), and 30.0 ms window inside 43.2 ms gap in the slip gap calculation (E84) from 53.6 ms to 96.8 ms in the stick-to-slip simulation (E38) needing 96.8 thousand accumulations per s where MAC means multiply-accumulate in the FIR rate (E78) where FIR means Finite Impulse Response."
+        },
+        {
+          "by": "Manager",
+          "text": "RECORD: Decided F1 molded Shore A 10 dome plus ridges plus sipes, F2 nail-backed faceted core with M2 plus dovetail, F3 capacitive plus PVDF, F4 2.00 mm pitch centroid to 1 mm, F5 100 to 500 Hz power plus shear check in 30 ms, F6 fail-safe heartbeat plus interrupt plus SPI; numbers that stand are 0.470 mm at 5.78 kPa (E14), 0.269 pF base (E26), 3.57 fF change (E55 corrects E28), 14.6 LSB (E62), to 213 kPa (E64) with 125 kPa hold (E93) from 9.81 N (E85), 43.2 ms gap (E84) with 30 ms window (E38), 14.0 g (E53), 0.0991 W (E51), 51.2 kbit per s (E52), 20.0 by 22.0 mm (E43 E60); still open are only named bench tests owed as hardware proof, no blocking objection open, all four members voted ready on v1 and answered."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,22 +1,30 @@
 {
   "id": "E21",
-  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "web_search",
-  "purpose": "search: DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
-  "code_or_query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
+  "purpose": "search: cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
+  "code_or_query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
   "inputs": {},
-  "output_summary": "sino-cold.en.made-in-china.com — 12V 24V 48V DC Mini Fridge R134A Refrigerator Compressor for Car Truck Camping China Manufacturer Sales Price - DC Mini Fridge Compressor and R134A Refrigerator Compressor — https://sino-cold.en.made-in-china.com/product/rJARnhLyaZWb/China-12V-24V-48V-DC-Mini-Fridge-R134A-Refrigerator-Compressor-for-Car-Truck-Camping-China-Manufacturer-Sales-Price.html",
-  "output_full": "sino-cold.en.made-in-china.com — 12V 24V 48V DC Mini Fridge R134A Refrigerator Compressor for Car Truck Camping China Manufacturer Sales Price - DC Mini Fridge Compressor and R134A Refrigerator Compressor — https://sino-cold.en.made-in-china.com/product/rJARnhLyaZWb/China-12V-24V-48V-DC-Mini-Fridge-R134A-Refrigerator-Compressor-for-Car-Truck-Camping-China-Manufacturer-Sales-Price.html\n(the search returned no passage text)",
+  "output_summary": "assets-eu.researchsquare.com — Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh — https://assets-eu.researchsquare.com/files/rs-5039022/v1_covered_5f1135f1-005c-4023-9628-5b3a8d41d02e.pdf?c=1725609907",
+  "output_full": "assets-eu.researchsquare.com — Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh — https://assets-eu.researchsquare.com/files/rs-5039022/v1_covered_5f1135f1-005c-4023-9628-5b3a8d41d02e.pdf?c=1725609907\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "sino-cold.en.made-in-china.com",
-      "title": "12V 24V 48V DC Mini Fridge R134A Refrigerator Compressor for Car Truck Camping China Manufacturer Sales Price - DC Mini Fridge Compressor and R134A Refrigerator Compressor",
+      "authors_or_org": "assets-eu.researchsquare.com",
+      "title": "Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh",
       "year": "",
-      "url": "https://sino-cold.en.made-in-china.com/product/rJARnhLyaZWb/China-12V-24V-48V-DC-Mini-Fridge-R134A-Refrigerator-Compressor-for-Car-Truck-Camping-China-Manufacturer-Sales-Price.html",
-      "query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
+      "url": "https://assets-eu.researchsquare.com/files/rs-5039022/v1_covered_5f1135f1-005c-4023-9628-5b3a8d41d02e.pdf?c=1725609907",
+      "query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
       "unresolved": false,
-      "passage": ""
+      "passage": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation)."
+        }
+      ]
     }
   ],
   "status": "ok",

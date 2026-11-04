@@ -1,0 +1,26 @@
+{
+  "id": "E63",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: spring plunger locking pin shear strength folding hand truck hinge",
+  "code_or_query": "spring plunger locking pin shear strength folding hand truck hinge",
+  "inputs": {},
+  "output_summary": "patents.google.com — US20020180169A1 - Kick boards \n      - Google Patents — https://patents.google.com/patent/US20020180169A1/en",
+  "output_full": "patents.google.com — US20020180169A1 - Kick boards \n      - Google Patents — https://patents.google.com/patent/US20020180169A1/en\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "patents.google.com",
+      "title": "US20020180169A1 - Kick boards \n      - Google Patents",
+      "year": "",
+      "url": "https://patents.google.com/patent/US20020180169A1/en",
+      "query": "spring plunger locking pin shear strength folding hand truck hinge",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

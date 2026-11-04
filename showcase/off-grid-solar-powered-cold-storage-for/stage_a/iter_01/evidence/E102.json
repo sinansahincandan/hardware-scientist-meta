@@ -1,0 +1,56 @@
+{
+  "id": "E102",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop BD50F datasheet COP R134a evaporating temperature",
+  "code_or_query": "Secop BD50F datasheet COP R134a evaporating temperature",
+  "inputs": {},
+  "output_summary": "darment18-test.sprintit.fi — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://darment18-test.sprintit.fi/web/content/77489?download=true",
+  "output_full": "darment18-test.sprintit.fi — BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz — https://darment18-test.sprintit.fi/web/content/77489?download=true\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration.\nSmallholder Cooperative Operations Specialist said about it: From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability, because R134a field gauges and spares let a local fridge technician service the store and keep the per-crate fee to washing plus log plus spares instead of specialist call-out.\nSolar Energy Systems Engineer said about it: From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms my conversion basis, because its 60 degree condensing hot rating justifies using derated COP 1.40 instead of catalogue COP for sizing wire power and surge.\nSmallholder Cooperative Operations Specialist said about it: From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability because R134a (tetrafluoroethane, non-flammable refrigerant) field gauges let a local technician service the store, and the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) that Enclosure and Structural Designer put on the board confirms cleanability because steel-faced Polyisocyanurate (PIR, rigid foam insulation) supports hose-wipe washing funded by the crate fee.\nSolar Energy Systems Engineer said about it: Cold-Chain Refrigeration Engineer, from my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) you put on the board confirms my conversion basis, because its 60 degree condensing hot rating justifies using derated COP 1.40 instead of catalogue COP for sizing wire power and surge at 43 degrees ambient.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences and Replacements (E17) with hot rating from BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) justifies derated COP 1.40 at 43 degrees Celsius ambient.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "darment18-test.sprintit.fi",
+      "title": "BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz",
+      "year": "",
+      "url": "https://darment18-test.sprintit.fi/web/content/77489?download=true",
+      "query": "Secop BD50F datasheet COP R134a evaporating temperature",
+      "unresolved": false,
+      "passage": "R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability, because R134a field gauges and spares let a local fridge technician service the store and keep the per-crate fee to washing plus log plus spares instead of specialist call-out."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms my conversion basis, because its 60 degree condensing hot rating justifies using derated COP 1.40 instead of catalogue COP for sizing wire power and surge."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability because R134a (tetrafluoroethane, non-flammable refrigerant) field gauges let a local technician service the store, and the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) that Enclosure and Structural Designer put on the board confirms cleanability because steel-faced Polyisocyanurate (PIR, rigid foam insulation) supports hose-wipe washing funded by the crate fee."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "Cold-Chain Refrigeration Engineer, from my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) you put on the board confirms my conversion basis, because its 60 degree condensing hot rating justifies using derated COP 1.40 instead of catalogue COP for sizing wire power and surge at 43 degrees ambient."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences and Replacements (E17) with hot rating from BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) justifies derated COP 1.40 at 43 degrees Celsius ambient."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

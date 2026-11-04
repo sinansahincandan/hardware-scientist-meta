@@ -1,14 +1,14 @@
 {
   "id": "E53",
-  "author": "Marcus - Vibration Control and Damping Specialist",
+  "author": "Retrofit Integration and Construction Lead",
   "tool": "calc",
-  "purpose": "dense crowd stroke scaling",
-  "code_or_query": "(3.8*1481/280)",
+  "purpose": "static weight per 400kg unit",
+  "code_or_query": "400*9.81",
   "inputs": {},
-  "output_summary": "20.1",
-  "output_full": "20.1",
+  "output_summary": "3.92e+03",
+  "output_full": "3.92e+03",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "E73",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "operating aero torque at 5 and 11 m/s",
+  "code_or_query": "(3.27/(1430*2*3.14159/60), 34.7/(3150*2*3.14159/60))",
+  "inputs": {},
+  "output_summary": "(0.0218, 0.105)",
+  "output_full": "(0.02183652182538097, 0.10519392743043826)",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E25",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello push pull maximum acceptable force single operator",
+  "code_or_query": "Snook Ciriello push pull maximum acceptable force single operator",
+  "inputs": {},
+  "output_summary": "fis.cld.bz — PSI - Issue 12 — https://fis.cld.bz/PSI-Issue-12/106/",
+  "output_full": "fis.cld.bz — PSI - Issue 12 — https://fis.cld.bz/PSI-Issue-12/106/\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the PSI - Issue 12 (E25) that Snook and Ciriello (SC, meaning psychophysical maximum acceptable push-pull tables) set maximum initial and sustained forces by gender, distance and frequency, and I take from the OCP Data Server Cart Whitepaper (E26) that for 75 percent of people acceptable push is about 36 lb for men and 25 lb for women.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "fis.cld.bz",
+      "title": "PSI - Issue 12",
+      "year": "",
+      "url": "https://fis.cld.bz/PSI-Issue-12/106/",
+      "query": "Snook Ciriello push pull maximum acceptable force single operator",
+      "unresolved": false,
+      "passage": "I take from the PSI - Issue 12 (E25) that Snook and Ciriello (SC, meaning psychophysical maximum acceptable push-pull tables) set maximum initial and sustained forces by gender, distance and frequency, and I take from the OCP Data Server Cart Whitepaper (E26) that for 75 percent of people acceptable push is about 36 lb for men and 25 lb for women.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the PSI - Issue 12 (E25) that Snook and Ciriello (SC, meaning psychophysical maximum acceptable push-pull tables) set maximum initial and sustained forces by gender, distance and frequency, and I take from the OCP Data Server Cart Whitepaper (E26) that for 75 percent of people acceptable push is about 36 lb for men and 25 lb for women."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,24 +1,30 @@
 {
   "id": "E5",
-  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
   "tool": "web_search",
-  "purpose": "search: capacitive piezoresistive tactile taxel array specifications datasheet",
-  "code_or_query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+  "purpose": "search: fingerprint ridges tactile sensor slip vibration amplification",
+  "code_or_query": "fingerprint ridges tactile sensor slip vibration amplification",
   "inputs": {},
-  "output_summary": "borowiecki.dev — Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery — https://borowiecki.dev/pdf/2610.10346",
-  "output_full": "borowiecki.dev — Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery — https://borowiecki.dev/pdf/2610.10346\n(found by the search; not opened or cited)",
+  "output_summary": "pubmed.ncbi.nlm.nih.gov — The role of fingerprints in the coding of tactile information probed with a biomimetic sensor — https://pubmed.ncbi.nlm.nih.gov/19179493/",
+  "output_full": "pubmed.ncbi.nlm.nih.gov — The role of fingerprints in the coding of tactile information probed with a biomimetic sensor — https://pubmed.ncbi.nlm.nih.gov/19179493/\n(opened by the member, not cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The The role of fingerprints in the coding of tactile information probed with a biomimetic sensor (E5) shows a ridged biomimetic surface makes vibration spectra dominated by scanning speed over interridge distance and tuned into the Pacinian receptor band, so I propose molded 0.4 mm pitch by 0.1 mm high ridges that put normal finger slip speeds into hundreds of hertz where Prof.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "borowiecki.dev",
-      "title": "Hall Effect-Based Tactile Force Detection Sensor for Robot-Assisted Minimally Invasive Surgery",
+      "authors_or_org": "pubmed.ncbi.nlm.nih.gov",
+      "title": "The role of fingerprints in the coding of tactile information probed with a biomimetic sensor",
       "year": "",
-      "url": "https://borowiecki.dev/pdf/2610.10346",
-      "query": "capacitive piezoresistive tactile taxel array specifications datasheet",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19179493/",
+      "query": "fingerprint ridges tactile sensor slip vibration amplification",
       "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
+      "passage": "The The role of fingerprints in the coding of tactile information probed with a biomimetic sensor (E5) shows a ridged biomimetic surface makes vibration spectra dominated by scanning speed over interridge distance and tuned into the Pacinian receptor band, so I propose molded 0.4 mm pitch by 0.1 mm high ridges that put normal finger slip speeds into hundreds of hertz where Prof.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The The role of fingerprints in the coding of tactile information probed with a biomimetic sensor (E5) shows a ridged biomimetic surface makes vibration spectra dominated by scanning speed over interridge distance and tuned into the Pacinian receptor band, so I propose molded 0.4 mm pitch by 0.1 mm high ridges that put normal finger slip speeds into hundreds of hertz where Prof."
+        }
+      ]
     }
   ],
   "status": "ok",

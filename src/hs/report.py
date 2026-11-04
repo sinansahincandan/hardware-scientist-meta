@@ -156,6 +156,7 @@ a{color:#1a5fb8} img{border-radius:6px}
 .small{color:#666;font-size:13px}
 .round{display:flex;gap:16px;background:#fff;border-radius:10px;padding:12px;margin:10px 0;align-items:flex-start}
 .round img{width:380px;flex:none}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
 </style>"""
 
 

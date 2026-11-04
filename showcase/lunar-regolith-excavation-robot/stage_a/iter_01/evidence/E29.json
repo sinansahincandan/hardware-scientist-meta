@@ -1,22 +1,24 @@
 {
   "id": "E29",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: IP65 enclosure dust sealing standard electronics box",
-  "code_or_query": "IP65 enclosure dust sealing standard electronics box",
+  "purpose": "search: NASA Lunabotics teleoperation remote control cameras out of sight",
+  "code_or_query": "NASA Lunabotics teleoperation remote control cameras out of sight",
   "inputs": {},
-  "output_summary": "aluleader.com — Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader — https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
-  "output_full": "aluleader.com — Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader — https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/\n(the search returned no passage text)",
+  "output_summary": "nelsonamoore.gitlab.io — 9781289096038 2011 nasa lunabotics mining competition for univ.pdf — 2011 — https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf",
+  "output_full": "nelsonamoore.gitlab.io — 9781289096038 2011 nasa lunabotics mining competition for univ.pdf — 2011 — https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "aluleader.com",
-      "title": "Aluminum Enclosure IP Rating Guide: Complete Selection Guide for Engineers | Aluleader",
-      "year": "",
-      "url": "https://www.aluleader.com/blog/aluminum-enclosure-ip-rating-guide-for-engineers/",
-      "query": "IP65 enclosure dust sealing standard electronics box",
+      "authors_or_org": "nelsonamoore.gitlab.io",
+      "title": "9781289096038 2011 nasa lunabotics mining competition for univ.pdf",
+      "year": "2011",
+      "url": "https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf",
+      "query": "NASA Lunabotics teleoperation remote control cameras out of sight",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

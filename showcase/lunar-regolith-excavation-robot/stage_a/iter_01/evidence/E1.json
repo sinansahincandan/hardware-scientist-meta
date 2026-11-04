@@ -1,22 +1,30 @@
 {
   "id": "E1",
-  "author": "Mara — Excavation and Mobility Engineer",
+  "author": "Excavation and Regolith Handling Lead",
   "tool": "web_search",
-  "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
-  "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+  "purpose": "search: NASA Lunabotics mining competition winning excavator bucket ladder design",
+  "code_or_query": "NASA Lunabotics mining competition winning excavator bucket ladder design",
   "inputs": {},
-  "output_summary": "hou.usra.edu — 5068.PDF — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
-  "output_full": "hou.usra.edu — 5068.PDF — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf\n(the search returned no passage text)",
+  "output_summary": "researchgate.net — A Simple Tele-Robotic Lunar Excavator — https://www.researchgate.net/publication/262332670_A_Simple_Tele-Robotic_Lunar_Excavator",
+  "output_full": "researchgate.net — A Simple Tele-Robotic Lunar Excavator — https://www.researchgate.net/publication/262332670_A_Simple_Tele-Robotic_Lunar_Excavator\n(found by the search; not opened or cited)\nExcavation and Regolith Handling Lead said about it: Plain words: the proven ladder from the A Simple Tele-Robotic Lunar Excavator (E1) mined 8 kg in 1 min, in the class of the winning rover in the University of Virginia Students Win NASA Challenge With Excavation Rover (E2), and the blade method from the INFRASTRUCTURE ROBOTICS: A TECHNOLOGY ENABLER (E5) and the Preparation of Papers for AIAA Technical Conferences (E6) gives only about a small bag of soil in push force and about two minutes per trip, from the cut-force estimate (E9) at 32.9 N and the fill simulation (E11) at 112 s to 15 kg; 32.9 N is about 3 kg weight against a 60 kg robot, so everyday scale says traction margin is comfortable.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "hou.usra.edu",
-      "title": "5068.PDF",
-      "year": "2019",
-      "url": "https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
-      "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "authors_or_org": "researchgate.net",
+      "title": "A Simple Tele-Robotic Lunar Excavator",
+      "year": "",
+      "url": "https://www.researchgate.net/publication/262332670_A_Simple_Tele-Robotic_Lunar_Excavator",
+      "query": "NASA Lunabotics mining competition winning excavator bucket ladder design",
       "unresolved": false,
-      "passage": ""
+      "passage": "Plain words: the proven ladder from the A Simple Tele-Robotic Lunar Excavator (E1) mined 8 kg in 1 min, in the class of the winning rover in the University of Virginia Students Win NASA Challenge With Excavation Rover (E2), and the blade method from the INFRASTRUCTURE ROBOTICS: A TECHNOLOGY ENABLER (E5) and the Preparation of Papers for AIAA Technical Conferences (E6) gives only about a small bag of soil in push force and about two minutes per trip, from the cut-force estimate (E9) at 32.9 N and the fill simulation (E11) at 112 s to 15 kg; 32.9 N is about 3 kg weight against a 60 kg robot, so everyday scale says traction margin is comfortable.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Excavation and Regolith Handling Lead",
+          "text": "Plain words: the proven ladder from the A Simple Tele-Robotic Lunar Excavator (E1) mined 8 kg in 1 min, in the class of the winning rover in the University of Virginia Students Win NASA Challenge With Excavation Rover (E2), and the blade method from the INFRASTRUCTURE ROBOTICS: A TECHNOLOGY ENABLER (E5) and the Preparation of Papers for AIAA Technical Conferences (E6) gives only about a small bag of soil in push force and about two minutes per trip, from the cut-force estimate (E9) at 32.9 N and the fill simulation (E11) at 112 s to 15 kg; 32.9 N is about 3 kg weight against a 60 kg robot, so everyday scale says traction margin is comfortable."
+        }
+      ]
     }
   ],
   "status": "ok",

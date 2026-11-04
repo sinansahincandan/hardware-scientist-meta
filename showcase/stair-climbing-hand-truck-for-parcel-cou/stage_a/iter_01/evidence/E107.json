@@ -1,0 +1,14 @@
+{
+  "id": "E107",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "door width clearance with true length",
+  "code_or_query": "1120-1145",
+  "inputs": {},
+  "output_summary": "-25",
+  "output_full": "-25",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

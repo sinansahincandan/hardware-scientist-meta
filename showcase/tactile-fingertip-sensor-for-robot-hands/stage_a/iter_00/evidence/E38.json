@@ -1,27 +1,14 @@
 {
   "id": "E38",
-  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
-  "tool": "calc",
-  "purpose": "mass sum fingertip cartridge for mount payload",
-  "code_or_query": "Q_(0.888,'g')+Q_(2,'g')+Q_(2,'g')",
-  "inputs": {
-    "arg0": {
-      "value": "0.888",
-      "unit": "g"
-    },
-    "arg1": {
-      "value": "2",
-      "unit": "g"
-    },
-    "arg2": {
-      "value": "2",
-      "unit": "g"
-    }
-  },
-  "output_summary": "4.89 g",
-  "output_full": "4.89 g",
+  "author": "Dr. Elena Vasquez \u2014 Contact Dynamics and Slip Detection",
+  "tool": "simulate",
+  "purpose": "stick-to-slip transition vs time: shear ramp to Coulomb limit plus 200 Hz micro-vibration burst and 30 ms detector window",
+  "code_or_query": "import numpy as np\ndt=1/2200\nt=np.arange(0,0.15,dt)\nFn=2.0  # N grip normal per finger\nmu=0.5  # silicone-glass friction\nFslip=mu*Fn  # 1.0 N\nFt=np.minimum(1.4*t/0.15+0.1,1.3)  # ramp shear\nstick=np.clip(1-Ft/(Fslip+1e-9)*0.5,0,1)  # stick ratio falls\n# vibration: 1 um at 200 Hz after microslip when Ft>0.6*Fslip\nenv=np.clip((Ft-0.6*Fslip)/(0.4*Fslip),0,1)\nvib=env*1e-6*np.sin(2*np.pi*200*t)\n# 30 ms moving power proxy\nw=int(0.03/dt)\npwr=np.convolve(vib**2,np.ones(w)/w,mode='same')\nprint(f\"Fn_N={Fn} mu={mu} Fslip_N={Fslip:.3f}\")\nprint(f\"t_microslip_ms={t[Ft>0.6*Fslip][0]*1000:.1f} t_grossslip_ms={t[Ft>=Fslip][0]*1000:.1f}\")\nprint(f\"vib_um={1.0} f_Hz=200 detector_window_ms=30 pwr_end={pwr[-1]:.3e}\")\nprint(\"stick_ratio at 0,50,100ms:\",[f\"{stick[np.argmin(abs(t-x))]:.2f}\" for x in [0,0.05,0.10]])\n",
+  "inputs": {},
+  "output_summary": "t_microslip_ms=53.6 t_grossslip_ms=96.8; vib_um=1.0 f_Hz=200 detector_window_ms=30 pwr_end=2.54e-13; stick_ratio at 0,50,100ms: ['0.95', '0.72', '0.48']",
+  "output_full": "Fn_N=2.0 mu=0.5 Fslip_N=1.000\nt_microslip_ms=53.6 t_grossslip_ms=96.8\nvib_um=1.0 f_Hz=200 detector_window_ms=30 pwr_end=2.544e-13\nstick_ratio at 0,50,100ms: ['0.95', '0.72', '0.48']",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 1
 }

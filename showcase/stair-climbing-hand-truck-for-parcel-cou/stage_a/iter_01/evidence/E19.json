@@ -1,0 +1,26 @@
+{
+  "id": "E19",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser going dimensions standard step height",
+  "code_or_query": "residential stair riser going dimensions standard step height",
+  "inputs": {},
+  "output_summary": "angi.com — Standard Size of a Staircase: Guide to Dimensions | Angi — https://www.angi.com/articles/standard-staircase-size.htm",
+  "output_full": "angi.com — Standard Size of a Staircase: Guide to Dimensions | Angi — https://www.angi.com/articles/standard-staircase-size.htm\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "angi.com",
+      "title": "Standard Size of a Staircase: Guide to Dimensions | Angi",
+      "year": "",
+      "url": "https://www.angi.com/articles/standard-staircase-size.htm",
+      "query": "residential stair riser going dimensions standard step height",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

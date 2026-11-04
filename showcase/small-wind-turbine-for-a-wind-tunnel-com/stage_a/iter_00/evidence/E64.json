@@ -1,0 +1,26 @@
+{
+  "id": "E64",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: diesel electric locomotive dynamic braking resistor grid thermal",
+  "code_or_query": "diesel electric locomotive dynamic braking resistor grid thermal",
+  "inputs": {},
+  "output_summary": "alchetron.com — Dynamic braking - Alchetron, The Free Social Encyclopedia — https://alchetron.com/Dynamic-braking",
+  "output_full": "alchetron.com — Dynamic braking - Alchetron, The Free Social Encyclopedia — https://alchetron.com/Dynamic-braking\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "alchetron.com",
+      "title": "Dynamic braking - Alchetron, The Free Social Encyclopedia",
+      "year": "",
+      "url": "https://alchetron.com/Dynamic-braking",
+      "query": "diesel electric locomotive dynamic braking resistor grid thermal",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

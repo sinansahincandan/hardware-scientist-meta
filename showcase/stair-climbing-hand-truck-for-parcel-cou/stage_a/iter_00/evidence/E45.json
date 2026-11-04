@@ -1,24 +1,36 @@
 {
   "id": "E45",
-  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
-  "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
+  "purpose": "search: bicycle disc brake stopping torque calculation pad friction radius 160mm",
+  "code_or_query": "bicycle disc brake stopping torque calculation pad friction radius 160mm",
   "inputs": {},
-  "output_summary": "carexpert.com.au — Ford Transit vs Mercedes-Benz Sprinter — https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
-  "output_full": "carexpert.com.au — Ford Transit vs Mercedes-Benz Sprinter — https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter\n(the search returned no passage text)",
+  "output_summary": "bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake — https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html",
+  "output_full": "bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake — https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html\n(opened by the member, not cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: I take from The Bicycle Physics of the Hydraulic Brake (E45, bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake) that braking torque is pad force times friction coefficient times rotor radius, I take from Disc brake effectiveness varies on rotor size?\nElena Ruiz — Human Factors & Single-Operator Safety said about it: As Elena Ruiz, single-operator safety: The hold must not live in the hands, so I confirm what Kenji Tanaka takes from The Bicycle Physics of the Hydraulic Brake (E45, The Bicycle Physics of the Hydraulic Brake) that clamp times radius makes torque and from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that a lock can hold the truck on stairs if the user stops, because that is the dead-man brake lever on both grips (C7) plus tooth park hold in the disc sketch (E52).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "carexpert.com.au",
-      "title": "Ford Transit vs Mercedes-Benz Sprinter",
+      "authors_or_org": "bikelabstudio.com",
+      "title": "The Bicycle Physics of the Hydraulic Brake",
       "year": "",
-      "url": "https://www.carexpert.com.au/ford/transit/vs/mercedes-benz/sprinter",
-      "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
+      "url": "https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html",
+      "query": "bicycle disc brake stopping torque calculation pad friction radius 160mm",
       "unresolved": false,
-      "passage": ""
+      "passage": "I take from The Bicycle Physics of the Hydraulic Brake (E45, bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake) that braking torque is pad force times friction coefficient times rotor radius, I take from Disc brake effectiveness varies on rotor size?",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "I take from The Bicycle Physics of the Hydraulic Brake (E45, bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake) that braking torque is pad force times friction coefficient times rotor radius, I take from Disc brake effectiveness varies on rotor size?"
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "As Elena Ruiz, single-operator safety: The hold must not live in the hands, so I confirm what Kenji Tanaka takes from The Bicycle Physics of the Hydraulic Brake (E45, The Bicycle Physics of the Hydraulic Brake) that clamp times radius makes torque and from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that a lock can hold the truck on stairs if the user stops, because that is the dead-man brake lever on both grips (C7) plus tooth park hold in the disc sketch (E52)."
+        }
+      ]
     }
   ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

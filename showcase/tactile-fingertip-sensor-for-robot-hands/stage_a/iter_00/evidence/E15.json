@@ -1,68 +1,14 @@
 {
   "id": "E15",
-  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-  "tool": "web_search",
-  "purpose": "search: fingerprint ridges tactile sensor friction slip enhancement",
-  "code_or_query": "fingerprint ridges tactile sensor friction slip enhancement",
+  "author": "Dr. Amara Okafor \u2014 Soft Skin Mechanics",
+  "tool": "sketch",
+  "purpose": "Fingertip section: domed silicone skin with fingerprint ridges over gel interlayer on rigid nail-backed core, contact load spreading to transducer.",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.plot([-10,10],[8,8],'k-',lw=2)\nax.annotate('object', xy=(0,8.5))\n# dome skin\nimport numpy as np\nx=np.linspace(-9,9,100)\ndome=4+3*np.sqrt(np.maximum(0,1-(x/10)**2))\nax.plot(x,dome,'k-',lw=2)\nax.fill_between(x, dome-1.5, dome, alpha=0.2)\nax.text(0,5.5,'silicone skin 1.5mm Shore A10')\nax.fill_between(x, dome-3.5, dome-1.5, alpha=0.15)\nax.text(0,3.0,'gel interlayer 2mm')\nax.plot(x, np.ones_like(x)*0.5,'k-',lw=3)\nax.text(0,0.0,'rigid core + nail (fixed)')\nax.annotate('ridges 0.4mm pitch', xy=(4,6.2), xytext=(5,7.5), arrowprops=dict(arrowstyle='->'))\nax.annotate('1mN -> 0.47mm dia spot', xy=(0,4.5), xytext=(-8,2.0), arrowprops=dict(arrowstyle='->'))\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
   "inputs": {},
-  "output_summary": "technologynetworks.com — Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research — https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454",
-  "output_full": "technologynetworks.com — Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research — https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454\n(found by the search; not opened or cited)\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: The Getting a Grip fingerprint finding (E15) that ridges raise friction helps me, since larger stick-slip means larger PVDF (polyvinylidene fluoride) voltage.\nSam — Robot Hand Integration and Manipulation said about it: Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly slow force holds grip while fast buzz catches slip, and the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip voltage for my PVDF, where PVDF means polyvinylidene fluoride, sampled at 2 kHz from the data rate check (E23) for under 5 ms latency, with per-taxel baseline plus gain stored in the MCU, where MCU means microcontroller unit, to remove 5 to 10 percent hysteresis and drift.\nSam — Robot Hand Integration and Manipulation said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds a milk bottle without nearing the 139 N survival proof.\nMaya — Tactile Transduction and Sensing Physics said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from sensing physics means larger high-frequency strain for the PVDF, where PVDF means polyvinylidene fluoride, vibration film sampled at 2 kHz.\nSam — Robot Hand Integration and Manipulation said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds without nearing survival load.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: I confirm the Getting a Grip finding (E15) that ridges raise friction, which from electronics means larger stick-slip voltage for polyvinylidene fluoride, where PVDF means polyvinylidene fluoride.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: The fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one capacitance-to-digital converter, where CDC means capacitance-to-digital converter, at 25 Hz static with vibration at 2 kHz from the data rate check (E23), like feeling slip before drop, and I confirm the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip signal.\nSam — Robot Hand Integration and Manipulation said about it: The Getting a Grip finding (E15) that ridges increase friction means the work point holds without crush.",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "technologynetworks.com",
-      "title": "Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research",
-      "year": "",
-      "url": "https://www.technologynetworks.com/drug-discovery/news/getting-a-grip-fingerprint-findings-could-boost-prosthetics-research-343454",
-      "query": "fingerprint ridges tactile sensor friction slip enhancement",
-      "unresolved": false,
-      "passage": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
-      "cited": true,
-      "read": false,
-      "statements": [
-        {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "The Getting a Grip fingerprint finding (E15) that ridges raise friction helps me, since larger stick-slip means larger PVDF (polyvinylidene fluoride) voltage."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "Plainly slow force holds grip while fast buzz catches slip, and the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip voltage for my PVDF, where PVDF means polyvinylidene fluoride, sampled at 2 kHz from the data rate check (E23) for under 5 ms latency, with per-taxel baseline plus gain stored in the MCU, where MCU means microcontroller unit, to remove 5 to 10 percent hysteresis and drift."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds a milk bottle without nearing the 139 N survival proof."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from sensing physics means larger high-frequency strain for the PVDF, where PVDF means polyvinylidene fluoride, vibration film sampled at 2 kHz."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, which from handling means the 14.8 N work point inside the mount load versus grip check (E32) holds without nearing survival load."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "I confirm the Getting a Grip finding (E15) that ridges raise friction, which from electronics means larger stick-slip voltage for polyvinylidene fluoride, where PVDF means polyvinylidene fluoride."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "The fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one capacitance-to-digital converter, where CDC means capacitance-to-digital converter, at 25 Hz static with vibration at 2 kHz from the data rate check (E23), like feeling slip before drop, and I confirm the Getting a Grip finding (E15) that ridges raise friction means larger stick-slip signal."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The Getting a Grip finding (E15) that ridges increase friction means the work point holds without crush."
-        }
-      ]
-    }
-  ],
+  "output_summary": "Fingertip section: domed silicone skin with fingerprint ridges over gel interlayer on rigid nail-backed core, contact load spreading to transducer.",
+  "output_full": "Fingertip section: domed silicone skin with fingerprint ridges over gel interlayer on rigid nail-backed core, contact load spreading to transducer.",
+  "sketch_path": "evidence/sketch_15.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

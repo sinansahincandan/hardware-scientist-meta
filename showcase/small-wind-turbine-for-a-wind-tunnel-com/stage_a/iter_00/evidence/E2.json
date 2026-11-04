@@ -1,0 +1,36 @@
+{
+  "id": "E2",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition winning turbine rotor design blade",
+  "code_or_query": "Collegiate Wind Competition winning turbine rotor design blade",
+  "inputs": {},
+  "output_summary": "energy.gov — Kansas State University Technical Design Report for the 2021 U.S. Department of Energy Collegiate Wind Competition — 2021 — https://www.energy.gov/sites/default/files/2021-11/ksu-designreport-2021.pdf",
+  "output_full": "energy.gov — Kansas State University Technical Design Report for the 2021 U.S. Department of Energy Collegiate Wind Competition — 2021 — https://www.energy.gov/sites/default/files/2021-11/ksu-designreport-2021.pdf\n(opened by the member, not cited)\nAero-Rotor Lead said about it: Department of Energy Collegiate Wind Competition (E2) which states the final turbine was a 3-bladed, fixed-pitch, direct-drive assembly with passive centrifugal Revolutions Per Minute (RPM) control, and I adopt that layout for the tri-star rotor (C1) plus rigid hub (C3).\nAero-Rotor Lead said about it: The same TSR 6 gives rotor speed (E14) 1.43e+03 RPM at 5 m/s and (E13) 3.15e+03 RPM at 11 m/s for direct-drive matching (C4), while wind dynamic load scale (E15) 37.3 N at 22 m/s is about 3.80 kg weight, easily carried to the post but requiring stall limiting; I read (E3) shows soft stall in 4 to 9 deg angle range and (E2) shows unloaded overspeed near 4300 RPM, so I add soft-stall sections (C7) to cap thrust and speed.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "energy.gov",
+      "title": "Kansas State University Technical Design Report for the 2021 U.S. Department of Energy Collegiate Wind Competition",
+      "year": "2021",
+      "url": "https://www.energy.gov/sites/default/files/2021-11/ksu-designreport-2021.pdf",
+      "query": "Collegiate Wind Competition winning turbine rotor design blade",
+      "unresolved": false,
+      "passage": "Department of Energy Collegiate Wind Competition (E2) which states the final turbine was a 3-bladed, fixed-pitch, direct-drive assembly with passive centrifugal Revolutions Per Minute (RPM) control, and I adopt that layout for the tri-star rotor (C1) plus rigid hub (C3).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "Department of Energy Collegiate Wind Competition (E2) which states the final turbine was a 3-bladed, fixed-pitch, direct-drive assembly with passive centrifugal Revolutions Per Minute (RPM) control, and I adopt that layout for the tri-star rotor (C1) plus rigid hub (C3)."
+        },
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "The same TSR 6 gives rotor speed (E14) 1.43e+03 RPM at 5 m/s and (E13) 3.15e+03 RPM at 11 m/s for direct-drive matching (C4), while wind dynamic load scale (E15) 37.3 N at 22 m/s is about 3.80 kg weight, easily carried to the post but requiring stall limiting; I read (E3) shows soft stall in 4 to 9 deg angle range and (E2) shows unloaded overspeed near 4300 RPM, so I add soft-stall sections (C7) to cap thrust and speed."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

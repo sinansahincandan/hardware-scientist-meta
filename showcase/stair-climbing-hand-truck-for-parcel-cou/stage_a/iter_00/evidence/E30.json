@@ -1,22 +1,38 @@
 {
   "id": "E30",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
   "tool": "web_search",
-  "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
-  "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+  "purpose": "search: EN 1757 safety hand truck stair climber brake standard",
+  "code_or_query": "EN 1757 safety hand truck stair climber brake standard",
   "inputs": {},
-  "output_summary": "hxm-aluminum.com — 6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum — https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
-  "output_full": "hxm-aluminum.com — 6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum — https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html\n(the search returned no passage text)",
+  "output_summary": "nen.nl — NEN-EN 1757:2022 en — 2022 — https://www.nen.nl/en/nen-en-1757-2022-en-296530",
+  "output_full": "nen.nl — NEN-EN 1757:2022 en — 2022 — https://www.nen.nl/en/nen-en-1757-2022-en-296530\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table.\nManager said about it: Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, no blocking objection is settled because the descent-hold objection stands since the rule that trucks to 500 kg need a parking brake from the NEN-EN 1757:2022 en (E30) plus the de-rate from 60 kg flat to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3) proves an auto-lock is needed but no torque is shown, so Elena Ruiz with Kenji Tanaka must prove locked hold with no back-drive and Mara Voss must prove twin-tube stress at full 60 kg on the 197 mm riser, and I answer all four not-ready votes as correct because the device cannot yet carry full load downstairs with one-person hold and fold into the van.\nKenji Tanaka — Stair-Climbing Locomotion said about it: Without the lock the hand must still meet the climb simulation (E23) at about 209 N pull and about 188 N hold, so I confirm what Elena Ruiz takes from the ergonomics push-pull guidance (E28) on sustained limits and from the parking-brake rule for trucks to 500 kg (E30): release must mean locked.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "hxm-aluminum.com",
-      "title": "6061 Aluminum Tubes | Round & Square Tube Supplier – HXM Aluminum",
-      "year": "",
-      "url": "https://www.hxm-aluminum.com/products/aluminum-tube/6061-aluminum-tubes.html",
-      "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "authors_or_org": "nen.nl",
+      "title": "NEN-EN 1757:2022 en",
+      "year": "2022",
+      "url": "https://www.nen.nl/en/nen-en-1757-2022-en-296530",
+      "query": "EN 1757 safety hand truck stair climber brake standard",
       "unresolved": false,
-      "passage": ""
+      "passage": "I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table."
+        },
+        {
+          "by": "Manager",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, no blocking objection is settled because the descent-hold objection stands since the rule that trucks to 500 kg need a parking brake from the NEN-EN 1757:2022 en (E30) plus the de-rate from 60 kg flat to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3) proves an auto-lock is needed but no torque is shown, so Elena Ruiz with Kenji Tanaka must prove locked hold with no back-drive and Mara Voss must prove twin-tube stress at full 60 kg on the 197 mm riser, and I answer all four not-ready votes as correct because the device cannot yet carry full load downstairs with one-person hold and fold into the van."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Without the lock the hand must still meet the climb simulation (E23) at about 209 N pull and about 188 N hold, so I confirm what Elena Ruiz takes from the ergonomics push-pull guidance (E28) on sustained limits and from the parking-brake rule for trucks to 500 kg (E30): release must mean locked."
+        }
+      ]
     }
   ],
   "status": "ok",

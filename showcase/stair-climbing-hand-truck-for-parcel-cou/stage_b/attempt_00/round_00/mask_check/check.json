@@ -1,0 +1,102 @@
+{
+  "crops": [
+    "crop 1: BB",
+    "crop 2: TP",
+    "crop 3: HR",
+    "crop 4: CL",
+    "crop 5: AX",
+    "crop 6: BR",
+    "crop 7: LV",
+    "crop 8: CB",
+    "crop 9: CB",
+    "crop 10: PS",
+    "crop 11: CL__wheel",
+    "crop 12: CL__wheel",
+    "crop 13: CL__wheel",
+    "crop 14: CL__wheel",
+    "crop 15: BB__tube",
+    "crop 16: BB__tube"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "outline of entire stair-climbing trolley"
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": false,
+      "seen_as": "coil suspension spring"
+    },
+    {
+      "index": 6,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 7,
+      "is_part": false,
+      "seen_as": "telescoping push handle grip"
+    },
+    {
+      "index": 8,
+      "is_part": false,
+      "seen_as": "brake cable and cable clip on backbone tube"
+    },
+    {
+      "index": 9,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 10,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 11,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 12,
+      "is_part": false,
+      "seen_as": "caster fork / small part of wheel assembly"
+    },
+    {
+      "index": 13,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 14,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 15,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 16,
+      "is_part": false,
+      "seen_as": "telescoping push handle inner tube"
+    }
+  ]
+}

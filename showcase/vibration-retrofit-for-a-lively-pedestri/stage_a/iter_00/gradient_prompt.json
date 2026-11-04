@@ -1,0 +1,77 @@
+{
+  "feedback_decisions": [
+    {
+      "feedback_item": "cross_beam orientation/size - longitudinal full-span vs transverse",
+      "decision": "reject",
+      "why": "The solution already claims a single short transverse cross-beam spanning between the two girders at midspan perpendicular to the girders in the twin under-deck layout sketch (E55) and the modal-effectiveness calculation (E67), with the friction load path into the girders proven by the slip-resistance calculation (E64) against the combined-load calculation (E65). What the renderer drew as a single long longitudinal beam parallel to the girders contradicts that fixed geometry and was a generator default to a familiar stringer archetype. What must change is nothing in the design, only faithful redraw transverse at midspan, because parts, quantity, and beam-to-girder friction connection were already decided. This says nothing about the design."
+    },
+    {
+      "feedback_item": "Friction Clamp Bolts callout misplaced onto mass frame",
+      "decision": "reject",
+      "why": "The solution already claims a friction clamp bolt set at the beam-to-girder interface with slip capacity proven by the slip-resistance calculation (E64) against the combined static plus dynamic demand in the combined-load calculation (E65). What the renderer drew routes the leader to the frame of the Tuned Mass Block, which is the wrong interface and hides the verified weld-free friction grip. What must change is nothing in the design, only leader routing and spelling to the beam-girder interface, because clamp function, location, and slip margin were already specified. This says nothing about the design."
+    },
+    {
+      "feedback_item": "extra empty flag symbols above deck",
+      "decision": "reject",
+      "why": "The solution already claims all steel stays within girder depth below the soffit with nothing above the deck in the twin under-deck layout sketch (E55) to maintain deck appearance with clear walkway. What the renderer drew as four small grey flag markers floating above the deck has no source in the parts list, connections, or measurement chain and is a hallucination. What must change is nothing in the design, only removal of unnamed symbols so only named part callouts remain, because the hidden under-deck constraint was already met. This says nothing about the design."
+    }
+  ],
+  "per_member": [
+    {
+      "member": "Retrofit Integration and Construction Lead",
+      "what_went_wrong": "Placement was specified by station and clearance in the envelope calculation (E68) and the free-decay simulation (E17), but orientation language stayed implicit, so verification had no agreed transverse-versus-longitudinal ground truth to judge the render against and the generator reverted to a longitudinal default.",
+      "what_should_change": "The role block should require the member to state beam orientation relative to girders and viewpoint, along-axis station at the antinode, and above-flange versus below-flange zone in words before agreement, and to confirm that the sketch shows that orientation.",
+      "explains": "The Retrofit Integration and Construction Lead turn introduced the twin pair at midspan and the caged stops with the layout sketch (E55) and the envelope calculation (E68), but described placement as centralized midspan without stating transverse-perpendicular orientation relative to the girders and viewpoint."
+    },
+    {
+      "member": "Bridge Retrofit Engineer",
+      "what_went_wrong": "Clamp capacity was proven by the slip-resistance calculation (E64) and demand in the combined-load calculation (E65), but the interface zone was not anchored in words, so the callout leader could drift to the mass frame while still listing the correct bolt function.",
+      "what_should_change": "The role block should require the member to name the host-system mounting interface explicitly as ordered zones from beam ends into girder webs, and to require that any clamp callout lands on that interface zone, with joint confirmation by the integration owner.",
+      "explains": "The Bridge Retrofit Engineer turn proved weld-free friction grip with the slip-resistance calculation (E64) against the combined-load calculation (E65) and cited the friction-slip mechanism source, but named the joint as clamped cross-beam without naming both sides of the interface in viewpoint-relative terms."
+    },
+    {
+      "member": "Structural Dynamicist",
+      "what_went_wrong": "Dynamics proof correctly centered action at the antinode, but without an explicit transverse-station commitment the dynamics evidence could not prevent a full-span longitudinal depiction that implies distributed drive.",
+      "what_should_change": "The role block should require the member to restate operating directionality and station dependence in words, namely that midspan drive favors a single transverse station and off-centre effectiveness falls, and to jointly confirm that station with the integration owner.",
+      "explains": "The Structural Dynamicist turn proved antinode drive with the locked-frequency check (E69) and the detuning sweep (E70) and effective damping in the free-decay simulation (E17), but never restated that drive occurs at a single transverse station."
+    },
+    {
+      "member": "Pedestrian Comfort and Safety Assessor",
+      "what_went_wrong": "Comfort acceptance correctly borrowed method from the lift ride source while bands set pass or fail, but appearance was treated as narrative rather than a countable interface, so extra flag markers above deck passed through without a member owning their rejection.",
+      "what_should_change": "The role block should require the member to state deck-appearance preservation as a topology ban with no hardware or symbols above the walking surface, separate from photorealistic style, and to check the figure for any above-deck marks before voting ready.",
+      "explains": "The Pedestrian Comfort and Safety Assessor turn accepted Medium comfort with the retrofitted-acceleration calculation (E44) settling in the crowd build-up simulation (E45) versus bare acceleration in the bare-acceleration calculation (E43), and confirmed silhouette kept by working under deck, but never stated an explicit ban on deck-top symbols."
+    }
+  ],
+  "per_section": [
+    {
+      "heading": "## 1. Problem",
+      "diagnosis": "The problem statement fixes span and first mode but fixes no viewpoint, operational setting, or connection topology, so the transverse beam between girders defined in the layout sketch (E55) and the friction grip into girders proven in the slip-resistance calculation (E64) had no prompt-level anchor. What was asked for was comfort without deck change, what was missing was transverse-perpendicular topology, midspan-station placement, and nothing-above-deck as topology commitments.",
+      "direction": "Add viewpoint and setting alongside parts, state transverse cross-beam topology between girders at midspan and clamp interface zones in words, and separate topology commitments from rendering style so verification judges same parts and same connections as faithful across style shifts.",
+      "explains": "The bare problem text allowed the renderer to invent a longitudinal full-span beam and floating deck flags because no sentence forbade them, even though the council had fixed the transverse layout in the layout sketch (E55) and midspan effectiveness in the modal-effectiveness calculation (E67)."
+    },
+    {
+      "heading": "## 2. Roles",
+      "diagnosis": "The roster defines complementary dynamics, load-path, comfort, and integration ownership without depiction ownership, so no member owned orientation handedness, viewpoint-relative zone order, or callout-to-interface binding. What was asked for was domain constraints and tradeoffs, what was missing was who confirms transverse orientation and beam-girder interface depiction before ready votes.",
+      "direction": "Keep specialties but add depiction confirmation duties to existing owners in generic terms, requiring joint confirmation of mounting interface, station order, and appearance ban without writing any design numbers or solutions into the roles.",
+      "explains": "The Retrofit Integration and Construction Lead owned under-deck placement and the Bridge Retrofit Engineer owned load-path continuity, yet neither role required explicit orientation or interface-zone confirmation, so the cross-beam orientation error in the box region and the misplaced clamp leader passed to rendering unchecked."
+    },
+    {
+      "heading": "## 4. Meeting protocol",
+      "diagnosis": "The meeting protocol requires concepts, evidence, simulations, and sketches but never requires an ordered end-to-end connection chain carried verbatim into the figure brief, viewpoint-relative zone language, or a ban on unnamed symbols. What was asked for was plain-words mechanism and labeled sketches, what was missing was a countable interface check that distinguishes true omission from rendering blend and representative versus literal depiction.",
+      "direction": "Require the Manager to record agreed functional interfaces separate from parts presence, to carry the agreed connection chain verbatim into image briefs, to specify zone order from the chosen viewpoint, and to forbid extra text or symbols beyond named parts, with members confirming before ready votes.",
+      "explains": "The protocol produced a complete energy chain from cross-beam to mass blocks to damper units and a measured chain to the comfort verdict, but without a verbatim-chain and zone-order rule the render could show a longitudinal beam, a misrouted clamp leader, and extra flags while still listing the correct parts."
+    }
+  ],
+  "sections_to_change": [
+    "## 1. Problem",
+    "## 2. Roles",
+    "## 4. Meeting protocol"
+  ],
+  "root_cause": "The prompt fixed physics, loads, and comfort with calculations and simulations but left depiction topology implicit, so the renderer defaulted to a familiar longitudinal stringer, drifted the clamp callout to the mass frame, and hallucinated deck-top flags. The twin-mass retrofit with tune, damping, slip margin, and under-deck concealment was already fully specified, so this was a drawing failure after three rounds, not a design rejection.",
+  "agenda": "This is a targeted depiction failure, not a broad physics or comfort failure. The council already fixed twin-mass tune, damping, loads, and concealment with calculations and simulations, so the next prompt edit must lock depiction topology and viewpoint without reopening the retrofit design.",
+  "same_problem_as_before": false,
+  "repeat_explanation": "",
+  "revert_sections": [],
+  "new_tool_proposals": [],
+  "retire_tools": []
+}

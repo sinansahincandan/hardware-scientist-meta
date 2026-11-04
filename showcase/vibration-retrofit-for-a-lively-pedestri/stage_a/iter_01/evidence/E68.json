@@ -1,0 +1,14 @@
+{
+  "id": "E68",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "calc",
+  "purpose": "total sag plus stroke envelope mm",
+  "code_or_query": "74.7+49.4",
+  "inputs": {},
+  "output_summary": "124",
+  "output_full": "124",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

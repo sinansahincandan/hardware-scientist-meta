@@ -1,0 +1,14 @@
+{
+  "id": "E69",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "six 400W panel footprint m2",
+  "code_or_query": "6*1.722*1.134",
+  "inputs": {},
+  "output_summary": "11.7",
+  "output_full": "11.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

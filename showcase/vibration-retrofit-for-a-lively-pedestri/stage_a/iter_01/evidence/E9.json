@@ -1,0 +1,23 @@
+{
+  "id": "E9",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "modal stiffness from assumed modal mass 30t at 1.9Hz",
+  "code_or_query": "Q_(30000,'kg')*(2*3.14159*Q_(1.9,'Hz'))**2",
+  "inputs": {
+    "arg0": {
+      "value": "30000",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "1.9",
+      "unit": "Hz"
+    }
+  },
+  "output_summary": "4.28\u00d710\u2076 Hz\u00b2\u22c5kg",
+  "output_full": "4.28\u00d710\u2076 Hz\u00b2\u22c5kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

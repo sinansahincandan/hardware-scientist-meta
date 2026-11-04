@@ -1,0 +1,32 @@
+{
+  "id": "E115",
+  "author": "Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: ground screw anchor pull-out capacity small shelter kN soft soil",
+  "code_or_query": "ground screw anchor pull-out capacity small shelter kN soft soil",
+  "inputs": {},
+  "output_summary": "123docz.net — Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH — https://123docz.net/document/9896984-nghien-cuu-giai-phap-neo-xoan-de-gia-cuong-on-dinh-cho-cau-kien-bao-ve-mai-kenh-cong-trinh-thuy-loi-tt-tieng-anh.htm",
+  "output_full": "123docz.net — Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH — https://123docz.net/document/9896984-nghien-cuu-giai-phap-neo-xoan-de-gia-cuong-on-dinh-cho-cau-kien-bao-ve-mai-kenh-cong-trinh-thuy-loi-tt-tieng-anh.htm\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: Small ground screws give 1.70 kN tension each from the Ground Screw Pole Anchor (E114), while screw anchors in soft-plastic clay give 4.83 to 5.10 kN uplift from the Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH (E115), so I use the conservative 1.70 kN value.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "123docz.net",
+      "title": "Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH",
+      "year": "",
+      "url": "https://123docz.net/document/9896984-nghien-cuu-giai-phap-neo-xoan-de-gia-cuong-on-dinh-cho-cau-kien-bao-ve-mai-kenh-cong-trinh-thuy-loi-tt-tieng-anh.htm",
+      "query": "ground screw anchor pull-out capacity small shelter kN soft soil",
+      "unresolved": false,
+      "passage": "Small ground screws give 1.70 kN tension each from the Ground Screw Pole Anchor (E114), while screw anchors in soft-plastic clay give 4.83 to 5.10 kN uplift from the Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH (E115), so I use the conservative 1.70 kN value.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "Small ground screws give 1.70 kN tension each from the Ground Screw Pole Anchor (E114), while screw anchors in soft-plastic clay give 4.83 to 5.10 kN uplift from the Nghiên cứu giải pháp neo xoắn để gia cường ổn định cho cấu kiện bảo vệ mái kênh công trình thủy lợi TT TIENG ANH (E115), so I use the conservative 1.70 kN value."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

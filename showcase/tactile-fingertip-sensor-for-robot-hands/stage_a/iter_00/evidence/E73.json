@@ -1,0 +1,26 @@
+{
+  "id": "E73",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+  "code_or_query": "STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+  "inputs": {},
+  "output_summary": "canada.newark.com — How to use ADC Oversampling techniques to improve signal-to-noise ratio on STM32 MCUs - Application note — https://canada.newark.com/site/binaries/content/assets/common/product-family-documents/stm-stm32l552e-ev/stm-stm32l552e-ev-an3.pdf?ICID=I-FP-EMB-DKHQ-STM-STM32L552E-EV-TR",
+  "output_full": "canada.newark.com — How to use ADC Oversampling techniques to improve signal-to-noise ratio on STM32 MCUs - Application note — https://canada.newark.com/site/binaries/content/assets/common/product-family-documents/stm-stm32l552e-ev/stm-stm32l552e-ev-an3.pdf?ICID=I-FP-EMB-DKHQ-STM-STM32L552E-EV-TR\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "canada.newark.com",
+      "title": "How to use ADC Oversampling techniques to improve signal-to-noise ratio on STM32 MCUs - Application note",
+      "year": "",
+      "url": "https://canada.newark.com/site/binaries/content/assets/common/product-family-documents/stm-stm32l552e-ev/stm-stm32l552e-ev-an3.pdf?ICID=I-FP-EMB-DKHQ-STM-STM32L552E-EV-TR",
+      "query": "STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

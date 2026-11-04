@@ -1,0 +1,251 @@
+{
+  "view": "side",
+  "nodes": [
+    {
+      "id": "chassis",
+      "label": "twin-tube aluminium chassis",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 900.0,
+        "max": 1050.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 1
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 6.0
+    },
+    {
+      "id": "wheels",
+      "label": "rigid grouser wheels",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 220.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#808080",
+      "aspect": 1.0
+    },
+    {
+      "id": "arms",
+      "label": "folding wheel arms",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 2.5
+    },
+    {
+      "id": "kerf",
+      "label": "narrow kerf trenching chain",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 100.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 3
+      },
+      "color_hint": "#a0a0a0",
+      "aspect": 0.5
+    },
+    {
+      "id": "ladder",
+      "label": "bucket ladder elevator",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 600.0,
+        "max": 800.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 2
+      },
+      "color_hint": "#a0a0a0",
+      "aspect": 4.5
+    },
+    {
+      "id": "hopper",
+      "label": "steep wedge hopper",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 300.0,
+        "max": 400.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 1
+      },
+      "color_hint": "#d5a06a",
+      "aspect": 1.1
+    },
+    {
+      "id": "screw",
+      "label": "auger discharge screw",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#c0c0c0",
+      "aspect": 4.0
+    },
+    {
+      "id": "battery",
+      "label": "lithium phosphate battery packs",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 200.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#4a86e8",
+      "aspect": 1.5
+    },
+    {
+      "id": "cameras",
+      "label": "drive and dig and mast cameras",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 50.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 0
+      },
+      "color_hint": "#e06666",
+      "aspect": 1.0
+    },
+    {
+      "id": "computer",
+      "label": "onboard computer with watchdog",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 100.0,
+        "max": 150.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 1
+      },
+      "color_hint": "#6aa84f",
+      "aspect": 1.5
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "kerf",
+      "to_id": "ladder",
+      "kind": "mechanical",
+      "label": "side spoil to ladder",
+      "arrow": true
+    },
+    {
+      "from_id": "ladder",
+      "to_id": "hopper",
+      "kind": "mechanical",
+      "label": "gravity chute into hopper",
+      "arrow": true
+    },
+    {
+      "from_id": "arms",
+      "to_id": "chassis",
+      "kind": "mechanical",
+      "label": "folding pivots widen track",
+      "arrow": false
+    },
+    {
+      "from_id": "arms",
+      "to_id": "wheels",
+      "kind": "mechanical",
+      "label": "supports wheels",
+      "arrow": false
+    },
+    {
+      "from_id": "hopper",
+      "to_id": "screw",
+      "kind": "mechanical",
+      "label": "rear pivot tilt",
+      "arrow": false
+    },
+    {
+      "from_id": "battery",
+      "to_id": "wheels",
+      "kind": "electrical",
+      "label": "fused bus to drives",
+      "arrow": false
+    },
+    {
+      "from_id": "battery",
+      "to_id": "kerf",
+      "kind": "electrical",
+      "label": "fused bus to dig",
+      "arrow": false
+    },
+    {
+      "from_id": "battery",
+      "to_id": "ladder",
+      "kind": "electrical",
+      "label": "fused bus to lift",
+      "arrow": false
+    },
+    {
+      "from_id": "cameras",
+      "to_id": "hopper",
+      "kind": "optical",
+      "label": "sees trench and bin",
+      "arrow": false
+    },
+    {
+      "from_id": "cameras",
+      "to_id": "computer",
+      "kind": "electrical",
+      "label": "video to computer",
+      "arrow": false
+    }
+  ],
+  "loads": [
+    {
+      "on_id": "hopper",
+      "label": "soil weight in hopper",
+      "direction": "down"
+    },
+    {
+      "on_id": "kerf",
+      "label": "cutting resistance at trench",
+      "direction": "down"
+    },
+    {
+      "on_id": "wheels",
+      "label": "ground support under wheels",
+      "direction": "up"
+    }
+  ],
+  "critical_part_id": "ladder",
+  "scale_bar_mm": 100.0,
+  "notes": [
+    "side view: front dig left, rear dump right; kerf cuts 100mm slot 50mm deep at front",
+    "ladder incline lifts spoil to high hopper, screw at hopper outlet meters tilt pour",
+    "chassis beam carries loads, arms link chassis to wheels at ground"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E125",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "chamber pad pressure with foundation self-weight added",
+  "code_or_query": "(2210+6*0.4*0.4*0.15*2400+4*0.4*0.4*0.15*2400)*9.81/6/(0.4*0.4)/1000",
+  "inputs": {},
+  "output_summary": "28.5",
+  "output_full": "28.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E97",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "MPPT charge current amps for 3.6kWp at 48V",
+  "code_or_query": "3600/48",
+  "inputs": {},
+  "output_summary": "75",
+  "output_full": "75",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

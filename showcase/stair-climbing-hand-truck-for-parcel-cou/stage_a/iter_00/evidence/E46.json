@@ -1,24 +1,26 @@
 {
   "id": "E46",
-  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: folding hand truck setup time seconds unfold",
-  "code_or_query": "folding hand truck setup time seconds unfold",
+  "purpose": "search: mountain bike disc brake holding torque 160mm rotor clamp force",
+  "code_or_query": "mountain bike disc brake holding torque 160mm rotor clamp force",
   "inputs": {},
-  "output_summary": "desertcart.ro — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania — https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
-  "output_full": "desertcart.ro — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania — https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel\n(the search returned no passage text)",
+  "output_summary": "picclick.com.au — PAIR HYDRAULIC DISC Brakes Left Front Right Rear MTB Bike 160mm Caliper Rotor AU — https://picclick.com.au/Pair-Hydraulic-Disc-Brakes-Left-Front-Right-Rear-336849198399.html",
+  "output_full": "picclick.com.au — PAIR HYDRAULIC DISC Brakes Left Front Right Rear MTB Bike 160mm Caliper Rotor AU — https://picclick.com.au/Pair-Hydraulic-Disc-Brakes-Left-Front-Right-Rear-336849198399.html\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "desertcart.ro",
-      "title": "Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Romania",
+      "authors_or_org": "picclick.com.au",
+      "title": "PAIR HYDRAULIC DISC Brakes Left Front Right Rear MTB Bike 160mm Caliper Rotor AU",
       "year": "",
-      "url": "https://www.desertcart.ro/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
-      "query": "folding hand truck setup time seconds unfold",
+      "url": "https://picclick.com.au/Pair-Hydraulic-Disc-Brakes-Left-Front-Right-Rear-336849198399.html",
+      "query": "mountain bike disc brake holding torque 160mm rotor clamp force",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

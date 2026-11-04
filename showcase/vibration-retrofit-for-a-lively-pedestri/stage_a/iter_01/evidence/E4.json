@@ -1,0 +1,32 @@
+{
+  "id": "E4",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
+  "code_or_query": "pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
+  "inputs": {},
+  "output_summary": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section — https://link.springer.com/article/10.1186/s43251-025-00188-y",
+  "output_full": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section — https://link.springer.com/article/10.1186/s43251-025-00188-y\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "link.springer.com",
+      "title": "Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section",
+      "year": "",
+      "url": "https://link.springer.com/article/10.1186/s43251-025-00188-y",
+      "query": "pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
+      "unresolved": false,
+      "passage": "Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

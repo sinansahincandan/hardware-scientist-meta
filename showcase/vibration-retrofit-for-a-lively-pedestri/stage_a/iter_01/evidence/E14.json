@@ -1,0 +1,14 @@
+{
+  "id": "E14",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "Den Hartog optimum TMD frequency",
+  "code_or_query": "1.9/(1+0.04)",
+  "inputs": {},
+  "output_summary": "1.83",
+  "output_full": "1.83",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

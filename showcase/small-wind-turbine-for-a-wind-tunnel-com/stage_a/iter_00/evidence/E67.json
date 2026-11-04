@@ -1,0 +1,14 @@
+{
+  "id": "E67",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "dump resistor energy during 1.65 s stop",
+  "code_or_query": "51.1*1.65",
+  "inputs": {},
+  "output_summary": "84.3",
+  "output_full": "84.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

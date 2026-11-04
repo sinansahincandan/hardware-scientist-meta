@@ -1,0 +1,14 @@
+{
+  "id": "E76",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "door width clearance folded length",
+  "code_or_query": "1120-730",
+  "inputs": {},
+  "output_summary": "390",
+  "output_full": "390",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

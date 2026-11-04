@@ -1,0 +1,36 @@
+{
+  "id": "E72",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: smallholder cooperative cold storage pay per crate fee affordability India Africa",
+  "code_or_query": "smallholder cooperative cold storage pay per crate fee affordability India Africa",
+  "inputs": {},
+  "output_summary": "llahub.gca.org — Preserving Harvests: Fresh Solutions to Food Loss in Kenya — https://llahub.gca.org/stories/c67c4b60-45de-431c-a977-b96aa8322560",
+  "output_full": "llahub.gca.org — Preserving Harvests: Fresh Solutions to Food Loss in Kenya — https://llahub.gca.org/stories/c67c4b60-45de-431c-a977-b96aa8322560\n(opened by the member, not cited)\nSmallholder Cooperative Operations Specialist said about it: Through an affordable sharing model, farmers rent storage space for as little as US$ 0.10-0.50 per crate per day from the Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72), and that daily fee funds the attendant, paper tags, twice-daily thermometer checks and hose cleaning with no electronic control from my field.\nSmallholder Cooperative Operations Specialist said about it: I take up the guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) that you put on the board, which gives 10 to 15 years with monthly wipe and terminal checks, which means my attendant can do it with no specialist, funded through farmers renting space for as little as US$ 0.10 to 0.50 per crate per day from Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72) for tags, twice-daily thermometer checks and hose cleaning.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "llahub.gca.org",
+      "title": "Preserving Harvests: Fresh Solutions to Food Loss in Kenya",
+      "year": "",
+      "url": "https://llahub.gca.org/stories/c67c4b60-45de-431c-a977-b96aa8322560",
+      "query": "smallholder cooperative cold storage pay per crate fee affordability India Africa",
+      "unresolved": false,
+      "passage": "Through an affordable sharing model, farmers rent storage space for as little as US$ 0.10-0.50 per crate per day from the Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72), and that daily fee funds the attendant, paper tags, twice-daily thermometer checks and hose cleaning with no electronic control from my field.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "Through an affordable sharing model, farmers rent storage space for as little as US$ 0.10-0.50 per crate per day from the Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72), and that daily fee funds the attendant, paper tags, twice-daily thermometer checks and hose cleaning with no electronic control from my field."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "I take up the guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) that you put on the board, which gives 10 to 15 years with monthly wipe and terminal checks, which means my attendant can do it with no specialist, funded through farmers renting space for as little as US$ 0.10 to 0.50 per crate per day from Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72) for tags, twice-daily thermometer checks and hose cleaning."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,23 @@
+{
+  "id": "E79",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "current at 5 m/s with revised 170Kv volts",
+  "code_or_query": "Q_(3.27,'W')/Q_(8.41,'V')",
+  "inputs": {
+    "arg0": {
+      "value": "3.27",
+      "unit": "W"
+    },
+    "arg1": {
+      "value": "8.41",
+      "unit": "V"
+    }
+  },
+  "output_summary": "0.389 W/V",
+  "output_full": "0.389 W/V",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

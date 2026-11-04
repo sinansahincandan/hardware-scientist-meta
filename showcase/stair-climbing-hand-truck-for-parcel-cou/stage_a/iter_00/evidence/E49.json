@@ -1,14 +1,32 @@
 {
   "id": "E49",
-  "author": "Leo \u2013 Last-Mile Operations and Van Integration Specialist",
-  "tool": "sketch",
-  "purpose": "Van stow slab and toe plate with 60x40x40 parcel",
-  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(1,2,figsize=(8,4)); ax[0].add_patch(plt.Rectangle((0,0),4.9,7.3,color='lightgrey')); ax[0].text(2.4,3.5,'folded slab\\n490x730',ha='center'); ax[0].set_xlim(-1,7); ax[0].set_ylim(-1,9); ax[0].set_title('folded in van niche'); ax[0].set_aspect('equal'); ax[1].add_patch(plt.Rectangle((0,0),4.5,0.5,color='grey')); ax[1].add_patch(plt.Rectangle((0,0.5),4.5,6.0,color='none',ec='black')); ax[1].add_patch(plt.Rectangle((0.5,0.5),4.0,4.0,color='tan')); ax[1].text(2.2,2.5,'parcel 60x40x40',ha='center'); ax[1].set_xlim(-1,6); ax[1].set_ylim(-1,8); ax[1].set_title('toe 450x350 unfolded'); plt.tight_layout(); plt.savefig('sketch.png')",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: bicycle disc brake stopping torque calculation pad friction radius 160mm",
+  "code_or_query": "bicycle disc brake stopping torque calculation pad friction radius 160mm",
   "inputs": {},
-  "output_summary": "Van stow slab and toe plate with 60x40x40 parcel",
-  "output_full": "Van stow slab and toe plate with 60x40x40 parcel",
-  "sketch_path": "evidence/sketch_49.png",
-  "references": [],
+  "output_summary": "physicsforums.com — Disc brake effectiveness varies on rotor size? — https://www.physicsforums.com/threads/disc-brake-effectiveness-varies-on-rotor-size.261308/",
+  "output_full": "physicsforums.com — Disc brake effectiveness varies on rotor size? — https://www.physicsforums.com/threads/disc-brake-effectiveness-varies-on-rotor-size.261308/\n(found by the search; not opened or cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: (E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "physicsforums.com",
+      "title": "Disc brake effectiveness varies on rotor size?",
+      "year": "",
+      "url": "https://www.physicsforums.com/threads/disc-brake-effectiveness-varies-on-rotor-size.261308/",
+      "query": "bicycle disc brake stopping torque calculation pad friction radius 160mm",
+      "unresolved": false,
+      "passage": "(E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "(E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent."
+        }
+      ]
+    }
+  ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

@@ -1,14 +1,36 @@
 {
   "id": "E45",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "calc",
-  "purpose": "useful lift energy check 15kg through 0.60m rise",
-  "code_or_query": "15*9.81*0.60",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: transverse milling drum soil cutting power traction trencher",
+  "code_or_query": "transverse milling drum soil cutting power traction trencher",
   "inputs": {},
-  "output_summary": "88.3",
-  "output_full": "88.3",
+  "output_summary": "rockzoneamericas.com — Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment — https://rockzoneamericas.com/products/categories/rockwheels/single-drum-trench-cutters",
+  "output_full": "rockzoneamericas.com — Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment — https://rockzoneamericas.com/products/categories/rockwheels/single-drum-trench-cutters\n(found by the search; not opened or cited)\nMobility and Deployable Chassis Lead said about it: The Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment (E45) finding I take is that transverse cutters concentrate all power into a single drum for high productivity in tough ground, and the Transverse Drum (E46) finding I take is that transverse drums deliver high-precision cutting power for demanding excavation, so the transverse milling drum loosener (C31) milling 300 mm wide by 50 mm deep and throwing soil back maps rotary tiller cutting to this low-traction robot.\nExcavation and Regolith Handling Lead said about it: I take from the Skid-Steer Safety for Farm and Landscape (E47) the rule that lifting a load transfers weight and raises the balance point, so I confirm trips stay at 15.0 kg dumped only on level ground for safety factor 1.69; I take from the Single Drum Trench Cutters (E45) the finding that transverse cutters concentrate all power in one drum for tough ground, which from my side means the transverse milling drum loosener (C31) fits traction but must still fit the 16.4 W ladder power from the ladder power estimate (E59), so Power Structure and Integration Lead please keep the fused ladder branch and Autonomy and Blind Operations Lead please keep current-limit backout.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "rockzoneamericas.com",
+      "title": "Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment",
+      "year": "",
+      "url": "https://rockzoneamericas.com/products/categories/rockwheels/single-drum-trench-cutters",
+      "query": "transverse milling drum soil cutting power traction trencher",
+      "unresolved": false,
+      "passage": "The Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment (E45) finding I take is that transverse cutters concentrate all power into a single drum for high productivity in tough ground, and the Transverse Drum (E46) finding I take is that transverse drums deliver high-precision cutting power for demanding excavation, so the transverse milling drum loosener (C31) milling 300 mm wide by 50 mm deep and throwing soil back maps rotary tiller cutting to this low-traction robot.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "The Single Drum Trench Cutters | Transverse Cutter | Trenching Attachment (E45) finding I take is that transverse cutters concentrate all power into a single drum for high productivity in tough ground, and the Transverse Drum (E46) finding I take is that transverse drums deliver high-precision cutting power for demanding excavation, so the transverse milling drum loosener (C31) milling 300 mm wide by 50 mm deep and throwing soil back maps rotary tiller cutting to this low-traction robot."
+        },
+        {
+          "by": "Excavation and Regolith Handling Lead",
+          "text": "I take from the Skid-Steer Safety for Farm and Landscape (E47) the rule that lifting a load transfers weight and raises the balance point, so I confirm trips stay at 15.0 kg dumped only on level ground for safety factor 1.69; I take from the Single Drum Trench Cutters (E45) the finding that transverse cutters concentrate all power in one drum for tough ground, which from my side means the transverse milling drum loosener (C31) fits traction but must still fit the 16.4 W ladder power from the ladder power estimate (E59), so Power Structure and Integration Lead please keep the fused ladder branch and Autonomy and Blind Operations Lead please keep current-limit backout."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 2
 }

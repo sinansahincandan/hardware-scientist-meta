@@ -1,0 +1,14 @@
+{
+  "id": "E100",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "clamp for corrected total torque",
+  "code_or_query": "74.2/0.0479",
+  "inputs": {},
+  "output_summary": "1.55e+03",
+  "output_full": "1.55e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

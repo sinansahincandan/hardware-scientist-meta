@@ -1,5 +1,0 @@
-{
-  "cycle": 3,
-  "member": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
-  "message": "Surya, the wire size point is closed for the device. The Direct Current (DC) vapor-compression chiller (C5) runs steady hold plus a daytime batch, and the peak electric for 200 kg batch over 8 h plus steady load (E60) is 0.400 kW. At 48 V that is the peak DC current in amps (E62) of 8.33 A, about a small microwave branch, so short thick copper with a 15 A fuse has ample margin.\n\nKofi, the night hold stays light on the box. The steady electric watts from Coefficient of Performance (COP) 2.5 (E51) is 150 W, like a household fridge, and the night energy at 150 W for 14 h (E57) is 2.10 kWh. That is the night fraction of 5.12 kWh battery (E58) of 41.0%, leaving morning reserve, with the shaded condenser and sealed door keeping head pressure down.\n\nFarah, uniformity needs no extra power. The uniform low-velocity airflow (C6) with raised slats and the interior plan and section (E36) keeps crates in the 4-10 C band while the 100 mm Polyurethane (PU) sandwich-panel cold box (C4) holds the steady load, so the Photovoltaic (PV) array stays in daytime batch mode."
-}

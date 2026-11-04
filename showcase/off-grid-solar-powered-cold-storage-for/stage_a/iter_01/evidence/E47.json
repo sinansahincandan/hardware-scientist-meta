@@ -1,0 +1,26 @@
+{
+  "id": "E47",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "code_or_query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "inputs": {},
+  "output_summary": "fao.org — Small-Scale Postharvest Handling Practices — https://www.fao.org/4/ae075e/ae075e16.htm",
+  "output_full": "fao.org — Small-Scale Postharvest Handling Practices — https://www.fao.org/4/ae075e/ae075e16.htm\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "fao.org",
+      "title": "Small-Scale Postharvest Handling Practices",
+      "year": "",
+      "url": "https://www.fao.org/4/ae075e/ae075e16.htm",
+      "query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

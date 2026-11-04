@@ -1,26 +1,14 @@
 {
   "id": "E14",
-  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-  "tool": "web_search",
-  "purpose": "search: silicone Shore A hardness soft robotics skin molding minimum wall thickness",
-  "code_or_query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
+  "author": "Dr. Amara Okafor \u2014 Soft Skin Mechanics",
+  "tool": "simulate",
+  "purpose": "Hertz contact radius for 1mN on soft silicone",
+  "code_or_query": "import math\nF=0.001\nR=0.01\nmu=0.145e6\nE_star=(3*mu)/(1-0.5**2)\na=(3*F*R/(4*E_star))**(1/3)\narea=math.pi*a*a\np=F/area\nprint(f\"a_mm={a*1000:.3f} p_kPa={p/1000:.3f} E_MPa={3*mu/1e6:.3f}\")",
   "inputs": {},
-  "output_summary": "finres-sa.com — RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105 — https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/",
-  "output_full": "finres-sa.com — RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105 — https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/\n(found by the search; not opened or cited)",
+  "output_summary": "a_mm=0.235 p_kPa=5.78 E_MPa=0.435",
+  "output_full": "a_mm=0.235 p_kPa=5.778 E_MPa=0.435",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "finres-sa.com",
-      "title": "RTV SILICONE FOR EXTRA SOFT MOLDING - FEINGOSIL 105",
-      "year": "",
-      "url": "https://www.finres-sa.com/en/product/rtv-silicone-for-extra-soft-molding-feingosil-105/",
-      "query": "silicone Shore A hardness soft robotics skin molding minimum wall thickness",
-      "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

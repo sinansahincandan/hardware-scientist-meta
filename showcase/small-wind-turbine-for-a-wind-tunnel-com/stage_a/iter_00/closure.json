@@ -1,0 +1,7 @@
+{
+  "closed_by": "chief",
+  "cycles_used": 4,
+  "open_blocking": [],
+  "chief_decision": "v2 40cm SD7080 3-blade fixed-pitch upwind rotor with soft stall on rigid hub drives direct-drive 170-180Kv outrunner plus Schottky bridge in stiff two-bearing nacelle on steel post clamp inside 45cm cube with post below; buck-boost feed to tunnel load plus switched 4ohm dump grid; series Normally Closed e-stop plus load-volt tap plus centrifugal overspeed switch latching trip drives spring-applied 0.80N-m disc plus dump brake with wiring inside nacelle and post bore. Fit 40cm disc with 2.5cm per side and 36.0cm stack inside 45cm cube. Survival 37.3N thrust 13.1N-m moment for 16.6MPa stress and 0.516mm deflection. Power 3.27W shaft at 5m/s (2.08W regulated) to 34.7W shaft 22.1W regulated at 11m/s at 1430-3150RPM with 8.41-18.5V into 8-40V regulator. Shutdown 0.673s to 315RPM threshold and 0RPM at 10s with 0.80N-m hold over 0.48N-m storm and 0.72N-m factored need, dump 85.6W with 109J spin and 4.35K disc rise. Bench tests to build: power-curve vs wind, timed stop on disconnect and on command to below 10% in 10s and stay, re-latch no-restart without reset, parked-torque hold at 22m/s.",
+  "decided_version": 2
+}

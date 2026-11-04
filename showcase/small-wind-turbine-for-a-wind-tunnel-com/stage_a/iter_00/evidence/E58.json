@@ -1,0 +1,14 @@
+{
+  "id": "E58",
+  "author": "Structures-Survival Engineer",
+  "tool": "sketch",
+  "purpose": "Nacelle bedplate with brake rails carrying disc caliper reaction to post",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(6,4)); ax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nax.add_patch(plt.Rectangle((4.5,0),1,2.5, fill=False, linewidth=2))\nax.text(5,1,\"post\",ha='center')\nax.add_patch(plt.Rectangle((2,2.5),6,0.5, fill=False, linewidth=2))\nax.text(5,2.75,\"bedplate + rails\",ha='center',fontsize=8)\nax.add_patch(plt.Rectangle((2.5,3.0),3,0.6, fill=False, linewidth=2))\nax.text(4,3.3,\"2 bearings\",ha='center',fontsize=8)\nax.plot([1,8],[3.6,3.6],'k-')\nax.text(1.2,3.8,\"rotor\",fontsize=8); ax.text(7.2,3.8,\"generator\",fontsize=8)\nax.add_patch(plt.Circle((5.5,3.6),0.5,fill=False,linewidth=2))\nax.text(5.5,3.6,\"disc\",ha='center',fontsize=8)\nax.add_patch(plt.Rectangle((5.1,4.1),0.8,0.4,fill=False,linewidth=2))\nax.text(5.5,4.6,\"caliper on rails\",ha='center',fontsize=7)\nax.annotate(\"\", xy=(5.5,3.9), xytext=(5.5,4.1), arrowprops=dict(arrowstyle=\"->\"))\nplt.savefig(\"sketch.png\",dpi=150); plt.close()",
+  "inputs": {},
+  "output_summary": "Nacelle bedplate with brake rails carrying disc caliper reaction to post",
+  "output_full": "Nacelle bedplate with brake rails carrying disc caliper reaction to post",
+  "sketch_path": "evidence/sketch_58.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

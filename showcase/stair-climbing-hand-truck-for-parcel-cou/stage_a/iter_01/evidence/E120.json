@@ -1,0 +1,14 @@
+{
+  "id": "E120",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "sketch",
+  "purpose": "Backbone as 1.1 m cantilever fixed at axle with 200 mm offset parcel load, 110 mm tip whip vs 44 mm with 40 mm tubes and optional diagonal stay to toe tip",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(6,4)); ax.plot([0,0],[0,1.1], linewidth=4, label='backbone fixed at axle'); ax.plot([0,0.2],[0.05,0.05], linewidth=4); ax.scatter([0.2],[0.05], s=200); ax.text(0.22,0.05,'parcel 200mm offset'); ax.scatter([0],[0], s=200); ax.text(0.05,0.0,'fixed axle support'); ax.annotate('tip whip 110mm ->44mm', xy=(0,1.1), xytext=(0.3,0.9), arrowprops=dict(arrowstyle='->')); ax.plot([0,0.2],[0.55,0.05], linestyle='--', label='optional stay'); ax.set_xlim(-0.2,0.6); ax.set_ylim(-0.1,1.3); ax.set_xlabel('fore-aft (m)'); ax.set_ylabel('height (m)'); ax.legend(fontsize=8); plt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
+  "inputs": {},
+  "output_summary": "Backbone as 1.1 m cantilever fixed at axle with 200 mm offset parcel load, 110 mm tip whip vs 44 mm with 40 mm tubes and optional diagonal stay to toe tip",
+  "output_full": "Backbone as 1.1 m cantilever fixed at axle with 200 mm offset parcel load, 110 mm tip whip vs 44 mm with 40 mm tubes and optional diagonal stay to toe tip",
+  "sketch_path": "evidence/sketch_120.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

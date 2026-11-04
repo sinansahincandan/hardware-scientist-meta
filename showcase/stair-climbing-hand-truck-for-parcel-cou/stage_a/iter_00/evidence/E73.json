@@ -1,0 +1,14 @@
+{
+  "id": "E73",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "total lifted mass vs 60kg parcel constraint",
+  "code_or_query": "sum({'parcel':60,'tare_truck':6.5}.values())",
+  "inputs": {},
+  "output_summary": "66.5",
+  "output_full": "66.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

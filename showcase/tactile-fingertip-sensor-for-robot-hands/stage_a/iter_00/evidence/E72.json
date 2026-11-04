@@ -1,0 +1,32 @@
+{
+  "id": "E72",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+  "code_or_query": "STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+  "inputs": {},
+  "output_summary": "zbook.org — STM32G4 Mainstream Series Mixed Signals MCU — https://zbook.org/read/a08_stm32g4-mainstream-series-mixed-signals-mcu.html",
+  "output_full": "zbook.org — STM32G4 Mainstream Series Mixed Signals MCU — https://zbook.org/read/a08_stm32g4-mainstream-series-mixed-signals-mcu.html\n(found by the search; not opened or cited)\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: The STM32G4 Mainstream Series Mixed Signals MCU (E72) states 170 MHz with 12-bit Analog-to-Digital Converters, where Analog-to-Digital Converter means ADC, at 4 Msps, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs run at 1 Msps and up, so 2.20 kHz Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, sampling is trivial, while the AD7147A (Rev.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "zbook.org",
+      "title": "STM32G4 Mainstream Series Mixed Signals MCU",
+      "year": "",
+      "url": "https://zbook.org/read/a08_stm32g4-mainstream-series-mixed-signals-mcu.html",
+      "query": "STM32 MCU ADC sampling 2kHz power consumption MIPS FIR filter",
+      "unresolved": false,
+      "passage": "The STM32G4 Mainstream Series Mixed Signals MCU (E72) states 170 MHz with 12-bit Analog-to-Digital Converters, where Analog-to-Digital Converter means ADC, at 4 Msps, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs run at 1 Msps and up, so 2.20 kHz Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, sampling is trivial, while the AD7147A (Rev.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "The STM32G4 Mainstream Series Mixed Signals MCU (E72) states 170 MHz with 12-bit Analog-to-Digital Converters, where Analog-to-Digital Converter means ADC, at 4 Msps, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs run at 1 Msps and up, so 2.20 kHz Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, sampling is trivial, while the AD7147A (Rev."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

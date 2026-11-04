@@ -1,22 +1,30 @@
 {
   "id": "E4",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "web_search",
-  "purpose": "search: pedestrian walking pacing frequency vertical footbridge resonance",
-  "code_or_query": "pedestrian walking pacing frequency vertical footbridge resonance",
+  "purpose": "search: pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
+  "code_or_query": "pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
   "inputs": {},
-  "output_summary": "pure.ed.ac.uk — Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling — 2017 — https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf",
-  "output_full": "pure.ed.ac.uk — Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling — 2017 — https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf\n(the search returned no passage text)",
+  "output_summary": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section — https://link.springer.com/article/10.1186/s43251-025-00188-y",
+  "output_full": "link.springer.com — Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section — https://link.springer.com/article/10.1186/s43251-025-00188-y\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "pure.ed.ac.uk",
-      "title": "Votsis et al-final-Dynamic Assessment of a FRP suspension footbridge through field testing and FE modelling",
-      "year": "2017",
-      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/31175185/j2017_1_final_submission.pdf",
-      "query": "pedestrian walking pacing frequency vertical footbridge resonance",
+      "authors_or_org": "link.springer.com",
+      "title": "Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section",
+      "year": "",
+      "url": "https://link.springer.com/article/10.1186/s43251-025-00188-y",
+      "query": "pedestrian bridge vertical vibration comfort limit EN 1990 Sétra HiVoSS",
       "unresolved": false,
-      "passage": ""
+      "passage": "Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "Resonance must be assumed because 1.9 Hz sits inside the critical walking band, with maximum comfort below 0.5 metres per second squared reported in the Dynamic Sensitivity of Footbridges: Modal Identification, Human-Induced Vibrations, and Emerging Solutions for Sustainable Design (E3) and in the Human-induced vibration assessment of a steel arch footbridge with tapered truss cross-section (E4), and with optimum tune and damping set by the Den Hartog relations reported in the 70."
+        }
+      ]
     }
   ],
   "status": "ok",

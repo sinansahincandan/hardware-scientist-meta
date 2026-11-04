@@ -1,0 +1,63 @@
+{
+  "round": 1,
+  "sam_differences": {
+    "chassis": [
+      "expected 1 visible, found 2",
+      "size against wheel: expected about 4.7 times, measured 1.7 times",
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
+    ],
+    "arm": [
+      "not found by the segmenter as 'metal arm'"
+    ],
+    "kerf": [
+      "expected a horizontal long axis, measured tilted about 38 degrees"
+    ],
+    "ladder": [
+      "expected a vertical long axis, measured tilted about 49 degrees",
+      "expected to touch hopper, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "hopper": [
+      "size against auger: expected about 0.82 times, measured 23 times",
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "auger": [
+      "expected 1 visible, found 23",
+      "size against hopper: expected about 1.2 times, measured 0.043 times"
+    ],
+    "battery": [
+      "size against chassis: expected about 0.4 times, measured 1.1 times"
+    ],
+    "camera": [
+      "expected 2 visible, found 3",
+      "expected to touch chassis, but they are apart in the picture"
+    ]
+  },
+  "critique_part_ids": [
+    "arm",
+    "callout",
+    "ladder"
+  ],
+  "sam_parts_used_by_critique": [
+    "arm",
+    "ladder"
+  ],
+  "unnoticed_sam_deviations": [],
+  "kept": false,
+  "why": "fixed no earlier fault",
+  "earlier_faults": [
+    {
+      "part_id": "ladder",
+      "fault": "ladder: ladder top end free in air high above/left of hopper, buckets full and spilling, white air gap with no chute to hopper; hopper separately full and tilting (expected: ladder top sprocket positioned over hopper with gravity chute dropping to hopper per sketch connection ladder->hopper and transfer line kerf -> ladder -> hopper)",
+      "status": "still_wrong",
+      "note": "Partially improved: hopper now upright (not tilting) and soil stream drawn toward hopper, but top still left/above hopper with open-air gap and no enclosed chute, not positioned over. Still wrong."
+    }
+  ],
+  "outcome_next_round": {
+    "ladder": "fixed",
+    "callout": "fixed",
+    "arm": "still_wrong"
+  }
+}

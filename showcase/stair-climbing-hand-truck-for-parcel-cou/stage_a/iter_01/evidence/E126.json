@@ -1,0 +1,26 @@
+{
+  "id": "E126",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+  "code_or_query": "Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+  "inputs": {},
+  "output_summary": "ezlifts.com — Why Caster Design Matters in Safe Patient Transers — https://www.ezlifts.com/post/why-caster-design-matters-in-safe-patient-transers",
+  "output_full": "ezlifts.com — Why Caster Design Matters in Safe Patient Transers — https://www.ezlifts.com/post/why-caster-design-matters-in-safe-patient-transers\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ezlifts.com",
+      "title": "Why Caster Design Matters in Safe Patient Transers",
+      "year": "",
+      "url": "https://www.ezlifts.com/post/why-caster-design-matters-in-safe-patient-transers",
+      "query": "Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

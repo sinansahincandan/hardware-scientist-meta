@@ -1,27 +1,26 @@
 {
   "id": "E48",
-  "author": "Kofi \u2014 Structural Enclosure and Low-Cost Fabrication Specialist",
-  "tool": "calc",
-  "purpose": "floor loading from produce alone",
-  "code_or_query": "(Q_(1000,'kg')*Q_(9.81,'m/s**2')/Q_(4,'m**2')).to('kPa')",
-  "inputs": {
-    "arg0": {
-      "value": "1000",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "4",
-      "unit": "m**2"
-    }
-  },
-  "output_summary": "2.45 kPa",
-  "output_full": "2.45 kPa",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: manual handling crate weight limit 20kg ergonomic FAO WHO",
+  "code_or_query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
+  "inputs": {},
+  "output_summary": "nss.nhs.scot — Once for Scotland - Manual handling — 2026 — https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf",
+  "output_full": "nss.nhs.scot — Once for Scotland - Manual handling — 2026 — https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "nss.nhs.scot",
+      "title": "Once for Scotland - Manual handling",
+      "year": "2026",
+      "url": "https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf",
+      "query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

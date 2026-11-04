@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Dr. Marcus Reid \u2014 Robotic Integration and Embedded Electronics",
+  "tool": "calc",
+  "purpose": "fingertip mass budget sum vs human fingertip and BioTac",
+  "code_or_query": "sum({'rigid_core_g':4,'silicone_skin_gel_g':3,'flex_array_g':1,'readout_pcb_mcu_cdc_g':4,'cable_connector_bracket_g':2}.values())",
+  "inputs": {},
+  "output_summary": "14",
+  "output_full": "14",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,22 +1,46 @@
 {
   "id": "E3",
-  "author": "Maya – Stair-Climbing Mechanisms Engineer",
+  "author": "Mara Voss — Structural Frame & Load Path",
   "tool": "web_search",
-  "purpose": "search: residential stair riser going dimensions building code max step height",
-  "code_or_query": "residential stair riser going dimensions building code max step height",
+  "purpose": "search: stair climbing hand truck 60kg folding datasheet load",
+  "code_or_query": "stair climbing hand truck 60kg folding datasheet load",
   "inputs": {},
-  "output_summary": "classicarchitecturetoday.com — Perfect Stair Dimensions for Safe, Stylish Spaces — http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
-  "output_full": "classicarchitecturetoday.com — Perfect Stair Dimensions for Safe, Stylish Spaces — http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/\n(the search returned no passage text)",
+  "output_summary": "fruugo.sk — Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK — https://www.fruugo.sk/trolleys-stair-climbing-trolley-6-wheels-aluminium-folding-hand-cart-steps/p-300575848-673165282?language=pl",
+  "output_full": "fruugo.sk — Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK — https://www.fruugo.sk/trolleys-stair-climbing-trolley-6-wheels-aluminium-folding-hand-cart-steps/p-300575848-673165282?language=pl\n(found by the search; not opened or cited)\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin.\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are the 51 cm by 41 cm by 104 cm open size folding to 62 cm by 11 cm by 75 cm at 6.07 kg tare (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5) against the lighter 38 cm by 28 cm by 101 cm at 3.60 kg aluminium trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), which shows folding to van depth costs kilograms unless sections stay thin-wall aluminium at the 276 MPa level (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses).\nKenji Tanaka — Stair-Climbing Locomotion said about it: The climb simulation (E23) gives about 209 N pull uphill, about 188 N sustained hold downhill and about 39.0 N m pivot torque per side on a 37.8 degree stair for 72.0 kg total, which is about 20 kg equivalent in the hands and is human scale for one courier but must be sustained all the way down without free back-drive, and de-rating proves the margin is real because the steel trolley drops from 250 kg flat to 120 kg on stairs from the Superlift Stair Climbing Trolley (E17) and the light aluminium trolley drops from 60 kg ground to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3), which is why I ask Elena Ruiz for a brake hold check and Mara Voss for full 60 kg stair stress.\nManager said about it: Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, no blocking objection is settled because the descent-hold objection stands since the rule that trucks to 500 kg need a parking brake from the NEN-EN 1757:2022 en (E30) plus the de-rate from 60 kg flat to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3) proves an auto-lock is needed but no torque is shown, so Elena Ruiz with Kenji Tanaka must prove locked hold with no back-drive and Mara Voss must prove twin-tube stress at full 60 kg on the 197 mm riser, and I answer all four not-ready votes as correct because the device cannot yet carry full load downstairs with one-person hold and fold into the van.\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are 60 kg flat de-rated to 30 to 40 kg on stairs from prior trolley evidence (E1) and (E3), which is why full 60 kg stair stress needs the impact allowance above, and folded stow stays near one-tenth of parcel mass for Tomas Lind.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "classicarchitecturetoday.com",
-      "title": "Perfect Stair Dimensions for Safe, Stylish Spaces",
+      "authors_or_org": "fruugo.sk",
+      "title": "Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK",
       "year": "",
-      "url": "http://classicarchitecturetoday.com/perfect-stair-dimensions-for-safe-stylish-spaces/",
-      "query": "residential stair riser going dimensions building code max step height",
+      "url": "https://www.fruugo.sk/trolleys-stair-climbing-trolley-6-wheels-aluminium-folding-hand-cart-steps/p-300575848-673165282?language=pl",
+      "query": "stair climbing hand truck 60kg folding datasheet load",
       "unresolved": false,
-      "passage": ""
+      "passage": "The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are the 51 cm by 41 cm by 104 cm open size folding to 62 cm by 11 cm by 75 cm at 6.07 kg tare (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5) against the lighter 38 cm by 28 cm by 101 cm at 3.60 kg aluminium trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), which shows folding to van depth costs kilograms unless sections stay thin-wall aluminium at the 276 MPa level (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses)."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "The climb simulation (E23) gives about 209 N pull uphill, about 188 N sustained hold downhill and about 39.0 N m pivot torque per side on a 37.8 degree stair for 72.0 kg total, which is about 20 kg equivalent in the hands and is human scale for one courier but must be sustained all the way down without free back-drive, and de-rating proves the margin is real because the steel trolley drops from 250 kg flat to 120 kg on stairs from the Superlift Stair Climbing Trolley (E17) and the light aluminium trolley drops from 60 kg ground to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3), which is why I ask Elena Ruiz for a brake hold check and Mara Voss for full 60 kg stair stress."
+        },
+        {
+          "by": "Manager",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, no blocking objection is settled because the descent-hold objection stands since the rule that trucks to 500 kg need a parking brake from the NEN-EN 1757:2022 en (E30) plus the de-rate from 60 kg flat to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3) proves an auto-lock is needed but no torque is shown, so Elena Ruiz with Kenji Tanaka must prove locked hold with no back-drive and Mara Voss must prove twin-tube stress at full 60 kg on the 197 mm riser, and I answer all four not-ready votes as correct because the device cannot yet carry full load downstairs with one-person hold and fold into the van."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are 60 kg flat de-rated to 30 to 40 kg on stairs from prior trolley evidence (E1) and (E3), which is why full 60 kg stair stress needs the impact allowance above, and folded stow stays near one-tenth of parcel mass for Tomas Lind."
+        }
+      ]
     }
   ],
   "status": "ok",

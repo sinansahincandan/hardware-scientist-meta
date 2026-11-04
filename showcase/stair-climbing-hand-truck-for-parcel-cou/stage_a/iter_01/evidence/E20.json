@@ -1,0 +1,26 @@
+{
+  "id": "E20",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: stair climbing trolley 6 wheels load capacity datasheet",
+  "code_or_query": "stair climbing trolley 6 wheels load capacity datasheet",
+  "inputs": {},
+  "output_summary": "manuals.plus — Mount-It! Stair Climbing Dolly Instruction Manual — https://manuals.plus/asin/B07X13DJWR",
+  "output_full": "manuals.plus — Mount-It! Stair Climbing Dolly Instruction Manual — https://manuals.plus/asin/B07X13DJWR\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "manuals.plus",
+      "title": "Mount-It! Stair Climbing Dolly Instruction Manual",
+      "year": "",
+      "url": "https://manuals.plus/asin/B07X13DJWR",
+      "query": "stair climbing trolley 6 wheels load capacity datasheet",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

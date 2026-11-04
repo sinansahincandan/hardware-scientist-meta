@@ -1,0 +1,32 @@
+{
+  "id": "E5",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+  "code_or_query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+  "inputs": {},
+  "output_summary": "extrica.com — 70. Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train — https://www.extrica.com/article/16115/pdf",
+  "output_full": "extrica.com — 70. Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train — https://www.extrica.com/article/16115/pdf\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "extrica.com",
+      "title": "70. Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train",
+      "year": "",
+      "url": "https://www.extrica.com/article/16115/pdf",
+      "query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+      "unresolved": false,
+      "passage": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

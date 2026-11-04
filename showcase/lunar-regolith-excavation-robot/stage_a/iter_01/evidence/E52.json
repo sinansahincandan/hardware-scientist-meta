@@ -1,0 +1,14 @@
+{
+  "id": "E52",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "calc",
+  "purpose": "twin rail sag share check",
+  "code_or_query": "72.9/2",
+  "inputs": {},
+  "output_summary": "36.5",
+  "output_full": "36.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

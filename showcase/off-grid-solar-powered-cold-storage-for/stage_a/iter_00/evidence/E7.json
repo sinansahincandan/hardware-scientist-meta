@@ -1,22 +1,30 @@
 {
   "id": "E7",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "purpose": "search: peak sun hours hot regions Africa India solar insolation kWh m2 day",
+  "code_or_query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
   "inputs": {},
-  "output_summary": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
-  "output_full": "bigweibattery.com.au — 48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid — https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/\n(the search returned no passage text)",
+  "output_summary": "heavengreenenergy.com — Insolation in Solar: Meaning and Why It Matters — https://www.heavengreenenergy.com/glossary/insolation",
+  "output_full": "heavengreenenergy.com — Insolation in Solar: Meaning and Why It Matters — https://www.heavengreenenergy.com/glossary/insolation\n(found by the search; not opened or cited)\nSolar Energy Systems Engineer said about it: For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "bigweibattery.com.au",
-      "title": "48V 100AH Energy Storage Solar Lithium Battery LiFePO4 Off-Grid",
+      "authors_or_org": "heavengreenenergy.com",
+      "title": "Insolation in Solar: Meaning and Why It Matters",
       "year": "",
-      "url": "https://www.bigweibattery.com.au/product/100ah-48v-lifepo4-lithium-marine-boat/",
-      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+      "url": "https://www.heavengreenenergy.com/glossary/insolation",
+      "query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
       "unresolved": false,
-      "passage": ""
+      "passage": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale."
+        }
+      ]
     }
   ],
   "status": "ok",

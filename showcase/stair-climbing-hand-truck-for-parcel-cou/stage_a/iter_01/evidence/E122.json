@@ -1,0 +1,14 @@
+{
+  "id": "E122",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "total weight with 40mm tubes",
+  "code_or_query": "67.07*9.81",
+  "inputs": {},
+  "output_summary": "658",
+  "output_full": "658",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

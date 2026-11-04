@@ -1,0 +1,536 @@
+{
+  "title": "40 cm soft-stall rotor with 170-180 Kv feed and 0.80 N-m spring-disc plus dump shutdown",
+  "problem_restatement": "Build a 40 cm wind turbine that fits in a 45 cm cube, makes regulated power from 5 to 11 m/s, survives 22 m/s, and shuts down below 10% speed within 10 s on command or load loss and stays parked.",
+  "mechanism_sentence": "Wind spins a 40 cm three-blade rotor to make electricity for a steady load, and if the stop button is pressed or the load is lost a spring squeezes a disc while extra spin turns to heat to stop in under 1 s and stay stopped.",
+  "decisive_choices": [
+    "Choose SD7080 TSR 6 Cp 0.34 rotor (C2) over generic 3-blade (C1) because C2 gives quantified low-wind power 3.27 W at 5 m/s (E11) and 34.7 W at 11 m/s (E12) from available powers (E9)(E10) per source (E3) with same 40 cm fit as winner practice (E2).",
+    "Keep direct-drive outrunner plus bridge (C14) but correct winding to 170 to 180 Kv because 220 Kv low volts 6.50 V (E37) sits below 8 V regulator minimum (E60) per O2, while 170 Kv gives 8.41 V low and 18.5 V top (E76) inside 8 to 40 V with unchanged rotor speeds and shaft powers.",
+    "Choose upsized 0.80 N-m spring-applied solenoid-released disc plus 4 ohm dump (C21 as upsized) over dump alone (C16) which fails at 9123 rpm with 0.155 N-m vs 0.48 N-m aero (E48) because only combined brake crosses 315 rpm in 0.673 s and holds at 0 rpm at 10 s with margins 1.67 and 1.11 (E70) satisfying 10 s rule (E41)."
+  ],
+  "open_question": "Do bench tests confirm power curve, timed stop, re-latch restart and parked torque on built hardware?",
+  "transfer_line": "Energy: three-blade rotor -> outrunner generator -> dump resistor grid | Measured: overspeed switch -> latching relay",
+  "assumed_constraints": [
+    {
+      "constraint": "Rotor Cp 0.34 at TSR 6 for SD7080 low-Reynolds sections",
+      "source": "Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications",
+      "evidence_ids": [
+        "E3",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "constraint": "6061-T6 aluminum yield about 276 MPa for post and nacelle",
+      "source": "Aluminum 6061-T6 Material Datasheet",
+      "evidence_ids": [
+        "E55",
+        "E27"
+      ]
+    },
+    {
+      "constraint": "Buck-boost regulator needs 8 V minimum and accepts 8 to 40 V to make regulated 12 V",
+      "source": "Buck/Boost Converter - 8-40V to 12V/3A",
+      "evidence_ids": [
+        "E60",
+        "E76"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Capture wind energy",
+    "Hold rotor assembly",
+    "Generate electricity",
+    "Feed electrical load",
+    "Sense unsafe condition",
+    "Brake rotor"
+  ],
+  "concept": {
+    "working_principle": "A 40 cm SD7080 fixed-pitch rotor with soft stall on a stiff nacelle-post mount drives a 170-180 Kv direct-drive outrunner through a Schottky bridge to a buck-boost feed to tunnel load plus switched 4 ohm dump grid, with a series normally-closed e-stop plus load-volt tap plus centrifugal overspeed switch latching trip driving a 0.80 N-m spring-applied disc plus dump brake on the low-speed shaft with wiring inside nacelle and post bore.",
+    "parts": [
+      {
+        "id": "rotor",
+        "name": "Three-blade fixed-pitch rotor",
+        "function": "Capture wind energy",
+        "material": "3D-printed plastic SD7080 sections",
+        "size_class_mm": {
+          "min": 380.0,
+          "max": 400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "hub",
+        "name": "Rigid hub and shaft",
+        "function": "Hold rotor assembly",
+        "material": "plastic hub with steel shaft",
+        "size_class_mm": {
+          "min": 40.0,
+          "max": 80.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "nacelle",
+        "name": "Stiff nacelle bedplate housing",
+        "function": "Hold rotor assembly",
+        "material": "6061-T6 aluminum bedplate",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 250.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "post",
+        "name": "Steel post clamp and post",
+        "function": "Hold rotor assembly",
+        "material": "6061-T6 aluminum tube",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 300.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "generator",
+        "name": "Direct-drive outrunner generator",
+        "function": "Generate electricity",
+        "material": "copper and steel outrunner 170 to 180 Kv",
+        "size_class_mm": {
+          "min": 30.0,
+          "max": 50.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "rectifier",
+        "name": "Three-phase rectifier bridge",
+        "function": "Generate electricity",
+        "material": "silicon Schottky bridge with capacitor",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 50.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "regulator",
+        "name": "Buck-boost regulator",
+        "function": "Feed electrical load",
+        "material": "electronics buck-boost 8 to 40 V to 12 V",
+        "size_class_mm": {
+          "min": 40.0,
+          "max": 70.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "dump",
+        "name": "Dump resistor grid",
+        "function": "Feed electrical load",
+        "material": "wirewound resistor 4 ohm",
+        "size_class_mm": {
+          "min": 30.0,
+          "max": 70.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "safety_loop",
+        "name": "Normally closed safety chain loop",
+        "function": "Sense unsafe condition",
+        "material": "copper wiring with relay and switches",
+        "size_class_mm": {
+          "min": 50.0,
+          "max": 100.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "disc_brake",
+        "name": "Spring-applied disc brake",
+        "function": "Brake rotor",
+        "material": "steel disc with friction pad",
+        "size_class_mm": {
+          "min": 40.0,
+          "max": 80.0
+        },
+        "qty": 1
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "rotor",
+        "to_id": "hub",
+        "kind": "mechanical",
+        "label": "shaft torque"
+      },
+      {
+        "from_id": "hub",
+        "to_id": "generator",
+        "kind": "mechanical",
+        "label": "low-speed shaft"
+      },
+      {
+        "from_id": "generator",
+        "to_id": "rectifier",
+        "kind": "electrical",
+        "label": "3-phase wild AC"
+      },
+      {
+        "from_id": "rectifier",
+        "to_id": "regulator",
+        "kind": "electrical",
+        "label": "raw DC"
+      },
+      {
+        "from_id": "regulator",
+        "to_id": "dump",
+        "kind": "electrical",
+        "label": "regulated feed"
+      },
+      {
+        "from_id": "safety_loop",
+        "to_id": "disc_brake",
+        "kind": "electrical",
+        "label": "latched trip"
+      },
+      {
+        "from_id": "disc_brake",
+        "to_id": "hub",
+        "kind": "mechanical",
+        "label": "friction torque"
+      },
+      {
+        "from_id": "nacelle",
+        "to_id": "post",
+        "kind": "mechanical",
+        "label": "bearing support"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "rotor",
+        "label": "wind push",
+        "direction": "right"
+      },
+      {
+        "on_id": "nacelle",
+        "label": "survival thrust",
+        "direction": "right"
+      },
+      {
+        "on_id": "nacelle",
+        "label": "weight",
+        "direction": "down"
+      },
+      {
+        "on_id": "regulator",
+        "label": "regulated power to tunnel load",
+        "direction": "out"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "shaft power at 5 m/s",
+      "value": 3.27,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "quantity": "shaft power at 11 m/s",
+      "value": 34.7,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "quantity": "regulated load power at 11 m/s",
+      "value": 22.1,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E66"
+      ]
+    },
+    {
+      "quantity": "low-wind regulated power",
+      "value": 2.08,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E80"
+      ]
+    },
+    {
+      "quantity": "rotor speed at 5 m/s",
+      "value": 1430.0,
+      "unit": "rpm",
+      "method": "calc",
+      "evidence_ids": [
+        "E14"
+      ]
+    },
+    {
+      "quantity": "rotor speed at 11 m/s",
+      "value": 3150.0,
+      "unit": "rpm",
+      "method": "calc",
+      "evidence_ids": [
+        "E13"
+      ]
+    },
+    {
+      "quantity": "revised volts low to top",
+      "value": 8.41,
+      "unit": "V",
+      "method": "calc",
+      "evidence_ids": [
+        "E76"
+      ]
+    },
+    {
+      "quantity": "survival thrust at 22 m/s",
+      "value": 37.3,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E22"
+      ]
+    },
+    {
+      "quantity": "overturning moment at post clamp",
+      "value": 13.1,
+      "unit": "N m",
+      "method": "calc",
+      "evidence_ids": [
+        "E23"
+      ]
+    },
+    {
+      "quantity": "post tip deflection",
+      "value": 0.516,
+      "unit": "mm",
+      "method": "vetted_calc",
+      "evidence_ids": [
+        "E26"
+      ]
+    },
+    {
+      "quantity": "bending stress in post",
+      "value": 16.6,
+      "unit": "MPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E27"
+      ]
+    },
+    {
+      "quantity": "side clearance per side",
+      "value": 2.5,
+      "unit": "cm",
+      "method": "calc",
+      "evidence_ids": [
+        "E74"
+      ]
+    },
+    {
+      "quantity": "axial stack length",
+      "value": 36.0,
+      "unit": "cm",
+      "method": "calc",
+      "evidence_ids": [
+        "E52"
+      ]
+    },
+    {
+      "quantity": "stop time to 315 rpm",
+      "value": 0.673,
+      "unit": "s",
+      "method": "simulate",
+      "evidence_ids": [
+        "E70"
+      ]
+    },
+    {
+      "quantity": "dump power at 18.5 V top",
+      "value": 85.6,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E78"
+      ]
+    },
+    {
+      "quantity": "brake disc temperature rise",
+      "value": 4.35,
+      "unit": "K",
+      "method": "calc",
+      "evidence_ids": [
+        "E53"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "Fit inside 45 cm cube",
+      "design_value": "2.50 cm per side, 36.0 cm stack",
+      "how_shown": "Side clearance and axial stack were summed and checked against deflection inside the cube layout.",
+      "evidence_ids": [
+        "E74",
+        "E52",
+        "E26"
+      ]
+    },
+    {
+      "constraint": "Produce between 5 m/s and 11 m/s",
+      "design_value": "3.27 W shaft to 22.1 W regulated",
+      "how_shown": "Shaft powers from available wind were carried through bridge and regulator to regulated load at revised volts.",
+      "evidence_ids": [
+        "E11",
+        "E12",
+        "E66",
+        "E76"
+      ]
+    },
+    {
+      "constraint": "Survive 22 m/s wind",
+      "design_value": "37.3 N thrust, 16.6 MPa stress",
+      "how_shown": "Survival thrust and moment were carried to post stress and checked against aluminum yield.",
+      "evidence_ids": [
+        "E22",
+        "E23",
+        "E27",
+        "E55"
+      ]
+    },
+    {
+      "constraint": "Shut down to below 10% of top speed within 10 s on command and on disconnect and stay there",
+      "design_value": "0.673 s to 315 rpm, 0 rpm at 10 s",
+      "how_shown": "Combined dump plus 0.80 N-m disc simulation was checked to cross threshold and hold at zero.",
+      "evidence_ids": [
+        "E70",
+        "E75",
+        "E48",
+        "E41"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "centrifugal overspeed switch with load voltage tap and stop button",
+      "interface": "normally closed loop opens on overspeed or load loss or button press"
+    },
+    {
+      "stage": "conditioning",
+      "name": "latching safety relay",
+      "interface": "latched trip signal that stays tripped without power"
+    },
+    {
+      "stage": "instrument",
+      "name": "brake relay and buck-boost controller",
+      "interface": "switched power between tunnel load and dump grid"
+    },
+    {
+      "stage": "computer",
+      "name": "operator reset",
+      "interface": "manual reset action after inspection"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "rotor",
+      "action": "catches wind and spins"
+    },
+    {
+      "part_id": "hub",
+      "action": "carries spin to generator"
+    },
+    {
+      "part_id": "generator",
+      "action": "makes electricity from spin"
+    },
+    {
+      "part_id": "regulator",
+      "action": "feeds steady power to load"
+    },
+    {
+      "part_id": "safety_loop",
+      "action": "trips on command or disconnect"
+    },
+    {
+      "part_id": "disc_brake",
+      "action": "squeezes disc to stop rotor"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Assemble steel post clamp and aluminum post first, because nacelle bedplate and wiring mount to it and set cube position",
+      "method": "Clamped 6061-T6 tube, 38.1 x 3.18 mm",
+      "parts_present": [
+        "post",
+        "nacelle"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Build stiff nacelle bedplate with two-bearing housing and brake rails next, because shaft, generator and caliper reaction feed into it",
+      "method": "Bolted 6061 aluminum plate bedplate, 250 mm long",
+      "parts_present": [
+        "nacelle",
+        "hub",
+        "disc_brake"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Make 40 cm three-blade SD7080 rotor on rigid hub with spinner and fit with tilt and overhang, because clearance depends on assembled deflection",
+      "method": "3D-printed blades, 400 mm diameter",
+      "parts_present": [
+        "rotor",
+        "hub"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Wire outrunner plus Schottky bridge to buck-boost and 4 ohm dump grid and normally-closed chain to spring disc last, because electrics thread inside nacelle and post bore clear of disc",
+      "method": "Wired outrunner 170 to 180 Kv with 4 ohm dump resistor",
+      "parts_present": [
+        "generator",
+        "rectifier",
+        "regulator",
+        "dump",
+        "safety_loop",
+        "disc_brake"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Dump-only brake gives zero torque at zero speed and runs away at 22 m/s",
+      "mitigation": "Use combined 0.80 N-m spring disc plus 4 ohm dump with soft-stall blades keeping parked torque near 0.25 N-m below hold"
+    },
+    {
+      "risk": "220 Kv low-wind volts 6.50 V starve regulator and false-trip load sense",
+      "mitigation": "Rewind to 170-180 Kv giving 8.41 V low to 18.5 V top inside 8-40 V regulator window"
+    }
+  ],
+  "novelty_claim": "Locomotive rheostatic dump-grid feed plus elevator safety-chain normally-closed latching sense transferred to model scale with spring-applied disc plus soft-stall rotor for fail-safe stop and park.",
+  "cost_class": "$100-1k",
+  "figure_spec": {
+    "system_view": "Side-elevation shutdown with left-to-right wind driving rotor plus hub plus shaft to generator plus spring disc brake in nacelle to controller and load, post below cube",
+    "critical_part_id": "rotor",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "Do bench tests confirm power curve, timed stop, re-latch restart and parked torque on built hardware?"
+  ]
+}

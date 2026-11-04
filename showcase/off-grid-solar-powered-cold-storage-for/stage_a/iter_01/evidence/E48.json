@@ -1,0 +1,26 @@
+{
+  "id": "E48",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: manual handling crate weight limit 20kg ergonomic FAO WHO",
+  "code_or_query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
+  "inputs": {},
+  "output_summary": "nss.nhs.scot — Once for Scotland - Manual handling — 2026 — https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf",
+  "output_full": "nss.nhs.scot — Once for Scotland - Manual handling — 2026 — https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "nss.nhs.scot",
+      "title": "Once for Scotland - Manual handling",
+      "year": "2026",
+      "url": "https://www.nss.nhs.scot/media/7013/foi-2026-3422-once-for-scotland-manual-handling.pdf",
+      "query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

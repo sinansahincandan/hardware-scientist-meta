@@ -1,0 +1,543 @@
+{
+  "title": "Off-grid 1-tonne solar cold store v3",
+  "problem_restatement": "Provide off-grid solar cold storage for 1 tonne produce holding 5 C at 43 C ambient with night autonomy and safe standing against wind and soft soil.",
+  "mechanism_sentence": "Sunlight makes electricity that is stored and then runs a fridge that blows cold air over stacked crates to keep 1000 kg of produce near 5 C.",
+  "decisive_choices": [
+    "Grown 3.6 kWp split 2 on roof plus 7 on ground chosen because 2.4 kWp yields only 9.00 kWh per day short of load and 17.6 sqm cannot fit 4.32 sqm roof.",
+    "48 V lithium iron phosphate bank chosen because ice-only and eutectic-only output cold not dispatchable electricity to run fans controls and compressor start while thermal stays only as buffer.",
+    "DC variable-speed R134a monoblock chosen because only vapour-compression lifts 38 K at 43 C ambient with village service, beating thermal-only and pad-only means."
+  ],
+  "open_question": "Does 250 kg daytime pull-down reach uniform 5 C at 43 C ambient in built hardware with 8 openings?",
+  "transfer_line": "Energy: split solar array -> battery bank -> monoblock cooler | Measured: temperature probes -> thermostat control",
+  "assumed_constraints": [
+    {
+      "constraint": "Design for worst-month 5.0 peak sun hours with 0.75 system derate, equator-facing tilt, zero shading 9am-3pm",
+      "source": "C3",
+      "evidence_ids": [
+        "E83",
+        "E93"
+      ]
+    },
+    {
+      "constraint": "Staged intake 250 kg per day as 12.5 crates per day with max 8 daytime single-crate openings with strip curtain",
+      "source": "C25",
+      "evidence_ids": [
+        "E78",
+        "E110",
+        "E28"
+      ]
+    },
+    {
+      "constraint": "Single mixed holding setpoint 5 C at 43 C ambient, 38 K lift, COP 1.40 hot for R134a",
+      "source": "C13",
+      "evidence_ids": [
+        "E41",
+        "E109",
+        "E111"
+      ]
+    },
+    {
+      "constraint": "Soft soil allowable 150 kPa with screw-anchor hold on separate paths",
+      "source": "C16",
+      "evidence_ids": [
+        "E62",
+        "E123",
+        "E127"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Convert sunlight",
+    "Store energy",
+    "Remove heat",
+    "Enclose chamber",
+    "Hold produce",
+    "Regulate temperature"
+  ],
+  "concept": {
+    "working_principle": "Sunlight to electricity to batteries to vapour-compression cold air over crates near 5 C",
+    "parts": [
+      {
+        "id": "pv_array",
+        "name": "Split photovoltaic array",
+        "function": "Convert sunlight",
+        "material": "Monocrystalline silicon glass aluminium",
+        "size_class_mm": {
+          "min": 1100.0,
+          "max": 1750.0
+        },
+        "qty": 9
+      },
+      {
+        "id": "batt_bank",
+        "name": "Battery bank with charge control",
+        "function": "Store energy",
+        "material": "Lithium iron phosphate steel electronics",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 800.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "cooler",
+        "name": "Monoblock vapour-compression cooler",
+        "function": "Remove heat",
+        "material": "Steel copper R134a refrigerant",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 800.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "chamber",
+        "name": "Insulated chamber with door",
+        "function": "Enclose chamber",
+        "material": "PIR foam steel facers PVC curtain",
+        "size_class_mm": {
+          "min": 1800.0,
+          "max": 2400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "rack_crate",
+        "name": "Racking with vented crates",
+        "function": "Hold produce",
+        "material": "Galvanized steel food-grade plastic",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 600.0
+        },
+        "qty": 50
+      },
+      {
+        "id": "control",
+        "name": "Thermostat with temperature probes",
+        "function": "Regulate temperature",
+        "material": "Electronics stainless probe",
+        "size_class_mm": {
+          "min": 50.0,
+          "max": 150.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "foundation",
+        "name": "Pads frames and anchors",
+        "function": "Support and anchor",
+        "material": "Concrete galvanized steel",
+        "size_class_mm": {
+          "min": 400.0,
+          "max": 2400.0
+        },
+        "qty": 1
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "pv_array",
+        "to_id": "batt_bank",
+        "kind": "electrical",
+        "label": "charges via MPPT"
+      },
+      {
+        "from_id": "batt_bank",
+        "to_id": "cooler",
+        "kind": "electrical",
+        "label": "powers compressor and fans"
+      },
+      {
+        "from_id": "cooler",
+        "to_id": "chamber",
+        "kind": "thermal",
+        "label": "blows cold air forward"
+      },
+      {
+        "from_id": "chamber",
+        "to_id": "rack_crate",
+        "kind": "mechanical",
+        "label": "encloses and supports"
+      },
+      {
+        "from_id": "control",
+        "to_id": "cooler",
+        "kind": "electrical",
+        "label": "switches cooler with shed"
+      },
+      {
+        "from_id": "chamber",
+        "to_id": "foundation",
+        "kind": "mechanical",
+        "label": "stands on pads"
+      },
+      {
+        "from_id": "pv_array",
+        "to_id": "foundation",
+        "kind": "mechanical",
+        "label": "mounted on gantry and ground frame"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "pv_array",
+        "label": "sunlight energy",
+        "direction": "in"
+      },
+      {
+        "on_id": "pv_array",
+        "label": "wind pressure",
+        "direction": "left"
+      },
+      {
+        "on_id": "chamber",
+        "label": "ambient heat and wind",
+        "direction": "in"
+      },
+      {
+        "on_id": "foundation",
+        "label": "produce plus equipment weight",
+        "direction": "down"
+      },
+      {
+        "on_id": "rack_crate",
+        "label": "warm produce field heat",
+        "direction": "in"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "produce mass",
+      "value": 1000.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E49"
+      ]
+    },
+    {
+      "quantity": "crate count",
+      "value": 50.0,
+      "unit": "crates",
+      "method": "calc",
+      "evidence_ids": [
+        "E77"
+      ]
+    },
+    {
+      "quantity": "staged intake rate",
+      "value": 12.5,
+      "unit": "crates per day",
+      "method": "calc",
+      "evidence_ids": [
+        "E78"
+      ]
+    },
+    {
+      "quantity": "interior volume",
+      "value": 8.64,
+      "unit": "m3",
+      "method": "calc",
+      "evidence_ids": [
+        "E39"
+      ]
+    },
+    {
+      "quantity": "envelope area",
+      "value": 25.4,
+      "unit": "m2",
+      "method": "calc",
+      "evidence_ids": [
+        "E40"
+      ]
+    },
+    {
+      "quantity": "conduction",
+      "value": 203.0,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E41"
+      ]
+    },
+    {
+      "quantity": "thermal total",
+      "value": 13.5,
+      "unit": "kWh per day",
+      "method": "calc",
+      "evidence_ids": [
+        "E109"
+      ]
+    },
+    {
+      "quantity": "door infiltration",
+      "value": 0.169,
+      "unit": "kWh per day",
+      "method": "calc",
+      "evidence_ids": [
+        "E110"
+      ]
+    },
+    {
+      "quantity": "electrical load",
+      "value": 10.4,
+      "unit": "kWh per day",
+      "method": "calc",
+      "evidence_ids": [
+        "E111",
+        "E128"
+      ]
+    },
+    {
+      "quantity": "array yield",
+      "value": 13.5,
+      "unit": "kWh per day",
+      "method": "calc",
+      "evidence_ids": [
+        "E83"
+      ]
+    },
+    {
+      "quantity": "array footprint",
+      "value": 17.6,
+      "unit": "m2",
+      "method": "calc",
+      "evidence_ids": [
+        "E84"
+      ]
+    },
+    {
+      "quantity": "complete mass",
+      "value": 2210.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E118"
+      ]
+    },
+    {
+      "quantity": "chamber mass",
+      "value": 1930.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E126"
+      ]
+    },
+    {
+      "quantity": "chamber pad pressure",
+      "value": 23.2,
+      "unit": "kPa",
+      "method": "calc",
+      "evidence_ids": [
+        "E127"
+      ]
+    },
+    {
+      "quantity": "wind uplift",
+      "value": 673.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E90"
+      ]
+    },
+    {
+      "quantity": "anchor hold",
+      "value": 1390.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E123"
+      ]
+    },
+    {
+      "quantity": "cloudy-day end charge",
+      "value": 3.73,
+      "unit": "kWh",
+      "method": "simulate",
+      "evidence_ids": [
+        "E95"
+      ]
+    },
+    {
+      "quantity": "charge current",
+      "value": 75.0,
+      "unit": "A",
+      "method": "calc",
+      "evidence_ids": [
+        "E97"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "Hold about 1 tonne of fresh produce",
+      "design_value": "1000 kg as 50 crates",
+      "how_shown": "Calculated 50 crates at 20 kg each for 1000 kg.",
+      "evidence_ids": [
+        "E49",
+        "E77"
+      ]
+    },
+    {
+      "constraint": "Run solar-only with no grid",
+      "design_value": "13.5 kWh per day yield covers 10.4 kWh per day load",
+      "how_shown": "Yield from 3.60 kWp at 5.00 sun hours set against reconciled electrical load.",
+      "evidence_ids": [
+        "E83",
+        "E111",
+        "E128"
+      ]
+    },
+    {
+      "constraint": "Hold 5 C interior at 43 C ambient over time with staged filling",
+      "design_value": "13.5 kWh thermal per day, 203 W conduction, 0.169 kWh per day door",
+      "how_shown": "Thermal sum with staged 250 kg pull-down converted by COP 1.40 to electrical load.",
+      "evidence_ids": [
+        "E109",
+        "E41",
+        "E110",
+        "E26"
+      ]
+    },
+    {
+      "constraint": "Stand on soft soil without overstress",
+      "design_value": "23.2 kPa chamber, 28.5 kPa with foundation, below 150 kPa",
+      "how_shown": "Separated chamber mass on six pads checked against soil capacity.",
+      "evidence_ids": [
+        "E126",
+        "E127",
+        "E125",
+        "E62"
+      ]
+    },
+    {
+      "constraint": "Resist wind uplift and tipping",
+      "design_value": "1390 kg hold against 673 kg uplift",
+      "how_shown": "Wind load on 17.6 sqm split array held by eight screw anchors.",
+      "evidence_ids": [
+        "E123",
+        "E90",
+        "E84"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "return-air sensor and produce probe",
+      "interface": "air and produce contact"
+    },
+    {
+      "stage": "conditioning",
+      "name": "digital thermostat with hysteresis",
+      "interface": "wired probe cable"
+    },
+    {
+      "stage": "instrument",
+      "name": "charge controller with disconnect and inverter",
+      "interface": "switched power plus shed wire"
+    },
+    {
+      "stage": "computer",
+      "name": "attendant with crate log and thermometer",
+      "interface": "visual log and refusal rule"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "pv_array",
+      "action": "makes direct-current electricity"
+    },
+    {
+      "part_id": "batt_bank",
+      "action": "stores daytime electricity for night"
+    },
+    {
+      "part_id": "control",
+      "action": "switches cooler to hold temperature"
+    },
+    {
+      "part_id": "cooler",
+      "action": "blows cold air over crates"
+    },
+    {
+      "part_id": "chamber",
+      "action": "holds cold around crates"
+    },
+    {
+      "part_id": "rack_crate",
+      "action": "holds produce with air gaps"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Set six precast pads with screw anchors and erect roof gantry plus separate ground frame first, because box and array bolt to them on separate load paths.",
+      "method": "Cast and bolted concrete 400 x 400 mm pads, 1.70 kN screw anchors, galvanized tube frame",
+      "parts_present": [
+        "foundation",
+        "pv_array"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Assemble cam-lock PIR box with insulated door plus strip curtain and trapped drain next, because racking cooler and wiring mount inside sealed envelope.",
+      "method": "Bolt-together PIR panels 100 mm walls 120 mm roof, 900 mm door, PVC curtain",
+      "parts_present": [
+        "chamber",
+        "foundation"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Fit two-row racking with vented crates and mount rear-high monoblock with sealed penetration plus thermostat probes, because airflow loop and control need fixed geometry.",
+      "method": "Slotted-angle steel racking, 600 x 400 mm vented crates, R134a monoblock COP 1.40",
+      "parts_present": [
+        "rack_crate",
+        "cooler",
+        "control",
+        "chamber"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Erect nine 400 W modules split 2 plus 7 and wire MPPT to 48 V battery bank and commission with shed and log, because power must be proven against load before loading produce.",
+      "method": "Fixed-tilt monocrystalline 400 W modules 17.6 sqm, 48 V LiFePO4 10.0 kWh usable, 75 A MPPT",
+      "parts_present": [
+        "pv_array",
+        "batt_bank",
+        "control",
+        "cooler"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Cloud, extra openings or full-tonne load breaks 3.10 kWh margin and autonomy",
+      "mitigation": "Enforce staged 250 kg per day, 8 openings, strip curtain, refusal of 51st crate and full warm load."
+    },
+    {
+      "risk": "Hot-ambient derate and non-uniform rear-to-front airflow fails pull-down",
+      "mitigation": "Use R134a serviceable monoblock with shaded condenser, sealed penetration, trapped drain and 43 C bench test."
+    },
+    {
+      "risk": "Wind uplift 673 kg overcomes anchorage on soft soil",
+      "mitigation": "Separate chamber and ground-frame footings with eight screw anchors and field pull test."
+    }
+  ],
+  "novelty_claim": "Narrower 1-tonne staged 3.60 kWp split-array PIR-box instantiation, not a new principle",
+  "cost_class": ">$10k",
+  "figure_spec": {
+    "system_view": "Split array 2 on roof gantry plus 7 on ground frame, PIR box on six pads with 900 mm door, two rack rows with 50 crates and rear-high to low-return airflow",
+    "critical_part_id": "chamber",
+    "preferred_view": "isometric"
+  },
+  "open_questions": [
+    "Does 250 kg daytime pull-down reach uniform 5 C at 43 C ambient in built hardware with 8 openings?",
+    "What is field screw-anchor pull capacity and rear-to-front temperature uniformity needing field pull test?"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "E98",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop BD50F DC compressor COP datasheet R134a",
+  "code_or_query": "Secop BD50F DC compressor COP datasheet R134a",
+  "inputs": {},
+  "output_summary": "rparts.com — | BD50F |  | — https://www.rparts.com/documents/BD50F_inch-compressor.pdf",
+  "output_full": "rparts.com — | BD50F |  | — https://www.rparts.com/documents/BD50F_inch-compressor.pdf\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "rparts.com",
+      "title": "| BD50F |  |",
+      "year": "",
+      "url": "https://www.rparts.com/documents/BD50F_inch-compressor.pdf",
+      "query": "Secop BD50F DC compressor COP datasheet R134a",
+      "unresolved": false,
+      "passage": "R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

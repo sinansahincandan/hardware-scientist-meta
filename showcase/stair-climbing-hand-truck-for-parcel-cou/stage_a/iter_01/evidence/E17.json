@@ -1,0 +1,36 @@
+{
+  "id": "E17",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: stair climbing trolley 6 wheels load capacity datasheet",
+  "code_or_query": "stair climbing trolley 6 wheels load capacity datasheet",
+  "inputs": {},
+  "output_summary": "svelt.it — Superlift Stair Climbing Trolley — https://www.svelt.it/en/products/handtrucks-and-ergonomic-wheelbarrows/manual-or-electrical-stair-climber-handtrucks/stair-climber-trolley-superlift",
+  "output_full": "svelt.it — Superlift Stair Climbing Trolley — https://www.svelt.it/en/products/handtrucks-and-ergonomic-wheelbarrows/manual-or-electrical-stair-climber-handtrucks/stair-climber-trolley-superlift\n(opened by the member, not cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17).\nKenji Tanaka — Stair-Climbing Locomotion said about it: The climb simulation (E23) gives about 209 N pull uphill, about 188 N sustained hold downhill and about 39.0 N m pivot torque per side on a 37.8 degree stair for 72.0 kg total, which is about 20 kg equivalent in the hands and is human scale for one courier but must be sustained all the way down without free back-drive, and de-rating proves the margin is real because the steel trolley drops from 250 kg flat to 120 kg on stairs from the Superlift Stair Climbing Trolley (E17) and the light aluminium trolley drops from 60 kg ground to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3), which is why I ask Elena Ruiz for a brake hold check and Mara Voss for full 60 kg stair stress.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "svelt.it",
+      "title": "Superlift Stair Climbing Trolley",
+      "year": "",
+      "url": "https://www.svelt.it/en/products/handtrucks-and-ergonomic-wheelbarrows/manual-or-electrical-stair-climber-handtrucks/stair-climber-trolley-superlift",
+      "query": "stair climbing trolley 6 wheels load capacity datasheet",
+      "unresolved": false,
+      "passage": "Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17)."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "The climb simulation (E23) gives about 209 N pull uphill, about 188 N sustained hold downhill and about 39.0 N m pivot torque per side on a 37.8 degree stair for 72.0 kg total, which is about 20 kg equivalent in the hands and is human scale for one courier but must be sustained all the way down without free back-drive, and de-rating proves the margin is real because the steel trolley drops from 250 kg flat to 120 kg on stairs from the Superlift Stair Climbing Trolley (E17) and the light aluminium trolley drops from 60 kg ground to 40 kg on stairs from the Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK (E3), which is why I ask Elena Ruiz for a brake hold check and Mara Voss for full 60 kg stair stress."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E45",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: robot gripper fingertip mount dovetail screw Robotiq Shadow Hand",
+  "code_or_query": "robot gripper fingertip mount dovetail screw Robotiq Shadow Hand",
+  "inputs": {},
+  "output_summary": "assets.robotiq.com — Installation — https://assets.robotiq.com/website-assets/support_documents/document/online/Hand-E_Instruction_Manual_e-Series_Web_20190329.zip/Hand-E_Instruction_Manual_e-Series_Web/Content/3.%20Installation.htm",
+  "output_full": "assets.robotiq.com — Installation — https://assets.robotiq.com/website-assets/support_documents/document/online/Hand-E_Instruction_Manual_e-Series_Web_20190329.zip/Hand-E_Instruction_Manual_e-Series_Web/Content/3.%20Installation.htm\n(found by the search; not opened or cited)\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: The Microsoft Word - BioTac Product Manual.docx (E43) states the design is a rigid core surrounded by an elastic skin filled with liquid to give human fingertip compliance and is rated at forces up to 50 N, the Exploiting High Quality Tactile Sensors for Simplified Grasping (E50) gives the proven 26 by 20 by 25 mm fingertip weighing 9.5 g precedent, and the Installation (E45) shows fingertip holders fastened to finger racks with screws.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "assets.robotiq.com",
+      "title": "Installation",
+      "year": "",
+      "url": "https://assets.robotiq.com/website-assets/support_documents/document/online/Hand-E_Instruction_Manual_e-Series_Web_20190329.zip/Hand-E_Instruction_Manual_e-Series_Web/Content/3.%20Installation.htm",
+      "query": "robot gripper fingertip mount dovetail screw Robotiq Shadow Hand",
+      "unresolved": false,
+      "passage": "The Microsoft Word - BioTac Product Manual.docx (E43) states the design is a rigid core surrounded by an elastic skin filled with liquid to give human fingertip compliance and is rated at forces up to 50 N, the Exploiting High Quality Tactile Sensors for Simplified Grasping (E50) gives the proven 26 by 20 by 25 mm fingertip weighing 9.5 g precedent, and the Installation (E45) shows fingertip holders fastened to finger racks with screws.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "The Microsoft Word - BioTac Product Manual.docx (E43) states the design is a rigid core surrounded by an elastic skin filled with liquid to give human fingertip compliance and is rated at forces up to 50 N, the Exploiting High Quality Tactile Sensors for Simplified Grasping (E50) gives the proven 26 by 20 by 25 mm fingertip weighing 9.5 g precedent, and the Installation (E45) shows fingertip holders fastened to finger racks with screws."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

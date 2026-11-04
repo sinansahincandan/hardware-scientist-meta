@@ -1,13 +1,11 @@
 {
   "crops": [
-    "crop 1: skin",
-    "crop 2: film",
-    "crop 3: film",
-    "crop 4: pcb",
-    "crop 5: pcb",
-    "crop 6: pcb",
-    "crop 7: core",
-    "crop 8: tail"
+    "crop 1: SKIN",
+    "crop 2: CORE",
+    "crop 3: PVDF",
+    "crop 4: FLEX",
+    "crop 5: BOARD",
+    "crop 6: CABLE"
   ],
   "items": [
     {
@@ -17,13 +15,13 @@
     },
     {
       "index": 2,
-      "is_part": false,
-      "seen_as": "silicone pillar dielectric x48 soft pillar array"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 3,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "Flex tail with connector"
     },
     {
       "index": 4,
@@ -32,21 +30,11 @@
     },
     {
       "index": 5,
-      "is_part": false,
-      "seen_as": "multiplexed readout electronics"
-    },
-    {
-      "index": 6,
-      "is_part": false,
-      "seen_as": "silicone pillar dielectric x48 soft pillar array"
-    },
-    {
-      "index": 7,
       "is_part": true,
       "seen_as": ""
     },
     {
-      "index": 8,
+      "index": 6,
       "is_part": true,
       "seen_as": ""
     }

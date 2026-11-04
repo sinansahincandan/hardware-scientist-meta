@@ -1,24 +1,14 @@
 {
   "id": "E15",
-  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
-  "tool": "web_search",
-  "purpose": "search: polyurethane sandwich panel thermal conductivity cold room insulation thickness",
-  "code_or_query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "simulate",
+  "purpose": "night autonomy through night with 10kWh battery and 300W night cooling load",
+  "code_or_query": "import numpy as np\ndt=0.25\nt=np.arange(0,24,dt)\n# sun 6am-6pm bell shape PV kW for 2.4kWp\nPV=np.maximum(0,np.sin(np.pi*(t-6)/12))*2.4*0.75\n# cooling load: 800W day avg, 300W night\nload=np.where((t>=6)&(t<=18),0.8,0.3)\nE_batt=10.0*0.8  # usable at 80% DoD, start full usable\nsoc=[E_batt]\nfor i in range(len(t)):\n    E_batt=min(8.0, max(0, E_batt+(PV[i]-load[i])*dt))\n    soc.append(E_batt)\nprint(f\"min usable remaining kWh: {min(soc):.2f}\")\nprint(f\"end usable kWh: {soc[-1]:.2f}\")\nprint(f\"PV daily kWh: {PV.sum()*dt:.2f} load daily kWh: {load.sum()*dt:.2f}\")",
   "inputs": {},
-  "output_summary": "wiskindsteelstructure.com — Global 500 PU PIR Sandwich Panels For Cold Room Partition Wall Supplier | WISKIND — https://www.wiskindsteelstructure.com/pu-pir-sandwich-panels-for-cold-room-partition-wall_p123.html",
-  "output_full": "wiskindsteelstructure.com — Global 500 PU PIR Sandwich Panels For Cold Room Partition Wall Supplier | WISKIND — https://www.wiskindsteelstructure.com/pu-pir-sandwich-panels-for-cold-room-partition-wall_p123.html\n(the search returned no passage text)",
+  "output_summary": "min usable remaining kWh: 5.41; end usable kWh: 5.48; PV daily kWh: 13.8 load daily kWh: 13.3",
+  "output_full": "min usable remaining kWh: 5.41\nend usable kWh: 5.48\nPV daily kWh: 13.75 load daily kWh: 13.32",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "wiskindsteelstructure.com",
-      "title": "Global 500 PU PIR Sandwich Panels For Cold Room Partition Wall Supplier | WISKIND",
-      "year": "",
-      "url": "https://www.wiskindsteelstructure.com/pu-pir-sandwich-panels-for-cold-room-partition-wall_p123.html",
-      "query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

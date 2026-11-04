@@ -2,179 +2,184 @@
   "view": "side",
   "nodes": [
     {
-      "id": "deck",
-      "label": "40m deck + girders 1.9Hz",
+      "id": "xb",
+      "label": "transverse cross-beam",
       "shape": "beam",
       "size_class_mm": {
-        "min": 40000.0,
-        "max": 40000.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 0
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 6.0
-    },
-    {
-      "id": "frame",
-      "label": "transverse bearer frame",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 1000.0,
+        "min": 2500.0,
         "max": 3000.0
       },
       "layout": {
         "col": 2,
         "row": 1
       },
-      "color_hint": "#a0a0a0",
-      "aspect": 4.0
+      "color_hint": "#7fb3d5",
+      "aspect": 6.0
     },
     {
-      "id": "bolts",
-      "label": "HS bolts clamp",
-      "shape": "circle",
-      "size_class_mm": {
-        "min": 10.0,
-        "max": 30.0
-      },
-      "layout": {
-        "col": 4,
-        "row": 1
-      },
-      "color_hint": "#404040",
-      "aspect": 1.0
-    },
-    {
-      "id": "spring",
-      "label": "helical springs 67.8kN/m",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 50.0,
-        "max": 500.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 2
-      },
-      "color_hint": "#f0c040",
-      "aspect": 0.35
-    },
-    {
-      "id": "damper",
-      "label": "dashpots 1090 Ns/m",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 100.0,
-        "max": 600.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 2
-      },
-      "color_hint": "#e08020",
-      "aspect": 0.4
-    },
-    {
-      "id": "mass",
-      "label": "500kg TMD mass 1.85Hz",
+      "id": "tm",
+      "label": "tuned mass",
       "shape": "rect",
       "size_class_mm": {
         "min": 300.0,
-        "max": 800.0
+        "max": 600.0
       },
       "layout": {
         "col": 2,
         "row": 3
       },
-      "color_hint": "#c0504d",
+      "color_hint": "#a9cce3",
       "aspect": 1.0
     },
     {
-      "id": "cover",
-      "label": "removable cover +/-50mm stops",
-      "shape": "plate",
+      "id": "cs",
+      "label": "coil spring suspension",
+      "shape": "cylinder",
       "size_class_mm": {
-        "min": 500.0,
-        "max": 2000.0
+        "min": 200.0,
+        "max": 400.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 2
+      },
+      "color_hint": "#f9e79f",
+      "aspect": 0.35
+    },
+    {
+      "id": "vd",
+      "label": "viscous damper",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 400.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#f5cba7",
+      "aspect": 0.45
+    },
+    {
+      "id": "hb",
+      "label": "HSFG clamp bolt set",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 20.0,
+        "max": 50.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 1
+      },
+      "color_hint": "#abb2b9",
+      "aspect": 0.8
+    },
+    {
+      "id": "es",
+      "label": "caged elastomer travel stop",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 80.0,
+        "max": 124.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 3
+      },
+      "color_hint": "#edbb99",
+      "aspect": 1.0
+    },
+    {
+      "id": "ac",
+      "label": "deck accelerometer array",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 10.0,
+        "max": 50.0
       },
       "layout": {
         "col": 2,
-        "row": 4
+        "row": 0
       },
-      "color_hint": "#90c090",
-      "aspect": 5.0
+      "color_hint": "#aed6f1",
+      "aspect": 1.0
     }
   ],
   "edges": [
     {
-      "from_id": "frame",
-      "to_id": "deck",
+      "from_id": "hb",
+      "to_id": "xb",
       "kind": "mechanical",
-      "label": "clamped with preloaded bolts",
+      "label": "clamps beam to girders",
       "arrow": false
     },
     {
-      "from_id": "bolts",
-      "to_id": "frame",
+      "from_id": "xb",
+      "to_id": "cs",
       "kind": "mechanical",
-      "label": "clamps frame to girders",
+      "label": "hangs springs",
       "arrow": false
     },
     {
-      "from_id": "spring",
-      "to_id": "frame",
+      "from_id": "xb",
+      "to_id": "vd",
       "kind": "mechanical",
-      "label": "seated on frame",
+      "label": "hangs dampers",
       "arrow": false
     },
     {
-      "from_id": "spring",
-      "to_id": "mass",
+      "from_id": "cs",
+      "to_id": "tm",
       "kind": "mechanical",
-      "label": "carries mass",
+      "label": "suspends masses",
       "arrow": false
     },
     {
-      "from_id": "damper",
-      "to_id": "frame",
+      "from_id": "vd",
+      "to_id": "tm",
       "kind": "mechanical",
-      "label": "connected to frame",
+      "label": "damps masses",
       "arrow": false
     },
     {
-      "from_id": "damper",
-      "to_id": "mass",
+      "from_id": "tm",
+      "to_id": "es",
       "kind": "mechanical",
-      "label": "damps mass motion",
+      "label": "hits stops on overtravel",
       "arrow": false
     },
     {
-      "from_id": "cover",
-      "to_id": "frame",
+      "from_id": "xb",
+      "to_id": "ac",
       "kind": "mechanical",
-      "label": "removable cover below",
+      "label": "carries sensor motion",
       "arrow": false
     }
   ],
   "loads": [
     {
-      "on_id": "deck",
-      "label": "dense-crowd resonant force 1480 N on deck",
+      "on_id": "xb",
+      "label": "crowd resonant force",
       "direction": "down"
     },
     {
-      "on_id": "mass",
-      "label": "500 kg weight 4.90 kN on springs",
+      "on_id": "tm",
+      "label": "device static weight",
       "direction": "down"
+    },
+    {
+      "on_id": "es",
+      "label": "stop impact load",
+      "direction": "up"
     }
   ],
-  "critical_part_id": "mass",
-  "scale_bar_mm": 500.0,
+  "critical_part_id": "xb",
+  "scale_bar_mm": 100.0,
   "notes": [
-    "Side view at midspan: deck on top, bolted transverse bearers below, springs+dashpots hung vertically carrying 500kg mass, cover below.",
-    "Tuned to 1.85Hz just below 1.9Hz mode, mu=2.5%, zeta_opt~0.0956, static sag 72.3mm, crowd stroke 20.1mm within +/-50mm stops.",
-    "Staged night install: prefab off-site, lift from under-bridge platform, lock mass for transport then release, shim + threaded seats for re-tuning."
+    "Side view under-deck at midspan: ac on deck, xb clamped by hb, cs+vd hang tm, es limits overtravel.",
+    "Twin 400kg at 1.83 Hz, 12.0% optimum, 6.2% effective; 49.4mm stroke in 80mm gap; 74.7mm sag, 124mm envelope.",
+    "8.28 m/s2 bare to 0.67 m/s2 Medium; 7.85kN weight, 1.31% TMD-only 1.69% total <2%; 32.9kN slip >13.1kN demand."
   ]
 }

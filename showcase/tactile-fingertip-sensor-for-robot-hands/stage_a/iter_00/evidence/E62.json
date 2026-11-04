@@ -1,0 +1,14 @@
+{
+  "id": "E62",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "signal margin in LSB counts vs 244 aF LSB",
+  "code_or_query": "3.57/0.244",
+  "inputs": {},
+  "output_summary": "14.6",
+  "output_full": "14.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

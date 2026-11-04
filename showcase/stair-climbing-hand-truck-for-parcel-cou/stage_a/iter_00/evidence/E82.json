@@ -1,0 +1,36 @@
+{
+  "id": "E82",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: hand grip strength brake lever two finger pull force ergonomics",
+  "code_or_query": "hand grip strength brake lever two finger pull force ergonomics",
+  "inputs": {},
+  "output_summary": "welovecycling.com — Is Your Brake Lever Set Up Correctly? — 2018 — https://www.welovecycling.com/wide/2018/09/28/is-your-brake-lever-set-up-correctly/",
+  "output_full": "welovecycling.com — Is Your Brake Lever Set Up Correctly? — 2018 — https://www.welovecycling.com/wide/2018/09/28/is-your-brake-lever-set-up-correctly/\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: (E82) that braking with the index finger alone leaves the rest for handlebar control, which means the lever must meter with one or two fingers while the rest hold, against about 22.6 deg lateral tip angle and about 161 N tip-hold from the stopping and tipping hold for one operator on stairs (E34) plus about 0.11 m whip from the tip deflection per tube 1.1m backbone (E71) like a hand span, which is outside everyday stiffness.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: (E82) that index-finger braking leaves the rest for handlebar control, which means the dead-man lever, meaning spring-applied hand lever that locks on release, must meter with one or two fingers while the rest hold, against tip-hold 161 N and 22.6 deg lateral tip from the stopping and tipping hold for one operator on stairs (E34) plus whip 0.11 m from the tip deflection per tube 1.1m backbone (E71) like a hand span now 13.8 mm from the braced tip deflection halved span (E85) like a fingertip, which keeps corrections inside everyday control.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "welovecycling.com",
+      "title": "Is Your Brake Lever Set Up Correctly?",
+      "year": "2018",
+      "url": "https://www.welovecycling.com/wide/2018/09/28/is-your-brake-lever-set-up-correctly/",
+      "query": "hand grip strength brake lever two finger pull force ergonomics",
+      "unresolved": false,
+      "passage": "(E82) that braking with the index finger alone leaves the rest for handlebar control, which means the lever must meter with one or two fingers while the rest hold, against about 22.6 deg lateral tip angle and about 161 N tip-hold from the stopping and tipping hold for one operator on stairs (E34) plus about 0.11 m whip from the tip deflection per tube 1.1m backbone (E71) like a hand span, which is outside everyday stiffness.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "(E82) that braking with the index finger alone leaves the rest for handlebar control, which means the lever must meter with one or two fingers while the rest hold, against about 22.6 deg lateral tip angle and about 161 N tip-hold from the stopping and tipping hold for one operator on stairs (E34) plus about 0.11 m whip from the tip deflection per tube 1.1m backbone (E71) like a hand span, which is outside everyday stiffness."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "(E82) that index-finger braking leaves the rest for handlebar control, which means the dead-man lever, meaning spring-applied hand lever that locks on release, must meter with one or two fingers while the rest hold, against tip-hold 161 N and 22.6 deg lateral tip from the stopping and tipping hold for one operator on stairs (E34) plus whip 0.11 m from the tip deflection per tube 1.1m backbone (E71) like a hand span now 13.8 mm from the braced tip deflection halved span (E85) like a fingertip, which keeps corrections inside everyday control."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

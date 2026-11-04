@@ -1,0 +1,14 @@
+{
+  "id": "E69",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "calc",
+  "purpose": "outlet area for 150 mm dia for arch check",
+  "code_or_query": "0.15*0.15*3.14159/4",
+  "inputs": {},
+  "output_summary": "0.0177",
+  "output_full": "0.0177",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

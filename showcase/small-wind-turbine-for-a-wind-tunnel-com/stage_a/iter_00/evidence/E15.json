@@ -1,0 +1,14 @@
+{
+  "id": "E15",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "thrust scale at 22 m/s",
+  "code_or_query": "0.5*1.225*3.1416*0.40*0.40/4*22.0*22.0",
+  "inputs": {},
+  "output_summary": "37.3",
+  "output_full": "37.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

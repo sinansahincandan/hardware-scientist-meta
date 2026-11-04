@@ -1,0 +1,26 @@
+{
+  "id": "E46",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: ColdHubs pay-as-you-store cooperative cold storage operation crates",
+  "code_or_query": "ColdHubs pay-as-you-store cooperative cold storage operation crates",
+  "inputs": {},
+  "output_summary": "sidley.com — ColdHubs Ltd | Sidley Emerging Enterprises Pro Bono Program | Pro Bono | Sidley Austin LLP — https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd",
+  "output_full": "sidley.com — ColdHubs Ltd | Sidley Emerging Enterprises Pro Bono Program | Pro Bono | Sidley Austin LLP — https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "sidley.com",
+      "title": "ColdHubs Ltd | Sidley Emerging Enterprises Pro Bono Program | Pro Bono | Sidley Austin LLP",
+      "year": "",
+      "url": "https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd",
+      "query": "ColdHubs pay-as-you-store cooperative cold storage operation crates",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

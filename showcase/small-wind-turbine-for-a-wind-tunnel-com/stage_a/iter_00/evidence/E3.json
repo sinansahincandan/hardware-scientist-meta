@@ -1,0 +1,36 @@
+{
+  "id": "E3",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+  "code_or_query": "small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+  "inputs": {},
+  "output_summary": "repo.lib.jfn.ac.lk — Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications — http://repo.lib.jfn.ac.lk/xmlui/handle/123456789/2319",
+  "output_full": "repo.lib.jfn.ac.lk — Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications — http://repo.lib.jfn.ac.lk/xmlui/handle/123456789/2319\n(opened by the member, not cited)\nAero-Rotor Lead said about it: I read the Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications (E3) which found the SD7080 airfoil best with maximum lift-to-drag ratio 46.3 and optimum Cp 0.34 at TSR 6, and I apply it in the SD7080 rotor (C2); with 40 cm diameter the available wind power (E9) 9.62 W at 5 m/s and (E10) 102 W at 11 m/s give shaft power (E11) 3.27 W at 5 m/s and (E12) 34.7 W at 11 m/s, about a phone charger, which is plausible for start-up at 5 m/s.\nAero-Rotor Lead said about it: The same TSR 6 gives rotor speed (E14) 1.43e+03 RPM at 5 m/s and (E13) 3.15e+03 RPM at 11 m/s for direct-drive matching (C4), while wind dynamic load scale (E15) 37.3 N at 22 m/s is about 3.80 kg weight, easily carried to the post but requiring stall limiting; I read (E3) shows soft stall in 4 to 9 deg angle range and (E2) shows unloaded overspeed near 4300 RPM, so I add soft-stall sections (C7) to cap thrust and speed.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "repo.lib.jfn.ac.lk",
+      "title": "Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications",
+      "year": "",
+      "url": "http://repo.lib.jfn.ac.lk/xmlui/handle/123456789/2319",
+      "query": "small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+      "unresolved": false,
+      "passage": "I read the Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications (E3) which found the SD7080 airfoil best with maximum lift-to-drag ratio 46.3 and optimum Cp 0.34 at TSR 6, and I apply it in the SD7080 rotor (C2); with 40 cm diameter the available wind power (E9) 9.62 W at 5 m/s and (E10) 102 W at 11 m/s give shaft power (E11) 3.27 W at 5 m/s and (E12) 34.7 W at 11 m/s, about a phone charger, which is plausible for start-up at 5 m/s.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "I read the Design of Small Horizontal Axis Wind Turbine for Low Wind Speed Rural Applications (E3) which found the SD7080 airfoil best with maximum lift-to-drag ratio 46.3 and optimum Cp 0.34 at TSR 6, and I apply it in the SD7080 rotor (C2); with 40 cm diameter the available wind power (E9) 9.62 W at 5 m/s and (E10) 102 W at 11 m/s give shaft power (E11) 3.27 W at 5 m/s and (E12) 34.7 W at 11 m/s, about a phone charger, which is plausible for start-up at 5 m/s."
+        },
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "The same TSR 6 gives rotor speed (E14) 1.43e+03 RPM at 5 m/s and (E13) 3.15e+03 RPM at 11 m/s for direct-drive matching (C4), while wind dynamic load scale (E15) 37.3 N at 22 m/s is about 3.80 kg weight, easily carried to the post but requiring stall limiting; I read (E3) shows soft stall in 4 to 9 deg angle range and (E2) shows unloaded overspeed near 4300 RPM, so I add soft-stall sections (C7) to cap thrust and speed."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

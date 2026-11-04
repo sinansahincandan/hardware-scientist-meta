@@ -1,0 +1,133 @@
+{
+  "parts": [
+    {
+      "part_id": "chassis",
+      "visual_phrase": "metal frame",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "ladder",
+      "size_ratio": 1.4,
+      "touches": [
+        "arms",
+        "ladder",
+        "hopper",
+        "battery",
+        "computer"
+      ],
+      "note": "main frame everything bolts to along the belly"
+    },
+    {
+      "part_id": "wheels",
+      "visual_phrase": "black wheel",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "arms",
+      "size_ratio": 0.8,
+      "touches": [
+        "arms"
+      ],
+      "note": "round groused drive wheels at corners"
+    },
+    {
+      "part_id": "arms",
+      "visual_phrase": "metal arm",
+      "count": 2,
+      "long_axis": "horizontal",
+      "size_vs": "wheels",
+      "size_ratio": 1.2,
+      "touches": [
+        "chassis",
+        "wheels"
+      ],
+      "note": "short folding struts from frame to wheels"
+    },
+    {
+      "part_id": "kerf",
+      "visual_phrase": "steel chain",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "ladder",
+      "size_ratio": 0.3,
+      "touches": [
+        "ladder"
+      ],
+      "note": "low narrow cutting chain at digging end"
+    },
+    {
+      "part_id": "ladder",
+      "visual_phrase": "metal ladder",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "hopper",
+      "size_ratio": 2.0,
+      "touches": [
+        "chassis",
+        "kerf",
+        "hopper"
+      ],
+      "note": "inclined elevator lifting soil to bin"
+    },
+    {
+      "part_id": "hopper",
+      "visual_phrase": "metal bin",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "ladder",
+      "size_ratio": 0.5,
+      "touches": [
+        "chassis",
+        "ladder",
+        "screw"
+      ],
+      "note": "large wedge container holding the load"
+    },
+    {
+      "part_id": "screw",
+      "visual_phrase": "metal screw",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "hopper",
+      "size_ratio": 0.64,
+      "touches": [
+        "hopper"
+      ],
+      "note": "tube screw under bin metering the pour"
+    },
+    {
+      "part_id": "battery",
+      "visual_phrase": "battery box",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "hopper",
+      "size_ratio": 0.5,
+      "touches": [
+        "chassis"
+      ],
+      "note": "paired boxes on frame for power"
+    },
+    {
+      "part_id": "cameras",
+      "visual_phrase": "small camera",
+      "count": 3,
+      "long_axis": "any",
+      "size_vs": "computer",
+      "size_ratio": 0.32,
+      "touches": [
+        "chassis"
+      ],
+      "note": "tiny eyes watching drive dig and bin"
+    },
+    {
+      "part_id": "computer",
+      "visual_phrase": "computer box",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "battery",
+      "size_ratio": 0.7,
+      "touches": [
+        "chassis"
+      ],
+      "note": "small control box for blind operation"
+    }
+  ]
+}

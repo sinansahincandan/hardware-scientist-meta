@@ -1,0 +1,32 @@
+{
+  "id": "E2",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: footbridge tuned mass damper retrofit Millennium Bridge damping",
+  "code_or_query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
+  "inputs": {},
+  "output_summary": "timenote.info — Millennium Bridge, London — https://timenote.info/en/Millennium-Bridge-London",
+  "output_full": "timenote.info — Millennium Bridge, London — https://timenote.info/en/Millennium-Bridge-London\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "timenote.info",
+      "title": "Millennium Bridge, London",
+      "year": "",
+      "url": "https://timenote.info/en/Millennium-Bridge-London",
+      "query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
+      "unresolved": false,
+      "passage": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

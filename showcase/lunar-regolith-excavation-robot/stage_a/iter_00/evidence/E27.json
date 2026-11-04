@@ -1,22 +1,30 @@
 {
   "id": "E27",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
-  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "purpose": "search: mobile robot link loss failsafe emergency stop standard",
+  "code_or_query": "mobile robot link loss failsafe emergency stop standard",
   "inputs": {},
-  "output_summary": "a-m-c.com — ADVANCED Motion Controls — https://www.a-m-c.com/ip65-rating/",
-  "output_full": "a-m-c.com — ADVANCED Motion Controls — https://www.a-m-c.com/ip65-rating/\n(the search returned no passage text)",
+  "output_summary": "bwieagle.com — BWI Eagle - E-Stop — https://www.bwieagle.com/E-Stop.html",
+  "output_full": "bwieagle.com — BWI Eagle - E-Stop — https://www.bwieagle.com/E-Stop.html\n(opened by the member, not cited)\nAutonomy and Blind Operations Lead said about it: This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "a-m-c.com",
-      "title": "ADVANCED Motion Controls",
+      "authors_or_org": "bwieagle.com",
+      "title": "BWI Eagle - E-Stop",
       "year": "",
-      "url": "https://www.a-m-c.com/ip65-rating/",
-      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "url": "https://www.bwieagle.com/E-Stop.html",
+      "query": "mobile robot link loss failsafe emergency stop standard",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30)."
+        }
+      ]
     }
   ],
   "status": "ok",

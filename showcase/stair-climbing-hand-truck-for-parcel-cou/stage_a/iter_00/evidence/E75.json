@@ -1,0 +1,14 @@
+{
+  "id": "E75",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "placeholder check folded vs door",
+  "code_or_query": "sum({'folded_length':730,'door_width':1120}.values())",
+  "inputs": {},
+  "output_summary": "1850",
+  "output_full": "1850",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

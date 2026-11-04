@@ -1,0 +1,628 @@
+{
+ "b1": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure panel A",
+     "fault": "Bucket ladder's lower end stops at chassis height, about 0.3 m above ground and behind the kerf chain; spoil cut in the trench has no path to the buckets (soil would have to jump the gap).",
+     "checked_by": "looked at full figure and zoomed crop of the mid-chassis",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A vs Parts",
+     "fault": "Only one (rear) wheel is drawn; the front of the machine stands on the kerf-chain leg. Text says four grouser wheels, skid-steer.",
+     "checked_by": "counted wheels in figure and zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check / stowed envelope",
+     "fault": "Stowed 0.90x0.42x0.45 m is claimed, but the folding of the ~1 m bucket ladder (drawn rising far above the chassis) and the kerf-chain leg below it is never accounted for; the code fragment only lists the chassis box.",
+     "checked_by": "read Key numbers and compared with figure geometry",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Mixed load cases: kerf cut force is 11 N, yet dig power 16.4 W uses 32.9 N (300 mm cut) and traction margin compares 294 N with 32.9 N; traction (0.5x60x9.81=294 N) and ground pressure use 60 kg instead of 46 kg robot + 15 kg soil; robot mass 46 kg vs 47 kg in clearance calc.",
+     "checked_by": "recomputed with python3",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / ground pressure",
+     "fault": "Contact patch 0.15 m long on a 0.20 m diameter rigid wheel is implausible; pressure 15.6 kPa is understated.",
+     "checked_by": "geometry check",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers / watchdog",
+     "fault": "Headline stop distance 0.308 m differs from the design's own table (0.562 m at 1 s latency).",
+     "checked_by": "read calc output",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Auger screw drawn sticking horizontally out of the hopper outlet, outside any casing.",
+     "checked_by": "zoomed crop",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Number lines are padded with raw code fragments; no drive-energy or runtime budget for the 480 Wh pack.",
+     "checked_by": "read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass 46 kg and remote operation with heartbeat stop are covered, but the stowed-box claim ignores the ladder (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Trench chain plus bucket ladder is a workable concept, but as drawn the ladder cannot reach the spoil and the front has no wheels."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Most single numbers re-derive (sag 3.96 mm, 15 kg/10 L, slope load), but load cases are mixed and use 60 kg instead of the real masses."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows the parts but contradicts the text on wheel count and on the dig-to-ladder path."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable parts and real risks (arching, tipping), but the envelope claim is unsupported."
+   },
+   "C6": {
+    "score": 3,
+    "why": "The short How-it-works is clear; the Key numbers section is cluttered with code fragments."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Five ordered making steps with materials and sizes, plus step images."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Missing front wheels, floating auger, ladder not connected to the dig."
+   },
+   "total": 24
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "figure panel A vs text",
+     "fault": "Figure shows five to six wheels (three on the near side); text says four wheels on folding rocker arms.",
+     "checked_by": "counted in zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A vs text",
+     "fault": "Both drums are stacked vertically at the tip of a long telescoping boom about 1 m ahead of the front wheels; text says the load is carried low between axles and tip calc uses a 0.40 m arm. Only the lower drum could touch soil.",
+     "checked_by": "looked at full figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure panels A,B",
+     "fault": "Drums drawn as open-ended cylinders with soil pouring out of the open axial end, contradicting retention by internal baffles.",
+     "checked_by": "zoomed panel B",
+     "severity": "major"
+    },
+    {
+     "where": "figure scale",
+     "fault": "Against the ~200 mm scale bar the wheels are ~0.7 m and the robot over 2 m long, against 300 mm wheels and a 1.0 m start box.",
+     "checked_by": "measured pixels against scale bar",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check / stowed box",
+     "fault": "Length stack 895+20+25 = 940 mm covers only the spine; the drums (210-300 mm) and tool rail are not in the stack, so the 1.0 m box claim is unsupported.",
+     "checked_by": "read tolerance stack",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / tip stability",
+     "fault": "Restore 231 Nm equals 0.4 m x 589 N (a 60 kg robot), while the design's own tare line gives 196 Nm for 50 kg; 'SF 1.98' does not follow from 231/75 (= 3.1).",
+     "checked_by": "recomputed with python3",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Drum diameter given as 210-250 mm, 239 mm heritage and 300 mm in the deployed sketch.",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers / traction",
+     "fault": "Cohesion term 81 N does not follow from c = 1 kPa on the stated 4 x 0.2 x 0.065 = 0.052 m^2 contact (52 N).",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers / ground pressure",
+     "fault": "Uses 589 N (60 kg) rather than 50 kg robot + 20 kg load.",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass 50 kg sums correctly and remote operation with a heartbeat stop is covered, but the stowed-box stack leaves out the drums (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Counter-rotating drums (RASSOR heritage) are a proven way to dig BP-1, but the drawn boom and open drums contradict the carry and retention described."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Energy, stop distance and mass re-derive; stability and traction figures mix masses and do not follow from their inputs."
+   },
+   "C4": {
+    "score": 2,
+    "why": "The picture differs from the text on wheel count, drum placement, drum retention and scale."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Honest about the cohesion and slope risks, with operating limits; real parts and heritage."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Explains shave, retain, carry and reverse-dump clearly; numbers section is cluttered."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with materials and sizes, plus step images."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Extra wheels, open-ended drums and wrong scale."
+   },
+   "total": 25
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Key numbers / dig rate",
+     "fault": "14 buckets x 0.45 L x 40% x 30 rpm gives about 117 kg/min if the chain makes 30 cycles a minute; the stated 7.5 kg/min only follows if about 27 buckets pass per minute. The number does not follow from its inputs.",
+     "checked_by": "recomputed with python3",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check / stowed box",
+     "fault": "Stowed height 0.44 m is claimed 'from CAD stacking' with no stack; the figure shows a tall camera mast whose folding is never mentioned.",
+     "checked_by": "compared text with figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text",
+     "fault": "Figure shows two containers (a front hopper fed by the ladder and a separate rear box tipped by a ram); text describes one 25 L hopper that is winch-tipped.",
+     "checked_by": "looked at figure",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / dig power",
+     "fault": "Lifting ~80 W is wrong: 0.125 kg/s x 9.81 x ~1 m is about 1.2 W (it oversizes the motor).",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers / ground pressure",
+     "fault": "52-90 kg over 4 x 0.28 x 0.15 m gives 3.0-5.3 kPa, not 4.5-8 kPa; 0.28 m contact length is implausible.",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Constraint check",
+     "fault": "Traction against dig draft and tip stability with a 38 kg load raised are never computed; constraints are declared MET by assertion and precedent. '20% margin' on 52/60 kg is 13%.",
+     "checked_by": "read text, recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "No labels, no scale; random gold-foil patches.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Parts",
+     "fault": "Parts list has a single entry; stray text 'handling display.'",
+     "checked_by": "read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass 52 kg sums; the stowed-height claim is unsupported with a tall mast drawn."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Bucket-ladder miners are proven, but traction, draft and stability are not checked."
+   },
+   "C3": {
+    "score": 2,
+    "why": "The key dig-rate number does not follow from its inputs; dig power and ground pressure are miscomputed."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Unlabelled, unscaled figure with two containers where the text has one."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable from bought-in parts with sensible risks, but several claims rest on assertion."
+   },
+   "C6": {
+    "score": 3,
+    "why": "A clear one-paragraph description, but the parts list is nearly empty."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four stages with processes but few sizes."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Plausible render, but with decorative artefacts and an extra container."
+   },
+   "total": 22
+  }
+ },
+ "01": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure panel A",
+     "fault": "The 'tri-star wheel cluster' is drawn as a horizontal four-arm caster spider (like an office-chair base) with swivel casters, plus another pair of casters on a rear frame. There are no triangular wheel clusters, and the mechanism could not walk over a step nose as drawn.",
+     "checked_by": "zoomed crop of wheel area",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / fold",
+     "fault": "Folded thickness 190 mm and width 310+2x35 = 380 mm do not include the tri-star clusters: three 150 mm wheels on a cluster span well over 300 mm.",
+     "checked_by": "geometry check",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check",
+     "fault": "No pull or handle force for climbing is computed (only 129 J per riser and 403 N slope load), so 'operated by one person' is not shown.",
+     "checked_by": "read text",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Tip-whip case puts the full 589 N at the 1.1 m handle tip, which is not a real load case; 'total lock 74.6 N m' is not derived anywhere.",
+     "checked_by": "recomputed (43.9 mm, 40.9 MPa, 129 J, 403 N, 57.4 N all re-derive)",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Parcel sits on the toe plate far from the backbone, with no backrest contact; only two of four making-step images are shown.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Constraint check",
+     "fault": "Van stow by '1.67 m diagonal' is not explained.",
+     "checked_by": "read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "60 kg load is carried in the sums; one-person operating force is never checked (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "A tri-star with spring-applied disc brake is a sound concept; the fold envelope with clusters does not add up."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Stated sums re-derive, but the fold dimensions leave out the clusters and the handle force is missing."
+   },
+   "C4": {
+    "score": 2,
+    "why": "The drawn wheel arrangement is not a tri-star; the picture does not show the mechanism."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable parts and a sensible fail-safe brake, but key dimensions are unsupported."
+   },
+   "C6": {
+    "score": 3,
+    "why": "The mechanism and brake are explained, in dense wording."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four ordered steps with sizes; only two step images."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Wrong wheel system, extra casters, parcel floating off the backrest."
+   },
+   "total": 22
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Parts / Key numbers",
+     "fault": "Descent brake 'sized for 353 N per side static x1.5' is not derived, and how the pawls 'jam on nosing edge' is not explained, although safe descent is central to the problem.",
+     "checked_by": "read text; 353 N is not 60x9.81/2 = 294 N",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Handle force 214 N uses 60 kg only (truck 11-12 kg ignored) and an assumed 0.40 m CG offset.",
+     "checked_by": "recomputed 60x9.81x0.40/1.10 = 214 N",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Folded size given three ways: 450x490x740, 420x490x740 and 45x37x74 cm.",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Two extra small wheels under the toe plate are not in the text; rear skids are not visible; folding is not shown.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Constraint check",
+     "fault": "Strength of spine and clusters not checked; ratings rest on catalogue precedent (stated openly).",
+     "checked_by": "read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "60 kg stair rating from proven products and a computed ~214 N handle force; folded size given."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Standard tri-star climbing with skids and pawls is a proven approach."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Handle force re-derives; brake load is unsupported and folded sizes are inconsistent."
+   },
+   "C4": {
+    "score": 4,
+    "why": "Clear tri-star cluster on a stair with correct climb orientation and a strapped parcel; extra toe wheels."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Honest reliance on precedent with clear risks."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Plain, clear explanation of climbing, descent and folding."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four plausible process steps, few sizes, no images."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; minor unexplained small wheels."
+   },
+   "total": 30
+  }
+ },
+ "02": {
+  "A": {
+   "faults": [
+    {
+     "where": "Constraint check / capacity",
+     "fault": "20 crates of 60x40x30 cm = 1.44 m^3 at the stated 0.60 t/m^3 holds 0.864 t, not 1 t; 50 kg per crate is beyond normal produce-crate loading.",
+     "checked_by": "recomputed with python3",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text",
+     "fault": "Figure shows about eight part-filled crates on two small racks (far from 1 t) and 4 PV modules against 6 x 400 W in the text.",
+     "checked_by": "counted in figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure",
+     "fault": "Monoblock with condenser fan and grille is drawn on the back wall inside the cold room; the text says a through-wall unit with an external condenser. As drawn, heat would be rejected into the room.",
+     "checked_by": "looked at figure",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / pull-down",
+     "fault": "Field-heat pull-down (33.6 kWh thermal, 13.4 kWh electric) is left out of the daily PV budget and never checked against 0.60 kW cooling (~56 h of compressor time for 1 t); no loading rule; Risks section is empty.",
+     "checked_by": "recomputed 1000x3.9x31/3600 = 33.6 kWh",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Transmission given as 5.27 and 5.65 kWh/d thermal and 2.11 and 2.26 electric; skin 25.6 m^2 matches neither internal (24.4) nor external (33.2) area.",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "PV tilt drawn ~15-20 deg against 5 deg in text; front wall missing without being marked as a cutaway.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Solar only is met (8.4 kWh/d against 3.56 kWh/d holding), but the 1 t capacity does not follow from its own crate numbers."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Standard PV, battery and DC monoblock is workable, but pull-down of a 1 t charge is not reconciled with 0.6 kW."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Mass, ground pressure, PV and battery sums re-derive; capacity and pull-down do not close."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows a fraction of the load, the wrong PV count and the condenser inside the cold room."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable from standard parts, but the Risks section is empty."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear plain description of the energy and heat path."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Five ordered steps with materials and sizes, plus step images."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Clean render, but the cooler is placed inside the room."
+   },
+   "total": 25
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "How it works / Parts",
+     "fault": "Ice bank: a monoblock sized to hold 4-8 C cannot freeze water, and no ice-making coil, circuit or pump is described; 200-300 L ice is not sized against the night load.",
+     "checked_by": "physics check",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text",
+     "fault": "Figure splits the box into a machine bay and a narrow cold compartment (~1 m wide) holding about eight crates, contradicting a 2.4x1.8x2.1 m cold room with 40 crates; cold-air arrows pass through the partition and out of the open door and floor slots.",
+     "checked_by": "looked at figure",
+     "severity": "major"
+    },
+    {
+     "where": "Parts",
+     "fault": "4 x 625 W panels are about 12.5 m^2, but the roof of a 2.4x1.8 m box is about 5 m^2; this is never checked.",
+     "checked_by": "recomputed from typical 625 W module size",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Gross volume 2.4x1.8x2.1 = 9.1 m^3, not '~7 m^3'.",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "PV yield 10-12.5 kWh/d applies no system losses (7.5-9.4 kWh/d at 0.75), so the margin over the 7-9 kWh/d load is thin or negative.",
+     "checked_by": "recomputed",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "'658 W/h' unit slip; most numbers are scaled from precedents rather than computed.",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Ice tanks drawn as pressurised gas cylinders.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "1 t in 40 crates is consistent (~450 kg/m^3); solar-only is asserted with a thin, unloss-corrected energy margin."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Vapour compression with PV and battery is workable; the ice-bank storage as described is not."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Pull-down and crate density re-derive; volume, PV yield and roof area do not."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows a small cold compartment with a few crates and physically wrong airflow."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Honest use of cited precedents and realistic risks."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Plain, clear explanation of how the unit is used and works."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four process steps, few sizes, no images."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Gas-cylinder 'ice bank', airflow through walls, partitioned box."
+   },
+   "total": 24
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Key numbers / door infiltration",
+     "fault": "0.169 kWh/d assumes only 1.2 kg (~1 m^3) of air exchanged per opening; for a 0.9 m door at 43 C with crates carried in, air-change estimates give several kWh/d thermal (~25 changes x 8.64 m^3 x 1.2 kg x ~80 kJ/kg = 5.8 kWh, ~1.7 kWh with a curtain), which eats into the 3.1 kWh/d margin.",
+     "checked_by": "recomputed with python3",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text",
+     "fault": "Ground array shows six modules against seven in the text; the two roof modules are drawn as an A-frame with one facing away.",
+     "checked_by": "zoomed crop and count",
+     "severity": "minor"
+    },
+    {
+     "where": "figure labels",
+     "fault": "'Insulated chamber with door' label and the critical-part panel point at the condensing unit; legend says monoblock 'not located'.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Cooler drawn like a split-AC outdoor unit rather than a monoblock.",
+     "checked_by": "looked at figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Parts",
+     "fault": "Part functions are one or two words.",
+     "checked_by": "read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "1 t as 50 crates, and solar only with 13.5 kWh/d yield against a computed 10.4 kWh/d load and a cloudy-day battery check."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Standard PV, battery and monoblock with a conservative COP 1.4 and staged loading; the door load is understated."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Conduction, load sums, yield, masses, pad pressure and uplift all re-derive; door infiltration is far too low (major)."
+   },
+   "C4": {
+    "score": 4,
+    "why": "Picture shows box, door, racking, cooler, battery and split array in context; small count and label slips."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Honest about margin, derating and wind risks, with operating rules."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear energy and heat path in plain words."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with materials and sizes, plus step images."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Mislabelled cooler, missing module, odd A-frame roof panels."
+   },
+   "total": 30
+  }
+ }
+}

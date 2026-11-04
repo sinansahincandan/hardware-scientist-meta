@@ -1,0 +1,90 @@
+{
+  "pixel_description": "Photorealistic side view of small wind turbine on gray background held by right hand. Left: Three-blade fixed-pitch rotor drawn as spinning hub with radial blades around horizontal shaft axis facing left wind. Two sharp black carbon blades with orange tips at NW and SSW plus two translucent gray blurred ghosts at NNE and SSE, all converging to central silver hub/spinner with bolts, indicating 3 physical blades in motion with blur. Hub connected to long horizontal steel shaft running right through middle aluminum two-bearing block on flat aluminum bedplate, then through ventilated steel disc with drilled holes, then into large black cylindrical outrunner generator with silver ends at far right. Disc has top silver caliper on transverse rails on thin supports to bedplate. Two small finned electronic boxes screwed to bedplate under generator with orange, green, black, red wires, plus thick black corrugated wire looping from generator front up to caliper area. Bedplate bolted atop vertical silver post gripped by hand at bottom right, cropped at bottom. Six beige callouts with thin leaders: Three Blade Rotor to blades, Hub Shaft Assembly to mid-shaft, Nacelle Housing to bearing block/bedplate, Spring Disc Brake to caliper, Outrunner Generator to black motor, Support Post to vertical tube. No other text, numbers or scale bars.",
+  "regions": [],
+  "previous_regions": [],
+  "comparison_with_previous": "First evaluation; no previous render to compare.",
+  "deviations": [
+    {
+      "what": "rotor",
+      "measured": "3.9 times",
+      "expected": "about 1.8 times nacelle",
+      "matters": false,
+      "why": "Pixels show 40cm-class rotor diameter vertical with motion-blur orange tips vs short foreshortened nacelle block horizontal. Blur adds ~10-15% and side-view foreshortens nacelle, inflating ratio. Capture function unchanged; still three-blade disc facing wind."
+    },
+    {
+      "what": "rotor__blade",
+      "measured": "found 4",
+      "expected": "3 visible",
+      "matters": false,
+      "why": "Pixels show spinning three-blade hub: two sharp black carbon blades with orange tips at NW and SSW plus two translucent gray ghosts at NNE and SSE sharing same hub centre. Boxed image counts ghosts as separate (boxes 2,4 top and 3,1 bottom). Long-exposure spin of 3 physical blades, not 4 static blades; working geometry is three-blade fixed-pitch."
+    },
+    {
+      "what": "hub",
+      "measured": "0.39 times; drawn apart",
+      "expected": "about 1.5 times generator; touch generator and disc_brake",
+      "matters": false,
+      "why": "Pixels show slender steel shaft from spinner through bearing block through disc flange into generator front. Shaft thin vs generator can thick so <1 ratio is correct. Touches via continuous shaft: rotor bolted to shaft, disc clamped on shaft flange, shaft into generator. Segmenter box-gap ignores shaft continuity."
+    },
+    {
+      "what": "nacelle",
+      "measured": "0.44 times; drawn apart",
+      "expected": "about 0.9 times post; touch post, hub, generator, disc_brake",
+      "matters": false,
+      "why": "Pixels show flat aluminum bedplate bolted directly atop post with centre + side bolts, bearing housing bolted atop bedplate with shaft through it, disc rails and generator riser screwed to bedplate. All touch via bedplate. Appears small because rotor diameter dominates vertical; functional bearing support intact."
+    },
+    {
+      "what": "post",
+      "measured": "2.3 times; drawn apart",
+      "expected": "about 1.1 times nacelle; touch nacelle",
+      "matters": false,
+      "why": "Pixels show vertical aluminum tube under bedplate gripped by hand, truncated by bottom crop so full length not visible. Centre bolt + two side nuts visible at bedplate-post joint = contact present. Apparent length inflated by crop; diameter vs hand matches ~38mm tube."
+    },
+    {
+      "what": "generator",
+      "measured": "2.5 times; drawn apart",
+      "expected": "about 0.67 times hub; touch hub and nacelle",
+      "matters": false,
+      "why": "Pixels show large black can with silver ends at rear connected by silver flange to same shaft, sitting on riser above bedplate with black corrugated + orange/green leads to bedplate boxes. Touches hub via shaft and nacelle via riser/bedplate. Large vs thin shaft is correct; expectation inverted."
+    },
+    {
+      "what": "rectifier",
+      "measured": "not found",
+      "expected": "present as small board 20-50mm",
+      "matters": false,
+      "why": "Pixels show two finned modules on bedplate under generator: black finned box with orange lead and silver finned block with green/red leads. Schottky bridge potted with heatsink, not bare board, so detector missed. Electrical stage present on bedplate."
+    },
+    {
+      "what": "dump",
+      "measured": "not found",
+      "expected": "present as wire coil 30-70mm",
+      "matters": false,
+      "why": "Pixels show same finned modules/wiring as dump grid housing; 4-ohm wirewound in finned enclosure, not open coil. Orange lead from black box to silver block indicates regulated feed to dump. Function present, form enclosed."
+    },
+    {
+      "what": "safety_loop",
+      "measured": "found 2; 3.2 times; drawn apart",
+      "expected": "1 visible about 1.4 times regulator; touch disc_brake and regulator",
+      "matters": false,
+      "why": "Pixels show single normally-closed chain with branches: thick black corrugated wire from generator to caliper rail plus thin orange/green/red leads to bedplate boxes. Segmenter counts two wire segments as two loops and measures longest loop vs small regulator box. Routing generator->electronics->caliper visible, terminals touch."
+    },
+    {
+      "what": "disc_brake",
+      "measured": "drawn apart",
+      "expected": "touch hub and nacelle",
+      "matters": false,
+      "why": "Pixels show ventilated steel disc on shaft flange between bearing block and generator with top caliper straddling edge on cross-rails pinned to bedplate. Must have air gap to spin. Touches hub via shaft flange and nacelle via caliper-rails-to-bedplate. Gap is functional clearance, not missing contact."
+    },
+    {
+      "what": "overall_size",
+      "measured": "located parts span ~733mm across x 520mm high scaled by 185mm hand; largest part stated 400mm",
+      "expected": "fit 45cm cube, rotor 380-400mm, stack 36cm, side 2.5cm per side",
+      "matters": false,
+      "why": "Apparent 733mm exceeds 450mm but overestimated: hand in foreground enlarged, motion blur enlarges rotor, shaft overhang drawn long for photo clarity, post truncated. Post diameter vs hand grip matches 38.1mm tube, rotor ~400mm class. No many-times violation; still 40cm turbine shape for 45cm cube with 36cm stack if overhang shortened."
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "No missing parts, connections or orientations. Differences are photographic only: motion blur creates ghost blade smears and enlarges rotor, shaft overhang drawn long, post cropped by frame, electronics miniaturized on bedplate. Energy path rotor->hub/shaft->generator->boxes and safety wires to caliper, mechanical path shaft->bearings->bedplate->post and disc->caliper->bedplate all visible as in sketch and hand sketches.",
+  "s2_flaw": false,
+  "s2_feedback": "Examined disc-caliper clearance, shaft alignment through bearings, bedplate-post bolts, and wire routing generator to bedplate boxes to caliper: disc spins free with caliper straddling, shaft continuous, no interference, no impossible assembly, load path rotor torque to generator and friction torque to bedplate intact. No design flaw visible in faithful view.",
+  "notes": "Photorealistic hardware photo, not diagram. Six callouts correctly spelled with no numbers and leaders ending on correct parts. Electronics for rectifier/regulator/dump compacted as two finned boxes on bedplate; wiring present. Sketch block-diagram overall label 'overall ~10811 mm' is a sketch typo vs 390mm rotor and 45cm cube, not a render fault. Shaft overhang long for illustration but connections intact."
+}

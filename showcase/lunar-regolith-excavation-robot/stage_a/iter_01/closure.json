@@ -1,7 +1,7 @@
 {
-  "closed_by": "cap",
-  "cycles_used": 4,
-  "open_blocking": [
-    "O2"
-  ]
+  "closed_by": "chief",
+  "cycles_used": 2,
+  "open_blocking": [],
+  "chief_decision": "Lunar digger settled on v1: four grouser skid wheels on folding arms stowing 0.90 by 0.42 by 0.45 m then widening to 1.05 m by 0.68 m track, narrow 100 mm kerf chain loosening 50 mm deep throwing side spoil to wide bucket-ladder lifting to 20 L steep wedge hopper run half-full 15 kg, rear-pivot tilt plus hopper screw metering pour over bin lip guided by bin fiducial, cameras plus heartbeat stop plus odometry plus current-limit digging for blind operation, 24 V pack on fused bus in twin-tube aluminium frame. Leading digging end and trailing dump end fixed to fiducial view, long-low working pose, power chain battery to drive ladder tilt compute continuous. Mass 46 kg vs 60 kg, cut 11 N vs traction 294 N, power 16.4 W 0.512 Wh per trip vs 480 Wh, sag 3.96 mm, stop 0.308 m with loss, drift 0.10 to 0.15 m with reset, clearance 0.15 m tip 1.69 level. Depiction leader and bracket errors contradict fixed sketches and need only drawing correction. After-build bench tests: hopper arching and screw torque, edge wear, fiducial visibility.",
+  "decided_version": 1
 }

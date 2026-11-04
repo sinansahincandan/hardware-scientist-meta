@@ -1,0 +1,14 @@
+{
+  "id": "E87",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "add 3 extra modules to mass budget for grown 9-module array",
+  "code_or_query": "1780+3*20.5",
+  "inputs": {},
+  "output_summary": "1.84e+03",
+  "output_full": "1.84e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

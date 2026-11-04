@@ -1,38 +1,24 @@
 {
   "id": "E19",
-  "author": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
   "tool": "web_search",
-  "purpose": "search: human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
-  "code_or_query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+  "purpose": "search: BioTac electrode array impedance fingertip sensor",
+  "code_or_query": "BioTac electrode array impedance fingertip sensor",
   "inputs": {},
-  "output_summary": "iiab.me — Mechanoreceptor — 2022 — https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor",
-  "output_full": "iiab.me — Mechanoreceptor — 2022 — https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor\n(opened by the member, not cited)\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: Pacinian vibration is about 200 Hz to 300 Hz from the Mechanoreceptor (E19), so the 2 kHz sampling from the data rate and Nyquist check (E23) exceeds the 1 kHz minimum for a 500 Hz slip band and gives under 5 ms latency.\nMaya — Tactile Transduction and Sensing Physics said about it: Human Pacinian vibration about 200 to 300 Hz from the Mechanoreceptor (E19) needs the 2 kHz sampling from the data rate check (E23), well above the 1 kHz minimum.",
+  "output_summary": "pmc.ncbi.nlm.nih.gov — Use of tactile feedback to control exploratory movements to characterize object compliance — https://pmc.ncbi.nlm.nih.gov:443/articles/PMC3405524/",
+  "output_full": "pmc.ncbi.nlm.nih.gov — Use of tactile feedback to control exploratory movements to characterize object compliance — https://pmc.ncbi.nlm.nih.gov:443/articles/PMC3405524/\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "iiab.me",
-      "title": "Mechanoreceptor",
-      "year": "2022",
-      "url": "https://iiab.me/kiwix/content/wikipedia_en_molcell_maxi_2022-11/A/Mechanoreceptor",
-      "query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "authors_or_org": "pmc.ncbi.nlm.nih.gov",
+      "title": "Use of tactile feedback to control exploratory movements to characterize object compliance",
+      "year": "",
+      "url": "https://pmc.ncbi.nlm.nih.gov:443/articles/PMC3405524/",
+      "query": "BioTac electrode array impedance fingertip sensor",
       "unresolved": false,
-      "passage": "Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push.",
-      "cited": true,
-      "read": true,
-      "statements": [
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "Plainly human Pacinian vibration is about 200 to 300 Hz from the Mechanoreceptor (E19), so the data rate and Nyquist for 48 taxels plus vibration channel (E23) choice of 2 kHz sampling exceeds the 1 kHz Nyquist limit for a 500 Hz slip band and gives under 5 ms slip latency against a 40 ms static frame, like hearing a buzz versus feeling a slow push."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "Pacinian vibration is about 200 Hz to 300 Hz from the Mechanoreceptor (E19), so the 2 kHz sampling from the data rate and Nyquist check (E23) exceeds the 1 kHz minimum for a 500 Hz slip band and gives under 5 ms latency."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Human Pacinian vibration about 200 to 300 Hz from the Mechanoreceptor (E19) needs the 2 kHz sampling from the data rate check (E23), well above the 1 kHz minimum."
-        }
-      ]
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

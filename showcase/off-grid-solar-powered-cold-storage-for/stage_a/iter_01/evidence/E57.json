@@ -1,0 +1,14 @@
+{
+  "id": "E57",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "door infiltration kWh per day for 4 air changes",
+  "code_or_query": "4*8.64*0.335*38/1000",
+  "inputs": {},
+  "output_summary": "0.44",
+  "output_full": "0.44",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

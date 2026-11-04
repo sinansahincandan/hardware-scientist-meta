@@ -1,21 +1,12 @@
 {
   "id": "E13",
-  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "calc",
-  "purpose": "PV kWp for 10kWh per day example",
-  "code_or_query": "Q_(10,'kWh')/(Q_(5,'h')*0.75)",
-  "inputs": {
-    "arg0": {
-      "value": "10",
-      "unit": "kWh"
-    },
-    "arg1": {
-      "value": "5",
-      "unit": "h"
-    }
-  },
-  "output_summary": "2.67 kWh/h",
-  "output_full": "2.67 kWh/h",
+  "purpose": "PV array watts for 8kWh per day load at 5 peak sun hours",
+  "code_or_query": "(8000/5/0.75)",
+  "inputs": {},
+  "output_summary": "2.13e+03",
+  "output_full": "2.13e+03",
   "sketch_path": null,
   "references": [],
   "status": "ok",

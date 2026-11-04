@@ -1,0 +1,14 @@
+{
+  "id": "E64",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "design slip resistance per M20 HSFG bolt in kN",
+  "code_or_query": "(0.3*137000/1.25)/1000",
+  "inputs": {},
+  "output_summary": "32.9",
+  "output_full": "32.9",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

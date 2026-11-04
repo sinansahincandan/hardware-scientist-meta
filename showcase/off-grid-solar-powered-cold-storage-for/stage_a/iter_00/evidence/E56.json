@@ -1,14 +1,26 @@
 {
   "id": "E56",
-  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "fraction of PV yield used by holding plus 200kg batch",
-  "code_or_query": "((3.6+2.0)/8.1)",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: evaporative condenser pre-cooling COP improvement hot climate",
+  "code_or_query": "evaporative condenser pre-cooling COP improvement hot climate",
   "inputs": {},
-  "output_summary": "0.691",
-  "output_full": "0.691",
+  "output_summary": "researchgate.net — Schematic diagram of the evaporative cooling combined with a condenser — https://www.researchgate.net/figure/Schematic-diagram-of-the-evaporative-cooling-combined-with-a-condenser_fig2_354256292",
+  "output_full": "researchgate.net — Schematic diagram of the evaporative cooling combined with a condenser — https://www.researchgate.net/figure/Schematic-diagram-of-the-evaporative-cooling-combined-with-a-condenser_fig2_354256292\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "researchgate.net",
+      "title": "Schematic diagram of the evaporative cooling combined with a condenser",
+      "year": "",
+      "url": "https://www.researchgate.net/figure/Schematic-diagram-of-the-evaporative-cooling-combined-with-a-condenser_fig2_354256292",
+      "query": "evaporative condenser pre-cooling COP improvement hot climate",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

@@ -1,23 +1,14 @@
 {
   "id": "E42",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "calc",
-  "purpose": "input work actuator stroke",
-  "code_or_query": "Q_(735,'N')*Q_(0.15,'m')",
-  "inputs": {
-    "arg0": {
-      "value": "735",
-      "unit": "N"
-    },
-    "arg1": {
-      "value": "0.15",
-      "unit": "m"
-    }
-  },
-  "output_summary": "110 m\u22c5N",
-  "output_full": "110 m\u22c5N",
+  "author": "Power Structure and Integration Lead",
+  "tool": "vetted_calc:cantilever_deflection",
+  "purpose": "frame rail deflection under carried load",
+  "code_or_query": "{\"args\": {\"E\": 68900000000.0, \"I\": 2.5e-08, \"L\": 0.8, \"P\": 300.0}}",
+  "inputs": {},
+  "output_summary": "vetted_calc error: cantilever_deflection() missing 4 required positional arguments: 'load_n', 'length_m', 'youngs_pa', and 'second_moment_m4'",
+  "output_full": "vetted_calc error: cantilever_deflection() missing 4 required positional arguments: 'load_n', 'length_m', 'youngs_pa', and 'second_moment_m4'",
   "sketch_path": null,
   "references": [],
-  "status": "ok",
+  "status": "error",
   "cycle": 1
 }

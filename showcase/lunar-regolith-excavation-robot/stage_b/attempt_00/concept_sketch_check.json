@@ -1,4 +1,4 @@
 {
-  "ok": true,
-  "reason": "Pixels show all 10 items with plausible connections: left spiked transverse drum + front lug wheel, mid chassis frame with two boxed units cabled (battery + computer/radio with antennas), left folding mast with top cameras/depth/IMU labeled MU and pivot, right vertical chain/cylinder mast with raised tilting hopper pouring into lower bin, and right large rear lug wheel. Layout matches hand sketch: front axle/dig + mast forward, electronics mid-frame ~0.95m, rear axle ~0.7m wheelbase with vertical 0.6m guide/high-lift at rear."
+  "ok": false,
+  "reason": "Pixels show truss/box frame not twin-tube; battery box chemistry not visible as lithium-phosphate; bucket ladder/chain looks wide with two runs, not single narrow 100mm kerf with 300mm pickup and adjacent spoil row per hand sketch; cameras/hopper/screw generic so consistency cannot be confirmed."
 }

@@ -1,0 +1,36 @@
+{
+  "id": "E4",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: solar cold room direct drive battery free thermal storage ice vs battery",
+  "code_or_query": "solar cold room direct drive battery free thermal storage ice vs battery",
+  "inputs": {},
+  "output_summary": "our-power.co.uk — Solar powered ice maker: off-grid cold chain explained — https://our-power.co.uk/solar-powered-ice-makers/",
+  "output_full": "our-power.co.uk — Solar powered ice maker: off-grid cold chain explained — https://our-power.co.uk/solar-powered-ice-makers/\n(opened by the member, not cited)\nSolar Energy Systems Engineer said about it: Night and cloudy cover uses the 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank (C2) sized by the battery formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3) and built from modules like the 51.2 volt 100 ampere-hour unit in 4000 Watt Solar | 48V 6500W/120V Hybrid Inverter | All-in-One Kit (E10), backed by the Phase-Change Material (PCM, ice store) thermal battery (C4) using the ice-as-battery principle in Solar powered ice maker: off-grid cold chain explained (E4) where 1 kilogram stores about 93.0 watt-hour, controlled by Maximum Power Point Tracking (MPPT, electronic solar optimizer) prioritization (C8), with panels as chamber shade and electrics in a vented locked box needing monthly wipe and terminal check.\nSolar Energy Systems Engineer said about it: The ice principle in Solar powered ice maker: off-grid cold chain explained (E4) stores about 93.0 watt-hour per kilogram, and the unit in Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA (E81) stores 3.79 kilowatt-hour with up to 6000 cycles, so ice carries the night cold while the 48 volt Lithium Iron Phosphate means LiFePO4, lithium battery chemistry, bank covers fans and controls through Maximum Power Point Tracking means MPPT, solar optimizer, prioritization.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "our-power.co.uk",
+      "title": "Solar powered ice maker: off-grid cold chain explained",
+      "year": "",
+      "url": "https://our-power.co.uk/solar-powered-ice-makers/",
+      "query": "solar cold room direct drive battery free thermal storage ice vs battery",
+      "unresolved": false,
+      "passage": "Night and cloudy cover uses the 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank (C2) sized by the battery formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3) and built from modules like the 51.2 volt 100 ampere-hour unit in 4000 Watt Solar | 48V 6500W/120V Hybrid Inverter | All-in-One Kit (E10), backed by the Phase-Change Material (PCM, ice store) thermal battery (C4) using the ice-as-battery principle in Solar powered ice maker: off-grid cold chain explained (E4) where 1 kilogram stores about 93.0 watt-hour, controlled by Maximum Power Point Tracking (MPPT, electronic solar optimizer) prioritization (C8), with panels as chamber shade and electrics in a vented locked box needing monthly wipe and terminal check.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "Night and cloudy cover uses the 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank (C2) sized by the battery formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3) and built from modules like the 51.2 volt 100 ampere-hour unit in 4000 Watt Solar | 48V 6500W/120V Hybrid Inverter | All-in-One Kit (E10), backed by the Phase-Change Material (PCM, ice store) thermal battery (C4) using the ice-as-battery principle in Solar powered ice maker: off-grid cold chain explained (E4) where 1 kilogram stores about 93.0 watt-hour, controlled by Maximum Power Point Tracking (MPPT, electronic solar optimizer) prioritization (C8), with panels as chamber shade and electrics in a vented locked box needing monthly wipe and terminal check."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The ice principle in Solar powered ice maker: off-grid cold chain explained (E4) stores about 93.0 watt-hour per kilogram, and the unit in Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA (E81) stores 3.79 kilowatt-hour with up to 6000 cycles, so ice carries the night cold while the 48 volt Lithium Iron Phosphate means LiFePO4, lithium battery chemistry, bank covers fans and controls through Maximum Power Point Tracking means MPPT, solar optimizer, prioritization."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

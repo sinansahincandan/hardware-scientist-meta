@@ -1,0 +1,27 @@
+{
+  "id": "E13",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "twin-tube backbone stress half moment",
+  "code_or_query": "((Q_(44.15,'N*m')*Q_(15,'mm'))/Q_(17282,'mm**4')).to('MPa')",
+  "inputs": {
+    "arg0": {
+      "value": "44.15",
+      "unit": "N*m"
+    },
+    "arg1": {
+      "value": "15",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "17282",
+      "unit": "mm**4"
+    }
+  },
+  "output_summary": "38.3 MPa",
+  "output_full": "38.3 MPa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,25 +1,12 @@
 {
   "id": "E11",
-  "author": "Mara \u2014 Excavation and Mobility Engineer",
-  "tool": "calc",
-  "purpose": "traction margin: half weight available vs 39N drum force",
-  "code_or_query": "(Q_(589,'N')*0.5+Q_(39,'N'))/Q_(589,'N')",
-  "inputs": {
-    "arg0": {
-      "value": "589",
-      "unit": "N"
-    },
-    "arg1": {
-      "value": "39",
-      "unit": "N"
-    },
-    "arg2": {
-      "value": "589",
-      "unit": "N"
-    }
-  },
-  "output_summary": "0.566",
-  "output_full": "0.566",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "simulate",
+  "purpose": "hopper filling over time at bucket-ladder rate vs scraper rate",
+  "code_or_query": "import numpy as np\nrate_ladder = 8/60  # kg/s from Chondrobot-2 8kg/min\nrate_scraper = 2/60  # kg/s conservative scraper\ntarget = 15  # kg per trip\nt = np.arange(0,1200)\nfill_ladder = np.minimum(rate_ladder*t, target)\nfill_scraper = np.minimum(rate_scraper*t, target)\nt_ladder = target/rate_ladder\nt_scraper = target/rate_scraper\nprint(f\"ladder to 15kg: {t_ladder:.0f} s; scraper to 15kg: {t_scraper:.0f} s\")\nprint(f\"hopper 20L at 1500kg/m3 = 30kg max; 15kg = half full\")",
+  "inputs": {},
+  "output_summary": "ladder to 15kg: 112 s; scraper to 15kg: 450 s; hopper 20L at 1500kg/m3 = 30kg max; 15kg = half full",
+  "output_full": "ladder to 15kg: 112 s; scraper to 15kg: 450 s\nhopper 20L at 1500kg/m3 = 30kg max; 15kg = half full",
   "sketch_path": null,
   "references": [],
   "status": "ok",

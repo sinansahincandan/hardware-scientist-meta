@@ -1,14 +1,14 @@
 {
   "id": "E59",
-  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "calc",
-  "purpose": "peak electric kW for 200kg batch over 8h plus steady load COP2.5",
-  "code_or_query": "(5/8+0.376)/2.5",
+  "purpose": "check conduction watts",
+  "code_or_query": "(25.4*0.21*38)",
   "inputs": {},
-  "output_summary": "0.4",
-  "output_full": "0.4",
+  "output_summary": "203",
+  "output_full": "203",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

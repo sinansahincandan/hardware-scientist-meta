@@ -1,0 +1,79 @@
+{
+  "px_per_mm": 4.0,
+  "boxes": {
+    "rotor": {
+      "x0": 102.66666666666666,
+      "y0": 65.0,
+      "x1": 137.33333333333334,
+      "y1": 203.66666666666669,
+      "label": "Three-blade fixed-pitch rotor"
+    },
+    "hub": {
+      "x0": 150.0,
+      "y0": 65.0,
+      "x1": 370.0,
+      "y1": 153.0000000000001,
+      "label": "Rigid hub and shaft"
+    },
+    "nacelle": {
+      "x0": 290.0,
+      "y0": 238.33333333333337,
+      "x1": 509.99999999999994,
+      "y1": 311.66666666666674,
+      "label": "Stiff nacelle bedplate housing"
+    },
+    "post": {
+      "x0": 379.2,
+      "y0": 411.66666666666674,
+      "x1": 420.8,
+      "y1": 550.3333333333334,
+      "label": "Steel post clamp and post"
+    },
+    "generator": {
+      "x0": 456.80000000000007,
+      "y0": 65.0,
+      "x1": 623.2,
+      "y1": 203.66666666666669,
+      "label": "Direct-drive outrunner generator"
+    },
+    "rectifier": {
+      "x0": 610.6666666666667,
+      "y0": 65.0,
+      "x1": 749.3333333333334,
+      "y1": 203.66666666666669,
+      "label": "Three-phase rectifier bridge"
+    },
+    "regulator": {
+      "x0": 736.8000000000001,
+      "y0": 65.0,
+      "x1": 903.2000000000002,
+      "y1": 203.66666666666669,
+      "label": "Buck-boost regulator"
+    },
+    "dump": {
+      "x0": 855.9999999999999,
+      "y0": 65.0,
+      "x1": 1064.0,
+      "y1": 203.66666666666669,
+      "label": "Dump resistor grid"
+    },
+    "safety_loop": {
+      "x0": 570.0000000000001,
+      "y0": 238.33333333333337,
+      "x1": 790.0,
+      "y1": 348.3333333333333,
+      "label": "Normally closed safety chain loop"
+    },
+    "disc_brake": {
+      "x0": 375.73333333333335,
+      "y0": 65.0,
+      "x1": 424.26666666666665,
+      "y1": 203.66666666666669,
+      "label": "Spring-applied disc brake"
+    }
+  },
+  "width": 1000,
+  "height": 625,
+  "critical_part_id": "rotor",
+  "scale_bar_mm": 10.0
+}

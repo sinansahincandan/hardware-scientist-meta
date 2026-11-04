@@ -1,0 +1,14 @@
+{
+  "id": "E65",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "combined static plus dynamic bracket load kN",
+  "code_or_query": "(7848+5220)/1000",
+  "inputs": {},
+  "output_summary": "13.1",
+  "output_full": "13.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

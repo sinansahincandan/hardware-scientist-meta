@@ -1,0 +1,32 @@
+{
+  "id": "E80",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
+  "tool": "web_search",
+  "purpose": "search: tire tread sipes increase grip flex blocks",
+  "code_or_query": "tire tread sipes increase grip flex blocks",
+  "inputs": {},
+  "output_summary": "simpletire.com — What Are Tire Sipes? Benefits & Types Explained for Better Traction | SimpleTire — https://simpletire.com/learn/tire-maintenance-safety/tire-sipe",
+  "output_full": "simpletire.com — What Are Tire Sipes? Benefits & Types Explained for Better Traction | SimpleTire — https://simpletire.com/learn/tire-maintenance-safety/tire-sipe\n(opened by the member, not cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: Benefits & Types Explained for Better Traction | SimpleTire (E80) states sipes are thin slits that let tread blocks flex to create more edges for gripping, and the Hertz contact radius for 1mN on soft silicone (E14) spreads 1.00 mN to 0.470 mm diameter at 5.78 kPa, which is a grain of sand on a fingertip and therefore everyday gentle touch.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "simpletire.com",
+      "title": "What Are Tire Sipes? Benefits & Types Explained for Better Traction | SimpleTire",
+      "year": "",
+      "url": "https://simpletire.com/learn/tire-maintenance-safety/tire-sipe",
+      "query": "tire tread sipes increase grip flex blocks",
+      "unresolved": false,
+      "passage": "Benefits & Types Explained for Better Traction | SimpleTire (E80) states sipes are thin slits that let tread blocks flex to create more edges for gripping, and the Hertz contact radius for 1mN on soft silicone (E14) spreads 1.00 mN to 0.470 mm diameter at 5.78 kPa, which is a grain of sand on a fingertip and therefore everyday gentle touch.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "Benefits & Types Explained for Better Traction | SimpleTire (E80) states sipes are thin slits that let tread blocks flex to create more edges for gripping, and the Hertz contact radius for 1mN on soft silicone (E14) spreads 1.00 mN to 0.470 mm diameter at 5.78 kPa, which is a grain of sand on a fingertip and therefore everyday gentle touch."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

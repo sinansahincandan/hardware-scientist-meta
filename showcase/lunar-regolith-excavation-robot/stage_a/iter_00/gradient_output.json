@@ -1,34 +1,30 @@
 {
   "items": [
     {
-      "feedback_item": "Battery mass-energy inconsistency: 341W x 0.5h = 171Wh not 1000Wh, 1000Wh/2.92kg = 342Wh/kg vs LiFePO4 pack ~90-110Wh/kg",
-      "must_change": "Must change battery energy and mass in solution: recompute 30-min energy from E34 341W to ~0.17-0.3kWh and correct pack mass to either ~2.92kg for NMC/light LiFePO4 at that energy OR ~8-10kg for 1kWh LiFePO4; update key_estimates battery mass, assumed_constraints pack sizing, joint mass total 50.6kg to ~57kg, risks and open_questions O4."
+      "feedback_item": "arm region [145.0, 680.0, 380.0, 835.0]: folding wheel arms rendered as short fixed brackets",
+      "must_change": "The solution claims four folding aluminium wheel arms connecting the twin-tube chassis to the rigid grouser wheels to widen track for stow and stability. The render actually shows only short fixed vertical brackets above the wheels with no diagonal folding members, which contradicts the specified chassis-to-arm-to-wheel load path and the stowed 0.90 by 0.42 m envelope widening to 1.05 m length and 0.68 m track with 0.13 m side shift and 0.025 m rotation gap (E51). No change to the solution or whiteboard is required because arm count, function, material and stow/deploy geometry are already fixed, so the next render must draw the four diagonal arms per the sketch. This matters for deploying stability and box fit, but the mismatch says nothing about the design soundness."
     },
     {
-      "feedback_item": "Actuator force with friction through 4:1 linkage unproven (E56 failed) and lift energy 2400J vs ~155J useful (15x overhead)",
-      "must_change": "Must change hopper lift proof: add pivot geometry, 150mm stroke through 4-to-1 chain to 1.05m lip, dual 500N actuator force with friction model; correct E60 2400J time-window/friction vs 15kgx9.81x1.05m useful; update hopper part, loads, risks and O2."
+      "feedback_item": "callout [228.0, 503.0, 360.0, 625.0]: Narrow Kerf Chain leader ends on deck hoses",
+      "must_change": "The solution claims a narrow kerf trenching chain cutting a 100 mm wide slot 50 mm deep with 11 N cut resistance feeding side spoil to the ladder (E64). The render actually places the leader on black hoses and cables on the chassis deck mid-frame, not on the vertical chain in the trench at bottom center. No change to the solution or whiteboard is required because the kerf part, its 50 to 100 mm size class, and its mechanical feed to the ladder are already fixed, so the leader must be redrawn to the chain in the trench. This matters for drawing readability, not for cutting or feeding function."
     },
     {
-      "feedback_item": "Dump kinematics and tip moment unproven: 0.45m stowed frame to 1.0m lip, 0.50m hopper, 0.30m overhang, tip factor 4.06 vs 7.1 earlier",
-      "must_change": "Must change dump stability proof: fix mast pivot geometry and moment arms showing pour lip to 1.05m to clear 1.0m bin, overhang distance, wheelbase reaction vs 10kg soil + hopper weight; reconcile tip safety factor calculation sensitivity vs wheelbarrow experience; update key_estimates tip factor, figure_spec system view, fabrication steps."
+      "feedback_item": "callout [735.0, 268.0, 868.0, 300.0]: Steep Wedge Hopper leader ends on soil stream",
+      "must_change": "The solution claims a 20 L steep wedge hopper containing carried soil at 15 kg half-full trips up to 30 kg max (E10) with fill to 15 kg in 112 s (E11) and gravity chute feed from the ladder. The render actually ends the leader on the falling soil stream above the hopper, not on the hopper steel body. No change to the solution or whiteboard is required because the hopper part, its 150 to 450 mm size class, and its ladder-to-hopper gravity connection are already fixed and the latest render correctly shows the chute over the hopper with a functional gap, so the leader must be moved to the hopper body. This matters for part identification, not for containment."
     },
     {
-      "feedback_item": "Dimensioned stowed 1.0x0.5x0.5m envelope missing: 300mm wheels + stowed 900mm mast + 1050mm hopper travel, sketches E11/E46/E57 deployed only",
-      "must_change": "Must change envelope proof: add dimensioned stowed sketch showing low tube frame ~0.95m, 300mm wheels, stowed tilting sensor mast, lowered hopper fit within 1.0x0.5x0.5m; update concept size_class_mm, sensormast stow/deploy description, connections, and assumed_constraints evidence E50/E46."
+      "feedback_item": "callout [596.0, 605.0, 734.0, 637.0]: duplicate Tilt Screw Discharge labels misplaced",
+      "must_change": "The solution claims a single tilt screw discharge metering 15 kg pours through the 150 mm outlet with pivot at 0.55 m clearing the 0.40 m lip by 0.15 m at tip safety factor 1.69 level-only (E51). The render actually shows two identical Tilt Screw Discharge labels with one ending on the hopper side panel and one near the outlet. No change to the solution or whiteboard is required because the screw part, its rear outlet location, and its hopper-to-auger metering connection are already fixed, so the duplicate must be removed and the single leader redrawn to the screw outlet at the hopper rear. This matters for discharge identification, not for metering function."
     },
     {
-      "feedback_item": "Mass integration O1 and runtime from pack at full load unproven (E58/E59 failed)",
-      "must_change": "Must change mass-runtime integration: recompute joint mass total with corrected pack still under 60kg limit and runtime at full 341W load; update E50, key_estimates 30-min power, risks, and close O1/O4 with numbers before vote."
+      "feedback_item": "callout [15.0, 639.0, 148.0, 672.0]: duplicate Rigid Grouser Wheels labels, one on soil",
+      "must_change": "The solution claims four rigid grouser wheels traversing loose soil with 294 N available traction against 11 N cut (E23) at 15.6 kPa ground pressure (E25) and brake-only stop in 0.0625 m (E23). The render actually shows two identical Rigid Grouser Wheels labels with the upper leader ending on the left soil pile, not on a wheel. No change to the solution or whiteboard is required because wheel count, 200 to 220 mm size class, grouser function and arm-to-wheel mounts are already fixed, so the duplicate must be removed and the single leader redrawn to a wheel. This matters for drawing clarity, not for traction or flotation."
     },
     {
-      "feedback_item": "Sealed-box thermal 22K rise E53 / 0.00332 m3/s for 80W E52 closed but IP65 dust claim only generic E27-E29, plus FPV latency / stopping 0.15m",
-      "must_change": "No acceptance change required in solution: retain sealed enclosure with seals and fan and dual-link heartbeat stop; leave IP seal detail and FPV latency as test tuning, not acceptance blockers."
-    },
-    {
-      "feedback_item": "Traction/cutting/contact/torque E10, sensor power E47, hopper volume 0.0111m3 E49, overall physical plausibility and RASSOR distinction",
-      "must_change": "No change required: retain 4x rigid grouser wheels, front transverse drum 45.7N vs ~400-500N weight traction ratio >5, central hopper on rear mast to 1.05m, 24V bus, sealed box, sensor mast, dual radio; keep E10/E34/E47/E49/E21 and novelty_claim as supported."
+      "feedback_item": "battery [280.0, 580.0, 430.0, 630.0]: two lithium phosphate packs not identifiable",
+      "must_change": "The solution claims two lithium phosphate battery packs on the chassis with fused bus to dig and drive and fused rails to cameras, closing the energy budget with 16.4 W ladder dig power (E59) and 0.512 Wh per trip (E60) and bounded motor heating rise of 18 K (E44). The render actually shows unlabeled black deck boxes and cables with no identifiable two packs. No change to the solution or whiteboard is required because pack count, chemistry, function and electrical connections to ladder and cameras are already fixed, so the next render must draw and label the two packs distinctly on the deck. This matters for power identification, but the unlabeled boxes say nothing about energy closure."
     }
   ],
-  "process_cause": "Meeting closed by cycle cap after 4 cycles without consensus on v2 by Sam (1 ready Mara to 3 not-ready Theo/Priya/Sam); blocking objections O1 mass integration, O2 dump kinematics/tip, O4 battery mass-energy left unresolved and vote taken before deciding recomputes (battery energy-mass, linkage force, stowed envelope) were computed.",
-  "summary": "Concept is physically plausible and COTS-buildable with no conservation/load/signal violation, but not accept yet: battery 342Wh/kg and lift/tip/envelope proofs are unclosed though closable (~57kg still under 60kg). Resubmittal with the two recomputes and stowed envelope sketch should be accept-ready."
+  "process_cause": "",
+  "summary": "DRAWING FAILURE after three rounds is a render fidelity limit, not a design verdict. All contested parts, connections and stow/deploy and clearance geometry are already specified on the board, and the chassis-ladder-hopper mounts plus gravity chute already match the sketch. No solution or whiteboard change is required."
 }

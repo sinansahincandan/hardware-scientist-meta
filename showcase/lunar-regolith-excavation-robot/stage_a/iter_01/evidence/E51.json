@@ -1,0 +1,14 @@
+{
+  "id": "E51",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "simulate",
+  "purpose": "tip dump clearance deployed vs stowed and pressure check",
+  "code_or_query": "import math\n# masses and geometry\nm_robot_no_soil=47.0 # kg incl structure per E41\nm_soil_trip=15.0\nm_hopper_steel=4.5\ng=9.81\n# chassis: stowed 0.9x0.45x0.45, deployed track widens\nwheel_d=0.20; grouser=0.01; wheel_R=wheel_d/2+grouser\nwheel_w=0.12\nwheelbase=0.62 # m axle to axle deployed\ntrack_stowed=0.42; track_deployed=0.68\nlength_stowed=0.90; length_deployed=1.05 # ladder forward adds length\n# ground pressure 4 wheels\ncontact_L=0.0632\narea=4*(contact_L*wheel_w)\npressure=(m_robot_no_soil+m_soil_trip)*g/area/1000 # kPa\n# tip about rear axle during rear dump: stabilizing = (robot w/o hopper load) * forward CG distance; overturning = (hopper+soil at tilt) * rear overhang\n# assume robot CG 0.30m forward of rear axle, hopper pivot 0.10m behind rear axle, soil CG 0.25m behind rear axle at full tilt, pivot height 0.55m\nF_stab=(m_robot_no_soil- (m_hopper_steel+m_soil_trip))*g*0.30 # only chassis forward? conservative: full robot minus raised load forward\nF_over=(m_hopper_steel+m_soil_trip)*g*0.25\nSF=F_stab/F_over\n# dump lip clearance: pivot height 0.55m, bin lip 0.40m assumed Lunabotics bin wall, need outlet above lip + trajectory over lip\npivot_h=0.55; lip_h=0.40; clearance=pivot_h-lip_h\nprint(f\"area {area:.4f} m2 pressure {pressure:.1f} kPa\")\nprint(f\"stab {F_stab:.0f} Nm over {F_over:.0f} Nm SF {SF:.2f}\")\nprint(f\"pivot {pivot_h} lip {lip_h} clearance {clearance:.2f} m\")\nprint(f\"stowed {length_stowed}x{track_stowed} deployed len {length_deployed} track {track_deployed} wheelR {wheel_R:.3f}\")\nprint(f\"wheel clearance to frame: track growth {(track_deployed-track_stowed)/2:.3f} m side shift, rotation gap 0.025 m specified\")\n",
+  "inputs": {},
+  "output_summary": "pivot 0.55 lip 0.4 clearance 0.15 m; stowed 0.9x0.42 deployed len 1.05 track 0.68 wheelR 0.11; wheel clearance to frame: track growth 0.13 m side shift, rotation gap 0.025 m specified",
+  "output_full": "area 0.0303 m2 pressure 20.0 kPa\nstab 81 Nm over 48 Nm SF 1.69\npivot 0.55 lip 0.4 clearance 0.15 m\nstowed 0.9x0.42 deployed len 1.05 track 0.68 wheelR 0.110\nwheel clearance to frame: track growth 0.130 m side shift, rotation gap 0.025 m specified",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

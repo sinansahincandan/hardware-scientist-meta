@@ -1,0 +1,14 @@
+{
+  "id": "E34",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "simulate",
+  "purpose": "stopping and tipping hold for one operator on stairs",
+  "code_or_query": "import math\nm_total=72.0 # 60kg parcel + 12kg truck estimate\ng=9.81\ntheta=math.degrees(math.atan2(0.197,0.254)) # max riser over min going\nslope_comp=m_total*g*math.sin(math.radians(theta))\n# lever: handle 1.1m from axle, load CG 0.25m from axle on tilt\nF_hold_tip=m_total*g*0.25/1.1\n# tip angle: track half-width 0.25m, CG height 0.6m\ntip_angle=math.degrees(math.atan(0.25/0.6))\nprint(f\"stair angle deg {theta:.1f}\")\nprint(f\"slope component N {slope_comp:.0f}\")\nprint(f\"tip-hold hand force N {F_hold_tip:.0f}\")\nprint(f\"lateral tip angle deg {tip_angle:.1f}\")\n# compare to ISO/Snook limits\nprint(f\"sustained limit ref 80-140 N; initial ref up to 320-340 N\")",
+  "inputs": {},
+  "output_summary": "tip-hold hand force N 161; lateral tip angle deg 22.6; sustained limit ref 80-140 N; initial ref up to 320-340 N",
+  "output_full": "stair angle deg 37.8\nslope component N 433\ntip-hold hand force N 161\nlateral tip angle deg 22.6\nsustained limit ref 80-140 N; initial ref up to 320-340 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

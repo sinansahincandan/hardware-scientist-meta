@@ -1,24 +1,14 @@
 {
   "id": "E31",
-  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
-  "tool": "web_search",
-  "purpose": "search: fresh produce bulk density kg per cubic metre cold storage tomato potato",
-  "code_or_query": "fresh produce bulk density kg per cubic metre cold storage tomato potato",
+  "author": "Enclosure and Structural Designer",
+  "tool": "use_skill",
+  "purpose": "skill: off-grid-cold-store-sizing",
+  "code_or_query": "off-grid-cold-store-sizing",
   "inputs": {},
-  "output_summary": "mjae.journals.ekb.eg — EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES — https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf",
-  "output_full": "mjae.journals.ekb.eg — EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES — https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf\n(the search returned no passage text)",
+  "output_summary": "Use when sizing any off-grid vapor-compression cold store for holding, pull-down, PV and autonomy.",
+  "output_full": "---\nname: off-grid-cold-store-sizing\ndescription: Use when sizing any off-grid vapor-compression cold store for holding, pull-down, PV and autonomy.\nsource: seeded from knowledge/insights (5 problems) (2026-11-02)\n---\n\n## 1. Separate holding from pull-down\n1. Compute conduction `Qcond=U*A*dT`. Reference tonne box: **U=0.22 W/m2K, A=25.6 m2, Qcond=186 W, Qsteady=376 W** including respiration, infiltration and fans for 4-10 C box in ~30 K ambient [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E24].\n2. Budget pull-down separately: **~25.0 kWh thermal per tonne from ~30 C to ~5 C (c~3.5 kJ/kg-K)**, an order above hourly holding; for 24-h pull-down **P_pull~1042 W thermal** [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E24].\n\n## 2. Convert to electric and PV\n3. Apply **DC vapor-compression COP~2.5**: **~370-400 W cold -> ~150 W electric, ~3.6 kWh/day continuous** (daily electric 3.61 kWh in example) [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E51,E52,E24,E20].\n4. Apply tropical fixed-tilt yield **~3-4 kWh/day per kWp (example 8.1 kWh/day from 2.4 kWp)** and oversize **PV ~2-3x over holding** to cover batch cooling, charge losses and cloud before battery sizing [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E54,E24].\n\n## 3. Size night store and buffers\n5. Size LiFePO4 usable store: **48 V 100 Ah = ~5.12 kWh nominal** [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E7,E9].\n6. Check night fraction: **150 W x 14 h = 2.1 kWh, ~0.41 of store, ~1.42 days holding-only autonomy** with no solar [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E57,E58,E66].\n7. Credit produce thermal buffer **~1.94 kWh per 2 K rise per tonne** for sealed-box ride-through and alarm thresholds [run 20261102-112524_off-grid-solar-powered-cold-storage-for- E67].\n8. Sanity-check pack mass with **COTS 24 V LiFePO4 pack ~90-120 Wh/kg at pack level (480 Wh / 5.3 kg = 90.6 Wh/kg; 819 Wh / 6.8 kg ~120 Wh/kg)**; reject claims **>150-200 Wh/kg (e.g. 1000 Wh in 2.92 kg = 342 Wh/kg)** as cell-only or erroneous [run 20261102-153907_lunar-regolith-excavation-robot E34,E35,E33].",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mjae.journals.ekb.eg",
-      "title": "EFFECT OF POTATO STACKS HEIGHT AND STORAGE DURATION ON PHYSICAL PROPERTIES OF POTATO TUBERS IN COMMERCIAL COLD STORES",
-      "year": "",
-      "url": "https://mjae.journals.ekb.eg/article_98640_3ca6f096f3c19eae94e556b7c9807c3c.pdf",
-      "query": "fresh produce bulk density kg per cubic metre cold storage tomato potato",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,23 @@
+{
+  "id": "E22",
+  "author": "Structures-Survival Engineer",
+  "tool": "calc",
+  "purpose": "survival thrust scale disc load at 22 m/s",
+  "code_or_query": "Q_(0.5*1.225*22**2,'Pa')*3.14159*Q_(0.2,'m')**2",
+  "inputs": {
+    "arg0": {
+      "value": "0.5*1.225*22**2",
+      "unit": "Pa"
+    },
+    "arg1": {
+      "value": "0.2",
+      "unit": "m"
+    }
+  },
+  "output_summary": "37.3 m\u00b2\u22c5Pa",
+  "output_full": "37.3 m\u00b2\u22c5Pa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

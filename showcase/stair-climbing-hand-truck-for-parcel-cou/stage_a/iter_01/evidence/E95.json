@@ -1,0 +1,23 @@
+{
+  "id": "E95",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "riser-going ratio for angle",
+  "code_or_query": "(Q_(0.197,'m')/Q_(0.254,'m'))",
+  "inputs": {
+    "arg0": {
+      "value": "0.197",
+      "unit": "m"
+    },
+    "arg1": {
+      "value": "0.254",
+      "unit": "m"
+    }
+  },
+  "output_summary": "0.776",
+  "output_full": "0.776",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

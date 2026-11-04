@@ -1,0 +1,90 @@
+{
+  "pixel_description": "Render only: concrete deck slab on top, two vertical steel I-girders below left and right. One transverse cross-beam (xb): single steel I-beam element spanning horizontally between girders, bolted end plates with many bolts at both ends to girder webs/flanges. Beam sits below deck soffit with gap. Hung from bottom flange: two vertical coil springs (left and centre-right) tall helices with top clevis to beam and bottom foot to mass top; two vertical viscous dampers (centre-left and right) silver cylinders with top pin to beam and bottom rod to mass top, each paired with a spring for twin units. Two tuned masses: black rectangular steel boxes hanging in air, left and right, each with two top brackets. Small black wire-mesh cages (travel stops) bolted to outer side wall of each box, touching box. One small black box with wire on top of deck midspan (accelerometer). One standing adult male at right for scale, beam span ~2x his height. Critical part xb: one element, single straight I-section arranged transversely, connected at both ends to girders via bolted plates, carrying four hanging points (2 springs + 2 dampers) on its bottom flange mid-span.",
+  "regions": [],
+  "previous_regions": [
+    {
+      "part_id": "callout",
+      "fault": "leader dot ends on bare top flange of cross-beam mid-span, not on bolts (expected: Clamp Bolt Set leader should end on HSFG bolt groups at beam-to-girder ends)",
+      "status": "fixed",
+      "note": "Now ends on left beam-to-girder bolted plate with multiple bolts. Top-flange mid-span dot is now Transverse Cross Beam leader, correct."
+    }
+  ],
+  "comparison_with_previous": "Compared with the previous render (third image), the Clamp Bolt Set callout fault is fixed: leader now ends on the left beam-to-girder bolted plate group, not on bare top flange mid-span. Twin masses, 2x vertical springs and 2x vertical dampers hanging from cross-beam are retained. Travel stops moved from hanging under beam to caged boxes attached to side of each tuned mass, which still satisfies tm-to-es contact. No new missing parts, floating parts or misplaced callouts introduced.",
+  "deviations": [
+    {
+      "what": "xb",
+      "measured": "pixels show top mounts bolted to bottom flange of beam and bottom mounts to masses - all touching",
+      "expected": "xb touches cs and vd (hangs springs/dampers); no direct xb-to-es contact required (es touches tm)",
+      "matters": false,
+      "why": "Segmenter says apart, but pixels show continuous load path: beam bottom flange -> clevis brackets -> springs/dampers -> mass top brackets. xb-to-es expectation is wrong per connections list; es correctly touches tm, not xb. No real gap."
+    },
+    {
+      "what": "tm",
+      "measured": "pixels show damper piston rod into top bracket on mass, touching",
+      "expected": "tm touches vd (and cs) via top brackets",
+      "matters": false,
+      "why": "Segmenter says apart, but left and right black box masses each have two top pedestals where spring foot and damper foot are bolted. Contact visible. Localizer miss of 'tm' does not mean absent - two boxes clearly visible."
+    },
+    {
+      "what": "cs",
+      "measured": "pixels show two tall vertical coils, long axis vertical, touching beam above",
+      "expected": "cs vertical long axis, ~0.6x tm size, touches xb above",
+      "matters": false,
+      "why": "Segmenter measured horizontal is wrong - both coil springs are tall vertical helices left and right. Size 1.5x vs 0.6x is bounding-box coarse error; springs are longer than mass height by design (200-400mm vs 300-600mm masses) and perspective elongates. Contact to xb via top clevis visible."
+    },
+    {
+      "what": "vd",
+      "measured": "pixels show two vertical silver cylinders, axis vertical, top pinned to beam, bottom pinned to mass",
+      "expected": "vd vertical long axis, touches xb above and tm below",
+      "matters": false,
+      "why": "Segmenter measured horizontal is wrong - dampers are vertical alongside springs. Apart claim is wrong - top pin to beam flange and bottom pin to mass bracket both touch in pixels."
+    },
+    {
+      "what": "hb",
+      "measured": "27 bolts visible in plates at both beam ends, forming one clamp set",
+      "expected": "hb qty 1 set; many individual HSFG bolts in set",
+      "matters": false,
+      "why": "Pixels show bolt groups at left and right beam-to-girder joints with ~dozens of bolts + nuts. Expected '2 visible' misunderstands qty 1 set; multiple bolts per joint are required for 32.9kN slip vs 13.1kN demand. Count difference does not change principle."
+    },
+    {
+      "what": "es",
+      "measured": "pixels show 2 small black cages, one on outer side of each mass, bolted to mass side wall",
+      "expected": "es qty 1 type (pair for twin masses), touches tm, size ~80-124mm small vs mass",
+      "matters": false,
+      "why": "Segmenter found 1 but pixels show 2 (left mass left face, right mass right face). Two for two masses is functionally correct for tm-to-es 'hits stops'. Expected xb touch is wrong - design has no xb-to-es contact. Size 0.57x vs 0.2x is coarse; cage is small vs 300-600mm mass, acceptable."
+    },
+    {
+      "what": "ac",
+      "measured": "pixels show 1 black box on deck top with wire, plus tiny fixture on beam top mis-detected",
+      "expected": "ac qty 1 deck accelerometer array on deck",
+      "matters": false,
+      "why": "Only one deck sensor with callout 'Deck Accelerometer' is visible on deck soffit top. Second detection is the small black lifting-eye/bolt on top flange of cross-beam where Transverse Cross Beam leader ends, not a sensor - no wire, no box. No extra sensor present."
+    },
+    {
+      "what": "cs__spring",
+      "measured": "pixels show vertical coils",
+      "expected": "cs__spring vertical",
+      "matters": false,
+      "why": "Same as cs: duplicate detection of same two vertical springs. Horizontal claim contradicted by tall vertical helix pixels."
+    },
+    {
+      "what": "vd__damper",
+      "measured": "pixels show vertical cylinders",
+      "expected": "vd__damper vertical",
+      "matters": false,
+      "why": "Same as vd: duplicate detection of same two vertical dampers. Horizontal claim contradicted by vertical cylinder pixels."
+    },
+    {
+      "what": "device",
+      "measured": "located span ~3612mm across in picture scaled by person, ~20% over nominal 3000mm",
+      "expected": "whole device ~2500-3000mm across, under-deck within girder depth, vs ~1700mm person",
+      "matters": false,
+      "why": "Pixels show beam span ~2-2.5x person height, masses ~knee to waist height, vertical drop ~person height. 3612 vs 3000mm is within coarse x2 segmenter error and perspective. Still reads as ~3m cross-beam under deck, confined below soffit, zero above deck except tiny sensor, satisfying no-deck-change and 124mm envelope intent. Not many times too large/small."
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "No functional differences from sketch: 1x cross-beam between girders, 2x masses, 2x vertical springs, 2x vertical dampers, clamp bolt set at ends, stops on masses, 1x deck sensor. Bolt multiplicity and two stop cages vs qty 1 type are set detailing, not missing/wrong connections.",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw exposed: beam-to-girder clamped joints show full bearing plates, springs/dampers vertical with clear travel below beam, masses clear of girders and ground, stop cages on masses do not cause interference, load path girders->beam->masses visible.",
+  "notes": "Photorealistic render, not diagram. All 7 part types visible. Callouts spelled correctly with no numbers. No scale bars or extra text."
+}

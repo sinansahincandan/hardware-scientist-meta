@@ -1,111 +1,110 @@
 {
   "parts": [
     {
-      "part_id": "skin",
-      "visual_phrase": "rubber skin",
+      "part_id": "SKIN",
+      "visual_phrase": "silicone dome",
       "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "core",
+      "long_axis": "any",
+      "size_vs": "CORE",
       "size_ratio": 1.0,
       "touches": [
-        "film",
-        "pillars"
+        "GEL",
+        "CORE"
       ],
-      "note": "ridged cap on top, takes all touch load"
+      "note": "Outer soft cover that spreads touch inward."
     },
     {
-      "part_id": "film",
-      "visual_phrase": "plastic film",
+      "part_id": "GEL",
+      "visual_phrase": "clear gel",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "skin",
-      "size_ratio": 0.95,
+      "size_vs": "SKIN",
+      "size_ratio": 0.9,
       "touches": [
-        "skin",
-        "pillars"
+        "SKIN",
+        "PVDF"
       ],
-      "note": "thin sheet just under skin for slip buzz"
+      "note": "Thin soft layer coupling dome to sensors."
     },
     {
-      "part_id": "pillars",
-      "visual_phrase": "rubber pillars",
-      "count": 8,
-      "long_axis": "vertical",
-      "size_vs": "pcb",
-      "size_ratio": 0.12,
-      "touches": [
-        "film",
-        "pcb",
-        "skin"
-      ],
-      "note": "one row of soft bumps visible in section"
-    },
-    {
-      "part_id": "pcb",
-      "visual_phrase": "circuit board",
+      "part_id": "CORE",
+      "visual_phrase": "plastic core",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "core",
+      "size_vs": "SKIN",
       "size_ratio": 1.0,
       "touches": [
-        "pillars",
-        "core",
-        "readout"
+        "SKIN",
+        "CAP",
+        "BOARD"
       ],
-      "note": "flat board with electrodes under pillars"
+      "note": "Stiff finger-shaped support all layers sit on."
     },
     {
-      "part_id": "core",
-      "visual_phrase": "plastic block",
+      "part_id": "CAP",
+      "visual_phrase": "sensor grid",
+      "count": 10,
+      "long_axis": "horizontal",
+      "size_vs": "CORE",
+      "size_ratio": 0.09,
+      "touches": [
+        "PVDF",
+        "CORE",
+        "FLEX"
+      ],
+      "note": "Small steady-pressure pads tiled on flat facets."
+    },
+    {
+      "part_id": "PVDF",
+      "visual_phrase": "clear film",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "skin",
-      "size_ratio": 1.0,
+      "size_vs": "CAP",
+      "size_ratio": 10.0,
       "touches": [
-        "pcb",
-        "screws",
-        "readout"
+        "GEL",
+        "CAP"
       ],
-      "note": "stiff block carrying stack, bolted to finger"
+      "note": "Thin vibration sheet over the pressure pads."
     },
     {
-      "part_id": "readout",
-      "visual_phrase": "computer chip",
-      "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "pcb",
-      "size_ratio": 0.8,
-      "touches": [
-        "pcb",
-        "core",
-        "tail"
-      ],
-      "note": "small electronics under board to bus"
-    },
-    {
-      "part_id": "tail",
+      "part_id": "FLEX",
       "visual_phrase": "flat cable",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "readout",
-      "size_ratio": 1.0,
+      "size_vs": "BOARD",
+      "size_ratio": 0.7,
       "touches": [
-        "readout",
-        "core"
+        "CAP",
+        "BOARD"
       ],
-      "note": "flat cable exiting rear to finger wiring"
+      "note": "Thin strip carrying signals back to electronics."
     },
     {
-      "part_id": "screws",
-      "visual_phrase": "metal screws",
-      "count": 2,
-      "long_axis": "vertical",
-      "size_vs": "core",
-      "size_ratio": 0.15,
+      "part_id": "BOARD",
+      "visual_phrase": "circuit board",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "CORE",
+      "size_ratio": 1.0,
       "touches": [
-        "core"
+        "FLEX",
+        "CABLE",
+        "CORE"
       ],
-      "note": "pair of small bolts through core base"
+      "note": "Small electronics block on back of finger."
+    },
+    {
+      "part_id": "CABLE",
+      "visual_phrase": "black cable",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "BOARD",
+      "size_ratio": 2.3,
+      "touches": [
+        "BOARD"
+      ],
+      "note": "Lead carrying messages away to the hand."
     }
   ]
 }

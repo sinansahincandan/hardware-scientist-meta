@@ -1,0 +1,14 @@
+{
+  "id": "E63",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "static sag in mm for 800kg TMD",
+  "code_or_query": "7848/105000*1000",
+  "inputs": {},
+  "output_summary": "74.7",
+  "output_full": "74.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

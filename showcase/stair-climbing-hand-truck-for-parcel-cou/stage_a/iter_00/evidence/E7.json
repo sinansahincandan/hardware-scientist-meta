@@ -1,24 +1,23 @@
 {
   "id": "E7",
-  "author": "Maya – Stair-Climbing Mechanisms Engineer",
-  "tool": "web_search",
-  "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
-  "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
-  "inputs": {},
-  "output_summary": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
-  "output_full": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mktg.idec.com",
-      "title": "ISO 11228-2?",
-      "year": "",
-      "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
-      "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
-      "unresolved": false,
-      "passage": ""
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "parcel weight 60kg to newtons",
+  "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s**2')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
     }
-  ],
+  },
+  "output_summary": "589 kg\u22c5m/s\u00b2",
+  "output_full": "589 kg\u22c5m/s\u00b2",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

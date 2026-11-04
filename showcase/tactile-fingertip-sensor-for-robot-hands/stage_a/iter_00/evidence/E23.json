@@ -1,14 +1,32 @@
 {
   "id": "E23",
-  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
-  "tool": "simulate",
-  "purpose": "data rate and Nyquist for 48 taxels plus vibration channel",
-  "code_or_query": "taxels=48; f_static=25; bits=16; rate_static=taxels*f_static*bits; f_vib=2000; bits_vib=12; rate_vib=f_vib*bits_vib; print(f\"static {rate_static} bps, vib {rate_vib} bps, total {(rate_static+rate_vib)/1000} kbps\"); print(f\"Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x\")",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
+  "code_or_query": "human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
   "inputs": {},
-  "output_summary": "static 19200 bps, vib 24000 bps, total 43.2 kbps; Nyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
-  "output_full": "static 19200 bps, vib 24000 bps, total 43.2 kbps\nNyquist for 500 Hz needs >1000 Hz sampling, choose 2000 Hz margin 2x",
+  "output_summary": "library.fiveable.me — Tactile acuity - Perception Study Guide 2024 | Fiveable — 2024 — https://library.fiveable.me:443/perception/unit-4/tactile-acuity/study-guide/xA7CC8U81kt1gmEu",
+  "output_full": "library.fiveable.me — Tactile acuity - Perception Study Guide 2024 | Fiveable — 2024 — https://library.fiveable.me:443/perception/unit-4/tactile-acuity/study-guide/xA7CC8U81kt1gmEu\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "library.fiveable.me",
+      "title": "Tactile acuity - Perception Study Guide 2024 | Fiveable",
+      "year": "2024",
+      "url": "https://library.fiveable.me:443/perception/unit-4/tactile-acuity/study-guide/xA7CC8U81kt1gmEu",
+      "query": "human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
+      "unresolved": false,
+      "passage": "The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,22 +1,24 @@
 {
   "id": "E5",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: 400W monocrystalline solar panel datasheet dimensions efficiency",
-  "code_or_query": "400W monocrystalline solar panel datasheet dimensions efficiency",
+  "purpose": "search: off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
+  "code_or_query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
   "inputs": {},
-  "output_summary": "device.report — DNA 108 BF10 400W Datasheet — https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74",
-  "output_full": "device.report — DNA 108 BF10 400W Datasheet — https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74\n(the search returned no passage text)",
+  "output_summary": "gennergyps.co.za — Solar powered cold storage units Vanuatu — 2024 — https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf",
+  "output_full": "gennergyps.co.za — Solar powered cold storage units Vanuatu — 2024 — https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "device.report",
-      "title": "DNA 108 BF10 400W Datasheet",
-      "year": "",
-      "url": "https://device.report/m/e172ef933f24b7bd742bc808e06c6d3675199c46e667eb7e0fd6b57aacee1e74",
-      "query": "400W monocrystalline solar panel datasheet dimensions efficiency",
+      "authors_or_org": "gennergyps.co.za",
+      "title": "Solar powered cold storage units Vanuatu",
+      "year": "2024",
+      "url": "https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf",
+      "query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

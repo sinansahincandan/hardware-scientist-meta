@@ -1,0 +1,14 @@
+{
+  "id": "E43",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "sketch",
+  "purpose": "Side view deployed vs folded: telescoping handle slides down, toe-plate folds up against backbone, tri-star clusters stay fixed; folded 730x380x190mm envelope for van door",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(figsize=(8,4)); ax.set_aspect('equal'); ax.axis('off')\n# deployed\nax.plot([0,0],[0,1.1],'k-',lw=3); ax.plot([0,0.24],[0,0],'k-',lw=3); ax.plot([-0.05,0.05],[1.1,1.1],'k-',lw=3)\nax.plot([0.0],[0.15],'o',ms=18); ax.text(-0.15,0.55,'backbone',fontsize=8,rotation=90); ax.text(0.05,0.02,'toe',fontsize=8); ax.text(-0.2,1.15,'handle up',fontsize=8); ax.text(-0.55,0.3,'deployed 1100 high',fontsize=8)\n# folded\nax.plot([1.0,1.0],[0.2,0.73],'k-',lw=3); ax.plot([1.0,1.05],[0.2,0.35],'k-',lw=3); ax.plot([0.95,1.05],[0.73,0.73],'k-',lw=2)\nax.plot([1.0],[0.25],'o',ms=18); ax.text(0.85,0.5,'folded',fontsize=8,rotation=90); ax.text(1.1,0.3,'toe up',fontsize=8); ax.text(0.8,0.78,'handle down',fontsize=8); ax.text(0.75,0.05,'730x380x190 env',fontsize=8)\nax.set_xlim(-0.7,1.6); ax.set_ylim(-0.1,1.3); plt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+  "inputs": {},
+  "output_summary": "Side view deployed vs folded: telescoping handle slides down, toe-plate folds up against backbone, tri-star clusters stay fixed; folded 730x380x190mm envelope for van door",
+  "output_full": "Side view deployed vs folded: telescoping handle slides down, toe-plate folds up against backbone, tri-star clusters stay fixed; folded 730x380x190mm envelope for van door",
+  "sketch_path": "evidence/sketch_43.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

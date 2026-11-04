@@ -1,0 +1,14 @@
+{
+  "id": "E82",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "required kWp for 13.2kWh per day",
+  "code_or_query": "13.2/(5*0.75)",
+  "inputs": {},
+  "output_summary": "3.52",
+  "output_full": "3.52",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

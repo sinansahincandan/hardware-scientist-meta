@@ -1,24 +1,30 @@
 {
   "id": "E21",
-  "author": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
   "tool": "web_search",
-  "purpose": "search: human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
-  "code_or_query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+  "purpose": "search: capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
+  "code_or_query": "capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
   "inputs": {},
-  "output_summary": "scales.arabpsychology.com — VIBRATION RECEPTOR Definition & Meaning — https://scales.arabpsychology.com/trm/vibration-receptor/",
-  "output_full": "scales.arabpsychology.com — VIBRATION RECEPTOR Definition & Meaning — https://scales.arabpsychology.com/trm/vibration-receptor/\n(found by the search; not opened or cited)",
+  "output_summary": "fierceelectronics.com — Capacitance Sensing in Human Body Contact Applications — https://www.fierceelectronics.com/embedded/capacitance-sensing-human-body-contact-applications",
+  "output_full": "fierceelectronics.com — Capacitance Sensing in Human Body Contact Applications — https://www.fierceelectronics.com/embedded/capacitance-sensing-human-body-contact-applications\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "scales.arabpsychology.com",
-      "title": "VIBRATION RECEPTOR Definition & Meaning",
+      "authors_or_org": "fierceelectronics.com",
+      "title": "Capacitance Sensing in Human Body Contact Applications",
       "year": "",
-      "url": "https://scales.arabpsychology.com/trm/vibration-receptor/",
-      "query": "human Pacinian corpuscle vibration frequency slip detection 200 Hz tactile sensor",
+      "url": "https://www.fierceelectronics.com/embedded/capacitance-sensing-human-body-contact-applications",
+      "query": "capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
       "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
+      "passage": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement."
+        }
+      ]
     }
   ],
   "status": "ok",

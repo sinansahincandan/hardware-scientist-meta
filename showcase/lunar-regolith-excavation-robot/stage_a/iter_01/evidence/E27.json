@@ -1,22 +1,30 @@
 {
   "id": "E27",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
-  "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+  "purpose": "search: mobile robot link loss failsafe emergency stop standard",
+  "code_or_query": "mobile robot link loss failsafe emergency stop standard",
   "inputs": {},
-  "output_summary": "bioennopower.com — 24V 20Ah LiFePO4 Battery – Bioenno Power — https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
-  "output_full": "bioennopower.com — 24V 20Ah LiFePO4 Battery – Bioenno Power — https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as\n(the search returned no passage text)",
+  "output_summary": "bwieagle.com — BWI Eagle - E-Stop — https://www.bwieagle.com/E-Stop.html",
+  "output_full": "bwieagle.com — BWI Eagle - E-Stop — https://www.bwieagle.com/E-Stop.html\n(opened by the member, not cited)\nAutonomy and Blind Operations Lead said about it: This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "bioennopower.com",
-      "title": "24V 20Ah LiFePO4 Battery – Bioenno Power",
+      "authors_or_org": "bwieagle.com",
+      "title": "BWI Eagle - E-Stop",
       "year": "",
-      "url": "https://www.bioennopower.com/collections/24v-series-lifepo4-lithium-iron-phosphate-batteries/products/copy-of-24v-20ah-lfp-battery-pvc-blf-2420as",
-      "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "url": "https://www.bwieagle.com/E-Stop.html",
+      "query": "mobile robot link loss failsafe emergency stop standard",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30)."
+        }
+      ]
     }
   ],
   "status": "ok",

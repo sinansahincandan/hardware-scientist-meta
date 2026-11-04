@@ -1,0 +1,14 @@
+{
+  "id": "E102",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "park pin shear with dynamic allowance",
+  "code_or_query": "400.6/804.2",
+  "inputs": {},
+  "output_summary": "0.498",
+  "output_full": "0.498",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

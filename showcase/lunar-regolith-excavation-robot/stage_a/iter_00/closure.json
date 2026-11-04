@@ -1,9 +1,7 @@
 {
-  "closed_by": "cap",
-  "cycles_used": 4,
-  "open_blocking": [
-    "O1",
-    "O2",
-    "O4"
-  ]
+  "closed_by": "chief",
+  "cycles_used": 3,
+  "open_blocking": [],
+  "chief_decision": "Lunar digger settled on four grouser skid wheels on folding arms, narrow 100 mm kerf chain loosener feeding wide bucket-ladder into 20 L steep wedge hopper run half-full, rear-pivot tilt plus screw metered pour over bin lip, camera teleoperation with heartbeat stop plus odometry-fiducial reset plus current-limit digging on 24 V 20 Ah fused bus in twin-tube frame. Leading digging end and trailing dump end fixed. Bench tests after build: BP-1 arching through 150 mm outlet with screw assist, cutting edge wear rate, bin fiducial visibility and align accuracy.",
+  "decided_version": 1
 }

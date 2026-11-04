@@ -1,35 +1,47 @@
 {
   "round": 0,
   "sam_differences": {
-    "p_star": [
-      "not found by the segmenter as 'wheel cluster'"
+    "BB": [
+      "expected a vertical long axis, measured tilted about 57 degrees",
+      "size against HR: expected about 0.98 times, measured 8.9 times",
+      "expected to touch TP, but they are apart in the picture",
+      "expected to touch HR, but they are apart in the picture",
+      "expected to touch PS, but they are apart in the picture"
     ],
-    "p_spine": [
-      "expected 1 visible, found 2",
-      "expected to touch p_toe, but they are apart in the picture"
+    "TP": [
+      "expected to touch BB, but they are apart in the picture"
     ],
-    "p_toe": [
-      "expected 1 visible, found 2",
-      "expected to touch p_spine, but they are apart in the picture"
+    "HR": [
+      "expected a vertical long axis, measured tilted about 149 degrees",
+      "size against BB: expected about 1 times, measured 0.11 times",
+      "expected to touch BB, but they are apart in the picture"
     ],
-    "p_brake": [
-      "expected to touch p_handle, but they are apart in the picture"
+    "AX": [
+      "not found by the segmenter as 'metal rod'"
     ],
-    "p_handle": [
-      "expected a vertical long axis, measured horizontal",
-      "size against p_spine: expected about 0.83 times, measured 0.38 times",
-      "expected to touch p_brake, but they are apart in the picture"
+    "BR": [
+      "expected to touch LV, but they are apart in the picture"
     ],
-    "p_strap": [
-      "expected 1 visible, found 2",
-      "expected a vertical long axis, measured tilted about 124 degrees",
-      "size against p_toe: expected about 1.3 times, measured 0.64 times"
+    "LV": [
+      "size against BR: expected about 0.65 times, measured 6.5 times",
+      "expected to touch BR, but they are apart in the picture"
     ],
-    "p_hinge": [
-      "not found by the segmenter as 'metal hinge'"
+    "PS": [
+      "expected a horizontal long axis, measured vertical",
+      "size against BB: expected about 1.1 times, measured 0.31 times",
+      "expected to touch BB, but they are apart in the picture"
+    ],
+    "CL__wheel": [
+      "expected 3 visible, found 4",
+      "size against CL: expected about 0.41 times, measured 0.2 times"
+    ],
+    "BB__tube": [
+      "expected a vertical long axis, measured tilted about 58 degrees"
     ]
   },
-  "critique_part_ids": [],
+  "critique_part_ids": [
+    "callout"
+  ],
   "sam_parts_used_by_critique": [],
   "unnoticed_sam_deviations": [],
   "kept": true,

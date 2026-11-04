@@ -1,0 +1,64 @@
+{
+  "prompt": "Photorealistic product rendering, true side view, on plain seamless light-grey studio backdrop with soft product-shot lighting. A compact skid-steer lunar digger about one metre long, about knee-high, straddling a small cut-off patch of dark soil. Front left: narrow vertical kerf trenching chain of abrasion-resistant steel engaged in a thin slot with a low spoil row beside it. From that low front pickup, an inclined steel bucket-ladder elevator rises rearward, its top discharge inserted directly into the inlet of a steep smooth-steel wedge hopper amidships via a short enclosed gravity chute with no air gap. Hopper sits level half-full of soil, with a horizontal steel auger discharge screw along its bottom extending rearward over a low collection box whose lip is well below the hopper outlet. Twin-tube aluminium chassis spine on top carries blocky battery packs forward. Four rigid steel grouser wheels below on pivoted aluminium folding arms deployed wide, two visible in side view. Small camera pods on mast and at dig point, compact computer box. Show chain circulating, ladder buckets moving up, wheels grounded, screw ready to meter. Materials: brushed aluminium tubes, dark steel chain and ladder, smooth painted hopper, rubber-free grouser wheels. Flow must read left to right: slot to chain to ladder to chute to hopper to screw to bin. Draw each focus part visibly, fixed frame versus moving chain, ladder, wheels, screw. Add a short callout with thin leader line for each focus part: Bucket Ladder, Kerf Chain, Wedge Hopper, Discharge Screw, Grouser Wheels, Folding Arms, on small light tags placed in empty space, clean and legible, and no other text, margins or scale bars.",
+  "must_not": [
+    "people and animals",
+    "room interiors and furniture",
+    "outdoor landscape with sky and vegetation",
+    "tank tracks in place of wheels",
+    "fixed brackets in place of folding arms",
+    "offboard operator equipment apart from machine",
+    "extra text blocks and measurement bars"
+  ],
+  "changes_from_previous": "Fixed floating ladder discharge by joining ladder top directly into hopper with short enclosed gravity chute; restored four pivoted folding wheel arms widening track instead of fixed brackets; kept narrow kerf chain in soil slot feeding ladder pickup and placed each leader to its own part with no duplication.",
+  "visual_plan": {
+    "view": "side",
+    "spatial_layout": "Side elevation, front to left, rear to right. Kerf low front in ground, ladder diagonal from front-low to centre-high into hopper mouth, hopper centre-rear above screw, screw horizontal to rear over bin, chassis spine above wheels, arms angled out to wheels, soil patch only under machine cut off at backdrop, bin small low box at rear.",
+    "operating_moment": "Mid-digging pass: kerf chain cutting shallow slot, ladder elevating soil stream into half-full hopper, machine stationary on soil patch with collection bin positioned behind outlet to show full carry to delivery.",
+    "transfer_path": "Load: narrow kerf slot -> bucket ladder lift -> gravity chute -> steep wedge hopper -> auger screw metered pour to bin. Measured: dig and drive cameras -> onboard computer -> sealed operator via telemetry.",
+    "interactions": "Folding arms pivot from chassis to hold grouser wheels wide; kerf chain loosens slot and pushes spoil sideways to ladder pickup; ladder buckets carry up and drop through enclosed chute into wedge hopper; hopper weight bears on chassis, screw meters out rearward into bin; cameras watch trench and bin to computer.",
+    "avoid": [
+      "floating discharge with gap between ladder and hopper",
+      "tank tracks or fixed wheel brackets",
+      "landscape, sky, room, furniture, people, clutter",
+      "offboard stations drawn on machine"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "ladder",
+      "material": "steel",
+      "purpose": "lifts loose soil to hopper",
+      "callout": "Bucket Ladder"
+    },
+    {
+      "part_id": "kerf",
+      "material": "abrasion-resistant steel",
+      "purpose": "cuts narrow slot",
+      "callout": "Kerf Chain"
+    },
+    {
+      "part_id": "hopper",
+      "material": "smooth steel",
+      "purpose": "contains carried soil",
+      "callout": "Wedge Hopper"
+    },
+    {
+      "part_id": "screw",
+      "material": "steel",
+      "purpose": "meters pour to bin",
+      "callout": "Discharge Screw"
+    },
+    {
+      "part_id": "wheels",
+      "material": "steel",
+      "purpose": "provides skid traction",
+      "callout": "Grouser Wheels"
+    },
+    {
+      "part_id": "arms",
+      "material": "aluminium",
+      "purpose": "stows and widens track",
+      "callout": "Folding Arms"
+    }
+  ]
+}

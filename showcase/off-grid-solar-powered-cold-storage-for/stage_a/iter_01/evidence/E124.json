@@ -1,0 +1,14 @@
+{
+  "id": "E124",
+  "author": "Enclosure and Structural Designer",
+  "tool": "sketch",
+  "purpose": "Dimensioned crate layout: plan and section with rack rows, air gaps, door swing and airflow loop",
+  "code_or_query": "import matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyArrowPatch\nplt.xkcd()\nfig, axes = plt.subplots(1,2, figsize=(10,4.5))\nax = axes[0]\nax.set_title(\"Plan 2.4x1.8m box, 2 rack rows, 50 crates\")\nax.add_patch(Rectangle((0,0), 2.4, 1.8, fill=False, linewidth=2))\nax.add_patch(Rectangle((0.15,0.15), 0.9, 1.5, fill=False, linewidth=1.5))\nax.add_patch(Rectangle((1.35,0.15), 0.9, 1.5, fill=False, linewidth=1.5))\nfor i in range(5):\n  for j in range(5):\n    ax.add_patch(Rectangle((0.17+i*0.175, 0.17+j*0.29), 0.15, 0.26, fill=False))\n    ax.add_patch(Rectangle((1.37+i*0.175, 0.17+j*0.29), 0.15, 0.26, fill=False))\nax.plot([1.05,1.05],[0.15,1.65],'--')\nax.text(0.3,1.7,'rack A 25 crates', fontsize=7)\nax.text(1.4,1.7,'rack B 25 crates', fontsize=7)\nax.text(0.9,-0.15,'2.40m ext, 900mm door at bottom', fontsize=8)\nax.add_patch(Rectangle((0.75,0), 0.9, 0.05, fill=False))\nax.set_aspect('equal'); ax.set_xlim(-0.2,2.6); ax.set_ylim(-0.3,2.0)\nax.set_xlabel('length m'); ax.set_ylabel('width m')\nax2 = axes[1]\nax2.set_title(\"Section 2.0m high, rear evap high, return low\")\nax2.add_patch(Rectangle((0,0), 2.4, 2.0, fill=False, linewidth=2))\nax2.add_patch(Rectangle((0.15,0.25), 0.9, 1.4, fill=False))\nax2.add_patch(Rectangle((1.35,0.25), 0.9, 1.4, fill=False))\nax2.add_patch(Rectangle((0.05,1.55), 0.25, 0.25, fill=False))\nax2.text(0.02,1.85,'evap', fontsize=8)\nax2.annotate('', xy=(1.2,1.6), xytext=(0.35,1.6), arrowprops=dict(arrowstyle='->'))\nax2.annotate('', xy=(0.3,0.35), xytext=(1.2,0.35), arrowprops=dict(arrowstyle='->'))\nax2.text(1.0,1.7,'cold fwd', fontsize=7); ax2.text(0.9,0.2,'warm return', fontsize=7)\nax2.text(0.9,-0.15,'25mm gaps, 900 door swing clear', fontsize=8)\nax2.set_aspect('equal'); ax2.set_xlim(-0.2,2.6); ax2.set_ylim(-0.3,2.2)\nfig.tight_layout()\nfig.savefig('sketch.png', dpi=150)\nprint('saved')",
+  "inputs": {},
+  "output_summary": "Dimensioned crate layout: plan and section with rack rows, air gaps, door swing and airflow loop",
+  "output_full": "saved\n",
+  "sketch_path": "evidence/sketch_124.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

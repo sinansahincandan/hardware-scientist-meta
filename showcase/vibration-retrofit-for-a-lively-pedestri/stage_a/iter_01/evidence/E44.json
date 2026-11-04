@@ -1,0 +1,14 @@
+{
+  "id": "E44",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "retrofitted acceleration with effective damping",
+  "code_or_query": "0.082824/(2*0.062)",
+  "inputs": {},
+  "output_summary": "0.668",
+  "output_full": "0.668",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

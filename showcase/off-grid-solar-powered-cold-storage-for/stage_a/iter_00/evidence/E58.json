@@ -1,14 +1,14 @@
 {
   "id": "E58",
-  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "calc",
-  "purpose": "night fraction of 5.12kWh battery",
-  "code_or_query": "(150*14/1000/5.12)",
+  "purpose": "steady plus staged pull-down daily kWh",
+  "code_or_query": "(203+50+40)*24/1000 + 6.2",
   "inputs": {},
-  "output_summary": "0.41",
-  "output_full": "0.41",
+  "output_summary": "13.2",
+  "output_full": "13.2",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

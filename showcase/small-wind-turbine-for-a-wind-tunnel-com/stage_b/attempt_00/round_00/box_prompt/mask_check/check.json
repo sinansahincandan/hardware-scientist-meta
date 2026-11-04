@@ -1,0 +1,24 @@
+{
+  "crops": [
+    "crop 1: hub",
+    "crop 2: nacelle",
+    "crop 3: rectifier"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": false,
+      "seen_as": "electrical wiring"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E74",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "static safety factor backbone stress vs yield",
+  "code_or_query": "276/51.1",
+  "inputs": {},
+  "output_summary": "5.4",
+  "output_full": "5.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

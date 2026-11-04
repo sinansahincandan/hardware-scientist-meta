@@ -1,0 +1,26 @@
+{
+  "id": "E130",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull recommended force limits manual handling",
+  "code_or_query": "ISO 11228-2 push pull recommended force limits manual handling",
+  "inputs": {},
+  "output_summary": "darcor.com — Industrial Ergonomics Regulations around the World — 2017 — https://darcor.com/2017/12/12/industrial-ergonomics-regulations-around-the-world/",
+  "output_full": "darcor.com — Industrial Ergonomics Regulations around the World — 2017 — https://darcor.com/2017/12/12/industrial-ergonomics-regulations-around-the-world/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "darcor.com",
+      "title": "Industrial Ergonomics Regulations around the World",
+      "year": "2017",
+      "url": "https://darcor.com/2017/12/12/industrial-ergonomics-regulations-around-the-world/",
+      "query": "ISO 11228-2 push pull recommended force limits manual handling",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

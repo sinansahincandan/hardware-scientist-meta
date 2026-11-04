@@ -1,0 +1,14 @@
+{
+  "id": "E75",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "extra beam plus bracket steel weight",
+  "code_or_query": "(230*9.81)/1000",
+  "inputs": {},
+  "output_summary": "2.26",
+  "output_full": "2.26",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,24 +1,27 @@
 {
   "id": "E8",
-  "author": "Maya – Stair-Climbing Mechanisms Engineer",
-  "tool": "web_search",
-  "purpose": "search: EN ISO hand truck safety standard 60 kg push pull force limits",
-  "code_or_query": "EN ISO hand truck safety standard 60 kg push pull force limits",
-  "inputs": {},
-  "output_summary": "webarchive.nationalarchives.gov.uk — Microsoft Word - updated version of report 9648.doc — https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
-  "output_full": "webarchive.nationalarchives.gov.uk — Microsoft Word - updated version of report 9648.doc — https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "webarchive.nationalarchives.gov.uk",
-      "title": "Microsoft Word - updated version of report 9648.doc",
-      "year": "",
-      "url": "https://webarchive.nationalarchives.gov.uk/ukgwa/20100707143156mp_/http://www.hse.gov.uk/research/rrpdf/rr228.pdf",
-      "query": "EN ISO hand truck safety standard 60 kg push pull force limits",
-      "unresolved": false,
-      "passage": ""
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "toe-plate root moment 60kg at 150mm",
+  "code_or_query": "(Q_(60,'kg')*Q_(9.81,'m/s**2')*Q_(0.15,'m')).to('N*m')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.15",
+      "unit": "m"
     }
-  ],
+  },
+  "output_summary": "88.3 m\u22c5N",
+  "output_full": "88.3 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

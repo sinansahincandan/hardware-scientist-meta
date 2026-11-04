@@ -1,0 +1,36 @@
+{
+  "crops": [
+    "crop 1: arm",
+    "crop 2: ladder",
+    "crop 3: hopper",
+    "crop 4: auger",
+    "crop 5: battery"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "twin tube chassis frame bracket"
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 4,
+      "is_part": false,
+      "seen_as": "soil dirt load discharging from screw"
+    },
+    {
+      "index": 5,
+      "is_part": false,
+      "seen_as": "cables/wiring above battery"
+    }
+  ]
+}

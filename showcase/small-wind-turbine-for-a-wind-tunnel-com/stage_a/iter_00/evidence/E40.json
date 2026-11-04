@@ -1,0 +1,14 @@
+{
+  "id": "E40",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "dump resistor current top volts",
+  "code_or_query": "14.3/4",
+  "inputs": {},
+  "output_summary": "3.58",
+  "output_full": "3.58",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

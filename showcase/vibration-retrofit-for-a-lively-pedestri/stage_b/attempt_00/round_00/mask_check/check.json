@@ -1,32 +1,32 @@
 {
   "crops": [
-    "crop 1: deck",
-    "crop 2: deck",
-    "crop 3: deck",
-    "crop 4: deck",
-    "crop 5: frame",
-    "crop 6: frame",
-    "crop 7: frame",
-    "crop 8: frame",
-    "crop 9: spring",
-    "crop 10: spring",
-    "crop 11: damper",
-    "crop 12: damper",
-    "crop 13: mass",
-    "crop 14: cover",
-    "crop 15: cover",
-    "crop 16: cover"
+    "crop 1: xb",
+    "crop 2: tm",
+    "crop 3: tm",
+    "crop 4: cs",
+    "crop 5: cs",
+    "crop 6: vd",
+    "crop 7: vd",
+    "crop 8: hb",
+    "crop 9: hb",
+    "crop 10: hb",
+    "crop 11: hb",
+    "crop 12: es",
+    "crop 13: es",
+    "crop 14: es",
+    "crop 15: ac",
+    "crop 16: ac"
   ],
   "items": [
     {
       "index": 1,
-      "is_part": false,
-      "seen_as": "transverse bearer frame"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 2,
-      "is_part": false,
-      "seen_as": "transverse bearer frame"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 3,
@@ -50,13 +50,13 @@
     },
     {
       "index": 7,
-      "is_part": false,
-      "seen_as": "40m deck + girders 1.9Hz"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 8,
-      "is_part": false,
-      "seen_as": "500kg TMD mass 1.85Hz"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 9,
@@ -91,12 +91,12 @@
     {
       "index": 15,
       "is_part": false,
-      "seen_as": "500kg TMD mass 1.85Hz"
+      "seen_as": "tuned mass"
     },
     {
       "index": 16,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "tuned mass"
     }
   ]
 }

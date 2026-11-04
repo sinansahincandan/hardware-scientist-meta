@@ -1,0 +1,19 @@
+{
+  "id": "E69",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "locked-mass frequency drop from 800kg added mass",
+  "code_or_query": "Q_(1.9,'Hz')*(20/20.8)**0.5",
+  "inputs": {
+    "arg0": {
+      "value": "1.9",
+      "unit": "Hz"
+    }
+  },
+  "output_summary": "1.86 Hz",
+  "output_full": "1.86 Hz",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E29",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "peak TMD dynamic force from stroke",
+  "code_or_query": "800*(2*3.14159*1.83)**2*0.0494",
+  "inputs": {},
+  "output_summary": "5.22e+03",
+  "output_full": "5.22e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

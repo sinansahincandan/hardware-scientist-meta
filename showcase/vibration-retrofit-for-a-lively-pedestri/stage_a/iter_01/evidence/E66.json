@@ -1,0 +1,14 @@
+{
+  "id": "E66",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "stop contact force at 80mm compression kN",
+  "code_or_query": "105000*0.08/1000",
+  "inputs": {},
+  "output_summary": "8.4",
+  "output_full": "8.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

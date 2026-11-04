@@ -1,0 +1,26 @@
+{
+  "id": "E5",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+  "code_or_query": "small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+  "inputs": {},
+  "output_summary": "doaj.org — Design Optimization and Performance Investigation of a Micro Wind Turbine for Domestic Dwelling Used for Renewable Generation System – DOAJ — https://doaj.org/article/005f3a9f52814153a9ccc66173ccc886",
+  "output_full": "doaj.org — Design Optimization and Performance Investigation of a Micro Wind Turbine for Domestic Dwelling Used for Renewable Generation System – DOAJ — https://doaj.org/article/005f3a9f52814153a9ccc66173ccc886\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "doaj.org",
+      "title": "Design Optimization and Performance Investigation of a Micro Wind Turbine for Domestic Dwelling Used for Renewable Generation System – DOAJ",
+      "year": "",
+      "url": "https://doaj.org/article/005f3a9f52814153a9ccc66173ccc886",
+      "query": "small wind turbine blade airfoil SD7080 SG6043 low Reynolds",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

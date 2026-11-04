@@ -1,8 +1,8 @@
 {
   "crops": [
-    "crop 1: pillars",
-    "crop 2: readout",
-    "crop 3: screws"
+    "crop 1: GEL",
+    "crop 2: CAP",
+    "crop 3: PVDF"
   ],
   "items": [
     {

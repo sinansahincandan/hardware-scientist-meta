@@ -1,0 +1,40 @@
+{
+  "id": "E81",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: hand grip strength brake lever two finger pull force ergonomics",
+  "code_or_query": "hand grip strength brake lever two finger pull force ergonomics",
+  "inputs": {},
+  "output_summary": "dirtsmartmtb.com — Technique of the Week: Brake Levers and Braking Technique — https://www.dirtsmartmtb.com/uncategorized/technique-week-stuff-brake-levers-probably-didnt-know/",
+  "output_full": "dirtsmartmtb.com — Technique of the Week: Brake Levers and Braking Technique — https://www.dirtsmartmtb.com/uncategorized/technique-week-stuff-brake-levers-probably-didnt-know/\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the others keep a powerful grip on the bars and from Is Your Brake Lever Set Up Correctly?\nTomas Lind — Folding & Van Integration said about it: I take up what Elena Ruiz put on the board from Carts: Push/Pull Guidelines (E77) that sustained rolling force should stay at or below 25 pounds, meaning about 111 N, and from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the rest keep grip.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the rest keep grip and from Is Your Brake Lever Set Up Correctly?",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "dirtsmartmtb.com",
+      "title": "Technique of the Week: Brake Levers and Braking Technique",
+      "year": "",
+      "url": "https://www.dirtsmartmtb.com/uncategorized/technique-week-stuff-brake-levers-probably-didnt-know/",
+      "query": "hand grip strength brake lever two finger pull force ergonomics",
+      "unresolved": false,
+      "passage": "I take from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the others keep a powerful grip on the bars and from Is Your Brake Lever Set Up Correctly?",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the others keep a powerful grip on the bars and from Is Your Brake Lever Set Up Correctly?"
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take up what Elena Ruiz put on the board from Carts: Push/Pull Guidelines (E77) that sustained rolling force should stay at or below 25 pounds, meaning about 111 N, and from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the rest keep grip."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Technique of the Week: Brake Levers and Braking Technique (E81) that one finger brakes while the rest keep grip and from Is Your Brake Lever Set Up Correctly?"
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

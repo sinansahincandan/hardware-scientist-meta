@@ -1,0 +1,14 @@
+{
+  "id": "E118",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "stress with impact for 40mm tubes per tube",
+  "code_or_query": "58.9*0.02/4.32e-08/1e6*1.5",
+  "inputs": {},
+  "output_summary": "40.9",
+  "output_full": "40.9",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

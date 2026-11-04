@@ -31,8 +31,8 @@ dialog img{max-width:94vw;max-height:92vh}
 </style>"""
 
 COPY_DIRS = ("final", "master_prompt")
-COPY_FILES = ("problem.json", "knowledge_in.json", "cost.json", "trace.md", "references.md",
-              "report.html", "board.html", "REVIEW.md")
+COPY_FILES = ("problem.json", "knowledge_in.json", "cost.json", "timing.json", "trace.md", "references.md",
+              "report.html", "board.html", "REVIEW.md", "seeded_from.json", "merged_from.json")
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -361,6 +361,7 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
                         for t, cap in shown)
         stats = "".join(f"<span><b>{html.escape(v)}</b>{html.escape(k)}</span>" for v, k in _stats(run_dir))
         choices = "".join(f"<li>{html.escape(str(c))}</li>" for c in sol.get("decisive_choices", []))
+        review = f'<a href="{slug}/REVIEW.md">Review</a>' if (dest / "REVIEW.md").exists() else ""
         hero = f"{slug}/final/panel_A.png" if (dest / "final" / "panel_A.png").exists() else ""
         cards.append(f"""<section class="card"><div class="top">
 <a href="{slug}/final/figure.png">{f'<img src="{hero}" alt="the concept">' if hero else ''}</a>
@@ -372,10 +373,10 @@ def build_showcase(run_dirs: list[Path], out: Path = ROOT / "showcase") -> Path:
 <div class="q"><b>Open question:</b> {html.escape(str(sol.get('open_question', '')))}</div></div></div>
 <div class="strip" style="grid-template-columns:repeat({len(shown)},1fr)">{strip}</div>
 <div class="links"><a href="{slug}/final/figure.png">Full figure</a><a href="{slug}/board.html">The council's whiteboard</a>
-<a href="{slug}/report.html">Report</a><a href="{slug}/dossier.html">Dossier</a><a href="{slug}/REVIEW.md">Review</a></div></section>""")
+<a href="{slug}/report.html">Report</a><a href="{slug}/dossier.html">Dossier</a>{review}</div></section>""")
     (out / "index.html").write_text(
         "<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'>"
-        f"<title>Hardware Scientist</title>{INDEX_STYLE}</head><body><header><h1>Hardware Scientist</h1>"
+        f"<title>Hardware Engineer</title>{INDEX_STYLE}</head><body><header><h1>Hardware Engineer</h1>"
         "<p>Give it a hardware problem in plain words. A council of AI engineers searches the literature, computes "
         "and sketches on a shared whiteboard; an evaluator judges the concept; a manager coaches the council when "
         "it fails. Then the accepted concept is drawn, measured by SAM 3.1, critiqued and redrawn until the picture "

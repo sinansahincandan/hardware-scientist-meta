@@ -1,14 +1,52 @@
 {
   "id": "E49",
-  "author": "Marcus - Vibration Control and Damping Specialist",
-  "tool": "calc",
-  "purpose": "equivalent synchronized pedestrians dense crowd",
-  "code_or_query": "10.8*(0.004*60)**0.5",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "web_search",
+  "purpose": "search: bridge under deck clearance maintenance walkway inspection access standard",
+  "code_or_query": "bridge under deck clearance maintenance walkway inspection access standard",
   "inputs": {},
-  "output_summary": "5.29",
-  "output_full": "5.29",
+  "output_summary": "codot.gov — Bridge Design Manual Section 2 — 2026 — http://codot.gov/programs/bridge/bridge-manuals/design_manual/bdm_section-2_2026.pdf/@@download/file/BDM_Section%202_2026.pdf",
+  "output_full": "codot.gov — Bridge Design Manual Section 2 — 2026 — http://codot.gov/programs/bridge/bridge-manuals/design_manual/bdm_section-2_2026.pdf/@@download/file/BDM_Section%202_2026.pdf\n(opened by the member, not cited)\nRetrofit Integration and Construction Lead said about it: The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49).\nManager said about it: Structural Dynamicist is answered by carrying tune versus stroke and effective damping about 6.20 percent from the free-decay simulation (E17) into selection, Bridge Retrofit Engineer is answered by carrying stiffening need 46.5 percent from the stiffness-increase calculation (E27) and clamp-without-weld evidence in the injection-bolt behaviour source (E24) into bracket proof, Pedestrian Comfort and Safety Assessor is answered by holding Medium comfort as working target pending my Maximum versus Medium choice with Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), access from the inspection-access rule (E49), Retrofit Integration and Construction Lead is answered by carrying twin 400 kg units from the per-unit split (E52) weighing 3.92 kN each from the per-unit weight calculation (E53) and the under-deck layout sketch (E55) into selection.\nPedestrian Comfort and Safety Assessor said about it: The retrofitted acceleration of 0.668 metres per second squared from the retrofitted-acceleration calculation (E44) settling at 0.67 metres per second squared in the crowd build-up simulation (E45) is 0.068 times gravity and everyday footbridge feel, against 8.28 metres per second squared bare from the bare-acceleration calculation (E43) at 0.844 times gravity almost body weight and clearly outside everyday feel, so I accept Medium as the retrofit target with the twin 400 kg units from the per-unit mass split (E52) serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), from the inspection-access rule (E49).\nPedestrian Comfort and Safety Assessor said about it: The retrofitted 0.668 m/s2 from the retrofitted-acceleration calculation (E44) settling at 0.67 m/s2 in the crowd build-up simulation (E45) is 0.068 times gravity and everyday footbridge feel, against bare 8.28 m/s2 from the bare-acceleration calculation (E43) at 0.844 times gravity almost body weight and clearly outside everyday feel, so Medium is the buildable target for the twin 400 kg units serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), from the inspection-access rule (E49).\nRetrofit Integration and Construction Lead said about it: I take from the Bridge Design Manual Section 2 — 2026 (E49) the Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), inspection-access rule, which from my discipline means service by BBAV with caged lock pins and annual tune check and no deck hatch, and I confirm what you take from the Millennium Bridge, London (E39) that silhouette is kept by working under deck, but I qualify it because that 37 viscous plus 52 tuned-mass spread covered multiple lateral and vertical modes while this 1.9 Hz vertical mode needs only the centralized pair; stop hit 8.40 kN from the stop-force calculation (E66) sits inside combined 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights and everyday liftable scale, against 32.9 kN slip per bolt from the slip-resistance calculation (E64).\nBridge Retrofit Engineer said about it: I take from the 1 Experiments on coldformed steel momentresisting connections with 2 bolting frictionslip mechanism (E57) that slip is per EN 1993-1-8 with friction 0.3, giving 32.9 kN per bolt from the slip-resistance calculation (E64) against 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights, so four bolts give redundancy; I take from the (PDF) Loss of preload in pretensioned bolts (E58) that preload loss must be checked with the fatigue concern in the injection-bolt source (E24), which from my discipline means annual Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), re-torque per the inspection-access rule (E49) put by Retrofit Integration and Construction Lead, confirmed as serviceable from below with no deck hatch.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "codot.gov",
+      "title": "Bridge Design Manual Section 2",
+      "year": "2026",
+      "url": "http://codot.gov/programs/bridge/bridge-manuals/design_manual/bdm_section-2_2026.pdf/@@download/file/BDM_Section%202_2026.pdf",
+      "query": "bridge under deck clearance maintenance walkway inspection access standard",
+      "unresolved": false,
+      "passage": "The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49)."
+        },
+        {
+          "by": "Manager",
+          "text": "Structural Dynamicist is answered by carrying tune versus stroke and effective damping about 6.20 percent from the free-decay simulation (E17) into selection, Bridge Retrofit Engineer is answered by carrying stiffening need 46.5 percent from the stiffness-increase calculation (E27) and clamp-without-weld evidence in the injection-bolt behaviour source (E24) into bracket proof, Pedestrian Comfort and Safety Assessor is answered by holding Medium comfort as working target pending my Maximum versus Medium choice with Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), access from the inspection-access rule (E49), Retrofit Integration and Construction Lead is answered by carrying twin 400 kg units from the per-unit split (E52) weighing 3.92 kN each from the per-unit weight calculation (E53) and the under-deck layout sketch (E55) into selection."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The retrofitted acceleration of 0.668 metres per second squared from the retrofitted-acceleration calculation (E44) settling at 0.67 metres per second squared in the crowd build-up simulation (E45) is 0.068 times gravity and everyday footbridge feel, against 8.28 metres per second squared bare from the bare-acceleration calculation (E43) at 0.844 times gravity almost body weight and clearly outside everyday feel, so I accept Medium as the retrofit target with the twin 400 kg units from the per-unit mass split (E52) serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), from the inspection-access rule (E49)."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The retrofitted 0.668 m/s2 from the retrofitted-acceleration calculation (E44) settling at 0.67 m/s2 in the crowd build-up simulation (E45) is 0.068 times gravity and everyday footbridge feel, against bare 8.28 m/s2 from the bare-acceleration calculation (E43) at 0.844 times gravity almost body weight and clearly outside everyday feel, so Medium is the buildable target for the twin 400 kg units serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), from the inspection-access rule (E49)."
+        },
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "I take from the Bridge Design Manual Section 2 — 2026 (E49) the Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), inspection-access rule, which from my discipline means service by BBAV with caged lock pins and annual tune check and no deck hatch, and I confirm what you take from the Millennium Bridge, London (E39) that silhouette is kept by working under deck, but I qualify it because that 37 viscous plus 52 tuned-mass spread covered multiple lateral and vertical modes while this 1.9 Hz vertical mode needs only the centralized pair; stop hit 8.40 kN from the stop-force calculation (E66) sits inside combined 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights and everyday liftable scale, against 32.9 kN slip per bolt from the slip-resistance calculation (E64)."
+        },
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "I take from the 1 Experiments on coldformed steel momentresisting connections with 2 bolting frictionslip mechanism (E57) that slip is per EN 1993-1-8 with friction 0.3, giving 32.9 kN per bolt from the slip-resistance calculation (E64) against 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights, so four bolts give redundancy; I take from the (PDF) Loss of preload in pretensioned bolts (E58) that preload loss must be checked with the fatigue concern in the injection-bolt source (E24), which from my discipline means annual Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), re-torque per the inspection-access rule (E49) put by Retrofit Integration and Construction Lead, confirmed as serviceable from below with no deck hatch."
+        }
+      ]
+    }
+  ],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

@@ -1,23 +1,32 @@
 {
   "id": "E16",
-  "author": "Leo \u2014 Soft Materials, Skin Mechanics and Fabrication",
-  "tool": "calc",
-  "purpose": "pressure of 1mN on one 2.5mm taxel",
-  "code_or_query": "Q_(1,'mN')/Q_(6.25,'mm**2')",
-  "inputs": {
-    "arg0": {
-      "value": "1",
-      "unit": "mN"
-    },
-    "arg1": {
-      "value": "6.25",
-      "unit": "mm**2"
-    }
-  },
-  "output_summary": "0.16 mN/mm\u00b2",
-  "output_full": "0.16 mN/mm\u00b2",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: capacitive tactile fingertip array robot taxel pitch sensitivity",
+  "code_or_query": "capacitive tactile fingertip array robot taxel pitch sensitivity",
+  "inputs": {},
+  "output_summary": "jiannnh.github.io — VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing — https://jiannnh.github.io/VecTile/",
+  "output_full": "jiannnh.github.io — VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing — https://jiannnh.github.io/VecTile/\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "jiannnh.github.io",
+      "title": "VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing",
+      "year": "",
+      "url": "https://jiannnh.github.io/VecTile/",
+      "query": "capacitive tactile fingertip array robot taxel pitch sensitivity",
+      "unresolved": false,
+      "passage": "The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing (E16) shows a flexible tactile array, the Physical AI | Robotiq (E17) shows pressure read across a 28-taxel capacitive array for contact shape and intensity, and the Tactile acuity - Perception Study Guide 2024 | Fiveable (E23) gives 1 to 2 millimetres fingertip two-point threshold."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,26 @@
+{
+  "id": "E7",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+  "code_or_query": "micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+  "inputs": {},
+  "output_summary": "scienceopen.com — Small Wind Turbine Blade Design and Optimization — https://www.scienceopen.com/document?id=ca6716ae-84fe-4423-a4fe-eabf81367dbb",
+  "output_full": "scienceopen.com — Small Wind Turbine Blade Design and Optimization — https://www.scienceopen.com/document?id=ca6716ae-84fe-4423-a4fe-eabf81367dbb\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "scienceopen.com",
+      "title": "Small Wind Turbine Blade Design and Optimization",
+      "year": "",
+      "url": "https://www.scienceopen.com/document?id=ca6716ae-84fe-4423-a4fe-eabf81367dbb",
+      "query": "micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E122",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "anchor capacity eight screw anchors at 1.7 kN each",
+  "code_or_query": "8*1.7*9.81/1000",
+  "inputs": {},
+  "output_summary": "0.133",
+  "output_full": "0.133",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

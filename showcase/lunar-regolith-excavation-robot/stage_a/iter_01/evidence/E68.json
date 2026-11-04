@@ -1,0 +1,14 @@
+{
+  "id": "E68",
+  "author": "Power Structure and Integration Lead",
+  "tool": "calc",
+  "purpose": "name every mass term for 60 kg check",
+  "code_or_query": "sum({'frame twin-tube + arms': 9.0, 'wheels x4 with grousers': 10.0, 'kerf chain + ladder': 8.0, 'wedge hopper steel': 4.5, 'tilt + screw discharge': 3.0, 'battery 24V 20Ah LiFePO4': 6.0, 'avionics cameras compute': 2.5, 'harness fuses mounts': 3.0}.values())",
+  "inputs": {},
+  "output_summary": "46",
+  "output_full": "46",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

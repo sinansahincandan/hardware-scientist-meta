@@ -1,0 +1,14 @@
+{
+  "id": "E50",
+  "author": "Safety-Control Integrator",
+  "tool": "sketch",
+  "purpose": "Side-elevation shutdown: left-to-right wind, rotor hub shaft generator spring disc brake nacelle controller load post below cube",
+  "code_or_query": "import matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,4))\nax.set_xlim(0,10); ax.set_ylim(0,5)\nax.annotate(\"\", xy=(1.5,3.5), xytext=(0.2,3.5), arrowprops=dict(arrowstyle=\"->\", lw=2))\nax.text(0.3,3.8,\"wind L->R\")\nax.plot([2,2],[2.2,4.8], lw=3, color=\"black\")\nax.add_patch(Rectangle((2,3.2),3.5-2,0.7, fill=False, lw=1.5))\nax.text(2.4,3.6,\"nacelle\")\nax.plot([2,3], [3.55,3.55], lw=2)\nax.text(2.2,3.3,\"shaft\")\nax.plot([3.2,3.2],[3.0,4.1], lw=4, color=\"red\")\nax.text(3.3,2.7,\"spring disc\", color=\"red\")\nax.add_patch(Rectangle((3.6,3.2),0.8,0.7, fill=False, lw=1.2))\nax.text(3.6,3.0,\"gen\")\nax.add_patch(Rectangle((5.2,2.8),1.5,1.1, fill=False, lw=1.2))\nax.text(5.3,3.3,\"controller\")\nax.plot([4.4,5.2],[3.4,3.4], lw=1.2)\nax.add_patch(Rectangle((7.2,2.8),1.2,1.1, fill=False, lw=1.2))\nax.text(7.4,3.3,\"load\")\nax.plot([6.7,7.2],[3.4,3.4], lw=1.2)\nax.add_patch(Rectangle((3.4,0.5),0.5,2.3, fill=False, lw=1.5))\nax.text(3.5,1.0,\"post\")\nax.plot([0,10],[0.5,0.5], lw=2)\nax.text(1,0.2,\"tunnel floor\")\nax.set_aspect(\"equal\"); ax.axis(\"off\")\nplt.tight_layout()\nplt.savefig(\"sketch.png\", dpi=150)\n",
+  "inputs": {},
+  "output_summary": "Side-elevation shutdown: left-to-right wind, rotor hub shaft generator spring disc brake nacelle controller load post below cube",
+  "output_full": "Side-elevation shutdown: left-to-right wind, rotor hub shaft generator spring disc brake nacelle controller load post below cube",
+  "sketch_path": "evidence/sketch_50.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

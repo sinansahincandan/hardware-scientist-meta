@@ -1,61 +1,81 @@
-Your drum-and-high-lift rover looks like Lunabotics territory — I'll line up the closest real rover, patent, and paper to define the difference.
-I've pinpointed NASA's counter-rotating drum excavator as the closest match — now I'll pull the details to spell out exactly how your single-drum plus lift-mast design differs.
-Closest match: **NASA RASSOR - Regolith Advanced Surface Systems Operations Robot**
+Matching your lunar digger concept against the closest flown prototype — gathering the comparison.
+Early results point to NASA's Lunabotics arena — now drilling into novel bucket-ladder hybrids.
+Closest match is **paper / working prototype:**
 
-**Product / Patent / Paper are the same system:**
+> Rhaman *et al.*, BRAC University — **CHONDROBOT-2: A simple and efficient semi-autonomous tele-robotic lunar excavator**, built for NASA's 2nd Annual Lunabotics Mining Competition 2011.
 
-* Product: `RASSOR Excavator` - `teleoperated mobile robotic platform with a unique space regolith excavation capability` with `net-zero reaction force, thus allowing it to load, haul, and dump space regolith`
-* Patent: `9,027,265` - Zero horizontal reaction force excavator
-* Paper: `IEEE Big Sky 2013, Regolith Advanced Surface Systems Operations Robot (RASSOR), 03/02/2013`
+Why it is closest:
 
-Detailed in UW-Madison TR-2024-02: `RASSOR operates with two counter-rotating bucket drums on its arms to minimize reaction forces horizontally and vertically, enabling a lighter design.` Vehicle is `chassis, four wheels, two arms and two buckets`
+* same problem: blind-operated lunar digger to excavate BP-1 simulant
+* `twin-armed bucket ladder excavator named Chondrobot-2 ... successful in mining 8 kg of BP-1 lunar simulant within 1 min and completing a full excavation-unloading cycle within 5 min`
+* same architecture: `four wheel drive robot consists of a bucket-ladder system for excavation` + `collector bucket which can contain 18 kg of regolith to deposit a bin installed at 50 cm height`
+* same blind operation: `operated both manually and remotely through a web browser without direct visual and auditory access to the hardware`
+* similar scale: `dimension of 1.21m x 0.66m x 0.74m with a total weight of 65 kg`
 
-### Why it is closest
+Difference from this concept:
 
-1. WheeledISRU excavator: `compact, lightweight` rover for `In Situ Resource Utilization (ISRU)` to `make local commodities, such as propellants and breathing air`
-2. Drum excavator: `bucket drums excavate soil/regolith by scoops mounted on the drums exteriors that sequentially take multiple cuts` `rotating at approximately 20 revolutions per minute`, same as proposed front transverse spinning drum scooping soil.
-3. Teleoperated with loss-of-signal relevance: `wireless control, telemetry, and onboard transmitting cameras, allowing for teleoperation with situational awareness`, `can be programmed to operate autonomously for selected tasks`
-4. High-dump to bin: `capable of standing up in a vertical position to dump into a receiving hopper without using a ramp`
-
-### Decisive difference
-
-Your concept replaces RASSOR's core principles with a **single-drum + separate high-lift hopper architecture:**
-
-* **Excavation:** RASSOR `uses counterrotating bucket drums on opposing arms to provide near-zero horizontal and minimal vertical net reaction force so that excavation is not reliant on the traction or weight of the mobility system`. Proposed concept uses **one** front transverse 200mm drum with 30mm shallow cut for 39 N reaction, accepting traction reaction and relying on 300mm grouser wheels + centred hopper load.
-
-* **Haul + Dump:** RASSOR: `During hauling, the bucket drums are raised by rotating the arms` `while the soil/regolith remains in the raised bucket drums`, `the bucket drums are commanded to reverse their direction of rotation, which causes soil/regolith to be expelled`. It `eliminates the need for an onboard dump bin`.
-
-  Proposed concept **adds** onboard bin: central hopper rides `Rear high-lift mast with dual actuators and chain` to 1.05m pour lip with 0.30m overhang - 0.15m stroke through 4-to-1 chain at 0.80 efficiency. That mast, tip-moment about rear axle, actuator force, and `0.45m stowed pivot on 0.60m guide` geometry have no counterpart in RASSOR.
-
-In short: **RASSOR = dual opposed drums that ARE the hopper and dump by reverse-spin; Proposed = single front drum that FEEDS a separate rear-lifted hopper that dumps by high-lift pour.**
+1. **No narrow-kerf pre-cut:** CHONDROBOT-2 digs full-width with bucket-ladder only. Concept splits function to `100 mm kerf trenching chain` cutting `50 mm deep slot at 11 N draft` feeding `wide bucket ladder` for side-spoil pickup.
+2. **No metered discharge:** CHONDROBOT-2 uses plain collector-bucket dump into bin. Concept uses `steep wedge 20 L hopper + rear tilt + live-bottom auger discharge screw` to meter `15 kg` pour over bin lip.
+3. **No stow/deploy chassis:** CHONDROBOT-2 is fixed 1.21 x 0.66 m footprint. Concept uses `twin-tube aluminium chassis + 4x folding wheel arms` to stow in `0.90 x 0.42 x 0.45 m / 1.0 x 0.5 x 0.5 m box` then widen track, `46 kg` vs 65 kg.
 
 
 Sources:
-- https://www.science.gov/topicpages/e/engineering+autonomous+space — engineering autonomous space: Topics by Science.gov
-- http://www.amfcse.org/s/Lunabotics-Guidebook-2027-10-12-27.pdf — NASA LUNABOTICS CHALLENGE guideBOOK 2026 - 2027
-- https://github.com/asher-plihal/pantherlunabotics2025-2026/blob/HEAD/CLAUDE.md — asher-plihal/pantherlunabotics2025-2026 - CLAUDE.md
-- https://www.science.gov/topicpages/r/remote+excavation+system — remote excavation system: Topics by Science.gov
-- https://github.com/roialrogue/pantherlunabotics2025-2026/blob/HEAD/.claude/CLAUDE.md — roialrogue/pantherlunabotics2025-2026 - .claude/CLAUDE.md
+- https://lunarnetworks.blogspot.com/2013/01/chonodrobot-2-simple-efficient-semit.html — Lunar Pioneer: CHONDROBOT-2 - A simple, efficient semit-autonomous tele-robotic lunar excavator
+- https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/ — Competition – NASA Lunabotics
 - https://github.com/mianqun/pantherlunabotics2025-2026/blob/HEAD/CLAUDE.md — PantherLunabotics2025-2026/CLAUDE.md at 560db41c814db934193b98d364d5717375efb8ce · mianqun/PantherLunabotics2025-2026
-- https://ni.lithium.com/ni/attachments/ni/3035/2049/1/Systems%20Engineering%20Report%20_Mile-High%20Miners.pdf — Fall 2011 NASA Lunabotics Mining Competition Systems Engineering Paper
-- https://www.science.gov/topicpages/n/nasa+lunabotics+mining — nasa lunabotics mining: Topics by Science.gov
-- https://core.ac.uk/download/pdf/10572014.pdf — https://ntrs.nasa.gov/search.jsp?R=20120017902 2019-08-30T23:19:56+00:00Z
-- https://jenikirbyhistory.getarchive.net/amp/media/ksc-2011-4154-158899 — CAPE CANAVERAL, Fla. -- A remote controlled or autonomous excavator, called a lunabot, is on display outside of the "Lunarena" at the Kennedy Space Center Visitor Complex in Florida where university students maneuver their remote controlled lunabots, in a "sand box" of ultra-fine simulated lunar soil during NASA's second annual Lunabotics Mining Competition. Thirty-six teams of undergraduate and graduate students from the United States, Bangladesh, Canada, Colombia and India will participate in NASA's Luna…
-- https://space-robotics.org/robots/lunar/rassor/ — RASSOR | Space Robotics
-- https://ntts-prod.s3.amazonaws.com/t2p/prod/t2media/tops/pdf/KSC-TOPS-7.pdf — Robotics, Automation and Control
-- https://lsc-pagepro.mydigitalpublication.com/publication/?i=608807&p=18&view=issueViewer — Inside Unmanned Systems APR-MAY 2018 Page 18
-- https://technology.nasa.gov/patent/KSC-TOPS-7 — Regolith Advanced Surface Systems Operations Robot (RASSOR) Excavator
-- https://space-robotics.org/robots/lunar/ipex/ — Infrastructure Pilot Excavator
-- https://grabcad.com/challenges/nasa-regolith-advanced-surface-systems-operations-robot-rassor-bucket-drum-design-challenge — NASA Regolith Advanced Surface Systems Operations Robot (RASSOR) Bucket Drum Design Challenge  | Engineering & Design Challenges | GrabCAD
-- https://ntrs.nasa.gov/citations/20150022134 — RASSOR - Regolith Advanced Surface Systems Operations Robot - NASA Technical Reports Server (NTRS)
-- https://nasa3d.arc.nasa.gov/detail/RASSOR — Regolith Advanced Surface Systems Operations Robot (RASSOR)
-- https://prezi.com/sz_4bygwhgsp/rassor/ — RASSOR by 21171 21171 on Prezi
-- https://ntrs.nasa.gov/citations/20210011366 — Design of an Excavation Robot: Regolith Advanced Surface Systems Operations Robot (RASSOR) 2.0
-- https://science.nasa.gov/3d-resources/regolith-advanced-surface-systems-operations-robot-rassor/ — Regolith Advanced Surface Systems Operations Robot (RASSOR) - NASA Science
-- https://sbel.wisc.edu/wp-content/uploads/sites/569/2024/05/TR-2024-02.pdf — Simulation-Based Engineering Lab University of Wisconsin-Madison Technical Report TR–2024–02 A Framework for Designing NASA’s RASSOR Rover using Project
-- https://vc.easychair.org/publications/preprint/9KVr/download — EasyChair Preprint
-- https://s.iafastro.directory/iac/paper/id/80002/abstract-pdf/IAC-23,A3,IP,11,x80002.brief.pdf?2023-04-06.16:46:15 — Paper ID: 80002
-- https://m.easychair.org/publications/preprint/9KVr/open — EasyChair Preprint
-- http://iafastro.directory/iac/paper/id/63057/abstract-pdf/GLEX-2021,10,1,7,x63057.brief.pdf?2021-02-26.10%3A43%3A42 — Paper ID: 63057
-- https://p.iafastro.directory/iac/paper/id/80002/abstract-pdf/IAC-23,A3,IP,11,x80002.brief.pdf?2023-04-06.16:46:15 — IAF SPACE EXPLORATION SYMPOSIUM (A3)
-- http://iafastro.directory/iac/paper/id/63057/abstract-pdf/GLEX-2021,10,1,7,x63057.brief.pdf?2021-02-26.10:43:42 — Paper ID: 63057
+- https://pdfslide.tips/download/link/lunabotics-rles.html — (Download PDF) lunabotics rles
+- https://www.science.gov/topicpages/n/nasa+lunar+mining — nasa lunar mining: Topics by Science.gov
+- https://digital.wpi.edu/downloads/4j03d2179?locale=en — Computer Science, Mechanical Engineering, And Robotics Engineering Programs
+- https://peer.asee.org/senior-design-experience-using-nasa-s-lunabotics-mining-competition-best-practices-and-evaluation-of-student-learning.pdf — Senior Design Experience Using NASAs Lunabotics Mining Competition: Best Practices and Evaluation of Student Learning
+- https://www.alabamaastrobotics.com/faq.html — FAQ - Alabama Astrobotics
+- https://archive.org/stream/NASA_NTRS_Archive_20110016233/NASA_NTRS_Archive_20110016233_djvu.txt — Full text of "NASA Technical Reports Server (NTRS) 20110016233: A Review of Lunar Regolith Excavation Robotic Device Prototypes"
+- https://www.yumpu.com/xx/document/view/67075271/mechatronics-2013-recent-technological-and-scientific-advances-pdfdrive-/545 — Project of Autonomous Con
+- https://www.science.gov/topicpages/r/remote+excavation+system — remote excavation system: Topics by Science.gov
+- https://patents.justia.com/patent/20240200447 — Lunar Regolith Processing System for Mining and Beneficiation
+- https://patents.justia.com/patent/20180345536 — U.S. Patent Application for MIXER BUCKET Patent Application (Application #20180345536 issued December 6, 2018) - Justia Patents Search
+- https://patents.justia.com/patent/8061441 — Autonomous excavating apparatus
+- https://patents.Google.Com/patent/CN209438556U/en — CN209438556U - A kind of powder grain material matches material conveying device 
+        - Google Patents
+- https://patents.google.com/patent/DE497298C/en — DE497298C - 
+  Swiveling bucket chain excavator with swiveling conveyor belt on the side of the chassis opposite the bucket ladder
+ 
+      - Google Patents
+- https://patents.google.com/patent/US1466568A/en — US1466568A - Excavator 
+      - Google Patents
+- https://patents.google.com/patent/CN214526319U/en — CN214526319U - Double-screw conveyer 
+      - Google Patents
+- https://eureka.patsnap.com/patent-CN106988356A — Sludge discharger - Eureka | Patsnap
+- https://patents.google.com/patent/CN114293987A/en — CN114293987A - Wheel bucket excavator suitable for excavating harder materials 
+        - Google Patents
+- https://patents.google.com/patent/JP2911881B1/en — JP2911881B1 - 
+        Excavator
+       
+      - Google Patents
+- https://amanrajdce.github.io/data2/lunabot_sys_eng_paper.pdf — TEAM DELTECH LUNAR EXCAVATORS
+- https://www.researchgate.net/publication/262332670_A_Simple_Tele-Robotic_Lunar_Excavator — A Simple Tele-Robotic Lunar Excavator
+- https://library.bracu.ac.bd/vufind/Record/10361-7415/Details — Staff View: A simple tele-robotic lunar excavator :: Discovery Services
+- https://library.bracu.ac.bd/vufind/Record/10361-7310/Details — Staff View: A new routing algorithm for symmetric rearrangeable networks and emerging applications :: Discovery Services
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/rss_2.0/10361/6992 — Conference Paper
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/rss_2.0/10361/6991 — Dr. Md. Belal Hossain Bhuian
+- https://web1.eng.famu.fsu.edu/me/senior_design/2011/team19/presentations/final_design.pdf — Slide 1
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/rss_1.0/10361/6991 — Dr. Md. Belal Hossain Bhuian
+- https://web1.eng.famu.fsu.edu/me/senior_design/2011/team19/presentations/springMidtermPresentation.pdf — Slide 1
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/rss_1.0/10361/6992 — Conference Paper
+- https://core.ac.uk/download/pdf/10573073.pdf — https://ntrs.nasa.gov/search.jsp?R=20130008972 2019-08-30T23:58:10+00:00Z
+- https://core.ac.uk/download/pdf/10569729.pdf — https://ntrs.nasa.gov/search.jsp?R=20120013419 2019-08-30T21:53:53+00:00Z
+- https://vdocuments.net/regolith-advanced-surface-systems-operations-robot-advanced-surface-systems.html — Regolith Advanced Surface Systems Operations Robot … · Regolith Advanced Surface Systems Operations Robot (RASSOR) ... The Regolith Advanced Surface Systems Operations ... space - [PDF Document]
+- https://sciences.ucf.edu/class/wp-content/uploads/sites/23/2017/03/CLASS-SSERVI-Robotic-Construction-Mueller-v1-March-2017.compressed.pdf — ConstructionwithRegolith
+- https://www.researchgate.net/profile/Rachel-Cox-7/publication/261248231_Regolith_Advanced_Surface_Systems_Operations_Robot_RASSOR/links/5c0fdb224585157ac1bb3893/Regolith-Advanced-Surface-Systems-Operations-Robot-RASSOR.pdf?origin=scientificContributions — Regolith Advanced Surface Systems Operations Robot (RASSOR)
+- https://zenodo.org/records/1263919/files/article.pdf?download=1 — Regolith Advanced Surface Systems Operations Robot (RASSOR)
+- https://ntrs.nasa.gov/api/citations/20170002067/downloads/20170002067.pdf?attachment=true — PowerPoint Presentation
+- https://www.designfax.net/cms/dfx/opens/articleview.php?nid=4&bid=273&aid=2159&eid= — Designfax – Technology for OEM Design Engineers
+- https://www.nanowerk.com/news2/robotics/newsid=28702.php — NASA working on mining robot for space missions
+- https://lsic.jhuapl.edu/uploadedDocs/presentations/932-Focus%20Area%20Presentations.pdf — LSIC Power Beaming workshop
+- http://cs.roboticbuilding.eu/images/6/69/3.paper.pdf — PowerPoint Presentation
+- https://www.homelandsecuritynewswire.com/dr20130204-nasa-engineers-building-sturdy-bluecollar-mining-robot?page=0,0 — Robotics | Homeland Security Newswire
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/atom_1.0/10361/6992 — Conference Paper
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/atom_1.0/10361/6991 — Dr. Md. Belal Hossain Bhuian
+- http://dspace.bracu.ac.bd:8080/xmlui/handle/10361/7429 — Chondrobot-2: A simple and efficient semi-autonomous tele-robotic lunar excavator
+- https://www.booksci.cn/literature_d127060_6.htm — 2012 15th International Conference on Computer and Information Technology (ICCIT)最新文献_第6页 - Book学术
+- https://library.bracu.ac.bd/vufind/Record/10361-7429/Details — Staff View: Chondrobot-2: A simple and efficient semi-autonomous tele-robotic lunar excavator :: Discovery Services
+- http://dspace.bracu.ac.bd:8080/xmlui/feed/atom_1.0/10361/7016 — Conference Paper

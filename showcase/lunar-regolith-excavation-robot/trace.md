@@ -1,5 +1,21 @@
 # Trace
-- stage B rerun seeded from runs/20261102-153907_lunar-regolith-excavation-robot (stage_a/iter_01/solution.json); no Stage A in this run
-- attempt 0: council sketches used as extra references: ['sketch_48.png', 'sketch_44.png']
-- concept sketch drawn from the council's sketches and checked; used as the primary reference
-- attempt 0 round 0: S1=True S2=False decision=s1_pass; kept (first round)
+- master prompt rev 0 written; roster=Excavation and Regolith Handling Lead, Mobility and Deployable Chassis Lead, Autonomy and Blind Operations Lead, Power Structure and Integration Lead
+- iter 0: meeting closed_by=chief cycles=3
+- iter 0: evaluator accept=True archive=A1
+- iter 0 attempt 0: council sketches used as extra references: ['sketch_65.png', 'sketch_53.png']
+- iter 0 concept sketch rejected by its check (Pixels show truss/box frame not twin-tube; battery box chemistry not visible as lithium-phosphate; bucket ladder/chain looks wide with two runs, not single narrow 100mm kerf with 300mm pickup and adjacent spoil row per hand sketch; cameras/hopper/screw generic so consistency cannot be confirmed.); code sketch used
+- iter 0 attempt 0 round 0: S1=False S2=False decision=s1_retry; kept (first round)
+- iter 0 attempt 0 round 1: S1=False S2=False decision=s1_retry; reverted (fixed no earlier fault)
+- iter 0 attempt 0 round 2: S1=False S2=False decision=s1_exhausted; reverted (introduced new faults)
+- iter 0: accepted design could not be drawn faithfully after 3 rounds; reported to the Manager as a drawing failure
+- iter 1: meeting continues on the board of iter 0
+- iter 1: meeting closed_by=chief cycles=2
+- iter 1: evaluator accept=True archive=A2
+- iter 1 attempt 1: council sketches used as extra references: ['sketch_65.png', 'sketch_53.png']
+- iter 1 concept sketch rejected by its check (Pixels show generic tubes, wheels, boxes and cameras but material as aluminium, chemistry as lithium-phosphate, and watchdog timer are not visually verifiable; wheels lack rigid grousers, and rear elevated hopper/auger to bin does not match hand-sketch 100mm kerf with 300mm ladder pickup and immediate adjacent spoil row.); code sketch used
+- iter 1 attempt 1 round 0: S1=True S2=False decision=s1_pass; kept (first round)
+- knowledge: insights written to knowledge/insights/20261104-121008_lunar-regolith-excavation-robot.md
+- knowledge: new skill narrow-kerf-draft-sizing
+- knowledge: new skill bucket-ladder-fill-sizing
+- knowledge: new skill fiducial-drift-reset-sizing
+- run accepted; final figure composed

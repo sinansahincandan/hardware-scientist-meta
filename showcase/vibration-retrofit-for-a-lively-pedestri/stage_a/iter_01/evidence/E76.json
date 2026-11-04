@@ -1,0 +1,14 @@
+{
+  "id": "E76",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "total added weight percent with beam steel",
+  "code_or_query": "(7.85+2.26)/600*100",
+  "inputs": {},
+  "output_summary": "1.69",
+  "output_full": "1.69",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

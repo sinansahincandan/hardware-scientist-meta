@@ -1,5 +1,7 @@
 {
-  "closed_by": "consensus",
-  "cycles_used": 4,
-  "open_blocking": []
+  "closed_by": "chief",
+  "cycles_used": 3,
+  "open_blocking": [],
+  "chief_decision": "Off-grid 1-tonne cold store v1 settled: 3.6kWp split PV (2 roof sunshade +7 ground frame) via MPPT to 48V LiFePO4 bank powers DC R134a monoblock with rear-to-front airflow plus eutectic plates and evaporative pad, in PIR box 2.4x1.8x2.0m on six pads with racked 50 crates, probe thermostat with shed and attendant discipline, staged 250kg/day at 5C. Daily yield 13.5kWh/d covers 13.2kWh/d with 0.3kWh margin; conduction 203W and door 0.44kWh/d inside 615W staged average; grown mass 1840kg gives 18.8kPa below 150kPa soil. Bench test required on built hardware: full 1000kg pull-down from 43C ambient to 5C and 250kg daytime batch timing.",
+  "decided_version": 1
 }

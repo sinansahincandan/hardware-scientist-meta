@@ -4,16 +4,38 @@
  "tts_python": "/private/tmp/claude-501/-Users-sinancandan-Downloads-MetaHackathon-HardwareScientist-MetaCode/b98a4c52-0a9e-4880-9b01-f68736a14a96/scratchpad/tts/bin/python",
  "segments": [
   {
-   "id": "hook",
-   "text": "Engineers start a new device with a paragraph and a few limits. Hardware Scientist turns it into an engineered concept: a picture you can trust, every number with its calculation, and a plan to make it. It is a design team built only from Meta models.",
+   "id": "problem",
+   "text": "In hardware design, we want a working concept early, and the best feedback is a picture. Ask a frontier model and the picture looks right but doesn't work: four blades on a three-blade design, hoppers that never connect. Feedback fixes one thing and breaks another.",
    "visual": {
-    "type": "still",
-    "img": "hook.png"
+    "type": "reveal",
+    "imgs": [
+     "problem_1.png",
+     "problem_2.png"
+    ],
+    "at": [
+     0,
+     0.62
+    ]
+   }
+  },
+  {
+   "id": "hook",
+   "text": "Hardware Engineer is a self-improving engineering team built on Meta models. Give it one paragraph, not a specification. It sets the concept-level requirements itself and returns a concept that works, ready for detail design.",
+   "visual": {
+    "type": "reveal",
+    "imgs": [
+     "hook_1.png",
+     "hook_2.png"
+    ],
+    "at": [
+     0,
+     0.45
+    ]
    }
   },
   {
    "id": "simple",
-   "text": "Expert agents work the problem on one shared whiteboard. An evaluator writes a critique. On a reject, the critique becomes a gradient that rewrites the team's own prompt. A picture loop then draws the design and checks every part, and lessons carry to the next problem.",
+   "text": "It works like a hardware team. Experts argue on one shared whiteboard. A reviewer checks the design like a senior engineer. A rejection becomes a written gradient that rewrites the team's own instructions, inspired by TextGrad. A picture loop draws and checks the design, and lessons carry to the next problem.",
    "visual": {
     "type": "reveal",
     "imgs": [
@@ -25,87 +47,84 @@
     "at": [
      0,
      0.3,
-     0.62,
-     0.84
+     0.6,
+     0.82
     ]
    }
   },
   {
    "id": "architecture",
-   "text": "Now the full architecture. The engineer gives only the what. In stage A, four experts and a chief designer search, calculate, simulate and sketch. The evaluator's written review is the loss. On a fail, the manager's two-step gradient rewrites only the guilty sections of the master prompt, and the meeting continues. Stage B draws the design.",
+   "text": "Zoom in. The engineer gives only the what. Four experts and a chief designer search the literature, calculate, simulate and sketch. The reviewer's critique flows back in two steps: what in the design must change, and which instruction let the fault through.",
    "visual": {
     "type": "tour",
-    "img": "fig1_hi.png",
+    "img": "arch_base.png",
     "keys": [
      {
       "box": [
        0,
        0,
        6000,
-       4725
+       3375
       ],
-      "hold": 0.7
+      "hold": 0.8,
+      "caption": ""
      },
      {
       "box": [
-       75,
-       37,
-       5962,
-       1237
+       120,
+       204,
+       3000,
+       1824
       ],
-      "hold": 0.9
+      "hold": 1.2,
+      "caption": "The engineer gives only the what"
      },
      {
       "box": [
-       131,
-       1237,
-       2718,
-       2962
+       67,
+       1413,
+       3053,
+       3093
       ],
-      "hold": 2.2
+      "hold": 2.0,
+      "caption": "Experts and a chief designer, one whiteboard"
      },
      {
       "box": [
-       94,
-       750,
-       3787,
-       3000
+       0,
+       849,
+       4160,
+       3189
       ],
-      "hold": 1.8
+      "hold": 2.0,
+      "caption": "Critique \u2192 gradient \u2192 prompt rewrite"
      },
      {
       "box": [
-       2775,
-       1237,
-       5212,
-       2962
+       2640,
+       587,
+       5970,
+       2461
       ],
-      "hold": 1.2
-     },
-     {
-      "box": [
-       3600,
-       750,
-       5962,
-       2100
-      ],
-      "hold": 1.0
+      "hold": 1.2,
+      "caption": "Lessons carry to the next problem"
      },
      {
       "box": [
        0,
        0,
        6000,
-       4725
+       3375
       ],
-      "hold": 0.5
+      "hold": 0.6,
+      "caption": ""
      }
     ]
    }
   },
   {
    "id": "textgrad",
-   "text": "A real step, from a lunar excavator. The evaluator rejected the first meeting: stowing was shown only as a volume, and tipping used placeholder masses. The output gradient says what must change; the prompt gradient finds the instruction that let it through, and the manager rewrites that rule. On the same board, the evaluator re-checks that issue first: 0.90 by 0.40 by 0.42 metres, met. This is TextGrad, applied to a whole team.",
+   "text": "A real step. The reviewer rejects the hand truck: the backbone cannot fold into the van, and the bending uses the wrong beam model. The manager writes what must change and why the instructions let it through, then rewrites only those lines. Next meeting, those issues are checked first, and pass.",
    "visual": {
     "type": "reveal",
     "imgs": [
@@ -118,25 +137,25 @@
     ],
     "at": [
      0,
-     0.24,
+     0.22,
      0.38,
      0.52,
-     0.66,
-     0.9
+     0.7,
+     0.88
     ]
    }
   },
   {
    "id": "whiteboard",
-   "text": "The whiteboard never resets. Across two meetings it grows from thirty-four sources and twelve calculations to sixty-eight and forty-four, with sketches pinned beside the numbers.",
+   "text": "The whiteboard never resets. Over two meetings it grows from thirty-four sources and twelve calculations to sixty-eight and forty-four, and every claim points to its evidence.",
    "visual": {
     "type": "reveal",
     "imgs": [
-     "board_1.png",
-     "board_2.png",
-     "board_3.png",
-     "board_4.png",
-     "board_5.png"
+     "whiteboard_1.png",
+     "whiteboard_2.png",
+     "whiteboard_3.png",
+     "whiteboard_4.png",
+     "whiteboard_5.png"
     ],
     "at": [
      0,
@@ -148,82 +167,126 @@
    }
   },
   {
-   "id": "picture_loop",
-   "text": "The picture loop. A code sketch fixes the geometry, Muse Image renders, SAM 3 masks every part, and a critic asks: is the render faithful to the sketch, and does it reveal a design flaw? A wrong part gets a local fix, kept only if nothing gets worse. A design flaw goes back to the council.",
+   "id": "picture",
+   "text": "Then the picture. A code sketch fixes the geometry and Muse Image renders it. Meta's models are multimodal, so the critic looks at the picture itself and compares it with the sketch and the design text. A wrong picture is fixed locally; a wrong design goes back to the team.",
    "visual": {
     "type": "tour",
-    "img": "fig2_hi.png",
+    "img": "picture_loop_base.png",
     "keys": [
      {
       "box": [
        0,
        0,
-       6000,
-       4387
+       6944,
+       3906
       ],
-      "hold": 0.6
+      "hold": 0.8,
+      "caption": ""
      },
      {
       "box": [
-       150,
-       562,
-       5887,
-       1762
+       609,
+       75,
+       3575,
+       1743
       ],
-      "hold": 2.0
+      "hold": 1.8,
+      "caption": "Sketch \u2192 image prompt \u2192 Muse Image"
      },
      {
       "box": [
-       1125,
-       862,
-       5100,
-       1762
+       3592,
+       420,
+       6367,
+       1980
       ],
-      "hold": 1.6
+      "hold": 1.8,
+      "caption": "SAM maps every part, the critic checks"
      },
      {
       "box": [
-       4125,
-       1050,
-       5962,
-       2625
+       1612,
+       368,
+       5632,
+       2629
       ],
-      "hold": 1.0
+      "hold": 1.6,
+      "caption": "Wrong part: fix it locally, keep or revert"
      },
      {
       "box": [
-       112,
-       2737,
-       3787,
-       4370
+       4118,
+       600,
+       6891,
+       2160
       ],
-      "hold": 1.4
+      "hold": 1.2,
+      "caption": "Design flaw: back to the expert team"
+     },
+     {
+      "box": [
+       571,
+       1840,
+       4243,
+       3906
+      ],
+      "hold": 1.4,
+      "caption": "The final figure, panel by panel"
+     },
+     {
+      "box": [
+       0,
+       0,
+       6944,
+       3906
+      ],
+      "hold": 0.5,
+      "caption": ""
      }
     ]
    }
   },
   {
-   "id": "fingertip",
-   "text": "Our best result: a robot fingertip in the spirit of Meta's Digit 360. SAM finds the skin, pillars, flex circuit, core and cable; markers sit on each part's own pixels, and the scale comes from a hand. The figure shows how it works, how it is measured, and how it is made.",
+   "id": "sam",
+   "text": "Why SAM? Image models miss small parts and, told to fix one, redraw everything. SAM 3.1 gives the critic and the editor each part's exact region. Its numbered marks made the critic count four blades on a three-blade rotor; in the final run it still argued one away.",
    "visual": {
     "type": "reveal",
     "imgs": [
-     "ft_1.png",
-     "ft_2.png",
-     "ft_3.png",
-     "ft_4.png"
+     "sam_1.png",
+     "sam_2.png",
+     "sam_count_1.png",
+     "sam_count_2.png",
+     "sam_count_3.png"
     ],
     "at": [
      0,
-     0.2,
-     0.42,
-     0.68
+     0.25,
+     0.5,
+     0.66,
+     0.84
+    ]
+   }
+  },
+  {
+   "id": "fingertip",
+   "text": "Here is a robot fingertip. SAM finds the skin, the pillars, the flex circuit, the core and the cable. The figure shows how it works, how it is measured, and how it is made, step by step.",
+   "visual": {
+    "type": "reveal",
+    "imgs": [
+     "fingertip_1.png",
+     "fingertip_2.png",
+     "fingertip_3.png"
+    ],
+    "at": [
+     0,
+     0.33,
+     0.66
     ]
    }
   },
   {
    "id": "gallery",
-   "text": "The same system designed an excavator, a turbine, a stair-climbing hand truck, a solar cold room and a footbridge damper.",
+   "text": "The same team designed an excavator, a turbine, a stair-climbing hand truck, a solar cold room and a footbridge damper.",
    "visual": {
     "type": "still",
     "img": "gallery.png"
@@ -231,7 +294,7 @@
   },
   {
    "id": "benchmark",
-   "text": "How good is it? Two blind judges audited all six problems against one Meta prompt, re-deriving every number first. Honestly, it is a tie on average, about twenty-six of forty each. Hardware Scientist is more consistent, with better-supported numbers and fewer picture mistakes, and was preferred in seven of twelve verdicts. Its making plans are weaker: our next target.",
+   "text": "Two blind judges scored six problems. Against one frontier prompt, it is a tie: Hardware Engineer is ahead on checked numbers and making plans, and behind on pictures.",
    "visual": {
     "type": "still",
     "img": "benchmark.png"
@@ -239,7 +302,7 @@
   },
   {
    "id": "open",
-   "text": "On Meta's open-weights Muse Spark and SAM 3, the same loops run in half the time. Scores are lower for now, but the designs are still original.",
+   "text": "We built the same system on Meta's open weights, Muse Spark Open and SAM 3, and the designs still come out working.",
    "visual": {
     "type": "still",
     "img": "open.png"
@@ -247,7 +310,7 @@
   },
   {
    "id": "close",
-   "text": "Hardware Scientist builds on TextGrad, symbolic learning, Trace and context engineering. The engineer gives the what. Hardware Scientist works out the how, and shows its proof.",
+   "text": "Instead of hours at the model, you get a stable concept that works, from a team that learns your domain with every design. The engineer gives the what. Hardware Engineer works out the how.",
    "visual": {
     "type": "still",
     "img": "close.png"

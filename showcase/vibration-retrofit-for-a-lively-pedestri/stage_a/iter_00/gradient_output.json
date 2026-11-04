@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "feedback_item": "cross_beam orientation/size - longitudinal full-span vs transverse",
+      "must_change": "The solution claims a single short transverse cross-beam 2.5 to 3.0 m long spanning between the two girders at midspan perpendicular to the girders (E55, E67), carrying the two damper units and clamped to the girders without weld. What is actually true is the renderer drew a single long longitudinal beam spanning nearly full view parallel to the girders below the girder, which contradicts the stated span-between-girders geometry and the HSFG-clamped load path into the girders (E64, E65). What must change is nothing in the design, because parts, quantity, size class, and beam-to-girder friction connection were already fixed by the council; only the figure must be redrawn transverse at midspan. Why it matters is a longitudinal beam would imply wrong load path and full-span added steel, while the verified device relies on midspan antinode drive and shear into girders."
+    },
+    {
+      "feedback_item": "Friction Clamp Bolts callout misplaced onto mass frame",
+      "must_change": "The solution claims a friction clamp bolt set of 4x M20 high-strength bolts that clamps the beam to the girders with 32.9 kN slip resistance per bolt against 13.1 kN combined static plus dynamic demand (E64, E65). What is actually true is the render leader for Friction Clamp Bolts ends on the frame of the left Tuned Mass Block, which is the wrong interface and misrepresents the weld-free friction grip into the girders. What must change is nothing in the design, because clamp function, location at the beam-girder interface, and slip capacity were already specified; only the callout leader routing and spelling must be corrected to the beam-girder interface. Why it matters is mislabeling hides the verified slip margin and fatigue/install advantage of the clamped joint."
+    },
+    {
+      "feedback_item": "extra empty flag symbols above deck",
+      "must_change": "The solution claims all steel stays within girder depth below the soffit with nothing above the deck and no deck change to maintain deck appearance with clear walkway (E55). What is actually true is the render shows four small grey flag markers with < symbols floating above the deck with no part names, which have no source in the parts list, connections, or measurement chain. What must change is nothing in the design; the renderer hallucinations must simply be removed so only named part callouts remain. Why it matters is extra symbols above deck falsely suggest deck-mounted hardware and violate the hidden under-deck constraint that was already met."
+    }
+  ],
+  "process_cause": "",
+  "summary": "This was a DRAWING FAILURE after 3 rounds, not a physics or comfort rejection. The twin 400 kg tuned-mass retrofit with 1.83 Hz tune, 0.67 m/s2 Medium comfort, and HSFG-clamped transverse beam was fully specified for geometry, connections, and loads, so the design need not change; only the figure needs faithful redraw."
+}

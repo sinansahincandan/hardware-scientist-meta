@@ -1,0 +1,14 @@
+{
+  "id": "E15",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "Den Hartog optimum TMD damping ratio",
+  "code_or_query": "(3*0.04/(8*(1+0.04)))**0.5",
+  "inputs": {},
+  "output_summary": "0.12",
+  "output_full": "0.12",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

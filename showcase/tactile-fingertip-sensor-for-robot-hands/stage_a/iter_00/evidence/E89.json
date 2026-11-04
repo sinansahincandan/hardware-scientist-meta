@@ -1,0 +1,32 @@
+{
+  "id": "E89",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
+  "tool": "web_search",
+  "purpose": "search: silicone rubber friction coefficient dry glass steel",
+  "code_or_query": "silicone rubber friction coefficient dry glass steel",
+  "inputs": {},
+  "output_summary": "doaj.org — Preparation and friction properties of silicone rubber composites – DOAJ — https://doaj.org/article/015ed1b1671648a6bf3953e67e468870",
+  "output_full": "doaj.org — Preparation and friction properties of silicone rubber composites – DOAJ — https://doaj.org/article/015ed1b1671648a6bf3953e67e468870\n(found by the search; not opened or cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "doaj.org",
+      "title": "Preparation and friction properties of silicone rubber composites – DOAJ",
+      "year": "",
+      "url": "https://doaj.org/article/015ed1b1671648a6bf3953e67e468870",
+      "query": "silicone rubber friction coefficient dry glass steel",
+      "unresolved": false,
+      "passage": "The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

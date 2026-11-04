@@ -1,24 +1,26 @@
 {
   "id": "E48",
-  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: folding hand truck setup time seconds unfold",
-  "code_or_query": "folding hand truck setup time seconds unfold",
+  "purpose": "search: tri-star stair climbing wheel cluster brake locked torque descent",
+  "code_or_query": "tri-star stair climbing wheel cluster brake locked torque descent",
   "inputs": {},
-  "output_summary": "global.microless.com — Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. — https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
-  "output_full": "global.microless.com — Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping. — https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/\n(the search returned no passage text)",
+  "output_summary": "patentsencyclopedia.com — Stair-Climbing Wheeled Vehicle - Patent application — https://www.patentsencyclopedia.com/app/20100032911",
+  "output_full": "patentsencyclopedia.com — Stair-Climbing Wheeled Vehicle - Patent application — https://www.patentsencyclopedia.com/app/20100032911\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "global.microless.com",
-      "title": "Dolly Cart Folding Hand Truck Dolly 309 lb Capacity Aluminum Heavy Duty Hand Cart with Swivel Handle and 7 inch Rubber All Terrain Silent Large Wheels, Portable Foldable Cart for Moving Heavy Item Buy, Best Price. Global Shipping.",
+      "authors_or_org": "patentsencyclopedia.com",
+      "title": "Stair-Climbing Wheeled Vehicle - Patent application",
       "year": "",
-      "url": "https://global.microless.com/product/dolly-cart-folding-hand-truck-dolly-309-lb-capacity-aluminum-heavy-duty-hand-cart-with-swivel-handle-and-7-inch-rubber-all-terrain-silent-large-wheels-portable-foldable-cart-for-moving-heavy-item/",
-      "query": "folding hand truck setup time seconds unfold",
+      "url": "https://www.patentsencyclopedia.com/app/20100032911",
+      "query": "tri-star stair climbing wheel cluster brake locked torque descent",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

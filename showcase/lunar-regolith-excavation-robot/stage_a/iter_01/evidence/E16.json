@@ -1,22 +1,24 @@
 {
   "id": "E16",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
-  "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "purpose": "search: NASA Lunabotics winning rover mobility wheels tracks chassis design",
+  "code_or_query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
   "inputs": {},
-  "output_summary": "technical.city — Jetson Orin Nano 4 GB — https://technical.city/en/video/Jetson-Orin-Nano-4-GB",
-  "output_full": "technical.city — Jetson Orin Nano 4 GB — https://technical.city/en/video/Jetson-Orin-Nano-4-GB\n(the search returned no passage text)",
+  "output_summary": "mechanical.sdsu.edu — 2026 NASA Lunabotics Propulsion Navigation and Controls Team – , — 2026 — http://mechanical.sdsu.edu/design-day/_files/2026/project32-.pdf",
+  "output_full": "mechanical.sdsu.edu — 2026 NASA Lunabotics Propulsion Navigation and Controls Team – , — 2026 — http://mechanical.sdsu.edu/design-day/_files/2026/project32-.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "technical.city",
-      "title": "Jetson Orin Nano 4 GB",
-      "year": "",
-      "url": "https://technical.city/en/video/Jetson-Orin-Nano-4-GB",
-      "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "authors_or_org": "mechanical.sdsu.edu",
+      "title": "2026 NASA Lunabotics Propulsion Navigation and Controls Team – ,",
+      "year": "2026",
+      "url": "http://mechanical.sdsu.edu/design-day/_files/2026/project32-.pdf",
+      "query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

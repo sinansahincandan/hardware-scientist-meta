@@ -1,0 +1,32 @@
+{
+  "id": "E25",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "web_search",
+  "purpose": "search: HSFG bolt fatigue preload EN 1993-1-9 detail category clamp",
+  "code_or_query": "HSFG bolt fatigue preload EN 1993-1-9 detail category clamp",
+  "inputs": {},
+  "output_summary": "vdocuments.net — Loss of preload in pretensioned bolts - TU Delft - [PDF Document] — https://vdocuments.net/loss-of-preload-in-pretensioned-bolts-tu-delft.html",
+  "output_full": "vdocuments.net — Loss of preload in pretensioned bolts - TU Delft - [PDF Document] — https://vdocuments.net/loss-of-preload-in-pretensioned-bolts-tu-delft.html\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: Clamped preloaded High-Strength Friction-Grip, defined as High-Strength Friction-Grip (HSFG), bolts are used because the Load‐deformation behavior of injection bolts for maintenance of steel structures under dynamic loads (E24) regulates fatigue of preloaded bolts by detail category in EN 1993-1-9 and the Loss of preload in pretensioned bolts - TU Delft - [PDF Document] (E25) shows bolt relaxation can reduce fatigue life through loss of clamp load, so friction clamp without welds is the buildable load path.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "vdocuments.net",
+      "title": "Loss of preload in pretensioned bolts - TU Delft - [PDF Document]",
+      "year": "",
+      "url": "https://vdocuments.net/loss-of-preload-in-pretensioned-bolts-tu-delft.html",
+      "query": "HSFG bolt fatigue preload EN 1993-1-9 detail category clamp",
+      "unresolved": false,
+      "passage": "Clamped preloaded High-Strength Friction-Grip, defined as High-Strength Friction-Grip (HSFG), bolts are used because the Load‐deformation behavior of injection bolts for maintenance of steel structures under dynamic loads (E24) regulates fatigue of preloaded bolts by detail category in EN 1993-1-9 and the Loss of preload in pretensioned bolts - TU Delft - [PDF Document] (E25) shows bolt relaxation can reduce fatigue life through loss of clamp load, so friction clamp without welds is the buildable load path.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "Clamped preloaded High-Strength Friction-Grip, defined as High-Strength Friction-Grip (HSFG), bolts are used because the Load‐deformation behavior of injection bolts for maintenance of steel structures under dynamic loads (E24) regulates fatigue of preloaded bolts by detail category in EN 1993-1-9 and the Loss of preload in pretensioned bolts - TU Delft - [PDF Document] (E25) shows bolt relaxation can reduce fatigue life through loss of clamp load, so friction clamp without welds is the buildable load path."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

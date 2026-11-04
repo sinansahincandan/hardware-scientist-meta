@@ -1,0 +1,26 @@
+{
+  "id": "E6",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+  "code_or_query": "micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+  "inputs": {},
+  "output_summary": "theengineeringprojects.com — Wind Turbine Generator Library for Proteus V1.0 (Arduino + 12V) — 2026 — https://www.theengineeringprojects.com/2026/11/wind-turbine-generator-library-for-proteus-v1-0.html",
+  "output_full": "theengineeringprojects.com — Wind Turbine Generator Library for Proteus V1.0 (Arduino + 12V) — 2026 — https://www.theengineeringprojects.com/2026/11/wind-turbine-generator-library-for-proteus-v1-0.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "theengineeringprojects.com",
+      "title": "Wind Turbine Generator Library for Proteus V1.0 (Arduino + 12V)",
+      "year": "2026",
+      "url": "https://www.theengineeringprojects.com/2026/11/wind-turbine-generator-library-for-proteus-v1-0.html",
+      "query": "micro wind turbine power coefficient Cp tip speed ratio 3 blades",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

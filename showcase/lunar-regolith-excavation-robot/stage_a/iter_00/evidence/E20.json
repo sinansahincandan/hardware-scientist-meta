@@ -1,22 +1,24 @@
 {
   "id": "E20",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
-  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "purpose": "search: NASA RASSOR excavator robot tracks mobility deployable chassis",
+  "code_or_query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
   "inputs": {},
-  "output_summary": "thinkrobotics.com — Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435",
-  "output_full": "thinkrobotics.com — Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435\n(the search returned no passage text)",
+  "output_summary": "mavigadget.com — From Mars to the Moon: The Robots Leading the Way in Space E — https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration",
+  "output_full": "mavigadget.com — From Mars to the Moon: The Robots Leading the Way in Space E — https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "thinkrobotics.com",
-      "title": "Intel RealSense D435 Depth Camera with Global Shutter\n – ThinkRobotics.com",
+      "authors_or_org": "mavigadget.com",
+      "title": "From Mars to the Moon: The Robots Leading the Way in Space E",
       "year": "",
-      "url": "https://thinkrobotics.com/products/intel-realsense-depth-camera-d435",
-      "query": "Intel RealSense depth camera range field of view datasheet",
+      "url": "https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration",
+      "query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

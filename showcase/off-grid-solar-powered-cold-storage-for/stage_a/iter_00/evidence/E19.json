@@ -1,22 +1,30 @@
 {
   "id": "E19",
-  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "web_search",
-  "purpose": "search: small cold storage 1 tonne cooling load kW respiration heat fresh produce",
-  "code_or_query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
+  "purpose": "search: Secop BD35F BD50F DC compressor datasheet COP refrigeration",
+  "code_or_query": "Secop BD35F BD50F DC compressor datasheet COP refrigeration",
   "inputs": {},
-  "output_summary": "scribd.com — Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables — https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf",
-  "output_full": "scribd.com — Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables — https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf\n(the search returned no passage text)",
+  "output_summary": "wigmors.pl — Secop is committed to delivering advanced refrigeration compressors and — 2021 — https://www.wigmors.pl/wp-content/uploads/2021/10/Sprezarki-chlodnicze-hermetyczne-Secop-AC-katalog-skrocony-EN-2021-08_compressed.pdf",
+  "output_full": "wigmors.pl — Secop is committed to delivering advanced refrigeration compressors and — 2021 — https://www.wigmors.pl/wp-content/uploads/2021/10/Sprezarki-chlodnicze-hermetyczne-Secop-AC-katalog-skrocony-EN-2021-08_compressed.pdf\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "scribd.com",
-      "title": "Design of Cold Storage Structure For Thousand PDF | PDF | Refrigeration | Vegetables",
-      "year": "",
-      "url": "https://www.scribd.com/document/409544472/Design-of-Cold-Storage-Structure-For-Thousand-pdf",
-      "query": "small cold storage 1 tonne cooling load kW respiration heat fresh produce",
+      "authors_or_org": "wigmors.pl",
+      "title": "Secop is committed to delivering advanced refrigeration compressors and",
+      "year": "2021",
+      "url": "https://www.wigmors.pl/wp-content/uploads/2021/10/Sprezarki-chlodnicze-hermetyczne-Secop-AC-katalog-skrocony-EN-2021-08_compressed.pdf",
+      "query": "Secop BD35F BD50F DC compressor datasheet COP refrigeration",
       "unresolved": false,
-      "passage": ""
+      "passage": "R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home."
+        }
+      ]
     }
   ],
   "status": "ok",

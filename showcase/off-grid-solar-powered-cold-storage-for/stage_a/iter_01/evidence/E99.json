@@ -1,0 +1,26 @@
+{
+  "id": "E99",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop BD50F DC compressor COP datasheet R134a",
+  "code_or_query": "Secop BD50F DC compressor COP datasheet R134a",
+  "inputs": {},
+  "output_summary": "ayranlikmakinesi.com — | BD50F |  | — https://www.ayranlikmakinesi.com/kataloglar/12-voltluk-buzdolabi-sogutma-motoru-ekovat-baglanti-sekli-tel-0212-2974432.pdf",
+  "output_full": "ayranlikmakinesi.com — | BD50F |  | — https://www.ayranlikmakinesi.com/kataloglar/12-voltluk-buzdolabi-sogutma-motoru-ekovat-baglanti-sekli-tel-0212-2974432.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ayranlikmakinesi.com",
+      "title": "| BD50F |  |",
+      "year": "",
+      "url": "https://www.ayranlikmakinesi.com/kataloglar/12-voltluk-buzdolabi-sogutma-motoru-ekovat-baglanti-sekli-tel-0212-2974432.pdf",
+      "query": "Secop BD50F DC compressor COP datasheet R134a",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

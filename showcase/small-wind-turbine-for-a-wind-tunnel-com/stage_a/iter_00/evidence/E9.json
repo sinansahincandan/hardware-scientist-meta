@@ -1,0 +1,14 @@
+{
+  "id": "E9",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "available wind power at 5 m/s 40cm rotor",
+  "code_or_query": "(0.5*1.225*3.1416*0.40**2/4*5.0**3)",
+  "inputs": {},
+  "output_summary": "9.62",
+  "output_full": "9.62",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

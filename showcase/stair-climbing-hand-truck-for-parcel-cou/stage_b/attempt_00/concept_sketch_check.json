@@ -1,4 +1,4 @@
 {
   "ok": true,
-  "reason": "Pixels show all listed parts with plausible connections: 3-wheel tri-star with central gear/pawl and outer brake band at spine base, twin spine tubes, top closed-loop handle with deadman lever+cable, mid-spine fold clamp with lock symbol, flat toe platform with box harness strap and end heel-stop. Layout matches engineer schematic: reclined 1200mm spine, tri at 197mm riser nose, toe over 254mm going, consistent orbit."
+  "reason": "First image shows all listed parts with plausible connections: twin tubes as backbone, folding toe/platform at base with parcel + retaining strap, telescoping top sections with push handle and up-arrows, tri-star 3-caster cluster on main cluster axle at bottom-left, toothed disc brake at backbone base, dead-man lever under handle with cable running down backbone to brake, clip-on cross braces/clamps spacing the tubes. This matches second image schematic: backbone fixed at axle at 0.0m, fixed axle support, parcel ~200mm fore-aft offset, and diagonal optional stay from mid-backbone to axle support shown as the diagonal strut in render."
 }

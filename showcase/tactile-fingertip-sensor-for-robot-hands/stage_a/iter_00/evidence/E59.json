@@ -1,0 +1,32 @@
+{
+  "id": "E59",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: porous PDMS capacitive pressure sensor sensitivity saturation high pressure kPa",
+  "code_or_query": "porous PDMS capacitive pressure sensor sensitivity saturation high pressure kPa",
+  "inputs": {},
+  "output_summary": "english.semi.cas.cn — High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors — http://english.semi.cas.cn/ps/202409/t20240920_690028.html",
+  "output_full": "english.semi.cas.cn — High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors — http://english.semi.cas.cn/ps/202409/t20240920_690028.html\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors (E59) maintains sensitivity in 0 to 10 kPa, 10 to 100 kPa and 100 to 400 kPa ranges, and the A flexible capacitive pressure sensor with a hybrid porous PDMS/SA hydrogel structure for touch/pain detection (E58) keeps maximum sensitivity up to 400 kPa.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "english.semi.cas.cn",
+      "title": "High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors",
+      "year": "",
+      "url": "http://english.semi.cas.cn/ps/202409/t20240920_690028.html",
+      "query": "porous PDMS capacitive pressure sensor sensitivity saturation high pressure kPa",
+      "unresolved": false,
+      "passage": "The High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors (E59) maintains sensitivity in 0 to 10 kPa, 10 to 100 kPa and 100 to 400 kPa ranges, and the A flexible capacitive pressure sensor with a hybrid porous PDMS/SA hydrogel structure for touch/pain detection (E58) keeps maximum sensitivity up to 400 kPa.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The High-Sensitive Wearable Capacitive Pressure Sensor with Hemispherical Porous Electrode--Institute of Semiconductors (E59) maintains sensitivity in 0 to 10 kPa, 10 to 100 kPa and 100 to 400 kPa ranges, and the A flexible capacitive pressure sensor with a hybrid porous PDMS/SA hydrogel structure for touch/pain detection (E58) keeps maximum sensitivity up to 400 kPa."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

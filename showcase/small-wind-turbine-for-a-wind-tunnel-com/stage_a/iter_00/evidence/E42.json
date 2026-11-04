@@ -1,0 +1,64 @@
+{
+  "id": "E42",
+  "author": "Safety-Control Integrator",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine fail safe mechanical disc brake solenoid spring applied",
+  "code_or_query": "small wind turbine fail safe mechanical disc brake solenoid spring applied",
+  "inputs": {},
+  "output_summary": "windpowerengineering.com — Braking ideas for wind turbines — https://www.windpowerengineering.com/braking-ideas-for-wind-turbines/",
+  "output_full": "windpowerengineering.com — Braking ideas for wind turbines — https://www.windpowerengineering.com/braking-ideas-for-wind-turbines/\n(opened by the member, not cited)\nSafety-Control Integrator said about it: I read the Braking ideas for wind turbines (E42) which states almost all wind turbine rotor brakes are of the fail-to-safe design, being spring-applied and released, with powerful springs pressing liners against a disc, and I transfer that rule to the spring disc (C21); the combined stop simulation (E47) with inertia 0.00200 kg·m2 and friction 0.400 N·m crosses below 10 percent in 1.65 s and sits at 0.00 RPM at 10 s, with top Kinetic Energy (KE), meaning spin energy, 109 J and peak friction heat 132 W, while the electrical-only runaway check (E48) reaches 9.12e+03 RPM at 10 s against the 315 RPM limit because 0.155 N·m electrical torque cannot beat 0.480 N·m wind torque, so the dump resistor (C16) alone fails.\nStructures-Survival Engineer said about it: I confirm what Safety-Control Integrator takes from Braking ideas for wind turbines (E42) that spring-applied pads press a disc, which from my side means the caliper reaction must go through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; the survival thrust (E22) of 37.3 N is a heavy shopping bag, the bending stress (E27) of 16.6 Megapascal (MPa), meaning million newtons per square metre, is about 16 times below the 276 MPa typical yield in the Aluminum 6061-T6 — Material Datasheet (E55) and the 5/12/23, 3:58 PM ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 (E56), with tip bend (E26) 0.516 mm against 25.0 mm side gap.\nPower-Systems Engineer said about it: I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute.\nAero-Rotor Lead said about it: Aero-Rotor Lead: I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that almost all rotor brakes are spring-applied fail-safe, which from my side means the blades must keep storm driving torque below the pad so the spring can park it.\nPower-Systems Engineer said about it: Safety-Control Integrator, I confirm what you take from the Braking ideas for wind turbines (E42) that almost all rotor brakes are spring-applied fail-safe.\nStructures-Survival Engineer said about it: I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) which states almost all rotor brakes are spring-applied fail-safe, which from my side means the caliper reaction still goes through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; revised dump 85.6 W (E78) against old 51.1 W (E39) with dump energy (E67) 84.3 J against spin 109 J (E47) and disc rise (E53) 4.35 K, meaning degrees of warming, stays far below aluminum softening, like a warm cup not a kettle.\nAero-Rotor Lead said about it: Tip 66.0 m/s in the tip speed check (E72) is highway-car speed not aircraft speed, so noise and vibration stay ordinary, and my stalled estimate about 0.25 N·m stays below your 0.80 N·m hold in the upgraded stop (E70), which I check as a hand grip beating a shopping-bag pull; I confirm what you take from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from rotor side means Tip-Speed Ratio (TSR), meaning tip speed over wind speed, 6 can run away electrically so friction must do the parking.\nStructures-Survival Engineer said about it: I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from structures side means the caliper reaction stays in the nacelle bedplate with brake rails (E58) to the post clamp; revised dump power (E78) 85.6 W with dump energy (E67) 84.3 J against spin energy (E47) 109 J and disc rise (E53) 4.35 K, meaning degrees of warming, stays far below aluminum softening, like a warm cup not a kettle.\nPower-Systems Engineer said about it: Safety-Control Integrator, I confirm what you take from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from power side means the dump grid is a slowing aid not a park means.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "windpowerengineering.com",
+      "title": "Braking ideas for wind turbines",
+      "year": "",
+      "url": "https://www.windpowerengineering.com/braking-ideas-for-wind-turbines/",
+      "query": "small wind turbine fail safe mechanical disc brake solenoid spring applied",
+      "unresolved": false,
+      "passage": "I read the Braking ideas for wind turbines (E42) which states almost all wind turbine rotor brakes are of the fail-to-safe design, being spring-applied and released, with powerful springs pressing liners against a disc, and I transfer that rule to the spring disc (C21); the combined stop simulation (E47) with inertia 0.00200 kg·m2 and friction 0.400 N·m crosses below 10 percent in 1.65 s and sits at 0.00 RPM at 10 s, with top Kinetic Energy (KE), meaning spin energy, 109 J and peak friction heat 132 W, while the electrical-only runaway check (E48) reaches 9.12e+03 RPM at 10 s against the 315 RPM limit because 0.155 N·m electrical torque cannot beat 0.480 N·m wind torque, so the dump resistor (C16) alone fails.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Safety-Control Integrator",
+          "text": "I read the Braking ideas for wind turbines (E42) which states almost all wind turbine rotor brakes are of the fail-to-safe design, being spring-applied and released, with powerful springs pressing liners against a disc, and I transfer that rule to the spring disc (C21); the combined stop simulation (E47) with inertia 0.00200 kg·m2 and friction 0.400 N·m crosses below 10 percent in 1.65 s and sits at 0.00 RPM at 10 s, with top Kinetic Energy (KE), meaning spin energy, 109 J and peak friction heat 132 W, while the electrical-only runaway check (E48) reaches 9.12e+03 RPM at 10 s against the 315 RPM limit because 0.155 N·m electrical torque cannot beat 0.480 N·m wind torque, so the dump resistor (C16) alone fails."
+        },
+        {
+          "by": "Structures-Survival Engineer",
+          "text": "I confirm what Safety-Control Integrator takes from Braking ideas for wind turbines (E42) that spring-applied pads press a disc, which from my side means the caliper reaction must go through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; the survival thrust (E22) of 37.3 N is a heavy shopping bag, the bending stress (E27) of 16.6 Megapascal (MPa), meaning million newtons per square metre, is about 16 times below the 276 MPa typical yield in the Aluminum 6061-T6 — Material Datasheet (E55) and the 5/12/23, 3:58 PM ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 (E56), with tip bend (E26) 0.516 mm against 25.0 mm side gap."
+        },
+        {
+          "by": "Power-Systems Engineer",
+          "text": "I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute."
+        },
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "Aero-Rotor Lead: I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that almost all rotor brakes are spring-applied fail-safe, which from my side means the blades must keep storm driving torque below the pad so the spring can park it."
+        },
+        {
+          "by": "Power-Systems Engineer",
+          "text": "Safety-Control Integrator, I confirm what you take from the Braking ideas for wind turbines (E42) that almost all rotor brakes are spring-applied fail-safe."
+        },
+        {
+          "by": "Structures-Survival Engineer",
+          "text": "I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) which states almost all rotor brakes are spring-applied fail-safe, which from my side means the caliper reaction still goes through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; revised dump 85.6 W (E78) against old 51.1 W (E39) with dump energy (E67) 84.3 J against spin 109 J (E47) and disc rise (E53) 4.35 K, meaning degrees of warming, stays far below aluminum softening, like a warm cup not a kettle."
+        },
+        {
+          "by": "Aero-Rotor Lead",
+          "text": "Tip 66.0 m/s in the tip speed check (E72) is highway-car speed not aircraft speed, so noise and vibration stay ordinary, and my stalled estimate about 0.25 N·m stays below your 0.80 N·m hold in the upgraded stop (E70), which I check as a hand grip beating a shopping-bag pull; I confirm what you take from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from rotor side means Tip-Speed Ratio (TSR), meaning tip speed over wind speed, 6 can run away electrically so friction must do the parking."
+        },
+        {
+          "by": "Structures-Survival Engineer",
+          "text": "I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from structures side means the caliper reaction stays in the nacelle bedplate with brake rails (E58) to the post clamp; revised dump power (E78) 85.6 W with dump energy (E67) 84.3 J against spin energy (E47) 109 J and disc rise (E53) 4.35 K, meaning degrees of warming, stays far below aluminum softening, like a warm cup not a kettle."
+        },
+        {
+          "by": "Power-Systems Engineer",
+          "text": "Safety-Control Integrator, I confirm what you take from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from power side means the dump grid is a slowing aid not a park means."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

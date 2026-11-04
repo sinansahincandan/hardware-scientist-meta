@@ -1,24 +1,39 @@
 {
   "id": "E9",
-  "author": "Mara — Excavation and Mobility Engineer",
-  "tool": "web_search",
-  "purpose": "search: NASA Lunabotics mining robot mass size excavation rate rules",
-  "code_or_query": "NASA Lunabotics mining robot mass size excavation rate rules",
-  "inputs": {},
-  "output_summary": "engprojects.tcnj.edu — Competition – NASA Lunabotics — https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/",
-  "output_full": "engprojects.tcnj.edu — Competition – NASA Lunabotics — https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "engprojects.tcnj.edu",
-      "title": "Competition – NASA Lunabotics",
-      "year": "",
-      "url": "https://engprojects.tcnj.edu/lunabotics26/tcnj-lunabotics-team/competition/",
-      "query": "NASA Lunabotics mining robot mass size excavation rate rules",
-      "unresolved": false,
-      "passage": ""
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "calc",
+  "purpose": "BP-1 shallow scraper cut force estimate for 0.3 m wide blade at 50 mm depth",
+  "code_or_query": "Q_(0.3,'m')*(Q_(500,'Pa')*Q_(0.05,'m')+0.5*Q_(1500,'kg/m**3')*Q_(9.81,'m/s**2')*Q_(0.05,'m')**2*4.6)",
+  "inputs": {
+    "arg0": {
+      "value": "0.3",
+      "unit": "m"
+    },
+    "arg1": {
+      "value": "500",
+      "unit": "Pa"
+    },
+    "arg2": {
+      "value": "0.05",
+      "unit": "m"
+    },
+    "arg3": {
+      "value": "1500",
+      "unit": "kg/m**3"
+    },
+    "arg4": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg5": {
+      "value": "0.05",
+      "unit": "m"
     }
-  ],
+  },
+  "output_summary": "32.9 m\u00b2\u22c5Pa",
+  "output_full": "32.9 m\u00b2\u22c5Pa",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

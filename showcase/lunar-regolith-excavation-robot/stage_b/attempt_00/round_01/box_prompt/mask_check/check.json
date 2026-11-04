@@ -1,0 +1,24 @@
+{
+  "crops": [
+    "crop 1: arm",
+    "crop 2: ladder",
+    "crop 3: hopper"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "out-of-focus background between frame members"
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E65",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "sketch",
+  "purpose": "narrow kerf chain slot with side spoil rows feeding wide ladder pickup",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(figsize=(6,3)); ax.set_aspect('equal'); ax.axis('off')\nax.plot([0,10],[1,1], 'k-', lw=2)\nax.add_patch(plt.Rectangle((4,0.3),1,0.7, fill=False, lw=2))\nax.text(4.1,0.5,'kerf 100mm', fontsize=8)\nax.annotate('spoil row', xy=(5,1.0), xytext=(6.5,1.8), arrowprops=dict(arrowstyle='->'))\nax.annotate('ladder 300mm pickup', xy=(4,1.0), xytext=(1.5,1.8), arrowprops=dict(arrowstyle='->'))\nax.text(0.2,0.2,'forward ->', fontsize=9)\nplt.savefig('sketch.png', dpi=150); plt.close()",
+  "inputs": {},
+  "output_summary": "narrow kerf chain slot with side spoil rows feeding wide ladder pickup",
+  "output_full": "narrow kerf chain slot with side spoil rows feeding wide ladder pickup",
+  "sketch_path": "evidence/sketch_65.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,14 +1,14 @@
 {
   "id": "E52",
-  "author": "Marcus - Vibration Control and Damping Specialist",
+  "author": "Retrofit Integration and Construction Lead",
   "tool": "calc",
-  "purpose": "dense crowd TMD acceleration scaling",
-  "code_or_query": "(0.103*1481/280)",
+  "purpose": "mass per unit for two-unit split of 800kg TMD",
+  "code_or_query": "800/2",
   "inputs": {},
-  "output_summary": "0.545",
-  "output_full": "0.545",
+  "output_summary": "400",
+  "output_full": "400",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

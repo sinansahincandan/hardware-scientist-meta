@@ -1,0 +1,14 @@
+{
+  "id": "E88",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "axle torsional shear stress 20mm dia 33.5Nm per side",
+  "code_or_query": "16*33.5/(3.14159*(0.02**3))",
+  "inputs": {},
+  "output_summary": "2.13e+07",
+  "output_full": "2.13e+07",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

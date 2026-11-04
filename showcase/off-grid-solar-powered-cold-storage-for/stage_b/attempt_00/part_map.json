@@ -2,153 +2,129 @@
   "parts": [
     {
       "part_id": "pv_array",
-      "visual_phrase": "solar panel",
-      "count": 6,
+      "visual_phrase": "solar panels",
+      "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "cold_box",
-      "size_ratio": 0.75,
+      "size_vs": "chamber",
+      "size_ratio": 2.0,
       "touches": [
-        "frame_rack",
-        "dc_wiring"
+        "foundation"
       ],
-      "note": "Six tilted panels on separate rack apart from box."
+      "note": "Split 2 roof plus 7 ground tilted array feeding batteries"
     },
     {
-      "part_id": "frame_rack",
-      "visual_phrase": "metal frame",
-      "count": 1,
-      "long_axis": "vertical",
-      "size_vs": "cold_box",
-      "size_ratio": 1.1,
-      "touches": [
-        "pv_array",
-        "cold_box",
-        "plinth"
-      ],
-      "note": "Bolted angle frame holds panels and box panels."
-    },
-    {
-      "part_id": "dc_wiring",
-      "visual_phrase": "black cable",
-      "count": 1,
-      "long_axis": "any",
-      "size_vs": "battery_cabinet",
-      "size_ratio": 6.0,
-      "touches": [
-        "pv_array",
-        "battery_cabinet",
-        "dc_chiller"
-      ],
-      "note": "Cables link panels to cabinet to chiller."
-    },
-    {
-      "part_id": "battery_cabinet",
+      "part_id": "batt_bank",
       "visual_phrase": "battery box",
       "count": 1,
       "long_axis": "vertical",
-      "size_vs": "cold_box",
-      "size_ratio": 0.4,
+      "size_vs": "cooler",
+      "size_ratio": 1.0,
       "touches": [
-        "dc_wiring",
-        "plinth",
-        "dc_chiller"
+        "foundation"
       ],
-      "note": "Upright store beside box feeds chiller at night."
+      "note": "48V box beside chamber storing daytime power for night"
     },
     {
-      "part_id": "cold_box",
-      "visual_phrase": "white box",
-      "count": 1,
-      "long_axis": "any",
-      "size_vs": "plinth",
-      "size_ratio": 0.9,
-      "touches": [
-        "plinth",
-        "frame_rack",
-        "door",
-        "dc_chiller",
-        "airflow_kit"
-      ],
-      "note": "Thick foam 2m room holds crates at 4-10C."
-    },
-    {
-      "part_id": "airflow_kit",
-      "visual_phrase": "fan",
+      "part_id": "cooler",
+      "visual_phrase": "cooler box",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "cold_box",
-      "size_ratio": 0.5,
+      "size_vs": "chamber",
+      "size_ratio": 0.33,
       "touches": [
-        "cold_box"
+        "chamber"
       ],
-      "note": "High fan and coil mix cold air over crates."
+      "note": "Rear-high box blowing cold air forward over crates"
     },
     {
-      "part_id": "racks",
+      "part_id": "chamber",
+      "visual_phrase": "white box",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "foundation",
+      "size_ratio": 1.0,
+      "touches": [
+        "cooler",
+        "rack_crate",
+        "foundation",
+        "control"
+      ],
+      "note": "Insulated white box on pads with front door"
+    },
+    {
+      "part_id": "rack_crate",
       "visual_phrase": "metal shelf",
       "count": 2,
       "long_axis": "horizontal",
-      "size_vs": "cold_box",
-      "size_ratio": 0.9,
+      "size_vs": "chamber",
+      "size_ratio": 0.8,
       "touches": [
-        "crates",
-        "plinth"
+        "chamber"
       ],
-      "note": "Two low side racks with centre aisle."
+      "note": "Two rows of steel racking inside chamber holding crates"
     },
     {
-      "part_id": "crates",
-      "visual_phrase": "plastic crate",
-      "count": 12,
-      "long_axis": "any",
-      "size_vs": "racks",
-      "size_ratio": 0.3,
-      "touches": [
-        "racks"
-      ],
-      "note": "Stacked vented crates 3 high visible in section."
-    },
-    {
-      "part_id": "door",
-      "visual_phrase": "door",
+      "part_id": "control",
+      "visual_phrase": "control box",
       "count": 1,
       "long_axis": "vertical",
-      "size_vs": "cold_box",
-      "size_ratio": 0.5,
+      "size_vs": "chamber",
+      "size_ratio": 0.06,
       "touches": [
-        "cold_box"
+        "chamber",
+        "cooler"
       ],
-      "note": "Sealed hinged front closure to box."
+      "note": "Small wall box with wired probes switching cooler"
     },
     {
-      "part_id": "dc_chiller",
-      "visual_phrase": "metal box",
-      "count": 1,
-      "long_axis": "any",
-      "size_vs": "battery_cabinet",
-      "size_ratio": 0.75,
-      "touches": [
-        "cold_box",
-        "battery_cabinet",
-        "plinth"
-      ],
-      "note": "Small shaded unit cooling box from outside."
-    },
-    {
-      "part_id": "plinth",
-      "visual_phrase": "concrete slab",
+      "part_id": "foundation",
+      "visual_phrase": "metal frame",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "cold_box",
-      "size_ratio": 1.1,
+      "size_vs": "chamber",
+      "size_ratio": 1.2,
       "touches": [
-        "cold_box",
-        "frame_rack",
-        "racks",
-        "battery_cabinet",
-        "dc_chiller"
+        "chamber",
+        "pv_array",
+        "batt_bank"
       ],
-      "note": "Raised washable slab carries box and racks."
+      "note": "Ground frames and pads under box and array"
+    },
+    {
+      "part_id": "pv_array__panel",
+      "visual_phrase": "solar panel",
+      "count": 9,
+      "long_axis": "horizontal",
+      "size_vs": "pv_array",
+      "size_ratio": 0.25,
+      "touches": [
+        "pv_array"
+      ],
+      "note": "One tilted rectangle, 2 on roof and 7 on ground seen together"
+    },
+    {
+      "part_id": "rack_crate__crate",
+      "visual_phrase": "plastic crate",
+      "count": 15,
+      "long_axis": "horizontal",
+      "size_vs": "rack_crate",
+      "size_ratio": 0.3,
+      "touches": [
+        "rack_crate"
+      ],
+      "note": "One vented box on shelf, 50 total but about 15 counted through door"
+    },
+    {
+      "part_id": "foundation__pad",
+      "visual_phrase": "concrete block",
+      "count": 4,
+      "long_axis": "horizontal",
+      "size_vs": "foundation",
+      "size_ratio": 0.2,
+      "touches": [
+        "foundation"
+      ],
+      "note": "One square foot block, 6 total but about 4 seen in side view"
     }
   ]
 }

@@ -1,0 +1,83 @@
+{
+  "pixel_description": "Render only: central single white insulated chamber box, rectangular with galvanized corner/edge framing, sitting on concrete pads via short galvanized feet with visible anchor bolts. Front face has single hinged insulated door swung open ~90deg to right, clear PVC strip curtain hanging inside doorway. Inside, two galvanized slotted-angle rack frames left and right, each 3-4 shelves high, holding blue/grey vented plastic crates filled with lettuce, tomatoes, peppers. Left side wall high: white monoblock cooler outdoor unit with fan grille, mounted through wall with bracket and sealed penetration. Below it on same wall: small white electrical box with grey conduit running down to battery and up to cooler. Left rear separate: grey vented steel battery cabinet on pads with charge controller boxes and thick black + grey cables/conduit to chamber/cooler. Front wall right of door: tiny white thermostat box screwed to wall with thin black probe wire looping from top of doorway down into interior produce/return-air. Roof: galvanized vented gantry frame bolted directly to top edge of chamber, holding tilted blue monocrystalline PV modules (two bright fronts facing right plus dark cell-patterned fronts facing left, vent gap underneath). Right of chamber separate galvanized ground frame with feet on gravel holding row of 5 tilted blue PV modules in line. Gravel/soil ground, six pad positions (five clearly, one occluded). Callouts with thin leaders, no numbers. Critical part chamber: drawn as one enclosing element (box + one open door leaf + curtain), arrangement encloses and supports two rack rows, stands on pads, carries cooler high on wall and thermostat on wall, carries gantry on top; working geometry (enclosure, door opening, interior racks, high-to-low airflow path from cooler forward) visible as in sketch/engineer section.",
+  "regions": [],
+  "previous_regions": [
+    {
+      "part_id": "callout",
+      "fault": "callout: two identical labels 'two racks of vented crates fresh produce' contain number word 'two', duplicated, one leader ends on concrete foundation pad not crates",
+      "status": "fixed",
+      "note": "Now single callout 'racks of vented crates with fresh produce' with no numbers, leader ends on blue crates inside chamber doorway. Duplication and number-word and misplaced leader all removed."
+    }
+  ],
+  "comparison_with_previous": "Compared with previous render (third image): fixed the flagged callout fault - the duplicated 'two racks of vented crates fresh produce' with number-word 'two' and leader ending on foundation pad is now a single 'racks of vented crates with fresh produce' with no numbers and leader ending on blue crates inside chamber. Also removed all other numeric prefixes ('2x', '7x', '900mm'). No new misplaced callout introduced; 'monoblock cooler' leader ends at cooler wall assembly with conduit, 'concrete pads with anchors' ends on front pad, 'insulated door with strip curtain' ends on open door, PV callouts end on correct arrays. Panel split illustration changed from previous 2 roof +7 ground to ~4 roof surfaces +5 ground surfaces in current view (total still 9 fronts) but total kWp unchanged; crate visibility similar partial view. No new missing part.",
+  "deviations": [
+    {
+      "what": "pv_array",
+      "measured": "8 instances, tilted ~148 deg, apart from foundation",
+      "expected": "1 pv_array system, horizontal long axis, touching foundation",
+      "matters": false,
+      "why": "Pixels show one split system: roof gantry bolted to chamber top edge plus separate ground frame to right with feet on soil. 8 boxes are sub-detections (3 roof boxes where middle box merges 2 faces +5 ground); manual count on overlay shows 9 blue fronts total. Tilt ~25-30 deg is required equator-facing tilt per C3, expectation of horizontal is wrong. Gantry/ground frames visibly bolted/touching, bbox gap is perspective, not separation. Total power same, load paths still separate."
+    },
+    {
+      "what": "cooler",
+      "measured": "0.99x chamber",
+      "expected": "cooler ~0.33x chamber",
+      "matters": false,
+      "why": "Localizer stated 'could not find cooler', so ratio compares wrong box. Pixels show white monoblock with grille mounted high on left chamber wall, ~1/4 side length, consistent with 400-800mm vs 1800-2400mm (~0.25-0.33). Correct scale, working geometry preserved."
+    },
+    {
+      "what": "chamber",
+      "measured": "apart in picture",
+      "expected": "chamber touching rack_crate, foundation, control",
+      "matters": false,
+      "why": "Pixels show touching: two rack frames standing on chamber floor inside open door and enclosed by walls; chamber steel feet bolted to concrete pads; small thermostat box screwed to front wall right of door with probe wire entering. Bboxes are interior vs exterior, gap is enclosure, not separation."
+    },
+    {
+      "what": "rack_crate",
+      "measured": "apart in picture",
+      "expected": "rack_crate touching chamber",
+      "matters": false,
+      "why": "Pixels show racks inside chamber interior behind strip curtain, standing on floor, crates stacked 3-4 high. Encloses-and-supports contact present; segmenter 'apart' is bbox interior/exterior artifact."
+    },
+    {
+      "what": "control",
+      "measured": "0.22x chamber, apart from chamber and cooler",
+      "expected": "control ~0.06x chamber, touching chamber and cooler",
+      "matters": false,
+      "why": "Pixels show correct tiny thermostat (~50-150mm) on front wall with black probe cable looping into chamber interior; size ~0.05x chamber. Segmenter measured larger side-wall electrical box (MPPT/disconnect part of batt_bank) as control, inflating ratio. Mounting screws = touching chamber; electrical switching to cooler via wired loom/conduit along wall, not bbox adjacency."
+    },
+    {
+      "what": "foundation",
+      "measured": "5 instances, apart from chamber and pv_array",
+      "expected": "1 foundation system touching chamber and pv_array",
+      "matters": false,
+      "why": "Pixels show one system: 5 concrete pads clearly visible plus 6th occluded behind chamber, galvanized gantry frame on chamber top and galvanized ground frame under ground PV, anchor bolts on pads. Count 5 is pads+frames sub-elements, not systems. Feet bolted to pads and gantry bolted to chamber = touching."
+    },
+    {
+      "what": "pv_array__panel",
+      "measured": "8 panels, tilted ~148 deg, 1x pv_array",
+      "expected": "9 pv panels, horizontal, ~0.25x pv_array",
+      "matters": false,
+      "why": "Last overlay image: 3 roof red boxes +5 ground red boxes =8 detections, but middle roof box merges bright front and dark front (both with cell grids) so true fronts 9 total. Tilt is design tilt, not horizontal. Ratio 1x because panel compared to its own sub-array bbox. Total 9x400W=3.6kWp unchanged, split illustration 4 roof surfaces vs spec 2+7 does not change sunlight-to-electricity principle."
+    },
+    {
+      "what": "rack_crate__crate",
+      "measured": "7 crates, vertical, 0.68x rack",
+      "expected": "15 crates visible, horizontal, ~0.3x rack",
+      "matters": false,
+      "why": "Pixels show blue vented 600x400mm crates stacked on two interior racks behind curtain/door, filled with produce; only ~7 fully unoccluded through doorway in overlay (blue boxes 1-7), rest hidden by door, curtain, produce and stacking. Full 50-crate (2x25) load implied inside. Vertical axis is end-on view through door; larger apparent ratio is foreground perspective. Partial visible load is allowed deviation, airflow over crates still shown."
+    },
+    {
+      "what": "foundation__pad",
+      "measured": "5 pads, 1x foundation",
+      "expected": "4 pads, ~0.2x foundation",
+      "matters": false,
+      "why": "Pixels show 5 square concrete pads with steel feet/anchors clearly, 6th hidden behind chamber, consistent with fab step 1 six pads 400x400mm. Expectation of 4 is wrong. Each pad ~400mm vs 2400mm system ~0.17 correct. Ratio 1x because pad compared to pad cluster. 5 visible of 6 is perspective occlusion."
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "No material difference in parts, connections, relative sizes, orientations or directions. All 7 part types present with correct topology: split PV on gantry+ground frames, battery cabinet wired to cooler, cooler through-wall high blowing forward, chamber enclosing racks, thermostat on wall with probes inside, chamber on pads. Apparent count/size/orientation deltas (8 vs 9 PV detections, 7 vs 15 crates visible, 5 vs 6 pads visible, tilted vs horizontal, cooler/control ratios) are segmenter bbox artifacts, perspective occlusion, or required tilt/partial-view, listed as matters=false deviations. Size/shape consistent with ~2400mm box for 1-tonne store.",
+  "s2_flaw": false,
+  "s2_feedback": "No real design flaw exposed. Concrete features: chamber feet bolted to separate concrete pads with anchors, roof gantry and ground PV frame on separate load paths, rear/side-high cooler with bracket and penetration, probe wire from thermostat into return-air/produce with door swing clear of racks, strip curtain and 25mm gaps preserved, no interference or unreachable part visible. Flaw if any would be in unfaithful count, not design.",
+  "notes": "Whole-device code span ~3919mm across x3639mm high scaled by stated sizes is coarse and shifted by out-of-proportion bbox (cooler miss, foundation split). Largest part stated 2400mm chamber. Sketch overall ~15548mm includes spacing of split array; render shows chamber ~2400mm boxy plus adjacent ground array a few metres, order of metres, not many-times too large/small. No people/hands for scale; crates (~600mm), pads (~400mm), door height vs crates proportion plausible for 1-tonne 2.4m box. Shape is boxy PIR box with door + separate PV frames as problem asks for wind/soft-soil standing. No diagram/cartoon/CAD wireframe, no extra numbers/margins/scale bars. All solution parts visible: pv split, grey vented battery cabinet with MPPT wiring left rear, white monoblock high, white chamber with open door + PVC strips, two rack rows with crates, thermostat + probes on front wall, pads/frames/anchors."
+}

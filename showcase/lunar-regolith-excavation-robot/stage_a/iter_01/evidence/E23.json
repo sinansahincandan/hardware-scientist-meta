@@ -1,24 +1,14 @@
 {
   "id": "E23",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
-  "tool": "web_search",
-  "purpose": "search: LiFePO4 24V battery pack specific energy Wh per kg datasheet",
-  "code_or_query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "simulate",
+  "purpose": "stowed envelope sum, ground pressure, tip-over and stopping check",
+  "code_or_query": "import numpy as np\n# Stowed envelope: chassis 0.9 long, width 0.45, height with folded arms 0.45\nL,W,H=0.9,0.45,0.45\nprint(f\"stowed {L}x{W}x{H} vs limit 1.0x0.5x0.5 PASS\" if L<=1.0 and W<=0.5 and H<=0.5 else \"FAIL\")\n# Ground pressure: 60kg robot, 4 wheels D=0.2m width=0.15m, contact patch approx width*contact length\n# contact length ~ sqrt(D*sink) with sink 0.02m -> sqrt(0.2*0.02)=0.063m\nD,b,sink=0.2,0.15,0.02\nimport math\nlc=math.sqrt(D*sink)\nA=4*b*lc\np=60*9.81/A/1000\nprint(f\"contact length {lc*1000:.1f} mm area {A*1e4:.1f} cm2 pressure {p:.1f} kPa\")\n# Traction vs cut force: mu~0.5 loose, traction=mu*W\ntraction=0.5*60*9.81\nprint(f\"traction {traction:.0f} N vs cut 32.9N margin {traction/32.9:.1f}x\")\n# Rear tip: wheelbase 0.7m, CG height 0.3m, hopper 15kg at rear overhang 0.3m behind rear axle when tilted\n# moment about rear axle: stabilizing robot 60kg at 0.35m ahead, overturning 15kg at 0.3m behind + inertia\nM_stab=60*9.81*0.35\nM_over=15*9.81*0.30\nprint(f\"stab {M_stab:.0f} Nm over {M_over:.0f} Nm SF {M_stab/M_over:.2f}\")\n# Stopping: v=0.5 m/s, decel mu*g=0.5*9.81? skid limited ~2 m/s2, d=v2/2a\nv,a=0.5,2.0\nd=v**2/(2*a)\nprint(f\"stop dist {d*1000:.0f} mm in {v/a:.2f} s\")",
   "inputs": {},
-  "output_summary": "actec.dk — 24v Lithium-Ion battery pack — https://actec.dk/media/documents/9C7D3794B117.pdf",
-  "output_full": "actec.dk — 24v Lithium-Ion battery pack — https://actec.dk/media/documents/9C7D3794B117.pdf\n(the search returned no passage text)",
+  "output_summary": "traction 294 N vs cut 32.9N margin 8.9x; stab 206 Nm over 44 Nm SF 4.67; stop dist 62 mm in 0.25 s",
+  "output_full": "stowed 0.9x0.45x0.45 vs limit 1.0x0.5x0.5 PASS\ncontact length 63.2 mm area 379.5 cm2 pressure 15.5 kPa\ntraction 294 N vs cut 32.9N margin 8.9x\nstab 206 Nm over 44 Nm SF 4.67\nstop dist 62 mm in 0.25 s",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "actec.dk",
-      "title": "24v Lithium-Ion battery pack",
-      "year": "",
-      "url": "https://actec.dk/media/documents/9C7D3794B117.pdf",
-      "query": "LiFePO4 24V battery pack specific energy Wh per kg datasheet",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

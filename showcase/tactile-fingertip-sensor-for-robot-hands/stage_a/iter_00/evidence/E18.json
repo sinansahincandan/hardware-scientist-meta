@@ -1,86 +1,24 @@
 {
   "id": "E18",
-  "author": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
   "tool": "web_search",
-  "purpose": "search: capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
-  "code_or_query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+  "purpose": "search: BioTac electrode array impedance fingertip sensor",
+  "code_or_query": "BioTac electrode array impedance fingertip sensor",
   "inputs": {},
-  "output_summary": "ar5iv.labs.arxiv.org — A Flexible and Robust Large Scale Capacitive Tactile System for Robots — https://ar5iv.labs.arxiv.org/html/1411.6837",
-  "output_full": "ar5iv.labs.arxiv.org — A Flexible and Robust Large Scale Capacitive Tactile System for Robots — https://ar5iv.labs.arxiv.org/html/1411.6837\n(opened by the member, not cited)\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows compressible capacitive pillars scanned in rows and columns work at hand scale, which confirms molded silicone pillars can be the spring and the sensing gap together.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: The 48 taxels from the fingertip area estimate (E8) would need 49 wires direct, falling to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the fingertip signal path sketch (E24), and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning at 25 Hz works at hand scale, which confirms this multiplexing from my side.\nSam — Robot Hand Integration and Manipulation said about it: Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush.\nMaya — Tactile Transduction and Sensing Physics said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanned compressible pillars work at hand scale, which confirms from sensing physics that pillars can be the spring and the gap together if guarded against 10 pF stray.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: The fingertip area estimate (E8) gives 48 taxels, the fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one CDC, where CDC means capacitance-to-digital converter, at 25 Hz static, and the large-scale capacitive system (E18) confirms row-column scanning works at hand scale, which from signal processing means 14 lines replace 49 wires.\nSam — Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not.\nMaya — Tactile Transduction and Sensing Physics said about it: I set aside 0.111 pF from the pressure from 1mN on taxel and fingertip area estimate (E8) and solid 1 MPa stiffness as the wrong solid-gap assumption, and 10 pF stray is rejected as common-mode by guarded row-column scanning in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The 1.5 mm skin plus 1.0 mm pillars from my hemispherical cap sketch (E17) fit in 15 to 20 mm diameter, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows such compressible pillars scanned in rows and columns work at hand scale, which from materials means pillars and skin molded together in LSR, where LSR means liquid silicone rubber, avoid a peel line.\nSam — Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not.\nMaya — Tactile Transduction and Sensing Physics said about it: I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode.\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) from Priya, which from my side means sparse pillars stay soft for sensitivity without extra wires because row-column scanning carries 48 points on few lines.\nPriya — Embedded Electronics, Signal Processing and Slip Detection said about it: I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode.\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning rejects stray capacitance, which from skin mechanics means sparse pillars keep 0.02 MPa softness from the effective pillar modulus (E39) while fitting 1.5 mm skin from the hemispherical cap sketch (E17) at thimble scale.\nSam — Robot Hand Integration and Manipulation said about it: The fingertip cartridge sketch (E33) shows rear 4-wire tail, and I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) finding that row-column scanning carries 48 points on 14 lines, which from integration means one flexible tail survives bending where 49 direct wires would not.",
+  "output_summary": "ieeexplore.ieee.org — Robo Psychophysics: — https://ieeexplore.ieee.org/ielaam/4543165/7782799/7542177-aam.pdf",
+  "output_full": "ieeexplore.ieee.org — Robo Psychophysics: — https://ieeexplore.ieee.org/ielaam/4543165/7782799/7542177-aam.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "ar5iv.labs.arxiv.org",
-      "title": "A Flexible and Robust Large Scale Capacitive Tactile System for Robots",
+      "authors_or_org": "ieeexplore.ieee.org",
+      "title": "Robo Psychophysics:",
       "year": "",
-      "url": "https://ar5iv.labs.arxiv.org/html/1411.6837",
-      "query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "url": "https://ieeexplore.ieee.org/ielaam/4543165/7782799/7542177-aam.pdf",
+      "query": "BioTac electrode array impedance fingertip sensor",
       "unresolved": false,
-      "passage": "Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18).",
-      "cited": true,
-      "read": true,
-      "statements": [
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "Plainly 48 taxels from the pressure from 1mN on taxel and fingertip area estimate (E8) would need about 49 wires direct, which falls to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger (E24), and that matches the 12 taxels per CDC (capacitance-to-digital converter) at 25 Hz output in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18)."
-        },
-        {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows compressible capacitive pillars scanned in rows and columns work at hand scale, which confirms molded silicone pillars can be the spring and the sensing gap together."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "The 48 taxels from the fingertip area estimate (E8) would need 49 wires direct, falling to 14 lines as 6 rows plus 8 columns into one CDC (capacitance-to-digital converter) in the fingertip signal path sketch (E24), and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning at 25 Hz works at hand scale, which confirms this multiplexing from my side."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "Contact compresses pillars to capacitance plus film charge, scanned in rows and columns to controller to rear 4-wire tail from the fingertip signal path sketch (E24), which the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms works at hand scale, and ridged skin raising friction from the Getting a Grip finding (E15) lets slip-triggered squeeze replace constant crush."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanned compressible pillars work at hand scale, which confirms from sensing physics that pillars can be the spring and the gap together if guarded against 10 pF stray."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "The fingertip area estimate (E8) gives 48 taxels, the fingertip signal path sketch (E24) shows 6 rows plus 8 columns into one CDC, where CDC means capacitance-to-digital converter, at 25 Hz static, and the large-scale capacitive system (E18) confirms row-column scanning works at hand scale, which from signal processing means 14 lines replace 49 wires."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) confirms row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "I set aside 0.111 pF from the pressure from 1mN on taxel and fingertip area estimate (E8) and solid 1 MPa stiffness as the wrong solid-gap assumption, and 10 pF stray is rejected as common-mode by guarded row-column scanning in the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18)."
-        },
-        {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "The 1.5 mm skin plus 1.0 mm pillars from my hemispherical cap sketch (E17) fit in 15 to 20 mm diameter, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows such compressible pillars scanned in rows and columns work at hand scale, which from materials means pillars and skin molded together in LSR, where LSR means liquid silicone rubber, avoid a peel line."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning carries 48 points on few lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode."
-        },
-        {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) from Priya, which from my side means sparse pillars stay soft for sensitivity without extra wires because row-column scanning carries 48 points on few lines."
-        },
-        {
-          "by": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
-          "text": "I keep that single value and set aside 0.111 pF from the fingertip area estimate (E8) as the wrong solid-gap case, and the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows guarded row-column scanning rejects picofarad stray as common mode."
-        },
-        {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "The A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) shows row-column scanning rejects stray capacitance, which from skin mechanics means sparse pillars keep 0.02 MPa softness from the effective pillar modulus (E39) while fitting 1.5 mm skin from the hemispherical cap sketch (E17) at thimble scale."
-        },
-        {
-          "by": "Sam — Robot Hand Integration and Manipulation",
-          "text": "The fingertip cartridge sketch (E33) shows rear 4-wire tail, and I confirm the A Flexible and Robust Large Scale Capacitive Tactile System for Robots (E18) finding that row-column scanning carries 48 points on 14 lines, which from integration means one flexible tail survives bending where 49 direct wires would not."
-        }
-      ]
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

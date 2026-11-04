@@ -1,0 +1,14 @@
+{
+  "id": "E99",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "hand release force from clamp with lever and losses",
+  "code_or_query": "1398/8/4.5/0.75",
+  "inputs": {},
+  "output_summary": "51.8",
+  "output_full": "51.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

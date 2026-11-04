@@ -1,0 +1,26 @@
+{
+  "id": "E32",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: brushless outrunner motor generator Kv datasheet direct drive small wind",
+  "code_or_query": "brushless outrunner motor generator Kv datasheet direct drive small wind",
+  "inputs": {},
+  "output_summary": "adrenalinercracing.com — E-flite Park 180 Brushless Outrunner Motor (2200kV) — https://www.adrenalinercracing.com/products/e-flite-park-180-brushless-outrunner-motor-2200kv?_pos=13&_fid=d5f612f82&_ss=c",
+  "output_full": "adrenalinercracing.com — E-flite Park 180 Brushless Outrunner Motor (2200kV) — https://www.adrenalinercracing.com/products/e-flite-park-180-brushless-outrunner-motor-2200kv?_pos=13&_fid=d5f612f82&_ss=c\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "adrenalinercracing.com",
+      "title": "E-flite Park 180 Brushless Outrunner Motor (2200kV)",
+      "year": "",
+      "url": "https://www.adrenalinercracing.com/products/e-flite-park-180-brushless-outrunner-motor-2200kv?_pos=13&_fid=d5f612f82&_ss=c",
+      "query": "brushless outrunner motor generator Kv datasheet direct drive small wind",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

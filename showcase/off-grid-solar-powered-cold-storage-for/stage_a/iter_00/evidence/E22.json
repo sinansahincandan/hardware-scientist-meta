@@ -1,22 +1,30 @@
 {
   "id": "E22",
-  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "web_search",
-  "purpose": "search: DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
-  "code_or_query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
+  "purpose": "search: cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
+  "code_or_query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
   "inputs": {},
-  "output_summary": "purswave.en.made-in-china.com — Ca1948K 48V Mini Air Cooler DC Refrigeration Units Air Cooled Compressor Units Small Portable Air Conditioner Units for Base Station Electric Cabinet — https://purswave.en.made-in-china.com/product/GTKUymFECdhM/China-Ca1948K-48V-Mini-Air-Cooler-DC-Refrigeration-Units-Air-Cooled-Compressor-Units-Small-Portable-Air-Conditioner-Units-for-Base-Station-Electric-Cabinet.html",
-  "output_full": "purswave.en.made-in-china.com — Ca1948K 48V Mini Air Cooler DC Refrigeration Units Air Cooled Compressor Units Small Portable Air Conditioner Units for Base Station Electric Cabinet — https://purswave.en.made-in-china.com/product/GTKUymFECdhM/China-Ca1948K-48V-Mini-Air-Cooler-DC-Refrigeration-Units-Air-Cooled-Compressor-Units-Small-Portable-Air-Conditioner-Units-for-Base-Station-Electric-Cabinet.html\n(the search returned no passage text)",
+  "output_summary": "yumpu.com — Heat Load Calculation — https://www.yumpu.com/en/document/view/36214174/heat-load-calculation",
+  "output_full": "yumpu.com — Heat Load Calculation — https://www.yumpu.com/en/document/view/36214174/heat-load-calculation\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "purswave.en.made-in-china.com",
-      "title": "Ca1948K 48V Mini Air Cooler DC Refrigeration Units Air Cooled Compressor Units Small Portable Air Conditioner Units for Base Station Electric Cabinet",
+      "authors_or_org": "yumpu.com",
+      "title": "Heat Load Calculation",
       "year": "",
-      "url": "https://purswave.en.made-in-china.com/product/GTKUymFECdhM/China-Ca1948K-48V-Mini-Air-Cooler-DC-Refrigeration-Units-Air-Cooled-Compressor-Units-Small-Portable-Air-Conditioner-Units-for-Base-Station-Electric-Cabinet.html",
-      "query": "DC solar compressor refrigeration unit COP datasheet 12V 24V 48V cold room",
+      "url": "https://www.yumpu.com/en/document/view/36214174/heat-load-calculation",
+      "query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
       "unresolved": false,
-      "passage": ""
+      "passage": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation)."
+        }
+      ]
     }
   ],
   "status": "ok",

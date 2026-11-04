@@ -1,0 +1,52 @@
+{
+  "id": "E48",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "web_search",
+  "purpose": "search: multiple distributed tuned mass dampers vs single TMD footbridge",
+  "code_or_query": "multiple distributed tuned mass dampers vs single TMD footbridge",
+  "inputs": {},
+  "output_summary": "pmc.ncbi.nlm.nih.gov — A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC — https://pmc.ncbi.nlm.nih.gov/articles/PMC12387548/",
+  "output_full": "pmc.ncbi.nlm.nih.gov — A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC — https://pmc.ncbi.nlm.nih.gov/articles/PMC12387548/\n(opened by the member, not cited)\nRetrofit Integration and Construction Lead said about it: The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49).\nStructural Dynamicist said about it: I confirm from dynamics what Retrofit Integration and Construction Lead takes from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), that spaced Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), tunes ride out drift, which is why twin 400 kg units detuned apart about 1.83 Hz are more robust than one exact unit, and I add for verify-comfort-acceptance the concert-hall decay analogy (C31) where Reverberation Time 60 dB, defined as Reverberation Time 60 dB (RT60), maps to log-decrement damping: pluck the bridge locked then unlocked and pass on measured effective damping, not only on calculation.\nPedestrian Comfort and Safety Assessor said about it: I confirm from comfort what Retrofit Integration and Construction Lead takes from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), Structural Dynamicist and Bridge Retrofit Engineer.\nBridge Retrofit Engineer said about it: Static sag 74.7 mm from the static-sag calculation (E63) plus 49.4 mm stroke from the free-decay simulation (E17) totals 124 mm from the envelope calculation (E68), a hand length well below a door width, inside girder depth per the layout sketch (E55), with stop hit 8.40 kN from the stop-force calculation (E66) inside 13.1 kN beam demand; I confirm what Structural Dynamicist takes from the MTMD robustness finding (E48) that detuned twins hold the band, proven by 0.67 m/s2 retrofitted from the crowd build-up simulation (E45) at 0.068 g inside Medium versus 8.28 m/s2 bare from the bare-acceleration calculation (E43) at 0.844 g almost body weight.\nPedestrian Comfort and Safety Assessor said about it: I take from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations (E48) that a Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), system shows stronger robustness under random pedestrian loads, which from comfort means the twin 400 kg Tuned Mass Damper, defined as Tuned Mass Damper (TMD), holding 0.476 to 0.526 m/s2 from the detuning sweep (E70) with 6.20 percent effective damping from the free-decay simulation (E17) keeps the Medium verdict under drift, serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), with the instrumented walk-through kept as after-build bench test.\nManager said about it: I accept Structural Dynamicist ready on twin-detuned hold 0.476 to 0.526 m/s2 from the detuning sweep (E70) with off-antinode 0.75 from the modal effectiveness calculation (E67), Retrofit Integration and Construction Lead ready on transverse midspan pair within girder depth with from-below service by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), with no deck hatch, Bridge Retrofit Engineer ready on clamp with beam steel inside 2 percent and stop load fed back, and Pedestrian Comfort and Safety Assessor ready on Medium with Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), robustness from the comfort review (E48), with the instrumented Class III crowd walk-through kept as the after-build bench test.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pmc.ncbi.nlm.nih.gov",
+      "title": "A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC",
+      "year": "",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12387548/",
+      "query": "multiple distributed tuned mass dampers vs single TMD footbridge",
+      "unresolved": false,
+      "passage": "The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "The finding that a Multiple Tuned Mass Damper system demonstrates stronger robustness when dealing with random pedestrian loads is stated in the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), and the rule that girders shall be made accessible from the ground, from walkways within the girder bays, or by a Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), is stated in the Bridge Design Manual Section 2 (E49)."
+        },
+        {
+          "by": "Structural Dynamicist",
+          "text": "I confirm from dynamics what Retrofit Integration and Construction Lead takes from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), that spaced Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), tunes ride out drift, which is why twin 400 kg units detuned apart about 1.83 Hz are more robust than one exact unit, and I add for verify-comfort-acceptance the concert-hall decay analogy (C31) where Reverberation Time 60 dB, defined as Reverberation Time 60 dB (RT60), maps to log-decrement damping: pluck the bridge locked then unlocked and pass on measured effective damping, not only on calculation."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "I confirm from comfort what Retrofit Integration and Construction Lead takes from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations and Tuned Mass Damper Control Technologies - PMC (E48), Structural Dynamicist and Bridge Retrofit Engineer."
+        },
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "Static sag 74.7 mm from the static-sag calculation (E63) plus 49.4 mm stroke from the free-decay simulation (E17) totals 124 mm from the envelope calculation (E68), a hand length well below a door width, inside girder depth per the layout sketch (E55), with stop hit 8.40 kN from the stop-force calculation (E66) inside 13.1 kN beam demand; I confirm what Structural Dynamicist takes from the MTMD robustness finding (E48) that detuned twins hold the band, proven by 0.67 m/s2 retrofitted from the crowd build-up simulation (E45) at 0.068 g inside Medium versus 8.28 m/s2 bare from the bare-acceleration calculation (E43) at 0.844 g almost body weight."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "I take from the A Review on Comfort of Pedestrian Bridges Under Human-Induced Vibrations (E48) that a Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), system shows stronger robustness under random pedestrian loads, which from comfort means the twin 400 kg Tuned Mass Damper, defined as Tuned Mass Damper (TMD), holding 0.476 to 0.526 m/s2 from the detuning sweep (E70) with 6.20 percent effective damping from the free-decay simulation (E17) keeps the Medium verdict under drift, serviced from below by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), with the instrumented walk-through kept as after-build bench test."
+        },
+        {
+          "by": "Manager",
+          "text": "I accept Structural Dynamicist ready on twin-detuned hold 0.476 to 0.526 m/s2 from the detuning sweep (E70) with off-antinode 0.75 from the modal effectiveness calculation (E67), Retrofit Integration and Construction Lead ready on transverse midspan pair within girder depth with from-below service by Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), with no deck hatch, Bridge Retrofit Engineer ready on clamp with beam steel inside 2 percent and stop load fed back, and Pedestrian Comfort and Safety Assessor ready on Medium with Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), robustness from the comfort review (E48), with the instrumented Class III crowd walk-through kept as the after-build bench test."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

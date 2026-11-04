@@ -1,0 +1,14 @@
+{
+  "id": "E68",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "pad pressure kPa six pads",
+  "code_or_query": "((1780*9.81/6)/0.16)/1000",
+  "inputs": {},
+  "output_summary": "18.2",
+  "output_full": "18.2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

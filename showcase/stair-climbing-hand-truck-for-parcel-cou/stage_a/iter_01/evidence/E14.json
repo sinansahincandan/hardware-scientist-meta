@@ -1,0 +1,31 @@
+{
+  "id": "E14",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "tip deflection twin tubes 1.1m",
+  "code_or_query": "((Q_(589,'N')*Q_(1100,'mm')**3)/(3*Q_(69000,'MPa')*2*Q_(17282,'mm**4'))).to('mm')",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "1100",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "69000",
+      "unit": "MPa"
+    },
+    "arg3": {
+      "value": "17282",
+      "unit": "mm**4"
+    }
+  },
+  "output_summary": "110 mm",
+  "output_full": "110 mm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

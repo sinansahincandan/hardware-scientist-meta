@@ -1,0 +1,14 @@
+{
+  "id": "E93",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "required peak kWp for reconciled electrical load",
+  "code_or_query": "10.55/(5.0*0.75)",
+  "inputs": {},
+  "output_summary": "2.81",
+  "output_full": "2.81",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

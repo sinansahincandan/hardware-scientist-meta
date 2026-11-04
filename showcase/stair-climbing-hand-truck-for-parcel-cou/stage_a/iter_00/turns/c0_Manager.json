@@ -1,0 +1,5 @@
+{
+  "cycle": 1,
+  "member": "Manager",
+  "message": "The whiteboard now holds six functions that cover the whole job from holding the parcel to stowing the truck. The work centres on one parcel weighing about 60 kg.\n\nMara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, please first bring the best existing solutions from your fields as concepts with source, then bring at least one concept for every function or say in one line that your field has none, and add any missing function you see.\n\nMara Voss will size the support under the 60 kg load with calc, Kenji Tanaka will show stair traverse over steps with simulate, Elena Ruiz will show stopping and tipping hold for one operator with simulate, and Tomas Lind will show folded stow with calc. The design is not ready because no concepts or checks exist yet."
+}

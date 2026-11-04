@@ -1,0 +1,14 @@
+{
+  "id": "E123",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "anchor hold mass equivalent eight anchors",
+  "code_or_query": "8*1.7*1000/9.81",
+  "inputs": {},
+  "output_summary": "1.39e+03",
+  "output_full": "1.39e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

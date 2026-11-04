@@ -1,22 +1,30 @@
 {
   "id": "E34",
-  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
+  "author": "Enclosure and Structural Designer",
   "tool": "web_search",
-  "purpose": "search: food safety cold room cleaning hygienic design washable surfaces FAO",
-  "code_or_query": "food safety cold room cleaning hygienic design washable surfaces FAO",
+  "purpose": "search: walk-in cold room 1 tonne dimensions internal volume vegetable crates",
+  "code_or_query": "walk-in cold room 1 tonne dimensions internal volume vegetable crates",
   "inputs": {},
-  "output_summary": "faolex.fao.org — mlt35655.max — https://faolex.fao.org/docs/pdf/mlt35655.pdf",
-  "output_full": "faolex.fao.org — mlt35655.max — https://faolex.fao.org/docs/pdf/mlt35655.pdf\n(the search returned no passage text)",
+  "output_summary": "pushpanjaliprefabbuilding.com — Cold Storage Room — https://www.pushpanjaliprefabbuilding.com/cold-storage-room.html",
+  "output_full": "pushpanjaliprefabbuilding.com — Cold Storage Room — https://www.pushpanjaliprefabbuilding.com/cold-storage-room.html\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: The precedent in Cold Storage Room (E34) lists a 1 Metric Tonne Vegetable Cold Storage Room at Dimension 4 metre by 4 metre by 3 metre, while my smaller interior 2.4 metre by 1.8 metre by 2.0 metre high gives interior volume 8.64 cubic metres in the interior volume estimate (E39), envelope area 25.4 square metres in the envelope area estimate (E40), and conduction 203 watt at 43 degree Celsius ambient minus 5 degree Celsius room in the conduction estimate (E41), about a small bedroom in everyday scale and inside your 350 watt steady assumption in the revised steady-load simulation (E28).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "faolex.fao.org",
-      "title": "mlt35655.max",
+      "authors_or_org": "pushpanjaliprefabbuilding.com",
+      "title": "Cold Storage Room",
       "year": "",
-      "url": "https://faolex.fao.org/docs/pdf/mlt35655.pdf",
-      "query": "food safety cold room cleaning hygienic design washable surfaces FAO",
+      "url": "https://www.pushpanjaliprefabbuilding.com/cold-storage-room.html",
+      "query": "walk-in cold room 1 tonne dimensions internal volume vegetable crates",
       "unresolved": false,
-      "passage": ""
+      "passage": "The precedent in Cold Storage Room (E34) lists a 1 Metric Tonne Vegetable Cold Storage Room at Dimension 4 metre by 4 metre by 3 metre, while my smaller interior 2.4 metre by 1.8 metre by 2.0 metre high gives interior volume 8.64 cubic metres in the interior volume estimate (E39), envelope area 25.4 square metres in the envelope area estimate (E40), and conduction 203 watt at 43 degree Celsius ambient minus 5 degree Celsius room in the conduction estimate (E41), about a small bedroom in everyday scale and inside your 350 watt steady assumption in the revised steady-load simulation (E28).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "The precedent in Cold Storage Room (E34) lists a 1 Metric Tonne Vegetable Cold Storage Room at Dimension 4 metre by 4 metre by 3 metre, while my smaller interior 2.4 metre by 1.8 metre by 2.0 metre high gives interior volume 8.64 cubic metres in the interior volume estimate (E39), envelope area 25.4 square metres in the envelope area estimate (E40), and conduction 203 watt at 43 degree Celsius ambient minus 5 degree Celsius room in the conduction estimate (E41), about a small bedroom in everyday scale and inside your 350 watt steady assumption in the revised steady-load simulation (E28)."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -1,0 +1,14 @@
+{
+  "id": "E91",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "term-by-term daily electrical load from thermal total divided by hot COP plus fans plus controls",
+  "code_or_query": "((203*24/1000)+(50*24/1000)+0.44+6.25)/1.4 + (40*24/1000)+(20*24/1000)",
+  "inputs": {},
+  "output_summary": "10.6",
+  "output_full": "10.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

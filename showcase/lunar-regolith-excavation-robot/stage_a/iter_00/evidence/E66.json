@@ -1,0 +1,14 @@
+{
+  "id": "E66",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "mass vs 60kg limit check",
+  "code_or_query": "sum([46])",
+  "inputs": {},
+  "output_summary": "46",
+  "output_full": "46",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

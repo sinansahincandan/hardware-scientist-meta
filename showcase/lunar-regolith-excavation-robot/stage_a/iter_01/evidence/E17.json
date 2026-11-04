@@ -1,22 +1,24 @@
 {
   "id": "E17",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: NVIDIA Jetson Orin Nano power consumption mass datasheet",
-  "code_or_query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+  "purpose": "search: Bekker wheel sinkage loose sand ground pressure small rover",
+  "code_or_query": "Bekker wheel sinkage loose sand ground pressure small rover",
   "inputs": {},
-  "output_summary": "kamami.pl — NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM — https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
-  "output_full": "kamami.pl — NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM — https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1\n(the search returned no passage text)",
+  "output_summary": "1library.net — Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem — https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q",
+  "output_full": "1library.net — Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem — https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "kamami.pl",
-      "title": "NVIDIA Jetson Orin Nano 4GB - ARM Cortex-A78AE processor module + 4GB RAM",
+      "authors_or_org": "1library.net",
+      "title": "Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem",
       "year": "",
-      "url": "https://kamami.pl/en/jetson-modules-som/1184504-nvidia-jetson-orin-nano-4gb-arm-cortex-a78ae-processor-module-4gb-ram.html?SubmitCurrency=1&id_currency=1",
-      "query": "NVIDIA Jetson Orin Nano power consumption mass datasheet",
+      "url": "https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q",
+      "query": "Bekker wheel sinkage loose sand ground pressure small rover",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

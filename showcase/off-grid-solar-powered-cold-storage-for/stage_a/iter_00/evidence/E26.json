@@ -1,24 +1,14 @@
 {
   "id": "E26",
-  "author": "Farah — Post-Harvest and Cooperative Operations Specialist",
-  "tool": "web_search",
-  "purpose": "search: vented plastic crate dimensions food grade 600x400 fresh produce stacking",
-  "code_or_query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "recompute sensible pull-down because E12 looks off by units",
+  "code_or_query": "(1000*3.6*25/3600)",
   "inputs": {},
-  "output_summary": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/",
-  "output_full": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/\n(the search returned no passage text)",
+  "output_summary": "25",
+  "output_full": "25",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "plastic2go.com.au",
-      "title": "Best Folding Vented 600x400 Plastic Crates for Sale",
-      "year": "",
-      "url": "https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/weight/1-56-kg/",
-      "query": "vented plastic crate dimensions food grade 600x400 fresh produce stacking",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,27 @@
+{
+  "id": "E8",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "toe-plate root moment 60kg at 150mm",
+  "code_or_query": "(Q_(60,'kg')*Q_(9.81,'m/s**2')*Q_(0.15,'m')).to('N*m')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.15",
+      "unit": "m"
+    }
+  },
+  "output_summary": "88.3 m\u22c5N",
+  "output_full": "88.3 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

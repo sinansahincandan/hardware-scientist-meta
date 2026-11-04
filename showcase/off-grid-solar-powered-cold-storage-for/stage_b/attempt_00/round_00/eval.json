@@ -1,83 +1,130 @@
 {
-  "pixel_description": "Photorealistic cutaway: left large white 100mm PU cold box as single 2m cube with thick white foam walls roof floor and back wall visible in section, left outer panel and corner steel brackets, open white 900mm hinged door swung 90deg to right, box sits flat on common grey concrete plinth. Inside two low steel side racks left and right with centre aisle, each 3-high blue vented crates with tomatoes lettuce zucchini lemons. Ceiling centre high evaporator cassette with fan and fins blowing translucent blue downflow over crates. Copper pipes run along inside back wall, exit right wall and run down outside to grey DC chiller condenser box with fan on plinth. Orange DC cables loop from chiller to adjacent dark grey battery control cabinet and toward tilted 6-panel solar array on A-frame to far right. Adult man standing between door and battery gives scale: box roof just above head, door ~ man height, overall width ~3x man height ~5m. Touches: racks stand on box floor, crates stacked on racks, evaporator screwed to roof, pipes penetrate wall chiller to evaporator, cables terminal to chiller and battery, all units bear on plinth, door hinged to box front. Critical cold_box: drawn as one insulated enclosure of 5 foam panels plus hinged door, 2m class, anchored to plinth, containing 2 racks with aisle, supporting high evaporator, penetrated by cooling pipes, closed by sealed door - working section geometry as in sketch and engineers plan/section with 3-high crates and air gaps and separate PV rack.",
-  "regions": [],
+  "pixel_description": "Isometric 3/4 render on plain light background with brown soil patch, no people. Central critical part Insulated chamber with door (chamber) drawn as one large white flat-wall box volume plus one thick white hinged door element open ~90deg on right front plus clear PVC strip curtain hanging in left half of doorway. Box sits on 4 visible galvanized steel feet on light-grey square concrete pads; front doorway reveals interior with two vertical slotted-angle rack frames side-by-side left and right, each with 4 grey vented crates stacked vertically =8 crates total with produce and air gaps. On chamber roof sits galvanized tube vented gantry frame touching roof, supporting 2 blue PV modules tilted (rear face shows reflection appearing as extra panels). Black-yellow cable bundle runs down left side wall. On left side wall upper, touching wall via bracket and sealed penetration, is white rectangular monoblock cooler outdoor unit with fan grille. To left rear, touching its own concrete pads, is grey vented steel battery cabinet box with small white charge-controller boxes attached, wired to roof cable and to cooler. To right rear, touching ground via low galvanized frame feet, is separate row of 7 blue PV modules tilted near-vertical on ground frame. On open door inner face is small white thermostat box touching door with black probe wire looping down then into chamber to crate zone and to top return-air sensor. All mechanical/electrical touches: roof frame-to-chamber roof, chamber-to-pads via feet, cooler-to-chamber wall, battery-to-pad, ground frame-to-ground, cables bundle connecting roof-battery-cooler, thermostat wire to interior. Callout labels with leaders overlay image.",
+  "regions": [
+    {
+      "box": [
+        625.0,
+        85.0,
+        772.0,
+        158.0
+      ],
+      "part_id": "callout",
+      "observed": "text 'rear-high monoblock cooler cold air supply forward' leader ends on roof PV modules, not cooler",
+      "expected": "cooler callout must end on side-mounted white monoblock cooler unit, name only with no numbers",
+      "source": "render"
+    },
+    {
+      "box": [
+        855.0,
+        708.0,
+        1000.0,
+        770.0
+      ],
+      "part_id": "callout",
+      "observed": "text '7x PV modules on galvanized ground frame' contains number '7x'",
+      "expected": "part name only e.g. 'photovoltaic modules on ground frame' with no numbers",
+      "source": "render"
+    },
+    {
+      "box": [
+        795.0,
+        758.0,
+        998.0,
+        818.0
+      ],
+      "part_id": "callout",
+      "observed": "text '2x PV modules on on vented gantry roof' contains number '2x', duplicated 'on', truncated, leader near door/ground not roof",
+      "expected": "part name only with no numbers, single 'on', leader must end on roof gantry modules",
+      "source": "render"
+    },
+    {
+      "box": [
+        730.0,
+        866.0,
+        865.0,
+        935.0
+      ],
+      "part_id": "callout",
+      "observed": "text '900mm insulated door with PVC strip curtain' contains number '900mm'",
+      "expected": "part name only e.g. 'insulated door with strip curtain' with no numbers",
+      "source": "render"
+    },
+    {
+      "box": [
+        452.0,
+        876.0,
+        690.0,
+        988.0
+      ],
+      "part_id": "callout",
+      "observed": "two identical labels 'two racks of vented crates fresh produce' contain number word 'two', duplicated, one leader ends on concrete foundation pad not crates",
+      "expected": "single callout naming rack crates only with no numbers, leader must end on crates inside chamber",
+      "source": "render"
+    }
+  ],
   "previous_regions": [],
-  "comparison_with_previous": "First evaluation, no previous render to compare.",
+  "comparison_with_previous": "No previous render; first evaluation of this split-array cold store concept.",
   "deviations": [
     {
       "what": "pv_array",
-      "measured": "tilted ~30deg fixed-tilt 6-panel array on A-frame, ~0.6x box width in perspective, orange cable run on plinth toward battery",
-      "expected": "horizontal long axis, 0.75x cold_box, touching dc_wiring",
+      "measured": "9 modules visible (2 on roof gantry +7 on ground frame), tilted ~146 deg diagonal, roof via gantry-chamber-pads and ground via own frame, not direct touch",
+      "expected": "1 array visible, horizontal long axis, touching foundation",
       "matters": false,
-      "why": "Tilt is required by design; apparent size small from perspective; electrical connection present via cables, power path unchanged."
+      "why": "Pixels show split 2+7 =9x400W =3.6kWp as designed. Tilt with vent gap is required for equator-facing yield and zero 9am-3pm shading. Indirect mounting (roof gantry on chamber on pads, ground frame on soil with separate load paths) is the design. Count 9 matches qty 9. Does not change sunlight-to-electricity principle. Segmenter counted modules as arrays and demanded horizontal direct touch."
     },
     {
-      "what": "frame_rack",
-      "measured": "corner angle brackets vertical on box plus separate tilted A-frame under PV; combined fragment 0.38x box",
-      "expected": "vertical long axis, 1.1x cold_box, touching cold_box",
+      "what": "chamber",
+      "measured": "large white PIR box present centrally, single box volume on pads with open door and strip curtain",
+      "expected": "white box found",
       "matters": false,
-      "why": "Design requires PV rack separate from cold box and box anchored to plinth; separation is intentional for wind load, support function unchanged."
+      "why": "Pixels clearly show insulated chamber with door: one white box volume, front doorway with thick open door hinged right, clear PVC strip curtain on left half, on steel feet on concrete pads, roof gantry on top, side cooler attached, two racks inside. Segmenter false negative on name 'white box' is not proof of absence."
     },
     {
-      "what": "dc_wiring",
-      "measured": "short orange cables plus copper pipes linking battery-chiller-box-PV along plinth, compact runs",
-      "expected": "6x battery_cabinet, touching pv_array and dc_chiller",
+      "what": "control",
+      "measured": "small white thermostat on open door inner face with black wire looping into chamber to crate/return-air zone and to top sensor; separate black bundle battery-to-cooler",
+      "expected": "control box touching cooler",
       "matters": false,
-      "why": "Short low-loss runs are better; cables visibly touch/connect units at terminals, electrical continuity shown."
+      "why": "Pixels show wired electrical connection, not box-to-box adjacency. Design is control->cooler electrical switching with shed via wired probes and MPPT/battery. Direct touch is not required; wire is visible. Segmenter demand for touching boxes is wrong."
     },
     {
-      "what": "battery_cabinet",
-      "measured": "dark grey cabinet ~0.3x box height on plinth next to chiller with small service gap, linked by orange cables",
-      "expected": "0.4x cold_box, touching dc_chiller",
+      "what": "foundation",
+      "measured": "6 concrete pads/feet plus 2 galvanized frames (roof gantry on chamber roof + low ground frame for 7 modules) seen; roof indirect via chamber, ground via soil",
+      "expected": "1 metal frame visible touching pv_array",
       "matters": false,
-      "why": "400-800mm cabinet vs 2000mm box is correctly small; gap with cable connection is correct for electrical not mechanical joint."
+      "why": "Pixels show foundation system: 4+ pads under chamber plus pads under battery, steel feet, roof gantry and ground frame. Qty 1 in text is one system comprising six precast pads with screw anchors per fabrication step 1. Separate chamber and ground-frame paths is design for 23.2kPa on 150kPa soil and 1390kg hold vs 673kg uplift. Indirect contact is correct. Segmenter split system into 6 and demanded direct pv touch."
     },
     {
-      "what": "cold_box",
-      "measured": "white box with corner brackets in contact, PV A-frame separate across plinth",
-      "expected": "touching frame_rack",
+      "what": "pv_array__panel",
+      "measured": "individual blue monocrystalline modules tilted ~146 deg, ~1.0x pv_array element (module = element)",
+      "expected": "solar panel horizontal, ~0.25x pv_array",
       "matters": false,
-      "why": "Corner frame touches box; PV frame separation is required separate rack, not a missing support."
+      "why": "Pixels show tilted modules with vent gap as required for yield and cooling, not horizontal. Ratio 1.0 is because panel is the module itself; 0.25 expectation assumes array of 4. Tilt does not change photovoltaic principle."
     },
     {
-      "what": "airflow_kit",
-      "measured": "ceiling cassette with fan ~0.3x box width plus large blue airflow plume filling box",
-      "expected": "0.5x cold_box",
+      "what": "rack_crate__crate",
+      "measured": "8 grey vented plastic crates visible in 2 racks x4 levels, with green/red produce and air gaps, PVC curtain in front",
+      "expected": "15 crates visible",
       "matters": false,
-      "why": "Fan unit small but plume shows uniform low-velocity air over evaporator as required; cooling distribution unchanged."
+      "why": "Pixels show partial load: two slotted-angle racks side-by-side inside chamber, 4 crates each. Full design is 50 crates at 20kg for 1000kg with 25mm gaps and rear-high to low-return airflow. Partial 8-crate load illustration preserves cold-air-over-crates principle. Example in brief says partial load of crates is matters=false. Last boxed image numbers 8 red boxes confirming count."
     },
     {
-      "what": "racks",
-      "measured": "two steel side racks inside box 3-high, standing on insulated floor above plinth",
-      "expected": "0.9x cold_box, touching plinth",
+      "what": "foundation__pad",
+      "measured": "6 square light-grey pads ~400x400mm with galvanized steel feet under chamber and battery, ~1.0x foundation element",
+      "expected": "4 concrete blocks visible, ~0.2x foundation",
       "matters": false,
-      "why": "Racks stand free inside box on floor which sits on plinth; indirect bearing via box floor is by design, ergonomic height preserved."
+      "why": "Pixels show six pads as designed for soft soil (six precast pads, chamber 23.2kPa). 4 vs 6 expectation is outdated. Ratio 1.0 because segmenter boxed pad as foundation itself. Pads sit under vertical load paths on brown soil. Does not change support/anchor principle. Last boxed image numbers 6 blue boxes confirming."
     },
     {
-      "what": "crates",
-      "measured": "9 crates visible 3 left +6 right, 3-high with vent slots and produce, ~0.4m crates on racks",
-      "expected": "12 visible, 0.3x racks",
+      "what": "device",
+      "measured": "code span ~3113mm across x2966mm high scaled by stated sizes; chamber box itself ~2.0-2.4m, overall with ground array wider",
+      "expected": "largest part stated 2400mm, whole device ~2400mm across, must hold 1t at 5C and stand on soft soil in wind",
       "matters": false,
-      "why": "Partial load illustration for 60-crate store; count and apparent large size from close view do not change washable vented housing principle."
-    },
-    {
-      "what": "dc_chiller",
-      "measured": "grey outdoor unit with fan ~1.1x battery cabinet, beside battery with cable loop and copper pipes to box",
-      "expected": "0.75x battery_cabinet, touching battery_cabinet",
-      "matters": false,
-      "why": "Localizer missed but pixels show unit clearly; size similar to battery as specified 300-600mm, segmenter 6.6x includes pipes; cable/pipe connection provides thermal/electrical path."
-    },
-    {
-      "what": "plinth",
-      "measured": "common grey concrete slab under box, chiller, battery and PV; racks bear via box floor",
-      "expected": "touching racks",
-      "matters": false,
-      "why": "Raised slab carries 1-tonne plus box uniformly; direct rack-plinth gap is insulation thickness, load path intact."
+      "why": "Pixels show box-like 2.4x1.8x2.0m chamber per hand sketches, plus split 17.6sqm array (2 roof+7 ground) which necessarily spreads footprint; schematic itself notes overall ~15548mm with spacing and chamber ~2078mm. No people/hands for scale, only soil/pads. Proportions are not many-times too large/small and shape is box cold store as problem asks for, not ruled out. Six pads and frames shown, no break of 150kPa or uplift limit visible."
     }
   ],
-  "s1_faithful": true,
-  "s1_differences": "Only illustrative differences: 9 crates visible vs 12 counted representing 60-crate full store, short cable/pipe runs, small service gaps between battery-chiller and racks-plinth via insulated floor, PV tilt perspective. Same 11 parts, same electrical thermal fluid mechanical connections, same relative sizes orientations and flow directions as sketch and hand sketches.",
+  "s1_faithful": false,
+  "s1_differences": "Mechanism parts and connections match sketch (split 2+7 PV, battery cabinet, side/rear-high cooler, white box with door+curtain, 2 racks with crates, thermostat+probes, pads/frames/anchors with wiring). Differences are depiction/callout faults: numbers in callouts (7x, 2x, 900mm, two) violating no-numbers rule, top cooler callout leader ending on roof PV, roof-PV callout with 'on on' typo ending away from roof, duplicate crate labels with one ending on foundation pad. Partial 8-crate load vs 50-crate full load is intentional illustration with matters=false.",
   "s2_flaw": false,
-  "s2_feedback": "Box fully bears on plinth, racks with centre aisle and 900mm door allow human reach, copper pipes and orange cables have clear runs without kinks, door swing clears chiller, PV rack separate so no extra wind on box; no interference, impossible assembly or failed load path seen.",
-  "notes": "Segmenter sizes coarse x2 and long-axis only; localizer missed dc_chiller but it is clearly visible outside beside door. Callouts spelled correctly with no numbers and no extra text/scale bars. Photorealistic render, not diagram."
+  "s2_feedback": "No design flaw exposed in faithful geometry: white box on six pads with steel feet shows direct down load path, roof gantry clears door swing, side cooler bracket clears soil, open door with strip curtain clears ground-frame PV to the right, thermostat on door with slack wire to interior probes does not foul racks or curtain. No interference, impossible assembly or missing cold-air path seen.",
+  "notes": "Code span 3113x2966mm reflects split-array spread, not chamber oversize. Chamber matches 1800-2400mm class and 2.40m ext, 900mm door, 2.0m high, 2 rack rows per engineer plan/section sketches. Six pads match 6-pad design for 23.2kPa <150kPa. No people/scale bars to judge absolute scale; shape is appropriate insulated box with roof and ground PV. All segmenter count/size/axis/touch findings answered above as matters=false with pixel evidence."
 }

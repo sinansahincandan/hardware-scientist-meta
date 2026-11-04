@@ -1,0 +1,14 @@
+{
+  "id": "E63",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "full grip 2N pressure margin vs saturation",
+  "code_or_query": "5.78*2000/435",
+  "inputs": {},
+  "output_summary": "26.6",
+  "output_full": "26.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

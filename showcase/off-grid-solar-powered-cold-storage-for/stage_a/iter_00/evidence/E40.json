@@ -1,24 +1,14 @@
 {
   "id": "E40",
-  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
-  "tool": "web_search",
-  "purpose": "search: galvanized steel angle 40x40 datasheet weight size",
-  "code_or_query": "galvanized steel angle 40x40 datasheet weight size",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "envelope area square metres",
+  "code_or_query": "2*(2.4*1.8+2.4*2.0+1.8*2.0)",
   "inputs": {},
-  "output_summary": "metals4u.co.uk — 40mm x 40mm x 3mm Galvanised Steel Angle | metals4U — https://www.metals4u.co.uk/materials/mild-steel/mild-steel-angle-iron/100264-p",
-  "output_full": "metals4u.co.uk — 40mm x 40mm x 3mm Galvanised Steel Angle | metals4U — https://www.metals4u.co.uk/materials/mild-steel/mild-steel-angle-iron/100264-p\n(the search returned no passage text)",
+  "output_summary": "25.4",
+  "output_full": "25.4",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "metals4u.co.uk",
-      "title": "40mm x 40mm x 3mm Galvanised Steel Angle | metals4U",
-      "year": "",
-      "url": "https://www.metals4u.co.uk/materials/mild-steel/mild-steel-angle-iron/100264-p",
-      "query": "galvanized steel angle 40x40 datasheet weight size",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,41 +1,47 @@
 {
   "round": 0,
   "sam_differences": {
-    "drum": [
-      "expected to touch chassis, but they are apart in the picture",
+    "chassis": [
       "expected to touch hopper, but they are apart in the picture"
     ],
+    "arm": [
+      "not found by the segmenter as 'metal arm'"
+    ],
+    "kerf": [
+      "expected a horizontal long axis, measured vertical"
+    ],
+    "ladder": [
+      "expected a vertical long axis, measured tilted about 47 degrees"
+    ],
     "hopper": [
-      "expected to touch drum, but they are apart in the picture"
+      "expected 1 visible, found 5",
+      "size against auger: expected about 0.82 times, measured 39 times",
+      "expected to touch auger, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
     ],
-    "lift": [
-      "not found by the segmenter as 'metal mast'"
+    "auger": [
+      "expected 1 visible, found 6",
+      "size against hopper: expected about 1.2 times, measured 0.026 times",
+      "expected to touch hopper, but they are apart in the picture"
     ],
-    "chassis": [
-      "expected to touch drum, but they are apart in the picture",
-      "expected to touch pmast, but they are apart in the picture"
+    "battery": [
+      "not found by the segmenter as 'battery box'"
     ],
-    "wheel": [
-      "expected 2 visible, found 1"
-    ],
-    "pmast": [
-      "expected to touch chassis, but they are apart in the picture",
-      "expected to touch sensors, but they are apart in the picture"
-    ],
-    "sensors": [
-      "expected 2 visible, found 1",
-      "expected to touch pmast, but they are apart in the picture"
-    ],
-    "pack": [
-      "expected 1 visible, found 2"
+    "camera": [
+      "expected to touch chassis, but they are apart in the picture"
     ]
   },
   "critique_part_ids": [
-    "callout"
+    "ladder"
   ],
-  "sam_parts_used_by_critique": [],
+  "sam_parts_used_by_critique": [
+    "ladder"
+  ],
   "unnoticed_sam_deviations": [],
   "kept": true,
   "why": "first round",
-  "earlier_faults": []
+  "earlier_faults": [],
+  "outcome_next_round": {
+    "ladder": "still_wrong"
+  }
 }

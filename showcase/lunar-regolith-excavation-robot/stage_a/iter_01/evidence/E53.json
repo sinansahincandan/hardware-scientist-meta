@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "sketch",
+  "purpose": "side view rear dump over bin lip and top view deployed wider track with wheel rotation gaps",
+  "code_or_query": "import matplotlib.pyplot as plt\nfig, (ax1, ax2)=plt.subplots(1,2, figsize=(9,4))\nfig.suptitle(\"Rear dump clearance and deployed track\")\n# side view\nax1.set_aspect('equal'); ax1.set_title(\"Side: pivot 0.55m clears 0.40m lip\")\nax1.plot([0,1.05],[0.11,0.11],'k-',lw=3) # chassis\nax1.plot([0.15,0.15],[0.11,0.22],'k-'); ax1.plot([0.9,0.9],[0.11,0.22],'k-')\nax1.plot([0.15,0.9],[0.22,0.22],'k-')\nfor x in [0.2,0.85]:\n    ax1.add_patch(plt.Circle((x,0.11),0.11,fill=False,lw=2))\nax1.plot([0.9,1.15],[0.55,0.45],'r-',lw=3) # tilted hopper\nax1.plot([1.15,1.15],[0,0.40],'b-',lw=3) # bin lip\nax1.text(1.15,0.42,\"bin lip 0.40m\",fontsize=8)\nax1.text(0.9,0.57,\"pivot 0.55m gap 0.15m\",fontsize=8,color='r')\nax1.set_ylim(0,0.8); ax1.set_xlabel(\"m\")\n# top view\nax2.set_title(\"Top: stowed 0.45m to deployed 0.68m track\")\nax2.add_patch(plt.Rectangle((0.1,0.15),0.9,0.30,fill=False,lw=2))\nax2.add_patch(plt.Rectangle((0.0,0.02),1.05,0.56,fill=False,ls='--'))\nfor (x,y) in [(0.2,0.02),(0.85,0.02),(0.2,0.46),(0.85,0.46)]:\n    ax2.add_patch(plt.Rectangle((x,y),0.15,0.12,fill=False,lw=2))\nax2.text(0.4,0.32,\"frame stowed box\",fontsize=8)\nax2.text(0.3,0.05,\"deployed track 0.68m\",fontsize=8)\nax2.set_xlim(-0.1,1.2); ax2.set_ylim(-0.05,0.65); ax2.set_xlabel(\"m\")\nplt.tight_layout()\nplt.savefig(\"sketch.png\")\n",
+  "inputs": {},
+  "output_summary": "side view rear dump over bin lip and top view deployed wider track with wheel rotation gaps",
+  "output_full": "side view rear dump over bin lip and top view deployed wider track with wheel rotation gaps",
+  "sketch_path": "evidence/sketch_53.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

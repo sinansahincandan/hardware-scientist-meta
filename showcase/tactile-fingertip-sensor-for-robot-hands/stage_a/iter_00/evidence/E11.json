@@ -1,28 +1,28 @@
 {
   "id": "E11",
-  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
   "tool": "web_search",
-  "purpose": "search: fingerprint ridges tactile sensor friction slip enhancement",
-  "code_or_query": "fingerprint ridges tactile sensor friction slip enhancement",
+  "purpose": "search: Smooth-On Dragon Skin Ecoflex silicone Shore hardness datasheet",
+  "code_or_query": "Smooth-On Dragon Skin Ecoflex silicone Shore hardness datasheet",
   "inputs": {},
-  "output_summary": "arxiv.org — [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip — 2008 — https://arxiv.org/abs/2008.06904",
-  "output_full": "arxiv.org — [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip — 2008 — https://arxiv.org/abs/2008.06904\n(opened by the member, not cited)\nLeo — Soft Materials, Skin Mechanics and Fabrication said about it: The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+  "output_summary": "smooth-on.com — Dragon Skin™ 30 vs. Ecoflex™ 5 — https://www.smooth-on.com/compare/5111/4796/a/",
+  "output_full": "smooth-on.com — Dragon Skin™ 30 vs. Ecoflex™ 5 — https://www.smooth-on.com/compare/5111/4796/a/\n(found by the search; not opened or cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: Ecoflex 5 type (E11), where 1 millinewton (mN) spreads to 0.47 mm diameter at 5.78 kilopascal (kPa) mean pressure in the Hertz spot size (E14) made with the soft-touch sizing skill (E1), which is a grain of sand on an adult fingertip at about one-twentieth of an atmosphere and therefore a gentle but transducible touch.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "arxiv.org",
-      "title": "[2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip",
-      "year": "2008",
-      "url": "https://arxiv.org/abs/2008.06904",
-      "query": "fingerprint ridges tactile sensor friction slip enhancement",
+      "authors_or_org": "smooth-on.com",
+      "title": "Dragon Skin™ 30 vs. Ecoflex™ 5",
+      "year": "",
+      "url": "https://www.smooth-on.com/compare/5111/4796/a/",
+      "query": "Smooth-On Dragon Skin Ecoflex silicone Shore hardness datasheet",
       "unresolved": false,
-      "passage": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip.",
+      "passage": "Ecoflex 5 type (E11), where 1 millinewton (mN) spreads to 0.47 mm diameter at 5.78 kilopascal (kPa) mean pressure in the Hertz spot size (E14) made with the soft-touch sizing skill (E1), which is a grain of sand on an adult fingertip at about one-twentieth of an atmosphere and therefore a gentle but transducible touch.",
       "cited": true,
-      "read": true,
+      "read": false,
       "statements": [
         {
-          "by": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-          "text": "The Getting a Grip: Fingerprint Findings Could Boost Prosthetics Research (E15) finds ridges increase friction and sensitivity, and the [2008.06904] A Biomimetic Tactile Fingerprint Induces Incipient Slip (E11) finds concentric ridges allow local shear before gross slip, so ridges trade molding sharpness for grip."
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "Ecoflex 5 type (E11), where 1 millinewton (mN) spreads to 0.47 mm diameter at 5.78 kilopascal (kPa) mean pressure in the Hertz spot size (E14) made with the soft-touch sizing skill (E1), which is a grain of sand on an adult fingertip at about one-twentieth of an atmosphere and therefore a gentle but transducible touch."
         }
       ]
     }

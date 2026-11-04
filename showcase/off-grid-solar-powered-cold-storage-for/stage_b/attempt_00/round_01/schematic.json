@@ -1,0 +1,58 @@
+{
+  "px_per_mm": 4.0,
+  "boxes": {
+    "pv_array": {
+      "x0": 570.0000000000001,
+      "y0": 65.0,
+      "x1": 790.0,
+      "y1": 127.85714285714283,
+      "label": "Split PV array 2 roof +7 ground"
+    },
+    "batt_bank": {
+      "x0": 78.39999999999999,
+      "y0": 325.00000000000006,
+      "x1": 161.60000000000002,
+      "y1": 429.00000000000006,
+      "label": "Battery bank with MPPT"
+    },
+    "cooler": {
+      "x0": 908.0,
+      "y0": 195.0,
+      "x1": 1011.9999999999999,
+      "y1": 299.0,
+      "label": "Monoblock cooler rear-high"
+    },
+    "chamber": {
+      "x0": 337.59999999999997,
+      "y0": 325.00000000000006,
+      "x1": 462.4,
+      "y1": 429.00000000000006,
+      "label": "Insulated chamber with door"
+    },
+    "rack_crate": {
+      "x0": 368.8,
+      "y0": 325.00000000000006,
+      "x1": 431.20000000000005,
+      "y1": 429.00000000000006,
+      "label": "Racking with vented crates"
+    },
+    "control": {
+      "x0": 908.0,
+      "y0": 325.00000000000006,
+      "x1": 1011.9999999999999,
+      "y1": 429.00000000000006,
+      "label": "Thermostat + probes"
+    },
+    "foundation": {
+      "x0": 250.0,
+      "y0": 455.00000000000006,
+      "x1": 550.0,
+      "y1": 505.00000000000006,
+      "label": "Pads frames and anchors"
+    }
+  },
+  "width": 1000,
+  "height": 625,
+  "critical_part_id": "chamber",
+  "scale_bar_mm": 500.0
+}

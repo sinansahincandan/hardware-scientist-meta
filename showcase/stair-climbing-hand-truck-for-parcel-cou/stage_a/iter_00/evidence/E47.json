@@ -1,24 +1,26 @@
 {
   "id": "E47",
-  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: folding hand truck setup time seconds unfold",
-  "code_or_query": "folding hand truck setup time seconds unfold",
+  "purpose": "search: mountain bike disc brake holding torque 160mm rotor clamp force",
+  "code_or_query": "mountain bike disc brake holding torque 160mm rotor clamp force",
   "inputs": {},
-  "output_summary": "desertcart.ec — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador — https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
-  "output_full": "desertcart.ec — Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador — https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel\n(the search returned no passage text)",
+  "output_summary": "picclick.com.au — BUCKLOS ELECTRIC BIKE Hydraulic Brake Set Front&Rear 1100&1800mm 2pc 160mm Rotor — https://picclick.com.au/BUCKLOS-Electric-Bike-Hydraulic-Brake-Set-FrontRear-11001800mm-336017742205.html",
+  "output_full": "picclick.com.au — BUCKLOS ELECTRIC BIKE Hydraulic Brake Set Front&Rear 1100&1800mm 2pc 160mm Rotor — https://picclick.com.au/BUCKLOS-Electric-Bike-Hydraulic-Brake-Set-FrontRear-11001800mm-336017742205.html\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "desertcart.ec",
-      "title": "Teprovo Dolly Cart 340lb Aluminum Folding Hand Truck With Swivel | Desertcart Ecuador",
+      "authors_or_org": "picclick.com.au",
+      "title": "BUCKLOS ELECTRIC BIKE Hydraulic Brake Set Front&Rear 1100&1800mm 2pc 160mm Rotor",
       "year": "",
-      "url": "https://www.desertcart.ec/products/499894891-teprovo-dolly-cart-340lb-aluminum-folding-hand-truck-with-swivel",
-      "query": "folding hand truck setup time seconds unfold",
+      "url": "https://picclick.com.au/BUCKLOS-Electric-Bike-Hydraulic-Brake-Set-FrontRear-11001800mm-336017742205.html",
+      "query": "mountain bike disc brake holding torque 160mm rotor clamp force",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

@@ -1,24 +1,14 @@
 {
   "id": "E32",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
-  "tool": "web_search",
-  "purpose": "search: NASA Lunabotics robot power battery size excavation",
-  "code_or_query": "NASA Lunabotics robot power battery size excavation",
+  "author": "Autonomy and Blind Operations Lead",
+  "tool": "simulate",
+  "purpose": "link-loss watchdog stop distance vs latency at 0.5 m/s",
+  "code_or_query": "import numpy as np\nv0=0.5 # m/s nominal drive\nlatencies=np.array([0.2,0.5,1.0,2.0])\na_brake=2.0 # m/s2 conservative skid-steer brake decel\nfor T in latencies:\n    d_coast=v0*T\n    d_brake=v0**2/(2*a_brake)\n    print(f\"T={T}s coast={d_coast:.3f} m brake={d_brake:.4f} m total={d_coast+d_brake:.3f} m\")\n# time history for 0.5 s timeout\ndt=0.02; T=0.5; t=np.arange(0,1.2,dt)\nx=np.zeros_like(t)\nv=np.zeros_like(t); v[0]=v0\nbraking=False\nfor i in range(1,len(t)):\n    if t[i]>T:\n        v[i]=max(0,v[i-1]-a_brake*dt)\n    else:\n        v[i]=v0\n    x[i]=x[i-1]+v[i]*dt\nprint(f\"final stop x={x[-1]:.3f} m t_stop={T+v0/a_brake:.2f} s\")\n",
   "inputs": {},
-  "output_summary": "mechanical.sdsu.edu — Project 22 - NASA Robotic Mining Competition — 2022 — https://mechanical.sdsu.edu/news/2022/project-26",
-  "output_full": "mechanical.sdsu.edu — Project 22 - NASA Robotic Mining Competition — 2022 — https://mechanical.sdsu.edu/news/2022/project-26\n(the search returned no passage text)",
+  "output_summary": "T=1.0s coast=0.5 m brake=0.0625 m total=0.562 m; T=2.0s coast=1 m brake=0.0625 m total=1.06 m; final stop x=0.308 m t_stop=0.75 s",
+  "output_full": "T=0.2s coast=0.100 m brake=0.0625 m total=0.163 m\nT=0.5s coast=0.250 m brake=0.0625 m total=0.312 m\nT=1.0s coast=0.500 m brake=0.0625 m total=0.562 m\nT=2.0s coast=1.000 m brake=0.0625 m total=1.062 m\nfinal stop x=0.308 m t_stop=0.75 s",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mechanical.sdsu.edu",
-      "title": "Project 22 - NASA Robotic Mining Competition",
-      "year": "2022",
-      "url": "https://mechanical.sdsu.edu/news/2022/project-26",
-      "query": "NASA Lunabotics robot power battery size excavation",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

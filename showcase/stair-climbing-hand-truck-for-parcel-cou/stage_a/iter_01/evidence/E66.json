@@ -1,0 +1,14 @@
+{
+  "id": "E66",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "folded tare weight for one-person lift",
+  "code_or_query": "6.5*9.81",
+  "inputs": {},
+  "output_summary": "63.8",
+  "output_full": "63.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

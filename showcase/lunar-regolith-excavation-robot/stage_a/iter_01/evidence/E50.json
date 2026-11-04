@@ -1,0 +1,32 @@
+{
+  "id": "E50",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum tube frame deflection allowable small robot chassis",
+  "code_or_query": "6061-T6 aluminum tube frame deflection allowable small robot chassis",
+  "inputs": {},
+  "output_summary": "jlab.org — Microsoft Word - FTOF Panel 1B Frame Analysis.docx — https://www.jlab.org/Hall-B/ftof/fea/ftof-p1bframe-fea.pdf",
+  "output_full": "jlab.org — Microsoft Word - FTOF Panel 1B Frame Analysis.docx — https://www.jlab.org/Hall-B/ftof/fea/ftof-p1bframe-fea.pdf\n(found by the search; not opened or cited)\nMobility and Deployable Chassis Lead said about it: I confirm the Aluminum square tubing strength (E38) rule that 6061-T6, meaning aluminium alloy 6061 in T6 temper, allows about 15,000 psi working stress, where psi means pounds per square inch, and the Microsoft Word - FTOF Panel 1B Frame Analysis.docx (E50) rule I take is that a frame passes only when stresses stay below allowable and deflections stay acceptable, so stiffness not strength decides here: single-rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) shared over two rails is still 36.5 mm from the twin rail sag share check (E52), a hand width not millimetre wobble.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "jlab.org",
+      "title": "Microsoft Word - FTOF Panel 1B Frame Analysis.docx",
+      "year": "",
+      "url": "https://www.jlab.org/Hall-B/ftof/fea/ftof-p1bframe-fea.pdf",
+      "query": "6061-T6 aluminum tube frame deflection allowable small robot chassis",
+      "unresolved": false,
+      "passage": "I confirm the Aluminum square tubing strength (E38) rule that 6061-T6, meaning aluminium alloy 6061 in T6 temper, allows about 15,000 psi working stress, where psi means pounds per square inch, and the Microsoft Word - FTOF Panel 1B Frame Analysis.docx (E50) rule I take is that a frame passes only when stresses stay below allowable and deflections stay acceptable, so stiffness not strength decides here: single-rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) shared over two rails is still 36.5 mm from the twin rail sag share check (E52), a hand width not millimetre wobble.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "I confirm the Aluminum square tubing strength (E38) rule that 6061-T6, meaning aluminium alloy 6061 in T6 temper, allows about 15,000 psi working stress, where psi means pounds per square inch, and the Microsoft Word - FTOF Panel 1B Frame Analysis.docx (E50) rule I take is that a frame passes only when stresses stay below allowable and deflections stay acceptable, so stiffness not strength decides here: single-rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) shared over two rails is still 36.5 mm from the twin rail sag share check (E52), a hand width not millimetre wobble."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

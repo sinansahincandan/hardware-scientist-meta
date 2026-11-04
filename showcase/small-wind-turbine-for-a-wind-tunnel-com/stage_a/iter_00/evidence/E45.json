@@ -1,0 +1,26 @@
+{
+  "id": "E45",
+  "author": "Safety-Control Integrator",
+  "tool": "web_search",
+  "purpose": "search: brushless generator short circuit brake stop time dump load resistor",
+  "code_or_query": "brushless generator short circuit brake stop time dump load resistor",
+  "inputs": {},
+  "output_summary": "en.istabreeze.store — iSTA‑Breeze Heli 4.0 — flexible for battery & network — https://en.istabreeze.store/de-at/products/istabreeze-heli4-offgrid-netz",
+  "output_full": "en.istabreeze.store — iSTA‑Breeze Heli 4.0 — flexible for battery & network — https://en.istabreeze.store/de-at/products/istabreeze-heli4-offgrid-netz\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "en.istabreeze.store",
+      "title": "iSTA‑Breeze Heli 4.0 — flexible for battery & network",
+      "year": "",
+      "url": "https://en.istabreeze.store/de-at/products/istabreeze-heli4-offgrid-netz",
+      "query": "brushless generator short circuit brake stop time dump load resistor",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

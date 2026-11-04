@@ -1,22 +1,30 @@
 {
   "id": "E6",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "web_search",
-  "purpose": "search: pedestrian walking pacing frequency vertical footbridge resonance",
-  "code_or_query": "pedestrian walking pacing frequency vertical footbridge resonance",
+  "purpose": "search: Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+  "code_or_query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
   "inputs": {},
-  "output_summary": "majowiecki.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2009 — https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
-  "output_full": "majowiecki.com — INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS — 2009 — https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf\n(the search returned no passage text)",
+  "output_summary": "vdocuments.net — analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 — https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html",
+  "output_full": "vdocuments.net — analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 — https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "majowiecki.com",
-      "title": "INSTRUCTIONS FOR PREPARATION OF CONTRIBUTIONS",
-      "year": "2009",
-      "url": "https://www.majowiecki.com/userfiles/Progetto/files/2009_Casalecchio_Passerella_strallata/Articoli/2011_-_Experiences_on_footbridge_conceptual_design_vs_dynamic_performances.pdf",
-      "query": "pedestrian walking pacing frequency vertical footbridge resonance",
+      "authors_or_org": "vdocuments.net",
+      "title": "analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html",
+      "year": "2014",
+      "url": "https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html",
+      "query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
       "unresolved": false,
-      "passage": ""
+      "passage": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6)."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -1,0 +1,14 @@
+{
+  "id": "E72",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "sketch",
+  "purpose": "L-frame backbone side view: parcel on toe-plate, bending load path to axle, strap over backrest, toe hinge pin at low-moment root",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(6,5)); ax.plot([0.2,0.2],[0.05,1.15], 'k-', lw=3); ax.plot([0.2,0.65],[0.05,0.05], 'k-', lw=3); ax.add_patch(plt.Rectangle((0.22,0.15),0.28,0.6, fill=False, lw=2)); ax.annotate('parcel 60kg', xy=(0.36,0.45), ha='center'); ax.annotate('backbone twin-tube', xy=(0.2,1.0), xytext=(0.6,1.05), arrowprops=dict(arrowstyle='->')); ax.annotate('toe-plate hinged+pin', xy=(0.4,0.05), xytext=(0.65,0.2), arrowprops=dict(arrowstyle='->')); ax.annotate('strap', xy=(0.36,0.75), xytext=(0.65,0.8), arrowprops=dict(arrowstyle='->')); ax.plot([0.2],[0.05],'ko', ms=10); ax.annotate('axle/cluster+disc mount', xy=(0.2,0.05), xytext=(0.55,0.0), arrowprops=dict(arrowstyle='->')); ax.set_xlim(0,1); ax.set_ylim(-0.1,1.2); ax.set_aspect('equal'); ax.axis('off'); plt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
+  "inputs": {},
+  "output_summary": "L-frame backbone side view: parcel on toe-plate, bending load path to axle, strap over backrest, toe hinge pin at low-moment root",
+  "output_full": "L-frame backbone side view: parcel on toe-plate, bending load path to axle, strap over backrest, toe hinge pin at low-moment root",
+  "sketch_path": "evidence/sketch_72.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

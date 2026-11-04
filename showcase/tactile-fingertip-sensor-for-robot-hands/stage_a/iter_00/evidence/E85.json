@@ -1,0 +1,19 @@
+{
+  "id": "E85",
+  "author": "Dr. Elena Vasquez \u2014 Contact Dynamics and Slip Detection",
+  "tool": "calc",
+  "purpose": "required normal per finger to hold 1kg with mu 0.5",
+  "code_or_query": "Q_(9.81,'N')/(2*0.5)",
+  "inputs": {
+    "arg0": {
+      "value": "9.81",
+      "unit": "N"
+    }
+  },
+  "output_summary": "9.81 N",
+  "output_full": "9.81 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

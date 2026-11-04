@@ -1,0 +1,64 @@
+{
+  "id": "E112",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search (cited source)",
+  "code_or_query": "",
+  "inputs": {},
+  "output_summary": "slingsby.com — Compact folding sack truck, capacity 90kg — https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html — Elena took from it: In plain words the posture and sightline are right but the whip is now a safety issue at the step nose, and I take up what Tomas Lind put on the board from Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity",
+  "output_full": "slingsby.com — Compact folding sack truck, capacity 90kg — https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html\nElena Ruiz — Human Factors & Single-Operator Safety took from it: In plain words the posture and sightline are right but the whip is now a safety issue at the step nose, and I take up what Tomas Lind put on the board from Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity\n(opened and read by the member)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: In plain words the posture and sightline are right but the whip is now a safety issue at the step nose, and I take up what Tomas Lind put on the board that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity I take from Compact folding sack truck, capacity 90kg (E112), which from my discipline means a cabin-bag lift is acceptable only if the stack truly sums.\nTomas Lind — Folding & Van Integration said about it: Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity.\nMara Voss — Structural Frame & Load Path said about it: Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: In plain words the posture and sightline are right and the whip and stow now check, and I take up what Tomas Lind put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare.\nTomas Lind — Folding & Van Integration said about it: Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare.\nMara Voss — Structural Frame & Load Path said about it: Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare.\nKenji Tanaka — Stair-Climbing Locomotion said about it: Mara Voss, Elena Ruiz, Tomas Lind, flat rolling stays cheap while stair walking stays costly, and I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that a light folding truck carries 90 kg flat.\nTomas Lind — Folding & Van Integration said about it: Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from the Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare.\nMara Voss — Structural Frame & Load Path said about it: Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 mm folds to 730 mm at light tare.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "slingsby.com",
+      "title": "Compact folding sack truck, capacity 90kg",
+      "year": "",
+      "url": "https://www.slingsby.com/compact-folding-sack-truck-capacity-90kg-313195.html",
+      "query": "",
+      "unresolved": false,
+      "passage": "In plain words the posture and sightline are right but the whip is now a safety issue at the step nose, and I take up what Tomas Lind put on the board from Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "In plain words the posture and sightline are right but the whip is now a safety issue at the step nose, and I take up what Tomas Lind put on the board that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity I take from Compact folding sack truck, capacity 90kg (E112), which from my discipline means a cabin-bag lift is acceptable only if the stack truly sums."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare for 90 kg capacity."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "In plain words the posture and sightline are right and the whip and stow now check, and I take up what Tomas Lind put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Mara Voss, Elena Ruiz, Tomas Lind, flat rolling stays cheap while stair walking stays costly, and I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that a light folding truck carries 90 kg flat."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz, I take up what Elena Ruiz put on the board from the Compact folding sack truck, capacity 90kg (E112) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "Tomas Lind, I take up what Elena Ruiz put on the board from Compact folding sack truck, capacity 90kg (E112) that overall 1100 mm folds to 730 mm at light tare."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,63 +1,63 @@
 {
-  "prompt": "Photorealistic studio product rendering, true side elevation of integrated wheeled drum rover doing rear high-lift dump. Long low chassis about knee-high, about twice as long as tall, riding on four large spiked grouser steel wheels, two visible in profile, front pair at left, rear pair at right, sitting on a thin cut-off patch of dark loose granular simulant soil that ends cleanly at a plain seamless light-grey studio backdrop with soft product lighting. At front left, transverse steel digging drum mounted low between front wheels, teeth engaged in a small soil pile and shallow cut groove. Mid-chassis rectangular frame with battery box and electronics box slung low. Tall slender folding perception mast rising vertically near front third, topped with cameras and antenna, about head-high on the machine. At rear right, vertical rear high-lift mast as a straight chain-driven slide guide with twin actuator cylinders and roller chain and sprockets visible, fully extended, carrying a large steel tilting hopper on top tipped rearward beyond the wheels, pouring a visible continuous stream of dark soil down into a standard plastic tote collection bin placed behind the rover for scale. Hopper overhangs behind rear axle, pour lip well above the bin. Show steel as painted and bare metal, rubber-free rigid wheels with triangular grousers, fabric hopper interior with soil load. Fixed vs moving readable: chassis and masts fixed, wheels and drum rotating, lift slider extended, hopper tilted. Material flow visible front to rear: cut soil at drum to hopper to falling stream to bin. Add short callouts with thin leader lines for each focus part, clean legible text on small light tags placed in empty space, no other text in image.",
+  "prompt": "Photorealistic product rendering, side view, on plain seamless light-grey studio backdrop with soft product-shot lighting. Compact four-wheel digging robot about waist-high and about 1050 mm long, shown with one standing adult person beside it for true size reading as the only scale extra. Device sits on a small patch of loose soil bed cut off cleanly at the backdrop, with a collection bin at the rear. Front narrow steel trenching chain engaged in a thin slot in the soil with small side spoil rows. Center long inclined steel bucket ladder rising from ground level to above the frame, buckets visible carrying soil upward. Mid-rear smooth steel steep wedge hopper tilted up at the rear pivot, with visible rear steel screw discharge pouring a continuous stream of soil down into the bin. Twin aluminium tube chassis frame low between four rigid steel grouser wheels on folding aluminium arms, two wheels visible in side profile. Small onboard cameras on mast and over dig point. Real materials: brushed aluminium frame, dark steel wheels and chains, smooth painted steel hopper. Show operating moment of discharge while digging edge remains at soil: soil in slot, soil on ladder buckets, soil heaped in hopper, soil stream falling into bin. Draw thin leader-line callouts on small light tags placed in empty space for Narrow Kerf Chain, Inclined Bucket Ladder, Steep Wedge Hopper, Tilt Screw Discharge, Rigid Grouser Wheels, Twin Tube Chassis, clean and legible, and no other text in image.",
   "must_not": [
-    "people and animals",
-    "room interiors landscapes sky and vegetation",
-    "furniture tools and clutter",
-    "extra vehicles and extra scale figures",
-    "hand sketch styling arrows and dimension lines",
-    "large text blocks margins and scale bars"
+    "separate operator station or control room or base electronics",
+    "landscape or field or sky or room or furniture or tools or clutter",
+    "cutaway or transparent or exploded views hiding parts",
+    "sketch colors or circles or arrows or diagram markup as materials",
+    "extra text or numbers or values or logos or scale bars or margins"
   ],
-  "changes_from_previous": "Initial rendering - no previous version, new side-view dump moment from sketches.",
+  "changes_from_previous": "First version, no prior archive to change from",
   "visual_plan": {
-    "view": "side",
-    "spatial_layout": "Side view, left to right: digging drum low at front between front wheels, grouser wheels fore and aft under chassis, perception mast vertical mid-front, low chassis with boxes center, rear lift mast vertical over rear wheels, tilted hopper high above and slightly behind rear, soil stream falling to tote bin at far right on same soil patch; light-grey seamless backdrop all around; bin provides known-size scale next to waist-high lift.",
-    "operating_moment": "Deployed high-lift dump moment: rover stationary nose-down stable, front drum in soil cut, perception mast fully raised, rear mast fully extended with hopper raised and tipped pouring soil stream into collection bin full of soil behind.",
-    "transfer_path": "Load: soil from drum cut into hopper, hopper weight up rear lift mast via chain into chassis into wheels to ground, then tipped pour into bin; Measured: cameras and motion sensor on mast to onboard computer via radio heartbeat for stop-hold remote operation.",
-    "interactions": "Front drum teeth bite shallow cut and throw soil toward central hopper path; chassis carries mast loads down into four grouser wheels pressing into simulant; rear mast chain slide lifts and supports tilted hopper; hopper lip pours soil stream into tote bin; perception mast stands fixed while cameras look forward over drum.",
+    "view": "True side elevation, slightly three-quarter to read wheel width and hopper wedge depth, whole 1050 mm machine plus soil patch, bin, and scale person in frame",
+    "spatial_layout": "Side profile left to right: narrow chain low at front ground contact, inclined bucket ladder rising rearward over chassis, twin-tube chassis low center on two visible grouser wheels with folding arms, steep wedge hopper mid-rear raised, screw outlet overhanging bin lip at far rear, small soil patch under wheels and chain only, bin just behind machine, scale adult standing behind in empty backdrop space",
+    "operating_moment": "Robot paused over narrow soil slot with front chain in cut, ladder mid-lift with soil in buckets, hopper raised at rear pivot discharging a visible soil stream into collection bin",
+    "transfer_path": "Load path front to rear: narrow kerf slot side spoil rows to inclined bucket ladder to gravity chute to steep wedge hopper to tilt screw discharge to bin; signal path: onboard dig and mast cameras viewing buckets and bin alignment",
+    "interactions": "Front chain teeth cut soil and push side spoil into ladder pickup; ladder buckets scoop and carry upward and drop over top sprocket through chute into wedge hopper; hopper tilted on rear pivot holds soil while floor screw drives metered flow out rear outlet; chassis carries ladder and hopper loads to four grouser wheels pressing on soil; cameras overlook dig point and bin for blind alignment",
     "avoid": [
-      "stowed flat transport pose inside start box",
-      "linkage or hydraulic arm replacing vertical chain slide",
-      "hopper hidden inside chassis or level carry pose",
-      "drum hidden behind wheels or replaced by blade"
+      "Do not show operator station, telemetry screens, or off-board equipment on the machine",
+      "Do not show landscape, sky, or workshop clutter beyond soil patch, bin, and one scale person",
+      "Do not use sketch diagram colors or line styles as materials",
+      "Do not hide focus parts inside housings; every focus part must be externally visible",
+      "Do not add extra text, numbers, or scale bars beyond the requested part tags"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "lift",
-      "material": "Steel",
-      "purpose": "Raise hopper on chain slide to pour lip",
-      "callout": "Rear lift mast"
+      "part_id": "kerf",
+      "material": "steel chain with cutting teeth",
+      "purpose": "cuts shallow narrow slot in soil",
+      "callout": "Narrow Kerf Chain"
+    },
+    {
+      "part_id": "ladder",
+      "material": "steel buckets on chain ladder",
+      "purpose": "lifts loose spoil up to hopper",
+      "callout": "Inclined Bucket Ladder"
     },
     {
       "part_id": "hopper",
-      "material": "Steel",
-      "purpose": "Carry soil and tip to dump into bin",
-      "callout": "High lift hopper"
+      "material": "smooth steel wedge bin",
+      "purpose": "holds carried soil load",
+      "callout": "Steep Wedge Hopper"
     },
     {
-      "part_id": "chassis",
-      "material": "Painted steel",
-      "purpose": "Carry mast loads into wheels",
-      "callout": "Chassis frame"
-    },
-    {
-      "part_id": "drum",
-      "material": "Steel",
-      "purpose": "Shallow cut and lift soil to hopper",
-      "callout": "Digging drum"
+      "part_id": "auger",
+      "material": "steel auger in housing",
+      "purpose": "meters soil pour over bin",
+      "callout": "Tilt Screw Discharge"
     },
     {
       "part_id": "wheel",
-      "material": "Steel",
-      "purpose": "Carry weight over loose simulant",
-      "callout": "Grouser wheel"
+      "material": "steel wheels with grousers",
+      "purpose": "traverse loose soil",
+      "callout": "Rigid Grouser Wheels"
     },
     {
-      "part_id": "pmast",
-      "material": "Aluminum",
-      "purpose": "Hold cameras high for remote view",
-      "callout": "Perception mast"
+      "part_id": "chassis",
+      "material": "6061-T6 aluminium square tube",
+      "purpose": "carry loads and keep alignment",
+      "callout": "Twin Tube Chassis"
     }
   ]
 }

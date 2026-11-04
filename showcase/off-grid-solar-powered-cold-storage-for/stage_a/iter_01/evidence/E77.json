@@ -1,0 +1,14 @@
+{
+  "id": "E77",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "calc",
+  "purpose": "crates for 1 tonne at 20kg each",
+  "code_or_query": "1000/20",
+  "inputs": {},
+  "output_summary": "50",
+  "output_full": "50",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

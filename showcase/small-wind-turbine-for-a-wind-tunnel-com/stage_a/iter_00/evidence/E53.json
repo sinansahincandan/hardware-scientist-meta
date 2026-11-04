@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Structures-Survival Engineer",
+  "tool": "calc",
+  "purpose": "brake disc temperature rise from spin energy",
+  "code_or_query": "108.8/(0.05*500)",
+  "inputs": {},
+  "output_summary": "4.35",
+  "output_full": "4.35",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

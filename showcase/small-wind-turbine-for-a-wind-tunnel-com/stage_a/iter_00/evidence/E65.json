@@ -1,0 +1,26 @@
+{
+  "id": "E65",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: brushless motor short circuit brake torque zero speed hold",
+  "code_or_query": "brushless motor short circuit brake torque zero speed hold",
+  "inputs": {},
+  "output_summary": "control.com — 3-phase short circuit  BLDC => zero torque — https://control.com/forums/threads/3-phase-short-circuit-bldc-zero-torque.21556/",
+  "output_full": "control.com — 3-phase short circuit  BLDC => zero torque — https://control.com/forums/threads/3-phase-short-circuit-bldc-zero-torque.21556/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "control.com",
+      "title": "3-phase short circuit  BLDC => zero torque",
+      "year": "",
+      "url": "https://control.com/forums/threads/3-phase-short-circuit-bldc-zero-torque.21556/",
+      "query": "brushless motor short circuit brake torque zero speed hold",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

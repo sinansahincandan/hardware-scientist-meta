@@ -1,0 +1,96 @@
+{
+  "crops": [
+    "crop 1: rotor",
+    "crop 2: rotor__blade",
+    "crop 3: rotor__blade",
+    "crop 4: rotor__blade",
+    "crop 5: rotor__blade",
+    "crop 6: hub",
+    "crop 7: post",
+    "crop 8: post",
+    "crop 9: generator",
+    "crop 10: regulator",
+    "crop 11: safety_loop",
+    "crop 12: safety_loop",
+    "crop 13: safety_loop",
+    "crop 14: safety_loop",
+    "crop 15: disc_brake"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": false,
+      "seen_as": "Spring-applied disc brake"
+    },
+    {
+      "index": 7,
+      "is_part": false,
+      "seen_as": "Rigid hub and shaft"
+    },
+    {
+      "index": 8,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 9,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 10,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 11,
+      "is_part": false,
+      "seen_as": "annotation label leader line on background"
+    },
+    {
+      "index": 12,
+      "is_part": false,
+      "seen_as": "annotation label leader line on background"
+    },
+    {
+      "index": 13,
+      "is_part": false,
+      "seen_as": "annotation label leader line on background"
+    },
+    {
+      "index": 14,
+      "is_part": false,
+      "seen_as": "annotation label leader line on background"
+    },
+    {
+      "index": 15,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

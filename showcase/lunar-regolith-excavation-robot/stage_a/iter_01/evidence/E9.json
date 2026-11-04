@@ -1,21 +1,37 @@
 {
   "id": "E9",
-  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "author": "Excavation and Regolith Handling Lead",
   "tool": "calc",
-  "purpose": "robot weight 60kg",
-  "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s**2')",
+  "purpose": "BP-1 shallow scraper cut force estimate for 0.3 m wide blade at 50 mm depth",
+  "code_or_query": "Q_(0.3,'m')*(Q_(500,'Pa')*Q_(0.05,'m')+0.5*Q_(1500,'kg/m**3')*Q_(9.81,'m/s**2')*Q_(0.05,'m')**2*4.6)",
   "inputs": {
     "arg0": {
-      "value": "60",
-      "unit": "kg"
+      "value": "0.3",
+      "unit": "m"
     },
     "arg1": {
+      "value": "500",
+      "unit": "Pa"
+    },
+    "arg2": {
+      "value": "0.05",
+      "unit": "m"
+    },
+    "arg3": {
+      "value": "1500",
+      "unit": "kg/m**3"
+    },
+    "arg4": {
       "value": "9.81",
       "unit": "m/s**2"
+    },
+    "arg5": {
+      "value": "0.05",
+      "unit": "m"
     }
   },
-  "output_summary": "589 kg\u22c5m/s\u00b2",
-  "output_full": "589 kg\u22c5m/s\u00b2",
+  "output_summary": "32.9 m\u00b2\u22c5Pa",
+  "output_full": "32.9 m\u00b2\u22c5Pa",
   "sketch_path": null,
   "references": [],
   "status": "ok",

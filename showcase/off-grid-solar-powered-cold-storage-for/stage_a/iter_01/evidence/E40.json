@@ -1,0 +1,14 @@
+{
+  "id": "E40",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "envelope area square metres",
+  "code_or_query": "2*(2.4*1.8+2.4*2.0+1.8*2.0)",
+  "inputs": {},
+  "output_summary": "25.4",
+  "output_full": "25.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -14,3 +14,4 @@ Typical values: 1 mN on Shore 10A gives 0.247 mm radius (E9); 1 mN over 1 mm2 ta
 
 ## Use notes
 - run 20261103-194701_tactile-fingertip-sensor-for-robot-hands (Derma — Soft Skin and Contact Mechanics Owner): Helped: sized soft skin to spread 1 mN touch over multiple taxels for centroid and signal.
+- run 20261104-121011_tactile-fingertip-sensor-for-robot-hands (Dr. Amara Okafor — Soft Skin Mechanics): Helped - Hertz spreading quantified 1 mN touch as 0.235 mm radius / 0.470 mm spot at 5.78 kPa on Shore A10 (E13, E14) under 2.5 mm stack (E2), directly driving F1 ridged-dome choice over optics/fluid.

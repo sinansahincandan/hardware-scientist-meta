@@ -1,12 +1,17 @@
 {
   "id": "E11",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "calc",
-  "purpose": "modal stiffness from 20 tonne modal mass at 1.9 Hz",
-  "code_or_query": "(2*3.14159*1.9)**2*20000",
-  "inputs": {},
-  "output_summary": "2.85e+06",
-  "output_full": "2.85e+06",
+  "purpose": "TMD mass for 4 pct ratio on 20t modal mass",
+  "code_or_query": "Q_(20000,'kg')*0.04",
+  "inputs": {
+    "arg0": {
+      "value": "20000",
+      "unit": "kg"
+    }
+  },
+  "output_summary": "800 kg",
+  "output_full": "800 kg",
   "sketch_path": null,
   "references": [],
   "status": "ok",

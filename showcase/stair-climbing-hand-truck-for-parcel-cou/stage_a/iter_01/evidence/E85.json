@@ -1,0 +1,14 @@
+{
+  "id": "E85",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "braced tip deflection halved span",
+  "code_or_query": "(0.11*(0.5**3))*1000",
+  "inputs": {},
+  "output_summary": "13.8",
+  "output_full": "13.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

@@ -1,27 +1,26 @@
 {
   "id": "E47",
-  "author": "Kofi \u2014 Structural Enclosure and Low-Cost Fabrication Specialist",
-  "tool": "calc",
-  "purpose": "soil pressure under plinth without concrete self-weight",
-  "code_or_query": "(Q_(1727, 'kg')*Q_(9.81,'m/s**2')/Q_(6.76,'m**2')).to('kPa')",
-  "inputs": {
-    "arg0": {
-      "value": "1727",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "6.76",
-      "unit": "m**2"
-    }
-  },
-  "output_summary": "2.51 kPa",
-  "output_full": "2.51 kPa",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "code_or_query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "inputs": {},
+  "output_summary": "fao.org — Small-Scale Postharvest Handling Practices — https://www.fao.org/4/ae075e/ae075e16.htm",
+  "output_full": "fao.org — Small-Scale Postharvest Handling Practices — https://www.fao.org/4/ae075e/ae075e16.htm\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "fao.org",
+      "title": "Small-Scale Postharvest Handling Practices",
+      "year": "",
+      "url": "https://www.fao.org/4/ae075e/ae075e16.htm",
+      "query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "E9",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "vetted_calc:cantilever_deflection",
+  "purpose": "L-frame backbone bending stress and deflection under 60kg",
+  "code_or_query": "{\"args\": {\"D\": 0.03, \"F\": 589.0, \"L\": 1.1, \"d\": 0.026, \"material\": \"aluminum-6061-T6\"}}",
+  "inputs": {},
+  "output_summary": "vetted_calc error: could not convert string to float: 'aluminum-6061-T6'",
+  "output_full": "vetted_calc error: could not convert string to float: 'aluminum-6061-T6'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

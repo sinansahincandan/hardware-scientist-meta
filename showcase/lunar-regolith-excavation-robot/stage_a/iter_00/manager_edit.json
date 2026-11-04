@@ -1,16 +1,10 @@
 {
   "changed": [
-    "## 2. Roles",
-    "## 4. Meeting protocol",
-    "## 5. Criteria"
+    "## 4. Meeting protocol"
   ],
-  "change_note": "Tightened domain checks in Roles and evidence discipline in Protocol/Criteria to close pack energy-mass, lift force with friction, tip stability, and stowed fit without redesign. Restored both fixed verbatim criteria in 5. Criteria while retaining prior closure and tuning intent as additional bullets.",
+  "change_note": "No prompt change: six items are image-model leader/bracket fidelity limits against already-specified design (E51, E24, E64, E10, E11, E23, E25, E59, E60, E44, E32, E33, E62, E68, E63); no Roles or protocol gap, so no rewrite warranted.",
   "no_progress": false,
-  "notes": [
-    "## 2. Roles: Roles lacked enforced consistency checks so off-scale pack, travel-without-force, swinging tip factor, and deployed-only sketches passed forward with early ready vote. Added qualitative derivation and reconciliation duties per owner without embedding solution numbers. (answers: Battery mass-energy inconsistency: sortie energy vs pack specific energy and joint total; Actuator force with friction and lift useful-vs-input energy; Dump kinematics/tip moment with overhang and wheelbase; Dimensioned stowed envelope fit; Mass integration and runtime at full load; Mara early ready vote; Theo stowed mast and joint mass share)",
-    "## 4. Meeting protocol: Protocol allowed early ready and carryover without joint mass, force, stability, and envelope evidence, so plausible concept stalled with blocks open. Strengthened to require cited ids, joint reconciliation on change, and specific lift, tip, and stowed evidence while withholding ready on open blocks. (answers: Battery mass-energy inconsistency; Actuator force with friction and lift energy overhead; Dump kinematics and tip moment sensitivity; Missing dimensioned stowed envelope; Mass integration and runtime at full load unproven with early ready vote and proposal carryover without joint evidence)",
-    "## 5. Criteria: Criteria did not distinguish acceptance proofs from test tuning, risking dust and latency detail treated as blockers. Clarified that buildable requires closed mass-energy, force, stability, and envelope proofs while bounded seal and link tuning stay as verification. (answers: Sealed-box thermal bound closed vs generic dust claim and link latency tuning should remain verification tuning, not acceptance blockers; Traction, power, and volume supported with no conservation violation remain as-is)"
-  ],
+  "notes": [],
   "reverted": [],
   "tools_registered": [],
   "tools_retired": []

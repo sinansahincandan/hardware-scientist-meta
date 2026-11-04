@@ -1,24 +1,30 @@
 {
   "id": "E4",
-  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
   "tool": "web_search",
-  "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
-  "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+  "purpose": "search: silicone Shore hardness Young's modulus durometer conversion",
+  "code_or_query": "silicone Shore hardness Young's modulus durometer conversion",
   "inputs": {},
-  "output_summary": "webot.org — Two-point Discrimination - Encyclopedia Information — https://webot.org/info/en/?search=Two-point_discrimination",
-  "output_full": "webot.org — Two-point Discrimination - Encyclopedia Information — https://webot.org/info/en/?search=Two-point_discrimination\n(found by the search; not opened or cited)",
+  "output_summary": "cati.com — Convert Durometer to Young's Modulus — https://www.cati.com/blog/convert-durometer/",
+  "output_full": "cati.com — Convert Durometer to Young's Modulus — https://www.cati.com/blog/convert-durometer/\n(opened by the member, not cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The Convert Durometer to Young's Modulus (E4) gives about 0.667 MPa for Shore A 10 silicone, soft enough for the 1 mN spot above yet moldable and durable, and the edge must be primer-bonded and clamped to a nail-backed core so grip load goes into the finger while the soft stack above transduction stays under 2.5 mm thick per the GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "webot.org",
-      "title": "Two-point Discrimination - Encyclopedia Information",
+      "authors_or_org": "cati.com",
+      "title": "Convert Durometer to Young's Modulus",
       "year": "",
-      "url": "https://webot.org/info/en/?search=Two-point_discrimination",
-      "query": "human fingertip tactile spatial resolution two-point discrimination",
+      "url": "https://www.cati.com/blog/convert-durometer/",
+      "query": "silicone Shore hardness Young's modulus durometer conversion",
       "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
+      "passage": "The Convert Durometer to Young's Modulus (E4) gives about 0.667 MPa for Shore A 10 silicone, soft enough for the 1 mN spot above yet moldable and durable, and the edge must be primer-bonded and clamped to a nail-backed core so grip load goes into the finger while the soft stack above transduction stays under 2.5 mm thick per the GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The Convert Durometer to Young's Modulus (E4) gives about 0.667 MPa for Shore A 10 silicone, soft enough for the 1 mN spot above yet moldable and durable, and the edge must be primer-bonded and clamped to a nail-backed core so grip load goes into the finger while the soft stack above transduction stays under 2.5 mm thick per the GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2)."
+        }
+      ]
     }
   ],
   "status": "ok",

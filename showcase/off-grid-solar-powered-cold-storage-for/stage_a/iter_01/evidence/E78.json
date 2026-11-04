@@ -1,0 +1,14 @@
+{
+  "id": "E78",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "calc",
+  "purpose": "daily crates for 250kg staged intake",
+  "code_or_query": "250/20",
+  "inputs": {},
+  "output_summary": "12.5",
+  "output_full": "12.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

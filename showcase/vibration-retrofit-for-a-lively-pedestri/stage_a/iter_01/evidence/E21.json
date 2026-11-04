@@ -1,0 +1,32 @@
+{
+  "id": "E21",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "web_search",
+  "purpose": "search: EN 1991-2 pedestrian footbridge live load 5 kN per m2",
+  "code_or_query": "EN 1991-2 pedestrian footbridge live load 5 kN per m2",
+  "inputs": {},
+  "output_summary": "bridgedesign.org.uk — Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading. — http://bridgedesign.org.uk/tutorial/eu-grillage-example.php",
+  "output_full": "bridgedesign.org.uk — Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading. — http://bridgedesign.org.uk/tutorial/eu-grillage-example.php\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: (E21) stating the pedestrian live load shall be taken as 5.0 kN per m2.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "bridgedesign.org.uk",
+      "title": "Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading.",
+      "year": "",
+      "url": "http://bridgedesign.org.uk/tutorial/eu-grillage-example.php",
+      "query": "EN 1991-2 pedestrian footbridge live load 5 kN per m2",
+      "unresolved": false,
+      "passage": "(E21) stating the pedestrian live load shall be taken as 5.0 kN per m2.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "(E21) stating the pedestrian live load shall be taken as 5.0 kN per m2."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

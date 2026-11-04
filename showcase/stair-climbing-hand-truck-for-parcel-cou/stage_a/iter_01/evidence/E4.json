@@ -1,0 +1,26 @@
+{
+  "id": "E4",
+  "author": "Mara Voss — Structural Frame & Load Path",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminium tube bending strength yield datasheet",
+  "code_or_query": "6061-T6 aluminium tube bending strength yield datasheet",
+  "inputs": {},
+  "output_summary": "tsinox.com — Aluminium Drawn Tube 6061 — https://www.tsinox.com/aluminum/aluminium-drawn-tube-6061.html",
+  "output_full": "tsinox.com — Aluminium Drawn Tube 6061 — https://www.tsinox.com/aluminum/aluminium-drawn-tube-6061.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "tsinox.com",
+      "title": "Aluminium Drawn Tube 6061",
+      "year": "",
+      "url": "https://www.tsinox.com/aluminum/aluminium-drawn-tube-6061.html",
+      "query": "6061-T6 aluminium tube bending strength yield datasheet",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

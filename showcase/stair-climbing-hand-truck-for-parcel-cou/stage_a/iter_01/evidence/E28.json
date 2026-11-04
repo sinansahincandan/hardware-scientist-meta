@@ -1,0 +1,36 @@
+{
+  "id": "E28",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull force limits manual handling",
+  "code_or_query": "ISO 11228-2 push pull force limits manual handling",
+  "inputs": {},
+  "output_summary": "yumpu.com — 8 <strong>ERGONOMICS</str — https://www.yumpu.com/en/document/view/3753522/ergonomics-guidelines-for-manual-handling/9",
+  "output_full": "yumpu.com — 8 <strong>ERGONOMICS</str — https://www.yumpu.com/en/document/view/3753522/ergonomics-guidelines-for-manual-handling/9\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: The stopping hold simulation (E34) gives about 161 N tip-hold at a 1.10 m handle, against about 188 N sustained hold and about 209 N pull in the climb simulation (E23), and I take from the 8 <strong>ERGONOMICS</str (E28) that International Organization for Standardization (ISO) 11228-2 recommends for 90 percent of people two-handed sustained push 230 N for men and 130 N for women and sustained pull 240 N for men and 140 N for women.\nKenji Tanaka — Stair-Climbing Locomotion said about it: Without the lock the hand must still meet the climb simulation (E23) at about 209 N pull and about 188 N hold, so I confirm what Elena Ruiz takes from the ergonomics push-pull guidance (E28) on sustained limits and from the parking-brake rule for trucks to 500 kg (E30): release must mean locked.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "yumpu.com",
+      "title": "8 <strong>ERGONOMICS</str",
+      "year": "",
+      "url": "https://www.yumpu.com/en/document/view/3753522/ergonomics-guidelines-for-manual-handling/9",
+      "query": "ISO 11228-2 push pull force limits manual handling",
+      "unresolved": false,
+      "passage": "The stopping hold simulation (E34) gives about 161 N tip-hold at a 1.10 m handle, against about 188 N sustained hold and about 209 N pull in the climb simulation (E23), and I take from the 8 <strong>ERGONOMICS</str (E28) that International Organization for Standardization (ISO) 11228-2 recommends for 90 percent of people two-handed sustained push 230 N for men and 130 N for women and sustained pull 240 N for men and 140 N for women.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "The stopping hold simulation (E34) gives about 161 N tip-hold at a 1.10 m handle, against about 188 N sustained hold and about 209 N pull in the climb simulation (E23), and I take from the 8 <strong>ERGONOMICS</str (E28) that International Organization for Standardization (ISO) 11228-2 recommends for 90 percent of people two-handed sustained push 230 N for men and 130 N for women and sustained pull 240 N for men and 140 N for women."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Without the lock the hand must still meet the climb simulation (E23) at about 209 N pull and about 188 N hold, so I confirm what Elena Ruiz takes from the ergonomics push-pull guidance (E28) on sustained limits and from the parking-brake rule for trucks to 500 kg (E30): release must mean locked."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

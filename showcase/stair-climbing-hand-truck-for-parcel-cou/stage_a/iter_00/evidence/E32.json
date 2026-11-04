@@ -1,22 +1,30 @@
 {
   "id": "E32",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
   "tool": "web_search",
-  "purpose": "search: 6061-T6 aluminum tube yield strength weight per meter 30mm",
-  "code_or_query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+  "purpose": "search: adjustable handle height ergonomics push cart elbow height",
+  "code_or_query": "adjustable handle height ergonomics push cart elbow height",
   "inputs": {},
-  "output_summary": "aviationaluminum.com — China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube – Miandi Manufacturers and Suppliers | Miandi — https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html",
-  "output_full": "aviationaluminum.com — China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube – Miandi Manufacturers and Suppliers | Miandi — https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html\n(the search returned no passage text)",
+  "output_summary": "online.documentine.com — push it or pull it erg033 - m-and-m-you-pull-it — https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html",
+  "output_full": "online.documentine.com — push it or pull it erg033 - m-and-m-you-pull-it — https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "aviationaluminum.com",
-      "title": "China Wholesale Discount Aluminium 6061 T6 Round Bar - 6061 Aluminum Tube – Miandi Manufacturers and Suppliers | Miandi",
+      "authors_or_org": "online.documentine.com",
+      "title": "push it or pull it erg033 - m-and-m-you-pull-it",
       "year": "",
-      "url": "https://www.aviationaluminum.com/wholesale-discount-aluminium-6061-t6-round-bar-6061-aluminum-tube-miandi.html",
-      "query": "6061-T6 aluminum tube yield strength weight per meter 30mm",
+      "url": "https://online.documentine.com/m-and-m-you-pull-it/1/push-it-or-pull-it-erg033.html",
+      "query": "adjustable handle height ergonomics push cart elbow height",
       "unresolved": false,
-      "passage": ""
+      "passage": "I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the push it or pull it erg033 - m-and-m-you-pull-it (E32) that for pushing the handle should be between elbow and hip and vertical handles for pushing should cover about 76 cm to 120 cm above the rolling surface, and I take from the Reducing Ergonomic Hazards - HME Business (E31) that vertical handles let all staff push at elbow height."
+        }
+      ]
     }
   ],
   "status": "ok",

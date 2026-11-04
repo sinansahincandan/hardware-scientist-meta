@@ -1,0 +1,14 @@
+{
+  "id": "E72",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "tip speed and rpm check at 11 m/s TSR6",
+  "code_or_query": "(6*11, 6*11*60/(2*3.14159*0.2))",
+  "inputs": {},
+  "output_summary": "(66, 3.15e+03)",
+  "output_full": "(66, 3151.2705349838775)",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

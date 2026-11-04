@@ -1,0 +1,19 @@
+{
+  "id": "E11",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "TMD mass for 4 pct ratio on 20t modal mass",
+  "code_or_query": "Q_(20000,'kg')*0.04",
+  "inputs": {
+    "arg0": {
+      "value": "20000",
+      "unit": "kg"
+    }
+  },
+  "output_summary": "800 kg",
+  "output_full": "800 kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

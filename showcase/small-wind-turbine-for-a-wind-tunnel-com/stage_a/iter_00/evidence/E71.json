@@ -1,0 +1,14 @@
+{
+  "id": "E71",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "check dynamic pressure reuse for parked torque",
+  "code_or_query": "0.5*1.225*22**2",
+  "inputs": {},
+  "output_summary": "296",
+  "output_full": "296",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

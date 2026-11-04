@@ -1,0 +1,14 @@
+{
+  "id": "E27",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "simulate",
+  "purpose": "steady heat load sum and pull-down temperature vs time",
+  "code_or_query": "import numpy as np\n# steady loads in W\nm=1000; cp=3600 # J/kgK\n# components: transmission, infiltration/door, respiration, fan+controls, safety\nU=0.35 # W/m2K with 100mm PU\nA=30 # m2 chamber surface\ndT=38 # 43 ambient -5 room\nQ_trans=U*A*dT\nQ_resp=0.06*m # 60 mW/kg mixed veg at 5C\nQ_door=120 # avg with strip curtain, ~10 openings/day\nQ_fan=60\nQ_total=Q_trans+Q_resp+Q_door+Q_fan\nprint(f\"Q_trans={Q_trans:.0f} W Q_resp={Q_resp:.0f} W Q_door={Q_door:.0f} W Q_fan={Q_fan:.0f} W Q_total={Q_total:.0f} W\")\n# pull-down: 250 kg/day fresh at 30C cooled to 5C + steady load, cooling capacity 800W, COP reflected as electrical later\nC_produce=m*cp # J/K full tonne\n# simple lumped: dT/dt = (Q_load - Q_cool)/C\nQ_cool=800\nQ_steady=Q_total\nT0=30; Tset=5; dt=600\nT=T0; t=0; times=[]; temps=[]\nfor i in range(200):\n    Q_net = Q_steady - Q_cool # negative = cooling\n    # respiration drops as cools: scale roughly\n    T = T + Q_net*dt/C_produce\n    t+=dt\n    times.append(t/3600); temps.append(T)\n    if T<=Tset: break\nprint(f\"pull-down full tonne to 5C in {t/3600:.1f} h at 800 W net\")\nprint(f\"daily pull-down energy 250kg batch kWh={(250*cp*25/3.6e6):.2f}\")\nprint(f\"steady daily kWh={(Q_total*24/1000):.2f}\")",
+  "inputs": {},
+  "output_summary": "pull-down full tonne to 5C in 33.3 h at 800 W net; daily pull-down energy 250kg batch kWh=6.25; steady daily kWh=15.3",
+  "output_full": "Q_trans=399 W Q_resp=60 W Q_door=120 W Q_fan=60 W Q_total=639 W\npull-down full tonne to 5C in 33.3 h at 800 W net\ndaily pull-down energy 250kg batch kWh=6.25\nsteady daily kWh=15.34",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

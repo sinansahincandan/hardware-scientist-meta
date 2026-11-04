@@ -1,24 +1,14 @@
 {
   "id": "E12",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
-  "tool": "web_search",
-  "purpose": "search: FPV 5.8 GHz video latency teleoperation ground robot",
-  "code_or_query": "FPV 5.8 GHz video latency teleoperation ground robot",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "sketch",
+  "purpose": "side view bucket-ladder digger feeding wedge hopper with rear-pivot dump over bin",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,4))\nax.set_xlim(0,10); ax.set_ylim(0,5); ax.set_aspect('equal'); ax.axis('off')\n# ground\nax.plot([0,10],[1,1],'k-',lw=2); ax.text(0.2,0.6,'BP-1 bed')\n# ladder\nax.plot([3,5.5],[0.7,3.2],'k-',lw=3); ax.plot([3.4,5.9],[0.9,3.4],'k-',lw=1)\nax.text(2.2,2.0,'bucket ladder\\n20deg entry')\n# buckets\nfor x,y in [(3.3,0.9),(3.9,1.5),(4.5,2.1),(5.1,2.7)]:\n    ax.add_patch(plt.Rectangle((x,y),0.3,0.2,fill=False,lw=2))\n# hopper\nax.plot([5.9,7.5],[3.4,3.4],'k-',lw=2); ax.plot([5.9,6.4],[3.4,2.0],'k-',lw=2); ax.plot([7.5,7.0],[3.4,2.0],'k-',lw=2)\nax.text(6.0,3.6,'wedge hopper 20L')\nax.text(6.2,2.4,'gate + vibrator')\n# bin\nax.add_patch(plt.Rectangle((7.8,0,1.5,1.5),fill=False,lw=2)); ax.text(7.9,1.6,'bin')\nax.annotate('dump pivot rear', xy=(7.5,2.0), xytext=(5.0,4.2), arrowprops=dict(arrowstyle='->'))\nax.set_title('Excavation and dump side view')\nplt.tight_layout(); plt.savefig('sketch.png')",
   "inputs": {},
-  "output_summary": "ivcan.com — FPV CVBS AV encoder decoder video stream over IP Ethernet — https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/",
-  "output_full": "ivcan.com — FPV CVBS AV encoder decoder video stream over IP Ethernet — https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/\n(the search returned no passage text)",
+  "output_summary": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "output_full": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "ivcan.com",
-      "title": "FPV CVBS AV encoder decoder video stream over IP Ethernet",
-      "year": "",
-      "url": "https://ivcan.com/p/fpv-cvbs-av-encoder-decoder-video-stream-over-ip-ethernet/",
-      "query": "FPV 5.8 GHz video latency teleoperation ground robot",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
-  "status": "ok",
+  "references": [],
+  "status": "error",
   "cycle": 1
 }

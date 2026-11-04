@@ -1,5 +1,0 @@
-{
-  "cycle": 2,
-  "member": "Marcus - Vibration Control and Damping Specialist",
-  "message": "Tomas, the under-deck vertical Tuned Mass Damper (TMD) tames the dense-crowd resonance confirmed by the Den Hartog optimum re-check (E54).\n\nFor the dense-crowd resonant force estimate (E50) of 1480 N, the bare-deck acceleration scaling (E51) of 9.26 m/s2 is 0.944 g, almost lifting a person, while the TMD-controlled acceleration scaling (E52) of 0.545 m/s2 is 0.0556 g, like gentle bus braking, below the 1.0 m/s2 minimum-comfort bound.\n\nPriya, the same crowd case leaves clearance in hand, since the dense-crowd stroke scaling (E53) of 20.1 mm is about a thumbnail width and gives 2.49 times margin to plus-minus 50 mm stops, so the 500 kg mass on 67.8 kN/m springs with 1.09 kN s/m dashpots stays buildable under deck."
-}

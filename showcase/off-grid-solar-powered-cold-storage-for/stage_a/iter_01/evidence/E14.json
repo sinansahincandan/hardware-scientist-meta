@@ -1,0 +1,14 @@
+{
+  "id": "E14",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "daily PV yield kWh for 2.4kWp at 5 PSH",
+  "code_or_query": "2400*5*0.75/1000",
+  "inputs": {},
+  "output_summary": "9",
+  "output_full": "9",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

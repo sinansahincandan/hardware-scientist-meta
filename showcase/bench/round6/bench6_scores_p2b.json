@@ -1,0 +1,688 @@
+{
+ "b1": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure, ladder vs kerf chain",
+     "fault": "Bucket ladder's lower end sits on the chassis top about 0.4 m above and behind the kerf chain; nothing carries the cut soil from the trench to the buckets.",
+     "checked_by": "Viewed full figure and crop of chassis/chain region",
+     "severity": "major"
+    },
+    {
+     "where": "figure, wheels",
+     "fault": "Only one rear wheel on a folding arm is visible; front of the chassis rests on the trenching chain. Text: four grouser wheels, skid steer.",
+     "checked_by": "Crop of lower chassis",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text, dump",
+     "fault": "Text: hopper tilts rearward and live-bottom screw meters soil over a 0.40 m bin lip. Picture: hopper upright, auger sticks out horizontally beyond the bin, bin sits beside the wheel under nothing.",
+     "checked_by": "Visual inspection",
+     "severity": "major"
+    },
+    {
+     "where": "constraint check, stowed box",
+     "fault": "0.90x0.42x0.45 m stowed size is asserted ('envelope simulation'); drawn ladder ~0.8 m long reaching ~0.9 m height with no described fold; using the 200 mm scale bar the chassis alone is ~1.1 m long.",
+     "checked_by": "Pixel measurement against scale bar",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, ladder dig power",
+     "fault": "16.4 W = 32.9 N x 0.5 m/s uses the 300 mm-wide cut force, not the 11 N kerf force stated for this design.",
+     "checked_by": "python3 re-derivation",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, traction",
+     "fault": "294 N = 60 kg x 9.81 x 0.5 uses the limit mass, not 46 kg robot (+15 kg soil gives 299 N, so effect small).",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, stop distance",
+     "fault": "Final 0.308 m stop contradicts the same calculation's table (0.56 m at 1 s latency).",
+     "checked_by": "Read calc text",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, mass",
+     "fault": "Mass sum gives 46 kg; another calc uses m_robot_no_soil = 47 kg.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, frame sag",
+     "fault": "I = 4.58e-8 m^4 vs 2.7e-8 m^4 for two 25.4x3 mm tubes; 'stiffened' not specified.",
+     "checked_by": "python3 tube I",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers formatting",
+     "fault": "Several key numbers are truncated code snippets rather than stated results.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass is summed (46 kg vs 60 kg) but the stowed 0.90x0.42x0.45 m box is only claimed; the drawn ladder rises far above 0.45 m and no folding of the ladder is described (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Kerf chain plus bucket ladder plus screw pour is a plausible chain, but as drawn the ladder foot is on top of the chassis away from the chain, so loosened soil has no path into the buckets (major)."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Mass, sag and pressure re-derive, but ladder power uses the full-width 32.9 N not the 11 N kerf force, traction uses 60 kg not the robot mass, stop distance 0.308 m contradicts its own 0.56 m table; key numbers are pasted code fragments."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows one wheel, a front end held up by the trenching chain, a ladder that does not reach the trench, and an untilted hopper whose screw points past the bin."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Risks named honestly (arching, blind tip), but the box claim and the soil path are not shown to close."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Step list explains the soil route in words, but the text 'wide ladder lifts side spoil' is unclear about how kerf spoil reaches the buckets."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Five ordered build steps with materials and sizes, illustrated; adequate but thin on the ladder fold and tilt mechanism."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Missing front/side wheels (one wheel visible on a four-wheel machine) and a chassis floating on the chain are generator mistakes."
+   },
+   "total": 22
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "figure, wheel count",
+     "fault": "Six wheels drawn (three on near side, two/three on far side); text: four wide wheels.",
+     "checked_by": "Crop of wheel region",
+     "severity": "major"
+    },
+    {
+     "where": "figure, drum layout",
+     "fault": "Both drums hang one above the other on a single forward arm; the upper drum cannot dig while the lower one does. Twin counter-rotating RASSOR drums sit at opposite ends.",
+     "checked_by": "Visual inspection",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, tip stability",
+     "fault": "Restore 231 Nm vs tare calc 0.4 x 50 x 9.81 = 196 Nm; 'SF 1.98' does not equal 231/75 = 3.1.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, paste bound",
+     "fault": "Claimed 273 N twin draft at 5 kPa, but the shown calc prints 33.2 N.",
+     "checked_by": "Read calc",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, shear traction",
+     "fault": "c*A = 81 N implies 0.081 m^2 contact; stated contact 4 x 0.2 x 0.065 = 0.052 m^2 gives 52 N.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "text, drum size",
+     "fault": "Drums 210-250 mm in parts/build, 300 mm in clearance sketch; detail scale bar ~500 mm on the drum.",
+     "checked_by": "Read text, figure",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, thermal",
+     "fault": "21.3 K rise stated without the heat input; 'plate-only 0.007 K' garbled.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "constraint check, bin clearance",
+     "fault": "Only 15 +/- 2 mm clearance over the bin lip at full 0.40 m lift; tight for blind operation.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Mass summed to 50 kg and stowed box given with a tolerance stack (0.94x0.48x0.48 m); remote/blind operation addressed with heartbeat stop and VIO."
+   },
+   "C2": {
+    "score": 3,
+    "why": "RASSOR-type counter-rotating drums are proven in BP-1, but as drawn both drums are stacked on one forward arm so only one can touch the ground (major)."
+   },
+   "C3": {
+    "score": 4,
+    "why": "Mass, ground pressure, draft, traction, stop and battery runtime re-derive; small inconsistencies (SF 1.98 vs 231/75 = 3.1, paste-bound 273 N vs printed 33 N, cohesion area 0.081 vs 0.052 m^2)."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows six wheels against four in text, and stacked drums on one arm unlike the twin opposite-end layout implied; captions mark wheels 'not located'."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Risks (cohesive paste, raised-load tip) stated with operating limits; heritage cited."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear dig-retain-carry-lift-reverse-dump sequence."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with materials, sizes and reasons, each illustrated."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Six wheels on a four-wheel design is a generator count mistake; detail panel scale (~500 mm) makes the drum larger than 250 mm."
+   },
+   "total": 28
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "key numbers, dig rate",
+     "fault": "14 buckets x 0.45 L x 40% x 30 rpm x 1.55 kg/L = 117 kg/min, not ~7.5 kg/min.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, dig power",
+     "fault": "'Lifting ~80 W' vs 0.12 kg/s x 9.81 x ~1 m = 1.2 W.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, ground pressure",
+     "fault": "52-90 kg over 4 x 0.28 x 0.15 m gives 3.0-5.3 kPa, not 4.5-8 kPa; 0.28 m contact length is unrealistic for a rigid wheel.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "constraint check, stowed box",
+     "fault": "0.96x0.48x0.44 m 'from CAD stacking' asserted; mast in picture rises well above 0.44 m and no fold is described.",
+     "checked_by": "Read text, figure",
+     "severity": "major"
+    },
+    {
+     "where": "physics, digging",
+     "fault": "No draft force or traction check for cutting BP-1 at 8 cm depth; only a risk line.",
+     "checked_by": "Read text",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text, hopper/dump",
+     "fault": "Two hoppers drawn (front on-board hopper fed by ladder, rear tipping box on a hydraulic ram); text: one 25 L hopper winch-tipped rear-up.",
+     "checked_by": "Visual inspection and crop",
+     "severity": "major"
+    },
+    {
+     "where": "figure, dig site",
+     "fault": "Ladder foot rests in a shallow tray rather than in a soil bed.",
+     "checked_by": "Visual inspection",
+     "severity": "minor"
+    },
+    {
+     "where": "parts list",
+     "fault": "Parts section lists only the chassis.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "stability",
+     "fault": "38 kg soil in a raised tipping hopper on a 52 kg robot; tip stability not computed.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Mass budget sums to 52 kg; stowed size claimed 'from CAD stacking' with no computation, and the tall camera mast is never said to fold (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Bucket-ladder miners are proven, but draft/traction in BP-1 is never computed and the dump hardware in the picture differs from the text (major)."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Dig rate inputs give 117 kg/min not 7.5; lifting power ~1 W not 80 W; ground pressure from own patches is 3.0/5.3 kPa not 4.5/8 kPa."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture has two hoppers (an on-board front hopper and a separate rear box tipped by a hydraulic ram) against one winch-tipped 25 L hopper; no scale or labels; ladder foot in a tray, not a soil bed."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Risks are listed with mitigations, but constraints are marked MET mostly by analogy to Lunabotics robots."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Operating sequence is clear in prose; parts list contains a single item."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four build stages with processes; no figure support and few sizes."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Photoreal render without obvious merged or floating parts; counts not checkable against text beyond buckets (6 visible vs 14, plausible with return strand)."
+   },
+   "total": 23
+  }
+ },
+ "b3": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure, blade count",
+     "fault": "Rotor drawn with four blades in panels A and B; text: three-blade rotor.",
+     "checked_by": "Counted blades in figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs cube constraint",
+     "fault": "Using the 38.1 mm post as scale, hub to generator end spans ~0.49 m, over the 45 cm cube and the stated 36 cm stack; rotor appears ~0.33 m not 0.40 m.",
+     "checked_by": "Pixel measurement",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, low-wind voltage",
+     "fault": "8.41 V at 1430 rpm is open-circuit (1430/170); after a Schottky bridge (~0.5-1 V) and winding drop under load it is below the 8 V regulator minimum, so the 2.08 W at 5 m/s is not shown.",
+     "checked_by": "python3 and reasoning",
+     "severity": "major"
+    },
+    {
+     "where": "constraint check, 22 m/s survival",
+     "fault": "Thrust is checked (Ct = 1, conservative) but the fixed-pitch rotor's free-running speed and blade centrifugal stress for 3D-printed blades at 22 m/s are not computed; 'soft stall' asserted.",
+     "checked_by": "Read text",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, post stiffness",
+     "fault": "I = 1.5e-8 m^4 used; a 38.1 x 3.18 mm tube has 5.36e-8 m^4, so stress 16.6 MPa is overstated ~3.6x (safe side).",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "text, post material",
+     "fault": "Part named 'Steel post clamp and post' but post is 6061-T6 aluminium.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure labels",
+     "fault": "'Spring-applied disc brake' leader points at generator end; disc is item 6.",
+     "checked_by": "Visual",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, dump power",
+     "fault": "85.6 W at 18.5 V open-circuit into 4 ohm exceeds ~26 W rotor input; winding resistance ignored.",
+     "checked_by": "python3",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "40 cm rotor with 2.5 cm side clearance and shutdown with spring brake are computed; production at 5 m/s rests on an open-circuit 8.41 V that falls below the 8 V regulator floor after bridge/winding drops (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Fixed-pitch rotor, outrunner and fail-safe spring disc plus dump is a sound concept; low-wind electrical chain and free-running survival at 22 m/s are not closed (major)."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Wind power, rpm, Kv volts, thrust, deflection, KE and disc rise re-derive; post I is 1.5e-8 vs 5.4e-8 for the stated tube (conservative), and the 5 m/s voltage is open-circuit."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture shows four blades and a ~0.5 m hub-to-generator shaft (scaled by the 38 mm post), contradicting three blades and the 36 cm stack."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Risks name the dump-only runaway and the Kv choice, and both are addressed."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear chain from wind to load and the trip logic for command and disconnect."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four steps with materials; only two illustrated; blade making only '3D-printed'."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Four-blade rotor on a 'three-blade' design is a generator count error; label 'spring-applied disc brake' points at the generator end."
+   },
+   "total": 25
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "figure, blade count",
+     "fault": "Four blades drawn; text: 3x carbon blades.",
+     "checked_by": "Counted blades",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs cube constraint",
+     "fault": "E-stop/dump-resistor enclosure mounted on the post below the nacelle, outside the cube; only the post may be outside.",
+     "checked_by": "Crop of enclosure",
+     "severity": "major"
+    },
+    {
+     "where": "constraint check, cube fit",
+     "fault": "25 cm nacelle + 18 cm tail = 43 cm leaves 2 cm for rotor hub depth and pitch slider; 'fits with 2 cm clearance' not supported.",
+     "checked_by": "Arithmetic",
+     "severity": "major"
+    },
+    {
+     "where": "constraint check, survival",
+     "fault": "'>4x margin' for shaft and blades at 22 m/s given without stress calc; servo torque against centrifugal twisting at up to 6000 rpm not computed.",
+     "checked_by": "Read text",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, top rpm",
+     "fault": "Uncontrolled 6300 rpm at 22 m/s; at TSR 5.5 it is 5780 rpm.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, stop time",
+     "fault": "2-3 s from 59 J / >25 W ignores falling short-circuit torque at low speed; plausible but not computed.",
+     "checked_by": "Reasoning",
+     "severity": "minor"
+    },
+    {
+     "where": "text, servo",
+     "fault": "Servo 'holds feather without power draw' vs supercap powering it.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, electric power",
+     "fault": "Only 85% generator efficiency applied; rectifier and MPPT losses omitted.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Power and shutdown addressed, but the drawn e-stop/dump box sits on the post outside the cube and the 25+18 cm nacelle-tail plus rotor hub leaves ~2 cm, so cube fit is not credible as stated (major)."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Pitch-to-feather plus generator short with spring return is a robust, well-known way to limit and stop; works in principle."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Swept power, rpm, thrust and KE re-derive; '>4x margin' structure, servo authority and stop time are asserted not computed; 6300 rpm vs 5780 at TSR 5.5."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Picture shows the pitch hub and tail vane as described, but four blades against three and an electronics box on the post."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Risks (pitch jam, resistor heat, flutter, false trip) are real and mitigated."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear explanation of normal running, power limiting and the shutdown sequence."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Specific make steps for blades, mechanics, electrics and test."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Four-blade rotor is a generator count error; 'DUMP RESISTOR' text legible."
+   },
+   "total": 28
+  }
+ },
+ "02": {
+  "A": {
+   "faults": [
+    {
+     "where": "constraint check, 1 tonne",
+     "fault": "20 crates x 0.072 m^3 = 1.44 m^3 x 0.60 t/m^3 = 0.864 t, not 1.0 t; 1 t needs 0.694 t/m^3 (50 kg per crate).",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "thermal budget, produce load",
+     "fault": "Daily holding budget (3.56 kWh) excludes field heat of incoming produce; 1 t pull-down 33.6 kWh thermal at 0.6 kW minus 0.22 kW leak takes ~3.7 days.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text, PV",
+     "fault": "Four modules drawn; text: 6 x 400 W. Six modules (11.2 m^2) also exceed the 5.8 m^2 roof footprint, not addressed.",
+     "checked_by": "Counted modules; python3 area",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, skin area",
+     "fault": "25.6 m^2 vs 24.4 m^2 internal and 33.2 m^2 external for the stated dimensions.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers consistency",
+     "fault": "5.27 kWh/2.11 kWh in one place, 5.65/2.26 kWh in the constraint check.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, autonomy",
+     "fault": "'1.8 days' is 3.84/2.11 transmission-only; with full 3.56 kWh/day holding it is ~1.1 day.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Chamber drawn with no front wall; eight crates shown vs twenty.",
+     "checked_by": "Visual",
+     "severity": "minor"
+    },
+    {
+     "where": "Risks section",
+     "fault": "Empty.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Solar-only energy balance computed (8.4 vs 3.56 kWh/day), but '1 t in 20 crates' needs 0.69 t/m^3 while the stated 0.60 t/m^3 gives 0.86 t (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "PV + LiFePO4 + DC monoblock in PIR box works for holding, but daily field heat of incoming produce is outside the budget and 0.6 kW cooling needs ~3.7 days to pull down 1 t (major)."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Transmission, PV, battery, mass and pressure re-derive; skin area 25.6 m^2 matches neither inside (24.4) nor outside (33.2); 5.27 vs 5.65 kWh thermal inconsistent; autonomy is transmission-only."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Picture shows the parts in place but four modules vs six, eight crates vs twenty, and the chamber drawn without a front wall."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Risks section is empty; otherwise numbers carry sources."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear energy and heat path explained step by step."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Five ordered steps with materials, sizes and reasons, each illustrated."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; missing front wall reads as a cutaway; no garbled text."
+   },
+   "total": 27
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "energy budget, ice bank",
+     "fault": "200-300 kg ice x 334 kJ/kg = 18.6-27.8 kWh thermal per day to freeze; at freezing COP ~2 this is ~10 kWh electric not in the 7-9 kWh/day budget.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, PV yield",
+     "fault": "2.5 kWp x 4-5 h = 10-12.5 kWh with no system losses; with 0.75 derate 7.5-9.4 kWh, at or below the stated load.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, heat load",
+     "fault": "Envelope transmission (about 200 W for 26.3 m^2 at U 0.2, 38 K) never computed; loads scaled from precedents.",
+     "checked_by": "python3",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text, room",
+     "fault": "Box drawn with a machine bay holding chiller, battery and tanks plus a cold compartment about half the width; text describes one 2.4x1.8x2.1 m cold room.",
+     "checked_by": "Visual",
+     "severity": "major"
+    },
+    {
+     "where": "figure, airflow",
+     "fault": "Cold-air arrows go from the evaporator in the machine bay across the partition and spill out of the open door onto the floor.",
+     "checked_by": "Visual",
+     "severity": "major"
+    },
+    {
+     "where": "key numbers, volume",
+     "fault": "2.4 x 1.8 x 2.1 = 9.07 m^3, stated ~7 m^3.",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "text",
+     "fault": "'658W/h' is not a unit of power or energy.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure, storage tanks",
+     "fault": "Ice-bank tanks drawn as pressurised gas cylinders.",
+     "checked_by": "Visual",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Solar-only and 1 t claimed MET by precedent (ColdHubs, 4.85 m^3 store), not by its own energy balance (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Vapour compression plus ice bank plus battery is a valid concept, but freezing 200-300 kg of ice daily (~23 kWh thermal) is not in the 7-9 kWh electric budget and PV yield is overstated (no losses applied) (major)."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Transmission load never computed; PV 10-12.5 kWh/day has no system derate (7.5-9.4 kWh with 0.75); room volume 9.1 m^3 stated ~7; '658 W/h' unit garble."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Picture splits the box into a machine bay and a narrow cold compartment roughly half the width, unlike the 2.4x1.8 m room; cold-air arrows cross the partition and pour out of the open door."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Risks are honest and practical (cloudy days, warm loading, R290 servicing)."
+   },
+   "C6": {
+    "score": 4,
+    "why": "How it works is clear and plain."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four make steps with processes, few dimensions, no illustrations."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Airflow arrows passing through walls and out the door; tanks drawn as pressure cylinders rather than ice-bank tanks."
+   },
+   "total": 24
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "figure vs text, PV count",
+     "fault": "Ground array shows five modules; text: 2 roof + 7 ground (nine).",
+     "checked_by": "Crop and count of ground array",
+     "severity": "major"
+    },
+    {
+     "where": "figure labels",
+     "fault": "Callout 5 'Insulated chamber with door' sits on the wall-mounted cooler; the monoblock itself is listed 'not located'.",
+     "checked_by": "Visual",
+     "severity": "minor"
+    },
+    {
+     "where": "key numbers, door infiltration",
+     "fault": "8 openings x 1 m^3 air each; a full air change of the 8.64 m^3 room gives ~0.88 kWh/day, about 5x more (still inside the 3.1 kWh margin).",
+     "checked_by": "python3",
+     "severity": "minor"
+    },
+    {
+     "where": "cooler capacity",
+     "fault": "Monoblock cooling capacity in kW not stated; ability to pull down 250 kg/day while holding not checked.",
+     "checked_by": "Read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure, cooler",
+     "fault": "Cooler drawn like a split-AC outdoor condenser rather than a through-wall monoblock.",
+     "checked_by": "Visual",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Both constraints met with computed numbers: 13.5 vs 10.4 kWh/day, 1000 kg as 50 x 20 kg crates with staged 250 kg/day intake."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Conservative COP 1.4, staged pull-down, cloudy-day battery simulation, separate wind-anchored ground array; physically sound."
+   },
+   "C3": {
+    "score": 4,
+    "why": "Envelope, conduction, thermal total, electrical load, yield, mass, pad pressure, uplift and anchors all re-derive; door infiltration assumes only 1 m^3 per opening (full change ~0.88 kWh/day, within margin)."
+   },
+   "C4": {
+    "score": 3,
+    "why": "Picture shows split array, pads, frame and monoblock, but only five ground modules vs seven and label 5 ('insulated chamber') points at the cooler while the cooler is 'not located'."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Risks tied to its own margins with operating rules (staged intake, refuse 51st crate)."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Explanation is short and generic; airflow route is only named."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with materials and sizes, each illustrated."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render with plausible construction; no garbled text."
+   },
+   "total": 30
+  }
+ }
+}

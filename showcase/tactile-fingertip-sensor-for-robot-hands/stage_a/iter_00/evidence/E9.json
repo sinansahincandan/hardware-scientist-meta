@@ -1,14 +1,26 @@
 {
   "id": "E9",
-  "author": "Maya \u2014 Tactile Transduction and Sensing Physics",
-  "tool": "sketch",
-  "purpose": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(5,5.5,'outer skin + PVDF film (vibration)',ha='center')\nax.add_patch(plt.Rectangle((1,4.2),8,0.6,fill=False,lw=2))\nax.text(5,3.5,'silicone pillars (dielectric)',ha='center')\nfor x in [2,4,6,8]:\n  ax.add_patch(plt.Rectangle((x-0.3,2.8),0.6,0.8,fill=False,lw=2))\nax.text(5,2.2,'PCB with comb electrodes (taxels 2.5mm pitch)',ha='center')\nax.add_patch(plt.Rectangle((1,1.7),8,0.4,fill=False,lw=2))\nax.text(5,1.0,'rigid fingertip core (fixed)',ha='center')\nax.annotate('contact force',xy=(5,4.8),xytext=(8.5,5.2),arrowprops=dict(arrowstyle='->',lw=2))\nplt.tight_layout(); plt.savefig('sketch.png')",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
+  "tool": "web_search",
+  "purpose": "search: fingerprint ridges tactile sensor slip vibration amplification",
+  "code_or_query": "fingerprint ridges tactile sensor slip vibration amplification",
   "inputs": {},
-  "output_summary": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
-  "output_full": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
-  "sketch_path": "evidence/sketch_9.png",
-  "references": [],
+  "output_summary": "syntouchllc.com — Microsoft Word - FingerprintsDoD.doc — 2009 — https://www.syntouchllc.com/Technology/_publications/2009_Fishel_FingerprintsDOD.pdf",
+  "output_full": "syntouchllc.com — Microsoft Word - FingerprintsDoD.doc — 2009 — https://www.syntouchllc.com/Technology/_publications/2009_Fishel_FingerprintsDOD.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "syntouchllc.com",
+      "title": "Microsoft Word - FingerprintsDoD.doc",
+      "year": "2009",
+      "url": "https://www.syntouchllc.com/Technology/_publications/2009_Fishel_FingerprintsDOD.pdf",
+      "query": "fingerprint ridges tactile sensor slip vibration amplification",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

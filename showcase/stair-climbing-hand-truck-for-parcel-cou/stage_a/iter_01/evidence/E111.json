@@ -1,0 +1,36 @@
+{
+  "id": "E111",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search (cited source)",
+  "code_or_query": "",
+  "inputs": {},
+  "output_summary": "bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake — https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html — Elena took from it: The numbers that decide it are total slope load 401 N from the slope load from total weight times sine theta (E97) needing total lock torque 74.2 N m from the total lock torque slope times cluster radius (E98), which needs 1.55 kN clamp from the clamp for corrected total torque (E100) because braking torque is pad force times friction times rotor radius I take from The Bicycle Physics of the Hydraulic Brake (E45)",
+  "output_full": "bikelabstudio.com — The Bicycle Physics of the Hydraulic Brake — https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html\nElena Ruiz — Human Factors & Single-Operator Safety took from it: The numbers that decide it are total slope load 401 N from the slope load from total weight times sine theta (E97) needing total lock torque 74.2 N m from the total lock torque slope times cluster radius (E98), which needs 1.55 kN clamp from the clamp for corrected total torque (E100) because braking torque is pad force times friction times rotor radius I take from The Bicycle Physics of the Hydraulic Brake (E45)\n(opened and read by the member)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: The numbers that decide it are total slope load 401 N from the slope load from total weight times sine theta (E97) needing total lock torque 74.2 N m from the total lock torque slope times cluster radius (E98), which needs 1.55 kN clamp from the clamp for corrected total torque (E100) because braking torque is pad force times friction times rotor radius I take from The Bicycle Physics of the Hydraulic Brake (E111), giving 57.4 N finger force from the corrected hand release force (E101) with caliper ratio 8, lever ratio 4.5 and cable efficiency 0.75 including friction loss, against maximum manual lever force 29 pounds (lb) I take from Force Guidelines (E78) with factor 2.25 but above maximum pinch force 9 lb, so it needs power grip at 3.8 to 6.4 centimetre span with wrist extension 25 degrees or less I take from Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1 (E56) where continuous grip above 10 percent of MVC is unacceptable, like lifting a 5.85 kg bag with two fingers, and parked shear demand ratio 0.498 from the park pin shear with dynamic allowance (E102) for factor about 2.0 with impact on the steepest slope.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Force Guidelines (E78) that maximum manual lever force is 29 pounds and maximum pinch force is 9 pounds, and I take from The Bicycle Physics of the Hydraulic Brake (E111) that braking torque equals pad friction times clamp force times rotor radius.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "bikelabstudio.com",
+      "title": "The Bicycle Physics of the Hydraulic Brake",
+      "year": "",
+      "url": "https://www.bikelabstudio.com/articles/bicycle-hydraulic-brakes-encyclopedia-en.html",
+      "query": "",
+      "unresolved": false,
+      "passage": "The numbers that decide it are total slope load 401 N from the slope load from total weight times sine theta (E97) needing total lock torque 74.2 N m from the total lock torque slope times cluster radius (E98), which needs 1.55 kN clamp from the clamp for corrected total torque (E100) because braking torque is pad force times friction times rotor radius I take from The Bicycle Physics of the Hydraulic Brake (E45)",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "The numbers that decide it are total slope load 401 N from the slope load from total weight times sine theta (E97) needing total lock torque 74.2 N m from the total lock torque slope times cluster radius (E98), which needs 1.55 kN clamp from the clamp for corrected total torque (E100) because braking torque is pad force times friction times rotor radius I take from The Bicycle Physics of the Hydraulic Brake (E111), giving 57.4 N finger force from the corrected hand release force (E101) with caliper ratio 8, lever ratio 4.5 and cable efficiency 0.75 including friction loss, against maximum manual lever force 29 pounds (lb) I take from Force Guidelines (E78) with factor 2.25 but above maximum pinch force 9 lb, so it needs power grip at 3.8 to 6.4 centimetre span with wrist extension 25 degrees or less I take from Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1 (E56) where continuous grip above 10 percent of MVC is unacceptable, like lifting a 5.85 kg bag with two fingers, and parked shear demand ratio 0.498 from the park pin shear with dynamic allowance (E102) for factor about 2.0 with impact on the steepest slope."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Force Guidelines (E78) that maximum manual lever force is 29 pounds and maximum pinch force is 9 pounds, and I take from The Bicycle Physics of the Hydraulic Brake (E111) that braking torque equals pad friction times clamp force times rotor radius."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

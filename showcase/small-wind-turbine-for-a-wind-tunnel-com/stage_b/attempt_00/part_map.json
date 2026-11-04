@@ -1,0 +1,146 @@
+{
+  "parts": [
+    {
+      "part_id": "rotor",
+      "visual_phrase": "fan rotor",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "nacelle",
+      "size_ratio": 1.78,
+      "touches": [
+        "hub"
+      ],
+      "note": "40cm wind catcher at front spinning the shaft"
+    },
+    {
+      "part_id": "rotor__blade",
+      "visual_phrase": "white blade",
+      "count": 3,
+      "long_axis": "any",
+      "size_vs": "rotor",
+      "size_ratio": 0.5,
+      "touches": [
+        "rotor"
+      ],
+      "note": "one of three identical blades making the rotor"
+    },
+    {
+      "part_id": "hub",
+      "visual_phrase": "metal hub",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "generator",
+      "size_ratio": 1.5,
+      "touches": [
+        "rotor",
+        "generator",
+        "disc_brake"
+      ],
+      "note": "short shaft carrying rotor spin back"
+    },
+    {
+      "part_id": "nacelle",
+      "visual_phrase": "metal housing",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "post",
+      "size_ratio": 0.9,
+      "touches": [
+        "post",
+        "hub",
+        "generator",
+        "disc_brake"
+      ],
+      "note": "long bed holding shaft and electrics above post"
+    },
+    {
+      "part_id": "post",
+      "visual_phrase": "metal post",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "nacelle",
+      "size_ratio": 1.11,
+      "touches": [
+        "nacelle"
+      ],
+      "note": "upright support under the housing"
+    },
+    {
+      "part_id": "generator",
+      "visual_phrase": "small motor",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "hub",
+      "size_ratio": 0.67,
+      "touches": [
+        "hub",
+        "nacelle"
+      ],
+      "note": "small round motor making power from spin"
+    },
+    {
+      "part_id": "rectifier",
+      "visual_phrase": "small board",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "regulator",
+      "size_ratio": 0.64,
+      "touches": [
+        "regulator",
+        "generator"
+      ],
+      "note": "tiny board turning wild AC to raw DC"
+    },
+    {
+      "part_id": "regulator",
+      "visual_phrase": "green board",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "dump",
+      "size_ratio": 1.1,
+      "touches": [
+        "rectifier",
+        "dump"
+      ],
+      "note": "box making steady 12V for the load"
+    },
+    {
+      "part_id": "dump",
+      "visual_phrase": "wire coil",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "regulator",
+      "size_ratio": 0.91,
+      "touches": [
+        "regulator"
+      ],
+      "note": "coil turning extra spin to heat on stop"
+    },
+    {
+      "part_id": "safety_loop",
+      "visual_phrase": "thin wire",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "regulator",
+      "size_ratio": 1.36,
+      "touches": [
+        "disc_brake",
+        "regulator"
+      ],
+      "note": "thin trip wiring looping to brake"
+    },
+    {
+      "part_id": "disc_brake",
+      "visual_phrase": "metal disc",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "hub",
+      "size_ratio": 1.0,
+      "touches": [
+        "hub",
+        "nacelle"
+      ],
+      "note": "round brake squeezed by spring to park rotor"
+    }
+  ]
+}

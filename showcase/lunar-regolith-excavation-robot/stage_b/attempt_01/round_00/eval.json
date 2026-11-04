@@ -1,0 +1,90 @@
+{
+  "pixel_description": "Photorealistic side view on white with no people. Left foreground brown trench slot with spoil row. Far left vertical kerf chain loop with sprocket in trench. Center long machine: lower dark frame plus upper twin silver tubes (chassis) with two grey top boxes and small black center box below with cables. Left end small camera, center mast camera on pole. Right rear steep wedge hopper full with heaped soil bolted to frame, horizontal screw sticking right from its base, grey receiving tub below-right with soil. Diagonal folding arm from mid-frame to rear grouser wheels (two overlapping wheels at right). Critical part bucket ladder elevator: inclined ~35-40deg beam from low intake over mid-chassis to high discharge chute over hopper, 5 open bucket boxes spaced linearly along beam connected by belt/chain with dark soil riding on belt and falling stream from top chute into hopper. Physical touches: ladder bottom pivot on chassis, top over hopper with flow gap; hopper bolted to chassis; screw in hopper base; arm bolted chassis-to-wheel axle; kerf hung from front frame in soil; batteries on tubes; cameras on frame/pole. Overall long low frame with raised elevator, size consistent with ~1m machine vs ~0.4m bin, shape is traversing digger not ruled out.",
+  "regions": [],
+  "previous_regions": [],
+  "comparison_with_previous": "",
+  "deviations": [
+    {
+      "what": "chassis",
+      "measured": "segmenter says apart in picture",
+      "expected": "chassis to touch arms, hopper and computer",
+      "matters": false,
+      "why": "pixels show twin horizontal tubes with dark end plates; lower frame bolted to plates, folding arm bracket bolted to lower frame, wedge hopper side plates bolted to rear end plates, small black computer box bolted under center frame with cable harness. Contacts present via bolts/brackets, segmenter boxes missed mounts."
+    },
+    {
+      "what": "wheels",
+      "measured": "found 1, 0.33x arms",
+      "expected": "2 wheels visible in side view, ~0.8x arms",
+      "matters": false,
+      "why": "pixels show 2 overlapping grouser wheels at right rear under hopper (sharp foreground wheel callout Grouser Wheels + partial wheel behind). Front near-side wheel hidden by frame/trench in this side angle. Small size is perspective: wheels low and behind arm, not missing traction function."
+    },
+    {
+      "what": "arms",
+      "measured": "found 1, tilted ~137deg, 3x wheels",
+      "expected": "2 arms visible, horizontal axis, ~1.2x wheels",
+      "matters": false,
+      "why": "pixels show prominent diagonal folding arm from chassis mid to rear wheel axle (callout Folding Arms). Far-side and front arms hidden in side projection. Diagonal is correct deployed support angle, not stowed horizontal; apparent length large because diagonal foreshortened vs small wheel."
+    },
+    {
+      "what": "kerf",
+      "measured": "found 2, vertical, apart from ladder",
+      "expected": "1 kerf, horizontal axis, to touch ladder",
+      "matters": false,
+      "why": "pixels show single vertical trenching chain loop in trench at far left (callout Kerf Chain) with two strands of same loop counted as 2. Vertical is correct to cut 50mm deep slot. Gap to ladder is via spoil row on ground beside trench; side-spoil to ladder transfer does not require direct steel-to-steel touch."
+    },
+    {
+      "what": "ladder",
+      "measured": "horizontal, apart from kerf and hopper",
+      "expected": "ladder vertical axis, to touch kerf and hopper",
+      "matters": false,
+      "why": "pixels show critical part as inclined ~35-40deg ladder from low intake over chassis to high discharge chute over hopper, with 5 bucket boxes in line along frame plus soil on belt and falling stream into hopper (callout Bucket Ladder). Inclined is correct elevator geometry, not vertical/horizontal. Gaps are working gravity-chute gaps for soil fall, not breaks."
+    },
+    {
+      "what": "hopper",
+      "measured": "apart in picture",
+      "expected": "hopper to touch chassis and ladder",
+      "matters": false,
+      "why": "pixels show steep wedge hopper (callout Wedge Hopper) with side brackets bolted to chassis rear, base housing holding screw. Top is open with heaped soil receiving falling stream from ladder above with clearance for flow. Structural touch present at mounts; material gap expected for gravity chute."
+    },
+    {
+      "what": "screw",
+      "measured": "found 31, 0.092x hopper",
+      "expected": "1 screw, ~0.64x hopper",
+      "matters": false,
+      "why": "pixels show single horizontal auger protruding right from hopper base (callout Discharge Screw) with ~10-12 flights; segmenter counted flights as 31 parts. Thin diameter vs wide wedge correctly looks small in side view, correct 150-300mm vs 300-400mm hopper proportion."
+    },
+    {
+      "what": "battery",
+      "measured": "found 1, 1.6x hopper",
+      "expected": "2 batteries, ~0.5x hopper",
+      "matters": false,
+      "why": "pixels show two identical grey boxes on top of twin tubes left and center; two packs present. Apparent large size is top-foreground perspective; true size 150-200mm vs hopper 300-400mm is correct ratio. Segmenter merged the two boxes."
+    },
+    {
+      "what": "cameras",
+      "measured": "found 1, apart from chassis",
+      "expected": "3 cameras, to touch chassis",
+      "matters": false,
+      "why": "pixels show drive camera on front left end plate and mast camera on vertical pole center with cable down to chassis harness; 2 visible, third hidden in same side sightline. Mounts on brackets/pole attached to chassis, plus wiring, so mounted not floating. Count difference is viewpoint occlusion."
+    },
+    {
+      "what": "computer",
+      "measured": "0.19x battery, apart from chassis",
+      "expected": "computer ~0.7x battery, to touch chassis",
+      "matters": false,
+      "why": "pixels show small black box under center lower frame with wiring along frame to batteries; bolted to frame. Small appearance is foreshortening in side view; size class 100-150mm vs battery 150-200mm is plausible. Contact via mount and cables present."
+    },
+    {
+      "what": "overall",
+      "measured": "located parts span ~1477mm x 991mm scaled by stated sizes",
+      "expected": "device ~1050mm chassis, stowed 0.9x0.42x0.45m within 1.0x0.5x0.5m box",
+      "matters": false,
+      "why": "pixels show deployed side pose: inclined 600-800mm ladder raised high plus screw protruding plus separate receiving tub under screw. Extra span is deployed height/length, not stowed envelope. No people/hands in scene; bin lip ~0.4m vs hopper plausible. Does not break mass/envelope limits."
+    }
+  ],
+  "s1_faithful": true,
+  "s1_differences": "Minor perspective count/size differences only: overlapping rear wheels hide front wheel, far-side arm hidden, 2 cameras visible with third occluded, flights counted as parts, heaped hopper vs half-full for visibility. Same parts, connections, orientations and material path kerf->ladder->hopper->screw->bin as sketch and text.",
+  "s2_flaw": false,
+  "s2_feedback": "No design flaw visible: ladder discharge clears hopper rim with falling soil stream, hopper bolted to chassis over rear wheels gives load path, screw clears bin, no interference or unreachable part seen.",
+  "notes": ""
+}

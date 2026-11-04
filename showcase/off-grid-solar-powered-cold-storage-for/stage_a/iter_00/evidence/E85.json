@@ -1,0 +1,14 @@
+{
+  "id": "E85",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "sketch",
+  "purpose": "Grown 9-module split PV array: 2 modules on roof gantry sunshade with vent gap plus 7 on ground frame, battery box vented at side",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\n# cold box\nax.add_patch(plt.Rectangle((1,1), 3, 2.5, fill=False, linewidth=2))\nax.text(1.2,2.2,'cold box', fontsize=10)\nax.text(1.2,1.7,'2x PV roof', fontsize=9)\n# roof PV\nax.add_patch(plt.Rectangle((0.8,3.6), 3.4, 0.6, fill=False, linewidth=2))\nax.text(1.5,3.8,'2 modules vent gap', fontsize=8)\n# ground frame 7 modules\nax.add_patch(plt.Rectangle((5.5,1), 4, 2.0, fill=False, linewidth=2))\nax.text(5.7,2.5,'7 modules ground frame', fontsize=9)\nfor i in range(7):\n    x=5.7+i*0.5\n    ax.plot([x,x],[1.1,2.2])\nax.text(5.7,0.6,'9x400W=3.6kWp ~17.6 m2', fontsize=9)\nax.text(1,0.6,'battery box vented', fontsize=9)\nax.add_patch(plt.Rectangle((1,0.1), 1, 0.4, fill=False))\nplt.tight_layout()\nplt.savefig('sketch.png', dpi=150)",
+  "inputs": {},
+  "output_summary": "Grown 9-module split PV array: 2 modules on roof gantry sunshade with vent gap plus 7 on ground frame, battery box vented at side",
+  "output_full": "Grown 9-module split PV array: 2 modules on roof gantry sunshade with vent gap plus 7 on ground frame, battery box vented at side",
+  "sketch_path": "evidence/sketch_85.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

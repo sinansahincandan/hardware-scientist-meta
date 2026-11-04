@@ -1,14 +1,32 @@
 {
   "id": "E24",
-  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
-  "tool": "sketch",
-  "purpose": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,10); ax.set_ylim(0,6); ax.axis('off')\nax.text(1,5,title if False else \"48 taxels\\n6x8 grid\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(4.5,5,\"CDC mux\\nstatic 25Hz\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(1,2.5,\"PVDF film\\nvibration\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(4.5,2.5,\"charge amp\\n+ 2kHz ADC\", fontsize=9, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(7.5,3.8,\"MCU\", fontsize=10, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.text(7.5,2,\"4-wire bus\\nPWR GND SDA SCL\", fontsize=8, bbox=dict(boxstyle=\"round\", fc=\"white\"))\nax.annotate(\"\", xy=(4.4,5), xytext=(2.8,5), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(4.4,2.5), xytext=(2.8,2.5), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.0,4.2), xytext=(5.9,4.8), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.0,3.6), xytext=(5.9,2.7), arrowprops=dict(arrowstyle=\"->\"))\nax.annotate(\"\", xy=(7.5,2.6), xytext=(7.5,3.3), arrowprops=dict(arrowstyle=\"->\"))\nax.text(5,0.8,\"fixed: rigid core + PCB  wires move with finger\", fontsize=8)\nplt.tight_layout(); plt.savefig(\"sketch.png\")",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: parallel plate capacitive sensor sensitivity ΔC force dielectric elastomer tactile",
+  "code_or_query": "parallel plate capacitive sensor sensitivity ΔC force dielectric elastomer tactile",
   "inputs": {},
-  "output_summary": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
-  "output_full": "Fingertip signal path: 48 capacitive taxels row-column mux to CDC to MCU, PVDF film to charge amp to fast ADC, single 4-wire bus out finger",
-  "sketch_path": "evidence/sketch_24.png",
-  "references": [],
+  "output_summary": "rnd.iitb.ac.in — Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay — https://rnd.iitb.ac.in/node/2597",
+  "output_full": "rnd.iitb.ac.in — Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay — https://rnd.iitb.ac.in/node/2597\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "rnd.iitb.ac.in",
+      "title": "Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay",
+      "year": "",
+      "url": "https://rnd.iitb.ac.in/node/2597",
+      "query": "parallel plate capacitive sensor sensitivity ΔC force dielectric elastomer tactile",
+      "unresolved": false,
+      "passage": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

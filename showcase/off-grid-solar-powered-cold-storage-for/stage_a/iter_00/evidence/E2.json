@@ -1,22 +1,30 @@
 {
   "id": "E2",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: peak sun hours tropical hot region solar sizing kWh per kWp per day",
-  "code_or_query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
+  "purpose": "search: off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
+  "code_or_query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
   "inputs": {},
-  "output_summary": "themescenter.online — How Many Solar Panels Do I Need? — https://www.themescenter.online/blog/how-many-solar-panels/index.html",
-  "output_full": "themescenter.online — How Many Solar Panels Do I Need? — https://www.themescenter.online/blog/how-many-solar-panels/index.html\n(the search returned no passage text)",
+  "output_summary": "agrinnovators.org — ColdHubs | Agrinnovators — https://agrinnovators.org/business-profile/coldhubs/",
+  "output_full": "agrinnovators.org — ColdHubs | Agrinnovators — https://agrinnovators.org/business-profile/coldhubs/\n(opened by the member, not cited)\nSolar Energy Systems Engineer said about it: As Solar Energy Systems Engineer, the best existing solar-only precedent is the ColdHubs walk-in store described in ColdHubs | Agrinnovators (E2), which is 3 metre by 3 metre by 2 metre for up to 3 tonne with roof Photovoltaic (PV) panels where the panels generate 6 kilowatt and the room uses 1.5 kilowatt to 2 kilowatt, so a roof array about three times the cooling load with battery backup runs 24/7 off-grid and maps directly to the fixed-tilt array (C1) scaled to 1 tonne.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "themescenter.online",
-      "title": "How Many Solar Panels Do I Need?",
+      "authors_or_org": "agrinnovators.org",
+      "title": "ColdHubs | Agrinnovators",
       "year": "",
-      "url": "https://www.themescenter.online/blog/how-many-solar-panels/index.html",
-      "query": "peak sun hours tropical hot region solar sizing kWh per kWp per day",
+      "url": "https://agrinnovators.org/business-profile/coldhubs/",
+      "query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
       "unresolved": false,
-      "passage": ""
+      "passage": "As Solar Energy Systems Engineer, the best existing solar-only precedent is the ColdHubs walk-in store described in ColdHubs | Agrinnovators (E2), which is 3 metre by 3 metre by 2 metre for up to 3 tonne with roof Photovoltaic (PV) panels where the panels generate 6 kilowatt and the room uses 1.5 kilowatt to 2 kilowatt, so a roof array about three times the cooling load with battery backup runs 24/7 off-grid and maps directly to the fixed-tilt array (C1) scaled to 1 tonne.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "As Solar Energy Systems Engineer, the best existing solar-only precedent is the ColdHubs walk-in store described in ColdHubs | Agrinnovators (E2), which is 3 metre by 3 metre by 2 metre for up to 3 tonne with roof Photovoltaic (PV) panels where the panels generate 6 kilowatt and the room uses 1.5 kilowatt to 2 kilowatt, so a roof array about three times the cooling load with battery backup runs 24/7 off-grid and maps directly to the fixed-tilt array (C1) scaled to 1 tonne."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -1,0 +1,14 @@
+{
+  "id": "E52",
+  "author": "Structures-Survival Engineer",
+  "tool": "calc",
+  "purpose": "axial stack length rotor overhang plus nacelle plus clearance",
+  "code_or_query": "sum([8,25,3])",
+  "inputs": {},
+  "output_summary": "36",
+  "output_full": "36",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

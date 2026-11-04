@@ -1,22 +1,24 @@
 {
   "id": "E18",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
-  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "purpose": "search: Bekker wheel sinkage loose sand ground pressure small rover",
+  "code_or_query": "Bekker wheel sinkage loose sand ground pressure small rover",
   "inputs": {},
-  "output_summary": "files.seeedstudio.com — INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth — https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf",
-  "output_full": "files.seeedstudio.com — INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth — https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf\n(the search returned no passage text)",
+  "output_summary": "academia.edu — Analysis of the Effect of Soft Soil’s Parameters Change on Planetary Vehicles’ Dynamic Response — https://www.academia.edu/77857492/Analysis_of_the_Effect_of_Soft_Soil_s_Parameters_Change_on_Planetary_Vehicles_Dynamic_Response",
+  "output_full": "academia.edu — Analysis of the Effect of Soft Soil’s Parameters Change on Planetary Vehicles’ Dynamic Response — https://www.academia.edu/77857492/Analysis_of_the_Effect_of_Soft_Soil_s_Parameters_Change_on_Planetary_Vehicles_Dynamic_Response\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "files.seeedstudio.com",
-      "title": "INDUSTRIAL PRODUCT DATASHEET Intel RealSense LiDAR Depth",
+      "authors_or_org": "academia.edu",
+      "title": "Analysis of the Effect of Soft Soil’s Parameters Change on Planetary Vehicles’ Dynamic Response",
       "year": "",
-      "url": "https://files.seeedstudio.com/Bazaar/product_pdf/113990794.pdf",
-      "query": "Intel RealSense depth camera range field of view datasheet",
+      "url": "https://www.academia.edu/77857492/Analysis_of_the_Effect_of_Soft_Soil_s_Parameters_Change_on_Planetary_Vehicles_Dynamic_Response",
+      "query": "Bekker wheel sinkage loose sand ground pressure small rover",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

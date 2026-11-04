@@ -1,0 +1,26 @@
+{
+  "id": "E17",
+  "author": "Structures-Survival Engineer",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition turbine nacelle yaw mount survival thrust bending",
+  "code_or_query": "Collegiate Wind Competition turbine nacelle yaw mount survival thrust bending",
+  "inputs": {},
+  "output_summary": "ceias.nau.edu — Collegiate Wind Competition: Mechanical Design — 2018 — https://ceias.nau.edu/capstone/projects/ME/2018/CollegiateWindCompetition/documentsa/Mechanical Final Poster.pdf",
+  "output_full": "ceias.nau.edu — Collegiate Wind Competition: Mechanical Design — 2018 — https://ceias.nau.edu/capstone/projects/ME/2018/CollegiateWindCompetition/documentsa/Mechanical Final Poster.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ceias.nau.edu",
+      "title": "Collegiate Wind Competition: Mechanical Design",
+      "year": "2018",
+      "url": "https://ceias.nau.edu/capstone/projects/ME/2018/CollegiateWindCompetition/documentsa/Mechanical Final Poster.pdf",
+      "query": "Collegiate Wind Competition turbine nacelle yaw mount survival thrust bending",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

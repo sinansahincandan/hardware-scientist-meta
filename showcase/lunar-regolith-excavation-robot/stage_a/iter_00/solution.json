@@ -1,421 +1,489 @@
 {
-  "title": "Integrated rover v2 with front drum and high-lift dump",
-  "problem_restatement": "Build a 60 kg 1.0x0.5x0.5 m rover that traverses loose BP-1, digs and carries soil, sees and stops safely without line-of-sight, runs on onboard power, resists dust and heat, and dumps over a 1.0 m bin without tipping.",
-  "mechanism_sentence": "Wide wheels roll over loose soil while a front drum scoops soil into a middle bin that climbs to 1.05 m to pour into a tall box.",
+  "title": "Blind narrow-kerf bucket-ladder digger with screw-metered wedge pour",
+  "problem_restatement": "Move whole mass over loose soil, break bed, lift flow to storage, hold carried mass, pour to bin, and do it blind from sensor signals.",
+  "mechanism_sentence": "Four grouser wheels carry a frame that cuts a 100 mm wide slot 50 mm deep, lifts the spoil with a bucket chain into a steep hopper, then tilts and screws 15 kg loads over the bin while onboard cameras guide blind driving.",
   "decisive_choices": [
-    "Choose 4-wheel drive rigid grouser wheels over tracked skid-steer to float on BP-1",
-    "Choose front transverse bucket drum over rear bucket ladder to keep belly clear",
-    "Choose rear high-lift mast with dual 500 N actuators to lift pour lip to 1.05 m to clear 1.0 m bin over tilt-only dump"
+    "Chose four-wheel grouser skid-steer C9 over tank tracks C8 because tracks clog and slip while 294 N traction vs 11 N cut with 15.6 kPa float fits box.",
+    "Chose narrow-kerf chain C36 over full-width ladder C1 and scraper C3 and drum C31 because 11 N draft vs 32.9 N full width vs 294 N traction fits 16.4 W power and feeds ladder.",
+    "Chose auger live-bottom with rear tilt C37 over plain tilting hopper plus vibrator C5 because screw meters 15 kg pour with 0.55 m pivot clearing 0.40 m lip by 0.15 m holding 1.69 level-only tip factor."
   ],
-  "open_question": "Does 2.92 kg for 1 kWh implying 342 Wh per kg recompute to a realistic pack mass and 30-min energy versus 341 W and 50.6 kg total?",
-  "transfer_line": "Load: front bucket drum -> central hopper -> high-lift mast | Measured: depth camera -> dual-link teleoperation",
+  "open_question": "Will the 20 L steep wedge hopper with 150 mm outlet and screw reliably discharge without arching?",
+  "transfer_line": "Load: narrow kerf trenching chain -> inclined bucket ladder -> steep wedge hopper | Measured: downward dig camera -> sealed station operator",
   "assumed_constraints": [
     {
-      "constraint": "Stay within 60 kg mass and 1.0 x 0.5 x 0.5 m size limits",
-      "source": "F3",
+      "constraint": "working stress capped near 15 ksi for 6061-T6 aluminium tube",
+      "source": "Aluminum square tubing strength",
       "evidence_ids": [
-        "E50",
-        "E46"
+        "E38"
       ]
     },
     {
-      "constraint": "Clear 1.0 m high collection bin lip to dump by gravity",
-      "source": "C10",
+      "constraint": "trips limited to 15 kg and dump only on level ground",
+      "source": "Mobility and Deployable Chassis Lead",
       "evidence_ids": [
-        "E42"
-      ]
-    },
-    {
-      "constraint": "Carry 10 kg BP-1 load at loose density near 0.90 g per cm3",
-      "source": "C10",
-      "evidence_ids": [
-        "E49",
-        "E36"
-      ]
-    },
-    {
-      "constraint": "Size 24 V pack for 30 min digging sortie at hundreds of watts",
-      "source": "C7",
-      "evidence_ids": [
-        "E34",
-        "E10"
+        "E51"
       ]
     }
   ],
   "functional_decomposition": [
-    "Traverse loose BP-1 bed without immobilization",
-    "Excavate and lift BP-1 into onboard carrying volume",
-    "React digging forces within 60 kg and 1.0x0.5x0.5 m limits",
-    "Provide remote situational awareness without line-of-sight",
-    "Maintain safe remote link with independent stop",
-    "Supply onboard power for drive digging computing and lighting",
-    "Protect electronics from dust intrusion and thermal overload",
-    "Store BP-1 onboard and dump into collection bin without spillage or tipping"
+    "Traverse ground",
+    "Loosen soil",
+    "Collect soil",
+    "Contain soil",
+    "Discharge soil",
+    "Coordinate blind operation"
   ],
   "concept": {
-    "working_principle": "Four rigid grouser wheels carry a low frame over BP-1, a front bucket drum scoops soil into a central hopper, and a rear high-lift mast raises the hopper pivot to 1.05 m to clear the 1.0 m bin lip for gravity pouring, powered by a 24 V pack in a sealed box with an elevated sensor mast for out-of-sight driving and heartbeat stop-and-hold.",
+    "working_principle": "Front narrow chain cuts a shallow slot and leaves side spoil, wide bucket ladder lifts spoil and drops over top sprocket into steep wedge hopper, rear tilt plus floor screw meters pour over bin lip while cameras plus heartbeat stop plus fiducial reset operate blind.",
     "parts": [
       {
-        "id": "frame",
-        "name": "low tube space frame with belly pan",
-        "function": "Carry drive plus dig loads in 60 kg budget",
-        "material": "aluminum",
+        "id": "chassis",
+        "name": "twin tube chassis frame",
+        "function": "carry loads and keep alignment",
+        "material": "6061-T6 aluminium",
         "size_class_mm": {
-          "min": 450.0,
-          "max": 950.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "wheel",
-        "name": "4-wheel drive rigid wheels with chevron grousers",
-        "function": "Traverse loose BP-1 without immobilization",
-        "material": "metal",
-        "size_class_mm": {
-          "min": 100.0,
-          "max": 300.0
-        },
-        "qty": 4
-      },
-      {
-        "id": "drum",
-        "name": "front transverse bucket drum with scoops",
-        "function": "Excavate and lift BP-1 into onboard volume",
-        "material": "metal",
-        "size_class_mm": {
-          "min": 50.0,
-          "max": 400.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "hopper",
-        "name": "central hopper with rear high-lift mast and dual actuators",
-        "function": "Store BP-1 and dump over 1.0 m bin by gravity",
-        "material": "aluminum",
-        "size_class_mm": {
-          "min": 500.0,
+          "min": 900.0,
           "max": 1050.0
         },
         "qty": 1
       },
       {
-        "id": "sensormast",
-        "name": "elevated tilting sensor mast with cameras depth IMU and lighting",
-        "function": "Provide remote situational awareness without line-of-sight",
-        "material": "aluminum",
+        "id": "wheel",
+        "name": "rigid grouser wheels",
+        "function": "traverse loose soil",
+        "material": "steel",
         "size_class_mm": {
-          "min": 500.0,
-          "max": 900.0
+          "min": 200.0,
+          "max": 220.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "arm",
+        "name": "folding wheel arms",
+        "function": "stow in box then widen track",
+        "material": "6061-T6 aluminium",
+        "size_class_mm": {
+          "min": 420.0,
+          "max": 680.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "kerf",
+        "name": "narrow kerf trenching chain",
+        "function": "loosen narrow slot",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 50.0,
+          "max": 100.0
         },
         "qty": 1
       },
       {
-        "id": "link",
-        "name": "dual-link teleoperation with heartbeat failsafe",
-        "function": "Maintain safe remote link with independent stop",
-        "material": "electronics",
+        "id": "ladder",
+        "name": "inclined bucket ladder",
+        "function": "lift loosened soil to hopper",
+        "material": "steel",
         "size_class_mm": {
-          "min": 50.0,
-          "max": 150.0
+          "min": 200.0,
+          "max": 500.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "hopper",
+        "name": "steep wedge hopper",
+        "function": "contain carried soil",
+        "material": "smooth steel",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 450.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "auger",
+        "name": "tilt screw discharge",
+        "function": "meter pour over bin lip",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 550.0
         },
         "qty": 1
       },
       {
         "id": "battery",
-        "name": "24 V battery pack",
-        "function": "Supply onboard electrical power for sortie",
+        "name": "lithium phosphate battery pack",
+        "function": "store energy for drive and dig",
         "material": "lithium iron phosphate",
         "size_class_mm": {
           "min": 100.0,
-          "max": 300.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "enclosure",
-        "name": "sealed electronics enclosure with seals and fan",
-        "function": "Protect electronics from dust and thermal overload",
-        "material": "metal",
-        "size_class_mm": {
-          "min": 200.0,
           "max": 400.0
         },
-        "qty": 1
+        "qty": 2
+      },
+      {
+        "id": "camera",
+        "name": "onboard camera set",
+        "function": "enable blind teleoperation",
+        "material": "electronics",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 100.0
+        },
+        "qty": 3
       }
     ],
     "connections": [
       {
-        "from_id": "wheel",
-        "to_id": "frame",
+        "from_id": "kerf",
+        "to_id": "ladder",
         "kind": "mechanical",
-        "label": "wheels carry frame over BP-1"
+        "label": "side spoil rows feed ladder"
       },
       {
-        "from_id": "drum",
+        "from_id": "ladder",
         "to_id": "hopper",
         "kind": "mechanical",
-        "label": "drum scoops and feeds hopper"
+        "label": "gravity chute drops to hopper"
       },
       {
         "from_id": "hopper",
-        "to_id": "frame",
+        "to_id": "auger",
         "kind": "mechanical",
-        "label": "mast guides lift hopper to pour lip"
+        "label": "screw meters to rear outlet"
+      },
+      {
+        "from_id": "chassis",
+        "to_id": "arm",
+        "kind": "mechanical",
+        "label": "arms support wheels"
+      },
+      {
+        "from_id": "arm",
+        "to_id": "wheel",
+        "kind": "mechanical",
+        "label": "carries grouser wheels"
+      },
+      {
+        "from_id": "chassis",
+        "to_id": "hopper",
+        "kind": "mechanical",
+        "label": "carries ladder and hopper"
       },
       {
         "from_id": "battery",
-        "to_id": "enclosure",
+        "to_id": "ladder",
         "kind": "electrical",
-        "label": "battery feeds fused star distribution"
+        "label": "fused bus to dig and drive"
       },
       {
-        "from_id": "enclosure",
-        "to_id": "wheel",
+        "from_id": "battery",
+        "to_id": "camera",
         "kind": "electrical",
-        "label": "drivers feed drive and dig"
-      },
-      {
-        "from_id": "sensormast",
-        "to_id": "enclosure",
-        "kind": "electrical",
-        "label": "mast sensors feed enclosure"
-      },
-      {
-        "from_id": "sensormast",
-        "to_id": "frame",
-        "kind": "mechanical",
-        "label": "mast stows on frame and deploys up"
-      },
-      {
-        "from_id": "link",
-        "to_id": "enclosure",
-        "kind": "wireless",
-        "label": "dual radio links video and control"
+        "label": "fused rails to cameras"
       }
     ],
     "loads": [
       {
-        "on_id": "drum",
-        "label": "45.7 N cutting force on drum",
+        "on_id": "kerf",
+        "label": "11 N cut resistance",
         "direction": "in"
       },
       {
         "on_id": "hopper",
-        "label": "10 kg soil weight in hopper",
+        "label": "15 kg soil weight",
+        "direction": "down"
+      },
+      {
+        "on_id": "chassis",
+        "label": "half robot plus soil",
         "direction": "down"
       },
       {
         "on_id": "wheel",
-        "label": "ground pressure on wheels",
-        "direction": "up"
+        "label": "wheel ground pressure",
+        "direction": "down"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "cutting force",
-      "value": 45.7,
+      "quantity": "robot mass",
+      "value": 46.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E62",
+        "E66",
+        "E67",
+        "E68"
+      ]
+    },
+    {
+      "quantity": "kerf cut force",
+      "value": 11.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E64"
+      ]
+    },
+    {
+      "quantity": "available traction",
+      "value": 294.0,
       "unit": "N",
       "method": "simulate",
       "evidence_ids": [
-        "E10"
+        "E23"
       ]
     },
     {
-      "quantity": "contact pressure",
-      "value": 4.09,
+      "quantity": "ground pressure",
+      "value": 15.6,
       "unit": "kPa",
-      "method": "simulate",
+      "method": "calc",
       "evidence_ids": [
-        "E10"
+        "E25"
       ]
     },
     {
-      "quantity": "torque per wheel",
-      "value": 6.44,
-      "unit": "N m",
-      "method": "simulate",
-      "evidence_ids": [
-        "E10"
-      ]
-    },
-    {
-      "quantity": "30-min average power",
-      "value": 341.0,
+      "quantity": "ladder dig power",
+      "value": 16.4,
       "unit": "W",
       "method": "calc",
       "evidence_ids": [
-        "E34"
+        "E59"
       ]
     },
     {
-      "quantity": "mast sensor plus LED power",
-      "value": 18.5,
-      "unit": "W",
-      "method": "calc",
-      "evidence_ids": [
-        "E47"
-      ]
-    },
-    {
-      "quantity": "battery mass",
-      "value": 2.92,
-      "unit": "kg",
-      "method": "calc",
-      "evidence_ids": [
-        "E48"
-      ]
-    },
-    {
-      "quantity": "hopper volume for 10 kg",
-      "value": 0.0111,
-      "unit": "m3",
-      "method": "calc",
-      "evidence_ids": [
-        "E49"
-      ]
-    },
-    {
-      "quantity": "joint mass total with payload",
-      "value": 50.6,
-      "unit": "kg",
-      "method": "calc",
-      "evidence_ids": [
-        "E50"
-      ]
-    },
-    {
-      "quantity": "tip safety factor with 0.30 m overhang",
-      "value": 4.06,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E55"
-      ]
-    },
-    {
-      "quantity": "stopping distance from latency",
-      "value": 0.15,
-      "unit": "m",
-      "method": "calc",
-      "evidence_ids": [
-        "E21"
-      ]
-    },
-    {
-      "quantity": "fan airflow for 80 W internal",
-      "value": 0.00332,
-      "unit": "m3 per s",
-      "method": "calc",
-      "evidence_ids": [
-        "E52"
-      ]
-    },
-    {
-      "quantity": "sealed box temperature rise",
-      "value": 22.0,
-      "unit": "K",
-      "method": "calc",
-      "evidence_ids": [
-        "E53"
-      ]
-    },
-    {
-      "quantity": "dual actuator lift energy",
-      "value": 2400.0,
-      "unit": "J",
+      "quantity": "dig energy per trip",
+      "value": 0.512,
+      "unit": "Wh",
       "method": "calc",
       "evidence_ids": [
         "E60"
+      ]
+    },
+    {
+      "quantity": "fill time to 15 kg",
+      "value": 112.0,
+      "unit": "s",
+      "method": "simulate",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "quantity": "hopper max payload",
+      "value": 30.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E10"
+      ]
+    },
+    {
+      "quantity": "frame sag stiffened",
+      "value": 3.96,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E63"
+      ]
+    },
+    {
+      "quantity": "brake-only stop distance",
+      "value": 0.0625,
+      "unit": "m",
+      "method": "simulate",
+      "evidence_ids": [
+        "E23"
+      ]
+    },
+    {
+      "quantity": "stop with link loss",
+      "value": 0.308,
+      "unit": "m",
+      "method": "simulate",
+      "evidence_ids": [
+        "E32"
+      ]
+    },
+    {
+      "quantity": "drift with 5 m reset",
+      "value": 0.15,
+      "unit": "m",
+      "method": "simulate",
+      "evidence_ids": [
+        "E33"
+      ]
+    },
+    {
+      "quantity": "dump lip clearance",
+      "value": 0.15,
+      "unit": "m",
+      "method": "simulate",
+      "evidence_ids": [
+        "E51"
+      ]
+    },
+    {
+      "quantity": "tip safety factor",
+      "value": 1.69,
+      "unit": "ratio",
+      "method": "simulate",
+      "evidence_ids": [
+        "E51"
+      ]
+    },
+    {
+      "quantity": "motor heating rise",
+      "value": 18.0,
+      "unit": "K",
+      "method": "simulate",
+      "evidence_ids": [
+        "E44"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "mass sum against the 60 kg limit",
+      "design_value": "46.0 kg vs 60.0 kg limit, margin 14.0 kg",
+      "how_shown": "Named mass sum totals 46.0 kg against 60.0 kg limit.",
+      "evidence_ids": [
+        "E62",
+        "E66",
+        "E67",
+        "E68"
+      ]
+    },
+    {
+      "constraint": "stowed sum against the 1.0 m by 0.5 m by 0.5 m box",
+      "design_value": "0.900 m by 0.420 m by 0.450 m fits box",
+      "how_shown": "Sketches and clearance simulation show stowed size inside box.",
+      "evidence_ids": [
+        "E51",
+        "E24"
       ]
     }
   ],
   "measurement_chain": [
     {
       "stage": "sensor",
-      "name": "dual FPV cameras and depth camera",
-      "interface": "video"
+      "name": "downward dig camera",
+      "interface": "optical view of buckets and bin tag"
     },
     {
-      "stage": "sensor",
-      "name": "IMU on sensor mast",
-      "interface": "orientation"
+      "stage": "conditioning",
+      "name": "onboard computer encoder",
+      "interface": "wired video and current signals"
     },
     {
       "stage": "instrument",
-      "name": "dual-link 5.8 GHz video plus 2.4 GHz control with heartbeat E-stop",
-      "interface": "radio"
+      "name": "wireless telemetry link",
+      "interface": "radio stream to base"
     },
     {
       "stage": "computer",
-      "name": "operator display with onboard stop-and-hold fallback",
-      "interface": "display and hold"
+      "name": "sealed station remote operator",
+      "interface": "screens and drive controls"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "camera",
+      "action": "guides blind driving"
+    },
+    {
+      "part_id": "wheel",
+      "action": "drives to dig site"
+    },
+    {
+      "part_id": "kerf",
+      "action": "cuts narrow slot in soil"
+    },
+    {
+      "part_id": "ladder",
+      "action": "lifts loose soil to hopper"
+    },
+    {
+      "part_id": "hopper",
+      "action": "holds carried soil load"
+    },
+    {
+      "part_id": "auger",
+      "action": "meters soil over bin"
     }
   ],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Assemble the low aluminum tube frame with belly pan about 0.95 m long",
-      "method": "mechanical assembly",
+      "description": "Weld twin-tube aluminium frame first because wheels, digger and hopper bolt to it",
+      "method": "TIG-welded 6061-T6 tube, 25.4 mm square x 3 mm wall",
       "parts_present": [
-        "frame"
+        "chassis"
       ]
     },
     {
       "step": 2,
-      "description": "Mount the four 300 mm rigid wheels and the front bucket drum",
-      "method": "mechanical assembly",
+      "description": "Bolt folding arms and grouser wheels to frame because track width sets stow and stability",
+      "method": "bolted aluminium arms, 200 mm wheels with 10 mm grousers",
       "parts_present": [
-        "frame",
+        "arm",
         "wheel",
-        "drum"
+        "chassis"
       ]
     },
     {
       "step": 3,
-      "description": "Fit the central hopper on the rear high-lift mast with dual actuators",
-      "method": "mechanical assembly",
+      "description": "Mount kerf chain and bucket ladder with chute to frame because cut must align to lift",
+      "method": "bolted steel chain, 100 mm wide kerf 50 mm deep",
       "parts_present": [
-        "frame",
-        "hopper"
+        "kerf",
+        "ladder",
+        "chassis"
       ]
     },
     {
       "step": 4,
-      "description": "Install the battery pack, sealed electronics box and tilting sensor mast on top",
-      "method": "mechanical assembly",
+      "description": "Install wedge hopper with screw and rear pivot plus battery and cameras because pour and power complete system",
+      "method": "bolted smooth steel hopper, 20 L 150 mm outlet 0.55 m pivot; 24 V 20 Ah pack",
       "parts_present": [
-        "frame",
+        "hopper",
+        "auger",
         "battery",
-        "enclosure",
-        "sensormast",
-        "link"
+        "camera"
       ]
     }
   ],
   "risks": [
     {
-      "risk": "Battery mass 2.92 kg for 1 kWh implies 342 Wh per kg outside everyday scale",
-      "mitigation": "Recompute pack mass at near 100 Wh per kg and 30-min energy versus 341 W and joint total"
+      "risk": "BP-1 arches in wedge hopper and blocks pour",
+      "mitigation": "Run half-full 15 kg trips with screw metering and keep arching as bench test"
     },
     {
-      "risk": "Lift travel plausible but actuator force proof failed",
-      "mitigation": "Show linkage force with friction for dual 500 N actuators through 4 to 1 chain to 1.05 m lip"
+      "risk": "Raised rear load tips robot",
+      "mitigation": "Dump only on level ground gated by tilt sensor at 15 kg trips"
+    },
+    {
+      "risk": "Link loss and drift cause overshoot and misalignment",
+      "mitigation": "Cap speed and halt on 0.5 s heartbeat loss plus fiducial reset every 5 m"
     }
   ],
-  "novelty_claim": "Front bucket drum feeding central hopper lifted on rear high-lift mast to pour over tall bin",
+  "novelty_claim": "Narrow 100 mm kerf slot feeding wide bucket ladder to steep wedge hopper with screw-metered rear tilt for blind pour.",
   "cost_class": "$1k-10k",
   "figure_spec": {
-    "system_view": "Side view of low tube frame with central hopper on rear high-lift mast raised to dump over 1.0 m bin lip",
-    "critical_part_id": "hopper",
+    "system_view": "side view bucket ladder feeding wedge hopper with rear tilt over bin on grouser wheels with cameras",
+    "critical_part_id": "ladder",
     "preferred_view": "side"
   },
   "open_questions": [
-    "Does 2.92 kg for 1 kWh implying 342 Wh per kg recompute to a realistic pack mass and 30-min energy versus 341 W and 50.6 kg total?",
-    "Does 150 mm stroke through 4 to 1 linkage provide enough force with friction to lift 10 kg to 1.05 m pour lip?",
-    "O1: Missing mass integration and dump stability proof",
-    "O2: Dump kinematics and tip moment unproven: 0.45 m stowed frame to clear 1.0 m bin lip with 150 mm stroke 500 N actuator and 0.50 m hopper, plus tip factor 7.1 looks high versus wheelbarrow experience. Sam to show pivot geometry and moment arms.",
-    "O4: Battery mass 2.92 kg for ~1 kWh LiFePO4 implies >300 Wh/kg, outside everyday pack scale; Priya to recompute mass and 30-min energy vs E34 and E50 before vote."
+    "Does wedge hopper with 150 mm outlet arch with BP-1 and need bench test?",
+    "What is edge wear rate in abrasive BP-1 for kerf and ladder teeth?",
+    "Is bin fiducial visible to mast camera at 1 to 2 m for final align?"
   ]
 }

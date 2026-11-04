@@ -1,22 +1,24 @@
 {
   "id": "E5",
-  "author": "Maya – Stair-Climbing Mechanisms Engineer",
+  "author": "Mara Voss — Structural Frame & Load Path",
   "tool": "web_search",
-  "purpose": "search: tri star three wheel stair climbing hand truck wheel dimensions",
-  "code_or_query": "tri star three wheel stair climbing hand truck wheel dimensions",
+  "purpose": "search: EN 1757 hand pallet truck safety hand truck standard load",
+  "code_or_query": "EN 1757 hand pallet truck safety hand truck standard load",
   "inputs": {},
-  "output_summary": "apluswhs.com — Announcing the Inexpensive Stair Climbing Hand Truck — https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck",
-  "output_full": "apluswhs.com — Announcing the Inexpensive Stair Climbing Hand Truck — https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck\n(the search returned no passage text)",
+  "output_summary": "blog.junyunhoist.com — JUNYUNHOIST - News blog - Pallet Jack Quality Standards: Testing & Certifications — https://blog.junyunhoist.com/blog/Pallet-Jack-Quality-Standards-Testing-and-Certifications-That-Guarantee-Safety.html",
+  "output_full": "blog.junyunhoist.com — JUNYUNHOIST - News blog - Pallet Jack Quality Standards: Testing & Certifications — https://blog.junyunhoist.com/blog/Pallet-Jack-Quality-Standards-Testing-and-Certifications-That-Guarantee-Safety.html\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "apluswhs.com",
-      "title": "Announcing the Inexpensive Stair Climbing Hand Truck",
+      "authors_or_org": "blog.junyunhoist.com",
+      "title": "JUNYUNHOIST - News blog - Pallet Jack Quality Standards: Testing & Certifications",
       "year": "",
-      "url": "https://apluswhs.com/blog/announcing-the-inexpensive-stair-climbing-hand-truck",
-      "query": "tri star three wheel stair climbing hand truck wheel dimensions",
+      "url": "https://blog.junyunhoist.com/blog/Pallet-Jack-Quality-Standards-Testing-and-Certifications-That-Guarantee-Safety.html",
+      "query": "EN 1757 hand pallet truck safety hand truck standard load",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

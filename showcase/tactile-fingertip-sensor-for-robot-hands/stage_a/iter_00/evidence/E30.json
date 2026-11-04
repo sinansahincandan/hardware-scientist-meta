@@ -1,24 +1,30 @@
 {
   "id": "E30",
-  "author": "Sam — Robot Hand Integration and Manipulation",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
   "tool": "web_search",
-  "purpose": "search: robot grasp slip drop prevention grip force control fragile objects",
-  "code_or_query": "robot grasp slip drop prevention grip force control fragile objects",
+  "purpose": "search: robot fingertip slip detection incipient slip micro vibration",
+  "code_or_query": "robot fingertip slip detection incipient slip micro vibration",
   "inputs": {},
-  "output_summary": "spacemart.com — Human taught tactile control lets robots grasp diverse objects — https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
-  "output_full": "spacemart.com — Human taught tactile control lets robots grasp diverse objects — https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/\n(found by the search; not opened or cited)",
+  "output_summary": "azosensors.com — Revolutionizing Robot Touch with Advanced Tactile Sensors — https://www.azosensors.com/article.aspx?ArticleID=3368",
+  "output_full": "azosensors.com — Revolutionizing Robot Touch with Advanced Tactile Sensors — https://www.azosensors.com/article.aspx?ArticleID=3368\n(opened by the member, not cited)\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The Revolutionizing Robot Touch with Advanced Tactile Sensors (E30) reports a 28 micrometer polyvinylidene fluoride film, Polyvinylidene Fluoride means PVDF piezoelectric plastic, gave a clear voltage jump as a bottle slipped, and 0.4 centimeter skin gave 2.2 to 2.6 volt slip signals versus 1.2 to 1.7 volt on 0.8 centimeter skin because thick silicone absorbs vibration; a 0.4 millimeter ridge pitch at 50 millimeter per second slip gives 125 hertz inside the 100 to 500 hertz band, which corrects the unit slip in the ridge-frequency calculation (E39).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "spacemart.com",
-      "title": "Human taught tactile control lets robots grasp diverse objects",
+      "authors_or_org": "azosensors.com",
+      "title": "Revolutionizing Robot Touch with Advanced Tactile Sensors",
       "year": "",
-      "url": "https://spacemart.com/human-taught-tactile-control-lets-robots-grasp-diverse-objects-999/",
-      "query": "robot grasp slip drop prevention grip force control fragile objects",
+      "url": "https://www.azosensors.com/article.aspx?ArticleID=3368",
+      "query": "robot fingertip slip detection incipient slip micro vibration",
       "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
+      "passage": "The Revolutionizing Robot Touch with Advanced Tactile Sensors (E30) reports a 28 micrometer polyvinylidene fluoride film, Polyvinylidene Fluoride means PVDF piezoelectric plastic, gave a clear voltage jump as a bottle slipped, and 0.4 centimeter skin gave 2.2 to 2.6 volt slip signals versus 1.2 to 1.7 volt on 0.8 centimeter skin because thick silicone absorbs vibration; a 0.4 millimeter ridge pitch at 50 millimeter per second slip gives 125 hertz inside the 100 to 500 hertz band, which corrects the unit slip in the ridge-frequency calculation (E39).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The Revolutionizing Robot Touch with Advanced Tactile Sensors (E30) reports a 28 micrometer polyvinylidene fluoride film, Polyvinylidene Fluoride means PVDF piezoelectric plastic, gave a clear voltage jump as a bottle slipped, and 0.4 centimeter skin gave 2.2 to 2.6 volt slip signals versus 1.2 to 1.7 volt on 0.8 centimeter skin because thick silicone absorbs vibration; a 0.4 millimeter ridge pitch at 50 millimeter per second slip gives 125 hertz inside the 100 to 500 hertz band, which corrects the unit slip in the ridge-frequency calculation (E39)."
+        }
+      ]
     }
   ],
   "status": "ok",

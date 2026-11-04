@@ -1,22 +1,24 @@
 {
   "id": "E6",
-  "author": "Maya – Stair-Climbing Mechanisms Engineer",
+  "author": "Mara Voss — Structural Frame & Load Path",
   "tool": "web_search",
-  "purpose": "search: tri star three wheel stair climbing hand truck wheel dimensions",
-  "code_or_query": "tri star three wheel stair climbing hand truck wheel dimensions",
+  "purpose": "search: EN 1757 hand pallet truck safety hand truck standard load",
+  "code_or_query": "EN 1757 hand pallet truck safety hand truck standard load",
   "inputs": {},
-  "output_summary": "handle-it.com — Electric Stair Climbing Sack Trucks — https://handle-it.com/xsto/",
-  "output_full": "handle-it.com — Electric Stair Climbing Sack Trucks — https://handle-it.com/xsto/\n(the search returned no passage text)",
+  "output_summary": "theworkplacedepot.co.uk — Hand Pallet Pump Trucks — https://www.theworkplacedepot.co.uk/hand-pallet-pump-trucks",
+  "output_full": "theworkplacedepot.co.uk — Hand Pallet Pump Trucks — https://www.theworkplacedepot.co.uk/hand-pallet-pump-trucks\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "handle-it.com",
-      "title": "Electric Stair Climbing Sack Trucks",
+      "authors_or_org": "theworkplacedepot.co.uk",
+      "title": "Hand Pallet Pump Trucks",
       "year": "",
-      "url": "https://handle-it.com/xsto/",
-      "query": "tri star three wheel stair climbing hand truck wheel dimensions",
+      "url": "https://www.theworkplacedepot.co.uk/hand-pallet-pump-trucks",
+      "query": "EN 1757 hand pallet truck safety hand truck standard load",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

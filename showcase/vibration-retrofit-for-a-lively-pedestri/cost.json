@@ -1,29 +1,41 @@
 {
-  "total_usd": 1.9479,
+  "total_usd": 4.8238,
   "entries": [
     {
       "role": "schematic",
       "model": "muse-spark-1.3",
-      "input": 3611,
-      "cached_input": 0,
-      "output": 2018,
-      "reasoning": 741,
+      "input": 4463,
+      "cached_input": 4337,
+      "output": 2428,
+      "reasoning": 1469,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.01309
+      "usd": 0.011127
+    },
+    {
+      "role": "schematic",
+      "model": "muse-spark-1.3",
+      "input": 4520,
+      "cached_input": 0,
+      "output": 2147,
+      "reasoning": 1120,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.014775
     },
     {
       "role": "part_map",
       "model": "muse-spark-1.3",
-      "input": 3489,
+      "input": 4414,
       "cached_input": 0,
-      "output": 2171,
-      "reasoning": 1660,
+      "output": 2676,
+      "reasoning": 1943,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.013588
+      "usd": 0.01689
     },
     {
       "role": "image_model",
@@ -40,38 +52,26 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3989,
+      "input": 4204,
       "cached_input": 0,
-      "output": 1376,
-      "reasoning": 1282,
+      "output": 1241,
+      "reasoning": 1108,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.010834
+      "usd": 0.010529
     },
     {
       "role": "vlm_writer",
       "model": "muse-spark-1.3",
-      "input": 6586,
+      "input": 7632,
       "cached_input": 0,
-      "output": 4000,
-      "reasoning": 3295,
+      "output": 3414,
+      "reasoning": 2272,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.025233
-    },
-    {
-      "role": "vlm_writer",
-      "model": "muse-spark-1.3",
-      "input": 6586,
-      "cached_input": 0,
-      "output": 4680,
-      "reasoning": 3623,
-      "searches": 0,
-      "images": 0,
-      "sam_calls": 0,
-      "usd": 0.028123
+      "usd": 0.02405
     },
     {
       "role": "image_model",
@@ -88,14 +88,50 @@
     {
       "role": "sam_phrases",
       "model": "muse-spark-1.3",
-      "input": 3732,
+      "input": 3755,
       "cached_input": 0,
-      "output": 2322,
-      "reasoning": 1891,
+      "output": 2467,
+      "reasoning": 1795,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.014534
+      "usd": 0.015178
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
     },
     {
       "role": "sam",
@@ -232,14 +268,14 @@
     {
       "role": "mask_check",
       "model": "muse-spark-1.3",
-      "input": 3913,
+      "input": 2864,
       "cached_input": 0,
-      "output": 2410,
-      "reasoning": 2071,
+      "output": 2790,
+      "reasoning": 2483,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.015134
+      "usd": 0.015437
     },
     {
       "role": "sam",
@@ -252,42 +288,354 @@
       "images": 0,
       "sam_calls": 1,
       "usd": 0.0025
-    },
-    {
-      "role": "mask_check",
-      "model": "muse-spark-1.3",
-      "input": 395,
-      "cached_input": 0,
-      "output": 662,
-      "reasoning": 632,
-      "searches": 0,
-      "images": 0,
-      "sam_calls": 0,
-      "usd": 0.003307
     },
     {
       "role": "designer_eval",
       "model": "muse-spark-1.3",
-      "input": 9983,
+      "input": 11281,
       "cached_input": 0,
-      "output": 6921,
-      "reasoning": 5597,
+      "output": 8000,
+      "reasoning": 7998,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.041893
+      "usd": 0.048101
+    },
+    {
+      "role": "designer_eval",
+      "model": "muse-spark-1.3",
+      "input": 11281,
+      "cached_input": 11249,
+      "output": 11329,
+      "reasoning": 9634,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.049876
+    },
+    {
+      "role": "vlm_prompt_gradient",
+      "model": "muse-spark-1.3",
+      "input": 5134,
+      "cached_input": 0,
+      "output": 5140,
+      "reasoning": 4333,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.028262
+    },
+    {
+      "role": "vlm_writer",
+      "model": "muse-spark-1.3",
+      "input": 9231,
+      "cached_input": 0,
+      "output": 4000,
+      "reasoning": 2779,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.028539
+    },
+    {
+      "role": "vlm_writer",
+      "model": "muse-spark-1.3",
+      "input": 9231,
+      "cached_input": 9201,
+      "output": 3183,
+      "reasoning": 1815,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.014945
+    },
+    {
+      "role": "image_model",
+      "model": "muse-image-1.0",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 1,
+      "sam_calls": 0,
+      "usd": 0.01
+    },
+    {
+      "role": "sam_phrases",
+      "model": "muse-spark-1.3",
+      "input": 3755,
+      "cached_input": 0,
+      "output": 2047,
+      "reasoning": 1428,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.013393
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "mask_check",
+      "model": "muse-spark-1.3",
+      "input": 3301,
+      "cached_input": 0,
+      "output": 2776,
+      "reasoning": 2466,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.015924
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "mask_check",
+      "model": "muse-spark-1.3",
+      "input": 409,
+      "cached_input": 0,
+      "output": 1092,
+      "reasoning": 1062,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.005152
+    },
+    {
+      "role": "sam",
+      "model": "sam-3.1",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 1,
+      "usd": 0.0025
+    },
+    {
+      "role": "designer_eval",
+      "model": "muse-spark-1.3",
+      "input": 15077,
+      "cached_input": 0,
+      "output": 6534,
+      "reasoning": 4639,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.046616
     },
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3380,
+      "input": 3384,
       "cached_input": 0,
-      "output": 334,
-      "reasoning": 293,
+      "output": 975,
+      "reasoning": 898,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.005644
+      "usd": 0.008374
     },
     {
       "role": "image_model",
@@ -304,14 +652,14 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3396,
+      "input": 3379,
       "cached_input": 0,
-      "output": 345,
-      "reasoning": 325,
+      "output": 1199,
+      "reasoning": 1150,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.005711
+      "usd": 0.009319
     },
     {
       "role": "image_model",
@@ -328,14 +676,14 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3362,
+      "input": 3344,
       "cached_input": 0,
-      "output": 1230,
-      "reasoning": 1138,
+      "output": 519,
+      "reasoning": 450,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.00943
+      "usd": 0.006386
     },
     {
       "role": "image_model",
@@ -352,14 +700,14 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3391,
+      "input": 3344,
       "cached_input": 0,
-      "output": 1024,
-      "reasoning": 925,
+      "output": 626,
+      "reasoning": 550,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.008591
+      "usd": 0.00684
     },
     {
       "role": "image_model",
@@ -376,14 +724,14 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3386,
+      "input": 3364,
       "cached_input": 0,
-      "output": 884,
-      "reasoning": 743,
+      "output": 460,
+      "reasoning": 379,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.00799
+      "usd": 0.00616
     },
     {
       "role": "image_model",
@@ -400,14 +748,38 @@
     {
       "role": "light_check",
       "model": "muse-spark-1.3",
-      "input": 3380,
+      "input": 3374,
       "cached_input": 0,
-      "output": 1036,
-      "reasoning": 913,
+      "output": 826,
+      "reasoning": 734,
       "searches": 0,
       "images": 0,
       "sam_calls": 0,
-      "usd": 0.008628
+      "usd": 0.007728
+    },
+    {
+      "role": "image_model",
+      "model": "muse-image-1.0",
+      "input": 0,
+      "cached_input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "searches": 0,
+      "images": 1,
+      "sam_calls": 0,
+      "usd": 0.01
+    },
+    {
+      "role": "light_check",
+      "model": "muse-spark-1.3",
+      "input": 3379,
+      "cached_input": 0,
+      "output": 611,
+      "reasoning": 516,
+      "searches": 0,
+      "images": 0,
+      "sam_calls": 0,
+      "usd": 0.006821
     }
   ]
 }

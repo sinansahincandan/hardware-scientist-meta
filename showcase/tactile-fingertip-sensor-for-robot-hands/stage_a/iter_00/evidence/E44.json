@@ -1,0 +1,26 @@
+{
+  "id": "E44",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: AD7147 capacitance to digital converter datasheet femtofarad resolution",
+  "code_or_query": "AD7147 capacitance to digital converter datasheet femtofarad resolution",
+  "inputs": {},
+  "output_summary": "datasheet.octopart.com — AD7147 (Rev. E) — https://datasheet.octopart.com/AD7147PACPZ-RL-Analog-Devices-datasheet-101563057.pdf",
+  "output_full": "datasheet.octopart.com — AD7147 (Rev. E) — https://datasheet.octopart.com/AD7147PACPZ-RL-Analog-Devices-datasheet-101563057.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "datasheet.octopart.com",
+      "title": "AD7147 (Rev. E)",
+      "year": "",
+      "url": "https://datasheet.octopart.com/AD7147PACPZ-RL-Analog-Devices-datasheet-101563057.pdf",
+      "query": "AD7147 capacitance to digital converter datasheet femtofarad resolution",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

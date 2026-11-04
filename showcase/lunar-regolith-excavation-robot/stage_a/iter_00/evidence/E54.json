@@ -1,14 +1,36 @@
 {
   "id": "E54",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "calc",
-  "purpose": "tip safety factor about rear axle empty CG vs payload overhang",
-  "code_or_query": "((40.6*9.81*0.35)/(10*9.81*0.20))",
+  "author": "Autonomy and Blind Operations Lead",
+  "tool": "web_search",
+  "purpose": "search: Apriltag fiducial docking accuracy mobile robot alignment",
+  "code_or_query": "Apriltag fiducial docking accuracy mobile robot alignment",
   "inputs": {},
-  "output_summary": "7.1",
-  "output_full": "7.1",
+  "output_summary": "informatik.uni-wuerzburg.de — Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots — 2022 — https://www.informatik.uni-wuerzburg.de/en/robotics/publications/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=ta2022_1.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=7f39bb4bfa053cc89d3989be7004f178&tx_extbibsonomycsl_publicationlist%5BuserName%5D=nuechter76&cHash=5ca4b90211cc5500565de480df984356",
+  "output_full": "informatik.uni-wuerzburg.de — Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots — 2022 — https://www.informatik.uni-wuerzburg.de/en/robotics/publications/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=ta2022_1.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=7f39bb4bfa053cc89d3989be7004f178&tx_extbibsonomycsl_publicationlist%5BuserName%5D=nuechter76&cHash=5ca4b90211cc5500565de480df984356\n(found by the search; not opened or cited)\nAutonomy and Blind Operations Lead said about it: I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting.\nMobility and Deployable Chassis Lead said about it: I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that tag-guided docking reaches about 4.5 cm deviation, which from chassis view means creep positioning to 0.030 m to 0.040 m at 1.00 m to 2.00 m from the fiducial final-align error budget and stall current backout timing (E58) is within skid-steer creep capability if final trim is done at 0.100 m per s, and I take from the Sebastion | Engineering (E39) the precedent that a 120 lb, meaning about 54.4 kg, winner sits at the same person-scale mass as our 46.0 kg from the updated mass sum (E62), so our wheel load and pressure regime is proven buildable.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "informatik.uni-wuerzburg.de",
+      "title": "Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots",
+      "year": "2022",
+      "url": "https://www.informatik.uni-wuerzburg.de/en/robotics/publications/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=ta2022_1.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=7f39bb4bfa053cc89d3989be7004f178&tx_extbibsonomycsl_publicationlist%5BuserName%5D=nuechter76&cHash=5ca4b90211cc5500565de480df984356",
+      "query": "Apriltag fiducial docking accuracy mobile robot alignment",
+      "unresolved": false,
+      "passage": "I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting."
+        },
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that tag-guided docking reaches about 4.5 cm deviation, which from chassis view means creep positioning to 0.030 m to 0.040 m at 1.00 m to 2.00 m from the fiducial final-align error budget and stall current backout timing (E58) is within skid-steer creep capability if final trim is done at 0.100 m per s, and I take from the Sebastion | Engineering (E39) the precedent that a 120 lb, meaning about 54.4 kg, winner sits at the same person-scale mass as our 46.0 kg from the updated mass sum (E62), so our wheel load and pressure regime is proven buildable."
+        }
+      ]
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

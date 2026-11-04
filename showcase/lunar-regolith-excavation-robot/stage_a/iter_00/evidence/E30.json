@@ -1,22 +1,30 @@
 {
   "id": "E30",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: NASA Lunabotics robot power battery size excavation",
-  "code_or_query": "NASA Lunabotics robot power battery size excavation",
+  "purpose": "search: mobile robot link loss failsafe emergency stop standard",
+  "code_or_query": "mobile robot link loss failsafe emergency stop standard",
   "inputs": {},
-  "output_summary": "spacegrant.oregonstate.edu — PowerPoint Presentation — 2022 — https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf",
-  "output_full": "spacegrant.oregonstate.edu — PowerPoint Presentation — 2022 — https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf\n(the search returned no passage text)",
+  "output_summary": "manualslib.com — Failsafe; Pilot Guideline - Flyability ELIOS User Manual — https://www.manualslib.com/manual/1556425/Flyability-Elios.html?page=33",
+  "output_full": "manualslib.com — Failsafe; Pilot Guideline - Flyability ELIOS User Manual — https://www.manualslib.com/manual/1556425/Flyability-Elios.html?page=33\n(found by the search; not opened or cited)\nAutonomy and Blind Operations Lead said about it: This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "spacegrant.oregonstate.edu",
-      "title": "PowerPoint Presentation",
-      "year": "2022",
-      "url": "https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/2022-11/tcovert_university_of_portland_uteap_poster.pdf",
-      "query": "NASA Lunabotics robot power battery size excavation",
+      "authors_or_org": "manualslib.com",
+      "title": "Failsafe; Pilot Guideline - Flyability ELIOS User Manual",
+      "year": "",
+      "url": "https://www.manualslib.com/manual/1556425/Flyability-Elios.html?page=33",
+      "query": "mobile robot link loss failsafe emergency stop standard",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the heartbeat signal ensures a constant link pattern from the BWI Eagle - E-Stop (E27) and the enter emergency landing mode on loss of communication rule from the Failsafe; Pilot Guideline - Flyability ELIOS User Manual (E30)."
+        }
+      ]
     }
   ],
   "status": "ok",

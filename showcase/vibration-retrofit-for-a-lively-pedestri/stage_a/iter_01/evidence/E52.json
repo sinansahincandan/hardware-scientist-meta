@@ -1,0 +1,14 @@
+{
+  "id": "E52",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "calc",
+  "purpose": "mass per unit for two-unit split of 800kg TMD",
+  "code_or_query": "800/2",
+  "inputs": {},
+  "output_summary": "400",
+  "output_full": "400",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

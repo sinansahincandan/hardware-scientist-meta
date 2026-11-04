@@ -1,0 +1,14 @@
+{
+  "id": "E121",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "wind uplift equivalent mass for array area",
+  "code_or_query": "375*17.6/9.81",
+  "inputs": {},
+  "output_summary": "673",
+  "output_full": "673",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

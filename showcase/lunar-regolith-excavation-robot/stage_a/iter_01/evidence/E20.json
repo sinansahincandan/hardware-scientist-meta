@@ -1,31 +1,26 @@
 {
   "id": "E20",
-  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
-  "tool": "calc",
-  "purpose": "autonomy power share sum",
-  "code_or_query": "(Q_(15,'W')+Q_(6,'W')+Q_(5,'W')+Q_(3,'W')).to('W')",
-  "inputs": {
-    "arg0": {
-      "value": "15",
-      "unit": "W"
-    },
-    "arg1": {
-      "value": "6",
-      "unit": "W"
-    },
-    "arg2": {
-      "value": "5",
-      "unit": "W"
-    },
-    "arg3": {
-      "value": "3",
-      "unit": "W"
-    }
-  },
-  "output_summary": "29 W",
-  "output_full": "29 W",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: NASA RASSOR excavator robot tracks mobility deployable chassis",
+  "code_or_query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
+  "inputs": {},
+  "output_summary": "mavigadget.com — From Mars to the Moon: The Robots Leading the Way in Space E — https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration",
+  "output_full": "mavigadget.com — From Mars to the Moon: The Robots Leading the Way in Space E — https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "mavigadget.com",
+      "title": "From Mars to the Moon: The Robots Leading the Way in Space E",
+      "year": "",
+      "url": "https://mavigadget.com/blogs/tech-gadgets/from-mars-to-the-moon-the-robots-leading-the-way-in-space-exploration",
+      "query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

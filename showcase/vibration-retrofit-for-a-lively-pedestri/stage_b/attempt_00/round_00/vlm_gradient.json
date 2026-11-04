@@ -1,0 +1,21 @@
+{
+  "per_region": [
+    {
+      "part_id": "cs-callout",
+      "diagnosis": "Coil Spring Suspension mislabel caused by callout sentence 'For each focus part draw a short callout with thin leader line to its plain name...' which lists names but defines no anchor point. Combined with 'Small caged black elastomer travel stops...' sentence, VLM anchored to the small hanging cage under the beam near left end because it is a salient hanging object. Pixels show correct vertical helical springs above both masses, so geometry is correct, only leader is wrong. Matters for readability, not for working principle load path.",
+      "prompt_fix": "Coil Spring Suspension callout: thin leader MUST end mid-coil on the tall vertical helical steel spring between beam hanger and mass top (center masses), never on the black caged travel-stop block."
+    },
+    {
+      "part_id": "vd-callout",
+      "diagnosis": "Viscous Damper mislabel caused by same vague callout sentence with no anchor definition. VLM confused the right under-beam caged stop with damper because both hang from beam and prompt says 'parallel stainless viscous damper cylinder' without saying leader must hit the smooth cylinder. Pixels show correct vertical smooth stainless cylinders parallel to springs above masses. Matters for identification, not mechanism - damping path is correctly drawn vertical.",
+      "prompt_fix": "Viscous Damper callout: thin leader MUST end mid-height on the smooth vertical stainless damper cylinder parallel to the spring, never on a caged travel-stop block."
+    },
+    {
+      "part_id": "hb-callout",
+      "diagnosis": "Clamp Bolt Set mislabel caused by sentence 'clamped at both ends with rows of dark HSFG bolt sets' + vague callout sentence. VLM placed dot on bare top flange at midspan instead of end plates. Pixels show correct dark bolt rows on vertical end-plates at both beam-to-girder junctions. Matters for showing clamped ends, but clamping is correctly drawn - only label anchor wrong.",
+      "prompt_fix": "Clamp Bolt Set callout: thin leader MUST end on the rows of dark HSFG bolts on the vertical end-plate where transverse cross-beam meets girder web at left or right end, never on bare beam flange at midspan."
+    }
+  ],
+  "fix_mode": "local",
+  "summary": "Segmenter is evidence only - pixels show correct mechanism: 1 xb: pixels show beam connected via black hangers to springs/dampers above masses; touch present for load path, segmenter apart is bracket occlusion, no fault, matters. 2 cs: pixels show vertical slender helical coils above masses, size ~ mass height, slender; measured horizontal 1.2x vs 0.6x is coarse bbox error, no fault, vertical matters. 3 vd: pixels show vertical stainless cylinders parallel to springs; measured horizontal is error, no fault, vertical matters. 4 hb 2 vs 5: pixels show 2 clamp groups left/right each with many individual bolts; counter counted bolts not sets; exact bolt count does not affect tuning, representative count acceptable. 5 es 2 vs 3: pixels show 2 under-beam cages + 2 side cages on masses; prompt said 'stops' plural, exact number not critical for travel-limit function, acceptable. 6 cs__spring horizontal: same as 2, pixels vertical, no fault. 7 vd__damper horizontal: same as 3, pixels vertical, no fault. Whole device 5090x3222mm scaled by ~1700mm person includes deck slab overhang and isometric perspective, not true beam length; beam is longest ~3m as stated, masses knee-height compact, springs/dampers slender verticals, proportions true, no size-limit break. Real fault is annotation only: 3 leaders misanchored while 3D geometry correct per WRITTEN DIFFERENCES."
+}

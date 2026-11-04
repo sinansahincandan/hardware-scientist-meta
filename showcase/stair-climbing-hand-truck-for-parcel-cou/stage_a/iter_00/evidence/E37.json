@@ -1,22 +1,34 @@
 {
   "id": "E37",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Tomas Lind — Folding & Van Integration",
   "tool": "web_search",
-  "purpose": "search: EN 1757 hand truck safety locking device folding",
-  "code_or_query": "EN 1757 hand truck safety locking device folding",
+  "purpose": "search: stair climbing hand truck folding hinge lock van mounting",
+  "code_or_query": "stair climbing hand truck folding hinge lock van mounting",
   "inputs": {},
-  "output_summary": "media.witglobal.net — Product data sheet Flat-bed hand truck, 2-axle with drawbar eye — https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf",
-  "output_full": "media.witglobal.net — Product data sheet Flat-bed hand truck, 2-axle with drawbar eye — https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf\n(the search returned no passage text)",
+  "output_summary": "handle-it.com — Powered Stair Climbing Sack Truck — https://handle-it.com/powered-stair-climbing-sack-truck/",
+  "output_full": "handle-it.com — Powered Stair Climbing Sack Truck — https://handle-it.com/powered-stair-climbing-sack-truck/\n(opened by the member, not cited)\nTomas Lind — Folding & Van Integration said about it: I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow.\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against 29 kg self-weight for 200 kg powered capacity from the Powered Stair Climbing Sack Truck (E37).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "media.witglobal.net",
-      "title": "Product data sheet Flat-bed hand truck, 2-axle with drawbar eye",
+      "authors_or_org": "handle-it.com",
+      "title": "Powered Stair Climbing Sack Truck",
       "year": "",
-      "url": "https://media.witglobal.net/stmedia/hhw/documents/LANG_en/686557183.pdf",
-      "query": "EN 1757 hand truck safety locking device folding",
+      "url": "https://handle-it.com/powered-stair-climbing-sack-truck/",
+      "query": "stair climbing hand truck folding hinge lock van mounting",
       "unresolved": false,
-      "passage": ""
+      "passage": "I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that a fixed-backbone folder holds 90 kg at 6.5 kg tare, against 29 kg self-weight for 200 kg powered capacity from the Powered Stair Climbing Sack Truck (E37)."
+        }
+      ]
     }
   ],
   "status": "ok",

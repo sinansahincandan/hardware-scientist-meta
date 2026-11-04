@@ -1,24 +1,27 @@
 {
   "id": "E22",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
-  "tool": "web_search",
-  "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
-  "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
-  "inputs": {},
-  "output_summary": "amazon.com — POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com — https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9",
-  "output_full": "amazon.com — POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com — https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "amazon.com",
-      "title": "POSTVI Folding Hand Truck,Foldable Dolly Cart With Wheels,500LB Heavy Duty Luggage Cart,6-wheel convenient Hand Truck,2 fixing ropes & 1 extra big storage bag Suitable for luggage,travel,moving(Black) - Amazon.com",
-      "year": "",
-      "url": "https://www.amazon.com/dp/B0FD7MCPRL/ref=cm_sw_r_as_gl_apa_gl_i_TQD0H6CZXE4FWF01QMG9",
-      "query": "delivery van cargo door dimensions folded hand truck envelope",
-      "unresolved": false,
-      "passage": ""
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "potential energy to lift 60kg one max riser",
+  "code_or_query": "Q_(60,\"kg\")*Q_(9.81,\"m/s**2\")*Q_(0.197,\"m\")",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    },
+    "arg2": {
+      "value": "0.197",
+      "unit": "m"
     }
-  ],
+  },
+  "output_summary": "116 kg\u22c5m\u00b2/s\u00b2",
+  "output_full": "116 kg\u22c5m\u00b2/s\u00b2",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,22 +1,30 @@
 {
   "id": "E20",
-  "author": "Marcus - Vibration Control and Damping Specialist",
+  "author": "Bridge Retrofit Engineer",
   "tool": "web_search",
-  "purpose": "search: tuned mass damper viscous damper datasheet stroke load bridge",
-  "code_or_query": "tuned mass damper viscous damper datasheet stroke load bridge",
+  "purpose": "search: EN 1991-2 pedestrian footbridge live load 5 kN per m2",
+  "code_or_query": "EN 1991-2 pedestrian footbridge live load 5 kN per m2",
   "inputs": {},
-  "output_summary": "trea.com — Inertial mass amplification type tuned mass damper — https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea",
-  "output_full": "trea.com — Inertial mass amplification type tuned mass damper — https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea\n(the search returned no passage text)",
+  "output_summary": "source.thenbs.com — Bison Pedestrian Bridge  - Bridge  | Built By Bison Ltd | BIM Library — https://source.thenbs.com/product/bison-pedestrian-bridge/tx9oFqy8UhJXfRf1nhvhig/9ehD4oxNE94uauVNuSYcKW?previousVersion=wcMSNA14HcSWXrhhAzWAg1",
+  "output_full": "source.thenbs.com — Bison Pedestrian Bridge  - Bridge  | Built By Bison Ltd | BIM Library — https://source.thenbs.com/product/bison-pedestrian-bridge/tx9oFqy8UhJXfRf1nhvhig/9ehD4oxNE94uauVNuSYcKW?previousVersion=wcMSNA14HcSWXrhhAzWAg1\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: The 5.0 kN per m2 crowd load basis is taken from the Bison Pedestrian Bridge - Bridge | Built By Bison Ltd | BIM Library (E20) tested to 5.0 kN per m2 and the Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "trea.com",
-      "title": "Inertial mass amplification type tuned mass damper",
+      "authors_or_org": "source.thenbs.com",
+      "title": "Bison Pedestrian Bridge  - Bridge  | Built By Bison Ltd | BIM Library",
       "year": "",
-      "url": "https://trea.com:443/information/inertial-mass-amplification-type-tuned-mass-damper/patentgrant/6ec43cd6-584b-4c29-8136-01cadd3a31ea",
-      "query": "tuned mass damper viscous damper datasheet stroke load bridge",
+      "url": "https://source.thenbs.com/product/bison-pedestrian-bridge/tx9oFqy8UhJXfRf1nhvhig/9ehD4oxNE94uauVNuSYcKW?previousVersion=wcMSNA14HcSWXrhhAzWAg1",
+      "query": "EN 1991-2 pedestrian footbridge live load 5 kN per m2",
       "unresolved": false,
-      "passage": ""
+      "passage": "The 5.0 kN per m2 crowd load basis is taken from the Bison Pedestrian Bridge - Bridge | Built By Bison Ltd | BIM Library (E20) tested to 5.0 kN per m2 and the Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "The 5.0 kN per m2 crowd load basis is taken from the Bison Pedestrian Bridge - Bridge | Built By Bison Ltd | BIM Library (E20) tested to 5.0 kN per m2 and the Bridge Design| Bridge loading idealisation for grillage analysis for eurocode loading."
+        }
+      ]
     }
   ],
   "status": "ok",

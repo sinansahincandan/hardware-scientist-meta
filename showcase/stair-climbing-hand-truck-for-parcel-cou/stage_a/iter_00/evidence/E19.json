@@ -1,27 +1,26 @@
 {
   "id": "E19",
-  "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
-  "tool": "calc",
-  "purpose": "energy per step lifting 60 kg one riser",
-  "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s^2')*Q_(0.197,'m')",
-  "inputs": {
-    "arg0": {
-      "value": "60",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s^2"
-    },
-    "arg2": {
-      "value": "0.197",
-      "unit": "m"
-    }
-  },
-  "output_summary": "116 kg\u22c5m\u00b2/s\u00b2",
-  "output_full": "116 kg\u22c5m\u00b2/s\u00b2",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser going dimensions standard step height",
+  "code_or_query": "residential stair riser going dimensions standard step height",
+  "inputs": {},
+  "output_summary": "angi.com — Standard Size of a Staircase: Guide to Dimensions | Angi — https://www.angi.com/articles/standard-staircase-size.htm",
+  "output_full": "angi.com — Standard Size of a Staircase: Guide to Dimensions | Angi — https://www.angi.com/articles/standard-staircase-size.htm\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "angi.com",
+      "title": "Standard Size of a Staircase: Guide to Dimensions | Angi",
+      "year": "",
+      "url": "https://www.angi.com/articles/standard-staircase-size.htm",
+      "query": "residential stair riser going dimensions standard step height",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

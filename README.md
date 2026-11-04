@@ -22,6 +22,15 @@ that does those feedback rounds itself:
 - **Knowledge loop.** Lessons, skills and tools from each problem are read by the next team. You can add your own
   sources: Markdown notes in `knowledge/insights/` are searched by the members during the meeting.
 
+**See it first:** 3-minute video [`showcase/hardware_engineer_3min.mp4`](showcase/hardware_engineer_3min.mp4) ·
+slides as one page [`showcase/story.html`](showcase/story.html) · six example designs [`showcase/index.html`](showcase/index.html).
+
+**Honest benchmark (round 6, [`showcase/bench/round6/`](showcase/bench/round6/README.md)).** Six problems, two blind
+judges with a fault audit before any score: Hardware Engineer 26.2 ± 2.9 of 40, one prompt to the same Meta model
+26.9 ± 3.0, Hardware Engineer on open weights 26.1 ± 2.5 (four problems; two ran out of budget). A tie on score: HE is
+ahead on numbers that are right and supported (20 vs 17.5 of 30) and on how to make it (22 vs 21), behind on the
+picture showing the design (13.5 vs 16). Picture–text consistency is the next target.
+
 ## Try it (reviewers)
 
 ```bash
@@ -43,7 +52,16 @@ To write your own problem, copy any file in `examples/` (a title, a paragraph, a
 
 ## Example inputs and outputs
 
-EXAMPLES_TABLE
+Six finished runs (round 6, all accepted) are in [`showcase/`](showcase/); open [`showcase/index.html`](showcase/index.html) after cloning. Each folder holds the input (`problem.json`), the report, the whiteboard page, the final figure, the meeting records (`stage_a/`) and the picture rounds (`stage_b/`). Cost is the Meta API cost from `cost.json`; wall time is from `timing.json`. Three runs are a picture-only redraw merged with the meeting run it was seeded from (`merged_from.json`); their cost is the sum of both runs, and the redraw's wall time was not recorded.
+
+| | Problem | Input | Report | Whiteboard | Figure | Accepted in | Meta cost | Wall time |
+|---|---|---|---|---|---|---|---|---|
+| b1 | [A small robot that digs lunar soil simulant, carries it and dumps it into a bin, run by a team that cannot see it](showcase/lunar-regolith-excavation-robot/) | [problem.json](showcase/lunar-regolith-excavation-robot/problem.json) | [report](showcase/lunar-regolith-excavation-robot/report.html) | [whiteboard](showcase/lunar-regolith-excavation-robot/board.html) | [figure](showcase/lunar-regolith-excavation-robot/final/figure.jpg) | meeting 2 (meeting 1 accepted, but the picture could not be drawn faithfully, so the design went back) | $4.25 | 83 min |
+| b2 | [A robot fingertip that feels where it is touched, how hard, and when an object starts to slip](showcase/tactile-fingertip-sensor-for-robot-hands/) | [problem.json](showcase/tactile-fingertip-sensor-for-robot-hands/problem.json) | [report](showcase/tactile-fingertip-sensor-for-robot-hands/report.html) | [whiteboard](showcase/tactile-fingertip-sensor-for-robot-hands/board.html) | [figure](showcase/tactile-fingertip-sensor-for-robot-hands/final/figure.jpg) | meeting 1 | $3.03 | 47 min |
+| b3 | [A small wind turbine for a wind-tunnel contest that survives gusts and stops itself safely](showcase/small-wind-turbine-for-a-wind-tunnel-com/) | [problem.json](showcase/small-wind-turbine-for-a-wind-tunnel-com/problem.json) | [report](showcase/small-wind-turbine-for-a-wind-tunnel-com/report.html) | [whiteboard](showcase/small-wind-turbine-for-a-wind-tunnel-com/board.html) | [figure](showcase/small-wind-turbine-for-a-wind-tunnel-com/final/figure.jpg) | meeting 1, then a picture-only redraw | $3.81 ($3.33 + $0.48 redraw) | 57 min + redraw (time not recorded) |
+| 01 | [A hand truck that lets one courier move about 60 kg up and down stairs and folds small](showcase/stair-climbing-hand-truck-for-parcel-cou/) | [problem.json](showcase/stair-climbing-hand-truck-for-parcel-cou/problem.json) | [report](showcase/stair-climbing-hand-truck-for-parcel-cou/report.html) | [whiteboard](showcase/stair-climbing-hand-truck-for-parcel-cou/board.html) | [figure](showcase/stair-climbing-hand-truck-for-parcel-cou/final/figure.jpg) | meeting 2 (meeting 1 rejected), then a picture-only redraw | $5.87 ($5.38 + $0.48 redraw) | 81 min + redraw (time not recorded) |
+| 02 | [A solar-powered cold store, without grid power, for smallholder farmers' fruit and vegetables](showcase/off-grid-solar-powered-cold-storage-for/) | [problem.json](showcase/off-grid-solar-powered-cold-storage-for/problem.json) | [report](showcase/off-grid-solar-powered-cold-storage-for/report.html) | [whiteboard](showcase/off-grid-solar-powered-cold-storage-for/board.html) | [figure](showcase/off-grid-solar-powered-cold-storage-for/final/figure.jpg) | meeting 2 (meeting 1 rejected) | $5.38 | 109 min |
+| 03 | [A retrofit that calms a 40 m footbridge that bounces under crowds (first mode about 1.9 Hz)](showcase/vibration-retrofit-for-a-lively-pedestri/) | [problem.json](showcase/vibration-retrofit-for-a-lively-pedestri/problem.json) | [report](showcase/vibration-retrofit-for-a-lively-pedestri/report.html) | [whiteboard](showcase/vibration-retrofit-for-a-lively-pedestri/board.html) | [figure](showcase/vibration-retrofit-for-a-lively-pedestri/final/figure.jpg) | meeting 2 (meeting 1 accepted, but the picture could not be drawn faithfully), then a picture-only redraw | $4.82 ($4.24 + $0.58 redraw) | 81 min + redraw (time not recorded) |
 
 ## Setup
 

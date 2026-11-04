@@ -1,24 +1,14 @@
 {
   "id": "E12",
-  "author": "Surya — Off-Grid Solar Power Specialist",
-  "tool": "web_search",
-  "purpose": "search: MPPT charge controller 48V 60A datasheet solar off-grid",
-  "code_or_query": "MPPT charge controller 48V 60A datasheet solar off-grid",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "estimate produce sensible heat kWh",
+  "code_or_query": "1000*3.5*1000/3600",
   "inputs": {},
-  "output_summary": "solar.se.com — Conext™ MPPT 60 150 solar charge controller — 2021 — https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf",
-  "output_full": "solar.se.com — Conext™ MPPT 60 150 solar charge controller — 2021 — https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf\n(the search returned no passage text)",
+  "output_summary": "972",
+  "output_full": "972",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "solar.se.com",
-      "title": "Conext™ MPPT 60 150 solar charge controller",
-      "year": "2021",
-      "url": "https://solar.se.com/eu/wp-content/uploads/sites/4/2021/10/Conext-MPPT-60-150-Datasheet.pdf",
-      "query": "MPPT charge controller 48V 60A datasheet solar off-grid",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

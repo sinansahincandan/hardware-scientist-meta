@@ -1,0 +1,14 @@
+{
+  "id": "E50",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "total weight truck plus parcel",
+  "code_or_query": "66.5*9.81",
+  "inputs": {},
+  "output_summary": "652",
+  "output_full": "652",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

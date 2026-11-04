@@ -1,0 +1,32 @@
+{
+  "id": "E60",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: delivery van cargo tie down lashing point strength EN 12195 load securing",
+  "code_or_query": "delivery van cargo tie down lashing point strength EN 12195 load securing",
+  "inputs": {},
+  "output_summary": "wedolifting.com — Load securing for lashing cargo - good quality and strength — https://wedolifting.com/pages/load-restraint",
+  "output_full": "wedolifting.com — Load securing for lashing cargo - good quality and strength — https://wedolifting.com/pages/load-restraint\n(found by the search; not opened or cited)\nTomas Lind — Folding & Van Integration said about it: I take from the US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44) that a separate clutch locks the cluster on stairs, and I take from the Load securing for lashing cargo - good quality and strength (E60) that under European Norm (EN) 12195-1 restraint must hold 0.8 times forward weight and 0.5 times to rear and side.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "wedolifting.com",
+      "title": "Load securing for lashing cargo - good quality and strength",
+      "year": "",
+      "url": "https://wedolifting.com/pages/load-restraint",
+      "query": "delivery van cargo tie down lashing point strength EN 12195 load securing",
+      "unresolved": false,
+      "passage": "I take from the US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44) that a separate clutch locks the cluster on stairs, and I take from the Load securing for lashing cargo - good quality and strength (E60) that under European Norm (EN) 12195-1 restraint must hold 0.8 times forward weight and 0.5 times to rear and side.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44) that a separate clutch locks the cluster on stairs, and I take from the Load securing for lashing cargo - good quality and strength (E60) that under European Norm (EN) 12195-1 restraint must hold 0.8 times forward weight and 0.5 times to rear and side."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

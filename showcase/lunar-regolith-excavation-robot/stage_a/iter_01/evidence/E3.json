@@ -1,22 +1,30 @@
 {
   "id": "E3",
-  "author": "Mara — Excavation and Mobility Engineer",
+  "author": "Excavation and Regolith Handling Lead",
   "tool": "web_search",
-  "purpose": "search: Black Point BP-1 lunar simulant density cohesion friction angle",
-  "code_or_query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+  "purpose": "search: Black Point-1 BP-1 lunar simulant bulk density cohesion friction angle",
+  "code_or_query": "Black Point-1 BP-1 lunar simulant bulk density cohesion friction angle",
   "inputs": {},
-  "output_summary": "impact.colorado.edu — | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | — https://impact.colorado.edu/lungradcon/presentations/142140b1",
-  "output_full": "impact.colorado.edu — | BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  | — https://impact.colorado.edu/lungradcon/presentations/142140b1\n(the search returned no passage text)",
+  "output_summary": "hou.usra.edu — Developing  a New  Space Economy (2019)  5068.pdf Lightning Talk or Poster — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+  "output_full": "hou.usra.edu — Developing  a New  Space Economy (2019)  5068.pdf Lightning Talk or Poster — 2019 — https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf\n(found by the search; not opened or cited)\nExcavation and Regolith Handling Lead said about it: Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "impact.colorado.edu",
-      "title": "| BEVAHIOR  OF BP-1 AND  LHS-1 LUNAR REGOLITH  SIMULANTS UNDER VACUUM  CONDITIONS. |  |",
-      "year": "",
-      "url": "https://impact.colorado.edu/lungradcon/presentations/142140b1",
-      "query": "Black Point BP-1 lunar simulant density cohesion friction angle",
+      "authors_or_org": "hou.usra.edu",
+      "title": "Developing  a New  Space Economy (2019)  5068.pdf Lightning Talk or Poster",
+      "year": "2019",
+      "url": "https://www.hou.usra.edu/meetings/lunarisru2019/pdf/5068.pdf",
+      "query": "Black Point-1 BP-1 lunar simulant bulk density cohesion friction angle",
       "unresolved": false,
-      "passage": ""
+      "passage": "Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Excavation and Regolith Handling Lead",
+          "text": "Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13)."
+        }
+      ]
     }
   ],
   "status": "ok",

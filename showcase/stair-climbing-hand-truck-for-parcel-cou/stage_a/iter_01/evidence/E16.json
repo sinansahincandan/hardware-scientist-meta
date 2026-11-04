@@ -1,0 +1,32 @@
+{
+  "id": "E16",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: residential stair riser going dimensions standard step height",
+  "code_or_query": "residential stair riser going dimensions standard step height",
+  "inputs": {},
+  "output_summary": "homedit.com — Standard Stair Step Height and Code Guidelines — https://www.homedit.com/step-height/",
+  "output_full": "homedit.com — Standard Stair Step Height and Code Guidelines — https://www.homedit.com/step-height/\n(opened by the member, not cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "homedit.com",
+      "title": "Standard Stair Step Height and Code Guidelines",
+      "year": "",
+      "url": "https://www.homedit.com/step-height/",
+      "query": "residential stair riser going dimensions standard step height",
+      "unresolved": false,
+      "passage": "Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Residential stairs set the geometry because the International Residential Code (IRC, meaning the United States residential stair code) allows maximum riser height 197 mm and minimum tread depth 254 mm from the Standard Stair Step Height and Code Guidelines (E16), and lifting the parcel through one maximum riser costs about 116 J from the parcel lift energy (E22), which is like lifting a shopping bag to a counter each step and is human scale, while the side view sketch (E24) shows 150 mm wheels on a 110 mm arm give about 185 mm cluster radius against that 197 mm riser so the axle must still rise over the nose, and existing 150 mm solid-rubber stars only clear steps up to 160 mm high with up to 20 mm overhang from the Superlift Stair Climbing Trolley (E17)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

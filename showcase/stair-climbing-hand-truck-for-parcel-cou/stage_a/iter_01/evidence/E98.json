@@ -1,0 +1,23 @@
+{
+  "id": "E98",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "total lock torque slope times cluster radius",
+  "code_or_query": "Q_(401,'N')*Q_(0.185,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "401",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "0.185",
+      "unit": "m"
+    }
+  },
+  "output_summary": "74.2 m\u22c5N",
+  "output_full": "74.2 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

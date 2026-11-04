@@ -1,35 +1,26 @@
 {
   "id": "E21",
-  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
-  "tool": "calc",
-  "purpose": "autonomy mass share sum",
-  "code_or_query": "(Q_(0.176,'kg')+Q_(0.1,'kg')+Q_(0.15,'kg')+Q_(1.0,'kg')+Q_(0.3,'kg')).to('kg')",
-  "inputs": {
-    "arg0": {
-      "value": "0.176",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "0.1",
-      "unit": "kg"
-    },
-    "arg2": {
-      "value": "0.15",
-      "unit": "kg"
-    },
-    "arg3": {
-      "value": "1.0",
-      "unit": "kg"
-    },
-    "arg4": {
-      "value": "0.3",
-      "unit": "kg"
-    }
-  },
-  "output_summary": "1.73 kg",
-  "output_full": "1.73 kg",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: NASA RASSOR excavator robot tracks mobility deployable chassis",
+  "code_or_query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
+  "inputs": {},
+  "output_summary": "en.wikipedia.org — NASA robots - Wikipedia — https://en.wikipedia.org/wiki/List_of_NASA_robots",
+  "output_full": "en.wikipedia.org — NASA robots - Wikipedia — https://en.wikipedia.org/wiki/List_of_NASA_robots\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "en.wikipedia.org",
+      "title": "NASA robots - Wikipedia",
+      "year": "",
+      "url": "https://en.wikipedia.org/wiki/List_of_NASA_robots",
+      "query": "NASA RASSOR excavator robot tracks mobility deployable chassis",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "E90",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "wind uplift mass equivalent kg for 9-module frame",
+  "code_or_query": "17.6*375/9.81",
+  "inputs": {},
+  "output_summary": "673",
+  "output_full": "673",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

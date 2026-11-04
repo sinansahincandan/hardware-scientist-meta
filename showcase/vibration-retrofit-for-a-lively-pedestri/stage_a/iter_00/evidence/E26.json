@@ -1,24 +1,14 @@
 {
   "id": "E26",
-  "author": "Priya - Retrofit Constructability Engineer",
-  "tool": "web_search",
-  "purpose": "search: footbridge tuned mass damper under deck installation maintenance access",
-  "code_or_query": "footbridge tuned mass damper under deck installation maintenance access",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "TMD static weight from 800kg mass",
+  "code_or_query": "800*9.81",
   "inputs": {},
-  "output_summary": "structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper — https://structechnique.com/download/15/free/aO4RBDPc",
-  "output_full": "structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper — https://structechnique.com/download/15/free/aO4RBDPc\n(the search returned no passage text)",
+  "output_summary": "7.85e+03",
+  "output_full": "7.85e+03",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "structechnique.com",
-      "title": "Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper",
-      "year": "",
-      "url": "https://structechnique.com/download/15/free/aO4RBDPc",
-      "query": "footbridge tuned mass damper under deck installation maintenance access",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

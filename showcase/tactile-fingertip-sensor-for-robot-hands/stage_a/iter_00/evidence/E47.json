@@ -1,0 +1,26 @@
+{
+  "id": "E47",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: flexible flat cable ZIF connector mating cycles reliability FPC",
+  "code_or_query": "flexible flat cable ZIF connector mating cycles reliability FPC",
+  "inputs": {},
+  "output_summary": "pcbboardassembly.com — History of Flexible Printed Circuit (FPC) – pcbboardassembly — https://pcbboardassembly.com/history-of-flexible-printed-circuit-fpc/",
+  "output_full": "pcbboardassembly.com — History of Flexible Printed Circuit (FPC) – pcbboardassembly — https://pcbboardassembly.com/history-of-flexible-printed-circuit-fpc/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pcbboardassembly.com",
+      "title": "History of Flexible Printed Circuit (FPC) – pcbboardassembly",
+      "year": "",
+      "url": "https://pcbboardassembly.com/history-of-flexible-printed-circuit-fpc/",
+      "query": "flexible flat cable ZIF connector mating cycles reliability FPC",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,19 @@
+{
+  "id": "E80",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "low-wind regulated power from shaft with chain efficiency",
+  "code_or_query": "Q_(3.27,'W')*0.637",
+  "inputs": {
+    "arg0": {
+      "value": "3.27",
+      "unit": "W"
+    }
+  },
+  "output_summary": "2.08 W",
+  "output_full": "2.08 W",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 4
+}

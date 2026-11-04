@@ -4,92 +4,173 @@
     1280
   ],
   "parts": {
-    "skin": {
-      "phrase": "grey ridged pad",
+    "SKIN": {
+      "phrase": "gray ridged dome",
       "tried": [
-        "grey ridged pad"
+        "gray ridged dome"
       ],
       "source": "phrase",
       "boxes": [
         [
-          481.875,
-          307.34992679355787,
-          1111.875,
-          498.50658857979505
+          532.5,
+          324.21669106881404,
+          1076.25,
+          549.1068814055637
         ]
       ],
       "confidence": [
-        0.85
+        0.74
       ],
       "mask": {
-        "file": "sam_masks/skin.png",
-        "area": 61023.0,
-        "cx": 787.9087572102779,
-        "cy": 418.3518615626639,
-        "angle": 178.9,
-        "elongation": 4.45
+        "file": "sam_masks/SKIN.png",
+        "area": 85277.0,
+        "cx": 802.9164008256708,
+        "cy": 441.2969600300244,
+        "angle": 0.3,
+        "elongation": 2.77
       }
     },
-    "film": {
-      "phrase": "transparent plastic sheet",
+    "GEL": {
+      "phrase": "Gel interlayer (box prompt)",
       "tried": [
-        "clear wavy film",
-        "transparent plastic sheet"
-      ],
-      "source": "phrase",
-      "boxes": [
-        [
-          305.625,
-          414.1727672035139,
-          1261.875,
-          543.484626647145
-        ]
-      ],
-      "confidence": [
-        0.85
-      ],
-      "rejected_by_judge": [
-        "silicone pillar dielectric x48 soft pillar array"
-      ],
-      "mask": {
-        "file": "sam_masks/film.png",
-        "area": 39612.0,
-        "cx": 778.8429551877271,
-        "cy": 472.21962050867984,
-        "angle": 179.7,
-        "elongation": 9.49
-      }
-    },
-    "pillars": {
-      "phrase": "silicone pillar dielectric x48 (box prompt)",
-      "tried": [
-        "clear plastic pillar",
-        "translucent soft pillar",
-        "rubber pillars",
-        "pillars"
+        "translucent gel ring",
+        "clear gel layer",
+        "clear gel",
+        "gel"
       ],
       "source": "box prompt",
       "boxes": [
         [
-          491.25,
-          485.38799414348466,
-          1196.25,
-          627.8184480234261
+          478.125,
+          427.29136163982434,
+          1130.625,
+          659.6778916544656
         ]
       ],
       "confidence": [
-        0.86
+        0.82
       ],
       "mask": {
-        "file": "sam_masks/pillars.png",
-        "area": 56207.0,
-        "cx": 807.2885934819897,
-        "cy": 566.3583476272156,
-        "angle": 179.2,
-        "elongation": 5.88
+        "file": "sam_masks/GEL.png",
+        "area": 88752.0,
+        "cx": 803.1184727174257,
+        "cy": 574.2510267635511,
+        "angle": 0.4,
+        "elongation": 3.91
       }
     },
-    "pcb": {
+    "CORE": {
+      "phrase": "gray faceted base",
+      "tried": [
+        "gray faceted base"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          630.0,
+          1071.9765739385066,
+          1021.875,
+          1229.3997071742315
+        ]
+      ],
+      "confidence": [
+        0.75
+      ],
+      "mask": {
+        "file": "sam_masks/CORE.png",
+        "area": 42883.0,
+        "cx": 858.0912490650711,
+        "cy": 1147.5310396409873,
+        "angle": 172.9,
+        "elongation": 2.68
+      }
+    },
+    "CAP": {
+      "phrase": "Capacitive taxel grid (box prompt)",
+      "tried": [
+        "black gridded plate",
+        "dark sensor plate",
+        "sensor grid",
+        "grid"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          532.5,
+          697.1595900439239,
+          1081.875,
+          792.7379209370425
+        ]
+      ],
+      "confidence": [
+        0.96
+      ],
+      "mask": {
+        "file": "sam_masks/CAP.png",
+        "area": 42021.0,
+        "cx": 788.4370973853732,
+        "cy": 749.8387646835922,
+        "angle": 178.5,
+        "elongation": 5.99
+      }
+    },
+    "PVDF": {
+      "phrase": "Vibration film (box prompt)",
+      "tried": [
+        "clear thin film",
+        "transparent plastic film"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          502.5,
+          639.0629575402636,
+          1104.375,
+          706.5300146412884
+        ]
+      ],
+      "confidence": [
+        0.92
+      ],
+      "rejected_by_judge": [
+        "Flex tail with connector"
+      ],
+      "mask": {
+        "file": "sam_masks/PVDF.png",
+        "area": 27037.0,
+        "cx": 808.6568427195798,
+        "cy": 677.6562591187628,
+        "angle": 0.2,
+        "elongation": 11.57
+      }
+    },
+    "FLEX": {
+      "phrase": "amber curved ribbon",
+      "tried": [
+        "amber curved ribbon"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          973.125,
+          545.3587115666179,
+          1434.375,
+          760.878477306003
+        ]
+      ],
+      "confidence": [
+        0.68
+      ],
+      "mask": {
+        "file": "sam_masks/FLEX.png",
+        "area": 23934.0,
+        "cx": 1245.556225909167,
+        "cy": 654.6964974023798,
+        "angle": 11.1,
+        "elongation": 2.37
+      }
+    },
+    "BOARD": {
       "phrase": "green circuit board",
       "tried": [
         "green circuit board"
@@ -97,193 +178,101 @@
       "source": "phrase",
       "boxes": [
         [
-          292.5,
-          762.7525622254759,
-          1275.0,
-          805.8565153733529
+          1140.0,
+          702.7818448023427,
+          1500.0,
+          813.3528550512445
         ]
       ],
       "confidence": [
-        0.68
-      ],
-      "rejected_by_judge": [
-        "silicone pillar dielectric x48 soft pillar array",
-        "multiplexed readout electronics"
+        0.78
       ],
       "mask": {
-        "file": "sam_masks/pcb.png",
-        "area": 22930.0,
-        "cx": 787.3099749731856,
-        "cy": 790.4497676081515,
-        "angle": 0.0,
-        "elongation": 35.43
+        "file": "sam_masks/BOARD.png",
+        "area": 28061.0,
+        "cx": 1318.1194242553797,
+        "cy": 761.1908222887274,
+        "angle": 176.5,
+        "elongation": 3.61
       }
     },
-    "core": {
-      "phrase": "grey metal block",
+    "CABLE": {
+      "phrase": "black cable",
       "tried": [
-        "grey metal block"
+        "black cable"
       ],
       "source": "phrase",
       "boxes": [
         [
-          348.75,
-          905.1830161054173,
-          1215.0,
-          1043.865300146413
-        ]
-      ],
-      "confidence": [
-        0.68
-      ],
-      "mask": {
-        "file": "sam_masks/core.png",
-        "area": 116705.0,
-        "cx": 782.1509538100659,
-        "cy": 975.0316326882611,
-        "angle": 180.0,
-        "elongation": 6.39
-      }
-    },
-    "readout": {
-      "phrase": "multiplexed readout electronics (box prompt)",
-      "tried": [
-        "black square chip",
-        "black computer chip",
-        "computer chip",
-        "chip"
-      ],
-      "source": "box prompt",
-      "boxes": [
-        [
-          913.125,
-          809.6046852122987,
-          1201.875,
-          880.8199121522695
-        ]
-      ],
-      "confidence": [
-        0.79
-      ],
-      "mask": {
-        "file": "sam_masks/readout.png",
-        "area": 14940.0,
-        "cx": 1057.5385847797063,
-        "cy": 845.2913217623498,
-        "angle": 178.3,
-        "elongation": 4.55
-      }
-    },
-    "tail": {
-      "phrase": "orange ribbon cable",
-      "tried": [
-        "orange ribbon cable"
-      ],
-      "source": "phrase",
-      "boxes": [
-        [
-          1291.875,
+          1485.0,
           734.6412884333822,
-          1863.75,
-          1077.5988286969255
+          1920.0,
+          910.8052708638361
         ]
       ],
       "confidence": [
-        0.94
+        0.89
       ],
       "mask": {
-        "file": "sam_masks/tail.png",
-        "area": 46767.0,
-        "cx": 1617.8634146341462,
-        "cy": 885.615917843389,
-        "angle": 152.7,
-        "elongation": 2.69
-      }
-    },
-    "screws": {
-      "phrase": "mounting screws x2 (box prompt)",
-      "tried": [
-        "silver metal screw",
-        "grey threaded screw",
-        "metal screws",
-        "screws"
-      ],
-      "source": "box prompt",
-      "boxes": [
-        [
-          440.625,
-          803.9824304538799,
-          1126.875,
-          1154.4363103953149
-        ]
-      ],
-      "confidence": [
-        0.85
-      ],
-      "mask": {
-        "file": "sam_masks/screws.png",
-        "area": 14751.0,
-        "cx": 714.3976261127597,
-        "cy": 1003.1470191529538,
-        "angle": 167.5,
-        "elongation": 2.79
+        "file": "sam_masks/CABLE.png",
+        "area": 15878.0,
+        "cx": 1708.4901365705614,
+        "cy": 796.9013657056146,
+        "angle": 163.1,
+        "elongation": 7.99
       }
     }
   },
   "contacts": [
     [
-      "skin",
-      "film"
+      "SKIN",
+      "GEL"
     ],
     [
-      "film",
-      "pillars"
+      "GEL",
+      "PVDF"
     ],
     [
-      "pcb",
-      "readout"
+      "CAP",
+      "PVDF"
     ],
     [
-      "pcb",
-      "screws"
+      "CAP",
+      "FLEX"
     ],
     [
-      "core",
-      "screws"
+      "PVDF",
+      "FLEX"
+    ],
+    [
+      "FLEX",
+      "BOARD"
+    ],
+    [
+      "BOARD",
+      "CABLE"
     ]
   ],
+  "reference": {},
   "differences": {
-    "skin": [
-      "expected to touch pillars, but they are apart in the picture"
+    "SKIN": [
+      "expected to touch CORE, but they are apart in the picture"
     ],
-    "pillars": [
-      "expected 8 visible, found 1",
-      "expected a vertical long axis, measured horizontal",
-      "size against pcb: expected about 0.12 times, measured 0.72 times",
-      "expected to touch pcb, but they are apart in the picture",
-      "expected to touch skin, but they are apart in the picture"
+    "CORE": [
+      "expected to touch SKIN, but they are apart in the picture",
+      "expected to touch CAP, but they are apart in the picture",
+      "expected to touch BOARD, but they are apart in the picture"
     ],
-    "pcb": [
-      "expected to touch pillars, but they are apart in the picture",
-      "expected to touch core, but they are apart in the picture"
+    "CAP": [
+      "expected 10 visible, found 1",
+      "size against CORE: expected about 0.09 times, measured 1.4 times",
+      "expected to touch CORE, but they are apart in the picture"
     ],
-    "core": [
-      "expected to touch pcb, but they are apart in the picture",
-      "expected to touch readout, but they are apart in the picture"
+    "PVDF": [
+      "size against CAP: expected about 10 times, measured 1.1 times"
     ],
-    "readout": [
-      "size against pcb: expected about 0.8 times, measured 0.29 times",
-      "expected to touch core, but they are apart in the picture",
-      "expected to touch tail, but they are apart in the picture"
-    ],
-    "tail": [
-      "expected to touch readout, but they are apart in the picture",
-      "expected to touch core, but they are apart in the picture"
-    ],
-    "screws": [
-      "expected 2 visible, found 1",
-      "expected a vertical long axis, measured horizontal",
-      "size against core: expected about 0.15 times, measured 0.79 times"
+    "BOARD": [
+      "expected to touch CORE, but they are apart in the picture"
     ]
   },
   "rechecks": []

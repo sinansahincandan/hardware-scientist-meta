@@ -1,0 +1,14 @@
+{
+  "id": "E70",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "backbone bending stress MPa per tube at 200mm offset",
+  "code_or_query": "(589*0.2/2)*0.015/1.73e-08/1e6",
+  "inputs": {},
+  "output_summary": "51.1",
+  "output_full": "51.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

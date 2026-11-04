@@ -1,0 +1,26 @@
+{
+  "id": "E33",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: brushless outrunner motor generator Kv datasheet direct drive small wind",
+  "code_or_query": "brushless outrunner motor generator Kv datasheet direct drive small wind",
+  "inputs": {},
+  "output_summary": "fr.amr-rc.com — Park 180 Brushless Outrunner Motor, 2200Kv - EFLM1120 - AMR RC — https://fr.amr-rc.com/park-180-brushless-outrunner-motor-2200kv.html",
+  "output_full": "fr.amr-rc.com — Park 180 Brushless Outrunner Motor, 2200Kv - EFLM1120 - AMR RC — https://fr.amr-rc.com/park-180-brushless-outrunner-motor-2200kv.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "fr.amr-rc.com",
+      "title": "Park 180 Brushless Outrunner Motor, 2200Kv - EFLM1120 - AMR RC",
+      "year": "",
+      "url": "https://fr.amr-rc.com/park-180-brushless-outrunner-motor-2200kv.html",
+      "query": "brushless outrunner motor generator Kv datasheet direct drive small wind",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

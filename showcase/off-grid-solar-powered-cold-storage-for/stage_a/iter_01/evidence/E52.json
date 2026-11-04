@@ -1,0 +1,36 @@
+{
+  "id": "E52",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: eutectic holdover plates transport refrigeration thermal storage",
+  "code_or_query": "eutectic holdover plates transport refrigeration thermal storage",
+  "inputs": {},
+  "output_summary": "artisanindustrial.com.au — Reliable Refrigerated Transport | Cold Car & Delvic Foods — https://artisanindustrial.com.au/refrigerated-transport-that-keeps-it-cool-cold-car-delvic-foods/",
+  "output_full": "artisanindustrial.com.au — Reliable Refrigerated Transport | Cold Car & Delvic Foods — https://artisanindustrial.com.au/refrigerated-transport-that-keeps-it-cool-cold-car-delvic-foods/\n(opened by the member, not cited)\nCold-Chain Refrigeration Engineer said about it: For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only.\nEnclosure and Structural Designer said about it: That guide states standard doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which passes one 600 by 400 mm crate plus carrier under eight openings discipline for only 0.44 kilowatt-hour per day door loss, and I qualify the wall-ceiling plates in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) from structures side as 100 to 150 kg on through-bolted rails with sealed rear penetration and outside drain to keep the Polyisocyanurate (PIR, rigid foam insulation) box hose-cleanable.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "artisanindustrial.com.au",
+      "title": "Reliable Refrigerated Transport | Cold Car & Delvic Foods",
+      "year": "",
+      "url": "https://artisanindustrial.com.au/refrigerated-transport-that-keeps-it-cool-cold-car-delvic-foods/",
+      "query": "eutectic holdover plates transport refrigeration thermal storage",
+      "unresolved": false,
+      "passage": "For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only."
+        },
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "That guide states standard doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which passes one 600 by 400 mm crate plus carrier under eight openings discipline for only 0.44 kilowatt-hour per day door loss, and I qualify the wall-ceiling plates in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) from structures side as 100 to 150 kg on through-bolted rails with sealed rear penetration and outside drain to keep the Polyisocyanurate (PIR, rigid foam insulation) box hose-cleanable."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,27 @@
+{
+  "id": "E42",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "folded envelope volume",
+  "code_or_query": "(Q_(730,'mm')*Q_(380,'mm')*Q_(190,'mm')).to('L')",
+  "inputs": {
+    "arg0": {
+      "value": "730",
+      "unit": "mm"
+    },
+    "arg1": {
+      "value": "380",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "190",
+      "unit": "mm"
+    }
+  },
+  "output_summary": "52.7 l",
+  "output_full": "52.7 l",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

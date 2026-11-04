@@ -1,0 +1,14 @@
+{
+  "id": "E76",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "required Kv for 8V minimum and revised volts with 170Kv",
+  "code_or_query": "(1430/8, 1430/170, 3150/170)",
+  "inputs": {},
+  "output_summary": "(179, 8.41, 18.5)",
+  "output_full": "(178.75, 8.411764705882353, 18.529411764705884)",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

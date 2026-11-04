@@ -1,0 +1,14 @@
+{
+  "id": "E30",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "total pedestrian live load for 3m wide deck",
+  "code_or_query": "5*40*3",
+  "inputs": {},
+  "output_summary": "600",
+  "output_full": "600",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

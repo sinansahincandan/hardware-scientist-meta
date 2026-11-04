@@ -1,24 +1,14 @@
 {
   "id": "E44",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
-  "tool": "web_search",
-  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
-  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "retrofitted acceleration with effective damping",
+  "code_or_query": "0.082824/(2*0.062)",
   "inputs": {},
-  "output_summary": "eurocodes.jrc.ec.europa.eu — Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc — 2021 — https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf",
-  "output_full": "eurocodes.jrc.ec.europa.eu — Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc — 2021 — https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf\n(the search returned no passage text)",
+  "output_summary": "0.668",
+  "output_full": "0.668",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "eurocodes.jrc.ec.europa.eu",
-      "title": "Microsoft Word - Geradin_JRC_Design of Footbridges_150909.doc",
-      "year": "2021",
-      "url": "https://eurocodes.jrc.ec.europa.eu/sites/default/files/2021-12/jrc_53442.pdf",
-      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

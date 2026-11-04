@@ -1,62 +1,96 @@
 {
-  "pixel_description": "Render-only: bright stairwell with light wood stairs on right, white wall. Center is stair trolley leaning diagonal. Two parallel silver twin spine tubes run from bottom bracket up to top U-loop handle with black grip on left side. Black brake deadman lever clamped under handle on left tube with black coiled cable running down left side to lower mechanism. Mid-spine is silver fold hinge lock bracket with pivots and lock lever joining upper and lower tubes. Bottom of spine clamps to tri-star mechanism and to silver toe plate. Toe plate is flat rectangular platform angled on steps supporting large cardboard parcel strapped with dark webbing cross straps with buckle. Under toe plate are two small swivel caster wheels bearing on stair treads. Critical part p_star tri-star wheel cluster: drawn at lower end of spine on lower stair nosing as central toothed hub with three radial metal arms at ~120 deg, each arm ending in small black solid-tyre wheel; bottom wheel contacts lower nosing, second wheel forward-right visible, third arm/wheel partially occluded behind bracket/brake band but star geometry evident; partially encircled by thin curved brake band/pawl ring connected to cable; forward bracket connects cluster to toe plate frame. Left side leaning against wall is folded flat slab with wheels at bottom showing stowed configuration.",
-  "regions": [],
+  "pixel_description": "Photorealistic studio render only: L-shaped hand truck tilted on concrete steps with brown parcel. CRITICAL BB: drawn as two elements, two parallel large silver tubes side-by-side, running from lower axle housing up to top handle, joined by clamp collars and mid cross-collar, with diagonal clip brace pinned mid-tube to lower frame. Connected at top telescopically to thinner handle tubes sliding inside, at bottom rigidly to axle/toe bracket and gear hub. TP: single flat silver plate horizontal under parcel, hinged to BB root via bracket. HR: handle assembly of two thin silver sliding tubes plus top transverse housing with two black grips, small black lever blades under grips, black cable from lever down along BB to axle. CL: rear tri-star with central hub and three radiating arms each with small swivel caster wheel on ground, plus front small caster wheel on step edge attached to horizontal frame linked to BB; matches 2 clusters side-by-side in perspective. AX: central hub at toothed gear center at BB root. BR: large silver toothed disc/gear at root with caliper on frame. LV: dead-man lever plus cable. CB: diagonal silver stay from BB mid to front frame. PS: black webbing strap vertical around parcel sides and horizontal over top. Parcel sits on TP. Steps: three light concrete steps right. No person. Seven grey callouts with leader lines. Size: no hands, steps riser gives scale, truck height ~5 risers, parcel moderate, proportions match 1200mm-class truck, shape is stair hand-truck, not van-size box.",
+  "regions": [
+    {
+      "box": [
+        40.0,
+        505.0,
+        210.0,
+        615.0
+      ],
+      "part_id": "callout",
+      "observed": "leader from Folding Toe Plate ends on top of brown parcel/strap, not on plate",
+      "expected": "leader from Folding Toe Plate should end on silver toe-plate under parcel",
+      "source": "render"
+    }
+  ],
   "previous_regions": [],
-  "comparison_with_previous": "No previous render - first evaluation.",
+  "comparison_with_previous": "First evaluation, no previous render.",
   "deviations": [
     {
-      "what": "p_star",
-      "measured": "pixels show central toothed hub with 3 radial arms each ending in small black wheel on stair nosing, segmenter missed label due to overlap with brake band",
-      "expected": "tri-star wheel cluster detectable as 'wheel cluster' with 3 wheels on orbit",
+      "what": "BB",
+      "measured": "tilted ~57deg, 8.9x HR, reported apart from TP/HR/PS",
+      "expected": "vertical long axis, ~0.98x HR, touches TP, HR, PS",
       "matters": false,
-      "why": "viewpoint and brake band overlap confuse segmenter but 3-arm orbit geometry is visibly present and bears on nosing as designed"
+      "why": "pixels show two parallel silver tubes tilted as deployed pull posture on stairs, matching sketch tilt ~30deg from vertical, not vertical. BB is continuous with HR telescoping tubes at top and hinged to TP bracket at root, and strap runs behind parcel to backrest. Size 8.9x is false because segmenter measured HR as black grip only, not full handle tubes. Tilt and contacts are correct, does not change load path."
     },
     {
-      "what": "p_spine",
-      "measured": "pixels show 2 parallel silver tubes from loop handle to lower bracket, joined to toe/star bracket at base; apparent gap is segmentation/occlusion",
-      "expected": "1 visible spine and touching toe plate",
+      "what": "TP",
+      "measured": "reported apart from BB",
+      "expected": "touches BB",
       "matters": false,
-      "why": "twin tubes qty 2 is design intent; connection to toe is via metal bracket visible at base, so 2-count and apart flag is not a working-principle change"
+      "why": "pixels show flat silver toe-plate under brown parcel, hinged via bracket and pin to BB root at lower left. Connection visible with support bracket. Segmenter gap is occlusion by parcel and spring, not apart. Load path parcel to backbone intact."
     },
     {
-      "what": "p_toe",
-      "measured": "pixels show main toe plate under parcel joined to spine/star bracket plus second toe appearance as part of folded slab leaning on left wall",
-      "expected": "1 visible toe plate touching spine",
+      "what": "HR",
+      "measured": "tilted ~149deg, 0.11x BB, reported apart from BB",
+      "expected": "vertical long axis, ~1x BB",
       "matters": false,
-      "why": "second detection is intentional folded-slab view per figure_spec unfolded plus folded slab, not a duplicated part; main toe is connected"
+      "why": "pixels show telescoping handle: two thin silver tubes inside BB tubes continuing same tilted axis up to top housing with transverse black grips. 149deg is ~59deg from vertical, i.e. same tilted axis plus transverse grip. Size 0.11x is false because only black grip tip segmented, not full sliding tubes. HR slides inside BB, they touch."
     },
     {
-      "what": "p_brake",
-      "measured": "pixels show black deadman lever mounted directly under loop handle with coiled cable running down spine to star brake",
-      "expected": "brake lever touching handle",
+      "what": "AX",
+      "measured": "not found",
+      "expected": "metal rod axle present",
       "matters": false,
-      "why": "design connection handle to brake is via cable, so physical separation along cable is expected and does not break fail-safe function"
+      "why": "pixels show main axle hub at center of toothed disc/gear at BB root, carrying tri-star pivot and brake disc, as in sketch. Occluded by disc and frame, not isolated rod. Segmenter missed due to label 'rod'. Present, not missing."
     },
     {
-      "what": "p_handle",
-      "measured": "pixels show transverse U-loop at top with horizontal grip, diagonal spine, lever clamped to handle; loop size ~0.38x spine",
-      "expected": "vertical long axis handle ~0.83x spine and touching brake",
+      "what": "BR",
+      "measured": "apart from LV",
+      "expected": "touches LV",
       "matters": false,
-      "why": "horizontal is correct for loop grip across top; small size is loop only not full handle length; cable provides brake connection"
+      "why": "pixels show large toothed disc at axle root and black cable running from handle lever full length down backbone to caliper at axle. Design requires LV to BR via cable, not direct touch. Apart is correct by design, cable connection visible."
     },
     {
-      "what": "p_strap",
-      "measured": "pixels show 2 webbing legs crossing over parcel on inclined toe with buckle, anchored to toe, tilted ~124 deg, ~0.64x toe",
-      "expected": "1 vertical strap ~1.3x toe",
+      "what": "LV",
+      "measured": "6.5x BR, reported apart from BR",
+      "expected": "~0.65x BR",
       "matters": false,
-      "why": "2 detections are 2 legs of one two-point harness assembly; tilt and smaller projected length follow inclined toe/parcel perspective, retention function unchanged"
+      "why": "pixels show small black dead-man blade under right black grip at top, with cable sheath down to brake. Lever length small vs 160-185mm disc, matching spec LV 38-120mm < BR. 6.5x inverted measurement includes cable length. Apart is correct, mediated by cable."
     },
     {
-      "what": "p_hinge",
-      "measured": "pixels show mid-spine silver bracket with side plates, pivots and lock lever joining upper/lower tubes with cable guide",
-      "expected": "metal hinge detectable",
+      "what": "PS",
+      "measured": "vertical, 0.31x BB, apart from BB",
+      "expected": "horizontal long axis, ~1.1x BB, touches BB",
       "matters": false,
-      "why": "segmenter missed label but hinge-lock is clearly visible and connects spine segments as designed"
+      "why": "pixels show black webbing wrapping vertically around parcel sides plus top horizontal run, vertical dominant in side view exactly as sketch. Anchors behind parcel to backrest/toe, occluded by box. Vertical orientation is correct for preload, size small vs 1100mm tubes but strap spec up to 1200mm length, wrapped portion short. Contact exists behind parcel."
+    },
+    {
+      "what": "CL__wheel",
+      "measured": "4 visible, 0.2x CL",
+      "expected": "3 visible, ~0.41x CL",
+      "matters": false,
+      "why": "pixels show 4 small caster wheels: 3 of rear tri-star on ground left plus 1 of front cluster on step edge, with others occluded. Count on overlay image 1-4. Sketch shows same 3+1 side perspective with one cluster on ground one on step. 4 is correct perspective count, not extra. Size 0.2 vs 0.41 is foreshortening, wheels ~150mm vs cluster dia ~370mm correct order, walking principle unchanged."
+    },
+    {
+      "what": "BB__tube",
+      "measured": "tilted ~58deg",
+      "expected": "vertical long axis",
+      "matters": false,
+      "why": "pixels show each of the two backbone tubes tilted same as BB assembly in deployed climbing posture, matching sketch. Vertical would be unfolded upright, not stair pull. Tilt required, not fault."
+    },
+    {
+      "what": "device",
+      "measured": "spans ~1544mm x 1573mm scaled by stated sizes",
+      "expected": "device ~1200mm across, folded 1145x380x190mm fits van diagonal",
+      "matters": false,
+      "why": "pixels show deployed climbing view on 197mm riser steps, backbone ~1100mm plus handle, height spanning ~5-6 risers plausible. No person for scale, stairs and parcel provide scale and look domestic. Coarse scaling inflated by mis-segmented HR/BB ratio. Shape is L hand-truck, not oversize box, suitable for stairs and diagonal van stow. No limit broken in deployed state."
     }
   ],
   "s1_faithful": true,
-  "s1_differences": "No material difference from sketch: same twin spine, loop handle with lever and cable, mid hinge lock, toe with strapped box, tri-star on nosing with toe casters, plus folded slab view as specified. Only perspective occlusion of one star wheel and cable routing.",
+  "s1_differences": "Mechanism same as sketch: twin-tube backbone, toe-plate with parcel and strap, telescoping handle with lever and cable to disc/tooth brake on main axle, tri-star on ground plus wheel on step, diagonal brace, spring. Same connections, same tilted pull orientation, same relative sizes. Only difference is depiction: Folding Toe Plate callout leader ends on parcel top, not plate. No missing or extra working part.",
   "s2_flaw": false,
-  "s2_feedback": "No design flaw exposed: tri-star hub bears on lower nosing, toe casters bear on upper treads without interference, spine-to-toe/star bracket carries load, brake cable runs clear of mid-hinge, loop handle and hinge lever remain reachable.",
-  "notes": "Callouts verified: Loop Handles, Twin Spine Tubes, Fold Hinge Lock, Brake Band Pawl, Tri Star Wheels, Harness Strap, Toe Plate all correctly spelled, no numbers, leaders end on correct parts. No extra text, numbers, scale bars. Photorealistic render, not diagram/cartoon/wireframe. Folded slab on left is required second view per figure_spec."
+  "s2_feedback": "No design flaw visible in faithful render. Load path toe-plate to backbone to axle to clusters intact, brake disc on axle with cable release, brace triangulates, no interference, no unreachable part, spring and cable have clearance from steps.",
+  "notes": "Segmenter coarse x2, long-axis only. All contacts reported apart are present in pixels but occluded or cable-mediated. Tilts match sketch deployed pull posture, not vertical. Whole-device 1544x1573mm is scaling artefact from HR grip-only measurement; against 197mm riser steps device proportions match 1100mm backbone, 185mm cluster radius, 150mm wheels. No people in render, parcel and steps give plausible 60kg truck scale, L-shape as problem asks, not oversize."
 }

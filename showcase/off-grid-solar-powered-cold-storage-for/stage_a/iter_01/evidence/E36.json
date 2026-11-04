@@ -1,0 +1,32 @@
+{
+  "id": "E36",
+  "author": "Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: food grade plastic crate 600x400 ventilation produce storage stacking",
+  "code_or_query": "food grade plastic crate 600x400 ventilation produce storage stacking",
+  "inputs": {},
+  "output_summary": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/folded-height/27-7-mm/",
+  "output_full": "plastic2go.com.au — Best Folding Vented 600x400 Plastic Crates for Sale — https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/folded-height/27-7-mm/\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: The listing in Best Folding Vented 600x400 Plastic Crates for Sale (E36) gives Footprint 600 by 400 millimetre, Material Food-Grade Polypropylene, and Airflow Fully Vented Walls and Base, so two slotted-angle rows carry fifty 600 millimetre by 400 millimetre crates at 20.0 kilogram each for 1000 kilogram total, hose-cleanable with removable shelves, shown with the high rear evaporator loop and low return in the walk-in chamber sketch (E42).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "plastic2go.com.au",
+      "title": "Best Folding Vented 600x400 Plastic Crates for Sale",
+      "year": "",
+      "url": "https://www.plastic2go.com.au/product-category/plastic-crates/600x400/folding-vented-iso-crate/folded-height/27-7-mm/",
+      "query": "food grade plastic crate 600x400 ventilation produce storage stacking",
+      "unresolved": false,
+      "passage": "The listing in Best Folding Vented 600x400 Plastic Crates for Sale (E36) gives Footprint 600 by 400 millimetre, Material Food-Grade Polypropylene, and Airflow Fully Vented Walls and Base, so two slotted-angle rows carry fifty 600 millimetre by 400 millimetre crates at 20.0 kilogram each for 1000 kilogram total, hose-cleanable with removable shelves, shown with the high rear evaporator loop and low return in the walk-in chamber sketch (E42).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "The listing in Best Folding Vented 600x400 Plastic Crates for Sale (E36) gives Footprint 600 by 400 millimetre, Material Food-Grade Polypropylene, and Airflow Fully Vented Walls and Base, so two slotted-angle rows carry fifty 600 millimetre by 400 millimetre crates at 20.0 kilogram each for 1000 kilogram total, hose-cleanable with removable shelves, shown with the high rear evaporator loop and low return in the walk-in chamber sketch (E42)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

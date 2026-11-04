@@ -4,18 +4,18 @@
     "crop 2: pv_array",
     "crop 3: pv_array",
     "crop 4: pv_array",
-    "crop 5: frame_rack",
-    "crop 6: dc_wiring",
-    "crop 7: dc_wiring",
-    "crop 8: dc_wiring",
-    "crop 9: dc_wiring",
-    "crop 10: battery_cabinet",
-    "crop 11: cold_box",
-    "crop 12: airflow_kit",
-    "crop 13: airflow_kit",
-    "crop 14: racks",
-    "crop 15: racks",
-    "crop 16: crates"
+    "crop 5: batt_bank",
+    "crop 6: cooler",
+    "crop 7: rack_crate",
+    "crop 8: rack_crate",
+    "crop 9: rack_crate",
+    "crop 10: rack_crate",
+    "crop 11: control",
+    "crop 12: control",
+    "crop 13: control",
+    "crop 14: foundation",
+    "crop 15: foundation",
+    "crop 16: foundation"
   ],
   "items": [
     {
@@ -45,28 +45,28 @@
     },
     {
       "index": 6,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "Insulated chamber with door"
     },
     {
       "index": 7,
-      "is_part": false,
-      "seen_as": "concrete plinth"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 8,
       "is_part": false,
-      "seen_as": "chiller refrigerant pipe"
+      "seen_as": "Split PV array 2 roof +7 ground"
     },
     {
       "index": 9,
-      "is_part": false,
-      "seen_as": "evaporator copper piping"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 10,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "Split PV array 2 roof +7 ground"
     },
     {
       "index": 11,
@@ -75,13 +75,13 @@
     },
     {
       "index": 12,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "Battery bank with MPPT"
     },
     {
       "index": 13,
       "is_part": false,
-      "seen_as": "DC chiller shaded"
+      "seen_as": "Battery bank with MPPT"
     },
     {
       "index": 14,

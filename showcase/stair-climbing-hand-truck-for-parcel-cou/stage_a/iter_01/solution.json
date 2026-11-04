@@ -1,0 +1,442 @@
+{
+  "title": "Manual tri-star hand truck v4 for one courier with 60 kg parcel",
+  "problem_restatement": "Provide a one-courier manual truck that carries a 60 kg parcel up domestic stairs, rolls on flat, locks hands-off on slopes, and stows flat in a small van.",
+  "mechanism_sentence": "A courier pulls small wheels that walk over each step while a spring brake holds the 60 kg load when the handle is released.",
+  "decisive_choices": [
+    "Keep one-piece twin-tube backbone upsized to 40 by 36 mm over triangulated toe-stay C29 because transverse brace cannot ground cantilever tip per E93 and E115, upsize cuts whip to 43.9 mm per E116 with 40.9 MPa per E118 for 0.37 kg penalty per E117 while stay adds joint in peak 118 N m path per E90 with 503 N tie per E119.",
+    "Use tri-star rotating cluster C1 for stair traverse because it is the only working means pivoting over the 197 mm riser with 185 mm radius and 37.3 N m per side costing 129 J per riser, while pull posture C11 does no stepping and fold-down handle note C19 only aids stow.",
+    "Use dead-man lever with disc plus tooth park pin C7 with C20 for limiting because release means locked holding 74.6 N m total against 209 N pull and 188 N hold exceeding sustained limits, while friction-only contact brake C3 alone cannot be trusted without positive lock."
+  ],
+  "open_question": "How do lever release feel and tooth-pin engagement behave under full slope load in a hardware bench test?",
+  "transfer_line": "Load: folding toe-plate -> twin-tube backbone -> tri-star wheel cluster | Measured: dead-man lever -> courier",
+  "assumed_constraints": [
+    {
+      "constraint": "Parcel centre fixed at 200 mm forward of backrest for all moment and stress checks",
+      "source": "Mara Voss unified offset",
+      "evidence_ids": [
+        "E90",
+        "E70"
+      ]
+    },
+    {
+      "constraint": "Impact factor 1.5 applied to static backbone stress",
+      "source": "Mara Voss structural check",
+      "evidence_ids": [
+        "E91",
+        "E92",
+        "E118"
+      ]
+    },
+    {
+      "constraint": "Tri-star cluster effective radius 185 mm for slope torque",
+      "source": "Kenji Tanaka stair torque",
+      "evidence_ids": [
+        "E98",
+        "E124"
+      ]
+    }
+  ],
+  "functional_decomposition": [
+    "Support parcel",
+    "Restrain parcel",
+    "Move on flat",
+    "Traverse stairs",
+    "Limit motion",
+    "Collapse frame"
+  ],
+  "concept": {
+    "working_principle": "Parcel sits on folding toe-plate and straps to twin-tube backbone, paired wheels roll on flat, tri-star clusters pivot over step noses, spring-applied disc plus tooth pin holds slope when lever is released and meters when squeezed, toe folds and handle slides with brace alongside for van stow.",
+    "parts": [
+      {
+        "id": "BB",
+        "name": "twin tube backbone",
+        "function": "carry parcel bending load to axle",
+        "material": "6061-T6 aluminium tube",
+        "size_class_mm": {
+          "min": 40.0,
+          "max": 1100.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "TP",
+        "name": "folding toe plate",
+        "function": "support parcel from below",
+        "material": "steel plate",
+        "size_class_mm": {
+          "min": 240.0,
+          "max": 365.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "HR",
+        "name": "telescoping push handle",
+        "function": "push pull and fold for stow",
+        "material": "steel tube",
+        "size_class_mm": {
+          "min": 30.0,
+          "max": 1120.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "CL",
+        "name": "tri-star wheel cluster",
+        "function": "walk over step nose and roll on flat",
+        "material": "steel plate with solid rubber wheels",
+        "size_class_mm": {
+          "min": 150.0,
+          "max": 370.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "AX",
+        "name": "main cluster axle",
+        "function": "carry clusters and brake torque",
+        "material": "steel",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 310.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "BR",
+        "name": "disc brake with tooth lock",
+        "function": "hold slope load hands off",
+        "material": "steel rotor with caliper",
+        "size_class_mm": {
+          "min": 160.0,
+          "max": 185.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "LV",
+        "name": "dead-man brake lever with cable",
+        "function": "release and meter lock",
+        "material": "steel lever with cable",
+        "size_class_mm": {
+          "min": 38.0,
+          "max": 120.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "CB",
+        "name": "clip-on cross brace",
+        "function": "tie twin tubes sideways when deployed",
+        "material": "aluminium tube",
+        "size_class_mm": {
+          "min": 25.0,
+          "max": 310.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "PS",
+        "name": "parcel retaining strap",
+        "function": "preload parcel to backrest",
+        "material": "polyester webbing with cam buckle",
+        "size_class_mm": {
+          "min": 25.0,
+          "max": 1200.0
+        },
+        "qty": 1
+      }
+    ],
+    "connections": [
+      {
+        "from_id": "TP",
+        "to_id": "BB",
+        "kind": "mechanical",
+        "label": "parcel load to backbone"
+      },
+      {
+        "from_id": "BB",
+        "to_id": "AX",
+        "kind": "mechanical",
+        "label": "bending to axle"
+      },
+      {
+        "from_id": "AX",
+        "to_id": "CL",
+        "kind": "mechanical",
+        "label": "torque to clusters"
+      },
+      {
+        "from_id": "LV",
+        "to_id": "BR",
+        "kind": "mechanical",
+        "label": "cable to caliper"
+      },
+      {
+        "from_id": "BR",
+        "to_id": "AX",
+        "kind": "mechanical",
+        "label": "lock to axle"
+      },
+      {
+        "from_id": "HR",
+        "to_id": "BB",
+        "kind": "mechanical",
+        "label": "slides inside backbone"
+      },
+      {
+        "from_id": "CB",
+        "to_id": "BB",
+        "kind": "mechanical",
+        "label": "pins across tubes"
+      },
+      {
+        "from_id": "PS",
+        "to_id": "BB",
+        "kind": "mechanical",
+        "label": "preload to backrest"
+      }
+    ],
+    "loads": [
+      {
+        "on_id": "TP",
+        "label": "parcel weight",
+        "direction": "down"
+      },
+      {
+        "on_id": "HR",
+        "label": "operator tip-back pull",
+        "direction": "up"
+      },
+      {
+        "on_id": "CL",
+        "label": "slope load on stairs",
+        "direction": "down"
+      }
+    ]
+  },
+  "key_estimates": [
+    {
+      "quantity": "total lifted mass and weight",
+      "value": 67.1,
+      "unit": "kg and N",
+      "method": "sum tare plus parcel and weight conversion",
+      "evidence_ids": [
+        "E121",
+        "E122"
+      ]
+    },
+    {
+      "quantity": "unified parcel moment",
+      "value": 118.0,
+      "unit": "N m",
+      "method": "parcel weight times 200 mm offset",
+      "evidence_ids": [
+        "E90"
+      ]
+    },
+    {
+      "quantity": "backbone stress with impact",
+      "value": 40.9,
+      "unit": "MPa",
+      "method": "bending stress with 1.5 impact for 40 mm tubes",
+      "evidence_ids": [
+        "E118"
+      ]
+    },
+    {
+      "quantity": "deployed tip whip",
+      "value": 43.9,
+      "unit": "mm",
+      "method": "cantilever deflection with twin 40 mm tube inertia",
+      "evidence_ids": [
+        "E116"
+      ]
+    },
+    {
+      "quantity": "stair work slope and total lock",
+      "value": 129.0,
+      "unit": "J and N m",
+      "method": "total mass energy and slope times cluster radius",
+      "evidence_ids": [
+        "E96",
+        "E123",
+        "E124",
+        "E132"
+      ]
+    },
+    {
+      "quantity": "hand release force",
+      "value": 57.4,
+      "unit": "N",
+      "method": "clamp with lever ratio and cable efficiency",
+      "evidence_ids": [
+        "E101"
+      ]
+    },
+    {
+      "quantity": "folded length",
+      "value": 1145.0,
+      "unit": "mm",
+      "method": "stacked folded dimensions and diagonal entry",
+      "evidence_ids": [
+        "E104",
+        "E105",
+        "E106",
+        "E109"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "Carry 60 kg parcel",
+      "design_value": "67.1 kg total, 658 N includes 60 kg parcel",
+      "how_shown": "Total mass sums tare plus parcel and converts to weight by calculation.",
+      "evidence_ids": [
+        "E121",
+        "E122",
+        "E7"
+      ]
+    },
+    {
+      "constraint": "Climb stairs with 197 mm maximum riser and 254 mm minimum going",
+      "design_value": "129 J per riser, 403 N slope, 74.6 N m lock, 43.9 mm whip",
+      "how_shown": "Total-mass energy and slope torque calculated and whip checked under quarter riser.",
+      "evidence_ids": [
+        "E96",
+        "E123",
+        "E124",
+        "E116"
+      ]
+    },
+    {
+      "constraint": "Stow in small urban van with 1120 mm door width and 1802 mm floor length",
+      "design_value": "1150 mm by 380 mm by 190 mm enters on 1.67 m diagonal to 1.80 m floor",
+      "how_shown": "Folded length width thickness summed by parts and checked straight versus diagonal entry.",
+      "evidence_ids": [
+        "E104",
+        "E105",
+        "E106",
+        "E109",
+        "E36"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "hand grip lever on handle",
+      "interface": "grip force to lever travel"
+    },
+    {
+      "stage": "conditioning",
+      "name": "brake cable",
+      "interface": "tension through slack loop"
+    },
+    {
+      "stage": "instrument",
+      "name": "disc caliper and tooth pin on axle",
+      "interface": "clamp force to torque"
+    },
+    {
+      "stage": "computer",
+      "name": "courier",
+      "interface": "squeeze to meter or release to lock"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "TP",
+      "action": "holds parcel from below"
+    },
+    {
+      "part_id": "PS",
+      "action": "secures parcel to backrest"
+    },
+    {
+      "part_id": "CL",
+      "action": "rolls on paired wheels"
+    },
+    {
+      "part_id": "CL",
+      "action": "walks over step nose"
+    },
+    {
+      "part_id": "BR",
+      "action": "holds slope hands off"
+    },
+    {
+      "part_id": "HR",
+      "action": "folds toe and handle"
+    }
+  ],
+  "fabrication_steps": [
+    {
+      "step": 1,
+      "description": "Weld the twin 1100 mm backbone tubes and axle mounts first, because toe, handle, axle and brace all locate to it",
+      "method": "TIG-welded 6061-T6 tube, 40 x 36 mm",
+      "parts_present": [
+        "BB",
+        "AX"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Bolt the folding 365 x 240 mm toe-plate with hinge pin to the backbone root, because it restores the load path when deployed",
+      "method": "Bolted steel plate, 365 x 240 mm with 8 mm pin",
+      "parts_present": [
+        "BB",
+        "TP",
+        "AX"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Fit the two tri-star clusters with 150 mm wheels and 160 mm disc plus tooth pin to the main axle, because stair walking and locking are tested together",
+      "method": "Bolted steel clusters with solid rubber wheels, 150 mm wheels, 160 mm rotor",
+      "parts_present": [
+        "BB",
+        "TP",
+        "AX",
+        "CL",
+        "BR"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Run the cable with slack loop from the sliding handle levers to the caliper, then add strap and clip-on brace, because folding must never release the brake",
+      "method": "Cabled steel lever with polyester strap and aluminium brace",
+      "parts_present": [
+        "BB",
+        "TP",
+        "AX",
+        "CL",
+        "BR",
+        "HR",
+        "LV",
+        "PS",
+        "CB"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Tired hand cannot hold 188 N descent load by grip alone",
+      "mitigation": "Hold slope in spring-applied disc plus tooth pin with 57.4 N release and hands-off auto-lock, verify by bench test"
+    },
+    {
+      "risk": "110 mm whip mistimes cluster nose contact and 1100 mm backbone cannot enter straight through door",
+      "mitigation": "Upsize to one-piece 40 by 36 mm tubes for 43.9 mm whip under quarter riser and accept 1150 mm diagonal stow"
+    }
+  ],
+  "novelty_claim": "Proven tri-star walking with twin-tube backbone plus spring-applied disc with positive tooth lock for hands-off holding and folding toe plus sliding handle for diagonal van stow, beyond fixed-frame 60 kg stair truck with skids.",
+  "cost_class": "$100-1k",
+  "figure_spec": {
+    "system_view": "Side view of deployed truck with parcel on toe-plate, twin-tube backbone to axle with tri-star clusters on 197 mm step, handle up and brace pinned",
+    "critical_part_id": "BB",
+    "preferred_view": "side"
+  },
+  "open_questions": [
+    "How do lever release feel and tooth-pin engagement behave under full slope load in a hardware bench test, since calculations show 57.4 N release and 0.498 shear ratio but no hardware test has been run?"
+  ]
+}

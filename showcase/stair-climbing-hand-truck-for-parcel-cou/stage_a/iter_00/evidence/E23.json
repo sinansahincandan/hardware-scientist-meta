@@ -1,24 +1,14 @@
 {
   "id": "E23",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
-  "tool": "web_search",
-  "purpose": "search: aluminium 6061 T6 tube mechanical properties yield strength datasheet",
-  "code_or_query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "simulate",
+  "purpose": "tri-star climb over steps: cluster rotation and operator pull estimate",
+  "code_or_query": "import numpy as np\n# stair + tri-star geometry\nriser=0.197 # m max IRC\ngoing=0.254 # m min IRC\nwheel_d=0.150 # m Superlift solid rubber\nwheel_r=wheel_d/2\n# tri-star: three wheel centres on radius Rc from main axle; choose Rc so cluster spans riser\n# typical: wheel centres 120 deg apart, Rc ~ 0.11 m gives overall cluster diameter ~ 2*(Rc+wheel_r)=0.37m\nRc=0.11\nm_load=60.0\nm_truck=12.0 # assumed steel tri-star truck tare between 6kg Alu and 18kg Superlift\nm_tot=m_load+m_truck\nW=m_tot*9.81\n# Tilted hand-truck: operator carries fraction f of weight at handles, wheels carry rest.\n# On stairs at ~45deg lean, vertical load splits; assume operator supports ~35% vertical.\nf_op=0.35\n# Pulling up one step: work = W*riser. Pull distance along slope per step ~ sqrt(riser^2+going^2)/cos(lean correction)\n# Simplify: operator force along incline needed = W*sin(stair_angle)*share + rolling/cluster pivot loss factor k\nstair_angle=np.arctan2(riser,going) # rad\nk_loss=1.25 # pivot sliding + tyre scrub\nF_pull=W*np.sin(stair_angle)*f_op*k_loss + 20 # +20 N guidance\n# Cluster torque about main axle when pivoting on one stopped wheel: T = (W_per_side/2)*Rc roughly\nT_per_side=(W/2)*Rc\n# Check wheel contact: cluster overall radius must exceed riser for smooth handover\ncluster_R=Rc+wheel_r\nprint(f\"stair_angle_deg {np.degrees(stair_angle):.1f}\")\nprint(f\"total weight N {W:.0f} (~{W/9.81:.0f} kg)\")\nprint(f\"energy per step J {W*riser:.0f}\")\nprint(f\"operator pull N {F_pull:.0f}\")\nprint(f\"cluster radius m {cluster_R:.3f} vs riser m {riser:.3f} ratio {cluster_R/riser:.2f}\")\nprint(f\"pivot torque per side N m {T_per_side:.1f}\")\n# descent: holding force similar magnitude, must be sustained not lifted\nprint(f\"descent hold N ~ {F_pull*0.9:.0f}\")\n# flat rolling: rolling resistance small wheels on hard floor Crr~0.02\nprint(f\"flat push N ~ {W*0.02+10:.0f}\")\n",
   "inputs": {},
-  "output_summary": "amardeepsteel.com — Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier — https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html",
-  "output_full": "amardeepsteel.com — Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier — https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html\n(the search returned no passage text)",
+  "output_summary": "pivot torque per side N m 38.8; descent hold N ~ 188; flat push N ~ 24",
+  "output_full": "stair_angle_deg 37.8\ntotal weight N 706 (~72 kg)\nenergy per step J 139\noperator pull N 209\ncluster radius m 0.185 vs riser m 0.197 ratio 0.94\npivot torque per side N m 38.8\ndescent hold N ~ 188\nflat push N ~ 24",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "amardeepsteel.com",
-      "title": "Aluminium 6061 Pipes & Tubes | 6061-T6 Size Chart & Supplier",
-      "year": "",
-      "url": "https://www.amardeepsteel.com/aluminium-6061-pipes-tubes.html",
-      "query": "aluminium 6061 T6 tube mechanical properties yield strength datasheet",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

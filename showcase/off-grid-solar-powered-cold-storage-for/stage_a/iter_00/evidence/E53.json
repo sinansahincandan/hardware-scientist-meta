@@ -1,14 +1,32 @@
 {
   "id": "E53",
-  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
-  "tool": "calc",
-  "purpose": "pulldown hours for 25 kWh at 0.5 kW net",
-  "code_or_query": "(25/0.5)",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: evaporative condenser pre-cooling COP improvement hot climate",
+  "code_or_query": "evaporative condenser pre-cooling COP improvement hot climate",
   "inputs": {},
-  "output_summary": "50",
-  "output_full": "50",
+  "output_summary": "rjwave.org — Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System — https://rjwave.org/ijedr/papers/IJEDR2603107.pdf",
+  "output_full": "rjwave.org — Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System — https://rjwave.org/ijedr/papers/IJEDR2603107.pdf\n(opened by the member, not cited)\nCold-Chain Refrigeration Engineer said about it: For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "rjwave.org",
+      "title": "Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System",
+      "year": "",
+      "url": "https://rjwave.org/ijedr/papers/IJEDR2603107.pdf",
+      "query": "evaporative condenser pre-cooling COP improvement hot climate",
+      "unresolved": false,
+      "passage": "For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "For energy store the delivery-body analogy in Reliable Refrigerated Transport | Cold Car & Delvic Foods (E52) freezes brine plates overnight then holds cold all day without running power, mapped as wall-ceiling eutectic plates at +2 to +5 degree Celsius charged by day compressor then passive at night to cut battery cycling; for heat removal the hot-climate condenser analogy in Effect of Condenser Cooling Methods on COP of a Vapour Compression Refrigeration System (E53) makes heat rejection follow wet-bulb not dry-bulb for about 20 percent less electrics, mapped as condensate-fed pad before the air condenser for hot-dry peaks only."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 2
 }

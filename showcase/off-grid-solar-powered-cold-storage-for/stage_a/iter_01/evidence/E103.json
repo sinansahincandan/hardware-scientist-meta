@@ -1,0 +1,26 @@
+{
+  "id": "E103",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop BD50F datasheet COP R134a evaporating temperature",
+  "code_or_query": "Secop BD50F datasheet COP R134a evaporating temperature",
+  "inputs": {},
+  "output_summary": "skh-kaeltetechnik.de — BD50F Direct Current Compressor R134a, 12/24V DC — https://www.skh-kaeltetechnik.de/mediafiles/Sonstiges/BD50F_2.pdf",
+  "output_full": "skh-kaeltetechnik.de — BD50F Direct Current Compressor R134a, 12/24V DC — https://www.skh-kaeltetechnik.de/mediafiles/Sonstiges/BD50F_2.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "skh-kaeltetechnik.de",
+      "title": "BD50F Direct Current Compressor R134a, 12/24V DC",
+      "year": "",
+      "url": "https://www.skh-kaeltetechnik.de/mediafiles/Sonstiges/BD50F_2.pdf",
+      "query": "Secop BD50F datasheet COP R134a evaporating temperature",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

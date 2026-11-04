@@ -1,0 +1,14 @@
+{
+  "id": "E41",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "conduction watts at 43C ambient 5C room",
+  "code_or_query": "0.21*25.4*38",
+  "inputs": {},
+  "output_summary": "203",
+  "output_full": "203",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E109",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "van door diagonal for angled entry",
+  "code_or_query": "((1120**2+1235**2)**0.5)",
+  "inputs": {},
+  "output_summary": "1.67e+03",
+  "output_full": "1.67e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

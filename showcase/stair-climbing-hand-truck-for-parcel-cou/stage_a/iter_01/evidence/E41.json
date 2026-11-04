@@ -1,0 +1,23 @@
+{
+  "id": "E41",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "total lifted mass truck plus parcel",
+  "code_or_query": "Q_(6.5,'kg')+Q_(60,'kg')",
+  "inputs": {
+    "arg0": {
+      "value": "6.5",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "60",
+      "unit": "kg"
+    }
+  },
+  "output_summary": "66.5 kg",
+  "output_full": "66.5 kg",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

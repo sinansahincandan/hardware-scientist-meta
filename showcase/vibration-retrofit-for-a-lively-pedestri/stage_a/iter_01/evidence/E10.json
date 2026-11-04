@@ -1,0 +1,14 @@
+{
+  "id": "E10",
+  "author": "Structural Dynamicist",
+  "tool": "vetted_calc:tuned_mass_damper_den_hartog",
+  "purpose": "optimal TMD tuning for 20t modal mass 1.9Hz mu 4pct",
+  "code_or_query": "{\"args\": {\"damping_primary\": 0.005, \"frequency_primary\": 1.9, \"mass_primary\": 20000.0, \"mass_ratio\": 0.04}}",
+  "inputs": {},
+  "output_summary": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+  "output_full": "vetted_calc error: tuned_mass_damper_den_hartog() missing 2 required positional arguments: 'main_mass_kg' and 'main_frequency_hz'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

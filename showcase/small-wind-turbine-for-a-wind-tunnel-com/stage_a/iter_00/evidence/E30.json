@@ -1,0 +1,32 @@
+{
+  "id": "E30",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition generator rectifier electrical design",
+  "code_or_query": "Collegiate Wind Competition generator rectifier electrical design",
+  "inputs": {},
+  "output_summary": "energy.gov — Washington State University Technical Design Report 2021 U.S. Department of Energy Collegiate Wind Competition — 2021 — https://www.energy.gov/sites/default/files/2021-11/wsu-designreport-2021.pdf",
+  "output_full": "energy.gov — Washington State University Technical Design Report 2021 U.S. Department of Energy Collegiate Wind Competition — 2021 — https://www.energy.gov/sites/default/files/2021-11/wsu-designreport-2021.pdf\n(opened by the member, not cited)\nPower-Systems Engineer said about it: Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "energy.gov",
+      "title": "Washington State University Technical Design Report 2021 U.S. Department of Energy Collegiate Wind Competition",
+      "year": "2021",
+      "url": "https://www.energy.gov/sites/default/files/2021-11/wsu-designreport-2021.pdf",
+      "query": "Collegiate Wind Competition generator rectifier electrical design",
+      "unresolved": false,
+      "passage": "Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Power-Systems Engineer",
+          "text": "Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

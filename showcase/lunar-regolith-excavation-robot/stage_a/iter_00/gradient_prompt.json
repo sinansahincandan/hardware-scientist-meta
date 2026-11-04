@@ -1,105 +1,99 @@
 {
   "feedback_decisions": [
     {
-      "feedback_item": "Battery mass-energy inconsistency: 341W x 0.5h = 171Wh not 1000Wh, 1000Wh/2.92kg = 342Wh/kg vs LiFePO4 pack ~90-110Wh/kg",
-      "decision": "apply",
-      "why": "Pack claim violates everyday pack scale and decides mass margin and runtime. Must require recompute of sortie energy from power and duration and pack mass from cited pack specific energy, with joint total reconciliation."
+      "feedback_item": "arm region [145.0, 680.0, 380.0, 835.0]: folding wheel arms rendered as short fixed brackets",
+      "decision": "reject",
+      "why": "Reject as a design change because the four folding aluminium arms connecting chassis to wheels with stowed to deployed widening are already fixed in the clearance simulation (E51) and sketches (E24), so the bracket-only render is a fidelity limit that says nothing about stability or box fit."
     },
     {
-      "feedback_item": "Actuator force with friction through 4:1 linkage unproven (E56 failed) and lift energy 2400J vs ~155J useful (15x overhead)",
-      "decision": "apply",
-      "why": "Travel without force with friction leaves dump unproven and lift energy overhead signals model error. Must require pivot geometry plus linkage force with friction and useful-vs-input energy check."
+      "feedback_item": "callout [228.0, 503.0, 360.0, 625.0]: Narrow Kerf Chain leader ends on deck hoses",
+      "decision": "reject",
+      "why": "Reject as a design change because the narrow kerf chain cutting a shallow slot and feeding side spoil to the ladder is already fixed by the kerf scaling calc (E64) and the mechanical feed connection, so the leader on hoses is a readability error that says nothing about cutting or feeding function."
     },
     {
-      "feedback_item": "Dump kinematics and tip moment unproven: 0.45m stowed frame to 1.0m lip, 0.50m hopper, 0.30m overhang, tip factor 4.06 vs 7.1 earlier",
-      "decision": "apply",
-      "why": "Tip factor swing shows moment-arm sensitivity. Must require fixed pivot geometry, overhang distance, wheelbase reactions and reconciled safety factor with sketch."
+      "feedback_item": "callout [735.0, 268.0, 868.0, 300.0]: Steep Wedge Hopper leader ends on soil stream",
+      "decision": "reject",
+      "why": "Reject as a design change because the steep wedge hopper containing carried soil and receiving gravity flow from the ladder is already fixed by the payload mass (E10) and fill simulation (E11) with chute over hopper shown, so the leader on the soil stream is a part-identification error that says nothing about containment."
     },
     {
-      "feedback_item": "Dimensioned stowed 1.0x0.5x0.5m envelope missing: 300mm wheels + stowed 900mm mast + 1050mm hopper travel, sketches E11/E46/E57 deployed only",
-      "decision": "apply",
-      "why": "Deployed topology alone cannot prove start-box fit. Must require dimensioned stowed sketch showing frame, wheels, stowed mast and lowered hopper within limits."
+      "feedback_item": "callout [596.0, 605.0, 734.0, 637.0]: duplicate Tilt Screw Discharge labels misplaced",
+      "decision": "reject",
+      "why": "Reject as a design change because the single screw metering pour to the rear outlet with lip clearance and level-only tip rule is already fixed by the tip dump clearance check (E51), so the duplicate label is a drawing-clarity error that says nothing about metering function."
     },
     {
-      "feedback_item": "Mass integration O1 and runtime from pack at full load unproven (E58/E59 failed)",
-      "decision": "apply",
-      "why": "Without joint mass table and runtime at full load, mass compliance and sortie closure stay open. Must require integrated total and runtime with evidence ids before vote."
+      "feedback_item": "callout [15.0, 639.0, 148.0, 672.0]: duplicate Rigid Grouser Wheels labels, one on soil",
+      "decision": "reject",
+      "why": "Reject as a design change because wheel count and grouser traction and flotation are already fixed by the tip-over and stopping check (E23) and ground pressure estimate (E25) with arm-to-wheel mounts, so the duplicate leader on soil is a clarity error that says nothing about traction."
     },
     {
-      "feedback_item": "Sealed-box thermal 22K rise E53 / 0.00332 m3/s for 80W E52 closed but IP65 dust claim only generic E27-E29, plus FPV latency / stopping 0.15m",
-      "decision": "defer",
-      "why": "Thermal bound is closed and dust-seal detail plus latency are test tuning, not acceptance blockers. Retain current sealed-box plus fan plus dual-link heartbeat behavior with no prompt acceptance change."
-    },
-    {
-      "feedback_item": "Traction/cutting/contact/torque E10, sensor power E47, hopper volume 0.0111m3 E49, overall physical plausibility and RASSOR distinction",
-      "decision": "defer",
-      "why": "Supported and plausible with no conservation/load/signal violation. Retain as-is with no prompt change."
+      "feedback_item": "battery [280.0, 580.0, 430.0, 630.0]: two lithium phosphate packs not identifiable",
+      "decision": "reject",
+      "why": "Reject as a design change because pack count and chemistry and fused power paths to dig and cameras are already fixed with energy closure from the ladder power estimate (E59) and dig energy estimate (E60) and heating estimate (E44), so unlabeled deck boxes are an identification error that says nothing about energy closure."
     }
   ],
   "per_member": [
     {
-      "member": "Priya — Power, Avionics and Lunar Environment Engineer",
-      "what_went_wrong": "Posted pack mass for nominal pack energy without checking energy equals power times duration and without comparing implied specific energy to cited pack scale, leaving O4 and O1 open.",
-      "what_should_change": "Require Priya to derive sortie energy from average power and duration, compare implied specific energy against cited pack-level datasheet value, post corrected pack mass and runtime at full load with evidence ids, and reconcile with joint mass total before supporting integration.",
-      "explains": "E48 battery mass claim and O4 plus E34 power budget cited in Priya turn: pack energy-mass ratio outside cited datasheet pack scale, sortie energy not reconciled"
+      "member": "Excavation and Regolith Handling Lead",
+      "what_went_wrong": "Nothing material went wrong in this members work. The leaders landing on hoses and on the soil stream reflect render placement, not a missing cut or containment specification.",
+      "what_should_change": "No change in reasoning is needed. The member should continue to state part identity and mechanical feed order before any drawing is judged, and keep arching and wear as named bench tests rather than calculation.",
+      "explains": "Backward chain shows Excavation and Regolith Handling Lead supplied kerf force scaling (E64) and fill and payload behaviour (E11)(E10) and confirmed tip and power interfaces, which fully specify the slot to ladder to hopper flow, so the misplaced chain and hopper leaders did not come from missing excavation reasoning."
     },
     {
-      "member": "Sam — Structure, Mass and Material Handling Engineer",
-      "what_went_wrong": "Showed travel but not force with friction, showed tip factor without fixed geometry causing large swing, and showed deployed topology without dimensioned stowed fit, leaving O1/O2 open.",
-      "what_should_change": "Require Sam to post pivot positions, guide travel and linkage force with friction for the lift, tip moment arms with overhang and wheelbase reactions for raised load, and a dimensioned stowed sketch showing fit within start limits, reusing joint mass evidence and stating why any recompute differs.",
-      "explains": "E56 failed linkage force, E60 lift energy overhead, E55/E51 tip factor swing, missing stowed envelope E46/E57/E11 plus O1/O2 cited in Sam turns and Manager notes cycles 2-4"
+      "member": "Mobility and Deployable Chassis Lead",
+      "what_went_wrong": "Nothing material went wrong in this members work. The bracket-only arms and duplicate wheel label reflect render simplification, not a missing load path or clearance specification.",
+      "what_should_change": "No change in reasoning is needed. The member should continue to state stowed versus deployed geometry and rotation gaps and tip gating in words before any drawing is judged, without adding new geometry for depiction alone.",
+      "explains": "Backward chain shows Mobility and Deployable Chassis Lead supplied envelope and clearance and tip and stop behaviour (E51)(E23) with ground pressure (E25), which fully specify stowed size and deployed track and level-only dumping, so fixed brackets instead of diagonal arms did not come from missing chassis reasoning."
     },
     {
-      "member": "Mara — Excavation and Mobility Engineer",
-      "what_went_wrong": "Voted ready on digging and flotation strength while dump, mass and pack blocks owned by others were still open, breaking survive-strongest-objection rule.",
-      "what_should_change": "Require Mara to withhold ready vote while blocking objections assigned to others remain open, to cite traction and cutting evidence ids for wheel-versus-track and drum-versus-ladder choice, and to condition support on closure of mass and dump proofs owned by Sam and Priya.",
-      "explains": "Mara ready vote while O1/O2/O4 open noted in Manager cycles 2-3 and member stats 1 ready to 3 not-ready"
+      "member": "Autonomy and Blind Operations Lead",
+      "what_went_wrong": "Nothing material went wrong in this members work. The drawing errors do not reflect missing stop or localization logic, which the transcript shows was bounded and voted ready.",
+      "what_should_change": "No change in reasoning is needed. The member should continue to state leading versus trailing end definition and heartbeat and fiducial reset behaviour in words before any drawing is judged.",
+      "explains": "Backward chain shows Autonomy and Blind Operations Lead supplied link-loss stop (E32) and drift with reset (E33) and align timing, which fully specify blind directionality and fiducial use, so callout duplication did not come from missing autonomy reasoning."
     },
     {
-      "member": "Theo — Autonomy and Remote Operations Engineer",
-      "what_went_wrong": "Sensing and link behavior were supported but stowed mast fit and joint mass agreement were left implicit, so envelope integration stayed unclosed.",
-      "what_should_change": "Require Theo to post stowed versus deployed mast dimensions and mass/power share for joint table, to keep heartbeat stop-and-hold behavior tied to latency and stopping evidence, and to withhold ready until joint envelope and mass proofs close.",
-      "explains": "E47 sensor power and E21 stopping distance plus E23 mast stow/deploy cited in Theo turns; Theo correctly withheld ready but mast stow fit left to Sam"
+      "member": "Power Structure and Integration Lead",
+      "what_went_wrong": "Nothing material went wrong in this members work. The unlabeled deck boxes reflect render labeling, not a missing pack count or power-path specification.",
+      "what_should_change": "No change in reasoning is needed. The member should continue to name every mass term and state fused bus continuity from battery to loads in words before any drawing is judged, without redrawing electrics for depiction alone.",
+      "explains": "Backward chain shows Power Structure and Integration Lead supplied mass sums (E62)(E68) and ladder power and energy (E59)(E60) and stiffened sag (E63) with heating (E44), which fully specify mass budget and power-path continuity, so unlabeled packs did not come from missing power-structure reasoning."
     }
   ],
   "per_section": [
     {
-      "heading": "## 2. Roles / ### Priya — Power, Avionics and Lunar Environment Engineer",
-      "diagnosis": "Priya role owns power sizing and enclosure but does not force energy-mass consistency check against cited pack scale, so off-scale pack passed to proposal and joint total.",
-      "direction": "Add to Priya ownership: derive sortie energy from budget power and duration, check implied specific energy against cited pack datasheet, post corrected mass and runtime with evidence ids, and reconcile with joint total.",
-      "explains": "E48/E34/E50 and O4 battery mass-energy inconsistency"
+      "heading": "1. Problem",
+      "diagnosis": "The problem statement fixed mass limit and stowed box and simulant and blind operation, which the council met with auditable sums and simulations. It asked for what to satisfy, not how to draw leaders, and it did not invite the bracket simplification, so it let the fault through only in the sense that depiction lives downstream of requirements.",
+      "direction": "No change. Keep the limit and envelope wording as the design ground truth and judge depiction separately from requirement closure.",
+      "explains": "Mass closure against the limit (E62) and stowed fit against the box (E51) show the problem constraints were already satisfied, so the arm and label errors say nothing about requirement meaning."
     },
     {
-      "heading": "## 2. Roles / ### Sam — Structure, Mass and Material Handling Engineer",
-      "diagnosis": "Sam role owns hopper, dump and envelope but does not force pivot geometry, linkage force with friction, tip arms, and dimensioned stowed fit, so travel plausible but force, stability and fit stay unproven.",
-      "direction": "Add to Sam ownership: show pivot positions, guide travel and linkage force with friction, show tip reactions with overhang for raised load, and post stowed dimensioned sketch proving fit; reconcile changed safety factor with stated geometry change.",
-      "explains": "E56/E60/E55/E51/E46/E57 and O1/O2 dump and envelope gaps"
+      "heading": "2. Roles",
+      "diagnosis": "Role blocks correctly assigned digging and chassis and blind operation and power integration with cross-domain checks, and the transcript shows each owner supplied the deciding calc or simulation and answered objections. They asked for domain reasoning and interface confirmation, which was delivered, but they do not control leader placement in the image model, so they could not prevent callout duplication.",
+      "direction": "No change. Keep complementary ownership and plain-words with numbers and reuse-by-id discipline, and do not add depiction duties to domain roles.",
+      "explains": "Kerf force work (E64) with traction (E23) and ladder power (E59) with heating (E44) and clearance with tip factor (E51) show role reasoning was complete, so the render mismatch is not a role gap."
     },
     {
-      "heading": "## 4. Meeting protocol",
-      "diagnosis": "Protocol requires evidence and survive-strongest-objection voting but allowed early ready vote and proposal carryover without joint mass, force, stability and envelope evidence, so cap arrived with blocks open.",
-      "direction": "Strengthen protocol: require cited evidence ids for key claims, require joint mass table reconciliation on proposal change, require lift-force, tip-geometry and stowed-sketch evidence to close related blocks, and require withholding ready vote while assigned blocks stay open.",
-      "explains": "Meeting closed without consensus with 1 ready to 3 not-ready and O1/O2/O4 open; early Mara vote cycles 2-3"
+      "heading": "3. Tools",
+      "diagnosis": "Tools direction to use calc for estimates and simulate for behaviour over time and sketch for layout was followed, with sums naming every term and stop and drift and filling shown over time. It asked for the right analysis, but no calculator controls line-anchoring in a generated image, so faithful analysis could still receive an unfaithful overlay.",
+      "direction": "No change. Keep calc versus simulate versus sketch discipline and do not add a drawing-correction calculator, which would not address leader anchoring.",
+      "explains": "Stop with link loss (E32) versus brake-only stop (E23) and drift with reset (E33) show behaviour was simulated rather than asserted, so the tool chain did its job before rendering."
     },
     {
-      "heading": "## 5. Criteria",
-      "diagnosis": "Criteria states work physically and buildable with shop methods but does not distinguish acceptance proofs from test tuning, so dust-seal detail and latency risk being treated as blockers on resubmittal.",
-      "direction": "Clarify that buildable requires closed mass-energy, lift-force, stability and envelope proofs with evidence, while seal implementation detail and link latency tuning remain verification tuning, not vote blockers when bounded.",
-      "explains": "Sealed-box thermal closed vs generic IP claim and FPV latency items marked no acceptance change"
+      "heading": "4. Meeting protocol",
+      "diagnosis": "Meeting protocol required plain words first with decisive numbers, reuse of evidence, sketches for flow path, objections with answers, and ready votes only on surviving versions. The meeting followed it through three cycles to unanimous ready with only after-build bench tests open. It asked for convergence on mechanism and limits, not for pixel verification, so it let depiction errors through by design separation.",
+      "direction": "No change. Keep manager-decides with member votes and bench-test naming, and do not gate design readiness on leader placement.",
+      "explains": "Cycle 3 record shows agreed soil path from kerf to ladder to hopper to screw with cameras guiding, with all votes ready, so protocol closure was achieved before the image step."
+    },
+    {
+      "heading": "5. Criteria",
+      "diagnosis": "Criteria require physical workability and buildability with ordinary shop methods, which the closed traction margin and power margin and millimetre stiffness and level-only tip rule support. They ask about load path and signal path, not about label count, and the chassis to arm to wheel and kerf to ladder to hopper to auger paths plus battery to ladder and cameras paths remain continuous in the solution despite label errors.",
+      "direction": "No change. Keep physical and buildable criteria and judge connectivity from the connection list and sketches rather than from render leaders.",
+      "explains": "Connections for side-spoil feed and gravity chute and screw metering with fused power buses show end-to-end continuity, so criteria are met even where leaders are misplaced."
     }
   ],
-  "sections_to_change": [
-    "## 2. Roles / ### Priya — Power, Avionics and Lunar Environment Engineer",
-    "## 2. Roles / ### Sam — Structure, Mass and Material Handling Engineer",
-    "## 2. Roles / ### Mara — Excavation and Mobility Engineer",
-    "## 2. Roles / ### Theo — Autonomy and Remote Operations Engineer",
-    "## 4. Meeting protocol",
-    "## 5. Criteria"
-  ],
-  "root_cause": "Roles lacked enforced consistency checks (energy equals power times duration versus pack scale; linkage force with friction and useful-vs-input energy; tip arms and stowed fit) and protocol allowed ready vote and proposal carryover without that evidence, so plausible concept reached cap with O1/O2/O4 sound but unclosed.",
-  "agenda": "Targeted failure, not broad unworkability: plausible wheeled drum rover closed traction, power, thermal and volume but left two recomputes open (pack energy-mass, lift force with tip and stowed envelope) when discussion ended without consensus. Fix by tightening domain checks in Roles and evidence gating in Meeting protocol/Criteria, not by redesign or roster change.",
+  "sections_to_change": [],
+  "root_cause": "Image-model fidelity limit after three rounds, not council under-specification. All contested parts and mechanical and electrical connections and stowed to deployed and clearance geometry were already specified and the chassis to ladder to hopper mounts already matched the sketch, so redraw of arms and leaders and pack labels belongs to depiction, not to design soundness.",
+  "agenda": "Targeted depiction failure with no design gap. The six feedback items all describe render leaders and bracket drawing that contradict parts and connections already fixed on the board, so no broad prompt rewrite is warranted.",
   "same_problem_as_before": false,
-  "repeat_explanation": "",
+  "repeat_explanation": "No prior distinct failure mode was supplied in this review packet to compare against, so this is treated as a first isolated render-fidelity finding rather than a repeat requiring reverts.",
   "revert_sections": [],
   "new_tool_proposals": [],
   "retire_tools": []

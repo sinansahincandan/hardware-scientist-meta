@@ -1,0 +1,32 @@
+{
+  "id": "E56",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: AD7147 capacitance resolution femtofarad sensitivity",
+  "code_or_query": "AD7147 capacitance resolution femtofarad sensitivity",
+  "inputs": {},
+  "output_summary": "mjt.me.uk — How cheap digital verniers work — https://www.mjt.me.uk/posts/digital-vernier-teardown",
+  "output_full": "mjt.me.uk — How cheap digital verniers work — https://www.mjt.me.uk/posts/digital-vernier-teardown\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mjt.me.uk",
+      "title": "How cheap digital verniers work",
+      "year": "",
+      "url": "https://www.mjt.me.uk/posts/digital-vernier-teardown",
+      "query": "AD7147 capacitance resolution femtofarad sensitivity",
+      "unresolved": false,
+      "passage": "Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

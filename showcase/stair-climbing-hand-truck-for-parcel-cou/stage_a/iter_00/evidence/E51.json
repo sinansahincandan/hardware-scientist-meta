@@ -1,14 +1,14 @@
 {
   "id": "E51",
-  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
-  "tool": "calc",
-  "purpose": "design shear load with dynamic factor",
-  "code_or_query": "(67.4*9.81*2.5).to('N')",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "simulate",
+  "purpose": "locked cluster holding torque and disc clamp on steep stair",
+  "code_or_query": "import math\nWpar=60*9.81\nWtot=66.5*9.81\nriser=0.197; tread=0.254\ntheta=math.atan2(riser,tread)\nslope=Wtot*math.sin(theta)\n# cluster pivot torque: load on axle moment about contact, arm ~ cluster radius 0.185 m\nRclus=0.185\nTtot=Wtot*math.sin(theta)*Rclus*0.9  # 0.9 accounts tilt geometry\nTperside=Ttot/2\nprint(f\"Wtot={Wtot:.1f} N theta={math.degrees(theta):.1f} deg slope={slope:.1f} N Ttot={Ttot:.1f} Nm Tperside={Tperside:.1f} Nm\")\n# disc: 160mm rotor mean radius 0.068 m, mu 0.35, two pads T=2*mu*F*r\nfor D,r in [(\"120mm\",0.05),(\"160mm\",0.068)]:\n    F=Ttot/(2*0.35*r)\n    print(D, f\"Fclamp={F:.0f} N\")\n# hand force at 1.1m handle to hold Ttot without brake\nFhand=Ttot/1.1\nprint(f\"Fhand_no_brake={Fhand:.0f} N\")\n# descent power at 0.2 m/s along slope\nP=slope*0.2\nprint(f\"P_descent_0p2mps={P:.0f} W, energy per riser={60*9.81*0.197:.0f} J\")",
   "inputs": {},
-  "output_summary": "failed: AttributeError: 'float' object has no attribute 'to'",
-  "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-3qnmvdiz/hs_user_script.py\", line 5, in <module>\n    __r = ((67.4*9.81*2.5).to('N'))\n           ^^^^^^^^^^^^^^^^^^\nAttributeError: 'float' object has no attribute 'to'",
+  "output_summary": "160mm Fclamp=1398 N; Fhand_no_brake=61 N; P_descent_0p2mps=80 W, energy per riser=116 J",
+  "output_full": "Wtot=652.4 N theta=37.8 deg slope=399.8 N Ttot=66.6 Nm Tperside=33.3 Nm\n120mm Fclamp=1902 N\n160mm Fclamp=1398 N\nFhand_no_brake=61 N\nP_descent_0p2mps=80 W, energy per riser=116 J",
   "sketch_path": null,
   "references": [],
-  "status": "error",
+  "status": "ok",
   "cycle": 2
 }

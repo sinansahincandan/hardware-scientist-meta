@@ -1,24 +1,40 @@
 {
   "id": "E44",
-  "author": "Leo – Last-Mile Operations and Van Integration Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: delivery van sliding door opening cargo dimensions Transit Sprinter",
-  "code_or_query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
+  "purpose": "search: tri-star stair climbing wheel cluster brake locked torque descent",
+  "code_or_query": "tri-star stair climbing wheel cluster brake locked torque descent",
   "inputs": {},
-  "output_summary": "lagunasprintervans.com — 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length — 2026 — https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
-  "output_full": "lagunasprintervans.com — 2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length — 2026 — https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/\n(the search returned no passage text)",
+  "output_summary": "patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle \n        - Google Patents — https://patents.google.com/patent/US20090133517A1/en",
+  "output_full": "patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle \n        - Google Patents — https://patents.google.com/patent/US20090133517A1/en\n(opened by the member, not cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: (E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: As Elena Ruiz, single-operator safety: The hold must not live in the hands, so I confirm what Kenji Tanaka takes from The Bicycle Physics of the Hydraulic Brake (E45, The Bicycle Physics of the Hydraulic Brake) that clamp times radius makes torque and from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that a lock can hold the truck on stairs if the user stops, because that is the dead-man brake lever on both grips (C7) plus tooth park hold in the disc sketch (E52).\nTomas Lind — Folding & Van Integration said about it: I take from the US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44) that a separate clutch locks the cluster on stairs, and I take from the Load securing for lashing cargo - good quality and strength (E60) that under European Norm (EN) 12195-1 restraint must hold 0.8 times forward weight and 0.5 times to rear and side.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "lagunasprintervans.com",
-      "title": "2026 Mercedes-Benz Sprinter Cargo Van Dimensions & Length",
-      "year": "2026",
-      "url": "https://www.lagunasprintervans.com/mercedes-benz-sprinter-cargo-van-dimensions/",
-      "query": "delivery van sliding door opening cargo dimensions Transit Sprinter",
+      "authors_or_org": "patents.google.com",
+      "title": "US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle \n        - Google Patents",
+      "year": "",
+      "url": "https://patents.google.com/patent/US20090133517A1/en",
+      "query": "tri-star stair climbing wheel cluster brake locked torque descent",
       "unresolved": false,
-      "passage": ""
+      "passage": "(E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "(E49, physicsforums.com — Disc brake effectiveness varies on rotor size?) that braking torque equals retarding friction force times contact radius, and I take from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, patents.google.com — US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that the clutch can act as a brake to lock the truck to the stairs if the user stops on ascent or descent."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "As Elena Ruiz, single-operator safety: The hold must not live in the hands, so I confirm what Kenji Tanaka takes from The Bicycle Physics of the Hydraulic Brake (E45, The Bicycle Physics of the Hydraulic Brake) that clamp times radius makes torque and from US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44, US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents) that a lock can hold the truck on stairs if the user stops, because that is the dead-man brake lever on both grips (C7) plus tooth park hold in the disc sketch (E52)."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the US20090133517A1 - Mechanical Tri-Wheel Retention Assembly for Stair-Climbing Wheeled Vehicle - Google Patents (E44) that a separate clutch locks the cluster on stairs, and I take from the Load securing for lashing cargo - good quality and strength (E60) that under European Norm (EN) 12195-1 restraint must hold 0.8 times forward weight and 0.5 times to rear and side."
+        }
+      ]
     }
   ],
   "status": "ok",
-  "cycle": 1
+  "cycle": 2
 }

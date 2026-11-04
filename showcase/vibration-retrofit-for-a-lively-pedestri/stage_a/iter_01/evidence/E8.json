@@ -1,0 +1,26 @@
+{
+  "id": "E8",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
+  "code_or_query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
+  "inputs": {},
+  "output_summary": "publicacoes.softaliza.com.br — Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges — 2020 — https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807",
+  "output_full": "publicacoes.softaliza.com.br — Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges — 2020 — https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "publicacoes.softaliza.com.br",
+      "title": "Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges",
+      "year": "2020",
+      "url": "https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807",
+      "query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

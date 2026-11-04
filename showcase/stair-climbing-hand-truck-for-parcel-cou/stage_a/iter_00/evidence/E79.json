@@ -1,0 +1,36 @@
+{
+  "id": "E79",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull recommended force limits",
+  "code_or_query": "ISO 11228-2 push pull recommended force limits",
+  "inputs": {},
+  "output_summary": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+  "output_full": "mktg.idec.com — ISO 11228-2? — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: (E79) that reduced-risk holding is below 6 dekanewtons, meaning 60 N, which keeps finger release far below the stair hold above, so the device still needs a bench test of lever release and tooth engagement with one tired hand plus cross-brace stiffness for the whip.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: (E79) that reduced-risk holding is below 6 dekanewtons, meaning 60 N, which keeps finger release far below stair hold above, so the remaining lever release and tooth engagement bench test is named for synthesis.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mktg.idec.com",
+      "title": "ISO 11228-2?",
+      "year": "",
+      "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=en",
+      "query": "ISO 11228-2 push pull recommended force limits",
+      "unresolved": false,
+      "passage": "(E79) that reduced-risk holding is below 6 dekanewtons, meaning 60 N, which keeps finger release far below the stair hold above, so the device still needs a bench test of lever release and tooth engagement with one tired hand plus cross-brace stiffness for the whip.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "(E79) that reduced-risk holding is below 6 dekanewtons, meaning 60 N, which keeps finger release far below the stair hold above, so the device still needs a bench test of lever release and tooth engagement with one tired hand plus cross-brace stiffness for the whip."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "(E79) that reduced-risk holding is below 6 dekanewtons, meaning 60 N, which keeps finger release far below stair hold above, so the remaining lever release and tooth engagement bench test is named for synthesis."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

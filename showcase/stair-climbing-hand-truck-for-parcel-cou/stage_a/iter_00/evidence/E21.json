@@ -1,24 +1,23 @@
 {
   "id": "E21",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
-  "tool": "web_search",
-  "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
-  "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
-  "inputs": {},
-  "output_summary": "michaels.com — Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels — https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720",
-  "output_full": "michaels.com — Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels — https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "michaels.com",
-      "title": "Multi-functional Foldable Metal Hand Truck with 10 Inch Wheels Suitable for All Terrains, Color: Red | Michaels",
-      "year": "",
-      "url": "https://www.michaels.com/product/phandle-sack-truck-with-10-inch-wheels-and-foldable-load-area-229375005134536720",
-      "query": "delivery van cargo door dimensions folded hand truck envelope",
-      "unresolved": false,
-      "passage": ""
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "reuse parcel weight check 60kg",
+  "code_or_query": "Q_(60,\"kg\")*Q_(9.81,\"m/s**2\")",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
     }
-  ],
+  },
+  "output_summary": "589 kg\u22c5m/s\u00b2",
+  "output_full": "589 kg\u22c5m/s\u00b2",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

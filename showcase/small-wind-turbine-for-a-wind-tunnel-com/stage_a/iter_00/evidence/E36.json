@@ -1,0 +1,14 @@
+{
+  "id": "E36",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "open-circuit volts at top speed Kv220",
+  "code_or_query": "3150/220",
+  "inputs": {},
+  "output_summary": "14.3",
+  "output_full": "14.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,22 +1,24 @@
 {
   "id": "E8",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical bending mode",
-  "code_or_query": "steel footbridge damping ratio vertical bending mode",
+  "purpose": "search: Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
+  "code_or_query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
   "inputs": {},
-  "output_summary": "enviro2014.vgtu.lt — Microsoft Word - 733-2322-1-PB_NDdoi — 2014 — http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf",
-  "output_full": "enviro2014.vgtu.lt — Microsoft Word - 733-2322-1-PB_NDdoi — 2014 — http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf\n(the search returned no passage text)",
+  "output_summary": "publicacoes.softaliza.com.br — Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges — 2020 — https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807",
+  "output_full": "publicacoes.softaliza.com.br — Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges — 2020 — https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "enviro2014.vgtu.lt",
-      "title": "Microsoft Word - 733-2322-1-PB_NDdoi",
-      "year": "2014",
-      "url": "http://enviro2014.vgtu.lt/Articles/4/142_Bacinskas.pdf",
-      "query": "steel footbridge damping ratio vertical bending mode",
+      "authors_or_org": "publicacoes.softaliza.com.br",
+      "title": "Humaninduced vibration analysis and human comfort assessment of pedestrian footbridges",
+      "year": "2020",
+      "url": "https://publicacoes.softaliza.com.br/cilamce2020/article/download/6207/5258/2807",
+      "query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

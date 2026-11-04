@@ -1,22 +1,24 @@
 {
   "id": "E11",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: MPPT charge controller 48V 60A datasheet solar off-grid",
-  "code_or_query": "MPPT charge controller 48V 60A datasheet solar off-grid",
+  "purpose": "search: solar cold room direct drive battery free thermal storage ice vs battery",
+  "code_or_query": "solar cold room direct drive battery free thermal storage ice vs battery",
   "inputs": {},
-  "output_summary": "tsolar.top — PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with — https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller",
-  "output_full": "tsolar.top — PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with — https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller\n(the search returned no passage text)",
+  "output_summary": "globalsouthhealth.com — Solar Cold Room: A Solution Gaining Momentum — https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/",
+  "output_full": "globalsouthhealth.com — Solar Cold Room: A Solution Gaining Momentum — https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "tsolar.top",
-      "title": "PowMr HHJ60-PRO 60A 12V/24V/36V/48V MPPT Solar Charge Controller with",
+      "authors_or_org": "globalsouthhealth.com",
+      "title": "Solar Cold Room: A Solution Gaining Momentum",
       "year": "",
-      "url": "https://tsolar.top/products/powmr-hhj60-pro-60a-12v-24v-36v-48v-mppt-solar-charge-controller",
-      "query": "MPPT charge controller 48V 60A datasheet solar off-grid",
+      "url": "https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/",
+      "query": "solar cold room direct drive battery free thermal storage ice vs battery",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

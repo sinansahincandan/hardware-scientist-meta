@@ -1,22 +1,30 @@
 {
   "id": "E40",
-  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "author": "Power Structure and Integration Lead",
   "tool": "web_search",
-  "purpose": "search: electric linear actuator 12V 24V force stroke datasheet dump",
-  "code_or_query": "electric linear actuator 12V 24V force stroke datasheet dump",
+  "purpose": "search: NASA Lunabotics robot mass power budget battery motor winners",
+  "code_or_query": "NASA Lunabotics robot mass power budget battery motor winners",
   "inputs": {},
-  "output_summary": "shanglinmotor.com — linear actuator sl la 25 — https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/",
-  "output_full": "shanglinmotor.com — linear actuator sl la 25 — https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/\n(the search returned no passage text)",
+  "output_summary": "sebastion.me — Sebastion | Engineering — https://www.sebastion.me/",
+  "output_full": "sebastion.me — Sebastion | Engineering — https://www.sebastion.me/\n(found by the search; not opened or cited)\nPower Structure and Integration Lead said about it: The 2025 NASA Lunabotics First Place Finish machine at 120 lb mass from the Sebastion | Engineering (E39) and the same win from the Sebastion | Engineering (E40) shows a 50 kg class digger is buildable, and the mass sum against the 60 kg limit (E41) is 47.0 kg leaving 13.0 kg margin, about a fifth of an adult body weight spare, so everyday scale says the limit is met.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "shanglinmotor.com",
-      "title": "linear actuator sl la 25",
+      "authors_or_org": "sebastion.me",
+      "title": "Sebastion | Engineering",
       "year": "",
-      "url": "https://www.shanglinmotor.com/products/linear-actuator/linear-actuator-sl-la-25/",
-      "query": "electric linear actuator 12V 24V force stroke datasheet dump",
+      "url": "https://www.sebastion.me/",
+      "query": "NASA Lunabotics robot mass power budget battery motor winners",
       "unresolved": false,
-      "passage": ""
+      "passage": "The 2025 NASA Lunabotics First Place Finish machine at 120 lb mass from the Sebastion | Engineering (E39) and the same win from the Sebastion | Engineering (E40) shows a 50 kg class digger is buildable, and the mass sum against the 60 kg limit (E41) is 47.0 kg leaving 13.0 kg margin, about a fifth of an adult body weight spare, so everyday scale says the limit is met.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "The 2025 NASA Lunabotics First Place Finish machine at 120 lb mass from the Sebastion | Engineering (E39) and the same win from the Sebastion | Engineering (E40) shows a 50 kg class digger is buildable, and the mass sum against the 60 kg limit (E41) is 47.0 kg leaving 13.0 kg margin, about a fifth of an adult body weight spare, so everyday scale says the limit is met."
+        }
+      ]
     }
   ],
   "status": "ok",

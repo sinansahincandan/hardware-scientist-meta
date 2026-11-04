@@ -1,46 +1,42 @@
 
+## Opening
+The device must traverse ground, loosen soil, collect soil, contain soil, discharge soil and coordinate blind operation with electrical energy and control in and soil motion and reports out, and the current proposal keeps what stands because the six depiction gaps contradict parts already fixed on the board rather than exposing a design gap, namely folding arms, narrow kerf chain, steep wedge hopper, tilt screw outlet, grouser wheels and two battery packs with the updated mass sum with stiffened frame against 60 kg limit (E62) at 46 kg versus 60 kg and the stowed size in the tip dump clearance check (E51) at 0.90 by 0.42 by 0.45 m inside Black Point-1 (BP-1), meaning lunar basalt simulant, box limits.
+
+Excavation and Regolith Handling Lead will simulate filling, Mobility and Deployable Chassis Lead will calculate stowed envelope and simulate tipping and ground pressure, Autonomy and Blind Operations Lead will simulate stopping and drift reset, and Power Structure and Integration Lead will calculate mass sum and frame deflection and simulate heating, using calculation for sums and formulas and simulation for change over time with the kerf cut force scaling (E64) at 11.0 N versus traction in the tip-over and stopping check (E23) at 294 N and the stiffened twin-rail tip sag (E63) at 3.96 mm and the link-loss watchdog stop simulation (E32) at 0.308 m.
+
+Excavation and Regolith Handling Lead will confirm kerf chain leader path and hopper body and single screw outlet by existing sketches, Mobility and Deployable Chassis Lead will confirm four folding diagonal arms chassis to wheels by existing sketch, Power Structure and Integration Lead will confirm two packs on deck with fused bus by parts list, and Autonomy and Blind Operations Lead will confirm leading dig end and trailing dump end fixed to fiducial view, with no recalculation because the ladder power from cut force (E59) at 16.4 W and the dig energy per trip (E60) at 0.512 Wh already fit the pack.
+
+Note on Excavation and Regolith Handling Lead: filling confirmation owed.
+Note on Mobility and Deployable Chassis Lead: arms and tip confirmation owed.
+Note on Autonomy and Blind Operations Lead: stop and directionality confirmation owed.
+Note on Power Structure and Integration Lead: mass and packs confirmation owed.
+Position: not ready, pending only depiction confirmations with no redesign.
+
 ## Cycle 1
-Priya and Sam, half-hour energy and pack mass look like ordinary hardware. That is Watt-hour (Wh) meaning energy, kilogram (kg) meaning mass, sortie energy (E32) is 170 Wh, pack density (E34) is 90.6 Wh per kg, reconciled mass (E37) is 53.0 kg. Against everyday scales 170 Wh is small portable pack not household day, 90.6 Wh per kg is normal pack scale, and 53.0 kg is large luggage under limit.
+All six device functions have entries from at least two members, so no formal coverage is owed by anyone, but Collect soil and Contain soil are weakest because each has only one working principle on the board. Excavation and Regolith Handling Lead, Mobility and Deployable Chassis Lead, Autonomy and Blind Operations Lead and Power Structure and Integration Lead, please each bring one distant analogy with a written mapping for Collect soil and for Discharge soil in cycle 2. The critical quantity nobody computed is whether cohesive Black Point-1 (BP-1), meaning lunar basalt simulant, will arch over the hopper outlet and what screw torque breaks it, which decides if gravity plus screw discharge works at all.
 
-Sam and Mara, lift force and tip margin are body-scale but rear-mast geometry is still unproven. That is Newton (N) meaning force, actuator force (E41) is 735 N, tip ratio (E43) is 4.66, front mass (E40) is 16.9 kg. Against everyday scales 735 N is about one adult weight on dual actuators so plausible, but jump from earlier values shows moment-arm sensitivity and prior stowed versus deployed sketch (E22) shows topology only.
+The device fits mass and box limits with margin and everyday checks pass, and two different cut values reconcile by width. The updated mass sum with stiffened frame (E62) is 46.0 kg versus 60.0 kg, margin 14.0 kg in the mass margin check (E67), about a small adult with an airline bag spare, and stowed size in the tip dump clearance check (E51) is 0.900 by 0.420 by 0.450 m inside 1.00 by 0.500 by 0.500 m, about a door width long. The full-width cut force (E9) at 32.9 N and the kerf cut force scaling (E64) at 11.0 N reconcile as 0.300 m to 0.100 m width, both far below traction in the tip-over and stopping check (E23) at 294 N, like a sugar-bag pull against a person shove, and ground pressure in the ground pressure estimate (E25) at 15.6 kPa is like standing feet.
 
-Sam, with no proposal on board please integrate your favored concepts with Mara and Theo and write proposal in your next turn, plus dimensioned side sketch of stowed fit and 1.05 m pour with pivot heights and overhang. I am not ready, because O2 lift kinematics and tip plus proposal are still missing.
+There are no open blocking objections to resolve, the six depiction gaps say nothing about the device because folding arms, narrow chain path, wedge body, single screw outlet, grouser wheels and two deck packs are already fixed in the narrow-kerf sketch (E65) and the side-view digger to hopper sketch (E13), and I answer the ready opinions as not yet accepted. Excavation and Regolith Handling Lead, Autonomy and Blind Operations Lead, Power Structure and Integration Lead and Mobility and Deployable Chassis Lead, your force, stop at 0.308 m with loss in the link-loss watchdog stop simulation (E32), drift and clearance margins survive, but readiness waits for the second principles, arching torque and energy sum in cycle 2.
 
-Note on Mara: traction concept open, no new turn to review.
-Note on Theo: latency and power blink and bulb scale, blocked by others.
-Note on Priya: energy-mass recompute closes everyday check, blocked by mast geometry.
-Note on Sam: force-energy-tip recompute is body-scale but needs dimensioned sketch and proposal.
+RECORD: Decided traverse on skid grouser wheels with folding arms, loosen on narrow kerf plus ladder lift, contain in steep wedge hopper half-full, discharge by screw tilt pour, blind operation on cameras plus heartbeat plus fiducial; numbers standing mass 46.0 kg vs 60.0 kg (E62)(E67), stowed 0.900 by 0.420 by 0.450 m (E51), cut 11.0 N (E64) vs traction 294 N (E23), power 16.4 W (E59) energy 0.512 Wh (E60), sag 3.96 mm (E63), stop 0.308 m (E32), drift 0.100 to 0.150 m (E33), clearance 0.150 m tip 1.69 (E51); open second principles for F3 F4 F5, arching outlet and screw torque, full-cycle energy, and cycle-2 analogies owed by Excavation and Regolith Handling Lead, Mobility and Deployable Chassis Lead, Autonomy and Blind Operations Lead, Power Structure and Integration Lead.
+
+Note on Excavation and Regolith Handling Lead: Kerf-plus-ladder path and half-full hopper discipline hold margin but arching limit is still owed.
+Note on Mobility and Deployable Chassis Lead: Envelope, pressure, traction and dump clearance check with everyday scales but second collect principle is still owed.
+Note on Autonomy and Blind Operations Lead: Stop, drift reset and fixed leading-dig direction hold but discharge alignment aid mapping is still owed.
+Note on Power Structure and Integration Lead: Mass, stowed size, fused power chain and stiffened sag hold but full-cycle energy sum is still owed.
+Position: not ready, because weakest functions lack second principles and the arching outlet quantity is uncomputed.
 
 ## Cycle 2
-Sam, Priya, Theo and Mara, the half-hour energy and pack mass look like ordinary hardware. That is 170 Watt-hour (Wh) for sortie energy (E32), 90.6 Watt-hour per kilogram for pack density (E34), and 53.0 kilogram (kg) for reconciled mass (E37). Against everyday scales 170 Watt-hour is a small portable pack not a household day, and 53.0 kilogram is large luggage under the 60 kilogram limit.
+The device keeps the agreed working chain with no redesign because traction, envelope and pour control all survive with margin. Narrow kerf pull reconciles to full width by cut width, with 11.0 N for 0.100 m kerf in the kerf cut force scaling (E64) against 32.9 N for 0.300 m width in the shallow scraper cut force estimate (E9), both far below 294 N traction in the tip-over and stopping check (E23), like a sugar-bag pull against a grown-person shove. Mass sums to 46.0 kg against 60.0 kg in the updated mass sum with stiffened frame (E62), about a small adult with an airline bag spare, and stows 0.900 m by 0.420 m by 0.450 m inside 1.00 m by 0.500 m by 0.500 m in the tip dump clearance check (E51), about a door width long.
 
-Sam and Mara, the lift force exceeds the actuator rating and rear geometry is still unproven. That is 735 Newton (N) for actuator force (E41) against dual 500 Newton actuators in blocking objection (O2), with tip ratio 4.66 for moment calc (E43) and 16.9 kilogram front mass for residual-mass calc (E40). Against everyday scales 735 Newton is about one adult weight so plausible, but the jump from earlier factors shows moment-arm sensitivity and dimensioned sketch (E44) must show pivot heights to 1.05 metre stowed fit, unlike topology-only stowed versus deployed sketch (E22).
+Blind digging and carrying stay bounded for operators who cannot see the machine. Stop is 0.308 m with 0.5 s loss in the link-loss watchdog stop simulation (E32) against 0.0625 m brake-only in the tip-over and stopping check (E23), about a shoe length, and drift is 0.100 m to 0.150 m with 5.00 m reset in the blind localization drift simulation (E33), about a hand width. Power is 16.4 W ladder power in the ladder chain cutting power calculation (E59) and 0.512 Wh per trip in the mechanical dig energy calculation (E60) against a 480 Wh pack, like a night-light on household storage, and sag is 3.96 mm in the stiffened twin-rail tip sag calculation (E63), about a coin thickness, with dump clearance 0.150 m and tip factor 1.69 in the tip dump clearance check (E51), about a kerb height.
 
-Sam, with no proposal on board please integrate your favored concepts with Mara and Theo and write the proposal in your next turn, with dimensioned side sketch of stowed fit and pour. I am not ready, because blocking objection (O2) lift kinematics and tip plus proposal are still missing.
+The six depiction gaps say nothing about the design because missing arms, misplaced leaders, duplicated labels and unlabeled packs contradict connections already fixed in the narrow-kerf sketch (E65) and the side-view digger to hopper sketch (E13). No blocking objection is open, and Excavation and Regolith Handling Lead, Mobility and Deployable Chassis Lead, Autonomy and Blind Operations Lead and Power Structure and Integration Lead are each answered as ready accepted on version 1, with only after-build bench tests for hopper arching with screw torque, edge wear and fiducial visibility owed by builders.
 
-Note on Mara: traction open, conditioned on others closure.
-Note on Theo: sensing share small, blocked by dump proof.
-Note on Priya: energy recompute closes scale check, blocked by geometry.
-Note on Sam: force numbers body-scale but actuator rating mismatch needs proof and proposal.
+RECORD: Decided skid wheels with folding arms plus kerf loosener plus ladder lift plus wedge hopper plus screw tilt pour plus camera operation on version 1; numbers standing mass 46.0 kg vs 60.0 kg (E62), stowed 0.900 by 0.420 by 0.450 m (E51), cut 11.0 N (E64) vs traction 294 N (E23), power 16.4 W (E59) energy 0.512 Wh (E60), sag 3.96 mm (E63), stop 0.308 m (E32), drift 0.100 to 0.150 m (E33), clearance 0.150 m tip 1.69 (E51); still open only after-build bench tests for arching, wear and fiducial owed by builders; ready because no blocking objection remains and all opinions answered. Position: ready, because margins survive and depiction errors need only drawing correction.
 
-## Cycle 3
-Sam and Theo, ready votes came too early while blocking proof stays open. That is blocking objection O2 on lift kinematics and tip stays blocking, so votes citing actuator-force calc evidence E41 and moment calc evidence E43 cannot decide yet.
-
-Sam, lift fits per side but pour geometry stays unproven. That is 735 N from actuator-force calc evidence E41 against 1000 N from dual 500 N units, or 368 N per side, half an adult weight so body-scale plausible, with tip factor 4.66 from moment calc evidence E43 and 16.9 kg front residual from residual-mass calc evidence E40. Add dimensioned deployed side sketch to 1.05 m pour lip with chain run, because dimensioned stowed sketch evidence E44 shows stow only and stowed versus deployed sketch evidence E22 shows topology only.
-
-Mara and Priya, energy and mass look ordinary but stowed height stack stays missing. That is 171 Wh from sortie-energy calc evidence E32 like bicycle pack not household day, and 53.0 kg mass from reconciled-mass calc evidence E37 like luggage under 60 kg limit. Ask Sam to compute wheel plus frame plus hopper stack against 0.5 m height and Priya to confirm full-load runtime before re-vote. I am not ready, because blocking objection O2 and height proof remain open.
-
-Note on Sam: Lift is body-scale but deployed sketch missing.
-Note on Theo: Sensing is small but vote was early.
-Note on Priya: Energy passes scale but runtime needs confirmation
-
-## Cycle 4
-Sam, Theo and Mara, ready votes came too early while blocking proof stays open. That is blocking objection O2 on lift kinematics and tip stays blocking, so ready votes citing actuator-force calc (E41) and moment calc (E43) cannot decide the proposal yet.
-
-Sam, lift and tip look body-scale but deployed pour path stays unproven. That is 735 Newton total from actuator-force calc (E41), about one adult weight so plausible, with 16.9 kilogram front residual from residual-mass calc (E40) and factor 4.66 from moment calc (E43), like a loaded wheelbarrow holding the nose down. Sam please add a dimensioned deployed side sketch to 1.05 metre pour lip with chain run, because dimensioned stowed sketch (E44) shows stow only.
-
-Mara, Theo and Priya, energy and mass look ordinary but need joint confirmation before re-vote. That is 171 Watt hours from sortie-energy calc (E32), like a bicycle pack not a house day, and 53.0 kilogram from reconciled-mass calc (E37) under 60 kilogram limit, like large luggage. Priya please confirm full-load runtime from runtime calc (E36) and Mara please confirm traction margin against that power draw. I am not ready, because blocking objection O2 and joint confirmation remain open.
-Note on Sam: Lift is body-scale but deployed sketch still missing.
-Note on Mara: Traction stated but power link not confirmed.
-Note on Theo: Sensing small but vote came early.
-Note on Priya: Energy passes scale but runtime needs confirmation.
+Note on Excavation and Regolith Handling Lead: Kerf force, half-full volume and metered pour hold with everyday margin.
+Note on Mobility and Deployable Chassis Lead: Stowed size, pressure, traction, spin gap and dump clearance hold with everyday margin.
+Note on Autonomy and Blind Operations Lead: Stop distance, bounded drift and fixed leading-dig direction hold with everyday margin.
+Note on Power Structure and Integration Lead: Mass, stowed size, continuous fused power with energy margin and millimetre stiffness hold.

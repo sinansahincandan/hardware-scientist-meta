@@ -1,0 +1,32 @@
+{
+  "id": "E56",
+  "author": "Structures-Survival Engineer",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum yield strength datasheet",
+  "code_or_query": "6061-T6 aluminum yield strength datasheet",
+  "inputs": {},
+  "output_summary": "quickparts.com — 5/12/23, 3:58 PM  ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 — 2024 — https://quickparts.com/wp-content/uploads/2024/05/Aluminum-6061.pdf?cq_con=153779310405&cq_plac&cq_net=g&cq_plt=gp&hsa_cam=20755492058&hsa_grp=153779310405&hsa_mt=b&hsa_src=g&hsa_ad=679938545208&hsa_acc=9728598533&hsa_net=adwords&hsa_kw=sls%203d%20printing%20cost&hsa_tgt=kwd-915542591476&hsa_ver=3&country-options=us",
+  "output_full": "quickparts.com — 5/12/23, 3:58 PM  ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 — 2024 — https://quickparts.com/wp-content/uploads/2024/05/Aluminum-6061.pdf?cq_con=153779310405&cq_plac&cq_net=g&cq_plt=gp&hsa_cam=20755492058&hsa_grp=153779310405&hsa_mt=b&hsa_src=g&hsa_ad=679938545208&hsa_acc=9728598533&hsa_net=adwords&hsa_kw=sls%203d%20printing%20cost&hsa_tgt=kwd-915542591476&hsa_ver=3&country-options=us\n(found by the search; not opened or cited)\nStructures-Survival Engineer said about it: I confirm what Safety-Control Integrator takes from Braking ideas for wind turbines (E42) that spring-applied pads press a disc, which from my side means the caliper reaction must go through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; the survival thrust (E22) of 37.3 N is a heavy shopping bag, the bending stress (E27) of 16.6 Megapascal (MPa), meaning million newtons per square metre, is about 16 times below the 276 MPa typical yield in the Aluminum 6061-T6 — Material Datasheet (E55) and the 5/12/23, 3:58 PM ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 (E56), with tip bend (E26) 0.516 mm against 25.0 mm side gap.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "quickparts.com",
+      "title": "5/12/23, 3:58 PM  ASM Material Data Sheet Aluminum 6061-T6; 6061-T651",
+      "year": "2024",
+      "url": "https://quickparts.com/wp-content/uploads/2024/05/Aluminum-6061.pdf?cq_con=153779310405&cq_plac&cq_net=g&cq_plt=gp&hsa_cam=20755492058&hsa_grp=153779310405&hsa_mt=b&hsa_src=g&hsa_ad=679938545208&hsa_acc=9728598533&hsa_net=adwords&hsa_kw=sls%203d%20printing%20cost&hsa_tgt=kwd-915542591476&hsa_ver=3&country-options=us",
+      "query": "6061-T6 aluminum yield strength datasheet",
+      "unresolved": false,
+      "passage": "I confirm what Safety-Control Integrator takes from Braking ideas for wind turbines (E42) that spring-applied pads press a disc, which from my side means the caliper reaction must go through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; the survival thrust (E22) of 37.3 N is a heavy shopping bag, the bending stress (E27) of 16.6 Megapascal (MPa), meaning million newtons per square metre, is about 16 times below the 276 MPa typical yield in the Aluminum 6061-T6 — Material Datasheet (E55) and the 5/12/23, 3:58 PM ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 (E56), with tip bend (E26) 0.516 mm against 25.0 mm side gap.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structures-Survival Engineer",
+          "text": "I confirm what Safety-Control Integrator takes from Braking ideas for wind turbines (E42) that spring-applied pads press a disc, which from my side means the caliper reaction must go through the bedplate rails in the nacelle bedplate sketch with brake rails (E58) to the post clamp; the survival thrust (E22) of 37.3 N is a heavy shopping bag, the bending stress (E27) of 16.6 Megapascal (MPa), meaning million newtons per square metre, is about 16 times below the 276 MPa typical yield in the Aluminum 6061-T6 — Material Datasheet (E55) and the 5/12/23, 3:58 PM ASM Material Data Sheet Aluminum 6061-T6; 6061-T651 (E56), with tip bend (E26) 0.516 mm against 25.0 mm side gap."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E116",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "system deflection with 40mm tubes",
+  "code_or_query": "589*1.1**3/(3*68.9e9*2*4.32e-08)",
+  "inputs": {},
+  "output_summary": "0.0439",
+  "output_full": "0.0439",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

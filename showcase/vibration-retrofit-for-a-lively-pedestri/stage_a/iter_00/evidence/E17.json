@@ -1,24 +1,14 @@
 {
   "id": "E17",
-  "author": "Marcus - Vibration Control and Damping Specialist",
-  "tool": "web_search",
-  "purpose": "search: Setra HiVoSS footbridge damping requirement TMD design",
-  "code_or_query": "Setra HiVoSS footbridge damping requirement TMD design",
+  "author": "Structural Dynamicist",
+  "tool": "simulate",
+  "purpose": "free decay of bridge plus TMD showing effective damping vs bare bridge",
+  "code_or_query": "import numpy as np\nM=20000.0; f1=1.9; w1=2*np.pi*f1; z1=0.005\nk1=w1**2*M; c1=2*z1*np.sqrt(k1*M)\nmu=0.04; m=mu*M; f2=f1/(1+mu); w2=2*np.pi*f2\nz2=np.sqrt(3*mu/(8*(1+mu))); k2=w2**2*m; c2=2*z2*np.sqrt(k2*m)\ndef run(c2v):\n    dt=0.002; T=15.0; n=int(T/dt)\n    x=np.zeros(n); v=np.zeros(n); y=np.zeros(n); w=np.zeros(n)\n    x[0]=0.02; v[0]=0.0; y[0]=0.02; w[0]=0.0\n    for i in range(n-1):\n        Fk=k1*x[i]+c1*(v[i]); Fk2=k2*(x[i]-y[i])+c2v*((v[i]-w[i]))\n        a1=(-k1*x[i]-c1*v[i]-k2*(x[i]-y[i])-c2v*(v[i]-w[i]))/M\n        a2=(k2*(x[i]-y[i])+c2v*(v[i]-w[i]))/m\n        v[i+1]=v[i]+a1*dt; x[i+1]=x[i]+v[i+1]*dt\n        w[i+1]=w[i]+a2*dt; y[i+1]=y[i]+w[i+1]*dt\n    return x,y\nxb,_=run(0.0)  # placeholder\nx,y=run(c2)\nt=np.arange(len(x))*0.002\n# log decrement on peaks of x\nimport math\nenv0=0.02; envT=abs(x[-1])\nzeff=np.log(env0/max(envT,1e-9))/(2*np.pi*f1*15.0)\nprint(f\"k1={k1:.3g} N/m m={m:.0f}kg f2={f2:.3f}Hz z2={z2:.3f} k2={k2:.3g} c2={c2:.3g}\")\nprint(f\"bare-ish start 20mm, with-TMD end {abs(x[-1])*1000:.2f}mm zeff~{zeff*100:.1f}%\")\nprint(f\"TMD relative stroke max {np.max(np.abs(x-y))*1000:.1f}mm\")\n",
   "inputs": {},
-  "output_summary": "nature.com — Scientific Reports — https://www.nature.com/articles/s41598-026-71374-9_reference.pdf",
-  "output_full": "nature.com — Scientific Reports — https://www.nature.com/articles/s41598-026-71374-9_reference.pdf\n(the search returned no passage text)",
+  "output_summary": "k1=2.85e+06 N/m m=800kg f2=1.83Hz z2=0.12 k2=1.05e+05 c2=2.21e+03; bare-ish start 20mm, with-TMD end 0mm zeff~6.2%; TMD relative stroke max 49.4mm",
+  "output_full": "k1=2.85e+06 N/m m=800kg f2=1.827Hz z2=0.120 k2=1.05e+05 c2=2.21e+03\nbare-ish start 20mm, with-TMD end 0.00mm zeff~6.2%\nTMD relative stroke max 49.4mm",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "nature.com",
-      "title": "Scientific Reports",
-      "year": "",
-      "url": "https://www.nature.com/articles/s41598-026-71374-9_reference.pdf",
-      "query": "Setra HiVoSS footbridge damping requirement TMD design",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

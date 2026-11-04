@@ -1,0 +1,14 @@
+{
+  "id": "E72",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "added weight percent from kN weights",
+  "code_or_query": "7.85/600*100",
+  "inputs": {},
+  "output_summary": "1.31",
+  "output_full": "1.31",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

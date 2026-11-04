@@ -1,0 +1,662 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "xb": {
+      "phrase": "dark grey beam",
+      "tried": [
+        "dark grey beam"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          382.5,
+          389.80966325036604,
+          1479.375,
+          595.9590043923865
+        ]
+      ],
+      "confidence": [
+        0.62
+      ],
+      "rejected_by_judge": [
+        "support column",
+        "support column"
+      ],
+      "mask": {
+        "file": "sam_masks/xb.png",
+        "area": 107333.0,
+        "cx": 932.6000894321061,
+        "cy": 485.63124161574007,
+        "angle": 5.9,
+        "elongation": 10.2
+      }
+    },
+    "tm": {
+      "phrase": "dark metal box",
+      "tried": [
+        "black hanging block",
+        "dark metal box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1027.5,
+          871.4494875549049,
+          1258.125,
+          1045.739385065886
+        ],
+        [
+          675.0,
+          927.6720351390923,
+          900.0,
+          1111.3323572474378
+        ]
+      ],
+      "confidence": [
+        0.54,
+        0.53
+      ],
+      "mask": {
+        "file": "sam_masks/tm.png",
+        "area": 64130.0,
+        "cx": 968.8793264733396,
+        "cy": 986.9284689741191,
+        "angle": 10.4,
+        "elongation": 4.05
+      }
+    },
+    "cs": {
+      "phrase": "silver coiled spring",
+      "tried": [
+        "silver coiled spring"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          718.125,
+          595.9590043923865,
+          774.375,
+          929.5461200585652
+        ],
+        [
+          1070.625,
+          550.9809663250367,
+          1126.875,
+          875.1976573938507
+        ]
+      ],
+      "confidence": [
+        0.89,
+        0.89
+      ],
+      "mask": {
+        "file": "sam_masks/cs.png",
+        "area": 32196.0,
+        "cx": 915.4432325235498,
+        "cy": 742.0803173029251,
+        "angle": 10.7,
+        "elongation": 1.95
+      }
+    },
+    "vd": {
+      "phrase": "silver cylindrical damper",
+      "tried": [
+        "silver cylindrical damper"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1158.75,
+          580.9663250366033,
+          1201.875,
+          832.0937042459736
+        ],
+        [
+          813.75,
+          610.9516837481699,
+          858.75,
+          875.1976573938507
+        ]
+      ],
+      "confidence": [
+        0.9,
+        0.91
+      ],
+      "mask": {
+        "file": "sam_masks/vd.png",
+        "area": 20983.0,
+        "cx": 996.4866514111366,
+        "cy": 725.0629290617849,
+        "angle": 7.2,
+        "elongation": 2.39
+      }
+    },
+    "hb": {
+      "phrase": "metal bolt",
+      "tried": [
+        "dark bolted joint",
+        "metal bolt"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1518.75,
+          393.5578330893119,
+          1531.875,
+          406.6764275256223
+        ],
+        [
+          373.125,
+          506.0029282576867,
+          388.125,
+          520.99560761347
+        ],
+        [
+          1104.375,
+          873.3235724743778,
+          1117.5,
+          884.5680819912152
+        ],
+        [
+          1488.75,
+          459.1508052708638,
+          1501.875,
+          472.2693997071742
+        ],
+        [
+          435.0,
+          502.25475841874083,
+          450.0,
+          517.2474377745242
+        ],
+        [
+          1488.75,
+          397.3060029282577,
+          1501.875,
+          408.5505124450952
+        ],
+        [
+          1516.875,
+          455.40263543191804,
+          1530.0,
+          468.52122986822843
+        ],
+        [
+          712.5,
+          1043.865300146413,
+          731.25,
+          1060.732064421669
+        ],
+        [
+          1516.875,
+          434.78770131771597,
+          1530.0,
+          447.90629575402636
+        ],
+        [
+          1093.125,
+          1032.6207906295754,
+          1102.5,
+          1041.99121522694
+        ],
+        [
+          335.625,
+          582.8404099560762,
+          352.5,
+          595.9590043923865
+        ],
+        [
+          435.0,
+          522.869692532943,
+          450.0,
+          537.8623718887262
+        ],
+        [
+          435.0,
+          543.484626647145,
+          450.0,
+          556.6032210834553
+        ],
+        [
+          375.0,
+          554.7291361639825,
+          390.0,
+          567.8477306002928
+        ],
+        [
+          435.0,
+          562.2254758418741,
+          450.0,
+          577.2181551976574
+        ],
+        [
+          748.125,
+          575.3440702781845,
+          765.0,
+          592.2108345534407
+        ],
+        [
+          373.125,
+          530.3660322108345,
+          390.0,
+          545.3587115666179
+        ],
+        [
+          335.625,
+          534.1142020497804,
+          350.625,
+          547.2327964860908
+        ],
+        [
+          333.75,
+          556.6032210834553,
+          350.625,
+          571.5959004392387
+        ],
+        [
+          886.875,
+          946.4128843338214,
+          896.25,
+          955.783308931186
+        ],
+        [
+          375.0,
+          577.2181551976574,
+          390.0,
+          592.2108345534407
+        ],
+        [
+          886.875,
+          1070.1024890190338,
+          896.25,
+          1081.346998535871
+        ],
+        [
+          1095.0,
+          910.8052708638361,
+          1102.5,
+          918.3016105417277
+        ],
+        [
+          333.75,
+          509.7510980966325,
+          348.75,
+          524.7437774524158
+        ],
+        [
+          1108.125,
+          534.1142020497804,
+          1121.25,
+          549.1068814055637
+        ],
+        [
+          1518.75,
+          414.1727672035139,
+          1531.875,
+          427.29136163982434
+        ],
+        [
+          1488.75,
+          438.5358711566618,
+          1501.875,
+          449.7803806734993
+        ]
+      ],
+      "confidence": [
+        0.55,
+        0.54,
+        0.52,
+        0.57,
+        0.51,
+        0.56,
+        0.53,
+        0.51,
+        0.53,
+        0.5,
+        0.55,
+        0.53,
+        0.53,
+        0.53,
+        0.53,
+        0.57,
+        0.53,
+        0.56,
+        0.55,
+        0.5,
+        0.55,
+        0.51,
+        0.53,
+        0.57,
+        0.55,
+        0.55,
+        0.52
+      ],
+      "rejected_by_judge": [
+        "tuned mass"
+      ],
+      "mask": {
+        "file": "sam_masks/hb.png",
+        "area": 4106.0,
+        "cx": 758.2908366533865,
+        "cy": 597.5537848605578,
+        "angle": 3.3,
+        "elongation": 2.45
+      }
+    },
+    "es": {
+      "phrase": "caged elastomer travel stop (box prompt)",
+      "tried": [
+        "black caged stop",
+        "small wire cage",
+        "rubber stop",
+        "stop"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          645.0,
+          955.783308931186,
+          716.25,
+          1083.2210834553441
+        ]
+      ],
+      "confidence": [
+        0.74
+      ],
+      "mask": {
+        "file": "sam_masks/es.png",
+        "area": 7010.0,
+        "cx": 678.9544143104443,
+        "cy": 1022.128101557992,
+        "angle": 85.6,
+        "elongation": 1.81
+      }
+    },
+    "ac": {
+      "phrase": "black box",
+      "tried": [
+        "small black sensor",
+        "black box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          675.0,
+          927.6720351390923,
+          900.0,
+          1111.3323572474378
+        ],
+        [
+          920.625,
+          172.41581259150806,
+          984.375,
+          198.65300146412886
+        ]
+      ],
+      "confidence": [
+        0.76,
+        0.53
+      ],
+      "rejected_by_judge": [
+        "tuned mass"
+      ],
+      "mask": {
+        "file": "sam_masks/ac.png",
+        "area": 34989.0,
+        "cx": 798.6433069964503,
+        "cy": 981.1835566242986,
+        "angle": 78.0,
+        "elongation": 3.17
+      }
+    },
+    "tm__mass": {
+      "phrase": "dark suspended box",
+      "tried": [
+        "dark suspended box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1027.5,
+          871.4494875549049,
+          1261.875,
+          1045.739385065886
+        ],
+        [
+          646.875,
+          927.6720351390923,
+          900.0,
+          1111.3323572474378
+        ]
+      ],
+      "confidence": [
+        0.57,
+        0.54
+      ],
+      "mask": {
+        "file": "sam_masks/tm__mass.png",
+        "area": 71789.0,
+        "cx": 949.2703532168964,
+        "cy": 989.3334077339434,
+        "angle": 9.9,
+        "elongation": 4.45
+      }
+    },
+    "cs__spring": {
+      "phrase": "tall spiral spring",
+      "tried": [
+        "tall spiral spring"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          718.125,
+          595.9590043923865,
+          774.375,
+          929.5461200585652
+        ],
+        [
+          1070.625,
+          552.8550512445096,
+          1126.875,
+          875.1976573938507
+        ]
+      ],
+      "confidence": [
+        0.91,
+        0.91
+      ],
+      "mask": {
+        "file": "sam_masks/cs__spring.png",
+        "area": 32318.0,
+        "cx": 915.064838829196,
+        "cy": 742.0758305545264,
+        "angle": 10.6,
+        "elongation": 1.96
+      }
+    },
+    "vd__damper": {
+      "phrase": "tall silver cylinder",
+      "tried": [
+        "tall silver cylinder"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1158.75,
+          580.9663250366033,
+          1201.875,
+          832.0937042459736
+        ],
+        [
+          813.75,
+          612.8257686676428,
+          858.75,
+          875.1976573938507
+        ]
+      ],
+      "confidence": [
+        0.9,
+        0.91
+      ],
+      "mask": {
+        "file": "sam_masks/vd__damper.png",
+        "area": 20996.0,
+        "cx": 996.3953488372093,
+        "cy": 725.0937857415173,
+        "angle": 7.3,
+        "elongation": 2.39
+      }
+    }
+  },
+  "contacts": [
+    [
+      "xb",
+      "hb"
+    ],
+    [
+      "tm",
+      "cs"
+    ],
+    [
+      "tm",
+      "hb"
+    ],
+    [
+      "tm",
+      "es"
+    ],
+    [
+      "tm",
+      "ac"
+    ],
+    [
+      "tm",
+      "tm__mass"
+    ],
+    [
+      "tm",
+      "cs__spring"
+    ],
+    [
+      "cs",
+      "hb"
+    ],
+    [
+      "cs",
+      "ac"
+    ],
+    [
+      "cs",
+      "tm__mass"
+    ],
+    [
+      "cs",
+      "cs__spring"
+    ],
+    [
+      "vd",
+      "vd__damper"
+    ],
+    [
+      "hb",
+      "es"
+    ],
+    [
+      "hb",
+      "ac"
+    ],
+    [
+      "hb",
+      "tm__mass"
+    ],
+    [
+      "hb",
+      "cs__spring"
+    ],
+    [
+      "es",
+      "ac"
+    ],
+    [
+      "es",
+      "tm__mass"
+    ],
+    [
+      "ac",
+      "tm__mass"
+    ],
+    [
+      "ac",
+      "cs__spring"
+    ],
+    [
+      "tm__mass",
+      "cs__spring"
+    ]
+  ],
+  "reference": {
+    "phrase": "standing person",
+    "found": true,
+    "mm": 1700.0,
+    "length_px": 516.3,
+    "box": [
+      1670.625,
+      580.9663250366033,
+      1824.375,
+      1098.2137628111275
+    ],
+    "px_per_mm": 0.3037
+  },
+  "differences": {
+    "xb": [
+      "expected to touch cs, but they are apart in the picture",
+      "expected to touch vd, but they are apart in the picture",
+      "expected to touch es, but they are apart in the picture"
+    ],
+    "tm": [
+      "expected to touch vd, but they are apart in the picture"
+    ],
+    "cs": [
+      "expected a vertical long axis, measured horizontal",
+      "size against tm: expected about 0.6 times, measured 1.5 times",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "vd": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch xb, but they are apart in the picture",
+      "expected to touch tm, but they are apart in the picture"
+    ],
+    "hb": [
+      "expected 2 visible, found 27"
+    ],
+    "es": [
+      "expected 2 visible, found 1",
+      "size against tm: expected about 0.2 times, measured 0.57 times",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "ac": [
+      "expected 1 visible, found 2",
+      "size against es: expected about 0.3 times, measured 1.8 times"
+    ],
+    "cs__spring": [
+      "expected a vertical long axis, measured horizontal"
+    ],
+    "vd__damper": [
+      "expected a vertical long axis, measured horizontal"
+    ]
+  },
+  "rechecks": [
+    "xb: last round expected to touch cs, but they are apart in the picture; expected to touch vd, but they are apart in the picture -> now expected to touch cs, but they are apart in the picture; expected to touch vd, but they are apart in the picture; expected to touch es, but they are apart in the picture",
+    "cs: last round expected a vertical long axis, measured horizontal; size against tm: expected about 0.6 times, measured 1.2 times; expected to touch xb, but they are apart in the picture -> now expected a vertical long axis, measured horizontal; size against tm: expected about 0.6 times, measured 1.5 times; expected to touch xb, but they are apart in the picture",
+    "vd: last round expected a vertical long axis, measured horizontal; expected to touch xb, but they are apart in the picture -> now expected a vertical long axis, measured horizontal; expected to touch xb, but they are apart in the picture; expected to touch tm, but they are apart in the picture",
+    "hb: last round expected 2 visible, found 5 -> now expected 2 visible, found 27",
+    "es: last round expected 2 visible, found 3 -> now expected 2 visible, found 1; size against tm: expected about 0.2 times, measured 0.57 times; expected to touch xb, but they are apart in the picture",
+    "cs__spring: last round expected a vertical long axis, measured horizontal -> now expected a vertical long axis, measured horizontal",
+    "vd__damper: last round expected a vertical long axis, measured horizontal -> now expected a vertical long axis, measured horizontal",
+    "tm__mass: matched before and still matches, but moved in the picture"
+  ]
+}

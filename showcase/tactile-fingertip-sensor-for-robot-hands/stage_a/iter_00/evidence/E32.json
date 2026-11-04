@@ -1,14 +1,26 @@
 {
   "id": "E32",
-  "author": "Sam \u2014 Robot Hand Integration and Manipulation",
-  "tool": "simulate",
-  "purpose": "mount load vs grip and drop check",
-  "code_or_query": "area_m2=15e-3*20e-3\nFmax=139.0\nFgrip=30.0\np_max=Fmax/area_m2\np_grip=Fgrip/area_m2\n# friction hold for 1kg object: need mu*F_grip*2 fingers >= m*(g+a) with a=5 m/s2\nm=1.0; g=9.81; a=5.0\nF_needed=m*(g+a)/(2*0.5)\nprint(f\"area_m2 {area_m2} p_max_kPa {p_max/1000:.1f} p_grip_kPa {p_grip/1000:.1f} F_needed_N {F_needed:.1f}\")",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: robot fingertip slip detection incipient slip micro vibration",
+  "code_or_query": "robot fingertip slip detection incipient slip micro vibration",
   "inputs": {},
-  "output_summary": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
-  "output_full": "area_m2 0.0003 p_max_kPa 463.3 p_grip_kPa 100.0 F_needed_N 14.8",
+  "output_summary": "robotsusa.com — OmniHand 2025 Tactile Robot Hand: Specs & Uses | RobotsUSA — 2025 — https://www.robotsusa.com/AgiBot-OmniHand-2025-with-Tactile-Sensors.htm",
+  "output_full": "robotsusa.com — OmniHand 2025 Tactile Robot Hand: Specs & Uses | RobotsUSA — 2025 — https://www.robotsusa.com/AgiBot-OmniHand-2025-with-Tactile-Sensors.htm\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "robotsusa.com",
+      "title": "OmniHand 2025 Tactile Robot Hand: Specs & Uses | RobotsUSA",
+      "year": "2025",
+      "url": "https://www.robotsusa.com/AgiBot-OmniHand-2025-with-Tactile-Sensors.htm",
+      "query": "robot fingertip slip detection incipient slip micro vibration",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

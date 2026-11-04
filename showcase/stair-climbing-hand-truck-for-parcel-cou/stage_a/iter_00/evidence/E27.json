@@ -1,22 +1,24 @@
 {
   "id": "E27",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
   "tool": "web_search",
-  "purpose": "search: folding hand truck locking hinge detent pin safety standard",
-  "code_or_query": "folding hand truck locking hinge detent pin safety standard",
+  "purpose": "search: ISO 11228-2 push pull force limits manual handling",
+  "code_or_query": "ISO 11228-2 push pull force limits manual handling",
   "inputs": {},
-  "output_summary": "handtruckexpert.com — How to Open a Folding Hand Truck: Step by Step Guide — https://handtruckexpert.com/how-to-open-a-folding-hand-truck/",
-  "output_full": "handtruckexpert.com — How to Open a Folding Hand Truck: Step by Step Guide — https://handtruckexpert.com/how-to-open-a-folding-hand-truck/\n(the search returned no passage text)",
+  "output_summary": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education",
+  "output_full": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "handtruckexpert.com",
-      "title": "How to Open a Folding Hand Truck: Step by Step Guide",
+      "authors_or_org": "casterconnection.com",
+      "title": "Ergonomic Casters Education",
       "year": "",
-      "url": "https://handtruckexpert.com/how-to-open-a-folding-hand-truck/",
-      "query": "folding hand truck locking hinge detent pin safety standard",
+      "url": "https://casterconnection.com/caster-education/ergonomic-casters-education",
+      "query": "ISO 11228-2 push pull force limits manual handling",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

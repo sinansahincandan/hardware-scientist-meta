@@ -1,0 +1,44 @@
+{
+  "b1": {
+    "A": "hs",
+    "B": "hs_open",
+    "C": "baseline",
+    "hs_run": "20261104-121008_lunar-regolith-excavation-robot",
+    "hs_open_run": "../HardwareScientist_OpenWeights/runs/20261104-123502_lunar-regolith-excavation-robot",
+    "hs_open_fig": "../HardwareScientist_OpenWeights/runs/20261104-123502_lunar-regolith-excavation-robot"
+  },
+  "b2": {
+    "A": "baseline",
+    "B": "hs_open",
+    "C": "hs",
+    "hs_run": "20261104-121011_tactile-fingertip-sensor-for-robot-hands",
+    "hs_open_run": "../HardwareScientist_OpenWeights/runs/20261104-123505_tactile-fingertip-sensor-for-robot-hands",
+    "hs_open_fig": "../HardwareScientist_OpenWeights/runs/20261104-123505_tactile-fingertip-sensor-for-robot-hands"
+  },
+  "b3": {
+    "A": "hs",
+    "B": "baseline",
+    "hs_run": "20261104-145036_small-wind-turbine-for-a-wind-tunnel-com"
+  },
+  "01": {
+    "A": "hs",
+    "B": "baseline",
+    "hs_run": "20261104-142329_stair-climbing-hand-truck-for-parcel-cou"
+  },
+  "02": {
+    "A": "hs_open",
+    "B": "baseline",
+    "C": "hs",
+    "hs_run": "20261104-142333_off-grid-solar-powered-cold-storage-for-",
+    "hs_open_run": "../HardwareScientist_OpenWeights/runs/20261104-123515_off-grid-solar-powered-cold-storage-for-",
+    "hs_open_fig": "../HardwareScientist_OpenWeights/runs/20261104-123515_off-grid-solar-powered-cold-storage-for-"
+  },
+  "03": {
+    "A": "baseline",
+    "B": "hs",
+    "C": "hs_open",
+    "hs_run": "20261104-142331_vibration-retrofit-for-a-lively-pedestri",
+    "hs_open_run": "../HardwareScientist_OpenWeights/runs/20261104-142335_vibration-retrofit-for-a-lively-pedestri",
+    "hs_open_fig": "../HardwareScientist_OpenWeights/runs/20261104-142335_vibration-retrofit-for-a-lively-pedestri"
+  }
+}

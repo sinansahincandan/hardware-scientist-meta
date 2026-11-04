@@ -1,0 +1,32 @@
+{
+  "id": "E34",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "web_search",
+  "purpose": "search: Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "code_or_query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "inputs": {},
+  "output_summary": "builderscience.pl — Case — https://builderscience.pl/api/files/view/1515069.pdf",
+  "output_full": "builderscience.pl — Case — https://builderscience.pl/api/files/view/1515069.pdf\n(found by the search; not opened or cited)\nPedestrian Comfort and Safety Assessor said about it: In plain words the bridge will resonate with normal walking so I set Maximum comfort below 0.5 metres per second squared, Medium comfort 0.5 to 1.0 metres per second squared, Minimum comfort 1.0 to 2.5 metres per second squared and Unacceptable above 2.5 metres per second squared, which is the band stated in the Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) (E33) and the Case (E34), while 1.90 Hz falling in the 1.40 to 2.40 Hz walking range is stated in the Analysis of the dynamic characteristics and vibrational comfort of selected footbridges over the S7 national road (E36).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "builderscience.pl",
+      "title": "Case",
+      "year": "",
+      "url": "https://builderscience.pl/api/files/view/1515069.pdf",
+      "query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+      "unresolved": false,
+      "passage": "In plain words the bridge will resonate with normal walking so I set Maximum comfort below 0.5 metres per second squared, Medium comfort 0.5 to 1.0 metres per second squared, Minimum comfort 1.0 to 2.5 metres per second squared and Unacceptable above 2.5 metres per second squared, which is the band stated in the Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) (E33) and the Case (E34), while 1.90 Hz falling in the 1.40 to 2.40 Hz walking range is stated in the Analysis of the dynamic characteristics and vibrational comfort of selected footbridges over the S7 national road (E36).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "In plain words the bridge will resonate with normal walking so I set Maximum comfort below 0.5 metres per second squared, Medium comfort 0.5 to 1.0 metres per second squared, Minimum comfort 1.0 to 2.5 metres per second squared and Unacceptable above 2.5 metres per second squared, which is the band stated in the Low-Cost Angular-Velocity Measurements for Sustainable Dynamic Identification of Pedestrian Footbridges: A Case Study of the Footbridge in Gdynia (Poland) (E33) and the Case (E34), while 1.90 Hz falling in the 1.40 to 2.40 Hz walking range is stated in the Analysis of the dynamic characteristics and vibrational comfort of selected footbridges over the S7 national road (E36)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,48 @@
+{
+  "id": "E17",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: R290 R134a refrigerant serviceability off-grid cold room comparison",
+  "code_or_query": "R290 R134a refrigerant serviceability off-grid cold room comparison",
+  "inputs": {},
+  "output_summary": "katom.com — R134a vs. R290 Refrigerant: Key Differences & Replacements — https://www.katom.com/learning-center/r134a-vs-r290-refrigerant.html",
+  "output_full": "katom.com — R134a vs. R290 Refrigerant: Key Differences & Replacements — https://www.katom.com/learning-center/r134a-vs-r290-refrigerant.html\n(opened by the member, not cited)\nCold-Chain Refrigeration Engineer said about it: R134a (tetrafluoroethane, synthetic refrigerant) is A1 non-flammable simplifying handling and service while R290 (propane, natural refrigerant) is A3 highly flammable requiring specifically engineered limited charges and sealed electrics (E17 R134a vs.\nCold-Chain Refrigeration Engineer said about it: R134a (tetrafluoroethane, A1 non-flammable refrigerant) stays field-serviceable per R134a vs R290 Refrigerant: Key Differences & Replacements (E17) against the hot-climate penalty in A solar powered off-grid air conditioning system with natural refrigerant (E23), with Coefficient of Performance (COP, cooling per electric power) about 1.4 at hot ambient, and I take up the PRBS 400W Monocrystalline Photovoltaic Panels | Commercial & High-Performance (E64) you put on the board for the 2-module roof sunshade vent gap, which from refrigeration cuts roof plus shaded-condenser lift in hot-dry peaks.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration.\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences and Replacements (E17) with hot rating from BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) justifies derated COP 1.40 at 43 degrees Celsius ambient.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "katom.com",
+      "title": "R134a vs. R290 Refrigerant: Key Differences & Replacements",
+      "year": "",
+      "url": "https://www.katom.com/learning-center/r134a-vs-r290-refrigerant.html",
+      "query": "R290 R134a refrigerant serviceability off-grid cold room comparison",
+      "unresolved": false,
+      "passage": "R134a (tetrafluoroethane, synthetic refrigerant) is A1 non-flammable simplifying handling and service while R290 (propane, natural refrigerant) is A3 highly flammable requiring specifically engineered limited charges and sealed electrics (E17 R134a vs.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R134a (tetrafluoroethane, synthetic refrigerant) is A1 non-flammable simplifying handling and service while R290 (propane, natural refrigerant) is A3 highly flammable requiring specifically engineered limited charges and sealed electrics (E17 R134a vs."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R134a (tetrafluoroethane, A1 non-flammable refrigerant) stays field-serviceable per R134a vs R290 Refrigerant: Key Differences & Replacements (E17) against the hot-climate penalty in A solar powered off-grid air conditioning system with natural refrigerant (E23), with Coefficient of Performance (COP, cooling per electric power) about 1.4 at hot ambient, and I take up the PRBS 400W Monocrystalline Photovoltaic Panels | Commercial & High-Performance (E64) you put on the board for the 2-module roof sunshade vent gap, which from refrigeration cuts roof plus shaded-condenser lift in hot-dry peaks."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences & Replacements (E17), with hot operation allowed by evaporating range minus 30 to 0 degrees Celsius and maximum condensing 60 degrees Celsius from the BD50F Direct Current Compressor R134a, 12-24V DC & 100-240V AC 50/60Hz (E102), extreme 55 degrees Celsius condensing rating from the MAKING MODERN LIVING POSSIBLE (E112), and household COP basis from the | BD50F | (E98) derated to 1.40 hot."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences and Replacements (E17), with hot rating to 60 degrees condensing from the BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) and extreme 55 degrees rating from the MAKING MODERN LIVING POSSIBLE (E112) against household COP basis from the | BD50F | (E98) derated to 1.40 hot, and the box must hold 200 W transmission ceiling at 38 Kelvin lift with shaded condenser and sealed rear penetration."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences and Replacements (E17) with hot rating from BD50F Direct Current Compressor R134a, 12-24V DC and 100-240V AC 50/60Hz (E102) justifies derated COP 1.40 at 43 degrees Celsius ambient."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

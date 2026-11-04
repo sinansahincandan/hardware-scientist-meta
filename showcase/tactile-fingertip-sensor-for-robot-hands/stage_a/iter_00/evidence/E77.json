@@ -1,0 +1,26 @@
+{
+  "id": "E77",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: emergency stop dual channel fail-safe normally closed ISO 13849",
+  "code_or_query": "emergency stop dual channel fail-safe normally closed ISO 13849",
+  "inputs": {},
+  "output_summary": "forumautomation.com — Why Emergency Stop push button use two Normally Closed (NC) contacts in a safety relay circuit? — https://forumautomation.com/t/why-emergency-stop-push-button-use-two-normally-closed-nc-contacts-in-a-safety-relay-circuit/13483",
+  "output_full": "forumautomation.com — Why Emergency Stop push button use two Normally Closed (NC) contacts in a safety relay circuit? — https://forumautomation.com/t/why-emergency-stop-push-button-use-two-normally-closed-nc-contacts-in-a-safety-relay-circuit/13483\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "forumautomation.com",
+      "title": "Why Emergency Stop push button use two Normally Closed (NC) contacts in a safety relay circuit?",
+      "year": "",
+      "url": "https://forumautomation.com/t/why-emergency-stop-push-button-use-two-normally-closed-nc-contacts-in-a-safety-relay-circuit/13483",
+      "query": "emergency stop dual channel fail-safe normally closed ISO 13849",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

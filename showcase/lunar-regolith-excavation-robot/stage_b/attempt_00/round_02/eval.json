@@ -1,0 +1,168 @@
+{
+  "pixel_description": "Side photorealistic view on brown loose soil with trenches/spoil rows, gray bin at right, standing adult man at far right for scale. Chassis: horizontal silver twin-tube rectangular frame mid-image, knee-high. Two rigid grouser wheels visible (left and right) with toothed rims and hub bolts, mounted directly under chassis via short vertical silver brackets. Chassis deck has black boxes/cables and three cameras: left tall mast with camera, center tall mast with camera, left-short mount with camera. Narrow kerf chain: thin vertical toothed chain digging down into center slot trench under chassis mid, separate from ladder. CRITICAL PART inclined bucket ladder: single inclined straight ladder with ~7 open steel buckets each heaped with soil in a linear row rising diagonally from chassis center to top sprocket above, plus exposed roller chain along left edge and steel side rail, bottom intake end bolted to mid-chassis, top has large gear/sprocket then enclosed rectangular gray chute housing descending diagonally to the right to a pour spout. Spout tip is above steep wedge hopper front lip with short air gap, brown soil stream falling from spout into hopper. Hopper: large gray steep wedge box tilted nose-up, heaped with soil above rim, rear lower pivot bolted to rear chassis, rear outlet has ribbed cylindrical tilt screw discharge nozzle pouring second soil stream down into gray bin. Touches: ladder bottom touches chassis, hopper pivot touches rear chassis, ladder-to-hopper is via falling soil air gap only, kerf isolated in soil slot, wheels touch soil and chassis brackets, camera masts touch chassis deck.",
+  "regions": [
+    {
+      "box": [
+        145.0,
+        680.0,
+        380.0,
+        835.0
+      ],
+      "part_id": "arm",
+      "observed": "only short fixed vertical brackets above grouser wheels under chassis, no folding/diagonal arms",
+      "expected": "folding wheel arms (qty 4) supporting wheels, arms chassis to wheels, to widen track",
+      "source": "render"
+    },
+    {
+      "box": [
+        228.0,
+        503.0,
+        360.0,
+        625.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on black hoses/cables on chassis deck mid-frame, not on trench chain",
+      "expected": "Narrow Kerf Chain leader to end on vertical chain in trench at bottom center",
+      "source": "render"
+    },
+    {
+      "box": [
+        735.0,
+        268.0,
+        868.0,
+        300.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on falling soil stream above hopper, not hopper steel body",
+      "expected": "Steep Wedge Hopper leader to end on hopper body",
+      "source": "render"
+    },
+    {
+      "box": [
+        596.0,
+        605.0,
+        734.0,
+        637.0
+      ],
+      "part_id": "callout",
+      "observed": "two identical Tilt Screw Discharge labels; lower ends on hopper side panel, upper ends near outlet - duplicate and misplaced",
+      "expected": "single Tilt Screw Discharge label ending on screw outlet at hopper rear",
+      "source": "render"
+    },
+    {
+      "box": [
+        15.0,
+        639.0,
+        148.0,
+        672.0
+      ],
+      "part_id": "callout",
+      "observed": "two identical Rigid Grouser Wheels labels; upper leader ends on left soil pile, not wheel",
+      "expected": "single Rigid Grouser Wheels label ending on wheel",
+      "source": "render"
+    },
+    {
+      "box": [
+        280.0,
+        580.0,
+        430.0,
+        630.0
+      ],
+      "part_id": "battery",
+      "observed": "unlabeled black boxes/cables on deck, no identifiable 2 packs",
+      "expected": "2 lithium phosphate battery packs on chassis, fused bus to dig and cameras",
+      "source": "text"
+    }
+  ],
+  "previous_regions": [
+    {
+      "part_id": "ladder",
+      "fault": "ladder top free in air left/above hopper, open soil pour through air, no chute, white gap",
+      "status": "fixed",
+      "note": "Fixed: now enclosed descending chute housing from top sprocket positioned over hopper, soil drops from chute tip into hopper. Small gravity air gap remains but chute present and aligned."
+    },
+    {
+      "part_id": "callout",
+      "fault": "leader ends on ladder top sprocket gear, no camera there",
+      "status": "fixed",
+      "note": "Fixed: Onboard Guide Cameras leader now ends on left camera pole mast/camera, not on sprocket gear."
+    },
+    {
+      "part_id": "arm",
+      "fault": "no folding arms drawn, only fixed uprights above wheels",
+      "status": "still_wrong",
+      "note": "Still wrong: only short vertical fixed brackets above wheels, no diagonal folding arms chassis-to-wheels to widen track."
+    }
+  ],
+  "comparison_with_previous": "Compared with previous render (third image): ladder fixed - now has enclosed descending chute housing from top sprocket positioned over hopper and pouring into hopper, no longer free in air left of hopper; camera callout fixed - Onboard Guide Cameras leader now ends on camera pole mast, not on ladder sprocket gear. Arm NOT fixed - still only fixed vertical brackets above wheels, no folding wheel arms. New depiction faults introduced/persist: duplicate Tilt Screw Discharge labels (two identical labels), duplicate Rigid Grouser Wheels labels with upper leader ending on soil, Narrow Kerf Chain leader ending on deck hoses not vertical chain, Steep Wedge Hopper leader ending on falling soil stream.",
+  "deviations": [
+    {
+      "what": "chassis",
+      "measured": "found 4 fragments, tilted ~124 deg, 1.9x wheel, apart from ladder and hopper",
+      "expected": "1 chassis, horizontal long axis, ~4.7x wheel diameter, touching ladder and hopper",
+      "matters": false,
+      "why": "Pixels show single horizontal twin-tube chassis frame with two parallel tubes; segmenter split frame top plus tubes into 4 and mis-read vertical brackets as tilt. Length ~4-5x wheel diameter (~1000mm vs ~210mm). Ladder base bolted to mid-chassis and hopper rear pivot bolted to chassis - both touch. Fragment count and angle do not change function."
+    },
+    {
+      "what": "arm",
+      "measured": "not found as metal arm",
+      "expected": "4 folding wheel arms chassis to wheels",
+      "matters": true,
+      "why": "Pixels show only fixed vertical silver brackets above left and right grouser wheels directly under chassis. No diagonal/folding arms to widen track from 0.45m stowed to 0.68m deployed. Missing deployment function matters for stow and stability."
+    },
+    {
+      "what": "kerf",
+      "measured": "vertical long axis, apart from ladder",
+      "expected": "1 kerf chain, horizontal long axis, touching ladder",
+      "matters": false,
+      "why": "Pixels show narrow vertical trenching chain digging down into center slot trench. Vertical is correct for 100mm wide 50mm deep slot cut. Apart from ladder is by design - transfer is via side spoil rows feeding ladder pickup, not solid touch. Expectation of horizontal and solid touch is wrong."
+    },
+    {
+      "what": "ladder",
+      "measured": "apart from kerf, hopper, chassis",
+      "expected": "1 ladder touching kerf, hopper and chassis",
+      "matters": false,
+      "why": "Pixels show ladder base mounted on mid-chassis (touches), top sprocket over hopper with enclosed chute pouring soil stream into hopper (gravity chute contact via short air gap, not solid touch, intended). Distance from kerf is different station, not required to touch. Segmenter solid-touch expectation wrong."
+    },
+    {
+      "what": "hopper",
+      "measured": "apart from ladder and chassis",
+      "expected": "1 hopper touching ladder and chassis",
+      "matters": false,
+      "why": "Pixels show steep wedge hopper tilted up, front pivot bolted to rear chassis (touches chassis). Upper rim under ladder chute receiving falling soil - gravity drop with small air gap is intended working contact, not solid touch. Segmenter wrong."
+    },
+    {
+      "what": "auger",
+      "measured": "not found as screw",
+      "expected": "1 tilt screw discharge touching hopper",
+      "matters": false,
+      "why": "Pixels show ribbed cylindrical screw outlet at hopper rear pouring soil stream into gray bin. Present and connected to hopper rear. Segmenter missed due to label 'Tilt Screw Discharge' vs 'screw'. No functional miss."
+    },
+    {
+      "what": "battery",
+      "measured": "not found as battery box",
+      "expected": "2 battery packs",
+      "matters": false,
+      "why": "Pixels show black boxes and cables on chassis deck between camera masts, likely packs but unlabeled and ambiguous. Not clearly 2 identifiable packs. Internal packs do not change external mechanism geometry, so geometry deviation does not matter, but labeling/visibility should be fixed."
+    },
+    {
+      "what": "camera",
+      "measured": "found 3, apart from chassis",
+      "expected": "2 cameras touching chassis",
+      "matters": false,
+      "why": "Pixels show 3 cameras: two on tall vertical masts plus one on short mount, all mast-mounted to chassis deck with wiring. Qty 3 matches text qty 3, segmenter expected 2 is wrong. Indirect mount via mast is design intent, not direct chassis touch. No functional miss."
+    },
+    {
+      "what": "device",
+      "measured": "located parts span ~1878mm across by 1704mm high scaled by 1700mm person",
+      "expected": "largest part 1050mm (chassis 900-1050mm), stowed 0.9x0.42x0.45m in 1.0x0.5x0.5m box",
+      "matters": false,
+      "why": "Pixels show span includes loose soil piles, trenches and gray bin beside device, inflating measurement. Device itself: chassis waist/knee high ~1000mm long consistent with 1050mm max, wheels ~210mm vs person. Deployed ladder plus tilted hopper tall above head is deployed height, allowed to exceed 0.5m stow height. No box limit broken."
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "Vs sketch: folding wheel arms missing (fixed brackets only); callout leaders misplaced/duplicated (Narrow Kerf Chain to hoses, Steep Wedge Hopper to soil stream, duplicate Tilt Screw Discharge and Rigid Grouser Wheels); battery packs not identifiable (unlabeled deck boxes). Ladder now has chute over hopper (improved) with functional gravity gap, chassis-ladder-hopper mounts otherwise match sketch connections.",
+  "s2_flaw": false,
+  "s2_feedback": "No concrete design impossibility in faithful aspects: hopper rear pivot bolted to chassis with clearance, ladder base bolted to chassis with clearance, screw outlet clears bin, vertical kerf chain in slot does not clash with wheels. Heaped hopper above rim suggests overfill vs 15kg half-full intent but on level ground as required, not interference.",
+  "notes": "Photorealistic side view, not diagram/cartoon/CAD wireframe, so style is acceptable. Callout spelling correct with no numbers, but placement/duplication faulty. Battery packs ambiguous. Folding arms remain missing."
+}

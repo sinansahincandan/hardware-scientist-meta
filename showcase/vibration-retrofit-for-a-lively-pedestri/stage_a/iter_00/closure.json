@@ -1,5 +1,7 @@
 {
-  "closed_by": "consensus",
-  "cycles_used": 4,
-  "open_blocking": []
+  "closed_by": "chief",
+  "cycles_used": 3,
+  "open_blocking": [],
+  "chief_decision": "Retrofit is twin 400 kg Tuned Mass Damper (TMD) units on High-Strength Friction-Grip (HSFG) clamped cross-beam at midspan antinode within girder depth, tuned about 1.83 Hz with paired viscous dampers, caged 80 mm stops with lock pins, serviced from below by Below Bridge Access Vehicle (BBAV) with no deck change, accepted by instrumented Class III crowd walk-through against Maximum/Medium/Minimum bands as bench acceptance test. Bench test to run after build: Class III crowd walk-through logging midspan acceleration versus time with filed record.",
+  "decided_version": 1
 }

@@ -1,0 +1,62 @@
+{
+  "prompt": "Photorealistic product rendering on plain seamless light-grey studio backdrop, isometric front three-quarter view, eye-level slightly above. Center: white PIR insulated cold box about doorway tall and van-width wide, standing on six small square concrete pads with galvanized frame and screw anchors on a small cleanly cut patch of compacted ground. Front insulated door swung open with clear PVC strip curtain parted, revealing steel rack rows holding stacked vented plastic crates filled with fresh produce at hand-carry size. White side-mounted outdoor monoblock cooler box mounted high on left outside wall with shaded condenser and sealed penetration, blowing cold air forward high over crates with low warm return. Left side beside box: vented steel battery cabinet with charge controller wired to cooler. Roof: low vented gantry holding tilted dark-blue PV modules with vent gap; to the right and slightly behind on separate low galvanized ground frame, matching tilted PV modules in a row. Small thermostat box on front wall beside door with thin probe cables into return air and into produce. Daylight operating moment, crisp product-shot lighting, real materials - glossy PV glass, white steel facers, galvanized tubes, matte concrete, green-red produce. Familiar scale read from door height and hand-carry crates. Callout rule: callouts show part names only, never numbers, counts, dimensions or multiplication marks. One single tag reading exactly insulated door with strip curtain with leader ending on the open front door edge and curtain. One single tag only reading exactly racks of vented crates with fresh produce with leader ending inside chamber on the stacked crates, never on pads or frames, no duplicates. One single tag reading exactly monoblock cooler with thin leader ending on the white side-mounted outdoor unit on the left wall. One single tag reading exactly photovoltaic modules on vented gantry roof with leader ending on the two roof modules on the low gantry. One single tag reading exactly photovoltaic modules on ground frame with leader ending on the ground row modules. One single tag reading exactly concrete pads with anchors with leader ending on a front concrete pad. Clean legible callouts on small light tags in empty space with thin leaders, no other text in image.",
+  "must_not": [
+    "human figures or animals or everyday clutter",
+    "landscape sky field room interior or furniture",
+    "loose tools wires outside device or extra structures",
+    "duplicate callout tags or descriptive phrases in labels",
+    "numeric counts or dimensions or measurement marks in labels",
+    "large text blocks margins or scale bars"
+  ],
+  "changes_from_previous": "Kept split 2-roof plus 7-ground layout, box on six pads, battery cabinet, rear-high cooler and partial produce load. Replaced vague callout sentence with six single-tag name-only rules with explicit leader targets; banned numbers/counts/dimensions in labels; fixed cooler leader to side unit, roof and ground PV to correct frames, door to name-only, and crates to single interior label.",
+  "visual_plan": {
+    "view": "isometric front three-quarter view, eye-level slightly above, showing front door interior, left-side cooler, roof modules and right-side ground array together",
+    "spatial_layout": "Central white box on six pads with open front door; two rack rows with crates inside; side-mounted cooler high on left wall; battery cabinet beside box left; low roof gantry with roof modules above box; separate low ground frame with row modules to right and slightly behind; thermostat on front wall beside door; small ground patch cut off cleanly at backdrop.",
+    "operating_moment": "Daylight operation with door open and strip curtain parted, representative vented crates with fresh produce visible inside, cold air moving forward high and returning low while array charges battery and powers cooler.",
+    "transfer_path": "Energy: split solar array to battery bank via MPPT to monoblock cooler blowing cold forward high over crates with low return; Measured: return-air sensor and produce probe to thermostat to switch cooler.",
+    "interactions": "Roof gantry and ground frame support tilted modules with vent gap; battery cabinet wires to cooler; thermostat probe cables run into return air and produce to switch cooler; cooler blows high cold forward over crate gaps with low warm return; chamber encloses racks; all stands on pads and screw anchors.",
+    "avoid": [
+      "people, sky, landscape, room, furniture, tools, clutter",
+      "extra text, duplicate labels, numbers in labels",
+      "hidden interior parts, generic field ground extending to horizon"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "chamber",
+      "material": "PIR foam steel facers PVC curtain",
+      "purpose": "Enclose chamber and show door opening",
+      "callout": "insulated door with strip curtain"
+    },
+    {
+      "part_id": "cooler",
+      "material": "Steel copper R134a refrigerant",
+      "purpose": "Remove heat by blowing cold air",
+      "callout": "monoblock cooler"
+    },
+    {
+      "part_id": "rack_crate",
+      "material": "Galvanized steel food-grade plastic",
+      "purpose": "Hold produce with air gaps",
+      "callout": "racks of vented crates with fresh produce"
+    },
+    {
+      "part_id": "pv_array",
+      "material": "Monocrystalline silicon glass aluminium",
+      "purpose": "Convert sunlight on roof gantry",
+      "callout": "photovoltaic modules on vented gantry roof"
+    },
+    {
+      "part_id": "pv_array",
+      "material": "Monocrystalline silicon glass aluminium",
+      "purpose": "Convert sunlight on ground frame",
+      "callout": "photovoltaic modules on ground frame"
+    },
+    {
+      "part_id": "foundation",
+      "material": "Concrete galvanized steel",
+      "purpose": "Support and anchor against wind",
+      "callout": "concrete pads with anchors"
+    }
+  ]
+}

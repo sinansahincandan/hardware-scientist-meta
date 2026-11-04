@@ -1,0 +1,14 @@
+{
+  "id": "E104",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "folded length stack backbone plus overhang plus cap",
+  "code_or_query": "1100+35+10",
+  "inputs": {},
+  "output_summary": "1145",
+  "output_full": "1145",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

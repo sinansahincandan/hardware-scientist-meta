@@ -1,0 +1,69 @@
+{
+  "prompt": "Photorealistic studio product rendering, isometric view from front-below-side, of twin under-deck tuned mass damper on HSFG-clamped cross-beam at work under a footbridge midspan. On a plain seamless light-grey studio backdrop with soft product-shot lighting, show a short clean-cut segment of bridge: horizontal deck soffit slab on top cut off at backdrop, two vertical steel girder webs left and right supporting it. A transverse steel cross-beam spans between the girder webs just below the soffit, clamped at both ends with rows of dark HSFG bolt sets on vertical end-plates at the beam-to-girder junctions. Hanging from the center of the beam are two identical black steel block masses side by side, each about knee-height, each suspended by a tall vertical steel helical coil spring and a parallel smooth stainless viscous damper cylinder between beam hanger and mass top. Small caged black elastomer travel stops with a visible gap sit beside the masses. A tiny deck accelerometer box sits on top of the deck slab at midspan. Include one standing adult person on the backdrop beside the assembly for true scale of the span, no other people or objects. Show operating moment with beam moving with bridge and masses lagging slightly opposite, springs and dampers visibly stroked. Real materials, sharp detail, mechanism readable, relative proportions true: beam longest, masses compact blocks, springs and dampers slender verticals, bolts small. For each focus part draw a short callout with thin leader line to its plain name on a small light tag placed in empty space: Transverse Cross Beam, Tuned Mass, Coil Spring Suspension, Viscous Damper, Clamp Bolt Set, Elastomer Travel Stop, Deck Accelerometer. Critical anchoring: Coil Spring Suspension leader MUST end mid-coil on the tall vertical helical steel spring between beam hanger and mass top at center masses, never on black caged block; Viscous Damper leader MUST end mid-height on the smooth vertical stainless damper cylinder parallel to the spring, never on caged block; Clamp Bolt Set leader MUST end on rows of dark HSFG bolts on the vertical end-plate where transverse beam meets girder web at left or right end, never on bare beam flange at midspan; Transverse Cross Beam leader ends on horizontal beam span; Tuned Mass leader ends on black steel block; Elastomer Travel Stop leader ends on caged block with gap; Deck Accelerometer leader ends on tiny box on deck. Clean legible callouts, no other text, no numbers, no margins or scale bars.",
+  "must_not": [
+    "room interiors",
+    "landscape or sky backgrounds",
+    "furniture",
+    "tools or construction clutter",
+    "additional people beyond single scale figure",
+    "sketch colors circles and line styles as materials",
+    "extra text blocks margins or scale bars"
+  ],
+  "changes_from_previous": "Kept 3D geometry which review found correct (1xb, 2tm, 2cs vertical, 2vd vertical, hb end clamps, es cages, ac on deck). Fixed annotation only: added explicit leader anchor points for Coil Spring Suspension to mid-coil helical spring, Viscous Damper to smooth stainless cylinder, and Clamp Bolt Set to end-plate bolt rows at girder junction, to stop misanchoring to travel-stop cages and midspan flange.",
+  "visual_plan": {
+    "view": "isometric from front-below-side showing under-deck assembly, beam-to-girder ends, vertical springs and dampers above masses, and deck top sensor",
+    "spatial_layout": "top horizontal deck slab cut off at backdrop, two vertical girder webs left and right, transverse beam spanning between just below soffit within girder depth, two block masses side-by-side centered under beam on vertical springs/dampers, stops beside masses, accelerometer on deck top at midspan, single standing adult beside assembly for scale",
+    "operating_moment": "bridge at resonance motion with cross-beam moving with soffit while twin masses lag slightly opposite, springs and dampers visibly stroked dissipating energy, travel stops clear with gap, accelerometer logging on deck",
+    "transfer_path": "vibration: main girders and deck soffit to transverse cross-beam to springs and viscous dampers to twin masses lagging and turning motion to heat; measured: midspan accelerometer to comfort verdict",
+    "interactions": "cross-beam clamped to both girder webs by HSFG bolt rows; beam hangers carry vertical coil springs and parallel viscous cylinders down to twin block masses; masses can move relative to beam stroking springs/dampers; caged elastomer stops flank masses with clear gap to catch overtravel",
+    "avoid": [
+      "room, landscape, sky, furniture, tools, extra people, clutter",
+      "sketch convention colors and circles as parts",
+      "extra text, numbers, margins, scale bars"
+    ]
+  },
+  "focus_parts": [
+    {
+      "part_id": "xb",
+      "material": "steel",
+      "purpose": "carries two damper units and moves with bridge",
+      "callout": "Transverse Cross Beam"
+    },
+    {
+      "part_id": "tm",
+      "material": "steel",
+      "purpose": "supplies inertial counteracting force lagging bridge",
+      "callout": "Tuned Mass"
+    },
+    {
+      "part_id": "cs",
+      "material": "steel coil spring",
+      "purpose": "converts bridge motion into relative travel",
+      "callout": "Coil Spring Suspension"
+    },
+    {
+      "part_id": "vd",
+      "material": "fluid viscous damper steel",
+      "purpose": "dissipates vibration energy as heat",
+      "callout": "Viscous Damper"
+    },
+    {
+      "part_id": "hb",
+      "material": "steel grade 10.9 M20 HSFG",
+      "purpose": "clamps cross-beam to girders by friction",
+      "callout": "Clamp Bolt Set"
+    },
+    {
+      "part_id": "es",
+      "material": "elastomer steel stop",
+      "purpose": "limits excess travel on surge",
+      "callout": "Elastomer Travel Stop"
+    },
+    {
+      "part_id": "ac",
+      "material": "silicon MEMS",
+      "purpose": "logs vertical acceleration for comfort verdict",
+      "callout": "Deck Accelerometer"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E52",
+  "author": "Dr. Marcus Reid \u2014 Robotic Integration and Embedded Electronics",
+  "tool": "calc",
+  "purpose": "SPI tactile message rate kbit per s at 100 Hz frames",
+  "code_or_query": "((28*2+8)*8*100)/1000",
+  "inputs": {},
+  "output_summary": "51.2",
+  "output_full": "51.2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,29 +1,12 @@
 {
   "id": "E43",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
+  "author": "Power Structure and Integration Lead",
   "tool": "calc",
-  "purpose": "tip stability factor moments",
-  "code_or_query": "Q_(43,'kg')*Q_(0.325,'m')/(Q_(10,'kg')*Q_(0.30,'m'))",
-  "inputs": {
-    "arg0": {
-      "value": "43",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "0.325",
-      "unit": "m"
-    },
-    "arg2": {
-      "value": "10",
-      "unit": "kg"
-    },
-    "arg3": {
-      "value": "0.30",
-      "unit": "m"
-    }
-  },
-  "output_summary": "4.66",
-  "output_full": "4.66",
+  "purpose": "cantilever deflection estimate frame rail",
+  "code_or_query": "((589+15*9.81)*0.8**3)/(3*68.9e9*2.5e-8)",
+  "inputs": {},
+  "output_summary": "0.0729",
+  "output_full": "0.0729",
   "sketch_path": null,
   "references": [],
   "status": "ok",

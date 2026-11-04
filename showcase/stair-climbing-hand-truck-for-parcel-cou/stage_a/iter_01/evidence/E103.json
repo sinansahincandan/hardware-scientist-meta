@@ -1,0 +1,14 @@
+{
+  "id": "E103",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "unhinged backbone length vs claimed folded length",
+  "code_or_query": "sum([1100, 0])",
+  "inputs": {},
+  "output_summary": "1100",
+  "output_full": "1100",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

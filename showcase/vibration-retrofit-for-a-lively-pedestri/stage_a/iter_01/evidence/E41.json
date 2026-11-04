@@ -1,0 +1,14 @@
+{
+  "id": "E41",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "equivalent synchronized pedestrians bare damping",
+  "code_or_query": "10.8*(0.005*60)**0.5",
+  "inputs": {},
+  "output_summary": "5.92",
+  "output_full": "5.92",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

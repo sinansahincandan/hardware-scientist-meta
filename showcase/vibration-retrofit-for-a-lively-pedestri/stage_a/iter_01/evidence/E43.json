@@ -1,0 +1,14 @@
+{
+  "id": "E43",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "bare deck resonant acceleration estimate",
+  "code_or_query": "0.082824/(2*0.005)",
+  "inputs": {},
+  "output_summary": "8.28",
+  "output_full": "8.28",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

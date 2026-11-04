@@ -1,0 +1,14 @@
+{
+  "id": "E62",
+  "author": "Power Structure and Integration Lead",
+  "tool": "calc",
+  "purpose": "updated mass sum with stiffened frame against 60 kg limit",
+  "code_or_query": "sum({'structure stiffened twin rails+bracing': 9, 'wheels x4': 10, 'ladder+digger': 8, 'hopper steel+vibrator': 5.5, 'battery 24V20Ah': 6, 'avionics+compute+cameras': 2.5, 'harness+fuses+mounts': 2, 'tilt motor+springs': 3}.values())",
+  "inputs": {},
+  "output_summary": "46",
+  "output_full": "46",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

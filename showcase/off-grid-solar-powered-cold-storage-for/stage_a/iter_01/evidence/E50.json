@@ -1,0 +1,14 @@
+{
+  "id": "E50",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "reconcile produce sensible heat 30C to 5C in kWh",
+  "code_or_query": "1000*3.6*25/3.6",
+  "inputs": {},
+  "output_summary": "2.5e+04",
+  "output_full": "2.5e+04",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

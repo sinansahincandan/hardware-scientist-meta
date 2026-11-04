@@ -1,0 +1,14 @@
+{
+  "id": "E90",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "unified parcel moment at single 200 mm offset",
+  "code_or_query": "589*0.20",
+  "inputs": {},
+  "output_summary": "118",
+  "output_full": "118",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

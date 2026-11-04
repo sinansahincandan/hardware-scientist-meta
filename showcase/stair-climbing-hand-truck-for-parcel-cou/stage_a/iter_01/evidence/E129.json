@@ -1,0 +1,26 @@
+{
+  "id": "E129",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull recommended force limits manual handling",
+  "code_or_query": "ISO 11228-2 push pull recommended force limits manual handling",
+  "inputs": {},
+  "output_summary": "Standards.Iteh.ai — ISO 11228-2:2007 Ergonomics Manual Handling Pushing and Pulling Guide — 2007 — https://Standards.Iteh.ai/catalog/standards/iso/0a5d43eb-2ee9-4181-90d8-c1af856402de/iso-11228-2-2007?reviews=true",
+  "output_full": "Standards.Iteh.ai — ISO 11228-2:2007 Ergonomics Manual Handling Pushing and Pulling Guide — 2007 — https://Standards.Iteh.ai/catalog/standards/iso/0a5d43eb-2ee9-4181-90d8-c1af856402de/iso-11228-2-2007?reviews=true\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "Standards.Iteh.ai",
+      "title": "ISO 11228-2:2007 Ergonomics Manual Handling Pushing and Pulling Guide",
+      "year": "2007",
+      "url": "https://Standards.Iteh.ai/catalog/standards/iso/0a5d43eb-2ee9-4181-90d8-c1af856402de/iso-11228-2-2007?reviews=true",
+      "query": "ISO 11228-2 push pull recommended force limits manual handling",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

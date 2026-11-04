@@ -1,0 +1,26 @@
+{
+  "id": "E106",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: cold storage respiration heat load tomatoes mangoes W per tonne",
+  "code_or_query": "cold storage respiration heat load tomatoes mangoes W per tonne",
+  "inputs": {},
+  "output_summary": "archive.nptel.ac.in — Microsoft Word - 15.Refrigeration (1).docx — https://archive.nptel.ac.in/content/storage2/courses/103107088/module15/lecture1/lecture1.pdf",
+  "output_full": "archive.nptel.ac.in — Microsoft Word - 15.Refrigeration (1).docx — https://archive.nptel.ac.in/content/storage2/courses/103107088/module15/lecture1/lecture1.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "archive.nptel.ac.in",
+      "title": "Microsoft Word - 15.Refrigeration (1).docx",
+      "year": "",
+      "url": "https://archive.nptel.ac.in/content/storage2/courses/103107088/module15/lecture1/lecture1.pdf",
+      "query": "cold storage respiration heat load tomatoes mangoes W per tonne",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

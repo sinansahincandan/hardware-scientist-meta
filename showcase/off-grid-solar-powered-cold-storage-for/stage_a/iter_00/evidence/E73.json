@@ -1,0 +1,32 @@
+{
+  "id": "E73",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO postharvest crate stacking air gap ventilation room cooling",
+  "code_or_query": "FAO postharvest crate stacking air gap ventilation room cooling",
+  "inputs": {},
+  "output_summary": "old.energypedia.info — Cold Storage of Agricultural Products - old.energypedia.info — https://old.energypedia.info/wiki/Cold_Storage_of_Agricultural_Products",
+  "output_full": "old.energypedia.info — Cold Storage of Agricultural Products - old.energypedia.info — https://old.energypedia.info/wiki/Cold_Storage_of_Agricultural_Products\n(opened by the member, not cited)\nSmallholder Cooperative Operations Specialist said about it: The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "old.energypedia.info",
+      "title": "Cold Storage of Agricultural Products - old.energypedia.info",
+      "year": "",
+      "url": "https://old.energypedia.info/wiki/Cold_Storage_of_Agricultural_Products",
+      "query": "FAO postharvest crate stacking air gap ventilation room cooling",
+      "unresolved": false,
+      "passage": "The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

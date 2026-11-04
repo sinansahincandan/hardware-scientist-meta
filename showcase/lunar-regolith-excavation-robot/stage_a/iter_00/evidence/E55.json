@@ -1,14 +1,32 @@
 {
   "id": "E55",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "calc",
-  "purpose": "tip safety factor with 0.30 m overhang",
-  "code_or_query": "((40.6*0.30)/(10*0.30))",
+  "author": "Autonomy and Blind Operations Lead",
+  "tool": "web_search",
+  "purpose": "search: Apriltag fiducial docking accuracy mobile robot alignment",
+  "code_or_query": "Apriltag fiducial docking accuracy mobile robot alignment",
   "inputs": {},
-  "output_summary": "4.06",
-  "output_full": "4.06",
+  "output_summary": "cuhkqa.mirrorweb.com — Indoor Hydroponics Robot System for Automated Seeding and Logistics — https://cuhkqa.mirrorweb.com/qa/20260127002602mp_/http:/www.cse.cuhk.edu.hk/%7Ejlee/publ/24/icca24VMOrobots.pdf",
+  "output_full": "cuhkqa.mirrorweb.com — Indoor Hydroponics Robot System for Automated Seeding and Logistics — https://cuhkqa.mirrorweb.com/qa/20260127002602mp_/http:/www.cse.cuhk.edu.hk/%7Ejlee/publ/24/icca24VMOrobots.pdf\n(found by the search; not opened or cited)\nAutonomy and Blind Operations Lead said about it: I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "cuhkqa.mirrorweb.com",
+      "title": "Indoor Hydroponics Robot System for Automated Seeding and Logistics",
+      "year": "",
+      "url": "https://cuhkqa.mirrorweb.com/qa/20260127002602mp_/http:/www.cse.cuhk.edu.hk/%7Ejlee/publ/24/icca24VMOrobots.pdf",
+      "query": "Apriltag fiducial docking accuracy mobile robot alignment",
+      "unresolved": false,
+      "passage": "I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "I take from the Advanced Edge Detection of AprilTags for Precise Docking Maneuvers of Mobile Robots (E54) the finding that dead reckoning still induces large errors but tag-guided docking reaches average deviation about 4.5 cm and 0.4 deg, and from the Indoor Hydroponics Robot System for Automated Seeding and Logistics (E55) the finding that AprilTag Visual Fiducial System, meaning printed square markers for camera pose, placed at every docking location minimises position offset, and the fiducial-guided auto-align dump maps that pad-relative docking to this robot by measuring pose to the bin tag then creeping into line before tilting."
+        }
+      ]
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 2
 }

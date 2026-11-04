@@ -1,32 +1,28 @@
 {
   "id": "E3",
-  "author": "Maya — Tactile Transduction and Sensing Physics",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
   "tool": "web_search",
-  "purpose": "search: robot fingertip tactile sensor force range sensitivity 1 mN",
-  "code_or_query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+  "purpose": "search: BioTac SynTouch soft skin fingertip compliant",
+  "code_or_query": "BioTac SynTouch soft skin fingertip compliant",
   "inputs": {},
-  "output_summary": "github.com — terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md — https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
-  "output_full": "github.com — terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md — https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise.",
+  "output_summary": "syntouchllc.com — SynTouch - BioTac — https://www.syntouchllc.com/Products/BioTac/",
+  "output_full": "syntouchllc.com — SynTouch - BioTac — https://www.syntouchllc.com/Products/BioTac/\n(opened by the member, not cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "github.com",
-      "title": "terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md",
+      "authors_or_org": "syntouchllc.com",
+      "title": "SynTouch - BioTac",
       "year": "",
-      "url": "https://github.com/terryum/survey-robot-hand-tactile-sensor/blob/HEAD/book/en/ch02.md",
-      "query": "robot fingertip tactile sensor force range sensitivity 1 mN",
+      "url": "https://www.syntouchllc.com/Products/BioTac/",
+      "query": "BioTac SynTouch soft skin fingertip compliant",
       "unresolved": false,
-      "passage": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit.",
+      "passage": "The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs.",
       "cited": true,
       "read": true,
       "statements": [
         {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Plainly that means 1 mN threshold with grip to about 30 N, where the 0.1 gram-force about 1 mN claim from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) and the less than 0.1 N to 100 N array range from the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3) show the span is buildable with PCB (printed circuit board) electrodes, but parasitics will decide the limit."
-        },
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Plainly capacitive is stable for static force but needs complex front ends and piezoelectric film, PVDF (polyvinylidene fluoride), sees only transients, per strengths and limits in the terryum/survey-robot-hand-tactile-sensor - book/en/ch02.md (E3), so thinner skin helps sensitivity but hurts spreading and noise."
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force (E2) shows a clear silicone elastomer with Shore A values between 5 and 20 and neo-Hookean coefficient mu of 0.145 megapascal (MPa) in a domed sheet under 2.5 millimetre (mm) thick, and the SynTouch - BioTac (E3) shows a rigid core surrounded by an elastic liquid-filled skin giving human-fingertip compliance, so I propose a molded 20 mm diameter by 22 mm long silicone dome with 1.5 mm skin over gel on a rigid core as drawn in the fingertip section sketch (E15), using purchasable silicones of the Dragon Skin 30 vs."
         }
       ]
     }

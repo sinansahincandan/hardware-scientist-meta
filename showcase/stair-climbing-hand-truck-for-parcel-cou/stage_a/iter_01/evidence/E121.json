@@ -1,0 +1,14 @@
+{
+  "id": "E121",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "new total with 40mm tubes",
+  "code_or_query": "66.7+0.37",
+  "inputs": {},
+  "output_summary": "67.1",
+  "output_full": "67.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

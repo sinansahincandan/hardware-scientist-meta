@@ -1,0 +1,32 @@
+{
+  "id": "E31",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine dump load brake resistor short circuit stop",
+  "code_or_query": "small wind turbine dump load brake resistor short circuit stop",
+  "inputs": {},
+  "output_summary": "bettersailing.com — Best Marine Wind Turbine Generators for Boats - Better Sailing — https://bettersailing.com/best-marine-wind-turbine-generators-for-boats/",
+  "output_full": "bettersailing.com — Best Marine Wind Turbine Generators for Boats - Better Sailing — https://bettersailing.com/best-marine-wind-turbine-generators-for-boats/\n(opened by the member, not cited)\nPower-Systems Engineer said about it: I read the Best Marine Wind Turbine Generators for Boats - Better Sailing (E31) which states never simply disconnect a running turbine with no load as it can spin to dangerous speeds, most turbines are braked electrically by shorting the output wires, and dump load diversion resistors burn surplus off as heat, and I use that brake-plus-resistor rule.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "bettersailing.com",
+      "title": "Best Marine Wind Turbine Generators for Boats - Better Sailing",
+      "year": "",
+      "url": "https://bettersailing.com/best-marine-wind-turbine-generators-for-boats/",
+      "query": "small wind turbine dump load brake resistor short circuit stop",
+      "unresolved": false,
+      "passage": "I read the Best Marine Wind Turbine Generators for Boats - Better Sailing (E31) which states never simply disconnect a running turbine with no load as it can spin to dangerous speeds, most turbines are braked electrically by shorting the output wires, and dump load diversion resistors burn surplus off as heat, and I use that brake-plus-resistor rule.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Power-Systems Engineer",
+          "text": "I read the Best Marine Wind Turbine Generators for Boats - Better Sailing (E31) which states never simply disconnect a running turbine with no load as it can spin to dangerous speeds, most turbines are braked electrically by shorting the output wires, and dump load diversion resistors burn surplus off as heat, and I use that brake-plus-resistor rule."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

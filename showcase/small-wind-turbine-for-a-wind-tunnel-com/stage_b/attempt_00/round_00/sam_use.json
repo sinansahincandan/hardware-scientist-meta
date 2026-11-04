@@ -1,0 +1,54 @@
+{
+  "round": 0,
+  "sam_differences": {
+    "rotor": [
+      "size against nacelle: expected about 1.8 times, measured 3.9 times"
+    ],
+    "rotor__blade": [
+      "expected 3 visible, found 4"
+    ],
+    "hub": [
+      "size against generator: expected about 1.5 times, measured 0.39 times",
+      "expected to touch generator, but they are apart in the picture",
+      "expected to touch disc_brake, but they are apart in the picture"
+    ],
+    "nacelle": [
+      "size against post: expected about 0.9 times, measured 0.44 times",
+      "expected to touch post, but they are apart in the picture",
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch generator, but they are apart in the picture",
+      "expected to touch disc_brake, but they are apart in the picture"
+    ],
+    "post": [
+      "size against nacelle: expected about 1.1 times, measured 2.3 times",
+      "expected to touch nacelle, but they are apart in the picture"
+    ],
+    "generator": [
+      "size against hub: expected about 0.67 times, measured 2.5 times",
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch nacelle, but they are apart in the picture"
+    ],
+    "rectifier": [
+      "not found by the segmenter as 'small board'"
+    ],
+    "dump": [
+      "not found by the segmenter as 'wire coil'"
+    ],
+    "safety_loop": [
+      "expected 1 visible, found 2",
+      "size against regulator: expected about 1.4 times, measured 3.2 times",
+      "expected to touch disc_brake, but they are apart in the picture",
+      "expected to touch regulator, but they are apart in the picture"
+    ],
+    "disc_brake": [
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch nacelle, but they are apart in the picture"
+    ]
+  },
+  "critique_part_ids": [],
+  "sam_parts_used_by_critique": [],
+  "unnoticed_sam_deviations": [],
+  "kept": true,
+  "why": "first round",
+  "earlier_faults": []
+}

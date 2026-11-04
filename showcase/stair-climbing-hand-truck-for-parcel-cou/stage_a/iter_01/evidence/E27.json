@@ -1,0 +1,26 @@
+{
+  "id": "E27",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: ISO 11228-2 push pull force limits manual handling",
+  "code_or_query": "ISO 11228-2 push pull force limits manual handling",
+  "inputs": {},
+  "output_summary": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education",
+  "output_full": "casterconnection.com — Ergonomic Casters Education — https://casterconnection.com/caster-education/ergonomic-casters-education\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "casterconnection.com",
+      "title": "Ergonomic Casters Education",
+      "year": "",
+      "url": "https://casterconnection.com/caster-education/ergonomic-casters-education",
+      "query": "ISO 11228-2 push pull force limits manual handling",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

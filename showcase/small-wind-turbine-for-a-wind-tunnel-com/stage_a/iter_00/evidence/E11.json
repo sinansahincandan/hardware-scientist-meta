@@ -1,0 +1,14 @@
+{
+  "id": "E11",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "shaft power at 5 m/s with Cp 0.34",
+  "code_or_query": "9.62*0.34",
+  "inputs": {},
+  "output_summary": "3.27",
+  "output_full": "3.27",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

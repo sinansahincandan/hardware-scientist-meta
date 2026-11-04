@@ -1,0 +1,32 @@
+{
+  "id": "E55",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: hand grip strength maximum voluntary contraction brake lever ergonomics",
+  "code_or_query": "hand grip strength maximum voluntary contraction brake lever ergonomics",
+  "inputs": {},
+  "output_summary": "1library.net — Operating posture - Ergonomics Design Considerations — https://1library.net/article/operating-posture-ergonomics-design-considerations.zxm6r04y",
+  "output_full": "1library.net — Operating posture - Ergonomics Design Considerations — https://1library.net/article/operating-posture-ergonomics-design-considerations.zxm6r04y\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Operating posture - Ergonomics Design Considerations (E55, Operating posture - Ergonomics Design Considerations) that hand used, grip posture and duration change grip coordination, and I take from Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1 (E56, Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1) that continuous handgrip above 10 percent of Maximum Voluntary Contraction (MVC, meaning maximum voluntary contraction) and intermittent grip above 17 percent MVC were unacceptable.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "1library.net",
+      "title": "Operating posture - Ergonomics Design Considerations",
+      "year": "",
+      "url": "https://1library.net/article/operating-posture-ergonomics-design-considerations.zxm6r04y",
+      "query": "hand grip strength maximum voluntary contraction brake lever ergonomics",
+      "unresolved": false,
+      "passage": "I take from Operating posture - Ergonomics Design Considerations (E55, Operating posture - Ergonomics Design Considerations) that hand used, grip posture and duration change grip coordination, and I take from Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1 (E56, Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1) that continuous handgrip above 10 percent of Maximum Voluntary Contraction (MVC, meaning maximum voluntary contraction) and intermittent grip above 17 percent MVC were unacceptable.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Operating posture - Ergonomics Design Considerations (E55, Operating posture - Ergonomics Design Considerations) that hand used, grip posture and duration change grip coordination, and I take from Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1 (E56, Review of Hand/Wrist/Arm Ergonomics Analysis Methods: Part 1) that continuous handgrip above 10 percent of Maximum Voluntary Contraction (MVC, meaning maximum voluntary contraction) and intermittent grip above 17 percent MVC were unacceptable."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

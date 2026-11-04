@@ -1,0 +1,18 @@
+{
+  "crops": [
+    "crop 1: cooler",
+    "crop 2: chamber"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "racking with vented crates and fresh produce load inside the chamber, not the insulated chamber walls/door itself"
+    }
+  ]
+}

@@ -1,24 +1,14 @@
 {
   "id": "E13",
-  "author": "Marcus - Vibration Control and Damping Specialist",
-  "tool": "web_search",
-  "purpose": "search: footbridge tuned mass damper mass ratio tuning Den Hartog",
-  "code_or_query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "TMD total mass at 4 percent mass ratio",
+  "code_or_query": "0.04*20000",
   "inputs": {},
-  "output_summary": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
-  "output_full": "backend.orbit.dtu.dk — TMD_nscm19.dvi — https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf\n(the search returned no passage text)",
+  "output_summary": "800",
+  "output_full": "800",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "backend.orbit.dtu.dk",
-      "title": "TMD_nscm19.dvi",
-      "year": "",
-      "url": "https://backend.orbit.dtu.dk/ws/files/4682306/TMD_nscm19.pdf",
-      "query": "footbridge tuned mass damper mass ratio tuning Den Hartog",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,14 +1,26 @@
 {
   "id": "E54",
-  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
-  "tool": "calc",
-  "purpose": "daily PV yield from 2.4kWp",
-  "code_or_query": "2.4*4.5*0.75",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: cold room door opening infiltration heat load air changes ASHRAE",
+  "code_or_query": "cold room door opening infiltration heat load air changes ASHRAE",
   "inputs": {},
-  "output_summary": "8.1",
-  "output_full": "8.1",
+  "output_summary": "atlantis-press.com — The Effects of Number of Passengers and Duration of Door Opening and Closing Toward Temperature Change (Case Study: KRL Series JR 205 Crossing Manggarai - Depok) — https://www.atlantis-press.com/article/125985597.pdf",
+  "output_full": "atlantis-press.com — The Effects of Number of Passengers and Duration of Door Opening and Closing Toward Temperature Change (Case Study: KRL Series JR 205 Crossing Manggarai - Depok) — https://www.atlantis-press.com/article/125985597.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "atlantis-press.com",
+      "title": "The Effects of Number of Passengers and Duration of Door Opening and Closing Toward Temperature Change (Case Study: KRL Series JR 205 Crossing Manggarai - Depok)",
+      "year": "",
+      "url": "https://www.atlantis-press.com/article/125985597.pdf",
+      "query": "cold room door opening infiltration heat load air changes ASHRAE",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 2
 }

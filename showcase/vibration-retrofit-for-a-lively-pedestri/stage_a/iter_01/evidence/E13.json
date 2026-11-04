@@ -1,0 +1,14 @@
+{
+  "id": "E13",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "TMD total mass at 4 percent mass ratio",
+  "code_or_query": "0.04*20000",
+  "inputs": {},
+  "output_summary": "800",
+  "output_full": "800",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

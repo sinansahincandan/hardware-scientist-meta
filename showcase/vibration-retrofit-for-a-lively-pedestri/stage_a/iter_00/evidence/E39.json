@@ -1,22 +1,38 @@
 {
   "id": "E39",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "author": "Pedestrian Comfort and Safety Assessor",
   "tool": "web_search",
-  "purpose": "search: Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
-  "code_or_query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+  "purpose": "search: Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
+  "code_or_query": "Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
   "inputs": {},
-  "output_summary": "files.eccomasproceedia.org — COMPDYN 2015 — 2015 — https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609",
-  "output_full": "files.eccomasproceedia.org — COMPDYN 2015 — 2015 — https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609\n(the search returned no passage text)",
+  "output_summary": "grokipedia.com — Millennium Bridge, London — https://grokipedia.com/page/Millennium_Bridge%2C_London",
+  "output_full": "grokipedia.com — Millennium Bridge, London — https://grokipedia.com/page/Millennium_Bridge%2C_London\n(found by the search; not opened or cited)\nPedestrian Comfort and Safety Assessor said about it: The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check.\nBridge Retrofit Engineer said about it: Acceptance needs a separate measured verdict, Pedestrian Comfort and Safety Assessor, and I confirm the Millennium Bridge, London (E39) precedent that silhouette is kept by working below deck.\nRetrofit Integration and Construction Lead said about it: I take from the Bridge Design Manual Section 2 — 2026 (E49) the Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), inspection-access rule, which from my discipline means service by BBAV with caged lock pins and annual tune check and no deck hatch, and I confirm what you take from the Millennium Bridge, London (E39) that silhouette is kept by working under deck, but I qualify it because that 37 viscous plus 52 tuned-mass spread covered multiple lateral and vertical modes while this 1.9 Hz vertical mode needs only the centralized pair; stop hit 8.40 kN from the stop-force calculation (E66) sits inside combined 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights and everyday liftable scale, against 32.9 kN slip per bolt from the slip-resistance calculation (E64).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "files.eccomasproceedia.org",
-      "title": "COMPDYN 2015",
-      "year": "2015",
-      "url": "https://files.eccomasproceedia.org/papers/compdyn-2015/1771.pdf?mtime=20170329172609",
-      "query": "Setra HiVoSS footbridge comfort classes vertical acceleration 0.5 1.0 2.5",
+      "authors_or_org": "grokipedia.com",
+      "title": "Millennium Bridge, London",
+      "year": "",
+      "url": "https://grokipedia.com/page/Millennium_Bridge%2C_London",
+      "query": "Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
       "unresolved": false,
-      "passage": ""
+      "passage": "The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check."
+        },
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "Acceptance needs a separate measured verdict, Pedestrian Comfort and Safety Assessor, and I confirm the Millennium Bridge, London (E39) precedent that silhouette is kept by working below deck."
+        },
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "I take from the Bridge Design Manual Section 2 — 2026 (E49) the Below Bridge Access Vehicle, defined as Below Bridge Access Vehicle (BBAV), inspection-access rule, which from my discipline means service by BBAV with caged lock pins and annual tune check and no deck hatch, and I confirm what you take from the Millennium Bridge, London (E39) that silhouette is kept by working under deck, but I qualify it because that 37 viscous plus 52 tuned-mass spread covered multiple lateral and vertical modes while this 1.9 Hz vertical mode needs only the centralized pair; stop hit 8.40 kN from the stop-force calculation (E66) sits inside combined 13.1 kN demand from the combined-load calculation (E65), about seventeen body weights and everyday liftable scale, against 32.9 kN slip per bolt from the slip-resistance calculation (E64)."
+        }
+      ]
     }
   ],
   "status": "ok",

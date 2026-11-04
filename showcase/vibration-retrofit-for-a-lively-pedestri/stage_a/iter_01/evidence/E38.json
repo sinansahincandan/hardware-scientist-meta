@@ -1,0 +1,32 @@
+{
+  "id": "E38",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "web_search",
+  "purpose": "search: Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
+  "code_or_query": "Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
+  "inputs": {},
+  "output_summary": "dataintelo.com — Viscous Fluid Dampers for Bridges Market — https://dataintelo.com/report/viscous-fluid-dampers-for-bridges-market",
+  "output_full": "dataintelo.com — Viscous Fluid Dampers for Bridges Market — https://dataintelo.com/report/viscous-fluid-dampers-for-bridges-market\n(found by the search; not opened or cited)\nPedestrian Comfort and Safety Assessor said about it: The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "dataintelo.com",
+      "title": "Viscous Fluid Dampers for Bridges Market",
+      "year": "",
+      "url": "https://dataintelo.com/report/viscous-fluid-dampers-for-bridges-market",
+      "query": "Millennium Bridge footbridge damper retrofit acceleration comfort pedestrian",
+      "unresolved": false,
+      "passage": "The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The 37 viscous plus 52 tuned-mass retrofit precedent that kept the silhouette by working under the deck is described in the Millennium Bridge, London (E39), and the emphasis of pedestrian dampers on human comfort serviceability is described in the Viscous Fluid Dampers for Bridges Market (E38), so I accept Medium comfort 0.5 to 1.0 metres per second squared as the retrofit target with below-soffit hardware that needs designed access, with the single-pedestrian 180 N harmonic basis from the FACTA UNIVERSITATIS — 2002 (E37) retained as the light-traffic check."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

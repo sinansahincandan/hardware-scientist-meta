@@ -1,0 +1,31 @@
+{
+  "per_region": [
+    {
+      "part_id": "cooler_callout",
+      "diagnosis": "Caused by vague final sentence 'Clean legible callouts on small light tags in empty space with thin leader lines to each focus part, no other text in image.' which allows descriptive phrases and gives no explicit leader target, combined with description sentence 'Rear-high monoblock cooler box mounted high on back outside wall...' - VLM attached top tag to salient roof PV instead of side unit and added function words 'cold air supply forward'.",
+      "prompt_fix": "Replace callout rule with: One single tag reading exactly 'monoblock cooler' - name only, no numbers, no airflow words - with thin leader ending on the white side-mounted outdoor unit on the left wall."
+    },
+    {
+      "part_id": "pv_ground_callout",
+      "diagnosis": "Caused by description sentence 'to the right and slightly behind on separate low galvanized ground frame, 7 matching tilted PV modules in a row.' leaking count into label, plus final callout sentence missing explicit ban on numbers/counts/dimensions/'x'. VLM rendered '7x PV modules on galvanized ground frame'.",
+      "prompt_fix": "Keep description count but strengthen callout rule to: Callouts show part names only, never numbers, counts, dimensions or 'x' - use exactly 'photovoltaic modules on ground frame'."
+    },
+    {
+      "part_id": "pv_roof_callout",
+      "diagnosis": "Caused by description sentence 'Roof: low gantry holding 2 tilted dark-blue PV modules with vent gap;' leaking '2x' and final callout sentence allowing typos/duplicates and vague leader target, so VLM wrote '2x PV modules on on vented gantry roof' with duplicated 'on', truncation, leader near door/ground not roof.",
+      "prompt_fix": "Replace with: One single tag reading exactly 'photovoltaic modules on vented gantry roof' - name only, single 'on', correct spelling, no numbers - with leader ending on the two roof modules on the low gantry."
+    },
+    {
+      "part_id": "door_callout",
+      "diagnosis": "Caused by description sentence 'Front 900mm insulated door swung open with clear PVC strip curtain parted,' leaking dimension into label, plus final callout sentence with no ban on dimensions. VLM rendered '900mm insulated door with PVC strip curtain'.",
+      "prompt_fix": "Keep 900mm only in description for scale, but require callout as exactly 'insulated door with strip curtain' - name only, no numbers or dimensions."
+    },
+    {
+      "part_id": "rack_crate_callout",
+      "diagnosis": "Caused by description sentence 'revealing two steel rack rows holding stacked vented plastic crates filled with fresh produce' leaking number-word 'two' and by 'thin leader lines to each focus part' interpreted as one label per rack, plus vague target so one leader ended on concrete foundation pad. Duplicated identical labels.",
+      "prompt_fix": "Replace with: One single tag only reading exactly 'racks of vented crates with fresh produce' - name only, no numbers/number-words, no duplicates - with leader ending inside chamber on the stacked crates, never on pads/frames."
+    }
+  ],
+  "fix_mode": "full",
+  "summary": "Deviations: 1 pv_array: pixels show correct split 2 roof +7 ground =9 modules, tilted ~146deg (~34deg tilt for sun) on gantry + separate ground frame; expected 1 horizontal array touching foundation is wrong template - separation by design. matters=false. 2 chamber: pixels show large white PIR box with open door/curtain/crates clearly present; segmenter missed 'white box' due to open door/interior break. matters=false. 3 control: pixels show small thermostat on front wall/door with thin probe cables into return air/produce correctly; it does not physically touch cooler, connected via wiring/battery, front vs side wall separation expected. matters=false. 4 foundation: pixels show 6 pads/feet + galvanized frames for box + roof gantry + ground PV correctly; expected 1 lumped frame touching pv_array is wrong - ground frame intentionally separate. matters=false. 5 pv_array__panel: tilt intentional, size 1x vs 0.25x is segmenter error on split array - single panel correctly large vs door/crate scale. matters=false. 6 rack_crate__crate: pixels show 2 racks x4 levels =8 vented hand-carry crates with produce, intentional representative partial load vs full 50-crate load to keep produce visible; airflow over crates still shown. matters=false. 7 foundation__pad: pixels show six small square pads correctly per 'six small square concrete pads'; expected 4 outdated, size 1x vs 0.2x is perspective foreground enlargement. support/anchor function intact. matters=false. Whole-device: located parts span ~3113mm across x2966mm high scaled by stated sizes (largest 2400mm) - compressed isometric product-shot framing vs true site overall ~15548mm and chamber ~2078mm; width includes chamber+open door+adjacent ground array, height includes doorway-tall box+gantry+tilt. Familiar scale from door/crates reads correct, no limit broken, proportions acceptable for illustration."
+}

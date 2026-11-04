@@ -1,0 +1,14 @@
+{
+  "id": "E59",
+  "author": "Power Structure and Integration Lead",
+  "tool": "calc",
+  "purpose": "ladder chain cutting power from cut force times chain speed",
+  "code_or_query": "32.9*0.5",
+  "inputs": {},
+  "output_summary": "16.4",
+  "output_full": "16.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

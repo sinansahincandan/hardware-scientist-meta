@@ -1,0 +1,14 @@
+{
+  "id": "E13",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "rpm at 11 m/s TSR6 40cm rotor",
+  "code_or_query": "6*11.0/0.20*60/6.2832",
+  "inputs": {},
+  "output_summary": "3.15e+03",
+  "output_full": "3.15e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

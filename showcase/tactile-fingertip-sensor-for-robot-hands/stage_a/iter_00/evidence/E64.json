@@ -1,0 +1,14 @@
+{
+  "id": "E64",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "simulate",
+  "purpose": "dual-range strain sweep 1mN to 50N grip without saturation",
+  "code_or_query": "import numpy as np\np_light=5.78 # kPa at 1mN\n# assume pressure scales ~ F^(1/3) Hertz: p ~ F^(1/3)\nF=np.array([0.001,0.01,0.1,1.0,2.0,10.0,50.0])\np=p_light*(F/0.001)**(1/3)\nE=435.0 # kPa dielectric modulus\nstrain=p/E\nprint([round(float(x),4) for x in p], [round(float(x),4) for x in strain])",
+  "inputs": {},
+  "output_summary": "[5.78, 12.5, 26.8, 57.8, 72.8, 125, 213] [0.0133, 0.0286, 0.0617, 0.133, 0.167, 0.286, 0.489]",
+  "output_full": "[5.78, 12.4526, 26.8284, 57.8, 72.8234, 124.5263, 212.937] [0.0133, 0.0286, 0.0617, 0.1329, 0.1674, 0.2863, 0.4895]",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E24",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "sketch",
+  "purpose": "Side view of tri-star cluster climbing 197 mm riser: triangular plate with three 150 mm wheels pivoting over step nose, main axle path and pull direction",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(6,5))\n# steps: two steps riser 197 going 254 scaled\nimport matplotlib.patches as patches\nriser, going = 1.97, 2.54\n# draw steps\nax.plot([0, going, going],[0,0,riser],'k',lw=2)\nax.plot([going, 2*going, 2*going],[riser,riser,2*riser],'k',lw=2)\nax.text(going+0.1, riser/2, 'riser 197', fontsize=8)\nax.text(going/2, -0.3, 'going 254', fontsize=8)\n# tri-star centres\nimport numpy as np\nRc=1.1\nangles=np.deg2rad([90,210,330])\ncx, cy = going-0.3, riser+1.1\nfor a in angles:\n    wx=cx+Rc*np.cos(a); wy=cy+Rc*np.sin(a)\n    c=plt.Circle((wx,wy),0.75,fill=False,lw=2)\n    ax.add_patch(c)\n    ax.plot([cx,wx],[cy,wy],'k--',lw=1)\nax.plot(cx,cy,'ko')\nax.text(cx+0.15,cy+0.15,'main axle',fontsize=9)\nax.text(cx-2.2,cy+1.8,'pull up/back',fontsize=9)\nax.annotate('',xy=(cx-0.5,cy+0.8),xytext=(cx-2.0,cy+1.6),arrowprops=dict(arrowstyle='->',lw=1.5))\nax.text(0.2,3.8,'lower tread contact',fontsize=8)\nax.text(going+0.4,riser+2.6,'lead wheel on next tread',fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nax.set_title('tri-star cluster walks over step nose')\nplt.tight_layout()\nplt.savefig('sketch.png', dpi=150)\n",
+  "inputs": {},
+  "output_summary": "Side view of tri-star cluster climbing 197 mm riser: triangular plate with three 150 mm wheels pivoting over step nose, main axle path and pull direction",
+  "output_full": "Side view of tri-star cluster climbing 197 mm riser: triangular plate with three 150 mm wheels pivoting over step nose, main axle path and pull direction",
+  "sketch_path": "evidence/sketch_24.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

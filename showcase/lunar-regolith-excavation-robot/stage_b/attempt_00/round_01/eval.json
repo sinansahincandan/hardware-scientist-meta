@@ -1,0 +1,120 @@
+{
+  "pixel_description": "Side photorealistic view on loose soil with standing person scale on right and gray bin on ground. Twin Tube Chassis: two longitudinal silver tubes between wheels, with cross members. Rigid Grouser Wheels: 2 visible dark lugged wheels (4 implied) under chassis touching ground, with vertical uprights to chassis. Narrow Kerf Chain: vertical toothed chain in soil slot at front-left under ladder toe, plus diagonal chain link to chassis. Inclined Bucket Ladder - critical part: ~8 open steel buckets full of soil in single file along straight inclined frame ~45-50deg to ground, bottom bucket in soil at left, successive buckets up-right to top sprocket gear with short angled spout; frame bolted at lower end to chassis front and mid-supported by A-frame strut to chassis; top end free in air left/above hopper pouring falling soil stream down-right. Steep Wedge Hopper: trapezoidal smooth steel bin mid-right on chassis pivot brackets with bolts and spring, heaped with soil mound above rim. Tilt Screw Discharge: short ribbed screw cylinder on hopper right side pouring dense soil stream into separate plastic bin. Lithium pack: silver box between tubes. Onboard cameras: 3 small cameras on thin black poles mounted on chassis. Contacts: ladder-to-chassis via mounts/strut touch, hopper-to-chassis via pivots touch, screw-to-hopper touch, cameras-to-chassis via poles touch, wheels-to-ground touch. Ladder-to-hopper has no metal chute, only air + falling soil. Bin not touching machine. Callouts: 7 text boxes with leaders.",
+  "regions": [
+    {
+      "box": [
+        420.0,
+        140.0,
+        515.0,
+        215.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on ladder top sprocket gear, no camera there",
+      "expected": "Onboard Guide Cameras leader to end on camera pole camera",
+      "source": "render"
+    },
+    {
+      "box": [
+        415.0,
+        190.0,
+        740.0,
+        470.0
+      ],
+      "part_id": "ladder",
+      "observed": "ladder top free in air left/above hopper, open soil pour through air, no chute, white gap",
+      "expected": "ladder top sprocket positioned over hopper with gravity chute dropping to hopper",
+      "source": "render"
+    },
+    {
+      "box": [
+        230.0,
+        670.0,
+        660.0,
+        860.0
+      ],
+      "part_id": "arm",
+      "observed": "no folding arms drawn, only fixed uprights above wheels",
+      "expected": "folding wheel arms supporting wheels, arms to chassis to wheels",
+      "source": "render"
+    }
+  ],
+  "previous_regions": [
+    {
+      "part_id": "ladder",
+      "fault": "ladder: ladder top end free in air high above/left of hopper, buckets full and spilling, white air gap with no chute to hopper; hopper separately full and tilting (expected: ladder top sprocket positioned over hopper with gravity chute dropping to hopper per sketch connection ladder->hopper and transfer line kerf -> ladder -> hopper)",
+      "status": "still_wrong",
+      "note": "Partially improved: hopper now upright (not tilting) and soil stream drawn toward hopper, but top still left/above hopper with open-air gap and no enclosed chute, not positioned over. Still wrong."
+    }
+  ],
+  "comparison_with_previous": "Compared with previous render (image 3): hopper state fixed from large tilted dump to upright steep wedge with side screw pouring to bin, cameras added (3 poles) and soil stream from ladder to hopper now drawn, reducing air-gap impression. Not fixed: ladder top still free in air left/above hopper with no enclosed gravity chute, arms still not shown, ladder-hopper and kerf-ladder physical contact still absent. New: Onboard Guide Cameras callout added but leader ends on ladder top sprocket, not a camera - new depiction fault.",
+  "deviations": [
+    {
+      "what": "chassis",
+      "measured": "found 2, 1.7x wheel, reported apart from ladder/hopper",
+      "expected": "1 chassis, ~4.7x wheel diameter, touching ladder and hopper",
+      "matters": false,
+      "why": "Pixels show 1 twin-tube frame with 2 longitudinal tubes counted as 2. Front mount + mid A-strut visibly bolt ladder to chassis and rear pivot brackets visibly bolt hopper to chassis, so apart is segmenter error. Length vs person (~0.5x 1700mm ~850mm) and vs wheel (~200mm) is ~4x, close to 4.7x; 1.7x is coarse mis-measure. Does not change carry/alignment."
+    },
+    {
+      "what": "arm",
+      "measured": "not found as metal arm",
+      "expected": "4 folding wheel arms supporting wheels",
+      "matters": true,
+      "why": "Pixels in side view show only fixed vertical uprights above wheels, no sideways folding extension. Folding for 0.45m stow to 0.68m track cannot be verified side-on and may be occluded, but no distinct arm part is drawn. Matters because stow/box and track load path is unverifiable."
+    },
+    {
+      "what": "kerf",
+      "measured": "tilted ~38 deg",
+      "expected": "1 narrow kerf chain, horizontal long axis",
+      "matters": false,
+      "why": "Pixels show vertical chain in soil slot at front-left under ladder toe, correctly entering ground for 100mm wide 50mm deep slot, plus diagonal ladder chain. Horizontal expectation is wrong for a trencher; tilt is perspective of vertical digger. Loosening function intact."
+    },
+    {
+      "what": "ladder",
+      "measured": "tilted ~49 deg from vertical (i.e. ~40deg to ground), reported apart from hopper/chassis",
+      "expected": "1 inclined ladder, vertical long axis, touching hopper and chassis",
+      "matters": true,
+      "why": "Pixels show inclined frame at ~45-50deg with ~8 buckets in line, bottom in soil, top sprocket + short spout free in air left/above hopper pouring open-air stream. Incline is correct per inclined ladder, not vertical, so axis expectation wrong. Apart from chassis is wrong - bolted front + strut touch. Apart from hopper is true and matters - no chute, breaks kerf->ladder->hopper load path."
+    },
+    {
+      "what": "hopper",
+      "measured": "23x auger, reported apart from ladder/chassis",
+      "expected": "1 hopper ~0.82x auger, touching ladder/chassis",
+      "matters": true,
+      "why": "Pixels show large steel wedge on rear chassis on pivot brackets (touching chassis, so apart is wrong). Large vs screw diameter is correct - 150-450mm hopper vs 150mm outlet screw; 23x is diameter vs width confusion. Apart from ladder is true - gap with no chute - matters for transfer. Over-heaped soil exceeds 20L/15kg but still contains."
+    },
+    {
+      "what": "auger",
+      "measured": "found 23, 0.043x hopper",
+      "expected": "1 screw ~1.2x hopper",
+      "matters": false,
+      "why": "Pixels show single ribbed screw discharge on hopper right side pouring to bin. 23 count is soil clods/chain teeth mis-counted. Small diameter vs large hopper width is correct for metered outlet; 1.2x expectation mixes length vs diameter. Metering function intact."
+    },
+    {
+      "what": "battery",
+      "measured": "1.1x chassis",
+      "expected": "2 battery packs ~0.4x chassis",
+      "matters": false,
+      "why": "Pixels show silver rectangular pack between twin tubes spanning ~60% chassis length. Qty 2 may be stacked/hidden in side view, one visible. Appears slightly long but still stores energy for dig/drive; does not break power path."
+    },
+    {
+      "what": "camera",
+      "measured": "found 3, reported apart from chassis",
+      "expected": "2 cameras touching chassis",
+      "matters": false,
+      "why": "Pixels show 3 cameras on black poles (front short, middle, rear tall) bolted to chassis, matching text qty 3, so 2 expected is wrong. Poles visibly touch chassis, so apart is segmenter error. Blind operation via downward dig camera intact."
+    },
+    {
+      "what": "device",
+      "measured": "located parts span ~3255mm x 1976mm scaled by ~1700mm person",
+      "expected": "device max ~1050mm, stowed 0.90x0.42x0.45m fits 1.0x0.5x0.5m box",
+      "matters": false,
+      "why": "Pixels vs person: chassis ~0.5x person ~850mm correct for 900-1050mm, wheels ~200mm correct, ladder top ~head height ~1700mm plausible deployed height. 3255mm span includes external soil piles + separate bin gap + ladder overhang, not stowed box. Stowed folding not shown deployed. No box limit broken."
+    }
+  ],
+  "s1_faithful": false,
+  "s1_differences": "Camera callout misplaced to ladder sprocket; ladder top not over hopper, no gravity chute, open-air transfer only; folding wheel arms not drawn as distinct parts. Chassis, wheels, kerf, ladder buckets, hopper, screw, battery, 3 cameras otherwise present with correct kinds and blind dig-to-bin flow attempted.",
+  "s2_flaw": false,
+  "s2_feedback": "No separate design flaw judged: hopper sits on visible pivot brackets and screw is attached to hopper, ladder is strut-supported, so load paths are plausible. Ladder-hopper air gap and missing arms are drawing faults in this unfaithful render, not proof of design interference or tip failure.",
+  "notes": "Photorealistic side view, not diagram. No numbers/scale bars. Bin on ground separate is use context, correctly separate. Second battery may be occluded."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "E29",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition generator rectifier electrical design",
+  "code_or_query": "Collegiate Wind Competition generator rectifier electrical design",
+  "inputs": {},
+  "output_summary": "energy.gov — Business Plan and Technical Report — 2018 — https://www.energy.gov/eere/collegiatewindcompetition/articles/seattle-university-business-plan-and-technical-report-2018",
+  "output_full": "energy.gov — Business Plan and Technical Report — 2018 — https://www.energy.gov/eere/collegiatewindcompetition/articles/seattle-university-business-plan-and-technical-report-2018\n(opened by the member, not cited)\nPower-Systems Engineer said about it: Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge.\nPower-Systems Engineer said about it: The swing from (E37) 6.50 V to (E36) 14.3 V is sized by the outrunner-generator-voltage-matching skill (E35) step calling for buck-boost for about 2-to-1 swing, with the Business Plan and Technical Report (E29) bridge drop under 1 V.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "energy.gov",
+      "title": "Business Plan and Technical Report",
+      "year": "2018",
+      "url": "https://www.energy.gov/eere/collegiatewindcompetition/articles/seattle-university-business-plan-and-technical-report-2018",
+      "query": "Collegiate Wind Competition generator rectifier electrical design",
+      "unresolved": false,
+      "passage": "Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Power-Systems Engineer",
+          "text": "Department of Energy Collegiate Wind Competition (E30) which states a three-phase permanent magnet brushless motor was chosen for a generator then converted to DC via a three-phase bridge rectifier, and I adopt that layout; I read the Business Plan and Technical Report (E29) which states a full-bridge Schottky three-phase rectifier was selected with only about 0.6 V drop plus a smoothing capacitor, and I use that low-loss bridge."
+        },
+        {
+          "by": "Power-Systems Engineer",
+          "text": "The swing from (E37) 6.50 V to (E36) 14.3 V is sized by the outrunner-generator-voltage-matching skill (E35) step calling for buck-boost for about 2-to-1 swing, with the Business Plan and Technical Report (E29) bridge drop under 1 V."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

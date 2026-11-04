@@ -1,0 +1,14 @@
+{
+  "id": "E12",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "estimate produce sensible heat kWh",
+  "code_or_query": "1000*3.5*1000/3600",
+  "inputs": {},
+  "output_summary": "972",
+  "output_full": "972",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

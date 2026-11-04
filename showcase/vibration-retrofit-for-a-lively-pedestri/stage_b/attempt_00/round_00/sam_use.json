@@ -1,38 +1,30 @@
 {
   "round": 0,
   "sam_differences": {
-    "deck": [
-      "expected 1 visible, found 3",
-      "size against frame: expected about 20 times, measured 1 times",
-      "expected to touch bolts, but they are apart in the picture"
+    "xb": [
+      "expected to touch cs, but they are apart in the picture",
+      "expected to touch vd, but they are apart in the picture"
     ],
-    "frame": [
-      "expected 2 visible, found 3",
-      "expected to touch damper, but they are apart in the picture",
-      "expected to touch cover, but they are apart in the picture"
-    ],
-    "bolts": [
-      "expected 8 visible, found 1",
+    "cs": [
       "expected a vertical long axis, measured horizontal",
-      "size against frame: expected about 0.01 times, measured 0.043 times",
-      "expected to touch deck, but they are apart in the picture"
+      "size against tm: expected about 0.6 times, measured 1.2 times",
+      "expected to touch xb, but they are apart in the picture"
     ],
-    "spring": [
-      "expected 4 visible, found 2",
+    "vd": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "hb": [
+      "expected 2 visible, found 5"
+    ],
+    "es": [
+      "expected 2 visible, found 3"
+    ],
+    "cs__spring": [
       "expected a vertical long axis, measured horizontal"
     ],
-    "damper": [
-      "expected a vertical long axis, measured horizontal",
-      "expected to touch frame, but they are apart in the picture",
-      "expected to touch mass, but they are apart in the picture"
-    ],
-    "mass": [
-      "expected to touch damper, but they are apart in the picture"
-    ],
-    "cover": [
-      "expected 1 visible, found 2",
-      "size against mass: expected about 2.4 times, measured 1.1 times",
-      "expected to touch frame, but they are apart in the picture"
+    "vd__damper": [
+      "expected a vertical long axis, measured horizontal"
     ]
   },
   "critique_part_ids": [
@@ -42,5 +34,8 @@
   "unnoticed_sam_deviations": [],
   "kept": true,
   "why": "first round",
-  "earlier_faults": []
+  "earlier_faults": [],
+  "outcome_next_round": {
+    "callout": "fixed"
+  }
 }

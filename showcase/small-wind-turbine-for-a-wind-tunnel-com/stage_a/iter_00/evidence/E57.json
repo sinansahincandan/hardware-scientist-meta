@@ -1,0 +1,14 @@
+{
+  "id": "E57",
+  "author": "Structures-Survival Engineer",
+  "tool": "sketch",
+  "purpose": "Nacelle bedplate with brake rails carrying disc caliper reaction to post",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig, ax = plt.subplots(figsize=(6,4)); ax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\n# post\nax.add_patch(plt.Rectangle((4.5,0,1,2.5, ), fill=False, linewidth=2))\nax.text(5,1,\"post\",ha='center')\n# bedplate\nax.add_patch(plt.Rectangle((2,2.5,6,0.5), fill=False, linewidth=2))\nax.text(5,2.75,\"bedplate + rails\",ha='center',fontsize=8)\n# shaft housing bearings\nax.add_patch(plt.Rectangle((2.5,3.0,3,0.6), fill=False, linewidth=2))\nax.text(4,3.3,\"2 bearings\",ha='center',fontsize=8)\n# shaft line\nax.plot([1,8],[3.6,3.6],'k-')\nax.text(1.2,3.8,\"rotor\",fontsize=8); ax.text(7.2,3.8,\"generator\",fontsize=8)\n# brake disc\nax.add_patch(plt.Circle((5.5,3.6),0.5,fill=False,linewidth=2))\nax.text(5.5,3.6,\"disc\",ha='center',fontsize=8)\n# caliper on rails\nax.add_patch(plt.Rectangle((5.1,4.1,0.8,0.4),fill=False,linewidth=2))\nax.text(5.5,4.6,\"caliper on rails\",ha='center',fontsize=7)\nax.arrow(5.5,4.1,0,-0.3)\nplt.savefig(\"sketch.png\",dpi=150); plt.close()",
+  "inputs": {},
+  "output_summary": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "output_full": "failed: TypeError: Rectangle.__init__() missing 2 required positional arguments: 'width' and 'height'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 2
+}

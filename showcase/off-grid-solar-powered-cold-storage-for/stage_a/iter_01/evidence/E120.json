@@ -1,0 +1,14 @@
+{
+  "id": "E120",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "wind pressure at 25 m/s gust",
+  "code_or_query": "0.5*1.2*25**2",
+  "inputs": {},
+  "output_summary": "375",
+  "output_full": "375",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

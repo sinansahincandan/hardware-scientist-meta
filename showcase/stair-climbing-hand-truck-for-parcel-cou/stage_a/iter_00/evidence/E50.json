@@ -1,25 +1,12 @@
 {
   "id": "E50",
-  "author": "Jonas \u2013 Ergonomics and Courier Safety Specialist",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
   "tool": "calc",
-  "purpose": "brake holding torque 60kg plus tare on tri-star orbit radius",
-  "code_or_query": "Q_(67.38,'kg')*Q_(9.81,'m/s**2')*Q_(0.14,'m')",
-  "inputs": {
-    "arg0": {
-      "value": "67.38",
-      "unit": "kg"
-    },
-    "arg1": {
-      "value": "9.81",
-      "unit": "m/s**2"
-    },
-    "arg2": {
-      "value": "0.14",
-      "unit": "m"
-    }
-  },
-  "output_summary": "92.5 kg\u22c5m\u00b2/s\u00b2",
-  "output_full": "92.5 kg\u22c5m\u00b2/s\u00b2",
+  "purpose": "total weight truck plus parcel",
+  "code_or_query": "66.5*9.81",
+  "inputs": {},
+  "output_summary": "652",
+  "output_full": "652",
   "sketch_path": null,
   "references": [],
   "status": "ok",

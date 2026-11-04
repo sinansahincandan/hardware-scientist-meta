@@ -1,0 +1,7 @@
+{
+  "closed_by": "chief",
+  "cycles_used": 3,
+  "open_blocking": [],
+  "chief_decision": "Off-grid 1-tonne cold store v3 is settled: 3.6 kWp split Photovoltaic (PV, solar-electric) array (2 on roof gantry plus 7 on ground frame) via Maximum Power Point Tracking (MPPT, solar charge optimizer) to 48 V Lithium Iron Phosphate (LiFePO4, rechargeable battery chemistry) bank powers R134a (tetrafluoroethane, non-flammable refrigerant) monoblock with rear-high airflow plus eutectic buffer in Polyisocyanurate (PIR, rigid foam insulation) box on six pads, holding 50 vented crates racked with gaps regulated by probe thermostat with Low-Voltage Disconnect (LVD, automatic battery protector) shed plus attendant log, staged 250 kg per day at 5 C with 8 openings. Energy, mass, anchorage and operation close on shared ids with two bench tests needing built hardware: daytime 250 kg pull-down timing at 43 C ambient and field uniformity pull test.",
+  "decided_version": 3
+}

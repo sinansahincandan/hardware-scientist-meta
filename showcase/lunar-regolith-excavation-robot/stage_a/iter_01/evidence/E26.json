@@ -1,22 +1,30 @@
 {
   "id": "E26",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: Bioenno LiFePO4 24V 20Ah weight specification",
-  "code_or_query": "Bioenno LiFePO4 24V 20Ah weight specification",
+  "purpose": "search: NASA Lunabotics teleoperation remote control cameras out of sight",
+  "code_or_query": "NASA Lunabotics teleoperation remote control cameras out of sight",
   "inputs": {},
-  "output_summary": "stevensmarine.com — Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) — 2024 — https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
-  "output_full": "stevensmarine.com — Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS) — 2024 — https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540\n(the search returned no passage text)",
+  "output_summary": "pcbway.com — Perseus: Building a Lunar Rover with QUT ROAR — https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html",
+  "output_full": "pcbway.com — Perseus: Building a Lunar Rover with QUT ROAR — https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html\n(opened by the member, not cited)\nAutonomy and Blind Operations Lead said about it: This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "stevensmarine.com",
-      "title": "Bioenno Power 24V, 20Ah LFP Battery (ABS, BLF-2420AS)",
-      "year": "2024",
-      "url": "https://www.stevensmarine.com/New-Inventory-2024-Bioenno-Power-Accessories-24V-20Ah-LFP-Battery-ABS-BLF-2420AS-Stevens-Marine-15017540",
-      "query": "Bioenno LiFePO4 24V 20Ah weight specification",
+      "authors_or_org": "pcbway.com",
+      "title": "Perseus: Building a Lunar Rover with QUT ROAR",
+      "year": "",
+      "url": "https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html",
+      "query": "NASA Lunabotics teleoperation remote control cameras out of sight",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34)."
+        }
+      ]
     }
   ],
   "status": "ok",

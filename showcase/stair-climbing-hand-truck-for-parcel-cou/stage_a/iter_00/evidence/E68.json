@@ -1,0 +1,14 @@
+{
+  "id": "E68",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "toe root moment 60kg at 150mm CG offset",
+  "code_or_query": "589*0.15",
+  "inputs": {},
+  "output_summary": "88.3",
+  "output_full": "88.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

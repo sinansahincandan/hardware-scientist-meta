@@ -1,0 +1,14 @@
+{
+  "id": "E28",
+  "author": "Structures-Survival Engineer",
+  "tool": "sketch",
+  "purpose": "Nacelle body, rotor clearance, and post interface inside 45 cm cube",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(7,5))\n# 45 cm cube outline\nax.add_patch(plt.Rectangle((0,0),45,45, fill=False, linewidth=2, label='45cm cube'))\n# post below (outside allowed)\nax.plot([22.5,22.5],[0,-8],'k-',linewidth=4)\nax.text(22.5,-6,'post (outside allowed)', ha='center', fontsize=8)\n# nacelle body\nax.add_patch(plt.Rectangle((14,20),14,6, fill=False, linewidth=2))\nax.text(21,23,'nacelle', ha='center', fontsize=8)\n# hub + nose\nax.plot([14,10],[23,23],'k-',linewidth=3)\nax.plot([10,10],[13,33], 'k-', linewidth=2)\nax.text(8,30,'rotor disc 40cm', rotation=90, fontsize=8)\n# blade sweep circle tips\nax.plot([10,10],[3,43],'k--',linewidth=1)\nax.text(4,23,'clearance to cube', fontsize=7)\nax.annotate('', xy=(0.5,23), xytext=(8,23), arrowprops=dict(arrowstyle='<->'))\nax.text(2,25,'2.5cm', fontsize=8)\n# dimensions\nax.set_xlim(-2,48); ax.set_ylim(-10,48); ax.set_aspect('equal')\nax.set_xlabel('cm'); ax.set_title('Side view: rotor + nacelle inside 45cm cube on post')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+  "inputs": {},
+  "output_summary": "Nacelle body, rotor clearance, and post interface inside 45 cm cube",
+  "output_full": "Nacelle body, rotor clearance, and post interface inside 45 cm cube",
+  "sketch_path": "evidence/sketch_28.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

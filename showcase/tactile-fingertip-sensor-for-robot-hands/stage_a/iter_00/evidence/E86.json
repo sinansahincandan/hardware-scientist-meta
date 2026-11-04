@@ -1,0 +1,32 @@
+{
+  "id": "E86",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
+  "tool": "web_search",
+  "purpose": "search: silicone Shore A 10 tear strength Dragon Skin 10 datasheet",
+  "code_or_query": "silicone Shore A 10 tear strength Dragon Skin 10 datasheet",
+  "inputs": {},
+  "output_summary": "smooth-on.com — Dragon Skin™ 10 MEDIUM Technical Specifications — https://www.smooth-on.com/compare/4607/r/",
+  "output_full": "smooth-on.com — Dragon Skin™ 10 MEDIUM Technical Specifications — https://www.smooth-on.com/compare/4607/r/\n(found by the search; not opened or cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The Dragon Skin™ 10 MEDIUM Technical Specifications (E86) states Die B tear strength 102 pli, the Dragon Skin™ 10 SLOW (E87) states tear strength 17.9 kN per m, the Evaluation of bonding efficiency between facial silicone and acrylic resin using different bonding agents and surface alterations (E90) states silicone primers improve bond to rigid resin, and the JAKO201227140592878.pdf (E91) states bond is checked by 180-degree peel test.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "smooth-on.com",
+      "title": "Dragon Skin™ 10 MEDIUM Technical Specifications",
+      "year": "",
+      "url": "https://www.smooth-on.com/compare/4607/r/",
+      "query": "silicone Shore A 10 tear strength Dragon Skin 10 datasheet",
+      "unresolved": false,
+      "passage": "The Dragon Skin™ 10 MEDIUM Technical Specifications (E86) states Die B tear strength 102 pli, the Dragon Skin™ 10 SLOW (E87) states tear strength 17.9 kN per m, the Evaluation of bonding efficiency between facial silicone and acrylic resin using different bonding agents and surface alterations (E90) states silicone primers improve bond to rigid resin, and the JAKO201227140592878.pdf (E91) states bond is checked by 180-degree peel test.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The Dragon Skin™ 10 MEDIUM Technical Specifications (E86) states Die B tear strength 102 pli, the Dragon Skin™ 10 SLOW (E87) states tear strength 17.9 kN per m, the Evaluation of bonding efficiency between facial silicone and acrylic resin using different bonding agents and surface alterations (E90) states silicone primers improve bond to rigid resin, and the JAKO201227140592878.pdf (E91) states bond is checked by 180-degree peel test."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

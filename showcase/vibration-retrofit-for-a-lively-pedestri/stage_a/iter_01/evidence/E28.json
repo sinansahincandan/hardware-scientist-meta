@@ -1,0 +1,14 @@
+{
+  "id": "E28",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "stiffness increase to move 1.9Hz to 2.5Hz",
+  "code_or_query": "(2.5/1.9)**2-1",
+  "inputs": {},
+  "output_summary": "0.731",
+  "output_full": "0.731",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

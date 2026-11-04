@@ -1,0 +1,32 @@
+{
+  "id": "E6",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+  "code_or_query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+  "inputs": {},
+  "output_summary": "vdocuments.net — analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 — https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html",
+  "output_full": "vdocuments.net — analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 — https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html\n(found by the search; not opened or cited)\nStructural Dynamicist said about it: Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "vdocuments.net",
+      "title": "analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html",
+      "year": "2014",
+      "url": "https://vdocuments.net/amp/analysis-on-the-optimum-performance-of-tuned-mass-damper-eurodyn2014cdpapers241ms09abs.html",
+      "query": "Den Hartog tuned mass damper optimum tuning damping mass ratio formula",
+      "unresolved": false,
+      "passage": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "Seismic performance of tuned mass damper on Shazand Railway Bridge induced by train (E5) and in the analysis on the optimum performance of tuned mass damper eurodyn2014cdpapers241ms09abs.html — 2014 (E6)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

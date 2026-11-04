@@ -1,0 +1,26 @@
+{
+  "id": "E39",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: delivery van cargo dimensions small van load space L1H1",
+  "code_or_query": "delivery van cargo dimensions small van load space L1H1",
+  "inputs": {},
+  "output_summary": "basworld.com — Volkswagen Transporter dimensions and load volume — https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume",
+  "output_full": "basworld.com — Volkswagen Transporter dimensions and load volume — https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "basworld.com",
+      "title": "Volkswagen Transporter dimensions and load volume",
+      "year": "",
+      "url": "https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume",
+      "query": "delivery van cargo dimensions small van load space L1H1",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

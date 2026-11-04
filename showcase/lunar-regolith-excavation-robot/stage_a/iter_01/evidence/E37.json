@@ -1,14 +1,36 @@
 {
   "id": "E37",
-  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
-  "tool": "calc",
-  "purpose": "reconciled joint total replacing 2.92kg pack with 5.3kg COTS pack",
-  "code_or_query": "(50.6-2.92+5.3)",
+  "author": "Power Structure and Integration Lead",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
+  "code_or_query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
   "inputs": {},
-  "output_summary": "53",
-  "output_full": "53",
+  "output_summary": "practicalmachinist.com — Engineering help please — https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/",
+  "output_full": "practicalmachinist.com — Engineering help please — https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/\n(found by the search; not opened or cited)\nPower Structure and Integration Lead said about it: 6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.\nMobility and Deployable Chassis Lead said about it: I take from the Engineering help please (E37) the rule that 6061-T6 aluminium yields near 40.0 ksi, meaning kilopounds per square inch, with working stress near 15.0 ksi.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "practicalmachinist.com",
+      "title": "Engineering help please",
+      "year": "",
+      "url": "https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/",
+      "query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
+      "unresolved": false,
+      "passage": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened."
+        },
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "I take from the Engineering help please (E37) the rule that 6061-T6 aluminium yields near 40.0 ksi, meaning kilopounds per square inch, with working stress near 15.0 ksi."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

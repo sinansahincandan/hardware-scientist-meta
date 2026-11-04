@@ -1,65 +1,69 @@
 {
-  "prompt": "Photorealistic studio product rendering, isometric view from slightly below and to the side, on a plain seamless light-grey studio backdrop with soft product lighting. Show a close-up cropped midspan segment of a steel footbridge deck, cut off cleanly at the backdrop, not the full span: horizontal deck slab on top with two longitudinal girders beneath. Clamped across the girders with preloaded high-strength bolts are two transverse steel bearer beams. Suspended centrally below the frame on vertical helical steel springs and vertical viscous dashpot cylinders is a large rectangular tuned steel mass block about waist-high relative to girder depth, free to move vertically with a visible stroke gap above a removable under-deck cover panel shown lowered and offset to reveal the moving parts. Fixed parts are deck, girders, bearer frame and bolt clamps; moving part is the steel mass on springs with dashpots stroking vertically. Show real materials: painted deck steel, dark structural frame, solid machined mass, bright coiled springs with threaded seats and shims, cylindrical oil dampers. Show load path pedestrians to deck to frame to springs and dampers to moving mass. Add a short callout with thin leader line for each focus part on a small light tag placed in empty space: Bridge Deck Section, Transverse Bearer Frame, Tuned Steel Mass, Helical Support Springs, Viscous Dashpots, Removable Cover Panel. Clean legible callouts, no other text, no margins, no scale bars.",
+  "prompt": "Photorealistic studio product rendering, isometric view from front-below-side, of twin under-deck tuned mass damper on HSFG-clamped cross-beam at work under a footbridge midspan. On a plain seamless light-grey studio backdrop with soft product-shot lighting, show a short clean-cut segment of bridge: horizontal deck soffit slab on top cut off at backdrop, two vertical steel girder webs left and right supporting it. A transverse steel cross-beam spans between the girder webs just below the soffit, clamped at both ends with rows of dark HSFG bolt sets. Hanging from the center of the beam are two identical black steel block masses side by side, each about knee-height, each suspended by a vertical steel coil spring and a parallel stainless viscous damper cylinder. Small caged black elastomer travel stops with a visible gap sit beside the masses. A tiny deck accelerometer box sits on top of the deck slab at midspan. Include one standing adult person on the backdrop beside the assembly for true scale of the 3 m span, no other people or objects. Show operating moment with beam moving with bridge and masses lagging slightly opposite, springs and dampers visibly stroked. Real materials, sharp detail, mechanism readable, relative proportions true: beam longest, masses compact blocks, springs and dampers slender verticals, bolts small. For each focus part draw a short callout with thin leader line to its plain name on a small light tag placed in empty space: Transverse Cross Beam, Tuned Mass, Coil Spring Suspension, Viscous Damper, Clamp Bolt Set, Elastomer Travel Stop, Deck Accelerometer. Clean legible callouts, no other text, no numbers, no margins or scale bars.",
   "must_not": [
-    "people, hands or crowd figures",
-    "rooms, landscapes, sky, vegetation or buildings",
-    "furniture, tools, scaffolding or lifting towers",
-    "diagram arrows, circles, colour blocks or line sketches",
-    "overlaid numbers, values or engineering notes",
-    "dimension lines, scale bars, margins or title blocks",
-    "welded joints or altered deck top surface"
+    "welded brackets or welded joints",
+    "single oversized mass block",
+    "deck-top machinery cabinets or control rooms",
+    "room interiors, landscapes, skies or furniture",
+    "tools, scaffolds or construction clutter",
+    "generic abstract diagrams or colored sketch overlays"
   ],
-  "changes_from_previous": "First rendering from mechanism sketches, no previous image to revise.",
+  "changes_from_previous": "Initial version - no previous rounds. First photorealistic isometric rendering built directly from mechanism sketches and solution embodiment.",
   "visual_plan": {
-    "view": "isometric from below-side, slightly under deck level looking up at midspan unit",
-    "spatial_layout": "Top: cropped horizontal deck slab. Beneath: two parallel girders left-right. Across them: two transverse bearer beams front-back. Center: rectangular mass block. Between frame and mass: four outer coil springs and two inner dashpot cylinders vertical. Below: thin cover panel offset downward. Isometric from below-side so deck, frame, springs, dashpots, mass and cover gap are all readable, cut edges fading to light-grey void.",
-    "operating_moment": "In-service resonant operation at midspan with deck excited from above and lock released: steel mass free to bounce vertically on springs while dashpots stroke, cover opened for visibility, deck top unchanged and concealed in normal use.",
-    "transfer_path": "Pedestrian crowd load into deck to girders to bolted bearer frame to helical springs and viscous dashpots to tuned steel mass moving out of phase, deck acceleration reduced to comfortable level.",
-    "interactions": "Bearer frame bolt-clamped to girders without welding; springs seated on frame and carrying mass from below; dashpots pinned between frame and mass; mass floats with static sag plus vertical stroke clearance to stops; cover hung below frame, shown detached to expose mechanism but aligned for re-fit.",
+    "view": "isometric product shot from front-below-side showing under-deck assembly, girder segment and deck patch on seamless light-grey backdrop",
+    "spatial_layout": "isometric from below-side: deck slab horizontal on top, girders vertical left and right, cross-beam transverse between girders below soffit, two masses centered under beam side-by-side, springs and dampers vertical between beam and masses, bolt sets at beam-to-girder ends, stops flanking masses, accelerometer centered on deck top, adult figure standing to right for scale",
+    "operating_moment": "resonant crowd excitation moment: girders and cross-beam oscillating vertically, twin masses displaced opposite to beam with 49 mm-scale stroke visible, dampers extending, stops ungaged with clear gap, accelerometer logging",
+    "transfer_path": "vibration: main girders to transverse cross-beam to twin masses via springs, dissipated in viscous dampers as heat; measured: midspan accelerometer to comfort band verdict",
+    "interactions": "cross-beam clamped to both girder webs by bolt friction; springs and dampers hang vertically from beam to top of each mass; masses move relative to beam stretching springs and stroking dampers; travel stops stand clear with gap to catch overtravel; accelerometer bolted to deck senses deck motion",
     "avoid": [
-      "full landscape, sky, river or street setting",
-      "people or crowd on deck",
-      "sketch colours, arrows or handwritten notes",
-      "text values, units or dimension lines in image",
-      "hiding mass, springs or dashpots inside cover"
+      "no room, landscape, sky, furniture, tools or clutter",
+      "no welded connections, no single mass, no deck-top equipment",
+      "no sketch colors, circles or line styles as materials",
+      "no extra text, numbers, margins or scale bars beyond light-tag callouts"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "deck",
-      "material": "painted steel",
-      "purpose": "carries crowd load and vibrates in first vertical mode",
-      "callout": "Bridge Deck Section"
+      "part_id": "xb",
+      "material": "painted structural steel",
+      "purpose": "carries both damper units and moves with bridge",
+      "callout": "Transverse Cross Beam"
     },
     {
-      "part_id": "frame",
-      "material": "structural steel",
-      "purpose": "clamps to girders to carry damper without welding",
-      "callout": "Transverse Bearer Frame"
+      "part_id": "tm",
+      "material": "black coated steel block",
+      "purpose": "supplies inertial counteracting force",
+      "callout": "Tuned Mass"
     },
     {
-      "part_id": "mass",
-      "material": "machined steel block",
-      "purpose": "moves vertically to absorb bridge resonance",
-      "callout": "Tuned Steel Mass"
+      "part_id": "cs",
+      "material": "steel coil spring",
+      "purpose": "converts bridge motion into relative travel",
+      "callout": "Coil Spring Suspension"
     },
     {
-      "part_id": "spring",
-      "material": "coiled spring steel",
-      "purpose": "supports mass and sets tuned frequency",
-      "callout": "Helical Support Springs"
+      "part_id": "vd",
+      "material": "stainless fluid damper steel",
+      "purpose": "dissipates vibration energy as heat",
+      "callout": "Viscous Damper"
     },
     {
-      "part_id": "damper",
-      "material": "steel and oil",
-      "purpose": "dissipates resonant energy as mass moves",
-      "callout": "Viscous Dashpots"
+      "part_id": "hb",
+      "material": "dark high-strength steel bolts",
+      "purpose": "clamps beam to girders by friction",
+      "callout": "Clamp Bolt Set"
     },
     {
-      "part_id": "cover",
-      "material": "sheet steel",
-      "purpose": "conceals unit and opens for inspection and retuning",
-      "callout": "Removable Cover Panel"
+      "part_id": "es",
+      "material": "black elastomer with steel cage",
+      "purpose": "limits excess travel on surge",
+      "callout": "Elastomer Travel Stop"
+    },
+    {
+      "part_id": "ac",
+      "material": "small silicon sensor metal housing",
+      "purpose": "logs vertical acceleration for comfort verdict",
+      "callout": "Deck Accelerometer"
     }
   ]
 }

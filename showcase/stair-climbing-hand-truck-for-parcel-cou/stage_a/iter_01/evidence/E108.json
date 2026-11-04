@@ -1,0 +1,14 @@
+{
+  "id": "E108",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "sketch",
+  "purpose": "Twin-tube backbone with clip-on transverse brace at mid-height when deployed, brace unclipped alongside for flat fold; toe folds up, handle slides down: stacked folded length width thickness vs van door",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,12); ax.set_ylim(0,7); ax.set_aspect('equal'); ax.axis('off')\n# deployed left\nax.plot([1,1],[1,5.5], color='black', linewidth=3)\nax.plot([1.6,1.6],[1,5.5], color='black', linewidth=3)\nax.plot([1,1.6],[3.2,3.2], color='black', linewidth=2)\nax.text(0.2,3.0,'backbone\\n1100mm\\n1-pc', fontsize=8)\n# toe\nax.plot([1,2.2],[1,1], color='black', linewidth=3)\nax.text(1.2,0.5,'toe 240mm', fontsize=8)\n# clusters\nfor y in [1.2]:\n    for x in [0.7,1.9]:\n        c=plt.Circle((x,y),0.4, fill=False, linewidth=2); ax.add_patch(c)\nax.text(0.2,6.0,'DEPLOYED side view', fontsize=9)\n# folded right\nax.plot([5,10.5],[2,2], color='black', linewidth=3)\nax.plot([5,10.5],[2.4,2.4], color='black', linewidth=3)\nax.text(7.0,1.4,'folded LENGTH= backbone 1100 + cap 45 =1145mm', fontsize=8)\n# toe folded up\nax.plot([5.2,5.2],[2.4,4.0], color='black', linewidth=2)\nax.text(4.0,3.5,'toe folded\\n365 wide', fontsize=7)\n# cluster envelope\nc2=plt.Circle((5.5,2.2),0.55, fill=False, linewidth=2); ax.add_patch(c2)\nc3=plt.Circle((10.0,2.2),0.55, fill=False, linewidth=2); ax.add_patch(c3)\nax.text(6.5,3.0,'WIDTH= frame 310 +2x35 clusters =380mm', fontsize=8)\nax.text(6.5,2.6,'THICK= cluster dia 370/2? radius185 +plate =190mm', fontsize=7)\nax.text(5.0,5.5,'FOLDED flat for van floor, brake locked', fontsize=9)\nax.text(5.0,5.0,'van door 1120x1235 floor 1802x1535', fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png', dpi=120)",
+  "inputs": {},
+  "output_summary": "Twin-tube backbone with clip-on transverse brace at mid-height when deployed, brace unclipped alongside for flat fold; toe folds up, handle slides down: stacked folded length width thickness vs van door",
+  "output_full": "Twin-tube backbone with clip-on transverse brace at mid-height when deployed, brace unclipped alongside for flat fold; toe folds up, handle slides down: stacked folded length width thickness vs van door",
+  "sketch_path": "evidence/sketch_108.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,13 +1,22 @@
 {
   "id": "E22",
-  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
-  "tool": "sketch",
-  "purpose": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
-  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(figsize=(8,4)); ax.set_xlim(0,1.1); ax.set_ylim(0,1.2); ax.set_xlabel('length m'); ax.set_ylabel('height m');\n# chassis box\nimport matplotlib.patches as p; ax.add_patch(p.Rectangle((0.1,0.15),0.8,0.25,color='lightgray')); ax.text(0.3,0.25,'chassis');\n# wheels\nfor x in [0.2,0.8]:\n  c=plt.Circle((x,0.15),0.15,fill=False,lw=2); ax.add_patch(c); ax.text(x,0.05,'wheel 300mm',ha='center',fontsize=8);\n# drum front\nax.add_patch(p.Rectangle((0.9,0.1),0.08,0.2,color='gray')); ax.text(0.9,0.32,'drum',fontsize=8);\n# stowed mast flat\nax.plot([0.15,0.95],[0.42,0.42],'k-',lw=3); ax.text(0.5,0.44,'mast STOWED flat 0.8m <1.0m',ha='center',fontsize=8);\n# deployed mast\nax.plot([0.6,0.6],[0.4,1.0],'k-',lw=3); ax.plot([0.5,0.7],[1.0,1.0],'k-',lw=2); ax.text(0.62,0.8,'mast DEPLOYED 0.6m->1.0m',fontsize=8); ax.text(0.5,1.03,'cams+depth+antenna',fontsize=8);\nax.text(0.05,1.1,'STOWED height 0.45m <0.5m',fontsize=9); plt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
-  "inputs": {},
-  "output_summary": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
-  "output_full": "Side view: stowed flat mast under 0.5m box vs deployed 1.0m mast over drum and hopper",
-  "sketch_path": "evidence/sketch_22.png",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "calc",
+  "purpose": "robot earth weight for ground pressure",
+  "code_or_query": "Q_(60,'kg')*Q_(9.81,'m/s**2')",
+  "inputs": {
+    "arg0": {
+      "value": "60",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "9.81",
+      "unit": "m/s**2"
+    }
+  },
+  "output_summary": "589 kg\u22c5m/s\u00b2",
+  "output_full": "589 kg\u22c5m/s\u00b2",
+  "sketch_path": null,
   "references": [],
   "status": "ok",
   "cycle": 1

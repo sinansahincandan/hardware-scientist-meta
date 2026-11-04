@@ -1,134 +1,115 @@
 {
-  "title": "Integrated wheeled drum rover with rear high-lift hopper dump",
-  "problem_restatement": "Drive over loose BP-1 simulant, excavate with low force, operate with no line-of-sight by remote link, and carry and high-lift dump regolith within 60 kg and 1.0 by 0.5 by 0.5 m start envelope.",
-  "mechanism_sentence": "Big spiky wheels roll over loose soil while a spinning front drum scoops soil into a bucket that is lifted about 1 m to pour into a bin, steered by video from a tall folding mast that stops the machine if the signal is lost.",
+  "title": "Skid-Steer Kerf-and-Ladder Lunar Digger with Screw-Tilt Pour",
+  "problem_restatement": "Build a blind-operated lunar digger that traverses, loosens, collects, contains and discharges BP-1 soil within 60 kg mass and 1.0 by 0.5 by 0.5 m stowed box.",
+  "mechanism_sentence": "Four grouser wheels drive a 46 kg machine that cuts a 100 mm wide slot 50 mm deep, buckets lift the loose soil into a half-full 20 L hopper, and a screw meters the 15 kg load out as the hopper tilts to clear the bin lip by 0.15 m.",
   "decisive_choices": [
-    "Front transverse single drum with 30 mm shallow cut for low 39 N reaction instead of drag blade or deep cut",
-    "Rear high-lift mast with 0.15 m dual actuators through 4-to-1 chain at 0.80 efficiency to reach 1.05 m pour lip with 0.30 m overhang",
-    "Purchasable 24 V 20 Ah LiFePO4 pack for 480 Wh at 90.6 Wh per kg giving 53.0 kg total instead of 1000 Wh in 2.92 kg claim"
+    "Chose four-wheel skid-steer with rigid grouser wheels C9 over tank tracks C8 because traction 294 N versus cut 32.9 N with 15.6 kPa pressure avoids clog and slip with same soil.",
+    "Chose narrow-kerf trenching chain C36 over full-width ladder C1 and scraper C3 and milling drum C31 because 11 N kerf draft versus 32.9 N full width fits same 294 N traction and 16.4 W power.",
+    "Chose auger live-bottom with rear tilt C37 over plain tilting hopper plus vibrator C5 because metered pour with same 0.55 m pivot clearing 0.40 m lip by 0.15 m holds blind accuracy with tip factor 1.69."
   ],
-  "open_question": "Does the rear mast lift to the 1.05 m pour lip with 0.30 m overhang stay nose-down and within actuator force once deployed geometry and friction are proven by dimensioned sketch and static calculation?",
-  "transfer_line": "Load: Hopper -> Rear lift mast -> Wheels | Measured: IMU -> Onboard computer",
+  "open_question": "Will cohesive BP-1 arch over the 150 mm outlet and what screw torque breaks it for reliable discharge?",
+  "transfer_line": "Load: narrow kerf chain -> bucket ladder -> steep wedge hopper | Measured: dig camera -> sealed station operator",
   "assumed_constraints": [
     {
-      "constraint": "Total mass must stay under 60 kg limit",
-      "source": "proposal v1 reconciled mass 53.0 kg",
+      "constraint": "Working stress capped near 15 ksi for 6061-T6 aluminium tube frame",
+      "source": "garage journal aluminium tube practice",
       "evidence_ids": [
-        "E37"
+        "E37",
+        "E38"
       ]
     },
     {
-      "constraint": "Stowed fit must stay inside 1.0 by 0.5 by 0.5 m start box",
-      "source": "dimensioned stowed sketch E44 and stowed-plus-deployed sketch E48",
+      "constraint": "BP-1 friction 39 to 51 deg needs steep smooth hopper walls for flow",
+      "source": "Jenike hopper practice",
       "evidence_ids": [
-        "E44",
-        "E48"
-      ]
-    },
-    {
-      "constraint": "Hopper must pour at 1.05 m lip from 0.45 m stowed pivot on 0.60 m guide",
-      "source": "Sam stowed-plus-deployed sketch E48",
-      "evidence_ids": [
-        "E48"
-      ]
-    },
-    {
-      "constraint": "Sortie is 0.5 h at about 341 W needing about 171 Wh",
-      "source": "sortie-energy calc E32 and runtime calc E36",
-      "evidence_ids": [
-        "E32",
-        "E36"
-      ]
-    },
-    {
-      "constraint": "Ground is Black Point 1 simulant with high friction and negligible cohesion",
-      "source": "friction source E1 and density source E2",
-      "evidence_ids": [
-        "E1",
-        "E2"
+        "E3",
+        "E7",
+        "E8"
       ]
     }
   ],
   "functional_decomposition": [
-    "Drive over loose BP-1 simulant bed without excessive sinkage or slip, and climb out of dig pile",
-    "Excavate BP-1 simulant with low cutting force and load into hopper",
-    "Operate with no line-of-sight via remote link with sensing, onboard compute, and heartbeat stop-and-hold",
-    "Carry regolith in hopper and high-lift dump into collection bin within mass and start envelope"
+    "Traverse ground",
+    "Loosen soil",
+    "Collect soil",
+    "Contain soil",
+    "Discharge soil",
+    "Coordinate blind operation"
   ],
   "concept": {
-    "working_principle": "Four 300 mm grouser wheels carry a frame with front 200 mm transverse drum taking 30 mm cuts into a central hopper, folding mast carries FPV cameras plus depth and IMU from 0.45 m stowed to about 1.0 m eye with heartbeat stop-hold, and rear mast raises the hopper on a 0.60 m guide from 0.45 m pivot to 1.05 m pour lip by 0.15 m dual actuators through 4-to-1 chain at 0.80 efficiency, powered by a 24 V 480 Wh pack for a 171 Wh half-hour sortie at 53.0 kg total.",
+    "working_principle": "Narrow 100 mm kerf chain cuts 50 mm deep slot at 11 N draft well below 294 N traction, wide bucket ladder lifts side spoil in 112 s to 15 kg half-full 20 L steep wedge hopper, rear tilt plus live-bottom screw meters pour over 0.40 m bin lip with 0.15 m clearance guided by cameras plus fiducial with heartbeat stop and odometry reset.",
     "parts": [
       {
-        "id": "wheel",
-        "name": "Rigid grouser wheel",
-        "function": "Carry weight over loose simulant and climb dig pile",
-        "material": "Metal",
+        "id": "chassis",
+        "name": "twin-tube aluminium chassis",
+        "function": "supports ladder hopper and arms",
+        "material": "6061-T6 aluminium",
         "size_class_mm": {
-          "min": 150.0,
-          "max": 300.0
-        },
-        "qty": 4
-      },
-      {
-        "id": "drum",
-        "name": "Front transverse digging drum",
-        "function": "Shallow cut and lift soil into hopper",
-        "material": "Metal",
-        "size_class_mm": {
-          "min": 200.0,
-          "max": 400.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "hopper",
-        "name": "High-lift hopper",
-        "function": "Carry regolith and dump into collection bin",
-        "material": "Metal",
-        "size_class_mm": {
-          "min": 200.0,
-          "max": 500.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "lift",
-        "name": "Rear high-lift mast with dual actuators and chain",
-        "function": "Raise hopper from 0.45 m to 1.05 m pour lip",
-        "material": "Metal",
-        "size_class_mm": {
-          "min": 150.0,
+          "min": 900.0,
           "max": 1050.0
         },
         "qty": 1
       },
       {
-        "id": "pmast",
-        "name": "Folding perception mast",
-        "function": "Carry cameras high and stow low",
-        "material": "Metal",
+        "id": "wheels",
+        "name": "rigid grouser wheels",
+        "function": "provides skid-steer traction",
+        "material": "steel",
         "size_class_mm": {
-          "min": 450.0,
-          "max": 1000.0
+          "min": 200.0,
+          "max": 220.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "arms",
+        "name": "folding wheel arms",
+        "function": "stows in box then widens track",
+        "material": "6061-T6 aluminium",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 300.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "kerf",
+        "name": "narrow kerf trenching chain",
+        "function": "loosens soil in narrow slot",
+        "material": "abrasion-resistant steel",
+        "size_class_mm": {
+          "min": 100.0,
+          "max": 300.0
         },
         "qty": 1
       },
       {
-        "id": "sensors",
-        "name": "FPV cameras plus depth sensor and motion sensor",
-        "function": "Remote view and orientation for teleoperation",
-        "material": "Electronics",
+        "id": "ladder",
+        "name": "bucket ladder elevator",
+        "function": "lifts loosened soil to hopper",
+        "material": "steel",
         "size_class_mm": {
-          "min": 20.0,
-          "max": 150.0
+          "min": 600.0,
+          "max": 800.0
         },
         "qty": 1
       },
       {
-        "id": "pack",
-        "name": "24 V battery pack",
-        "function": "Store sortie energy",
-        "material": "LiFePO4 cells",
+        "id": "hopper",
+        "name": "steep wedge hopper",
+        "function": "contains carried soil",
+        "material": "smooth steel",
+        "size_class_mm": {
+          "min": 300.0,
+          "max": 400.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "screw",
+        "name": "auger discharge screw",
+        "function": "meters pour during tilt",
+        "material": "steel",
         "size_class_mm": {
           "min": 150.0,
           "max": 300.0
@@ -136,308 +117,358 @@
         "qty": 1
       },
       {
-        "id": "compute",
-        "name": "Onboard computer and radio",
-        "function": "Heartbeat stop-hold and link",
-        "material": "Electronics",
+        "id": "battery",
+        "name": "lithium phosphate battery packs",
+        "function": "powers drive ladder tilt compute",
+        "material": "lithium iron phosphate",
         "size_class_mm": {
-          "min": 50.0,
+          "min": 150.0,
           "max": 200.0
         },
-        "qty": 1
+        "qty": 2
       },
       {
-        "id": "chassis",
-        "name": "Chassis frame and sealed box",
-        "function": "Carry loads and keep dust out",
-        "material": "Metal",
+        "id": "cameras",
+        "name": "drive and dig and mast cameras",
+        "function": "sees drive dig and bin",
+        "material": "electronics",
         "size_class_mm": {
-          "min": 450.0,
-          "max": 950.0
+          "min": 30.0,
+          "max": 50.0
+        },
+        "qty": 3
+      },
+      {
+        "id": "computer",
+        "name": "onboard computer with watchdog",
+        "function": "halts on heartbeat loss",
+        "material": "electronics",
+        "size_class_mm": {
+          "min": 100.0,
+          "max": 150.0
         },
         "qty": 1
       }
     ],
     "connections": [
       {
-        "from_id": "drum",
+        "from_id": "arms",
+        "to_id": "chassis",
+        "kind": "mechanical",
+        "label": "folding pivots widen track"
+      },
+      {
+        "from_id": "arms",
+        "to_id": "wheels",
+        "kind": "mechanical",
+        "label": "supports wheels"
+      },
+      {
+        "from_id": "kerf",
+        "to_id": "ladder",
+        "kind": "mechanical",
+        "label": "side spoil to ladder"
+      },
+      {
+        "from_id": "ladder",
         "to_id": "hopper",
         "kind": "mechanical",
-        "label": "cuts soil and lifts into hopper"
+        "label": "gravity chute into hopper"
       },
       {
         "from_id": "hopper",
-        "to_id": "lift",
+        "to_id": "screw",
         "kind": "mechanical",
-        "label": "rides on lift guide"
+        "label": "rear pivot tilt"
       },
       {
-        "from_id": "lift",
-        "to_id": "chassis",
-        "kind": "mechanical",
-        "label": "mast load into frame"
-      },
-      {
-        "from_id": "wheel",
-        "to_id": "chassis",
-        "kind": "mechanical",
-        "label": "carries chassis load"
-      },
-      {
-        "from_id": "pack",
-        "to_id": "drum",
+        "from_id": "battery",
+        "to_id": "wheels",
         "kind": "electrical",
-        "label": "24 V power to drive and lift"
+        "label": "fused bus to drives"
       },
       {
-        "from_id": "sensors",
-        "to_id": "compute",
-        "kind": "wireless",
-        "label": "video and heartbeat to operator"
+        "from_id": "battery",
+        "to_id": "kerf",
+        "kind": "electrical",
+        "label": "fused bus to dig"
+      },
+      {
+        "from_id": "battery",
+        "to_id": "ladder",
+        "kind": "electrical",
+        "label": "fused bus to lift"
+      },
+      {
+        "from_id": "cameras",
+        "to_id": "hopper",
+        "kind": "optical",
+        "label": "sees trench and bin"
+      },
+      {
+        "from_id": "cameras",
+        "to_id": "computer",
+        "kind": "electrical",
+        "label": "video to computer"
       }
     ],
     "loads": [
       {
         "on_id": "hopper",
-        "label": "hopper plus soil weight for lift",
+        "label": "soil weight in hopper",
         "direction": "down"
       },
       {
-        "on_id": "drum",
-        "label": "drum cutting reaction against weight",
+        "on_id": "kerf",
+        "label": "cutting resistance at trench",
         "direction": "down"
       },
       {
-        "on_id": "wheel",
-        "label": "chassis weight for flotation",
-        "direction": "down"
+        "on_id": "wheels",
+        "label": "ground support under wheels",
+        "direction": "up"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "sortie energy",
-      "value": 170.0,
+      "quantity": "standing mass",
+      "value": 46.0,
+      "unit": "kg",
+      "method": "calc",
+      "evidence_ids": [
+        "E62",
+        "E66",
+        "E67"
+      ]
+    },
+    {
+      "quantity": "stowed length",
+      "value": 0.9,
+      "unit": "m",
+      "method": "simulate",
+      "evidence_ids": [
+        "E51"
+      ]
+    },
+    {
+      "quantity": "kerf cut force",
+      "value": 11.0,
+      "unit": "N",
+      "method": "calc",
+      "evidence_ids": [
+        "E64"
+      ]
+    },
+    {
+      "quantity": "traction",
+      "value": 294.0,
+      "unit": "N",
+      "method": "simulate",
+      "evidence_ids": [
+        "E23"
+      ]
+    },
+    {
+      "quantity": "ladder dig power",
+      "value": 16.4,
+      "unit": "W",
+      "method": "calc",
+      "evidence_ids": [
+        "E59"
+      ]
+    },
+    {
+      "quantity": "dig energy per trip",
+      "value": 0.512,
       "unit": "Wh",
       "method": "calc",
+      "evidence_ids": [
+        "E60"
+      ]
+    },
+    {
+      "quantity": "frame sag",
+      "value": 3.96,
+      "unit": "mm",
+      "method": "calc",
+      "evidence_ids": [
+        "E63"
+      ]
+    },
+    {
+      "quantity": "watchdog stop distance",
+      "value": 0.308,
+      "unit": "m",
+      "method": "simulate",
       "evidence_ids": [
         "E32"
       ]
     },
     {
-      "quantity": "pack specific energy",
-      "value": 90.6,
-      "unit": "Wh/kg",
-      "method": "calc",
-      "evidence_ids": [
-        "E34"
-      ]
-    },
-    {
-      "quantity": "reconciled total mass",
-      "value": 53.0,
-      "unit": "kg",
-      "method": "calc",
-      "evidence_ids": [
-        "E37"
-      ]
-    },
-    {
-      "quantity": "runtime at full load",
-      "value": 1.41,
-      "unit": "h",
-      "method": "calc",
-      "evidence_ids": [
-        "E36"
-      ]
-    },
-    {
-      "quantity": "actuator force total",
-      "value": 735.0,
-      "unit": "N",
-      "method": "calc",
-      "evidence_ids": [
-        "E41"
-      ]
-    },
-    {
-      "quantity": "actuator input work",
-      "value": 110.0,
-      "unit": "J",
-      "method": "calc",
-      "evidence_ids": [
-        "E42"
-      ]
-    },
-    {
-      "quantity": "useful lift energy",
-      "value": 88.3,
-      "unit": "J",
-      "method": "calc",
-      "evidence_ids": [
-        "E38"
-      ]
-    },
-    {
-      "quantity": "tip stability factor",
-      "value": 4.66,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E43"
-      ]
-    },
-    {
-      "quantity": "front axle residual mass",
-      "value": 16.9,
-      "unit": "kg",
-      "method": "calc",
-      "evidence_ids": [
-        "E40"
-      ]
-    },
-    {
-      "quantity": "nominal ground pressure",
-      "value": 9820.0,
-      "unit": "N/m2",
-      "method": "calc",
-      "evidence_ids": [
-        "E10"
-      ]
-    },
-    {
-      "quantity": "robot weight at 60 kg",
-      "value": 589.0,
-      "unit": "N",
-      "method": "calc",
-      "evidence_ids": [
-        "E9"
-      ]
-    },
-    {
-      "quantity": "drawbar pull ratio",
-      "value": 0.0662,
-      "unit": "ratio",
-      "method": "calc",
-      "evidence_ids": [
-        "E12"
-      ]
-    },
-    {
-      "quantity": "stopping distance",
-      "value": 0.25,
+      "quantity": "drift with fiducial reset",
+      "value": 0.15,
       "unit": "m",
-      "method": "calc",
+      "method": "simulate",
       "evidence_ids": [
-        "E19"
+        "E33"
       ]
     },
     {
-      "quantity": "autonomy power share",
-      "value": 29.0,
-      "unit": "W",
-      "method": "calc",
+      "quantity": "dump clearance",
+      "value": 0.15,
+      "unit": "m",
+      "method": "simulate",
       "evidence_ids": [
-        "E20"
+        "E51"
       ]
     },
     {
-      "quantity": "autonomy mass share",
-      "value": 1.73,
-      "unit": "kg",
+      "quantity": "ground pressure",
+      "value": 15.6,
+      "unit": "kPa",
       "method": "calc",
       "evidence_ids": [
-        "E21"
+        "E25"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "Robot mass within 60 kg limit",
+      "design_value": "46 kg",
+      "how_shown": "Mass sum calc shows 46 kg versus 60 kg limit with 14 kg margin.",
+      "evidence_ids": [
+        "E62",
+        "E66",
+        "E67"
+      ]
+    },
+    {
+      "constraint": "Stowed envelope within 1.0 by 0.5 by 0.5 m box",
+      "design_value": "0.900 by 0.420 by 0.450 m",
+      "how_shown": "Envelope simulation shows stowed size fits inside start box with deployed track widening.",
+      "evidence_ids": [
+        "E51",
+        "E24"
       ]
     }
   ],
   "measurement_chain": [
     {
       "stage": "sensor",
-      "name": "FPV cameras",
-      "interface": "video"
+      "name": "forward drive plus dig plus mast cameras",
+      "interface": "optical view of buckets and bin fiducial"
     },
     {
-      "stage": "sensor",
-      "name": "Depth sensor and IMU",
-      "interface": "digital ranging and motion"
+      "stage": "conditioning",
+      "name": "onboard video encoder and current limit",
+      "interface": "compressed video and current signal"
     },
     {
       "stage": "instrument",
-      "name": "5 GHz WiFi link with E-stop hold",
-      "interface": "wireless video and heartbeat"
+      "name": "wireless telemetry link",
+      "interface": "network stream and heartbeat link"
     },
     {
       "stage": "computer",
-      "name": "Onboard computer",
-      "interface": "hold-to-run control"
+      "name": "sealed station operator",
+      "interface": "operator watches displays and commands"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "wheels",
+      "action": "drives to trench"
+    },
+    {
+      "part_id": "kerf",
+      "action": "cuts narrow soil slot"
+    },
+    {
+      "part_id": "ladder",
+      "action": "lifts loose soil up"
+    },
+    {
+      "part_id": "hopper",
+      "action": "holds half-full soil load"
+    },
+    {
+      "part_id": "screw",
+      "action": "meters soil into bin"
     }
   ],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Assemble the frame and mount the four 300 mm wheels with traction bars",
-      "method": "assemble",
+      "description": "Weld the twin-tube aluminium chassis first, because wheels, ladder and hopper all bolt to it",
+      "method": "TIG-welded 6061-T6 tube, 25.4 mm outside 3 mm wall",
       "parts_present": [
-        "chassis",
-        "wheel"
+        "chassis"
       ]
     },
     {
       "step": 2,
-      "description": "Mount the front spinning drum and the central bucket on the rear lifting mast",
-      "method": "assemble",
+      "description": "Bolt folding arms and grouser wheels to chassis, because track width and spin gap set stability",
+      "method": "Bolted aluminium arms, 200 mm diameter wheels with 10 mm grousers",
       "parts_present": [
-        "drum",
-        "hopper",
-        "lift",
+        "arms",
+        "wheels",
         "chassis"
       ]
     },
     {
       "step": 3,
-      "description": "Mount the folding mast and fit the cameras and sensors on top",
-      "method": "assemble",
+      "description": "Mount narrow kerf chain and bucket ladder to front mounts, because chain clearance and chute gap set dig path",
+      "method": "Bolted steel chain and ladder, 100 mm kerf width 50 mm depth",
       "parts_present": [
-        "pmast",
-        "sensors",
-        "compute"
+        "kerf",
+        "ladder",
+        "chassis"
       ]
     },
     {
       "step": 4,
-      "description": "Fit the battery pack and sealed electronics box under the frame",
-      "method": "install",
+      "description": "Mount steep wedge hopper on rear pivots with live-bottom screw, because tilt pour clears bin lip",
+      "method": "Steel wedge hopper, 20 L volume 60 deg walls 150 mm outlet",
       "parts_present": [
-        "pack",
-        "chassis",
-        "compute"
+        "hopper",
+        "screw",
+        "chassis"
+      ]
+    },
+    {
+      "step": 5,
+      "description": "Wire battery packs and cameras to fused bus and computer last, because power and views prove before blind run",
+      "method": "Fused 24 V 20 Ah LiFePO4 bus, drive and dig cameras",
+      "parts_present": [
+        "battery",
+        "cameras",
+        "computer",
+        "chassis"
       ]
     }
   ],
   "risks": [
     {
-      "risk": "Single drum 39 N reaction slips wheels or raises power",
-      "mitigation": "Keep cut shallow near 30 mm and hopper load centred"
+      "risk": "BP-1 arches over outlet and pour stalls",
+      "mitigation": "Run half-full 15 kg trips and bench-test arching plus screw torque after build"
     },
     {
-      "risk": "Raised 15 kg load tips over rear axle due to moment-arm sensitivity",
-      "mitigation": "Fix overhang at 0.30 m and wheelbase at 0.70 m and verify by deployed side sketch to 1.05 m"
-    },
-    {
-      "risk": "Sortie energy and pack mass do not close under limit",
-      "mitigation": "Use purchasable 480 Wh pack for 1.41 h margin and re-sum mass"
+      "risk": "Rear tilt tips machine or misses bin blind",
+      "mitigation": "Keep level-ground pour, fiducial creep align and heartbeat stop with 0.308 m stop"
     }
   ],
-  "novelty_claim": "Combination of front transverse drum with central hopper on rear high-lift mast plus folding 1.0 m perception mast with heartbeat stop-hold in 60 kg wheeled rover",
+  "novelty_claim": "Narrow kerf loosening feeding wide ladder pickup with screw-metered tilt pour under camera-only blind operation",
   "cost_class": "$1k-10k",
   "figure_spec": {
-    "system_view": "Side view showing stowed fit in start box and deployed lift to 1.05 m pour lip with overhang and wheelbase",
-    "critical_part_id": "lift",
+    "system_view": "side view of ladder feeding wedge hopper with rear tilt over bin plus top view of deployed track",
+    "critical_part_id": "ladder",
     "preferred_view": "side"
   },
   "open_questions": [
-    "Does the rear mast lift to the 1.05 m pour lip with 0.30 m overhang stay nose-down and within actuator force once deployed geometry and friction are proven by dimensioned sketch and static calculation?",
-    "O2: Provide dimensioned side sketch plus static calculation of rear high-lift mast: pivot heights to 1.05 m pour lip, 150 mm stroke dual 500 N actuators through 4-to-1 chain with friction lifting hopper + 10 kg soil, and tip moment about rear axle with 0.30 m overhang to replace failed E56 and reconcile 7.1 vs 4.06 factors to close O2 - sketch plus calculation the room can perform."
+    "Will cohesive BP-1 arch over the 150 mm outlet and what screw torque breaks it?",
+    "How fast does the cutting edge wear in BP-1 before draft rises beyond margin?",
+    "Can the mast camera see the bin fiducial clearly enough for final align in dust?"
   ]
 }

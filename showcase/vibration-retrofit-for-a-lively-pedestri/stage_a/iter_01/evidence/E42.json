@@ -1,0 +1,14 @@
+{
+  "id": "E42",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "modal force per modal mass bare bridge",
+  "code_or_query": "5.916*280/20000",
+  "inputs": {},
+  "output_summary": "0.0828",
+  "output_full": "0.0828",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

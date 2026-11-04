@@ -1,24 +1,14 @@
 {
   "id": "E27",
-  "author": "Priya - Retrofit Constructability Engineer",
-  "tool": "web_search",
-  "purpose": "search: footbridge tuned mass damper under deck installation maintenance access",
-  "code_or_query": "footbridge tuned mass damper under deck installation maintenance access",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "stiffness increase to move 1.9Hz to 2.3Hz",
+  "code_or_query": "(2.3/1.9)**2-1",
   "inputs": {},
-  "output_summary": "engmech.cz — 229 — 2006 — https://www.engmech.cz/improc/2006/Urushadze-229-PT.pdf",
-  "output_full": "engmech.cz — 229 — 2006 — https://www.engmech.cz/improc/2006/Urushadze-229-PT.pdf\n(the search returned no passage text)",
+  "output_summary": "0.465",
+  "output_full": "0.465",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "engmech.cz",
-      "title": "229",
-      "year": "2006",
-      "url": "https://www.engmech.cz/improc/2006/Urushadze-229-PT.pdf",
-      "query": "footbridge tuned mass damper under deck installation maintenance access",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "E39",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "dump resistor power at top volts 4 ohm",
+  "code_or_query": "14.3**2/4",
+  "inputs": {},
+  "output_summary": "51.1",
+  "output_full": "51.1",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

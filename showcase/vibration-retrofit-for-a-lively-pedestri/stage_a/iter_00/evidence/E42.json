@@ -1,24 +1,14 @@
 {
   "id": "E42",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
-  "tool": "web_search",
-  "purpose": "search: Setra footbridge crowd load density synchronized pedestrians equivalent number",
-  "code_or_query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "modal force per modal mass bare bridge",
+  "code_or_query": "5.916*280/20000",
   "inputs": {},
-  "output_summary": "1library.net — 4.4.1 Dynamic load cases - Footbridge guide setra — https://1library.net/article/dynamic-load-cases-footbridge-guide-setra.ye693erq",
-  "output_full": "1library.net — 4.4.1 Dynamic load cases - Footbridge guide setra — https://1library.net/article/dynamic-load-cases-footbridge-guide-setra.ye693erq\n(the search returned no passage text)",
+  "output_summary": "0.0828",
+  "output_full": "0.0828",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "1library.net",
-      "title": "4.4.1 Dynamic load cases - Footbridge guide setra",
-      "year": "",
-      "url": "https://1library.net/article/dynamic-load-cases-footbridge-guide-setra.ye693erq",
-      "query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

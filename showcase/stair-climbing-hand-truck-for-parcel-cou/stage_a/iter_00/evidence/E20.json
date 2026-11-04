@@ -1,22 +1,24 @@
 {
   "id": "E20",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: delivery van cargo door dimensions folded hand truck envelope",
-  "code_or_query": "delivery van cargo door dimensions folded hand truck envelope",
+  "purpose": "search: stair climbing trolley 6 wheels load capacity datasheet",
+  "code_or_query": "stair climbing trolley 6 wheels load capacity datasheet",
   "inputs": {},
-  "output_summary": "officedepot.com — Global Hardlines Collapsible Handi Truck 220 Lb Capacity — https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/",
-  "output_full": "officedepot.com — Global Hardlines Collapsible Handi Truck 220 Lb Capacity — https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/\n(the search returned no passage text)",
+  "output_summary": "manuals.plus — Mount-It! Stair Climbing Dolly Instruction Manual — https://manuals.plus/asin/B07X13DJWR",
+  "output_full": "manuals.plus — Mount-It! Stair Climbing Dolly Instruction Manual — https://manuals.plus/asin/B07X13DJWR\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "officedepot.com",
-      "title": "Global Hardlines Collapsible Handi Truck 220 Lb Capacity",
+      "authors_or_org": "manuals.plus",
+      "title": "Mount-It! Stair Climbing Dolly Instruction Manual",
       "year": "",
-      "url": "https://www.officedepot.com/a/products/487188/Global-Hardlines-Collapsible-Handi-Truck-39/",
-      "query": "delivery van cargo door dimensions folded hand truck envelope",
+      "url": "https://manuals.plus/asin/B07X13DJWR",
+      "query": "stair climbing trolley 6 wheels load capacity datasheet",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

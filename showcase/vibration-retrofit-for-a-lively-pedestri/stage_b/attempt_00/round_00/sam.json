@@ -4,312 +4,459 @@
     1280
   ],
   "parts": {
-    "deck": {
-      "phrase": "long steel beam",
+    "xb": {
+      "phrase": "dark steel girder",
       "tried": [
-        "long steel beam"
+        "dark steel girder"
       ],
       "source": "phrase",
       "boxes": [
         [
-          0.0,
-          1.8740849194729137,
-          1920.0,
-          290.48316251830164
-        ],
-        [
-          0.0,
-          65.59297218155197,
-          1920.0,
-          414.1727672035139
-        ],
-        [
-          1713.75,
-          155.54904831625183,
-          1920.0,
-          223.01610541727672
+          260.625,
+          393.5578330893119,
+          1605.0,
+          579.0922401171304
         ]
       ],
       "confidence": [
-        0.78,
-        0.79,
-        0.54
-      ],
-      "rejected_by_judge": [
-        "transverse bearer frame",
-        "transverse bearer frame"
+        0.64
       ],
       "mask": {
-        "file": "sam_masks/deck.png",
-        "area": 338298.0,
-        "cx": 942.9383013672729,
-        "cy": 194.80074685952658,
+        "file": "sam_masks/xb.png",
+        "area": 131021.0,
+        "cx": 915.0357437196667,
+        "cy": 480.6082842404078,
+        "angle": 3.5,
+        "elongation": 12.88
+      }
+    },
+    "tm": {
+      "phrase": "black metal box",
+      "tried": [
+        "black metal box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1003.125,
+          820.8491947291362,
+          1256.25,
+          1013.8799414348463
+        ],
+        [
+          673.125,
+          869.5754026354319,
+          924.375,
+          1043.865300146413
+        ]
+      ],
+      "confidence": [
+        0.83,
+        0.82
+      ],
+      "mask": {
+        "file": "sam_masks/tm.png",
+        "area": 75225.0,
+        "cx": 963.6627709307268,
+        "cy": 937.3002549936251,
         "angle": 6.6,
-        "elongation": 10.32
+        "elongation": 3.86
       }
     },
-    "frame": {
-      "phrase": "steel beams",
+    "cs": {
+      "phrase": "coiled metal spring",
       "tried": [
-        "short steel beam",
-        "short dark beam",
-        "steel beams"
+        "coiled metal spring"
       ],
       "source": "phrase",
       "boxes": [
         [
-          256.875,
-          427.29136163982434,
-          879.375,
-          586.5885797950219
+          1134.375,
+          534.1142020497804,
+          1177.5,
+          830.2196193265007
         ],
         [
-          1046.25,
-          299.8535871156662,
-          1635.0,
-          494.7584187408492
-        ],
-        [
-          0.0,
-          65.59297218155197,
-          1920.0,
-          414.1727672035139
+          761.25,
+          571.5959004392387,
+          806.25,
+          877.0717423133236
         ]
       ],
       "confidence": [
-        0.55,
+        0.67,
+        0.69
+      ],
+      "mask": {
+        "file": "sam_masks/cs.png",
+        "area": 21717.0,
+        "cx": 965.3816083395384,
+        "cy": 697.8804914370811,
+        "angle": 8.4,
+        "elongation": 2.36
+      }
+    },
+    "vd": {
+      "phrase": "silver metal cylinder",
+      "tried": [
+        "silver metal cylinder"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          851.25,
+          648.4333821376281,
+          892.5,
+          848.9604685212299
+        ],
+        [
+          1055.625,
+          627.8184480234261,
+          1095.0,
+          824.597364568082
+        ]
+      ],
+      "confidence": [
+        0.79,
+        0.77
+      ],
+      "mask": {
+        "file": "sam_masks/vd.png",
+        "area": 13130.0,
+        "cx": 974.4547662416514,
+        "cy": 734.6168791742563,
+        "angle": 9.2,
+        "elongation": 1.84
+      }
+    },
+    "hb": {
+      "phrase": "metal bolt",
+      "tried": [
+        "small steel bolt",
+        "dark metal bolt",
+        "tiny silver bolt",
+        "metal bolt"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          343.125,
+          537.8623718887262,
+          354.375,
+          550.9809663250367
+        ],
+        [
+          318.75,
+          511.62518301610544,
+          330.0,
+          526.6178623718887
+        ],
+        [
+          316.875,
+          487.2620790629576,
+          331.875,
+          500.38067349926797
+        ],
+        [
+          318.75,
+          537.8623718887262,
+          331.875,
+          552.8550512445096
+        ],
+        [
+          431.25,
+          507.8770131771596,
+          444.375,
+          519.1215226939971
+        ]
+      ],
+      "confidence": [
+        0.5,
+        0.53,
+        0.51,
         0.52,
-        0.63
+        0.5
+      ],
+      "mask": {
+        "file": "sam_masks/hb.png",
+        "area": 674.0,
+        "cx": 348.6,
+        "cy": 522.8125,
+        "angle": 3.9,
+        "elongation": 2.07
+      }
+    },
+    "es": {
+      "phrase": "small black cage",
+      "tried": [
+        "small black cage"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1385.625,
+          477.891654465593,
+          1455.0,
+          562.2254758418741
+        ],
+        [
+          997.5,
+          899.5607613469986,
+          1061.25,
+          980.1464128843338
+        ],
+        [
+          440.625,
+          537.8623718887262,
+          508.125,
+          629.692532942899
+        ]
+      ],
+      "confidence": [
+        0.66,
+        0.52,
+        0.68
+      ],
+      "mask": {
+        "file": "sam_masks/es.png",
+        "area": 13990.0,
+        "cx": 954.0079749359157,
+        "cy": 668.2984904585588,
+        "angle": 0.9,
+        "elongation": 2.22
+      }
+    },
+    "ac": {
+      "phrase": "tiny black box",
+      "tried": [
+        "small black sensor",
+        "tiny black box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          965.625,
+          163.04538799414348,
+          1016.25,
+          191.15666178623718
+        ]
+      ],
+      "confidence": [
+        0.73
       ],
       "rejected_by_judge": [
-        "500kg TMD mass 1.85Hz",
-        "40m deck + girders 1.9Hz"
+        "tuned mass",
+        "tuned mass"
       ],
       "mask": {
-        "file": "sam_masks/frame.png",
-        "area": 264113.0,
-        "cx": 924.4324062731577,
-        "cy": 301.635013535381,
-        "angle": 7.7,
-        "elongation": 4.89
+        "file": "sam_masks/ac.png",
+        "area": 1259.0,
+        "cx": 989.4556962025316,
+        "cy": 176.90506329113924,
+        "angle": 0.0,
+        "elongation": 1.71
       }
     },
-    "bolts": {
-      "phrase": "HS bolts clamp (box prompt)",
+    "tm__mass": {
+      "phrase": "black metal box",
       "tried": [
-        "small metal bolt",
-        "steel bolt",
-        "bolts"
-      ],
-      "source": "box prompt",
-      "boxes": [
-        [
-          729.375,
-          399.1800878477306,
-          811.875,
-          457.27672035139096
-        ]
-      ],
-      "confidence": [
-        0.52
-      ],
-      "mask": {
-        "file": "sam_masks/bolts.png",
-        "area": 2277.0,
-        "cx": 771.6234458259325,
-        "cy": 430.8454706927176,
-        "angle": 162.3,
-        "elongation": 1.62
-      }
-    },
-    "spring": {
-      "phrase": "silver coiled spring",
-      "tried": [
-        "silver coiled spring"
+        "black metal box"
       ],
       "source": "phrase",
       "boxes": [
         [
-          1143.75,
-          457.27672035139096,
-          1201.875,
-          712.1522693997072
+          1003.125,
+          820.8491947291362,
+          1256.25,
+          1013.8799414348463
         ],
         [
-          733.125,
-          565.9736456808199,
-          795.0,
-          820.8491947291362
+          673.125,
+          869.5754026354319,
+          924.375,
+          1043.865300146413
         ]
       ],
       "confidence": [
-        0.9,
-        0.91
+        0.83,
+        0.82
       ],
       "mask": {
-        "file": "sam_masks/spring.png",
-        "area": 24917.0,
-        "cx": 956.6058077972084,
-        "cy": 640.871169581261,
-        "angle": 16.6,
-        "elongation": 3.13
+        "file": "sam_masks/tm__mass.png",
+        "area": 75225.0,
+        "cx": 963.6627709307268,
+        "cy": 937.3002549936251,
+        "angle": 6.6,
+        "elongation": 3.86
       }
     },
-    "damper": {
-      "phrase": "black cylinder",
+    "cs__spring": {
+      "phrase": "coiled metal spring",
       "tried": [
-        "black cylinder"
+        "coiled metal spring"
       ],
       "source": "phrase",
       "boxes": [
         [
-          1220.625,
-          506.0029282576867,
-          1276.875,
-          678.4187408491947
+          1134.375,
+          534.1142020497804,
+          1177.5,
+          830.2196193265007
         ],
         [
-          661.875,
-          567.8477306002928,
-          721.875,
-          747.7598828696925
+          761.25,
+          571.5959004392387,
+          806.25,
+          877.0717423133236
         ]
       ],
       "confidence": [
-        0.82,
-        0.84
+        0.67,
+        0.7
       ],
       "mask": {
-        "file": "sam_masks/damper.png",
-        "area": 18185.0,
-        "cx": 957.1587057010786,
-        "cy": 625.6469293418446,
-        "angle": 7.1,
-        "elongation": 5.6
+        "file": "sam_masks/cs__spring.png",
+        "area": 21720.0,
+        "cx": 965.3793745346239,
+        "cy": 697.8886820551005,
+        "angle": 8.3,
+        "elongation": 2.36
       }
     },
-    "mass": {
-      "phrase": "large grey block",
+    "vd__damper": {
+      "phrase": "silver metal cylinder",
       "tried": [
-        "large grey block"
+        "silver metal cylinder"
       ],
       "source": "phrase",
       "boxes": [
         [
-          626.25,
-          693.4114202049781,
-          1295.625,
-          1036.3689604685212
-        ]
-      ],
-      "confidence": [
-        0.53
-      ],
-      "mask": {
-        "file": "sam_masks/mass.png",
-        "area": 149379.0,
-        "cx": 954.2379434997991,
-        "cy": 859.4219842013656,
-        "angle": 13.4,
-        "elongation": 2.92
-      }
-    },
-    "cover": {
-      "phrase": "flat dark panel",
-      "tried": [
-        "flat dark panel"
-      ],
-      "source": "phrase",
-      "boxes": [
-        [
-          502.5,
-          920.1756954612006,
-          1213.125,
-          1111.3323572474378
+          851.25,
+          648.4333821376281,
+          892.5,
+          848.9604685212299
         ],
         [
-          701.25,
-          957.6573938506589,
-          1447.5,
-          1206.9106881405564
+          1055.625,
+          627.8184480234261,
+          1095.0,
+          824.597364568082
         ]
       ],
       "confidence": [
-        0.64,
-        0.66
-      ],
-      "rejected_by_judge": [
-        "500kg TMD mass 1.85Hz"
+        0.79,
+        0.77
       ],
       "mask": {
-        "file": "sam_masks/cover.png",
-        "area": 116744.0,
-        "cx": 988.0743558114035,
-        "cy": 1059.8522478070176,
-        "angle": 5.8,
-        "elongation": 4.01
+        "file": "sam_masks/vd__damper.png",
+        "area": 13134.0,
+        "cx": 974.4285280728376,
+        "cy": 734.6130500758725,
+        "angle": 9.2,
+        "elongation": 1.84
       }
     }
   },
   "contacts": [
     [
-      "deck",
-      "frame"
+      "xb",
+      "hb"
     ],
     [
-      "frame",
-      "bolts"
+      "xb",
+      "es"
     ],
     [
-      "frame",
-      "spring"
+      "tm",
+      "cs"
     ],
     [
-      "spring",
-      "damper"
+      "tm",
+      "vd"
     ],
     [
-      "spring",
-      "mass"
+      "tm",
+      "es"
     ],
     [
-      "mass",
-      "cover"
+      "tm",
+      "tm__mass"
+    ],
+    [
+      "tm",
+      "cs__spring"
+    ],
+    [
+      "tm",
+      "vd__damper"
+    ],
+    [
+      "cs",
+      "tm__mass"
+    ],
+    [
+      "cs",
+      "cs__spring"
+    ],
+    [
+      "vd",
+      "tm__mass"
+    ],
+    [
+      "vd",
+      "vd__damper"
+    ],
+    [
+      "es",
+      "tm__mass"
+    ],
+    [
+      "tm__mass",
+      "cs__spring"
+    ],
+    [
+      "tm__mass",
+      "vd__damper"
     ]
   ],
+  "reference": {
+    "phrase": "standing person",
+    "found": true,
+    "mm": 1700.0,
+    "length_px": 449.0,
+    "box": [
+      1650.0,
+      648.4333821376281,
+      1777.5,
+      1098.2137628111275
+    ],
+    "px_per_mm": 0.2641
+  },
   "differences": {
-    "deck": [
-      "expected 1 visible, found 3",
-      "size against frame: expected about 20 times, measured 1 times",
-      "expected to touch bolts, but they are apart in the picture"
+    "xb": [
+      "expected to touch cs, but they are apart in the picture",
+      "expected to touch vd, but they are apart in the picture"
     ],
-    "frame": [
-      "expected 2 visible, found 3",
-      "expected to touch damper, but they are apart in the picture",
-      "expected to touch cover, but they are apart in the picture"
-    ],
-    "bolts": [
-      "expected 8 visible, found 1",
+    "cs": [
       "expected a vertical long axis, measured horizontal",
-      "size against frame: expected about 0.01 times, measured 0.043 times",
-      "expected to touch deck, but they are apart in the picture"
+      "size against tm: expected about 0.6 times, measured 1.2 times",
+      "expected to touch xb, but they are apart in the picture"
     ],
-    "spring": [
-      "expected 4 visible, found 2",
+    "vd": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch xb, but they are apart in the picture"
+    ],
+    "hb": [
+      "expected 2 visible, found 5"
+    ],
+    "es": [
+      "expected 2 visible, found 3"
+    ],
+    "cs__spring": [
       "expected a vertical long axis, measured horizontal"
     ],
-    "damper": [
-      "expected a vertical long axis, measured horizontal",
-      "expected to touch frame, but they are apart in the picture",
-      "expected to touch mass, but they are apart in the picture"
-    ],
-    "mass": [
-      "expected to touch damper, but they are apart in the picture"
-    ],
-    "cover": [
-      "expected 1 visible, found 2",
-      "size against mass: expected about 2.4 times, measured 1.1 times",
-      "expected to touch frame, but they are apart in the picture"
+    "vd__damper": [
+      "expected a vertical long axis, measured horizontal"
     ]
   },
   "rechecks": []

@@ -1,0 +1,26 @@
+{
+  "id": "E65",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: Ford Transit Courier payload cargo tie downs lashing",
+  "code_or_query": "Ford Transit Courier payload cargo tie downs lashing",
+  "inputs": {},
+  "output_summary": "perkinsfordservice.co.uk — Used Ford Transit Courier for Sale in Braintree, Essex | Compact Work Vans | Perkins Garage — https://www.perkinsfordservice.co.uk/usedcars/ford/transit-courier",
+  "output_full": "perkinsfordservice.co.uk — Used Ford Transit Courier for Sale in Braintree, Essex | Compact Work Vans | Perkins Garage — https://www.perkinsfordservice.co.uk/usedcars/ford/transit-courier\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "perkinsfordservice.co.uk",
+      "title": "Used Ford Transit Courier for Sale in Braintree, Essex | Compact Work Vans | Perkins Garage",
+      "year": "",
+      "url": "https://www.perkinsfordservice.co.uk/usedcars/ford/transit-courier",
+      "query": "Ford Transit Courier payload cargo tie downs lashing",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

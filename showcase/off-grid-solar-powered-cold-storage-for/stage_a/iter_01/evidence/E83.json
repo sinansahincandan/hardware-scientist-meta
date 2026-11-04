@@ -1,0 +1,14 @@
+{
+  "id": "E83",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "daily yield for 3.6kWp grown array",
+  "code_or_query": "(3.6*5*0.75)",
+  "inputs": {},
+  "output_summary": "13.5",
+  "output_full": "13.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

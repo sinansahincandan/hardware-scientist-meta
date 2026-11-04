@@ -1,0 +1,595 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "chassis": {
+      "phrase": "twin-tube aluminium chassis (box prompt)",
+      "tried": [
+        "silver tube frame",
+        "metal frame",
+        "frame"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          416.25,
+          685.9150805270864,
+          1222.5,
+          744.0117130307467
+        ]
+      ],
+      "confidence": [
+        0.76
+      ],
+      "mask": {
+        "file": "sam_masks/chassis.png",
+        "area": 21421.0,
+        "cx": 833.6313465783664,
+        "cy": 709.8473142016188,
+        "angle": 0.2,
+        "elongation": 20.98
+      }
+    },
+    "wheels": {
+      "phrase": "small treaded wheel",
+      "tried": [
+        "small treaded wheel"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1288.125,
+          980.1464128843338,
+          1396.875,
+          1090.7174231332358
+        ]
+      ],
+      "confidence": [
+        0.84
+      ],
+      "rejected_by_judge": [
+        "folding wheel arms",
+        "trenching chain drive sprocket bolt"
+      ],
+      "mask": {
+        "file": "sam_masks/wheels.png",
+        "area": 7323.0,
+        "cx": 1348.598705501618,
+        "cy": 1040.8360302049623,
+        "angle": 43.6,
+        "elongation": 1.22
+      }
+    },
+    "arms": {
+      "phrase": "folding wheel arms (box prompt)",
+      "tried": [
+        "dark angled arm",
+        "metal arm",
+        "arm"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          1063.125,
+          796.4860907759883,
+          1395.0,
+          1088.8433382137628
+        ]
+      ],
+      "confidence": [
+        0.69
+      ],
+      "mask": {
+        "file": "sam_masks/arms.png",
+        "area": 27763.0,
+        "cx": 1223.3772472314108,
+        "cy": 928.7510427153746,
+        "angle": 137.0,
+        "elongation": 3.74
+      }
+    },
+    "kerf": {
+      "phrase": "dark digging chain",
+      "tried": [
+        "dark digging chain"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          420.0,
+          888.316251830161,
+          470.625,
+          1066.354319180088
+        ],
+        [
+          358.125,
+          873.3235724743778,
+          384.375,
+          1101.9619326500733
+        ]
+      ],
+      "confidence": [
+        0.78,
+        0.74
+      ],
+      "mask": {
+        "file": "sam_masks/kerf.png",
+        "area": 6155.0,
+        "cx": 400.45465994962217,
+        "cy": 981.5100755667506,
+        "angle": 76.7,
+        "elongation": 1.59
+      }
+    },
+    "ladder": {
+      "phrase": "bucket ladder elevator (box prompt)",
+      "tried": [
+        "grey bucket conveyor"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          414.375,
+          329.8389458272328,
+          1299.375,
+          826.4714494875549
+        ]
+      ],
+      "confidence": [
+        0.7
+      ],
+      "rejected_by_judge": [
+        "steep wedge hopper and fill bin container"
+      ],
+      "mask": {
+        "file": "sam_masks/ladder.png",
+        "area": 76626.0,
+        "cx": 890.3316100057444,
+        "cy": 577.3042978745626,
+        "angle": 27.8,
+        "elongation": 7.11
+      }
+    },
+    "hopper": {
+      "phrase": "large grey hopper",
+      "tried": [
+        "large grey hopper"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1220.625,
+          618.4480234260615,
+          1526.25,
+          803.9824304538799
+        ]
+      ],
+      "confidence": [
+        0.95
+      ],
+      "mask": {
+        "file": "sam_masks/hopper.png",
+        "area": 34354.0,
+        "cx": 1361.8842495940617,
+        "cy": 691.5117142194387,
+        "angle": 12.9,
+        "elongation": 1.33
+      }
+    },
+    "screw": {
+      "phrase": "metal screw",
+      "tried": [
+        "spiral metal auger",
+        "metal screw"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1213.125,
+          395.4319180087848,
+          1226.25,
+          406.6764275256223
+        ],
+        [
+          798.75,
+          646.5592972181552,
+          819.375,
+          667.1742313323573
+        ],
+        [
+          361.875,
+          852.7086383601758,
+          373.125,
+          863.9531478770132
+        ],
+        [
+          1276.875,
+          961.4055636896047,
+          1297.5,
+          980.1464128843338
+        ],
+        [
+          851.25,
+          594.0849194729136,
+          864.375,
+          605.3294289897511
+        ],
+        [
+          731.25,
+          667.1742313323573,
+          744.375,
+          678.4187408491947
+        ],
+        [
+          1031.25,
+          500.38067349926797,
+          1044.375,
+          513.4992679355784
+        ],
+        [
+          858.75,
+          609.077598828697,
+          871.875,
+          620.3221083455344
+        ],
+        [
+          1085.625,
+          451.6544655929722,
+          1100.625,
+          464.7730600292826
+        ],
+        [
+          495.0,
+          807.7306002928258,
+          508.125,
+          822.7232796486092
+        ],
+        [
+          1286.25,
+          830.2196193265007,
+          1297.5,
+          843.3382137628112
+        ],
+        [
+          538.125,
+          798.3601756954612,
+          553.125,
+          813.3528550512445
+        ],
+        [
+          1149.375,
+          429.1654465592972,
+          1162.5,
+          442.2840409956076
+        ],
+        [
+          915.0,
+          571.5959004392387,
+          926.25,
+          584.714494875549
+        ],
+        [
+          380.625,
+          747.7598828696925,
+          393.75,
+          760.878477306003
+        ],
+        [
+          361.875,
+          835.8418740849195,
+          375.0,
+          847.086383601757
+        ],
+        [
+          1265.625,
+          359.8243045387994,
+          1282.5,
+          374.81698389458273
+        ],
+        [
+          937.5,
+          472.2693997071742,
+          948.75,
+          481.6398243045388
+        ],
+        [
+          1162.5,
+          807.7306002928258,
+          1179.375,
+          824.597364568082
+        ],
+        [
+          1061.25,
+          826.4714494875549,
+          1074.375,
+          841.4641288433382
+        ],
+        [
+          969.375,
+          522.869692532943,
+          980.625,
+          535.9882869692533
+        ],
+        [
+          1351.875,
+          871.4494875549049,
+          1365.0,
+          882.6939970717424
+        ],
+        [
+          976.875,
+          537.8623718887262,
+          990.0,
+          549.1068814055637
+        ],
+        [
+          1089.375,
+          875.1976573938507,
+          1098.75,
+          886.4421669106881
+        ],
+        [
+          1102.5,
+          839.5900439238653,
+          1125.0,
+          862.0790629575403
+        ],
+        [
+          1095.0,
+          466.6471449487555,
+          1108.125,
+          477.891654465593
+        ],
+        [
+          391.875,
+          878.9458272327965,
+          420.0,
+          903.3089311859444
+        ],
+        [
+          1235.625,
+          691.5373352855052,
+          1256.25,
+          712.1522693997072
+        ],
+        [
+          1055.625,
+          401.0541727672035,
+          1066.875,
+          410.4245973645681
+        ],
+        [
+          382.5,
+          1066.354319180088,
+          403.125,
+          1088.8433382137628
+        ],
+        [
+          1286.25,
+          863.9531478770132,
+          1297.5,
+          877.0717423133236
+        ]
+      ],
+      "confidence": [
+        0.55,
+        0.58,
+        0.55,
+        0.57,
+        0.54,
+        0.52,
+        0.59,
+        0.54,
+        0.55,
+        0.52,
+        0.57,
+        0.55,
+        0.53,
+        0.58,
+        0.61,
+        0.58,
+        0.64,
+        0.52,
+        0.62,
+        0.54,
+        0.57,
+        0.52,
+        0.58,
+        0.55,
+        0.62,
+        0.58,
+        0.53,
+        0.66,
+        0.52,
+        0.58,
+        0.54
+      ],
+      "rejected_by_judge": [
+        "unidentifiable extreme close-up",
+        "unidentifiable extreme close-up",
+        "unidentifiable extreme close-up",
+        "unidentifiable extreme close-up"
+      ],
+      "mask": {
+        "file": "sam_masks/screw.png",
+        "area": 5421.0,
+        "cx": 896.2231947483589,
+        "cy": 745.2283005105762,
+        "angle": 16.7,
+        "elongation": 2.05
+      }
+    },
+    "battery": {
+      "phrase": "lithium phosphate battery packs (box prompt)",
+      "tried": [
+        "grey rectangular pack",
+        "battery box",
+        "box"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          562.5,
+          652.1815519765739,
+          1042.5,
+          745.8857979502196
+        ]
+      ],
+      "confidence": [
+        0.68
+      ],
+      "mask": {
+        "file": "sam_masks/battery.png",
+        "area": 16393.0,
+        "cx": 845.8418740849195,
+        "cy": 698.6163982430454,
+        "angle": 179.2,
+        "elongation": 6.86
+      }
+    },
+    "cameras": {
+      "phrase": "small black camera",
+      "tried": [
+        "small black camera"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1020.0,
+          550.9809663250367,
+          1066.875,
+          588.4626647144948
+        ]
+      ],
+      "confidence": [
+        0.67
+      ],
+      "mask": {
+        "file": "sam_masks/cameras.png",
+        "area": 1399.0,
+        "cx": 1042.271676300578,
+        "cy": 569.3121387283237,
+        "angle": 4.2,
+        "elongation": 1.31
+      }
+    },
+    "computer": {
+      "phrase": "small black box",
+      "tried": [
+        "small black box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          781.875,
+          772.1229868228404,
+          873.75,
+          824.597364568082
+        ]
+      ],
+      "confidence": [
+        0.7
+      ],
+      "mask": {
+        "file": "sam_masks/computer.png",
+        "area": 4615.0,
+        "cx": 827.9744463373083,
+        "cy": 798.6592844974447,
+        "angle": 0.5,
+        "elongation": 1.71
+      }
+    }
+  },
+  "contacts": [
+    [
+      "chassis",
+      "ladder"
+    ],
+    [
+      "chassis",
+      "battery"
+    ],
+    [
+      "wheels",
+      "arms"
+    ],
+    [
+      "arms",
+      "screw"
+    ],
+    [
+      "kerf",
+      "screw"
+    ],
+    [
+      "ladder",
+      "screw"
+    ],
+    [
+      "ladder",
+      "battery"
+    ],
+    [
+      "ladder",
+      "cameras"
+    ],
+    [
+      "hopper",
+      "screw"
+    ]
+  ],
+  "reference": {
+    "phrase": "standing person",
+    "found": false
+  },
+  "differences": {
+    "chassis": [
+      "expected to touch arms, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture",
+      "expected to touch computer, but they are apart in the picture"
+    ],
+    "wheels": [
+      "expected 2 visible, found 1",
+      "size against arms: expected about 0.8 times, measured 0.33 times"
+    ],
+    "arms": [
+      "expected 2 visible, found 1",
+      "expected a horizontal long axis, measured tilted about 137 degrees",
+      "size against wheels: expected about 1.2 times, measured 3 times",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "kerf": [
+      "expected 1 visible, found 2",
+      "expected a horizontal long axis, measured vertical",
+      "expected to touch ladder, but they are apart in the picture"
+    ],
+    "ladder": [
+      "expected a vertical long axis, measured horizontal",
+      "expected to touch kerf, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
+    ],
+    "hopper": [
+      "expected to touch chassis, but they are apart in the picture",
+      "expected to touch ladder, but they are apart in the picture"
+    ],
+    "screw": [
+      "expected 1 visible, found 31",
+      "size against hopper: expected about 0.64 times, measured 0.092 times"
+    ],
+    "battery": [
+      "expected 2 visible, found 1",
+      "size against hopper: expected about 0.5 times, measured 1.6 times"
+    ],
+    "cameras": [
+      "expected 3 visible, found 1",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "computer": [
+      "size against battery: expected about 0.7 times, measured 0.19 times",
+      "expected to touch chassis, but they are apart in the picture"
+    ]
+  },
+  "rechecks": []
+}

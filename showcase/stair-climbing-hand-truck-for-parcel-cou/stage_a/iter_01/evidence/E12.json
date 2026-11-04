@@ -1,0 +1,31 @@
+{
+  "id": "E12",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "backbone bending stress twin-tube share",
+  "code_or_query": "((Q_(589,'N')*Q_(450,'mm')*Q_(15,'mm'))/Q_(17282,'mm**4')).to('MPa')",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "450",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "15",
+      "unit": "mm"
+    },
+    "arg3": {
+      "value": "17282",
+      "unit": "mm**4"
+    }
+  },
+  "output_summary": "230 MPa",
+  "output_full": "230 MPa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

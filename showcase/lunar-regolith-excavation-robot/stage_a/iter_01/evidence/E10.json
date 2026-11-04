@@ -1,25 +1,21 @@
 {
   "id": "E10",
-  "author": "Mara \u2014 Excavation and Mobility Engineer",
+  "author": "Excavation and Regolith Handling Lead",
   "tool": "calc",
-  "purpose": "nominal ground pressure 4 wheels contact 150x100mm",
-  "code_or_query": "Q_(589,'N')/(4*Q_(0.15,'m')*Q_(0.10,'m'))",
+  "purpose": "hopper payload mass from 20 L volume at BP-1 compacted density",
+  "code_or_query": "Q_(1500,'kg/m**3')*Q_(0.02,'m**3')",
   "inputs": {
     "arg0": {
-      "value": "589",
-      "unit": "N"
+      "value": "1500",
+      "unit": "kg/m**3"
     },
     "arg1": {
-      "value": "0.15",
-      "unit": "m"
-    },
-    "arg2": {
-      "value": "0.10",
-      "unit": "m"
+      "value": "0.02",
+      "unit": "m**3"
     }
   },
-  "output_summary": "9.82\u00d710\u00b3 N/m\u00b2",
-  "output_full": "9.82\u00d710\u00b3 N/m\u00b2",
+  "output_summary": "30 kg",
+  "output_full": "30 kg",
   "sketch_path": null,
   "references": [],
   "status": "ok",

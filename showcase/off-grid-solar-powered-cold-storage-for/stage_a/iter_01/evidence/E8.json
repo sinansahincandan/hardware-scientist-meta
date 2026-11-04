@@ -1,0 +1,26 @@
+{
+  "id": "E8",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: peak sun hours hot regions Africa India solar insolation kWh m2 day",
+  "code_or_query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
+  "inputs": {},
+  "output_summary": "solaripedia.com — Solaripedia | Resource — https://www.solaripedia.com/259/3598/resource.html",
+  "output_full": "solaripedia.com — Solaripedia | Resource — https://www.solaripedia.com/259/3598/resource.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "solaripedia.com",
+      "title": "Solaripedia | Resource",
+      "year": "",
+      "url": "https://www.solaripedia.com/259/3598/resource.html",
+      "query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

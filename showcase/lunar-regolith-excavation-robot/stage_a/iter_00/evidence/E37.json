@@ -1,22 +1,30 @@
 {
   "id": "E37",
-  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "author": "Power Structure and Integration Lead",
   "tool": "web_search",
-  "purpose": "search: lunar regolith simulant BP-1 bulk density angle of repose",
-  "code_or_query": "lunar regolith simulant BP-1 bulk density angle of repose",
+  "purpose": "search: 6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
+  "code_or_query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
   "inputs": {},
-  "output_summary": "researchgate.net — Three Regolith Simulant Conveyance Systems Tested in Vacuum and Atmospheric Conditions — https://www.researchgate.net/publication/374825495_Three_Regolith_Simulant_Conveyance_Systems_Tested_in_Vacuum_and_Atmospheric_Conditions",
-  "output_full": "researchgate.net — Three Regolith Simulant Conveyance Systems Tested in Vacuum and Atmospheric Conditions — https://www.researchgate.net/publication/374825495_Three_Regolith_Simulant_Conveyance_Systems_Tested_in_Vacuum_and_Atmospheric_Conditions\n(the search returned no passage text)",
+  "output_summary": "practicalmachinist.com — Engineering help please — https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/",
+  "output_full": "practicalmachinist.com — Engineering help please — https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/\n(found by the search; not opened or cited)\nPower Structure and Integration Lead said about it: 6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "researchgate.net",
-      "title": "Three Regolith Simulant Conveyance Systems Tested in Vacuum and Atmospheric Conditions",
+      "authors_or_org": "practicalmachinist.com",
+      "title": "Engineering help please",
       "year": "",
-      "url": "https://www.researchgate.net/publication/374825495_Three_Regolith_Simulant_Conveyance_Systems_Tested_in_Vacuum_and_Atmospheric_Conditions",
-      "query": "lunar regolith simulant BP-1 bulk density angle of repose",
+      "url": "https://www.practicalmachinist.com/forum/threads/engineering-help-please.425223/",
+      "query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
       "unresolved": false,
-      "passage": ""
+      "passage": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -1,135 +1,68 @@
 {
-  "pixel_description": "Render only: human fingertip pressing top gray ridged circular disc (skin). Below disc a wide transparent wavy sheet (film). Below that ~40+ translucent white rounded-top pins (silicone pillar dielectric) in grid ~6x8 rows, sitting on top green wavy PCB with small chips at sides, dented down in middle under finger. Below that a second transparent wavy sheet. Below that ~17-20 rigid silver-black telescopic cylinders in single front row (multiple rows deep) standing between second green flat PCB below and the upper wavy PCB above. Below that second green flat PCB, a third lower green chip-covered PCB with black ICs and copper traces, with orange multi-line flexible ribbon (tail) exiting right rear in S-curve. Below that a solid light-gray rectangular block (core) then two vertical threaded screws with cross heads through to black base plate. All layers separated by air gaps in exploded view but stacked vertically in order: finger-skin-film-upper pins-upper board-membrane-lower pins-middle board-lower board-core-screws-base. Critical pillars: drawn as two distinct arrays, not one: upper soft translucent array compressed in center and connected only to upper PCB top, lower rigid metallic pin array connecting middle PCB to upper membrane, neither touching skin directly.",
+  "pixel_description": "Photorealistic close-up, eye-level. Top center adult finger pressing down indenting single continuous gray hemispherical dome with fine vertical/concentric ridges visible on flank. Dome sits centered atop thick transparent gel ring bulging outward at rim. Below gel a thinner clear PVDF film disc, below that dark rectangular capacitive grid with dense small squares. Grid sits directly on matte light-gray faceted rigid core with angular facets and dovetail/block base below. From right edge of grid an amber/orange flex tail loops up and over down to green readout PCB with black chips mounted on side ledge/bracket of core. Thick black cable exits PCB to right edge. Stack order top to bottom: finger/SKIN/GEL/PVDF/CAP/CORE; side chain CAP-FLEX-BOARD-CABLE. Critical part SKIN: one element only, domed, elastomeric gray, concentrically/vertically ridged texture, arranged as outer skin covering stack, connected below via gel interlayer and clamped around rim, working geometry dome and ridges visible as in sketch. Scale: dome width about finger pad width, finger-scale, consistent with ~20mm.",
   "regions": [
     {
       "box": [
-        610.0,
-        520.0,
-        685.0,
-        572.0
+        60.0,
+        611.0,
+        213.0,
+        685.0
       ],
       "part_id": "callout",
-      "observed": "leader for Taxel Electrode Board ends on silver-black pin shafts mid-array",
-      "expected": "leader for Taxel Electrode Board must end on green electrode PCB",
-      "source": "render"
-    },
-    {
-      "box": [
-        154.0,
-        515.0,
-        663.0,
-        615.0
-      ],
-      "part_id": "pillars",
-      "observed": "second array of rigid silver-black telescopic pins between two PCBs",
-      "expected": "single array of soft silicone pillars between film and electrode PCB",
-      "source": "render"
-    },
-    {
-      "box": [
-        151.0,
-        592.0,
-        665.0,
-        640.0
-      ],
-      "part_id": "pcb",
-      "observed": "third green PCB middle layer creating three-board stack",
-      "expected": "only two boards: taxel electrode PCB and readout PCB",
-      "source": "render"
-    },
-    {
-      "box": [
-        151.0,
-        438.0,
-        665.0,
-        498.0
-      ],
-      "part_id": "pcb",
-      "observed": "green electrode board drawn wavy/bent following finger dent",
-      "expected": "rigid flat electrode board carried by core, only skin/film deflect",
-      "source": "render"
-    },
-    {
-      "box": [
-        264.0,
-        234.0,
-        608.0,
-        364.0
-      ],
-      "part_id": "skin",
-      "observed": "small isolated circular disc narrower than stack, floating above",
-      "expected": "full-width ridged outer skin cap covering fingertip stack",
-      "source": "render"
-    },
-    {
-      "box": [
-        152.0,
-        483.0,
-        667.0,
-        522.0
-      ],
-      "part_id": "film",
-      "observed": "second translucent membrane between upper PCB and lower pins",
-      "expected": "single vibration film between skin and pillars",
+      "observed": "Callout reads 'Capacitive Taxel Array 8x8 grid' containing numbers 8x8",
+      "expected": "Callout naming Capacitive Taxel Array with no numbers",
       "source": "render"
     }
   ],
   "previous_regions": [],
-  "comparison_with_previous": "No prior render evaluation; first comparison against mechanism sketch.",
+  "comparison_with_previous": "First evaluation, no previous render to compare.",
   "deviations": [
     {
-      "what": "skin",
-      "measured": "skin disc floats above film with air gap in exploded view",
-      "expected": "skin touches pillars via film",
+      "what": "SKIN",
+      "measured": "Apparent gap in exploded view, SKIN above GEL above CORE",
+      "expected": "SKIN to touch CORE (clamped edge)",
       "matters": false,
-      "why": "exploded visualization separates layers but preserves order skin-film-pillars; gap is intentional, not missing contact"
+      "why": "Pixels show single gray ridged dome indented by finger sitting inside/upon thick clear gel ring which sits on stack above CORE. Direct SKIN-CORE edge not resolved due to transparent gel and exploded spacing for visibility, but pressure path SKIN->GEL->PVDF->CAP->CORE is continuous and clamp is implied. No functional break; illustration gap does not change working principle."
     },
     {
-      "what": "pillars",
-      "measured": "two separate vertical arrays: upper ~40 translucent pins on wavy board plus lower ~18 large silver-black rigid pins 0.72x pcb, both gapped from skin/pcb",
-      "expected": "48 soft vertical pillars ~0.12x pcb touching pcb and skin",
-      "matters": true,
-      "why": "upper array approximates soft pillars but lower rigid telescopic pin array is wrong mechanism and oversize; doubles pillar function and breaks single compressible-gap principle"
+      "what": "CORE",
+      "measured": "Segmenter says apart; pixels show contact/mounting",
+      "expected": "CORE to touch SKIN, CAP and BOARD",
+      "matters": false,
+      "why": "Pixels show light-gray faceted CORE with flat top directly under dark CAP grid, with CAP seated on it, and right-side boss/ledge carrying green BOARD, and SKIN/GEL stack centered above. Transparent layers cause segmenter to read gaps as separation. Load path CORE supporting CAP and BOARD is visible, so expectation of apart is wrong."
     },
     {
-      "what": "pcb",
-      "measured": "pcb layers gapped from pillars and core in exploded view; upper pcb drawn wavy",
-      "expected": "single taxel electrode pcb touches pillars and core",
+      "what": "CAP",
+      "measured": "1 grid module ~1.4x CORE top, seated on CORE, grid of many taxels visible",
+      "expected": "CAP: 10 visible, 0.09x CORE, to touch CORE",
       "matters": false,
-      "why": "gaps are exploded view; waviness is shape fault listed separately, contact order is preserved"
+      "why": "Pixels show one rectangular Capacitive Taxel Array module with dense 8x8 grid texture (~64 taxels) as qty 1 per solution (size_class 0.2-2.0mm per taxel, array ~20mm). Expectation of 10 separate pieces at 0.09x misinterprets taxel vs array. Module footprint ~ same as CORE top (~1x) is correct for 20mm fingertip. It sits on CORE; no missing contact."
     },
     {
-      "what": "core",
-      "measured": "gray block gapped from boards above and base below",
-      "expected": "rigid core touches pcb and readout",
+      "what": "PVDF",
+      "measured": "PVDF ~1.1x CAP, same footprint thin clear film",
+      "expected": "PVDF 10x CAP",
       "matters": false,
-      "why": "exploded separation for illustration; stack order core between readout and screws/holder is correct"
+      "why": "Pixels show thin transparent PVDF Vibration Film directly between GEL and CAP with same rectangular footprint as CAP (~1.1x). Per solution PVDF 0.028-20mm film covering array, 1x is correct. Expectation of 10x is wrong; film is not 10x larger."
     },
     {
-      "what": "readout",
-      "measured": "lower green chip board ~0.29x pcb in segmenter measure, gapped from core and tail junction but tail overlaps board edge",
-      "expected": "readout ~0.8x pcb touches core and tail",
+      "what": "BOARD",
+      "measured": "BOARD seated on side ledge of CORE, touching via mount",
+      "expected": "BOARD to touch CORE",
       "matters": false,
-      "why": "size difference is perspective/coarse segmentation; board still carries chips and rear tail exit, function preserved"
+      "why": "Pixels show green readout PCB mounted on gray lateral bracket of CORE on right side, with amber flex entering it. Segmenter reads shadow/gap as apart, but mounting/bracket contact is visible. Electrical path FLEX->BOARD is continuous."
     },
     {
-      "what": "tail",
-      "measured": "orange ribbon overlaps readout board edge but shows gap to core in exploded view",
-      "expected": "flexible tail touches readout and core rear",
+      "what": "WHOLE_DEVICE_SIZE",
+      "measured": "Located parts span ~48mm across by 30mm high including board+cable; fingertip dome itself ~ finger-width",
+      "expected": "Whole device ~20.0mm by 22.0mm fingertip, largest part 50mm cable, finger-scale",
       "matters": false,
-      "why": "rear-exit routing is preserved; gap is exploded separation, tail is continuous wavy ribbon"
-    },
-    {
-      "what": "screws",
-      "measured": "pixels show 2 vertical screws left and right through core to base; segmenter found 1 horizontal 0.79x due to coarse error and foreground close-up",
-      "expected": "2 vertical metal screws ~0.15x core",
-      "matters": false,
-      "why": "segmenter miscount/orientation error; visually screws clamp core to holder vertically, function preserved"
+      "why": "Pixels show adult fingertip pressing dome, dome width ~ fingertip width ~20mm per design, core ~ same. Extended length to right includes on-finger board and message cable, allowed up to 50mm cable and 22mm board. No violation of fingertip size shape 18x28mm finger / 26x20x25mm precedent or 50mm limit. Proportions finger-scale, correct shape domed fingertip."
     }
   ],
-  "s1_faithful": false,
-  "s1_differences": "Sketch has skin full-width cap, single film, single soft-pillar array on flat electrode PCB, plus readout PCB, core, screws and rear tail. Render adds second rigid pin array, third PCB, second membrane, bends rigid PCB, shrinks skin to small disc, and misplaces Taxel Electrode Board callout onto pins.",
+  "s1_faithful": true,
+  "s1_differences": "Same 8 parts in same order and connections as sketch and figure_spec: skin over gel over vibration film over taxel grid on faceted core with flex to board and cable to hand. Slight exploded spacing for visibility but stacking and flex/cable continuity preserved. No missing, duplicated or floating parts affecting mechanism.",
   "s2_flaw": false,
-  "s2_feedback": "Exploded stack shows correct order skin-film-pillars-PCB-core-screws with rear tail exit and no interference; gaps are visualization separation, no design interference or unreachable assembly seen.",
-  "notes": "Segmenter undercounts pillars and screws and mis-reports orientation due to exploded close-up; gaps are exploded-view style shared with sketch. Core faults are extra board, extra rigid pin array, bent electrode PCB, small isolated skin cap, and misplaced Taxel callout."
+  "s2_feedback": "No design flaw exposed. Faceted core supports grid, flex has dorsal loop with bend clearance, board mounted on core side, cable strain relief visible. Load path finger to dome to gel to films to core plausible, no interference or unreachable part seen.",
+  "notes": "Photorealistic render, not diagram/CAD. All 8 solution parts present in correct order. Only depiction fault is numbers in one callout."
 }

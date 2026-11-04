@@ -1,0 +1,31 @@
+{
+  "id": "E26",
+  "author": "Structures-Survival Engineer",
+  "tool": "vetted_calc:cantilever_deflection",
+  "purpose": "post tip deflection and bending stress at 22 m/s survival",
+  "code_or_query": "{\"args\": {\"length_m\": 0.35, \"load_n\": 37.3, \"second_moment_m4\": 1.5e-08, \"youngs_pa\": 68900000000.0}, \"input_sources\": {}}",
+  "inputs": {
+    "length_m": {
+      "value": 0.35,
+      "source": "assumption"
+    },
+    "load_n": {
+      "value": 37.3,
+      "source": "assumption"
+    },
+    "second_moment_m4": {
+      "value": 1.5e-08,
+      "source": "assumption"
+    },
+    "youngs_pa": {
+      "value": 68900000000.0,
+      "source": "assumption"
+    }
+  },
+  "output_summary": "deflection_m=0.0005157998709885501 m",
+  "output_full": "{\n  \"deflection_m\": 0.0005157998709885501,\n  \"unit\": \"m\",\n  \"inputs\": {\n    \"load_n\": 37.3,\n    \"length_m\": 0.35,\n    \"youngs_pa\": 68900000000.0,\n    \"second_moment_m4\": 1.5e-08\n  },\n  \"provenance\": {\n    \"length_m\": {\n      \"value\": 0.35,\n      \"source\": \"assumption\"\n    },\n    \"load_n\": {\n      \"value\": 37.3,\n      \"source\": \"assumption\"\n    },\n    \"second_moment_m4\": {\n      \"value\": 1.5e-08,\n      \"source\": \"assumption\"\n    },\n    \"youngs_pa\": {\n      \"value\": 68900000000.0,\n      \"source\": \"assumption\"\n    }\n  },\n  \"calculator\": \"cantilever_deflection\"\n}",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

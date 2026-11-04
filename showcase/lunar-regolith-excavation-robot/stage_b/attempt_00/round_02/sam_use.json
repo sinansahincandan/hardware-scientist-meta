@@ -1,0 +1,70 @@
+{
+  "round": 2,
+  "sam_differences": {
+    "chassis": [
+      "expected 1 visible, found 4",
+      "expected a horizontal long axis, measured tilted about 124 degrees",
+      "size against wheel: expected about 4.7 times, measured 1.9 times",
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
+    ],
+    "arm": [
+      "not found by the segmenter as 'metal arm'"
+    ],
+    "kerf": [
+      "expected a horizontal long axis, measured vertical",
+      "expected to touch ladder, but they are apart in the picture"
+    ],
+    "ladder": [
+      "expected to touch kerf, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "hopper": [
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "auger": [
+      "not found by the segmenter as 'screw'"
+    ],
+    "battery": [
+      "not found by the segmenter as 'battery box'"
+    ],
+    "camera": [
+      "expected 2 visible, found 3",
+      "expected to touch chassis, but they are apart in the picture"
+    ]
+  },
+  "critique_part_ids": [
+    "arm",
+    "battery",
+    "callout"
+  ],
+  "sam_parts_used_by_critique": [
+    "arm",
+    "battery"
+  ],
+  "unnoticed_sam_deviations": [],
+  "kept": false,
+  "why": "introduced new faults",
+  "earlier_faults": [
+    {
+      "part_id": "ladder",
+      "fault": "ladder top free in air left/above hopper, open soil pour through air, no chute, white gap",
+      "status": "fixed",
+      "note": "Fixed: now enclosed descending chute housing from top sprocket positioned over hopper, soil drops from chute tip into hopper. Small gravity air gap remains but chute present and aligned."
+    },
+    {
+      "part_id": "callout",
+      "fault": "leader ends on ladder top sprocket gear, no camera there",
+      "status": "fixed",
+      "note": "Fixed: Onboard Guide Cameras leader now ends on left camera pole mast/camera, not on sprocket gear."
+    },
+    {
+      "part_id": "arm",
+      "fault": "no folding arms drawn, only fixed uprights above wheels",
+      "status": "still_wrong",
+      "note": "Still wrong: only short vertical fixed brackets above wheels, no diagonal folding arms chassis-to-wheels to widen track."
+    }
+  ]
+}

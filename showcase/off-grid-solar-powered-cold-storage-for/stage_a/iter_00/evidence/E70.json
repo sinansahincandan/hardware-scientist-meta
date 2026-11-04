@@ -1,0 +1,14 @@
+{
+  "id": "E70",
+  "author": "Enclosure and Structural Designer",
+  "tool": "sketch",
+  "purpose": "Split PV layout: 2 modules as roof sunshade on gantry over cold box plus 4 modules on separate ground frame, box on six pads with racking and rear evaporator",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\n# cold box\nax.add_patch(plt.Rectangle((2,0.5), 3, 2, fill=False, linewidth=2))\nax.text(3.5,1.5,'cold box\\n2.4x1.8x2.0m',ha='center',va='center',fontsize=8)\n# door\nax.plot([2,2],[0.5,2.5],linewidth=3)\nax.text(1.7,1.5,'door+strip',rotation=90,va='center',fontsize=7)\n# pads\nfor x in [2.2,3.4,4.8]:\n    ax.add_patch(plt.Rectangle((x,0.2),0.3,0.3,fill=False))\nax.text(3.5,0.05,'6 precast pads',ha='center',fontsize=7)\n# roof gantry 2 panels\nax.plot([1.8,5.2],[2.9,2.9],linewidth=2)\nax.plot([1.8,1.8],[2.5,2.9],linewidth=1)\nax.plot([5.2,5.2],[2.5,2.9],linewidth=1)\nax.add_patch(plt.Rectangle((2.2,2.9),1.4,0.4,fill=False))\nax.add_patch(plt.Rectangle((3.6,2.9),1.4,0.4,fill=False))\nax.text(3.5,3.5,'2 PV shade modules + vent gap',ha='center',fontsize=7)\n# separate ground array 4 panels\nax.plot([6,8.5],[0.5,1.5],linewidth=2)\nfor i in range(4):\n    ax.add_patch(plt.Rectangle((6.1+i*0.55,0.7),0.5,0.6,fill=False))\nax.text(7.2,0.2,'ground PV 4 modules own footings',ha='center',fontsize=7)\nax.set_xlim(0,9)\nax.set_ylim(0,4)\nax.set_aspect('equal')\nax.axis('off')\nplt.tight_layout()\nplt.savefig('sketch.png')",
+  "inputs": {},
+  "output_summary": "Split PV layout: 2 modules as roof sunshade on gantry over cold box plus 4 modules on separate ground frame, box on six pads with racking and rear evaporator",
+  "output_full": "Split PV layout: 2 modules as roof sunshade on gantry over cold box plus 4 modules on separate ground frame, box on six pads with racking and rear evaporator",
+  "sketch_path": "evidence/sketch_70.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

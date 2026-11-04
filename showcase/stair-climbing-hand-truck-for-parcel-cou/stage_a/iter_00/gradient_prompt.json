@@ -1,0 +1,111 @@
+{
+  "feedback_decisions": [
+    {
+      "feedback_item": "The folded suitcase cannot contain the one-piece backbone and the tri-star clusters as claimed.",
+      "decision": "apply",
+      "why": "The folded envelope claim from the folded volume calc (E42) and the door clearance calc (E76) was never summed against the backbone length from fabrication step 1 and the cluster diameter from the side view sketch (E24) and the toe-plate width, so a 1100 mm bar in a 730 mm envelope is geometrically impossible and van stow cannot be accepted on hope."
+    },
+    {
+      "feedback_item": "The braced backbone stiffness claim uses the wrong structural model and understates deflection by about eight times.",
+      "decision": "apply",
+      "why": "The unbraced deflection from the tip deflection calc (E71) using cantilever deflection with tube inertia (E69) is correct, but the braced claim from the braced deflection calc (E85) applies halved-span scaling that requires a new ground support, which a transverse clip across two tubes that bend together does not provide, so deployed whip remains near the unbraced value and changes handling on the maximum riser from the stair code (E16)."
+    },
+    {
+      "feedback_item": "The parcel offset and backbone stress use two different moments for the same load and the impact factor has no calculation.",
+      "decision": "apply",
+      "why": "Parcel weight from weight calc (E7) and toe moment from the toe moment calc (E68) use one offset while backbone stress from the backbone stress calc (E70) and safety factor from the safety factor calc (E74) use a larger offset with correct arithmetic for that input, so traceability is broken and the claimed impact factor has no calc, while axle torsion (E88) and pin shear (E89) recompute as correct and need no change."
+    },
+    {
+      "feedback_item": "The stair torque is used inconsistently as total and per-side and the brake sizing follows from the unsettled number.",
+      "decision": "apply",
+      "why": "The climb simulation (E23) reports per-side pivot torque with pull and hold while the locked-torque check (E51) reports total torque from slope times radius on the steepest stair from the stair code (E16) and cluster sketch (E24), and the two totals do not agree, so caliper clamp and tooth-pin sizing has no settled input for the safety-critical hold."
+    },
+    {
+      "feedback_item": "The climb work understates the lifted mass by about ten percent.",
+      "decision": "apply",
+      "why": "Lift energy from the parcel lift energy calc (E22) correctly applies energy equals mass times gravity times height to parcel mass only, while the operator lifts total mass from the tare lift calc (E86) and total mass calcs (E41, E73), so work, slope load and torque are all understated when parcel-only energy is carried forward."
+    },
+    {
+      "feedback_item": "The single-operator holding case exceeds sustained hand limits and rests entirely on an uncalculated spring-applied lock with weak human-factor sources.",
+      "decision": "apply",
+      "why": "Stair pull and hold from the climb simulation (E23) exceed sustained limits with ratio from the hold ratio calc (E59), and van restraint from the van restraint calc (E67) is correctly sized, so hands-off holding must be shown by calculable lever advantage, cable loss, finger force and holding margin with impact, and limits resting on unopened search results are weaker than values read from opened pages such as van space (E36) and stair code (E16)."
+    }
+  ],
+  "per_member": [
+    {
+      "member": "Tomas Lind — Folding & Van Integration",
+      "what_went_wrong": "This member claimed suitcase stow from the folded volume calc (E42) with door clearance (E76) while defining one-piece tubes in fabrication that cannot fit that length, and never summed cluster diameter from the cluster sketch (E24) and toe-plate width across the claimed width and thickness.",
+      "what_should_change": "Require this member to post a dimensioned stacked folded layout that sums backbone length with handle overlap, cluster diameter and thickness, and toe-plate width against envelope length, width and thickness, to reuse existing evidence by id before computing, to post a sketch when geometry matters, and to withhold ready until the sum fits or geometry is revised.",
+      "explains": "The role text asking for folded dimensions and tradeoffs vs rigidity without requiring a summed stacked layout explains the folded suitcase item where the folded volume calc (E42) was never reconciled with backbone length and cluster size."
+    },
+    {
+      "member": "Mara Voss — Structural Frame & Load Path",
+      "what_went_wrong": "This member carried correct unbraced deflection from the tip deflection calc (E71) with tube inertia (E69) but claimed large reduction from the braced deflection calc (E85) without a ground support, and used different offsets for toe moment and backbone stress while retaining an impact factor with no calculation.",
+      "what_should_change": "Require this member to state the support model and its regime before claiming stiffness change, to pick one parcel centre and reuse it for toe moment and backbone stress with recomputed factor, to add a calc if any impact factor is retained, and to check deflection against everyday scales and cluster alignment on the maximum riser before agreement.",
+      "explains": "The role text asking for max stress and deflection without requiring model-regime and single-offset traceability explains the braced-stiffness item from the braced deflection calc (E85) versus the tip deflection calc (E71) and the offset inconsistency between the toe moment calc (E68) and the backbone stress calc (E70)."
+    },
+    {
+      "member": "Kenji Tanaka — Stair-Climbing Locomotion",
+      "what_went_wrong": "This member left per-side torque and total locked torque inconsistent, carried parcel-only lift energy forward instead of total-mass energy, and left brake sizing following from the unsettled torque.",
+      "what_should_change": "Require this member to define total versus per-side torque once and reuse it consistently, to carry total lifted mass into energy, slope load, pull, hold and lock torque on the steepest stair, to read existing evidence before computing, and to resize clamp and pin only from the corrected total.",
+      "explains": "The role text asking for step-height and descent constraints without requiring total versus per-side bookkeeping explains the torque inconsistency between the climb simulation (E23) and the locked-torque check (E51) and the parcel-only energy from the parcel lift energy calc (E22)."
+    },
+    {
+      "member": "Elena Ruiz — Human Factors & Single-Operator Safety",
+      "what_went_wrong": "This member correctly showed that stair effort exceeds sustained capability but rested the safety case on a spring-applied lock with tooth hold that had no lever-force calc, cited limits from pages never opened, and voted ready while the tired-hand release check was named for hardware instead of settled by calculation.",
+      "what_should_change": "Require this member to replace unopened search results with opened sources for hand limits, to post calculable lever advantage with cable loss and required finger force to release and meter plus holding margin with impact for the largest slope load, and to withhold ready until that margin is shown in the meeting rather than deferred.",
+      "explains": "The role text asking for force limits and interlocks without requiring opened sources and calculable release force explains the holding-case item where pull and hold from the climb simulation (E23) exceed sustained limits and the lock margin was deferred to bench test on weak sources."
+    }
+  ],
+  "per_section": [
+    {
+      "heading": "## 4. Meeting protocol",
+      "diagnosis": "The protocol asked members to give a readiness opinion only when the proposal survives the strongest objection and said what calculation can settle is settled in the meeting, but it also said a test that needs built hardware cannot be done here so it should be named as a bench test. What it asked for allowed consensus close, what it failed to ask for was a bar on deferring calculable force and margin work to hardware and a bar on ready votes before dimensional, mass and torque reconciliation. That gap let all four ready votes proceed with inconsistent geometry and unsettled safety margin.",
+      "direction": "Narrow the bench-test clause to hardware-only wear and feel checks and require that any lever force, clamp, pin engagement and holding margin that can be calculated is calculated in the meeting, require reconciliation of envelope stack, mass definition, offset definition and torque definition before any ready vote, and require the Manager to answer every opinion on the current version without treating a named future test as closure.",
+      "explains": "The sentences about readiness and about naming a bench test in Meeting protocol explain why the meeting closed by chief after four cycles with ready votes while the envelope stack, brace model, torque definition and lever margin were still open."
+    },
+    {
+      "heading": "### Tomas Lind — Folding & Van Integration",
+      "diagnosis": "The Tomas Lind role asked for folded dimensions, fold sequence, van fit and tradeoffs vs rigidity and joint count. What it asked for produced envelope volume and tare lift, what it failed to ask for was a summed stacked-dimension proof that adds backbone, handle overlap, cluster and toe-plate contributions against each envelope axis plus a sketch when geometry matters. That gap let the folded volume calc (E42) stand without showing how long tubes fit a shorter envelope.",
+      "direction": "Add an explicit ownership rule that this member must provide a stacked folded layout summing every length, width and thickness contributor, must post a labeled sketch when changing fold geometry, must reuse prior evidence by id, and must check sizes against a person and a door before relying on them.",
+      "explains": "The folded-dimensions ownership in Roles for Tomas Lind explains the folded suitcase item where backbone length, cluster diameter and toe-plate width were never summed into the claimed envelope."
+    },
+    {
+      "heading": "### Mara Voss — Structural Frame & Load Path",
+      "diagnosis": "The Mara Voss role asked for max stress, deflection and stability constraints and tradeoffs vs weight and foldability. What it asked for produced stress and deflection numbers, what it failed to ask for was a regime check that a cross-tie is not a ground support and a single-offset continuity rule with an explicit impact calc if claimed. That gap let the braced deflection calc (E85) misuse halved-span scaling and let two offsets coexist.",
+      "direction": "Add an explicit rule that this member must name the structural model and its applicable regime before claiming stiffness change, must use one parcel centre for all moments and stresses, must show any impact allowance by calc, and must evaluate deflection effects on handling and step engagement.",
+      "explains": "The stress and deflection ownership in Roles for Mara Voss explains the braced-stiffness item and the offset inconsistency item involving the tip deflection calc (E71), the braced deflection calc (E85), the toe moment calc (E68) and the backbone stress calc (E70)."
+    },
+    {
+      "heading": "### Kenji Tanaka — Stair-Climbing Locomotion",
+      "diagnosis": "The Kenji Tanaka role asked for step-height climbing, directionality and descent constraints and tradeoffs vs flat efficiency. What it asked for produced pull, hold and torque, what it failed to ask for was consistent total versus per-side bookkeeping and use of total lifted mass for work and slope load. That gap let the climb simulation (E23) and the locked-torque check (E51) disagree and let parcel-only energy from the parcel lift energy calc (E22) understate climb work.",
+      "direction": "Add an explicit rule that this member must declare total versus per-side quantities once, must carry total mass through energy, slope force, pull, hold and lock torque on the steepest stair, and must reconcile simulation inputs with prior mass and geometry evidence before sizing clamp and pin.",
+      "explains": "The stair kinematics and descent ownership in Roles for Kenji Tanaka explains the torque-definition item and the climb-work item involving the climb simulation (E23), the locked-torque check (E51) and the parcel lift energy calc (E22)."
+    },
+    {
+      "heading": "### Elena Ruiz — Human Factors & Single-Operator Safety",
+      "diagnosis": "The Elena Ruiz role asked for force limits, tipping risk, visibility and grip constraints and tradeoffs vs mechanical advantage. What it asked for surfaced exceedance of sustained limits, what it failed to ask for was opened-source limits and a calculable release-and-meter force chain with holding margin including impact. That gap let unopened sources stand and let the lever check be deferred.",
+      "direction": "Add an explicit rule that this member must cite only opened sources for human limits, must require lever advantage with losses and finger force for release and metering plus locked holding margin, and must keep the descent-hold concern open until that calc shows margin rather than naming hardware test as closure.",
+      "explains": "The operability and interlock ownership in Roles for Elena Ruiz explains the holding-case item where sustained limits are exceeded and the safety case rests on an uncalculated lock."
+    },
+    {
+      "heading": "## 3. Tools and ## 5. Criteria",
+      "diagnosis": "Tools said to use calc, simulate, sketch and web_search and Criteria said the concept must work physically and be buildable, with a speaking rule for plain words and check against everyday scales. What they asked for enabled estimates, what they failed to ask for was mandatory sketch-based summation for envelopes, mandatory reuse of evidence by id, and mandatory traceability where one input offset and one mass definition flow through all dependent calcs. That gap let inconsistent numbers coexist with a buildable load path.",
+      "direction": "Require a labeled sketch whenever geometry or flow path matters, require a sum-of-parts statement naming every term for masses and envelope axes, require reuse of existing evidence by id unless recompute is justified, and add to Criteria that load, geometry and signal chains must be traceable with consistent inputs and no violated conservation.",
+      "explains": "The general Tools and Criteria language explains why correct local formulas for bending, torsion, shear and energy could pass while system-level sums and definitions diverged."
+    }
+  ],
+  "sections_to_change": [
+    "2. Roles",
+    "3. Tools",
+    "4. Meeting protocol",
+    "5. Criteria"
+  ],
+  "root_cause": "The council reached ready votes because Meeting protocol permitted deferral of calculable lever and holding-margin work to a hardware bench test and did not block ready before envelope, mass, offset and torque reconciliation, while Roles did not require stacked-dimension summation, structural-regime checks, single-offset traceability, consistent total bookkeeping or opened-source human limits, so correct local arithmetic coexisted with inconsistent system inputs.",
+  "agenda": "The failure is broad, not single-part: the folded envelope does not sum its parts, the braced deflection uses the wrong support model, and mass, offset and torque definitions are inconsistent while the safety-critical lever margin was deferred to hardware test. The fix must tighten Roles to require regime and consistency checks, tighten Meeting protocol to block ready votes before reconciliation, and tighten Tools and Criteria to require summed geometry and calculable margins.",
+  "same_problem_as_before": false,
+  "repeat_explanation": "",
+  "revert_sections": [],
+  "new_tool_proposals": [],
+  "retire_tools": []
+}

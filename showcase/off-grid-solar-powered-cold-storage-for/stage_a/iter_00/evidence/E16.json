@@ -1,22 +1,30 @@
 {
   "id": "E16",
-  "author": "Lena — Refrigeration and Thermal Insulation Engineer",
+  "author": "Cold-Chain Refrigeration Engineer",
   "tool": "web_search",
-  "purpose": "search: polyurethane sandwich panel thermal conductivity cold room insulation thickness",
-  "code_or_query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
+  "purpose": "search: solar powered cold room 1 tonne Ecofrost ColdHubs refrigeration specifications",
+  "code_or_query": "solar powered cold room 1 tonne Ecofrost ColdHubs refrigeration specifications",
   "inputs": {},
-  "output_summary": "ecer.com — details uuucyrw p148max 50mm 200mm polyurethane foam sandwich panels cladding cold room insulated outdoor.html — https://www.ecer.com/corp/details-uuucyrw-p148max-50mm-200mm-polyurethane-foam-sandwich-panels-cladding-cold-room-insulated-outdoor.html",
-  "output_full": "ecer.com — details uuucyrw p148max 50mm 200mm polyurethane foam sandwich panels cladding cold room insulated outdoor.html — https://www.ecer.com/corp/details-uuucyrw-p148max-50mm-200mm-polyurethane-foam-sandwich-panels-cladding-cold-room-insulated-outdoor.html\n(the search returned no passage text)",
+  "output_summary": "ecozensolutions.com — Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions — https://www.ecozensolutions.com/innovation/micro-cold-storage",
+  "output_full": "ecozensolutions.com — Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions — https://www.ecozensolutions.com/innovation/micro-cold-storage\n(opened by the member, not cited)\nCold-Chain Refrigeration Engineer said about it: As Cold-Chain Refrigeration Engineer, the field precedent for 1 tonne is the Ecofrost solar cold room holding 4 to 10 degrees Celsius with 5 kilowatt standalone solar and up to 30 hours batteryless backup (E16 Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions), matched by the 3 metre by 3 metre by 2 metre ColdHubs store for up to 3 tonnes (E18 Cold Hubs | Engineering For Change), which together mean a small Direct Current (DC, battery-type power) variable-speed vapor-compression monoblock with forced air.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "ecer.com",
-      "title": "details uuucyrw p148max 50mm 200mm polyurethane foam sandwich panels cladding cold room insulated outdoor.html",
+      "authors_or_org": "ecozensolutions.com",
+      "title": "Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions",
       "year": "",
-      "url": "https://www.ecer.com/corp/details-uuucyrw-p148max-50mm-200mm-polyurethane-foam-sandwich-panels-cladding-cold-room-insulated-outdoor.html",
-      "query": "polyurethane sandwich panel thermal conductivity cold room insulation thickness",
+      "url": "https://www.ecozensolutions.com/innovation/micro-cold-storage",
+      "query": "solar powered cold room 1 tonne Ecofrost ColdHubs refrigeration specifications",
       "unresolved": false,
-      "passage": ""
+      "passage": "As Cold-Chain Refrigeration Engineer, the field precedent for 1 tonne is the Ecofrost solar cold room holding 4 to 10 degrees Celsius with 5 kilowatt standalone solar and up to 30 hours batteryless backup (E16 Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions), matched by the 3 metre by 3 metre by 2 metre ColdHubs store for up to 3 tonnes (E18 Cold Hubs | Engineering For Change), which together mean a small Direct Current (DC, battery-type power) variable-speed vapor-compression monoblock with forced air.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "As Cold-Chain Refrigeration Engineer, the field precedent for 1 tonne is the Ecofrost solar cold room holding 4 to 10 degrees Celsius with 5 kilowatt standalone solar and up to 30 hours batteryless backup (E16 Ecofrost - Solar Powered Cold Storage Room Manufacturer in India - Ecozen | Ecozensolutions), matched by the 3 metre by 3 metre by 2 metre ColdHubs store for up to 3 tonnes (E18 Cold Hubs | Engineering For Change), which together mean a small Direct Current (DC, battery-type power) variable-speed vapor-compression monoblock with forced air."
+        }
+      ]
     }
   ],
   "status": "ok",

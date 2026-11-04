@@ -1,0 +1,14 @@
+{
+  "id": "E89",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "pad pressure kPa with grown array allowance",
+  "code_or_query": "(1841.5*9.81/6)/(0.4*0.4)*0.001",
+  "inputs": {},
+  "output_summary": "18.8",
+  "output_full": "18.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

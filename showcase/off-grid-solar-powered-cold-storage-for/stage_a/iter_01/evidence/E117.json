@@ -1,0 +1,32 @@
+{
+  "id": "E117",
+  "author": "Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: PIR sandwich panel weight kg per m2 100mm cold room",
+  "code_or_query": "PIR sandwich panel weight kg per m2 100mm cold room",
+  "inputs": {},
+  "output_summary": "everychina.com — Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding — https://www.everychina.com/p-z52fba2f-114553945-insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.html",
+  "output_full": "everychina.com — Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding — https://www.everychina.com/p-z52fba2f-114553945-insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.html\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "everychina.com",
+      "title": "Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding",
+      "year": "",
+      "url": "https://www.everychina.com/p-z52fba2f-114553945-insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.html",
+      "query": "PIR sandwich panel weight kg per m2 100mm cold room",
+      "unresolved": false,
+      "passage": "Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

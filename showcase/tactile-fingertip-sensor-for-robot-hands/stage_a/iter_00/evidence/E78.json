@@ -1,0 +1,14 @@
+{
+  "id": "E78",
+  "author": "Dr. Marcus Reid \u2014 Robotic Integration and Embedded Electronics",
+  "tool": "calc",
+  "purpose": "FIR multiply-accumulate rate for 44-tap slip filter at 2200 Hz",
+  "code_or_query": "44*2200",
+  "inputs": {},
+  "output_summary": "96800",
+  "output_full": "96800",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

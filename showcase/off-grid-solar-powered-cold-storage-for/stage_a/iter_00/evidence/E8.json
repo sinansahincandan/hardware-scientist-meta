@@ -1,22 +1,24 @@
 {
   "id": "E8",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "purpose": "search: peak sun hours hot regions Africa India solar insolation kWh m2 day",
+  "code_or_query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
   "inputs": {},
-  "output_summary": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
-  "output_full": "nabellasstores.com — LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores — https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/\n(the search returned no passage text)",
+  "output_summary": "solaripedia.com — Solaripedia | Resource — https://www.solaripedia.com/259/3598/resource.html",
+  "output_full": "solaripedia.com — Solaripedia | Resource — https://www.solaripedia.com/259/3598/resource.html\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "nabellasstores.com",
-      "title": "LC-Star 48V 100Ah LiFePO4 Solar Battery 5KWh - Lithium Solar Battery - Nabellas Stores",
+      "authors_or_org": "solaripedia.com",
+      "title": "Solaripedia | Resource",
       "year": "",
-      "url": "https://nabellasstores.com/product/lc-star-48v-100ah-lifepo4-solar-battery-5kwh-lithium-solar-battery/",
-      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+      "url": "https://www.solaripedia.com/259/3598/resource.html",
+      "query": "peak sun hours hot regions Africa India solar insolation kWh m2 day",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

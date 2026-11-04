@@ -1,22 +1,24 @@
 {
   "id": "E7",
-  "author": "Elena - Structural Dynamics Engineer",
+  "author": "Structural Dynamicist",
   "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical bending mode",
-  "code_or_query": "steel footbridge damping ratio vertical bending mode",
+  "purpose": "search: Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
+  "code_or_query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
   "inputs": {},
-  "output_summary": "researchgate.net — (PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge — https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge",
-  "output_full": "researchgate.net — (PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge — https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge\n(the search returned no passage text)",
+  "output_summary": "core.ac.uk — View metadata, citation and similar papers at core.ac.uk  brought to you by CORE — https://core.ac.uk/download/77031822.pdf",
+  "output_full": "core.ac.uk — View metadata, citation and similar papers at core.ac.uk  brought to you by CORE — https://core.ac.uk/download/77031822.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "researchgate.net",
-      "title": "(PDF) Long-term vibration serviceability of a steel-plated stress ribbon footbridge",
+      "authors_or_org": "core.ac.uk",
+      "title": "View metadata, citation and similar papers at core.ac.uk  brought to you by CORE",
       "year": "",
-      "url": "https://www.researchgate.net/publication/267641796_Long-term_vibration_serviceability_of_a_steel-plated_stress_ribbon_footbridge",
-      "query": "steel footbridge damping ratio vertical bending mode",
+      "url": "https://core.ac.uk/download/77031822.pdf",
+      "query": "Sétra footbridge pedestrian load 1.9 Hz vertical acceleration damping ratio 0.5%",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

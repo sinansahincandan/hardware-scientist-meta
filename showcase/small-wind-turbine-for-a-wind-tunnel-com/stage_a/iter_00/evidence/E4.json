@@ -1,0 +1,26 @@
+{
+  "id": "E4",
+  "author": "Aero-Rotor Lead",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition winning turbine rotor design blade",
+  "code_or_query": "Collegiate Wind Competition winning turbine rotor design blade",
+  "inputs": {},
+  "output_summary": "ceias.nau.edu — Northern Arizona University — 2018 — https://ceias.nau.edu/capstone/projects/ME/2018/18F7_CWC/docs/reports/Midpoint Report CWC.pdf",
+  "output_full": "ceias.nau.edu — Northern Arizona University — 2018 — https://ceias.nau.edu/capstone/projects/ME/2018/18F7_CWC/docs/reports/Midpoint Report CWC.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ceias.nau.edu",
+      "title": "Northern Arizona University",
+      "year": "2018",
+      "url": "https://ceias.nau.edu/capstone/projects/ME/2018/18F7_CWC/docs/reports/Midpoint Report CWC.pdf",
+      "query": "Collegiate Wind Competition winning turbine rotor design blade",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

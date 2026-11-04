@@ -1,14 +1,32 @@
 {
   "id": "E7",
-  "author": "Mara \u2014 Excavation and Mobility Engineer",
-  "tool": "search_knowledge",
-  "purpose": "knowledge: wheel traction loose soil Bekker sinkage grouser",
-  "code_or_query": "wheel traction loose soil Bekker sinkage grouser",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "web_search",
+  "purpose": "search: steep hopper wall angle mass flow cohesive soil Jenike",
+  "code_or_query": "steep hopper wall angle mass flow cohesive soil Jenike",
   "inputs": {},
-  "output_summary": "Light cold-box ground versus wind loads (from 20261102-112524_off-grid-solar-powered-cold-storage-for-)",
-  "output_full": "Light cold-box ground versus wind loads \u2014 from 20261102-112524_off-grid-solar-powered-cold-storage-for-\nA tonne of produce spread over a few square metres imposes only ~2.5 kPa floor and soil pressure, an order of magnitude below typical allowable soil bearing of tens to >50 kPa, so bearing rarely governs lightweight cold stores. Lateral wind governs anchoring: dynamic pressure follows ~0.6 x V^2, or ~540 Pa at 30 m/s gust, yielding ~2.9 kN on a ~5 m2 side wall that must be carried by anchors, plinth fixings and separate PV supports.\nEvidence: E47 (soil pressure under plinth without concrete self-weight: 2.51 kPa); E48 (floor loading from produce alone: 2.45 kPa); E64 (wind pressure at 30 m/s gust: 540 Pa); E65 (wind force on side wall: 2.86\u00d710\u00b3 N); E43 (search: concrete slab soil bearing capacity kPa small building foundation: spaworld.co.nz \u2014 Generic Concrete Slab or Pad Building Guide | Portable Spas \u2014 https://www.spaworld.co.nz/learn/how-to-build-a-generic-concrete-slab-or-pad-for-a-portable-spa-pool/); E44 (search: concrete slab soil bearing capacity kPa small building foundation: amcfoam.com \u2014 Revised: March 2010 \u2014 2010 \u2014 https://amcfoam.com/PDFs/Normal%20and%20Problem%20Soils.pdf)",
+  "output_summary": "jenike.com — Case Study - Limestone and Clay Storage Solution | Jenike & Johanson — https://jenike.com/case-studies/reliable-handling-of-limestone-and-clay-at-cemex/",
+  "output_full": "jenike.com — Case Study - Limestone and Clay Storage Solution | Jenike & Johanson — https://jenike.com/case-studies/reliable-handling-of-limestone-and-clay-at-cemex/\n(found by the search; not opened or cited)\nExcavation and Regolith Handling Lead said about it: Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13).",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "jenike.com",
+      "title": "Case Study - Limestone and Clay Storage Solution | Jenike & Johanson",
+      "year": "",
+      "url": "https://jenike.com/case-studies/reliable-handling-of-limestone-and-clay-at-cemex/",
+      "query": "steep hopper wall angle mass flow cohesive soil Jenike",
+      "unresolved": false,
+      "passage": "Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Excavation and Regolith Handling Lead",
+          "text": "Plain words: mass flow needs steep smooth walls and a large outlet from the Case Study - Limestone and Clay Storage Solution | Jenike & Johanson (E7) and the Powder Perspectives: There is a Science to Powder Handling (E8), applied to compacted density between 1.5 g/cm3 and 1.8 g/cm3 from the Robotics Minindg Competition Rules 2014 1 - [PDF Document] (E4) with peak friction 39 deg to 51 deg from the Developing a New Space Economy (2019) 5068.pdf Lightning Talk or Poster (E3), so a 20 L wedge holds about half a person's weight and we plan half-full trips with shaking to break arches, from the payload mass (E10) at 30.0 kg max and the side-view dump sketch (E13)."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

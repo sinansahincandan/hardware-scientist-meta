@@ -1,0 +1,68 @@
+{
+  "id": "E41",
+  "author": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+  "tool": "web_search",
+  "purpose": "search: AD7147 capacitance to digital converter datasheet femtofarad resolution",
+  "code_or_query": "AD7147 capacitance to digital converter datasheet femtofarad resolution",
+  "inputs": {},
+  "output_summary": "analog.com — AD7147A (Rev. B) — https://www.analog.com/media/en/technical-documentation/data-sheets/ad7147a.pdf",
+  "output_full": "analog.com — AD7147A (Rev. B) — https://www.analog.com/media/en/technical-documentation/data-sheets/ad7147a.pdf\n(opened by the member, not cited)\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard.\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: B) (E41) runs 2.6 to 3.6 V supply at 1.00 mA full power and 29.0 uA low power mode with SPI, where SPI means Serial Peripheral Interface, compatible interface, matching the Microsoft Word - BioTac Product Manual.docx (E43) 6-pin 5 V SPI precedent.\nManager said about it: The numbers that decide it are zero blocking objections on the board, 2200 Hz sampling with 30.0 ms window from the BioTac slip chapter (E31), 9.00 ms converter update in the converter datasheet (E41) and 51.2 kbit per s message rate (E52), so Dr.\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: B) (E41) from Dr.\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: B) (E41) Capacitance-to-Digital Converter, where Capacitance-to-Digital Converter means CDC, frame at 9.00 millisecond update cannot carry 100 to 500 hertz vibration per the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) plus-minus 8 picofarad range, with the full Serial Peripheral Interface, where Serial Peripheral Interface means SPI, frame at 51.2 kilobit per second in the SPI tactile message rate (E52) following.\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: B) (E41).\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: B) (E41) states 9.00 ms update for 13 capacitive inputs so it cannot carry 100 to 500 Hz vibration.\nManager said about it: The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76).\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The numbers that decide it are 2200 Hz sampling with 30.0 ms window inside the 43.2 ms gap from 53.6 ms micro-slip to 96.8 ms gross slip in the stick-to-slip transition simulation (E38), where CDC means Capacitance-to-Digital Converter cannot carry 100 to 500 Hz shake at 9.00 ms update in the AD7147A Rev B (E41), so PVDF, where PVDF means Polyvinylidene Fluoride vibration film, must go direct to the MCU, where MCU means Microcontroller Unit, ADC, where ADC means Analog-to-Digital Converter, and the full SPI, where SPI means Serial Peripheral Interface, frame at 51.2 kbit per s in the SPI rate (E52) follows after the 1-bit interrupt.\nManager said about it: The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "analog.com",
+      "title": "AD7147A (Rev. B)",
+      "year": "",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ad7147a.pdf",
+      "query": "AD7147 capacitance to digital converter datasheet femtofarad resolution",
+      "unresolved": false,
+      "passage": "B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "B) (E41) states femtofarad resolution with 13 capacitance sensor inputs at 9 ms update for all 13 inputs, and the FPC Connector Guide : Types and Reliability Considerations (E42) states contacts in ZIF, where ZIF means Zero Insertion Force, connectors have higher cycle rating because they are not rubbed during insertion with 0.5 mm pitch as industry standard."
+        },
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "B) (E41) runs 2.6 to 3.6 V supply at 1.00 mA full power and 29.0 uA low power mode with SPI, where SPI means Serial Peripheral Interface, compatible interface, matching the Microsoft Word - BioTac Product Manual.docx (E43) 6-pin 5 V SPI precedent."
+        },
+        {
+          "by": "Manager",
+          "text": "The numbers that decide it are zero blocking objections on the board, 2200 Hz sampling with 30.0 ms window from the BioTac slip chapter (E31), 9.00 ms converter update in the converter datasheet (E41) and 51.2 kbit per s message rate (E52), so Dr."
+        },
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "B) (E41) from Dr."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "B) (E41) Capacitance-to-Digital Converter, where Capacitance-to-Digital Converter means CDC, frame at 9.00 millisecond update cannot carry 100 to 500 hertz vibration per the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) plus-minus 8 picofarad range, with the full Serial Peripheral Interface, where Serial Peripheral Interface means SPI, frame at 51.2 kilobit per second in the SPI tactile message rate (E52) following."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "B) (E41)."
+        },
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "B) (E41) states 9.00 ms update for 13 capacitive inputs so it cannot carry 100 to 500 Hz vibration."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76)."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The numbers that decide it are 2200 Hz sampling with 30.0 ms window inside the 43.2 ms gap from 53.6 ms micro-slip to 96.8 ms gross slip in the stick-to-slip transition simulation (E38), where CDC means Capacitance-to-Digital Converter cannot carry 100 to 500 Hz shake at 9.00 ms update in the AD7147A Rev B (E41), so PVDF, where PVDF means Polyvinylidene Fluoride vibration film, must go direct to the MCU, where MCU means Microcontroller Unit, ADC, where ADC means Analog-to-Digital Converter, and the full SPI, where SPI means Serial Peripheral Interface, frame at 51.2 kbit per s in the SPI rate (E52) follows after the 1-bit interrupt."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

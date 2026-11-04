@@ -1,0 +1,14 @@
+{
+  "id": "E83",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "hand-hold mass equivalent for 188 N stair hold",
+  "code_or_query": "188/9.81",
+  "inputs": {},
+  "output_summary": "19.2",
+  "output_full": "19.2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

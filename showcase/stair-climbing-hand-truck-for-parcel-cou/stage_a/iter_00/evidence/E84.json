@@ -1,0 +1,14 @@
+{
+  "id": "E84",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "tare mass from lift force",
+  "code_or_query": "63.8/9.81",
+  "inputs": {},
+  "output_summary": "6.5",
+  "output_full": "6.5",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

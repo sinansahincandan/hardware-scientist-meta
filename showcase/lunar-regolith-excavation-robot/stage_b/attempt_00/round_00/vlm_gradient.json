@@ -1,0 +1,46 @@
+{
+  "per_region": [
+    {
+      "part_id": "chassis",
+      "diagnosis": "what=chassis: pixels show twin-tube low frame with hopper pivot-bolted on top at mid-rear, no real gap; segmenter 'apart' is shadow/edge split at pivot. Load path chassis-hopper intact, does not break working principle. Caused by sentences 'Twin aluminium tube chassis frame low...' + 'hopper tilted up at the rear pivot' not stating direct contact.",
+      "prompt_fix": "Replace with: Twin aluminium tube chassis as continuous low frame with steep wedge hopper pivot-bolted directly on top of it with metal-on-metal contact, no visible gap."
+    },
+    {
+      "part_id": "arm",
+      "diagnosis": "what=arm: pixels show side profile with two grouser wheels and side frame plates; folding arms tucked behind frame and occluded, so segmenter finds 0. Mobility via wheels still legible, does not break working principle. Caused by sentence 'on folding aluminium arms, two wheels visible in side profile' implying arms should be separately visible in side view.",
+      "prompt_fix": "Replace with: folding aluminium arms tucked directly behind side frame, mostly occluded in side view with only two wheels prominent - representative visibility acceptable."
+    },
+    {
+      "part_id": "kerf",
+      "diagnosis": "what=kerf: pixels show correct narrow vertical chain engaged downward in thin slot at front with spoil rows. Segmenter expected horizontal long axis is wrong; vertical is required for trenching. Supports cutting principle. Prompt sentence 'Front narrow steel trenching chain engaged in a thin slot' missing orientation word.",
+      "prompt_fix": "Replace with: Front narrow steel trenching chain oriented vertically, engaged downward in a thin slot in the soil with small side spoil rows."
+    },
+    {
+      "part_id": "ladder",
+      "diagnosis": "what=ladder: pixels show long inclined ladder top end free high above/left of hopper with white air gap, buckets full and spilling to air, not into hopper - breaks required kerf->ladder->hopper gravity path. Critical for working principle. Caused by sentence 'Center long inclined steel bucket ladder rising from ground level to above the frame, buckets visible carrying soil upward' with no termination over hopper and no chute.",
+      "prompt_fix": "Replace with: Center inclined steel bucket ladder rising from front dig point with its upper head sprocket terminating immediately above and just inside the hopper throat, joined by a short enclosed gravity chute with no air gap, buckets tipping directly into hopper."
+    },
+    {
+      "part_id": "hopper",
+      "diagnosis": "what=hopper: pixels show single smooth wedge hopper heaped with soil, tilted up at rear pivot; segmenter 5 is over-segmentation of bin + soil heap + highlights, not 5 hoppers. Size 39x vs auger is whole bin vs screw threads. Mounted on chassis and joined to rear screw in image. Storage-tilt function intact, count artifact does not break principle.",
+      "prompt_fix": "Replace with: one single Mid-rear smooth steel steep wedge hopper tilted up at the rear pivot - one container only, representative count acceptable despite soil heap highlights."
+    },
+    {
+      "part_id": "auger",
+      "diagnosis": "what=auger: pixels show rear tilt screw discharge as short screw chute pouring continuous stream into bin plus tilt jack-screw under hopper; threads split by segmenter as 6 tiny pieces 0.026x hopper. Discharge stream into bin visible, so discharge principle preserved; count/size artifact. Caused by sentence 'with visible rear steel screw discharge pouring...' without singularity and allowing thread fragmentation.",
+      "prompt_fix": "Replace with: one single visible rear steel screw discharge chute at hopper rear pouring soil down into bin - one screw unit only, thread texture may read as one piece, representative count acceptable."
+    },
+    {
+      "part_id": "battery",
+      "diagnosis": "what=battery: pixels show no separate battery box; pack hidden inside low chassis between tubes/cables in exterior side view. Prompt contains no battery visualization sentence. Power source can stay internal, does not break soil kerf->ladder->hopper->screw path.",
+      "prompt_fix": "Add: lithium phosphate battery pack housed low inside chassis frame, allowed to be hidden/occluded in exterior side view, no need for separate visible box."
+    },
+    {
+      "part_id": "camera",
+      "diagnosis": "what=camera: pixels show two small cameras on slender vertical masts - front over dig point and center over frame - offset above chassis by mast height, so air gap is intentional. Segmenter 'touch chassis' ignores mast. Perception function intact, does not break principle. Caused by sentence 'Small onboard cameras on mast and over dig point' not stating offset.",
+      "prompt_fix": "Replace with: Small onboard cameras on slender vertical masts bolted to chassis and standing above it over dig point and frame, mast-height air gap intentional."
+    }
+  ],
+  "fix_mode": "full",
+  "summary": "Main structural fault is ladder->hopper disconnect: ladder discharges to air high left of hopper, breaking kerf->ladder->hopper path; all other flags are segmenter artifacts/occlusion/orientation errors with principle intact. Scale: located parts span ~2081mm across x 1881mm high scaled by ~1700mm person vs prompt compact waist-high and 1050mm long longest part - drawn ~2x too long/wide and too tall due to exaggerated towering ladder plus soil bed width, breaking compact limit and design's own 1050mm dimension; cap ladder top just above hopper lip for chest-high max and overall length ~1050mm."
+}

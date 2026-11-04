@@ -13,3 +13,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 4. Budget tare explicitly. Reference build **frame+wheels+locks = 7.38 kg**, demonstrating **~7-8 kg tare class** with solid tyres achievable [run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou E40].
 
 ## Use notes
+- run 20261104-121014_small-wind-turbine-for-a-wind-tunnel-com (Structures-Survival Engineer): Helped verified post stiffness and strength with margin.

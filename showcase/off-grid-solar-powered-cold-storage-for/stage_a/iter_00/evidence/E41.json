@@ -1,24 +1,14 @@
 {
   "id": "E41",
-  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
-  "tool": "web_search",
-  "purpose": "search: galvanized steel angle 40x40 datasheet weight size",
-  "code_or_query": "galvanized steel angle 40x40 datasheet weight size",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "conduction watts at 43C ambient 5C room",
+  "code_or_query": "0.21*25.4*38",
   "inputs": {},
-  "output_summary": "en.lsdsteel.com — High Quality Best-Selling Zero Spangle Galvanized Steel - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda — http://en.lsdsteel.com/best-selling-zero-spangle-galvanized-steel-profile-steel-lishengda-product/",
-  "output_full": "en.lsdsteel.com — High Quality Best-Selling Zero Spangle Galvanized Steel - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda — http://en.lsdsteel.com/best-selling-zero-spangle-galvanized-steel-profile-steel-lishengda-product/\n(the search returned no passage text)",
+  "output_summary": "203",
+  "output_full": "203",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "en.lsdsteel.com",
-      "title": "High Quality Best-Selling Zero Spangle Galvanized Steel - Profile Steel – Lishengda Exporter and Manufacturer | Lishengda",
-      "year": "",
-      "url": "http://en.lsdsteel.com/best-selling-zero-spangle-galvanized-steel-profile-steel-lishengda-product/",
-      "query": "galvanized steel angle 40x40 datasheet weight size",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

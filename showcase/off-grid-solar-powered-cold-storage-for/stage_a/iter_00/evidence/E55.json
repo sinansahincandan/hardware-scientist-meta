@@ -1,14 +1,26 @@
 {
   "id": "E55",
-  "author": "Farah \u2014 Post-Harvest and Cooperative Operations Specialist",
-  "tool": "calc",
-  "purpose": "daily batch electric for 200kg from 25kWh per tonne thermal COP2.5",
-  "code_or_query": "(200/1000*25)/2.5",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: eutectic holdover plates transport refrigeration thermal storage",
+  "code_or_query": "eutectic holdover plates transport refrigeration thermal storage",
   "inputs": {},
-  "output_summary": "2",
-  "output_full": "2",
+  "output_summary": "rgees.com — product — https://rgees.com/product/",
+  "output_full": "rgees.com — product — https://rgees.com/product/\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "rgees.com",
+      "title": "product",
+      "year": "",
+      "url": "https://rgees.com/product/",
+      "query": "eutectic holdover plates transport refrigeration thermal storage",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
-  "cycle": 3
+  "cycle": 2
 }

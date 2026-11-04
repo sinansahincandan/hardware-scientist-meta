@@ -1,0 +1,26 @@
+{
+  "id": "E101",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: DC monoblock cold room cooling capacity COP 43C ambient",
+  "code_or_query": "DC monoblock cold room cooling capacity COP 43C ambient",
+  "inputs": {},
+  "output_summary": "madeinchina.com — House Heating Heat Pump with Monoblock Hydro Box a+++ CE - MadeInChina.com — https://madeinchina.com/mall/show-House-Heating-Heat-Pump-with-Monoblock-Hydro-Box-a-CE_1217356.html",
+  "output_full": "madeinchina.com — House Heating Heat Pump with Monoblock Hydro Box a+++ CE - MadeInChina.com — https://madeinchina.com/mall/show-House-Heating-Heat-Pump-with-Monoblock-Hydro-Box-a-CE_1217356.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "madeinchina.com",
+      "title": "House Heating Heat Pump with Monoblock Hydro Box a+++ CE - MadeInChina.com",
+      "year": "",
+      "url": "https://madeinchina.com/mall/show-House-Heating-Heat-Pump-with-Monoblock-Hydro-Box-a-CE_1217356.html",
+      "query": "DC monoblock cold room cooling capacity COP 43C ambient",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

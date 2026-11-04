@@ -1,0 +1,14 @@
+{
+  "id": "E74",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "sketch",
+  "purpose": "Transverse HSFG clamp interface cross-section below soffit between girders at midspan",
+  "code_or_query": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(8,4))\nax.set_aspect('equal'); ax.axis('off')\n# deck\nax.fill_between([0,10], 5.2, 5.6, color='lightgrey')\nax.text(5,5.4,'deck soffit',ha='center',va='center',fontsize=8)\n# girders\nfor x in [1.5,8.5]:\n    ax.fill_between([x-0.3,x+0.3], 1.0, 5.2, color='grey', alpha=0.6)\n    ax.text(x,3.0,'girder',ha='center',va='center',fontsize=7, rotation=90)\n# cross-beam transverse\nax.fill_between([1.2,8.8], 3.8, 4.3, color='dimgrey')\nax.text(5,4.05,'transverse cross-beam',ha='center',va='center',fontsize=8, color='white')\n# clamp zones\nfor x in [1.5,8.5]:\n    ax.plot([x-0.5,x+0.5],[3.8,3.8],'k-',lw=2)\n    ax.plot([x-0.5,x+0.5],[4.3,4.3],'k-',lw=2)\n    ax.text(x,4.6,'HSFG clamp bolts\\nbeam-to-girder web',ha='center',va='bottom',fontsize=6)\n# springs dampers masses\nfor xm in [4.0,6.0]:\n    ax.plot([xm,xm],[2.2,3.8],'b-',lw=2)\n    ax.text(xm,3.0,'spring+damper',ha='right',va='center',fontsize=6, rotation=90)\n    ax.fill_between([xm-0.6,xm+0.6],1.4,2.2,color='black')\n    ax.text(xm,1.8,'400kg mass',ha='center',va='center',fontsize=6,color='white')\nax.text(5,0.7,'all below soffit within girder depth, between girders at midspan',ha='center',fontsize=7)\nplt.tight_layout()\nplt.savefig('sketch.png',dpi=150)",
+  "inputs": {},
+  "output_summary": "Transverse HSFG clamp interface cross-section below soffit between girders at midspan",
+  "output_full": "Transverse HSFG clamp interface cross-section below soffit between girders at midspan",
+  "sketch_path": "evidence/sketch_74.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

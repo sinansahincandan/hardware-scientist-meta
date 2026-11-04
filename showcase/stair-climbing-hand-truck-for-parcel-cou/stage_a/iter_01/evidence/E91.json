@@ -1,0 +1,14 @@
+{
+  "id": "E91",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "backbone stress with 1.5 impact factor at unified offset",
+  "code_or_query": "51.1*1.5",
+  "inputs": {},
+  "output_summary": "76.7",
+  "output_full": "76.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

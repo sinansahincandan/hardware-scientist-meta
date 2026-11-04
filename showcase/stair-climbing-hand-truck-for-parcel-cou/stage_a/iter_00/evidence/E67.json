@@ -1,0 +1,14 @@
+{
+  "id": "E67",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "forward restraint force on folded 6.5kg truck",
+  "code_or_query": "0.8*6.5*9.81",
+  "inputs": {},
+  "output_summary": "51",
+  "output_full": "51",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

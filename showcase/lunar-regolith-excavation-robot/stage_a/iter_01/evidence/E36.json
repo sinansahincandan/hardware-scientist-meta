@@ -1,14 +1,32 @@
 {
   "id": "E36",
-  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
-  "tool": "calc",
-  "purpose": "runtime hours from 480Wh pack at 341W full load",
-  "code_or_query": "(480/341)",
+  "author": "Power Structure and Integration Lead",
+  "tool": "web_search",
+  "purpose": "search: LiFePO4 24V battery pack energy density small mobile robot datasheet",
+  "code_or_query": "LiFePO4 24V battery pack energy density small mobile robot datasheet",
   "inputs": {},
-  "output_summary": "1.41",
-  "output_full": "1.41",
+  "output_summary": "it.ecer.com — pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory — https://it.ecer.com/corp/details-uuu3tg0-pu1bk6y-24v-10ah-lifepo4-battery-pack-for-electric-robot-in-light-weight-and-compact-size.html",
+  "output_full": "it.ecer.com — pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory — https://it.ecer.com/corp/details-uuu3tg0-pu1bk6y-24v-10ah-lifepo4-battery-pack-for-electric-robot-in-light-weight-and-compact-size.html\n(found by the search; not opened or cited)\nPower Structure and Integration Lead said about it: A pack with Nominal Voltage 24V and Rated Capacity 10Ah from the batteria del fosfato del ferro del litio di 24V 10AH per il robot elettrico nella dimensione leggera e compatta from China Factory (E35) and with Nominal Voltage 24V and Rated Capacity 10Ah from the pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory (E36) means two in parallel give 24.0 V 20.0 Ah for 480 Wh, where Lithium iron phosphate (LiFePO4, meaning a safe long-life rechargeable chemistry) is the chemistry, and the motor heating estimate (E44) rises only 18.0 K after 300 s at 45.0 W waste heat, which is warm skin not boiling water, so everyday scale says heating is gentle.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "it.ecer.com",
+      "title": "pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory",
+      "year": "",
+      "url": "https://it.ecer.com/corp/details-uuu3tg0-pu1bk6y-24v-10ah-lifepo4-battery-pack-for-electric-robot-in-light-weight-and-compact-size.html",
+      "query": "LiFePO4 24V battery pack energy density small mobile robot datasheet",
+      "unresolved": false,
+      "passage": "A pack with Nominal Voltage 24V and Rated Capacity 10Ah from the batteria del fosfato del ferro del litio di 24V 10AH per il robot elettrico nella dimensione leggera e compatta from China Factory (E35) and with Nominal Voltage 24V and Rated Capacity 10Ah from the pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory (E36) means two in parallel give 24.0 V 20.0 Ah for 480 Wh, where Lithium iron phosphate (LiFePO4, meaning a safe long-life rechargeable chemistry) is the chemistry, and the motor heating estimate (E44) rises only 18.0 K after 300 s at 45.0 W waste heat, which is warm skin not boiling water, so everyday scale says heating is gentle.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "A pack with Nominal Voltage 24V and Rated Capacity 10Ah from the batteria del fosfato del ferro del litio di 24V 10AH per il robot elettrico nella dimensione leggera e compatta from China Factory (E35) and with Nominal Voltage 24V and Rated Capacity 10Ah from the pacchetto della batteria di 24V 10AH LiFePO4 per il robot elettrico nella dimensione leggera e compatta from China Factory (E36) means two in parallel give 24.0 V 20.0 Ah for 480 Wh, where Lithium iron phosphate (LiFePO4, meaning a safe long-life rechargeable chemistry) is the chemistry, and the motor heating estimate (E44) rises only 18.0 K after 300 s at 45.0 W waste heat, which is warm skin not boiling water, so everyday scale says heating is gentle."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

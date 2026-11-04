@@ -1,24 +1,14 @@
 {
   "id": "E13",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
-  "tool": "web_search",
-  "purpose": "search: FPV 5.8 GHz video latency teleoperation ground robot",
-  "code_or_query": "FPV 5.8 GHz video latency teleoperation ground robot",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "sketch",
+  "purpose": "side view bucket-ladder digger feeding wedge hopper with rear-pivot dump over bin",
+  "code_or_query": "import matplotlib.pyplot as plt\nimport matplotlib.patches as mp\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,4))\nax.set_xlim(0,10); ax.set_ylim(0,5); ax.set_aspect('equal'); ax.axis('off')\nax.plot([0,10],[1,1],'k-',lw=2)\nax.text(0.2,0.6,'BP-1 bed')\nax.plot([3,5.5],[0.7,3.2],'k-',lw=3)\nax.plot([3.4,5.9],[0.9,3.4],'k-',lw=1)\nax.text(1.6,2.0,'bucket ladder 20deg entry')\nfor x,y in [(3.3,0.9),(3.9,1.5),(4.5,2.1),(5.1,2.7)]:\n    ax.add_patch(mp.Rectangle((x,y),0.3,0.2,fill=False,lw=2))\nax.plot([5.9,7.5],[3.4,3.4],'k-',lw=2)\nax.plot([5.9,6.4],[3.4,2.0],'k-',lw=2)\nax.plot([7.5,7.0],[3.4,2.0],'k-',lw=2)\nax.text(6.0,3.6,'wedge hopper 20L')\nax.text(6.0,2.5,'gate + vibrator')\nax.add_patch(mp.Rectangle((7.8,0.0),1.5,1.5,fill=False,lw=2))\nax.text(7.9,0.5,'bin')\nax.annotate('dump pivot rear', xy=(7.0,2.0), xytext=(5.0,4.2), arrowprops=dict(arrowstyle='->'))\nax.set_title('Excavation and dump side view')\nplt.tight_layout(); plt.savefig('sketch.png')",
   "inputs": {},
-  "output_summary": "api-dev.govwhitepapers.com — Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments — 2026 — https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf",
-  "output_full": "api-dev.govwhitepapers.com — Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments — 2026 — https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "api-dev.govwhitepapers.com",
-      "title": "Fiber-Optic vs. RF Communication Links for FPV Drones in Military Environments",
-      "year": "2026",
-      "url": "https://api-dev.govwhitepapers.com/wp-content/uploads/2026/02/FPV_Drone_FiberOptic_vs_RF_WhitePaper_v-7.pdf",
-      "query": "FPV 5.8 GHz video latency teleoperation ground robot",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "output_summary": "side view bucket-ladder digger feeding wedge hopper with rear-pivot dump over bin",
+  "output_full": "side view bucket-ladder digger feeding wedge hopper with rear-pivot dump over bin",
+  "sketch_path": "evidence/sketch_13.png",
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

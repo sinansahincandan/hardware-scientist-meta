@@ -1,22 +1,30 @@
 {
   "id": "E9",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
-  "code_or_query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+  "purpose": "search: 400W monocrystalline solar panel datasheet efficiency dimensions 48V LiFePO4 battery MPPT",
+  "code_or_query": "400W monocrystalline solar panel datasheet efficiency dimensions 48V LiFePO4 battery MPPT",
   "inputs": {},
-  "output_summary": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
-  "output_full": "thesolarstore.com — EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery — https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery\n(the search returned no passage text)",
+  "output_summary": "allbatteries.co.uk — Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC — https://www.allbatteries.co.uk/spectra-400w-48v-rigid-solar-panel-monocrystalline-perc-spr6038.html",
+  "output_full": "allbatteries.co.uk — Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC — https://www.allbatteries.co.uk/spectra-400w-48v-rigid-solar-panel-monocrystalline-perc-spr6038.html\n(found by the search; not opened or cited)\nSolar Energy Systems Engineer said about it: For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "thesolarstore.com",
-      "title": "EG4 LifePower4 48V 5.12kWh 100Ah Lithium Iron Phosphate Battery",
+      "authors_or_org": "allbatteries.co.uk",
+      "title": "Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC",
       "year": "",
-      "url": "https://thesolarstore.com/products/eg4-lifepower4-48v-5-12kwh-100ah-lithium-iron-phosphate-battery",
-      "query": "LiFePO4 48V 100Ah battery datasheet off-grid solar usable capacity",
+      "url": "https://www.allbatteries.co.uk/spectra-400w-48v-rigid-solar-panel-monocrystalline-perc-spr6038.html",
+      "query": "400W monocrystalline solar panel datasheet efficiency dimensions 48V LiFePO4 battery MPPT",
       "unresolved": false,
-      "passage": ""
+      "passage": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -1,0 +1,14 @@
+{
+  "id": "E79",
+  "author": "Dr. Marcus Reid \u2014 Robotic Integration and Embedded Electronics",
+  "tool": "sketch",
+  "purpose": "Fail-safe dual-path tactile transmit: PVDF direct to MCU ADC plus CDC array frame, latched slip interrupt plus SPI message to hand; fixed finger vs fingertip board vs hand controller",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(7, 4.5))\nax.set_xlim(0, 10); ax.set_ylim(0, 6); ax.axis('off')\nax.text(5, 5.6, 'fail-safe dual-path transmit', ha='center', fontsize=12)\n# fingertip board\nax.add_patch(plt.Rectangle((0.5, 1.2), 4.2, 3.2, fill=False, lw=1.5))\nax.text(2.6, 4.1, 'fingertip PCB (fixed to finger)', ha='center', fontsize=9)\nax.text(1.2, 3.4, 'PVDF ->', fontsize=9); ax.text(1.2, 2.9, 'MCU ADC', fontsize=9)\nax.text(1.2, 2.3, 'array ->', fontsize=9); ax.text(1.2, 1.8, 'CDC frame', fontsize=9)\n# hand controller\nax.add_patch(plt.Rectangle((6.3, 1.2), 3.2, 3.2, fill=False, lw=1.5))\nax.text(7.9, 4.1, 'hand controller', ha='center', fontsize=9)\nax.text(6.9, 3.0, 'grip loop', fontsize=9)\n# two paths\nax.annotate('', xy=(6.3, 3.3), xytext=(4.7, 3.3), arrowprops=dict(arrowstyle='->', lw=1.5))\nax.text(5.5, 3.55, 'slip interrupt (fast 1-bit)', ha='center', fontsize=8)\nax.annotate('', xy=(6.3, 2.0), xytext=(4.7, 2.0), arrowprops=dict(arrowstyle='->', lw=1.5))\nax.text(5.5, 2.25, 'SPI frame 100Hz + OK bit', ha='center', fontsize=8)\nax.text(5.5, 0.7, 'break anywhere -> OK lost -> tighten grip', ha='center', fontsize=8)\nplt.tight_layout(); plt.savefig('sketch.png', dpi=120); plt.close()",
+  "inputs": {},
+  "output_summary": "Fail-safe dual-path tactile transmit: PVDF direct to MCU ADC plus CDC array frame, latched slip interrupt plus SPI message to hand; fixed finger vs fingertip board vs hand controller",
+  "output_full": "Fail-safe dual-path tactile transmit: PVDF direct to MCU ADC plus CDC array frame, latched slip interrupt plus SPI message to hand; fixed finger vs fingertip board vs hand controller",
+  "sketch_path": "evidence/sketch_79.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E59",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "web_search",
+  "purpose": "search: elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+  "code_or_query": "elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+  "inputs": {},
+  "output_summary": "henning-gmbh.de — a P000498 — https://www.henning-gmbh.de/index.php5/en/Weight-is-Paramount-Mini-Measuring-Block-for-QS3/c-PROMOTION/a-P000498?sid7C5C4CC6642D458C9EC898919A0C3981=4dnujkhodhj4hin5ksmavosjv7",
+  "output_full": "henning-gmbh.de — a P000498 — https://www.henning-gmbh.de/index.php5/en/Weight-is-Paramount-Mini-Measuring-Block-for-QS3/c-PROMOTION/a-P000498?sid7C5C4CC6642D458C9EC898919A0C3981=4dnujkhodhj4hin5ksmavosjv7\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "henning-gmbh.de",
+      "title": "a P000498",
+      "year": "",
+      "url": "https://www.henning-gmbh.de/index.php5/en/Weight-is-Paramount-Mini-Measuring-Block-for-QS3/c-PROMOTION/a-P000498?sid7C5C4CC6642D458C9EC898919A0C3981=4dnujkhodhj4hin5ksmavosjv7",
+      "query": "elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+      "unresolved": false,
+      "passage": "I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

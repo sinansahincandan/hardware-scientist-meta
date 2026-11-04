@@ -1,390 +1,518 @@
 {
-  "title": "Under-deck vertical tuned mass damper at midspan on bolted clamp frame with staged install",
-  "problem_restatement": "40 m footbridge first vertical mode at 1.9 Hz lies in walking range with low damping and exceeds comfort under crowd loading, requiring concealed supplemental damping with staged retrofit without full closure",
-  "mechanism_sentence": "A 500 kg weight hung on tuned springs and dampers under the middle of the bridge sways to calm crowd shaking to a gentle feel.",
+  "title": "Twin 400 kg under-deck tuned mass damper retrofit for 40 m lively footbridge",
+  "problem_restatement": "Retrofit a 40 m lively footbridge with 1.9 Hz first mode to Medium comfort with hidden under-deck dampers and no deck change.",
+  "mechanism_sentence": "Bridge shake swings two 400 kg weights hung under the middle of the deck and oil dampers turn that swing into heat so a 8.28 m/s2 shake drops to 0.67 m/s2 with only 49.4 mm of motion.",
   "decisive_choices": [
-    "Mount 500 kg tuned mass at midspan under deck tuned just below 1.9 Hz to 1.85 Hz",
-    "Support on helical springs plus viscous dashpots sized for 72.3 mm sag and 20.1 mm crowd stroke with plus-minus 50 mm stops",
-    "Clamp with bolted transverse bearers with staged night install and removable cover for re-tuning without deck change"
+    "Chose twin 400 kg pair detuned about 1.83 Hz (C20) over single exact absorber (C1) because same 800 kg 4% ratio holds 0.476 to 0.526 m/s2 under detuning via MTMD robustness, and over stiffening (C7) needing 46.5% more stiffness to reach 2.3 Hz.",
+    "Chose paired dampers with tolerant band inside twin units (C21) over single optimum dashpot (C3) at same 12.0% optimum because exact tune fails on drift, and over add-on parallel fluid unit (C10) which lacks MTMD robustness finding and detuning hold.",
+    "Chose HSFG-clamped cross-beam carrying 7.85 kN weight plus 5.22 kN dynamic into girders as shear (C22) over generic welded bracket (C4) because weld-free friction gives 32.9 kN slip per bolt against 13.1 kN demand with fatigue and install advantage."
   ],
-  "open_question": "Will field-measured first-mode frequency, modal mass and damping confirm the assumed 20000 kg at 1.9 Hz tuning so dense-crowd response stays below 1.0 m/s2 with clearance?",
-  "transfer_line": "Load: pedestrians -> deck -> damper mass | Measured: deck acceleration -> comfort check",
+  "open_question": "Does the after-build instrumented Class III crowd walk-through verify 0.67 m/s2 Medium comfort in place with filed record?",
+  "transfer_line": "Energy: Under-deck cross-beam -> Tuned mass blocks -> Viscous damper units | Measured: Midspan accelerometer logger -> Comfort verdict record",
   "assumed_constraints": [
     {
-      "constraint": "vertical comfort target maximum comfort below 0.5 m/s2, minimum comfort below 1.0 m/s2, unacceptable above 2.5 m/s2 per Setra and HiVoSS comfort classes",
-      "source": "C1",
-      "evidence_ids": [
-        "E38"
-      ]
-    },
-    {
-      "constraint": "staged night installation plus under-bridge access: prefabricate frame plus TMD off site, lift from tower plus under-bridge inspection platform with one lane kept open, lock mass for transport and release after bolting, leave removable cover plus shim and threaded spring seats for inspection and re-tuning",
-      "source": "C4",
+      "constraint": "total added dead load under 2% of pedestrian live load",
+      "source": "Bridge Retrofit Engineer",
       "evidence_ids": [
         "E26",
-        "E28",
-        "E32"
+        "E30",
+        "E72"
       ]
     },
     {
-      "constraint": "dense-crowd verification case Class III 0.5 pedestrians per square metre, equivalent synchronized pedestrians from Setra 10.8*sqrt(zeta*N), single-pedestrian weight 700 N with 280 N first-harmonic amplitude at resonance",
-      "source": "C5",
+      "constraint": "vertical comfort target maximum comfort below 0.5 m/s2, mean 0.5-1.0 m/s2, minimum 1.0-2.5 m/s2, unacceptable above 2.5 m/s2",
+      "source": "Pedestrian Comfort and Safety Assessor",
       "evidence_ids": [
-        "E41",
-        "E42",
-        "E44"
+        "E19",
+        "E33",
+        "E45"
+      ]
+    },
+    {
+      "constraint": "maintenance by Below Bridge Access Vehicle or girder-bay walkway with lockable deck hatch per inspection-access rule, plus annual TMD tuning check — deck kept clear during service",
+      "source": "Retrofit Integration and Construction Lead",
+      "evidence_ids": [
+        "E49",
+        "E55"
       ]
     }
   ],
   "functional_decomposition": [
-    "Quantify first vertical mode modal mass, stiffness and damping of 40 m span",
-    "Suppress first vertical mode resonant response with supplemental damping",
-    "Concealed under-deck mounting, staged installation without full closure, and inspection plus re-tuning access for 40 m span",
-    "Verify pedestrian comfort against crowd loading for 40 m span"
+    "F1 capture bridge motion",
+    "F2 supply counteracting force",
+    "F3 dissipate vibration energy",
+    "F4 transfer loads to structure",
+    "F5 limit excess travel",
+    "F6 maintain deck appearance",
+    "F7 verify comfort acceptance"
   ],
   "concept": {
-    "working_principle": "lumped steel mass on helical steel springs plus viscous dashpots, tuned to first vertical mode, mounted at midspan under deck so deck appearance unchanged",
+    "working_principle": "Bridge motion at the midspan antinode drives two sprung masses where motion is largest, tuned dampers convert relative motion to heat, and a clamped frame carries the push into the girders with nothing on the deck.",
     "parts": [
       {
-        "id": "deck",
-        "name": "existing 40 m footbridge deck and girders",
-        "function": "carry pedestrian load and provide first vertical mode at 1.9 Hz",
-        "material": "steel",
+        "id": "cross_beam",
+        "name": "Under-deck cross beam",
+        "function": "carries two damper units and moves with midspan antinode",
+        "material": "Structural steel",
         "size_class_mm": {
-          "min": 40000.0,
-          "max": 40000.0
+          "min": 2500.0,
+          "max": 3000.0
         },
         "qty": 1
       },
       {
-        "id": "frame",
-        "name": "transverse steel bearer beams",
-        "function": "clamp to existing longitudinal girders to carry TMD without welding",
-        "material": "steel",
+        "id": "tmd_mass",
+        "name": "Tuned mass block",
+        "function": "supplies counteracting inertial force",
+        "material": "Steel",
         "size_class_mm": {
-          "min": 1000.0,
-          "max": 3000.0
+          "min": 400.0,
+          "max": 600.0
         },
         "qty": 2
       },
       {
-        "id": "mass",
-        "name": "TMD steel mass 500 kg",
-        "function": "secondary tuned mass to absorb first vertical mode",
-        "material": "steel",
+        "id": "coil_spring",
+        "name": "Coil suspension spring",
+        "function": "tunes mass to 1.83 Hz",
+        "material": "Spring steel",
         "size_class_mm": {
-          "min": 300.0,
-          "max": 800.0
+          "min": 200.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "viscous_damper",
+        "name": "Viscous damper unit",
+        "function": "dissipates vibration energy as heat",
+        "material": "Steel with fluid",
+        "size_class_mm": {
+          "min": 200.0,
+          "max": 400.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "hsfg_clamp",
+        "name": "Friction clamp bolt set",
+        "function": "clamps beam to girders without weld",
+        "material": "High-strength steel M20 bolts",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 150.0
+        },
+        "qty": 4
+      },
+      {
+        "id": "travel_stop",
+        "name": "Caged travel stop with pad",
+        "function": "limits excess travel",
+        "material": "Steel with elastomer pad",
+        "size_class_mm": {
+          "min": 80.0,
+          "max": 124.0
+        },
+        "qty": 2
+      },
+      {
+        "id": "accel_sensor",
+        "name": "Midspan accelerometer logger",
+        "function": "logs vertical acceleration for acceptance",
+        "material": "Electronics",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 100.0
         },
         "qty": 1
       },
       {
-        "id": "spring",
-        "name": "helical steel springs",
-        "function": "provide tuned stiffness with static sag and re-tuning adjustment",
-        "material": "steel",
+        "id": "girder",
+        "name": "Existing main girder",
+        "function": "receives device forces",
+        "material": "Structural steel",
         "size_class_mm": {
-          "min": 50.0,
-          "max": 500.0
+          "min": 39000.0,
+          "max": 40000.0
         },
-        "qty": 1
-      },
-      {
-        "id": "damper",
-        "name": "viscous dashpots",
-        "function": "provide tuned damping for resonant energy dissipation",
-        "material": "steel and oil",
-        "size_class_mm": {
-          "min": 100.0,
-          "max": 600.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "cover",
-        "name": "removable under-deck cover",
-        "function": "conceal TMD and allow inspection and re-tuning access",
-        "material": "steel",
-        "size_class_mm": {
-          "min": 500.0,
-          "max": 2000.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "bolts",
-        "name": "preloaded high-strength bolts",
-        "function": "clamp bearer beams to girders without welding",
-        "material": "steel",
-        "size_class_mm": {
-          "min": 10.0,
-          "max": 30.0
-        },
-        "qty": 1
+        "qty": 2
       }
     ],
     "connections": [
       {
-        "from_id": "frame",
-        "to_id": "deck",
+        "from_id": "coil_spring",
+        "to_id": "cross_beam",
         "kind": "mechanical",
-        "label": "clamped with preloaded bolts"
+        "label": "hangs masses from beam"
       },
       {
-        "from_id": "spring",
-        "to_id": "frame",
+        "from_id": "tmd_mass",
+        "to_id": "coil_spring",
         "kind": "mechanical",
-        "label": "seated on frame"
+        "label": "hung on spring"
       },
       {
-        "from_id": "spring",
-        "to_id": "mass",
+        "from_id": "tmd_mass",
+        "to_id": "viscous_damper",
         "kind": "mechanical",
-        "label": "carries mass"
+        "label": "damped to beam"
       },
       {
-        "from_id": "damper",
-        "to_id": "frame",
+        "from_id": "viscous_damper",
+        "to_id": "cross_beam",
         "kind": "mechanical",
-        "label": "connected to frame"
+        "label": "dissipates to beam"
       },
       {
-        "from_id": "damper",
-        "to_id": "mass",
+        "from_id": "cross_beam",
+        "to_id": "hsfg_clamp",
         "kind": "mechanical",
-        "label": "damps mass motion"
+        "label": "clamped"
       },
       {
-        "from_id": "cover",
-        "to_id": "frame",
+        "from_id": "hsfg_clamp",
+        "to_id": "girder",
         "kind": "mechanical",
-        "label": "removable cover below"
+        "label": "friction grip into girders"
+      },
+      {
+        "from_id": "tmd_mass",
+        "to_id": "travel_stop",
+        "kind": "mechanical",
+        "label": "hits on over-travel"
+      },
+      {
+        "from_id": "travel_stop",
+        "to_id": "cross_beam",
+        "kind": "mechanical",
+        "label": "caged to beam"
+      },
+      {
+        "from_id": "accel_sensor",
+        "to_id": "cross_beam",
+        "kind": "mechanical",
+        "label": "mounted at midspan"
       }
     ],
     "loads": [
       {
-        "on_id": "deck",
-        "label": "dense-crowd resonant force 1480 N on deck",
+        "on_id": "cross_beam",
+        "label": "bridge vertical vibration",
+        "direction": "up"
+      },
+      {
+        "on_id": "hsfg_clamp",
+        "label": "7.85 kN static weight",
         "direction": "down"
       },
       {
-        "on_id": "mass",
-        "label": "500 kg weight 4.90 kN on springs",
+        "on_id": "girder",
+        "label": "Class III crowd load",
         "direction": "down"
+      },
+      {
+        "on_id": "travel_stop",
+        "label": "stop contact load",
+        "direction": "up"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "modal mass",
-      "value": 20000.0,
+      "quantity": "TMD total mass",
+      "value": 800.0,
       "unit": "kg",
-      "method": "assumption for stiffness scaling",
-      "evidence_ids": [
-        "E11"
-      ]
-    },
-    {
-      "quantity": "modal stiffness at 1.9 Hz",
-      "value": 2850000.0,
-      "unit": "N/m",
       "method": "calc",
       "evidence_ids": [
-        "E11"
+        "E13"
       ]
     },
     {
-      "quantity": "TMD mass",
-      "value": 500.0,
-      "unit": "kg",
-      "method": "calc from 2.5 percent ratio",
-      "evidence_ids": [
-        "E22",
-        "E54"
-      ]
-    },
-    {
-      "quantity": "TMD tuning frequency",
-      "value": 1.85,
+      "quantity": "TMD optimum frequency",
+      "value": 1.83,
       "unit": "Hz",
-      "method": "Den Hartog tuning calc",
-      "evidence_ids": [
-        "E23",
-        "E54"
-      ]
-    },
-    {
-      "quantity": "TMD damping ratio",
-      "value": 0.0956,
-      "unit": "ratio",
-      "method": "Den Hartog optimum re-check",
-      "evidence_ids": [
-        "E54"
-      ]
-    },
-    {
-      "quantity": "TMD stiffness",
-      "value": 67824.9,
-      "unit": "N/m",
-      "method": "Den Hartog calc",
-      "evidence_ids": [
-        "E24",
-        "E54"
-      ]
-    },
-    {
-      "quantity": "TMD viscous coefficient",
-      "value": 1090.0,
-      "unit": "N s/m",
-      "method": "Den Hartog calc",
-      "evidence_ids": [
-        "E24"
-      ]
-    },
-    {
-      "quantity": "TMD weight",
-      "value": 4900.0,
-      "unit": "N",
       "method": "calc",
       "evidence_ids": [
-        "E35"
+        "E14"
       ]
     },
     {
-      "quantity": "factored frame design load",
-      "value": 12300.0,
-      "unit": "N",
+      "quantity": "TMD optimum damping ratio",
+      "value": 12.0,
+      "unit": "%",
       "method": "calc",
       "evidence_ids": [
-        "E36"
+        "E15"
       ]
     },
     {
-      "quantity": "single-walker bare acceleration",
-      "value": 1.75,
+      "quantity": "effective damping",
+      "value": 6.2,
+      "unit": "%",
+      "method": "simulate",
+      "evidence_ids": [
+        "E17"
+      ]
+    },
+    {
+      "quantity": "bare deck acceleration",
+      "value": 8.28,
       "unit": "m/s2",
-      "method": "simulate resonant response",
+      "method": "calc",
       "evidence_ids": [
-        "E47"
+        "E43"
       ]
     },
     {
-      "quantity": "single-walker TMD-controlled acceleration",
-      "value": 0.103,
+      "quantity": "retrofitted deck acceleration",
+      "value": 0.67,
       "unit": "m/s2",
-      "method": "simulate resonant response",
+      "method": "simulate",
       "evidence_ids": [
-        "E47"
+        "E44",
+        "E45"
       ]
     },
     {
-      "quantity": "dense-crowd resonant force",
-      "value": 1480.0,
-      "unit": "N",
-      "method": "calc dense crowd scaling",
-      "evidence_ids": [
-        "E50"
-      ]
-    },
-    {
-      "quantity": "dense-crowd bare acceleration",
-      "value": 9.26,
-      "unit": "m/s2",
-      "method": "calc dense crowd scaling",
-      "evidence_ids": [
-        "E51"
-      ]
-    },
-    {
-      "quantity": "dense-crowd TMD-controlled acceleration",
-      "value": 0.545,
-      "unit": "m/s2",
-      "method": "calc dense crowd scaling",
-      "evidence_ids": [
-        "E52"
-      ]
-    },
-    {
-      "quantity": "dense-crowd stroke",
-      "value": 20.1,
+      "quantity": "peak relative travel",
+      "value": 49.4,
       "unit": "mm",
-      "method": "calc dense crowd scaling",
+      "method": "simulate",
       "evidence_ids": [
-        "E53"
+        "E17"
       ]
     },
     {
-      "quantity": "static spring sag",
-      "value": 72.3,
+      "quantity": "static sag",
+      "value": 74.7,
       "unit": "mm",
       "method": "calc",
       "evidence_ids": [
-        "E55"
+        "E63"
       ]
     },
     {
-      "quantity": "total spring compression static plus dynamic",
-      "value": 92.4,
+      "quantity": "sag plus stroke envelope",
+      "value": 124.0,
       "unit": "mm",
       "method": "calc",
       "evidence_ids": [
-        "E56"
+        "E68"
+      ]
+    },
+    {
+      "quantity": "TMD static weight",
+      "value": 7.85,
+      "unit": "kN",
+      "method": "calc",
+      "evidence_ids": [
+        "E26"
+      ]
+    },
+    {
+      "quantity": "pedestrian live load",
+      "value": 600.0,
+      "unit": "kN",
+      "method": "calc",
+      "evidence_ids": [
+        "E30"
+      ]
+    },
+    {
+      "quantity": "added weight fraction",
+      "value": 1.31,
+      "unit": "%",
+      "method": "calc",
+      "evidence_ids": [
+        "E72"
+      ]
+    },
+    {
+      "quantity": "slip resistance per bolt",
+      "value": 32.9,
+      "unit": "kN",
+      "method": "calc",
+      "evidence_ids": [
+        "E64"
+      ]
+    },
+    {
+      "quantity": "combined static plus dynamic demand",
+      "value": 13.1,
+      "unit": "kN",
+      "method": "calc",
+      "evidence_ids": [
+        "E65"
+      ]
+    },
+    {
+      "quantity": "stop contact force",
+      "value": 8.4,
+      "unit": "kN",
+      "method": "calc",
+      "evidence_ids": [
+        "E66"
+      ]
+    },
+    {
+      "quantity": "locked-mass frequency",
+      "value": 1.86,
+      "unit": "Hz",
+      "method": "calc",
+      "evidence_ids": [
+        "E69"
+      ]
+    },
+    {
+      "quantity": "detuned acceleration high",
+      "value": 0.526,
+      "unit": "m/s2",
+      "method": "simulate",
+      "evidence_ids": [
+        "E70"
       ]
     }
   ],
-  "measurement_chain": [],
+  "constraint_table": [
+    {
+      "constraint": "40 m span",
+      "design_value": "40 m existing, units at midspan",
+      "how_shown": "Layout sketch shows cross-beam at midspan of the 40 m span and off-antinode calculation shows full effect only there.",
+      "evidence_ids": [
+        "E55",
+        "E67"
+      ]
+    },
+    {
+      "constraint": "1.9 Hz first mode",
+      "design_value": "1.9 Hz bare, 1.83 Hz tune, 1.86 Hz locked",
+      "how_shown": "Optimum tune sets 1.83 Hz from 1.9 Hz and locked-mass check gives 1.86 Hz so damping must do the work.",
+      "evidence_ids": [
+        "E14",
+        "E69"
+      ]
+    },
+    {
+      "constraint": "maintain deck appearance with clear walkway",
+      "design_value": "all steel within girder depth, nothing above deck",
+      "how_shown": "Layout sketch shows all hardware between girders below soffit above bottom flange with no deck change.",
+      "evidence_ids": [
+        "E55"
+      ]
+    }
+  ],
+  "measurement_chain": [
+    {
+      "stage": "sensor",
+      "name": "midspan vertical accelerometer",
+      "interface": "bolted under deck at antinode"
+    },
+    {
+      "stage": "conditioning",
+      "name": "acceleration signal conditioner",
+      "interface": "wired to logger"
+    },
+    {
+      "stage": "instrument",
+      "name": "crowd walk-through data logger",
+      "interface": "logs acceleration versus time"
+    },
+    {
+      "stage": "computer",
+      "name": "comfort band verdict record",
+      "interface": "files record against bands"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "cross_beam",
+      "action": "moves with bridge antinode"
+    },
+    {
+      "part_id": "tmd_mass",
+      "action": "swings out of phase"
+    },
+    {
+      "part_id": "viscous_damper",
+      "action": "turns motion into heat"
+    },
+    {
+      "part_id": "hsfg_clamp",
+      "action": "carries push into girders"
+    },
+    {
+      "part_id": "travel_stop",
+      "action": "catches over-travel hits"
+    },
+    {
+      "part_id": "accel_sensor",
+      "action": "logs shake for verdict"
+    }
+  ],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Build the two steel bearer beams and the 500 kg damper unit with springs and dampers off site",
-      "method": "off-site prefabrication",
+      "description": "Fabricate the structural steel cross-beam and clamp plates first, because the masses, springs and stops all bolt to it",
+      "method": "Bolted structural steel beam, 2.5 to 3.0 m span between girders",
       "parts_present": [
-        "frame",
-        "mass",
-        "spring",
-        "damper"
+        "cross_beam",
+        "hsfg_clamp",
+        "girder"
       ]
     },
     {
       "step": 2,
-      "description": "Lift the unit under the middle of the bridge at night from a tower platform keeping one walkway open and clamp the beams to the girders with preloaded bolts",
-      "method": "night-time lifting and bolted clamping",
+      "description": "Assemble the two 400 kg steel masses on coil springs with parallel viscous dampers, because tune and stroke are set on the bench before lifting",
+      "method": "Assembled steel masses 400 kg each with 105 kN/m coil springs",
       "parts_present": [
-        "deck",
-        "frame",
-        "bolts"
+        "tmd_mass",
+        "coil_spring",
+        "viscous_damper"
       ]
     },
     {
       "step": 3,
-      "description": "Unlock the mass for operation, fit the removable cover below and set the spring seats and shims for tuning",
-      "method": "release and covering",
+      "description": "Fit caged travel stops with elastomer pads and lockable service pins to the beam, because the 80 mm gap must clear the 49.4 mm stroke plus 74.7 mm sag",
+      "method": "Bolted steel cages with elastomer pads, 80 mm gap, 124 mm envelope",
       "parts_present": [
-        "mass",
-        "spring",
-        "cover"
+        "travel_stop",
+        "cross_beam"
       ]
     },
     {
       "step": 4,
-      "description": "Inspect the unit from below and re-tune with shims if shaking grows",
-      "method": "inspection and re-tuning",
+      "description": "Clamp the beam between girder webs from below with M20 HSFG bolts and hang the tuned units, because no weld or deck opening is allowed",
+      "method": "HSFG-clamped with M20 bolts, 32.9 kN slip per bolt",
       "parts_present": [
-        "cover",
-        "spring",
-        "damper"
+        "cross_beam",
+        "hsfg_clamp",
+        "tmd_mass",
+        "accel_sensor"
       ]
     }
   ],
-  "risks": [],
+  "risks": [
+    {
+      "risk": "tuning drift loses damping",
+      "mitigation": "use twin units detuned about 1.83 Hz holding 0.476 to 0.526 m/s2 and annual re-tune from BBAV"
+    },
+    {
+      "risk": "HSFG preload loss and loosening at 1.9 Hz",
+      "mitigation": "use four bolts with 32.9 kN slip each against 13.1 kN demand plus annual BBAV re-torque"
+    },
+    {
+      "risk": "over-travel impact damages beam",
+      "mitigation": "size 80 mm gap beyond 49.4 mm stroke with 124 mm envelope inside girder depth and check 8.40 kN hit into beam"
+    }
+  ],
   "novelty_claim": "",
-  "cost_class": "$1k-10k",
+  "cost_class": ">$10k",
   "figure_spec": {
-    "system_view": "Under-deck vertical tuned mass damper at midspan showing deck, bolted support frame, steel mass on springs plus dashpots with lockable cover below",
-    "critical_part_id": "mass",
+    "system_view": "Under-deck twin TMD cross-section and side view at midspan: deck, two girders, cross-beam, two masses on springs and dampers within girder depth, clamps, stops, access side",
+    "critical_part_id": "cross_beam",
     "preferred_view": "isometric"
   },
   "open_questions": [
-    "Will field-measured first-mode frequency, modal mass and damping confirm the assumed 20000 kg at 1.9 Hz tuning so dense-crowd response stays below 1.0 m/s2 with clearance?"
+    "Does the after-build instrumented Class III crowd walk-through verify 0.67 m/s2 Medium comfort in place with filed record?"
   ]
 }

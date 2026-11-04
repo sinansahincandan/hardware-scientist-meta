@@ -1,0 +1,32 @@
+{
+  "id": "E22",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
+  "code_or_query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
+  "inputs": {},
+  "output_summary": "yumpu.com — Heat Load Calculation — https://www.yumpu.com/en/document/view/36214174/heat-load-calculation",
+  "output_full": "yumpu.com — Heat Load Calculation — https://www.yumpu.com/en/document/view/36214174/heat-load-calculation\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "yumpu.com",
+      "title": "Heat Load Calculation",
+      "year": "",
+      "url": "https://www.yumpu.com/en/document/view/36214174/heat-load-calculation",
+      "query": "cold storage heat load calculation respiration heat fruit vegetables ASHRAE",
+      "unresolved": false,
+      "passage": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "In plain words the room must hold the cold against leaks plus cool each day's warm harvest, where product plus respiration heat is a named load (E21 Assessing the Thermal Load of Low-Cost Cold Storage for Perishable Agricultural Products Used in Rural Areas of Bangladesh) with sensible cooling plus respiration (E22 Heat Load Calculation)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

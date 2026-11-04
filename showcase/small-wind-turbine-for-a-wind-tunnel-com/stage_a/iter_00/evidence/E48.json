@@ -1,0 +1,14 @@
+{
+  "id": "E48",
+  "author": "Safety-Control Integrator",
+  "tool": "simulate",
+  "purpose": "electrical-only dump brake fails at 22 m/s - shows need for mechanical",
+  "code_or_query": "import numpy as np\nI=0.002\nw_top=3150*2*np.pi/60\nk_elec=0.00047\n# at 22 m/s aero torque ~ scales V2: 0.12*(22/11)**2=0.48 Nm worst unloaded\nT_aero=0.48\ndt=0.005; t=np.arange(0,10,dt)\nw=np.zeros_like(t); w[0]=w_top\nfor i in range(1,len(t)):\n    T_e=T_aero-k_elec*w[i-1]\n    w[i]=max(0,w[i-1]+T_e/I*dt)\nprint(f\"elec-only w@10s rpm {w[-1]*60/2/np.pi:.0f} (target <315 rpm) -> FAILS, rotor runs away\")\nprint(f\"elec torque at top Nm {k_elec*w_top:.3f} vs aero Nm {T_aero:.2f}\")\n",
+  "inputs": {},
+  "output_summary": "elec-only w@10s rpm 9123 (target <315 rpm) -> FAILS, rotor runs away; elec torque at top Nm 0.155 vs aero Nm 0.48",
+  "output_full": "elec-only w@10s rpm 9123 (target <315 rpm) -> FAILS, rotor runs away\nelec torque at top Nm 0.155 vs aero Nm 0.48",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E123",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "slope load with new weight",
+  "code_or_query": "658*0.613",
+  "inputs": {},
+  "output_summary": "403",
+  "output_full": "403",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

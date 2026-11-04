@@ -1,0 +1,14 @@
+{
+  "id": "E70",
+  "author": "Structural Dynamicist",
+  "tool": "simulate",
+  "purpose": "detuning sensitivity of TMD acceleration vs frequency error",
+  "code_or_query": "import numpy as np\nm1=20000; f1=1.9; w1=2*np.pi*f1; k1=m1*w1**2\nmu=0.04; m2=800\nf2_opt=1.83\nz2=0.12\nk2=m2*(2*np.pi*f2_opt)**2\nc2=2*z2*m2*(2*np.pi*f2_opt)\nF0=1660\n# steady state at excitation f1=1.9 Hz with varied f2\nw= w1\nfor err in [-0.05, -0.03, 0.0, 0.03, 0.05]:\n    f2=f2_opt*(1+err); k2v=m2*(2*np.pi*f2)**2\n    # 2DOF complex\n    Z1=k1-m1*w**2+1j*w*0.005*2*m1*w1  # small bare damping approx\n    # full matrix solve: [k1+k2-m1w2+icw, -(k2+icw); -(k2+icw), k2-m2w2+icw] [x1;x2]=[F0;0]\n    c=c2\n    a11=k1+k2v-m1*w**2+1j*w*c\n    a12=-(k2v+1j*w*c); a21=a12; a22=k2v-m2*w**2+1j*w*c\n    det=a11*a22-a12*a21\n    x1=(F0*a22)/det\n    print(err, abs(x1)*1000, abs(x1)*w**2)\n",
+  "inputs": {},
+  "output_summary": "0.0 3.69 0.526; 0.03 3.34 0.476; 0.05 3.23 0.46",
+  "output_full": "-0.05 4.739256250270904 0.6754249979499436\n-0.03 4.254055430898735 0.6062755902953089\n0.0 3.688632945325608 0.5256932244151665\n0.03 3.336922043445988 0.47556841101909075\n0.05 3.2252463599521257 0.45965271785719664",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

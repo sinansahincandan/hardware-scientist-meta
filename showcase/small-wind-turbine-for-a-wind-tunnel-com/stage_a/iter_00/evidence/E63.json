@@ -1,0 +1,26 @@
+{
+  "id": "E63",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: buck-boost DC-DC converter module efficiency 12V datasheet",
+  "code_or_query": "buck-boost DC-DC converter module efficiency 12V datasheet",
+  "inputs": {},
+  "output_summary": "kamami.pl — Buck/Boost Converter - DC-DC Step-Up/Step-Down converter 12V 3A — https://kamami.pl/en/step-up-step-down/1183624-com-18376-buck-boost-converter-8-40v-to-12v-3a.html",
+  "output_full": "kamami.pl — Buck/Boost Converter - DC-DC Step-Up/Step-Down converter 12V 3A — https://kamami.pl/en/step-up-step-down/1183624-com-18376-buck-boost-converter-8-40v-to-12v-3a.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "kamami.pl",
+      "title": "Buck/Boost Converter - DC-DC Step-Up/Step-Down converter 12V 3A",
+      "year": "",
+      "url": "https://kamami.pl/en/step-up-step-down/1183624-com-18376-buck-boost-converter-8-40v-to-12v-3a.html",
+      "query": "buck-boost DC-DC converter module efficiency 12V datasheet",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

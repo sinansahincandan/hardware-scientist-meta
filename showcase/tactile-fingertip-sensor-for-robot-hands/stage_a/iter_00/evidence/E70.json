@@ -1,0 +1,32 @@
+{
+  "id": "E70",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: incipient slip trailing edge contact periphery stick-slip propagation tactile",
+  "code_or_query": "incipient slip trailing edge contact periphery stick-slip propagation tactile",
+  "inputs": {},
+  "output_summary": "nature.com — Efficient tactile encoding of object slippage | Scientific Reports — https://www.nature.com/articles/s41598-022-16938-1?error=cookies_not_supported&code=80e5cb56-9675-4f83-af58-65e860526540",
+  "output_full": "nature.com — Efficient tactile encoding of object slippage | Scientific Reports — https://www.nature.com/articles/s41598-022-16938-1?error=cookies_not_supported&code=80e5cb56-9675-4f83-af58-65e860526540\n(found by the search; not opened or cited)\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "nature.com",
+      "title": "Efficient tactile encoding of object slippage | Scientific Reports",
+      "year": "",
+      "url": "https://www.nature.com/articles/s41598-022-16938-1?error=cookies_not_supported&code=80e5cb56-9675-4f83-af58-65e860526540",
+      "query": "incipient slip trailing edge contact periphery stick-slip propagation tactile",
+      "unresolved": false,
+      "passage": "The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

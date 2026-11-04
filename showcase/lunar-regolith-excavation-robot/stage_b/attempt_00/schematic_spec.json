@@ -2,257 +2,226 @@
   "view": "side",
   "nodes": [
     {
-      "id": "drum",
-      "label": "Front transverse digging drum",
-      "shape": "cylinder",
+      "id": "chassis",
+      "label": "twin tube chassis frame",
+      "shape": "beam",
       "size_class_mm": {
-        "min": 200.0,
-        "max": 400.0
+        "min": 900.0,
+        "max": 1050.0
       },
       "layout": {
-        "col": 0,
-        "row": 2
+        "col": 5,
+        "row": 4
       },
       "color_hint": "#7fb3d5",
-      "aspect": 1.33
+      "aspect": 5.0
     },
     {
-      "id": "hopper",
-      "label": "High-lift hopper",
+      "id": "wheel",
+      "label": "rigid grouser wheels",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 220.0
+      },
+      "layout": {
+        "col": 5,
+        "row": 5
+      },
+      "color_hint": "#5d6d7e",
+      "aspect": 1.0
+    },
+    {
+      "id": "arm",
+      "label": "folding wheel arms",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 420.0,
+        "max": 680.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 4
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 6.0
+    },
+    {
+      "id": "kerf",
+      "label": "narrow kerf trenching chain",
       "shape": "rect",
+      "size_class_mm": {
+        "min": 50.0,
+        "max": 100.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 4
+      },
+      "color_hint": "#909497",
+      "aspect": 0.67
+    },
+    {
+      "id": "ladder",
+      "label": "inclined bucket ladder",
+      "shape": "beam",
       "size_class_mm": {
         "min": 200.0,
         "max": 500.0
       },
       "layout": {
         "col": 3,
-        "row": 1
+        "row": 3
       },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
+      "color_hint": "#909497",
+      "aspect": 3.5
     },
     {
-      "id": "lift",
-      "label": "Rear high-lift mast",
-      "shape": "beam",
+      "id": "hopper",
+      "label": "steep wedge hopper",
+      "shape": "plate",
       "size_class_mm": {
         "min": 150.0,
-        "max": 1050.0
+        "max": 450.0
+      },
+      "layout": {
+        "col": 6,
+        "row": 2
+      },
+      "color_hint": "#aab7b8",
+      "aspect": 1.2
+    },
+    {
+      "id": "auger",
+      "label": "tilt screw discharge",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 150.0,
+        "max": 550.0
+      },
+      "layout": {
+        "col": 8,
+        "row": 3
+      },
+      "color_hint": "#909497",
+      "aspect": 6.0
+    },
+    {
+      "id": "battery",
+      "label": "lithium phosphate battery pack",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 100.0,
+        "max": 400.0
       },
       "layout": {
         "col": 4,
-        "row": 1
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
-    },
-    {
-      "id": "chassis",
-      "label": "Chassis frame",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 450.0,
-        "max": 950.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 2
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
-    },
-    {
-      "id": "wheel",
-      "label": "Front grouser wheel",
-      "shape": "circle",
-      "size_class_mm": {
-        "min": 150.0,
-        "max": 300.0
-      },
-      "layout": {
-        "col": 1,
         "row": 3
       },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.0
+      "color_hint": "#2e86c1",
+      "aspect": 2.0
     },
     {
-      "id": "wheel_rear",
-      "label": "Rear grouser wheel",
+      "id": "camera",
+      "label": "onboard camera set",
       "shape": "circle",
-      "size_class_mm": {
-        "min": 150.0,
-        "max": 300.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 3
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.0
-    },
-    {
-      "id": "pmast",
-      "label": "Folding perception mast",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 450.0,
-        "max": 1000.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 0
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
-    },
-    {
-      "id": "sensors",
-      "label": "Cameras + depth + IMU",
-      "shape": "rect",
       "size_class_mm": {
         "min": 20.0,
-        "max": 150.0
+        "max": 100.0
       },
       "layout": {
-        "col": 2,
-        "row": 0
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
-    },
-    {
-      "id": "pack",
-      "label": "24 V battery pack",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 150.0,
-        "max": 300.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 2
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
-    },
-    {
-      "id": "compute",
-      "label": "Onboard computer + radio",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 50.0,
-        "max": 200.0
-      },
-      "layout": {
-        "col": 1,
+        "col": 6,
         "row": 1
       },
-      "color_hint": "#7fb3d5",
-      "aspect": 1.33
+      "color_hint": "#2e86c1",
+      "aspect": 1.0
     }
   ],
   "edges": [
     {
-      "from_id": "drum",
+      "from_id": "kerf",
+      "to_id": "ladder",
+      "kind": "mechanical",
+      "label": "side spoil rows feed ladder",
+      "arrow": true
+    },
+    {
+      "from_id": "ladder",
       "to_id": "hopper",
       "kind": "mechanical",
-      "label": "cuts soil and lifts into hopper",
-      "arrow": false
+      "label": "gravity chute drops to hopper",
+      "arrow": true
     },
     {
       "from_id": "hopper",
-      "to_id": "lift",
+      "to_id": "auger",
       "kind": "mechanical",
-      "label": "rides on lift guide",
-      "arrow": false
+      "label": "screw meters to rear outlet",
+      "arrow": true
     },
     {
-      "from_id": "lift",
-      "to_id": "chassis",
+      "from_id": "chassis",
+      "to_id": "arm",
       "kind": "mechanical",
-      "label": "mast load into frame",
+      "label": "arms support wheels",
       "arrow": false
     },
     {
-      "from_id": "wheel",
-      "to_id": "chassis",
+      "from_id": "arm",
+      "to_id": "wheel",
       "kind": "mechanical",
-      "label": "carries chassis load front",
+      "label": "carries grouser wheels",
       "arrow": false
     },
     {
-      "from_id": "wheel_rear",
-      "to_id": "chassis",
+      "from_id": "chassis",
+      "to_id": "hopper",
       "kind": "mechanical",
-      "label": "carries chassis load rear",
+      "label": "carries ladder and hopper",
       "arrow": false
     },
     {
-      "from_id": "pmast",
-      "to_id": "chassis",
-      "kind": "mechanical",
-      "label": "mast mounted on frame",
-      "arrow": false
-    },
-    {
-      "from_id": "sensors",
-      "to_id": "pmast",
-      "kind": "mechanical",
-      "label": "sensors on mast top",
-      "arrow": false
-    },
-    {
-      "from_id": "sensors",
-      "to_id": "compute",
-      "kind": "wireless",
-      "label": "video and heartbeat to operator",
-      "arrow": false
-    },
-    {
-      "from_id": "compute",
-      "to_id": "pack",
+      "from_id": "battery",
+      "to_id": "ladder",
       "kind": "electrical",
-      "label": "control power and hold-to-run",
+      "label": "fused bus to dig and drive",
       "arrow": false
     },
     {
-      "from_id": "pack",
-      "to_id": "drum",
+      "from_id": "battery",
+      "to_id": "camera",
       "kind": "electrical",
-      "label": "24 V power to drive and lift",
-      "arrow": false
-    },
-    {
-      "from_id": "pack",
-      "to_id": "chassis",
-      "kind": "electrical",
-      "label": "power to chassis bus",
+      "label": "fused rails to cameras",
       "arrow": false
     }
   ],
   "loads": [
     {
+      "on_id": "kerf",
+      "label": "11 N cut resistance",
+      "direction": "right"
+    },
+    {
       "on_id": "hopper",
-      "label": "hopper plus soil weight for lift",
+      "label": "15 kg soil weight",
       "direction": "down"
     },
     {
-      "on_id": "drum",
-      "label": "drum cutting reaction against weight",
+      "on_id": "chassis",
+      "label": "half robot plus soil",
       "direction": "down"
     },
     {
       "on_id": "wheel",
-      "label": "chassis weight for flotation",
+      "label": "wheel ground pressure",
       "direction": "down"
     }
   ],
-  "critical_part_id": "lift",
-  "scale_bar_mm": 10.0,
+  "critical_part_id": "ladder",
+  "scale_bar_mm": 100.0,
   "notes": [
-    "Side view: front drum to central hopper on rear lift to 1.05m pour lip, 0.30m overhang.",
-    "Stowed fit in 1.0x0.5x0.5m box, mast folds 0.45m to 1.0m eye.",
-    "Load path: Hopper -> Rear lift mast -> Wheels; IMU -> Onboard computer."
+    "Side view: front left kerf cuts 100mm slot 50mm deep, ladder lifts to wedge hopper, rear auger tilts over bin.",
+    "Transfer: kerf -> ladder -> hopper -> auger; screw meters 15kg pour with 0.55m pivot.",
+    "Blind operation: downward dig camera + mast camera guide teleop."
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "id": "E10",
+  "author": "Aero-Rotor Lead",
+  "tool": "calc",
+  "purpose": "available power at 11 m/s 40cm rotor",
+  "code_or_query": "0.5*1.225*3.1416*0.40*0.40/4*11.0**3",
+  "inputs": {},
+  "output_summary": "102",
+  "output_full": "102",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

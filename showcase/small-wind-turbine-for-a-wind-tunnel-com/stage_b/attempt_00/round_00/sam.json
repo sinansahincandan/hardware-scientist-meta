@@ -1,0 +1,392 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "rotor": {
+      "phrase": "dark fan",
+      "tried": [
+        "black spinning rotor",
+        "dark fan"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          114.375,
+          104.94875549048317,
+          470.625,
+          1073.8506588579796
+        ]
+      ],
+      "confidence": [
+        0.74
+      ],
+      "mask": {
+        "file": "sam_masks/rotor.png",
+        "area": 84503.0,
+        "cx": 285.6069079725574,
+        "cy": 579.5501301159214,
+        "angle": 89.8,
+        "elongation": 3.15
+      }
+    },
+    "rotor__blade": {
+      "phrase": "black spinning blade",
+      "tried": [
+        "black spinning blade"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          363.75,
+          639.0629575402636,
+          470.625,
+          908.9311859443632
+        ],
+        [
+          116.25,
+          106.82284040995609,
+          318.75,
+          487.2620790629576
+        ],
+        [
+          155.625,
+          635.3147877013178,
+          331.875,
+          1073.8506588579796
+        ],
+        [
+          333.75,
+          149.9267935578331,
+          453.75,
+          500.38067349926797
+        ]
+      ],
+      "confidence": [
+        0.74,
+        0.84,
+        0.86,
+        0.82
+      ],
+      "mask": {
+        "file": "sam_masks/rotor__blade.png",
+        "area": 75856.0,
+        "cx": 284.20372029298625,
+        "cy": 581.1318965062972,
+        "angle": 89.7,
+        "elongation": 3.17
+      }
+    },
+    "hub": {
+      "phrase": "Rigid hub and shaft (box prompt)",
+      "tried": [
+        "silver metal hub",
+        "small hub",
+        "metal hub"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          241.875,
+          489.13616398243045,
+          397.5,
+          614.6998535871157
+        ]
+      ],
+      "confidence": [
+        0.87
+      ],
+      "rejected_by_judge": [
+        "Spring-applied disc brake"
+      ],
+      "mask": {
+        "file": "sam_masks/hub.png",
+        "area": 10516.0,
+        "cx": 328.672030651341,
+        "cy": 552.3800766283525,
+        "angle": 4.0,
+        "elongation": 1.29
+      }
+    },
+    "nacelle": {
+      "phrase": "Stiff nacelle bedplate housing (box prompt)",
+      "tried": [
+        "silver metal box",
+        "metal housing",
+        "housing"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          821.25,
+          477.891654465593,
+          1038.75,
+          723.3967789165447
+        ]
+      ],
+      "confidence": [
+        0.93
+      ],
+      "mask": {
+        "file": "sam_masks/nacelle.png",
+        "area": 44770.0,
+        "cx": 927.2558306422677,
+        "cy": 598.9637603157518,
+        "angle": 51.3,
+        "elongation": 1.04
+      }
+    },
+    "post": {
+      "phrase": "silver metal post",
+      "tried": [
+        "silver metal post"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1074.375,
+          723.3967789165447,
+          1231.875,
+          1280.0
+        ]
+      ],
+      "confidence": [
+        0.72
+      ],
+      "rejected_by_judge": [
+        "Rigid hub and shaft"
+      ],
+      "mask": {
+        "file": "sam_masks/post.png",
+        "area": 51375.0,
+        "cx": 1149.8732756605098,
+        "cy": 986.2338087444471,
+        "angle": 89.2,
+        "elongation": 5.35
+      }
+    },
+    "generator": {
+      "phrase": "small motor",
+      "tried": [
+        "black cylindrical motor",
+        "small motor"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1374.375,
+          464.7730600292826,
+          1770.0,
+          631.5666178623719
+        ]
+      ],
+      "confidence": [
+        0.63
+      ],
+      "mask": {
+        "file": "sam_masks/generator.png",
+        "area": 54357.0,
+        "cx": 1581.7497781721383,
+        "cy": 548.6931381248152,
+        "angle": 180.0,
+        "elongation": 2.26
+      }
+    },
+    "rectifier": {
+      "phrase": "silver finned block",
+      "tried": [
+        "silver finned block",
+        "small heatsink",
+        "small board",
+        "board"
+      ],
+      "source": "none",
+      "boxes": [],
+      "confidence": [],
+      "rejected_by_judge": [
+        "electrical wiring"
+      ]
+    },
+    "regulator": {
+      "phrase": "black finned block",
+      "tried": [
+        "black finned block"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1252.5,
+          614.6998535871157,
+          1353.75,
+          691.5373352855052
+        ]
+      ],
+      "confidence": [
+        0.67
+      ],
+      "mask": {
+        "file": "sam_masks/regulator.png",
+        "area": 6949.0,
+        "cx": 1301.7946324387399,
+        "cy": 652.1971995332556,
+        "angle": 171.1,
+        "elongation": 1.3
+      }
+    },
+    "dump": {
+      "phrase": "wire coil",
+      "tried": [
+        "wire coil",
+        "coil"
+      ],
+      "source": "none",
+      "visible_to_vlm": false,
+      "boxes": [],
+      "confidence": []
+    },
+    "safety_loop": {
+      "phrase": "thin black cable",
+      "tried": [
+        "thin black cable"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1192.5,
+          414.1727672035139,
+          1520.625,
+          530.3660322108345
+        ],
+        [
+          1121.25,
+          324.21669106881404,
+          1181.25,
+          350.4538799414349
+        ]
+      ],
+      "confidence": [
+        0.67,
+        0.6
+      ],
+      "rejected_by_judge": [
+        "annotation label leader line on background",
+        "annotation label leader line on background",
+        "annotation label leader line on background",
+        "annotation label leader line on background"
+      ],
+      "mask": {
+        "file": "sam_masks/safety_loop.png",
+        "area": 8013.0,
+        "cx": 1313.0903703703705,
+        "cy": 467.85382716049384,
+        "angle": 177.0,
+        "elongation": 2.37
+      }
+    },
+    "disc_brake": {
+      "phrase": "metal disc",
+      "tried": [
+        "perforated metal disc",
+        "metal disc"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1113.75,
+          408.5505124450952,
+          1164.375,
+          684.0409956076135
+        ]
+      ],
+      "confidence": [
+        0.51
+      ],
+      "mask": {
+        "file": "sam_masks/disc_brake.png",
+        "area": 11094.0,
+        "cx": 1136.4987441693577,
+        "cy": 545.6799425905992,
+        "angle": 89.8,
+        "elongation": 6.3
+      }
+    }
+  },
+  "contacts": [
+    [
+      "rotor",
+      "rotor__blade"
+    ],
+    [
+      "rotor",
+      "hub"
+    ],
+    [
+      "rotor__blade",
+      "hub"
+    ],
+    [
+      "generator",
+      "safety_loop"
+    ]
+  ],
+  "reference": {
+    "phrase": "human hand",
+    "found": true,
+    "mm": 185.0,
+    "length_px": 418.0,
+    "box": [
+      1061.25,
+      1068.2284040995607,
+      1464.375,
+      1280.0
+    ],
+    "px_per_mm": 2.2593
+  },
+  "differences": {
+    "rotor": [
+      "size against nacelle: expected about 1.8 times, measured 3.9 times"
+    ],
+    "rotor__blade": [
+      "expected 3 visible, found 4"
+    ],
+    "hub": [
+      "size against generator: expected about 1.5 times, measured 0.39 times",
+      "expected to touch generator, but they are apart in the picture",
+      "expected to touch disc_brake, but they are apart in the picture"
+    ],
+    "nacelle": [
+      "size against post: expected about 0.9 times, measured 0.44 times",
+      "expected to touch post, but they are apart in the picture",
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch generator, but they are apart in the picture",
+      "expected to touch disc_brake, but they are apart in the picture"
+    ],
+    "post": [
+      "size against nacelle: expected about 1.1 times, measured 2.3 times",
+      "expected to touch nacelle, but they are apart in the picture"
+    ],
+    "generator": [
+      "size against hub: expected about 0.67 times, measured 2.5 times",
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch nacelle, but they are apart in the picture"
+    ],
+    "rectifier": [
+      "not found by the segmenter as 'small board'"
+    ],
+    "dump": [
+      "not found by the segmenter as 'wire coil'"
+    ],
+    "safety_loop": [
+      "expected 1 visible, found 2",
+      "size against regulator: expected about 1.4 times, measured 3.2 times",
+      "expected to touch disc_brake, but they are apart in the picture",
+      "expected to touch regulator, but they are apart in the picture"
+    ],
+    "disc_brake": [
+      "expected to touch hub, but they are apart in the picture",
+      "expected to touch nacelle, but they are apart in the picture"
+    ]
+  },
+  "rechecks": []
+}

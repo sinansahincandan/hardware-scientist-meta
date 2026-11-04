@@ -1,0 +1,32 @@
+{
+  "id": "E57",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck parking brake deadman requirement",
+  "code_or_query": "EN 1757 hand truck parking brake deadman requirement",
+  "inputs": {},
+  "output_summary": "pdf.medicalexpo.fr — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure — https://pdf.medicalexpo.fr/pdf-en/handle-it/heavy-duty-flatbed-trolley-deadman-brake/4609340-291136.html",
+  "output_full": "pdf.medicalexpo.fr — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure — https://pdf.medicalexpo.fr/pdf-en/handle-it/heavy-duty-flatbed-trolley-deadman-brake/4609340-291136.html\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure (E57, Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure) that the dead-man system integrated in the handle is always applied unless consciously released, built in line with European Norm (EN) 1757-3, meaning European truck safety rule, which maps directly to the single-action fold interlock (C12).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pdf.medicalexpo.fr",
+      "title": "Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure",
+      "year": "",
+      "url": "https://pdf.medicalexpo.fr/pdf-en/handle-it/heavy-duty-flatbed-trolley-deadman-brake/4609340-291136.html",
+      "query": "EN 1757 hand truck parking brake deadman requirement",
+      "unresolved": false,
+      "passage": "I take from Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure (E57, Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure) that the dead-man system integrated in the handle is always applied unless consciously released, built in line with European Norm (EN) 1757-3, meaning European truck safety rule, which maps directly to the single-action fold interlock (C12).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure (E57, Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT - Catalogue PDF | Documentation technique | Brochure) that the dead-man system integrated in the handle is always applied unless consciously released, built in line with European Norm (EN) 1757-3, meaning European truck safety rule, which maps directly to the single-action fold interlock (C12)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

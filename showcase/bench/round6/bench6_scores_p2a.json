@@ -1,0 +1,628 @@
+{
+ "b2": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure main view",
+     "fault": "Camera sits below the dome and faces sideways out of the cutaway; it cannot image the inner membrane as the text requires",
+     "checked_by": "zoomed crop of figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure inset",
+     "fault": "Dome drawn hollow with a bolt stud through its centre and no camera or LEDs; contradicts the camera-in-core design; radiating arrows unexplained",
+     "checked_by": "viewed inset at full size",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers - slip",
+     "fault": "'<10 ms incipient-slip flag from marker divergence' impossible at 60 fps (16.7 ms per frame); only the acoustic/PVDF channel could meet it",
+     "checked_by": "1/60 s = 16.7 ms",
+     "severity": "minor"
+    },
+    {
+     "where": "Parts vs Key numbers",
+     "fault": "Vibration band given as 100 Hz-5 kHz in Parts but 3-500 Hz sampled at 4 kHz in Key numbers; 5 kHz exceeds the 2 kHz Nyquist limit",
+     "checked_by": "compared sections",
+     "severity": "minor"
+    },
+    {
+     "where": "How it works / made",
+     "fault": "Camera must look through the 'rigid SLA core' to the membrane; a transparent window/core is never stated",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - Hertz",
+     "fault": "Uses E*=70 kPa (Young's modulus of Ecoflex 00-30) instead of E/(1-v^2)~92 kPa; indentation ~20 um not 25 um, still detectable",
+     "checked_by": "python Hertz recompute (24.3 um with their inputs)",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - mass",
+     "fault": "~12 g stated with no mass budget",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "MEMS microphone, PVDF film and thermistor not shown; no scale reference",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Size 16x24 mm with mount stated against precedents; 1 mN shown by a Hertz indentation (~24 um, reproduced) that a photometric-stereo camera can resolve."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Vision-based gel fingertip plus vibration channel is an established working principle; needs a transparent core, which is not stated."
+   },
+   "C3": {
+    "score": 4,
+    "why": "Hertz indentation and dynamic range reproduce; mass and the <10 ms marker-divergence claim are unsupported, and the vibration band is inconsistent (minor)."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Two major picture faults: the camera faces sideways below the dome instead of into it, and the inset shows a hollow dome with a screw through it and no camera."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Buildable with known parts (DIGIT-like); risks are concrete and honest (abrasion, LED heating, creep)."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Clear account of location, force, shear and slip sensing paths."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four sensible making steps: casting, coating/markers, assembly, calibration on a force stage."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Inset with a screw stud through the gel and unexplained arrows; the main render is clean but its camera orientation is wrong."
+   },
+   "total": 29
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Key numbers - Hertz spread",
+     "fault": "'Hertz spread 1.47 mm' does not follow from its own formula: a=(3FR/4E*)^(1/3)=0.27 mm (0.54 mm diameter); 1.47 is the dC value copied",
+     "checked_by": "python recompute",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers - 1 mN capacitance",
+     "fault": "dC 1.47 fF applies the local Hertz strain to the whole 1.5 mm taxel with the skin modulus; with that modulus a 1 mN load on one taxel gives ~0.06 fF; only with the soft pillar modulus (~0.8 fF) would it work, which is not the stated derivation",
+     "checked_by": "python recompute",
+     "severity": "major"
+    },
+    {
+     "where": "Readout / slip",
+     "fault": "2x AD7746-class CDC give 4 channels at <100 Hz; ~100 taxels (20x16 mm at 1.5 mm pitch) and 1-2 kHz slip sampling are impossible without an unmentioned multiplexer and faster converter",
+     "checked_by": "channel count and datasheet-class rate",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / Constraint check - plate sag",
+     "fault": "Own calculation prints 384 um and 'Requirement <5um met? False', and states '15.5 um ... well below 5 um', yet the constraint check reports the gap as stable",
+     "checked_by": "python recompute (384 um for 0.8 mm FR4 at 12 mm)",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A and step 4",
+     "fault": "Sensor stack is mounted on a human fingertip; the dovetail mount is a small cube on a human finger; the device is for a robot finger",
+     "checked_by": "viewed figure",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check - envelope",
+     "fault": "2.8 mm stack uses a 0.8 mm skin, but the mass budget uses a 480 mm^3 solid hemispherical cap (~6 mm tall); dome height left out of the envelope",
+     "checked_by": "r=(3V/2pi)^(1/3)=6.1 mm",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers - mass",
+     "fault": "1.5 g total omits the aluminium dovetail carrier, screws and spacer posts",
+     "checked_by": "read sum terms",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - mount",
+     "fault": "M1.6 screw area taken as 2 mm^2 (8/4) instead of 1.27 mm^2; capacity ~1630 N not 2560 N; margin still large",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Risks",
+     "fault": "Risks section is empty",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Parts 4 and 5 both mark the same module; electrode pattern is round dots of mixed sizes in rings, not a 1.5 mm grid",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Size claimed via a 2.8 mm stack that ignores the dome height; 1 mN detection rests on a mis-derived capacitance budget (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Capacitive taxel skin can work, but the named readout (2x AD7746-class, 4 channels, <100 Hz) cannot scan ~100 taxels at the 1-2 kHz the slip claim needs."
+   },
+   "C3": {
+    "score": 2,
+    "why": "Several major number faults: 1.47 mm 'Hertz spread' does not follow (0.54 mm), dC derived inconsistently, plate-sag check fails in its own code yet is reported as met."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Exploded stack is shown mounted on a human fingertip, not a robot finger; taxels drawn as a circular dot pattern rather than the stated grid."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Plausible materials and processes, but the Risks section is empty and the readout choice is not workable as written."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Mechanism is described but in dense jargon and with the wrong spread figure."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four detailed steps with materials and dimensions."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Render is clean; no merged or floating parts beyond the exploded layout."
+   },
+   "total": 24
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Key numbers - capacitance change at 1 mN",
+     "fault": "dC=C0*p/E uses the 5.78 kPa contact pressure over the full 1.5 mm taxel, but the 0.47 mm spot is 7.7% of taxel area; 1 mN on one taxel gives at most ~0.27 fF = ~1.1 LSB of 244 aF, not 14.6 LSB",
+     "checked_by": "python: C0*F/(A*E)",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A",
+     "fault": "Device is a squat dome on a faceted pot, ~26 mm wide against the 10 mm bar, with side board and cable; it does not look like a fingertip",
+     "checked_by": "pixel measure vs scale bar",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs text - taxel grid",
+     "fault": "Message rate implies 28 taxels on flat facets; figure shows one flat tile on top with roughly 150-200 cells",
+     "checked_by": "counted cells in zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers - full scale",
+     "fault": "At 50 N Hertz radius ~9.4 mm, comparable to the 10 mm dome radius, so the F^(1/3) scaling is invalid; 49% dielectric strain called 'without saturation'",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - slip gap",
+     "fault": "43.2 ms micro-to-gross slip gap is set by an assumed shear ramp (1.4 N over 150 ms); faster loading shrinks it",
+     "checked_by": "read model",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Gel interlayer drawn as a separate transparent cup with an air gap above the vibration film and grid; steps 3-4 show a donut dome with a hole",
+     "checked_by": "zoomed crop",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "Size stated 20x22 mm but the picture shows a squat mushroom ~26 mm wide on a faceted pot; 1 mN margin overstated ~13x (major)."
+   },
+   "C2": {
+    "score": 3,
+    "why": "Capacitive grid plus PVDF slip film is a sound concept, but static 1 mN detection sits at about one converter count."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Hertz, power, mass and data-rate reproduce; the decisive dC at 1 mN ignores that the 0.47 mm spot covers ~8% of a taxel."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Shape does not read as a fingertip; one flat tile with ~150+ cells versus 28 taxels on facets in the text; gel shown as a loose cup above an air gap."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Buildable parts; risks are specific with tests; honest fail-safe message design."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Plain, clear explanation of steady and fast sensing paths."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with materials and dimensions, matched by step images."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Gel interlayer drawn as a sloshing transparent cup; step images show a donut dome with a hole unlike panel A."
+   },
+   "total": 26
+  }
+ },
+ "01": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure panel A",
+     "fault": "'Tri-star wheel cluster' drawn as a horizontal three-arm swivel-caster base (like an office chair) under the axle; it cannot pivot over a step nose; a second caster frame at the back",
+     "checked_by": "zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A - scale",
+     "fault": "Against the ~200 mm bar the toe plate measures ~770 mm (text 365 mm) and the backbone ~2 m (text 1100 mm)",
+     "checked_by": "pixel measure",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers / Constraint check - fold",
+     "fault": "Folded thickness 190 mm cannot contain a tri-star of 150 mm wheels (minimum cluster envelope ~280-320 mm)",
+     "checked_by": "python: pitch radius >=86.6 mm",
+     "severity": "major"
+    },
+    {
+     "where": "Constraint check",
+     "fault": "Problem constraint 'operated by one person' is not checked: no handle force for climbing; 188 N descent load in Risks is not derived and differs from the 403 N slope load",
+     "checked_by": "read text",
+     "severity": "major"
+    },
+    {
+     "where": "figure panel A",
+     "fault": "Brake shown as two sprockets/chainrings; no disc or caliper visible",
+     "checked_by": "zoomed crop",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "Lift energy uses 66.7 kg while total is 67.1 kg; '1.67 m diagonal' van entry not reproducible from the stated dimensions",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "'Measurement chain' panel (lever as sensor, courier as computer) is irrelevant; only 2 of 4 making steps illustrated",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "60 kg handled, but one-person operation is never checked (no climbing handle force) and the folded 190 mm thickness cannot hold the 150 mm-wheel tri-star clusters."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Tri-star clusters with a spring-applied, dead-man disc brake and tooth lock is a working stair concept."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Stress (40.9 MPa), whip (43.9 mm), slope load (403 N) and release force reproduce; fold thickness wrong and descent force 188 N underived."
+   },
+   "C4": {
+    "score": 1,
+    "why": "The key mechanism is drawn wrong: the tri-star is a horizontal swivel-caster spider that cannot climb, and the scale makes the truck about twice its stated size."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Buildable aluminium/steel parts; spring-applied hands-off hold is a safety-conscious choice; risks honest."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Explains climb, hold and fold briefly."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Four steps with sizes; only two are illustrated."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Office-chair caster base, sprockets in place of a disc brake, extra rear caster frame, floating dash marks."
+   },
+   "total": 23
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "Key numbers - handle force",
+     "fault": "214 N = 60*9.81*0.40/1.10 omits the 11-12 kg truck and the peak force to lift ~70 kg up each 170-210 mm riser; 'within one-person pull' has no source",
+     "checked_by": "python",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers - cluster",
+     "fault": "'Cluster radius ~160 mm' with 150 mm wheels gives ~470 mm envelope if pitch radius, exceeding the 450 mm folded dimension; term ambiguous",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Parts - descent brake",
+     "fault": "Step-edge pawl mechanism only named; no geometry or check beyond 353 N per side x1.5",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Extra pair of small wheels under the toe plate front not in the text; pawls, skids and fold hinges hard to see; no scale bar",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 3,
+    "why": "60 kg rating and fold size come from real products; one-person claim rests on a 214 N steady pull that leaves out the truck mass and step-lift peaks (major)."
+   },
+   "C2": {
+    "score": 4,
+    "why": "Standard tri-star hand truck with skids and edge-brake pawls is proven for this load."
+   },
+   "C3": {
+    "score": 3,
+    "why": "Handle force reproduces (214 N) but omits 11-12 kg tare; cluster radius 160 mm with 150 mm wheels is ambiguous against the 450 mm fold."
+   },
+   "C4": {
+    "score": 4,
+    "why": "Photoreal truck on stairs with three-wheel clusters each side, toe plate and strap match the text; brake pawls and skids barely visible, no scale."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Honest that it follows existing products; buildable; good risk list."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Short, clear description of climb, descent and fold."
+   },
+   "C7": {
+    "score": 3,
+    "why": "Generic four-step making list without dimensions for hinges or pawls."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; an extra pair of small wheels under the toe plate is not in the text."
+   },
+   "total": 28
+  }
+ },
+ "03": {
+  "A": {
+   "faults": [
+    {
+     "where": "figure",
+     "fault": "Concrete deck drawn with a broken, gouged chunk at midspan, as if the bridge were damaged",
+     "checked_by": "viewed figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure",
+     "fault": "Viscous dashpots mounted outside the spring cage between brackets and the cage frame; as drawn they are not connected to the moving mass and damp nothing",
+     "checked_by": "zoomed crop",
+     "severity": "major"
+    },
+    {
+     "where": "figure",
+     "fault": "Odd cruciform box posts piercing between girders and deck; no scale bar, labels or person",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers vs figure",
+     "fault": "Text estimates a steel deck ~1.1 t/m; figure shows a thick concrete slab",
+     "checked_by": "compared",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - tuning",
+     "fault": "With mu=1000/22000=0.0455, Den Hartog gives 1.82 Hz, not 1.83 Hz",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Envelope",
+     "fault": "~1.5 t installed at midspan (frames included) lowers the bridge frequency slightly; not mentioned (covered by +/-10% tuning)",
+     "checked_by": "estimate",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Tuned to the 1.9 Hz mode at midspan, comfort target with a computed value, all hardware below the soffit."
+   },
+   "C2": {
+    "score": 5,
+    "why": "Twin under-deck TMDs with Den Hartog tuning are the standard, working retrofit; my 2-DOF model gives ~0.14 m/s2, better than claimed."
+   },
+   "C3": {
+    "score": 4,
+    "why": "Mass ratio, spring rate, sag, deck amplitude reproduce; tuning 1.83 Hz vs 1.82 Hz from its own mu (minor)."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Dampers drawn outside the cage, not connected to the moving mass; deck slab drawn broken; no scale or labels."
+   },
+   "C5": {
+    "score": 5,
+    "why": "Buildable with standard parts; staged survey and tuning; risks specific and honest (detuning, bottoming, wear, 2nd mode)."
+   },
+   "C6": {
+    "score": 4,
+    "why": "Plain explanation of how the masses split and damp the resonance."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four stages from modal test to on-site tuning."
+   },
+   "C8": {
+    "score": 2,
+    "why": "Concrete slab with a gouged, broken midspan section; strange cruciform box posts between girders."
+   },
+   "total": 30
+  },
+  "B": {
+   "faults": [
+    {
+     "where": "figure",
+     "fault": "Deck shown as a short slab on two vertical columns (portal/table) with the cross-beam bolted between the columns; no girders or 40 m span, contradicting 'clamped between girder webs'",
+     "checked_by": "viewed figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure vs Constraint check",
+     "fault": "Masses hang ~1.5 m below the cross-beam (scale bar), contradicting 'confined within girder depth, 124 mm'",
+     "checked_by": "pixel measure vs 1000 mm bar",
+     "severity": "major"
+    },
+    {
+     "where": "figure",
+     "fault": "Callout 6 'deck accelerometer array' points to a mass block; tuned mass 'not located'; a box sits on the deck top though text says zero above deck",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - bare acceleration",
+     "fault": "8.28 m/s2 (0.84 g) from an unexplained 0.0828 m/s2 static term (implies 1.66 kN modal force); far beyond a merely uncomfortable bridge",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - stroke",
+     "fault": "49.4 mm from a free decay from 20 mm; steady-state 2-DOF at the same forcing gives ~14 mm (conservative)",
+     "checked_by": "python 2-DOF FRF",
+     "severity": "minor"
+    },
+    {
+     "where": "How it is made",
+     "fault": "'2 x 400 kg masses on 105 kN/m springs': 105 kN/m is the total; per 400 kg mass it would tune to 2.58 Hz",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Risks vs Key numbers",
+     "fault": "Twin detuned units said to hold 0.476-0.526 m/s2 while the main result is 0.67 m/s2",
+     "checked_by": "compared",
+     "severity": "minor"
+    },
+    {
+     "where": "Key numbers - bolts",
+     "fault": "M20 grade 10.9 bolts given 8.8 preload (137 kN); 'stop contact force at 80 mm compression' mislabels spring force at 80 mm travel",
+     "checked_by": "read",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Comfort 0.67 m/s2 (mean class) and below-soffit placement shown with computed values."
+   },
+   "C2": {
+    "score": 5,
+    "why": "Twin TMD on a clamped cross-beam is a sound retrofit; my 2-DOF model reproduces ~0.61 m/s2."
+   },
+   "C3": {
+    "score": 4,
+    "why": "Mass, stiffness, damping, sag, bolt slip reproduce; 8.28 m/s2 bare baseline is extreme and the 49.4 mm stroke comes from a free decay (steady state ~14 mm)."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Deck drawn as a slab on two columns like a table with the cross-beam bolted between the columns; no girders; masses hang ~1.5 m below, against 'within girder depth'."
+   },
+   "C5": {
+    "score": 4,
+    "why": "Buildable, HSFG clamping, stops and annual checks; honest."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Explanation is understandable but awkwardly worded."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Four ordered steps with sizes and bolt grades."
+   },
+   "C8": {
+    "score": 3,
+    "why": "Callouts misplaced (accelerometer label on the mass, tuned mass 'not located'); deck-on-posts context is a generator mistake."
+   },
+   "total": 29
+  },
+  "C": {
+   "faults": [
+    {
+     "where": "Parts vs How it is made vs figure",
+     "fault": "Tray said to contain sag plus stroke within 250 mm depth, but the 500 kg block hangs 'in free air with no surrounding carrier' on springs below the tray; figure shows it ~1 m below",
+     "checked_by": "compared sections and figure",
+     "severity": "major"
+    },
+    {
+     "where": "figure - scale",
+     "fault": "Against the ~1000 mm bar in panel B the block is ~4 m long; the step-4 silhouette makes it ~1.8 m; text says 580-690 mm (500 kg steel = 0.064 m^3)",
+     "checked_by": "pixel measure",
+     "severity": "major"
+    },
+    {
+     "where": "Key numbers",
+     "fault": "zeta 0.0956 and 0.0932 both used; FS 2.5 stated but 15/6.5 = 2.3; stroke ~95 mm vs ~20 mm dynamic",
+     "checked_by": "python",
+     "severity": "minor"
+    },
+    {
+     "where": "Risks",
+     "fault": "Risks section empty",
+     "checked_by": "read text",
+     "severity": "minor"
+    },
+    {
+     "where": "figure",
+     "fault": "Callout 4 floats in empty air, 3 'not located'; 'transverse' spreader beam drawn parallel to girders; 'retained ENV' jargon",
+     "checked_by": "viewed figure",
+     "severity": "minor"
+    }
+   ],
+   "C1": {
+    "score": 4,
+    "why": "Tuning, 0.455 m/s2 at 1 kN (reproduced) and below-soffit placement shown with computed values."
+   },
+   "C2": {
+    "score": 5,
+    "why": "Single under-deck TMD with Den Hartog tuning works; 2-DOF reproduces 11x cut."
+   },
+   "C3": {
+    "score": 4,
+    "why": "k, c, sag, FRF reproduce; small slips (zeta 0.0956 vs 0.0932, FS 2.3 called 2.5, stroke 95 vs 20 mm)."
+   },
+   "C4": {
+    "score": 2,
+    "why": "Mass hangs ~1 m below the 'enclosure tray' that is said to contain the motion; block drawn ~2-4 m long against the scale versus 580-690 mm in text."
+   },
+   "C5": {
+    "score": 3,
+    "why": "Buildable with catalogue parts, but the Risks section is empty."
+   },
+   "C6": {
+    "score": 3,
+    "why": "Clear functional chain, but tray-contains-motion versus free-air mass is contradictory (major)."
+   },
+   "C7": {
+    "score": 4,
+    "why": "Five ordered steps with dimensions and tuning procedure."
+   },
+   "C8": {
+    "score": 4,
+    "why": "Clean render; minor callout placement issues."
+   },
+   "total": 29
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E94",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "daily margin grown array yield minus reconciled electrical load",
+  "code_or_query": "3.6*5.0*0.75-10.55",
+  "inputs": {},
+  "output_summary": "2.95",
+  "output_full": "2.95",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

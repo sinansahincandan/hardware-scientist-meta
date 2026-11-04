@@ -1,0 +1,5 @@
+{
+  "cycle": 2,
+  "member": "Mobility and Deployable Chassis Lead",
+  "message": "The four drop-down wheel arms stow the chassis inside the start box and swing out to widen the track before driving, keeping the spinning wheels clear of the static frame and hopper. Manager, the stowed size is 0.900 by 0.420 by 0.450 m inside 1.00 by 0.500 by 0.500 m with deployed length 1.05 m and track 0.680 m and rotation gap 0.0250 m per the tip dump clearance check (E51), about a door width long, and the arm pivots and gaps match the side and top view folding chassis sketch (E24).\n\nI take from the Engineering help please (E37) the rule that 6061-T6 aluminium yields near 40.0 ksi, meaning kilopounds per square inch, with working stress near 15.0 ksi. Power Structure and Integration Lead, this confirms the twin-tube chassis choice for my wheel and digger loads, because the stiffened twin-rail tip sag (E63) stays 3.96 mm, about a coin thickness over a metre rail, so the ladder, hopper pivots and arm lugs stay aligned.\n\nPosition: ready, because stowed envelope with widened track, spin clearance and millimetre stiffness all survive with margin and need no redesign."
+}

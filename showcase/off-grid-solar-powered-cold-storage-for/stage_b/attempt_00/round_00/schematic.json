@@ -2,85 +2,57 @@
   "px_per_mm": 4.0,
   "boxes": {
     "pv_array": {
-      "x0": 9.999999999999986,
+      "x0": 570.0000000000001,
       "y0": 65.0,
-      "x1": 229.99999999999997,
-      "y1": 138.33333333333348,
-      "label": "PV array 2.4kWp tilt"
-    },
-    "frame_rack": {
-      "x0": 9.999999999999986,
-      "y0": 195.0,
-      "x1": 229.99999999999997,
-      "y1": 283.0,
-      "label": "PV + box steel frame"
-    },
-    "dc_wiring": {
-      "x0": 219.99999999999997,
-      "y0": 65.0,
-      "x1": 440.00000000000006,
-      "y1": 120.00000000000011,
-      "label": "DC wiring"
-    },
-    "battery_cabinet": {
-      "x0": 923.5999999999999,
-      "y0": 325.00000000000006,
-      "x1": 996.4000000000001,
-      "y1": 429.00000000000006,
-      "label": "Battery 5kWh + MPPT"
-    },
-    "cold_box": {
-      "x0": 482.8,
-      "y0": 195.0,
-      "x1": 597.2,
-      "y1": 299.0,
-      "label": "100mm PU cold box 2m"
-    },
-    "airflow_kit": {
-      "x0": 430.00000000000006,
-      "y0": 65.0,
-      "x1": 650.0,
+      "x1": 790.0,
       "y1": 127.85714285714283,
-      "label": "Fan + evaporator high"
+      "label": "Split PV array 2 roof +7 ground"
     },
-    "racks": {
-      "x0": 225.99999999999997,
+    "batt_bank": {
+      "x0": 78.39999999999999,
       "y0": 325.00000000000006,
-      "x1": 434.0,
+      "x1": 161.60000000000002,
       "y1": 429.00000000000006,
-      "label": "Low side racks"
+      "label": "Battery bank with MPPT"
     },
-    "crates": {
-      "x0": 488.00000000000006,
-      "y0": 325.00000000000006,
-      "x1": 592.0,
-      "y1": 429.00000000000006,
-      "label": "Vented crates"
-    },
-    "door": {
-      "x0": 724.0000000000001,
-      "y0": 195.0,
-      "x1": 776.0000000000001,
-      "y1": 299.0,
-      "label": "900mm insulated door"
-    },
-    "dc_chiller": {
+    "cooler": {
       "x0": 908.0,
       "y0": 195.0,
       "x1": 1011.9999999999999,
       "y1": 299.0,
-      "label": "DC chiller shaded"
+      "label": "Monoblock cooler rear-high"
     },
-    "plinth": {
-      "x0": 390.00000000000006,
+    "chamber": {
+      "x0": 337.59999999999997,
+      "y0": 325.00000000000006,
+      "x1": 462.4,
+      "y1": 429.00000000000006,
+      "label": "Insulated chamber with door"
+    },
+    "rack_crate": {
+      "x0": 368.8,
+      "y0": 325.00000000000006,
+      "x1": 431.20000000000005,
+      "y1": 429.00000000000006,
+      "label": "Racking with vented crates"
+    },
+    "control": {
+      "x0": 908.0,
+      "y0": 325.00000000000006,
+      "x1": 1011.9999999999999,
+      "y1": 429.00000000000006,
+      "label": "Thermostat + probes"
+    },
+    "foundation": {
+      "x0": 250.0,
       "y0": 455.00000000000006,
-      "x1": 690.0,
+      "x1": 550.0,
       "y1": 505.00000000000006,
-      "label": "Concrete plinth"
+      "label": "Pads frames and anchors"
     }
   },
   "width": 1000,
   "height": 625,
-  "critical_part_id": "cold_box",
+  "critical_part_id": "chamber",
   "scale_bar_mm": 500.0
 }

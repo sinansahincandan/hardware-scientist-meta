@@ -1,0 +1,14 @@
+{
+  "id": "E61",
+  "author": "Power Structure and Integration Lead",
+  "tool": "calc",
+  "purpose": "second moment two square tubes 25.4 mm outside 3 mm wall",
+  "code_or_query": "((0.0254**4-0.0194**4)/12)*2",
+  "inputs": {},
+  "output_summary": "4.58e-08",
+  "output_full": "4.58e-08",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

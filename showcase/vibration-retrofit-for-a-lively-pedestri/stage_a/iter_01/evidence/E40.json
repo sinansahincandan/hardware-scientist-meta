@@ -1,0 +1,14 @@
+{
+  "id": "E40",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "crowd count Class III 0.5 ped per m2 on 120 m2 deck",
+  "code_or_query": "120*0.5",
+  "inputs": {},
+  "output_summary": "60",
+  "output_full": "60",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

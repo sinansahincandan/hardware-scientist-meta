@@ -1,0 +1,26 @@
+{
+  "id": "E113",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: \"BD50F\" COP 1.4 condensing 55C evaporating",
+  "code_or_query": "\"BD50F\" COP 1.4 condensing 55C evaporating",
+  "inputs": {},
+  "output_summary": "assets.danfoss.com — Danfoss BD Compressors for extreme conditions — https://assets.danfoss.com/documents/latest/99496/AF062286422682en-000101.pdf",
+  "output_full": "assets.danfoss.com — Danfoss BD Compressors for extreme conditions — https://assets.danfoss.com/documents/latest/99496/AF062286422682en-000101.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "assets.danfoss.com",
+      "title": "Danfoss BD Compressors for extreme conditions",
+      "year": "",
+      "url": "https://assets.danfoss.com/documents/latest/99496/AF062286422682en-000101.pdf",
+      "query": "\"BD50F\" COP 1.4 condensing 55C evaporating",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

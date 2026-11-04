@@ -1,0 +1,14 @@
+{
+  "id": "E42",
+  "author": "Enclosure and Structural Designer",
+  "tool": "sketch",
+  "purpose": "Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame",
+  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd(); fig,ax=plt.subplots(figsize=(8,5)); ax.set_xlim(0,10); ax.set_ylim(0,6); ax.set_aspect('equal'); ax.axis('off')\nimport matplotlib.patches as mp\nax.add_patch(mp.Rectangle((1,1),7,4,fill=False,lw=2))\nax.add_patch(mp.Rectangle((1,4.6),7,0.4,fill=False,lw=1.5))\nax.text(4.5,5.4,'PV shade roof',ha='center',fontsize=10)\nfor x in [2,5,7]:\n    ax.plot([x,x],[5.0,5.4],'k-')\nax.add_patch(mp.Rectangle((7.6,1.2),0.4,3.0,fill=False,lw=2))\nax.text(7.8,2.5,'door\\n+strip',ha='left',fontsize=8)\nax.add_patch(mp.Rectangle((1.6,1.2),2.0,2.6,fill=False,lw=1.5))\nax.text(2.6,3.0,'rack L\\ncrates',ha='center',fontsize=8)\nax.add_patch(mp.Rectangle((4.2,1.2),2.0,2.6,fill=False,lw=1.5))\nax.text(5.2,3.0,'rack R\\ncrates',ha='center',fontsize=8)\nax.add_patch(mp.Rectangle((1.4,3.9),0.5,0.6,fill=False,lw=1.5))\nax.text(0.3,4.2,'evap hi',fontsize=8)\nax.annotate('',xy=(4.0,3.6),xytext=(1.9,4.1),arrowprops=dict(arrowstyle='->'))\nax.annotate('',xy=(1.9,1.5),xytext=(4.0,1.5),arrowprops=dict(arrowstyle='->'))\nax.text(3.0,4.5,'cold fwd',fontsize=8); ax.text(3.0,1.1,'warm return',fontsize=8)\nfor x in [1.5,4.0,6.5]:\n    ax.add_patch(mp.Rectangle((x,0.6),1.0,0.4,fill=False,lw=1.5))\nax.text(4.5,0.25,'ground pads + plinths',ha='center',fontsize=9)\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+  "inputs": {},
+  "output_summary": "Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame",
+  "output_full": "Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame",
+  "sketch_path": "evidence/sketch_42.png",
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

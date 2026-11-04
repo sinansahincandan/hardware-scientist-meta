@@ -1,23 +1,14 @@
 {
   "id": "E60",
-  "author": "Priya \u2014 Power, Avionics and Lunar Environment Engineer",
+  "author": "Power Structure and Integration Lead",
   "tool": "calc",
-  "purpose": "dual actuator lift energy transient",
-  "code_or_query": "(Q_(120, 'W')*Q_(20, 's')).to('J')",
-  "inputs": {
-    "arg0": {
-      "value": "120",
-      "unit": "W"
-    },
-    "arg1": {
-      "value": "20",
-      "unit": "s"
-    }
-  },
-  "output_summary": "2.4\u00d710\u00b3 J",
-  "output_full": "2.4\u00d710\u00b3 J",
+  "purpose": "mechanical dig energy per 15 kg trip from ladder power times fill time",
+  "code_or_query": "16.45*112/3600",
+  "inputs": {},
+  "output_summary": "0.512",
+  "output_full": "0.512",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 2
 }

@@ -1,0 +1,40 @@
+{
+  "id": "E2",
+  "author": "Mara Voss — Structural Frame & Load Path",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminium tube bending strength yield datasheet",
+  "code_or_query": "6061-T6 aluminium tube bending strength yield datasheet",
+  "inputs": {},
+  "output_summary": "gneealuminum.com — 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses — https://www.gneealuminum.com/info/6061-t6-t4-t5-seamless-pipe-103228772.html",
+  "output_full": "gneealuminum.com — 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses — https://www.gneealuminum.com/info/6061-t6-t4-t5-seamless-pipe-103228772.html\n(opened by the member, not cited)\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin.\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are the 51 cm by 41 cm by 104 cm open size folding to 62 cm by 11 cm by 75 cm at 6.07 kg tare (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5) against the lighter 38 cm by 28 cm by 101 cm at 3.60 kg aluminium trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), which shows folding to van depth costs kilograms unless sections stay thin-wall aluminium at the 276 MPa level (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses).\nMara Voss — Structural Frame & Load Path said about it: The numbers that decide it are toe root moment 88.3 N m from the toe moment calc (E68) for 60 kg at 150 mm offset, backbone stress 51.1 MPa from the backbone stress calc (E70) against about 276 MPa yield for 6061-T6, meaning solution heat-treated and artificially aged, seamless pipe from prior 6061-T6 evidence (E2), and tip deflection 0.11 m from the deflection calc (E71) for a 1.1 m backbone.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "gneealuminum.com",
+      "title": "6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses",
+      "year": "",
+      "url": "https://www.gneealuminum.com/info/6061-t6-t4-t5-seamless-pipe-103228772.html",
+      "query": "6061-T6 aluminium tube bending strength yield datasheet",
+      "unresolved": false,
+      "passage": "The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are the 60 kg standard rating and 30 kg stair rating with 39 cm by 29 cm base plate from the 30/60KG Versatile Stair Climber (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5), the 60 kg ground and 40 kg stair rating from the aluminium six-wheel trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), and about 276 MPa yield for 6061-T6 seamless pipe (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses), and 60 kg is about one adult body weight so the frame stress and tip moment are human-scale and must have margin."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are the 51 cm by 41 cm by 104 cm open size folding to 62 cm by 11 cm by 75 cm at 6.07 kg tare (E1, STANLEY-HANDTRUCKS - Flipbook by MSGROUP | FlipHTML5) against the lighter 38 cm by 28 cm by 101 cm at 3.60 kg aluminium trolley (E3, Trolleys Stair Climbing Trolley 6 Wheels Aluminium Folding Hand Cart Steps | Fruugo SK), which shows folding to van depth costs kilograms unless sections stay thin-wall aluminium at the 276 MPa level (E2, 6061-T6, T4 and T5 Seamless Aluminum Pipe: Tempers, Properties and Uses)."
+        },
+        {
+          "by": "Mara Voss — Structural Frame & Load Path",
+          "text": "The numbers that decide it are toe root moment 88.3 N m from the toe moment calc (E68) for 60 kg at 150 mm offset, backbone stress 51.1 MPa from the backbone stress calc (E70) against about 276 MPa yield for 6061-T6, meaning solution heat-treated and artificially aged, seamless pipe from prior 6061-T6 evidence (E2), and tip deflection 0.11 m from the deflection calc (E71) for a 1.1 m backbone."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

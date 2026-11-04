@@ -1,0 +1,14 @@
+{
+  "id": "E54",
+  "author": "Structures-Survival Engineer",
+  "tool": "calc",
+  "purpose": "required hold torque with safety factor on aero torque",
+  "code_or_query": "0.48*1.5",
+  "inputs": {},
+  "output_summary": "0.72",
+  "output_full": "0.72",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

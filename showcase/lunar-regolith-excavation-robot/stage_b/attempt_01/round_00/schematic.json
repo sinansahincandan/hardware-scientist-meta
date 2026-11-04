@@ -1,0 +1,79 @@
+{
+  "px_per_mm": 4.0,
+  "boxes": {
+    "chassis": {
+      "x0": 390.00000000000006,
+      "y0": 195.0,
+      "x1": 690.0,
+      "y1": 245.0,
+      "label": "twin-tube aluminium chassis"
+    },
+    "wheels": {
+      "x0": 488.00000000000006,
+      "y0": 455.00000000000006,
+      "x1": 592.0,
+      "y1": 559.0000000000001,
+      "label": "rigid grouser wheels"
+    },
+    "arms": {
+      "x0": 430.00000000000006,
+      "y0": 325.00000000000006,
+      "x1": 650.0,
+      "y1": 413.0,
+      "label": "folding wheel arms"
+    },
+    "kerf": {
+      "x0": 94.0,
+      "y0": 455.00000000000006,
+      "x1": 146.0,
+      "y1": 559.0000000000001,
+      "label": "narrow kerf trenching chain"
+    },
+    "ladder": {
+      "x0": 217.49999999999997,
+      "y0": 325.00000000000006,
+      "x1": 442.5,
+      "y1": 375.00000000000006,
+      "label": "bucket ladder elevator"
+    },
+    "hopper": {
+      "x0": 692.8000000000001,
+      "y0": 195.0,
+      "x1": 807.2,
+      "y1": 299.0,
+      "label": "steep wedge hopper"
+    },
+    "screw": {
+      "x0": 640.0,
+      "y0": 325.00000000000006,
+      "x1": 860.0000000000001,
+      "y1": 380.0,
+      "label": "auger discharge screw"
+    },
+    "battery": {
+      "x0": 251.99999999999994,
+      "y0": 195.0,
+      "x1": 408.0,
+      "y1": 299.0,
+      "label": "lithium phosphate battery packs"
+    },
+    "cameras": {
+      "x0": 698.0,
+      "y0": 65.0,
+      "x1": 802.0000000000001,
+      "y1": 168.99999999999994,
+      "label": "drive and dig and mast cameras"
+    },
+    "computer": {
+      "x0": 882.0,
+      "y0": 195.0,
+      "x1": 1038.0,
+      "y1": 299.0,
+      "label": "onboard computer with watchdog"
+    }
+  },
+  "width": 1000,
+  "height": 625,
+  "critical_part_id": "ladder",
+  "scale_bar_mm": 100.0
+}

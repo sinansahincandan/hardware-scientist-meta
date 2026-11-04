@@ -1,0 +1,36 @@
+{
+  "id": "E15",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
+  "tool": "web_search",
+  "purpose": "search: tri-star three wheel stair climbing hand truck mechanism",
+  "code_or_query": "tri-star three wheel stair climbing hand truck mechanism",
+  "inputs": {},
+  "output_summary": "sacktrucks.co.uk — Stair Climbing Sack Trucks & Trolleys — https://www.sacktrucks.co.uk/stair-climber-trucks/",
+  "output_full": "sacktrucks.co.uk — Stair Climbing Sack Trucks & Trolleys — https://www.sacktrucks.co.uk/stair-climber-trucks/\n(opened by the member, not cited)\nKenji Tanaka — Stair-Climbing Locomotion said about it: The tri-star wheel cluster (C1) walks stairs without lifting the whole truck because the lead wheel stops on the step nose and the triangle pivots around it to hand the load to the next tread, as described in the Stair Climbing Sack Trucks & Trolleys (E15), so Mara Voss, Elena Ruiz and Tomas Lind should note it climbs pulled backward uphill and is lowered forward downhill in reverse.\nKenji Tanaka — Stair-Climbing Locomotion said about it: Flat rolling pays for the stair ability because the same small wheels roll as a fixed-axle cart on level floors and only engage at step edges as described in the Stair Climbing Sack Trucks & Trolleys (E15), so Tomas Lind should note the van run stays easy at about 24.0 N from the climb simulation (E23) but with higher rolling loss than one large wheel.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "sacktrucks.co.uk",
+      "title": "Stair Climbing Sack Trucks & Trolleys",
+      "year": "",
+      "url": "https://www.sacktrucks.co.uk/stair-climber-trucks/",
+      "query": "tri-star three wheel stair climbing hand truck mechanism",
+      "unresolved": false,
+      "passage": "The tri-star wheel cluster (C1) walks stairs without lifting the whole truck because the lead wheel stops on the step nose and the triangle pivots around it to hand the load to the next tread, as described in the Stair Climbing Sack Trucks & Trolleys (E15), so Mara Voss, Elena Ruiz and Tomas Lind should note it climbs pulled backward uphill and is lowered forward downhill in reverse.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "The tri-star wheel cluster (C1) walks stairs without lifting the whole truck because the lead wheel stops on the step nose and the triangle pivots around it to hand the load to the next tread, as described in the Stair Climbing Sack Trucks & Trolleys (E15), so Mara Voss, Elena Ruiz and Tomas Lind should note it climbs pulled backward uphill and is lowered forward downhill in reverse."
+        },
+        {
+          "by": "Kenji Tanaka — Stair-Climbing Locomotion",
+          "text": "Flat rolling pays for the stair ability because the same small wheels roll as a fixed-axle cart on level floors and only engage at step edges as described in the Stair Climbing Sack Trucks & Trolleys (E15), so Tomas Lind should note the van run stays easy at about 24.0 N from the climb simulation (E23) but with higher rolling loss than one large wheel."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

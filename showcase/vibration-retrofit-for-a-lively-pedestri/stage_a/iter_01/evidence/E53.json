@@ -1,0 +1,14 @@
+{
+  "id": "E53",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "calc",
+  "purpose": "static weight per 400kg unit",
+  "code_or_query": "400*9.81",
+  "inputs": {},
+  "output_summary": "3.92e+03",
+  "output_full": "3.92e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,14 +1,26 @@
 {
   "id": "E58",
-  "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
-  "tool": "simulate",
-  "purpose": "stair heave lever effort brake torque tip margin 60kg",
-  "code_or_query": "import math\nm_load=60.0; m_tare=12.0; m=m_load+m_tare; g=9.81\nW=m*g\n# stair worst: 200mm riser, 250mm going\nangle=math.degrees(math.atan2(200,250))\nFslope=W*math.sin(math.radians(angle))\n# levered climb: pivot at nosing contact, CG 0.20m fwd of spine, 0.60m up spine, handles 1.10m up spine, lean 25deg from vertical\nlean=25.0\ncg_fwd=0.20; cg_up=0.60; h_handle=1.10\n# horizontal moment arm of weight about contact ~ cg_fwd*cos(lean)+cg_up*sin(lean) approx, handle arm ~ h_handle*sin(lean)+h_handle? simplified lever ratio 0.32 from geometry\nratio=0.32\nFlever=W*ratio\n# brake torque: orbit radius 0.14m about carrier centre\nT=W*0.14\nTsf=T*2.0\n# tip: CG height ~0.70m, rear base ~0.28m -> tip angle from vertical\ntip=math.degrees(math.atan2(0.28,0.70))\nprint(f\"W={W:.1f}N angle={angle:.1f}deg Fslope={Fslope:.0f}N Flever={Flever:.0f}N T={T:.1f}Nm Tsf={Tsf:.1f}Nm tip={tip:.1f}deg lean={lean} margin={tip-lean:.1f}\")\nprint(f\"energy per 0.20m riser={(m_load+m_tare)*g*0.20:.0f}J vs daily ~\")\n",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck parking brake deadman requirement",
+  "code_or_query": "EN 1757 hand truck parking brake deadman requirement",
   "inputs": {},
-  "output_summary": "W=706.3N angle=38.7deg Fslope=441N Flever=226N T=98.9Nm Tsf=197.8Nm tip=21.8deg lean=25.0 margin=-3.2; energy per 0.2m riser=141J vs daily ~",
-  "output_full": "W=706.3N angle=38.7deg Fslope=441N Flever=226N T=98.9Nm Tsf=197.8Nm tip=21.8deg lean=25.0 margin=-3.2\nenergy per 0.20m riser=141J vs daily ~",
+  "output_summary": "pdf.aeroexpo.online — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure — https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html",
+  "output_full": "pdf.aeroexpo.online — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure — https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "pdf.aeroexpo.online",
+      "title": "Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure",
+      "year": "",
+      "url": "https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html",
+      "query": "EN 1757 hand truck parking brake deadman requirement",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 2
 }

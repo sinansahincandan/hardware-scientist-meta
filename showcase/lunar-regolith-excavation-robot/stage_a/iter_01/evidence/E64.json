@@ -1,0 +1,14 @@
+{
+  "id": "E64",
+  "author": "Excavation and Regolith Handling Lead",
+  "tool": "calc",
+  "purpose": "scale cut force to 100 mm kerf",
+  "code_or_query": "32.9*0.1/0.3",
+  "inputs": {},
+  "output_summary": "11",
+  "output_full": "11",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

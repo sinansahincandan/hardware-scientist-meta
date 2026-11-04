@@ -1,0 +1,14 @@
+{
+  "id": "E24",
+  "author": "Structures-Survival Engineer",
+  "tool": "vetted_calc:cantilever_deflection",
+  "purpose": "post tip deflection and bending stress at 22 m/s survival",
+  "code_or_query": "{\"args\": {\"E\": 68900000000.0, \"F\": 37.3, \"I\": 1.5e-08, \"L\": 0.35, \"c\": 0.01905, \"input_sources\": {\"E\": \"source\", \"F\": \"assumption\", \"I\": \"assumption\", \"L\": \"assumption\", \"c\": \"assumption\"}, \"yield_strength\": 240000000.0}}",
+  "inputs": {},
+  "output_summary": "vetted_calc error: float() argument must be a string or a real number, not 'dict'",
+  "output_full": "vetted_calc error: float() argument must be a string or a real number, not 'dict'",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

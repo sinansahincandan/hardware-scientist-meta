@@ -1,0 +1,32 @@
+{
+  "id": "E105",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: cold storage respiration heat load tomatoes mangoes W per tonne",
+  "code_or_query": "cold storage respiration heat load tomatoes mangoes W per tonne",
+  "inputs": {},
+  "output_summary": "muhaz.org — Tahun 2000. Part IV processing by the removal of heat — 2000 — https://muhaz.org/tahun-2000-part-iv-processing-by-the-removal-of-heat.html",
+  "output_full": "muhaz.org — Tahun 2000. Part IV processing by the removal of heat — 2000 — https://muhaz.org/tahun-2000-part-iv-processing-by-the-removal-of-heat.html\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: Part IV processing by the removal of heat (E105), my single thermal total is conduction 4.87 plus respiration 1.20 plus door 0.17 plus staged pull-down 6.25 equals 12.5 kWh thermal per day, which supersedes the inconsistent 13.2 kWh per day from the steady plus staged pull-down daily kWh (E58) and the 12.8 kWh thermal per day from the thermal cooling total kWh_th per day conduction plus respiration plus door plus staged pull-down (E92).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "muhaz.org",
+      "title": "Tahun 2000. Part IV processing by the removal of heat",
+      "year": "2000",
+      "url": "https://muhaz.org/tahun-2000-part-iv-processing-by-the-removal-of-heat.html",
+      "query": "cold storage respiration heat load tomatoes mangoes W per tonne",
+      "unresolved": false,
+      "passage": "Part IV processing by the removal of heat (E105), my single thermal total is conduction 4.87 plus respiration 1.20 plus door 0.17 plus staged pull-down 6.25 equals 12.5 kWh thermal per day, which supersedes the inconsistent 13.2 kWh per day from the steady plus staged pull-down daily kWh (E58) and the 12.8 kWh thermal per day from the thermal cooling total kWh_th per day conduction plus respiration plus door plus staged pull-down (E92).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "Part IV processing by the removal of heat (E105), my single thermal total is conduction 4.87 plus respiration 1.20 plus door 0.17 plus staged pull-down 6.25 equals 12.5 kWh thermal per day, which supersedes the inconsistent 13.2 kWh per day from the steady plus staged pull-down daily kWh (E58) and the 12.8 kWh thermal per day from the thermal cooling total kWh_th per day conduction plus respiration plus door plus staged pull-down (E92)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

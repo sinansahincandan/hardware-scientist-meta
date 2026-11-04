@@ -1,68 +1,89 @@
-I'll search for the closest solar cold storage products and papers to compare against your concept.
-I've found strong candidates — now I'll gather detailed specs to pinpoint the closest match.
-**Closest: ColdHubs solar walk-in cold room - Nigeria**
+Finding the closest real-world match to your solar cold-store concept — searching products, patents and papers.
+I found a very close 1.5-tonne solar unit — now opening the source to pin down the exact differences.
+**Closest match: Paper**
 
-> `3 x 3 metres` roof-mounted solar, `up to 3 tonnes of food arranged in 30 kg crates`
+> Odhiambo, Muthoni & Kosgei - **Effectiveness of solar-powered cold storage for fresh produce preservation in remote areas**, *Int. J. Agric. Food Sci. 2025;7(9):60-63*
 
-> `installed at markets and farm co-operatives` `rent space` `pay per crate ... per day`
+Tested a:
 
-> `Excess solar power is stored in batteries to ensure the hubs are kept cold at night and in bad weather.`
+> `1.5 ton capacity solar-powered cold storage unit installed in three remote villages of the Nakuru County between March 2022 and February 2023`
 
-Other listing describes same family as:
+Configured as:
 
-> `plug and play modular, solar-powered walk-in cold room, for 24/7 off-grid storage`
+> `2 kW photovoltaic array, a 10 kWh lithium-iron-phosphate battery bank and a variable-speed vapour-compression chiller`
 
-> `made of 120mm insulating cold room panels`
+To:
 
-Closest alternative for sizing reference: **Ecozen Ecofrost Micro Cold Storage:**
+> `hold chamber air at 4-6 °C with 85% relative humidity`
 
-> `portable cold chain room that accommodates 5-6 metric tonne`
+Result:
 
-> `Capacity: 5000-6000 kg`, `Temperature control: 2-10 degree C`
+> `Shelf life extended by 2.9 to 3.9 times across commodities, with grapes reaching 13.8 days against 4.1 at ambient`
 
-> `relies on solar panels of 2.5-3.5KW and stores power using thermal energy rather than conventional batteries`, `Can last 36 hours on backup`
+> `unit ran autonomously for 21 hours per day on average and coped with rainy-season cloud spells without cold-chain breakdown`
 
-### Difference vs Concept: `Solar cold store for 1 tonne at 4-10 C`
+This is functionally identical to proposed concept:
 
-1. **Scale down to 1-tonne cooperative build:**
-Concept is 1-tonne, `2 m box`, ~60 vented crates, 2 low racks, concrete plinth - vs ColdHubs 3-tonne 3x3 m pay-per-crate hub, vs Ecofrost 5-6 tonne `20 x 8 x 8 ft` portable unit.
+Sunlight -> electricity -> batteries -> cooler -> cold air over crates in sealed box near 5 °C.
 
-2. **Explicit solar-only sizing + operating rule:**
-Concept fixes `2.4 kWp + 5 kWh LiFePO4, 100 mm PU, 150 W hold / 0.4 kW batch` with `Cap warm intake at 200 kg per day and add no warm crates on cloudy days` and ~1.42-day no-batch autonomy. ColdHubs states only batteries for night/bad weather with no published batch cap; Ecofrost explicitly avoids electrochemical store by using `thermal energy rather than conventional batteries`.
+### Why it is closest
 
-3. **Construction / deployment:**
-Concept: anchored 100 mm PU box on raised washable concrete plinth + `PV rack separate` from box + bolted galvanized frame + 900 mm sealed hinged door for low-cost local build. ColdHubs: roof-mounted PV `have solar panels on the roof`, 120mm panels, operated as service; Ecofrost: factory-assembled portable `individually assembled in Pune` at `$18,058.00` with remote app `monitored remotely` `operated via an Android app`.
+1. Same function chain: PV + LiFePO4 + variable-speed vapour-compression.
+2. Same scale: 1.5 t vs proposed 1.0 t / 1000 kg.
+3. Same setpoint band: 4-6 °C vs proposed single 5 °C mixed-holding.
+4. Same off-grid remote smallholder use case.
 
-In short: ColdHubs = same **solar+battery + crates + cooperative/market** use, but 3x larger, roof-PV, service model; concept = smaller, fully specified 1-tonne PV-battery-DC-chiller + plinth + capped-batch rule to stay inside daily sun.
+Other commercial candidates are farther:
+
+* **ColdHubs:** `plug-and-play modular assembled walk-in cold room that is powered using solar energy to provide off-grid storage` , but `can store up to three tonnes` - search result lines 84-85: `up to three tonnes`, pay-as-you-store shared market model, not 1-tonne staged farm box.
+* **Ecozen Ecofrost:** `portable solar-powered cold room`, `based on thermal energy storage, which can maintain low temperatures without any backup power`, capacities `5 metric tons` to `5–10 metric tons` / `2-30 MT`, vs proposed electrochemical battery-only store.
+
+### Difference from this concept
+
+Proposed concept narrows / hardens the paper demonstrator into a build-to sizing:
+
+1. **Down-sized holding, staged intake:** 1.0 t as 50 x 20 kg `600x400mm vented crates with 25mm air gaps` vs 1.5 t parallel storage of `tomato, spinach, okra, table grapes and coriander`. Proposal stages `250 kg per day` pull-down, not full-tonne at once.
+
+2. **Grown split array:** 3.60 kWp, 9 modules, 2 on roof + 7 on ground, `17.6 m2` footprint yielding `13.5 kWh per day` for `13.2 kWh per day` load with `0.3 kWh per day` margin, vs paper's `2 kW photovoltaic array`. Proposal explicitly sizes for `worst-month 5.0 Peak Sun Hours` + `0.75 system derate` and shade-array gantry that does not load foam.
+
+3. **Defined envelope:** cam-lock polyisocyanurate `100 mm walls 120 mm roof and floor`, `0.21 W per m2 K`, `203 W conduction`, `25.4 m2` envelope, `8.64 m3` interior, `0.44 kWh per day` door infiltration, `615 W` staged average - not disclosed in paper abstract.
+
+4. **Defined ambient and control:** `5C` return-air probe + digital thermostat with battery shed vs paper `4-6 °C with 85% relative humidity`. Proposal designs to `43C ambient`, 38 K lift, DC monoblock with serviceable non-flammable refrigerant.
+
+5. **Foundation:** `6` precast pads, `1840 kg` grown mass, `18.8 kPa` on soil - absent in paper.
+
+In short: paper proves viability and `Benefit-cost` ratio `1.84 over seven years, with a payback period close to 3.6 years`; this concept is the 1-tonne, 3.6 kWp split-array, PIR-box, staged-discipline engineering instantiation of it, still open on `Does staged 250 kg per day pull-down hold 5C at 43C ambient on solar-only power as built hardware bench test?`
 
 
 Sources:
-- https://ismcontainers.com/talus-renewables-and-ism-containers-transform-fertilizer-production-in-kenya/ — Talus Renewables and ISM Containers Transform Fertilizer Production in Kenya
-- https://www.pv-magazine.com/2020/11/03/solar-powered-cooling-system-for-vegetable-storage/ — Solar-powered cooling system for crop storage
-- https://www.techwin.co.ke/coldstorages-equipment/coldrooms-storages/solar-cold-rooms — Solar Cold Rooms
-- https://www.pv-magazine.com/2021/06/08/solar-powered-cold-storage-service/ — Solar-powered cold storage service
-- https://www.techwin.co.ke/dairy-equipment/cold-storage-solutions/coid/solar-powered-cold-rooms — Solar Powered Cold Rooms
-- https://www.researchgate.net/publication/395704662_Mitigating_Post-Harvest_Losses_in_Sub-Saharan_Africa_A_Hybrid_Solar-Powered_Cold_Storage_System_with_Passive_Evaporative_Cooling_and_Smart_Monitoring_for_Smallholder_Farmers — Mitigating Post-Harvest Losses in Sub-Saharan Africa: A Hybrid Solar-Powered Cold Storage System with Passive Evaporative Cooling and Smart Monitoring for Smallholder Farmers
-- https://indiacleanenergy.com/solar-cold-storage/ — Solar-Cold-Storage
+- https://www.agriculturaljournals.com/archives/2025.v7.i9.A.1480/effectiveness-of-solar-powered-cold-storage-for-fresh-produce-preservation-in-remote-areas — Effectiveness of solar-powered cold storage for fresh produce preservation in remote areas
+- https://unreasonablegroup.com/ventures/ecozen-solutions — Ecozen Solutions – an Unreasonable company
+- https://www.scinovex.com/articles/W7160699909.pdf — Effectiveness of solar-powered cold storage for fresh produce preservation in remote areas
+- https://www.iiec.org/coolingdemo-technologies/720-cold-storage-and-food-processing/684-fresh-box-refrigerated-storage-freshbox — Fresh box - Refrigerated storage (Solar option) (FreshBox)
+- https://www.xbcoldroom.com/Off-Grid-Solar-Cold-Storage-Container-with-Foldable-Solar-Panels-for-Farm-Produce-pd196491638.html — Off-Grid Solar Cold Storage Container with Foldable Solar Panels for Farm Produce
+- https://freezepromax.com/Solar-Cold-Storage-pd510139948.html — Solar Cold Storage from China manufacturer - FreezePro
+- https://agtecher.com/en/hardware/ecofrost-solar-cold-storage/ — Ecofrost Solar Cold Storage: Sustainable... | AgTecher
+- https://farmbizafrica.com/graduates-unveil-cheap-locally-fabricated-solar-powered-cold-room-for-preserving-fresh-farm-produce/?option=com_content&view=article&id=2565&catid=12 — Graduates unveil cheap, locally made solar-powered cold-room for preserving fresh farm produce
 - https://insulatedsystemsltd.com/solar-cold-rooms/ — Solar Cold Rooms – Insulated Systems
-- https://greenworldinvestor.com/all-you-wanted-to-know-about-solar-powered-cold-storage-mobile-units-in-india/ — all You Wanted to Know About Solar Powered Cold Storage Mobile Units in India
-- https://solarsolutions4everyone.co.za/nb/surs/Solar-Cold-Storage:-Powering-Food-Security_Fri-10-Jun-2022-3406.pdf — Solar Cold Storage: Powering Food Security
-- https://africaprize.raeng.org.uk/2018-cohort/nnaemeka-chidiebere-ikegwuonu — Nnaemeka Chidiebere Ikegwuonu
-- https://techxlab.org/solutions/cold-rooms-by-coldhubs/ — Cold Rooms by ColdHubs
-- https://understandsolar.com/a-communal-solar-fridge-for-nigerian-farmers-markets/ — A Communal Solar Fridge for Nigerian Farmers Markets
-- https://www.renewableenergymagazine.com/jane-marsh/the-rise-of-the-energy-entrepreneur-how-20261019 — The Rise of the Energy Entrepreneur: How Individuals Are Profiting From Renewables
-- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&oldid=304340 — ColdHubs - Solar Cold Rooms in Nigeria
-- https://energypedia.info/index.php?title=ColdHubs_-_Solar_Cold_Rooms_in_Nigeria&direction=prev&oldid=304357 — ColdHubs - Solar Cold Rooms in Nigeria
-- https://afritechconnect.com/article/africa-loses-one-third-of-its-fish-to-spoilage-these-3-innovations-are-fighting-back — 3 African Innovations Fighting Fish Spoilage and Food Waste
-- https://www.ccacoalition.org/content/coldhubs-ltd — ColdHubs Ltd. | Climate & Clean Air Coalition
-- https://www.sidley.com/en/probonolanding/sidley-emerging-enterprises-pro-bono-program/projects/coldhubs-ltd — ColdHubs Ltd | Sidley Emerging Enterprises Pro Bono Program | Pro Bono | Sidley Austin LLP
-- https://ng.linkedin.com/company/coldhubslimited?trk=article-ssr-frontend-pulse_little-mention — ColdHubs Limited | LinkedIn
+- https://borgenproject.org/solar-cold-storage-in-africa/ — Food Security with Solar Cold Storage in Africa
 - https://smartbuy.alibaba.com/buyingguides/ecozen-cold-storage — How to Choose Ecozen Cold Storage: A Complete Buyer's Guide
-- https://www.iiec.org/coolingdemo-technologies/720-cold-storage-and-food-processing/677-ecofrost-portable-solar-powered-cold-rooms-ecozen-solutions — Ecofrost - Portable, solar powered cold rooms (Ecozen solutions)
-- https://www.ecozensolutions.com/agriculture/ecofrost-in-kenya.html — ecofrost in Kenya
-- https://www.pv-magazine-india.com/2021/06/07/solar-powered-cold-storage-as-a-service/ — Solar-powered cold storage as a service
-- https://5.imimg.com/data5/SELLER/Doc/2022/12/LV/EM/KI/18386671/solar-powered-cold-storage.pdf — PowerPoint Presentation
-- https://www.engineeringforchange.org/solutions/product/ecofrost-micro-cold-storage/ — EcoFrost Micro Cold Storage
-- https://efficiencyforaccess.org/?p=3286 — High Hopes for Off-Grid Cold Chain Solutions in Rural Kenya - Efficiency for Access
-- https://www.eco-business.com/id/news/how-apps-ai-and-solar-powered-cold-rooms-are-driving-sustainable-agriculture/ — How apps, AI and solar-powered cold rooms are driving sustainable agriculture
 - https://www.indiamart.com/proddetail/ecofrost-solar-cold-room-20855381197.html — Ecofrost Solar Cold Room
+- https://ireap.thecleannetwork.org/products/35 — IREAP- Product Details
+- https://unstop.com/c/ecozen-solutions-private-limited-recruiter-career-interview-selection-process-job-profile-articles-videos-118763/amp — Ecozen Solutions Private Limited Careers: Jobs, Internships, Competitions & More
+- https://www.scribd.com/document/214645635/Brochure — Ecozen Solutions: Solar Products Overview
+- https://www.iiec.org/cold-storage-and-food-processing/677-ecofrost-portable-solar-powered-cold-rooms-ecozen-solutions — Ecofrost - Portable, solar powered cold rooms (Ecozen solutions)
+- https://internshala.com/company/ecozen-solutions-private-limited-1524660013/ — Ecozen Solutions Private Limited Company Profile & Overview
+- https://www.electronicsforu.com/electronics-startups/ecofrost-made-in-india-solar-powered-cold-storage-to-reduce-crop-spoilage — Ecofrost: Made In India Solar-Powered Cold Storage To Reduce Crop Spoilage
+- https://ireap.thecleannetwork.org/products/33 — IREAP- Product Details
+- https://jobs.omnivore.vc/companies/ecozen-2/jobs/28901227-vp-r-d — VP- R&D @ Ecozen | Omnivore Job Board
+- https://www.engineeringforchange.org/solutions/product/cold-hubs — Cold Hubs | Engineering For Change
+- https://trademagazin.hu/en/tag/coldhubs/ — ColdHubs - Trademagazin
+- https://techtrends.africa/cold-chain-technology-in-africa-solving-the-food-waste-problem/ — Cold Chain Technology In Africa: Solving The Food Waste Problem | TechTrends Africa
+- https://coldhubs.com/coldhubnews/2025/3/31/salad-market-aba-coldhubs — Salad Market Aba, ColdHubs
+- https://solve.mit.edu/challenges/coastal-communities/solutions/5035/application — MIT Solve | ColdHubs
+- https://www.sitra.fi/en/cases/communal-refrigerated-buildings-powered-by-the-sun/ — Communal refrigerated buildings powered by the sun
+- https://www.economistgreen.com/2016/05/nnameka-ikegwuonu-coldhubs-nigeria.html — ECONOMISTGREEN.COM bard.solar UNsummitfuture.com
+- https://www.thecooldown.com/green-business/revolutionary-rental-system-boosting-farmers-incomes/ — African farmers are paying by the kilo for solar cold rooms to keep harvests from rotting
+- https://techxlab.org/solutions/cold-rooms-by-coldhubs/ — Cold Rooms by ColdHubs
+- https://abtnews.net/reducing-the-rot-and-waste-how-solar-tech-can-rescue-africas-post-harvest-losses-and-unlock-trillion-dollar-agricultural-boom/ — REDUCING THE ROT AND WASTE: How Solar Tech Can Rescue Africa’s Post-Harvest Losses And Unlock Trillion-Dollar Agricultural Boom!
+- https://pitchbook.com/profiles/company/115381-63 — ColdHubs 2026 Company Profile: Valuation, Funding & Investors | PitchBook

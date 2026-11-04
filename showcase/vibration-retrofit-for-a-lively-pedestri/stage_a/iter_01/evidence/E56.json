@@ -1,0 +1,14 @@
+{
+  "id": "E56",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "static spring sag of 800kg TMD on 105kN/m spring",
+  "code_or_query": "7848/105000",
+  "inputs": {},
+  "output_summary": "0.0747",
+  "output_full": "0.0747",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

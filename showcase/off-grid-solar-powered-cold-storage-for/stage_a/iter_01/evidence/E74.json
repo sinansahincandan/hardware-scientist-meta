@@ -1,0 +1,26 @@
+{
+  "id": "E74",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: walk-in cold room door width standard single leaf 900mm ergonomic",
+  "code_or_query": "walk-in cold room door width standard single leaf 900mm ergonomic",
+  "inputs": {},
+  "output_summary": "zbook.org — Walk-in Cold Rooms And Freezer Rooms - Unicef - PDF Document — https://zbook.org/read/c9d3d1_walk-in-cold-rooms-and-freezer-rooms-unicef.html",
+  "output_full": "zbook.org — Walk-in Cold Rooms And Freezer Rooms - Unicef - PDF Document — https://zbook.org/read/c9d3d1_walk-in-cold-rooms-and-freezer-rooms-unicef.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "zbook.org",
+      "title": "Walk-in Cold Rooms And Freezer Rooms - Unicef - PDF Document",
+      "year": "",
+      "url": "https://zbook.org/read/c9d3d1_walk-in-cold-rooms-and-freezer-rooms-unicef.html",
+      "query": "walk-in cold room door width standard single leaf 900mm ergonomic",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

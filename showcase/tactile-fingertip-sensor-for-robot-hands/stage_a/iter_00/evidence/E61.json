@@ -1,0 +1,26 @@
+{
+  "id": "E61",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: human fingertip size dimensions width length mm",
+  "code_or_query": "human fingertip size dimensions width length mm",
+  "inputs": {},
+  "output_summary": "mdpi-res.com — Free and Forced Vibration Modes of the Human Fingertip — https://mdpi-res.com/d_attachment/applsci/applsci-11-05709/article_deploy/applsci-11-05709-v3.pdf?version=1624348917",
+  "output_full": "mdpi-res.com — Free and Forced Vibration Modes of the Human Fingertip — https://mdpi-res.com/d_attachment/applsci/applsci-11-05709/article_deploy/applsci-11-05709-v3.pdf?version=1624348917\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "mdpi-res.com",
+      "title": "Free and Forced Vibration Modes of the Human Fingertip",
+      "year": "",
+      "url": "https://mdpi-res.com/d_attachment/applsci/applsci-11-05709/article_deploy/applsci-11-05709-v3.pdf?version=1624348917",
+      "query": "human fingertip size dimensions width length mm",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

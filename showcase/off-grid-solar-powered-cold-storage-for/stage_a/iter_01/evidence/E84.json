@@ -1,0 +1,14 @@
+{
+  "id": "E84",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "nine-module footprint for grown array",
+  "code_or_query": "9*1.722*1.134",
+  "inputs": {},
+  "output_summary": "17.6",
+  "output_full": "17.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

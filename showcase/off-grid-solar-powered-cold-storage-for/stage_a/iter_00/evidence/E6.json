@@ -1,22 +1,24 @@
 {
   "id": "E6",
-  "author": "Surya — Off-Grid Solar Power Specialist",
+  "author": "Solar Energy Systems Engineer",
   "tool": "web_search",
-  "purpose": "search: 400W monocrystalline solar panel datasheet dimensions efficiency",
-  "code_or_query": "400W monocrystalline solar panel datasheet dimensions efficiency",
+  "purpose": "search: solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
+  "code_or_query": "solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
   "inputs": {},
-  "output_summary": "jslpowerin.com — 400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET — 2026 — https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf",
-  "output_full": "jslpowerin.com — 400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET — 2026 — https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf\n(the search returned no passage text)",
+  "output_summary": "portal.segensolar.co.za — Huisie by die see — 2018 — https://portal.segensolar.co.za/reseller/images/Presentations/2018/MLT%20-%20PRESENTATIONS/System%20Sizing%20Off%20Grid%20System%20v2.pdf",
+  "output_full": "portal.segensolar.co.za — Huisie by die see — 2018 — https://portal.segensolar.co.za/reseller/images/Presentations/2018/MLT%20-%20PRESENTATIONS/System%20Sizing%20Off%20Grid%20System%20v2.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "jslpowerin.com",
-      "title": "400W-420W FLEXIBLE SOLAR PANEL – PRODUCT DATASHEET",
-      "year": "2026",
-      "url": "https://www.jslpowerin.com/wp-content/uploads/2026/08/400-420W_-Flexible_Solar_Panel_Product_Datasheet.pdf",
-      "query": "400W monocrystalline solar panel datasheet dimensions efficiency",
+      "authors_or_org": "portal.segensolar.co.za",
+      "title": "Huisie by die see",
+      "year": "2018",
+      "url": "https://portal.segensolar.co.za/reseller/images/Presentations/2018/MLT%20-%20PRESENTATIONS/System%20Sizing%20Off%20Grid%20System%20v2.pdf",
+      "query": "solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

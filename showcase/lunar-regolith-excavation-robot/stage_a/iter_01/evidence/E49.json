@@ -1,0 +1,26 @@
+{
+  "id": "E49",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: 6061-T6 aluminum tube frame deflection allowable small robot chassis",
+  "code_or_query": "6061-T6 aluminum tube frame deflection allowable small robot chassis",
+  "inputs": {},
+  "output_summary": "sambuz.com — [PPT] - Phase 1 of Articulated Arm 6-Axis Robot    PowerPoint Presentation - 21678 — https://www.sambuz.com/doc/phase-1-of-articulated-arm-6-axis-robot-ppt-presentation-21678",
+  "output_full": "sambuz.com — [PPT] - Phase 1 of Articulated Arm 6-Axis Robot    PowerPoint Presentation - 21678 — https://www.sambuz.com/doc/phase-1-of-articulated-arm-6-axis-robot-ppt-presentation-21678\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "sambuz.com",
+      "title": "[PPT] - Phase 1 of Articulated Arm 6-Axis Robot    PowerPoint Presentation - 21678",
+      "year": "",
+      "url": "https://www.sambuz.com/doc/phase-1-of-articulated-arm-6-axis-robot-ppt-presentation-21678",
+      "query": "6061-T6 aluminum tube frame deflection allowable small robot chassis",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

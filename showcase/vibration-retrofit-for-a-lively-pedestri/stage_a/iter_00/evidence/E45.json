@@ -1,24 +1,14 @@
 {
   "id": "E45",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
-  "tool": "web_search",
-  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
-  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "simulate",
+  "purpose": "crowd resonance acceleration bare versus TMD-retrofitted bridge over time",
+  "code_or_query": "import numpy as np\n# Bridge 1.9 Hz, modal mass 20000 kg per E12, k=2.85e6; TMD 800kg f=1.83Hz z=0.12 per E13-E16\nf1=1.9; m1=20000.0; k1=2.85e6\nm2=800.0; f2=1.83; z2=0.12; k2=1.05e5; c2=2.21e3\nw=2*np.pi*f1\n# crowd force: Neq~5.92 *280N\nF0=5.916*280.0\n# bare: zeta 0.5%, retro effective 6.2% per E17\nfor zeta,label in [(0.005,'bare'),(0.062,'tmd')]:\n    c1=2*zeta*np.sqrt(k1*m1)\n    # steady-state resonant accel = F0/(2*zeta*m1)\n    a=F0/(2*zeta*m1)\n    print(label, 'c1=',round(c1,1),' a_ss=',round(a,3),' m/s2 =',round(a/9.81,3),' g')\n# time simulation: build-up envelope a(t)=a_ss*(1-exp(-zeta*w*t))\nt=np.linspace(0,30,301)\na_bare=F0/(2*0.005*m1)*(1-np.exp(-0.005*w*t))\na_tmd=F0/(2*0.062*m1)*(1-np.exp(-0.062*w*t))\nprint('t=5s bare',round(float(a_bare[50]),2),'tmd',round(float(a_tmd[50]),2))\nprint('t=15s bare',round(float(a_bare[150]),2),'tmd',round(float(a_tmd[150]),2))\nprint('t=30s bare',round(float(a_bare[300]),2),'tmd',round(float(a_tmd[300]),2))\nprint('comfort: max<0.5 mean 0.5-1.0 min 1.0-2.5 unacceptable>2.5 m/s2')",
   "inputs": {},
-  "output_summary": "fileserver-az.core.ac.uk — Microsoft Word - tv_22_2015_2_527-537 — 2015 — https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf",
-  "output_full": "fileserver-az.core.ac.uk — Microsoft Word - tv_22_2015_2_527-537 — 2015 — https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf\n(the search returned no passage text)",
+  "output_summary": "t=15s bare 4.9 tmd 0.67; t=30s bare 6.9 tmd 0.67; comfort: max<0.5 mean 0.5-1.0 min 1.0-2.5 unacceptable>2.5 m/s2",
+  "output_full": "bare c1= 2387.5  a_ss= 8.282  m/s2 = 0.844  g\ntmd c1= 29604.6  a_ss= 0.668  m/s2 = 0.068  g\nt=5s bare 2.14 tmd 0.65\nt=15s bare 4.9 tmd 0.67\nt=30s bare 6.9 tmd 0.67\ncomfort: max<0.5 mean 0.5-1.0 min 1.0-2.5 unacceptable>2.5 m/s2",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "fileserver-az.core.ac.uk",
-      "title": "Microsoft Word - tv_22_2015_2_527-537",
-      "year": "2015",
-      "url": "https://fileserver-az.core.ac.uk/download/pdf/33278412.pdf",
-      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

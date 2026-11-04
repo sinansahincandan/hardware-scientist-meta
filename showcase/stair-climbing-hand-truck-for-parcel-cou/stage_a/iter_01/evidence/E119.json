@@ -1,0 +1,14 @@
+{
+  "id": "E119",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "diagonal tie tension for 118Nm moment",
+  "code_or_query": "118*1.126/(1.1*0.24)",
+  "inputs": {},
+  "output_summary": "503",
+  "output_full": "503",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

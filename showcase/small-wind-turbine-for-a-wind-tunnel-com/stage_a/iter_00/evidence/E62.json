@@ -1,0 +1,40 @@
+{
+  "id": "E62",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: brushless motor short circuit brake torque zero speed hold",
+  "code_or_query": "brushless motor short circuit brake torque zero speed hold",
+  "inputs": {},
+  "output_summary": "greensky-power.com — How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) — 2026 — https://greensky-power.com/how-to-short-a-dc-motor/",
+  "output_full": "greensky-power.com — How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) — 2026 — https://greensky-power.com/how-to-short-a-dc-motor/\n(opened by the member, not cited)\nPower-Systems Engineer said about it: I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute.\nSafety-Control Integrator said about it: For the Manager, sensing gets a distant-field second means in the elevator-chain analogy sense (C27) and I confirm what Power-Systems Engineer takes from the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) that short-circuit braking torque falls to zero at zero speed, which from my side means electrics can help slow but only spring friction can park.\nSafety-Control Integrator said about it: For Power-Systems Engineer, I confirm what you take from the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) that short-circuit torque falls to zero at zero speed, which from shutdown side means electrics can help slow but only spring friction can keep the rotor parked.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "greensky-power.com",
+      "title": "How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026)",
+      "year": "2026",
+      "url": "https://greensky-power.com/how-to-short-a-dc-motor/",
+      "query": "brushless motor short circuit brake torque zero speed hold",
+      "unresolved": false,
+      "passage": "I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Power-Systems Engineer",
+          "text": "I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute."
+        },
+        {
+          "by": "Safety-Control Integrator",
+          "text": "For the Manager, sensing gets a distant-field second means in the elevator-chain analogy sense (C27) and I confirm what Power-Systems Engineer takes from the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) that short-circuit braking torque falls to zero at zero speed, which from my side means electrics can help slow but only spring friction can park."
+        },
+        {
+          "by": "Safety-Control Integrator",
+          "text": "For Power-Systems Engineer, I confirm what you take from the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) that short-circuit torque falls to zero at zero speed, which from shutdown side means electrics can help slow but only spring friction can keep the rotor parked."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

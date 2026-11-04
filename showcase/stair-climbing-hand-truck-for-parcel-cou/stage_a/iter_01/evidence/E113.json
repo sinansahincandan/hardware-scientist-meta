@@ -1,0 +1,14 @@
+{
+  "id": "E113",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "tube I for 40x36mm upsize option",
+  "code_or_query": "3.1415926535*(0.04**4-0.036**4)/64",
+  "inputs": {},
+  "output_summary": "4.32e-08",
+  "output_full": "4.32e-08",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,22 +1,24 @@
 {
   "id": "E15",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: ISO 13849 emergency stop mobile robot standard",
-  "code_or_query": "ISO 13849 emergency stop mobile robot standard",
+  "purpose": "search: NASA Lunabotics winning rover mobility wheels tracks chassis design",
+  "code_or_query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
   "inputs": {},
-  "output_summary": "fairino-amr-doc.readthedocs.io — Functional Safety — https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf",
-  "output_full": "fairino-amr-doc.readthedocs.io — Functional Safety — https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf\n(the search returned no passage text)",
+  "output_summary": "ig.utexas.edu — Powerpoint template for scientific posters (Swarthmore College) — 2024 — https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf",
+  "output_full": "ig.utexas.edu — Powerpoint template for scientific posters (Swarthmore College) — 2024 — https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "fairino-amr-doc.readthedocs.io",
-      "title": "Functional Safety",
-      "year": "",
-      "url": "https://fairino-amr-doc.readthedocs.io/en/latest/_downloads/3fad9b2fb9495445b01780c81d0c1b31/AMR-300%20Composite%20Mobile%20Robot%20V2.0%20-%20Whole%20Machine%20Functional%20Safety%20Certification%20Certificate.pdf",
-      "query": "ISO 13849 emergency stop mobile robot standard",
+      "authors_or_org": "ig.utexas.edu",
+      "title": "Powerpoint template for scientific posters (Swarthmore College)",
+      "year": "2024",
+      "url": "https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf",
+      "query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

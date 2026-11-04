@@ -1,0 +1,23 @@
+{
+  "id": "E74",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "side clearance per side inside cube",
+  "code_or_query": "((Q_(45,'cm')-Q_(40,'cm'))/2).to('cm')",
+  "inputs": {
+    "arg0": {
+      "value": "45",
+      "unit": "cm"
+    },
+    "arg1": {
+      "value": "40",
+      "unit": "cm"
+    }
+  },
+  "output_summary": "2.5 cm",
+  "output_full": "2.5 cm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

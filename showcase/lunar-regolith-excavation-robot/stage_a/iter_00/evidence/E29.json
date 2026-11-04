@@ -1,22 +1,24 @@
 {
   "id": "E29",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: IP65 enclosure standard IEC 60529 dust protection",
-  "code_or_query": "IP65 enclosure standard IEC 60529 dust protection",
+  "purpose": "search: NASA Lunabotics teleoperation remote control cameras out of sight",
+  "code_or_query": "NASA Lunabotics teleoperation remote control cameras out of sight",
   "inputs": {},
-  "output_summary": "optraffic.com — IP65 for Traffic Equipment: 5 Common Misconceptions Explained — https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/",
-  "output_full": "optraffic.com — IP65 for Traffic Equipment: 5 Common Misconceptions Explained — https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/\n(the search returned no passage text)",
+  "output_summary": "nelsonamoore.gitlab.io — 9781289096038 2011 nasa lunabotics mining competition for univ.pdf — 2011 — https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf",
+  "output_full": "nelsonamoore.gitlab.io — 9781289096038 2011 nasa lunabotics mining competition for univ.pdf — 2011 — https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "optraffic.com",
-      "title": "IP65 for Traffic Equipment: 5 Common Misconceptions Explained",
-      "year": "",
-      "url": "https://optraffic.com/blog/misconceptions-about-ip65-what-you-need-to-know/",
-      "query": "IP65 enclosure standard IEC 60529 dust protection",
+      "authors_or_org": "nelsonamoore.gitlab.io",
+      "title": "9781289096038 2011 nasa lunabotics mining competition for univ.pdf",
+      "year": "2011",
+      "url": "https://nelsonamoore.gitlab.io/ir/13-geovany-hauck-ii-1/9781289096038-2011-nasa-lunabotics-mining-competition-for-univ.pdf",
+      "query": "NASA Lunabotics teleoperation remote control cameras out of sight",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

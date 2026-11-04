@@ -1,0 +1,90 @@
+{
+  "crops": [
+    "crop 1: chassis",
+    "crop 2: chassis",
+    "crop 3: chassis",
+    "crop 4: chassis",
+    "crop 5: wheel",
+    "crop 6: wheel",
+    "crop 7: arm",
+    "crop 8: arm",
+    "crop 9: kerf",
+    "crop 10: kerf",
+    "crop 11: hopper",
+    "crop 12: camera",
+    "crop 13: camera",
+    "crop 14: camera"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "tilt screw discharge"
+    },
+    {
+      "index": 3,
+      "is_part": false,
+      "seen_as": "folding wheel arms"
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 7,
+      "is_part": false,
+      "seen_as": "people"
+    },
+    {
+      "index": 8,
+      "is_part": false,
+      "seen_as": "people"
+    },
+    {
+      "index": 9,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 10,
+      "is_part": false,
+      "seen_as": "inclined bucket ladder"
+    },
+    {
+      "index": 11,
+      "is_part": false,
+      "seen_as": "a bin or container it fills"
+    },
+    {
+      "index": 12,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 13,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 14,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

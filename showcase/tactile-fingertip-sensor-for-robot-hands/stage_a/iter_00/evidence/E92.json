@@ -1,0 +1,14 @@
+{
+  "id": "E92",
+  "author": "Dr. Amara Okafor \u2014 Soft Skin Mechanics",
+  "tool": "calc",
+  "purpose": "tear force per width for 1.5mm skin",
+  "code_or_query": "17.9*1.5",
+  "inputs": {},
+  "output_summary": "26.8",
+  "output_full": "26.8",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

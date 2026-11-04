@@ -1,25 +1,21 @@
 {
   "id": "E41",
-  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
   "tool": "calc",
-  "purpose": "section modulus 30x2 tube",
-  "code_or_query": "(3.14159/32*((Q_(30,'mm')**4-Q_(26,'mm')**4))/(Q_(15,'mm'))).to('mm**3')",
+  "purpose": "total lifted mass truck plus parcel",
+  "code_or_query": "Q_(6.5,'kg')+Q_(60,'kg')",
   "inputs": {
     "arg0": {
-      "value": "30",
-      "unit": "mm"
+      "value": "6.5",
+      "unit": "kg"
     },
     "arg1": {
-      "value": "26",
-      "unit": "mm"
-    },
-    "arg2": {
-      "value": "15",
-      "unit": "mm"
+      "value": "60",
+      "unit": "kg"
     }
   },
-  "output_summary": "2.31\u00d710\u00b3 mm\u00b3",
-  "output_full": "2.31\u00d710\u00b3 mm\u00b3",
+  "output_summary": "66.5 kg",
+  "output_full": "66.5 kg",
   "sketch_path": null,
   "references": [],
   "status": "ok",

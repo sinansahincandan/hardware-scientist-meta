@@ -1,0 +1,14 @@
+{
+  "id": "E51",
+  "author": "Dr. Marcus Reid \u2014 Robotic Integration and Embedded Electronics",
+  "tool": "calc",
+  "purpose": "fingertip power budget sum for readout electronics",
+  "code_or_query": "sum({'cdc_3V3_1mA_W': 3.3*0.001, 'mcu_active_25mA_W': 3.3*0.025, 'pvdf_amp_1mA_W': 3.3*0.001, 'reg_loss_W': 0.010}.values())",
+  "inputs": {},
+  "output_summary": "0.0991",
+  "output_full": "0.0991",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

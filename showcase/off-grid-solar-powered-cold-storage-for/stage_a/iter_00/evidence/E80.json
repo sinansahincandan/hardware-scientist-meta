@@ -1,0 +1,40 @@
+{
+  "id": "E80",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: 48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+  "code_or_query": "48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+  "inputs": {},
+  "output_summary": "sunpal-energy.com — 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance — https://www.sunpal-energy.com/48v-lithium-battery-maintenance-guide-how-to-extend-your-solar-battery-lifespan-and-improve-performance",
+  "output_full": "sunpal-energy.com — 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance — https://www.sunpal-energy.com/48v-lithium-battery-maintenance-guide-how-to-extend-your-solar-battery-lifespan-and-improve-performance\n(found by the search; not opened or cited)\nSolar Energy Systems Engineer said about it: The guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) gives 10 to 15 years and 3000 to 6000 cycles with regular terminal checks, so the vented locked box needs monthly wipe and terminal check and panels wiped.\nSmallholder Cooperative Operations Specialist said about it: I take up the guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) that you put on the board, which gives 10 to 15 years with monthly wipe and terminal checks, which means my attendant can do it with no specialist, funded through farmers renting space for as little as US$ 0.10 to 0.50 per crate per day from Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72) for tags, twice-daily thermometer checks and hose cleaning.\nSolar Energy Systems Engineer said about it: The guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) gives 10 to 15 years with monthly wipe and terminal checks, so the vented locked battery box plus wiped panels is attendant work funded by the crate fee.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "sunpal-energy.com",
+      "title": "48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance",
+      "year": "",
+      "url": "https://www.sunpal-energy.com/48v-lithium-battery-maintenance-guide-how-to-extend-your-solar-battery-lifespan-and-improve-performance",
+      "query": "48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+      "unresolved": false,
+      "passage": "The guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) gives 10 to 15 years and 3000 to 6000 cycles with regular terminal checks, so the vented locked box needs monthly wipe and terminal check and panels wiped.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) gives 10 to 15 years and 3000 to 6000 cycles with regular terminal checks, so the vented locked box needs monthly wipe and terminal check and panels wiped."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "I take up the guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) that you put on the board, which gives 10 to 15 years with monthly wipe and terminal checks, which means my attendant can do it with no specialist, funded through farmers renting space for as little as US$ 0.10 to 0.50 per crate per day from Preserving Harvests: Fresh Solutions to Food Loss in Kenya (E72) for tags, twice-daily thermometer checks and hose cleaning."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The guidance in 48V Lithium Battery Maintenance Guide: How To Extend Your Solar Battery Lifespan And Improve Performance (E80) gives 10 to 15 years with monthly wipe and terminal checks, so the vented locked battery box plus wiped panels is attendant work funded by the crate fee."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

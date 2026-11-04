@@ -1,32 +1,14 @@
 {
   "id": "E1",
-  "author": "Maya — Tactile Transduction and Sensing Physics",
-  "tool": "web_search",
-  "purpose": "search: human fingertip tactile spatial resolution two-point discrimination",
-  "code_or_query": "human fingertip tactile spatial resolution two-point discrimination",
+  "author": "Dr. Amara Okafor \u2014 Soft Skin Mechanics",
+  "tool": "use_skill",
+  "purpose": "skill: soft-touch-hertz-sizing",
+  "code_or_query": "soft-touch-hertz-sizing",
   "inputs": {},
-  "output_summary": "en.wikipedia.org — Two-point discrimination — https://en.wikipedia.org/wiki/Two-point_discrimination",
-  "output_full": "en.wikipedia.org — Two-point discrimination — https://en.wikipedia.org/wiki/Two-point_discrimination\n(opened by the member, not cited)\nMaya — Tactile Transduction and Sensing Physics said about it: Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
+  "output_summary": "Use when sizing any soft elastomer skin to spread millinewton touch onto a discrete sensing element.",
+  "output_full": "---\nname: soft-touch-hertz-sizing\ndescription: Use when sizing any soft elastomer skin to spread millinewton touch onto a discrete sensing element.\nsource: run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (2026-11-02)\n---\n\n1. Get elastomer modulus from Shore A (e.g., Shore 10A silicone) and fingertip/object radii.\n2. Compute Hertz contact radius a for light load F: a ~ (F*R/E*)^1/3.\n3. Compute mean pressure p = F/(pi*a^2) and spread area vs sensor pitch.\n4. Require contact diameter to couple to at least one taxel but localize within 2 mm pitch for human-like resolution.\n5. Check membrane can transmit pressure without bottoming or tearing.\n\nTypical values: 1 mN on Shore 10A gives 0.247 mm radius (E9); 1 mN over 1 mm2 taxel gives 1 mN/mm2 pressure (E10); 2 mm pitch taxel gives 212 fF base capacitance (E18).",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "en.wikipedia.org",
-      "title": "Two-point discrimination",
-      "year": "",
-      "url": "https://en.wikipedia.org/wiki/Two-point_discrimination",
-      "query": "human fingertip tactile spatial resolution two-point discrimination",
-      "unresolved": false,
-      "passage": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip.",
-      "cited": true,
-      "read": true,
-      "statements": [
-        {
-          "by": "Maya — Tactile Transduction and Sensing Physics",
-          "text": "Plainly that means pitch below the human limit, which is 2 to 8 mm on fingertips from the Two-point discrimination (E1), and the commercial move from 4 mm to 2.5 mm squares from the Giving the Robot Fingerprints: XELA Robotics Shrinks Sensors for Tesollo Hand Integration (E2) supports 2.5 mm pitch giving about 48 taxels on a 15 mm by 20 mm fingertip."
-        }
-      ]
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

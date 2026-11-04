@@ -1,0 +1,26 @@
+{
+  "id": "E58",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 hand truck parking brake deadman requirement",
+  "code_or_query": "EN 1757 hand truck parking brake deadman requirement",
+  "inputs": {},
+  "output_summary": "pdf.aeroexpo.online — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure — https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html",
+  "output_full": "pdf.aeroexpo.online — Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure — https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pdf.aeroexpo.online",
+      "title": "Heavy Duty Flatbed Trolley with Deadman Brake - Handle-iT Ltd - Catalogo PDF | Documentazione tecnica | Brochure",
+      "year": "",
+      "url": "https://pdf.aeroexpo.online/it/pdf-en/handle-it-ltd/heavy-duty-flatbed-trolley-deadman-brake/180712-29896.html",
+      "query": "EN 1757 hand truck parking brake deadman requirement",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

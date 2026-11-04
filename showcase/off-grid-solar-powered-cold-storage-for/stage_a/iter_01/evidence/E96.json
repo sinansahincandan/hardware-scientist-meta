@@ -1,0 +1,14 @@
+{
+  "id": "E96",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "nominal kWh for night load at 80 percent depth of discharge",
+  "code_or_query": "3.02/0.8",
+  "inputs": {},
+  "output_summary": "3.77",
+  "output_full": "3.77",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

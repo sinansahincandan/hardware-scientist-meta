@@ -1,431 +1,537 @@
 {
-  "title": "Soft-pillar capacitive plus vibration fingertip cartridge for grip and slip sensing",
-  "problem_restatement": "Robot fingertip must localize touch, measure 1 mN to grip force with shear, detect slip vibration, and mount with wiring surviving grip loads.",
-  "mechanism_sentence": "Squeezing the soft fingertip compresses tiny cushions to measure steady push across about 48 points spaced 2.5 mm apart while a thin sensing layer feels fast buzz to catch slip.",
+  "title": "Ridged soft-dome fingertip with dual sensing and fail-safe slip warning",
+  "problem_restatement": "Make a finger-scale touch fingertip from skin to hand controller that conforms, supports load, transduces stress, resolves location, warns slip, and transmits message.",
+  "mechanism_sentence": "A soft ridged dome about 20 mm wide spreads even a 1 mN touch onto squeeze sensors for steady push and a vibration film for slip, and a tiny finger computer sends position, force and a fast slip warning to the hand.",
   "decisive_choices": [
-    "Use soft air-gap molded pillars at 20 kPa effective stiffness as both spring and sensing gap to lift 1 mN to 2.66 fF above noise instead of solid silicone",
-    "Split sensing into slow static capacitive taxels at 25 Hz and fast vibration film at 2 kHz with 6x8 row-column multiplexing to a single 4-wire bus",
-    "Carry all grip load in a stiff bolted rigid core and holder with replaceable ridged skin cap and rear-exit tail so only pillars move"
+    "F1 molded Shore A 10 dome with ridges plus sipes (C3) because only it quantifies 1 mN to 0.470 mm spot at 5.78 kPa under 2.5 mm stack, beating clear pad needing optics and fluid skin that leaks.",
+    "F3 capacitive taxels plus vibration film (C18) because capacitive alone cannot carry 100 to 500 Hz vibration through 9.00 ms converter update, while split path keeps 0.269 pF base with 3.57 fF change plus volt-level slip signals.",
+    "F6 fail-safe heartbeat plus interrupt plus frame (C29) because frame alone at 51.2 kbit per s cannot meet 30.0 ms latency, while normally-held line drops to danger on wire break per track-circuit analogy."
   ],
-  "open_question": "Will slip-triggered grip control with this fingertip prevent drops without crushing across objects in closed-loop tests?",
-  "transfer_line": "Load: outer touch skin -> silicone pillar dielectric -> rigid mounting core | Measured: capacitive taxel array -> fingertip controller to 4-wire bus",
+  "open_question": "Does the 30 ms slip warning loop close on built hardware under shake and grip load?",
+  "transfer_line": "Pressure: ridged silicone dome -> gel interlayer -> capacitive taxel grid | Measured: on-finger converter and microcontroller filter -> hand controller",
   "assumed_constraints": [
     {
-      "constraint": "fingertip contact area ~15 mm x 20 mm with 2.5 mm taxel pitch gives ~48 taxels, matching human 2-8 mm two-point threshold; grip force range to ~30 N",
-      "source": "C3",
+      "constraint": "silicone-object friction mu 0.5 to 1.0 so 2 N grip holds without slip",
+      "source": "Dr. Elena Vasquez",
       "evidence_ids": [
-        "E1",
-        "E2",
-        "E8"
+        "E85",
+        "E88"
       ]
     },
     {
-      "constraint": "fingertip hemisphere 15-20 mm diameter mountable cap",
-      "source": "C4",
+      "constraint": "soft stack above transduction stays under 2.5 mm so 1 mN pressure reaches films",
+      "source": "Dr. Amara Okafor",
       "evidence_ids": [
-        "E12",
-        "E17"
+        "E2",
+        "E14"
+      ]
+    },
+    {
+      "constraint": "flex tail needs at least 3.18 mm bend radius and dorsal routing clear of rim slip",
+      "source": "Dr. Marcus Reid",
+      "evidence_ids": [
+        "E43",
+        "E67"
       ]
     }
   ],
   "functional_decomposition": [
-    "Localize contact on fingertip surface",
-    "Measure normal and shear contact force from 1 mN to grip force",
-    "Detect slip onset and vibration/texture",
-    "Mount fingertip to robot finger and route wiring while surviving grip loads"
+    "Conform contact surface",
+    "Support fingertip load",
+    "Transduce contact stress",
+    "Resolve contact location",
+    "Detect slip onset",
+    "Transmit tactile message"
   ],
   "concept": {
-    "working_principle": "Contact through outer skin compresses soft air-gap pillars to change capacitance for static normal and shear force while overlaid polymer film generates charge for high-frequency slip vibration, scanned row-column at slow and fast rates and fused in fingertip controller to grip control.",
+    "working_principle": "Molded ridged dome spreads touch through gel to capacitive taxels for steady force and vibration film for slip on flat facets of a rigid core, static path via converter frames and dynamic path direct to microcontroller joined into fail-safe message with heartbeat plus slip interrupt plus full frame.",
     "parts": [
       {
-        "id": "core",
-        "name": "rigid mounting core",
-        "function": "carries sensing stack and bolts to finger",
-        "material": "rigid plastic",
-        "size_class_mm": {
-          "min": 7.0,
-          "max": 20.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "pcb",
-        "name": "taxel electrode circuit board",
-        "function": "carries comb electrodes for capacitive taxels",
-        "material": "printed circuit board",
-        "size_class_mm": {
-          "min": 1.6,
-          "max": 20.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "pillars",
-        "name": "silicone pillar dielectric",
-        "function": "compressible gap and spring for static force",
-        "material": "silicone rubber",
-        "size_class_mm": {
-          "min": 1.0,
-          "max": 2.5
-        },
-        "qty": 48
-      },
-      {
-        "id": "film",
-        "name": "vibration sensing film",
-        "function": "senses high-frequency vibration and slip transients",
-        "material": "PVDF",
-        "size_class_mm": {
-          "min": 0.11,
-          "max": 20.0
-        },
-        "qty": 1
-      },
-      {
-        "id": "skin",
-        "name": "outer touch skin",
-        "function": "protects stack and spreads contact and raises friction with ridges",
-        "material": "silicone Shore A 30",
+        "id": "SKIN",
+        "name": "Ridged silicone dome",
+        "function": "conform contact and spread pressure",
+        "material": "Shore A 10 silicone",
         "size_class_mm": {
           "min": 1.5,
+          "max": 22.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "GEL",
+        "name": "Gel interlayer",
+        "function": "couple skin pressure to films",
+        "material": "low-modulus silicone gel",
+        "size_class_mm": {
+          "min": 0.5,
+          "max": 2.5
+        },
+        "qty": 1
+      },
+      {
+        "id": "CORE",
+        "name": "Nail-backed faceted rigid core with mount",
+        "function": "support fingertip load into finger",
+        "material": "3D-printed rigid polymer",
+        "size_class_mm": {
+          "min": 20.0,
+          "max": 22.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "CAP",
+        "name": "Capacitive taxel grid",
+        "function": "transduce quasi-static force",
+        "material": "polyimide plus silicone dielectric",
+        "size_class_mm": {
+          "min": 0.2,
+          "max": 2.0
+        },
+        "qty": 1
+      },
+      {
+        "id": "PVDF",
+        "name": "Vibration film",
+        "function": "transduce slip vibration",
+        "material": "PVDF piezoelectric film 28 um",
+        "size_class_mm": {
+          "min": 0.028,
           "max": 20.0
         },
         "qty": 1
       },
       {
-        "id": "readout",
-        "name": "multiplexed readout electronics",
-        "function": "converts capacitance and vibration to digital bus and stores calibration",
-        "material": "silicon electronics",
+        "id": "FLEX",
+        "name": "Flex tail with connector",
+        "function": "route array signals to board",
+        "material": "polyimide flex 50 um, 0.5 mm ZIF",
         "size_class_mm": {
-          "min": 15.0,
-          "max": 20.0
+          "min": 0.05,
+          "max": 3.18
         },
         "qty": 1
       },
       {
-        "id": "tail",
-        "name": "rear flexible tail",
-        "function": "carries 4-wire bus out back of finger",
-        "material": "flexible circuit",
+        "id": "BOARD",
+        "name": "On-finger readout board",
+        "function": "condition signals, decide slip, transmit",
+        "material": "PCB with converter plus microcontroller",
         "size_class_mm": {
-          "min": 15.0,
-          "max": 20.0
+          "min": 10.0,
+          "max": 22.0
         },
         "qty": 1
       },
       {
-        "id": "screws",
-        "name": "mounting screws",
-        "function": "clamps core to fingertip holder",
-        "material": "metal",
+        "id": "CABLE",
+        "name": "Message cable with interrupt line",
+        "function": "transmit tactile message to hand",
+        "material": "copper wire, 5 V digital link",
         "size_class_mm": {
-          "min": 3.0,
-          "max": 3.0
+          "min": 1.0,
+          "max": 50.0
         },
-        "qty": 2
+        "qty": 1
       }
     ],
     "connections": [
       {
-        "from_id": "skin",
-        "to_id": "film",
+        "from_id": "SKIN",
+        "to_id": "GEL",
         "kind": "mechanical",
-        "label": "presses film"
+        "label": "spreads pressure"
       },
       {
-        "from_id": "film",
-        "to_id": "pillars",
+        "from_id": "GEL",
+        "to_id": "PVDF",
         "kind": "mechanical",
-        "label": "presses pillars"
+        "label": "couples pressure"
       },
       {
-        "from_id": "pillars",
-        "to_id": "pcb",
+        "from_id": "PVDF",
+        "to_id": "CAP",
         "kind": "mechanical",
-        "label": "compresses sensing gap"
+        "label": "passes static pressure"
       },
       {
-        "from_id": "pcb",
-        "to_id": "core",
+        "from_id": "CAP",
+        "to_id": "CORE",
         "kind": "mechanical",
-        "label": "carried by core"
+        "label": "mounted on facets"
       },
       {
-        "from_id": "core",
-        "to_id": "screws",
+        "from_id": "SKIN",
+        "to_id": "CORE",
         "kind": "mechanical",
-        "label": "clamped by screws"
+        "label": "clamped edge"
       },
       {
-        "from_id": "pcb",
-        "to_id": "readout",
+        "from_id": "CAP",
+        "to_id": "FLEX",
         "kind": "electrical",
-        "label": "static signals to readout"
+        "label": "analog frames"
       },
       {
-        "from_id": "film",
-        "to_id": "readout",
+        "from_id": "FLEX",
+        "to_id": "BOARD",
         "kind": "electrical",
-        "label": "vibration signals to readout"
+        "label": "to converter"
       },
       {
-        "from_id": "readout",
-        "to_id": "tail",
+        "from_id": "PVDF",
+        "to_id": "BOARD",
         "kind": "electrical",
-        "label": "bus out rear"
+        "label": "direct vibration"
+      },
+      {
+        "from_id": "BOARD",
+        "to_id": "CABLE",
+        "kind": "electrical",
+        "label": "tactile message"
       }
     ],
     "loads": [
       {
-        "on_id": "skin",
-        "label": "30 N nominal grip press over 300 mm2",
-        "direction": "in"
+        "on_id": "SKIN",
+        "label": "touch and grip pressure",
+        "direction": "down"
       },
       {
-        "on_id": "skin",
-        "label": "shear from slip and texture",
-        "direction": "left"
-      },
-      {
-        "on_id": "core",
-        "label": "139 N survival proof load into holder",
-        "direction": "in"
+        "on_id": "CORE",
+        "label": "reaction into finger",
+        "direction": "up"
       }
     ]
   },
   "key_estimates": [
     {
-      "quantity": "taxel count",
-      "value": 48.0,
-      "unit": "taxels",
-      "method": "simulate",
+      "quantity": "contact spot diameter at 1 mN",
+      "value": 0.47,
+      "unit": "mm",
+      "method": "simulate Hertz",
       "evidence_ids": [
-        "E8"
+        "E14"
       ]
     },
     {
-      "quantity": "contact area",
-      "value": 300.0,
-      "unit": "mm2",
-      "method": "simulate",
+      "quantity": "mean contact pressure at 1 mN",
+      "value": 5.78,
+      "unit": "kPa",
+      "method": "simulate Hertz",
       "evidence_ids": [
-        "E8",
-        "E32"
+        "E14"
       ]
     },
     {
-      "quantity": "light-touch pressure from 1 mN on one taxel",
-      "value": 160.0,
-      "unit": "Pa",
-      "method": "calc",
-      "evidence_ids": [
-        "E16"
-      ]
-    },
-    {
-      "quantity": "base capacitance for 2.5 mm taxel",
-      "value": 0.332,
+      "quantity": "base capacitance",
+      "value": 0.269,
       "unit": "pF",
-      "method": "calc",
+      "method": "calc parallel-plate",
       "evidence_ids": [
-        "E35"
-      ]
-    },
-    {
-      "quantity": "light-touch strain with soft pillars",
-      "value": 0.008,
-      "unit": "strain",
-      "method": "calc",
-      "evidence_ids": [
-        "E36"
+        "E26"
       ]
     },
     {
       "quantity": "capacitance change at 1 mN",
-      "value": 2.66,
+      "value": 3.57,
       "unit": "fF",
-      "method": "calc",
+      "method": "calc strain times base",
       "evidence_ids": [
-        "E35",
-        "E36",
-        "E16"
+        "E55"
       ]
     },
     {
-      "quantity": "static sampling rate",
-      "value": 25.0,
-      "unit": "Hz",
-      "method": "simulate",
+      "quantity": "signal margin at 1 mN",
+      "value": 14.6,
+      "unit": "LSB",
+      "method": "calc counts vs 244 aF LSB",
       "evidence_ids": [
-        "E18",
-        "E24"
+        "E62"
       ]
     },
     {
-      "quantity": "vibration sampling rate",
-      "value": 2000.0,
-      "unit": "Hz",
-      "method": "simulate",
-      "evidence_ids": [
-        "E23"
-      ]
-    },
-    {
-      "quantity": "total data rate",
-      "value": 43.2,
-      "unit": "kbps",
-      "method": "simulate",
-      "evidence_ids": [
-        "E23"
-      ]
-    },
-    {
-      "quantity": "nominal grip pressure at 30 N",
-      "value": 100.0,
+      "quantity": "full-scale pressure at 50 N",
+      "value": 213.0,
       "unit": "kPa",
-      "method": "simulate",
+      "method": "simulate dual-range sweep",
       "evidence_ids": [
-        "E32"
+        "E64"
       ]
     },
     {
-      "quantity": "worst-case pressure",
-      "value": 463.3,
-      "unit": "kPa",
-      "method": "simulate",
-      "evidence_ids": [
-        "E32"
-      ]
-    },
-    {
-      "quantity": "normal grip force for 1 kg object",
-      "value": 14.8,
+      "quantity": "normal per finger to hold 1 kg",
+      "value": 9.81,
       "unit": "N",
-      "method": "simulate",
+      "method": "calc hold force",
       "evidence_ids": [
-        "E32"
+        "E85"
       ]
     },
     {
-      "quantity": "effective pillar modulus",
-      "value": 0.02,
-      "unit": "MPa",
-      "method": "calc",
+      "quantity": "pressure at 9.81 N hold",
+      "value": 125.0,
+      "unit": "kPa",
+      "method": "calc pressure at hold",
       "evidence_ids": [
-        "E39",
-        "E36"
+        "E93"
       ]
     },
     {
-      "quantity": "worst-case skin strain",
-      "value": 0.463,
-      "unit": "strain",
-      "method": "calc",
-      "evidence_ids": [
-        "E34"
-      ]
-    },
-    {
-      "quantity": "cartridge mass",
-      "value": 4.89,
-      "unit": "g",
-      "method": "calc",
+      "quantity": "micro to gross slip gap",
+      "value": 43.2,
+      "unit": "ms",
+      "method": "simulate stick-to-slip",
       "evidence_ids": [
         "E38",
-        "E37"
+        "E84"
+      ]
+    },
+    {
+      "quantity": "slip detector window",
+      "value": 30.0,
+      "unit": "ms",
+      "method": "simulate detector",
+      "evidence_ids": [
+        "E38"
+      ]
+    },
+    {
+      "quantity": "fingertip mass",
+      "value": 14.0,
+      "unit": "g",
+      "method": "sum mass budget",
+      "evidence_ids": [
+        "E53"
+      ]
+    },
+    {
+      "quantity": "readout power",
+      "value": 0.0991,
+      "unit": "W",
+      "method": "sum power budget",
+      "evidence_ids": [
+        "E51"
+      ]
+    },
+    {
+      "quantity": "tactile message rate at 100 Hz",
+      "value": 51.2,
+      "unit": "kbit per s",
+      "method": "calc message rate",
+      "evidence_ids": [
+        "E52"
+      ]
+    },
+    {
+      "quantity": "fingertip diameter",
+      "value": 20.0,
+      "unit": "mm",
+      "method": "precedent check",
+      "evidence_ids": [
+        "E43",
+        "E60"
+      ]
+    },
+    {
+      "quantity": "fingertip length",
+      "value": 22.0,
+      "unit": "mm",
+      "method": "precedent check",
+      "evidence_ids": [
+        "E43",
+        "E60"
+      ]
+    },
+    {
+      "quantity": "slip filter compute",
+      "value": 96.8,
+      "unit": "kMAC per s",
+      "method": "calc filter load",
+      "evidence_ids": [
+        "E78"
+      ]
+    }
+  ],
+  "constraint_table": [
+    {
+      "constraint": "fingertip size shape",
+      "design_value": "20.0 mm by 22.0 mm",
+      "how_shown": "Body stays inside 18.0 mm by 28.0 mm finger and 26 mm by 20 mm by 25 mm precedent.",
+      "evidence_ids": [
+        "E43",
+        "E60"
+      ]
+    },
+    {
+      "constraint": "small force detection of about 1 mN",
+      "design_value": "0.470 mm spot at 5.78 kPa, 3.57 fF on 0.269 pF, 14.6 LSB",
+      "how_shown": "Hertz spreading plus base and change capacitance give counts above converter noise.",
+      "evidence_ids": [
+        "E14",
+        "E26",
+        "E55",
+        "E62"
+      ]
+    },
+    {
+      "constraint": "resolve contact location to 1 mm",
+      "design_value": "1 mm from 2.00 mm pitch with centroid",
+      "how_shown": "Pitch sharing 0.470 mm spot interpolates to 1 mm without saturation to 213 kPa.",
+      "evidence_ids": [
+        "E14",
+        "E62",
+        "E64"
+      ]
+    },
+    {
+      "constraint": "detect slip onset within 30 ms",
+      "design_value": "30.0 ms window inside 43.2 ms gap",
+      "how_shown": "2200 Hz sampling with 30 ms window fits 53.6 ms to 96.8 ms micro to gross slip gap.",
+      "evidence_ids": [
+        "E38",
+        "E84",
+        "E78"
+      ]
+    },
+    {
+      "constraint": "support fingertip load and hold 1 kg",
+      "design_value": "to 213 kPa at 50 N, 125 kPa at 9.81 N hold",
+      "how_shown": "Dual-range sweep spans light touch to full grip with hold mid-range.",
+      "evidence_ids": [
+        "E64",
+        "E93",
+        "E85"
+      ]
+    },
+    {
+      "constraint": "on-finger power, mass and message rate",
+      "design_value": "0.0991 W, 14.0 g, 51.2 kbit per s",
+      "how_shown": "Sums at 100 Hz frames stay finger scale on power, weight and rate.",
+      "evidence_ids": [
+        "E51",
+        "E53",
+        "E52"
       ]
     }
   ],
   "measurement_chain": [
     {
       "stage": "sensor",
-      "name": "capacitive taxel array and vibration film",
-      "interface": "compression to capacitance and charge"
+      "name": "capacitive taxel grid",
+      "interface": "distributed pressure"
+    },
+    {
+      "stage": "sensor",
+      "name": "vibration film",
+      "interface": "fast vibration"
     },
     {
       "stage": "conditioning",
-      "name": "capacitance-to-digital converter and charge amplifier",
-      "interface": "capacitance and charge to digital counts"
+      "name": "on-finger converter and microcontroller filter",
+      "interface": "analog capacitance and voltage"
     },
     {
       "stage": "instrument",
-      "name": "fingertip controller and 4-wire bus",
-      "interface": "digital counts to bus packets"
+      "name": "message frame plus slip interrupt line",
+      "interface": "digital frame and interrupt"
     },
     {
       "stage": "computer",
-      "name": "robot grasp controller",
-      "interface": "bus packets to grip squeeze"
+      "name": "hand controller",
+      "interface": "grip command"
+    }
+  ],
+  "operating_sequence": [
+    {
+      "part_id": "SKIN",
+      "action": "spreads touch into pressure spot"
+    },
+    {
+      "part_id": "CAP",
+      "action": "feels steady push"
+    },
+    {
+      "part_id": "PVDF",
+      "action": "hears fast slip vibration"
+    },
+    {
+      "part_id": "BOARD",
+      "action": "decides slip and locates touch"
+    },
+    {
+      "part_id": "CABLE",
+      "action": "carries warning to hand"
     }
   ],
   "fabrication_steps": [
     {
       "step": 1,
-      "description": "Mold the soft cap about 15 mm to 20 mm wide with 1.5 mm skin, small pillars and grip ridges as one piece",
-      "method": "molding",
+      "description": "Print faceted rigid core with nail back plus M2 plus dovetail mount first, because skin, films and board all bolt to it.",
+      "method": "3D-printed rigid polymer core, 20 mm dia x 22 mm with M2 screw plus dovetail",
       "parts_present": [
-        "skin",
-        "pillars"
+        "CORE"
       ]
     },
     {
       "step": 2,
-      "description": "Fit the sensing board and thin sensing layers onto the stiff core to make the 4.21 mm stack",
-      "method": "assembly",
+      "description": "Make capacitive grid on flat facets plus vibration film with flex tail next, because flat tiles must sit before soft drape covers them.",
+      "method": "laminated polyimide flex with 1.5 mm electrodes, 200 um dielectric, 2.00 mm pitch plus 28 um film",
       "parts_present": [
-        "core",
-        "pcb",
-        "pillars",
-        "film",
-        "skin"
+        "CAP",
+        "PVDF",
+        "FLEX",
+        "CORE"
       ]
     },
     {
       "step": 3,
-      "description": "Mount the fingertip cartridge to the finger with two screws and route the tail out the back",
-      "method": "assembly",
+      "description": "Mold ridged dome with gel interlayer and bond plus clamp edge over core after, because thin stack must drape continuous skin over tiles.",
+      "method": "molded Shore A 10 silicone dome, 20 mm dia x 22 mm, 1.5 to 2 mm skin under 2.5 mm stack, 0.4 mm pitch ridges 0.1 mm high",
       "parts_present": [
-        "core",
-        "screws",
-        "tail",
-        "readout"
+        "SKIN",
+        "GEL",
+        "CORE",
+        "CAP",
+        "PVDF"
       ]
     },
     {
       "step": 4,
-      "description": "Calibrate each touch point unloaded and at grip load to store zero and gain for drift and memory",
-      "method": "calibration",
+      "description": "Mount on-finger board dorsally and join flex via ZIF plus cable to hand last, because electronics are tested after skin and flex are placed.",
+      "method": "assembled PCB with converter plus microcontroller, 0.5 mm ZIF, 3.18 mm bend, 6-pin 5 V link",
       "parts_present": [
-        "pcb",
-        "readout"
+        "BOARD",
+        "FLEX",
+        "CABLE",
+        "CORE"
       ]
     }
   ],
   "risks": [
     {
-      "risk": "1 mN signal buried by parasitics, hysteresis 5-10 percent and drift",
-      "mitigation": "use soft air-gap pillars with guarded row-column scanning and per-taxel zero plus gain updated when unloaded"
+      "risk": "micro-sipes tear at rim shear",
+      "mitigation": "rub-cycle tear test plus primer peel check"
     },
     {
-      "risk": "thin ridged skin tears under repeated 30 N to 139 N crush",
-      "mitigation": "mold pillars and skin as one piece and let pillars bottom to solid at high load, replace cap when worn"
+      "risk": "flex tail breaks at mount under vibration",
+      "mitigation": "shake-plus-pull continuity test with dorsal routing"
     },
     {
-      "risk": "mount flexes or tail pinches causing drop or crush",
-      "mitigation": "use stiff bolted core with rear tail and slip-triggered squeeze proven in drop and crush tests"
+      "risk": "slip warning misses 30 ms window through slow frame",
+      "mitigation": "timed hardware loop test of direct vibration path"
     }
   ],
-  "novelty_claim": "Soft molded air-gap pillars as combined spring and sensing gap with dual-rate static capacitance plus fast vibration film in a stiff bolted quick-change cap with rear 4-wire bus",
+  "novelty_claim": "Continuous ridged skin with micro-sipes draped like cornea over flat-faceted core plus split static-dynamic films joined by fail-safe heartbeat plus slip interrupt.",
   "cost_class": "$100-1k",
   "figure_spec": {
-    "system_view": "Fingertip cross-section: rigid core, PCB with taxel electrodes, silicone pillar dielectric, PVDF film, outer skin; contact load spreads over taxels.",
-    "critical_part_id": "pillars",
+    "system_view": "Fingertip section showing domed ridged skin over gel over vibration film over capacitive tiles on faceted core with flex to on-finger board and cable to hand",
+    "critical_part_id": "SKIN",
     "preferred_view": "section"
   },
   "open_questions": [
-    "Will thin ridged skin survive repeated 30 N grips without cyclic tear at ridges?",
-    "Will per-taxel zero plus gain calibration hold 1 mN truth over 30 N with 5 to 10 percent hysteresis and drift?",
-    "O1: Two base capacitances (0.111 pF vs 0.332 pF) and two stiffnesses (1 MPa solid vs 20 kPa effective pillars) give conflicting 1 mN margins (0.053 fF vs 2.66 fF); reconcile to one stiffness and one delta-C vs parasitics/noise, plus missing mass sum and calibration flow, before vote."
+    "Does the 30 ms slip warning loop close on built hardware under shake and grip load?",
+    "Does the micro-siped skin survive rub cycles without tear with primer bond intact?",
+    "Does the flex tail keep continuity across the mount under vibration plus pull?"
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "id": "E93",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "pressure at 9.81N hold over 5mm radius contact",
+  "code_or_query": "Q_(9.81,'N')/(3.1416*Q_(5,'mm')**2)",
+  "inputs": {
+    "arg0": {
+      "value": "9.81",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "5",
+      "unit": "mm"
+    }
+  },
+  "output_summary": "0.125 N/mm\u00b2",
+  "output_full": "0.125 N/mm\u00b2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

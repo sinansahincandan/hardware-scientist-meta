@@ -3,269 +3,193 @@
   "nodes": [
     {
       "id": "pv_array",
-      "label": "PV array 2.4kWp tilt",
-      "shape": "rect",
+      "label": "Split PV array 2 roof +7 ground",
+      "shape": "plate",
       "size_class_mm": {
         "min": 1100.0,
-        "max": 1800.0
+        "max": 1750.0
       },
       "layout": {
-        "col": 0,
+        "col": 2,
         "row": 0
       },
       "color_hint": "#2e86c1",
-      "aspect": 3.0
+      "aspect": 3.5
     },
     {
-      "id": "frame_rack",
-      "label": "PV + box steel frame",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 2000.0,
-        "max": 2600.0
-      },
-      "layout": {
-        "col": 0,
-        "row": 1
-      },
-      "color_hint": "#909497",
-      "aspect": 2.5
-    },
-    {
-      "id": "dc_wiring",
-      "label": "DC wiring",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 1000.0,
-        "max": 5000.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 0
-      },
-      "color_hint": "#e67e22",
-      "aspect": 4.0
-    },
-    {
-      "id": "battery_cabinet",
-      "label": "Battery 5kWh + MPPT",
+      "id": "batt_bank",
+      "label": "Battery bank with MPPT",
       "shape": "rect",
       "size_class_mm": {
         "min": 400.0,
         "max": 800.0
       },
       "layout": {
-        "col": 5,
+        "col": 0,
         "row": 2
       },
-      "color_hint": "#5d6d7e",
-      "aspect": 0.7
+      "color_hint": "#27ae60",
+      "aspect": 0.8
     },
     {
-      "id": "cold_box",
-      "label": "100mm PU cold box 2m",
+      "id": "cooler",
+      "label": "Monoblock cooler rear-high",
       "shape": "rect",
       "size_class_mm": {
-        "min": 2000.0,
-        "max": 2400.0
+        "min": 400.0,
+        "max": 800.0
       },
       "layout": {
-        "col": 2,
+        "col": 3,
         "row": 1
       },
       "color_hint": "#7fb3d5",
-      "aspect": 1.1
+      "aspect": 1.0
     },
     {
-      "id": "airflow_kit",
-      "label": "Fan + evaporator high",
+      "id": "chamber",
+      "label": "Insulated chamber with door",
       "shape": "rect",
       "size_class_mm": {
-        "min": 200.0,
-        "max": 1200.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 0
-      },
-      "color_hint": "#aed6f1",
-      "aspect": 3.5
-    },
-    {
-      "id": "racks",
-      "label": "Low side racks",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 900.0,
-        "max": 2000.0
+        "min": 1800.0,
+        "max": 2400.0
       },
       "layout": {
         "col": 1,
         "row": 2
       },
-      "color_hint": "#a6acaf",
-      "aspect": 2.0
+      "color_hint": "#f0f0f0",
+      "aspect": 1.2
     },
     {
-      "id": "crates",
-      "label": "Vented crates",
+      "id": "rack_crate",
+      "label": "Racking with vented crates",
       "shape": "rect",
       "size_class_mm": {
-        "min": 300.0,
+        "min": 400.0,
         "max": 600.0
       },
       "layout": {
-        "col": 2,
+        "col": 1,
         "row": 2
       },
-      "color_hint": "#82c991",
+      "color_hint": "#e67e22",
+      "aspect": 0.6
+    },
+    {
+      "id": "control",
+      "label": "Thermostat + probes",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 50.0,
+        "max": 150.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#e74c3c",
       "aspect": 1.0
     },
     {
-      "id": "door",
-      "label": "900mm insulated door",
-      "shape": "rect",
+      "id": "foundation",
+      "label": "Pads frames and anchors",
+      "shape": "beam",
       "size_class_mm": {
-        "min": 900.0,
-        "max": 1000.0
+        "min": 400.0,
+        "max": 2400.0
       },
       "layout": {
-        "col": 4,
-        "row": 1
+        "col": 1,
+        "row": 4
       },
-      "color_hint": "#7fb3d5",
-      "aspect": 0.5
-    },
-    {
-      "id": "dc_chiller",
-      "label": "DC chiller shaded",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 300.0,
-        "max": 600.0
-      },
-      "layout": {
-        "col": 5,
-        "row": 1
-      },
-      "color_hint": "#5d6d7e",
-      "aspect": 1.0
-    },
-    {
-      "id": "plinth",
-      "label": "Concrete plinth",
-      "shape": "plate",
-      "size_class_mm": {
-        "min": 150.0,
-        "max": 2600.0
-      },
-      "layout": {
-        "col": 2,
-        "row": 3
-      },
-      "color_hint": "#b2babb",
+      "color_hint": "#909497",
       "aspect": 6.0
     }
   ],
   "edges": [
     {
       "from_id": "pv_array",
-      "to_id": "battery_cabinet",
+      "to_id": "batt_bank",
       "kind": "electrical",
-      "label": "DC charge via MPPT",
-      "arrow": false
+      "label": "charges via MPPT",
+      "arrow": true
     },
     {
-      "from_id": "battery_cabinet",
-      "to_id": "dc_chiller",
+      "from_id": "batt_bank",
+      "to_id": "cooler",
       "kind": "electrical",
-      "label": "48V DC supply",
-      "arrow": false
+      "label": "powers compressor and fans",
+      "arrow": true
     },
     {
-      "from_id": "dc_chiller",
-      "to_id": "cold_box",
+      "from_id": "cooler",
+      "to_id": "chamber",
       "kind": "thermal",
-      "label": "cooling to 4-10C",
+      "label": "blows cold air forward",
       "arrow": true
     },
     {
-      "from_id": "airflow_kit",
-      "to_id": "cold_box",
-      "kind": "fluid",
-      "label": "low-velocity air over evaporator",
-      "arrow": true
-    },
-    {
-      "from_id": "crates",
-      "to_id": "racks",
+      "from_id": "chamber",
+      "to_id": "rack_crate",
       "kind": "mechanical",
-      "label": "stacked 3 high vent gaps",
+      "label": "encloses and supports",
       "arrow": false
     },
     {
-      "from_id": "racks",
-      "to_id": "plinth",
-      "kind": "mechanical",
-      "label": "stand free on plinth",
-      "arrow": false
-    },
-    {
-      "from_id": "cold_box",
-      "to_id": "plinth",
-      "kind": "mechanical",
-      "label": "anchored to plinth",
-      "arrow": false
-    },
-    {
-      "from_id": "frame_rack",
-      "to_id": "cold_box",
-      "kind": "mechanical",
-      "label": "supports panels, PV separate",
-      "arrow": false
-    },
-    {
-      "from_id": "door",
-      "to_id": "cold_box",
-      "kind": "mechanical",
-      "label": "sealed hinged closure",
-      "arrow": false
-    },
-    {
-      "from_id": "dc_wiring",
-      "to_id": "battery_cabinet",
+      "from_id": "control",
+      "to_id": "cooler",
       "kind": "electrical",
-      "label": "series pairs fuses disconnect",
+      "label": "switches cooler with shed",
+      "arrow": true
+    },
+    {
+      "from_id": "chamber",
+      "to_id": "foundation",
+      "kind": "mechanical",
+      "label": "stands on pads",
+      "arrow": false
+    },
+    {
+      "from_id": "pv_array",
+      "to_id": "foundation",
+      "kind": "mechanical",
+      "label": "mounted on gantry and ground frame",
       "arrow": false
     }
   ],
   "loads": [
     {
       "on_id": "pv_array",
-      "label": "Solar irradiance on array",
-      "direction": "up"
+      "label": "sunlight energy",
+      "direction": "in"
     },
     {
-      "on_id": "plinth",
-      "label": "1 tonne produce plus box weight",
-      "direction": "down"
-    },
-    {
-      "on_id": "cold_box",
-      "label": "Wind gust on side wall",
+      "on_id": "pv_array",
+      "label": "wind pressure",
       "direction": "left"
     },
     {
-      "on_id": "cold_box",
-      "label": "Ambient heat and door air",
+      "on_id": "chamber",
+      "label": "ambient heat and wind",
+      "direction": "in"
+    },
+    {
+      "on_id": "foundation",
+      "label": "produce plus equipment weight",
+      "direction": "down"
+    },
+    {
+      "on_id": "rack_crate",
+      "label": "warm produce field heat",
       "direction": "in"
     }
   ],
-  "critical_part_id": "cold_box",
+  "critical_part_id": "chamber",
   "scale_bar_mm": 500.0,
   "notes": [
-    "Side section: PV on separate rack left, cold box centre on plinth, chiller + battery shaded right.",
-    "Air kit high inside box blows over crates on low racks; door sealed on side wall.",
-    "Cap 200kg/day warm intake, no intake cloudy days; 1.42-day hold autonomy."
+    "Side view: split array 2 on roof gantry over chamber + 7 on ground frame, PIR box on six pads with 900mm door.",
+    "Air loop: rear-high monoblock blows forward low-return over two rack rows with 50 crates.",
+    "Power: PV -> MPPT -> 48V bank -> cooler, thermostat probes switch cooler with load shed."
   ]
 }

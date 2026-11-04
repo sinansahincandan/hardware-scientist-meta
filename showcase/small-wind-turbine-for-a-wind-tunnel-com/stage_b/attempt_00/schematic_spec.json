@@ -1,0 +1,270 @@
+{
+  "view": "side",
+  "nodes": [
+    {
+      "id": "rotor",
+      "label": "Three-blade fixed-pitch rotor",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 380.0,
+        "max": 400.0
+      },
+      "layout": {
+        "col": 0,
+        "row": 1
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 0.25
+    },
+    {
+      "id": "hub",
+      "label": "Rigid hub and shaft",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 40.0,
+        "max": 80.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 1
+      },
+      "color_hint": "#a9a9a9",
+      "aspect": 2.5
+    },
+    {
+      "id": "nacelle",
+      "label": "Stiff nacelle bedplate housing",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 250.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 2
+      },
+      "color_hint": "#d5a76a",
+      "aspect": 3.0
+    },
+    {
+      "id": "post",
+      "label": "Steel post clamp and post",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 200.0,
+        "max": 300.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#8a8a8a",
+      "aspect": 0.3
+    },
+    {
+      "id": "generator",
+      "label": "Direct-drive outrunner generator",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 50.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 1
+      },
+      "color_hint": "#e07a5f",
+      "aspect": 1.2
+    },
+    {
+      "id": "rectifier",
+      "label": "Three-phase rectifier bridge",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 20.0,
+        "max": 50.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 1
+      },
+      "color_hint": "#81b29a",
+      "aspect": 1.0
+    },
+    {
+      "id": "regulator",
+      "label": "Buck-boost regulator",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 40.0,
+        "max": 70.0
+      },
+      "layout": {
+        "col": 5,
+        "row": 1
+      },
+      "color_hint": "#f2cc8f",
+      "aspect": 1.2
+    },
+    {
+      "id": "dump",
+      "label": "Dump resistor grid",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 70.0
+      },
+      "layout": {
+        "col": 6,
+        "row": 1
+      },
+      "color_hint": "#c1121f",
+      "aspect": 1.5
+    },
+    {
+      "id": "safety_loop",
+      "label": "Normally closed safety chain loop",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 50.0,
+        "max": 100.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 2
+      },
+      "color_hint": "#f4d35e",
+      "aspect": 2.0
+    },
+    {
+      "id": "disc_brake",
+      "label": "Spring-applied disc brake",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 40.0,
+        "max": 80.0
+      },
+      "layout": {
+        "col": 2,
+        "row": 1
+      },
+      "color_hint": "#6d6d6d",
+      "aspect": 0.35
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "rotor",
+      "to_id": "hub",
+      "kind": "mechanical",
+      "label": "shaft torque",
+      "arrow": false
+    },
+    {
+      "from_id": "hub",
+      "to_id": "generator",
+      "kind": "mechanical",
+      "label": "low-speed shaft",
+      "arrow": false
+    },
+    {
+      "from_id": "generator",
+      "to_id": "rectifier",
+      "kind": "electrical",
+      "label": "3-phase wild AC",
+      "arrow": false
+    },
+    {
+      "from_id": "rectifier",
+      "to_id": "regulator",
+      "kind": "electrical",
+      "label": "raw DC",
+      "arrow": false
+    },
+    {
+      "from_id": "regulator",
+      "to_id": "dump",
+      "kind": "electrical",
+      "label": "regulated feed",
+      "arrow": false
+    },
+    {
+      "from_id": "safety_loop",
+      "to_id": "disc_brake",
+      "kind": "electrical",
+      "label": "latched trip",
+      "arrow": true
+    },
+    {
+      "from_id": "disc_brake",
+      "to_id": "hub",
+      "kind": "mechanical",
+      "label": "friction torque",
+      "arrow": false
+    },
+    {
+      "from_id": "nacelle",
+      "to_id": "post",
+      "kind": "mechanical",
+      "label": "bearing support",
+      "arrow": false
+    },
+    {
+      "from_id": "hub",
+      "to_id": "nacelle",
+      "kind": "mechanical",
+      "label": "bearing in nacelle",
+      "arrow": false
+    },
+    {
+      "from_id": "generator",
+      "to_id": "nacelle",
+      "kind": "mechanical",
+      "label": "mounted in nacelle",
+      "arrow": false
+    },
+    {
+      "from_id": "disc_brake",
+      "to_id": "nacelle",
+      "kind": "mechanical",
+      "label": "caliper reacts to nacelle",
+      "arrow": false
+    },
+    {
+      "from_id": "safety_loop",
+      "to_id": "regulator",
+      "kind": "electrical",
+      "label": "sense and dump switch",
+      "arrow": true
+    }
+  ],
+  "loads": [
+    {
+      "on_id": "rotor",
+      "label": "wind push",
+      "direction": "right"
+    },
+    {
+      "on_id": "nacelle",
+      "label": "survival thrust",
+      "direction": "right"
+    },
+    {
+      "on_id": "nacelle",
+      "label": "weight",
+      "direction": "down"
+    },
+    {
+      "on_id": "regulator",
+      "label": "regulated power to tunnel load",
+      "direction": "out"
+    }
+  ],
+  "critical_part_id": "rotor",
+  "scale_bar_mm": 10.0,
+  "notes": [
+    "Side elevation left-to-right wind: rotor-hub-disc-generator on nacelle-post to rectifier-regulator-dump.",
+    "Hub bearings and generator mount and brake caliper all react to nacelle to tie structure to power chain.",
+    "Safety loop senses regulator/load and drives spring disc plus dump switch for fail-safe stop."
+  ]
+}

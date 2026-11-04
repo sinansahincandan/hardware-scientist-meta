@@ -1,0 +1,14 @@
+{
+  "id": "E105",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "folded width stack outer tubes plus clusters",
+  "code_or_query": "310+2*35",
+  "inputs": {},
+  "output_summary": "380",
+  "output_full": "380",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

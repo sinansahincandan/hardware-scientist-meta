@@ -1,0 +1,32 @@
+{
+  "id": "E20",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: Secop BD35F BD50F DC compressor datasheet COP refrigeration",
+  "code_or_query": "Secop BD35F BD50F DC compressor datasheet COP refrigeration",
+  "inputs": {},
+  "output_summary": "images.tradeservice.com — Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home. As people go mobile, so does food. The excellent performance of the BD series safeguards food preservation. — https://images.tradeservice.com/ATTACHMENTS/DIR100306/Danfoss_00490_3_4_7_18_20_22_24_28_45_50-53_94_95_CAT.pdf",
+  "output_full": "images.tradeservice.com — Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home. As people go mobile, so does food. The excellent performance of the BD series safeguards food preservation. — https://images.tradeservice.com/ATTACHMENTS/DIR100306/Danfoss_00490_3_4_7_18_20_22_24_28_45_50-53_94_95_CAT.pdf\n(found by the search; not opened or cited)\nCold-Chain Refrigeration Engineer said about it: R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "images.tradeservice.com",
+      "title": "Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home. As people go mobile, so does food. The excellent performance of the BD series safeguards food preservation.",
+      "year": "",
+      "url": "https://images.tradeservice.com/ATTACHMENTS/DIR100306/Danfoss_00490_3_4_7_18_20_22_24_28_45_50-53_94_95_CAT.pdf",
+      "query": "Secop BD35F BD50F DC compressor datasheet COP refrigeration",
+      "unresolved": false,
+      "passage": "R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "R290 Refrigerant: Key Differences & Replacements), test work shows R290 Coefficient of Performance (COP, cooling heat per electric work) only 2.42 percent higher than R134a (E23 A solar powered off-grid air conditioning system with natural refrigerant for residential buildings: A theoretical and experimental evaluation), and the serviceable Direct Current choice is the BD50F-class compressor family (E19 Secop is committed to delivering advanced refrigeration compressors and) detailed in the DC performance tables (E20 Hermetic Compressors for DC Voltage Modern comfort is brought into life when leaving home."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

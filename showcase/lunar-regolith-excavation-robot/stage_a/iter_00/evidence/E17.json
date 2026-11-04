@@ -1,22 +1,24 @@
 {
   "id": "E17",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: ISO 13849 emergency stop mobile robot standard",
-  "code_or_query": "ISO 13849 emergency stop mobile robot standard",
+  "purpose": "search: Bekker wheel sinkage loose sand ground pressure small rover",
+  "code_or_query": "Bekker wheel sinkage loose sand ground pressure small rover",
   "inputs": {},
-  "output_summary": "robotics247.com — TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs — https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain",
-  "output_full": "robotics247.com — TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs — https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain\n(the search returned no passage text)",
+  "output_summary": "1library.net — Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem — https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q",
+  "output_full": "1library.net — Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem — https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "robotics247.com",
-      "title": "TÜV Rheinland Certifies the Safety Features of Mobile Industrial Robots’ AMRs",
+      "authors_or_org": "1library.net",
+      "title": "Sinkage - Analysis and Experiments - Axel Rover Tethered Dynamics and Motion Planning on Extrem",
       "year": "",
-      "url": "https://www.robotics247.com/article/tuev_rheinland_certifies_the_safety_features_of_mobile_industrial_robots_amrs/Supply_Chain",
-      "query": "ISO 13849 emergency stop mobile robot standard",
+      "url": "https://1library.net/article/sinkage-analysis-and-experiments.oz1oxj8q",
+      "query": "Bekker wheel sinkage loose sand ground pressure small rover",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

@@ -1,7 +1,7 @@
 {
-  "closed_by": "cap",
-  "cycles_used": 4,
-  "open_blocking": [
-    "O1"
-  ]
+  "closed_by": "chief",
+  "cycles_used": 3,
+  "open_blocking": [],
+  "chief_decision": "Integrated fingertip: molded Shore A 10 dome with 0.4 mm ridges plus sipes draped as cornea over faceted nail-backed core with M2 plus dovetail; stack skin-gel-PVDF-capacitive taxels under 2.5 mm to on-finger CDC plus MCU with fail-safe heartbeat plus slip interrupt plus SPI. Meets 1 mN to 0.47 mm at 5.78 kPa to 3.57 fF for 14.6 LSB, spans to 213 kPa at 50 N, warns in 30 ms inside 43.2 ms gap, 20 by 22 mm, 14.0 g, 0.0991 W, 51.2 kbit per s. Hardware proof as bench tests: rub-cycle tear and bond, shake-plus-pull flex continuity, timed 30 ms slip loop with shear calibration.",
+  "decided_version": 1
 }

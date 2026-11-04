@@ -1,0 +1,26 @@
+{
+  "id": "E125",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+  "code_or_query": "Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+  "inputs": {},
+  "output_summary": "content.statefundca.com — ErgoMatters — https://content.statefundca.com/safety/ErgoMatters/Carts.asp",
+  "output_full": "content.statefundca.com — ErgoMatters — https://content.statefundca.com/safety/ErgoMatters/Carts.asp\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "content.statefundca.com",
+      "title": "ErgoMatters",
+      "year": "",
+      "url": "https://content.statefundca.com/safety/ErgoMatters/Carts.asp",
+      "query": "Snook Ciriello maximum acceptable push pull forces single operator sustained limit",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

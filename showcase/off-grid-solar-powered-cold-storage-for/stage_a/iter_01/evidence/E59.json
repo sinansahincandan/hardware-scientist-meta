@@ -1,0 +1,14 @@
+{
+  "id": "E59",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "check conduction watts",
+  "code_or_query": "(25.4*0.21*38)",
+  "inputs": {},
+  "output_summary": "203",
+  "output_full": "203",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

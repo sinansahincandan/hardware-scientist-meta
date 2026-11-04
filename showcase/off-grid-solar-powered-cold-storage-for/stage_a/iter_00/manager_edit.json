@@ -1,0 +1,21 @@
+{
+  "changed": [
+    "## 2. Roles",
+    "## 3. Tools",
+    "## 4. Meeting protocol",
+    "## 5. Criteria"
+  ],
+  "change_note": "Tightened quantitative handover and worst-case closure across Problem, Roles, Tools, Protocol and Criteria without prescribing design numbers; each interface now has a single owner, single controlling value, and explicit conversion and completeness checks.",
+  "no_progress": false,
+  "notes": [
+    "heading '## 1. Problem' could not be placed on one section; that text was not applied",
+    "## 1. Problem: Staged-only balance with thin margin was voted as meeting the tonne without owning full-harvest and cloudy-day cases; fixes intake, ambient/sun, and ground/shade ambiguity. (answers: Clarifies staged vs full-tonne intake, hot-ambient and low-sun basis, and field siting so staged-only thin-margin operation cannot stand as meeting full requirement.)",
+    "## 2. Roles: Thermal, door, storage, mass and anchorage fell between domains; aligns each handover to one owner with joint confirmation and reuse discipline. (answers: Assigns single ownership for thermal-to-electrical conversion, door-model selection, usable storage autonomy, complete mass/pressure, separate structures/anchorage/penetrations, and enforceable operating limits with joint handover confirmation.)",
+    "## 3. Tools: Calc created a new total without reusing door evidence, simulate average contradicted calc total, and sketch lumped structures; restores tool discipline for consistent reuse and regime checks. (answers: Enforces reuse-by-id, term-by-term sums with method/units, separate-structure sketches, board-only sourcing, and everyday-scale/regime checks so calc/simulate/sketch cannot create competing totals.)",
+    "## 4. Meeting protocol: Proposal was recorded ready with dual energies, dual door values, unconverted regimes and unsized storage; adds quantitative closure and supersession while keeping existing concept/evidence/objection/readiness practice. (answers: Requires single controlling value per quantity with supersession, term-by-term interface checks, reuse-by-id, and Manager answering each not-ready reason with evidence while preserving concepts/objections/readiness and bench-test practice.)",
+    "## 5. Criteria: Workable/buildable alone let unreleasable balance pass with omitted door/COP, unsized battery, full-harvest fragility and partial mass; adds closure, autonomy, worst-case and completeness tests. (answers: Extends pass/fail beyond workable/buildable to closed electrical-unit energy, sized night/cloud autonomy, staged-vs-full worst case, and complete mass-to-soil proof with single-value control.)"
+  ],
+  "reverted": [],
+  "tools_registered": [],
+  "tools_retired": []
+}

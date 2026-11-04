@@ -1,14 +1,40 @@
 {
   "id": "E57",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "sketch",
-  "purpose": "High-lift rear mast with vertical guides raising hopper pivot to clear 1m bin",
-  "code_or_query": "import matplotlib.pyplot as plt; plt.xkcd()\nfig, ax = plt.subplots(figsize=(6,4))\nax.set_xlim(0,1.0); ax.set_ylim(0,1.3)\nax.plot([0.1,0.8],[0.15,0.15],'k-',lw=3)\nax.plot([0.15,0.15],[0.15,0.3],'k-'); ax.plot([0.65,0.65],[0.15,0.3],'k-')\nax.text(0.3,0.05,'chassis low frame')\nax.plot([0.65,0.65],[0.3,1.05],'k-',lw=3)\nax.text(0.68,0.65,'vertical guide mast')\nax.plot([0.2,0.65],[0.45,0.45],'b-',lw=2)\nax.text(0.25,0.5,'hopper stowed 0.45m')\nax.plot([0.35,0.95],[1.05,1.05],'r-',lw=2)\nax.text(0.3,1.1,'hopper raised lip 1.05m over bin')\nax.plot([0.85,0.95],[0.0,1.0],'k--')\nax.text(0.86,0.5,'bin lip 1.0m')\nax.annotate('150mm actuator x2 4:1 chain', xy=(0.65,0.4), xytext=(0.1,0.9), arrowprops=dict(arrowstyle='->'))\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png', dpi=150)",
+  "author": "Autonomy and Blind Operations Lead",
+  "tool": "web_search",
+  "purpose": "search: autonomous excavator digging motor current stall detection control",
+  "code_or_query": "autonomous excavator digging motor current stall detection control",
   "inputs": {},
-  "output_summary": "High-lift rear mast with vertical guides raising hopper pivot to clear 1m bin",
-  "output_full": "High-lift rear mast with vertical guides raising hopper pivot to clear 1m bin",
-  "sketch_path": "evidence/sketch_57.png",
-  "references": [],
+  "output_summary": "patents.Justia.Com — Systems, devices, and/or methods regarding excavating — https://patents.Justia.Com/patent/7832126",
+  "output_full": "patents.Justia.Com — Systems, devices, and/or methods regarding excavating — https://patents.Justia.Com/patent/7832126\n(found by the search; not opened or cited)\nAutonomy and Blind Operations Lead said about it: I take from the CA2784416C - Systems, devices, and/or methods regarding excavating - Google Patents (E56) and the Systems, devices, and/or methods regarding excavating (E57) the finding that an excavator automatically controls crowd motion in response to an automatically detected stall condition at the hoist motor to avoid stalling the bucket in the bank, and the autonomous current-limited dig control maps that stall-avoidance to this robot by slowing the ladder feed on high motor current and reversing briefly on stall.\nPower Structure and Integration Lead said about it: I take from the Systems, devices, and/or methods regarding excavating (E57) and its patent twin (E56) the finding that an excavator backs crowd motion off on detected hoist-motor stall, which for this device means the ladder driver must be a current-limited fused branch that folds back before the fuse blows; I take from the Skid-Steer Safety for Farm and Landscape (E47) the rule that a raised load transfers weight and raises the Centre of Gravity (CG, meaning balance point), which for this device means the rear pivot lugs plus tilt motor carry 15.0 kg soil plus steel at 0.550 m pivot clearing the 0.400 m lip from the tip dump clearance check (E51).\nExcavation and Regolith Handling Lead said about it: I take from the Systems, devices, and/or methods regarding excavating (E57) and its twin CA2784416C patent (E56) the finding that crowd backs off on hoist stall, which for my ladder plus screw means current-limit foldback plus 0.600 s reverse from the tag align and backout simulation (E58) protects the 16.4 W ladder power from the ladder power estimate (E59); pivot 0.550 m clears 0.400 m lip by 0.150 m from the tip dump clearance check (E51) with align 0.030 to 0.040 m, finger width against 0.150 m mouth, and level-only 15 kg trips hold factor 1.69 per the Skid-Steer Safety rule (E47).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "patents.Justia.Com",
+      "title": "Systems, devices, and/or methods regarding excavating",
+      "year": "",
+      "url": "https://patents.Justia.Com/patent/7832126",
+      "query": "autonomous excavator digging motor current stall detection control",
+      "unresolved": false,
+      "passage": "I take from the CA2784416C - Systems, devices, and/or methods regarding excavating - Google Patents (E56) and the Systems, devices, and/or methods regarding excavating (E57) the finding that an excavator automatically controls crowd motion in response to an automatically detected stall condition at the hoist motor to avoid stalling the bucket in the bank, and the autonomous current-limited dig control maps that stall-avoidance to this robot by slowing the ladder feed on high motor current and reversing briefly on stall.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "I take from the CA2784416C - Systems, devices, and/or methods regarding excavating - Google Patents (E56) and the Systems, devices, and/or methods regarding excavating (E57) the finding that an excavator automatically controls crowd motion in response to an automatically detected stall condition at the hoist motor to avoid stalling the bucket in the bank, and the autonomous current-limited dig control maps that stall-avoidance to this robot by slowing the ladder feed on high motor current and reversing briefly on stall."
+        },
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "I take from the Systems, devices, and/or methods regarding excavating (E57) and its patent twin (E56) the finding that an excavator backs crowd motion off on detected hoist-motor stall, which for this device means the ladder driver must be a current-limited fused branch that folds back before the fuse blows; I take from the Skid-Steer Safety for Farm and Landscape (E47) the rule that a raised load transfers weight and raises the Centre of Gravity (CG, meaning balance point), which for this device means the rear pivot lugs plus tilt motor carry 15.0 kg soil plus steel at 0.550 m pivot clearing the 0.400 m lip from the tip dump clearance check (E51)."
+        },
+        {
+          "by": "Excavation and Regolith Handling Lead",
+          "text": "I take from the Systems, devices, and/or methods regarding excavating (E57) and its twin CA2784416C patent (E56) the finding that crowd backs off on hoist stall, which for my ladder plus screw means current-limit foldback plus 0.600 s reverse from the tag align and backout simulation (E58) protects the 16.4 W ladder power from the ladder power estimate (E59); pivot 0.550 m clears 0.400 m lip by 0.150 m from the tip dump clearance check (E51) with align 0.030 to 0.040 m, finger width against 0.150 m mouth, and level-only 15 kg trips hold factor 1.69 per the Skid-Steer Safety rule (E47)."
+        }
+      ]
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 2
 }

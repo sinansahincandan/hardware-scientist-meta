@@ -1,0 +1,84 @@
+{
+  "crops": [
+    "crop 1: wheels",
+    "crop 2: wheels",
+    "crop 3: wheels",
+    "crop 4: kerf",
+    "crop 5: kerf",
+    "crop 6: ladder",
+    "crop 7: hopper",
+    "crop 8: screw",
+    "crop 9: screw",
+    "crop 10: screw",
+    "crop 11: screw",
+    "crop 12: cameras",
+    "crop 13: computer"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": false,
+      "seen_as": "trenching chain drive sprocket bolt"
+    },
+    {
+      "index": 3,
+      "is_part": false,
+      "seen_as": "folding wheel arms"
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": false,
+      "seen_as": "steep wedge hopper and fill bin container"
+    },
+    {
+      "index": 7,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 8,
+      "is_part": false,
+      "seen_as": "unidentifiable extreme close-up"
+    },
+    {
+      "index": 9,
+      "is_part": false,
+      "seen_as": "unidentifiable extreme close-up"
+    },
+    {
+      "index": 10,
+      "is_part": false,
+      "seen_as": "unidentifiable extreme close-up"
+    },
+    {
+      "index": 11,
+      "is_part": false,
+      "seen_as": "unidentifiable extreme close-up"
+    },
+    {
+      "index": 12,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 13,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

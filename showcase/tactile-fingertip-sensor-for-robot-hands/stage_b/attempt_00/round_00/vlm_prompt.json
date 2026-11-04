@@ -1,62 +1,68 @@
 {
-  "prompt": "Photorealistic studio product rendering of a 20 mm robot fingertip tactile cartridge in operating moment, sectioned close-up isometric side view slightly exploded vertically to reveal stack. On a plain seamless light-grey studio backdrop with soft product lighting. Bottom: small dark rigid finger holder block cut off cleanly at backdrop, with stiff light-grey rigid mounting core bolted to it. Above core: green printed circuit readout board with tiny chips, then thin taxel electrode board, then dense array of tiny translucent silicone pillars about 1-2 mm tall, then thin translucent vibration film, then matte grey ridged silicone touch skin cap about fingertip-nail size covering top. An adult human index fingertip presses the center of the ridged skin, denting it visibly, central pillars compressed more than outer pillars, showing scale that whole device is about 20 mm across. A thin flat flexible orange-brown tail cable exits the rear of the boards and loops back. Fixed parts rigid core, boards, holder stay still; moving parts skin, film and pillars compress under press. Show clean legible callouts on small light tags in empty space with thin leader lines to each focus part: Ridged Touch Skin, Vibration Sensing Film, Soft Pillar Array, Taxel Electrode Board, Rigid Mounting Core, Flexible Rear Tail, and no other text, margins or scale bars. Real materials, sharp focus, mechanism readable.",
+  "prompt": "Photorealistic studio product rendering, half-section side view of a finger-scale robotic touch fingertip, about fingertip sized, mounted on a short rigid finger stub. Front quarter cut away to reveal layered stack. Top: matte soft-silicone dome with fine concentric ridges, lightly indented on top by the pad of an adult index fingertip pressing down, fingertip skin only, cropped close, giving true scale. Directly under dome: translucent soft gel interlayer bulging slightly at rim. Under gel: ultra-thin translucent vibration film, then a dark gridded capacitive taxel tile array sitting on flat facets of a light rigid faceted core with nail-back and dovetail mount. Thin amber flex tail loops with a gentle bend from the tile area dorsally to a small green readout circuit board with black chips mounted on the back of the core, with a thin black message cable exiting the board out of frame. Plain seamless light-grey studio backdrop, soft product lighting, real material textures, slight compression of dome and gel showing load. Clean legible callouts on small light tags in empty space with thin leader lines to each layer, no other text.",
   "must_not": [
-    "room interiors or landscapes or sky",
-    "furniture or tools or clutter",
-    "additional people or extra hands",
-    "hand-drawn sketch style or diagram colors or arrows",
-    "generic large blocks disconnected from mechanism"
+    "room interiors or outdoor settings",
+    "furniture, tools or lab clutter",
+    "full hands, faces or additional people",
+    "cutaway drawing colors or sketch marks",
+    "extra text, legends or measurement graphics"
   ],
   "changes_from_previous": "",
   "visual_plan": {
-    "view": "close-up isometric side section, slightly vertically separated to expose layers, eye-level with stack",
-    "spatial_layout": "vertical stack from bottom to top: holder plate, screw heads below, rigid core, readout board with tail exiting right-rear, electrode board, pillar array gap, vibration film, ridged skin cap; human fingertip above center touching skin; tail looping to side; light-grey void around for callout tags",
-    "operating_moment": "adult fingertip pressing center of ridged skin under grip load, skin and film deflecting down, central soft pillars visibly shortened to measure normal and shear, film sensing slip vibration, signals flowing to rear tail",
-    "transfer_path": "load path outer skin into film into pillar array into electrode board into rigid core into holder; sensing path pillar compression to capacitance plus film charge to readout to flexible tail bus to grasp controller",
-    "interactions": "human fingertip presses ridged skin; skin presses vibration film; film presses pillar tops; pillars compress down onto electrode board; boards are carried by rigid core; core clamped by screws to holder; electrode signals and film signals route to readout then to rear tail",
+    "view": "Close-up side half-section, eye-level slightly above, cut plane through dome center to show conforming layers, facet tiles, core, flex bend, and dorsal board",
+    "spatial_layout": "Top to bottom stack: adult fingertip contact on domed ridged skin, gel, vibration film, capacitive grid, faceted rigid core and mount. Side: flex tail in U-bend from stack to dorsal readout board, cable exiting rearward. Section cut from front to expose layers, board offset dorsally clear of contact",
+    "operating_moment": "Steady light touch under grip load with incipient slip: dome slightly flattened at contact, gel bulged at edge, electronics live, slip signal path active to cable",
+    "transfer_path": "Pressure: ridged dome to gel to vibration film to capacitive grid to rigid core; Signal: capacitive grid via flex tail to on-finger board and vibration film direct to board, then via message cable toward hand",
+    "interactions": "Probe fingertip presses dome down; dome spreads and compresses gel; gel presses vibration film and capacitive tiles; tiles sit fixed on faceted core facets; core reacts upward into mount; flex tail carries analog signals to dorsal board; board sends message down cable",
     "avoid": [
-      "landscape or room or furniture context",
-      "sketch colors, circles, line hatching as materials",
-      "hidden internals, all focus layers must be visible in section",
-      "extra text, numbers, scale bars outside callout tags"
+      "Do not show landscape, sky, furniture, or lab equipment",
+      "Do not show control room, hand controller box, or charger",
+      "Do not use sketch colors, circles, or arrows as materials",
+      "Do not add text, numbers, graphs, or scale bars beyond callout tags"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "skin",
-      "material": "silicone rubber Shore A 30",
-      "purpose": "protects stack and spreads contact for grip friction",
-      "callout": "Ridged Touch Skin"
+      "part_id": "SKIN",
+      "material": "Shore A 10 silicone",
+      "purpose": "conform to touch and spread pressure",
+      "callout": "Ridged Silicone Dome"
     },
     {
-      "part_id": "film",
-      "material": "PVDF polymer film",
-      "purpose": "senses high-frequency slip vibration and texture",
+      "part_id": "GEL",
+      "material": "low-modulus silicone gel",
+      "purpose": "couple dome pressure to sensing films",
+      "callout": "Gel Interlayer"
+    },
+    {
+      "part_id": "PVDF",
+      "material": "thin PVDF piezoelectric film",
+      "purpose": "transduce fast slip vibration",
       "callout": "Vibration Sensing Film"
     },
     {
-      "part_id": "pillars",
-      "material": "silicone rubber",
-      "purpose": "compressible spring and sensing gap for static force",
-      "callout": "Soft Pillar Array"
+      "part_id": "CAP",
+      "material": "polyimide with silicone dielectric",
+      "purpose": "transduce steady push and location",
+      "callout": "Capacitive Taxel Grid"
     },
     {
-      "part_id": "pcb",
-      "material": "printed circuit board",
-      "purpose": "holds capacitive taxel electrodes for static force",
-      "callout": "Taxel Electrode Board"
+      "part_id": "CORE",
+      "material": "rigid 3D-printed polymer",
+      "purpose": "support load into finger mount",
+      "callout": "Faceted Rigid Core"
     },
     {
-      "part_id": "core",
-      "material": "rigid plastic",
-      "purpose": "carries sensing stack and bolts to finger holder",
-      "callout": "Rigid Mounting Core"
+      "part_id": "FLEX",
+      "material": "thin polyimide flex circuit",
+      "purpose": "route array signals to board",
+      "callout": "Flex Signal Tail"
     },
     {
-      "part_id": "tail",
-      "material": "flexible circuit",
-      "purpose": "carries four-wire bus out rear of finger",
-      "callout": "Flexible Rear Tail"
+      "part_id": "BOARD",
+      "material": "PCB with converter and microcontroller",
+      "purpose": "condition signals and transmit warning",
+      "callout": "Readout Circuit Board"
     }
   ]
 }

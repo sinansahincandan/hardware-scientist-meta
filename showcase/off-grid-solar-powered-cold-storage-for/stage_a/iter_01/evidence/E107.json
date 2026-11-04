@@ -1,0 +1,14 @@
+{
+  "id": "E107",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "door infiltration with curtain sensible plus latent per opening",
+  "code_or_query": "(8*0.5*1.2*1.005*38/3600 + 8*0.5*0.010*2500/3600)",
+  "inputs": {},
+  "output_summary": "0.0787",
+  "output_full": "0.0787",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

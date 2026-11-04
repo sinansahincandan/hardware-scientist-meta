@@ -1,0 +1,14 @@
+{
+  "id": "E59",
+  "author": "Elena Ruiz \u2014 Human Factors & Single-Operator Safety",
+  "tool": "calc",
+  "purpose": "ratio of downhill hold to female sustained pull limit",
+  "code_or_query": "188/130",
+  "inputs": {},
+  "output_summary": "1.45",
+  "output_full": "1.45",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

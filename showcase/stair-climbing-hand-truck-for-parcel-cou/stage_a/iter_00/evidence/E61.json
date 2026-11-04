@@ -1,14 +1,26 @@
 {
   "id": "E61",
-  "author": "Maya \u2013 Stair-Climbing Mechanisms Engineer",
-  "tool": "calc",
-  "purpose": "spine bending stress per tube 60kg plus tare",
-  "code_or_query": "((706*0.2/2)/ (2.31e-6))/1e6",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: delivery van cargo tie down lashing point strength EN 12195 load securing",
+  "code_or_query": "delivery van cargo tie down lashing point strength EN 12195 load securing",
   "inputs": {},
-  "output_summary": "30.6",
-  "output_full": "30.6",
+  "output_summary": "incredibletourtravel.com — Lashing: how to ensure safety in the transport of goods? — https://incredibletourtravel.com/lashing-how-to-ensure-safety-in-the-transport-of-goods/",
+  "output_full": "incredibletourtravel.com — Lashing: how to ensure safety in the transport of goods? — https://incredibletourtravel.com/lashing-how-to-ensure-safety-in-the-transport-of-goods/\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "incredibletourtravel.com",
+      "title": "Lashing: how to ensure safety in the transport of goods?",
+      "year": "",
+      "url": "https://incredibletourtravel.com/lashing-how-to-ensure-safety-in-the-transport-of-goods/",
+      "query": "delivery van cargo tie down lashing point strength EN 12195 load securing",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
-  "cycle": 4
+  "cycle": 2
 }

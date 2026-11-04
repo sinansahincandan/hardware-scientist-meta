@@ -1,0 +1,48 @@
+{
+  "id": "E116",
+  "author": "Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: PIR sandwich panel weight kg per m2 100mm cold room",
+  "code_or_query": "PIR sandwich panel weight kg per m2 100mm cold room",
+  "inputs": {},
+  "output_summary": "baodupanel.com — Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding — https://www.baodupanel.com/doc/37908004/insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.pdf",
+  "output_full": "baodupanel.com — Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding — https://www.baodupanel.com/doc/37908004/insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.pdf\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres.\nCold-Chain Refrigeration Engineer said about it: From my discipline the panel weight from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) that Enclosure and Structural Designer put on the board confirms my insulation requirement is buildable, because 12.1 kg per square metre at 100 mm giving 306 kg on the envelope buys U about 0.21 W per square metre Kelvin and 203 W leak, so foam weight does not force extra cooling.\nEnclosure and Structural Designer said about it: Reusing interior 8.64 cubic metres from the interior volume estimate (E39) with envelope 25.4 square metres from the envelope area square metres (E40) giving conduction 203 W from the conduction watts at 43C ambient 5C room (E41), I confirm from my discipline the rule in the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) at 12.1 kg per square metre gives about 306 kg on that same 25.4 square metre envelope for Polyisocyanurate (PIR, rigid foam insulation) weight already inside the complete mass, buying U about 0.21 W per square metre Kelvin and that 203 W leak, about two old light bulbs so everyday scale holds.\nSmallholder Cooperative Operations Specialist said about it: From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability because R134a (tetrafluoroethane, non-flammable refrigerant) field gauges let a local technician service the store, and the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) that Enclosure and Structural Designer put on the board confirms cleanability because steel-faced Polyisocyanurate (PIR, rigid foam insulation) supports hose-wipe washing funded by the crate fee.\nCold-Chain Refrigeration Engineer said about it: From my discipline the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) that Enclosure and Structural Designer put on the board confirms buildability, because 12.1 kilogram per square metre at 100 millimetre giving about 306 kilogram on that envelope buys U about 0.21 Watt per square metre Kelvin and that 203 Watt leak, about two old light bulbs so everyday scale holds.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "baodupanel.com",
+      "title": "Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding",
+      "year": "",
+      "url": "https://www.baodupanel.com/doc/37908004/insulated-pur-pir-sandwich-panel-100mm-cold-room-panels-roof-cladding.pdf",
+      "query": "PIR sandwich panel weight kg per m2 100mm cold room",
+      "unresolved": false,
+      "passage": "Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "Polyisocyanurate (PIR, rigid foam insulation) panels weigh 12.05 kg per square metre at 100 mm thickness from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) and the same panel datasheet from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E117), which sets panel mass 306 kg on 25.4 square metres."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "From my discipline the panel weight from the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) that Enclosure and Structural Designer put on the board confirms my insulation requirement is buildable, because 12.1 kg per square metre at 100 mm giving 306 kg on the envelope buys U about 0.21 W per square metre Kelvin and 203 W leak, so foam weight does not force extra cooling."
+        },
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "Reusing interior 8.64 cubic metres from the interior volume estimate (E39) with envelope 25.4 square metres from the envelope area square metres (E40) giving conduction 203 W from the conduction watts at 43C ambient 5C room (E41), I confirm from my discipline the rule in the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) at 12.1 kg per square metre gives about 306 kg on that same 25.4 square metre envelope for Polyisocyanurate (PIR, rigid foam insulation) weight already inside the complete mass, buying U about 0.21 W per square metre Kelvin and that 203 W leak, about two old light bulbs so everyday scale holds."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "From my discipline the BD50F Direct Current Compressor R134a, 12-24V DC source (E102) that Cold-Chain Refrigeration Engineer put on the board confirms repairability because R134a (tetrafluoroethane, non-flammable refrigerant) field gauges let a local technician service the store, and the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding source (E116) that Enclosure and Structural Designer put on the board confirms cleanability because steel-faced Polyisocyanurate (PIR, rigid foam insulation) supports hose-wipe washing funded by the crate fee."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "From my discipline the Insulated PUR PIR Sandwich Panel 100mm Cold Room Panels Roof Cladding (E116) that Enclosure and Structural Designer put on the board confirms buildability, because 12.1 kilogram per square metre at 100 millimetre giving about 306 kilogram on that envelope buys U about 0.21 Watt per square metre Kelvin and that 203 Watt leak, about two old light bulbs so everyday scale holds."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

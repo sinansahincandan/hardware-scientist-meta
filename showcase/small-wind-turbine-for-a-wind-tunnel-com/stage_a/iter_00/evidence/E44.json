@@ -1,0 +1,26 @@
+{
+  "id": "E44",
+  "author": "Safety-Control Integrator",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine fail safe mechanical disc brake solenoid spring applied",
+  "code_or_query": "small wind turbine fail safe mechanical disc brake solenoid spring applied",
+  "inputs": {},
+  "output_summary": "t2t.idatatools.com — Untitled — 2015 — https://t2t.idatatools.com/wp-content/uploads/2015/02/Electric-Clutches-and-Brakes-for-Wind-Turbines.pdf",
+  "output_full": "t2t.idatatools.com — Untitled — 2015 — https://t2t.idatatools.com/wp-content/uploads/2015/02/Electric-Clutches-and-Brakes-for-Wind-Turbines.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "t2t.idatatools.com",
+      "title": "Untitled",
+      "year": "2015",
+      "url": "https://t2t.idatatools.com/wp-content/uploads/2015/02/Electric-Clutches-and-Brakes-for-Wind-Turbines.pdf",
+      "query": "small wind turbine fail safe mechanical disc brake solenoid spring applied",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

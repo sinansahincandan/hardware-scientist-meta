@@ -1,22 +1,30 @@
 {
   "id": "E26",
-  "author": "Priya — Power, Avionics and Lunar Environment Engineer",
+  "author": "Autonomy and Blind Operations Lead",
   "tool": "web_search",
-  "purpose": "search: LiFePO4 24V battery pack energy density datasheet weight",
-  "code_or_query": "LiFePO4 24V battery pack energy density datasheet weight",
+  "purpose": "search: NASA Lunabotics teleoperation remote control cameras out of sight",
+  "code_or_query": "NASA Lunabotics teleoperation remote control cameras out of sight",
   "inputs": {},
-  "output_summary": "actec.dk — 24v Lithium-Ion battery pack — https://actec.dk/media/documents/5BAA69612E3C.pdf",
-  "output_full": "actec.dk — 24v Lithium-Ion battery pack — https://actec.dk/media/documents/5BAA69612E3C.pdf\n(the search returned no passage text)",
+  "output_summary": "pcbway.com — Perseus: Building a Lunar Rover with QUT ROAR — https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html",
+  "output_full": "pcbway.com — Perseus: Building a Lunar Rover with QUT ROAR — https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html\n(opened by the member, not cited)\nAutonomy and Blind Operations Lead said about it: This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "actec.dk",
-      "title": "24v Lithium-Ion battery pack",
+      "authors_or_org": "pcbway.com",
+      "title": "Perseus: Building a Lunar Rover with QUT ROAR",
       "year": "",
-      "url": "https://actec.dk/media/documents/5BAA69612E3C.pdf",
-      "query": "LiFePO4 24V battery pack energy density datasheet weight",
+      "url": "https://www.pcbway.com/project/sponsor/Perseus_Building_a_Lunar_Rover_with_QUT_ROAR_44d23606.html",
+      "query": "NASA Lunabotics teleoperation remote control cameras out of sight",
       "unresolved": false,
-      "passage": ""
+      "passage": "This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Autonomy and Blind Operations Lead",
+          "text": "This follows the sealed base station pattern where the team teleoperates the rover from a sealed base station and can only see through the onboard cameras and sensors from the Perseus: Building a Lunar Rover with QUT ROAR (E26), implemented as forward drive camera plus downward dig camera plus mast camera shown in the blind-operation layout sketch (E34)."
+        }
+      ]
     }
   ],
   "status": "ok",

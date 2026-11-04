@@ -1,24 +1,14 @@
 {
   "id": "E41",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
-  "tool": "web_search",
-  "purpose": "search: Setra footbridge crowd load density synchronized pedestrians equivalent number",
-  "code_or_query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "equivalent synchronized pedestrians bare damping",
+  "code_or_query": "10.8*(0.005*60)**0.5",
   "inputs": {},
-  "output_summary": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — http://mdpi.com/2075-5309/12/6/732/htm",
-  "output_full": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — http://mdpi.com/2075-5309/12/6/732/htm\n(the search returned no passage text)",
+  "output_summary": "5.92",
+  "output_full": "5.92",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mdpi.com",
-      "title": "Vibration Serviceability Assessment of a Historic Suspension Footbridge",
-      "year": "",
-      "url": "http://mdpi.com/2075-5309/12/6/732/htm",
-      "query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

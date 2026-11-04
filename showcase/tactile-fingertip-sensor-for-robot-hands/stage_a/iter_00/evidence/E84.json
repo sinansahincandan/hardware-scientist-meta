@@ -1,0 +1,14 @@
+{
+  "id": "E84",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "slip warning gap vs detector window",
+  "code_or_query": "96.8-53.6",
+  "inputs": {},
+  "output_summary": "43.2",
+  "output_full": "43.2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

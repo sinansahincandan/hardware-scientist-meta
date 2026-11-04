@@ -1,0 +1,32 @@
+{
+  "id": "E29",
+  "author": "Elena Ruiz — Human Factors & Single-Operator Safety",
+  "tool": "web_search",
+  "purpose": "search: EN 1757 safety hand truck stair climber brake standard",
+  "code_or_query": "EN 1757 safety hand truck stair climber brake standard",
+  "inputs": {},
+  "output_summary": "shunhehandtruck.com — The Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers — https://www.shunhehandtruck.com/the-ergonomics-case-for-folding-hand-trucks-what-safety-research-says-about-protecting-workers.html",
+  "output_full": "shunhehandtruck.com — The Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers — https://www.shunhehandtruck.com/the-ergonomics-case-for-folding-hand-trucks-what-safety-research-says-about-protecting-workers.html\n(found by the search; not opened or cited)\nElena Ruiz — Human Factors & Single-Operator Safety said about it: I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "shunhehandtruck.com",
+      "title": "The Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers",
+      "year": "",
+      "url": "https://www.shunhehandtruck.com/the-ergonomics-case-for-folding-hand-trucks-what-safety-research-says-about-protecting-workers.html",
+      "query": "EN 1757 safety hand truck stair climber brake standard",
+      "unresolved": false,
+      "passage": "I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "I take from the NEN-EN 1757:2022 en (E30) that pedestrian-propelled trucks up to and including 500 kg must have a parking brake, and I take from the Ergonomics Case for Folding Hand Trucks: What Safety Research Says About Protecting Workers (E29) that European Standard (EN) 1757 requires stability testing by tilt-table."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

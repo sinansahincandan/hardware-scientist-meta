@@ -1,0 +1,14 @@
+{
+  "id": "E92",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "safety factor with impact vs 6061-T6 yield",
+  "code_or_query": "276/76.65",
+  "inputs": {},
+  "output_summary": "3.6",
+  "output_full": "3.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

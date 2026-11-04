@@ -1,0 +1,531 @@
+{
+  "size": [
+    1920,
+    1280
+  ],
+  "parts": {
+    "chassis": {
+      "phrase": "silver metal tube",
+      "tried": [
+        "silver metal tube"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          680.625,
+          982.0204978038067,
+          1010.625,
+          1023.2503660322109
+        ],
+        [
+          680.625,
+          1062.606149341142,
+          1010.625,
+          1105.7101024890192
+        ]
+      ],
+      "confidence": [
+        0.71,
+        0.69
+      ],
+      "rejected_by_judge": [
+        "screw",
+        "tilt screw discharge"
+      ],
+      "mask": {
+        "file": "sam_masks/chassis.png",
+        "area": 23592.0,
+        "cx": 847.5472847233971,
+        "cy": 1043.5496531889696,
+        "angle": 179.5,
+        "elongation": 2.32
+      }
+    },
+    "wheel": {
+      "phrase": "dark treaded wheel",
+      "tried": [
+        "black spiked wheel",
+        "dark treaded wheel"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          478.125,
+          959.5314787701318,
+          671.25,
+          1143.1918008784774
+        ],
+        [
+          1014.375,
+          959.5314787701318,
+          1209.375,
+          1146.9399707174232
+        ]
+      ],
+      "confidence": [
+        0.86,
+        0.88
+      ],
+      "mask": {
+        "file": "sam_masks/wheel.png",
+        "area": 55780.0,
+        "cx": 845.0414997137951,
+        "cy": 1052.9237263880939,
+        "angle": 179.8,
+        "elongation": 5.83
+      }
+    },
+    "arm": {
+      "phrase": "arm",
+      "tried": [
+        "silver metal arm",
+        "grey angled arm",
+        "metal arm",
+        "arm"
+      ],
+      "source": "phrase",
+      "boxes": [],
+      "confidence": [],
+      "rejected_by_judge": [
+        "person",
+        "out-of-focus background between frame members"
+      ]
+    },
+    "kerf": {
+      "phrase": "dark metal chain",
+      "tried": [
+        "dark metal chain"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          249.375,
+          839.5900439238653,
+          555.0,
+          1107.584187408492
+        ]
+      ],
+      "confidence": [
+        0.54
+      ],
+      "mask": {
+        "file": "sam_masks/kerf.png",
+        "area": 14228.0,
+        "cx": 353.5122638849732,
+        "cy": 978.0947279391034,
+        "angle": 38.5,
+        "elongation": 3.24
+      }
+    },
+    "ladder": {
+      "phrase": "inclined bucket ladder (box prompt)",
+      "tried": [
+        "silver metal conveyor",
+        "grey bucket conveyor"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          191.25,
+          183.66032210834555,
+          997.5,
+          965.1537335285506
+        ]
+      ],
+      "confidence": [
+        0.73
+      ],
+      "rejected_by_judge": [
+        "steep wedge hopper"
+      ],
+      "mask": {
+        "file": "sam_masks/ladder.png",
+        "area": 98404.0,
+        "cx": 594.1616678858815,
+        "cy": 572.4972770868894,
+        "angle": 48.7,
+        "elongation": 5.93
+      }
+    },
+    "hopper": {
+      "phrase": "steep wedge hopper (box prompt)",
+      "tried": [
+        "silver wedge bin",
+        "grey metal bin"
+      ],
+      "source": "box prompt",
+      "boxes": [
+        [
+          988.125,
+          614.6998535871157,
+          1464.375,
+          886.4421669106881
+        ]
+      ],
+      "confidence": [
+        0.92
+      ],
+      "rejected_by_judge": [
+        "bin or container it fills"
+      ],
+      "mask": {
+        "file": "sam_masks/hopper.png",
+        "area": 63440.0,
+        "cx": 1183.231732776618,
+        "cy": 703.6090339722907,
+        "angle": 7.6,
+        "elongation": 2.03
+      }
+    },
+    "auger": {
+      "phrase": "screw",
+      "tried": [
+        "ribbed metal chute",
+        "silver spiral chute",
+        "screw"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          453.75,
+          712.1522693997072,
+          466.875,
+          723.3967789165447
+        ],
+        [
+          624.375,
+          517.2474377745242,
+          637.5,
+          530.3660322108345
+        ],
+        [
+          588.75,
+          903.3089311859444,
+          603.75,
+          916.4275256222547
+        ],
+        [
+          862.5,
+          903.3089311859444,
+          877.5,
+          918.3016105417277
+        ],
+        [
+          1213.125,
+          1030.7467057101026,
+          1228.125,
+          1045.739385065886
+        ],
+        [
+          607.5,
+          862.0790629575403,
+          628.125,
+          882.6939970717424
+        ],
+        [
+          538.125,
+          614.6998535871157,
+          551.25,
+          627.8184480234261
+        ],
+        [
+          1117.5,
+          807.7306002928258,
+          1132.5,
+          822.7232796486092
+        ],
+        [
+          1080.0,
+          1073.8506588579796,
+          1091.25,
+          1085.095168374817
+        ],
+        [
+          541.875,
+          903.3089311859444,
+          555.0,
+          916.4275256222547
+        ],
+        [
+          1132.5,
+          1071.9765739385066,
+          1143.75,
+          1085.095168374817
+        ],
+        [
+          1211.25,
+          901.4348462664715,
+          1228.125,
+          918.3016105417277
+        ],
+        [
+          478.125,
+          903.3089311859444,
+          495.0,
+          918.3016105417277
+        ],
+        [
+          598.125,
+          1064.480234260615,
+          611.25,
+          1077.5988286969255
+        ],
+        [
+          909.375,
+          796.4860907759883,
+          922.5,
+          809.6046852122987
+        ],
+        [
+          1091.25,
+          1021.376281112738,
+          1104.375,
+          1034.4948755490484
+        ],
+        [
+          933.75,
+          818.9751098096633,
+          946.875,
+          832.0937042459736
+        ],
+        [
+          1080.0,
+          805.8565153733529,
+          1095.0,
+          822.7232796486092
+        ],
+        [
+          1106.25,
+          1085.095168374817,
+          1117.5,
+          1098.2137628111275
+        ],
+        [
+          1121.25,
+          1021.376281112738,
+          1132.5,
+          1034.4948755490484
+        ],
+        [
+          971.25,
+          788.9897510980967,
+          984.375,
+          803.9824304538799
+        ],
+        [
+          532.5,
+          1051.3616398243046,
+          545.625,
+          1064.480234260615
+        ],
+        [
+          1128.75,
+          903.3089311859444,
+          1143.75,
+          916.4275256222547
+        ]
+      ],
+      "confidence": [
+        0.51,
+        0.51,
+        0.53,
+        0.55,
+        0.53,
+        0.51,
+        0.51,
+        0.51,
+        0.53,
+        0.54,
+        0.52,
+        0.55,
+        0.52,
+        0.5,
+        0.5,
+        0.5,
+        0.52,
+        0.52,
+        0.51,
+        0.52,
+        0.52,
+        0.52,
+        0.52
+      ],
+      "rejected_by_judge": [
+        "bin or container it fills",
+        "out-of-focus thing in the background",
+        "out-of-focus thing in the background",
+        "out-of-focus thing in the background"
+      ],
+      "mask": {
+        "file": "sam_masks/auger.png",
+        "area": 3631.0,
+        "cx": 856.3632286995515,
+        "cy": 893.8026905829596,
+        "angle": 167.5,
+        "elongation": 2.16
+      }
+    },
+    "battery": {
+      "phrase": "silver rectangular box",
+      "tried": [
+        "silver rectangular box"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          1402.5,
+          929.5461200585652,
+          1777.5,
+          1116.9546120058565
+        ],
+        [
+          738.75,
+          961.4055636896047,
+          960.0,
+          1060.732064421669
+        ]
+      ],
+      "confidence": [
+        0.69,
+        0.52
+      ],
+      "mask": {
+        "file": "sam_masks/battery.png",
+        "area": 63181.0,
+        "cx": 1436.5728598604946,
+        "cy": 1023.9421686746988,
+        "angle": 179.4,
+        "elongation": 7.42
+      }
+    },
+    "camera": {
+      "phrase": "small black camera",
+      "tried": [
+        "small black camera"
+      ],
+      "source": "phrase",
+      "boxes": [
+        [
+          669.375,
+          622.1961932650073,
+          716.25,
+          663.4260614934115
+        ],
+        [
+          778.125,
+          496.63250366032213,
+          819.375,
+          534.1142020497804
+        ],
+        [
+          939.375,
+          348.57979502196196,
+          986.25,
+          389.80966325036604
+        ]
+      ],
+      "confidence": [
+        0.83,
+        0.8,
+        0.83
+      ],
+      "mask": {
+        "file": "sam_masks/camera.png",
+        "area": 4565.0,
+        "cx": 815.9733570159858,
+        "cy": 510.91296625222026,
+        "angle": 45.5,
+        "elongation": 12.86
+      }
+    }
+  },
+  "contacts": [
+    [
+      "chassis",
+      "wheel"
+    ],
+    [
+      "chassis",
+      "battery"
+    ],
+    [
+      "wheel",
+      "auger"
+    ],
+    [
+      "kerf",
+      "ladder"
+    ],
+    [
+      "kerf",
+      "auger"
+    ],
+    [
+      "ladder",
+      "auger"
+    ],
+    [
+      "hopper",
+      "auger"
+    ]
+  ],
+  "reference": {
+    "phrase": "standing person",
+    "found": true,
+    "mm": 1700.0,
+    "length_px": 828.5,
+    "box": [
+      1432.5,
+      103.07467057101024,
+      1695.0,
+      927.6720351390923
+    ],
+    "px_per_mm": 0.4874
+  },
+  "differences": {
+    "chassis": [
+      "expected 1 visible, found 2",
+      "size against wheel: expected about 4.7 times, measured 1.7 times",
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch hopper, but they are apart in the picture"
+    ],
+    "arm": [
+      "not found by the segmenter as 'metal arm'"
+    ],
+    "kerf": [
+      "expected a horizontal long axis, measured tilted about 38 degrees"
+    ],
+    "ladder": [
+      "expected a vertical long axis, measured tilted about 49 degrees",
+      "expected to touch hopper, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "hopper": [
+      "size against auger: expected about 0.82 times, measured 23 times",
+      "expected to touch ladder, but they are apart in the picture",
+      "expected to touch chassis, but they are apart in the picture"
+    ],
+    "auger": [
+      "expected 1 visible, found 23",
+      "size against hopper: expected about 1.2 times, measured 0.043 times"
+    ],
+    "battery": [
+      "size against chassis: expected about 0.4 times, measured 1.1 times"
+    ],
+    "camera": [
+      "expected 2 visible, found 3",
+      "expected to touch chassis, but they are apart in the picture"
+    ]
+  },
+  "rechecks": [
+    "chassis: last round expected to touch hopper, but they are apart in the picture -> now expected 1 visible, found 2; size against wheel: expected about 4.7 times, measured 1.7 times; expected to touch ladder, but they are apart in the picture; expected to touch hopper, but they are apart in the picture",
+    "arm: last round not found by the segmenter as 'metal arm' -> now not found by the segmenter as 'metal arm'",
+    "kerf: last round expected a horizontal long axis, measured vertical -> now expected a horizontal long axis, measured tilted about 38 degrees",
+    "ladder: last round expected a vertical long axis, measured tilted about 47 degrees -> now expected a vertical long axis, measured tilted about 49 degrees; expected to touch hopper, but they are apart in the picture; expected to touch chassis, but they are apart in the picture",
+    "hopper: last round expected 1 visible, found 5; size against auger: expected about 0.82 times, measured 39 times; expected to touch auger, but they are apart in the picture; expected to touch chassis, but they are apart in the picture -> now size against auger: expected about 0.82 times, measured 23 times; expected to touch ladder, but they are apart in the picture; expected to touch chassis, but they are apart in the picture",
+    "auger: last round expected 1 visible, found 6; size against hopper: expected about 1.2 times, measured 0.026 times; expected to touch hopper, but they are apart in the picture -> now expected 1 visible, found 23; size against hopper: expected about 1.2 times, measured 0.043 times",
+    "battery: last round not found by the segmenter as 'battery box' -> now size against chassis: expected about 0.4 times, measured 1.1 times",
+    "camera: last round expected to touch chassis, but they are apart in the picture -> now expected 2 visible, found 3; expected to touch chassis, but they are apart in the picture",
+    "wheel: matched before and still matches, but moved in the picture"
+  ]
+}

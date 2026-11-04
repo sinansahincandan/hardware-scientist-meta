@@ -1,0 +1,14 @@
+{
+  "id": "E111",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "reconciled electrical total with curtain latent door model",
+  "code_or_query": "(4.872+1.2+0.169+6.25)/1.4+0.96+0.48",
+  "inputs": {},
+  "output_summary": "10.4",
+  "output_full": "10.4",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

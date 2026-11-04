@@ -1,14 +1,44 @@
 {
   "id": "E51",
-  "author": "Lena \u2014 Refrigeration and Thermal Insulation Engineer",
-  "tool": "calc",
-  "purpose": "steady electric watts from COP 2.5",
-  "code_or_query": "(376/2.5)",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "web_search",
+  "purpose": "search: cold room door opening infiltration heat load air changes ASHRAE",
+  "code_or_query": "cold room door opening infiltration heat load air changes ASHRAE",
   "inputs": {},
-  "output_summary": "150",
-  "output_full": "150",
+  "output_summary": "agriculture.institute — Designing Efficient Cold Storage: Key Factors and Cooling Loads — https://agriculture.institute/diary-equipment-utilities/efficient-cold-storage-design-factors-cooling-loads/",
+  "output_full": "agriculture.institute — Designing Efficient Cold Storage: Key Factors and Cooling Loads — https://agriculture.institute/diary-equipment-utilities/efficient-cold-storage-design-factors-cooling-loads/\n(opened by the member, not cited)\nCold-Chain Refrigeration Engineer said about it: The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives heat-transfer coefficient 0.21 watt per square metre kelvin at 100 millimetre, which gives 203 watt conduction in the conduction check (E59), and the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) sizes infiltration as air changes times volume times energy per cubic metre, so 4 air changes per day in the 8.64 cubic metre room cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, so averaged door gain near 18 watt is inside my steady budget and your strip curtain holds.\nEnclosure and Structural Designer said about it: I take up the infiltration method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) that Cold-Chain Refrigeration Engineer used, Manager.\nManager said about it: Array need 3.52 kilowatt peak in the required peak estimate (E82) is met by 3.60 kilowatt peak in that same grown-array yield calc (E83), split layout in the split layout sketch (E70) carries no panel loads into sandwich panels, door method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) with 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) supports eight-opening discipline, and full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) leaves the 43 degree pull-down as named bench test, not a block.\nCold-Chain Refrigeration Engineer said about it: I take up the Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) you put on the board, which states 900 millimetre doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which from refrigeration means 4 air changes per day cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, by the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51), so 8 openings discipline holds.",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "agriculture.institute",
+      "title": "Designing Efficient Cold Storage: Key Factors and Cooling Loads",
+      "year": "",
+      "url": "https://agriculture.institute/diary-equipment-utilities/efficient-cold-storage-design-factors-cooling-loads/",
+      "query": "cold room door opening infiltration heat load air changes ASHRAE",
+      "unresolved": false,
+      "passage": "The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives heat-transfer coefficient 0.21 watt per square metre kelvin at 100 millimetre, which gives 203 watt conduction in the conduction check (E59), and the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) sizes infiltration as air changes times volume times energy per cubic metre, so 4 air changes per day in the 8.64 cubic metre room cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, so averaged door gain near 18 watt is inside my steady budget and your strip curtain holds.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives heat-transfer coefficient 0.21 watt per square metre kelvin at 100 millimetre, which gives 203 watt conduction in the conduction check (E59), and the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) sizes infiltration as air changes times volume times energy per cubic metre, so 4 air changes per day in the 8.64 cubic metre room cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, so averaged door gain near 18 watt is inside my steady budget and your strip curtain holds."
+        },
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "I take up the infiltration method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) that Cold-Chain Refrigeration Engineer used, Manager."
+        },
+        {
+          "by": "Manager",
+          "text": "Array need 3.52 kilowatt peak in the required peak estimate (E82) is met by 3.60 kilowatt peak in that same grown-array yield calc (E83), split layout in the split layout sketch (E70) carries no panel loads into sandwich panels, door method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) with 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) supports eight-opening discipline, and full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) leaves the 43 degree pull-down as named bench test, not a block."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "I take up the Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) you put on the board, which states 900 millimetre doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which from refrigeration means 4 air changes per day cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, by the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51), so 8 openings discipline holds."
+        }
+      ]
+    }
+  ],
   "status": "ok",
   "cycle": 2
 }

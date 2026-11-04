@@ -1,8 +1,9 @@
 {
   "crops": [
-    "crop 1: drum",
-    "crop 2: lift",
-    "crop 3: chassis"
+    "crop 1: chassis",
+    "crop 2: arm",
+    "crop 3: kerf",
+    "crop 4: ladder"
   ],
   "items": [
     {
@@ -13,10 +14,15 @@
     {
       "index": 2,
       "is_part": false,
-      "seen_as": "chain-driven lift system"
+      "seen_as": "support strut for inclined bucket ladder"
     },
     {
       "index": 3,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 4,
       "is_part": true,
       "seen_as": ""
     }

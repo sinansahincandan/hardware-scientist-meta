@@ -1,22 +1,24 @@
 {
   "id": "E15",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: 5 GHz WiFi teleoperation latency FPV camera 100ms robot",
-  "code_or_query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+  "purpose": "search: NASA Lunabotics winning rover mobility wheels tracks chassis design",
+  "code_or_query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
   "inputs": {},
-  "output_summary": "anodas.lt — DJI RoboMaster S1 — https://www.anodas.lt/en/dji-robomaster-s1",
-  "output_full": "anodas.lt — DJI RoboMaster S1 — https://www.anodas.lt/en/dji-robomaster-s1\n(the search returned no passage text)",
+  "output_summary": "ig.utexas.edu — Powerpoint template for scientific posters (Swarthmore College) — 2024 — https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf",
+  "output_full": "ig.utexas.edu — Powerpoint template for scientific posters (Swarthmore College) — 2024 — https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "anodas.lt",
-      "title": "DJI RoboMaster S1",
-      "year": "",
-      "url": "https://www.anodas.lt/en/dji-robomaster-s1",
-      "query": "5 GHz WiFi teleoperation latency FPV camera 100ms robot",
+      "authors_or_org": "ig.utexas.edu",
+      "title": "Powerpoint template for scientific posters (Swarthmore College)",
+      "year": "2024",
+      "url": "https://ig.utexas.edu/wp-content/uploads/2024/11/Poster-UHCL-Team-NOVA-1.pdf",
+      "query": "NASA Lunabotics winning rover mobility wheels tracks chassis design",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

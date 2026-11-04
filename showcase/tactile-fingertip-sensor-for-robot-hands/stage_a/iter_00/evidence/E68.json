@@ -1,0 +1,44 @@
+{
+  "id": "E68",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: STM32 ADC sampling rate kHz vibration tactile sensor",
+  "code_or_query": "STM32 ADC sampling rate kHz vibration tactile sensor",
+  "inputs": {},
+  "output_summary": "dercuano.github.io — Notes on the STM32 microcontroller family — https://dercuano.github.io/notes/stm32.html",
+  "output_full": "dercuano.github.io — Notes on the STM32 microcontroller family — https://dercuano.github.io/notes/stm32.html\n(opened by the member, not cited)\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up.\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: The STM32G4 Mainstream Series Mixed Signals MCU (E72) states 170 MHz with 12-bit Analog-to-Digital Converters, where Analog-to-Digital Converter means ADC, at 4 Msps, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs run at 1 Msps and up, so 2.20 kHz Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, sampling is trivial, while the AD7147A (Rev.\nManager said about it: The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76).\nManager said about it: The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "dercuano.github.io",
+      "title": "Notes on the STM32 microcontroller family",
+      "year": "",
+      "url": "https://dercuano.github.io/notes/stm32.html",
+      "query": "STM32 ADC sampling rate kHz vibration tactile sensor",
+      "unresolved": false,
+      "passage": "The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up."
+        },
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "The STM32G4 Mainstream Series Mixed Signals MCU (E72) states 170 MHz with 12-bit Analog-to-Digital Converters, where Analog-to-Digital Converter means ADC, at 4 Msps, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs run at 1 Msps and up, so 2.20 kHz Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, sampling is trivial, while the AD7147A (Rev."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack from outside is ridged skin over gel under 2.50 mm total in the GelSight High-Resolution Robot Tactile Sensors (E2) over Polyvinylidene Fluoride, where Polyvinylidene Fluoride means PVDF vibration film, over capacitive taxels on flat facets in the compound-eye drape sketch (E65) with flex at 3.18 mm bend in the BioTac Product Manual (E43) to the on-finger board, where Capacitance-to-Digital Converter means CDC and Microcontroller Unit means MCU and Serial Peripheral Interface means SPI and Analog-to-Digital Converter means ADC, so static force via 9.00 ms CDC update in the AD7147A Rev B (E41) and vibration via 1 Msps ADC in the STM32 notes (E68) meet in the fail-safe dual path with heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76)."
+        },
+        {
+          "by": "Manager",
+          "text": "The stack stays under 2.50 mm in the GelSight High-Resolution Robot Tactile Sensors (E2) over the faceted drape sketch (E65) with 3.18 mm flex bend in the BioTac Product Manual (E43), static force goes through the 9.00 ms update in the AD7147A Rev B (E41) where CDC means Capacitance-to-Digital Converter, and fast shake goes direct to the 1 Msps converter in the STM32 notes (E68) where ADC means Analog-to-Digital Converter and MCU means Microcontroller Unit, joined by heartbeat plus interrupt in the What is a Track Circuit (E74) with two-channel wiring in the How to wire e-stop (E76) where SPI means Serial Peripheral Interface."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

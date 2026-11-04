@@ -1,24 +1,23 @@
 {
   "id": "E11",
-  "author": "Jonas – Ergonomics and Courier Safety Specialist",
-  "tool": "web_search",
-  "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
-  "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
-  "inputs": {},
-  "output_summary": "mdpi.com — Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries — https://www.mdpi.com/2313-576X/11/1/25",
-  "output_full": "mdpi.com — Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries — https://www.mdpi.com/2313-576X/11/1/25\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mdpi.com",
-      "title": "Design of Manual Handling Carts: A Novel Approach Combining Corrective Forces and Modelling to Prevent Injuries",
-      "year": "",
-      "url": "https://www.mdpi.com/2313-576X/11/1/25",
-      "query": "ISO 11228-2 push pull force limits ergonomics handles",
-      "unresolved": false,
-      "passage": ""
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "tube second moment 30x26mm",
+  "code_or_query": "((3.14159/64)*((Q_(30,'mm')**4)-(Q_(26,'mm')**4))).to('mm**4')",
+  "inputs": {
+    "arg0": {
+      "value": "30",
+      "unit": "mm"
+    },
+    "arg1": {
+      "value": "26",
+      "unit": "mm"
     }
-  ],
+  },
+  "output_summary": "1.73\u00d710\u2074 mm\u2074",
+  "output_full": "1.73\u00d710\u2074 mm\u2074",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

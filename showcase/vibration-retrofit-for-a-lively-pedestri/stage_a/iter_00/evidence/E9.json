@@ -1,24 +1,23 @@
 {
   "id": "E9",
-  "author": "Elena - Structural Dynamics Engineer",
-  "tool": "web_search",
-  "purpose": "search: steel footbridge damping ratio vertical bending mode",
-  "code_or_query": "steel footbridge damping ratio vertical bending mode",
-  "inputs": {},
-  "output_summary": "onlinelibrary.wiley.com — Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System — https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700",
-  "output_full": "onlinelibrary.wiley.com — Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System — https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "onlinelibrary.wiley.com",
-      "title": "Optimization Analysis of Vibration Reduction for Large‐Span Steel Pedestrian Bridges Based on Tuned Mass Damper Inerter System",
-      "year": "",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1155/adce/6521700",
-      "query": "steel footbridge damping ratio vertical bending mode",
-      "unresolved": false,
-      "passage": ""
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "modal stiffness from assumed modal mass 30t at 1.9Hz",
+  "code_or_query": "Q_(30000,'kg')*(2*3.14159*Q_(1.9,'Hz'))**2",
+  "inputs": {
+    "arg0": {
+      "value": "30000",
+      "unit": "kg"
+    },
+    "arg1": {
+      "value": "1.9",
+      "unit": "Hz"
     }
-  ],
+  },
+  "output_summary": "4.28\u00d710\u2076 Hz\u00b2\u22c5kg",
+  "output_full": "4.28\u00d710\u2076 Hz\u00b2\u22c5kg",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

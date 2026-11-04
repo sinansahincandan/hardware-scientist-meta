@@ -1,69 +1,71 @@
 {
-  "prompt": "Photorealistic product rendering, true side view of a stair-climbing parcel trolley on residential stairs with load present. A tall twin-tube aluminium trolley leans slightly back on stair nosings, pulled by a courier's hands on a closed-loop handle at top. At the base, a triangular tri-star cluster on each side with three small solid-rubber wheels, one wheel bearing on the stair nosing edge, mid-rotation over the step. Twin parallel spine tubes run from the axle up to the handles. A steel brake band wraps the star carrier with a small pawl engaging it, cable running up the spine to a deadman lever under the handles. A flat aluminium toe plate juts forward at the base carrying a large taped cardboard parcel about knee-high, secured by two fabric harness straps with buckle over the top. Mid-spine shows a chunky fold hinge with lock plates and small lock window. In soft background, a thin folded-flat trolley slab leans against the stair wall to show stow shape. Real materials: brushed aluminium, black rubber tyres, steel hardware, brown cardboard, dark webbing. Soft daylight with product-shot fill, sharp focus on mechanism, stairs and wall simple light tone for contrast. Show fixed spine and toe versus rotating star wheels and moving brake lever. Add clean legible callouts on small light tags in empty space with thin leader lines to each part: Tri Star Wheels, Twin Spine Tubes, Brake Band Pawl, Toe Plate, Loop Handles, Fold Hinge Lock, Harness Strap, and no other text.",
+  "prompt": "Photorealistic product rendering, true side view, of a manual tri-star stair hand truck leaning back climbing domestic stairs, on a plain seamless light-grey studio backdrop. Tall twin-tube aluminium backbone diagonal from low axle up to extended telescoping steel push handle at top. Large cardboard parcel strapped to backbone sitting on horizontal folding steel toe-plate at the foot. At the base, a steel main axle carrying two tri-star wheel clusters, each cluster is a triangular steel plate with three small solid rubber wheels, one wheel on flat tread and one pivoting over the concrete step nose. Steel disc rotor with tooth lock visible on axle side with caliper. Dead-man steel brake lever under handle grip with black cable running down alongside backbone with slack loop to caliper. Clip strap of polyester webbing around parcel to backbone. Only a small patch of two light concrete stair steps under wheels and toe, cut off cleanly at the backdrop for scale, stair riser about one sixth of truck height, parcel about half of truck height. Real materials, matte aluminium, dark rubber, brushed steel, brown cardboard, product-shot softbox lighting, sharp focus on mechanism. Fixed backbone and toe versus rotating tri-star clusters and pivoting handle clearly readable. Add short clean callouts on small light tags in empty space with thin leader lines to each visible part: Twin Tube Backbone, Folding Toe Plate, Tri Star Cluster, Main Cluster Axle, Disc Tooth Brake, Dead Man Lever, Telescoping Push Handle, no other text.",
   "must_not": [
-    "pencil sketch or line-drawing style",
-    "diagram color fills and solid circles",
-    "hand-drawn arrows and annotation marks",
-    "dimension numbers and measurement grids",
-    "extra labels logos or watermarks",
-    "scale bars borders or margins"
+    "people and animals",
+    "room interior and furniture",
+    "sky and landscape and vegetation",
+    "tools and clutter and extra boxes",
+    "powered motors and skids and single pole frame",
+    "transparent or cutaway rendering",
+    "sketch colors and diagram arrows",
+    "large text blocks and titles and scale bars"
   ],
-  "changes_from_previous": "",
+  "changes_from_previous": "Initial version - no previous rendering, built directly from solution and hand sketches.",
   "visual_plan": {
-    "view": "side view, unfolded working view with folded slab context",
-    "spatial_layout": "Side elevation, slightly angled for depth. Foreground: three stair treads rising right to left. Trolley diagonal across steps, toe and parcel forward over lower tread, star clusters on nosing, spine rising to upper left, handles at hip-to-chest height with hands. Folded flat slab propped against wall in blurred background lower left. Empty sky/wall space around for callout tags.",
-    "operating_moment": "Mid-climb heave: trolley leaned back, tri-star mid-rotation with one small wheel on the nosing edge and another lifting to next tread, parcel strapped on toe, courier pulling loop handles, brake pawl holding carrier to prevent runaway.",
-    "transfer_path": "Load path toe plate into twin spine tubes into tri-star carrier into stair nosing; control path deadman lever via cable to brake band and pawl on carrier; lock state path hinge pin position to visual lock window.",
-    "interactions": "Toe plate bolted to lower spine carries parcel weight up into tubes; tubes bolt to tri-star axle; brake band wraps star carrier and pawl drops into carrier teeth, released by cable from deadman lever on handles; harness straps clamp parcel down to toe and spine; mid-spine hinge joins upper and lower tubes and locks with pin.",
+    "view": "True side elevation, full truck plus parcel plus two steps in frame, deployed tilted working posture",
+    "spatial_layout": "Side profile left to right: parcel on toe-plate at lower left, vertical backbone rising diagonally to upper right to extended handle; axle and disc brake low center just above lower step; tri-star clusters straddling the step nose; two concrete steps forming small L patch under device only, vast empty light-grey backdrop around for callout tags.",
+    "operating_moment": "Mid-climb operating moment tipped back pulling upstairs: parcel secured on toe-plate, lower tri-star cluster pivoting over step nose while upper wheels still on lower tread, disc plus tooth lock holding slope load, handle pulled up and lever squeezed to meter.",
+    "transfer_path": "Load path: folding toe-plate -> twin-tube backbone -> main cluster axle -> tri-star wheel cluster -> stair step; Control path: dead-man lever -> cable -> disc tooth brake -> axle lock, release to move, release handle to auto-lock.",
+    "interactions": "Parcel weight sits down on folding toe-plate, hinge transfers to twin-tube backbone; strap preloads parcel back against backbone; backbone bends to main cluster axle; axle carries twin tri-star clusters to step treads; telescoping handle slides inside backbone tubes; dead-man lever pulls cable with slack loop to disc caliper and tooth pin on axle to hold or meter rotation.",
     "avoid": [
-      "sketch shading and diagram colors",
-      "arrows and handwritten notes",
-      "printed numbers and grids",
-      "extra text and logos"
+      "No people, no room, no sky, no furniture, no tools, no extra parcels",
+      "No powered or motorized elements, no skids, no single-tube concept",
+      "No sketch styling, no colored diagram circles, no motion arrows",
+      "No hidden internal parts, all focus parts externally visible"
     ]
   },
   "focus_parts": [
     {
-      "part_id": "p_star",
-      "material": "solid rubber tyres on steel hubs",
-      "purpose": "walk over stair nosings with one wheel always bearing",
-      "callout": "Tri Star Wheels"
+      "part_id": "BB",
+      "material": "6061-T6 aluminium tube",
+      "purpose": "carry parcel bending load to axle",
+      "callout": "Twin Tube Backbone"
     },
     {
-      "part_id": "p_spine",
-      "material": "brushed aluminium tubes",
-      "purpose": "carry parcel load in bending to axle",
-      "callout": "Twin Spine Tubes"
+      "part_id": "TP",
+      "material": "steel plate",
+      "purpose": "support parcel from below",
+      "callout": "Folding Toe Plate"
     },
     {
-      "part_id": "p_brake",
-      "material": "steel band and pawl with cable",
-      "purpose": "hold on nosing fail-safe when lever released",
-      "callout": "Brake Band Pawl"
+      "part_id": "CL",
+      "material": "steel plate with solid rubber wheels",
+      "purpose": "walk over step nose and roll",
+      "callout": "Tri Star Cluster"
     },
     {
-      "part_id": "p_toe",
-      "material": "aluminium tread plate",
-      "purpose": "support large parcel from below",
-      "callout": "Toe Plate"
+      "part_id": "AX",
+      "material": "steel",
+      "purpose": "carry clusters and brake torque",
+      "callout": "Main Cluster Axle"
     },
     {
-      "part_id": "p_handle",
-      "material": "aluminium tube with rubber grips",
-      "purpose": "one-person lever heave at hip height",
-      "callout": "Loop Handles"
+      "part_id": "BR",
+      "material": "steel rotor with caliper",
+      "purpose": "hold slope load hands off",
+      "callout": "Disc Tooth Brake"
     },
     {
-      "part_id": "p_hinge",
-      "material": "aluminium hinge with steel pin",
-      "purpose": "fold flat for stow and lock rigid unfolded",
-      "callout": "Fold Hinge Lock"
+      "part_id": "LV",
+      "material": "steel lever with cable",
+      "purpose": "release and meter lock",
+      "callout": "Dead Man Lever"
     },
     {
-      "part_id": "p_strap",
-      "material": "fabric webbing with metal buckle",
-      "purpose": "retain parcel on toe plate",
-      "callout": "Harness Strap"
+      "part_id": "HR",
+      "material": "steel tube",
+      "purpose": "push pull and fold for stow",
+      "callout": "Telescoping Push Handle"
     }
   ]
 }

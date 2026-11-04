@@ -1,0 +1,122 @@
+{
+  "feedback_decisions": [
+    {
+      "feedback_item": "Daily solar balance claimed as 13.5 kWh per day yield covering 13.2 kWh per day load with 0.3 kWh per day margin is inconsistent because the load omits door loss.",
+      "decision": "apply",
+      "why": "Apply because the arithmetic is checkable: the daily load estimate built from conduction plus fans plus staged pull-down omits the door infiltration term that the same meeting claims elsewhere, so yield minus load is overstated and the release margin is not proven for the design day."
+    },
+    {
+      "feedback_item": "Thermal watts were equated directly to electrical yield with no COP conversion for vapor compression.",
+      "decision": "apply",
+      "why": "Apply because vapor-compression electricity equals thermal divided by COP at hot-condenser conditions, and the meeting compared thermal watts directly to electrical yield. The regime error must be corrected before array and battery can prove autonomy, even though correction in this direction would help margin."
+    },
+    {
+      "feedback_item": "Two different daily energies are claimed for the same staged duty and the balance is unsettled.",
+      "decision": "apply",
+      "why": "Apply because two totals are on the board for the same duty and differ by more than the claimed margin. No release decision can be judged until one controlling summation owns the balance."
+    },
+    {
+      "feedback_item": "Door infiltration is shown with two values and the smaller value was used to preserve margin.",
+      "decision": "apply",
+      "why": "Apply because the small sensible-only value and the larger simulation-average value cannot both control. The choice decides whether staged intake holds temperature, so a single defensible model tied to openings, curtain and latent must be selected and carried through."
+    },
+    {
+      "feedback_item": "Battery autonomy for night and cloudy-day operation was not sized.",
+      "decision": "apply",
+      "why": "Apply because solar-only operation must carry night load every night and survive cloud on a thin margin. Without usable kWh, depth of discharge, surge and autonomy days, the array footprint alone cannot guarantee holding."
+    },
+    {
+      "feedback_item": "Full-harvest and cloudy-day performance at 43C ambient breaks the staged-only design and margin is too thin for dust and derate.",
+      "decision": "apply",
+      "why": "Apply because the design only works as a staged operating rule with small margin, but the rule is not enforced as a hard limit and derates for heat, dust and cloud are not carried. Full warm loading and one cloudy day are the foreseeable worst cases that must be owned."
+    },
+    {
+      "feedback_item": "Mass to soil pressure is correct arithmetically but the mass sum is incomplete.",
+      "decision": "apply",
+      "why": "Apply because pressure arithmetic checks but the summed mass omits foreseeable hardware terms. The factor to allowable soil pressure must be shown on a complete parts list, otherwise standing is asserted on a partial weight."
+    },
+    {
+      "feedback_item": "Split array layout and wind anchoring and box penetrations are not fully defined as buildable structures.",
+      "decision": "apply",
+      "why": "Apply because split layout, uplift anchorage and cooler penetration sealing decide whether temperature holding and soil standing survive wind and leak. Footprint arithmetic forces the split, and uplift magnitude forces quantified anchorage and separate load paths."
+    }
+  ],
+  "per_member": [
+    {
+      "member": "Solar Energy Systems Engineer",
+      "what_went_wrong": "Claimed grown-array yield covers staged load with small margin while the load omitted door loss, equated thermal to electrical, left two competing daily totals, and gave no battery autonomy to carry night and cloud.",
+      "what_should_change": "Require this member to own the electrical side of the balance end to end: reuse the thermal load by id, state design COP basis, convert to electrical, add door and fan terms explicitly, show array yield relation with derate, and size usable battery with autonomy and surge and shed logic before any ready vote. Check everyday scale and cross-read the refrigeration estimate before computing.",
+      "explains": "## 2. Roles / ### Solar Energy Systems Engineer allowed yield minus load to go to vote with door loss omitted, COP unconverted, dual daily totals unresolved, and no usable battery kWh. The role asked for array sizing and daytime autonomy but did not require stating electrical versus thermal, reusing the refrigeration load by id, or proving charge and night cover."
+    },
+    {
+      "member": "Cold-Chain Refrigeration Engineer",
+      "what_went_wrong": "Published staged and full-tonne pull-down heat and a daily balance that omitted door loss, carried two door values and two daily energies, and left electrical conversion to others so the balance could not close.",
+      "what_should_change": "Require this member to declare the thermal-to-electrical conversion basis, select one door infiltration model tied to openings and curtain with sensible plus latent, publish a single term-by-term daily total that others reuse, and explicitly supersede any contradictory average. Read enclosure and operations evidence before computing and name the hot pull-down as bench test without treating it as done.",
+      "explains": "## 2. Roles / ### Cold-Chain Refrigeration Engineer produced the thermal core but left COP, door model and single-total ownership open. The role asked for cooling load and insulation and door gain but did not require declaring COP at hot ambient, selecting one door model with latent, or withdrawing the superseded average."
+    },
+    {
+      "member": "Enclosure and Structural Designer",
+      "what_went_wrong": "Showed pad pressure well below allowable on a partial mass sum, left two envelope areas, and left wind uplift without anchor capacity and cooler penetration without buildable sealing.",
+      "what_should_change": "Require this member to list every mass term including frames, cooler, battery box and foundations, resolve which envelope area controls conduction, and detail roof gantry plus ground frame as separate structures with no foam load, anchor capacity with pull-out basis, and penetration and drain sealing before ready. Reuse panel datasheet evidence by id and check pressure against everyday scale.",
+      "explains": "## 2. Roles / ### Enclosure and Structural Designer closed conduction and footprint correctly but left mass incomplete, envelope inconsistent, and split-structure anchorage unquantified. The role asked for stability on unprepared ground and soft-to-rigid compatibility but did not require listing every weight term or drawing two separate structures with penetration detail."
+    },
+    {
+      "member": "Smallholder Cooperative Operations Specialist",
+      "what_went_wrong": "Made staged intake operable as counted crates and door discipline but did not force it as a limit that protects the thin energy margin, so extra openings or full loading could break holding without violating any stated rule.",
+      "what_should_change": "Require this member to declare representative counts as enforceable limits, tie crate rate and single-crate door and opening discipline directly to the door-loss value used in the energy total, and own the attendant log, fee-funded maintenance and load-shed behavior for cloud and full-harvest attempts. Confirm setpoint and discipline by evidence before ready.",
+      "explains": "## 2. Roles / ### Smallholder Cooperative Operations Specialist anchored crate count and staged discipline but left the operating rule unenforced against full-harvest and door-breakdown risk. The role asked for workflow and door ergonomics but did not require making staged intake and opening discipline a hard limit with log and shed."
+    },
+    {
+      "member": "Manager",
+      "what_went_wrong": "Closed the power-to-cold-to-box chain as matching end to end and recorded ready votes on a small margin while load, door, COP, battery, mass and anchorage were still inconsistent or unsized.",
+      "what_should_change": "Require the Manager to settle one controlling value per quantity, enforce reuse by id, require term-by-term energy and mass sums with stated conversions, and answer each not-ready reason with named evidence before recording ready. Treat hardware-only tests as named bench tests but do not allow unsettled analysis to go to vote as if it were hardware.",
+      "explains": "## 4. Meeting protocol let proposal version one form and collect ready votes while deciding quantities were inconsistent. The protocol asked for readiness opinions and bench-test naming but did not forbid a ready vote when dual values, missing COP, missing battery kWh, or omitted terms were still open."
+    }
+  ],
+  "per_section": [
+    {
+      "heading": "## 4. Meeting protocol",
+      "diagnosis": "Meeting protocol asked for concepts, evidence, objections and readiness votes but did not require quantitative closure before ready. It asked what calculation can settle is settled, yet allowed a vote with two daily energies, two door values, no COP conversion and no battery kWh, so the thin margin went to vote with unsettled analysis.",
+      "direction": "Require a single controlling estimate per quantity with explicit supersession, term-by-term sums naming every term, reuse of existing evidence by id with reason for any recompute, and ownership of interfaces before any ready vote is counted. Keep bench tests for hardware-only behavior and judge readiness on analysis closure.",
+      "explains": "Process cause and findings on dual totals, door selection, COP, battery and margin all trace to this gap."
+    },
+    {
+      "heading": "## 5. Criteria",
+      "diagnosis": "Criteria asked only for physically workable and buildable with purchasable parts. That asked for no violated conservation and a load path but failed to ask for closed energy with correct regime, sized storage autonomy, worst-case operation, and complete mass, so a principle-sound but unreleasable balance could pass.",
+      "direction": "Extend criteria to require closed daily energy in consistent electrical units with stated conversion basis, sized night and cloudy autonomy, worst-case staged versus full-load behavior, and complete mass to soil pressure, without adding numeric design answers. Verification should fail any proposal with dual controlling values or missing storage sizing.",
+      "explains": "Findings on COP omission, door omission, battery sizing, full-harvest vulnerability and incomplete mass passed because criteria did not test them."
+    },
+    {
+      "heading": "## 3. Tools",
+      "diagnosis": "Tools made calc, simulate, sketch and web_search always available but did not enforce discipline that would have caught the errors. Calc allowed a new total without reusing the door estimate by id, simulate allowed an average that contradicted the calc total, and sketch was accepted while lumping two structures and omitting penetration detail.",
+      "direction": "Require reading and reusing existing evidence by id, showing sums term by term with method and units, sketching geometry when layout or flow matters with separate structures and interfaces, and citing sources only when on the board as evidence. Require checking against everyday scales and known regimes before relying on a result.",
+      "explains": "Arithmetic itself was mostly correct; the failure was inconsistent reuse and unchecked regime across tools."
+    },
+    {
+      "heading": "## 2. Roles",
+      "diagnosis": "Roles defined complementary specialties with explicit ownership but left interface quantities unowned. Conversion from thermal to electrical, door model selection, battery autonomy, complete mass, and split-structure anchorage fell between power, cooling, box and use, so each member could be locally correct while the system total stayed open.",
+      "direction": "Align roles so each interface has a single owner and a joint-confirmation rule: refrigeration owns thermal plus COP basis and single thermal total, solar owns electrical conversion plus array plus battery autonomy, enclosure owns complete mass plus pressure plus separate structures plus penetrations, operations owns enforceable staged and opening limits tied to the energy total. Require adjacent owners to jointly confirm the handover value.",
+      "explains": "Backward chain shows each claim traces to a member turn under this roster, yet no role forced the handover to reconcile."
+    },
+    {
+      "heading": "## 1. Problem",
+      "diagnosis": "Problem stated solar-only and about one tonne but did not fix whether full warm loading in one day or staged loading over days is the requirement, nor the hot-ambient design point and shading and soil setting that size array, cooler, door and foundations. That let staged-only operation with thin margin stand as if it met the full tonne without an operating limit.",
+      "direction": "Clarify the operating requirement as staged versus full intake, the design ambient and sun-hours basis, and the unprepared-ground and shading setting as constraints to be met with evidence, without prescribing the design choice. Make clear that any staged rule must appear as an enforced operating limit with monitoring.",
+      "explains": "Worst-case finding on full-tonne heat versus daily yield and cloudy-day fragility traces to this ambiguity."
+    }
+  ],
+  "sections_to_change": [
+    "## 2. Roles",
+    "## 4. Meeting protocol",
+    "## 5. Criteria",
+    "## 3. Tools",
+    "## 1. Problem"
+  ],
+  "root_cause": "The roster and protocol produced a principle-correct chain but no enforced quantitative handover: thermal was never converted to electrical with stated COP, door loss was never selected as one value and added to the total, two daily totals coexisted, battery autonomy was never sized, mass was never completed, and split-structure anchorage was never quantified. Ready votes were then allowed on a small margin computed from that open set, so consensus closed before the numbers closed.",
+  "agenda": "Broad, not targeted. The proposal is physically sound in principle but was voted ready with unsettled quantitative closure across energy, storage, mass and structure. Seven of eight findings trace to the same pattern: inconsistent totals were carried into a 0.3 kWh per day margin vote without COP conversion, without door-loss inclusion, without battery autonomy, and without complete mass and anchorage. The fix must tighten ownership and protocol for quantitative reconciliation, not patch one number.",
+  "same_problem_as_before": false,
+  "repeat_explanation": "",
+  "revert_sections": [],
+  "new_tool_proposals": [],
+  "retire_tools": []
+}

@@ -1,0 +1,102 @@
+{
+  "crops": [
+    "crop 1: xb",
+    "crop 2: xb",
+    "crop 3: xb",
+    "crop 4: tm",
+    "crop 5: tm",
+    "crop 6: cs",
+    "crop 7: cs",
+    "crop 8: vd",
+    "crop 9: vd",
+    "crop 10: hb",
+    "crop 11: hb",
+    "crop 12: hb",
+    "crop 13: hb",
+    "crop 14: ac",
+    "crop 15: ac",
+    "crop 16: ac"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": false,
+      "seen_as": "support column"
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": false,
+      "seen_as": "support column"
+    },
+    {
+      "index": 4,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 7,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 8,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 9,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 10,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 11,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 12,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 13,
+      "is_part": false,
+      "seen_as": "tuned mass"
+    },
+    {
+      "index": 14,
+      "is_part": false,
+      "seen_as": "tuned mass"
+    },
+    {
+      "index": 15,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 16,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

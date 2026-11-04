@@ -1,24 +1,31 @@
 {
   "id": "E14",
-  "author": "Jonas – Ergonomics and Courier Safety Specialist",
-  "tool": "web_search",
-  "purpose": "search: EN 1757 hand truck safety brake load restraint strap standard",
-  "code_or_query": "EN 1757 hand truck safety brake load restraint strap standard",
-  "inputs": {},
-  "output_summary": "electrochannel.com — Manual pallet truck. Safety in loading and unloading products — https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
-  "output_full": "electrochannel.com — Manual pallet truck. Safety in loading and unloading products — https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "electrochannel.com",
-      "title": "Manual pallet truck. Safety in loading and unloading products",
-      "year": "",
-      "url": "https://www.electrochannel.com/en/pallet-truck-and-accessories/4142-hc-100-skid-lift-pallet-truck",
-      "query": "EN 1757 hand truck safety brake load restraint strap standard",
-      "unresolved": false,
-      "passage": ""
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "tip deflection twin tubes 1.1m",
+  "code_or_query": "((Q_(589,'N')*Q_(1100,'mm')**3)/(3*Q_(69000,'MPa')*2*Q_(17282,'mm**4'))).to('mm')",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "1100",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "69000",
+      "unit": "MPa"
+    },
+    "arg3": {
+      "value": "17282",
+      "unit": "mm**4"
     }
-  ],
+  },
+  "output_summary": "110 mm",
+  "output_full": "110 mm",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

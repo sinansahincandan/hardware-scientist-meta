@@ -1,0 +1,14 @@
+{
+  "id": "E38",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "chamber volume and conduction for 120mm PIR box",
+  "code_or_query": "Q_=__import__('pint').UnitRegistry(); interior_L=2.4; interior_W=1.8; interior_H=2.0; V=interior_L*interior_W*interior_H; A=2*(interior_L*interior_W+interior_L*interior_H+interior_W*interior_H); U=0.21; dT=38; Qcond=U*A*dT; (V, A, Qcond)",
+  "inputs": {},
+  "output_summary": "failed: SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+  "output_full": "Traceback (most recent call last):\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 104, in <module>\n  File \"/Users/sinancandan/Downloads/MetaHackathon_HardwareScientist_MetaCode/src/hs/launcher.py\", line 99, in main\n  File \"/var/folders/8z/54jq9n_x5gs4fh7vqf75g9tm0000gn/T/hs-sandbox-iq_1rmi4/hs_user_script.py\", line 5\n    __r = (Q_=__import__('pint').UnitRegistry(); interior_L=2.4; interior_W=1.8; interior_H=2.0; V=interior_L*interior_W*interior_H; A=2*(interior_L*interior_W+interior_L*interior_H+interior_W*interior_H); U=0.21; dT=38; Qcond=U*A*dT; (V, A, Qcond))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

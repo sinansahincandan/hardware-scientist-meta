@@ -1,0 +1,19 @@
+{
+  "changed": [
+    "## 2. Roles",
+    "## 3. Tools",
+    "## 4. Meeting protocol",
+    "## 5. Criteria"
+  ],
+  "change_note": "Tighten Roles with stacked-fit, regime, single-input and opened-source checks, narrow bench-test to hardware-only with in-meeting calculable margins, and require traceable sums in Tools/Criteria \u2014 because ready votes closed on divergent geometry, mass, offset and torque inputs.",
+  "no_progress": false,
+  "notes": [
+    "## 2. Roles: Roles asked for dimensions, stress, torque and force limits but did not require stacked summation, regime naming, single-offset and total-mass bookkeeping, or opened-source calculable lever margin, because correct local arithmetic coexisted with inconsistent system inputs. (answers: The folded suitcase cannot contain the one-piece backbone and the tri-star clusters as claimed. | The parcel offset and backbone stress use two different moments for the same load and the impact factor has no calculation. | The braced backbone stiffness claim uses the wrong structural model and understates deflection by about eight times. | The stair torque is used inconsistently as total and per-side and the brake sizing follows from the unsettled number. | The climb work understates the lifted mass by about ten percent. | The single-operator holding case exceeds sustained hand limits and rests entirely on an uncalculated spring-applied lock with weak human-factor sources.)",
+    "## 3. Tools: Tools enabled estimates but did not require sketch-based summation, term-by-term sums, and evidence reuse, because locally correct bending, torsion and energy formulas passed while system sums diverged. (answers: The folded suitcase cannot contain the one-piece backbone and the tri-star clusters as claimed. | The parcel offset and backbone stress use two different moments for the same load and the impact factor has no calculation. | The stair torque is used inconsistently as total and per-side and the brake sizing follows from the unsettled number. | The climb work understates the lifted mass by about ten percent.)",
+    "## 4. Meeting protocol: Protocol allowed consensus close while saying calculable work is settled in the meeting but also allowing any hardware-needing test to be named as bench test, because that gap let envelope, brace-model, torque and lever-margin work be deferred while ready votes proceeded. (answers: The folded suitcase cannot contain the one-piece backbone and the tri-star clusters as claimed. | The braced backbone stiffness claim uses the wrong structural model and understates deflection by about eight times. | The parcel offset and backbone stress use two different moments for the same load and the impact factor has no calculation. | The stair torque is used inconsistently as total and per-side and the brake sizing follows from the unsettled number. | The climb work understates the lifted mass by about ten percent. | The single-operator holding case exceeds sustained hand limits and rests entirely on an uncalculated spring-applied lock with weak human-factor sources.)",
+    "## 5. Criteria: Criteria required physically working and buildable but did not require traceable consistent inputs and stacked shape proof, because correct local formulas passed while envelope sums and mass, offset and torque definitions diverged. (answers: The folded suitcase cannot contain the one-piece backbone and the tri-star clusters as claimed. | The parcel offset and backbone stress use two different moments for the same load and the impact factor has no calculation. | The climb work understates the lifted mass by about ten percent. | The stair torque is used inconsistently as total and per-side and the brake sizing follows from the unsettled number.)"
+  ],
+  "reverted": [],
+  "tools_registered": [],
+  "tools_retired": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E54",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "sketch",
+  "purpose": "Under-deck twin TMD layout cross-section and side view: deck, two girders, cross beam at midspan, two TMD masses on springs+dampers hung below soffit within girder depth, clamped brackets, travel stops, access side.",
+  "code_or_query": "import matplotlib.pyplot as plt\nplt.style.use('xkcd')\nfig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,4))\n# cross-section\nax1.set_title('Cross-section at midspan (looking along span)')\nax1.plot([-3,3],[2,2], linewidth=3)  # deck\nax1.plot([-2.2,-2.2],[2,0.2], linewidth=3)  # left girder\nax1.plot([2.2,2.2],[2,0.2], linewidth=3)  # right girder\nax1.plot([-2.2,2.2],[1.2,1.2], linewidth=2)  # cross beam\nfor x in [-1.1, 1.1]:\n    ax1.plot([x,x],[1.2,0.5], linestyle='--')  # spring\n    ax1.add_patch(plt.Rectangle((x-0.35,0.0),0.7,0.5))\n    ax1.text(x,0.25,'TMD', ha='center', va='center', fontsize=8)\nax1.text(0,2.15,'deck (clear)', ha='center', fontsize=8)\nax1.text(-2.2,1.1,'girder', ha='right', fontsize=8)\nax1.set_xlim(-3.5,3.5); ax1.set_ylim(-0.5,2.8); ax1.set_aspect('equal'); ax1.axis('off')\n# side view\nax2.set_title('Side view along 40m span')\nax2.plot([0,40],[2,2], linewidth=3)\nax2.plot([0,40],[1.0,1.0], linewidth=1, linestyle=':')\nax2.add_patch(plt.Rectangle((17,0.2),2.2,0.8))\nax2.add_patch(plt.Rectangle((20.8,0.2),2.2,0.8))\nax2.plot([17,19.2],[1.4,1.4]); ax2.plot([20.8,23],[1.4,1.4])\nax2.text(18.1,0.6,'TMD1', ha='center', fontsize=8)\nax2.text(21.9,0.6,'TMD2', ha='center', fontsize=8)\nax2.text(20,2.15,'midspan zone', ha='center', fontsize=8)\nax2.text(20,1.55,'springs+dampers to cross beam', ha='center', fontsize=7)\nax2.set_xlim(0,40); ax2.set_ylim(-0.5,2.8); ax2.axis('off')\nplt.tight_layout()\nplt.savefig('sketch.png', dpi=120)",
+  "inputs": {},
+  "output_summary": "failed: OSError: 'xkcd' is not a valid package style, path of style file, URL of style file, or library style name (library styles are listed in `style.available`)",
+  "output_full": "failed: OSError: 'xkcd' is not a valid package style, path of style file, URL of style file, or library style name (library styles are listed in `style.available`)",
+  "sketch_path": null,
+  "references": [],
+  "status": "error",
+  "cycle": 1
+}

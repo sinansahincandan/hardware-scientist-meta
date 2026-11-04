@@ -1,24 +1,14 @@
 {
   "id": "E30",
-  "author": "Priya - Retrofit Constructability Engineer",
-  "tool": "web_search",
-  "purpose": "search: steel bolted beam clamp retrofit HSFG bolts datasheet",
-  "code_or_query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "calc",
+  "purpose": "total pedestrian live load for 3m wide deck",
+  "code_or_query": "5*40*3",
   "inputs": {},
-  "output_summary": "milsons.co.nz — High Strength Friction Grip (HSFG) bolts — 2023 — https://milsons.co.nz/wp-content/uploads/2023/10/High-Strength-Friction-Grip-HSFG-bolts-230307.pdf",
-  "output_full": "milsons.co.nz — High Strength Friction Grip (HSFG) bolts — 2023 — https://milsons.co.nz/wp-content/uploads/2023/10/High-Strength-Friction-Grip-HSFG-bolts-230307.pdf\n(the search returned no passage text)",
+  "output_summary": "600",
+  "output_full": "600",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "milsons.co.nz",
-      "title": "High Strength Friction Grip (HSFG) bolts",
-      "year": "2023",
-      "url": "https://milsons.co.nz/wp-content/uploads/2023/10/High-Strength-Friction-Grip-HSFG-bolts-230307.pdf",
-      "query": "steel bolted beam clamp retrofit HSFG bolts datasheet",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

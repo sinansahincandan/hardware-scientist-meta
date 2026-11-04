@@ -1,19 +1,26 @@
 {
   "id": "E22",
-  "author": "Priya \u2014 Embedded Electronics, Signal Processing and Slip Detection",
-  "tool": "calc",
-  "purpose": "dummy to test calc format",
-  "code_or_query": "Q_(48,'')/(Q_(25,'Hz'))",
-  "inputs": {
-    "arg0": {
-      "value": "25",
-      "unit": "Hz"
-    }
-  },
-  "output_summary": "1.92 1/Hz",
-  "output_full": "1.92 1/Hz",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
+  "code_or_query": "human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
+  "inputs": {},
+  "output_summary": "github.com — | 440   Part IV / Perception |  | — https://github.com/liuao08/neuro/raw/9e9ef5eedd9d29d2cdf89e450465c60766b1d3fa/chap19/fig_19_3.pdf",
+  "output_full": "github.com — | 440   Part IV / Perception |  | — https://github.com/liuao08/neuro/raw/9e9ef5eedd9d29d2cdf89e450465c60766b1d3fa/chap19/fig_19_3.pdf\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "github.com",
+      "title": "| 440   Part IV / Perception |  |",
+      "year": "",
+      "url": "https://github.com/liuao08/neuro/raw/9e9ef5eedd9d29d2cdf89e450465c60766b1d3fa/chap19/fig_19_3.pdf",
+      "query": "human fingertip spatial resolution two-point discrimination Meissner tactile acuity mm",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

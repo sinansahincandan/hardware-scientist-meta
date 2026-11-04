@@ -1,0 +1,23 @@
+{
+  "id": "E78",
+  "author": "Safety-Control Integrator",
+  "tool": "calc",
+  "purpose": "revised dump power at 18.5V top with 4 ohm",
+  "code_or_query": "(Q_(18.5,'V')**2 / Q_(4,'ohm')).to('W')",
+  "inputs": {
+    "arg0": {
+      "value": "18.5",
+      "unit": "V"
+    },
+    "arg1": {
+      "value": "4",
+      "unit": "ohm"
+    }
+  },
+  "output_summary": "85.6 W",
+  "output_full": "85.6 W",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

@@ -1,22 +1,30 @@
 {
   "id": "E32",
-  "author": "Priya - Retrofit Constructability Engineer",
+  "author": "Pedestrian Comfort and Safety Assessor",
   "tool": "web_search",
-  "purpose": "search: under bridge inspection platform mobile staging pedestrian footbridge",
-  "code_or_query": "under bridge inspection platform mobile staging pedestrian footbridge",
+  "purpose": "search: Setra footbridge crowd load density synchronized pedestrians equivalent number dynamic load case",
+  "code_or_query": "Setra footbridge crowd load density synchronized pedestrians equivalent number dynamic load case",
   "inputs": {},
-  "output_summary": "canadianrentalservice.com — Mobile Platforms To Assist In Bridge Inspections - Canadian Rental Service — https://www.canadianrentalservice.com/mobile-platforms-to-assist-in-bridge-inspections-1249/",
-  "output_full": "canadianrentalservice.com — Mobile Platforms To Assist In Bridge Inspections - Canadian Rental Service — https://www.canadianrentalservice.com/mobile-platforms-to-assist-in-bridge-inspections-1249/\n(the search returned no passage text)",
+  "output_summary": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — https://www.mdpi.com/2075-5309/12/6/732/html",
+  "output_full": "mdpi.com — Vibration Serviceability Assessment of a Historic Suspension Footbridge — https://www.mdpi.com/2075-5309/12/6/732/html\n(opened by the member, not cited)\nPedestrian Comfort and Safety Assessor said about it: The Class III crowd of 0.5 pedestrians per square metre from the 4.4.1 Dynamic load cases (E35) gives 60 people from the crowd-count calculation (E40) on the 40 by 3 m deck, equivalent to 5.92 synchronized pedestrians from the equivalent-count calculation (E41) using the 10.8 times root damping times number rule from the same 4.4.1 Dynamic load cases (E35), times 280 N per pedestrian from the Vibration Serviceability Assessment of a Historic Suspension Footbridge (E32) giving about 1.66 kN resonant force, which gives 8.28 metres per second squared bare from the bare-acceleration calculation (E43) or 0.844 g almost a body weight and clearly outside everyday footbridge feel, falling to 0.668 metres per second squared with effective damping from the retrofitted-acceleration calculation (E44) and settling at 0.67 metres per second squared by 15 s in the crowd build-up simulation (E45).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "canadianrentalservice.com",
-      "title": "Mobile Platforms To Assist In Bridge Inspections - Canadian Rental Service",
+      "authors_or_org": "mdpi.com",
+      "title": "Vibration Serviceability Assessment of a Historic Suspension Footbridge",
       "year": "",
-      "url": "https://www.canadianrentalservice.com/mobile-platforms-to-assist-in-bridge-inspections-1249/",
-      "query": "under bridge inspection platform mobile staging pedestrian footbridge",
+      "url": "https://www.mdpi.com/2075-5309/12/6/732/html",
+      "query": "Setra footbridge crowd load density synchronized pedestrians equivalent number dynamic load case",
       "unresolved": false,
-      "passage": ""
+      "passage": "The Class III crowd of 0.5 pedestrians per square metre from the 4.4.1 Dynamic load cases (E35) gives 60 people from the crowd-count calculation (E40) on the 40 by 3 m deck, equivalent to 5.92 synchronized pedestrians from the equivalent-count calculation (E41) using the 10.8 times root damping times number rule from the same 4.4.1 Dynamic load cases (E35), times 280 N per pedestrian from the Vibration Serviceability Assessment of a Historic Suspension Footbridge (E32) giving about 1.66 kN resonant force, which gives 8.28 metres per second squared bare from the bare-acceleration calculation (E43) or 0.844 g almost a body weight and clearly outside everyday footbridge feel, falling to 0.668 metres per second squared with effective damping from the retrofitted-acceleration calculation (E44) and settling at 0.67 metres per second squared by 15 s in the crowd build-up simulation (E45).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The Class III crowd of 0.5 pedestrians per square metre from the 4.4.1 Dynamic load cases (E35) gives 60 people from the crowd-count calculation (E40) on the 40 by 3 m deck, equivalent to 5.92 synchronized pedestrians from the equivalent-count calculation (E41) using the 10.8 times root damping times number rule from the same 4.4.1 Dynamic load cases (E35), times 280 N per pedestrian from the Vibration Serviceability Assessment of a Historic Suspension Footbridge (E32) giving about 1.66 kN resonant force, which gives 8.28 metres per second squared bare from the bare-acceleration calculation (E43) or 0.844 g almost a body weight and clearly outside everyday footbridge feel, falling to 0.668 metres per second squared with effective damping from the retrofitted-acceleration calculation (E44) and settling at 0.67 metres per second squared by 15 s in the crowd build-up simulation (E45)."
+        }
+      ]
     }
   ],
   "status": "ok",

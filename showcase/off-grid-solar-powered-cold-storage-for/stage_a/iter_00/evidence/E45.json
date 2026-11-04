@@ -1,22 +1,30 @@
 {
   "id": "E45",
-  "author": "Kofi — Structural Enclosure and Low-Cost Fabrication Specialist",
+  "author": "Smallholder Cooperative Operations Specialist",
   "tool": "web_search",
-  "purpose": "search: concrete slab soil bearing capacity kPa small building foundation",
-  "code_or_query": "concrete slab soil bearing capacity kPa small building foundation",
+  "purpose": "search: manual handling crate weight limit 20kg ergonomic FAO WHO",
+  "code_or_query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
   "inputs": {},
-  "output_summary": "doczz.net — structural slab design structural slab soil loading — https://doczz.net/doc/8663516/structural-slab-design-structural-slab-soil-loading",
-  "output_full": "doczz.net — structural slab design structural slab soil loading — https://doczz.net/doc/8663516/structural-slab-design-structural-slab-soil-loading\n(the search returned no passage text)",
+  "output_summary": "praxis42.com — Manual handling weight limits — https://praxis42.com/resources/health-and-safety/manual-handling-weight-limits/",
+  "output_full": "praxis42.com — Manual handling weight limits — https://praxis42.com/resources/health-and-safety/manual-handling-weight-limits/\n(opened by the member, not cited)\nSmallholder Cooperative Operations Specialist said about it: The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "doczz.net",
-      "title": "structural slab design structural slab soil loading",
+      "authors_or_org": "praxis42.com",
+      "title": "Manual handling weight limits",
       "year": "",
-      "url": "https://doczz.net/doc/8663516/structural-slab-design-structural-slab-soil-loading",
-      "query": "concrete slab soil bearing capacity kPa small building foundation",
+      "url": "https://praxis42.com/resources/health-and-safety/manual-handling-weight-limits/",
+      "query": "manual handling crate weight limit 20kg ergonomic FAO WHO",
       "unresolved": false,
-      "passage": ""
+      "passage": "The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42)."
+        }
+      ]
     }
   ],
   "status": "ok",

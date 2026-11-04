@@ -1,24 +1,31 @@
 {
   "id": "E12",
-  "author": "Jonas – Ergonomics and Courier Safety Specialist",
-  "tool": "web_search",
-  "purpose": "search: ISO 11228-2 push pull force limits ergonomics handles",
-  "code_or_query": "ISO 11228-2 push pull force limits ergonomics handles",
-  "inputs": {},
-  "output_summary": "mktg.idec.com — AWD ISO 11228 2.pdf — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
-  "output_full": "mktg.idec.com — AWD ISO 11228 2.pdf — https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr\n(the search returned no passage text)",
-  "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "mktg.idec.com",
-      "title": "AWD ISO 11228 2.pdf",
-      "year": "",
-      "url": "https://mktg.idec.com/hubfs/EU_AWD/AWD_ISO-11228-2.pdf?hsLang=fr",
-      "query": "ISO 11228-2 push pull force limits ergonomics handles",
-      "unresolved": false,
-      "passage": ""
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "backbone bending stress twin-tube share",
+  "code_or_query": "((Q_(589,'N')*Q_(450,'mm')*Q_(15,'mm'))/Q_(17282,'mm**4')).to('MPa')",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "450",
+      "unit": "mm"
+    },
+    "arg2": {
+      "value": "15",
+      "unit": "mm"
+    },
+    "arg3": {
+      "value": "17282",
+      "unit": "mm**4"
     }
-  ],
+  },
+  "output_summary": "230 MPa",
+  "output_full": "230 MPa",
+  "sketch_path": null,
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

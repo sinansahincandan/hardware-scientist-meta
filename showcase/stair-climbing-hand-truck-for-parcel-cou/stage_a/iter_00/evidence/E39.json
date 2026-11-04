@@ -1,27 +1,26 @@
 {
   "id": "E39",
-  "author": "Priya \u2013 Lightweight Foldable Structures Engineer",
-  "tool": "calc",
-  "purpose": "mass per meter 30x2 mm Al tube",
-  "code_or_query": "Q_(2700,'kg/m**3')*3.14159/4*(Q_(30,'mm')**2-Q_(26,'mm')**2)",
-  "inputs": {
-    "arg0": {
-      "value": "2700",
-      "unit": "kg/m**3"
-    },
-    "arg1": {
-      "value": "30",
-      "unit": "mm"
-    },
-    "arg2": {
-      "value": "26",
-      "unit": "mm"
-    }
-  },
-  "output_summary": "0.000475 kg/mm",
-  "output_full": "0.000475 kg/mm",
+  "author": "Tomas Lind — Folding & Van Integration",
+  "tool": "web_search",
+  "purpose": "search: delivery van cargo dimensions small van load space L1H1",
+  "code_or_query": "delivery van cargo dimensions small van load space L1H1",
+  "inputs": {},
+  "output_summary": "basworld.com — Volkswagen Transporter dimensions and load volume — https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume",
+  "output_full": "basworld.com — Volkswagen Transporter dimensions and load volume — https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "basworld.com",
+      "title": "Volkswagen Transporter dimensions and load volume",
+      "year": "",
+      "url": "https://www.basworld.com/content/volkswagen-transporter-dimensions-and-load-volume",
+      "query": "delivery van cargo dimensions small van load space L1H1",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

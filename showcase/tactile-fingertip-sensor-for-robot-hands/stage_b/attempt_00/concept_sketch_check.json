@@ -1,4 +1,4 @@
 {
   "ok": true,
-  "reason": "Pixels show top ridged skin under finger, thin film layer below it, pillar array between film and taxel plate, lower PCB with 2 ICs and rear flex tail to right, rigid hatched core block, and 2 Phillips screws at base. Stack and rear-tail / 2-point mount matches hand sketch's rigid core+skin on holder with rear tail and 2x M3."
+  "reason": "Pixels show all parts: ridged dome top-left, puffy gel bulge below it, grid taxel layer below gel, thin wavy vibration/PVDF film below grid, faceted rigid core+mount below stack left and under finger-board right, U flex tail from left mount to PCB left connector, populated on-finger readout PCB under fingertip, Y dual-wire message cable on right. Matches hand sketch: fingertip PCB fixed to finger reads array+PVDF via flex and sends dual-path slip-interrupt + SPI frame+OK to controller."
 }

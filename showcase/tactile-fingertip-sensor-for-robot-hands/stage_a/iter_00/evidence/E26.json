@@ -1,26 +1,14 @@
 {
   "id": "E26",
-  "author": "Sam — Robot Hand Integration and Manipulation",
-  "tool": "web_search",
-  "purpose": "search: robot hand fingertip dimensions mount Robotiq Allegro grip force",
-  "code_or_query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "base capacitance 1.5mm taxel 200um gap",
+  "code_or_query": "8.854e-12*2.7*(1.5e-3**2)/200e-6",
   "inputs": {},
-  "output_summary": "idec-fs.com — Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd. — https://www.idec-fs.com/en/robotiq/Products/",
-  "output_full": "idec-fs.com — Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd. — https://www.idec-fs.com/en/robotiq/Products/\n(found by the search; not opened or cited)",
+  "output_summary": "2.69e-13",
+  "output_full": "2.69e-13",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "idec-fs.com",
-      "title": "Robotiq of Robot Hand | Hand-E Adaptive Gripper | IDEC Factory Solutions Co., Ltd.",
-      "year": "",
-      "url": "https://www.idec-fs.com/en/robotiq/Products/",
-      "query": "robot hand fingertip dimensions mount Robotiq Allegro grip force",
-      "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

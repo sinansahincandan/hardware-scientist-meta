@@ -1,0 +1,40 @@
+{
+  "id": "E88",
+  "author": "Dr. Amara Okafor — Soft Skin Mechanics",
+  "tool": "web_search",
+  "purpose": "search: silicone rubber friction coefficient dry glass steel",
+  "code_or_query": "silicone rubber friction coefficient dry glass steel",
+  "inputs": {},
+  "output_summary": "alibaba.com — Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue — https://www.alibaba.com/product-insights/bar-mat-vs-silicone-grip-liner-does-textured-rubber-actually-prevent-spills-or-just-collect-sticky-residue.html",
+  "output_full": "alibaba.com — Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue — https://www.alibaba.com/product-insights/bar-mat-vs-silicone-grip-liner-does-textured-rubber-actually-prevent-spills-or-just-collect-sticky-residue.html\n(found by the search; not opened or cited)\nDr. Amara Okafor — Soft Skin Mechanics said about it: The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness.\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: I take up the Bar Mat Vs Silicone Grip Liner (E88) from Dr.\nManager said about it: Amara Okafor is answered by 26.8 N tear in the tear force calculation (E92) against 9.81 N hold with 0.880 grip in the silicone grip liner (E88), Prof.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "alibaba.com",
+      "title": "Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue",
+      "year": "",
+      "url": "https://www.alibaba.com/product-insights/bar-mat-vs-silicone-grip-liner-does-textured-rubber-actually-prevent-spills-or-just-collect-sticky-residue.html",
+      "query": "silicone rubber friction coefficient dry glass steel",
+      "unresolved": false,
+      "passage": "The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "The Bar Mat Vs Silicone Grip Liner—does Textured Rubber Actually Prevent Spills Or Just Collect Sticky Residue (E88) states dry silicone grip coefficient near 0.88, and the Preparation and friction properties of silicone rubber composites – DOAJ (E89) states dry friction coefficient of silicone rubber on smooth glass is high and varies with loss factor over hardness."
+        },
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "I take up the Bar Mat Vs Silicone Grip Liner (E88) from Dr."
+        },
+        {
+          "by": "Manager",
+          "text": "Amara Okafor is answered by 26.8 N tear in the tear force calculation (E92) against 9.81 N hold with 0.880 grip in the silicone grip liner (E88), Prof."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 3
+}

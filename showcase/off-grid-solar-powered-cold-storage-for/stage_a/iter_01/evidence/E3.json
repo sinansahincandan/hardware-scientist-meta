@@ -1,0 +1,36 @@
+{
+  "id": "E3",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
+  "code_or_query": "solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
+  "inputs": {},
+  "output_summary": "offgridcollective.co — How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA — https://offgridcollective.co/us/guides/power-systems/how-to-size-off-grid-solar-system/",
+  "output_full": "offgridcollective.co — How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA — https://offgridcollective.co/us/guides/power-systems/how-to-size-off-grid-solar-system/\n(opened by the member, not cited)\nSolar Energy Systems Engineer said about it: For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.\nSolar Energy Systems Engineer said about it: Night and cloudy cover uses the 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank (C2) sized by the battery formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3) and built from modules like the 51.2 volt 100 ampere-hour unit in 4000 Watt Solar | 48V 6500W/120V Hybrid Inverter | All-in-One Kit (E10), backed by the Phase-Change Material (PCM, ice store) thermal battery (C4) using the ice-as-battery principle in Solar powered ice maker: off-grid cold chain explained (E4) where 1 kilogram stores about 93.0 watt-hour, controlled by Maximum Power Point Tracking (MPPT, electronic solar optimizer) prioritization (C8), with panels as chamber shade and electrics in a vented locked box needing monthly wipe and terminal check.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "offgridcollective.co",
+      "title": "How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA",
+      "year": "",
+      "url": "https://offgridcollective.co/us/guides/power-systems/how-to-size-off-grid-solar-system/",
+      "query": "solar PV sizing off-grid cold room kWh per day battery MPPT datasheet",
+      "unresolved": false,
+      "passage": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "For this device power sizing follows the array formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3), which divides daily load by worst-month Peak Sun Hours (PSH, equivalent hours at 1000 watt per square metre) and by 0.75 system efficiency, with hot-region resource of about 5.0 PSH from Insolation in Solar: Meaning and Why It Matters (E7) and 400 watt modules from Spectra 400W 48V Rigid Solar Panel - Monocrystalline PERC (E9); then the array sizing estimate (E13) gives 2.13 kilowatt for 8.00 kilowatt-hour per day, the daily yield estimate (E14) gives 9.00 kilowatt-hour per day from 2.40 kilowatt peak, and the night autonomy simulation (E15) shows about 13.3 kilowatt-hour per day load is not covered so about 3.50 kilowatt peak is needed, which is about one household daily use and therefore an everyday scale."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "Night and cloudy cover uses the 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank (C2) sized by the battery formula in How to Size an Off-Grid Solar System (5-Step Guide) | Off Grid Collective USA (E3) and built from modules like the 51.2 volt 100 ampere-hour unit in 4000 Watt Solar | 48V 6500W/120V Hybrid Inverter | All-in-One Kit (E10), backed by the Phase-Change Material (PCM, ice store) thermal battery (C4) using the ice-as-battery principle in Solar powered ice maker: off-grid cold chain explained (E4) where 1 kilogram stores about 93.0 watt-hour, controlled by Maximum Power Point Tracking (MPPT, electronic solar optimizer) prioritization (C8), with panels as chamber shade and electrics in a vented locked box needing monthly wipe and terminal check."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

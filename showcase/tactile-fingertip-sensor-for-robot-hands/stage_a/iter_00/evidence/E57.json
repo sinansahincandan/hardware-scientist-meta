@@ -1,0 +1,40 @@
+{
+  "id": "E57",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+  "tool": "web_search",
+  "purpose": "search: AD7147 capacitance resolution femtofarad sensitivity",
+  "code_or_query": "AD7147 capacitance resolution femtofarad sensitivity",
+  "inputs": {},
+  "output_summary": "ez.analog.com — How to adjust the sensitivity and calculate capacitance for AD7147 — https://ez.analog.com/other-products/w/documents/34180/how-to-adjust-the-sensitivity-and-calculate-capacitance-for-ad7147",
+  "output_full": "ez.analog.com — How to adjust the sensitivity and calculate capacitance for AD7147 — https://ez.analog.com/other-products/w/documents/34180/how-to-adjust-the-sensitivity-and-calculate-capacitance-for-ad7147\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise.\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: B) (E41) Capacitance-to-Digital Converter, where Capacitance-to-Digital Converter means CDC, frame at 9.00 millisecond update cannot carry 100 to 500 hertz vibration per the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) plus-minus 8 picofarad range, with the full Serial Peripheral Interface, where Serial Peripheral Interface means SPI, frame at 51.2 kilobit per second in the SPI tactile message rate (E52) following.\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: I take up the How to adjust the sensitivity for AD7147 (E57) from Prof.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "ez.analog.com",
+      "title": "How to adjust the sensitivity and calculate capacitance for AD7147",
+      "year": "",
+      "url": "https://ez.analog.com/other-products/w/documents/34180/how-to-adjust-the-sensitivity-and-calculate-capacitance-for-ad7147",
+      "query": "AD7147 capacitance resolution femtofarad sensitivity",
+      "unresolved": false,
+      "passage": "Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "Marcus Reid which states femtofarad resolution on 13 inputs, the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) which states the input range is fixed at plus-minus 8 pF with 16-bit resolution so each count weighs 244 aF, and the How cheap digital verniers work (E56) which states the AD7147 has sub-femtofarad output noise."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "B) (E41) Capacitance-to-Digital Converter, where Capacitance-to-Digital Converter means CDC, frame at 9.00 millisecond update cannot carry 100 to 500 hertz vibration per the How to adjust the sensitivity and calculate capacitance for AD7147 (E57) plus-minus 8 picofarad range, with the full Serial Peripheral Interface, where Serial Peripheral Interface means SPI, frame at 51.2 kilobit per second in the SPI tactile message rate (E52) following."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "I take up the How to adjust the sensitivity for AD7147 (E57) from Prof."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

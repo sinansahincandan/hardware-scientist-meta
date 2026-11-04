@@ -1,0 +1,32 @@
+{
+  "id": "E69",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: earthquake early warning P-wave S-wave seconds alert Japan",
+  "code_or_query": "earthquake early warning P-wave S-wave seconds alert Japan",
+  "inputs": {},
+  "output_summary": "qorvalyn.com — Earthquake Early Warning Systems: How Alerts Protect Lives — https://qorvalyn.com/2958/earthquake-early-warning-systems-how-alerts-protect-lives/",
+  "output_full": "qorvalyn.com — Earthquake Early Warning Systems: How Alerts Protect Lives — https://qorvalyn.com/2958/earthquake-early-warning-systems-how-alerts-protect-lives/\n(found by the search; not opened or cited)\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "qorvalyn.com",
+      "title": "Earthquake Early Warning Systems: How Alerts Protect Lives",
+      "year": "",
+      "url": "https://qorvalyn.com/2958/earthquake-early-warning-systems-how-alerts-protect-lives/",
+      "query": "earthquake early warning P-wave S-wave seconds alert Japan",
+      "unresolved": false,
+      "passage": "The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The Blind Zone of Earthquake Early Warning (E66) states the premise that closest stations register fast P-waves to estimate later larger S-waves, and that even the fastest Japan alert takes 2 to 3 seconds leaving a 25-kilometre blind zone, the Earthquake Early Warning Systems: How Alerts Protect Lives (E69) states P-waves travel roughly 6 to 8 kilometres per second while damaging S-waves move at 3.5 to 4 kilometres per second, and the Notes on the STM32 microcontroller family (E68) states STM32 ADCs are 12-bit and run at 1 Msps and up."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

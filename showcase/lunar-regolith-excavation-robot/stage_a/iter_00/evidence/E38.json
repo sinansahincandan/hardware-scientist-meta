@@ -1,22 +1,38 @@
 {
   "id": "E38",
-  "author": "Sam — Structure, Mass and Material Handling Engineer",
+  "author": "Power Structure and Integration Lead",
   "tool": "web_search",
-  "purpose": "search: electric linear actuator 12V 24V force stroke datasheet dump",
-  "code_or_query": "electric linear actuator 12V 24V force stroke datasheet dump",
+  "purpose": "search: 6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
+  "code_or_query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
   "inputs": {},
-  "output_summary": "docs.rs-online.com — RS PRO Miniature Electric Linear Actuator — https://docs.rs-online.com/b168/0900766b81683456.pdf",
-  "output_full": "docs.rs-online.com — RS PRO Miniature Electric Linear Actuator — https://docs.rs-online.com/b168/0900766b81683456.pdf\n(the search returned no passage text)",
+  "output_summary": "garagejournal.com — Aluminum square tubing strength — https://www.garagejournal.com/forum/threads/aluminum-square-tubing-strength.479789/",
+  "output_full": "garagejournal.com — Aluminum square tubing strength — https://www.garagejournal.com/forum/threads/aluminum-square-tubing-strength.479789/\n(found by the search; not opened or cited)\nPower Structure and Integration Lead said about it: 6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.\nManager said about it: Brake-only stop 0.0625 m in 0.250 s from the tip-over and stopping check (E23) versus total 0.308 m in 0.750 s with 0.500 s link loss at 0.500 m per s from the link-loss watchdog stop distance vs latency at 0.5 m/s simulation (E32), both well under 1 g, while rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) far exceeds millimetre stiffness under 6061-T6 aluminium allowed stress from the Aluminum square tubing strength (E38), so everyday check fails.\nMobility and Deployable Chassis Lead said about it: I confirm the Aluminum square tubing strength (E38) rule that 6061-T6, meaning aluminium alloy 6061 in T6 temper, allows about 15,000 psi working stress, where psi means pounds per square inch, and the Microsoft Word - FTOF Panel 1B Frame Analysis.docx (E50) rule I take is that a frame passes only when stresses stay below allowable and deflections stay acceptable, so stiffness not strength decides here: single-rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) shared over two rails is still 36.5 mm from the twin rail sag share check (E52), a hand width not millimetre wobble.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "docs.rs-online.com",
-      "title": "RS PRO Miniature Electric Linear Actuator",
+      "authors_or_org": "garagejournal.com",
+      "title": "Aluminum square tubing strength",
       "year": "",
-      "url": "https://docs.rs-online.com/b168/0900766b81683456.pdf",
-      "query": "electric linear actuator 12V 24V force stroke datasheet dump",
+      "url": "https://www.garagejournal.com/forum/threads/aluminum-square-tubing-strength.479789/",
+      "query": "6061-T6 aluminum square tube allowable stress deflection lightweight robot frame",
       "unresolved": false,
-      "passage": ""
+      "passage": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Power Structure and Integration Lead",
+          "text": "6061 T6 aluminum has a yield strength of 40 KSI at room temperature from the Engineering help please (E37) and 6061-T6 will allow up to around 15,000 psi working stress from the Aluminum square tubing strength (E38), where KSI means thousand pounds per square inch and psi means pounds per square inch, but the single-rail cantilever deflection estimate (E43) gives 72.9 mm sag under full weight, a hand width and far above millimetre wobble, so Mobility and Deployable Chassis Lead and Excavation and Regolith Handling Lead please note the tube size or twin-rail sharing must be stiffened."
+        },
+        {
+          "by": "Manager",
+          "text": "Brake-only stop 0.0625 m in 0.250 s from the tip-over and stopping check (E23) versus total 0.308 m in 0.750 s with 0.500 s link loss at 0.500 m per s from the link-loss watchdog stop distance vs latency at 0.5 m/s simulation (E32), both well under 1 g, while rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) far exceeds millimetre stiffness under 6061-T6 aluminium allowed stress from the Aluminum square tubing strength (E38), so everyday check fails."
+        },
+        {
+          "by": "Mobility and Deployable Chassis Lead",
+          "text": "I confirm the Aluminum square tubing strength (E38) rule that 6061-T6, meaning aluminium alloy 6061 in T6 temper, allows about 15,000 psi working stress, where psi means pounds per square inch, and the Microsoft Word - FTOF Panel 1B Frame Analysis.docx (E50) rule I take is that a frame passes only when stresses stay below allowable and deflections stay acceptable, so stiffness not strength decides here: single-rail sag 72.9 mm from the cantilever deflection estimate frame rail (E43) shared over two rails is still 36.5 mm from the twin rail sag share check (E52), a hand width not millimetre wobble."
+        }
+      ]
     }
   ],
   "status": "ok",

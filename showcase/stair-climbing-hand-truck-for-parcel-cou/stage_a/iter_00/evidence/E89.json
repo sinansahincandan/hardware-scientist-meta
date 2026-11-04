@@ -1,0 +1,23 @@
+{
+  "id": "E89",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "toe hinge pin single shear stress 8mm pin half weight",
+  "code_or_query": "((Q_(589,\"N\")/2)/(3.14159*(Q_(8,\"mm\")**2)/4)).to(\"MPa\")",
+  "inputs": {
+    "arg0": {
+      "value": "589",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "8",
+      "unit": "mm"
+    }
+  },
+  "output_summary": "5.86 MPa",
+  "output_full": "5.86 MPa",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

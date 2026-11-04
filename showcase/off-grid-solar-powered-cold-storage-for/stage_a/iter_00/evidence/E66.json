@@ -1,14 +1,14 @@
 {
   "id": "E66",
-  "author": "Surya \u2014 Off-Grid Solar Power Specialist",
+  "author": "Enclosure and Structural Designer",
   "tool": "calc",
-  "purpose": "autonomy days holding only",
-  "code_or_query": "(5.12*1000/3600*3600/1000)/3.6",
+  "purpose": "summed chamber mass budget",
+  "code_or_query": "sum({'produce':1000, 'crates 50x1.8kg':90, 'racking steel':80, 'PIR panels 25.4m2x13kg':330, 'door+curtain':30, 'battery 13kWh':100, 'eutectic plates+brine':120, 'misc drains wiring':30}.values())",
   "inputs": {},
-  "output_summary": "1.42",
-  "output_full": "1.42",
+  "output_summary": "1780",
+  "output_full": "1780",
   "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 4
+  "cycle": 2
 }

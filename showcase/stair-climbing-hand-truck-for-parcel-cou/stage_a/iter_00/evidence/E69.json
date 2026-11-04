@@ -1,0 +1,14 @@
+{
+  "id": "E69",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "tube second moment 30x26mm",
+  "code_or_query": "3.14159/64*((30e-3)**4-(26e-3)**4)",
+  "inputs": {},
+  "output_summary": "1.73e-08",
+  "output_full": "1.73e-08",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

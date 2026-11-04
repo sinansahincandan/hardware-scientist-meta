@@ -1,0 +1,26 @@
+{
+  "id": "E11",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: solar cold room direct drive battery free thermal storage ice vs battery",
+  "code_or_query": "solar cold room direct drive battery free thermal storage ice vs battery",
+  "inputs": {},
+  "output_summary": "globalsouthhealth.com — Solar Cold Room: A Solution Gaining Momentum — https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/",
+  "output_full": "globalsouthhealth.com — Solar Cold Room: A Solution Gaining Momentum — https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "globalsouthhealth.com",
+      "title": "Solar Cold Room: A Solution Gaining Momentum",
+      "year": "",
+      "url": "https://www.globalsouthhealth.com/blog/solar-cold-room-a-solution-gaining-momentum/",
+      "query": "solar cold room direct drive battery free thermal storage ice vs battery",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

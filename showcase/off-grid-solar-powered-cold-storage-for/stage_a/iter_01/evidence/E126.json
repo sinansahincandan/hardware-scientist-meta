@@ -1,0 +1,14 @@
+{
+  "id": "E126",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "chamber superstructure mass without foundation",
+  "code_or_query": "1000+93.5+90+306+45+110+120+55+60+40+10",
+  "inputs": {},
+  "output_summary": "1.93e+03",
+  "output_full": "1.93e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

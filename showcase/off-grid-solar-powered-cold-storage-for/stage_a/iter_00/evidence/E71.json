@@ -1,0 +1,56 @@
+{
+  "id": "E71",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: walk-in cold room door width standard single leaf 900mm ergonomic",
+  "code_or_query": "walk-in cold room door width standard single leaf 900mm ergonomic",
+  "inputs": {},
+  "output_summary": "snowmaster.com.au — Coolroom Buying Guide: Walk-In Refrigeration for Kitchens — https://snowmaster.com.au/blog/coolroom-buying-guide-australia",
+  "output_full": "snowmaster.com.au — Coolroom Buying Guide: Walk-In Refrigeration for Kitchens — https://snowmaster.com.au/blog/coolroom-buying-guide-australia\n(opened by the member, not cited)\nSmallholder Cooperative Operations Specialist said about it: The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow.\nManager said about it: Array need 3.52 kilowatt peak in the required peak estimate (E82) is met by 3.60 kilowatt peak in that same grown-array yield calc (E83), split layout in the split layout sketch (E70) carries no panel loads into sandwich panels, door method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) with 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) supports eight-opening discipline, and full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) leaves the 43 degree pull-down as named bench test, not a block.\nEnclosure and Structural Designer said about it: I take up the door rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) that Smallholder Cooperative Operations Specialist put on the board, Cold-Chain Refrigeration Engineer.\nSmallholder Cooperative Operations Specialist said about it: The rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) is standard doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains, so a single 900 mm door passes one 600 mm by 400 mm crate plus carrier under 8 openings per day discipline for only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, with each 20 kg crate a one-person lift against a door wider than a person.\nSolar Energy Systems Engineer said about it: I take up the door rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) that you put on the board, which states 900 mm doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains, which from my side keeps door loss to only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, inside the 13.5 kilowatt-hour yield.\nCold-Chain Refrigeration Engineer said about it: I take up the Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) you put on the board, which states 900 millimetre doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which from refrigeration means 4 air changes per day cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, by the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51), so 8 openings discipline holds.\nManager said about it: Holding 1000 kilogram in the total produce mass estimate (E49) as 50 crates in the crates for 1 tonne check (E77) staged as 12.5 crates per day in the daily crates check (E78) through 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) under 8-opening discipline keeps Photovoltaic (PV, solar electricity) plus Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) with Maximum Power Point Tracking (MPPT, solar optimizer) and probe control inside that daily balance, leaving full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) as the named 43 degree pull-down bench test on built hardware, not a block.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "snowmaster.com.au",
+      "title": "Coolroom Buying Guide: Walk-In Refrigeration for Kitchens",
+      "year": "",
+      "url": "https://snowmaster.com.au/blog/coolroom-buying-guide-australia",
+      "query": "walk-in cold room door width standard single leaf 900mm ergonomic",
+      "unresolved": false,
+      "passage": "The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) states standard coolroom doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains inside the door plus self-closing hinges, so a single 900 mm door passes one 600 mm by 400 mm crate at a time plus the carrier under 8 openings per day daytime discipline, which keeps door loss to only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, and the Cold Storage of Agricultural Products - old.energypedia.info (E73) requires well-ventilated crates with gaps between walls and stacks for airflow."
+        },
+        {
+          "by": "Manager",
+          "text": "Array need 3.52 kilowatt peak in the required peak estimate (E82) is met by 3.60 kilowatt peak in that same grown-array yield calc (E83), split layout in the split layout sketch (E70) carries no panel loads into sandwich panels, door method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51) with 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) supports eight-opening discipline, and full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) leaves the 43 degree pull-down as named bench test, not a block."
+        },
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "I take up the door rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) that Smallholder Cooperative Operations Specialist put on the board, Cold-Chain Refrigeration Engineer."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) is standard doors are 900 mm wide with Polyvinyl Chloride (PVC, flexible plastic) strip curtains, so a single 900 mm door passes one 600 mm by 400 mm crate plus carrier under 8 openings per day discipline for only 0.44 kilowatt-hour per day from the door infiltration estimate (E57), about a kettle boiled twice, with each 20 kg crate a one-person lift against a door wider than a person."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "I take up the door rule in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) that you put on the board, which states 900 mm doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains, which from my side keeps door loss to only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, inside the 13.5 kilowatt-hour yield."
+        },
+        {
+          "by": "Cold-Chain Refrigeration Engineer",
+          "text": "I take up the Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) you put on the board, which states 900 millimetre doors with Polyvinyl Chloride (PVC, flexible plastic) strip curtains and self-closing hinges, which from refrigeration means 4 air changes per day cost only 0.44 kilowatt-hour per day in the door infiltration estimate (E57), about a kettle boiled twice, by the method in Designing Efficient Cold Storage: Key Factors and Cooling Loads (E51), so 8 openings discipline holds."
+        },
+        {
+          "by": "Manager",
+          "text": "Holding 1000 kilogram in the total produce mass estimate (E49) as 50 crates in the crates for 1 tonne check (E77) staged as 12.5 crates per day in the daily crates check (E78) through 900 millimetre door in Coolroom Buying Guide: Walk-In Refrigeration for Kitchens (E71) under 8-opening discipline keeps Photovoltaic (PV, solar electricity) plus Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) with Maximum Power Point Tracking (MPPT, solar optimizer) and probe control inside that daily balance, leaving full-tonne heat 25.0 kilowatt-hour in the recomputed pull-down estimate (E26) staged as 6.20 kilowatt-hour per batch in that revised steady-load simulation (E28) as the named 43 degree pull-down bench test on built hardware, not a block."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

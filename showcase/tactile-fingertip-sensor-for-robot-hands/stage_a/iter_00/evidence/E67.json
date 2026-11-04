@@ -1,0 +1,48 @@
+{
+  "id": "E67",
+  "author": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+  "tool": "web_search",
+  "purpose": "search: incipient slip trailing edge contact periphery stick-slip propagation tactile",
+  "code_or_query": "incipient slip trailing edge contact periphery stick-slip propagation tactile",
+  "inputs": {},
+  "output_summary": "pmc.ncbi.nlm.nih.gov — Dynamics of fingertip contact during the onset of tangential slip — http://pmc.ncbi.nlm.nih.gov/articles/PMC4191101/",
+  "output_full": "pmc.ncbi.nlm.nih.gov — Dynamics of fingertip contact during the onset of tangential slip — http://pmc.ncbi.nlm.nih.gov/articles/PMC4191101/\n(opened by the member, not cited)\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge.\nDr. Amara Okafor — Soft Skin Mechanics said about it: I take up the Dynamics of fingertip contact during the onset of tangential slip (E67) from Dr.\nDr. Elena Vasquez — Contact Dynamics and Slip Detection said about it: The numbers that decide it are 14.6 steps at 1.00 mN in the signal margin counts (E62) rising to 48.9 percent strain at 213 kPa in the dual-range sweep (E64), with trailing-edge stretch and leading-edge squeeze in the Dynamics of fingertip slip (E67) to give direction, about one-tenth of an eye blink for the 30.0 ms decision and therefore fast enough only on the direct path.\nDr. Marcus Reid — Robotic Integration and Embedded Electronics said about it: I take up the Dynamics of fingertip contact during the onset of tangential slip (E67) from Dr.\nManager said about it: Marcus Reid is answered by dorsal routing clear of rim slip in the Dynamics of fingertip slip (E67) plus fail-safe interrupt, with rub-cycle tear, shake-plus-pull continuity and timed 30 ms loop as bench tests.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "pmc.ncbi.nlm.nih.gov",
+      "title": "Dynamics of fingertip contact during the onset of tangential slip",
+      "year": "",
+      "url": "http://pmc.ncbi.nlm.nih.gov/articles/PMC4191101/",
+      "query": "incipient slip trailing edge contact periphery stick-slip propagation tactile",
+      "unresolved": false,
+      "passage": "The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The Dynamics of fingertip contact during the onset of tangential slip (E67) states complete slippage occurs gradually with first incipient slips at the periphery and an annulus of slip forming around a remaining stuck zone growing to the centre, and the Efficient tactile encoding of object slippage | Scientific Reports (E70) states during incipient slippage the outer region slips and the slip area propagates from periphery to centre with compressive strain ahead and tensile strain at the trailing edge."
+        },
+        {
+          "by": "Dr. Amara Okafor — Soft Skin Mechanics",
+          "text": "I take up the Dynamics of fingertip contact during the onset of tangential slip (E67) from Dr."
+        },
+        {
+          "by": "Dr. Elena Vasquez — Contact Dynamics and Slip Detection",
+          "text": "The numbers that decide it are 14.6 steps at 1.00 mN in the signal margin counts (E62) rising to 48.9 percent strain at 213 kPa in the dual-range sweep (E64), with trailing-edge stretch and leading-edge squeeze in the Dynamics of fingertip slip (E67) to give direction, about one-tenth of an eye blink for the 30.0 ms decision and therefore fast enough only on the direct path."
+        },
+        {
+          "by": "Dr. Marcus Reid — Robotic Integration and Embedded Electronics",
+          "text": "I take up the Dynamics of fingertip contact during the onset of tangential slip (E67) from Dr."
+        },
+        {
+          "by": "Manager",
+          "text": "Marcus Reid is answered by dorsal routing clear of rim slip in the Dynamics of fingertip slip (E67) plus fail-safe interrupt, with rub-cycle tear, shake-plus-pull continuity and timed 30 ms loop as bench tests."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

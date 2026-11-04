@@ -1,0 +1,14 @@
+{
+  "id": "E49",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "calc",
+  "purpose": "total produce mass from 50 crates at 20 kg each",
+  "code_or_query": "50*20",
+  "inputs": {},
+  "output_summary": "1000",
+  "output_full": "1000",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

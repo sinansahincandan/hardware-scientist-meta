@@ -1,0 +1,14 @@
+{
+  "id": "E38",
+  "author": "Power-Systems Engineer",
+  "tool": "calc",
+  "purpose": "net electrical power at 11 m/s after losses",
+  "code_or_query": "34.7*0.75",
+  "inputs": {},
+  "output_summary": "26",
+  "output_full": "26",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

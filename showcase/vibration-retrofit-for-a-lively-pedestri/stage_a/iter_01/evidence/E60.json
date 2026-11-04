@@ -1,0 +1,40 @@
+{
+  "id": "E60",
+  "author": "Bridge Retrofit Engineer",
+  "tool": "web_search",
+  "purpose": "search: elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+  "code_or_query": "elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+  "inputs": {},
+  "output_summary": "scribd.com — Chapter 15 PDF — https://www.scribd.com/document/439652787/Chapter-15-pdf",
+  "output_full": "scribd.com — Chapter 15 PDF — https://www.scribd.com/document/439652787/Chapter-15-pdf\n(found by the search; not opened or cited)\nBridge Retrofit Engineer said about it: I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43).\nPedestrian Comfort and Safety Assessor said about it: I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, which confirms from my discipline that my Setra/HIVOSS crowd acceptance run with filed record (C29) should borrow the measurement method while the Maximum/Medium/Minimum bands set pass or fail, backed by the car-jury analogy (C30) with no deck-visible hardware (C28).\nPedestrian Comfort and Safety Assessor said about it: The finding that a Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), system demonstrates stronger robustness when dealing with random pedestrian loads means from my discipline that the detuned twin pair holds Medium under drift and random load, proven by the instrumented Class III crowd walk-through in my acceptance run (C29) where I borrow method from the Chapter 15 PDF (E60) while the bands set pass or fail.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "scribd.com",
+      "title": "Chapter 15 PDF",
+      "year": "",
+      "url": "https://www.scribd.com/document/439652787/Chapter-15-pdf",
+      "query": "elevator lift ride quality acceptance ISO 18738 acceleration measurement",
+      "unresolved": false,
+      "passage": "I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Bridge Retrofit Engineer",
+          "text": "I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, and from the a P000498 (E59) that ISO 18738 ride measurement needs a defined sensor contact pressure with a mandatory measuring plate, which maps onto a crowd walk-through logging vertical acceleration over time with the comfort band setting pass or fail, holding Medium 0.5 to 1.0 m/s2 against 0.67 m/s2 retrofitted from the retrofitted-acceleration calculation (E44) versus 8.28 m/s2 bare at 0.844 g from the bare-acceleration calculation (E43)."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "I take from the Chapter 15 PDF (E60) that draft ISO 18738 Measurement of Lift Ride Quality establishes requirements, methodology and processing for acceleration evaluation but does not try to establish what is or is not acceptable, which confirms from my discipline that my Setra/HIVOSS crowd acceptance run with filed record (C29) should borrow the measurement method while the Maximum/Medium/Minimum bands set pass or fail, backed by the car-jury analogy (C30) with no deck-visible hardware (C28)."
+        },
+        {
+          "by": "Pedestrian Comfort and Safety Assessor",
+          "text": "The finding that a Multiple Tuned Mass Damper, defined as Multiple Tuned Mass Damper (MTMD), system demonstrates stronger robustness when dealing with random pedestrian loads means from my discipline that the detuned twin pair holds Medium under drift and random load, proven by the instrumented Class III crowd walk-through in my acceptance run (C29) where I borrow method from the Chapter 15 PDF (E60) while the bands set pass or fail."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

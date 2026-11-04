@@ -1,0 +1,32 @@
+{
+  "id": "E61",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: diesel electric locomotive dynamic braking resistor grid thermal",
+  "code_or_query": "diesel electric locomotive dynamic braking resistor grid thermal",
+  "inputs": {},
+  "output_summary": "en.wikipedia.org — Dynamic braking - Wikipedia — https://en.wikipedia.org/wiki/Dynamic_braking_(locomotive)",
+  "output_full": "en.wikipedia.org — Dynamic braking - Wikipedia — https://en.wikipedia.org/wiki/Dynamic_braking_(locomotive)\n(opened by the member, not cited)\nPower-Systems Engineer said about it: I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "en.wikipedia.org",
+      "title": "Dynamic braking - Wikipedia",
+      "year": "",
+      "url": "https://en.wikipedia.org/wiki/Dynamic_braking_(locomotive)",
+      "query": "diesel electric locomotive dynamic braking resistor grid thermal",
+      "unresolved": false,
+      "passage": "I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Power-Systems Engineer",
+          "text": "I read the Dynamic braking - Wikipedia (E61) which states dynamic braking is use of a traction motor as a generator when slowing, termed rheostatic if dissipated as heat in brake grid resistors with thermal monitoring to protect resistors, which maps to the outrunner onto the 4 ohm dump plus the spring disc sized by the dynamic-brake-stop-sizing skill (E59); I read the How to Short a DC Motor: Short-Circuit (Dynamic) Braking Explained (2026) (E62) which states short-circuit braking torque decays to zero when the shaft stops, and I confirm what Safety-Control Integrator takes from the Braking ideas for wind turbines (E42) that brakes are spring-applied fail-safe, which from my side means electrics alone cannot park because the electrical-only runaway check (E48) with 0.155 N·m electrical against 0.480 N·m wind torque fails at 9.12e+03 Revolutions Per Minute (RPM), meaning shaft turns per minute."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

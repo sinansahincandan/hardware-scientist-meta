@@ -1,0 +1,14 @@
+{
+  "id": "E86",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "daily energy margin grown array yield minus reconciled load",
+  "code_or_query": "13.5-13.2",
+  "inputs": {},
+  "output_summary": "0.3",
+  "output_full": "0.3",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

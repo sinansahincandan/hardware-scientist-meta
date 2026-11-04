@@ -1,0 +1,36 @@
+{
+  "id": "E79",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: solar irrigation pumping overhead water tank storage day night use",
+  "code_or_query": "solar irrigation pumping overhead water tank storage day night use",
+  "inputs": {},
+  "output_summary": "solar-electric.com — Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric — https://www.solar-electric.com/solar-water-pumping.html?price=5000-6000",
+  "output_full": "solar-electric.com — Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric — https://www.solar-electric.com/solar-water-pumping.html?price=5000-6000\n(found by the search; not opened or cited)\nSolar Energy Systems Engineer said about it: The rule in Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric (E79) is most systems store water, not electricity, pumping into a tank by day so water is available at night, mapped as the daytime Phase-Change Material means PCM, ice store, thermal battery of 100 to 150 kilogram ice.\nSolar Energy Systems Engineer said about it: The 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank with Maximum Power Point Tracking (MPPT, solar optimizer) must output dispatchable electricity for compressor start plus fans and controls, while the daytime Phase-Change Material (PCM, ice store) thermal battery of 100 to 150 kg ice carries night cold to cut cycling, mapped from storing water by day in a tank for night use in Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric (E79).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "solar-electric.com",
+      "title": "Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric",
+      "year": "",
+      "url": "https://www.solar-electric.com/solar-water-pumping.html?price=5000-6000",
+      "query": "solar irrigation pumping overhead water tank storage day night use",
+      "unresolved": false,
+      "passage": "The rule in Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric (E79) is most systems store water, not electricity, pumping into a tank by day so water is available at night, mapped as the daytime Phase-Change Material means PCM, ice store, thermal battery of 100 to 150 kilogram ice.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The rule in Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric (E79) is most systems store water, not electricity, pumping into a tank by day so water is available at night, mapped as the daytime Phase-Change Material means PCM, ice store, thermal battery of 100 to 150 kilogram ice."
+        },
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The 48 volt Lithium Iron Phosphate (LiFePO4, lithium battery chemistry) bank with Maximum Power Point Tracking (MPPT, solar optimizer) must output dispatchable electricity for compressor start plus fans and controls, while the daytime Phase-Change Material (PCM, ice store) thermal battery of 100 to 150 kg ice carries night cold to cut cycling, mapped from storing water by day in a tank for night use in Solar Water Pumps, DC Pumps, Solar Well Pumps | NAZ Solar Electric (E79)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "E114",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "mass twin 30x26 tubes 1.1m",
+  "code_or_query": "2700*3.1415926535*(0.03**2-0.026**2)/4*1.1*2",
+  "inputs": {},
+  "output_summary": "1.05",
+  "output_full": "1.05",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

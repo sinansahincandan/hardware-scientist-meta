@@ -1,24 +1,30 @@
 {
   "id": "E20",
-  "author": "Priya — Embedded Electronics, Signal Processing and Slip Detection",
+  "author": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
   "tool": "web_search",
-  "purpose": "search: capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
-  "code_or_query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+  "purpose": "search: capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
+  "code_or_query": "capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
   "inputs": {},
-  "output_summary": "mdpi-res.com — Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper — https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677",
-  "output_full": "mdpi-res.com — Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper — https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677\n(found by the search; not opened or cited)",
+  "output_summary": "eetimes.com — CDC enables touch-control sensitivity in portable electronic devices — https://www.eetimes.com/cdc-enables-touch-control-sensitivity-in-portable-electronic-devices/",
+  "output_full": "eetimes.com — CDC enables touch-control sensitivity in portable electronic devices — https://www.eetimes.com/cdc-enables-touch-control-sensitivity-in-portable-electronic-devices/\n(found by the search; not opened or cited)\nProf. Kenji Tanaka — Micro-Transduction Arrays said about it: The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "mdpi-res.com",
-      "title": "Design and Evaluation of Capacitive Smart Transducer for a Forestry Crane Gripper",
+      "authors_or_org": "eetimes.com",
+      "title": "CDC enables touch-control sensitivity in portable electronic devices",
       "year": "",
-      "url": "https://mdpi-res.com/d_attachment/sensors/sensors-23-02747/article_deploy/sensors-23-02747.pdf?version=1677752677",
-      "query": "capacitive tactile sensor array multiplexed readout capacitance to digital AD7147",
+      "url": "https://www.eetimes.com/cdc-enables-touch-control-sensitivity-in-portable-electronic-devices/",
+      "query": "capacitance to digital converter AD7147 tactile array sensitivity femtofarad",
       "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
+      "passage": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Prof. Kenji Tanaka — Micro-Transduction Arrays",
+          "text": "The Single-Step Fabrication of Porous Elastomer for High Sensitivity Pressure Sensor | IITBombay (E24) shows the parallel-plate construction with dielectric between plates, the CDC enables touch-control sensitivity in portable electronic devices (E20) states femtofarad resolution on 13 inputs, and the Capacitance Sensing in Human Body Contact Applications (E21) states 16-bit femtofarad measurement."
+        }
+      ]
     }
   ],
   "status": "ok",

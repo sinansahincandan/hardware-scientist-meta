@@ -1,26 +1,14 @@
 {
   "id": "E28",
-  "author": "Sam — Robot Hand Integration and Manipulation",
-  "tool": "web_search",
-  "purpose": "search: robot gripper finger flex cable routing bending radius 4-wire I2C",
-  "code_or_query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
+  "author": "Prof. Kenji Tanaka \u2014 Micro-Transduction Arrays",
+  "tool": "calc",
+  "purpose": "deltaC fF from 5.78kPa on 435kPa dielectric",
+  "code_or_query": "0.269*5.78/435",
   "inputs": {},
-  "output_summary": "manualslib.com — Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18] — https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18",
-  "output_full": "manualslib.com — Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18] — https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18\n(found by the search; not opened or cited)",
+  "output_summary": "0.00357",
+  "output_full": "0.00357",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "manualslib.com",
-      "title": "Wiring; Tool Data; Digital I/O Wires - OnRobot DOOSAN Gecko Gripper User Manual [Page 18]",
-      "year": "",
-      "url": "https://www.manualslib.com/manual/2100014/Onrobot-Doosan-Gecko-Gripper.html?page=18",
-      "query": "robot gripper finger flex cable routing bending radius 4-wire I2C",
-      "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

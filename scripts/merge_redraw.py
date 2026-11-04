@@ -1,12 +1,14 @@
 """Give a Stage B redraw folder its problem's meeting, so the pages show the whole problem (no model call).
 
 Usage: .venv/bin/python scripts/merge_redraw.py <redraw_run_dir>
-Reads seeded_from.json; copies stage_a/, knowledge_in.json, archive.jsonl and REVIEW.md (if the redraw has none) from the source
-run; writes merged_from.json; cost.json total becomes the sum of both runs (both values kept in the note); report.html and board.html are rebuilt.
+Reads seeded_from.json; copies stage_a/, knowledge_in.json, archive.jsonl, and master_prompt/, references.md and
+REVIEW.md (each only if the redraw has none of its own) from the source run; writes merged_from.json; cost.json
+total becomes the sum of both runs (both values kept in the note); report.html and board.html are rebuilt.
 """
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -23,6 +25,12 @@ def main() -> int:
     for name in ("knowledge_in.json", "archive.jsonl"):
         if (source / name).exists():
             shutil.copy(source / name, redraw / name)
+    if not (redraw / "master_prompt").exists() and (source / "master_prompt").exists():
+        shutil.copytree(source / "master_prompt", redraw / "master_prompt")
+    refs = redraw / "references.md"
+    if (source / "references.md").exists() and (
+            not refs.exists() or not re.search(r"^\d+\. ", refs.read_text(encoding="utf-8"), flags=re.MULTILINE)):
+        shutil.copy(source / "references.md", refs)  # the redraw searched nothing; the meeting's sources belong here
     if not (redraw / "REVIEW.md").exists() and (source / "REVIEW.md").exists():
         shutil.copy(source / "REVIEW.md", redraw / "REVIEW.md")
     a = float(json.loads((source / "cost.json").read_text(encoding="utf-8")).get("total_usd", 0.0))
@@ -34,8 +42,8 @@ def main() -> int:
         cost["total_usd"] = round(a + b, 4)
         (redraw / "cost.json").write_text(json.dumps(cost, indent=2), encoding="utf-8")
     (redraw / "merged_from.json").write_text(json.dumps({
-        "note": f"stage_a/ and knowledge_in.json copied from run {source.name} (the Stage A this redraw was seeded "
-                f"from) so the pages show the whole problem; cost.json total is the sum of both runs "
+        "note": f"stage_a/, knowledge_in.json, master_prompt/ and references.md copied from run {source.name} "
+                f"(the Stage A this redraw was seeded from) so the pages show the whole problem; cost.json total is the sum of both runs "
                 f"(${a:.4f} + ${b:.4f})."}, indent=2), encoding="utf-8")
     # the pages were written before the meeting was copied in; rebuild them so they show it
     sys.path.insert(0, str(ROOT / "src"))

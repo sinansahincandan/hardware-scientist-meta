@@ -1,0 +1,26 @@
+{
+  "id": "E76",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO postharvest crate stacking air gap ventilation room cooling",
+  "code_or_query": "FAO postharvest crate stacking air gap ventilation room cooling",
+  "inputs": {},
+  "output_summary": "agriculture.institute — Special Transportation Needs for Agricultural Products - Agriculture Notes by Agriculture.Institute — https://agriculture.institute/food-processing-and-engineering-i/special-transportation-needs-agricultural-products/",
+  "output_full": "agriculture.institute — Special Transportation Needs for Agricultural Products - Agriculture Notes by Agriculture.Institute — https://agriculture.institute/food-processing-and-engineering-i/special-transportation-needs-agricultural-products/\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "agriculture.institute",
+      "title": "Special Transportation Needs for Agricultural Products - Agriculture Notes by Agriculture.Institute",
+      "year": "",
+      "url": "https://agriculture.institute/food-processing-and-engineering-i/special-transportation-needs-agricultural-products/",
+      "query": "FAO postharvest crate stacking air gap ventilation room cooling",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

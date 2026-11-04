@@ -1,0 +1,14 @@
+{
+  "id": "E12",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "modal stiffness for 20 tonne modal mass at 1.9 Hz",
+  "code_or_query": "((2*3.14159265*1.9)**2)*20000",
+  "inputs": {},
+  "output_summary": "2.85e+06",
+  "output_full": "2.85e+06",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,0 +1,32 @@
+{
+  "id": "E81",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: 48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+  "code_or_query": "48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+  "inputs": {},
+  "output_summary": "rocksolar.ca — Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA — https://rocksolar.ca/products/dakota-48v-74ah-lifepo4-battery?utm_content=Facebook_UA&utm_source=facebook&variant=54438643368227",
+  "output_full": "rocksolar.ca — Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA — https://rocksolar.ca/products/dakota-48v-74ah-lifepo4-battery?utm_content=Facebook_UA&utm_source=facebook&variant=54438643368227\n(found by the search; not opened or cited)\nSolar Energy Systems Engineer said about it: The ice principle in Solar powered ice maker: off-grid cold chain explained (E4) stores about 93.0 watt-hour per kilogram, and the unit in Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA (E81) stores 3.79 kilowatt-hour with up to 6000 cycles, so ice carries the night cold while the 48 volt Lithium Iron Phosphate means LiFePO4, lithium battery chemistry, bank covers fans and controls through Maximum Power Point Tracking means MPPT, solar optimizer, prioritization.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "rocksolar.ca",
+      "title": "Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA",
+      "year": "",
+      "url": "https://rocksolar.ca/products/dakota-48v-74ah-lifepo4-battery?utm_content=Facebook_UA&utm_source=facebook&variant=54438643368227",
+      "query": "48V LiFePO4 off-grid battery maintenance lifespan cycles datasheet",
+      "unresolved": false,
+      "passage": "The ice principle in Solar powered ice maker: off-grid cold chain explained (E4) stores about 93.0 watt-hour per kilogram, and the unit in Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA (E81) stores 3.79 kilowatt-hour with up to 6000 cycles, so ice carries the night cold while the 48 volt Lithium Iron Phosphate means LiFePO4, lithium battery chemistry, bank covers fans and controls through Maximum Power Point Tracking means MPPT, solar optimizer, prioritization.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Solar Energy Systems Engineer",
+          "text": "The ice principle in Solar powered ice maker: off-grid cold chain explained (E4) stores about 93.0 watt-hour per kilogram, and the unit in Dakota 48V 74Ah LiFePO4 Battery | Lithium Battery Canada – ROCKSOLAR CANADA (E81) stores 3.79 kilowatt-hour with up to 6000 cycles, so ice carries the night cold while the 48 volt Lithium Iron Phosphate means LiFePO4, lithium battery chemistry, bank covers fans and controls through Maximum Power Point Tracking means MPPT, solar optimizer, prioritization."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 2
+}

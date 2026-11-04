@@ -1,0 +1,32 @@
+{
+  "id": "E47",
+  "author": "Retrofit Integration and Construction Lead",
+  "tool": "web_search",
+  "purpose": "search: footbridge tuned mass damper under deck installation maintenance access",
+  "code_or_query": "footbridge tuned mass damper under deck installation maintenance access",
+  "inputs": {},
+  "output_summary": "deicon.com — | Pedestrian Bridge Vibration |  |  | — 2022 — https://deicon.com/wp-content/uploads/2022/04/Pedestrian-Bridge-vibration-control-using-tuned-mass-dampers.pdf",
+  "output_full": "deicon.com — | Pedestrian Bridge Vibration |  |  | — 2022 — https://deicon.com/wp-content/uploads/2022/04/Pedestrian-Bridge-vibration-control-using-tuned-mass-dampers.pdf\n(opened by the member, not cited)\nRetrofit Integration and Construction Lead said about it: The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "deicon.com",
+      "title": "| Pedestrian Bridge Vibration |  |  |",
+      "year": "2022",
+      "url": "https://deicon.com/wp-content/uploads/2022/04/Pedestrian-Bridge-vibration-control-using-tuned-mass-dampers.pdf",
+      "query": "footbridge tuned mass damper under deck installation maintenance access",
+      "unresolved": false,
+      "passage": "The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

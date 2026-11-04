@@ -1,0 +1,14 @@
+{
+  "id": "E124",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "corrected lock torque with new weight",
+  "code_or_query": "403*0.185",
+  "inputs": {},
+  "output_summary": "74.6",
+  "output_full": "74.6",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

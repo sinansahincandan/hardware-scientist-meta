@@ -1,14 +1,14 @@
 {
   "id": "E44",
-  "author": "Sam \u2014 Structure, Mass and Material Handling Engineer",
-  "tool": "sketch",
-  "purpose": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
-  "code_or_query": "import matplotlib.pyplot as plt\nplt.xkcd()\nfig, ax = plt.subplots(figsize=(8,5))\nax.set_xlim(0,1.15); ax.set_ylim(0,0.65)\n# start box 1.0 x 0.5\nimport matplotlib.patches as patches\nax.add_patch(patches.Rectangle((0.02,0.02),1.0,0.5,fill=False,lw=2,label='start box'))\nax.text(0.52,0.54,'START BOX 1.00 x 0.50 m',ha='center',fontsize=9)\n# ground\nax.plot([0,1.12],[0.02,0.02],'k-',lw=2)\n# wheels 300mm dia at x=0.15 and 0.80, wheelbase 0.65\nimport matplotlib.patches as mp\nfor x in [0.17,0.82]:\n    c=plt.Circle((x,0.17),0.15,fill=False,lw=2)\n    ax.add_patch(c)\n    ax.text(x,0.17,'W\\n300mm',ha='center',va='center',fontsize=7)\nax.annotate('',xy=(0.17,0.06),xytext=(0.82,0.06),arrowprops=dict(arrowstyle='<->'))\nax.text(0.495,0.07,'wheelbase 0.65 m',ha='center',fontsize=8)\n# frame 0.95 long x 0.10 tall at y ~0.30\nax.add_patch(patches.Rectangle((0.05,0.30),0.95,0.10,fill=False,lw=2))\nax.text(0.52,0.35,'FRAME 0.95x0.48m',ha='center',fontsize=8)\n# lowered hopper inside frame\nax.add_patch(patches.Rectangle((0.55,0.32),0.30,0.12,fill=False,lw=2))\nax.text(0.70,0.38,'HOPPER\\nlowered',ha='center',fontsize=7)\n# folded mast flat to 0.45m height\nax.plot([0.15,0.90],[0.45,0.45],'k-',lw=3)\nax.text(0.52,0.47,'MAST stowed 0.45m high',ha='center',fontsize=8)\n# drum front transverse\nax.add_patch(patches.Rectangle((0.02,0.12),0.12,0.12,fill=False,lw=2))\nax.text(0.08,0.18,'DRUM',ha='center',fontsize=7)\n# dims length\nax.annotate('',xy=(0.02,0.60),xytext=(1.02,0.60),arrowprops=dict(arrowstyle='<->'))\nax.text(0.52,0.61,'1.00 m limit / frame 0.95 m',ha='center',fontsize=8)\nax.set_aspect('equal'); ax.axis('off')\nplt.tight_layout(); plt.savefig('sketch.png',dpi=150)",
+  "author": "Power Structure and Integration Lead",
+  "tool": "simulate",
+  "purpose": "battery mixed duty runtime and motor heating estimate",
+  "code_or_query": "import numpy as np\n# battery 24V 20Ah = 480 Wh; loads: drive 4x50W=200W, ladder 150W, compute+cams 30W\nV=24.0; Ah=20.0\nE_wh=V*Ah\n# 25 min run: dig 40% (drive+ladder+compute), transit 40% (drive+compute), dump/idle 20% (compute+actuator burst)\nP_dig=200+150+30\nP_transit=200+30\nP_dump=30+100\nT_h=25/60\nE_use= T_h*(0.4*P_dig+0.4*P_transit+0.2*P_dump)\nprint(f\"pack {E_wh:.0f} Wh use {E_use:.0f} Wh margin {E_wh/E_use:.2f}x\")\n# motor heating: 150W in, 70% eff -> 45W heat, thermal mass 1.5kg steel+Cu ~500 J/kgK\nPheat=150*0.3\nCth=1.5*500\nfor t in [60,150,300]:\n    print(f\"t={t}s dT={Pheat*t/Cth:.1f} K\")\n",
   "inputs": {},
-  "output_summary": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
-  "output_full": "Dimensioned stowed side view: 1.0x0.5m start box, 0.95m frame, 300mm wheels, folded mast to 0.45m, lowered hopper",
-  "sketch_path": "evidence/sketch_44.png",
+  "output_summary": "t=60s dT=3.6 K; t=150s dT=9.0 K; t=300s dT=18.0 K",
+  "output_full": "pack 480 Wh use 112 Wh margin 4.27x\nt=60s dT=3.6 K\nt=150s dT=9.0 K\nt=300s dT=18.0 K",
+  "sketch_path": null,
   "references": [],
   "status": "ok",
-  "cycle": 2
+  "cycle": 1
 }

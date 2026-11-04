@@ -1,0 +1,14 @@
+{
+  "id": "E106",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "folded thickness stack cluster radius plus clearance",
+  "code_or_query": "185+5",
+  "inputs": {},
+  "output_summary": "190",
+  "output_full": "190",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

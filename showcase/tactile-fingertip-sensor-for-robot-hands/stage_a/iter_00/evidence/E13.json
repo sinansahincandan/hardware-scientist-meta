@@ -1,26 +1,14 @@
 {
   "id": "E13",
-  "author": "Leo — Soft Materials, Skin Mechanics and Fabrication",
-  "tool": "web_search",
-  "purpose": "search: human fingertip diameter size anthropometry",
-  "code_or_query": "human fingertip diameter size anthropometry",
+  "author": "Dr. Amara Okafor \u2014 Soft Skin Mechanics",
+  "tool": "simulate",
+  "purpose": "Hertz skin spreading for 1 mN touch",
+  "code_or_query": "import math\nF=0.001 # N\nR=0.01 # m fingertip radius\nmu=0.145e6 # Pa neo-Hookean from GelSight\nE=3*mu\nnu=0.5\nEstar=E/(1-nu**2)\na=(3*F*R/(4*Estar))**(1/3)\np=F/(math.pi*a**2)\nprint(f\"E={E/1e6:.3f} MPa Estar={Estar/1e6:.3f} MPa a={a*1e3:.3f} mm p={p/1e3:.3f} kPa\")\n# check Shore A10 estimate\nfor ShoreA in [5,10,20]:\n    E2=math.exp(ShoreA*0.0235-0.6403)*1e6\n    print(ShoreA, E2/1e6)\n",
   "inputs": {},
-  "output_summary": "researchgate.net — Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087 — https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087",
-  "output_full": "researchgate.net — Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087 — https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087\n(found by the search; not opened or cited)",
+  "output_summary": "5 0.593; 10 0.667; 20 0.843",
+  "output_full": "E=0.435 MPa Estar=0.580 MPa a=0.235 mm p=5.778 kPa\n5 0.5928582187827951\n10 0.6667767478261721\n20 0.8434117551125253",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "researchgate.net",
-      "title": "Comparison of M SD hand dimensions mm between right and left hands tbl1 286964087",
-      "year": "",
-      "url": "https://www.researchgate.net/figure/Comparison-of-M-SD-hand-dimensions-mm-between-right-and-left-hands_tbl1_286964087",
-      "query": "human fingertip diameter size anthropometry",
-      "unresolved": false,
-      "passage": "",
-      "cited": false,
-      "read": false
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

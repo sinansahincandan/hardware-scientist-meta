@@ -1,82 +1,80 @@
 {
   "crops": [
-    "crop 1: hopper",
-    "crop 2: lift",
-    "crop 3: chassis",
-    "crop 4: wheel",
-    "crop 5: wheel",
-    "crop 6: wheel",
-    "crop 7: wheel",
-    "crop 8: wheel_rear",
-    "crop 9: wheel_rear",
-    "crop 10: wheel_rear",
-    "crop 11: wheel_rear",
-    "crop 12: pmast",
-    "crop 13: pmast",
-    "crop 14: pmast",
-    "crop 15: sensors",
-    "crop 16: pack"
+    "crop 1: chassis",
+    "crop 2: wheel",
+    "crop 3: wheel",
+    "crop 4: arm",
+    "crop 5: hopper",
+    "crop 6: hopper",
+    "crop 7: hopper",
+    "crop 8: hopper",
+    "crop 9: auger",
+    "crop 10: auger",
+    "crop 11: auger",
+    "crop 12: auger",
+    "crop 13: camera",
+    "crop 14: camera"
   ],
   "items": [
     {
       "index": 1,
+      "is_part": false,
+      "seen_as": "inclined bucket ladder"
+    },
+    {
+      "index": 2,
       "is_part": true,
       "seen_as": ""
     },
     {
-      "index": 2,
-      "is_part": false,
-      "seen_as": "Folding perception mast"
-    },
-    {
       "index": 3,
-      "is_part": false,
-      "seen_as": "Rear high-lift mast"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 4,
       "is_part": false,
-      "seen_as": "Rear grouser wheel"
+      "seen_as": "inclined bucket ladder"
     },
     {
       "index": 5,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "inclined bucket ladder"
     },
     {
       "index": 6,
-      "is_part": false,
-      "seen_as": "Rear grouser wheel"
+      "is_part": true,
+      "seen_as": ""
     },
     {
       "index": 7,
       "is_part": false,
-      "seen_as": "Front transverse digging drum"
+      "seen_as": "inclined bucket ladder"
     },
     {
       "index": 8,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "inclined bucket ladder"
     },
     {
       "index": 9,
       "is_part": false,
-      "seen_as": "Front grouser wheel"
+      "seen_as": "load"
     },
     {
       "index": 10,
       "is_part": false,
-      "seen_as": "Front transverse digging drum"
+      "seen_as": "load"
     },
     {
       "index": 11,
-      "is_part": true,
-      "seen_as": ""
+      "is_part": false,
+      "seen_as": "load"
     },
     {
       "index": 12,
       "is_part": false,
-      "seen_as": "Rear high-lift mast"
+      "seen_as": "load"
     },
     {
       "index": 13,
@@ -85,16 +83,6 @@
     },
     {
       "index": 14,
-      "is_part": false,
-      "seen_as": "Rear high-lift mast"
-    },
-    {
-      "index": 15,
-      "is_part": true,
-      "seen_as": ""
-    },
-    {
-      "index": 16,
       "is_part": true,
       "seen_as": ""
     }

@@ -1,0 +1,32 @@
+{
+  "id": "E1",
+  "author": "Structural Dynamicist",
+  "tool": "web_search",
+  "purpose": "search: footbridge tuned mass damper retrofit Millennium Bridge damping",
+  "code_or_query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
+  "inputs": {},
+  "output_summary": "api.repository.cam.ac.uk — ICSV22 Template — https://api.repository.cam.ac.uk/server/api/core/bitstreams/3afdf7af-401b-44f6-8bdb-b40f25db454f/content",
+  "output_full": "api.repository.cam.ac.uk — ICSV22 Template — https://api.repository.cam.ac.uk/server/api/core/bitstreams/3afdf7af-401b-44f6-8bdb-b40f25db454f/content\n(opened by the member, not cited)\nStructural Dynamicist said about it: The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "api.repository.cam.ac.uk",
+      "title": "ICSV22 Template",
+      "year": "",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/3afdf7af-401b-44f6-8bdb-b40f25db454f/content",
+      "query": "footbridge tuned mass damper retrofit Millennium Bridge damping",
+      "unresolved": false,
+      "passage": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Structural Dynamicist",
+          "text": "The proven retrofit for a lively deck is tuned masses hidden below the deck that push back at the bending frequency while the walkway and sightline stay unchanged, as built on London with vertical absorbers under the deck described in the ICSV22 Template (E1) and in the Millennium Bridge, London (E2)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

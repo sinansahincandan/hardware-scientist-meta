@@ -1,24 +1,14 @@
 {
   "id": "E16",
-  "author": "Marcus - Vibration Control and Damping Specialist",
-  "tool": "web_search",
-  "purpose": "search: Setra HiVoSS footbridge damping requirement TMD design",
-  "code_or_query": "Setra HiVoSS footbridge damping requirement TMD design",
+  "author": "Structural Dynamicist",
+  "tool": "calc",
+  "purpose": "TMD spring stiffness for 800kg at 1.83Hz",
+  "code_or_query": "((2*3.14159265*1.827)**2)*800",
   "inputs": {},
-  "output_summary": "structurae.net — [PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification — https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download",
-  "output_full": "structurae.net — [PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification — https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download\n(the search returned no passage text)",
+  "output_summary": "1.05e+05",
+  "output_full": "1.05e+05",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "structurae.net",
-      "title": "[PREVIEW] Model-based Tmd Design for the Footbridge \"Inwilerstrasse\" in Switzerland and its Experimental Verification",
-      "year": "",
-      "url": "https://structurae.net/en/literature/conference-paper/model-based-tmd-design-for-the-footbridge-inwilerstrasse-in-switzerland-and-ist-experimental-verification/preview-download",
-      "query": "Setra HiVoSS footbridge damping requirement TMD design",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

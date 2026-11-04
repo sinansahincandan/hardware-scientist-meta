@@ -1,0 +1,36 @@
+{
+  "id": "E44",
+  "author": "Smallholder Cooperative Operations Specialist",
+  "tool": "web_search",
+  "purpose": "search: FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "code_or_query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+  "inputs": {},
+  "output_summary": "fao.org — Small-Scale Postharvest Handling Practices — http://www.fao.org/4/ae075e/ae075e13.htm",
+  "output_full": "fao.org — Small-Scale Postharvest Handling Practices — http://www.fao.org/4/ae075e/ae075e13.htm\n(opened by the member, not cited)\nSmallholder Cooperative Operations Specialist said about it: The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42).\nSmallholder Cooperative Operations Specialist said about it: The rule in Small-Scale Postharvest Handling Practices (E44) keeps temperate crops near 0 degC but chilling-sensitive crops at 10 degC to 12 degC to avoid injury, so the single 5.0 degC mixed holding is an agreed compromise to hold tomatoes with leafy vegetables, paid by the flat fee in The Solution – ColdHubs (E43) covering reusable crates, twice-daily wall thermometer checks and hose cleaning with early-morning shaded intake.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "fao.org",
+      "title": "Small-Scale Postharvest Handling Practices",
+      "year": "",
+      "url": "http://www.fao.org/4/ae075e/ae075e13.htm",
+      "query": "FAO recommended cold storage temperature fruits vegetables 4-10C post-harvest",
+      "unresolved": false,
+      "passage": "The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The guidance in Manual handling weight limits (E45) sets 20 kg close to the body at elbow height as the suggested adult limit, so 20.0 kg crates are one-person suitcase loads, handled through a single door with strip curtain under 8 openings per day discipline, stacked with 25 mm air gaps and narrow one-pallet-width rows for circulation stated in Small-Scale Postharvest Handling Practices (E44) inside interior volume cubic metres (E39) of 8.64 cubic metres, keeping the rear-to-front loop shown in Walk-in chamber: insulated box on ground pads, front door with strip curtain, two rack rows with vented crates, rear high evaporator airflow loop, roof PV shade frame (E42)."
+        },
+        {
+          "by": "Smallholder Cooperative Operations Specialist",
+          "text": "The rule in Small-Scale Postharvest Handling Practices (E44) keeps temperate crops near 0 degC but chilling-sensitive crops at 10 degC to 12 degC to avoid injury, so the single 5.0 degC mixed holding is an agreed compromise to hold tomatoes with leafy vegetables, paid by the flat fee in The Solution – ColdHubs (E43) covering reusable crates, twice-daily wall thermometer checks and hose cleaning with early-morning shaded intake."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

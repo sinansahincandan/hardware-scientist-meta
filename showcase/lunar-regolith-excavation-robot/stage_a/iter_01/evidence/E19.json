@@ -1,23 +1,26 @@
 {
   "id": "E19",
-  "author": "Theo \u2014 Autonomy and Remote Operations Engineer",
-  "tool": "calc",
-  "purpose": "stopping distance from latency at crawl speed",
-  "code_or_query": "Q_(0.5,'m/s')*Q_(0.5,'s')",
-  "inputs": {
-    "arg0": {
-      "value": "0.5",
-      "unit": "m/s"
-    },
-    "arg1": {
-      "value": "0.5",
-      "unit": "s"
-    }
-  },
-  "output_summary": "0.25 m",
-  "output_full": "0.25 m",
+  "author": "Mobility and Deployable Chassis Lead",
+  "tool": "web_search",
+  "purpose": "search: skid steer four wheel drive lunar rover grouser wheel regolith traction",
+  "code_or_query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
+  "inputs": {},
+  "output_summary": "venturi.space — Tests MONA LUNA at Luna - Venturi Space — https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/",
+  "output_full": "venturi.space — Tests MONA LUNA at Luna - Venturi Space — https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/\n(found by the search; not opened or cited)",
   "sketch_path": null,
-  "references": [],
+  "references": [
+    {
+      "authors_or_org": "venturi.space",
+      "title": "Tests MONA LUNA at Luna - Venturi Space",
+      "year": "",
+      "url": "https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/",
+      "query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
   "status": "ok",
   "cycle": 1
 }

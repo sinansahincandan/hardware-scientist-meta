@@ -1,0 +1,32 @@
+{
+  "id": "E33",
+  "author": "Enclosure and Structural Designer",
+  "tool": "web_search",
+  "purpose": "search: insulated sandwich panel PIR polyurethane cold room U-value thickness 100mm",
+  "code_or_query": "insulated sandwich panel PIR polyurethane cold room U-value thickness 100mm",
+  "inputs": {},
+  "output_summary": "laotie-steel.com — Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared — https://www.laotie-steel.com/blog/sandwich-panel-types-pu-pir-eps-rock-wool-comparison",
+  "output_full": "laotie-steel.com — Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared — https://www.laotie-steel.com/blog/sandwich-panel-types-pu-pir-eps-rock-wool-comparison\n(found by the search; not opened or cited)\nEnclosure and Structural Designer said about it: The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives U Value PIR 0.21 watt per square metre kelvin at 100 millimetre and 0.17 watt per square metre kelvin at 120 millimetre, and the comparison in Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared (E33) states 100 millimetre Polyurethane (PU, foam insulation) reaches about 0.23 watt per square metre kelvin, so I use Polyisocyanurate (PIR, rigid foam insulation) 100 millimetre walls and 120 millimetre roof and floor at about 0.21 watt per square metre kelvin.",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "laotie-steel.com",
+      "title": "Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared",
+      "year": "",
+      "url": "https://www.laotie-steel.com/blog/sandwich-panel-types-pu-pir-eps-rock-wool-comparison",
+      "query": "insulated sandwich panel PIR polyurethane cold room U-value thickness 100mm",
+      "unresolved": false,
+      "passage": "The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives U Value PIR 0.21 watt per square metre kelvin at 100 millimetre and 0.17 watt per square metre kelvin at 120 millimetre, and the comparison in Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared (E33) states 100 millimetre Polyurethane (PU, foam insulation) reaches about 0.23 watt per square metre kelvin, so I use Polyisocyanurate (PIR, rigid foam insulation) 100 millimetre walls and 120 millimetre roof and floor at about 0.21 watt per square metre kelvin.",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Enclosure and Structural Designer",
+          "text": "The table in Professional Manufacturer Factory Keep Warm Insulated PU Sandwich Panel (E32) gives U Value PIR 0.21 watt per square metre kelvin at 100 millimetre and 0.17 watt per square metre kelvin at 120 millimetre, and the comparison in Sandwich Panel Types: PU, PIR, EPS & Rock Wool Compared (E33) states 100 millimetre Polyurethane (PU, foam insulation) reaches about 0.23 watt per square metre kelvin, so I use Polyisocyanurate (PIR, rigid foam insulation) 100 millimetre walls and 120 millimetre roof and floor at about 0.21 watt per square metre kelvin."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

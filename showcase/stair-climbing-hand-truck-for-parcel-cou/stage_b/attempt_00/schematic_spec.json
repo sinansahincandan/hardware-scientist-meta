@@ -2,185 +2,222 @@
   "view": "side",
   "nodes": [
     {
-      "id": "p_star",
+      "id": "BB",
+      "label": "twin tube backbone",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 40.0,
+        "max": 1100.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 2
+      },
+      "color_hint": "#7fb3d5",
+      "aspect": 0.04
+    },
+    {
+      "id": "TP",
+      "label": "folding toe plate",
+      "shape": "plate",
+      "size_class_mm": {
+        "min": 240.0,
+        "max": 365.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 4
+      },
+      "color_hint": "#9099a0",
+      "aspect": 6.0
+    },
+    {
+      "id": "HR",
+      "label": "telescoping push handle",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 30.0,
+        "max": 1120.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 0
+      },
+      "color_hint": "#9099a0",
+      "aspect": 0.08
+    },
+    {
+      "id": "CL",
       "label": "tri-star wheel cluster",
       "shape": "circle",
       "size_class_mm": {
-        "min": 140.0,
-        "max": 300.0
+        "min": 150.0,
+        "max": 370.0
       },
       "layout": {
-        "col": 1,
+        "col": 2,
+        "row": 4
+      },
+      "color_hint": "#3a3a3a",
+      "aspect": 1.0
+    },
+    {
+      "id": "AX",
+      "label": "main cluster axle",
+      "shape": "circle",
+      "size_class_mm": {
+        "min": 20.0,
+        "max": 310.0
+      },
+      "layout": {
+        "col": 3,
         "row": 4
       },
       "color_hint": "#5d6d7e",
       "aspect": 1.0
     },
     {
-      "id": "p_spine",
-      "label": "twin spine tubes",
-      "shape": "beam",
+      "id": "BR",
+      "label": "disc brake with tooth lock",
+      "shape": "circle",
       "size_class_mm": {
-        "min": 30.0,
-        "max": 1200.0
+        "min": 160.0,
+        "max": 185.0
       },
       "layout": {
         "col": 2,
-        "row": 2
-      },
-      "color_hint": "#7fb3d5",
-      "aspect": 0.08
-    },
-    {
-      "id": "p_toe",
-      "label": "toe plate 450x350",
-      "shape": "plate",
-      "size_class_mm": {
-        "min": 5.0,
-        "max": 450.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 4
-      },
-      "color_hint": "#a9cce3",
-      "aspect": 7.0
-    },
-    {
-      "id": "p_brake",
-      "label": "brake band + pawl + deadman",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 20.0,
-        "max": 200.0
-      },
-      "layout": {
-        "col": 1,
-        "row": 3
+        "row": 5
       },
       "color_hint": "#c0392b",
-      "aspect": 1.2
+      "aspect": 1.0
     },
     {
-      "id": "p_handle",
-      "label": "closed-loop handles",
+      "id": "LV",
+      "label": "dead-man brake lever with cable",
       "shape": "rect",
       "size_class_mm": {
-        "min": 900.0,
-        "max": 1100.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 0
-      },
-      "color_hint": "#7dcea0",
-      "aspect": 0.75
-    },
-    {
-      "id": "p_strap",
-      "label": "harness strap + heel stop",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 30.0,
-        "max": 600.0
+        "min": 38.0,
+        "max": 120.0
       },
       "layout": {
         "col": 4,
-        "row": 3
+        "row": 0
       },
-      "color_hint": "#f0c27a",
-      "aspect": 0.15
+      "color_hint": "#e67e22",
+      "aspect": 0.32
     },
     {
-      "id": "p_hinge",
-      "label": "mid-spine fold hinge + lock",
-      "shape": "circle",
+      "id": "CB",
+      "label": "clip-on cross brace",
+      "shape": "beam",
       "size_class_mm": {
-        "min": 30.0,
-        "max": 150.0
+        "min": 25.0,
+        "max": 310.0
       },
       "layout": {
         "col": 3,
-        "row": 2
+        "row": 3
       },
-      "color_hint": "#f1948a",
+      "color_hint": "#7fb3d5",
       "aspect": 1.0
+    },
+    {
+      "id": "PS",
+      "label": "parcel retaining strap",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 25.0,
+        "max": 1200.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 1
+      },
+      "color_hint": "#f1c40f",
+      "aspect": 0.15
     }
   ],
   "edges": [
     {
-      "from_id": "p_spine",
-      "to_id": "p_star",
+      "from_id": "TP",
+      "to_id": "BB",
       "kind": "mechanical",
-      "label": "spine tubes to carrier axle",
+      "label": "parcel load to backbone",
       "arrow": false
     },
     {
-      "from_id": "p_spine",
-      "to_id": "p_toe",
+      "from_id": "BB",
+      "to_id": "AX",
       "kind": "mechanical",
-      "label": "spine to toe plate",
+      "label": "bending to axle",
       "arrow": false
     },
     {
-      "from_id": "p_spine",
-      "to_id": "p_handle",
+      "from_id": "AX",
+      "to_id": "CL",
       "kind": "mechanical",
-      "label": "spine to handles",
+      "label": "torque to clusters",
       "arrow": false
     },
     {
-      "from_id": "p_brake",
-      "to_id": "p_star",
+      "from_id": "LV",
+      "to_id": "BR",
       "kind": "mechanical",
-      "label": "brake band and pawl on carrier",
+      "label": "cable to caliper",
       "arrow": false
     },
     {
-      "from_id": "p_handle",
-      "to_id": "p_brake",
+      "from_id": "BR",
+      "to_id": "AX",
       "kind": "mechanical",
-      "label": "deadman lever to brake",
-      "arrow": true
-    },
-    {
-      "from_id": "p_hinge",
-      "to_id": "p_spine",
-      "kind": "mechanical",
-      "label": "fold hinge joins spine",
+      "label": "lock to axle",
       "arrow": false
     },
     {
-      "from_id": "p_strap",
-      "to_id": "p_toe",
+      "from_id": "HR",
+      "to_id": "BB",
       "kind": "mechanical",
-      "label": "harness to toe plate",
+      "label": "slides inside backbone",
+      "arrow": false
+    },
+    {
+      "from_id": "CB",
+      "to_id": "BB",
+      "kind": "mechanical",
+      "label": "pins across tubes",
+      "arrow": false
+    },
+    {
+      "from_id": "PS",
+      "to_id": "BB",
+      "kind": "mechanical",
+      "label": "preload to backrest",
       "arrow": false
     }
   ],
   "loads": [
     {
-      "on_id": "p_toe",
-      "label": "60 kg parcel weight",
+      "on_id": "TP",
+      "label": "parcel weight",
       "direction": "down"
     },
     {
-      "on_id": "p_handle",
-      "label": "226 N lever heave",
+      "on_id": "HR",
+      "label": "operator tip-back pull",
       "direction": "up"
     },
     {
-      "on_id": "p_star",
-      "label": "stair nosing reaction",
-      "direction": "up"
+      "on_id": "CL",
+      "label": "slope load on stairs",
+      "direction": "down"
     }
   ],
-  "critical_part_id": "p_star",
-  "scale_bar_mm": 100.0,
+  "critical_part_id": "BB",
+  "scale_bar_mm": 200.0,
   "notes": [
-    "Side view unfolded at 15 deg lean on 200mm riser / 250mm going: star at nosing, spine leans back, toe forward, handles top.",
-    "Fail-safe: brake band + pawl spring-locked on release, deadman lever at handles, hold 198 N-m.",
-    "Twin 30x2mm spine with mid-hinge lock + green-red indicator; SF 9.02, pin 36.6 MPa.",
-    "Folds to 730x490x150 slab for van niche, tare 7.38 kg, toe holds 40x30x30 to 60x40x40 cm parcel."
+    "Side view deployed: parcel on TP forward, BB inclined, HR up, CL on 197mm step nose.",
+    "BB one-piece twin 40x36mm 1100mm carries 118 N m, 40.9 MPa with 1.5 impact, 43.9mm whip.",
+    "CL 185mm radius pivots over riser: 129J per riser, 74.6 N m total lock.",
+    "BR spring-applied disc + tooth pin holds hands-off; LV squeeze releases/meters with 57.4N release."
   ]
 }

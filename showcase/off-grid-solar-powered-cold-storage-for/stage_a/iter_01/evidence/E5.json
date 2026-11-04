@@ -1,0 +1,26 @@
+{
+  "id": "E5",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
+  "code_or_query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
+  "inputs": {},
+  "output_summary": "gennergyps.co.za — Solar powered cold storage units Vanuatu — 2024 — https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf",
+  "output_full": "gennergyps.co.za — Solar powered cold storage units Vanuatu — 2024 — https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "gennergyps.co.za",
+      "title": "Solar powered cold storage units Vanuatu",
+      "year": "2024",
+      "url": "https://gennergyps.co.za/content/files/Solar-powered-cold-storage-units-Vanuatu_Thu-04-Jul-2024-34789.pdf",
+      "query": "off-grid solar powered cold storage 1 tonne produce ColdHubs Ecofrost specifications",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

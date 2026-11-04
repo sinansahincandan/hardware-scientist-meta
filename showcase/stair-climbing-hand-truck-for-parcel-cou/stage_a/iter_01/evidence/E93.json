@@ -1,0 +1,14 @@
+{
+  "id": "E93",
+  "author": "Mara Voss \u2014 Structural Frame & Load Path",
+  "tool": "calc",
+  "purpose": "system tip deflection twin-tube cantilever correct model",
+  "code_or_query": "589*1.1**3/(3*68.9e9*3.46e-08)",
+  "inputs": {},
+  "output_summary": "0.11",
+  "output_full": "0.11",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

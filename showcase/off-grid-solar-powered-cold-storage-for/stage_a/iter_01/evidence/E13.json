@@ -1,0 +1,14 @@
+{
+  "id": "E13",
+  "author": "Solar Energy Systems Engineer",
+  "tool": "calc",
+  "purpose": "PV array watts for 8kWh per day load at 5 peak sun hours",
+  "code_or_query": "(8000/5/0.75)",
+  "inputs": {},
+  "output_summary": "2.13e+03",
+  "output_full": "2.13e+03",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

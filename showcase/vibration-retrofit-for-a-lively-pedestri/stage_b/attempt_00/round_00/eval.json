@@ -1,75 +1,106 @@
 {
-  "pixel_description": "Render only: top shows two long parallel dark steel I-girders spanning beyond frame left-right, with splice plates and rows of bolts on webs. Directly below girders sits transverse bearer frame of short I-beams perpendicular to girders, clamped via bolted brackets with vertical bolts and nuts metal-to-metal. Hanging from frame are four vertical elements in two pairs: left pair black cylinder left and bright coiled helix right; right pair coiled helix left and black cylinder right. Coils are helical support springs with top eyelets to frame beam and bottom eyelets to top face of mass. Black cylinders are viscous dashpots with top clevis to frame and bottom clevis to top face of mass. Critical part 500kg TMD mass 1.85Hz is drawn as ONE solid rectangular steel block, horizontally elongated, centered under frame, top face carries 4 connections (2 springs + 2 dampers near ends left-right), bottom face above cover with clear vertical stroke gap, no other blocks, floating or duplicated. Below mass are two flat rectangular tray panels shown hinged open outward as removable cover panel, with hinge hardware and small links, forming a split cover with gap to mass. Callouts: Bridge Deck Section to rear girder, Transverse Bearer Frame to cross beam, Tuned Steel Mass to block, Removable Cover Panel to lower tray, Viscous Dashpots to right black cylinder, Helical Support Springs leader ends on left black cylinder (damper) not a coil. No people, hands, numbers, scale bars. Overall shape is under-deck hung mass at midspan, consistent with concealed damping for 40m footbridge; close-up scale plausible, not many times too large/small.",
+  "pixel_description": "Render only: concrete deck slab horizontal on top, two dark vertical I-girders/columns to ground left and right supporting deck. Critical part transverse cross-beam xb: ONE element, single dark steel I-beam, horizontal transverse, spanning between girders, clamped at both ends with top and web bolt groups. Under bottom flange: two hanging twin units side-by-side centre. Each unit: one vertical coil spring + one vertical silver viscous damper cylinder side-by-side, top attached via black hanger bracket to beam, bottom pinned to top of large black box tuned mass. So 2 masses, 2 springs, 2 dampers total. Black open cage stops: one hanging under beam near left girder, one hanging under beam near right girder, plus small cage on outer side of each mass moving with mass. Small black box deck accelerometer on top centre of deck with wire. Standing adult man right of right girder for scale. How touch: hb bolts clamp xb ends to girder webs, xb bottom touches spring/damper tops via brackets, spring/damper bottoms touch mass tops, masses float with air gap to beam and to under-beam cages, deck touches girders top and ac bottom.",
   "regions": [
     {
       "box": [
-        69.0,
-        496.0,
-        239.0,
-        544.0
+        220.0,
+        541.0,
+        386.0,
+        576.0
       ],
       "part_id": "callout",
-      "observed": "label 'Helical Support Springs' with leader dot ending on black cylindrical viscous damper",
-      "expected": "Helical Support Springs label leader should end on coiled helical spring",
+      "observed": "leader ends on left under-beam Elastomer Travel Stop cage, not on spring",
+      "expected": "Coil Spring Suspension leader should end on vertical coil springs above masses",
+      "source": "render"
+    },
+    {
+      "box": [
+        638.0,
+        561.0,
+        751.0,
+        594.0
+      ],
+      "part_id": "callout",
+      "observed": "leader ends on right under-beam Elastomer Travel Stop cage, not on damper",
+      "expected": "Viscous Damper leader should end on vertical damper cylinders above masses",
+      "source": "render"
+    },
+    {
+      "box": [
+        636.0,
+        246.0,
+        740.0,
+        281.0
+      ],
+      "part_id": "callout",
+      "observed": "leader dot ends on bare top flange of cross-beam mid-span, not on bolts",
+      "expected": "Clamp Bolt Set leader should end on HSFG bolt groups at beam-to-girder ends",
       "source": "render"
     }
   ],
   "previous_regions": [],
-  "comparison_with_previous": "First review - no previous render to compare; evaluated against mechanism sketch and engineers' hand sketches.",
+  "comparison_with_previous": "First evaluation; no previous render to compare.",
   "deviations": [
     {
-      "what": "deck",
-      "measured": "2 long parallel girders in close-up midspan section ~3-4x visible frame length, clamp bolts connect frame below girders",
-      "expected": "1 deck assembly ~20x frame, full 40m, touching bolts",
+      "what": "xb",
+      "measured": "both spring tops and damper tops attached to beam bottom flange via black hanger brackets with no gap",
+      "expected": "xb transverse beam bottom to touch tops of cs springs and vd dampers (hangs springs/dampers)",
       "matters": false,
-      "why": "Only a midspan section is shown, not full 40m. Two girders are one deck. Load path deck-bolts-frame preserved in pixels."
+      "why": "pixels show direct bracket attachment under beam for both twin units; segmenter 'apart' is threshold on bracket vs coil/cylinder, not a physical gap. Load path girders->xb->cs/vd intact."
     },
     {
-      "what": "frame",
-      "measured": "3-4 transverse I-beams stacked as clamp sandwich; dampers/springs hang from lowest beam; cover hinged below with gap",
-      "expected": "2 bearer beams touching damper and cover",
+      "what": "cs",
+      "measured": "vertical long-axis coils, about 1.2x tm box height, attached to xb via hanger",
+      "expected": "cs vertical long axis, about 0.6x tm height, touching xb",
       "matters": false,
-      "why": "Extra members are clamp sandwich detail for bolted transverse bearers. Vertical load path frame to springs/dampers to mass preserved, cover below with clearance."
+      "why": "pixels show two long vertical coil springs above the two black masses. Segmenter 'horizontal' is wrong - coils are clearly vertical. Taller than 0.6x is illustration of stroke/sag, does not change vertical suspension working principle, and contact to xb is present."
     },
     {
-      "what": "bolts",
-      "measured": "dozens visible: horizontal splice bolts on girder webs plus vertical clamp bolts; clamp bolts ~0.043x frame in close-up",
-      "expected": "8+ HS bolts vertical ~0.01x frame touching deck",
+      "what": "vd",
+      "measured": "vertical long-axis cylinders above masses, attached to xb via hanger",
+      "expected": "vd vertical long axis, touching xb",
       "matters": false,
-      "why": "Mixed orientations are different functions (splice vs clamp). Count larger, size larger due to close-up perspective, but clamping metal-to-metal preserved."
+      "why": "pixels show two vertical silver viscous cylinders parallel to springs. Segmenter 'horizontal' is wrong. Contact to xb via top bracket and to tm via bottom pin is visible, so damping path intact."
     },
     {
-      "what": "spring",
-      "measured": "2 bright coiled helices vertical, one per side, eyelet top to frame, eyelet bottom to mass top",
-      "expected": "4 coil springs vertical",
+      "what": "hb",
+      "measured": "5 detected bolt groups, many bolts at both beam ends top and web",
+      "expected": "hb HSFG clamp bolt set qty 1 set, 2 visible zones (beam-to-girder each end)",
       "matters": false,
-      "why": "2 springs + 2 dashpots = 4 legs as in engineers sketches. Pixels are vertical, segmenter horizontal is wrong. Symmetric vertical support preserved."
+      "why": "pixels show multiple rows of bolts at left and right beam-to-girder joints. Extra bolt depictions vs 2 zones is set detailing; more bolts is conservative for 32.9 kN slip vs 13.1 kN demand and does not change clamp working principle."
     },
     {
-      "what": "damper",
-      "measured": "2 black cylinders vertical, clevis top to frame, clevis bottom to mass top",
-      "expected": "dashpots vertical touching frame and mass",
+      "what": "es",
+      "measured": "3-4 black cage stops visible: 2 hanging under beam near girders plus 1 side cage on each tuned mass",
+      "expected": "es caged elastomer stops qty 1 set, 2 visible",
       "matters": false,
-      "why": "Pixels show vertical orientation and connection both ends. Segmenter horizontal/apart claims are threshold errors. Damping load path intact."
+      "why": "pixels show cage baskets under beam and on mass sides. Extra cages vs 2 still provide over-travel limit for 49.4 mm stroke inside 80 mm gap; does not create different mechanism."
     },
     {
-      "what": "mass",
-      "measured": "single rectangular block touched at top by 2 springs + 2 dampers via eyelets/clevises",
-      "expected": "steel block touching damper",
+      "what": "cs__spring",
+      "measured": "vertical coil",
+      "expected": "cs__spring instance vertical long axis",
       "matters": false,
-      "why": "Direct visible connection frame to mass. Segmenter apart claim false. Mass free to move vertically for tuning."
+      "why": "pixels show the instance as vertical coil spring; segmenter horizontal call is wrong, same as cs."
     },
     {
-      "what": "cover",
-      "measured": "2 open tray panels below mass forming split cover ~1.1x mass in perspective, hinged with stroke gap to mass",
-      "expected": "1 cover ~2.4x mass touching frame",
+      "what": "vd__damper",
+      "measured": "vertical cylinder",
+      "expected": "vd__damper instance vertical long axis",
       "matters": false,
-      "why": "Two panels are open halves of one removable cover assembly shown open for view. Gap provides +/-50mm stroke clearance. Concealment when closed retained."
+      "why": "pixels show the instance as vertical damper cylinder; segmenter horizontal call is wrong, same as vd."
+    },
+    {
+      "what": "device",
+      "measured": "located parts span ~5090 mm across x ~3222 mm high scaled by ~1700 mm person; xb ~1.3x spec, spring+mass hang ~1.2-1.5 m tall ~2x spec",
+      "expected": "whole device largest part xb 2500-3000 mm, hanging envelope 124 mm sag+stroke within girder depth, zero above deck except 10-50 mm ac",
+      "matters": false,
+      "why": "pixels show deck on two tall girder-columns to ground for visualization with twin masses hanging below beam between girders, ac small box on deck. Beam length modestly over but not many-times; tall hang is illustration, still under-deck twin-hang shape with no deck change. Does not break 2% weight or Medium comfort limits and not a shape the problem rules out."
     }
   ],
-  "s1_faithful": true,
-  "s1_differences": "Close-up midspan section shows only girder length near TMD not full 40m; frame shown as stacked clamp sandwich; springs 2 coils + 2 dashpots vs schematic symbols; cover shown as two open panels vs one closed box; Helical Support Springs callout leader ends on damper instead of spring. Parts, vertical connections frame-to-mass, orientations and concealed under-deck arrangement match sketch.",
+  "s1_faithful": false,
+  "s1_differences": "3D geometry has correct parts, counts and connections: 1 xb, 2 tm, 2 cs vertical, 2 vd vertical, hb clamps, es cages, ac on deck. But annotated picture contradicts solution text locations: Coil Spring Suspension and Viscous Damper callouts both point to travel-stop cages, and Clamp Bolt Set points to beam, so labels misidentify parts.",
   "s2_flaw": false,
-  "s2_feedback": "Mass hangs vertically on 2 springs + 2 dashpots from bearer frame with clear stroke gap above open cover panels; deck-frame clamp, spring-mass and damper-mass load paths continuous with no interference or impossible assembly visible.",
-  "notes": "Photorealistic render, not diagram/CAD wireframe. Segmenter touch/orientation flags are coarse threshold errors - springs/dampers are vertical and connected in pixels. Only annotation fault requiring fix is Helical Support Springs leader ending on damper. No people/scale objects to misjudge 40m context; close-up midspan section is appropriate."
+  "s2_feedback": "No design flaw exposed in image: load path main girders->xb->springs/dampers->masses visible with no interference, masses clear of beam and stops in static view, clamp at both ends can carry 7.85 kN plus dynamics. Extra bolts/cages are conservative, not impossible assembly.",
+  "notes": "Leader lines are faint; endpoints judged from visible dots/lines. 3D geometry matches twin under-deck TMD but three callout leaders end on wrong parts."
 }

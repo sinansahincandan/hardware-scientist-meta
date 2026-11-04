@@ -1,0 +1,14 @@
+{
+  "id": "E58",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "steady plus staged pull-down daily kWh",
+  "code_or_query": "(203+50+40)*24/1000 + 6.2",
+  "inputs": {},
+  "output_summary": "13.2",
+  "output_full": "13.2",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

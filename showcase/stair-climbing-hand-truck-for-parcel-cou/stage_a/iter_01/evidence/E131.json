@@ -1,0 +1,14 @@
+{
+  "id": "E131",
+  "author": "Tomas Lind \u2014 Folding & Van Integration",
+  "tool": "calc",
+  "purpose": "tare lift with 40mm tubes from total",
+  "code_or_query": "((67.1-60)*9.81)",
+  "inputs": {},
+  "output_summary": "69.7",
+  "output_full": "69.7",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 3
+}

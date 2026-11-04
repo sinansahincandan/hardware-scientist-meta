@@ -1,65 +1,65 @@
 {
   "px_per_mm": 4.0,
   "boxes": {
-    "skin": {
-      "x0": 200.0,
+    "SKIN": {
+      "x0": 57.49999999999999,
       "y0": 65.0,
-      "x1": 600.0,
+      "x1": 182.5,
       "y1": 115.00000000000006,
-      "label": "outer touch skin (ridged)"
+      "label": "Ridged silicone dome"
     },
-    "film": {
-      "x0": 100.0,
+    "GEL": {
+      "x0": -80.0,
       "y0": 169.00000000000006,
-      "x1": 700.0,
+      "x1": 320.0,
       "y1": 219.00000000000006,
-      "label": "vibration sensing film"
+      "label": "Gel interlayer"
     },
-    "pillars": {
-      "x0": 379.2,
-      "y0": 273.00000000000006,
-      "x1": 420.8,
-      "y1": 356.20000000000005,
-      "label": "silicone pillar dielectric x48"
+    "CORE": {
+      "x0": 74.24,
+      "y0": 481.00000000000006,
+      "x1": 165.76,
+      "y1": 564.2,
+      "label": "Nail-backed faceted rigid core with mount"
     },
-    "pcb": {
-      "x0": 87.5,
+    "CAP": {
+      "x0": -80.0,
       "y0": 377.00000000000006,
-      "x1": 712.5,
+      "x1": 320.0,
       "y1": 427.00000000000006,
-      "label": "taxel electrode circuit board"
+      "label": "Capacitive taxel grid"
     },
-    "core": {
-      "x0": 325.0,
-      "y0": 481.00000000000006,
-      "x1": 475.0,
-      "y1": 531.0,
-      "label": "rigid mounting core"
+    "PVDF": {
+      "x0": -130.0,
+      "y0": 273.00000000000006,
+      "x1": 370.0,
+      "y1": 323.00000000000006,
+      "label": "Vibration film"
     },
-    "readout": {
-      "x0": 607.8312163512969,
+    "FLEX": {
+      "x0": 250.0,
       "y0": 377.00000000000006,
-      "x1": 752.1687836487033,
-      "y1": 449.16878364870325,
-      "label": "multiplexed readout electronics"
+      "x1": 550.0,
+      "y1": 427.00000000000006,
+      "label": "Flex tail with connector"
     },
-    "tail": {
-      "x0": 810.0,
-      "y0": 481.00000000000006,
-      "x1": 1110.0,
-      "y1": 531.0,
-      "label": "rear flexible tail"
+    "BOARD": {
+      "x0": 570.0000000000001,
+      "y0": 377.00000000000006,
+      "x1": 790.0,
+      "y1": 427.00000000000006,
+      "label": "On-finger readout board"
     },
-    "screws": {
-      "x0": 85.0,
-      "y0": 481.00000000000006,
-      "x1": 154.99999999999997,
-      "y1": 551.0,
-      "label": "mounting screws x2"
+    "CABLE": {
+      "x0": 760.0,
+      "y0": 377.00000000000006,
+      "x1": 1160.0,
+      "y1": 427.00000000000006,
+      "label": "Message cable with interrupt line"
     }
   },
   "width": 1000,
   "height": 625,
-  "critical_part_id": "pillars",
+  "critical_part_id": "SKIN",
   "scale_bar_mm": 10.0
 }

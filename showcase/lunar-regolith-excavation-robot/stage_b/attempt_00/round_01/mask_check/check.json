@@ -1,0 +1,102 @@
+{
+  "crops": [
+    "crop 1: chassis",
+    "crop 2: chassis",
+    "crop 3: chassis",
+    "crop 4: chassis",
+    "crop 5: wheel",
+    "crop 6: wheel",
+    "crop 7: arm",
+    "crop 8: kerf",
+    "crop 9: ladder",
+    "crop 10: hopper",
+    "crop 11: auger",
+    "crop 12: auger",
+    "crop 13: auger",
+    "crop 14: auger",
+    "crop 15: battery",
+    "crop 16: battery"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 2,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 3,
+      "is_part": false,
+      "seen_as": "tilt screw discharge"
+    },
+    {
+      "index": 4,
+      "is_part": false,
+      "seen_as": "screw"
+    },
+    {
+      "index": 5,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 6,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 7,
+      "is_part": false,
+      "seen_as": "person"
+    },
+    {
+      "index": 8,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 9,
+      "is_part": false,
+      "seen_as": "steep wedge hopper"
+    },
+    {
+      "index": 10,
+      "is_part": false,
+      "seen_as": "bin or container it fills"
+    },
+    {
+      "index": 11,
+      "is_part": false,
+      "seen_as": "out-of-focus thing in the background"
+    },
+    {
+      "index": 12,
+      "is_part": false,
+      "seen_as": "out-of-focus thing in the background"
+    },
+    {
+      "index": 13,
+      "is_part": false,
+      "seen_as": "out-of-focus thing in the background"
+    },
+    {
+      "index": 14,
+      "is_part": false,
+      "seen_as": "bin or container it fills"
+    },
+    {
+      "index": 15,
+      "is_part": true,
+      "seen_as": ""
+    },
+    {
+      "index": 16,
+      "is_part": true,
+      "seen_as": ""
+    }
+  ]
+}

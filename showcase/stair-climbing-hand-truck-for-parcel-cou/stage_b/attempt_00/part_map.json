@@ -1,95 +1,145 @@
 {
   "parts": [
     {
-      "part_id": "p_star",
-      "visual_phrase": "wheel cluster",
-      "count": 1,
-      "long_axis": "any",
-      "size_vs": "p_spine",
-      "size_ratio": 0.25,
-      "touches": [
-        "p_spine",
-        "p_brake"
-      ],
-      "note": "three small wheels orbiting stair nosing, always one bearing"
-    },
-    {
-      "part_id": "p_spine",
-      "visual_phrase": "metal tube",
+      "part_id": "BB",
+      "visual_phrase": "metal frame",
       "count": 1,
       "long_axis": "vertical",
-      "size_vs": "p_toe",
-      "size_ratio": 2.67,
+      "size_vs": "HR",
+      "size_ratio": 0.98,
       "touches": [
-        "p_star",
-        "p_toe",
-        "p_handle",
-        "p_hinge"
+        "TP",
+        "AX",
+        "HR",
+        "CB",
+        "PS"
       ],
-      "note": "twin leaning tubes carrying 60kg bending to axle"
+      "note": "Upright twin tubes carry parcel load to axle."
     },
     {
-      "part_id": "p_toe",
+      "part_id": "TP",
       "visual_phrase": "metal plate",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "p_star",
-      "size_ratio": 1.5,
+      "size_vs": "BB",
+      "size_ratio": 0.33,
       "touches": [
-        "p_spine",
-        "p_strap"
+        "BB"
       ],
-      "note": "flat platform holding parcel at base of spine"
+      "note": "Folds down to hold parcel from below."
     },
     {
-      "part_id": "p_brake",
-      "visual_phrase": "brake lever",
-      "count": 1,
-      "long_axis": "any",
-      "size_vs": "p_star",
-      "size_ratio": 0.66,
-      "touches": [
-        "p_star",
-        "p_handle"
-      ],
-      "note": "fail-safe band on carrier released by hand lever"
-    },
-    {
-      "part_id": "p_handle",
+      "part_id": "HR",
       "visual_phrase": "metal handle",
       "count": 1,
       "long_axis": "vertical",
-      "size_vs": "p_spine",
-      "size_ratio": 0.83,
+      "size_vs": "BB",
+      "size_ratio": 1.02,
       "touches": [
-        "p_spine",
-        "p_brake"
+        "BB",
+        "LV"
       ],
-      "note": "loop grips at hip height for one-person heave"
+      "note": "Slides in backbone for pull and stow."
     },
     {
-      "part_id": "p_strap",
-      "visual_phrase": "fabric strap",
-      "count": 1,
-      "long_axis": "vertical",
-      "size_vs": "p_toe",
-      "size_ratio": 1.33,
-      "touches": [
-        "p_toe"
-      ],
-      "note": "webbing retaining parcel to plate and spine"
-    },
-    {
-      "part_id": "p_hinge",
-      "visual_phrase": "metal hinge",
+      "part_id": "CL",
+      "visual_phrase": "wheel cluster",
       "count": 1,
       "long_axis": "any",
-      "size_vs": "p_spine",
-      "size_ratio": 0.12,
+      "size_vs": "BB",
+      "size_ratio": 0.34,
       "touches": [
-        "p_spine"
+        "AX"
       ],
-      "note": "mid-tube joint folding to flat slab with lock pin"
+      "note": "Three-wheeled star pivots over step nose."
+    },
+    {
+      "part_id": "AX",
+      "visual_phrase": "metal rod",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "CL",
+      "size_ratio": 0.84,
+      "touches": [
+        "BB",
+        "CL",
+        "BR"
+      ],
+      "note": "Cross shaft carries clusters and brake torque."
+    },
+    {
+      "part_id": "BR",
+      "visual_phrase": "metal disc",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "CL",
+      "size_ratio": 0.5,
+      "touches": [
+        "AX",
+        "LV"
+      ],
+      "note": "Spring disc holds axle hands-off on slope."
+    },
+    {
+      "part_id": "LV",
+      "visual_phrase": "brake lever",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "BR",
+      "size_ratio": 0.65,
+      "touches": [
+        "HR",
+        "BR"
+      ],
+      "note": "Squeeze to release, let go to lock."
+    },
+    {
+      "part_id": "CB",
+      "visual_phrase": "metal bar",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "AX",
+      "size_ratio": 1.0,
+      "touches": [
+        "BB"
+      ],
+      "note": "Pins across tubes to stiffen frame."
+    },
+    {
+      "part_id": "PS",
+      "visual_phrase": "black strap",
+      "count": 1,
+      "long_axis": "horizontal",
+      "size_vs": "BB",
+      "size_ratio": 1.09,
+      "touches": [
+        "BB"
+      ],
+      "note": "Wraps parcel tight to backrest."
+    },
+    {
+      "part_id": "CL__wheel",
+      "visual_phrase": "black wheel",
+      "count": 3,
+      "long_axis": "any",
+      "size_vs": "CL",
+      "size_ratio": 0.41,
+      "touches": [
+        "CL"
+      ],
+      "note": "One star shows three small rolling wheels."
+    },
+    {
+      "part_id": "BB__tube",
+      "visual_phrase": "metal tube",
+      "count": 1,
+      "long_axis": "vertical",
+      "size_vs": "BB",
+      "size_ratio": 1.0,
+      "touches": [
+        "BB"
+      ],
+      "note": "Side view shows one tube hiding the other."
     }
   ]
 }

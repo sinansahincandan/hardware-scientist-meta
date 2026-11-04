@@ -1,0 +1,19 @@
+{
+  "id": "E97",
+  "author": "Kenji Tanaka \u2014 Stair-Climbing Locomotion",
+  "tool": "calc",
+  "purpose": "slope load from total weight times sin theta",
+  "code_or_query": "Q_(654,'N')*0.613",
+  "inputs": {
+    "arg0": {
+      "value": "654",
+      "unit": "N"
+    }
+  },
+  "output_summary": "401 N",
+  "output_full": "401 N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

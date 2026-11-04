@@ -1,22 +1,30 @@
 {
   "id": "E46",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
+  "author": "Retrofit Integration and Construction Lead",
   "tool": "web_search",
-  "purpose": "search: Eurocode pedestrian vertical force harmonic walking frequency",
-  "code_or_query": "Eurocode pedestrian vertical force harmonic walking frequency",
+  "purpose": "search: footbridge tuned mass damper under deck installation maintenance access",
+  "code_or_query": "footbridge tuned mass damper under deck installation maintenance access",
   "inputs": {},
-  "output_summary": "1library.net — Modeling spatially unrestricted pedestrian traffic on footbridges — https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html",
-  "output_full": "1library.net — Modeling spatially unrestricted pedestrian traffic on footbridges — https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html\n(the search returned no passage text)",
+  "output_summary": "structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper — https://structechnique.com/download/15/free/aO4RBDPc",
+  "output_full": "structechnique.com — Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper — https://structechnique.com/download/15/free/aO4RBDPc\n(opened by the member, not cited)\nRetrofit Integration and Construction Lead said about it: The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47).",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "1library.net",
-      "title": "Modeling spatially unrestricted pedestrian traffic on footbridges",
+      "authors_or_org": "structechnique.com",
+      "title": "Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper",
       "year": "",
-      "url": "https://1library.net/document/zlgj92oy-modeling-spatially-unrestricted-pedestrian-traffic-on-footbridges.html",
-      "query": "Eurocode pedestrian vertical force harmonic walking frequency",
+      "url": "https://structechnique.com/download/15/free/aO4RBDPc",
+      "query": "footbridge tuned mass damper under deck installation maintenance access",
       "unresolved": false,
-      "passage": ""
+      "passage": "The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Retrofit Integration and Construction Lead",
+          "text": "The rule that the damper can be bolted to the structure in the most effective location and custom designed to fit in the available space within or underneath the structure is stated in the Retrofitting Eagles Meadow Bridge with a Tuned Mass Damper (E46), and the precedent of two dampers with 500 kg combined moving mass installed at midspan adjacent to the two main girders concealed within the structure is described in the | Pedestrian Bridge Vibration | | | (E47)."
+        }
+      ]
     }
   ],
   "status": "ok",

@@ -2,206 +2,208 @@
   "view": "side",
   "nodes": [
     {
-      "id": "skin",
-      "label": "outer touch skin (ridged)",
-      "shape": "plate",
+      "id": "SKIN",
+      "label": "Ridged silicone dome",
+      "shape": "rect",
       "size_class_mm": {
         "min": 1.5,
-        "max": 20.0
+        "max": 22.0
       },
       "layout": {
-        "col": 3,
+        "col": 1,
         "row": 0
       },
-      "color_hint": "#e59866",
-      "aspect": 8.0
+      "color_hint": "#e8a090",
+      "aspect": 2.5
     },
     {
-      "id": "film",
-      "label": "vibration sensing film",
-      "shape": "plate",
+      "id": "GEL",
+      "label": "Gel interlayer",
+      "shape": "rect",
       "size_class_mm": {
-        "min": 0.11,
-        "max": 20.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 1
-      },
-      "color_hint": "#f9e79f",
-      "aspect": 12.0
-    },
-    {
-      "id": "pillars",
-      "label": "silicone pillar dielectric x48",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 1.0,
+        "min": 0.5,
         "max": 2.5
       },
       "layout": {
-        "col": 3,
-        "row": 2
+        "col": 1,
+        "row": 1
       },
-      "color_hint": "#7fb3d5",
-      "aspect": 0.5
+      "color_hint": "#aed6f1",
+      "aspect": 8.0
     },
     {
-      "id": "pcb",
-      "label": "taxel electrode circuit board",
-      "shape": "plate",
-      "size_class_mm": {
-        "min": 1.6,
-        "max": 20.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 3
-      },
-      "color_hint": "#82c991",
-      "aspect": 12.5
-    },
-    {
-      "id": "core",
-      "label": "rigid mounting core",
+      "id": "CORE",
+      "label": "Nail-backed faceted rigid core with mount",
       "shape": "rect",
       "size_class_mm": {
-        "min": 7.0,
-        "max": 20.0
-      },
-      "layout": {
-        "col": 3,
-        "row": 4
-      },
-      "color_hint": "#aeb6bf",
-      "aspect": 3.0
-    },
-    {
-      "id": "readout",
-      "label": "multiplexed readout electronics",
-      "shape": "rect",
-      "size_class_mm": {
-        "min": 15.0,
-        "max": 20.0
-      },
-      "layout": {
-        "col": 5,
-        "row": 3
-      },
-      "color_hint": "#c39bd3",
-      "aspect": 2.0
-    },
-    {
-      "id": "tail",
-      "label": "rear flexible tail",
-      "shape": "beam",
-      "size_class_mm": {
-        "min": 15.0,
-        "max": 20.0
-      },
-      "layout": {
-        "col": 6,
-        "row": 4
-      },
-      "color_hint": "#f0b27a",
-      "aspect": 6.0
-    },
-    {
-      "id": "screws",
-      "label": "mounting screws x2",
-      "shape": "cylinder",
-      "size_class_mm": {
-        "min": 3.0,
-        "max": 3.0
+        "min": 20.0,
+        "max": 22.0
       },
       "layout": {
         "col": 1,
         "row": 4
       },
-      "color_hint": "#808080",
-      "aspect": 1.0
+      "color_hint": "#a9a9a9",
+      "aspect": 1.1
+    },
+    {
+      "id": "CAP",
+      "label": "Capacitive taxel grid",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 0.2,
+        "max": 2.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 3
+      },
+      "color_hint": "#f5b041",
+      "aspect": 8.0
+    },
+    {
+      "id": "PVDF",
+      "label": "Vibration film",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 0.028,
+        "max": 20.0
+      },
+      "layout": {
+        "col": 1,
+        "row": 2
+      },
+      "color_hint": "#82e0aa",
+      "aspect": 10.0
+    },
+    {
+      "id": "FLEX",
+      "label": "Flex tail with connector",
+      "shape": "beam",
+      "size_class_mm": {
+        "min": 0.05,
+        "max": 3.18
+      },
+      "layout": {
+        "col": 2,
+        "row": 3
+      },
+      "color_hint": "#f9e79f",
+      "aspect": 6.0
+    },
+    {
+      "id": "BOARD",
+      "label": "On-finger readout board",
+      "shape": "rect",
+      "size_class_mm": {
+        "min": 10.0,
+        "max": 22.0
+      },
+      "layout": {
+        "col": 3,
+        "row": 3
+      },
+      "color_hint": "#229954",
+      "aspect": 4.4
+    },
+    {
+      "id": "CABLE",
+      "label": "Message cable with interrupt line",
+      "shape": "cylinder",
+      "size_class_mm": {
+        "min": 1.0,
+        "max": 50.0
+      },
+      "layout": {
+        "col": 4,
+        "row": 3
+      },
+      "color_hint": "#2c3e50",
+      "aspect": 8.0
     }
   ],
   "edges": [
     {
-      "from_id": "skin",
-      "to_id": "film",
+      "from_id": "SKIN",
+      "to_id": "GEL",
       "kind": "mechanical",
-      "label": "presses film",
+      "label": "spreads pressure",
       "arrow": false
     },
     {
-      "from_id": "film",
-      "to_id": "pillars",
+      "from_id": "GEL",
+      "to_id": "PVDF",
       "kind": "mechanical",
-      "label": "presses pillars",
+      "label": "couples pressure",
       "arrow": false
     },
     {
-      "from_id": "pillars",
-      "to_id": "pcb",
+      "from_id": "PVDF",
+      "to_id": "CAP",
       "kind": "mechanical",
-      "label": "compresses sensing gap",
+      "label": "passes static pressure",
       "arrow": false
     },
     {
-      "from_id": "pcb",
-      "to_id": "core",
+      "from_id": "CAP",
+      "to_id": "CORE",
       "kind": "mechanical",
-      "label": "carried by core",
+      "label": "mounted on facets",
       "arrow": false
     },
     {
-      "from_id": "core",
-      "to_id": "screws",
+      "from_id": "SKIN",
+      "to_id": "CORE",
       "kind": "mechanical",
-      "label": "clamped by screws",
+      "label": "clamped edge",
       "arrow": false
     },
     {
-      "from_id": "pcb",
-      "to_id": "readout",
+      "from_id": "CAP",
+      "to_id": "FLEX",
       "kind": "electrical",
-      "label": "static signals to readout",
-      "arrow": false
+      "label": "analog frames",
+      "arrow": true
     },
     {
-      "from_id": "film",
-      "to_id": "readout",
+      "from_id": "FLEX",
+      "to_id": "BOARD",
       "kind": "electrical",
-      "label": "vibration signals to readout",
-      "arrow": false
+      "label": "to converter",
+      "arrow": true
     },
     {
-      "from_id": "readout",
-      "to_id": "tail",
+      "from_id": "PVDF",
+      "to_id": "BOARD",
       "kind": "electrical",
-      "label": "bus out rear",
-      "arrow": false
+      "label": "direct vibration",
+      "arrow": true
+    },
+    {
+      "from_id": "BOARD",
+      "to_id": "CABLE",
+      "kind": "electrical",
+      "label": "tactile message",
+      "arrow": true
     }
   ],
   "loads": [
     {
-      "on_id": "skin",
-      "label": "30 N nominal grip press over 300 mm2",
-      "direction": "in"
+      "on_id": "SKIN",
+      "label": "touch and grip pressure",
+      "direction": "down"
     },
     {
-      "on_id": "skin",
-      "label": "shear from slip and texture",
-      "direction": "left"
-    },
-    {
-      "on_id": "core",
-      "label": "139 N survival proof load into holder",
-      "direction": "in"
+      "on_id": "CORE",
+      "label": "reaction into finger",
+      "direction": "up"
     }
   ],
-  "critical_part_id": "pillars",
+  "critical_part_id": "SKIN",
   "scale_bar_mm": 10.0,
   "notes": [
-    "Side section stack top-down: skin -> film -> pillars (critical air-gap spring) -> pcb -> core.",
-    "48 taxels at 2.5mm pitch over 15x20mm; wide plates vs tall 0.5-aspect pillars show true proportions.",
-    "Static capacitive 25Hz + PVDF 2kHz fused in readout to 4-wire rear tail; core+screws carry grip load."
+    "Side section: ridged dome over gel over PVDF over capacitive tiles on faceted core, side view.",
+    "Soft stack <2.5mm: 1mN -> 0.47mm spot at 5.78kPa, 3.57fF on 0.269pF.",
+    "Split path: static frames via FLEX plus direct vibration to BOARD; 30ms slip interrupt + heartbeat fail-safe."
   ]
 }

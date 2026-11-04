@@ -1,0 +1,26 @@
+{
+  "id": "E34",
+  "author": "Power-Systems Engineer",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine dump load brake resistor short circuit stop",
+  "code_or_query": "small wind turbine dump load brake resistor short circuit stop",
+  "inputs": {},
+  "output_summary": "irp-cdn.multiscreensite.com — Part Number: — https://irp-cdn.multiscreensite.com/e04293cf/files/uploaded/GA-LETU-013-LE-v150-User-Manual-Rev-B.pdf",
+  "output_full": "irp-cdn.multiscreensite.com — Part Number: — https://irp-cdn.multiscreensite.com/e04293cf/files/uploaded/GA-LETU-013-LE-v150-User-Manual-Rev-B.pdf\n(found by the search; not opened or cited)",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "irp-cdn.multiscreensite.com",
+      "title": "Part Number:",
+      "year": "",
+      "url": "https://irp-cdn.multiscreensite.com/e04293cf/files/uploaded/GA-LETU-013-LE-v150-User-Manual-Rev-B.pdf",
+      "query": "small wind turbine dump load brake resistor short circuit stop",
+      "unresolved": false,
+      "passage": "",
+      "cited": false,
+      "read": false
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

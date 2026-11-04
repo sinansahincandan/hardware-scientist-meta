@@ -1,0 +1,14 @@
+{
+  "id": "E39",
+  "author": "Enclosure and Structural Designer",
+  "tool": "calc",
+  "purpose": "interior volume cubic metres",
+  "code_or_query": "2.4*1.8*2.0",
+  "inputs": {},
+  "output_summary": "8.64",
+  "output_full": "8.64",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

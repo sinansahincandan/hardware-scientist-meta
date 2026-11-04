@@ -1,0 +1,32 @@
+{
+  "id": "E19",
+  "author": "Structures-Survival Engineer",
+  "tool": "web_search",
+  "purpose": "search: small wind turbine nacelle clearance blade tip tower 6061 aluminum tube strength",
+  "code_or_query": "small wind turbine nacelle clearance blade tip tower 6061 aluminum tube strength",
+  "inputs": {},
+  "output_summary": "energy.gov — Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo — 2024 — https://www.energy.gov/sites/default/files/2024-08/cwc24-turbine-design-report_cal-poly.pdf",
+  "output_full": "energy.gov — Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo — 2024 — https://www.energy.gov/sites/default/files/2024-08/cwc24-turbine-design-report_cal-poly.pdf\n(found by the search; not opened or cited)\nStructures-Survival Engineer said about it: I take from the Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo (E19) that nacelle plates and mounts are made from 6061 aluminum, which I use for the bedplate; the side-view layout with rotor clearance and post interface (E28) shows rotor plus nacelle inside the cube with only the post below outside, and the tilt plus overhang clearance concept (C9) keeps the 2.50 cm per-side gap positive under the 0.516 mm deflection (E26).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "energy.gov",
+      "title": "Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo",
+      "year": "2024",
+      "url": "https://www.energy.gov/sites/default/files/2024-08/cwc24-turbine-design-report_cal-poly.pdf",
+      "query": "small wind turbine nacelle clearance blade tip tower 6061 aluminum tube strength",
+      "unresolved": false,
+      "passage": "I take from the Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo (E19) that nacelle plates and mounts are made from 6061 aluminum, which I use for the bedplate; the side-view layout with rotor clearance and post interface (E28) shows rotor plus nacelle inside the cube with only the post below outside, and the tilt plus overhang clearance concept (C9) keeps the 2.50 cm per-side gap positive under the 0.516 mm deflection (E26).",
+      "cited": true,
+      "read": false,
+      "statements": [
+        {
+          "by": "Structures-Survival Engineer",
+          "text": "I take from the Turbine Design Report - 2024 Collegiate Wind Competition - California Polytechnic State University, San Luis Obispo (E19) that nacelle plates and mounts are made from 6061 aluminum, which I use for the bedplate; the side-view layout with rotor clearance and post interface (E28) shows rotor plus nacelle inside the cube with only the post below outside, and the tilt plus overhang clearance concept (C9) keeps the 2.50 cm per-side gap positive under the 0.516 mm deflection (E26)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

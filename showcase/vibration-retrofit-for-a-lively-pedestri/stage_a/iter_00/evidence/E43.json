@@ -1,24 +1,14 @@
 {
   "id": "E43",
-  "author": "Tomas - Pedestrian Comfort and Safety Analyst",
-  "tool": "web_search",
-  "purpose": "search: Setra footbridge crowd load density synchronized pedestrians equivalent number",
-  "code_or_query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
+  "author": "Pedestrian Comfort and Safety Assessor",
+  "tool": "calc",
+  "purpose": "bare deck resonant acceleration estimate",
+  "code_or_query": "0.082824/(2*0.005)",
   "inputs": {},
-  "output_summary": "spiral.imperial.ac.uk — Guidance for footbridge design: a new simplified method for the accurate evaluation of the structural response in serviceability conditions — https://spiral.imperial.ac.uk/server/api/core/bitstreams/e6ce776b-5d6c-4267-b59a-349774ebfc32/content",
-  "output_full": "spiral.imperial.ac.uk — Guidance for footbridge design: a new simplified method for the accurate evaluation of the structural response in serviceability conditions — https://spiral.imperial.ac.uk/server/api/core/bitstreams/e6ce776b-5d6c-4267-b59a-349774ebfc32/content\n(the search returned no passage text)",
+  "output_summary": "8.28",
+  "output_full": "8.28",
   "sketch_path": null,
-  "references": [
-    {
-      "authors_or_org": "spiral.imperial.ac.uk",
-      "title": "Guidance for footbridge design: a new simplified method for the accurate evaluation of the structural response in serviceability conditions",
-      "year": "",
-      "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/e6ce776b-5d6c-4267-b59a-349774ebfc32/content",
-      "query": "Setra footbridge crowd load density synchronized pedestrians equivalent number",
-      "unresolved": false,
-      "passage": ""
-    }
-  ],
+  "references": [],
   "status": "ok",
   "cycle": 1
 }

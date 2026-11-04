@@ -1,22 +1,24 @@
 {
   "id": "E18",
-  "author": "Jonas – Ergonomics and Courier Safety Specialist",
+  "author": "Kenji Tanaka — Stair-Climbing Locomotion",
   "tool": "web_search",
-  "purpose": "search: adjustable handle height ergonomics push pull 90 120 cm",
-  "code_or_query": "adjustable handle height ergonomics push pull 90 120 cm",
+  "purpose": "search: tri-star three wheel stair climbing hand truck mechanism",
+  "code_or_query": "tri-star three wheel stair climbing hand truck mechanism",
   "inputs": {},
-  "output_summary": "youbeli.com — BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator — 2000 — https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn",
-  "output_full": "youbeli.com — BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator — 2000 — https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn\n(the search returned no passage text)",
+  "output_summary": "vevor.com.au — VEVOR Stair Climbing Carts – Heavy-Duty & Foldable Options — https://www.vevor.com.au/janitorial-carts-c_42407",
+  "output_full": "vevor.com.au — VEVOR Stair Climbing Carts – Heavy-Duty & Foldable Options — https://www.vevor.com.au/janitorial-carts-c_42407\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "youbeli.com",
-      "title": "BOSSYTOO Wireless Grass Trimmer 2000mah 12V 350W Adjustable Rechargeable Electric Garden Push Lawnmower Garden Decorator",
-      "year": "2000",
-      "url": "https://www.youbeli.com/bossytoo-wireless-grass-trimmer-2000mah-12v-350w-adjustable-rechargeable-electric-p-3844664.html?language=cn",
-      "query": "adjustable handle height ergonomics push pull 90 120 cm",
+      "authors_or_org": "vevor.com.au",
+      "title": "VEVOR Stair Climbing Carts – Heavy-Duty & Foldable Options",
+      "year": "",
+      "url": "https://www.vevor.com.au/janitorial-carts-c_42407",
+      "query": "tri-star three wheel stair climbing hand truck mechanism",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

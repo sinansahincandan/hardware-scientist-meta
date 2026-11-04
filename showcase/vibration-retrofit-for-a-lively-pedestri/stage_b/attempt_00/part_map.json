@@ -1,97 +1,130 @@
 {
   "parts": [
     {
-      "part_id": "deck",
-      "visual_phrase": "bridge deck",
+      "part_id": "xb",
+      "visual_phrase": "steel beam",
       "count": 1,
       "long_axis": "horizontal",
-      "size_vs": "frame",
-      "size_ratio": 20.0,
+      "size_vs": "tm",
+      "size_ratio": 5.0,
       "touches": [
-        "frame",
-        "bolts"
+        "hb",
+        "cs",
+        "vd",
+        "es"
       ],
-      "note": "Long span overhead that everything hangs from at midspan."
+      "note": "Single steel beam spanning between girders carrying both damper units."
     },
     {
-      "part_id": "frame",
-      "visual_phrase": "steel beams",
+      "part_id": "tm",
+      "visual_phrase": "metal block",
       "count": 2,
-      "long_axis": "horizontal",
-      "size_vs": "mass",
-      "size_ratio": 4.0,
+      "long_axis": "any",
+      "size_vs": "xb",
+      "size_ratio": 0.2,
       "touches": [
-        "deck",
-        "bolts",
-        "spring",
-        "damper",
-        "cover"
+        "cs",
+        "vd",
+        "es"
       ],
-      "note": "Two cross beams clamped under deck carrying the unit."
+      "note": "Twin hanging blocks that lag deck motion to supply counter force."
     },
     {
-      "part_id": "bolts",
-      "visual_phrase": "bolts",
-      "count": 8,
-      "long_axis": "vertical",
-      "size_vs": "frame",
-      "size_ratio": 0.01,
-      "touches": [
-        "deck",
-        "frame"
-      ],
-      "note": "Small clamps holding beams to deck girders."
-    },
-    {
-      "part_id": "spring",
-      "visual_phrase": "coil springs",
-      "count": 4,
-      "long_axis": "vertical",
-      "size_vs": "damper",
-      "size_ratio": 1.0,
-      "touches": [
-        "frame",
-        "mass"
-      ],
-      "note": "Upright coils between beams and block taking sag."
-    },
-    {
-      "part_id": "damper",
-      "visual_phrase": "shock absorbers",
+      "part_id": "cs",
+      "visual_phrase": "metal spring",
       "count": 2,
       "long_axis": "vertical",
-      "size_vs": "spring",
+      "size_vs": "tm",
+      "size_ratio": 0.6,
+      "touches": [
+        "xb",
+        "tm"
+      ],
+      "note": "Vertical coils hanging masses from beam allowing relative travel."
+    },
+    {
+      "part_id": "vd",
+      "visual_phrase": "shock absorber",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "tm",
+      "size_ratio": 0.6,
+      "touches": [
+        "xb",
+        "tm"
+      ],
+      "note": "Vertical cylinders parallel to springs turning motion into heat."
+    },
+    {
+      "part_id": "hb",
+      "visual_phrase": "metal bolt",
+      "count": 2,
+      "long_axis": "horizontal",
+      "size_vs": "xb",
+      "size_ratio": 0.02,
+      "touches": [
+        "xb"
+      ],
+      "note": "Clamp groups at both beam ends friction-fixing beam to girders."
+    },
+    {
+      "part_id": "es",
+      "visual_phrase": "rubber stop",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "tm",
+      "size_ratio": 0.2,
+      "touches": [
+        "xb",
+        "tm"
+      ],
+      "note": "Caged rubber buffers catching mass on overtravel inside 80mm gap."
+    },
+    {
+      "part_id": "ac",
+      "visual_phrase": "small sensor",
+      "count": 1,
+      "long_axis": "any",
+      "size_vs": "es",
+      "size_ratio": 0.3,
+      "touches": [],
+      "note": "Tiny deck-mounted sensor logging midspan acceleration for comfort verdict."
+    },
+    {
+      "part_id": "tm__mass",
+      "visual_phrase": "metal block",
+      "count": 2,
+      "long_axis": "any",
+      "size_vs": "tm",
       "size_ratio": 1.0,
       "touches": [
-        "frame",
-        "mass"
+        "tm"
       ],
-      "note": "Upright cylinders between beams and block absorbing motion."
+      "note": "One block of the twin pair, check two are drawn not one."
     },
     {
-      "part_id": "mass",
-      "visual_phrase": "steel block",
-      "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "spring",
-      "size_ratio": 1.7,
+      "part_id": "cs__spring",
+      "visual_phrase": "metal spring",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "cs",
+      "size_ratio": 1.0,
       "touches": [
-        "spring",
-        "damper"
+        "cs"
       ],
-      "note": "Heavy block hung on springs at midspan."
+      "note": "One coil of the pair, check two are drawn not one or three."
     },
     {
-      "part_id": "cover",
-      "visual_phrase": "metal cover",
-      "count": 1,
-      "long_axis": "horizontal",
-      "size_vs": "mass",
-      "size_ratio": 2.4,
+      "part_id": "vd__damper",
+      "visual_phrase": "shock absorber",
+      "count": 2,
+      "long_axis": "vertical",
+      "size_vs": "vd",
+      "size_ratio": 1.0,
       "touches": [
-        "frame"
+        "vd"
       ],
-      "note": "Flat enclosure below unit hiding block for access."
+      "note": "One cylinder of the pair, check two are drawn not one or three."
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "id": "E23",
+  "author": "Structures-Survival Engineer",
+  "tool": "calc",
+  "purpose": "overturning moment at post clamp from survival thrust",
+  "code_or_query": "Q_(37.3,'N')*Q_(0.35,'m')",
+  "inputs": {
+    "arg0": {
+      "value": "37.3",
+      "unit": "N"
+    },
+    "arg1": {
+      "value": "0.35",
+      "unit": "m"
+    }
+  },
+  "output_summary": "13.1 m\u22c5N",
+  "output_full": "13.1 m\u22c5N",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

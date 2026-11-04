@@ -1,0 +1,52 @@
+{
+  "id": "E41",
+  "author": "Safety-Control Integrator",
+  "tool": "web_search",
+  "purpose": "search: Collegiate Wind Competition shutdown brake load disconnect stop requirement",
+  "code_or_query": "Collegiate Wind Competition shutdown brake load disconnect stop requirement",
+  "inputs": {},
+  "output_summary": "energy.gov — CWC 2019 Rules and Requirements Manual_20190104 — 2019 — https://www.energy.gov/sites/prod/files/2019/01/f58/CWC%202019%20Rules%20and%20Requirements%20Manual_20190104_0.pdf",
+  "output_full": "energy.gov — CWC 2019 Rules and Requirements Manual_20190104 — 2019 — https://www.energy.gov/sites/prod/files/2019/01/f58/CWC%202019%20Rules%20and%20Requirements%20Manual_20190104_0.pdf\n(opened by the member, not cited)\nSafety-Control Integrator said about it: I read the CWC 2019 Rules and Requirements Manual_20190104 (E41) which states turbines must be capable of shutting down on command as well as when electrically disconnected from the load and defines shutdown as dropping below 10 percent of maximum Revolutions Per Minute (RPM), meaning shaft turns per minute, within 10 s, and I apply that rule in the latched trip (C20) with trip threshold 315 RPM from 10 percent of the top speed (E13) 3.15e+03 RPM, in the side-view shutdown layout (E50).\nManager said about it: The side gap 2.50 cm (E74) clears deflection 0.516 mm (E26) with axial stack 36.0 cm (E52) inside 45 cm, thrust 37.3 N (E22) and moment 13.1 N·m (E23) give stress 16.6 MPa (E27) against yield in the Aluminum 6061-T6 — Material Datasheet (E55), power 3.27 W (E11) to shaft 34.7 W (E12) to net 26.0 W (E38) to regulated 22.1 W (E66) at speeds 1.43e+03 RPM (E14) to 3.15e+03 RPM (E13) and volts 6.50 V (E37) to 14.3 V (E36), and stop 0.673 s (E70) to 0 RPM at 10 s against 10 s rule in the CWC 2019 Rules and Requirements Manual_20190104 (E41) with hold 0.800 N·m beating storm 0.480 N·m (E48) and factored 0.720 N·m (E54), while heat 51.1 W (E39) for 84.3 J (E67) against spin 109 J (E47) plus rise 4.35 K (E53) is bulb-level for seconds.\nManager said about it: Side gap 2.50 cm in the side clearance (E74) clears deflection 0.516 mm in the post tip deflection (E26) with axial stack 36.0 cm in the axial stack length (E52) inside 45 cm, thrust 37.3 N in the survival thrust (E22) with moment 13.1 N-m in the overturning moment (E23) gives stress 16.6 MPa in the bending stress (E27) against yield in the Aluminum 6061-T6 — Material Datasheet (E55), power 3.27 W in the shaft power at 5 m/s (E11) to 22.1 W regulated in the regulated load power (E66) at speeds 1430 RPM in the rpm at 5 m/s (E14) to 3150 RPM in the rpm at 11 m/s (E13), where Revolutions Per Minute (RPM) means shaft turns per minute, and stop 0.673 s in the upgraded stop (E70) to 0 RPM at 10 s against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41) with hold 0.80 N-m beating storm 0.48 N-m in the electrical-only runaway check (E48) and factored 0.72 N-m in the required hold torque (E54).\nSafety-Control Integrator said about it: The upgraded 0.673 s crossing in the upgraded stop (E70) reaches below 10 percent and sits at 0 at 10 s against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41), with 0.80 N-m hold beating 0.48 N-m storm and 0.72 N-m factored need.\nPower-Systems Engineer said about it: Structures-Survival Engineer, I take up the CWC 2019 Rules and Requirements Manual_20190104 (E41) which requires shutdown on command and on load disconnect, which from power side means raw Direct Current (DC), meaning current in one direction, must always have somewhere to go inside the body.\nManager said about it: Stop 0.673 s to threshold 315 RPM in the 10 percent threshold (E75) and 0 RPM at 10 s in the upgraded stop (E70) against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41), hold 0.80 N·m beating storm 0.48 N·m in the electrical-only runaway check (E48) and factored 0.72 N·m in the required hold torque (E54), dump 85.6 W in the revised dump power (E78) superseding 51.1 W in the dump resistor power (E39) with spin 109 J in the spin-down energy (E47) and rise 4.35 K in the brake disc temperature (E53).",
+  "sketch_path": null,
+  "references": [
+    {
+      "authors_or_org": "energy.gov",
+      "title": "CWC 2019 Rules and Requirements Manual_20190104",
+      "year": "2019",
+      "url": "https://www.energy.gov/sites/prod/files/2019/01/f58/CWC%202019%20Rules%20and%20Requirements%20Manual_20190104_0.pdf",
+      "query": "Collegiate Wind Competition shutdown brake load disconnect stop requirement",
+      "unresolved": false,
+      "passage": "I read the CWC 2019 Rules and Requirements Manual_20190104 (E41) which states turbines must be capable of shutting down on command as well as when electrically disconnected from the load and defines shutdown as dropping below 10 percent of maximum Revolutions Per Minute (RPM), meaning shaft turns per minute, within 10 s, and I apply that rule in the latched trip (C20) with trip threshold 315 RPM from 10 percent of the top speed (E13) 3.15e+03 RPM, in the side-view shutdown layout (E50).",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Safety-Control Integrator",
+          "text": "I read the CWC 2019 Rules and Requirements Manual_20190104 (E41) which states turbines must be capable of shutting down on command as well as when electrically disconnected from the load and defines shutdown as dropping below 10 percent of maximum Revolutions Per Minute (RPM), meaning shaft turns per minute, within 10 s, and I apply that rule in the latched trip (C20) with trip threshold 315 RPM from 10 percent of the top speed (E13) 3.15e+03 RPM, in the side-view shutdown layout (E50)."
+        },
+        {
+          "by": "Manager",
+          "text": "The side gap 2.50 cm (E74) clears deflection 0.516 mm (E26) with axial stack 36.0 cm (E52) inside 45 cm, thrust 37.3 N (E22) and moment 13.1 N·m (E23) give stress 16.6 MPa (E27) against yield in the Aluminum 6061-T6 — Material Datasheet (E55), power 3.27 W (E11) to shaft 34.7 W (E12) to net 26.0 W (E38) to regulated 22.1 W (E66) at speeds 1.43e+03 RPM (E14) to 3.15e+03 RPM (E13) and volts 6.50 V (E37) to 14.3 V (E36), and stop 0.673 s (E70) to 0 RPM at 10 s against 10 s rule in the CWC 2019 Rules and Requirements Manual_20190104 (E41) with hold 0.800 N·m beating storm 0.480 N·m (E48) and factored 0.720 N·m (E54), while heat 51.1 W (E39) for 84.3 J (E67) against spin 109 J (E47) plus rise 4.35 K (E53) is bulb-level for seconds."
+        },
+        {
+          "by": "Manager",
+          "text": "Side gap 2.50 cm in the side clearance (E74) clears deflection 0.516 mm in the post tip deflection (E26) with axial stack 36.0 cm in the axial stack length (E52) inside 45 cm, thrust 37.3 N in the survival thrust (E22) with moment 13.1 N-m in the overturning moment (E23) gives stress 16.6 MPa in the bending stress (E27) against yield in the Aluminum 6061-T6 — Material Datasheet (E55), power 3.27 W in the shaft power at 5 m/s (E11) to 22.1 W regulated in the regulated load power (E66) at speeds 1430 RPM in the rpm at 5 m/s (E14) to 3150 RPM in the rpm at 11 m/s (E13), where Revolutions Per Minute (RPM) means shaft turns per minute, and stop 0.673 s in the upgraded stop (E70) to 0 RPM at 10 s against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41) with hold 0.80 N-m beating storm 0.48 N-m in the electrical-only runaway check (E48) and factored 0.72 N-m in the required hold torque (E54)."
+        },
+        {
+          "by": "Safety-Control Integrator",
+          "text": "The upgraded 0.673 s crossing in the upgraded stop (E70) reaches below 10 percent and sits at 0 at 10 s against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41), with 0.80 N-m hold beating 0.48 N-m storm and 0.72 N-m factored need."
+        },
+        {
+          "by": "Power-Systems Engineer",
+          "text": "Structures-Survival Engineer, I take up the CWC 2019 Rules and Requirements Manual_20190104 (E41) which requires shutdown on command and on load disconnect, which from power side means raw Direct Current (DC), meaning current in one direction, must always have somewhere to go inside the body."
+        },
+        {
+          "by": "Manager",
+          "text": "Stop 0.673 s to threshold 315 RPM in the 10 percent threshold (E75) and 0 RPM at 10 s in the upgraded stop (E70) against the 10 s rule in the CWC 2019 Rules and Requirements Manual (E41), hold 0.80 N·m beating storm 0.48 N·m in the electrical-only runaway check (E48) and factored 0.72 N·m in the required hold torque (E54), dump 85.6 W in the revised dump power (E78) superseding 51.1 W in the dump resistor power (E39) with spin 109 J in the spin-down energy (E47) and rise 4.35 K in the brake disc temperature (E53)."
+        }
+      ]
+    }
+  ],
+  "status": "ok",
+  "cycle": 1
+}

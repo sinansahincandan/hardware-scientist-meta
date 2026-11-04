@@ -1,22 +1,24 @@
 {
   "id": "E19",
-  "author": "Theo — Autonomy and Remote Operations Engineer",
+  "author": "Mobility and Deployable Chassis Lead",
   "tool": "web_search",
-  "purpose": "search: Intel RealSense depth camera range field of view datasheet",
-  "code_or_query": "Intel RealSense depth camera range field of view datasheet",
+  "purpose": "search: skid steer four wheel drive lunar rover grouser wheel regolith traction",
+  "code_or_query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
   "inputs": {},
-  "output_summary": "thinkrobotics.com — Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i",
-  "output_full": "thinkrobotics.com — Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics — https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i\n(the search returned no passage text)",
+  "output_summary": "venturi.space — Tests MONA LUNA at Luna - Venturi Space — https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/",
+  "output_full": "venturi.space — Tests MONA LUNA at Luna - Venturi Space — https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/\n(found by the search; not opened or cited)",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "thinkrobotics.com",
-      "title": "Intel RealSense D435i Depth Camera with IMU - FAQ\n – Atlantis Robotics",
+      "authors_or_org": "venturi.space",
+      "title": "Tests MONA LUNA at Luna - Venturi Space",
       "year": "",
-      "url": "https://thinkrobotics.com/products/intel-realsense-depth-camera-d435i",
-      "query": "Intel RealSense depth camera range field of view datasheet",
+      "url": "https://venturi.space/en/article/european-lunar-rover-mona-luna-completes-its-first-driving-tests/",
+      "query": "skid steer four wheel drive lunar rover grouser wheel regolith traction",
       "unresolved": false,
-      "passage": ""
+      "passage": "",
+      "cited": false,
+      "read": false
     }
   ],
   "status": "ok",

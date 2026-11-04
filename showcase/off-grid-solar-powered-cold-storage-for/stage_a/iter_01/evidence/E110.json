@@ -1,0 +1,14 @@
+{
+  "id": "E110",
+  "author": "Cold-Chain Refrigeration Engineer",
+  "tool": "calc",
+  "purpose": "single door model 8 curtain openings sensible plus latent",
+  "code_or_query": "(8*1.2*1.005*38/3600 + 8*1.2*0.01*2500/3600)",
+  "inputs": {},
+  "output_summary": "0.169",
+  "output_full": "0.169",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}

@@ -1,22 +1,46 @@
 {
   "id": "E36",
-  "author": "Priya – Lightweight Foldable Structures Engineer",
+  "author": "Tomas Lind — Folding & Van Integration",
   "tool": "web_search",
-  "purpose": "search: EN 1757 hand truck safety locking device folding",
-  "code_or_query": "EN 1757 hand truck safety locking device folding",
+  "purpose": "search: delivery van cargo dimensions small van load space L1H1",
+  "code_or_query": "delivery van cargo dimensions small van load space L1H1",
   "inputs": {},
-  "output_summary": "hahn-kolb.cn — Buy FETRA Flat-bed hand truck with wire grid walls — https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/",
-  "output_full": "hahn-kolb.cn — Buy FETRA Flat-bed hand truck with wire grid walls — https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/\n(the search returned no passage text)",
+  "output_summary": "espaciofurgo.com — Ford Transit Courier — https://www.espaciofurgo.com/en/plug/Ford-Transit-Courier/",
+  "output_full": "espaciofurgo.com — Ford Transit Courier — https://www.espaciofurgo.com/en/plug/Ford-Transit-Courier/\n(opened by the member, not cited)\nTomas Lind — Folding & Van Integration said about it: I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow.\nManager said about it: Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, the key results are human scale but the hold does not fit comfortable sustained work because a 60 kg parcel is about one adult body weight and lifting it one riser costs about 116 J from the parcel lift energy (E22) like a shopping bag to a counter and the climb pulls about 209 N uphill and about 188 N downhill from the climb simulation (E23) like holding about 19.1 kg in the hands, and the sums fit the van because total carry is about 66.5 kg from the total mass calc (E41) and folded size is 730 mm by 380 mm by 190 mm for about 52.7 L from the folded volume calc (E42) like one large suitcase against the 1120 mm by 1235 mm door from the Ford Transit Courier (E36), and I reconcile the two hold values by taking the larger design case because about 161 N tip-hold from the stopping hold simulation (E34) assumes a 1.10 m handle while about 188 N from the climb simulation (E23) assumes steeper geometry, so design to about 209 N.\nManager said about it: RECORD: Nothing selected, tri-star cluster with dead-man lock plus telescoping handle and folding toe-plate is leading direction, numbers that stand are 60 kg parcel with 589 N weight, 116 J per 197 mm riser (E22), 209 N pull and 188 N hold (E23) versus 161 N tip-hold (E34), 66.5 kg total (E41), folded 730 by 380 by 190 mm for 52.7 L (E42) fitting 1120 by 1235 mm door (E36), still open are Mara Voss formal Support and Restrain concepts and stair stress, Kenji Tanaka plus Elena Ruiz locked-brake torque proof, Tomas Lind latch interface, all owed in cycle 2.\nElena Ruiz — Human Factors & Single-Operator Safety said about it: The numbers that decide it are folded 730 by 380 by 190 mm at 6.5 kg tare from the folding sack truck source (E35, Compact folding sack truck, capacity 90kg) fitting the 1120 by 1235 mm door from the van cargo source (E36, Ford Transit Courier), so I keep my descent-hold objection on the tri-star wheel cluster (C1) open: not ready, because lever release force and tooth engagement with one tired hand remain a bench test with Kenji Tanaka and axle mount stress with Mara Voss.\nTomas Lind — Folding & Van Integration said about it: I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare, I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor 1802 mm long, and I take from the News | Insurance Factory (E64) that the Courier has six tie-down points with 590 kg payload.",
   "sketch_path": null,
   "references": [
     {
-      "authors_or_org": "hahn-kolb.cn",
-      "title": "Buy FETRA Flat-bed hand truck with wire grid walls",
+      "authors_or_org": "espaciofurgo.com",
+      "title": "Ford Transit Courier",
       "year": "",
-      "url": "https://www.hahn-kolb.cn/All-categories/FETRA-Flat-bed-hand-truck-with-wire-grid-walls/1610CL04_0508010714.cyid/1610.cgid/en/US/CNY/",
-      "query": "EN 1757 hand truck safety locking device folding",
+      "url": "https://www.espaciofurgo.com/en/plug/Ford-Transit-Courier/",
+      "query": "delivery van cargo dimensions small van load space L1H1",
       "unresolved": false,
-      "passage": ""
+      "passage": "I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow.",
+      "cited": true,
+      "read": true,
+      "statements": [
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor length 1802 mm, width 1535 mm and height 1253 mm, and I take from the Powered Stair Climbing Sack Truck (E37) that a folding handle cuts height from 1590 to 1195 mm for van stow."
+        },
+        {
+          "by": "Manager",
+          "text": "Mara Voss, Kenji Tanaka, Elena Ruiz and Tomas Lind, the key results are human scale but the hold does not fit comfortable sustained work because a 60 kg parcel is about one adult body weight and lifting it one riser costs about 116 J from the parcel lift energy (E22) like a shopping bag to a counter and the climb pulls about 209 N uphill and about 188 N downhill from the climb simulation (E23) like holding about 19.1 kg in the hands, and the sums fit the van because total carry is about 66.5 kg from the total mass calc (E41) and folded size is 730 mm by 380 mm by 190 mm for about 52.7 L from the folded volume calc (E42) like one large suitcase against the 1120 mm by 1235 mm door from the Ford Transit Courier (E36), and I reconcile the two hold values by taking the larger design case because about 161 N tip-hold from the stopping hold simulation (E34) assumes a 1.10 m handle while about 188 N from the climb simulation (E23) assumes steeper geometry, so design to about 209 N."
+        },
+        {
+          "by": "Manager",
+          "text": "RECORD: Nothing selected, tri-star cluster with dead-man lock plus telescoping handle and folding toe-plate is leading direction, numbers that stand are 60 kg parcel with 589 N weight, 116 J per 197 mm riser (E22), 209 N pull and 188 N hold (E23) versus 161 N tip-hold (E34), 66.5 kg total (E41), folded 730 by 380 by 190 mm for 52.7 L (E42) fitting 1120 by 1235 mm door (E36), still open are Mara Voss formal Support and Restrain concepts and stair stress, Kenji Tanaka plus Elena Ruiz locked-brake torque proof, Tomas Lind latch interface, all owed in cycle 2."
+        },
+        {
+          "by": "Elena Ruiz — Human Factors & Single-Operator Safety",
+          "text": "The numbers that decide it are folded 730 by 380 by 190 mm at 6.5 kg tare from the folding sack truck source (E35, Compact folding sack truck, capacity 90kg) fitting the 1120 by 1235 mm door from the van cargo source (E36, Ford Transit Courier), so I keep my descent-hold objection on the tri-star wheel cluster (C1) open: not ready, because lever release force and tooth engagement with one tired hand remain a bench test with Kenji Tanaka and axle mount stress with Mara Voss."
+        },
+        {
+          "by": "Tomas Lind — Folding & Van Integration",
+          "text": "I take from the Compact folding sack truck, capacity 90kg (E35) that overall 1100 by 380 by 410 mm folds to 730 by 380 by 190 mm at 6.5 kg tare, I take from the Ford Transit Courier (E36) that the rear door is 1235 by 1120 mm with floor 1802 mm long, and I take from the News | Insurance Factory (E64) that the Courier has six tie-down points with 590 kg payload."
+        }
+      ]
     }
   ],
   "status": "ok",

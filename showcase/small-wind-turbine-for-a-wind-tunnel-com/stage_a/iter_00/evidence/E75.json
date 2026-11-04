@@ -1,0 +1,19 @@
+{
+  "id": "E75",
+  "author": "Manager",
+  "tool": "calc",
+  "purpose": "10 percent top speed trip threshold",
+  "code_or_query": "Q_(3150,'rpm')*0.1",
+  "inputs": {
+    "arg0": {
+      "value": "3150",
+      "unit": "rpm"
+    }
+  },
+  "output_summary": "315 rpm",
+  "output_full": "315 rpm",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 2
+}

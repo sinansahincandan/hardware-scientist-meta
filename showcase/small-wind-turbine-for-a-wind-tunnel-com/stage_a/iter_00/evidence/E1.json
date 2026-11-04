@@ -1,0 +1,14 @@
+{
+  "id": "E1",
+  "author": "Aero-Rotor Lead",
+  "tool": "use_skill",
+  "purpose": "skill: small-rotor-power-sizing",
+  "code_or_query": "small-rotor-power-sizing",
+  "inputs": {},
+  "output_summary": "Use when sizing any sub-meter wind rotor for shaft power and speed over an operating wind range.",
+  "output_full": "---\nname: small-rotor-power-sizing\ndescription: Use when sizing any sub-meter wind rotor for shaft power and speed over an operating wind range.\nsource: run 20261102-214943_small-wind-turbine-for-a-wind-tunnel-com (2026-11-02)\n---\n\n1. Compute available wind power P = 0.5*rho*A*V^3 for rotor disc area A at operating winds.\n2. Apply realistic small-rotor Cp ~0.3-0.35 to get shaft power Pshaft = Cp*P and check vs electrical target.\n3. Pick tip-speed ratio TSR ~6 for 3 blades, compute omega = TSR*V/R and rpm = omega*60/2pi for generator matching.\n4. Check cut-in to rated span for torque = Pshaft/omega.\n\nTypical: 44 cm rotor gives 124 W available at 11 m/s (E7, E30); Cp 0.35 gives 43.4 W shaft (E10); TSR 6 gives 300 rad/s (E29, E38) = 2.86e+03 rpm (E39); shaft torque ~0.145 N-m at 11 m/s (E37).",
+  "sketch_path": null,
+  "references": [],
+  "status": "ok",
+  "cycle": 1
+}
