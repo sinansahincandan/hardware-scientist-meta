@@ -33,7 +33,7 @@ ROLES: dict[str, RoleConfig] = {
     "vlm_prompt_gradient": RoleConfig(DEFAULT_MODEL, "high", 6000),
     "optimizer": RoleConfig(DEFAULT_MODEL, "medium", 8000),
     "schematic": RoleConfig(DEFAULT_MODEL, "low", 8000),
-    "vlm_writer": RoleConfig(DEFAULT_MODEL, "high", 4000),
+    "vlm_writer": RoleConfig(DEFAULT_MODEL, "high", 12000),  # 4000 left no room after high-effort reasoning (empty reply, run 121014 redraw)
     "localization": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "part_map": RoleConfig(DEFAULT_MODEL, "low", 4000),
     "sam_phrases": RoleConfig(DEFAULT_MODEL, "low", 4000),
