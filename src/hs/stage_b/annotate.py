@@ -163,10 +163,11 @@ class Annotator:
                 text = label_of.get(pid, pid)
                 tw = draw.textlength(text, font=font)
                 lx = 16 if side == "left" else w - tw - 16
-                ly = min(max(cy - fs / 2, next_top), h - fs - 16)
+                floor = h - fs - (2 * fs + 50 if side == "left" else 16)  # the scale bar sits bottom-left
+                ly = min(max(cy - fs / 2, next_top), floor)
                 below = (lx - 6 < cx < lx + tw + 6) and (ly - 4 < cy < ly + fs + 6)  # the label would hide its part
                 if below:
-                    ly = min(max(cy + 2 * fs, next_top), h - fs - 16)
+                    ly = min(max(cy + 2 * fs, next_top), floor)
                 next_top = ly + fs + pad + gap
                 rect = (lx - 6, ly - 4, lx + tw + 6, ly + fs + 6)
                 label_rects.append([*rect])
