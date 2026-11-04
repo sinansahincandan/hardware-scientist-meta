@@ -77,6 +77,22 @@
     Modal's own billing (about $0.19 a run). Baseten lists Muse Spark Open at $1.25 per million input tokens, $0.15
     cached and $4.25 output, the same as muse-spark-1.3. Both stacks ran the three problems in parallel.</p>
 
+  <h2>Against one Meta prompt, blind judge</h2>
+  <table>
+    <tr><th>Problem</th><th>One prompt (Meta API)</th><th>HS, Meta API</th><th class="open">HS, open weights</th></tr>
+    <tr><td>Lunar regolith excavator</td><td>15</td><td><b>17 ★</b></td><td>12</td></tr>
+    <tr><td>Tactile fingertip sensor</td><td>16</td><td>16</td><td><b>17 ★</b></td></tr>
+    <tr><td>Small wind turbine</td><td><b>18 ★</b></td><td>16</td><td>12</td></tr>
+    <tr class="total"><td>Total of 75</td><td>49</td><td>49</td><td>41</td></tr>
+    <tr><td>Per design</td><td>70 s · $0.08</td><td>47 min · $2.20</td><td>26 min · $2.27</td></tr>
+  </table>
+  <p class="note">★ the judge's best design for that problem. One independent judge per problem (a Claude agent that did not
+    know which system made which design) saw the three designs in the same format, labelled A, B and C, and scored each
+    1–5 on the five criteria of examples/bench/RUBRIC.md: meets the constraints, physically works, numbers right, picture
+    shows it, buildable and honest. The open-weights fingertip was best: the judge re-derived its whole 1 mN chain and it
+    held. On the excavator and the turbine the open-weights design left a function without a part (no transfer from blade to
+    hopper; feathering with no pitch actuator listed). Packets, key and scores: runs/bench3_*.</p>
+
   <h2>Same problems, side by side</h2>
   <p>Left: Meta Model API. Right: open weights. Each is the accepted design's final figure.</p>
   <div class="pair">

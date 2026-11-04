@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Three-way blind judging</title><link rel="stylesheet" href="style.css">
+<style>
+  .row { display: flex; gap: 60px; margin-top: 52px; align-items: flex-start; }
+  .left { flex: 1.35; }
+  .right { flex: 1; font-size: 26px; line-height: 1.45; }
+  .right p { margin-bottom: 22px; }
+  td.n { font-weight: 500; }
+  .star { color: var(--ink); }
+  tr.per td { color: var(--muted); font-size: 25px; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">One Meta prompt vs Hardware Scientist · blind judge</div>
+  <h1>Meta API or open weights, same system</h1>
+  <div class="row">
+    <div class="left">
+      <table>
+        <tr><th>Problem</th><th>One prompt</th><th>HS, Meta API</th><th class="open">HS, open weights</th></tr>
+        <tr><td>Lunar excavator</td><td class="n">15</td><td class="n"><b>17 ★</b></td><td class="n">12</td></tr>
+        <tr><td>Tactile fingertip</td><td class="n">16</td><td class="n">16</td><td class="n"><b>17 ★</b></td></tr>
+        <tr><td>Wind turbine</td><td class="n"><b>18 ★</b></td><td class="n">16</td><td class="n">12</td></tr>
+        <tr class="total"><td>Total of 75</td><td>49</td><td>49</td><td>41</td></tr>
+        <tr class="per"><td>Per design</td><td>70 s · $0.08</td><td>47 min · $2.20</td><td>26 min · $2.27</td></tr>
+      </table>
+      <p class="note">★ the judge's best design for that problem. One independent judge per problem saw the three designs in
+        the same format, labelled A, B, C, and scored each 1–5 on five criteria written before any result: meets the
+        constraints, physically works, numbers right, picture shows it, buildable and honest.</p>
+    </div>
+    <div class="right">
+      <p><b class="blue">Fingertip, open weights best.</b> The judge re-derived its whole 1 mN chain, from contact patch to
+        capacitance change and converter noise, and it held.</p>
+      <p><b>Excavator and turbine.</b> The open-weights council left a function without a part: nothing carries soil from
+        the blade into the hopper, and braking relies on feathering blades with no pitch actuator listed.</p>
+      <p><b>Same architecture either way.</b> The open run took half the time at the same cost. Where it lagged, the
+        judge found a missing part in the design, not a broken pipeline.</p>
+    </div>
+  </div>
+</div></body></html>
