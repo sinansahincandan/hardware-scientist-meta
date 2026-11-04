@@ -65,7 +65,7 @@ MAX_COST_USD_PER_RUN = 15.00
 # Round-3 budget (item 0): one project-wide ledger of real Meta spend, checked before
 # every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).
 # Fake mode never touches it. HS_BUDGET_LEDGER overrides the path (tests).
-MAX_TOTAL_SPEND_USD = 112.35  # owner 2026-11-03: $20, then $50 more credit
+MAX_TOTAL_SPEND_USD = 136.0  # owner 2026-11-03 23:15: at most $40 more from $96 spent; aim to stop near $116
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger.jsonl"))
 
