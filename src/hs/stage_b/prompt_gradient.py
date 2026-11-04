@@ -34,20 +34,27 @@ class VLMPromptGradientRunner:
                                       "You diagnose which VLM-prompt sentence caused each depiction fault.",
                                       prompt, image_paths=[render_png, labeled_png])
 
-    def progress_check(self, annotated_png: Path, ev_before: DesignerEval, fix_notes: str) -> ProgressCheck:
-        regions = "\n".join(
-            f"- part={r.part_id} box={r.box}: observed={r.observed} | expected={r.expected}"
-            for r in ev_before.regions)
+    def progress_check(self, annotated_png: Path, ev_before: DesignerEval, fix_notes: str,
+                       part_id: str = "", before_png: Path | None = None) -> ProgressCheck:
+        # one local edit changes one region; the other listed faults are still there and are not this edit's test
+        fixed = [r for r in ev_before.regions if r.part_id == part_id] or ev_before.regions
+        others = [r for r in ev_before.regions if r not in fixed]
+        line = "- part={0.part_id} box={0.box}: observed={0.observed} | expected={0.expected}".format
         prompt = (
-            "Progress check on the edited render. For the regions below: does the fixed region now "
-            "pass (fixed_region_pass)? Do previously passing areas still pass (previous_pass)? Is any "
-            "paste seam visible (seam_visible)? Judge from the pixels only, and note that a label "
-            "alone never proves a connection.\n\n"
-            f"REGIONS BEFORE THE FIX:\n{regions}\n\nFIX APPLIED:\n{fix_notes}\n"
+            "Progress check on a render where ONE region was edited and pasted back. fixed_region_pass: does the "
+            "edited region now show what was expected for it? previous_pass: is everything outside it as good as "
+            "before (no part lost, moved or broken)? seam_visible: is a paste seam visible? Judge from the pixels "
+            "only; a label alone never proves a connection."
+            + (" The first image is the render before the edit, the second after it." if before_png else "")
+            + "\n\nTHE EDITED REGION:\n" + "\n".join(line(r) for r in fixed)
+            + (("\n\nOTHER FAULTS FROM THE SAME CRITIQUE (not touched by this edit; they are fixed separately and do "
+                "not decide fixed_region_pass):\n" + "\n".join(line(r) for r in others)) if others else "")
+            + f"\n\nFIX APPLIED:\n{fix_notes}\n"
         )
+        images = [before_png, annotated_png] if before_png else [annotated_png]
         return self.client.structured("progress_check", ProgressCheck,
                                       "You are the progress-check judge for a locally edited render.",
-                                      prompt, image_paths=[annotated_png])
+                                      prompt, image_paths=images)
 
 
 def composite_region(previous_png: Path, edited_png: Path, box_1000: list[float],

@@ -250,7 +250,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             if not info["outside_unchanged"]:
                 log(f"attempt {attempt} round {r}: local edit {region.part_id} reverted (outside-box pixels changed)")
                 continue
-            check = grad_runner.progress_check(comp_path, ev, fix)
+            check = grad_runner.progress_check(comp_path, ev, fix, part_id=region.part_id, before_png=current)
             (round_dir / f"progress_{region.part_id}.json").write_text(check.model_dump_json(indent=2),
                                                                        encoding="utf-8")
             if check.fixed_region_pass and check.previous_pass and not check.seam_visible:

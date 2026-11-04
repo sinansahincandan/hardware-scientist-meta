@@ -26,7 +26,8 @@ later, SAM finds all eight parts where the design puts them. Only then come labe
 
 **6 · Results.**
 Five public problems — NASA Lunabotics, a robot fingertip, the DOE wind competition, an infant warmer, a braille
-display — five accepted concepts, drawn in use with scale, assembly steps and a measurement chain.
+display — five accepted concepts, drawn in use with scale, assembly steps and a measurement chain. Where the
+drawing still differs from the design, as with the braille magnets, the critic says so and it is not called final.
 
 **7 · Against one prompt.**
 Same Meta models, one prompt: 70 seconds, a picture that contradicts its own text, numbers "from a CAD" that does not
