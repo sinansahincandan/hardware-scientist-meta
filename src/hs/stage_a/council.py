@@ -250,6 +250,19 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                 output = f"error: unknown tool {name}"
             input_items.append({"type": "function_call_output",
                                 "call_id": getattr(call, "call_id", ""), "output": str(output)[:2000]})
+    if input_items and prev_id is not None and not new_search_ids:
+        # the turn used all its rounds with tool outputs still owed: answer them and ask for the spoken message
+        try:
+            resp = client.responses(
+                role=role, instructions=roster_instructions, previous_response_id=prev_id,
+                tools=[t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard"],
+                input_items=input_items + [{"type": "message", "role": "user", "content": [{"type": "input_text",
+                    "text": "Your tool rounds for this turn are used up. Give your spoken message now, written "
+                            "compactly, citing evidence ids."}]}])
+            last_text = _output_text(resp) or last_text
+        except Exception as exc:
+            if "not found or expired" not in str(exc):
+                raise
     if new_search_ids and prev_id is not None:
         # Spec §4.4 / B8: one extra chained request so the member can cite the new search evidence by id.
         listing = "\n".join(f"- {e.id}: {e.output_summary}" for e in board.evidence if e.id in new_search_ids)
@@ -257,7 +270,9 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
             resp = client.responses(
                 role=role, instructions=roster_instructions, previous_response_id=prev_id,
                 tools=[t for t in TOOL_SCHEMAS if t.get("name") == "whiteboard"],
-                input_items=[{"type": "message", "role": "user", "content": [{"type": "input_text", "text": (
+                # tool outputs still owed when the turn hit its round limit go first: a chained request with an
+                # unanswered function call is refused ("No tool output found", run 223922)
+                input_items=input_items + [{"type": "message", "role": "user", "content": [{"type": "input_text", "text": (
                     "Your searches are now on the whiteboard as evidence:\n" + listing + "\n\nRewrite your spoken "
                     "message so that every source you rely on is cited by its evidence id and title, and cite "
                     "nothing that is not on the board. Reply with the message only.")}]}])
