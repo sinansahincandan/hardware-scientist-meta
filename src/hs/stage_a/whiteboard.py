@@ -101,6 +101,9 @@ class Whiteboard(BaseModel):
     selections: list[WBSelection] = Field(default_factory=list)
     roster: list[str] = Field(default_factory=list)
     closure: WBClosure = Field(default_factory=WBClosure)
+    # the chief designer's compact record of each cycle (what was decided, the numbers that stand, what is open):
+    # the meeting's compacted context, so speech needs no word limit (owner 2026-11-03)
+    records: list[str] = Field(default_factory=list)
 
     # -- evidence is written by CODE only -------------------------------------
     def add_evidence(self, author: str, tool: str, purpose: str, code_or_query: str,
@@ -301,6 +304,9 @@ class Whiteboard(BaseModel):
     # -- rendering -------------------------------------------------------------------
     def render_markdown(self) -> str:
         lines: list[str] = ["# Whiteboard"]
+        if self.records:
+            lines.append("## Chief designer's records (compact state of the meeting, latest last)")
+            lines += [f"- {r}" for r in self.records[-4:]]
         if self.inspirations:
             lines.append("## Inspirations")
             for ins in self.inspirations:

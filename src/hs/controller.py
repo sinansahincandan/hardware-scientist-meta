@@ -179,6 +179,8 @@ class Controller:
             inspirations = manager.inspirations(archive)
             meeting = Meeting(self.client, master, run_dir, k,
                               min_cycles=self.min_cycles, max_cycles=self.max_cycles)
+            if k > 0 and meeting.carry_from(run_dir / "stage_a" / f"iter_{k - 1:02d}"):
+                trace.log(f"iter {k}: meeting continues on the board of iter {k - 1}")
             meeting.pin_inspirations(inspirations)
             if pending_eval_requests:
                 meeting.pin_evaluator_requests(pending_eval_requests, pending_eval_feedback)

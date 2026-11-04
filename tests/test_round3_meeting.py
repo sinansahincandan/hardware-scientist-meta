@@ -7,7 +7,6 @@ from typing import Any
 
 import pytest
 
-from hs import config
 from hs.client import BudgetExceeded
 from hs.master_prompt import MasterPrompt
 from hs.schemas import Verdict
@@ -33,31 +32,13 @@ def _meeting(tmp_path: Path, client: Any) -> Meeting:
     return Meeting(client, master, tmp_path, 0)
 
 
-def test_long_turn_is_reasked_once_and_never_cut(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    long_msg = "word " * 400
-    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: long_msg)
-    client = _Client(reply="short " * 120)
+def test_long_turn_is_kept_whole_with_no_extra_call(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Owner 2026-11-03: no word limit; members are asked to write compactly and speech is never cut or re-asked."""
+    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "word " * 1500)
+    client = _Client()
     meeting = _meeting(tmp_path, client)
     meeting._run_real_turn("A", ["A"], 1)
-    assert client.calls == 1 and len(meeting.transcript[-1]["message"].split()) == 120
-    # A reply that is not shorter is ignored: the full original stays, uncut.
-    client2 = _Client(reply="longer " * 500)
-    meeting2 = _meeting(tmp_path / "b", client2)
-    meeting2._run_real_turn("A", ["A"], 1)
-    assert len(meeting2.transcript[-1]["message"].split()) == 400
-
-
-def test_short_turn_costs_no_extra_call(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "word " * config.MAX_TURN_MESSAGE_WORDS)
-    client = _Client()
-    _meeting(tmp_path, client)._run_real_turn("A", ["A"], 1)
-    assert client.calls == 0
-
-
-def test_budget_stop_propagates_from_the_shorten_reask(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(council, "run_member_turn", lambda *a, **k: "word " * 400)
-    with pytest.raises(BudgetExceeded):
-        _meeting(tmp_path, _Client(raise_budget=True))._run_real_turn("A", ["A"], 1)
+    assert client.calls == 0 and len(meeting.transcript[-1]["message"].split()) == 1500
 
 
 def test_consensus_is_rechecked_after_the_managers_turn(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

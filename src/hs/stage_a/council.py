@@ -53,8 +53,9 @@ SPEAKING_RULE = (
 )
 
 
-def _compact_transcript(since: list[dict[str, Any]], budget: int = 6000) -> str:
-    """Compaction (v2 E): full text for recent turns, one-line summaries before."""
+def _compact_transcript(since: list[dict[str, Any]], budget: int = 24000) -> str:
+    """Compaction (v2 E): full text for recent turns; earlier turns are covered by the chief designer's records on
+    the board, so they are listed here by first sentence only."""
     lines = [f"{t['member']}: {t['message']}" for t in since]
     text = "\n".join(lines)
     if len(text) <= budget:
@@ -70,7 +71,8 @@ def _compact_transcript(since: list[dict[str, Any]], budget: int = 6000) -> str:
     older = lines[: len(lines) - len(kept)]
     summary = "\n".join(f"{l.split(':')[0]}: {l.split(':', 1)[-1].strip().split('.')[0]}."
                         for l in older if ":" in l)
-    return f"EARLIER TURNS (one-line summaries; full text is on disk):\n{summary}\n\nRECENT TURNS:\n" + "\n".join(kept)
+    return (f"EARLIER TURNS (first sentences; the chief designer's records on the board hold the state):\n{summary}"
+            f"\n\nRECENT TURNS:\n" + "\n".join(kept))
 
 
 def run_member_turn(client: Any, master: MasterPrompt, member: str, board: Whiteboard,
@@ -91,8 +93,8 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
     user_text = (
         f"PEOPLE IN THIS ROOM (address them only by these names): {people}\n\n"
         f"WHITEBOARD:\n{board.render_markdown()}\n\n"
-        f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + _compact_transcript(since[-8:])
-        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now (<= 250 words). {SPEAKING_RULE}\n"
+        f"TRANSCRIPT SINCE YOUR LAST TURN:\n" + _compact_transcript(since[-12:])
+        + f"\n\nYOUR PREVIOUS MESSAGE:\n{own_prev}\n\nSpeak now. Write compactly: your point, the numbers that decide it with units, the evidence ids; no padding, no repetition of the board. {SPEAKING_RULE}\n"
         "Use the whiteboard tool to write to the board; use calc/vetted_calc/simulate/sketch/web_search for evidence. "
         "Read the evidence already on the board before computing: reuse an existing evidence item by its id "
         "unless you state in your message why you recompute it. Post a labeled sketch (sketch tool, hand-drawn "
@@ -156,7 +158,7 @@ def run_member_turn(client: Any, master: MasterPrompt, member: str, board: White
                             "text": (f"WHITEBOARD (your previous chain in this turn expired; "
                                      f"board state below already includes your earlier actions):\n"
                                      f"{board.render_markdown()}\n\nContinue your turn from this "
-                                     f"board state and finish with your spoken message (<= 250 words).")}]}]
+                                     f"board state and finish with your spoken message, written compactly.")}]}]
             continue
         prev_id = getattr(resp, "id", prev_id)
         input_items = []

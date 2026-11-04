@@ -106,3 +106,22 @@ answers every opinion (`close_meeting`, closed_by "chief"); all-ready consensus 
 first check is that every function has a means. The gradient Manager (rewrite after rejection) is unchanged and now
 also rewrites the chief's instructions. Fig. 1 labels updated with the owner's permission (council and meeting boxes,
 controller comment); layout unchanged.
+
+## SPEC-13 (2026-11-03, owner): growing context, no word limits, re-check first
+Owner decisions after the round-2/3 benchmark (HS 53 vs single prompt 49 of 75, rounds not converging):
+1. The council never starts again on an empty board: meeting k+1 continues on meeting k's whiteboard (functions,
+   concepts, selections, proposal, objections, all evidence and its files); readiness opinions and the closure are
+   cleared; the Evaluator's requests are pinned on it as open blocking objections; the chief's opening turn assigns
+   each request and each uncomputed numeric constraint to a named member.
+2. No word limits on speech: members and the chief are asked to write compactly; the chief ends each cycle with a
+   compact RECORD of the meeting's state, which goes on the board (Whiteboard.records) and stands for older turns
+   when the transcript is compacted.
+3. The Evaluator re-checks its previous requests first (met / not met with evidence ids), accepts when they are met
+   and every limit is shown, and turns only concept-breaking new gaps into requests (loop rule: the same issue
+   re-checked). It sees each calculation's expression; part sums name their terms.
+4. Protocol: members first bring the best existing solutions (competition winners, products, papers, with source);
+   behaviour over time is shown with simulate; numeric constraints get an owner and a method in the chief's opening.
+   Tool calls per turn 6 → 10.
+5. The solution carries a constraint table (constraint, design value, how shown, evidence ids) and making methods.
+6. Benchmark rubric v2 (examples/bench/RUBRIC_v2.md) adds: explains how it works, tells how to make it, picture free
+   of image-generator mistakes; the single prompt is also asked how it is made (runs/baseline_v2).

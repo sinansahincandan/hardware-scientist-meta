@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -39,11 +40,15 @@ def hs_markdown(run: Path) -> str:
     nums = [f"- {k['quantity']}: {k['value']:g} {k['unit']} ({basis(k)})" for k in sol.get("key_estimates", [])]
     steps = [f"- {s['action']}" for s in sol.get("operating_sequence", [])]
     risks = [f"- {r['risk']} — {r['mitigation']}" for r in sol.get("risks", [])]
+    made = [f"- {f['description']} ({f['method']})" if f.get("method") else f"- {f['description']}"
+            for f in sol.get("fabrication_steps", [])]
+    table = [f"- {r['constraint']}: {r['design_value']} — {r['how_shown']}" for r in sol.get("constraint_table", [])]
     return (f"# {sol['title']}\n\n## How it works\n{sol.get('mechanism_sentence', '')} "
             f"{sol['concept'].get('working_principle', '')}\n" + ("\n".join(steps) + "\n" if steps else "")
             + "\n## Parts\n" + "\n".join(parts) + "\n\n## Key numbers\n" + "\n".join(nums)
-            + "\n\n## Constraint check\n" + verdict.get("constraint_review", "") + "\n\n## Risks\n" + "\n".join(risks)
-            + "\n")
+            + "\n\n## Constraint check\n" + ("\n".join(table) if table else verdict.get("constraint_review", ""))
+            + "\n\n## Risks\n" + "\n".join(risks)
+            + ("\n\n## How it is made\n" + "\n".join(made) if made else "") + "\n")
 
 
 def main() -> int:
@@ -57,7 +62,7 @@ def main() -> int:
         pid, run = arg.split("=", 1)
         run = Path(run)
         prob_file = next((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
-        base = ROOT / "runs" / "baseline" / prob_file.stem
+        base = ROOT / "runs" / os.environ.get("BASELINE_OUT", "baseline") / prob_file.stem
         designs = {"hs": run, "baseline": base} | ({"hs_prev": prev[pid]} if pid in prev else {})
         # labels by a fixed hash of problem + salt + design, so neither system always sits first
         ranked = sorted(designs, key=lambda who: hashlib.sha256((pid + salt + who).encode()).hexdigest()) \
@@ -74,12 +79,13 @@ def main() -> int:
             (d / label).mkdir()
             if who in ("hs", "hs_prev"):
                 (d / label / "design.md").write_text(hs_markdown(designs[who]), encoding="utf-8")
-                src = designs[who] / "final" / "panel_A.png"
+                full = designs[who] / "final" / "figure.png"  # panels A-D: the device, its critical part, how it is made
+                src = full if full.exists() else designs[who] / "final" / "panel_A.png"
             else:
                 shutil.copy(base / "design.md", d / label / "design.md")
                 src = base / "figure.png"
             im = Image.open(src).convert("RGB")
-            im.thumbnail((1600, 1600))
+            im.thumbnail((1800, 2400))
             im.save(d / label / "figure.jpg", quality=88)
     key_file.write_text(json.dumps(key, indent=2), encoding="utf-8")
     print(f"{len(key)} packets in {packets}")

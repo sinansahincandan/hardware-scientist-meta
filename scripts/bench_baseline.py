@@ -3,11 +3,12 @@ the whole concept design and an image prompt, then ONE Muse Image call that draw
 Manager, no critic, no SAM, no redraw. Wall time and cost recorded.
 
 Usage: .venv/bin/python scripts/bench_baseline.py examples/bench/*.json
-Writes runs/baseline/<problem stem>/design.md, figure.png, record.json.
+Writes <out>/<problem stem>/design.md, figure.png, record.json (out: runs/baseline, or BASELINE_OUT).
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -28,6 +29,7 @@ class BaselineDesign(BaseModel):
     key_numbers: list[str]
     constraint_check: list[str]
     risks: list[str]
+    how_it_is_made: list[str] = []
     image_prompt: str
 
 
@@ -35,7 +37,8 @@ PROMPT = (
     "You are an expert hardware design engineer. Design a concept for the problem below. Search the literature if "
     "useful. Return: title; how_it_works (a short paragraph); parts (each 'name — what it does'); key_numbers (the "
     "deciding estimates, each with how it was obtained); constraint_check (one line per given constraint: met or not "
-    "and why); risks; image_prompt (a prompt for a photorealistic product rendering of the concept on a plain light "
+    "and why); risks; how_it_is_made (3 to 5 making stages in order, each with its method, for example "
+    "'laser-cut aluminium sheet, bolted'); image_prompt (a prompt for a photorealistic product rendering of the concept on a plain light "
     "grey backdrop that shows how it works).\n\nPROBLEM: {title}\n{statement}\nCONSTRAINTS:\n{constraints}"
 )
 
@@ -60,7 +63,7 @@ def main() -> int:
     Image.new("RGB", (1536, 1024), (236, 238, 240)).save(blank)
     for arg in sys.argv[1:]:
         prob = json.loads(Path(arg).read_text(encoding="utf-8"))
-        out = ROOT / "runs" / "baseline" / Path(arg).stem
+        out = ROOT / "runs" / os.environ.get("BASELINE_OUT", "baseline") / Path(arg).stem
         out.mkdir(parents=True, exist_ok=True)
         client = MetaClient(run_dir=out, max_cost=0.5)
         start = time.time()
@@ -77,7 +80,9 @@ def main() -> int:
               + "".join(f"- {x}\n" for x in design.parts) + "\n## Key numbers\n"
               + "".join(f"- {x}\n" for x in design.key_numbers) + "\n## Constraint check\n"
               + "".join(f"- {x}\n" for x in design.constraint_check) + "\n## Risks\n"
-              + "".join(f"- {x}\n" for x in design.risks))
+              + "".join(f"- {x}\n" for x in design.risks)
+              + ("\n## How it is made\n" + "".join(f"- {x}\n" for x in design.how_it_is_made)
+                 if design.how_it_is_made else ""))
         (out / "design.md").write_text(md, encoding="utf-8")
         cost = json.loads((out / "cost.json").read_text(encoding="utf-8")).get("total_usd", 0.0)
         (out / "record.json").write_text(json.dumps({"problem_file": arg, "wall_seconds": seconds,
