@@ -32,6 +32,13 @@ def main() -> int:
     title = json.loads((run_dir / "problem.json").read_text(encoding="utf-8"))["title"]
     members = list(dict.fromkeys(r["member"] for r in records if r.get("member") and r["member"] != "Manager"))
     board = Whiteboard()
+    k = int(it.name.split("_")[-1]) if it.name.split("_")[-1].isdigit() else 0
+    prev = it.parent / f"iter_{k - 1:02d}" / "whiteboard.json"
+    trace = (run_dir / "trace.md").read_text(encoding="utf-8") if (run_dir / "trace.md").exists() else ""
+    if k > 0 and prev.exists() and f"iter {k}: meeting continues on the board of iter {k - 1}" in trace:
+        board = Whiteboard.load(prev)  # SPEC-13: this meeting started on the previous meeting's board
+        board.votes.clear()
+        board.closure = type(board.closure)()
     snapshots: dict[int, dict] = {}
     for r in records:
         if r.get("kind") == "op" and r.get("ok"):

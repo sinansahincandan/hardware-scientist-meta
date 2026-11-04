@@ -20,8 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 CRIT = {"C1": "Meets the constraints", "C2": "Physically works", "C3": "Numbers right and supported",
         "C4": "Picture shows the design", "C5": "Buildable and honest", "C6": "Explains how it works",
         "C7": "Tells how to make it", "C8": "Picture free of generator mistakes"}
-WHO = {"baseline": "Single prompt", "hs_prev": "Hardware Scientist, old council", "hs": "Hardware Scientist"}
-ORDER = ["baseline", "hs_prev", "hs"]
+WHO = {"baseline": "Single prompt", "hs_prev": "Hardware Scientist, old council", "hs": "Hardware Scientist",
+       "hs_open": "Hardware Scientist, open weights"}
+ORDER = ["baseline", "hs_prev", "hs", "hs_open"]
 
 
 def _img(path: Path, width: int = 900) -> str:
@@ -36,6 +37,10 @@ def _cost(who: str, k: dict, base_rec: dict) -> tuple[float, float, Path]:
     """(seconds, dollars, figure) for one design."""
     if who == "baseline":
         return base_rec["wall_seconds"], base_rec["cost_usd"], Path(base_rec["_dir"]) / "figure.png"
+    if who == "hs_open":
+        run, fig = Path(k["hs_open_run"]), Path(k["hs_open_fig"])
+        t = json.loads((run / "timing.json").read_text(encoding="utf-8")) if (run / "timing.json").exists() else {}
+        return t.get("wall_seconds", 0.0), t.get("cost_usd", 0.0), fig / "final" / "panel_A.png"
     run = ROOT / "runs" / k["hs_run" if who == "hs" else "hs_prev_run"]
     t = json.loads((run / "timing.json").read_text(encoding="utf-8"))
     return t["wall_seconds"], t["cost_usd"], run / "final" / "panel_A.png"
@@ -106,8 +111,8 @@ td,th{{border-bottom:1px solid #e1e6ec;padding:8px 10px;text-align:left;vertical
 border-radius:12px;padding:20px;margin:26px 0}}.prob{{color:#33404f;margin:4px 0}}
 .cons{{color:#5b6878;margin:4px 0 12px;font-size:14px}}
 .verdict{{background:#f1f5fb;border-left:5px solid #1f6fd1;padding:10px 14px;border-radius:6px;margin:10px 0 16px}}
-.cols{{display:grid;gap:16px}}.cols.c2{{grid-template-columns:1fr 1fr}}.cols.c3{{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:900px){{.cols.c2,.cols.c3{{grid-template-columns:1fr}}}}
+.cols{{display:grid;gap:16px}}.cols.c2{{grid-template-columns:1fr 1fr}}.cols.c3{{grid-template-columns:1fr 1fr 1fr}}.cols.c4{{grid-template-columns:1fr 1fr 1fr 1fr}}
+@media(max-width:900px){{.cols.c2,.cols.c3,.cols.c4{{grid-template-columns:1fr}}}}
 .col{{border:1px solid #e1e6ec;border-radius:10px;padding:10px}}.col.best{{border:2px solid #1f6fd1}}
 .col img{{width:100%;border-radius:8px;border:1px solid #e1e6ec}}.col h3{{margin:0 0 2px;font-size:17px}}
 .tot{{float:right;color:#1f6fd1}}.crit td{{font-size:12.5px}}.arith{{font-size:13px;color:#5b6878}}

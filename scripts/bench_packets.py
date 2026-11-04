@@ -4,7 +4,8 @@ written outside the packet folder.
 
 Usage: .venv/bin/python scripts/bench_packets.py <packets_dir> <key_file> [salt=<text>] b1=<hs_run_dir> b2=<hs_run_dir> …
 salt changes the fixed A/B labelling (round 1 put HS on B for b1–b3; round 2 uses salt=r2).
-prev_b1=<run> adds an earlier Hardware Scientist run as a third design (labels A/B/C, mixed by the same hash).
+prev_b1=<run> adds an earlier Hardware Scientist run as a third design (labels A/B/C, mixed by the same hash);
+open_b1=<run> [openfig_b1=<run>] adds Hardware Scientist on open weights (its picture from a redraw if given).
 """
 from __future__ import annotations
 
@@ -58,18 +59,24 @@ def main() -> int:
     args = sys.argv[3:]
     salt = next((a.split("=", 1)[1] for a in args if a.startswith("salt=")), "")
     prev = {a.split("=", 1)[0][5:]: Path(a.split("=", 1)[1]) for a in args if a.startswith("prev_")}
-    for arg in [a for a in args if not a.startswith(("salt=", "prev_"))]:
+    # open_b1=<run>: Hardware Scientist on open weights (another folder); openfig_b1=<run>: its picture from a
+    # Stage B redraw of the same meeting
+    opn = {a.split("=", 1)[0][5:]: Path(a.split("=", 1)[1]) for a in args if a.startswith("open_")}
+    ofig = {a.split("=", 1)[0][8:]: Path(a.split("=", 1)[1]) for a in args if a.startswith("openfig_")}
+    for arg in [a for a in args if not a.startswith(("salt=", "prev_", "open_", "openfig_"))]:
         pid, run = arg.split("=", 1)
         run = Path(run)
         prob_file = next((ROOT / "examples" / "bench").glob(f"{pid}_*.json"))
         base = ROOT / "runs" / os.environ.get("BASELINE_OUT", "baseline") / prob_file.stem
-        designs = {"hs": run, "baseline": base} | ({"hs_prev": prev[pid]} if pid in prev else {})
+        designs = {"hs": run, "baseline": base} | ({"hs_prev": prev[pid]} if pid in prev else {}) \
+            | ({"hs_open": opn[pid]} if pid in opn else {})
         # labels by a fixed hash of problem + salt + design, so neither system always sits first
         ranked = sorted(designs, key=lambda who: hashlib.sha256((pid + salt + who).encode()).hexdigest()) \
-            if prev else (["hs", "baseline"] if int(hashlib.sha256((pid + salt).encode()).hexdigest(), 16) % 2 == 0
+            if len(designs) > 2 else (["hs", "baseline"] if int(hashlib.sha256((pid + salt).encode()).hexdigest(), 16) % 2 == 0
                           else ["baseline", "hs"])
         order = dict(zip("ABC", ranked, strict=False))
-        key[pid] = {**order, "hs_run": run.name} | ({"hs_prev_run": prev[pid].name} if pid in prev else {})
+        key[pid] = {**order, "hs_run": run.name} | ({"hs_prev_run": prev[pid].name} if pid in prev else {}) \
+            | ({"hs_open_run": str(opn[pid]), "hs_open_fig": str(ofig.get(pid, opn[pid]))} if pid in opn else {})
         d = packets / pid
         if d.exists():
             shutil.rmtree(d)
@@ -77,10 +84,11 @@ def main() -> int:
         shutil.copy(prob_file, d / "problem.json")
         for label, who in order.items():
             (d / label).mkdir()
-            if who in ("hs", "hs_prev"):
+            if who in ("hs", "hs_prev", "hs_open"):
                 (d / label / "design.md").write_text(hs_markdown(designs[who]), encoding="utf-8")
-                full = designs[who] / "final" / "figure.png"  # panels A-D: the device, its critical part, how it is made
-                src = full if full.exists() else designs[who] / "final" / "panel_A.png"
+                fig_run = ofig.get(pid, designs[who]) if who == "hs_open" else designs[who]
+                full = fig_run / "final" / "figure.png"  # panels A-D: the device, its critical part, how it is made
+                src = full if full.exists() else fig_run / "final" / "panel_A.png"
             else:
                 shutil.copy(base / "design.md", d / label / "design.md")
                 src = base / "figure.png"
