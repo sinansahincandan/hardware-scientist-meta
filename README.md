@@ -28,7 +28,7 @@ that does those feedback rounds itself:
 git clone https://github.com/sinansahincandan/hardware-scientist-meta.git && cd hardware-scientist-meta
 python3 -m venv .venv && source .venv/bin/activate && pip install -e .
 export MODEL_API_KEY=<your Meta Model API key>
-hs run examples/bench/b3_wind_turbine.json --quick      # QUICK_TIME, about QUICK_COST
+hs run examples/bench/b3_wind_turbine.json --quick      # measured: 30 min, $1.67 (while six other runs shared the API)
 ```
 
 The run prints its folder. Open:

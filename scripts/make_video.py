@@ -72,24 +72,40 @@ def _tour_frames(spec: dict, n: int):
     big = Image.new("RGB", (src.size[0] + 2 * pad, src.size[1] + 2 * pad), src.getpixel((2, 2)))
     big.paste(src, (pad, pad))
     keys = [(_box169([v + pad for v in k["box"]]), float(k.get("hold", 1.0))) for k in spec["keys"]]
+    captions = [str(k.get("caption", "")) for k in spec["keys"]]
     total = n / FPS
     hold_total = max(total - MOVE_S * (len(keys) - 1), 0.5)
     weight = sum(h for _, h in keys)
-    timeline = []  # (start, end, box_a, box_b)
+    timeline = []  # (start, end, box_a, box_b, caption shown while holding)
     t = 0.0
     for i, (box, h) in enumerate(keys):
         d = hold_total * h / weight
-        timeline.append((t, t + d, box, box))
+        timeline.append((t, t + d, box, box, captions[i]))
         t += d
         if i + 1 < len(keys):
-            timeline.append((t, t + MOVE_S, box, keys[i + 1][0]))
+            timeline.append((t, t + MOVE_S, box, keys[i + 1][0], ""))
             t += MOVE_S
     for f in range(n):
         tt = f / FPS
         seg = next((s for s in timeline if s[0] <= tt < s[1]), timeline[-1])
         a = _ease(min(max((tt - seg[0]) / max(seg[1] - seg[0], 1e-6), 0.0), 1.0)) if seg[2] != seg[3] else 0.0
         box = tuple(seg[2][j] + (seg[3][j] - seg[2][j]) * a for j in range(4))
-        yield big.resize((W, H), Image.BICUBIC, box=box)
+        frame = big.resize((W, H), Image.BICUBIC, box=box)
+        if seg[4]:
+            frame = _caption(frame, seg[4])
+        yield frame
+
+
+def _caption(frame: Image.Image, text: str) -> Image.Image:
+    """A dark pill with white text at the lower left, as on the slide previews."""
+    from PIL import ImageDraw, ImageFont
+
+    font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 40)
+    d = ImageDraw.Draw(frame)
+    w = d.textlength(text, font=font)
+    d.rounded_rectangle([60, H - 140, 60 + w + 56, H - 64], radius=38, fill=(22, 32, 44))
+    d.text((88, H - 124), text, font=font, fill="white")
+    return frame
 
 
 def _reveal_frames(spec: dict, n: int):

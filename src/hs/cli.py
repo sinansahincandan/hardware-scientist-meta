@@ -40,9 +40,9 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
 
 def _quick_mode() -> dict[str, int]:
-    """Same loops, smaller: for a reviewer who wants a design in about a quarter of an hour (full runs take 45-75
+    """Same loops, smaller: for a reviewer who wants a design in about half an hour for about $1.7 (full runs take 45-75
     min). Two meetings of up to two cycles, members and chief at low effort with fewer tool calls, two picture
-    rounds, no return from the picture to the design, two making-step images."""
+    rounds, no return from the picture to the design, three making-step images."""
     from dataclasses import replace
 
     from hs import config
@@ -50,7 +50,7 @@ def _quick_mode() -> dict[str, int]:
     for role in ("member", "manager"):
         config.ROLES[role] = replace(config.ROLES[role], effort="low")
     config.MAX_TOOL_CALLS_PER_TURN = 5
-    config.MAX_FIGURE_IMAGES = 2
+    config.MAX_FIGURE_IMAGES = 3
     print("quick mode: up to 2 meetings x 2 cycles, low effort members, 2 picture rounds")
     return {"max_a_iters": 2, "max_s1_rounds": 2, "max_b_returns": 0, "min_cycles": 2, "max_cycles": 2}
 
@@ -172,7 +172,7 @@ def build_parser() -> argparse.ArgumentParser:
     run = sub.add_parser("run")
     run.add_argument("problem")
     run.add_argument("--fake", action="store_true")
-    run.add_argument("--quick", action="store_true", help="same loops, fewer cycles and rounds (about 15 min)")
+    run.add_argument("--quick", action="store_true", help="same loops, fewer cycles and rounds (about 30 min, about $1.7)")
     run.set_defaults(func=_cmd_run)
     ex = sub.add_parser("examples")
     ex.add_argument("--n", type=int, default=5)
