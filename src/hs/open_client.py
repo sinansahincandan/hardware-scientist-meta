@@ -8,8 +8,9 @@ the rest of HS runs unchanged (probe: runs/open_probe/, 2026-11-03):
 - hosted web_search (accepted but never searches; the reply invents [1][2] sources): replaced by the
   web_search / open_page function tools of hs.open_search, run here, and reported back as Meta-style
   web_search_call items plus url_citation spans, so search_sources() and the board see the same shape.
-Pictures (image_edit) stay on Meta's muse-image-1.0; SAM is inherited from MetaClient until the Modal
-SAM 3.1 app replaces it.
+Pictures (image_edit) stay on Meta's muse-image-1.0 (Meta has no open-weights image model). SAM runs on
+Meta's open-weights SAM 3 image model in a Modal GPU container (modal_apps/sam3_open.py; why not
+the SAM 3.1 checkpoint: see that file).
 """
 from __future__ import annotations
 
@@ -58,6 +59,7 @@ def _replay_items(output: list[Any]) -> list[dict[str, Any]]:
 
 
 _URL = re.compile(r"https?://[^\s)\]>\"'`]+")
+_SAM_BOX = re.compile(r"(\d+)<\|box;x1=(-?\d+);y1=(-?\d+);x2=(-?\d+);y2=(-?\d+);w=\d+;h=\d+[^|]*\|>")
 
 
 def _citations(text: str, sources: dict[str, str]) -> list[Any]:
@@ -82,6 +84,7 @@ class OpenClient(MetaClient):
         super().__init__(run_dir=run_dir, max_cost=max_cost)
         self._open_sdk: Any = None
         self._chains: dict[str, list[dict[str, Any]]] = {}
+        self._sam: Any = None
 
     def _open(self) -> Any:
         if self._open_sdk is None:
@@ -199,3 +202,37 @@ class OpenClient(MetaClient):
                   usage=NS(input_tokens=usage["input_tokens"], output_tokens=usage["output_tokens"],
                            input_tokens_details=NS(cached_tokens=usage["cached"]),
                            output_tokens_details=NS(reasoning_tokens=usage["reasoning"])))
+
+    def sam_segment(self, phrase: str, image_png: Path, metadata: dict[str, str] | None = None) -> str:
+        """SAM 3 (open weights) on Modal. Same inputs as MetaClient.sam_segment: a noun phrase, or Meta's box
+        prompt text ("<0f>1<|box;x1=..;y1=..;x2=..;y2=..;w=..;h=..|>,2<|box;..|>") from part_map._box_prompt,
+        on the image sent at most 1024 px on its long side. Returns JSON that part_map.parse_instances reads
+        (confidence is always included, so `metadata` is not needed)."""
+        import io
+        import time
+
+        import modal
+        from PIL import Image
+
+        self.cost.check_budget(estimated_usd=0.01)
+        with Image.open(image_png) as im:
+            im = im.convert("RGB")
+            scale = min(1.0, 1024 / max(im.size))
+            if scale < 1.0:
+                im = im.resize((round(im.width * scale), round(im.height * scale)))
+            buf = io.BytesIO()
+            im.save(buf, format="PNG")
+        if self._sam is None:
+            self._sam = modal.Cls.from_name(*config.SAM_OPEN_APP)()
+        boxes = [{"object_id": m.group(1), "box": [int(m.group(k)) for k in (2, 3, 4, 5)]}
+                 for m in _SAM_BOX.finditer(phrase)] if phrase.startswith("<0f>") else []
+        t0 = time.time()
+        if boxes:
+            data = self._sam.segment_boxes.remote(buf.getvalue(), boxes)
+        else:
+            data = self._sam.segment_text.remote(buf.getvalue(), phrase)
+        wall = time.time() - t0
+        self.cost.record("sam", "sam-3-open@modal", {"modal_seconds": wall})
+        self.last_sam = {"phrase": phrase, "sent_size": im.size, "wall_seconds": round(wall, 2),
+                         "gpu_seconds": data.get("gpu_seconds"), "instances": len(data.get("instances", []))}
+        return json.dumps({"open_sam": True, **{k: v for k, v in data.items() if k != "gpu_seconds"}})

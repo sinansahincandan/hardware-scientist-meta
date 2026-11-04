@@ -65,6 +65,8 @@ def parse_sam(raw: str, img_w: int, img_h: int) -> list[tuple[float, float, floa
 def parse_instances(raw: str, img_w: int, img_h: int) -> list[dict[str, Any]]:
     """Every object SAM returned, in render pixels: box, confidence (when asked for), object id and its own
     boolean mask when decodable (meta-sam-parser, owner-approved 2026-11-02). Fake mode: boxes only."""
+    if (raw or "").startswith('{"open_sam"'):
+        return _open_instances(raw, img_w, img_h)
     frame = _BOX.search(raw or "")
     if frame is None:
         return []
@@ -105,6 +107,32 @@ def parse_instances(raw: str, img_w: int, img_h: int) -> list[dict[str, Any]]:
         return [{"box": b, "conf": None, "object_id": str(i + 1), "mask": None}
                 for i, b in enumerate(parse_sam(raw, img_w, img_h))]
     return kept
+
+
+def _open_instances(raw: str, img_w: int, img_h: int) -> list[dict[str, Any]]:
+    """Open-weights copy: SAM 3.1 on Modal (OpenClient.sam_segment) returns JSON, not Meta's token text —
+    boxes, confidences and box-cropped mask PNGs in the sent image's pixels, scaled here to render pixels."""
+    import base64
+    import io
+
+    data = json.loads(raw)
+    sx, sy = img_w / max(int(data["w"]), 1), img_h / max(int(data["h"]), 1)
+    out: list[dict[str, Any]] = []
+    for it in data.get("instances", []):
+        b = it["box"]
+        inst: dict[str, Any] = {"object_id": str(it["object_id"]), "conf": it.get("conf"),
+                                "box": (b[0] * sx, b[1] * sy, b[2] * sx, b[3] * sy), "mask": None}
+        if it.get("mask_png"):
+            x0, y0, x1, y1 = it["mask_box"]
+            X0, Y0 = round(x0 * sx), round(y0 * sy)
+            X1, Y1 = max(round(x1 * sx), X0 + 1), max(round(y1 * sy), Y0 + 1)
+            small = Image.open(io.BytesIO(base64.b64decode(it["mask_png"]))).convert("L")
+            big = np.asarray(small.resize((X1 - X0, Y1 - Y0))) > 127
+            full = np.zeros((img_h, img_w), dtype=bool)
+            full[Y0:Y0 + big.shape[0], X0:X0 + big.shape[1]] = big[: img_h - Y0, : img_w - X0]
+            inst["mask"] = full
+        out.append(inst)
+    return out
 
 
 def parse_masks(raw: str, img_w: int, img_h: int) -> np.ndarray | None:

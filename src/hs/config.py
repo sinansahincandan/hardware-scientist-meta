@@ -95,7 +95,11 @@ PRICES = {
     "web_search_per_query": 0.0,  # open copy: free ddgs search (Meta's hosted search was $2.50 / 1,000)
     "image_each": 0.01,
     "sam_image_each": 2.50 / 1000.0,
+    # Open copy: SAM 3 on a Modal A10G (L4 as fallback), billed per second of the call as seen from here
+    # (cold starts included; the idle minutes before the container scales down are not, see Modal's usage page).
+    "modal_gpu_per_second": 0.000306,
 }
+SAM_OPEN_APP = ("hs-sam3", "Sam3")  # modal_apps/sam3_open.py (SAM 3 image model, open weights)
 
 FIXED_CRITERIA = [
     "The concept must work physically (no violated conservation law, load path, or signal path).",

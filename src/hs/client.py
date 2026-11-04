@@ -43,6 +43,7 @@ def price_usage(usage: dict[str, Any]) -> float:
         + searches * p["web_search_per_query"]
         + images * p["image_each"]
         + sam_calls * p["sam_image_each"]
+        + float(usage.get("modal_seconds", 0) or 0) * p.get("modal_gpu_per_second", 0.0)
     )
 
 
@@ -166,6 +167,7 @@ class CostLog:
                 "searches": int(usage.get("searches", 0) or 0),
                 "images": int(usage.get("images", 0) or 0),
                 "sam_calls": int(usage.get("sam_calls", 0) or 0),
+                "modal_seconds": round(float(usage.get("modal_seconds", 0) or 0), 3),
                 "usd": round(usd, 6),
             }
         )

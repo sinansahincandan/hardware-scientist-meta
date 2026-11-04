@@ -126,3 +126,53 @@ def test_effort_map_covers_every_role():
 
     assert all(rc.effort in config.OPEN_EFFORT for rc in config.ROLES.values())
     assert set(config.OPEN_EFFORT.values()) <= {"low", "medium", "high", "xhigh"}
+
+
+def test_open_sam_json_reads_as_instances_in_render_pixels():
+    import base64
+    import io
+    import json
+
+    import numpy as np
+    from PIL import Image
+
+    from hs.stage_b.part_map import parse_instances, parse_masks
+
+    crop = np.zeros((10, 20), dtype=np.uint8)
+    crop[2:8, 5:15] = 255
+    buf = io.BytesIO()
+    Image.fromarray(crop).convert("1").save(buf, format="PNG")
+    raw = json.dumps({"open_sam": True, "w": 100, "h": 50, "instances": [
+        {"object_id": "3", "box": [10, 10, 30, 20], "conf": 0.91,
+         "mask_png": base64.b64encode(buf.getvalue()).decode(), "mask_box": [10, 10, 30, 20]}]})
+    insts = parse_instances(raw, 200, 100)  # render is twice the sent size
+    assert len(insts) == 1 and insts[0]["object_id"] == "3" and insts[0]["conf"] == 0.91
+    assert insts[0]["box"] == (20, 20, 60, 40)
+    mask = parse_masks(raw, 200, 100)
+    assert mask is not None and mask.shape == (100, 200)
+    ys, xs = np.nonzero(mask)
+    assert 28 <= xs.min() <= 32 and 48 <= xs.max() <= 52 and 22 <= ys.min() <= 26
+
+
+def test_box_prompt_text_becomes_boxes_for_modal(client, tmp_path):
+    from PIL import Image
+
+    from hs.stage_b.part_map import _box_prompt
+
+    text, ids = _box_prompt({"p1": (100, 200, 300, 400), "p3": (500, 500, 600, 700)}, 2048, 1024)
+    calls = []
+
+    class _Sam:
+        class segment_boxes:
+            @staticmethod
+            def remote(png, boxes):
+                calls.append(boxes)
+                return {"w": 1024, "h": 512, "instances": [], "gpu_seconds": 0.1}
+
+    client._sam = _Sam()
+    img = tmp_path / "r.png"
+    Image.new("RGB", (2048, 1024)).save(img)
+    client.sam_segment(text, img)
+    assert [b["object_id"] for b in calls[0]] == ["1", "2"] and ids == {"1": "p1", "2": "p3"}
+    assert calls[0][0]["box"] == [102, 102, 307, 205]
+    assert client.cost.entries[-1]["model"] == "sam-3-open@modal"
