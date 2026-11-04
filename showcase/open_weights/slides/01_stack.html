@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Open weights stack</title><link rel="stylesheet" href="style.css">
+<style>
+  .wrap { margin-top: 56px; }
+  td:first-child { width: 30%; font-weight: 500; }
+  td .sub { display: block; font-size: 21px; color: var(--muted); margin-top: 4px; }
+  .foot { margin-top: 34px; font-size: 27px; line-height: 1.45; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">Open weights · same architecture</div>
+  <h1>The same Hardware Scientist runs on Meta's open-weights models</h1>
+  <div class="wrap">
+    <table>
+      <tr><th>What the model does</th><th>Meta Model API run</th><th class="open">Open-weights run</th></tr>
+      <tr><td>Council, Manager, Evaluator, TextGrad optimizer, picture critics</td>
+          <td>muse-spark-1.3<span class="sub">Meta Model API</span></td>
+          <td class="open"><b>Muse Spark Open</b><span class="sub">816B mixture of experts, 42B active · Baseten</span></td></tr>
+      <tr><td>Part masks on the rendered device</td>
+          <td>sam-3.1<span class="sub">Meta Model API</span></td>
+          <td class="open"><b>SAM 3</b><span class="sub">open weights on our own GPU · Modal (A10G)</span></td></tr>
+      <tr><td>Literature search</td>
+          <td>hosted web search<span class="sub">Meta Model API</span></td>
+          <td class="open"><b>free web search + page reading</b><span class="sub">plain code, no model</span></td></tr>
+      <tr><td>Photoreal pictures</td>
+          <td>muse-image-1.0<span class="sub">Meta Model API</span></td>
+          <td class="open">muse-image-1.0<span class="sub">Meta Model API · Meta has no open-weights image model</span></td></tr>
+    </table>
+  </div>
+  <p class="foot">One client file is swapped in. The council, the chief designer, the Evaluator, the TextGrad loop and the
+    picture pipeline are the same code.</p>
+</div></body></html>

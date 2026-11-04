@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Open weights cost and time</title><link rel="stylesheet" href="style.css">
+<style>
+  .row { display: flex; gap: 64px; margin-top: 56px; align-items: flex-start; }
+  .left { flex: 1.45; }
+  .right { flex: 1; display: flex; flex-direction: column; gap: 28px; }
+  .big { background: var(--card); border: 2px solid var(--line); padding: 30px 34px; }
+  .big .n { font-size: 64px; font-weight: 700; }
+  .big .n .arrow { color: var(--muted); font-weight: 400; padding: 0 12px; }
+  .big .n .to { color: var(--blue); }
+  .big .l { font-size: 25px; color: var(--muted); margin-top: 6px; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">Meta API vs open weights · same three problems</div>
+  <h1>Same cost, half the time</h1>
+  <div class="row">
+    <div class="left">
+      <table>
+        <tr><th>Problem</th><th>Meta Model API</th><th class="open">Open weights</th></tr>
+        <tr><td>Lunar excavator</td><td>59 min · $2.49</td><td class="open">17 min · $1.38</td></tr>
+        <tr><td>Tactile fingertip</td><td>44 min · $2.31</td><td class="open">18 min · $1.52</td></tr>
+        <tr><td>Wind turbine</td><td>38 min · $1.79</td><td class="open">42 min · $3.33</td></tr>
+        <tr class="total"><td>Three designs</td><td>141 min · $6.59</td><td class="open">77 min · $6.80</td></tr>
+      </table>
+      <p class="note">Every design was accepted by the Evaluator in both stacks. Open-weights total includes SAM 3 on Modal
+        (about $0.19 a run, from Modal's billing) and pictures on the Meta API (about $0.09 a run).</p>
+    </div>
+    <div class="right">
+      <div class="big"><div class="n">141<span class="arrow">→</span><span class="to">77 min</span></div>
+        <div class="l">for the same three designs</div></div>
+      <div class="big"><div class="n">$6.59<span class="arrow">→</span><span class="to">$6.80</span></div>
+        <div class="l">Baseten sells Muse Spark Open at Meta's token price: $1.25 in, $4.25 out per million</div></div>
+      <div class="big"><div class="n"><span class="to">Your hardware</span></div>
+        <div class="l">open weights: the provider, or your own GPUs, is your choice</div></div>
+    </div>
+  </div>
+</div></body></html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Open weights side by side</title><link rel="stylesheet" href="style.css">
+<style>
+  .grid { display: grid; grid-template-columns: 170px 1fr 1fr 1fr; gap: 18px 22px; margin-top: 40px; align-items: center; }
+  .grid img { width: 100%; height: 328px; object-fit: cover; object-position: top; display: block;
+    border: 2px solid var(--line); background: #fff; }
+  .rowlabel { font-size: 27px; font-weight: 700; line-height: 1.2; }
+  .rowlabel.open { color: var(--blue); }
+  .rowlabel span { display: block; font-size: 20px; font-weight: 400; color: var(--muted); margin-top: 6px; }
+  .colhead { font-size: 26px; color: var(--muted); font-weight: 500; }
+</style></head>
+<body><div class="slide">
+  <div class="kicker">Same problems, side by side</div>
+  <h1>Accepted designs, drawn by each stack</h1>
+  <div class="grid">
+    <div></div><div class="colhead">Lunar excavator</div><div class="colhead">Tactile fingertip</div><div class="colhead">Wind turbine</div>
+    <div class="rowlabel">Meta Model API<span>muse-spark-1.3 · sam-3.1</span></div>
+    <img src="../img/meta_b1_A.jpg"><img src="../img/meta_b2_A.jpg"><img src="../img/meta_b3_A.jpg">
+    <div class="rowlabel open">Open weights<span>Muse Spark Open · SAM 3</span></div>
+    <img src="../img/open_b1_A.jpg"><img src="../img/open_b2_A.jpg"><img src="../img/open_b3_A.jpg">
+  </div>
+</div></body></html>

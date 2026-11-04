@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open-Weights Hardware Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #f5f6f8; --ink: #1b1f24; --muted: #5b6470; --blue: #1a6fd6; --line: #d9dde3; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "DM Sans", Helvetica, Arial, sans-serif;
+    font-size: 18px; line-height: 1.55; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 24px 80px; }
+  .kicker { color: var(--blue); font-weight: 700; letter-spacing: 0.14em; font-size: 14px; text-transform: uppercase; }
+  h1 { font-size: 44px; line-height: 1.15; margin: 10px 0 14px; }
+  h2 { font-size: 28px; margin: 56px 0 14px; }
+  .lead { font-size: 21px; color: #333a43; max-width: 900px; }
+  table { border-collapse: collapse; background: var(--card); border: 1px solid var(--line); width: 100%; }
+  th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; font-size: 16px; }
+  th.open { color: var(--blue); font-weight: 700; }
+  td .sub { display: block; font-size: 14px; color: var(--muted); }
+  tr.total td { border-top: 2px solid var(--ink); font-weight: 700; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .stat { background: var(--card); border: 1px solid var(--line); padding: 20px 22px; }
+  .stat .n { font-size: 34px; font-weight: 700; }
+  .stat .n .to { color: var(--blue); }
+  .stat .l { color: var(--muted); font-size: 15px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  .pair figure { margin: 0; background: var(--card); border: 1px solid var(--line); padding: 10px; }
+  .pair img { width: 100%; display: block; }
+  .pair figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
+  .pair figcaption b { color: var(--ink); }
+  .pair figcaption b.blue { color: var(--blue); }
+  ul { padding-left: 22px; } li { margin: 6px 0; }
+  .note { color: var(--muted); font-size: 15px; }
+  code { font-size: 15px; background: #eceef2; padding: 1px 5px; }
+  @media (max-width: 760px) { .pair, .stats { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+</style></head>
+<body><div class="wrap">
+  <div class="kicker">Hardware Scientist · open weights</div>
+  <h1>The same Hardware Scientist, run on Meta's open-weights models</h1>
+  <p class="lead">Hardware Scientist runs on the Meta Model API. Here the same code runs with its reasoning on
+    Muse Spark Open, Meta's open-weights model served by Baseten, and its part masks on SAM 3, Meta's
+    open-weights segmenter on a Modal GPU. The architecture is unchanged; one client file is swapped in.
+    All three benchmark problems were solved and accepted, at the same cost and in about half the time.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">141 → <span class="to">77 min</span></div><div class="l">for the same three designs</div></div>
+    <div class="stat"><div class="n">$6.59 → <span class="to">$6.80</span></div><div class="l">same token price at Baseten as on the Meta Model API</div></div>
+    <div class="stat"><div class="n"><span class="to">3 of 3</span></div><div class="l">designs accepted by the Evaluator in both stacks</div></div>
+  </div>
+
+  <h2>What runs where</h2>
+  <table>
+    <tr><th>What the model does</th><th>Meta Model API run</th><th class="open">Open-weights run</th></tr>
+    <tr><td>Council, Manager (chief designer), Evaluator, TextGrad optimizer, picture writer and critics</td>
+        <td>muse-spark-1.3<span class="sub">Meta Model API</span></td>
+        <td><b>Muse Spark Open</b> (<code>meta-models/muse-spark-open-1026</code>)<span class="sub">816B mixture of experts, 42B active · Baseten, OpenAI-compatible Responses API</span></td></tr>
+    <tr><td>Part masks on the rendered device</td>
+        <td>sam-3.1<span class="sub">Meta Model API</span></td>
+        <td><b>SAM 3</b> (<code>facebook/sam3</code>)<span class="sub">open weights, image model, on a Modal A10G GPU</span></td></tr>
+    <tr><td>Literature search</td>
+        <td>hosted web search<span class="sub">Meta Model API</span></td>
+        <td><b>free web search + page and PDF reading</b><span class="sub">plain code given to the model as two tools</span></td></tr>
+    <tr><td>Photoreal pictures</td>
+        <td>muse-image-1.0<span class="sub">Meta Model API</span></td>
+        <td>muse-image-1.0<span class="sub">Meta Model API: Meta has no open-weights image model</span></td></tr>
+  </table>
+
+  <h2>Cost and time, same three problems</h2>
+  <table>
+    <tr><th>Problem</th><th>Meta Model API</th><th class="open">Open weights</th></tr>
+    <tr><td>Lunar regolith excavator</td><td>59 min · $2.49 · accepted</td><td>17 min · $1.38 · accepted</td></tr>
+    <tr><td>Tactile fingertip sensor</td><td>44 min · $2.31 · accepted</td><td>18 min · $1.52 · accepted</td></tr>
+    <tr><td>Small wind turbine</td><td>38 min · $1.79 · accepted</td><td>42 min · $3.33 · accepted</td></tr>
+    <tr class="total"><td>Three designs</td><td>141 min · $6.59</td><td>77 min · $6.80</td></tr>
+  </table>
+  <p class="note">Open-weights total: Baseten tokens and Meta pictures from the project ledger, plus SAM 3 on Modal from
+    Modal's own billing (about $0.19 a run). Baseten lists Muse Spark Open at $1.25 per million input tokens, $0.15
+    cached and $4.25 output, the same as muse-spark-1.3. Both stacks ran the three problems in parallel.</p>
+
+  <h2>Same problems, side by side</h2>
+  <p>Left: Meta Model API. Right: open weights. Each is the accepted design's final figure.</p>
+  <div class="pair">
+    <figure><img src="img/meta_b1_fig.jpg" alt="Lunar excavator, Meta Model API"><figcaption><b>Lunar excavator</b> · Meta Model API</figcaption></figure>
+    <figure><img src="img/open_b1_fig.jpg" alt="Lunar excavator, open weights"><figcaption><b class="blue">Lunar excavator</b> · open weights</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="img/meta_b2_fig.jpg" alt="Tactile fingertip, Meta Model API"><figcaption><b>Tactile fingertip</b> · Meta Model API</figcaption></figure>
+    <figure><img src="img/open_b2_fig.jpg" alt="Tactile fingertip, open weights"><figcaption><b class="blue">Tactile fingertip</b> · open weights</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="img/meta_b3_fig.jpg" alt="Wind turbine, Meta Model API"><figcaption><b>Wind turbine</b> · Meta Model API</figcaption></figure>
+    <figure><img src="img/open_b3_fig.jpg" alt="Wind turbine, open weights"><figcaption><b class="blue">Wind turbine</b> · open weights · picture stage redrawn from the same meeting after the part-size instruction was added</figcaption></figure>
+  </div>
+
+  <h2>What it took</h2>
+  <ul>
+    <li><b>One client file.</b> <code>OpenClient</code> keeps the same interface as the Meta client. Baseten does not
+      store conversations, so the client keeps each chain itself; the resent part is billed at the cached rate.</li>
+    <li><b>Search as tools.</b> Baseten's model has no hosted search, so members get <i>web_search</i> and
+      <i>open_page</i>; results reach the whiteboard in the same form as before, so every citation still needs search
+      evidence on the board.</li>
+    <li><b>SAM 3 on Modal.</b> The SAM 3.1 checkpoint is built for video tracking and does not load into the image
+      model; the SAM 3 image checkpoint does, and found the same parts at the same places as the Meta API's SAM.</li>
+    <li><b>Instructions the open model needed spelled out.</b> Search before posting numbers; name parts in plain
+      words; give each part its own size. Muse Spark 1.3 did these unasked.</li>
+  </ul>
+  <p class="note">Runs: open weights <code>runs/20261103-210007</code>, <code>-210010</code>, <code>-210013</code> (turbine
+    figure <code>-215821</code>); Meta Model API <code>runs/20261103-152604</code>, <code>-194701</code>, <code>-170525</code>.
+    Details in JOURNAL.md.</p>
+</div></body></html>
