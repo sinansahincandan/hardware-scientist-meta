@@ -9,9 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from hs.client import search_sources  # noqa: E402,F401
-from hs.open_client import OpenClient  # noqa: E402
-from hs.schemas import Verdict  # noqa: E402
+from hs.client import search_sources  # noqa: F401
+from hs.open_client import OpenClient
+from hs.schemas import Verdict
 
 
 def main() -> int:

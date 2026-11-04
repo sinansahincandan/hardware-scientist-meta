@@ -14,10 +14,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from hs.master_prompt import MasterPrompt, split_master_prompt  # noqa: E402
-from hs.open_client import OpenClient  # noqa: E402
-from hs.stage_a.meeting import Meeting  # noqa: E402
-from hs.stage_a.whiteboard import Whiteboard  # noqa: E402
+from hs.master_prompt import MasterPrompt, split_master_prompt
+from hs.open_client import OpenClient
+from hs.stage_a.meeting import Meeting
+from hs.stage_a.whiteboard import Whiteboard
 
 
 class LoggingClient(OpenClient):

@@ -391,6 +391,10 @@ class Secretary:
             prompt = (
                 "Synthesize the SolutionPrompt from the final whiteboard and transcript. "
                 "Copy evidence ids into key_estimates where they exist. Add nothing not on the board. "
+                "Name every part in concept.parts by its plain name of 2 to 5 words, as a person would call it (for "
+                "example 'Wedge hopper', 'Twin tracks on fold-out beams'); its sizes, ratings, materials and position "
+                "belong in size_class_mm, material and function, never in the name, because the name is the label "
+                "drawn on the figure. "
                 "Also write: mechanism_sentence (one sentence stating the working principle in plain words a "
                 "non-specialist can follow: no part ids, no product codes, units with a space, at most three "
                 "significant figures); "

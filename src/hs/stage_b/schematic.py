@@ -90,7 +90,8 @@ def spec_and_check(client: Any, solution: SolutionPrompt) -> tuple[SchematicSpec
                     "aspect to the part's real width/height ratio (a coil spring is tall, about "
                     "0.35; a deck girder is wide, about 6; a box is near 1), so the sketch "
                     "carries true relative proportions, and place joints and loads where they "
-                    "physically act.")
+                    "physically act. Label each part node with the part's name exactly as in the parts list "
+                    "(the label is drawn on the figure; sizes and ratings stay out of it).")
     spec = client.structured("schematic", SchematicSpec, instructions, solution.model_dump_json(indent=2))
     errors = check_spec(spec, solution)
     if not errors:
