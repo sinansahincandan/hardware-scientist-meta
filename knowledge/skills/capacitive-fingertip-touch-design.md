@@ -22,3 +22,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 
 ## Use notes
 - run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (Chen — Slip Dynamics and Grip Control Signal): Helped: guided row-column shear taxel plus 100-500 Hz / 1 kHz vibration dual-channel slip flag and 10 ms budget that keeps fall within 1 mm.
+- run 20261103-170523_tactile-fingertip-sensor-for-robot-hands (Sofia Mount — Finger Integration and Rigid Support): Helped: guided parallel-plate taxel grid, dual-range force cover, and stick-ratio slip flag adopted in decisive choices and estimates.

@@ -13,3 +13,4 @@ Typical: gust at 22 m/s gives thrust 36.1 N (E11) to 45.1 N verification (E19); 
 
 ## Use notes
 - run 20261103-105038_small-wind-turbine-for-a-wind-tunnel-com (Aero-Rotor Designer): Helped: provided survival thrust method checked against disc-area dynamic pressure for post mount.
+- run 20261103-170525_small-wind-turbine-for-a-wind-tunnel-com (Aero — Rotor Aerodynamics Lead): Helped - quantified 22m/s survival thrust and post moment driving spine/post and yaw-out.
