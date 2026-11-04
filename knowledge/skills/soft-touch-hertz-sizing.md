@@ -13,3 +13,4 @@ source: run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (2026-11-02
 Typical values: 1 mN on Shore 10A gives 0.247 mm radius (E9); 1 mN over 1 mm2 taxel gives 1 mN/mm2 pressure (E10); 2 mm pitch taxel gives 212 fF base capacitance (E18).
 
 ## Use notes
+- run 20261103-194701_tactile-fingertip-sensor-for-robot-hands (Derma — Soft Skin and Contact Mechanics Owner): Helped: sized soft skin to spread 1 mN touch over multiple taxels for centroid and signal.

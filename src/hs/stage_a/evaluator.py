@@ -15,7 +15,7 @@ class Evaluator:
         self.client = client
 
     def judge(self, master: MasterPrompt, solution: SolutionPrompt, board: Whiteboard,
-              closed_by: str, iter_dir: Path) -> Verdict:
+              closed_by: str, iter_dir: Path, previous_requests: list[str] | None = None) -> Verdict:
         sections = dict(master.sections)
         # 1) prior-art check (free text + web_search)
         novelty, citations = self.client.free_text(
@@ -122,6 +122,12 @@ class Evaluator:
             "settle that point: say in writing whether the evidence settles it or not. A literature value that rests "
             "on a search result whose page was never opened is weaker than one read from the page; say so where it "
             "decides acceptance. No scores."
+            + (("\n\nTHE SAME ISSUES ARE RE-CHECKED FIRST (the loop's rule). Your previous verdict asked the room "
+                "for:\n" + "\n".join(f"- {r}" for r in previous_requests) + "\nStart your feedback by saying for "
+                "each whether the board now meets it, with the evidence id. When every one is met and the concept "
+                "works with every stated limit shown, accept. A new gap you find now is an evidence_request only if "
+                "it could make the concept fail or break a stated limit; any other improvement goes in your "
+                "feedback text as advice, not as a reason to reject. ") if previous_requests else "")
         )
         verdict = self.client.structured(
             "evaluator", Verdict,

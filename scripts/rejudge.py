@@ -24,12 +24,17 @@ def main() -> int:
     it = run / "stage_a" / f"iter_{int(sys.argv[3]) if len(sys.argv) > 3 else 0:02d}"
     out.mkdir(parents=True, exist_ok=True)
     problem = json.loads((run / "problem.json").read_text(encoding="utf-8"))
+    k = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+    rev = run / "master_prompt" / f"rev_{k:03d}.md"  # meeting k ran on revision k (one rewrite per rejection)
     master = MasterPrompt(out, problem["title"], split_master_prompt(
-        min((run / "master_prompt").glob("rev_*.md")).read_text(encoding="utf-8")))
+        (rev if rev.exists() else min((run / "master_prompt").glob("rev_*.md"))).read_text(encoding="utf-8")))
     solution = SolutionPrompt.model_validate_json((it / "solution.json").read_text(encoding="utf-8"))
     board = Whiteboard.load(it / "whiteboard.json")
+    prev = run / "stage_a" / f"iter_{int(sys.argv[3]) - 1:02d}" / "verdict.json" if len(sys.argv) > 3 else None
+    previous = json.loads(prev.read_text(encoding="utf-8"))["evidence_requests"] if prev and prev.exists() else None
     verdict = Evaluator(MetaClient(run_dir=out, max_cost=0.3)).judge(master, solution, board,
-                                                                      board.closure.closed_by, out)
+                                                                      board.closure.closed_by, out,
+                                                                      previous_requests=previous)
     print("accept", verdict.accept)
     print("requests", json.dumps(verdict.evidence_requests, indent=1)[:1500])
     return 0
