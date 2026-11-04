@@ -86,20 +86,20 @@ def spec_and_check(client: Any, solution: SolutionPrompt) -> tuple[SchematicSpec
             errors2 = check_spec(spec2, solution)
             return (spec2 if not errors2 else None), errors2
         return spec, []
-    spec = client.structured("schematic", SchematicSpec,
-                             "Convert the concept into a 2D mechanism sketch spec. Set every node's "
-                             "aspect to the part's real width/height ratio (a coil spring is tall, about "
-                             "0.35; a deck girder is wide, about 6; a box is near 1), so the sketch "
-                             "carries true relative proportions, and place joints and loads where they "
-                             "physically act.",
-                             solution.model_dump_json(indent=2))
+    base = ("Convert the concept into a 2D mechanism sketch spec. Make one node for every part of the concept, "
+            "with the node id equal to the part's id: " + ", ".join(p.id for p in solution.concept.parts) + ". "
+            "Set every node's aspect to the part's real width/height ratio (a coil spring is tall, about 0.35; a "
+            "deck girder is wide, about 6; a box is near 1), so the sketch carries true relative proportions, and "
+            "place joints and loads where they physically act.")
+    spec = client.structured("schematic", SchematicSpec, base, solution.model_dump_json(indent=2))
     errors = check_spec(spec, solution)
-    if not errors:
-        return spec, []
-    spec = client.structured("schematic", SchematicSpec,
-                             "Previous spec failed checks: " + "; ".join(errors) + ". Fix it.",
-                             solution.model_dump_json(indent=2))
-    errors = check_spec(spec, solution)
+    for _ in range(2):  # a spec-writer slip is fixed here; only a concept that cannot be drawn goes back to the council
+        if not errors:
+            return spec, []
+        spec = client.structured("schematic", SchematicSpec,
+                                 base + " Your previous spec failed these checks: " + "; ".join(errors)
+                                 + ". Fix every one.", solution.model_dump_json(indent=2))
+        errors = check_spec(spec, solution)
     return (spec if not errors else None), errors
 
 
