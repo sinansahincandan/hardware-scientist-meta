@@ -216,8 +216,8 @@ def _crop(render: Image.Image, inst: dict[str, Any]) -> Image.Image:
 
 def _judge(client: Any, render_png: Path, found: dict[str, list[dict[str, Any]]], labels: dict[str, str],
            out_dir: Path | None) -> dict[str, list[str]]:
-    """'Checks: SAM + judges' (Fig. 2): one call shows each found object outlined in its own crop and asks whether
-    it is the part it was found for. Objects judged to be something else are dropped; returns what they were."""
+    """'Checks: SAM + judges' (Fig. 2): calls of up to MAX_IMAGES_PER_CALL crops show each found object outlined in
+    its own crop and ask whether it is the part it was found for. Objects judged to be something else are dropped; returns what they were."""
     import tempfile
 
     render = Image.open(render_png).convert("RGB")
@@ -233,16 +233,25 @@ def _judge(client: Any, render_png: Path, found: dict[str, list[dict[str, Any]]]
             crops.append((pid, j, path))
     if not crops:
         return {}
-    lines = "\n".join(f"crop {k}: should show the {labels.get(pid, pid)}" for k, (pid, _, _) in enumerate(crops, 1))
-    check: MaskCheck = client.structured(
-        "mask_check", MaskCheck, "You check an image segmenter's output.",
-        "Each image below is a crop of one picture of a device; a magenta outline marks what the segmenter found. "
-        "For each crop, say whether the outlined thing is the named part of the device (is_part), and if not, what "
-        "it is (seen_as). The device's parts are: " + "; ".join(labels.values()) + ". The scene may also hold "
-        "things that are not part of the device (ground, load, a bin or container it fills, an object pressing on "
-        "or held by it, people, buildings, out-of-focus things in the background); an outline on such a thing is "
-        "not the part, even if it looks similar. Judge the outlined object only.\n\n"
-        + lines, image_paths=[c[2] for c in crops])
+    from hs import config
+
+    # One call per group of at most MAX_IMAGES_PER_CALL crops (Baseten takes 8 images per request; Meta took 16).
+    step = config.MAX_IMAGES_PER_CALL
+    items: list[Any] = []
+    for start in range(0, len(crops), step):
+        group = crops[start:start + step]
+        lines = "\n".join(f"crop {k}: should show the {labels.get(pid, pid)}" for k, (pid, _, _) in enumerate(group, 1))
+        part: MaskCheck = client.structured(
+            "mask_check", MaskCheck, "You check an image segmenter's output.",
+            "Each image below is a crop of one picture of a device; a magenta outline marks what the segmenter found. "
+            "For each crop, say whether the outlined thing is the named part of the device (is_part), and if not, what "
+            "it is (seen_as). The device's parts are: " + "; ".join(labels.values()) + ". The scene may also hold "
+            "things that are not part of the device (ground, load, a bin or container it fills, an object pressing on "
+            "or held by it, people, buildings, out-of-focus things in the background); an outline on such a thing is "
+            "not the part, even if it looks similar. Judge the outlined object only.\n\n"
+            + lines, image_paths=[c[2] for c in group])
+        items += [it.model_copy(update={"index": it.index + start}) for it in part.items]
+    check = MaskCheck(items=items)
     (tmp / "check.json").write_text(json.dumps({"crops": [f"crop {k}: {pid}" for k, (pid, _, _) in enumerate(crops, 1)],
                                                 **check.model_dump()}, indent=2), encoding="utf-8")
     verdict = {it.index: it for it in check.items}

@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 import uuid
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -85,6 +86,19 @@ class OpenClient(MetaClient):
         self._open_sdk: Any = None
         self._chains: dict[str, list[dict[str, Any]]] = {}
         self._sam: Any = None
+
+    def _log_search(self, role: str, instructions: str, name: str, args: dict[str, Any], result: str) -> None:
+        """One line per search or page opening in <run>/open_search.jsonl (who, what, how much came back)."""
+        run_dir = self.cost.run_dir
+        if run_dir is None:
+            return
+        who = next((ln.strip() for ln in instructions.splitlines() if ln.strip().lower().startswith("you are")), role)
+        rec = {"at": time.strftime("%H:%M:%S"), "role": role, "who": who[:120], "tool": name, "args": args,
+               "results": 0 if result.startswith(("no results", "could not open", "search budget")) else
+               (result.count("\n- ") + result.startswith("- ") if name == "web_search" else len(result)),
+               "note": result[:160] if result.startswith(("no results", "could not open", "search budget")) else ""}
+        with (Path(run_dir) / "open_search.jsonl").open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(rec) + "\n")
 
     def _open(self) -> Any:
         if self._open_sdk is None:
@@ -172,6 +186,7 @@ class OpenClient(MetaClient):
                     seen.setdefault(url, "")
                     result = open_page(url, str(args.get("find", "")))
                 history.append({"type": "function_call_output", "call_id": call.call_id, "output": result})
+                self._log_search(role, instructions, call.name, args, result)
             others = [i for i in output if getattr(i, "type", None) == "function_call"
                       and getattr(i, "name", "") not in SEARCH_TOOL_NAMES]
             if search_calls and not others and not _output_text(resp).strip():
@@ -209,7 +224,6 @@ class OpenClient(MetaClient):
         on the image sent at most 1024 px on its long side. Returns JSON that part_map.parse_instances reads
         (confidence is always included, so `metadata` is not needed)."""
         import io
-        import time
 
         import modal
         from PIL import Image

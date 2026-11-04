@@ -80,6 +80,7 @@ OPEN_TEXT_MODEL = "meta-models/muse-spark-open-1026"  # the only model the hacka
 # Muse Spark Open takes low | medium | high | xhigh (defaults to xhigh when none is sent).
 OPEN_EFFORT = {"minimal": "low", "low": "low", "medium": "medium", "high": "high", "xhigh": "xhigh", "max": "xhigh"}
 MAX_SEARCH_ACTIONS_PER_CALL = 8
+MAX_IMAGES_PER_CALL = 8  # Baseten: HTTP 400 'Too many images: 16 (max 8)' (run 194325 Stage B)
 
 IMAGE_BACKEND = "edits"  # "edits" | "responses" (fallback, spec §5.3)
 

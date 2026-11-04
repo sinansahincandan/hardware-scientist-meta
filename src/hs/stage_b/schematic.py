@@ -86,19 +86,21 @@ def spec_and_check(client: Any, solution: SolutionPrompt) -> tuple[SchematicSpec
             errors2 = check_spec(spec2, solution)
             return (spec2 if not errors2 else None), errors2
         return spec, []
-    spec = client.structured("schematic", SchematicSpec,
-                             "Convert the concept into a 2D mechanism sketch spec. Set every node's "
-                             "aspect to the part's real width/height ratio (a coil spring is tall, about "
-                             "0.35; a deck girder is wide, about 6; a box is near 1), so the sketch "
-                             "carries true relative proportions, and place joints and loads where they "
-                             "physically act.",
-                             solution.model_dump_json(indent=2))
+    instructions = ("Convert the concept into a 2D mechanism sketch spec. Set every node's "
+                    "aspect to the part's real width/height ratio (a coil spring is tall, about "
+                    "0.35; a deck girder is wide, about 6; a box is near 1), so the sketch "
+                    "carries true relative proportions, and place joints and loads where they "
+                    "physically act.")
+    spec = client.structured("schematic", SchematicSpec, instructions, solution.model_dump_json(indent=2))
     errors = check_spec(spec, solution)
     if not errors:
         return spec, []
+    # Re-ask with the same task, the spec that failed and what failed, so the fix targets that spec
+    # (the bare "Fix it." re-ask drew a fresh spec that failed the same way on Muse Spark Open, run 194901).
     spec = client.structured("schematic", SchematicSpec,
-                             "Previous spec failed checks: " + "; ".join(errors) + ". Fix it.",
-                             solution.model_dump_json(indent=2))
+                             instructions + " Your previous spec (below) failed these checks: " + "; ".join(errors)
+                             + ". Return the corrected spec: change only what the checks name.",
+                             solution.model_dump_json(indent=2) + "\n\nPREVIOUS SPEC:\n" + spec.model_dump_json(indent=2))
     errors = check_spec(spec, solution)
     return (spec if not errors else None), errors
 
@@ -114,6 +116,7 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
 
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from matplotlib.colors import is_color_like
     from matplotlib.patches import Circle, FancyArrow, Rectangle
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -159,13 +162,14 @@ def render_schematic(spec: SchematicSpec, out_dir: Path, subset_ids: list[str] |
             ax.plot([x1, x2], [y1, y2], color="#333333", lw=3 if edge.kind == "fluid" else 1.5, linestyle=style)
             if edge.kind == "fluid":
                 ax.plot([x1, x2], [y1 + 0.06, y2 + 0.06], color="#333333", lw=1.2)
-        for node in nodes:
+        for k, node in enumerate(nodes):
             cx, cy, w, h = positions[node.id]
+            # A hint that is not a colour (Muse Spark Open wrote part kinds such as 'frame') takes the palette.
+            fill = node.color_hint if is_color_like(node.color_hint) else COLORS[k % len(COLORS)]
             if node.shape == "circle":
-                ax.add_patch(Circle((cx, cy), w / 2, facecolor=node.color_hint, edgecolor="#333333"))
+                ax.add_patch(Circle((cx, cy), w / 2, facecolor=fill, edgecolor="#333333"))
             else:
-                ax.add_patch(Rectangle((cx - w / 2, cy - h / 2), w, h,
-                                       facecolor=node.color_hint, edgecolor="#333333"))
+                ax.add_patch(Rectangle((cx - w / 2, cy - h / 2), w, h, facecolor=fill, edgecolor="#333333"))
             if labeled:
                 ax.text(cx, cy, node.label, ha="center", va="center", fontsize=9)
         # Joints: hinge circles where mechanical connections meet (v2 mechanism sketch).
