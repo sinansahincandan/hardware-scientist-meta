@@ -57,7 +57,11 @@ class Manager:
             "deciding quantity was computed), say so in process_cause. If the feedback is a DRAWING FAILURE "
             "(the picture could not be drawn faithfully), judge whether the design is under-specified — parts, "
             "connections or geometry the council never fixed — and if it is not, say that the design need not "
-            "change. Do not diagnose the prompt yet."
+            "change. Do not diagnose the prompt yet. "
+            "WRITING: write each item the way an engineer explains a review finding to the team: what was claimed, "
+            "what is actually true and how you know (the relation or the evidence), what must change, and why it "
+            "matters for the device. Full sentences, plain nouns first, evidence ids in parentheses after the thing "
+            "they support, never an id alone as the subject."
         )
         gradient = self.client.structured("manager_output_gradient", OutputGradient,
                                           "You are the Manager, step 1: judge the output against the feedback.",
@@ -94,7 +98,13 @@ class Manager:
             "calculator caused the failure, you may add up to 2 entries to new_tool_proposals "
             "(name, description, JSON-schema parameters, python_source defining run(args), "
             "smoke_test_input); each is smoke-tested in the sandbox and registered for all members. A tool carried "
-            "from an earlier problem that misled the council may be retired (retire_tools, with your reason)."
+            "from an earlier problem that misled the council may be retired (retire_tools, with your reason). "
+            "In each diagnosis say why the instruction that was there let the fault through (what it asked for, "
+            "what it failed to ask for), so the fix answers that gap and not only this symptom. "
+            "WRITING: write each item the way an engineer explains a review finding to the team: what was claimed, "
+            "what is actually true and how you know (the relation or the evidence), what must change, and why it "
+            "matters for the device. Full sentences, plain nouns first, evidence ids in parentheses after the thing "
+            "they support, never an id alone as the subject."
         )
         gradients = self.client.structured("manager_gradients", Gradients,
                                            "You are the Manager, step 2: diagnose which prompt part or behaviour caused the output.",
@@ -154,7 +164,9 @@ class Manager:
             "would hold for any design of this problem (a check, a habit, a responsibility), never this design's "
             "parts, mechanisms or values. Keep the problem's stated limits and the existing protocol rules in the "
             "sections you rewrite unless the notes say one of them caused the failure; a rewrite adds or sharpens, "
-            "it does not quietly drop.",
+            "it does not quietly drop. Write every new rule with its reason in the same sentence, in plain words a "
+            "member can apply to a design they have not seen yet (for example: 'prove a box fit by stacking the "
+            "folded lengths, widths and heights against the box, because a volume can fit where the shape cannot').",
             f"MASTER PROMPT:\n{self.master.text()}\n\nMANAGER NOTES (step-2 prompt gradient; consume this only):\n"
             f"{notes_json}", iter_dir / "rewrite.json")
         change_notes = [rewrite.change_note]

@@ -93,9 +93,26 @@ def test_unaddressed_segmenter_findings_are_detected() -> None:
     from hs.stage_b.loop import _unaddressed
 
     ev = DesignerEval(s1_faithful=True, deviations=[
-        Deviation(what="pv_array panel count", measured="14", expected="12", matters=False, why="")])
+        Deviation(what="pv_array panel count", measured="14", expected="12", matters=False,
+                  why="two extra panels on the same rack; the array area and the power path are unchanged by them")])
     diffs = {"pv_array": ["expected 12, found 14"], "dc_cooler": ["not found"]}
     assert _unaddressed(diffs, ev) == ["dc_cooler"]
+    # round 6: a finding dismissed as not mattering with no reason is not answered
+    waved = DesignerEval(s1_faithful=True, deviations=[
+        Deviation(what="conveyor apart from hopper", measured="apart", expected="touch", matters=False, why="")])
+    assert _unaddressed({"conveyor": ["expected to touch hopper, but they are apart"]}, waved) == ["conveyor"]
+
+
+def test_edit_box_is_the_union_of_critic_and_sam_boxes(tmp_path: Path) -> None:
+    import json
+
+    from hs.stage_b.loop import _edit_box
+
+    sam = tmp_path / "sam.json"
+    sam.write_text(json.dumps({"size": [2000, 1000], "parts": {"tail": {"boxes": [[1000, 100, 1400, 900]]}}}))
+    box, src = _edit_box([450, 200, 600, 500], "tail", sam)
+    assert src == "critic+sam" and box == [450, 100, 700, 900]
+    assert _edit_box([1, 2, 3, 4], "missing", sam) == ([1, 2, 3, 4], "critic")
 
 
 def test_step_check_falls_back_to_a_general_check_only_on_the_content_filter(tmp_path: Path) -> None:

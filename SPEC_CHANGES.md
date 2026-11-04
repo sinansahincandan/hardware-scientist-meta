@@ -125,3 +125,19 @@ Owner decisions after the round-2/3 benchmark (HS 53 vs single prompt 49 of 75, 
 5. The solution carries a constraint table (constraint, design value, how shown, evidence ids) and making methods.
 6. Benchmark rubric v2 (examples/bench/RUBRIC_v2.md) adds: explains how it works, tells how to make it, picture free
    of image-generator mistakes; the single prompt is also asked how it is made (runs/baseline_v2).
+
+## SPEC-14 (2026-11-04, owner): the review loops judge like an engineer, the picture is checked against the text, making plans are concrete
+Reason: the round-5 audit (two blind judges, fault-first rubric, six problems) tied HS with one Meta prompt (26.1 vs
+26.6 of 40). HS lost most on making plans (19.5 vs 24 of 30), and its major faults were picture-vs-text contradictions
+(15 of 34) and formula errors (8 of 34) that the loops let through.
+- Evaluator (§4.5): opens with an overall engineer's judgment, checks formulas and regimes (not only arithmetic), the
+  design's agreement with itself, and the worst case of every limit, including limits that must keep holding; writes
+  for colleagues in full sentences. An accept that still carries evidence requests is re-asked once; the model decides.
+- Manager gradients and rewrite (§4.6): each item says what was claimed, what is true and how we know, what must
+  change and why; every new rule carries its reason.
+- Designer evaluation (§5.5): new STEP 3d compares the render with the solution text (counts, contacts, placement and
+  state, flow path, size against the scale reference); a contradiction is a region with source "text" (a drawing fault
+  to fix). Every segmenter finding must be answered with a region or a written pixel reason; a required contact the
+  pixels do not show is a fault.
+- Picture loop: a local edit is pasted over the union of the critic's box and SAM's box for that part.
+- Fabrication (§6 D): stages say what and why in this order; method names process, material and identifying sizes.
