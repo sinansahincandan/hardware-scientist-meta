@@ -110,7 +110,7 @@ def _panel_b(render_path: Path, spec: SchematicSpec, localization: Localization,
 
     boxes_px = {p.id: (p.box_1000.x0 / 1000 * w, p.box_1000.y0 / 1000 * h, p.box_1000.x1 / 1000 * w,
                        p.box_1000.y1 / 1000 * h) for p in localization.parts if p.found}
-    ppm, _ref_mm = px_per_mm(spec, boxes_px)  # the whole picture's scale, applied to the enlarged crop
+    ppm, _ref_mm = px_per_mm(spec, boxes_px, localization.px_per_mm)  # the whole picture's scale, applied to the enlarged crop
     bar_mm = nice_scale_mm(max(crop.size[0] / max(ppm * max(scale, 1.0), 1e-6) / 4, 0.01)) if ppm else 0.0
     bar_px = bar_mm * ppm * max(scale, 1.0)
     if 10 < bar_px < crop.size[0] - 20:

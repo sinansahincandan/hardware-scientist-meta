@@ -288,6 +288,9 @@ class LocalizedPart(BaseModel):
 
 class Localization(BaseModel):
     parts: list[LocalizedPart] = Field(default_factory=list)
+    # picture scale from the scale reference in the render (a hand or a person of known size) when SAM found it;
+    # 0 = use the parts' stated sizes
+    px_per_mm: float = 0.0
 
 
 class EvalRegion(BaseModel):

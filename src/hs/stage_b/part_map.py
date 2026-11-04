@@ -301,7 +301,42 @@ def measure(client: Any, render_png: Path, part_map: PartMap, out_dir: Path | No
             rec["mask"] = {"file": f"sam_masks/{pid}.png", **_mask_stats(union)}
     if out_dir is not None:
         out["contacts"] = _mask_contacts(out_dir, list(out["parts"]), w, h)
+    if spec is not None and not getattr(client, "is_fake", False):
+        out["reference"] = _reference_scale(client, render_png, spec, w, h)
     return out
+
+
+def _reference_scale(client: Any, render_png: Path, spec: SchematicSpec, w: int, h: int) -> dict[str, Any]:
+    """The picture's scale from the scale reference the image prompt asks for (schematic.scale_reference): an adult
+    hand (about 185 mm wrist to fingertip) beside a hand-to-shoebox device, a standing person (about 1.7 m) beside a
+    larger one. Measured along the mask's long axis, so a tilted hand counts its length, not its box. The parts'
+    stated sizes gave a scale bar 1.7 times off when the image model drew one part out of proportion (run 174524)."""
+    from hs.stage_b.schematic import overall_size_mm
+
+    size = overall_size_mm(spec)
+    if size <= 60:  # a fingertip-sized device sits beside a finger, whose visible length is no reliable scale
+        return {}
+    phrase, mm = ("human hand", 185.0) if size <= 400 else ("standing person", 1700.0)
+    try:
+        insts = parse_instances(client.sam_segment(phrase, render_png, metadata={"include_confidence": "true"}), w, h)
+    except Exception:
+        return {}
+    insts = [i for i in insts if (i.get("conf") or 0) >= 0.5]
+    if not insts:
+        return {"phrase": phrase, "found": False}
+    best = max(insts, key=lambda i: i.get("conf") or 0)
+    x0, y0, x1, y1 = best["box"]
+    length = float(max(x1 - x0, y1 - y0))
+    if best.get("mask") is not None:
+        ys, xs = np.nonzero(best["mask"])
+        if len(xs) > 50:
+            pts = np.stack([xs, ys], 1).astype(float)
+            pts -= pts.mean(0)
+            axis = np.linalg.svd(pts, full_matrices=False)[2][0]
+            proj = pts @ axis
+            length = float(proj.max() - proj.min())
+    return {"phrase": phrase, "found": True, "mm": mm, "length_px": round(length, 1), "box": list(best["box"]),
+            "px_per_mm": round(length / mm, 4)}
 
 
 def _mask_contacts(out_dir: Path, ids: list[str], w: int, h: int) -> list[list[str]]:
@@ -442,13 +477,16 @@ def extent_text(meas: dict[str, Any], spec: SchematicSpec) -> str:
     from hs.stage_b.annotate import px_per_mm
 
     boxes = {n.id: b for n in spec.nodes if (b := _main(meas["parts"].get(n.id, {}).get("boxes", []))) is not None}
-    ppm, largest = px_per_mm(spec, boxes)
+    ref = meas.get("reference") or {}
+    ppm, largest = px_per_mm(spec, boxes, float(ref.get("px_per_mm", 0.0) or 0.0))
     if ppm <= 0 or len(boxes) < 2:
         return ""
+    basis = (f"the {ref['phrase']} in the picture, taken as about {ref['mm']:.0f} mm" if ref.get("px_per_mm")
+             else "the parts' stated sizes (coarse: one part drawn out of proportion shifts it)")
     x0, y0 = min(b[0] for b in boxes.values()), min(b[1] for b in boxes.values())
     x1, y1 = max(b[2] for b in boxes.values()), max(b[3] for b in boxes.values())
-    return (f"Whole device as drawn (code measurement, coarse): the located parts span about {(x1 - x0) / ppm:.0f} mm "
-            f"across by {(y1 - y0) / ppm:.0f} mm high in the picture, at the scale the parts' stated sizes give "
+    return (f"Whole device as drawn (code measurement): the located parts span about {(x1 - x0) / ppm:.0f} mm "
+            f"across by {(y1 - y0) / ppm:.0f} mm high in the picture, scaled by {basis} "
             f"(the largest part is stated as {largest:.0f} mm). Compare it with the problem's size limits and the "
             "design's own dimensions, and say whether the drawn proportions break a limit.")
 
@@ -462,7 +500,7 @@ def to_localization(meas: dict[str, Any], spec: SchematicSpec) -> Localization:
         else:
             parts.append(LocalizedPart(id=node.id, found=True, box_1000=Box1000(
                 x0=main[0] / w * 1000, y0=main[1] / h * 1000, x1=main[2] / w * 1000, y1=main[3] / h * 1000)))
-    return Localization(parts=parts)
+    return Localization(parts=parts, px_per_mm=float((meas.get("reference") or {}).get("px_per_mm", 0.0) or 0.0))
 
 
 def save_round(out_dir: Path, meas: dict[str, Any], diffs: dict[str, list[str]], rechecks: list[str]) -> None:

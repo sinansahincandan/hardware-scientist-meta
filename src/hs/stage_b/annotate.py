@@ -52,7 +52,8 @@ def nice_scale_mm(size_mm: float) -> float:
     return max(m * exp for m in (1, 2, 5) if m * exp <= max(size_mm, exp))
 
 
-def px_per_mm(spec: SchematicSpec, boxes_px: dict[str, tuple[float, float, float, float]]) -> tuple[float, float]:
+def px_per_mm(spec: SchematicSpec, boxes_px: dict[str, tuple[float, float, float, float]],
+              reference: float = 0.0) -> tuple[float, float]:
     """Picture scale: for every located part, its longer box side over its largest stated size; the median of those
     estimates. One part alone misleads (a pillar boxed as a whole array, a solar array only partly boxed).
     Returns (pixels per mm, the largest located part's size in mm), or (0, 0) when no part is located."""
@@ -63,6 +64,8 @@ def px_per_mm(spec: SchematicSpec, boxes_px: dict[str, tuple[float, float, float
             x0, y0, x1, y1 = boxes_px[n.id]
             est.append(max(x1 - x0, y1 - y0) / n.size_class_mm.max)
             largest = max(largest, n.size_class_mm.max)
+    if reference > 0:  # a hand or person of known size in the picture outranks the parts' own stated sizes
+        return reference, largest
     if not est:
         return 0.0, 0.0
     est.sort()
@@ -119,12 +122,12 @@ class Annotator:
         if localization is None:
             loc = self.localize(render_png, spec, geometry)
         else:
-            loc = localization
+            loc = localization.model_copy(deep=True)  # never change the caller's record (panel B and markers use it)
             missing_ids = [p.id for p in loc.parts if not p.found]
             if fallback and missing_ids and not getattr(self.client, "is_fake", False):
                 subset = spec.model_copy(update={"nodes": [n for n in spec.nodes if n.id in missing_ids]})
                 extra = {p.id: p for p in self.localize(render_png, subset, geometry).parts if p.found}
-                loc = Localization(parts=[extra.get(p.id, p) for p in loc.parts])
+                loc = Localization(parts=[extra.get(p.id, p) for p in loc.parts], px_per_mm=loc.px_per_mm)
         img = Image.open(render_png).convert("RGB")
         w, h = img.size
         font = _font(max(18, w // 60))
@@ -136,12 +139,14 @@ class Annotator:
             b = part.box_1000
             boxes_px[part.id] = (min(max(b.x0 / 1000 * w, 0), w), min(max(b.y0 / 1000 * h, 0), h),
                                  min(max(b.x1 / 1000 * w, 0), w), min(max(b.y1 / 1000 * h, 0), h))
-        for pid in _drop_conflicting(boxes_px):
+        # written as located: a refigure reads it back, and parts dropped below only for labelling were lost from
+        # it on every redraw (run 170523 lost its critical part and panel B)
+        (out_png.parent / "localization.json").write_text(loc.model_dump_json(indent=2), encoding="utf-8")
+        for pid in _drop_conflicting(boxes_px):  # overlapping boxes: label one of them only
             boxes_px.pop(pid, None)
             for part in loc.parts:
                 if part.id == pid:
                     part.found = False
-        (out_png.parent / "localization.json").write_text(loc.model_dump_json(indent=2), encoding="utf-8")
         label_of = {n.id: n.label for n in spec.nodes}
         overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         draw = ImageDraw.Draw(overlay)
@@ -178,7 +183,7 @@ class Annotator:
         img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
         draw = ImageDraw.Draw(img)
         missing = [p.id for p in loc.parts if not p.found]
-        ppm, ref_mm = px_per_mm(spec, boxes_px)
+        ppm, ref_mm = px_per_mm(spec, boxes_px, loc.px_per_mm)
         if ppm > 0:
             bar_mm = nice_scale_mm(ref_mm / 3)  # a round length about a third of the largest part
             bar_px = bar_mm * ppm
