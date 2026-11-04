@@ -7,6 +7,7 @@ import textwrap
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 from PIL import Image, ImageDraw
 
 from hs import config
@@ -193,10 +194,27 @@ def relabel_panel_a(client: Any, spec: SchematicSpec, render_path: Path, localiz
     return render_path
 
 
-def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localization, notes: list[str]) -> bool:
+def _mask_points(mask_file: Path, w: int, h: int, r: int) -> list[tuple[float, float]]:
+    """Grid points of a SAM mask (scaled to w x h), preferring points with the mask all around them; for a thin
+    part (a cable) no point is that deep, so any mask pixel on the grid is used."""
+    if not mask_file.exists():
+        return []
+    m = np.array(Image.open(mask_file).convert("L").resize((w, h))) > 127
+    step = max(4, r // 3)
+    ys, xs = np.mgrid[step // 2:h:step, step // 2:w:step]
+    inside = m[ys, xs]
+    pts = [(float(x), float(y)) for x, y in zip(xs[inside], ys[inside], strict=True)]
+    deep = [(x, y) for x, y in pts if all(m[min(max(int(y + dy), 0), h - 1), min(max(int(x + dx), 0), w - 1)]
+                                         for dx, dy in ((r, 0), (-r, 0), (0, r), (0, -r)))]
+    return deep or pts
+
+
+def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localization, notes: list[str],
+                  masks_dir: Path | None = None) -> bool:
     """How it works, on the picture (code only): a numbered marker on the part that does each step of the
     solution's operating sequence, and a legend under the picture ('1 · drum — digs loose soil'). Steps whose part
-    was not located are listed in the legend without a marker."""
+    was not located are listed in the legend without a marker. With SAM masks (masks_dir/<part id>.png) the marker
+    sits on the part's own pixels: the middle of a curved cable's box is empty space or another part."""
     from hs.stage_b.annotate import _font
 
     steps = solution.operating_sequence[:6]
@@ -213,9 +231,21 @@ def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localiz
     labels_file = panel_a.with_suffix(".labels.json")
     blocked: list[list[float]] = json.loads(labels_file.read_text(encoding="utf-8")) if labels_file.exists() else []
     placed: list[tuple[float, float]] = []
+    # labels.json lists each label's box followed by its dot; the leader line runs from the box's near side to the dot
+    leaders = []
+    for (lx0, ly0, lx1, ly1), (dx0, dy0, dx1, dy1) in zip(blocked[0::2], blocked[1::2], strict=False):
+        dx, dy = (dx0 + dx1) / 2, (dy0 + dy1) / 2
+        leaders.append((lx1 if dx > lx1 else lx0, (ly0 + ly1) / 2, dx, dy))
+
+    def off_line(x: float, y: float, seg: tuple[float, float, float, float]) -> float:
+        ax, ay, bx, by = seg
+        t = max(0.0, min(1.0, ((x - ax) * (bx - ax) + (y - ay) * (by - ay)) / max((bx - ax) ** 2 + (by - ay) ** 2, 1e-9)))
+        return ((x - ax - t * (bx - ax)) ** 2 + (y - ay - t * (by - ay)) ** 2) ** 0.5
 
     def free(x: float, y: float) -> bool:
         if any(abs(x - px) < 2.2 * r and abs(y - py) < 2.2 * r for px, py in placed):
+            return False
+        if any(off_line(x, y, seg) < 1.2 * r for seg in leaders):
             return False
         return not any(x0 - r < x < x1 + r and y0 - r < y < y1 + r for x0, y0, x1, y1 in blocked)
 
@@ -226,8 +256,11 @@ def draw_sequence(panel_a: Path, solution: SolutionPrompt, localization: Localiz
         bx0, by0, bx1, by1 = b.x0 / 1000 * w, b.y0 / 1000 * h, b.x1 / 1000 * w, b.y1 / 1000 * h
         # the part's centre first, then a grid of points inside the part: the first one clear of labels and markers
         mx, my = (bx0 + bx1) / 2, (by0 + by1) / 2
-        cands = sorted([(bx0 + (bx1 - bx0) * i / 8, by0 + (by1 - by0) * j / 8) for j in range(1, 8) for i in range(1, 8)],
-                       key=lambda q: (q[0] - mx) ** 2 + (q[1] - my) ** 2)  # nearest the part's centre first
+        cands = [(bx0 + (bx1 - bx0) * i / 8, by0 + (by1 - by0) * j / 8) for j in range(1, 8) for i in range(1, 8)]
+        on_part = _mask_points(masks_dir / f"{st.part_id}.png", w, h, r) if masks_dir else []
+        if on_part:  # points well inside the mask, nearest the mask's own centre first
+            cands, mx, my = on_part, sum(x for x, _ in on_part) / len(on_part), sum(y for _, y in on_part) / len(on_part)
+        cands = sorted(cands, key=lambda q: (q[0] - mx) ** 2 + (q[1] - my) ** 2)  # nearest the part's centre first
         cx, cy = next(((x, y) for x, y in cands if free(x, y)), cands[0])
         placed.append((cx, cy))
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(200, 60, 40), outline=(255, 255, 255), width=4)
@@ -269,7 +302,7 @@ def compose(client: Any, solution: SolutionPrompt, spec: SchematicSpec, *,
     panel_a = final_dir / "panel_A.png"
     Image.open(annotated_path).convert("RGB").save(panel_a)
     shown = relabel_panel_a(client, spec, render_path, localization, panel_a, trace_notes)
-    draw_sequence(panel_a, solution, localization, trace_notes)
+    draw_sequence(panel_a, solution, localization, trace_notes, masks_dir=annotated_path.parent / "sam_masks")
     panel_b = final_dir / "panel_B.png"
     has_b = _panel_b(shown, spec, localization, panel_b, trace_notes)
     panel_c = final_dir / "panel_C.png"

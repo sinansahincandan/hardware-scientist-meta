@@ -196,8 +196,12 @@ def report_html(run_dir: Path) -> str:
     events: list[str] = []
     seeded = _read_json(run_dir / "seeded_from.json")
     if seeded:
-        events.append(f"This run redrew the accepted solution of run {html.escape(str(seeded.get('source_run', '')))}; "
-                      "no council meeting ran in this run.")
+        if (run_dir / "merged_from.json").exists():
+            events.append(f"The council meeting below ran in run {html.escape(str(seeded.get('source_run', '')))}; "
+                          "this run redrew its accepted solution.")
+        else:
+            events.append(f"This run redrew the accepted solution of run {html.escape(str(seeded.get('source_run', '')))}; "
+                          "no council meeting ran in this run.")
     for entry in archive:
         k = int(entry.get("iteration", 0))
         iter_dir = run_dir / "stage_a" / f"iter_{k:02d}"

@@ -6,6 +6,7 @@ Panel A keeps the image model's callouts when the final callout check passed (no
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -30,7 +31,14 @@ def main() -> int:
         panel_a = run / "final" / "panel_A.png"
         Annotator(None).run(render, spec, {}, panel_a, localization=loc, fallback=False, draw_labels=clean.exists())
         notes: list[str] = []
-        draw_sequence(panel_a, solution, loc, notes)
+        passed = [json.loads(x) for x in (run / "image_archive.jsonl").read_text(encoding="utf-8").splitlines()
+                  if x.strip() and json.loads(x).get("decision") == "s1_pass"]
+        masks = Path(passed[-1]["render"]).parent / "sam_masks" if passed else None  # the masks of the shipped render
+        # final/localization.json keeps only the labelled parts; the markers use every part the round located
+        located = masks.parent / "localization.json" if masks else None
+        marks = (Localization.model_validate_json(located.read_text(encoding="utf-8"))
+                 if located and located.exists() else loc)
+        draw_sequence(panel_a, solution, marks, notes, masks_dir=masks)
         _panel_b(render, spec, loc, run / "final" / "panel_B.png", notes)
         _panel_c(solution, run / "final" / "panel_C.png")
         print(run.name, recompose(run).name, "; ".join(notes))
