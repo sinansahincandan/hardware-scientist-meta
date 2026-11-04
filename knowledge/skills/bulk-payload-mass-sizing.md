@@ -11,3 +11,4 @@ source: run 20261103-142845_lunar-regolith-excavation-robot (2026-11-03)
 5. Check stability/CG: carry low in chassis bay and verify envelope/clearance (e.g., 1.0x0.5x0.5 m stow, 150 mm clearance (E8, E25)) and friction for transport (e.g., 39-51 deg peak friction (E10)).
 
 ## Use notes
+- run 20261103-210007_lunar-regolith-excavation-robot (Prof. Kenji Tanaka — Excavation & Regolith Handling): Helped - sized carried payload from volume and density despite initial calc error E13: E15 corrected 30L at 1.60g/cc E7/E18 =48kg E45, excluded from 60kg dry limit E1-E2, summed dry mass 13.9kg E44 with frame 1.56kg E15 vs limit.

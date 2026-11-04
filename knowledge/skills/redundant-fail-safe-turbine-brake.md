@@ -11,3 +11,4 @@ source: run 20261103-201825_small-wind-turbine-for-a-wind-tunnel-com (2026-11-03
 5. Verify redundancy: either 3-phase MOSFET short via 2-3 ohm dump OR NC pin achieves stop; log both paths independent of mains.
 
 ## Use notes
+- run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com (Safety & Braking Engineer): Helped: DIRECT MATCH. Skill triggered for <10% speed in 10s on command/load-loss without external power. Solution C24 implements skill's dual-channel NC MOSFET + relay via 5F 5V 62.5J supercap (E15/E16/E18) to provide net 0.095 N m decel (alpha 27.2 rad/s2) for J 0.0035 kg m2 from 302 rad/s (E17) to <30 rad/s in 10s over residual aero <0.04 N m vs aero 0.408 N m at 22 m/s (E18) vs feathered thrust 7.5 N limit (E5/E6), meeting fail-safe de-energize-to-safe intent. E21 160 J rotational energy and E19/E20 checks support budget.

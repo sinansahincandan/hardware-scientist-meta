@@ -4,6 +4,7 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
 
 ## Process
 - L29: Council consensus should separate mechanical-structure commitments from annotation-text commitments so Manager briefs and verification judge spelling faults as redraw-only, not S1 mechanical failure. [2026-11-03, run 20261103-201819_lunar-regolith-excavation-robot]
+  - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Ignored: iter 0 round 0 faithful=True was treated as not faithful due to p04 faults without separating mechanical-structure commitments from non-structural faults as redraw-only.
 
 - L25: Council consensus should record operating directionality (leading vs trailing end) together with parts presence so verification judges front-rear placement consistently. [2026-11-03, run 20261103-105032_lunar-regolith-excavation-robot]
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: recorded leading vs trailing directionality enabled the check to reject side-view misplacement against plan-view FRONT.
@@ -28,6 +29,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: viewpoint-specific side-elevation layout agreement helped judge rendering faithful on structure despite tipped-hopper foreshortening.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: viewpoint-specific layout agreement enabled judging side-elevation front-rear order as faulty then faithful.
   - used in run 20261103-201819_lunar-regolith-excavation-robot: Applied: iter 2 viewpoint-specific side-view layout agreement enabled verification to accept front-feed arrangement as faithful despite added slight elevation.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: viewpoint-specific internal stacking order for section-cut view helped judge longitudinal arrangement as faithful.
+  - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Ignored: iter 0 accepted design lacked agreed viewpoint-specific layout/zone order shared with brief, causing isometric view to fail to show p04 geometry and p03 orientation in rounds 1-2.
 
 - L14: Council consensus should record which capacity or quantity depictions may be representative rather than literal so visual verification judges structural intent over exact counts. [2026-11-02, run 20261102-112524_off-grid-solar-powered-cold-storage-for-]
   - used in run 20261102-121628_vibration-retrofit-for-a-lively-pedestri: Applied: judging structural intent over exact counts helped accept S1 pass with S2=False as faithful.
@@ -40,8 +43,10 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-105032_lunar-regolith-excavation-robot: Applied: judging structural intent over exact counts helped accept S1 pass with S2=False as faithful.
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: judging structural intent over exact proportions helped accept S1 pass with S2=False as faithful.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: judging structural intent over exact counts helped accept S1 pass with S2=False as faithful.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: judging structural intent over exact counts helped accept S1 pass with S2=False as faithful despite rendering approximation.
 
 - L11: Manager should require meeting consensus to record joint structural commitments with explicit owner per commitment so downstream accountability stays clear. [2026-11-02, run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou]
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: consensus close with distinct domain owners implies joint structural commitments were recorded with clear ownership per commitment.
 
 
 - L1: When the Manager revises Meeting protocol and Criteria, it must also align Roles so decision ownership stays consistent with the new process and standards. [2026-11-02, run 20261102-022817_stair-climbing-hand-truck-for-parcel-cou]
@@ -61,6 +66,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: 4-cycle consensus close among distinct domain leads suggests explicit domain constraints helped integrate expertise to evaluator accept.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: 4-cycle consensus close among distinct Chassis, Excavation, Mobility, Autonomy-Power owners suggests explicit domain constraints helped integrate expertise.
   - used in run 20261103-201819_lunar-regolith-excavation-robot: Applied: distinct Mobility/Excavation/Autonomy/Power-Structures roster reaching consensus in 4 cycles in iter 0 and 2 suggests explicit domain constraints helped integrate expertise despite iter 1 cap.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: 4-cycle consensus among Mobility/Chassis, Excavation, Autonomy/Sensing, Power/Thermal owners suggests explicit domain constraints and tradeoffs were articulated before agreement.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: 4-cycle consensus among 4 distinct domain owners suggests explicit domain constraints and cross-domain tradeoffs were articulated before agreement, enabling first-iter evaluator accept.
 
 - L3: When a meeting closes by cap and the evaluator rejects, require the manager edit to target Roles and Meeting protocol in addition to Criteria to restore consensus close in the next iteration. [2026-10-31, run 20261031-220800_vibration-retrofit-for-a-lively-pedestri]
   - used in run 20261102-153907_lunar-regolith-excavation-robot: Applied: targeting Roles and Meeting protocol plus Criteria after cap-close rejection helped convert iter 0 reject into iter 1 accept.
@@ -94,6 +101,9 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: stating true side view at eye level in the brief helped share framing between agreement and verification to S1 faithful.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: true side view plus at-work setting in the brief helped share framing between agreement and verification.
   - used in run 20261103-201819_lunar-regolith-excavation-robot: Applied: Master prompt and brief stating side view slightly elevated 15 degrees plus operational setting with parts helped share framing between council agreement and S1 verification which returned faithful=True.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: master prompt and brief stating studio product shot viewpoint and seamless backdrop setting provided shared framing for agreement and verification.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: stating longitudinal section-cut viewpoint plus studio product rendering setting in master prompt helped share framing between agreement and verification.
+  - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Ignored: iter 0 Master prompt used generic isometric front-quarter slightly above and upwind without precise orthographic side-view framing, contributing to unverifiable geometry until iter 1 precise SIDE view left-profile orthographic eye-level restored inspectability.
 
 - L6: Master prompts should specify connection topology between parts, not just a parts list, so council deliberation and visual verification share the same structural ground truth. [2026-11-02, run 20261102-025924_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: topology-rich prompt helped achieve S1 faithful=True with no material difference.
@@ -105,6 +115,9 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-105032_lunar-regolith-excavation-robot: Applied: connection-rich agreement helped achieve S1 faithful=True with part-for-part mechanism match.
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: connection-rich trailing-scraper agreement helped achieve S1 faithful=True with matching arrangement.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: connection-topology ground truth enabled judging elevator-to-hopper misconnection in round 0 and its fix in round 1.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: master prompt specified connection topology (All 10 parts present and correctly connected: 4x4 wheels with hubs, space frame) helping S1 faithful=True on first round.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: connection-topology-rich master prompt preserved 7-part types, relative positions and connections in rendering, helping achieve S1 faithful=True first round.
+  - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Applied: iter 1 Master prompt explicitly encoded topology p1->p2->p3->p11->p5->load, p4->p6->p7 load path, p10 reaction, p8 via, enabling S1 faithful=True in attempt 1 round 0.
 
 - L7: Council rosters should define complementary specialties with explicit ownership areas so deliberation covers all domains without overlap or gaps. [2026-11-02, run 20261102-022817_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: complementary roster with distinct ownership helped reach fast consensus without gaps.
@@ -121,6 +134,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: complementary Mobility/Excavation/Autonomy/Integration roster helped cover domains without gaps to consensus accept.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: complementary Chassis Architect, Excavation Lead, Mobility Engineer, Autonomy and Power Lead roster helped cover domains without gaps to consensus.
   - used in run 20261103-201819_lunar-regolith-excavation-robot: Applied: complementary Dr. K. Aris - Mobility & Terrain, M. Chen - Excavation & Material Handling, S. Okoro - Autonomy & Remote Operations, J. Park - Power Systems & Lightweight Structures ownership helped sustain 4-cycle deliberation to evaluator acceptance.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: complementary roster with explicit ownership (Mobility & Structural Chassis, Excavation & Regolith Handling, Autonomy/Teleoperation & Sensing, Power/Thermal & Integration) covered domains without gaps to consensus in 4 cycles.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: complementary roster with distinct Biomimetic Structure, Transduction, Soft Materials, Embedded Electronics ownership covered all domains without gaps to consensus in 4 cycles.
 
 ## Tools
 
@@ -143,6 +158,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: prioritizing presence, placement and connectivity helped accept S1 pass with S2=False as faithful despite pose foreshortening.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: prioritizing presence, placement, and connectivity helped accept S1 pass with S2=False as faithful in round 1.
   - used in run 20261103-201819_lunar-regolith-excavation-robot: Applied: judging by presence/placement/connectivity allowed S1=True despite only callout spelling faults Grouser Wheals/Rear Pivit and earlier schematic size fault, treating text as non-structural.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: S1=True S2=False judged as s1_pass faithful shows prioritization of presence/placement/connectivity over exact counts helped accept rendering.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: prioritizing presence, placement and connectivity over exact counts helped accept S1 pass with S2=False as faithful for section-cut rendering.
 
 - L10: Image prompts for multi-part products should enumerate all major structures and their visible connections from the chosen viewpoint to achieve faithful rendering. [2026-11-02, run 20261102-025924_stair-climbing-hand-truck-for-parcel-cou]
   - used in run 20261102-105608_stair-climbing-hand-truck-for-parcel-cou: Applied: enumerating major structures and connections helped produce faithful first-round rendering.
@@ -153,5 +170,8 @@ Process lessons for the Manager and the optimizer (round 3 B12: pipeline-mechani
   - used in run 20261103-105032_lunar-regolith-excavation-robot: Applied: enumerating major structures and visible connections helped produce faithful first-round rendering.
   - used in run 20261103-142845_lunar-regolith-excavation-robot: Applied: enumerating major structures and visible side-view connections helped produce faithful first-round rendering.
   - used in run 20261103-152604_lunar-regolith-excavation-robot: Applied: enumerating major structures and visible connections helped produce round 1 rendering with all 8 parts and correct connections.
+  - used in run 20261103-210007_lunar-regolith-excavation-robot: Applied: image brief enumerating all major structures and visible connections (10 parts, wheels/hubs/frame) helped achieve faithful first-round rendering.
+  - used in run 20261103-210010_tactile-fingertip-sensor-for-robot-hands: Applied: enumerating all major structures and visible connections from longitudinal section-cut viewpoint in brief helped produce faithful first-round rendering.
+  - used in run 20261103-210013_small-wind-turbine-for-a-wind-tunnel-com: Applied: iter 1 round 0 brief enumerated all 11 parts with correct topology and side-view visibility, producing first-round faithful rendering after iter 0 enumeration failures.
 
 ## User feedback

@@ -12,3 +12,4 @@ source: run 20261103-201819_lunar-regolith-excavation-robot (2026-11-03)
 6. Confirm no conveyor needed: forward drive peels layer directly backward into hopper inlet during motion, buildable with purchasable blade/actuator vs no-concept alternative [decisive choice 2]
 
 ## Use notes
+- run 20261103-210007_lunar-regolith-excavation-robot (Prof. Kenji Tanaka — Excavation & Regolith Handling): Helped - integrated front 400mm vibrated blade feeding directly rearward into mid-chassis 30L hopper without chute/conveyor: mechanism sentence, F2->F3 hand-over, and cut-to-carry traction >10x requirement cited E41 E49 E16.

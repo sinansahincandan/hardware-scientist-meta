@@ -22,3 +22,4 @@ source: seeded from knowledge/insights (5 problems) (2026-11-02)
 
 ## Use notes
 - run 20261102-214941_tactile-fingertip-sensor-for-robot-hands (Chen — Slip Dynamics and Grip Control Signal): Helped: guided row-column shear taxel plus 100-500 Hz / 1 kHz vibration dual-channel slip flag and 10 ms budget that keeps fall within 1 mm.
+- run 20261103-210010_tactile-fingertip-sensor-for-robot-hands (Dr. Maya Chen — Biomimetic Structure & Mounting Interface): Helped. Provided end-to-end fF design flow for human-like localization/grip/slip: C0 ~39.8 fF per 2.25 mm2 taxel [E19], ΔC 0.88 fF =2.2% for 1 mN [E35] checked inside AD7746 ±4 pF to 17 pF range and 0.02 fF noise [E29,E30] =44x margin, with 30x 1.5x1.5 mm taxels at 2.0-2.5 mm hex pitch on 15x12 mm active. Justified F4 choice C9 differential capacitive vs C4/C14/C21 unquantified. Retire:false.

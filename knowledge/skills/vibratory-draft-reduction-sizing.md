@@ -10,3 +10,4 @@ source: run 20261103-105032_lunar-regolith-excavation-robot (2026-11-03)
 4. Check: vibrated draft < traction with margin >2x before fixing depth/skids; if not, reduce depth or add vibration power (~30 W vibrator) (E35, E39).
 
 ## Use notes
+- run 20261103-210007_lunar-regolith-excavation-robot (Prof. Kenji Tanaka — Excavation & Regolith Handling): Helped - sized 30W 3mm eccentric at 25Hz to keep draft below traction: E16 ~50% reduction and E19 70-93% reduction cited in C8, reducing draft to 40-85N vs 933N peak, enabling forward peeling without traction loss.
