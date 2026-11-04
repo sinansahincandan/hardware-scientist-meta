@@ -16,6 +16,10 @@ def _make_client(fake: bool, run_dir: Path | None = None, scenario: str | None =
         from hs.fake_client import FakeClient
 
         return FakeClient(run_dir=run_dir, scenario=scenario, max_cost=max_cost)
+    if os.environ.get("HS_BACKEND", "open") == "open":  # this folder: open weights by default
+        from hs.open_client import OpenClient
+
+        return OpenClient(run_dir=run_dir, max_cost=max_cost)
     from hs.client import MetaClient
 
     return MetaClient(run_dir=run_dir, max_cost=max_cost)

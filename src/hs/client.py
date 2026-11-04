@@ -332,13 +332,13 @@ class MetaClient:
         self.cost.record(role, rc.model, _usage_from_response(resp))
         return resp
 
-    def _create_with_retries(self, kwargs: dict[str, Any]) -> Any:
+    def _create_with_retries(self, kwargs: dict[str, Any], sdk: Any = None) -> Any:
         """5xx/429: retry with backoff (max 3). 402: BudgetExceeded. Other 400s raise. A content-filter 400
         is taken as a reason to re-word, not to resend: one retry with numbers, units and codes removed
         from the text (owner decision 2026-11-02); if that is blocked too, the error is raised."""
         from hs.plain import plain_request
 
-        client = self._client()
+        client = sdk or self._client()
         delay = 2.0
         last_exc: Exception | None = None
         plain = False

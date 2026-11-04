@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from hs.client import MetaClient
+from hs.open_client import OpenClient as MetaClient  # open-weights copy
 from hs.master_prompt import MasterPrompt, roster_of, split_master_prompt
 from hs.stage_a.meeting import Meeting
 from hs.stage_a.whiteboard import WBClosure, Whiteboard

@@ -17,6 +17,9 @@ dependencies = [
     "Pillow",
     "pint",
     "meta-sam-parser==0.1.0",
+    "ddgs",
+    "pypdf",
+    "modal",
 ]
 
 [project.optional-dependencies]

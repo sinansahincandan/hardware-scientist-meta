@@ -66,12 +66,25 @@ MAX_COST_USD_PER_RUN = 15.00
 # Round-3 budget (item 0): one project-wide ledger of real Meta spend, checked before
 # every call. $55 hard cap for round 3 (dashboard showed $67 credit on 2026-11-02).
 # Fake mode never touches it. HS_BUDGET_LEDGER overrides the path (tests).
-MAX_TOTAL_SPEND_USD = 112.35  # owner 2026-11-03: $20, then $50 more credit
+# Open-weights copy: its own ledger (Baseten text + Meta pictures + Modal SAM), never the main folder's.
+MAX_TOTAL_SPEND_USD = 60.00  # owner 2026-11-03: Baseten $100 hackathon credit, Modal $30; pictures on Meta credit
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger.jsonl"))
+BUDGET_LEDGER_PATH = Path(os.environ.get("HS_BUDGET_LEDGER", PROJECT_ROOT / "budget" / "ledger_open.jsonl"))
+
+# Open-weights backend (owner decision 2026-11-03): every text and picture-reading role runs on Meta's
+# open-weights Muse Spark Open, served by Baseten (OpenAI-compatible Responses API). previous_response_id
+# is not supported there (HTTP 501) and the hosted web_search does not search (no web_search_call items),
+# so OpenClient keeps the chain itself and runs hs.open_search. Pictures stay on Meta's muse-image-1.0.
+OPEN_BASE_URL = "https://inference.baseten.co/v1"
+OPEN_TEXT_MODEL = "meta-models/muse-spark-open-1026"  # the only model the hackathon key accepts
+# Muse Spark Open takes low | medium | high | xhigh (defaults to xhigh when none is sent).
+OPEN_EFFORT = {"minimal": "low", "low": "low", "medium": "medium", "high": "high", "xhigh": "xhigh", "max": "xhigh"}
+MAX_SEARCH_ACTIONS_PER_CALL = 8
 
 IMAGE_BACKEND = "edits"  # "edits" | "responses" (fallback, spec §5.3)
 
+# Open copy: Baseten lists Muse Spark Open at the same token rates as Meta's muse-spark-1.3
+# ($1.25 in / $0.15 cached / $4.25 out per 1M, baseten.co/library/muse-spark-open, 2026-11-03).
 # Prices: USD per 1M tokens unless noted. Verified against https://dev.meta.ai/docs/pricing-rate-limits
 # on 2026-11-02 (muse-spark-1.3 standard mode; web search grounding; muse-image-1.0 flat per image;
 # sam-3.1 image segmentation $2.50 per 1,000 images).
@@ -79,7 +92,7 @@ PRICES = {
     "input_per_1m": 1.25,
     "cached_input_per_1m": 0.15,
     "output_per_1m": 4.25,
-    "web_search_per_query": 2.50 / 1000.0,
+    "web_search_per_query": 0.0,  # open copy: free ddgs search (Meta's hosted search was $2.50 / 1,000)
     "image_each": 0.01,
     "sam_image_each": 2.50 / 1000.0,
 }

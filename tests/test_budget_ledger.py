@@ -40,7 +40,10 @@ def test_call_estimate_is_worst_case() -> None:
     items = [{"type": "message", "role": "user", "content": [{"type": "input_text", "text": "x" * 4000}]}]
     plain = estimate_call_usd("", items, 1000)
     assert plain == pytest.approx(1000 * 1.25 / 1e6 + 1000 * 4.25 / 1e6)
-    assert estimate_call_usd("", items, 1000, [{"type": "web_search"}]) == pytest.approx(plain + 3 * 0.0025)
+    from hs import config
+
+    searched = plain + 3 * config.PRICES["web_search_per_query"]  # open copy: free search, so equal to plain
+    assert estimate_call_usd("", items, 1000, [{"type": "web_search"}]) == pytest.approx(searched)
 
 
 def test_costlog_checks_ledger_even_when_run_cap_is_fine(tmp_path: Path) -> None:
