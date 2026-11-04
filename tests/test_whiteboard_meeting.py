@@ -174,3 +174,15 @@ def test_rewrite_does_not_double_the_heading(tmp_path) -> None:
         "heading": "## 4. Meeting protocol", "new_text": "## 4. Meeting protocol\nCycle 1: y"})()])
     proposed, dropped = mp.propose(rw)
     assert proposed == {"## 4. Meeting protocol": "Cycle 1: y"} and not dropped
+
+
+def test_reselection_unfavours_the_earlier_choice() -> None:
+    from hs.stage_a.whiteboard import Whiteboard
+
+    b = Whiteboard(problem_title="t", roster=["A"])
+    b.apply_op("Manager", {"action": "add_function", "text": "Discharge soil"})
+    b.apply_op("A", {"action": "add_concept", "function_id": "F1", "text": "tip dump"})
+    b.apply_op("A", {"action": "add_concept", "function_id": "F1", "text": "propped dump"})
+    b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "concept_id": "C1", "rationale": "x"})
+    b.apply_op("Manager", {"action": "select_concept", "function_id": "F1", "concept_id": "C2", "rationale": "tips"})
+    assert [c.status for c in b.concepts] == ["open", "favored"]
