@@ -435,7 +435,7 @@ class MetaClient:
             try:
                 r = requests.post("https://api.meta.ai/v1/images/edits",
                                   json={k: v for k, v in body.items() if k != "_plain"}, headers=headers, timeout=240)
-                if r.status_code in (500, 503, 429):
+                if r.status_code in (500, 502, 503, 504, 429):  # 504 "request timed out" crashed run 234446
                     wait = r.headers.get("Retry-After")
                     time.sleep(float(wait) if wait else delay)
                     delay *= 2
