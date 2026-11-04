@@ -250,7 +250,7 @@ def board_html(run_dir: Path, *, fragment: bool = False, live: bool = False) -> 
             what = ("rewrote the council's " + ", ".join(plain)) if changed else "changed no section of the council's instructions"
             body.append(f"<div class='verdict'><b>The Manager {_e(what)}.</b> {_e(_sentence(edit.get('change_note', '')))}</div>")
         sections.append("".join(body) + "</section>")
-    header = (f"<header class='page'><h1>{_e(title)}</h1>"
+    header = (f"<header class='page'><h1>{_e(title)}</h1><p>Built with Muse Spark Open</p>"
               f"<p>The council's whiteboard — who said what, what they computed, searched and sketched, "
               f"and how the design changed.</p><nav>{''.join(nav)}</nav></header>")
     body_html = header + "".join(sections)

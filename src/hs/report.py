@@ -172,7 +172,7 @@ def report_html(run_dir: Path) -> str:
                          f"<title>{html.escape(str(problem.get('title', run_dir.name)))}</title>"
                          f"{REPORT_STYLE}</head><body><main>")]
     # 1. The problem
-    parts.append(f"<p class='small'>Hardware Scientist — concept report</p><h1>{html.escape(str(problem.get('title', run_dir.name)))}</h1>")
+    parts.append(f"<p class='small'>Hardware Engineer — concept report · Built with Muse Spark Open</p><h1>{html.escape(str(problem.get('title', run_dir.name)))}</h1>")
     parts.append(f"<p>{html.escape(str(problem.get('statement', '')))}</p>")
     if problem.get("constraints"):
         parts.append("<ul>" + "".join(f"<li>{html.escape(str(c))}</li>" for c in problem["constraints"]) + "</ul>")

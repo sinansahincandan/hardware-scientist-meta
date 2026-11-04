@@ -1,4 +1,6 @@
-# Hardware Scientist
+# Hardware Engineer (HE) — open-weights copy
+
+**Built with Muse Spark Open.** The same loops as the main branch, run on Meta's open-weights Muse Spark Open (Baseten) and SAM 3 (Modal); pictures from Muse Image 1.0 on the Meta Model API. See `NOTICE.md` and `licenses/`.
 
 Conceptual hardware design system (Meta Global AI Developer Hackathon). Input: a problem
 statement with constraints. Output: an accepted concept (`SolutionPrompt`) and a concept
