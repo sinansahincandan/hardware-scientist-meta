@@ -46,7 +46,13 @@ def build_part_map(client: Any, solution: SolutionPrompt, spec: SchematicSpec, o
         "present in large numbers, the number likely to be visible, not the total), long_axis (horizontal, "
         "vertical or any, as the part would appear in a side view of the working device), size_vs (the "
         "neighbouring part it is best compared with) and size_ratio (its longest dimension divided by that "
-        "neighbour's), touches (ids of the parts it physically touches), and a one-line note.\n\n"
+        "neighbour's), touches (ids of the parts it physically touches), and a one-line note.\n"
+        "Image models miscount repeated elements (four blades drawn for three, three wheels for four), and a "
+        "critic looking at the picture misses it; the segmenter can count them. So when a part is made of a "
+        "repeated element whose number the design states or depends on (rotor blades, wheels, legs, buckets, "
+        "panels, fingers), add one more entry for that element: part_id '<part id>__<element>' (for example "
+        "'rotor__blade'), visual_phrase for ONE element ('white blade', 'black wheel'), count = how many of them "
+        "a viewer sees in one normal view of the design, size_vs the part itself, touches [the part].\n\n"
         f"PARTS:\n{parts}\n\nDESIGN:\n{solution.model_dump_json(indent=2)}")
     (out_dir / "part_map.json").write_text(part_map.model_dump_json(indent=2), encoding="utf-8")
     return part_map
@@ -510,6 +516,35 @@ def save_round(out_dir: Path, meas: dict[str, Any], diffs: dict[str, list[str]],
 
 SAM_COLORS = [(230, 57, 70), (29, 120, 220), (42, 157, 85), (244, 162, 37), (142, 68, 173), (0, 150, 160),
               (200, 80, 150), (120, 120, 40), (90, 90, 90), (210, 105, 30)]
+
+
+def count_marks(render_png: Path, sam_json: Path, diffs: dict[str, list[str]], out_png: Path) -> Path | None:
+    """Set-of-Mark evidence for the critic (code only): every instance the segmenter found for a counted element
+    whose count differs from the design, boxed and numbered on the render. A critic told 'found 4' in words still
+    saw three blades in a four-blade render (run 121014); numbered marks let it count on the picture itself."""
+    from PIL import ImageDraw
+
+    from hs.stage_b.annotate import _font
+
+    counted = [pid for pid, notes in diffs.items() if "__" in pid and any("visible, found" in n for n in notes)]
+    if not counted:
+        return None
+    data = json.loads(sam_json.read_text(encoding="utf-8"))
+    img = Image.open(render_png).convert("RGB")
+    w = img.size[0]
+    draw = ImageDraw.Draw(img)
+    font = _font(max(22, w // 45))
+    for i, pid in enumerate(counted):
+        color = SAM_COLORS[i % len(SAM_COLORS)]
+        for k, (x0, y0, x1, y1) in enumerate(data["parts"].get(pid, {}).get("boxes", []), 1):
+            draw.rectangle([x0, y0, x1, y1], outline=color, width=max(3, w // 400))
+            r = font.size  # type: ignore[attr-defined]
+            cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+            draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color, outline=(255, 255, 255), width=3)
+            label = str(k)
+            draw.text((cx - draw.textlength(label, font=font) / 2, cy - r * 0.62), label, fill=(255, 255, 255), font=font)
+    img.save(out_png)
+    return out_png
 
 
 def draw_overlay(render_png: Path, sam_json: Path, out_png: Path) -> Path:

@@ -157,6 +157,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
         rechecks = pm.recheck(meas, diffs, kept["sam"] if kept else None)
         pm.save_round(round_dir, meas, diffs, rechecks)
         pm.draw_overlay(render_path, round_dir / "sam.json", round_dir / "sam_overlay.png")
+        marks = pm.count_marks(render_path, round_dir / "sam.json", diffs, round_dir / "count_marks.png")
         sam_text = "\n".join(t for t in (pm.evidence_text(diffs, rechecks, part_map), pm.extent_text(meas, spec)) if t)
         annotated_path, loc, missing = Annotator(client).run(render_path, spec, geometry, round_dir / "annotated.png",
                                                              localization=pm.to_localization(meas, spec),
@@ -166,7 +167,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
             earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
             previous_render=kept["render"] if kept else None,
             critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
-            council_sketches=sketches)
+            council_sketches=sketches, count_marks=marks)
         missed = _unaddressed(diffs, ev)
         if missed:  # C18 completeness: one re-ask naming the findings the critic did not address
             log(f"attempt {attempt} round {r}: critic re-asked for unaddressed segmenter findings {missed}")
@@ -179,7 +180,7 @@ def run_stage_b(client: Any, solution: SolutionPrompt, spec: SchematicSpec, atte
                 earlier_faults=[f"{pid}: {fault}" for pid, fault in earlier_faults.items()],
                 previous_render=kept["render"] if kept else None,
                 critical_part=next((f"{n.label} ({n.id})" for n in spec.nodes if n.id == spec.critical_part_id), ""),
-                council_sketches=sketches)
+                council_sketches=sketches, count_marks=marks)
         decision = decide(ev, r, max_rounds)
         (round_dir / "eval.json").write_text(ev.model_dump_json(indent=2), encoding="utf-8")
         (round_dir / "decision.txt").write_text(decision + "\n", encoding="utf-8")

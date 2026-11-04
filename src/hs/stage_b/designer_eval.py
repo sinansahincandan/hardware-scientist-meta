@@ -62,7 +62,7 @@ class DesignerEvalRunner:
     def run(self, render_png: Path, sketch_png: Path, solution: SolutionPrompt,
             missing_parts: list[str], measurements: str = "", earlier_faults: list[str] | None = None,
             previous_render: Path | None = None, critical_part: str = "",
-            council_sketches: list[Path] | None = None) -> DesignerEval:
+            council_sketches: list[Path] | None = None, count_marks: Path | None = None) -> DesignerEval:
         earlier = "\n".join(f"- {f}" for f in earlier_faults or [])
         size_mm = max((p.size_class_mm.max for p in solution.concept.parts), default=0.0)
         prompt = (
@@ -131,9 +131,14 @@ class DesignerEvalRunner:
             + (f"\n{measurements}\n" if measurements else "")
             + f"\nSOLUTION SUMMARY:\n{solution.model_dump_json(indent=2)}\n\n"
             + f"PARTS THE LOCALIZER COULD NOT FIND IN THE RENDER: {missing_parts}\n"
+            + ("\nTHE LAST IMAGE is the render with every instance the segmenter found for each counted element "
+               "boxed and numbered. Count the elements on that image yourself before you accept or dismiss a count "
+               "finding; motion blur does not make a drawn element a ghost if it has its own root and outline.\n"
+               if count_marks is not None else "")
         )
         return self.client.structured("designer_eval", DesignerEval,
                                       "You are the designer-evaluator (VLM). Compare the render with the mechanism sketch and with the solution text.",
                                       prompt, image_paths=[render_png, sketch_png]
                                       + ([previous_render] if previous_render is not None else [])
-                                      + list(council_sketches or []))
+                                      + list(council_sketches or [])
+                                      + ([count_marks] if count_marks is not None else []))
