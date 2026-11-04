@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset="utf-8"><title>HE TextGrad step</title><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{--ink:#122030;--mute:#5d6b7c;--faint:#8d98a6;--line:#dbe1e8;--bg:#f5f6f8;--blue:#1f6fd1;--orange:#e0662a;--purple:#7b4fd6;--green:#1f9d63;--red:#d64545}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{width:1920px;height:1080px;overflow:hidden;position:relative;background:var(--bg);font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.kicker{position:absolute;left:96px;top:50px;font-weight:700;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.title{position:absolute;left:96px;top:84px;margin:0;font-weight:800;font-size:56px;line-height:1.06;letter-spacing:-.025em}
+.foot{position:absolute;left:96px;right:96px;bottom:22px;font-size:18px;color:var(--faint);white-space:nowrap}
+.row,.strip{position:absolute;left:96px;width:1728px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.row{top:178px}
+.c{background:#fff;border:3px solid var(--line);border-radius:22px;padding:16px 18px 14px;height:366px;position:relative;display:flex;flex-direction:column;gap:8px}
+.c .hd{display:flex;align-items:center;gap:12px}
+.c .n{flex:none;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:23px}
+.c h3{margin:0;font-size:25px;line-height:1.08;font-weight:800}
+.c p{margin:0;font-size:22px;line-height:1.26;color:#24364a}
+.c .tag{margin-top:auto;font-size:18px;color:var(--mute);font-weight:500}
+.r{border-color:#efb0b0}.r .n{background:var(--red)}
+.o{border-color:#f0b08c}.o .n{background:var(--orange)}
+.b{border-color:#9dbfee}.b .n{background:var(--blue)}
+.g{border-color:#9fd7bb;background:#f2fbf6}.g .n{background:var(--green)}
+.q{font-style:italic}
+/* image strip */
+.strip{top:560px;height:300px}
+.pn{background:#fff;border:2px solid var(--line);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden;position:relative}
+.pn .cap{font-size:19px;font-weight:700;color:var(--ink);line-height:1.1;text-align:center}
+.pn .cap i{font-style:normal;font-weight:500;color:var(--mute)}
+.pic{flex:1;min-height:0;position:relative;border-radius:10px;overflow:hidden;background:#fff}
+.pic img{width:100%;height:100%;object-fit:contain;display:block}
+.chip{position:absolute;font-size:16px;font-weight:800;color:#fff;background:var(--red);border-radius:8px;padding:2px 8px;white-space:nowrap}
+.chip.gr{background:var(--green)}
+.x{position:absolute;font-size:44px;font-weight:800;color:var(--red);line-height:1}
+/* stack diagram */
+.stack{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 4px}
+.stack .lbl{font-size:16px;font-weight:700;color:var(--mute);margin-bottom:4px}
+.bar{display:flex;height:40px;border-radius:6px;overflow:hidden;font-size:15px;font-weight:700;color:#fff}
+.bar span{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.case{height:40px;border:3px dashed var(--red);border-radius:6px;display:flex;align-items:center;padding-left:10px;font-size:16px;font-weight:800;color:var(--red);position:relative}
+.over{position:absolute;top:-3px;bottom:-3px;background:repeating-linear-gradient(45deg,#fbe0e0 0 6px,#fff 6px 12px);border:3px solid var(--red);border-left:none;border-radius:0 6px 6px 0}
+.sum{font-size:18px;font-weight:800;color:var(--ink);text-align:center}
+/* diff */
+.diff{grid-column:3 / span 2}
+.code{flex:1;background:#0f1722;border-radius:10px;padding:10px 14px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:17.5px;line-height:21.5px;color:#c9d4e0;white-space:pre;overflow:hidden}
+.code div{padding:0 6px;border-radius:3px}
+.code .h{color:#7f8ea3}
+.code .m{background:rgba(214,69,69,.28);color:#ffb4b4}
+.code .p{background:rgba(31,157,99,.26);color:#a6f0c8}
+/* col 5 two pictures */
+.duo{flex:1;display:flex;flex-direction:column;gap:6px;min-height:0}
+.duo .pic{flex:none}
+.back{position:absolute;left:96px;top:860px;width:1728px;height:50px;border:4px dashed var(--orange);border-top:none;border-radius:0 0 30px 30px}
+.backlbl{position:absolute;left:0;width:1920px;text-align:center;top:918px;font-size:25px;font-weight:700;color:var(--orange)}
+.s2,.s3,.s4,.s5,.s6{opacity:0}
+body.st2 .s2,body.st3 .s2,body.st4 .s2,body.st5 .s2,body.st6 .s2{opacity:1}
+body.st3 .s3,body.st4 .s3,body.st5 .s3,body.st6 .s3{opacity:1}
+body.st4 .s4,body.st5 .s4,body.st6 .s4{opacity:1}
+body.st5 .s5,body.st6 .s5{opacity:1}
+body.st6 .s6{opacity:1}
+</style></head><body class="st6">
+<div class="kicker">Inspired by TextGrad · a real step · stair-climbing hand truck</div>
+<h1 class="title">Critique becomes a gradient. The gradient rewrites the team.</h1>
+<div class="row">
+ <div class="c r"><div class="hd"><div class="n">1</div><h3>The reviewer says no</h3></div>
+  <p class="q">“A 1.1 m backbone cannot fold into a 73 cm case.”</p>
+  <p class="q">“The brace uses the wrong beam model: deflection is 8× too low.”</p>
+  <div class="tag">the loss: a written review, no score</div></div>
+ <div class="c o s2"><div class="hd"><div class="n">2</div><h3>What must change</h3></div>
+  <p>Stack the folded lengths part by part.</p><p>Recompute the bending with the right beam model.</p>
+  <div class="tag">gradient on the design</div></div>
+ <div class="c o s3"><div class="hd"><div class="n">3</div><h3>Why it got through</h3></div>
+  <p>The team could vote “ready” before the fit and the beam model were checked.</p>
+  <div class="tag">gradient on the prompt</div></div>
+ <div class="c b s4"><div class="hd"><div class="n">4</div><h3>New rule in the team’s prompt</h3></div>
+  <p class="q">“Name the support model before claiming a brace stiffens it, because a member that bends with its neighbours is not a new support.”</p>
+  <div class="tag">only the guilty sections rewritten</div></div>
+ <div class="c g s5"><div class="hd"><div class="n">5</div><h3>Same issues, checked first</h3></div>
+  <p class="q">“Backbone bending now uses the cantilever model: 43.9 mm tip deflection. Met.”</p><p class="q">“Folded length stacked part by part: 1145 mm, carried diagonally into the van. Met.”</p>
+  <div class="tag">meeting 2, same whiteboard</div></div>
+</div>
+
+<div class="strip">
+ <!-- 1: meeting-1 sketch E43 -->
+ <div class="pn">
+  <div class="pic"><img src="assets/tg_e43.png">
+   <div class="chip" style="left:2px;top:96px">1100 mm tall</div>
+   <div class="chip" style="right:2px;top:22px">claimed: 730 mm case</div>
+   <div class="x" style="left:250px;top:120px">✕</div></div>
+  <div class="cap">Meeting 1 sketch <i>(E43)</i></div>
+ </div>
+ <!-- 2: stack diagram -->
+ <div class="pn s2">
+  <div class="stack">
+   <div><div class="lbl">folded length, part by part</div>
+    <div class="bar"><span style="width:84.6%;background:#5b6f86">backbone 1100</span><span style="width:6.4%;background:#e0662a">35</span><span style="width:9%;background:#7b4fd6">10</span></div></div>
+   <div><div class="lbl">the case it must fit</div>
+    <div class="case" style="width:63.8%">730 mm<div class="over" style="left:100%;width:56.7%"></div></div></div>
+   <div class="sum">1100 + 35 + 10 = 1145 mm</div>
+  </div>
+  <div class="cap">Add the parts, not volumes</div>
+ </div>
+ <!-- 3-4: prompt diff -->
+ <div class="pn diff s3">
+  <div class="code"><div class="h">## 4. Meeting protocol</div><div class="m">- … a test that needs built hardware cannot be done</div><div class="m">-   here, so name it as a bench test and judge readiness</div><div class="p s4">+ … a bench test only for hardware-only wear and feel</div><div class="p s4">+   that cannot be calculated …</div><div class="h s4">## 2. Roles</div><div class="p s4">+ Prove stiffness only after naming the support model</div><div class="p s4">+   … a member that bends together with its neighbours</div><div class="p s4">+   is not a new ground support.</div><div class="p s4">+ Prove folded fit by stacking every folded length …</div></div>
+  <div class="cap">The team’s prompt, rewritten <i>(diff 1)</i></div>
+ </div>
+ <!-- 5: meeting-2 sketch E108 + final render -->
+ <div class="pn s5">
+  <div class="duo">
+   <div class="pic" style="height:96px"><img src="assets/tg_e108.png"><div class="chip gr" style="right:2px;top:2px">1145 mm</div></div>
+   <div class="pic" style="flex:1"><img src="assets/tg_render.png"></div>
+  </div>
+  <div class="cap">Folded stack <i>(E108)</i>, final render</div>
+ </div>
+</div>
+
+<div class="back s6"></div><div class="backlbl s6">↺ the meeting continues on the same board</div>
+<div class="foot">Draws on: TextGrad — Yuksekgonul et al., Nature 2025 · Symbolic Learning — Zhou et al. 2024 · Trace — Cheng et al., NeurIPS 2024 · ACE — Zhang et al. 2025</div>
+</body></html>
