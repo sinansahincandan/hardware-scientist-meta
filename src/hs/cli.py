@@ -27,13 +27,32 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
     problem = Problem.model_validate_json(Path(args.problem).read_text(encoding="utf-8"))
     client = _make_client(bool(args.fake))
-    result = Controller(client).run(problem)  # binds the client's cost log to the new run folder
+    caps: dict[str, int] = {}
+    if args.quick:
+        caps = _quick_mode()
+    result = Controller(client, **caps).run(problem)  # binds the client's cost log to the new run folder
     print(f"run folder: {result.run_dir}")
     print(f"final figure: {result.figure_path}")
     print(f"cost: ${result.cost_usd:.4f}")
     for warning in result.warnings:
         print(f"warning: {warning}")
     return 0
+
+
+def _quick_mode() -> dict[str, int]:
+    """Same loops, smaller: for a reviewer who wants a design in about a quarter of an hour (full runs take 45-75
+    min). Two meetings of up to two cycles, members and chief at low effort with fewer tool calls, two picture
+    rounds, no return from the picture to the design, two making-step images."""
+    from dataclasses import replace
+
+    from hs import config
+
+    for role in ("member", "manager"):
+        config.ROLES[role] = replace(config.ROLES[role], effort="low")
+    config.MAX_TOOL_CALLS_PER_TURN = 5
+    config.MAX_FIGURE_IMAGES = 2
+    print("quick mode: up to 2 meetings x 2 cycles, low effort members, 2 picture rounds")
+    return {"max_a_iters": 2, "max_s1_rounds": 2, "max_b_returns": 0, "min_cycles": 2, "max_cycles": 2}
 
 
 def _cmd_examples(args: argparse.Namespace) -> int:
@@ -153,6 +172,7 @@ def build_parser() -> argparse.ArgumentParser:
     run = sub.add_parser("run")
     run.add_argument("problem")
     run.add_argument("--fake", action="store_true")
+    run.add_argument("--quick", action="store_true", help="same loops, fewer cycles and rounds (about 15 min)")
     run.set_defaults(func=_cmd_run)
     ex = sub.add_parser("examples")
     ex.add_argument("--n", type=int, default=5)

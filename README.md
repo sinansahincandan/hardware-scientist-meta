@@ -1,16 +1,49 @@
-# Hardware Scientist
+# Hardware Engineer (HE)
 
-Conceptual hardware design system (Meta Global AI Developer Hackathon). Input: a problem
-statement with constraints. Output: an accepted concept (`SolutionPrompt`) and a concept
-figure (panels A–D) — system view, critical part, measurement chain, fabrication steps.
+**Give it a paragraph. Get back a concept that works: a picture you can trust, every number with its calculation,
+and a plan for how to make it.** Built only on Meta models through the Meta Model API: Muse Spark 1.3 (the team),
+Muse Image 1.0 (pictures) and SAM 3.1 (part maps). A second copy runs on Meta's open weights.
 
-A council of LLM experts argues around a shared whiteboard (Stage A); a Manager rewrites the
-Markdown master prompt from written feedback (TextGrad-style); Stage B turns the accepted
-concept into a mechanism sketch → photoreal image-model render → SAM 3.1 part measurements →
-designer evaluation (S1: faithful to the sketch? S2: design flaw revealed?), in a closed loop that
-keeps a round only when it fixed an earlier fault and broke nothing. The render carries no text;
-code draws every label from SAM boxes (round 3, `SPEC_CHANGES.md`). Full brief: [HARDWARE_SCIENTIST_SPEC.md](HARDWARE_SCIENTIST_SPEC.md),
-plan: [PLAN.md](PLAN.md), assumptions: [QUESTIONS.md](QUESTIONS.md).
+Hardware design starts with a concept, and the best feedback on a concept is a picture. Asked directly, a frontier
+model returns a picture that looks right and does not work: parts that do not connect, counts that do not match the
+text, numbers that were guessed. Feedback fixes one place and breaks another. HE is a self-improving engineering team
+that does those feedback rounds itself:
+
+- **Design loop.** Expert agents and a chief designer argue on one shared whiteboard. They search the literature,
+  calculate, simulate and sketch. An Evaluator reviews the result like a senior engineer: it re-derives formulas, checks the
+  worst case of every limit, and confirms the design agrees with itself. On a rejection, the Manager turns the
+  written critique into a textual gradient (inspired by TextGrad): first what in the design must change, then which
+  instruction let the fault through. It rewrites only those sections of the team's prompt, and the meeting continues on
+  the same board. The Evaluator re-checks the same issues first.
+- **Picture loop.** A code sketch fixes the geometry, and Muse Image renders it. SAM 3.1 finds every part and measures
+  counts, contacts and size against a hand or a person. A critic compares the picture with both the sketch and the design
+  text. It must answer every SAM finding. A local fix is pasted only over the part's own region and is kept only if
+  nothing else gets worse. A design flaw seen in the picture goes back to the design loop.
+- **Knowledge loop.** Lessons, skills and tools from each problem are read by the next team. You can add your own
+  sources: Markdown notes in `knowledge/insights/` are searched by the members during the meeting.
+
+## Try it (reviewers)
+
+```bash
+git clone https://github.com/sinansahincandan/hardware-scientist-meta.git && cd hardware-scientist-meta
+python3 -m venv .venv && source .venv/bin/activate && pip install -e .
+export MODEL_API_KEY=<your Meta Model API key>
+hs run examples/bench/b3_wind_turbine.json --quick      # QUICK_TIME, about QUICK_COST
+```
+
+The run prints its folder. Open:
+
+- `runs/<id>/report.html` for the design, the figure and what happened;
+- `runs/<id>/board.html` for the whiteboard, meeting by meeting;
+- `runs/<id>/final/figure.png` for the concept figure.
+
+`--quick` keeps every loop but uses fewer meeting cycles and picture rounds. Without it, a full run takes 45–75 min.
+To write your own problem, copy any file in `examples/` (a title, a paragraph, a few constraints) and run it.
+`hs run --fake examples/01_stair_cart.json` runs offline with a scripted client and needs no key.
+
+## Example inputs and outputs
+
+EXAMPLES_TABLE
 
 ## Setup
 
