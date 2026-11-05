@@ -167,7 +167,7 @@
   },
   {
    "id": "whiteboard",
-   "text": "The whiteboard never resets. Four experts post ideas, the chief designer stars one per function, sketches and calculations fill the board. The reviewer rejects. Meeting two starts on the same board, rechecks the folding, and the design is accepted.",
+   "text": "The whiteboard never resets. The design is broken into functions; experts post ideas for each, the chief designer picks one per function, and sketches and calculations fill the board. The reviewer rejects. Meeting two, same board: the folding is rechecked and accepted.",
    "visual": {
     "type": "reveal",
     "imgs": [
@@ -306,7 +306,7 @@
   },
   {
    "id": "gallery",
-   "text": "The same team designed an excavator, a turbine, a hand truck, a cold room and a footbridge damper.",
+   "text": "It also designed an excavator, a turbine, a cold room and a footbridge damper.",
    "visual": {
     "type": "still",
     "img": "gallery.png"
