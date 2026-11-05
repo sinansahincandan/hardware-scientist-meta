@@ -48,7 +48,7 @@ if want("hook"):
              ("ft_step3.png", "How it is made", "50% 45%"), ("ft_board.png", "Whiteboard record", "0% 0%")]
     tl = "".join(f'<div class="tile"><div class="ph"><img src="../assets/{f}" style="object-position:{pos}"></div>'
                  f'<div class="c">{c}</div></div>' for f, c, pos in tiles)
-    body = f"""<div class="kicker">Hardware Engineer</div>
+    body = f"""<div class="kicker">Hardware Engineer · conceptual hardware design</div>
 <div class="inh colh">What goes in</div>
 <div class="in card"><div class="mark">“</div>
 <div class="t">Robot hands crush what they hold.<br>Design a fingertip that feels touch.</div>
@@ -76,7 +76,7 @@ body{{background:{bg}}}
 """
     body = f"""<img class="fig" src="../assets/gal_fingertip.png">
 <div class="kicker">Hardware Engineer</div>
-<div class="hl">One paragraph in.<br><span>An engineered<br>concept out.</span></div>
+<div class="hl">One paragraph in.<br><span>A conceptual<br>hardware design out.</span></div>
 <div class="sub">a robot fingertip that feels a 1 mN touch</div>
 {foot()}"""
     S.shoot(write("hook_2.html", page(body, css)), f"{OUT}/hook_2.png")
@@ -150,7 +150,7 @@ body.st1 .g2,body.st2 .g1{display:none}
 <div class="pr" style="left:1004px"><img src="../assets/fx_r2.png">{ring('fx_r2', '#d64545', 'x')}<span class="rd">round 2</span></div>
 <div class="pl" style="left:96px;background:var(--ink)">Fix asked: join cable to flex</div>
 <div class="pl" style="left:1004px;background:var(--red)">Joined — now plugged into nothing</div>"""
-    body = f"""<div class="kicker">The problem with one prompt</div>
+    body = f"""<div class="kicker">Conceptual hardware design · the problem with one prompt</div>
 <div class="g1"><h1 class="title">Looks right. Doesn't work.</h1>
 {tur}{exc}
 <div class="foot">One-prompt renders from our baseline runs: the turbine was specified with three blades; the excavator with one hopper. Parts found by SAM 3.1.</div></div>

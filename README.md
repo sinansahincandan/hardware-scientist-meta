@@ -33,9 +33,12 @@ picture showing the design (13.5 vs 16). Picture–text consistency is the next 
 
 ## Try it (reviewers)
 
+Needs **Python 3.11 or newer** (`python3 --version`; macOS ships 3.9 — use e.g. `python3.12` from Homebrew or python.org).
+
 ```bash
 git clone https://github.com/sinansahincandan/hardware-scientist-meta.git && cd hardware-scientist-meta
-python3 -m venv .venv && source .venv/bin/activate && pip install -e .
+python3.12 -m venv .venv && source .venv/bin/activate && pip install --upgrade pip && pip install -e .
+hs run --fake examples/01_stair_cart.json               # offline check, no key, ~10 s
 export MODEL_API_KEY=<your Meta Model API key>
 hs run examples/bench/b3_wind_turbine.json --quick      # measured: 30 min, $1.67 (while six other runs shared the API)
 ```

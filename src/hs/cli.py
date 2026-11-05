@@ -33,7 +33,9 @@ def _cmd_run(args: argparse.Namespace) -> int:
     result = Controller(client, **caps).run(problem)  # binds the client's cost log to the new run folder
     print(f"run folder: {result.run_dir}")
     print(f"final figure: {result.figure_path}")
-    print(f"cost: ${result.cost_usd:.4f}")
+    fake = bool(args.fake) or os.environ.get("HS_FAKE") == "1"
+    print(f"cost: ${result.cost_usd:.4f}" + (" (simulated; fake mode makes no API call)" if fake else ""))
+    print(f"open: {result.run_dir / 'report.html'}")
     for warning in result.warnings:
         print(f"warning: {warning}")
     return 0

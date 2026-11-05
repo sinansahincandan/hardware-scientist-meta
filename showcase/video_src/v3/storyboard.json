@@ -5,7 +5,7 @@
  "segments": [
   {
    "id": "problem",
-   "text": "The best feedback on a concept is a picture. Ask a frontier model and the picture looks right but doesn't work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.",
+   "text": "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks right but doesn't work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.",
    "visual": {
     "type": "reveal",
     "imgs": [
@@ -20,7 +20,7 @@
   },
   {
    "id": "hook",
-   "text": "Hardware Engineer takes one paragraph and returns an engineered concept: a labelled picture you can trust, every number with its calculation, a plan to make it, and the whiteboard behind it. Here, a robot fingertip that feels a one millinewton touch.",
+   "text": "Hardware Engineer takes one paragraph and returns a conceptual hardware design: a labelled picture you can trust, every number with its calculation, a plan to make it, and the whiteboard behind it. Here, a robot fingertip that feels a one millinewton touch.",
    "visual": {
     "type": "reveal",
     "imgs": [
