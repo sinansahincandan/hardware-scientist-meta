@@ -9,9 +9,15 @@ def reveal(prefix_or_list, at=None):
     imgs = [os.path.basename(i) for i in imgs]
     n = len(imgs)
     return {"type": "reveal", "imgs": imgs, "at": at or [round(i / n, 2) for i in range(n)]}
+TXT = {}
+TXT['hook'] = "Hardware Engineer takes one paragraph and returns a conceptual hardware design: a labelled picture you can trust, every number with its calculation, a plan to make it, and the whiteboard behind it. Here, a robot fingertip that feels a one millinewton touch."
+TXT['problem'] = "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks catchy, but it does not actually work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another."
+def at_phrase(seg, phrase):
+    t = TXT[seg]
+    return round(t.index(phrase) / len(t) + 0.03, 2)
 SEG = [
- ("problem", "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks right but doesn't work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.", reveal("problem", [0, 0.58])),
- ("hook", "Hardware Engineer takes one paragraph and returns a conceptual hardware design: a labelled picture you can trust, every number with its calculation, a plan to make it, and the whiteboard behind it. Here, a robot fingertip that feels a one millinewton touch.", reveal("hook", [0, 0.64])),
+ ("problem", "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks catchy, but it does not actually work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.", reveal("problem", [0, at_phrase("problem", "Feedback fixes")])),
+ ("hook", "Hardware Engineer takes one paragraph and returns a conceptual hardware design: a labelled picture you can trust, every number with its calculation, a plan to make it, and the whiteboard behind it. Here, a robot fingertip that feels a one millinewton touch.", reveal("hook", [0, at_phrase("hook", "Here, a robot")])),
  ("simple", "It works like a hardware team: experts on one whiteboard, a reviewer like a senior engineer, and a rejection becomes a written gradient that rewrites the team's own instructions, inspired by TextGrad.", reveal("simple", [0, 0.3, 0.6, 0.82])),
  ("architecture", "The engineer gives only the what. Experts advise, a chief designer decides, and everything they search, calculate and sketch lands on one whiteboard. A reviewer writes the critique. On a rejection the Manager turns it into a gradient and rewrites only the lines that let the fault through. Lessons, skills and tools carry to the next problem.", {"type": "tour", "img": "arch_base.png", "keys": keys("arch_keys.json")}),
  ("textgrad", "The reviewer rejects the hand truck: the backbone cannot fold into the van, the bending uses the wrong beam model. The Manager writes what must change and why the instructions let it through, and rewrites only those lines. Next meeting, the same issues are checked first, and pass.", reveal("textgrad", [0, 0.2, 0.36, 0.5, 0.68, 0.86])),

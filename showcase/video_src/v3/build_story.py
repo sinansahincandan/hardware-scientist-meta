@@ -151,7 +151,7 @@ body.st1 .g2,body.st2 .g1{display:none}
 <div class="pl" style="left:96px;background:var(--ink)">Fix asked: join cable to flex</div>
 <div class="pl" style="left:1004px;background:var(--red)">Joined — now plugged into nothing</div>"""
     body = f"""<div class="kicker">Conceptual hardware design · the problem with one prompt</div>
-<div class="g1"><h1 class="title">Looks right. Doesn't work.</h1>
+<div class="g1"><h1 class="title">Looks catchy. Doesn't actually work.</h1>
 {tur}{exc}
 <div class="foot">One-prompt renders from our baseline runs: the turbine was specified with three blades; the excavator with one hopper. Parts found by SAM 3.1.</div></div>
 <div class="g2">{g2}

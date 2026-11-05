@@ -5,7 +5,7 @@
  "segments": [
   {
    "id": "problem",
-   "text": "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks right but doesn't work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.",
+   "text": "In conceptual hardware design, the best feedback is a picture. Ask a frontier model and the picture looks catchy, but it does not actually work: four blades where the text says three, hoppers that never connect. Feedback fixes one thing and breaks another.",
    "visual": {
     "type": "reveal",
     "imgs": [
@@ -14,7 +14,7 @@
     ],
     "at": [
      0,
-     0.58
+     0.86
     ]
    }
   },
@@ -29,7 +29,7 @@
     ],
     "at": [
      0,
-     0.64
+     0.8
     ]
    }
   },
